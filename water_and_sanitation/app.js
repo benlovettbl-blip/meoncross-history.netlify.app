@@ -7800,7 +7800,7 @@ window.sortMiddleWayTile = function(category) {
 // CUSTOM KEY STAGE 3 PEDAGOGICAL FUNCTIONS
 // ==========================================
 
-window.toggleDoNowAnswers = function() {
+window.toggleDoNowAnswers = function(event) {
   const answers = document.querySelectorAll('.do-now-answer');
   const btn = event.currentTarget;
   let isCurrentlyHidden = true;
@@ -7822,7 +7822,7 @@ window.toggleDoNowAnswers = function() {
   }
 };
 
-window.toggleModelAnswers = function() {
+window.toggleModelAnswers = function(event) {
   const block = document.getElementById('modelAnswersBlock');
   const btn = event.currentTarget;
   if (!block) return;
