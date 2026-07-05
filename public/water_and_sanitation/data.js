@@ -7,8 +7,8 @@ const timelineData = [
     "title": "Prehistoric and Roman Sanitation",
     "events": [
       {
-        "subtitle": "Society and Government in the Iron Age",
-        "text": "Long before modern indoor plumbing existed, the inhabitants of prehistoric Britain had to find clever ways to secure drinking water and dispose of human waste. During the British Iron Age (700 BC - AD 43), most people lived in roundhouse farming settlements like Silchester. They dug basic earthen cesspits for waste, and covered them over with soil once filled.",
+        "subtitle": "Iron Age Settlements & Cesspits",
+        "text": "It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water. During the British Iron Age (700 BC - AD 43), most families lived in circular wooden homes called roundhouses, such as those discovered by archaeologists at Silchester. Because the people of this era left no written documents behind, historians must rely on physical clues unearthed from the ground—a field of study known as archaeology. These physical discoveries show that Iron Age communities intentionally built their settlements near fresh springs, streams, or hand-dug wells to secure their daily water supply.",
         "dates": ["700 BC"],
         "names": ["Iron Age Britons"],
         "stats": ["Cesspit pits", "Roundhouse settlements"],
@@ -17,7 +17,7 @@ const timelineData = [
       },
       {
         "subtitle": "Roman Conduits & Water Supply",
-        "text": "The arrival of the Roman Empire in AD 43 completely transformed the British landscape. Roman engineers constructed massive stone channels called conduits. These conduits used gravity to carry clean water over vast distances directly into urban centres and military fortresses like Corbridge.",
+        "text": "This simple way of life was completely transformed in AD 43 when the Roman Empire invaded Britain. The Romans brought revolutionary sanitation technology and a strong belief that clean, flowing water was vital for keeping a society healthy. To bring vast amounts of clean water into their newly built stone towns and military outposts, such as Corbridge, Roman engineers constructed stone channels called conduits. These conduits used the natural pull of gravity to transport fresh water over miles from distant natural springs directly into urban centres.",
         "dates": ["AD 43"],
         "names": ["Roman Engineers"],
         "stats": ["Gravity conduits"],
@@ -26,7 +26,7 @@ const timelineData = [
       },
       {
         "subtitle": "Bathhouses and Latrines",
-        "text": "In Roman towns, clean water fed public bathhouses (like Bearsden) and communal toilets called latrines. At military sites like Housesteads Fort on Hadrian's Wall, soldiers sat above deep channels where running water constantly flushed waste away into underground sewers.",
+        "text": "In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers. Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian's Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. To wipe themselves, Roman soldiers used a wet sponge attached to the end of a shared wooden stick.",
         "dates": ["AD 62"],
         "names": ["Seneca the Younger"],
         "stats": ["Bathhouses", "Latrines"],
@@ -35,7 +35,7 @@ const timelineData = [
       },
       {
         "subtitle": "The Roman Withdrawal",
-        "text": "When the Romans withdrew around AD 410, much of this advanced engineering was abandoned. Britain's sanitation slipped back into primitive patterns for centuries.",
+        "text": "When the Romans finally left Britain around AD 410, much of this advanced engineering was abandoned, and sanitation slipped back into primitive patterns for centuries.",
         "dates": ["AD 410"],
         "names": ["Roman Legionaries"],
         "stats": ["Sanitation collapse"],
@@ -49,38 +49,38 @@ const timelineData = [
 const quizData = [
   {
     "id": "q1",
-    "question": "During which historical period did people in Britain use simple earthen holes called cesspits for waste disposal?",
-    "answer": "The Iron Age",
-    "distractors": ["The Roman Period", "The Victorian Era", "The Bronze Age"],
-    "explanation": "Earthen holes called cesspits were standard during the Iron Age in Britain, dug and covered over once full."
-  },
-  {
-    "id": "q2",
-    "question": "Why do historians rely on archaeologists to understand sanitation in Iron Age Britain?",
-    "answer": "There are no surviving written records from the Iron Age.",
-    "distractors": ["Iron Age people only used stone tools which did not decay.", "Roman written records about the Iron Age were all destroyed in a fire.", "Iron Age people lived underground."],
+    "question": "Why do historians rely on archaeology to study sanitation in Iron Age Britain?",
+    "answer": "There are no surviving written records from Iron Age Britain.",
+    "distractors": ["Iron Age people lived entirely underground in caves.", "Roman invaders destroyed all the books written by Iron Age people.", "Iron Age people only used stone tools."],
     "explanation": "Since there are no written accounts from Iron Age Britain, excavation and material archaeology are the only ways to study their habits."
   },
   {
+    "id": "q2",
+    "question": "How did Iron Age people manage their cesspits once they became full?",
+    "answer": "They covered them with soil and dug a new pit nearby.",
+    "distractors": ["They used lead pipes to flush the waste into local rivers.", "They hired specialized gongfermers to empty them.", "They set them on fire."],
+    "explanation": "Simple, temporary cesspits were buried with soil when full, and a new trench was dug nearby."
+  },
+  {
     "id": "q3",
-    "question": "What were the stone channels built by Roman engineers to transport clean water over long distances called?",
-    "answer": "Conduits",
-    "distractors": ["Cesspits", "Latrines", "Aqueducts"],
-    "explanation": "Conduits were stone channels engineered by the Romans to transport fresh spring water into fortresses and towns using gravity."
+    "question": "What engineering method did Roman conduits use to transport fresh water over miles?",
+    "answer": "Gravity pulling water down a slight slope",
+    "distractors": ["Underground steam-powered pressure pumps", "Hand-operated wooden waterwheels", "Electric water pumps"],
+    "explanation": "Conduits were sloped channels that relied on the natural pull of gravity to move water over long distances."
   },
   {
     "id": "q4",
-    "question": "Which Roman military fort on Hadrian's Wall contains the remains of a public latrine block flushed by running water?",
+    "question": "Which Roman fort along Hadrian's Wall contains the archaeological remains of a flushing communal latrine?",
     "answer": "Housesteads Fort",
     "distractors": ["Bearsden Fort", "Silchester Fort", "Corbridge Fort"],
     "explanation": "Housesteads Fort contains well-preserved remains of a Roman military latrine flushed by running water channels."
   },
   {
     "id": "q5",
-    "question": "What happened to Britain's advanced Roman sanitation systems after the Romans withdrew around AD 410?",
-    "answer": "The systems fell into disrepair and were abandoned.",
-    "distractors": ["They were expanded by Anglo-Saxon engineers.", "They were purchased by private water companies.", "They were preserved exactly as they were."],
-    "explanation": "Following the Roman withdrawal in AD 410, advanced sanitation systems were abandoned, and Britain returned to simpler, localized methods."
+    "question": "What did Roman bathers experience inside a bathhouse like Bearsden?",
+    "answer": "Washing in sequence through cold, warm, and hot rooms",
+    "distractors": ["Swimming in deep reservoirs filled with rainwater", "Paying water sellers to pour buckets of cold river water over them", "Sitting in a single room with a fireplace"],
+    "explanation": "Bathers washed in sequence through unheated, warm, and steaming hot chambers."
   }
 ];
 
