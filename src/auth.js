@@ -25,7 +25,7 @@ export function initAuth() {
   // Prepare localStorage default session for developer mode / classroom testing
   if (!localStorage.getItem('user_profile')) {
     // Default mock user
-    setMockUser("Year 7");
+    setMockUser("Admin");
   }
 }
 

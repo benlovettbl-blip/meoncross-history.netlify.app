@@ -4,3 +4,4 @@ dist/
 *.log
 .gemini/
 .env*
+src/data/elizabethan_old/

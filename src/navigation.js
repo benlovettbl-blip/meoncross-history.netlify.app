@@ -4,7 +4,7 @@
 
 import { state } from './state.js';
 import { parseMarkdown } from './markdown_parser.js';
-import { renderDashboard, renderInteractiveQuiz, renderTimeline, renderBookletView, renderProfileView } from './views.js';
+import { renderDashboard, renderInteractiveQuiz, renderTimeline, renderBookletView, renderProfileView, renderDecisionsView, renderTabooView } from './views.js';
 
 export async function switchView(viewName, param = null) {
   state.currentView = viewName;
@@ -61,6 +61,12 @@ export async function switchView(viewName, param = null) {
   } else if (viewName === 'booklet') {
     if (param) await loadUnit(param);
     renderBookletView();
+  } else if (viewName === 'decisions') {
+    if (param) await loadUnit(param);
+    renderDecisionsView();
+  } else if (viewName === 'taboo') {
+    if (param) await loadUnit(param);
+    renderTabooView();
   }
 }
 
@@ -88,6 +94,25 @@ async function loadUnit(unitId) {
         state.allQuestions.push(q);
       }
     });
+
+    const navDecisions = document.getElementById('nav-decisions');
+    const navTaboo = document.getElementById('nav-taboo');
+    if (navDecisions && navTaboo) {
+      if (unitId.startsWith('gcse_')) {
+        // Elizabethan does not have decisions game, only Middle East and USA do
+        if (unitId === 'gcse_elizabethan_england') {
+          navDecisions.style.display = 'none';
+        } else {
+          navDecisions.style.display = 'flex';
+        }
+        navTaboo.style.display = 'flex';
+        navDecisions.onclick = () => switchView('decisions', unitId);
+        navTaboo.onclick = () => switchView('taboo', unitId);
+      } else {
+        navDecisions.style.display = 'none';
+        navTaboo.style.display = 'none';
+      }
+    }
   } catch (err) {
     console.error("Error loading unit:", err);
     alert(`Could not load unit: ${unitId}. Please ensure the content file exists.`);
