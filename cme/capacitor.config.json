@@ -1,0 +1,6 @@
+{
+  "appId": "com.history.middleeastmastery",
+  "appName": "Middle East History Mastery",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

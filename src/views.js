@@ -118,33 +118,20 @@ export function renderDashboard() {
         ${isUnlocked ? `
           <div class="module-actions">
             ${unit.id.startsWith('gcse_') ? `
-              <button class="btn btn-sm btn-primary" onclick="window.switchView('lessons', '${unit.id}')">
-                <i class="fa-solid fa-book-open"></i> Study Lessons
-              </button>
-              <button class="btn btn-sm btn-secondary" onclick="window.switchView('interactive', '${unit.id}')">
-                <i class="fa-solid fa-gamepad"></i> Interactive Study
+              <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
+                <i class="fa-solid fa-circle-play"></i> Launch Study App
               </button>
             ` : `
               <button class="btn btn-sm btn-primary" onclick="window.switchView('interactive', '${unit.id}')">
                 <i class="fa-solid fa-gamepad"></i> Interactive Study
               </button>
+              <button class="btn btn-sm btn-secondary" onclick="window.switchView('timeline', '${unit.id}')">
+                <i class="fa-solid fa-timeline"></i> Timeline
+              </button>
+              <button class="btn btn-sm btn-outline" onclick="window.switchView('booklet', '${unit.id}')">
+                <i class="fa-solid fa-print"></i> PDF/A4 Booklet
+              </button>
             `}
-            <button class="btn btn-sm btn-secondary" onclick="window.switchView('timeline', '${unit.id}')">
-              <i class="fa-solid fa-timeline"></i> Timeline
-            </button>
-            ${unit.id !== 'gcse_elizabethan_england' && unit.id.startsWith('gcse_') ? `
-              <button class="btn btn-sm btn-secondary" onclick="window.switchView('decisions', '${unit.id}')">
-                <i class="fa-solid fa-phone-volume"></i> Decisions Game
-              </button>
-            ` : ''}
-            ${unit.id.startsWith('gcse_') ? `
-              <button class="btn btn-sm btn-secondary" onclick="window.switchView('taboo', '${unit.id}')">
-                <i class="fa-solid fa-tags"></i> Taboo Recall
-              </button>
-            ` : ''}
-            <button class="btn btn-sm btn-outline" onclick="window.switchView('booklet', '${unit.id}')">
-              <i class="fa-solid fa-print"></i> PDF/A4 Booklet
-            </button>
           </div>
         ` : `
           <div class="locked-indicator">
@@ -200,6 +187,16 @@ export function renderProfileView() {
 window.updateProfileYearGroup = function(val) {
   setMockUser(val);
   renderDashboard();
+};
+
+window.launchSubApp = function(unitId) {
+  if (unitId === 'gcse_usa_1954_1975') {
+    window.location.href = '/usa/';
+  } else if (unitId === 'gcse_middle_east_1945_1995') {
+    window.location.href = '/cme/';
+  } else if (unitId === 'gcse_elizabethan_england') {
+    window.location.href = '/eee/';
+  }
 };
 
 export function renderInteractiveQuiz() {
@@ -662,7 +659,7 @@ export async function renderLessonsView() {
     const sub = data.subtopics[index];
     
     // Parse content lines and render beautifully
-    let bodyHtml = sub.contentLines.map(line => {
+    let bodyHtml = sub.content.split('\n').map(line => {
       let l = line.trim();
       if (!l) return '';
       
@@ -725,7 +722,7 @@ export async function renderLessonsView() {
       
       <div class="modules-grid">
         ${data.subtopics.map((sub, idx) => {
-          const descLine = sub.contentLines.find(line => line.trim().length > 30 && !line.includes('#') && !line.includes('*') && !line.includes('<')) || 'Study this historical topic.';
+          const descLine = sub.content.split('\n').find(line => line.trim().length > 30 && !line.includes('#') && !line.includes('*') && !line.includes('<')) || 'Study this historical topic.';
           return `
             <div class="module-card" style="cursor: pointer;" onclick="window.viewLessonDetail(${idx})">
               <div class="module-header">

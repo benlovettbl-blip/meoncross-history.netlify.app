@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCSE History Study Centre: Interactive Timeline (1945-1995)</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Premium CSS Design System (Desert Slate / Sunset Oasis Vibe) */
+    :root {
+      --bg-dark: #0d0f14;
+      --bg-card: #151922;
+      --bg-card-hover: #1c222e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      
+      --primary: #f97316; /* Sunset Orange */
+      --primary-hover: #ea580c;
+      --primary-glow: rgba(249, 115, 22, 0.15);
+      
+      --secondary: #14b8a6; /* Oasis Teal */
+      --secondary-glow: rgba(20, 184, 166, 0.15);
+      
+      --accent: #eab308; /* Desert Gold */
+      --accent-glow: rgba(234, 179, 8, 0.15);
+      
+      --success: #10b981; /* Emerald Green */
+      --success-glow: rgba(16, 185, 129, 0.15);
+      
+      --error: #ef4444; /* Crimson Red */
+      --error-glow: rgba(239, 68, 68, 0.15);
+      
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(249, 115, 22, 0.4);
+      --border-radius-lg: 16px;
+      --border-radius-md: 12px;
+      --border-radius-sm: 8px;
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.15s ease;
+    }
+
+    /* Light Theme Overlay support */
+    [data-theme="light"] {
+      --bg-dark: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-glass: rgba(15, 23, 42, 0.08);
+      --primary-glow: rgba(249, 115, 22, 0.1);
+      --secondary-glow: rgba(20, 184, 166, 0.1);
+      --accent-glow: rgba(234, 179, 8, 0.1);
+      --success-glow: rgba(16, 185, 129, 0.1);
+      --error-glow: rgba(239, 68, 68, 0.1);
+      --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+
+    .cme-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Header & Branding styles */
+    header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .header-logo {
+      background: transparent;
+      color: var(--primary);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      align-items: flex-start;
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .header-info h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .header-info p {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      width: 44px;
+      height: 44px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .theme-toggle-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .app-badge {
+      display: inline-block;
+      background: var(--primary-glow);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .header-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Controls & Buttons */
+    .timeline-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .timeline-btn {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-glass);
+      padding: 10px 20px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .timeline-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .timeline-btn.active {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Timeline Container & Cards */
+    .interactive-timeline {
+      position: relative;
+      padding-left: 28px;
+      margin: 20px 0 50px 0;
+    }
+
+    .interactive-timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 4px;
+      background: var(--border-glass);
+      border-radius: 2px;
+    }
+
+    .timeline-event {
+      position: relative;
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      user-select: none;
+    }
+
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 3px solid var(--border-glass);
+      transition: all var(--transition-normal);
+      z-index: 2;
+    }
+
+    .timeline-event:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-active);
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-event:hover::before {
+      border-color: var(--primary);
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .timeline-event.expanded {
+      border-color: var(--border-active);
+      background: var(--bg-card-hover);
+    }
+
+    .timeline-event.expanded::before {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .timeline-event-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-date {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.2rem;
+      margin-top: 4px;
+      flex-grow: 1;
+    }
+
+    .click-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+    }
+
+    .timeline-event.expanded .click-hint i {
+      transform: rotate(180deg);
+    }
+
+    .timeline-event.expanded .click-hint span {
+      content: 'Click to collapse';
+    }
+
+    .timeline-details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .timeline-event.expanded .timeline-details {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 16px;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 16px;
+    }
+
+    .timeline-details ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline-details li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-details li::before {
+      content: '❖';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .timeline-details li strong {
+      color: var(--secondary);
+    }
+
+    /* Sound option switch style */
+    .sound-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      padding: 8px 12px;
+      border-radius: var(--border-radius-sm);
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .sound-control:hover {
+      border-color: var(--primary);
+      color: var(--text-main);
+    }
+
+    /* Premium Exam Suite Styling */
+    .cme-exam-container {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .exam-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .exam-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .exam-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exam-section select {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: var(--text-main);
+      padding: 12px 16px;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--border-glass);
+      font-size: 1rem;
+      font-family: inherit;
+      width: 100%;
+      margin-bottom: 16px;
+      outline: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .exam-section select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .question-display-box {
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--secondary);
+      background: rgba(20, 184, 166, 0.05);
+      border-left: 4px solid var(--secondary);
+      padding: 12px 16px;
+      border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+      display: none;
+    }
+
+    .exam-section textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 120px;
+      outline: none;
+      transition: border-color var(--transition-fast);
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
+
+    .exam-section textarea:focus {
+      border-color: var(--primary);
+    }
+
+    /* Live Keyword Tracker Badges */
+    .tracker-container {
+      background: rgba(0, 0, 0, 0.15);
+      border: 1px dashed var(--border-glass);
+      padding: 16px 20px;
+      border-radius: var(--border-radius-md);
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tracker-label {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .kw-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all var(--transition-normal);
+      user-select: none;
+    }
+
+    .kw-badge.found {
+      background: var(--success);
+      color: white;
+      border-color: var(--success);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Action Buttons */
+    .action-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
+    }
+
+    .action-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(249, 115, 22, 0.3);
+    }
+
+    .action-btn:active {
+      transform: translateY(0);
+    }
+
+    .action-btn.check-btn {
+      background: var(--secondary);
+      box-shadow: 0 4px 10px rgba(20, 184, 166, 0.2);
+    }
+
+    .action-btn.check-btn:hover {
+      background: #0d9488;
+      box-shadow: 0 6px 14px rgba(20, 184, 166, 0.3);
+    }
+
+    /* Clue & Model Boxes */
+    .hidden-box {
+      display: none;
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      padding: 24px;
+      border-radius: var(--border-radius-md);
+      margin-top: 16px;
+      box-shadow: var(--shadow-sm);
+      animation: slideDown 0.3s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .clue-box {
+      background: rgba(234, 179, 8, 0.05);
+      border-color: rgba(234, 179, 8, 0.15);
+      border-left: 4px solid var(--accent);
+      color: var(--text-main);
+    }
+
+    .model-box {
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.15);
+      border-left: 4px solid var(--success);
+      color: var(--text-main);
+    }
+
+    /* MCQ Gateway Panel Styling */
+    #cons-mcq-container {
+      background: rgba(20, 184, 166, 0.05);
+      border-color: rgba(20, 184, 166, 0.15);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .model-box-title {
+      font-size: 1.1rem;
+      color: var(--success);
+      margin-bottom: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .clue-box-title {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .model-box-text {
+      font-style: italic;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-main);
+      background: rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      border-radius: var(--border-radius-sm);
+      margin-bottom: 12px;
+    }
+
+    .examiner-tip {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-glass);
+      padding-top: 12px;
+      line-height: 1.5;
+    }
+
+    .highlight-link {
+      background-color: rgba(234, 179, 8, 0.25);
+      border-bottom: 2px solid var(--accent);
+      padding: 0 4px;
+      border-radius: 2px;
+      font-weight: 700;
+      color: #ffd700;
+    }
+
+    [data-theme="light"] .highlight-link {
+      color: #854d0e;
+    }
+
+    .highlight-word {
+      background-color: rgba(16, 185, 129, 0.25);
+      border-bottom: 2px solid var(--success);
+      padding: 0 4px;
+      border-radius: 2px;
+      font-weight: 700;
+      color: #4ade80;
+    }
+
+    [data-theme="light"] .highlight-word {
+      color: #166534;
+    }
+
+    /* Bouncy Chimney Sweeper Logo Animations */
+    @keyframes chimneyBounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      30% { transform: translateY(-5px) scale(0.96) rotate(-2deg); }
+      50% { transform: translateY(-8px) scale(1.05) rotate(2deg); }
+      70% { transform: translateY(-3px) scale(0.98) rotate(-1deg); }
+      85% { transform: translateY(-1px) scale(1.01) rotate(0.5deg); }
+    }
+
+    .bouncy-chimney {
+      animation: chimneyBounce 2.5s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: filter var(--transition-fast), transform var(--transition-fast);
+      position: relative;
+    }
+
+    .bouncy-chimney:hover {
+      filter: drop-shadow(0 0 12px var(--primary-glow)) drop-shadow(0 0 4px var(--primary));
+      animation-play-state: paused;
+      transform: scale(1.15) rotate(3deg);
+    }
+
+    .bouncy-chimney:active {
+      transform: scale(0.95);
+    }
+
+    /* Smoke Particles */
+    .smoke-particle {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(28, 25, 23, 0.85);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) scale(1);
+      filter: blur(1.5px);
+    }
+
+    @keyframes smokeRise1 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(-14px, -26px) scale(3.5); opacity: 0; filter: blur(4px); }
+    }
+
+    @keyframes smokeRise2 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(10px, -32px) scale(4); opacity: 0; filter: blur(5px); }
+    }
+
+    @keyframes smokeRise3 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.7; }
+      100% { transform: translate(-2px, -38px) scale(4.5); opacity: 0; filter: blur(6px); }
+    }
+
+    .bouncy-chimney:hover .smoke-1 {
+      animation: smokeRise1 1.6s infinite linear;
+    }
+
+    .bouncy-chimney:hover .smoke-2 {
+      animation: smokeRise2 1.8s infinite linear;
+      animation-delay: 0.5s;
+    }
+
+    .bouncy-chimney:hover .smoke-3 {
+      animation: smokeRise3 2.0s infinite linear;
+      animation-delay: 1.0s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cme-container">
+    
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <div class="header-logo bouncy-chimney brand-icon" id="header-brand-logo" title="Fareham Chimney Sweep">
+          <div class="smoke-particle smoke-1"></div>
+          <div class="smoke-particle smoke-2"></div>
+          <div class="smoke-particle smoke-3"></div>
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="24" width="14" height="2" rx="0.5" fill="#a03018" />
+            <polygon points="6,24 8,4 16,4 18,24" fill="#e65c00" />
+            <rect x="7" y="2" width="10" height="2" rx="0.5" fill="#b34700" />
+            <rect x="7.8" y="6" width="8.4" height="1.5" fill="#ffffff" />
+            <rect x="8.0" y="9.5" width="8.0" height="1.5" fill="#ffffff" />
+            <rect x="8.2" y="13" width="7.6" height="1.5" fill="#ffffff" />
+          </svg>
+        </div>
+        <div class="header-info">
+          <div class="app-badge" style="margin-bottom: 4px;">GCSE History Paper 2</div>
+          <h1 style="font-size: 1.25rem;">Study Centre: Interactive Timeline & Exam Practice</h1>
+          <p style="font-size: 0.78rem; text-transform: none; letter-spacing: normal; font-weight: normal; color: var(--text-muted);">
+            Consolidate Middle East conflict chronology (1945–1995) and master core GCSE exam questions with Live Keyword Trackers.
+          </p>
+        </div>
+      </div>
+      
+      <div class="header-actions" style="display: flex; align-items: center; gap: 10px;">
+        <a href="index.html" class="timeline-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; padding: 8px 14px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); transition: all var(--transition-fast);">
+          <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+        <!-- Theme Switcher -->
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" style="position: static; margin: 0;">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Toolbar controls -->
+    <div class="timeline-controls">
+      <button class="timeline-btn" onclick="toggleAllTimelines('block')">
+        <i class="fa-solid fa-expand"></i> Expand All Eras
+      </button>
+      <button class="timeline-btn" onclick="toggleAllTimelines('none')">
+        <i class="fa-solid fa-compress"></i> Collapse All Eras
+      </button>
+      <div class="sound-control" id="sound-toggle" title="Toggle Sound Feedback">
+        <i class="fa-solid fa-volume-high"></i> <span>Sound: On</span>
+      </div>
+    </div>
+
+    <!-- Chronology Timeline -->
+    <div class="interactive-timeline">
+      
+      <!-- Key Topic 1 -->
+      <div class="timeline-event" id="event-card-te1" onclick="toggleTimeline('te1')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1945–1947</div>
+          <div class="timeline-title">The British Mandate Breaks Down</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te1" class="timeline-details">
+          <ul>
+            <li><strong>Post-WWII Tension:</strong> Britain faces conflicting demands from Zionists (seeking a haven for Holocaust survivors) and Palestinian Arabs (demanding independence).</li>
+            <li><strong>July 1946:</strong> The Jewish insurgent group Irgun bombs the British administrative headquarters at the King David Hotel in Jerusalem, killing 91 people and shattering British public morale.</li>
+            <li><strong>Feb 1947:</strong> Exhausted by the insurgency and the cost of keeping 100,000 troops in Palestine, Britain hands the problem to the newly formed United Nations.</li>
+            <li><strong>Nov 1947:</strong> The UN passes Resolution 181 (The Partition Plan), allocating 55% of the land to a Jewish state. Jews accept it; the Arab League rejects it completely, sparking immediate civil war.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te2" onclick="toggleTimeline('te2')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1948–1949</div>
+          <div class="timeline-title">The First Arab-Israeli War & The Nakba</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te2" class="timeline-details">
+          <ul>
+            <li><strong>May 1948:</strong> The British Mandate officially ends. David Ben-Gurion declares the State of Israel. The next day, armies from five Arab nations invade.</li>
+            <li><strong>1948-49 War:</strong> Israel survives due to a unified command (creation of the Israeli Defence Forces - IDF), mandatory conscription, and importing Czech weapons during UN truces.</li>
+            <li><strong>The Aftermath (1949):</strong> Armistice agreements establish the 'Green Line'. Israel expands its territory beyond the UN plan. Jordan annexes the West Bank; Egypt takes military control of Gaza.</li>
+            <li><strong>The Nakba:</strong> Over 700,000 Palestinian Arabs flee or are driven from their homes, creating a massive refugee crisis. The UN sets up UNRWA to run refugee camps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te3" onclick="toggleTimeline('te3')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1950–1955</div>
+          <div class="timeline-title">State Building, Border Wars & The Cold War</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te3" class="timeline-details">
+          <ul>
+            <li><strong>1950:</strong> Israel passes the Law of Return, granting any Jew worldwide the right to Israeli citizenship, leading to a massive demographic expansion.</li>
+            <li><strong>1954:</strong> Gamal Abdel Nasser officially takes power in Egypt, promoting Pan-Arabism to unite the Arab world.</li>
+            <li><strong>Feb 1955:</strong> Israel launches a massive reprisal attack against Egyptian military headquarters in Gaza to stop cross-border 'Fedayeen' guerrilla raids.</li>
+            <li><strong>Sept 1955:</strong> Humiliated by the Gaza raid, Nasser signs the massive Czech Arms Deal to bypass Western embargoes and secure advanced Soviet weapons, escalating Cold War tensions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te4" onclick="toggleTimeline('te4')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1956–1958</div>
+          <div class="timeline-title">The Suez Crisis & Arab Nationalism</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te4" class="timeline-details">
+          <ul>
+            <li><strong>July 1956:</strong> The USA and Britain withdraw funding for the Aswan High Dam. In retaliation, Nasser nationalises the Suez Canal to use its toll revenues.</li>
+            <li><strong>Oct 1956:</strong> Britain, France, and Israel hold secret meetings and sign the Protocol of Sèvres to collude against Egypt.</li>
+            <li><strong>Oct/Nov 1956 (Suez Crisis):</strong> Israel invades the Sinai Peninsula, destroying Fedayeen bases. Britain and France intervene but are forced to withdraw humiliatingly after immense pressure from the USA and USSR.</li>
+            <li><strong>The Result:</strong> UN peacekeepers (UNEF) are stationed in the Sinai, giving Israel a decade of secure borders and reopening the Straits of Tiran for trade.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Key Topic 2 -->
+      <div class="timeline-event" id="event-card-te5" onclick="toggleTimeline('te5')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1964–1967 (May)</div>
+          <div class="timeline-title">The Road to the Six Day War</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te5" class="timeline-details">
+          <ul>
+            <li><strong>1964:</strong> The Cairo Conference officially sets up the Palestine Liberation Organisation (PLO) to unite Palestinians.</li>
+            <li><strong>1965-66:</strong> Fatah begins sabotage raids. Disputes erupt over Syria's 'Headwater Diversion Plan'.</li>
+            <li><strong>Nov 1966:</strong> The IDF launches a destructive reprisal raid on the West Bank village of Samu, humiliating King Hussein of Jordan.</li>
+            <li><strong>May 1967 (The Crisis):</strong> Soviet misinformation falsely claims Israel is massing troops on the Syrian border. Nasser reacts by moving 100,000 troops into Sinai, ordering UNEF peacekeepers out, and blockading the Straits of Tiran.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te6" onclick="toggleTimeline('te6')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1967 (June) – 1969</div>
+          <div class="timeline-title">The Six Day War & The Aftermath</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te6" class="timeline-details">
+          <ul>
+            <li><strong>55 June 1967:</strong> Viewing the blockade as an act of war, Israel launches a devastating pre-emptive air strike, destroying Arab air forces on the ground in hours.</li>
+            <li><strong>The Victory:</strong> In just six days, Israel captures the Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights.</li>
+            <li><strong>Aug 1967:</strong> The Arab League meets in Khartoum and issues the 'Three Nos': no peace, no recognition, no negotiation with Israel.</li>
+            <li><strong>Nov 1967:</strong> The UN passes Resolution 242, establishing the principle of 'Land for Peace'.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te7" onclick="toggleTimeline('te7')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1970–1972</div>
+          <div class="timeline-title">Global Terrorism & Black September</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te7" class="timeline-details">
+          <ul>
+            <li><strong>Sept 1970:</strong> The PFLP hijacks international passenger jets to Dawson's Field in Jordan to gain global publicity.</li>
+            <li><strong>Sept 1970 (Black September):</strong> Furious at the hijackings, King Hussein's army attacks the PLO in Jordan. The PLO is expelled and moves its headquarters to Lebanon.</li>
+            <li><strong>Sept 1972:</strong> 'Black September' terrorists take Israeli athletes hostage at the Munich Olympics. 11 Israelis are killed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te8" onclick="toggleTimeline('te8')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1973–1975</div>
+          <div class="timeline-title">The Yom Kippur War & Shuttle Diplomacy</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te8" class="timeline-details">
+          <ul>
+            <li><strong>6 Oct 1973:</strong> On the holiest Jewish holiday, Egypt and Syria launch a surprise coordinated attack, overwhelming Israeli defences initially.</li>
+            <li><strong>Superpower Intervention:</strong> The USA launches a $2.2 billion emergency airlift of weapons to save Israel. The USSR arms the Arabs.</li>
+            <li><strong>The Oil Crisis:</strong> In retaliation for US support of Israel, Arab OPEC nations launch a strict oil embargo, quadrupling global fuel prices.</li>
+            <li><strong>1974-75:</strong> US Secretary of State Henry Kissinger engages in 'Shuttle Diplomacy', leading to disengagement treaties and the reopening of the Suez Canal.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Key Topic 3 -->
+      <div class="timeline-event" id="event-card-te9" onclick="toggleTimeline('te9')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1977–1979</div>
+          <div class="timeline-title">The Camp David Accords</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te9" class="timeline-details">
+          <ul>
+            <li><strong>Nov 1977:</strong> Egyptian President Anwar Sadat makes a historic visit to Jerusalem, addressing the Israeli Knesset and breaking the psychological barrier.</li>
+            <li><strong>Sept 1978:</strong> US President Jimmy Carter invites Sadat and Israeli PM Menachem Begin to Camp David to hammer out an agreement.</li>
+            <li><strong>March 1979:</strong> The Treaty of Washington is signed. Egypt becomes the first Arab state to officially recognise Israel, and Israel withdraws from the Sinai Peninsula completely.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te10" onclick="toggleTimeline('te10')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1978–1982</div>
+          <div class="timeline-title">The PLO in Lebanon & Full-Scale Invasion</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te10" class="timeline-details">
+          <ul>
+            <li><strong>1970s Lebanon:</strong> The PLO establishes 'Fatahland' in southern Lebanon, launching Katyusha rockets into northern Israel.</li>
+            <li><strong>March 1978:</strong> After the Coastal Road Massacre, Israel launches Operation Litani, a limited invasion to push the PLO back. UNIFIL is established.</li>
+            <li><strong>June 1982:</strong> Following an assassination attempt on the Israeli ambassador in London, Israel launches a full-scale invasion: Operation Peace for Galilee.</li>
+            <li><strong>Sept 1982:</strong> The IDF besieges Beirut, forcing the PLO to evacuate to Tunisia. Lebanese Christian militias carry out the horrific Sabra and Shatila massacres while the IDF guards the perimeters.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te11" onclick="toggleTimeline('te11')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1987–1991</div>
+          <div class="timeline-title">The Intifada & The End of the Cold War</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te11" class="timeline-details">
+          <ul>
+            <li><strong>Dec 1987:</strong> An Israeli army truck crashes in Gaza, sparking the First Intifada ('shaking off'). This grassroots Palestinian uprising features mass strikes and stone-throwing.</li>
+            <li><strong>1988:</strong> Israel's harsh 'Iron Fist' military response draws intense international condemnation.</li>
+            <li><strong>Dec 1988:</strong> Yasser Arafat addresses the UN, historically renouncing terrorism and accepting the two-state solution.</li>
+            <li><strong>1991:</strong> The collapse of the USSR (End of the Cold War) strips the PLO of funding. The US-led Gulf War victory allows America to pressure both sides to attend the Madrid Peace Conference.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-event" id="event-card-te12" onclick="toggleTimeline('te12')">
+        <div class="timeline-event-header">
+          <div class="timeline-date">1993–1995</div>
+          <div class="timeline-title">The Oslo Accords & The Peace Process</div>
+          <div class="click-hint"><i class="fa-solid fa-chevron-down"></i> <span>Click to reveal</span></div>
+        </div>
+        <div id="te12" class="timeline-details">
+          <ul>
+            <li><strong>1993:</strong> Frustrated by public stalls, Israeli and PLO negotiators hold secret, back-channel talks in Norway.</li>
+            <li><strong>Sept 1993 (Oslo I):</strong> The Oslo Accords are signed. Arafat and Rabin shake hands on the White House lawn. The Palestinian National Authority (PNA) is set up.</li>
+            <li><strong>Oct 1994:</strong> King Hussein signs a full peace treaty between Jordan and Israel.</li>
+            <li><strong>Nov 1995:</strong> The peace process suffers a massive blow when Israeli PM Yitzhak Rabin is assassinated by Yigal Amir, a Jewish religious extremist.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3 Exam Practice Sections Suite -->
+    <div class="cme-exam-container">
+
+      <!-- 1. CONSEQUENCE SECTION -->
+      <div class="exam-section">
+        <h3><i class="fa-solid fa-circle-nodes" style="color: var(--primary);"></i> 1. Exam Skills: 'Explain One Consequence' (4 Marks)</h3>
+        <select id="cons-select" onchange="loadConsQuestion()">
+          <option value="" disabled selected>-- Select a Topic --</option>
+          <option value="c1">1.1: The bombing of the King David Hotel (1946)</option>
+          <option value="c2">1.2: Territorial changes following the 1948–49 war</option>
+          <option value="c3">1.3: The Suez Crisis (1956)</option>
+        </select>
+        
+        <div id="cons-display" class="question-display-box"></div>
+        
+        <!-- NEW: Multiple Choice Gateway -->
+        <div id="cons-mcq-container" class="hidden-box">
+          <p style="margin-top:0; margin-bottom:12px;"><strong>Step 1: Identify a valid consequence.</strong><br><em style="font-size:0.88rem; color:var(--text-muted);">Read the options below. Three are historically incorrect or refer to different events. Select the true consequence to unlock the writing zone.</em></p>
+          <select id="cons-mcq" style="margin-bottom:12px;">
+            <!-- Options injected via JavaScript -->
+          </select>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <button class="action-btn" style="background-color: var(--secondary); box-shadow:0 4px 10px var(--secondary-glow);" onclick="verifyConsequence()">Verify Choice</button>
+            <span id="cons-feedback" style="font-weight: bold; font-size:0.95rem;"></span>
+          </div>
+        </div>
+
+        <!-- Writing Zone (Hidden until sequence is verified) -->
+        <div id="cons-writing-container" style="display:none; margin-top: 20px; padding-top: 15px; border-top: 2px dashed var(--border-glass);">
+          <p style="margin-bottom:12px;"><strong>Step 2: Explain the consequence.</strong><br><em style="font-size:0.88rem; color:var(--text-muted);">Now, use your chosen fact to write a full paragraph. Add specific historical details (AO1) and use the target vocabulary to show analysis (AO2).</em></p>
+          
+          <div class="tracker-container">
+            <span class="tracker-label">Vocabulary Target:</span>
+            <span class="kw-badge cons-kw" data-word="as a result">As a result</span>
+            <span class="kw-badge cons-kw" data-word="as a consequence">As a consequence</span>
+            <span class="kw-badge cons-kw" data-word="the effect was">The effect was</span>
+            <span class="kw-badge cons-kw" data-word="this led to">This led to</span>
+          </div>
+
+          <textarea id="cons-answer" placeholder="Type your 4-mark consequence paragraph here..." oninput="trackKeywords('cons-answer', 'cons-kw')"></textarea>
+          
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="action-btn" onclick="toggleVisibility('cons-clue')">
+              <i class="fa-solid fa-lightbulb" style="color: var(--accent);"></i> Need a Clue?
+            </button>
+            <button class="action-btn check-btn" onclick="toggleVisibility('cons-model')">
+              <i class="fa-solid fa-clipboard-check"></i> Self-Check Answer
+            </button>
+          </div>
+          
+          <div id="cons-clue" class="hidden-box clue-box"></div>
+          <div id="cons-model" class="hidden-box model-box"></div>
+        </div>
+      </div>
+
+      <!-- 2. IMPORTANCE SECTION -->
+      <div class="exam-section">
+        <h3><i class="fa-solid fa-circle-exclamation" style="color: var(--primary);"></i> 2. Exam Skills: 'Explain the Importance' (8 Marks)</h3>
+        <select id="imp-select" onchange="loadQuestion('imp')">
+          <option value="" disabled selected>-- Select a Topic --</option>
+          <option value="i1">1.2: Importance of the creation of the IDF for the survival of Israel</option>
+          <option value="i2">2.1: Importance of the closure of the Straits of Tiran for the Six Day War</option>
+          <option value="i3">3.1: Importance of Sadat's visit to Israel (1977) for the peace process</option>
+        </select>
+        
+        <div id="imp-display" class="question-display-box"></div>
+        
+        <div class="tracker-container">
+          <span class="tracker-label">Vocabulary Target:</span>
+          <span class="kw-badge imp-kw" data-word="important because">Important because</span>
+          <span class="kw-badge imp-kw" data-word="this meant that">This meant that</span>
+          <span class="kw-badge imp-kw" data-word="difference it made">Difference it made</span>
+          <span class="kw-badge imp-kw" data-word="led to">Led to</span>
+        </div>
+
+        <textarea id="imp-answer" placeholder="Draft your two paragraphs here..." oninput="trackKeywords('imp-answer', 'imp-kw')"></textarea>
+        
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="action-btn" onclick="toggleVisibility('imp-clue')">
+            <i class="fa-solid fa-lightbulb" style="color: var(--accent);"></i> Need a Clue?
+          </button>
+          <button class="action-btn check-btn" onclick="toggleVisibility('imp-model')">
+            <i class="fa-solid fa-clipboard-check"></i> Self-Check Answer
+          </button>
+        </div>
+        
+        <div id="imp-clue" class="hidden-box clue-box"></div>
+        <div id="imp-model" class="hidden-box model-box"></div>
+      </div>
+
+      <!-- 3. NARRATIVE SECTION -->
+      <div class="exam-section">
+        <h3><i class="fa-solid fa-list-ol" style="color: var(--primary);"></i> 3. Exam Skills: 'Write a Narrative Account' (8 Marks)</h3>
+        <select id="nar-select" onchange="loadQuestion('nar')">
+          <option value="" disabled selected>-- Select a Question --</option>
+          <option value="n1">Write a narrative account analysing the key events of 1955–56 leading to the Suez Crisis.</option>
+          <option value="n2">Write a narrative account analysing the key events of 1970–82 leading to the invasion of Lebanon.</option>
+          <option value="n3">Write a narrative account analysing the key events of 1988–93 leading to the Oslo Accords.</option>
+        </select>
+
+        <div id="nar-display" class="question-display-box"></div>
+
+        <div class="tracker-container">
+          <span class="tracker-label">Process Words Target:</span>
+          <span class="kw-badge nar-kw" data-word="provoked">Provoked</span>
+          <span class="kw-badge nar-kw" data-word="intensified">Intensified</span>
+          <span class="kw-badge nar-kw" data-word="escalated">Escalated</span>
+          <span class="kw-badge nar-kw" data-word="deteriorated">Deteriorated</span>
+          <span class="kw-badge nar-kw" data-word="resulted in">Resulted in</span>
+        </div>
+
+        <textarea id="nar-answer" placeholder="Draft your analytical narrative here..." oninput="trackKeywords('nar-answer', 'nar-kw')"></textarea>
+        
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="action-btn check-btn" onclick="toggleVisibility('nar-model')">
+            <i class="fa-solid fa-clipboard-check"></i> Self-Check Answer
+          </button>
+        </div>
+        <div id="nar-model" class="hidden-box model-box"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    /* --- WEB AUDIO SYNTH ENGINE --- */
+    const Sound = {
+      ctx: null,
+      init() {
+        if (!this.ctx) {
+          try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) this.ctx = new AudioCtx();
+          } catch(e) {}
+        }
+      },
+      play(type) {
+        if (localStorage.getItem('cme_sound') === 'off') return;
+        this.init();
+        if (!this.ctx) return;
+        
+        const ctx = this.ctx;
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+        
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        
+        if (type === 'click') {
+          osc.frequency.setValueAtTime(600, now);
+          osc.frequency.exponentialRampToValueAtTime(150, now + 0.05);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.linearRampToValueAtTime(0, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'success') {
+          osc.frequency.setValueAtTime(523.25, now); // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+          osc.frequency.setValueAtTime(783.99, now + 0.16); // G5
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        } else if (type === 'error') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.linearRampToValueAtTime(90, now + 0.2);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'pop') {
+          osc.frequency.setValueAtTime(800, now);
+          osc.frequency.exponentialRampToValueAtTime(400, now + 0.03);
+          gain.gain.setValueAtTime(0.03, now);
+          gain.gain.linearRampToValueAtTime(0, now + 0.03);
+          osc.start(now);
+          osc.stop(now + 0.03);
+        }
+      }
+    };
+
+    /* --- THEME CONTROLLER --- */
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('cme_theme', newTheme);
+      
+      const icon = themeToggle.querySelector('i');
+      if (newTheme === 'light') {
+        icon.className = 'fa-solid fa-sun';
+      } else {
+        icon.className = 'fa-solid fa-moon';
+      }
+      Sound.play('pop');
+    });
+
+    // Load saved preferences
+    if (localStorage.getItem('cme_theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeToggle.querySelector('i').className = 'fa-solid fa-sun';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.querySelector('i').className = 'fa-solid fa-moon';
+    }
+
+    /* --- SOUND CONTROLLER --- */
+    const soundToggle = document.getElementById('sound-toggle');
+    soundToggle.addEventListener('click', () => {
+      const isSoundOff = localStorage.getItem('cme_sound') === 'off';
+      if (isSoundOff) {
+        localStorage.setItem('cme_sound', 'on');
+        soundToggle.querySelector('i').className = 'fa-solid fa-volume-high';
+        soundToggle.querySelector('span').innerText = 'Sound: On';
+        Sound.play('click');
+      } else {
+        localStorage.setItem('cme_sound', 'off');
+        soundToggle.querySelector('i').className = 'fa-solid fa-volume-xmark';
+        soundToggle.querySelector('span').innerText = 'Sound: Off';
+      }
+    });
+
+    if (localStorage.getItem('cme_sound') === 'off') {
+      soundToggle.querySelector('i').className = 'fa-solid fa-volume-xmark';
+      soundToggle.querySelector('span').innerText = 'Sound: Off';
+    }
+
+    /* --- TIMELINE LOGIC --- */
+    function toggleTimeline(id) {
+      Sound.play('click');
+      var element = document.getElementById(id);
+      var card = document.getElementById('event-card-' + id);
+      
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+      } else {
+        // Collapse all others
+        document.querySelectorAll('.timeline-event').forEach(function(ev) {
+          ev.classList.remove('expanded');
+        });
+        card.classList.add('expanded');
+      }
+    }
+
+    function toggleAllTimelines(displayState) {
+      Sound.play('pop');
+      document.querySelectorAll('.timeline-event').forEach(function(card) {
+        if (displayState === 'block') {
+          card.classList.add('expanded');
+        } else {
+          card.classList.remove('expanded');
+        }
+      });
+    }
+
+    /* --- EXAM SECTIONS LOGIC --- */
+    const examData = {
+      // Consequence Data (Now with 3 MCQ Opener Options to support weak learners)
+      "c1": { 
+        q: "Explain one consequence of the bombing of the King David Hotel.", 
+        options: [
+          "It led to the immediate creation of the Israeli Defence Forces.",
+          "It caused massive outrage among the British public, severely damaging morale.",
+          "It resulted in the United Nations immediately passing Resolution 242."
+        ],
+        correct: 1,
+        c: "Think about the British public's reaction and how it forced the government's hand.", 
+        a: "It caused massive outrage among the British public, severely damaging morale. This put intense pressure on the British government to withdraw, leading directly to their decision to hand the Palestine problem over to the UN in February 1947." 
+      },
+      "c2": { 
+        q: "Explain one consequence of territorial changes following the 1948–49 war.", 
+        options: [
+          "It resulted in the reopening of the Straits of Tiran to Israeli shipping.",
+          "It led to the PLO being expelled to Lebanon during Black September.",
+          "One major consequence was the mass displacement of Palestinian Arabs, known as the Nakba."
+        ],
+        correct: 2,
+        c: "Think about what happened to the Palestinian Arabs when Israel expanded its borders.", 
+        a: "One major consequence was the mass displacement of Palestinian Arabs, known as the Nakba. Because Israel expanded its borders beyond the UN partition plan, no Palestinian state was created, leaving over 700,000 Palestinians as stateless refugees." 
+      },
+      "c3": { 
+        q: "Explain one consequence of the Suez Crisis (1956).", 
+        options: [
+          "It resulted in a decade of improved security for Israel.",
+          "It led to the British Mandate officially starting in Palestine.",
+          "It resulted in Yasser Arafat addressing the United Nations in Geneva."
+        ],
+        correct: 0,
+        c: "Think about the UN peacekeepers and what they stopped from happening.", 
+        a: "It resulted in a decade of improved security for Israel. As a consequence of the crisis, UN peacekeepers (UNEF) were stationed in the Sinai buffer zone to stop Fedayeen raids, providing Israel with highly secure borders until 1967." 
+      },
+      
+      // Importance Data
+      "i1": { q: "Explain the importance of the creation of the IDF for the survival of Israel.", c: "Unified command, preventing civil war. Mandatory conscription providing numbers.", a: "Point 1: It united rival paramilitary groups under one command, preventing civil war.<br><br>Point 2: Compulsory conscription grew the forces to over 100,000, providing the numbers needed to defeat the Arab armies." },
+      "i2": { q: "Explain the importance of the closure of the Straits of Tiran for the outbreak of the Six Day War.", c: "Economic strangulation. Warning treated as act of war.", a: "Point 1: It threatened Israel with economic strangulation by cutting off oil imports.<br><br>Point 2: Israel had warned this would be treated as an act of war, providing the direct justification to launch the pre-emptive air strike on June 5th." },
+      "i3": { q: "Explain the importance of Sadat's visit to Israel (1977) for the peace process.", c: "Breaking psychological barrier. Inviting Carter to mediate.", a: "Point 1: It broke the psychological barrier between Arabs and Israelis, violating the Arab League's 'Three Nos'.<br><br>Point 2: It built the trust required to allow US President Carter to mediate the formal Camp David Accords in 1978." },
+      
+      // Narrative Data 
+      "n1": { q: "Write a narrative account analysing the key events of 1955–56 leading to the Suez Crisis.", a: "In 1955, Israeli attacks on Gaza provoked Nasser to buy Soviet arms. As a result, the USA withdrew Aswan Dam funding. In retaliation, Nasser nationalised the Suez Canal. This deteriorated relations, resulting in the secret Protocol of Sèvres and the Suez Crisis." },
+      "n2": { q: "Write a narrative account analysing the key events of 1970–82 leading to the invasion of Lebanon.", a: "After 1970, the PLO was forced into Lebanon. This enabled them to launch attacks, which escalated into the 1978 Coastal Road Massacre, provoking Operation Litani. The final trigger was the 1982 assassination attempt in London, which resulted in Operation Peace for Galilee." },
+      "n3": { q: "Write a narrative account analysing the key events of 1988–93 leading to the Oslo Accords.", a: "In 1988, Arafat renounced terrorism. This diplomatic shift was intensified by the end of the Cold War (1991), which resulted in the PLO losing Soviet funding. Consequently, both sides were forced to compromise, resulting in secret talks and the 1993 Oslo Accords." }
+    };
+
+    function highlightAnswer(text) {
+      if (!text) return "";
+      
+      // Highlight linking phrases
+      const links = [
+        "as a result", "as a consequence", "consequently", "the effect was", 
+        "this led to", "led to", "in retaliation", "leading directly to"
+      ];
+      let highlighted = text;
+      links.forEach(link => {
+        const regex = new RegExp('\\b(' + link + ')\\b', 'gi');
+        highlighted = highlighted.replace(regex, '<span class="highlight-link">$1</span>');
+      });
+
+      // Highlight process words
+      const words = [
+        "provoked", "intensified", "escalated", "deteriorated", 
+        "resulted in", "forced", "enabled", "trigger", "assassination attempt"
+      ];
+      words.forEach(word => {
+        const regex = new RegExp('\\b(' + word + ')\\b', 'gi');
+        highlighted = highlighted.replace(regex, '<span class="highlight-word">$1</span>');
+      });
+      
+      return highlighted;
+    }
+
+    // Dedicated loader for the Consequence section (with MCQ)
+    function loadConsQuestion() {
+      Sound.play('click');
+      const selected = document.getElementById("cons-select").value;
+      if (!selected) return;
+      
+      const data = examData[selected];
+      const displayEl = document.getElementById("cons-display");
+      displayEl.innerHTML = "<strong>Question:</strong> " + data.q;
+      displayEl.style.display = "block";
+      
+      // Setup MCQ options
+      const mcqDropdown = document.getElementById("cons-mcq");
+      mcqDropdown.innerHTML = "<option value='-1' disabled selected>-- Select the correct historical consequence --</option>";
+      data.options.forEach((opt, index) => {
+        mcqDropdown.innerHTML += `<option value="${index}">${opt}</option>`;
+      });
+      
+      // Reset displays
+      document.getElementById("cons-mcq-container").style.display = "block";
+      document.getElementById("cons-writing-container").style.display = "none";
+      document.getElementById("cons-feedback").innerHTML = "";
+      document.getElementById("cons-answer").value = "";
+      
+      const clueEl = document.getElementById("cons-clue");
+      clueEl.innerHTML = `
+        <div class="clue-box-title"><i class="fa-solid fa-lightbulb"></i> Educator Clues</div>
+        <p><strong>Clue:</strong> ${data.c}</p>
+      `;
+      clueEl.style.display = "none";
+      
+      const modelEl = document.getElementById("cons-model");
+      modelEl.innerHTML = `
+        <div class="model-box-title"><i class="fa-solid fa-award"></i> Level 3/4 Model Answer</div>
+        <div class="model-box-text">${highlightAnswer(data.a)}</div>
+        <div class="examiner-tip">
+          <strong>Examiner Tip:</strong> Notice how linking phrases (highlighted in yellow) show a clear analytical cause-and-effect structure, and process words (highlighted in green) demonstrate high-level historical analysis.
+        </div>
+      `;
+      modelEl.style.display = "none";
+      
+      // Reset keyword badges
+      let badges = document.querySelectorAll('.cons-kw');
+      badges.forEach(badge => badge.classList.remove('found'));
+    }
+
+    // Verifies the pupil's multiple choice selection
+    function verifyConsequence() {
+      const selectedTopic = document.getElementById("cons-select").value;
+      const selectedOption = parseInt(document.getElementById("cons-mcq").value);
+      const feedback = document.getElementById("cons-feedback");
+      const writingZone = document.getElementById("cons-writing-container");
+      
+      if (isNaN(selectedOption) || selectedOption === -1) {
+        Sound.play('error');
+        feedback.style.color = "var(--error)";
+        feedback.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Please select an option!";
+        return;
+      }
+
+      if (selectedOption === examData[selectedTopic].correct) {
+        Sound.play('success');
+        feedback.style.color = "var(--success)";
+        feedback.innerHTML = "<i class='fa-solid fa-circle-check'></i> Correct! Now write your full explanation below.";
+        writingZone.style.display = "block";
+        writingZone.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        Sound.play('error');
+        feedback.style.color = "var(--error)";
+        feedback.innerHTML = "<i class='fa-solid fa-circle-xmark'></i> Incorrect. That did not happen as a result of this event. Try again!";
+        writingZone.style.display = "none";
+      }
+    }
+
+    // Loader for the Importance and Narrative sections
+    function loadQuestion(type) {
+      Sound.play('click');
+      const selected = document.getElementById(type + "-select").value;
+      if (!selected) return;
+      
+      const displayEl = document.getElementById(type + "-display");
+      displayEl.innerHTML = "<strong>Question:</strong> " + examData[selected].q;
+      displayEl.style.display = "block";
+      
+      const modelEl = document.getElementById(type + "-model");
+      modelEl.innerHTML = `
+        <div class="model-box-title"><i class="fa-solid fa-award"></i> Level 3/4 Model Answer</div>
+        <div class="model-box-text">${highlightAnswer(examData[selected].a)}</div>
+        <div class="examiner-tip">
+          <strong>Examiner Tip:</strong> Notice how linking phrases (highlighted in yellow) show a clear analytical cause-and-effect structure, and process words (highlighted in green) demonstrate high-level historical analysis.
+        </div>
+      `;
+      modelEl.style.display = "none";
+      
+      if (type !== 'nar') {
+        const clueEl = document.getElementById(type + "-clue");
+        clueEl.innerHTML = `
+          <div class="clue-box-title"><i class="fa-solid fa-lightbulb"></i> Educator Clues</div>
+          <p><strong>Clue:</strong> ${examData[selected].c}</p>
+        `;
+        clueEl.style.display = "none";
+      }
+      
+      document.getElementById(type + "-answer").value = "";
+      
+      let badges = document.querySelectorAll('.' + type + "-kw");
+      badges.forEach(badge => badge.classList.remove('found'));
+    }
+
+    function trackKeywords(inputId, badgeClass) {
+      let text = document.getElementById(inputId).value.toLowerCase();
+      let badges = document.querySelectorAll('.' + badgeClass);
+      
+      badges.forEach(badge => {
+        let keyword = badge.getAttribute('data-word').toLowerCase();
+        if (text.includes(keyword)) {
+          if (!badge.classList.contains('found')) {
+            badge.classList.add('found');
+            Sound.play('pop');
+          }
+        } else {
+          badge.classList.remove('found');
+        }
+      });
+    }
+
+    function toggleVisibility(id) {
+      const el = document.getElementById(id);
+      if (el.innerHTML !== "") {
+        const isHidden = el.style.display === "none" || el.style.display === "";
+        el.style.display = isHidden ? "block" : "none";
+        if (isHidden) {
+          Sound.play('success');
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          Sound.play('click');
+        }
+      }
+    }
+  </script>
+</body>
+</html>

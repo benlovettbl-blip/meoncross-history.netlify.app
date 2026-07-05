@@ -1,0 +1,8 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force LF for shell scripts and GHA workflows
+*.sh text eol=lf
+gradlew text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
