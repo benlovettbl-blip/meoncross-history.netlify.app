@@ -233,7 +233,7 @@ function setupNavigation() {
 
       tab.classList.add("active");
       const targetId = tab.getAttribute("data-target");
-      document.getElementById(targetId).classList.add("active");
+      const targetEl = document.getElementById(targetId); if (targetEl) targetEl.classList.add("active");
       appState.currentTab = targetId;
       
       if (targetId === "causationWebSection" && currentCausationChallenge) {
@@ -253,13 +253,13 @@ function setupTimeline() {
   renderTimeline();
 
   // Search input change handler
-  timelineSearchInput.addEventListener("input", (e) => {
+  if (timelineSearchInput) timelineSearchInput.addEventListener("input", (e) => {
     appState.timelineSearchQuery = e.target.value.toLowerCase().trim();
     renderTimeline();
   });
 
   // Filter button handlers
-  filterTags.forEach(tag => {
+  if (filterTags) filterTags.forEach(tag => {
     tag.addEventListener("click", () => {
       filterTags.forEach(t => t.classList.remove("active"));
       tag.classList.add("active");
