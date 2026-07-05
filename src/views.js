@@ -117,9 +117,18 @@ export function renderDashboard() {
         
         ${isUnlocked ? `
           <div class="module-actions">
-            <button class="btn btn-sm btn-primary" onclick="window.switchView('interactive', '${unit.id}')">
-              <i class="fa-solid fa-gamepad"></i> Interactive Study
-            </button>
+            ${unit.id.startsWith('gcse_') ? `
+              <button class="btn btn-sm btn-primary" onclick="window.switchView('lessons', '${unit.id}')">
+                <i class="fa-solid fa-book-open"></i> Study Lessons
+              </button>
+              <button class="btn btn-sm btn-secondary" onclick="window.switchView('interactive', '${unit.id}')">
+                <i class="fa-solid fa-gamepad"></i> Interactive Study
+              </button>
+            ` : `
+              <button class="btn btn-sm btn-primary" onclick="window.switchView('interactive', '${unit.id}')">
+                <i class="fa-solid fa-gamepad"></i> Interactive Study
+              </button>
+            `}
             <button class="btn btn-sm btn-secondary" onclick="window.switchView('timeline', '${unit.id}')">
               <i class="fa-solid fa-timeline"></i> Timeline
             </button>
@@ -632,3 +641,109 @@ export async function renderTabooView() {
 
   window.showRandomTabooCard();
 }
+
+export async function renderLessonsView() {
+  const container = document.getElementById('main-content');
+  const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
+  const data = state.activeUnitData;
+
+  if (!data || !data.subtopics || data.subtopics.length === 0) {
+    container.innerHTML = `
+      <div class="card text-center">
+        <h3><i class="fa-solid fa-book-open"></i> Lessons Study Guide</h3>
+        <p>No lessons available for this unit.</p>
+        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+      </div>
+    `;
+    return;
+  }
+
+  window.viewLessonDetail = function(index) {
+    const sub = data.subtopics[index];
+    
+    // Parse content lines and render beautifully
+    let bodyHtml = sub.contentLines.map(line => {
+      let l = line.trim();
+      if (!l) return '';
+      
+      // Simple markdown conversions for textbook slides
+      if (l.startsWith('- **') && l.includes('**:')) {
+        return l.replace(/^-\s*\*\*(.*?)\*\*:\s*(.*)/, '<p style="margin: 8px 0; padding-left: 20px;"><strong>&bull; $1</strong>: $2</p>');
+      }
+      if (l.startsWith('- ')) {
+        return `<p style="margin: 6px 0; padding-left: 20px;">&bull; ${l.substring(2)}</p>`;
+      }
+      if (l.startsWith('### ')) {
+        return `<h4 style="font-size: 1.15rem; font-weight: 700; color: var(--secondary); margin: 24px 0 12px 0; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px;">${l.substring(4)}</h4>`;
+      }
+      if (l.includes('<span class="tip-icon">')) {
+        return ''; 
+      }
+      if (l.includes('**Examiner Tip:**')) {
+        return `<div style="background-color: var(--bg-app); border-left: 4px solid var(--accent); padding: 14px; border-radius: var(--border-radius-sm); margin: 18px 0;">
+          <strong>💡 Examiner Tip:</strong> ${l.replace('**Examiner Tip:**', '').replace(/\*\*/g, '').trim()}
+        </div>`;
+      }
+      if (l.includes('📝 Source ')) {
+        return `<div style="background-color: var(--bg-app); border: 1px solid var(--border-glass); border-top: 3px solid var(--primary); padding: 16px; border-radius: var(--border-radius-sm); margin: 20px 0; font-family: Georgia, serif;">
+          <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-family: var(--font-heading);">${l.replace(/[\*#_]/g, '')}</strong>`;
+      }
+      if (l.startsWith('"') && l.endsWith('"')) {
+        return `<p style="font-style: italic; margin: 0; line-height: 1.5; color: var(--text-muted);">${l.replace(/"/g, '')}</p></div>`;
+      }
+      
+      return `<p style="line-height: 1.6; margin: 12px 0;">${l.replace(/\*\*/g, '<strong>').replace(/\*\*/g, '</strong>')}</p>`;
+    }).join('\n');
+
+    container.innerHTML = `
+      <div class="card max-w-2xl mx-auto" style="animation: fadeInUp 0.3s ease-out;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 16px; margin-bottom: 20px;">
+          <button class="btn btn-secondary btn-sm" onclick="window.switchView('lessons', '${unitId}')">
+            <i class="fa-solid fa-arrow-left"></i> Lessons Menu
+          </button>
+          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--primary);">${data.title}</span>
+        </div>
+
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px; line-height: 1.3;">${sub.title}</h2>
+        
+        <div class="lesson-content-body" style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
+          ${bodyHtml}
+        </div>
+
+        <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; margin-top: 30px; display: flex; justify-content: space-between; gap: 12px;">
+          ${index > 0 ? `<button class="btn btn-secondary" onclick="window.viewLessonDetail(${index - 1})">&larr; Previous Lesson</button>` : '<span></span>'}
+          ${index < data.subtopics.length - 1 ? `<button class="btn btn-primary" onclick="window.viewLessonDetail(${index + 1})">Next Lesson &rarr;</button>` : `<button class="btn btn-primary" onclick="window.switchView('interactive', '${unitId}')">Take Lesson Quiz &rarr;</button>`}
+        </div>
+      </div>
+    `;
+  };
+
+  container.innerHTML = `
+    <div class="card" style="animation: fadeInUp 0.3s ease-out;">
+      <h3 style="margin-bottom: 8px;"><i class="fa-solid fa-book-open text-primary"></i> ${data.title} - Study Guide</h3>
+      <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and examiner tips for each lesson before testing yourself.</p>
+      
+      <div class="modules-grid">
+        ${data.subtopics.map((sub, idx) => {
+          const descLine = sub.contentLines.find(line => line.trim().length > 30 && !line.includes('#') && !line.includes('*') && !line.includes('<')) || 'Study this historical topic.';
+          return `
+            <div class="module-card" style="cursor: pointer;" onclick="window.viewLessonDetail(${idx})">
+              <div class="module-header">
+                <span class="category-badge">Lesson ${idx + 1}</span>
+                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+              </div>
+              <h4 style="margin: 10px 0;">${sub.title}</h4>
+              <p style="font-size: 0.85rem; line-height: 1.4; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                ${descLine}
+              </p>
+              <button class="btn btn-sm btn-primary w-full" style="margin-top: 12px;">
+                Read Lesson
+              </button>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
