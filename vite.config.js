@@ -10,7 +10,8 @@ export default defineConfig({
         main: 'index.html',
         usa: 'usa/index.html',
         cme: 'cme/index.html',
-        eee: 'eee/index.html'
+        eee: 'eee/index.html',
+        water_and_sanitation: 'water_and_sanitation/index.html'
       }
     }
   },

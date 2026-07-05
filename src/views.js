@@ -118,7 +118,7 @@ export function renderDashboard() {
         
         ${isUnlocked ? `
           <div class="module-actions">
-            ${unit.id.startsWith('gcse_') ? `
+            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' ? `
               <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
                 <i class="fa-solid fa-circle-play"></i> Launch Study App
               </button>
@@ -197,6 +197,8 @@ window.launchSubApp = function(unitId) {
     window.location.href = '/cme/';
   } else if (unitId === 'gcse_elizabethan_england') {
     window.location.href = '/eee/';
+  } else if (unitId === 'water_and_sanitation') {
+    window.location.href = '/water_and_sanitation/';
   }
 };
 
