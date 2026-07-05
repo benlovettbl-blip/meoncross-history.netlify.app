@@ -7795,3 +7795,160 @@ window.sortMiddleWayTile = function(category) {
   
   renderMiddleWayGame();
 };
+
+// ==========================================
+// CUSTOM KEY STAGE 3 PEDAGOGICAL FUNCTIONS
+// ==========================================
+
+window.toggleDoNowAnswers = function() {
+  const answers = document.querySelectorAll('.do-now-answer');
+  const btn = event.currentTarget;
+  let isCurrentlyHidden = true;
+
+  answers.forEach(ans => {
+    if (ans.style.display === 'none' || ans.style.display === '') {
+      ans.style.display = 'inline';
+      isCurrentlyHidden = false;
+    } else {
+      ans.style.display = 'none';
+      isCurrentlyHidden = true;
+    }
+  });
+
+  if (isCurrentlyHidden) {
+    btn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal Do Now Answers';
+  } else {
+    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Do Now Answers';
+  }
+};
+
+window.toggleModelAnswers = function() {
+  const block = document.getElementById('modelAnswersBlock');
+  const btn = event.currentTarget;
+  if (!block) return;
+  
+  if (block.style.display === 'none' || block.style.display === '') {
+    block.style.display = 'block';
+    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Model Answers & Marking Guide';
+  } else {
+    block.style.display = 'none';
+    btn.innerHTML = '<i class="fa-solid fa-eye"></i> Show Model Answers & Marking Guide';
+  }
+};
+
+let quickQuizState = {
+  currentQuestionIndex: 0,
+  selectedAnswer: null,
+  isSubmitted: false
+};
+
+window.selectQuickQuizOption = function(ansIndex) {
+  if (quickQuizState.isSubmitted) return;
+  quickQuizState.selectedAnswer = ansIndex;
+  
+  const options = document.querySelectorAll('.quick-quiz-option-btn');
+  options.forEach((btn, idx) => {
+    if (idx === ansIndex) {
+      btn.style.borderColor = 'var(--primary)';
+      btn.style.background = 'rgba(var(--primary-rgb), 0.08)';
+    } else {
+      btn.style.borderColor = 'var(--border-color)';
+      btn.style.background = 'var(--bg-surface)';
+    }
+  });
+  
+  const submitBtn = document.getElementById('quickQuizSubmitBtn');
+  if (submitBtn) submitBtn.disabled = false;
+};
+
+window.submitQuickQuizAnswer = function() {
+  if (quickQuizState.isSubmitted || quickQuizState.selectedAnswer === null) return;
+  quickQuizState.isSubmitted = true;
+  
+  const q = quizData[quickQuizState.currentQuestionIndex];
+  const selectedText = document.querySelectorAll('.quick-quiz-option-btn')[quickQuizState.selectedAnswer].getAttribute('data-val');
+  const isCorrect = (selectedText === q.answer);
+  
+  const feedbackBlock = document.getElementById('quickQuizFeedback');
+  feedbackBlock.style.display = 'block';
+  if (isCorrect) {
+    feedbackBlock.style.borderColor = 'var(--success)';
+    feedbackBlock.style.background = 'rgba(16, 185, 129, 0.04)';
+    feedbackBlock.innerHTML = `<span style="color: var(--success); font-weight: 800;">✓ Correct!</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">${q.explanation}</p>`;
+    if (typeof playChronologyFeedbackTone === 'function') playChronologyFeedbackTone(true);
+    
+    // XP gain
+    appState.userXP += 50;
+    localStorage.setItem("was_user_xp", appState.userXP);
+    updateXPBadge();
+  } else {
+    feedbackBlock.style.borderColor = 'var(--error)';
+    feedbackBlock.style.background = 'rgba(239, 68, 68, 0.04)';
+    feedbackBlock.innerHTML = `<span style="color: var(--error); font-weight: 800;">✗ Incorrect.</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">The correct answer is: <strong>${q.answer}</strong>.<br>${q.explanation}</p>`;
+    if (typeof playChronologyFeedbackTone === 'function') playChronologyFeedbackTone(false);
+  }
+  
+  const submitBtn = document.getElementById('quickQuizSubmitBtn');
+  if (quickQuizState.currentQuestionIndex < quizData.length - 1) {
+    submitBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    submitBtn.onclick = window.nextQuickQuizQuestion;
+  } else {
+    submitBtn.innerHTML = 'Quiz Completed! 🎉';
+    submitBtn.disabled = true;
+  }
+};
+
+window.nextQuickQuizQuestion = function() {
+  quickQuizState.currentQuestionIndex++;
+  quickQuizState.selectedAnswer = null;
+  quickQuizState.isSubmitted = false;
+  window.renderLessonQuickQuiz();
+};
+
+window.renderLessonQuickQuiz = function() {
+  const container = document.getElementById('quickQuizQuestionContainer');
+  if (!container) return;
+  
+  const q = quizData[quickQuizState.currentQuestionIndex];
+  if (!q) return;
+  
+  const options = [q.answer, ...q.distractors];
+  
+  let optionsHtml = '';
+  options.forEach((opt, idx) => {
+    optionsHtml += `<button class="quick-quiz-option-btn" data-val="${opt.replace(/"/g, '&quot;')}" onclick="window.selectQuickQuizOption(${idx})" style="display: block; width: 100%; text-align: left; padding: 10px 14px; margin-bottom: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-surface); font-family: var(--font-body); font-size: 0.9rem; cursor: pointer; transition: all 0.2s;">
+      ${opt}
+    </button>`;
+  });
+  
+  container.innerHTML = `
+    <div style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; font-family: var(--font-title);">
+      Question ${quickQuizState.currentQuestionIndex + 1} of ${quizData.length}:
+      <span style="font-weight: 500; font-family: var(--font-body); display: block; margin-top: 6px;">${q.question}</span>
+    </div>
+    
+    <div style="margin-bottom: 16px;">
+      ${optionsHtml}
+    </div>
+    
+    <div id="quickQuizFeedback" style="display: none; padding: 10px 14px; border-left: 4px solid; border-radius: var(--radius-sm); margin-bottom: 16px; font-family: var(--font-body);"></div>
+    
+    <button class="btn btn-primary" id="quickQuizSubmitBtn" onclick="window.submitQuickQuizAnswer()" disabled style="width: 100%;">
+      Submit Answer
+    </button>
+  `;
+};
+
+// Intercept window.switchActiveLesson to auto-render quiz
+const prevSwitch = window.switchActiveLesson;
+window.switchActiveLesson = function(lessonNum) {
+  if (typeof prevSwitch === 'function') prevSwitch(lessonNum);
+  setTimeout(() => {
+    window.renderLessonQuickQuiz();
+  }, 150);
+};
+
+// Also trigger on first load
+setTimeout(() => {
+  window.renderLessonQuickQuiz();
+}, 500);

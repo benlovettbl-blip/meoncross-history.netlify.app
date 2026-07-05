@@ -116,7 +116,7 @@
     <template id="lesson1Template">
       <!-- Visual Source Card -->
       <div class="knowledge-card" style="animation: fadeInUp 0.4s ease-out; text-align: center; margin-bottom: 24px;">
-        <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px;">
+        <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
           <i class="fa-solid fa-image"></i> Visual Source Analysis
         </h4>
         <img src="assets/was_roman_bathhouse.png" alt="Roman Bathhouse Source" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 12px; max-height: 380px; width: 100%; object-fit: cover;">
@@ -124,7 +124,8 @@
           <strong>Source A:</strong> A reconstruction illustration showing the steaming heated chambers and flowing water channels of a Roman public bathhouse in Roman Britain.
         </p>
       </div>
-      <!-- Do Now Retrieval Grid -->
+
+      <!-- Do Now Task Grid -->
       <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); animation: fadeInUp 0.4s ease-out; margin-bottom: 24px;">
         <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
           <i class="fa-solid fa-brain"></i> Do Now Task: Retrieval Grid
@@ -132,31 +133,26 @@
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Test your historical foundations. Answer the questions below before moving into today's focus.</p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-          <!-- Q1 -->
           <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
             <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Skills (1 Point)</strong>
             <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q1: What does the term chronology mean when we study history?</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Chronology is the arrangement of historical events in the exact order in which they occurred over time.</span></p>
           </div>
-          <!-- Q3 -->
           <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
             <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Evidence & Sources (2 Points)</strong>
             <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q3: If an archaeologist uncovers a Roman coin buried in a field, is it a primary source or a secondary source?</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">It is a primary source because it is a physical artifact created during the actual time period under study.</span></p>
           </div>
-          <!-- Q5 -->
           <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
             <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Chronology (3 Points)</strong>
             <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q5: Put these three eras in the correct chronological order, starting with the oldest: Victorian Britain, Iron Age Britain, Roman Britain.</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">1. Iron Age Britain, 2. Roman Britain, 3. Victorian Britain.</span></p>
           </div>
-          <!-- Q2 -->
           <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
             <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Skills (1 Point)</strong>
             <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q2: What is the difference between BC and AD on a timeline?</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">BC stands for "Before Christ" (counting backward from year 1), while AD stands for "Anno Domini" (in the year of our Lord, counting forward).</span></p>
           </div>
-          <!-- Q4 -->
           <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
             <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Evidence & Sources (2 Points)</strong>
             <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q4: What is the name given to a professional historical detective who digs up and analyzes physical remains from the past?</p>
@@ -192,9 +188,21 @@
         <p style="font-style: italic; margin-bottom: 0.75rem;">
           "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths."
         </p>
-        <cite style="display: block; text-align: right; font-size: 0.82rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted);">
+        <cite style="display: block; text-align: right; font-size: 0.82rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-bottom: 1rem;">
           — Seneca the Younger, Roman Philosopher, Letters to Lucilius, Letter 56, c. AD 62
         </cite>
+        
+        <!-- Class Discussion Prompt Callout Box -->
+        <div style="background: rgba(var(--primary-rgb), 0.04); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; line-height: 1.5; margin-top: 1.5rem; color: var(--text-main);">
+          <strong style="color: var(--primary); font-family: var(--font-title); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+            🗣️ Class Discussion: The Reality of Roman Baths
+          </strong>
+          <ul style="margin: 0; padding-left: 1.25rem;">
+            <li style="margin-bottom: 4px;">Why might a wealthy Roman philosopher like Seneca dislike the noise of the bathhouse, while ordinary citizens enjoyed it?</li>
+            <li style="margin-bottom: 4px;">Does Seneca's letter suggest that public bathhouses were primarily for hygiene or for socializing and business?</li>
+            <li>How does this source challenge the stereotype that the past was completely quiet and simple?</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Pupil Activities Card -->
@@ -205,37 +213,38 @@
         
         <!-- Part A -->
         <div style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700;">Part A: Core Comprehension (Questions 1-4)</h5>
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700;">Part A: Core Comprehension (Questions 1-5)</h5>
           <ol style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
             <li>Where did Iron Age families get their fresh water, and how did they dispose of their waste?</li>
             <li>What was a Roman conduit, and how did it work?</li>
             <li>Describe the different rooms inside a Roman public bathhouse like the one at Bearsden.</li>
             <li>How did communal Roman latrines keep soldiers clean and healthy?</li>
+            <li style="color: var(--primary); font-weight: 700;">Study Source A (Seneca the Younger). How useful is this source to a historian researching what it was like to visit a Roman bathhouse?</li>
           </ol>
         </div>
 
         <!-- Part B -->
         <div style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); font-family: var(--font-title); font-weight: 700;">Part B: Conceptual Analysis (Questions 5-7)</h5>
-          <ul style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; list-style-type: square; font-family: var(--font-body);">
-            <li><strong>5. Causation:</strong> Explain why the Roman invasion of AD 43 was the main cause of change for sanitation in Britain.</li>
-            <li><strong>6. Change and Continuity:</strong> Did the arrival of Roman sanitation benefit all people in Britain equally? (Think about the difference between a wealthy Roman citizen living in a town and a poor British peasant living in a countryside roundhouse).</li>
-            <li><strong>7. Significance:</strong> Why is archaeology more significant for historians studying the Iron Age compared to those studying Roman Britain?</li>
-          </ul>
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); font-family: var(--font-title); font-weight: 700;">Part B: Conceptual Analysis (Questions 6-8)</h5>
+          <ol start="6" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+            <li><strong>Causation:</strong> Explain why the Roman invasion of AD 43 was the main cause of change for sanitation in Britain.</li>
+            <li><strong>Change and Continuity:</strong> Did the arrival of Roman sanitation benefit all people in Britain equally? (Think about the difference between a wealthy Roman citizen living in a town and a poor British peasant living in a countryside roundhouse).</li>
+            <li><strong>Significance:</strong> Why is archaeology more significant for historians studying the Iron Age compared to those studying Roman Britain?</li>
+          </ol>
         </div>
 
         <!-- Part C -->
         <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-indigo); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-indigo); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis (Question 8)</h5>
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-indigo); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis (Question 9)</h5>
           <p style="margin: 0 0 8px 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
-            8. Study the contemporary source by Seneca the Younger. What does this source tell us about what it was like to visit a Roman bathhouse?
+            9. Study the contemporary source by Seneca the Younger. What does this source tell us about what it was like to visit a Roman bathhouse?
           </p>
         </div>
 
         <!-- Part D -->
         <div style="margin-bottom: 20px; border-left: 3px solid var(--text-gold); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--text-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Liberation Task (Questions 9-11)</h5>
-          <ol start="9" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--text-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Liberation Task (Questions 10-12)</h5>
+          <ol start="10" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
             <li>Open your internet browser and search for <strong>"Silchester Roman Town excavation"</strong>. Write down two major objects or structures that archaeologists have uncovered at this site that reveal what life was like for the residents.</li>
             <li>Look up <strong>"Housesteads Roman Fort latrines reconstruction"</strong>. Use the virtual reconstruction images to draw a simple bird's-eye diagram of how the seating and flushing water channels were organized. Label the sewer line.</li>
             <li>Research <strong>"Bearsden Roman Bath House National Trust Scotland"</strong>. Write a short travel-guide paragraph (50-80 words) inviting modern tourists to visit the ruins, explaining what remains can still be seen on the ground today.</li>
@@ -250,16 +259,17 @@
 
         <!-- Hidden Model Answers Block -->
         <div id="modelAnswersBlock" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
-          <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800;">Official Model Answers</h5>
+          <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800;">Official Model Answers & Marking Guide</h5>
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <div><strong>A1:</strong> Iron Age families collected their water from natural springs, streams, or hand-dug wells, and they disposed of their waste by digging simple cesspits in the ground, which were buried with soil when full.</div>
             <div><strong>A2:</strong> A Roman conduit was a stone-built channel designed to carry clean water over long distances into towns, utilizing the natural pull of gravity to move the water.</div>
             <div><strong>A3:</strong> A Roman bathhouse contained a sequence of rooms with different temperatures that bathers walked through, including unheated cold rooms, warm rooms for relaxing, and steaming hot rooms for washing.</div>
             <div><strong>A4:</strong> Roman latrines used a continuous stream of running water underneath the seating benches to flush sewage into deep sewers, which swept the filth away and stopped diseases from spreading in crowded forts.</div>
-            <div><strong>A5 [Causation]:</strong> The Roman invasion of AD 43 was the main cause of change because the Romans brought highly advanced engineering skills, such as building stone conduits and flushing sewers, which did not exist in Iron Age Britain and completely changed how water and waste were managed.</div>
-            <div><strong>A6 [Change/Continuity]:</strong> No, Roman sanitation did not benefit everyone equally. While wealthy town-dwellers and Roman soldiers enjoyed the luxury of flushing public latrines and gravity-fed bathhouses, ordinary British peasants in the countryside experienced absolute continuity, continuing to rely on simple wells and earth cesspits just as their ancestors had done for centuries.</div>
-            <div><strong>A7 [Significance]:</strong> Archaeology is incredibly significant for studying the Iron Age because there are no written documents from that period, making physical ruins and unearthed cesspits the only evidence available. In contrast, historians studying Roman Britain can use written sources alongside physical remains.</div>
-            <div><strong>A8 [Source Analysis]:</strong> Seneca's letter shows that Roman bathhouses were busy, noisy, and highly social places. Bathers would hear the groans of people lifting weights, the cries of street food vendors like sausage-sellers and bakers hawking their goods, and the screeches of hair-pluckers, proving that the baths were about social activity and commerce as much as cleanliness.</div>
+            <div style="color: var(--primary); font-weight: 700;"><strong>A5 [Source Utility]:</strong> Source A is highly useful because it is a contemporary primary source written by Seneca who personally experienced the baths. It reveals that Roman bathhouses were busy, noisy, and active social environments, detailing specific activities such as weight-lifting, sausage-selling, and hair-plucking.</div>
+            <div><strong>A6 [Causation]:</strong> The Roman invasion of AD 43 was the main cause of change because the Romans brought highly advanced engineering skills, such as building stone conduits and flushing sewers, which did not exist in Iron Age Britain and completely changed how water and waste were managed.</div>
+            <div><strong>A7 [Change/Continuity]:</strong> No, Roman sanitation did not benefit everyone equally. While wealthy town-dwellers and Roman soldiers enjoyed the luxury of flushing public latrines and gravity-fed bathhouses, ordinary British peasants in the countryside experienced absolute continuity, continuing to rely on simple wells and earth cesspits just as their ancestors had done for centuries.</div>
+            <div><strong>A8 [Significance]:</strong> Archaeology is incredibly significant for studying the Iron Age because there are no written documents from that period, making physical ruins and unearthed cesspits the only evidence available. In contrast, historians studying Roman Britain can use written sources alongside physical remains.</div>
+            <div><strong>A9 [Source Analysis]:</strong> Seneca's letter shows that Roman bathhouses were busy, noisy, and highly social places. Bathers would hear the groans of people lifting weights, the cries of street food vendors like sausage-sellers and bakers hawking their goods, and the screeches of hair-pluckers, proving that the baths were about social activity and commerce as much as cleanliness.</div>
           </div>
         </div>
       </div>
@@ -275,9 +285,7 @@
           <!-- Rendered Dynamically via app.js -->
         </div>
       </div>
-    </template>
-    
-    <section id="flashcardSection" class="tab-content">
+    </template><section id="flashcardSection" class="tab-content">
       <div class="flashcard-deck-container">
         <div class="flashcard-deck-header">
           <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--primary);">🎴 3D Key Fact Flashcards</h2>
