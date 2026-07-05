@@ -7800,7 +7800,7 @@ window.sortMiddleWayTile = function(category) {
 // CUSTOM KEY STAGE 3 PEDAGOGICAL FUNCTIONS
 // ==========================================
 
-window.toggleDoNowAnswers = function(event) {
+window.toggleDoNowAnswers = function() {
   const answers = document.querySelectorAll('.do-now-answer');
   const btn = event.currentTarget;
   let isCurrentlyHidden = true;
@@ -7822,7 +7822,7 @@ window.toggleDoNowAnswers = function(event) {
   }
 };
 
-window.toggleModelAnswers = function(event) {
+window.toggleModelAnswers = function() {
   const block = document.getElementById('modelAnswersBlock');
   const btn = event.currentTarget;
   if (!block) return;
@@ -7952,117 +7952,3 @@ window.switchActiveLesson = function(lessonNum) {
 setTimeout(() => {
   window.renderLessonQuickQuiz();
 }, 500);
-
-// ==========================================
-// SEND SUPPORT: TEXT-TO-SPEECH READ ALOUD
-// ==========================================
-
-let readAloudState = {
-  isSpeaking: false,
-  utterances: [],
-  currentIndex: 0,
-  blocks: []
-};
-
-window.toggleReadAloud = function(event) {
-  const btn = event.currentTarget || document.getElementById('readAloudBtn');
-  if (!btn) return;
-  
-  if (readAloudState.isSpeaking) {
-    // Stop reading
-    window.speechSynthesis.cancel();
-    readAloudState.isSpeaking = false;
-    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-    btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
-    
-    // Clear all highlights
-    readAloudState.blocks.forEach(block => {
-      block.style.background = 'transparent';
-      block.style.boxShadow = 'none';
-    });
-  } else {
-    // Start reading
-    readAloudState.blocks = Array.from(document.querySelectorAll('.narrative-para-block'));
-    if (readAloudState.blocks.length === 0) return;
-    
-    readAloudState.isSpeaking = true;
-    readAloudState.currentIndex = 0;
-    btn.innerHTML = '<i class="fa-solid fa-circle-stop"></i> Stop';
-    btn.style.background = 'rgba(239, 68, 68, 0.1)';
-    
-    speakCurrentBlock(btn);
-  }
-};
-
-function speakCurrentBlock(btn) {
-  if (!readAloudState.isSpeaking || readAloudState.currentIndex >= readAloudState.blocks.length) {
-    // Reset state
-    readAloudState.isSpeaking = false;
-    if (btn) {
-      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-      btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
-    }
-    readAloudState.blocks.forEach(block => {
-      block.style.background = 'transparent';
-      block.style.boxShadow = 'none';
-    });
-    return;
-  }
-  
-  // Clear previous highlights and highlight current
-  readAloudState.blocks.forEach((block, idx) => {
-    if (idx === readAloudState.currentIndex) {
-      block.style.background = 'rgba(234, 179, 8, 0.12)';
-      block.style.boxShadow = '0 0 0 4px rgba(234, 179, 8, 0.05)';
-      block.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      block.style.background = 'transparent';
-      block.style.boxShadow = 'none';
-    }
-  });
-  
-  const textToSpeak = readAloudState.blocks[readAloudState.currentIndex].textContent;
-  const utterance = new SpeechSynthesisUtterance(textToSpeak);
-  
-  // Set preferred British English voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const ukVoice = voices.find(v => v.lang.includes('GB') || v.lang.includes('EN-GB'));
-  if (ukVoice) utterance.voice = ukVoice;
-  
-  utterance.onend = function() {
-    readAloudState.currentIndex++;
-    speakCurrentBlock(btn);
-  };
-  
-  utterance.onerror = function() {
-    readAloudState.isSpeaking = false;
-    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-    btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
-    readAloudState.blocks.forEach(block => {
-      block.style.background = 'transparent';
-      block.style.boxShadow = 'none';
-    });
-  };
-  
-  window.speechSynthesis.speak(utterance);
-}
-
-// Cancel speech if tab is switched
-const prevNavTabs = document.querySelectorAll(".nav-tab");
-prevNavTabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    if (readAloudState.isSpeaking) {
-      window.speechSynthesis.cancel();
-      readAloudState.isSpeaking = false;
-      const btn = document.getElementById('readAloudBtn');
-      if (btn) {
-        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-        btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
-      }
-      readAloudState.blocks.forEach(block => {
-        block.style.background = 'transparent';
-        block.style.boxShadow = 'none';
-      });
-    }
-  });
-});

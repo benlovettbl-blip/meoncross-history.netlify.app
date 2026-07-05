@@ -8066,3 +8066,35 @@ prevNavTabs.forEach(tab => {
     }
   });
 });
+
+// ==========================================
+// SEND SUPPORT: TEXT SIMPLIFIER
+// ==========================================
+
+let isSimplifiedActive = false;
+
+window.toggleSimplifyText = function(event) {
+  const btn = event.currentTarget || document.getElementById('simplifyTextBtn');
+  const standardBlock = document.getElementById('standardNarrativeBlock');
+  const simplifiedBlock = document.getElementById('simplifiedNarrativeBlock');
+  if (!btn || !standardBlock || !simplifiedBlock) return;
+
+  isSimplifiedActive = !isSimplifiedActive;
+
+  if (isSimplifiedActive) {
+    standardBlock.style.display = 'none';
+    simplifiedBlock.style.display = 'block';
+    btn.innerHTML = '<i class="fa-solid fa-expand"></i> Standard Text';
+    btn.style.background = 'rgba(var(--primary-rgb), 0.12)';
+  } else {
+    standardBlock.style.display = 'block';
+    simplifiedBlock.style.display = 'none';
+    btn.innerHTML = '<i class="fa-solid fa-compress"></i> Simplify Text';
+    btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
+  }
+
+  // Cancel speech if speaking
+  if (typeof window.toggleReadAloud === 'function' && readAloudState.isSpeaking) {
+    window.toggleReadAloud();
+  }
+};
