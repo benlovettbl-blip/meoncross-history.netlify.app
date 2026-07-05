@@ -9,6 +9,7 @@ import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from
 
 // Unit Definitions & Target Year Groups
 export const UNITS = [
+  { id: 'water_and_sanitation', title: 'Water and Sanitation Through Time', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Exploring sanitation development from prehistoric roundhouses to Roman conduits.' },
   { id: 'norman_conquest', title: 'The Norman Conquest (1066)', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Enquiry into the succession crisis, battles of 1066, and Norman control.' },
   { id: 'change_1450_1750', title: 'Change from 1450-1750', category: 'Key Stage 3', yearGroup: 'Year 8', desc: 'Exploring the Renaissance, Reformation, Civil War, and Scientific Revolution.' },
   { id: 'great_war', title: 'The Great War (1914-1918)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into the causes, trench warfare, and global impact of WWI.' },
