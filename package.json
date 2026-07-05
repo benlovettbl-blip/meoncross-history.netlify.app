@@ -1,0 +1,23 @@
+{
+  "name": "meoncross-history",
+  "version": "1.0.0",
+  "description": "Meoncross History Mega App (KS3 & GCSE)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [
+    "education",
+    "history",
+    "sso"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/msal-browser": "^3.28.1"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14"
+  }
+}
