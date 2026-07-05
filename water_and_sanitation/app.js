@@ -4416,3 +4416,11 @@ window.switchActiveLesson = function(lessonNum) {
 setTimeout(() => {
   window.renderLessonQuickQuiz();
 }, 500);
+
+// ==========================================
+// PRINT ACTION FOR WORKBOOK PACK
+// ==========================================
+
+window.printWorksheetPack = function() {
+  window.print();
+};
