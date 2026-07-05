@@ -1,8 +1,8 @@
 // State Management
 const appState = {
-  currentTab: "timelineSection",
-  theme: localStorage.getItem("elizabethan_theme") || "light",
-  userXP: Number(localStorage.getItem("elizabethan_user_xp")) || 0,
+  currentTab: "lessonsSection",
+  theme: localStorage.getItem("was_theme") || "light",
+  userXP: Number(localStorage.getItem("was_user_xp")) || 0,
   timelineFilter: "all",
   timelineSearchQuery: "",
   timelineSortMode: "topic",
