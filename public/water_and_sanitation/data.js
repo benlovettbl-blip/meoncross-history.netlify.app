@@ -140,6 +140,50 @@ const timelineData = [
         "significance": "Water remained a distributed and manually transported commodity for most citizens."
       }
     ]
+  },
+  {
+    "id": "kt4-1",
+    "section": "Lesson 4",
+    "topic": "Water and Sanitation Through Time",
+    "title": "Industrial Britain (1750–1850)",
+    "events": [
+      {
+        "subtitle": "Population Surge and Urbanization",
+        "text": "Between 1750 and 1850, Britain's population skyrocketed from 6 million to 21 million. Thousands of rural families flooded into expanding cities to work in steam-powered factories and coal mines, resulting in rapid urbanization and intense crowding.",
+        "dates": ["1750-1850"],
+        "names": ["Factory Workers"],
+        "stats": ["6M to 21M population"],
+        "tags": ["Migration", "Sanitation"],
+        "significance": "A demographic explosion that overwhelmed basic housing and public health services."
+      },
+      {
+        "subtitle": "Shared Pumps and Back-to-Backs",
+        "text": "Landlords built cheap, back-to-back terraced brick housing blocks with shared yards. Poorer families did not have indoor running water, relying on shared street pumps which only supplied water for a few hours a day, which was often brown and polluted.",
+        "dates": ["AD 1800"],
+        "names": ["Urban Landlords"],
+        "stats": ["Back-to-back houses", "Shared street pumps"],
+        "tags": ["Water Supply", "Sanitation"],
+        "significance": "Sanitation deteriorated due to lack of municipal oversight and laissez-faire policies."
+      },
+      {
+        "subtitle": "The 1831 Cholera Epidemic",
+        "text": "Cholera, a terrifying waterborne disease, struck Britain for the first time in 1831, causing rapid dehydration and death. Over 31,000 people died in the first epidemic, triggering national panic and highlighting the failure of municipal public health.",
+        "dates": ["AD 1831"],
+        "names": ["Victims of Cholera"],
+        "stats": ["31,000+ deaths"],
+        "tags": ["Hygiene", "Sanitation"],
+        "significance": "Brought a terrifying new epidemic disease that exposed the hazards of dirty town water."
+      },
+      {
+        "subtitle": "Chadwick's Sanitation Report",
+        "text": "Poor Law Commissioner Edwin Chadwick published his landmark Report on the Sanitary Condition of the Labouring Population, documenting the filth, damp, and overcrowded conditions of the working class and advocating for drainage and clean water.",
+        "dates": ["AD 1842"],
+        "names": ["Edwin Chadwick"],
+        "stats": ["Sanitary Report"],
+        "tags": ["Engineering", "Sanitation"],
+        "significance": "The first major government study proposing that improving sanitation would reduce poverty and disease."
+      }
+    ]
   }
 ];
 
@@ -293,6 +337,56 @@ const quizData = [
       "Filtering well water through sand and charcoal beds"
     ],
     "explanation": "Water sellers transported fresh water from local rivers or conduits in large barrels to sell to townspeople."
+  },
+  {
+    "question": "By how much did Britain's population grow during the century of industrialisation (1750–1850)?",
+    "answer": "It skyrocketed from 6 million to 21 million.",
+    "distractors": [
+      "It remained stable at around 10 million.",
+      "It decreased from 15 million to 6 million due to cholera.",
+      "It grew from 3 million to 9 million."
+    ],
+    "explanation": "The population grew from 6 million in 1750 to a massive 21 million in 1850 due to the Industrial Revolution."
+  },
+  {
+    "question": "How did working-class families living in terraced yards usually obtain their water?",
+    "answer": "From a shared pump in the street or yard that only ran for a few hours.",
+    "distractors": [
+      "From copper pipes connected to indoor taps in their kitchens.",
+      "From private wells dug inside their cellars.",
+      "By collecting rainwater in barrels off their roofs."
+    ],
+    "explanation": "Workers had to share yard pumps, which were only turned on for a few hours a day by private water companies."
+  },
+  {
+    "question": "What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?",
+    "answer": "Cholera",
+    "distractors": [
+      "Smallpox",
+      "The Black Death",
+      "Tuberculosis"
+    ],
+    "explanation": "Britain's first cholera epidemic in 1831 was a national disaster that killed over 31,000 people."
+  },
+  {
+    "question": "What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?",
+    "answer": "Miasma Theory (the belief that disease is spread by bad smells)",
+    "distractors": [
+      "Germ Theory (the belief that micro-organisms cause disease)",
+      "Humoral Theory (the belief that body fluids must be balanced)",
+      "Astrological Theory (the belief that planetary positions cause disease)"
+    ],
+    "explanation": "Victorian doctors believed in Miasma Theory, thinking cholera was caught by breathing in bad air from decomposing waste."
+  },
+  {
+    "question": "Why did cesspits under shared yard privies frequently overflow in industrial cities?",
+    "answer": "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
+    "distractors": [
+      "Rainwater was channeled directly into them to help flush them.",
+      "Water companies used high-pressure steam pumps to clear them.",
+      "Specialized gongfermers were banned from working in towns."
+    ],
+    "explanation": "Overflowing cesspits were common because landlords refused to pay to empty them and they had no sewer connections."
   }
 ];
 
