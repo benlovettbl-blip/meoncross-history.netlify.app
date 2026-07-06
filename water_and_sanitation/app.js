@@ -776,10 +776,13 @@ window.generateWorksheetPackHtml = function(lessonNum, includeAnswers) {
     }
   }
 
-  // Page 3 Bottom: Part C (Q8)
-  let page3SourceAnalysisHtml = '<h3 style="color: #10b981; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part C: Source Analysis</h3>';
+  // Page 3 Bottom: Part C (Q8 & Q9)
+  let page3SourceAnalysisHtml = '<h3 style="color: #10b981; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part C: Source & Local Connection Analysis</h3>';
   if (activities[7]) {
     page3SourceAnalysisHtml += getQuestionBlock(activities[7].question, activities[7].answer, activities[7].num);
+  }
+  if (activities[8]) {
+    page3SourceAnalysisHtml += getQuestionBlock(activities[8].question, activities[8].answer, activities[8].num);
   }
 
   // Page 4: Part D (Q9-Q11)
