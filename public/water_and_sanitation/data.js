@@ -48,67 +48,57 @@ const timelineData = [
 
 const quizData = [
   {
-    "id": "q1",
-    "question": "Why do historians rely on archaeology to study sanitation in Iron Age Britain?",
-    "answer": "There are no surviving written records from Iron Age Britain.",
-    "distractors": ["Iron Age people lived entirely underground in caves.", "Roman invaders destroyed all the books written by Iron Age people.", "Iron Age people only used stone tools."],
-    "explanation": "Since there are no written accounts from Iron Age Britain, excavation and material archaeology are the only ways to study their habits."
+    "question": "Why was digging cesspits in the Iron Age a hygienic way to manage waste?",
+    "answer": "Roundhouse settlements were spread out and temporary pits kept waste away from springs",
+    "distractors": [
+      "Waste was collected daily by town sweepers and recycled as crop fertilizer",
+      "Roman military engineers oversaw the cleaning of public clay sewers",
+      "Peasants built stone-lined channels to sweep waste directly into clean rivers"
+    ],
+    "explanation": "Because farming roundhouses were spread out, digging localized, temporary cesspits was safe and prevented pollution of fresh water."
   },
   {
-    "id": "q2",
-    "question": "How did Iron Age people manage their cesspits once they became full?",
-    "answer": "They covered them with soil and dug a new pit nearby.",
-    "distractors": ["They used lead pipes to flush the waste into local rivers.", "They hired specialized gongfermers to empty them.", "They set them on fire."],
-    "explanation": "Simple, temporary cesspits were buried with soil when full, and a new trench was dug nearby."
+    "question": "What technology did Roman engineers use to bring fresh water over miles into British towns?",
+    "answer": "Stone channels called conduits that utilized the natural pull of gravity",
+    "distractors": [
+      "Cast-iron pumps driven by high-pressure steam power",
+      "Deep underground wells equipped with wooden hand windlasses",
+      "Large clay pipes carrying water driven by electric siphons"
+    ],
+    "explanation": "Roman engineers constructed stone conduits that used gravity to transport fresh spring water into urban centers."
   },
   {
-    "id": "q3",
-    "question": "What engineering method did Roman conduits use to transport fresh water over miles?",
-    "answer": "Gravity pulling water down a slight slope",
-    "distractors": ["Underground steam-powered pressure pumps", "Hand-operated wooden waterwheels", "Electric water pumps"],
-    "explanation": "Conduits were sloped channels that relied on the natural pull of gravity to move water over long distances."
+    "question": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+    "answer": "Housesteads Fort on Hadrian's Wall",
+    "distractors": [
+      "Silchester farming roundhouse village",
+      "Bearsden public bathing sequence",
+      "Fareham chimney sweep academy"
+    ],
+    "explanation": "At Housesteads Fort, soldiers sat over deep, stone-lined channels flushed constantly by a stream of water."
   },
   {
-    "id": "q4",
-    "question": "Which Roman fort along Hadrian's Wall contains the archaeological remains of a flushing communal latrine?",
-    "answer": "Housesteads Fort",
-    "distractors": ["Bearsden Fort", "Silchester Fort", "Corbridge Fort"],
-    "explanation": "Housesteads Fort contains well-preserved remains of a Roman military latrine flushed by running water channels."
+    "question": "What did Roman soldiers use to wipe themselves in communal latrines?",
+    "answer": "A wet sponge attached to the end of a shared wooden stick",
+    "distractors": [
+      "Bundles of dried straw or coarse wool",
+      "High-pressure water jets and linen towels",
+      "Broad green leaves gathered from local woods"
+    ],
+    "explanation": "Roman soldiers used a shared sponge on a stick, kept wet in the running latrine water."
   },
   {
-    "id": "q5",
     "question": "What did Roman bathers experience inside a bathhouse like Bearsden?",
     "answer": "Washing in sequence through cold, warm, and hot rooms",
-    "distractors": ["Swimming in deep reservoirs filled with rainwater", "Paying water sellers to pour buckets of cold river water over them", "Sitting in a single room with a fireplace"],
+    "distractors": [
+      "Swimming in deep reservoirs filled with rainwater",
+      "Paying water sellers to pour buckets of cold river water over them",
+      "Sitting in a single room with a fireplace"
+    ],
     "explanation": "Bathers washed in sequence through unheated, warm, and steaming hot chambers."
   }
 ];
 
-const examData = {};
-const elizabethanWheelData = { questions: [] };
-const officialPastPapers = [];
-const causationWebData = [];
-const blurtingData = [
-  {
-    "lessonId": 1,
-    "title": "Lesson 1: Prehistoric and Roman Sanitation",
-    "facts": [
-      {
-        "keywords": ["cesspits", "Iron Age", "Silchester"],
-        "fact": "During the British Iron Age, families disposed of waste in earthen holes called cesspits."
-      },
-      {
-        "keywords": ["conduits", "gravity", "Roman"],
-        "fact": "Roman engineers built stone conduits to transport clean water over long distances using gravity."
-      },
-      {
-        "keywords": ["latrines", "Bearsden", "Housesteads Fort"],
-        "fact": "Water flushed communal toilets called latrines, sweeping waste into sewers at Housesteads Fort."
-      }
-    ]
-  }
-];
-
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { timelineData, quizData, examData, elizabethanWheelData, officialPastPapers, causationWebData, blurtingData };
+  module.exports = { timelineData, quizData };
 }

@@ -4,138 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KS3 Year 7: Water and Sanitation Through Time</title>
-  <!-- Font Awesome Icons (Offline Supported) -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-  <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-<style>
-    @media print {
-      body * {
-        visibility: hidden;
-      }
-      #printableWorkbook, #printableWorkbook * {
-        visibility: visible;
-      }
-      #printableWorkbook {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
+  <style>
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .nav-tab.active {
+      border-bottom: 3px solid var(--primary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .narrative-para-block {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      font-size: 1rem;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: background-color 0.3s;
+    }
+    .quick-quiz-container {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+    .do-now-answer {
+      color: var(--success);
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <!-- Publisher Easter Egg Banner -->
-    <div class="top-meta-bar" id="topMetaBar" style="display: flex; align-items: center; justify-content: flex-start; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1rem; padding: 0.35rem 0.75rem; background: rgba(var(--primary-rgb), 0.03); border-radius: var(--radius-sm); border: 1px solid var(--border-color); gap: 1rem; transition: opacity 0.5s ease-in-out; opacity: 1; flex-wrap: wrap;">
-      <div style="font-weight: 700; color: var(--primary); white-space: nowrap;">📚 KS3 Year 7 History Study App</div>
-      <div style="display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; border-left: 1px solid var(--border-color); padding-left: 1rem;">
-        <img src="assets/fareham_chimney.png" alt="Fareham Chimney Icon" style="height: 16px; width: auto; vertical-align: middle;">
-        <span>Published by <strong>Fareham Chimney Sweep Inc.</strong></span>
+
+  <!-- Top Sticky Navigation & Header -->
+  <header style="background: var(--bg-surface); border-bottom: 1px solid var(--border-color); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-sm);">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <h1 style="margin: 0; font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          🚰 Water & Sanitation
+        </h1>
+        <span class="badge badge-primary" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">Key Stage 3 Unit</span>
       </div>
-      <div id="chimneyQuoteDisplay" style="font-style: italic; border-left: 1px solid var(--border-color); padding-left: 1rem; flex: 1; min-width: 200px; text-align: left; transition: opacity 0.5s ease-in-out; opacity: 1; display: inline-block;">
-        "Brushing away historical ignorance, one flue at a time."
+      
+      <!-- XP Level Progress Widget -->
+      <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-title); font-size: 0.9rem; font-weight: 700;">
+          <span style="color: var(--text-muted);">Rank:</span>
+          <span id="xpBadge" style="color: var(--primary);">Peasant</span>
+          <span id="xpText" style="background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem;">0 XP</span>
+        </div>
+        
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn" onclick="document.querySelector('.nav-tab[data-target=\'worksheetsSection\']').click()" style="font-size: 0.82rem; font-family: var(--font-title); font-weight: 700; padding: 0.45rem 0.9rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+            🖨️ Study Sheet
+          </button>
+          <button class="btn" onclick="window.showFigureModal('Seneca the Younger')" style="font-size: 0.82rem; font-family: var(--font-title); font-weight: 700; padding: 0.45rem 0.9rem;">
+            ℹ️ About Unit
+          </button>
+          <button id="themeToggleBtn" class="btn" style="padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); cursor: pointer;">
+            🌓 Theme
+          </button>
+        </div>
       </div>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header>
-      <div class="brand">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crown"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z"/><path d="M5 20h14"/></svg>
-        <h1>Water & Sanitation</h1>
-        <span>Key Stage 3 Study Unit</span>
-      </div>
-      <div class="header-controls">
-        <div class="xp-badge-container" id="xpBadgeContainer" style="margin-right: 0.5rem;">
-          <span id="tudorTitle" style="font-weight: 800; color: var(--primary);">Peasant</span>
-          <div class="xp-progress-bar-outer">
-            <div class="xp-progress-bar-inner" id="xpProgressBarInner"></div>
-          </div>
-          <span id="xpText" style="font-size: 0.75rem; min-width: 45px; text-align: right;">0 XP</span>
-        </div>
-        <button class="btn" style="padding: 0.5rem 0.8rem; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem;" onclick="togglePresentationMode()">
-          👑 Pres Mode
-        </button>
-        <button class="btn" style="padding: 0.5rem 0.8rem; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem;" onclick="generatePrintableStudySheet()">
-          🖨️ Study Sheet
-        </button>
-        <button class="help-btn" id="helpBtn" aria-label="Show Revision Guide" onclick="window.showOnboarding()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="help-icon"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </button>
-        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
-      </div>
-    </header>
+  <!-- Secondary Navigation Tabs -->
+  <nav style="background: var(--bg-surface-alt); border-bottom: 1px solid var(--border-color); padding: 0 2rem;">
+    <div style="display: flex; gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+      <button class="nav-tab active" data-target="lessonsSection" style="background: none; border: none; padding: 1rem 0.5rem; font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        📚 Study Guide
+      </button>
+      <button class="nav-tab" data-target="timelineSection" style="background: none; border: none; padding: 1rem 0.5rem; font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ⏳ Interactive Timeline
+      </button>
+      <button class="nav-tab" data-target="worksheetsSection" style="background: none; border: none; padding: 1rem 0.5rem; font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🖨️ Worksheets Preview
+      </button>
+    </div>
+  </nav>
 
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-      <a href="/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; text-decoration: none; font-size: 0.78rem; font-weight: 700; color: var(--text-main); padding: 0.5rem 1rem; border-radius: var(--radius-sm); border: 1px dashed var(--border-color); background: rgba(var(--primary-rgb), 0.05); margin-right: 10px;">
-        <i class="fa-solid fa-house-chimney"></i> Portal
-      </a>
-      <button class="nav-tab active" data-target="lessonsSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M6 6h10M6 10h10M6 14h10"/></svg>
-        Lessons
-      </button>
-      <button class="nav-tab" data-target="flashcardSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-        3D Flashcards
-      </button>
-      <button class="nav-tab" data-target="timelineSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Timeline
-      </button>
-      <button class="nav-tab" data-target="blurtingSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v14"/></svg>
-        Blurting
-      </button>
-      <button class="nav-tab" data-target="quizSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6"/><path d="M12 9v6"/><circle cx="12" cy="12" r="10"/></svg>
-        Quiz
-      </button>
-      <button class="nav-tab" data-target="practiceSection">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-        Practice
-      </button>
-    </nav>
+  <!-- Main Content Layout -->
+  <main style="max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; text-align: left;">
 
-
-    <!-- LESSONS TAB -->
+    <!-- 1. LESSONS SECTION -->
     <section id="lessonsSection" class="tab-content active">
-      <!-- Lesson Navigation Selector -->
-      <!-- Lesson Navigation Selector -->
-      <div class="lesson-selector-bar">
-        <button class="btn active" id="btnLesson1" onclick="switchActiveLesson(1)">
-          <i class="fa-solid fa-book-open"></i> 1.1: How clean were prehistoric and Roman Britain?
-        </button>
-      </div>
-
-      <!-- Mobile Dropdown Selector -->
-      <div class="mobile-lesson-selector-container">
-        <label for="mobileLessonSelect"><i class="fa-solid fa-graduation-cap"></i> Select Lesson Topic:</label>
-        <select id="mobileLessonSelect" onchange="switchActiveLesson(Number(this.value))">
-          <option value="1">1.1: How clean were prehistoric and Roman Britain?</option>
-        </select>
-      </div>
-
-      <div class="lessons-layout" id="lessonContainer">
-        <!-- Loaded Dynamically via JS -->
-      </div>
-    </section>
-
-    <!-- LESSON TEMPLATES -->
-    <template id="lesson1Template">
-      <!-- Visual Source Card (Clean - No Numbers) -->
-      <div class="knowledge-card" style="animation: fadeInUp 0.4s ease-out; text-align: center; margin-bottom: 24px;">
+      
+      <!-- Visual Source Card -->
+      <div class="knowledge-card" style="text-align: center; margin-bottom: 24px;">
         <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
           <i class="fa-solid fa-image"></i> Visual Source Analysis
         </h4>
@@ -146,7 +121,7 @@
       </div>
 
       <!-- Do Now Task Grid (Answers Hidden) -->
-      <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); animation: fadeInUp 0.4s ease-out; margin-bottom: 24px;">
+      <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
         <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
           <i class="fa-solid fa-brain"></i> Do Now Task: Retrieval Grid
         </h4>
@@ -180,51 +155,61 @@
           </div>
         </div>
         <div style="margin-top: 16px; text-align: right;">
-          <button class="btn btn-primary" onclick="window.toggleDoNowAnswers(event)">
+          <button class="btn btn-secondary" onclick="window.toggleDoNowAnswers(event)">
             <i class="fa-solid fa-eye"></i> Reveal Do Now Answers
           </button>
         </div>
       </div>
 
-      <!-- Core Narrative Card (Standard / Simplified Toggles) -->
-      <div class="knowledge-card" style="animation: fadeInUp 0.4s ease-out;">
-        <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; width: 100%;">
-          <i class="fa-solid fa-book-open"></i> Core Narrative: How clean were prehistoric and Roman Britain?
-          <div style="margin-left: auto; display: flex; gap: 0.5rem; align-items: center;">
-            <button id="simplifyTextBtn" class="btn btn-sm" onclick="window.toggleSimplifyText(event)" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid var(--border-color); color: var(--primary); font-family: var(--font-title); font-weight: 700;">
-              <i class="fa-solid fa-compress"></i> Simplify Text
-            </button>
-            <button id="readAloudBtn" class="btn btn-sm" onclick="window.toggleReadAloud(event)" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid var(--border-color); color: var(--primary); font-family: var(--font-title); font-weight: 700;">
-              <i class="fa-solid fa-volume-high"></i> Listen
-            </button>
-          </div>
-        </h4>
-        
-        <div id="standardNarrativeBlock">
-          <p class="narrative-p" style="line-height: 1.7; margin-bottom: 1rem; color: var(--text-main);">
-            <span class="narrative-para-block" style="display: block; transition: all 0.3s ease; border-radius: 4px; padding: 4px 8px;">It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water. During the British Iron Age (which lasted from around 700 BC until the Roman invasion in AD 43), most families lived in circular wooden homes called roundhouses, such as those discovered by archaeologists at Silchester. Because the people of this era left no written documents behind, historians must rely on physical clues unearthed from the ground—a field of study known as archaeology. These physical discoveries show that Iron Age communities intentionally built their settlements near fresh springs, streams, or hand-dug wells to secure their daily water supply.</span>
-          </p>
-          <p class="narrative-p" style="line-height: 1.7; margin-bottom: 1rem; color: var(--text-main);">
-            <span class="narrative-para-block" style="display: block; transition: all 0.3s ease; border-radius: 4px; padding: 4px 8px;">This simple way of life was completely transformed in AD 43 when the Roman Empire invaded Britain. The Romans brought revolutionary sanitation technology and a strong belief that clean, flowing water was vital for keeping a society healthy. To bring vast amounts of clean water into their newly built stone towns and military outposts, such as Corbridge, Roman engineers constructed stone channels called conduits. These conduits used the natural pull of gravity to transport fresh water over miles from distant natural springs directly into urban centres.</span>
-          </p>
-          <p class="narrative-p" style="line-height: 1.7; margin-bottom: 1rem; color: var(--text-main);">
-            <span class="narrative-para-block" style="display: block; transition: all 0.3s ease; border-radius: 4px; padding: 4px 8px;">In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers. Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian's Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. To wipe themselves, Roman soldiers used a wet sponge attached to the end of a shared wooden stick. When the Romans finally left Britain around AD 410, much of this advanced engineering was abandoned, and sanitation slipped back into primitive patterns for centuries.</span>
-          </p>
-        </div>
-        
-        <div id="simplifiedNarrativeBlock" style="display: none;">
-          <ul style="line-height: 1.8; font-size: 0.95rem; color: var(--text-main); font-family: var(--font-body); padding-left: 1.5rem; margin: 0 0 1.25rem 0;">
-            <li style="margin-bottom: 8px;"><strong>Roundhouses & Cesspits (Prehistoric Britain)</strong>: People in the Iron Age lived in circular wooden homes called roundhouses. They got fresh water from wells or streams. For toilet waste, they dug simple earth holes called cesspits. They buried them with soil when full.</li>
-            <li style="margin-bottom: 8px;"><strong>Roman Invasion (AD 43)</strong>: The Roman Empire brought clean running water to Britain. Roman engineers built stone pipes and gravity channels called conduits to carry clean water from springs to towns.</li>
-            <li style="margin-bottom: 8px;"><strong>Bathhouses & Latrines (Roman Sanitation)</strong>: Roman towns had large public bathhouses (Bearsden) for washing and exercising. Public toilets called latrines were flushed clean by running water channels.</li>
-            <li><strong>Roman Withdrawal (AD 410)</strong>: When the Romans left, these advanced systems fell into disrepair. Britain returned to using simple cesspits and wells.</li>
-          </ul>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+        <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary);">
+          Lesson 1.1: Prehistoric and Roman Sanitation
+        </h2>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn" id="simplifyTextBtn" onclick="window.toggleSimplifyText(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">
+            <i class="fa-solid fa-compress"></i> Simplify Text
+          </button>
+          <button class="btn" id="readAloudBtn" onclick="window.toggleReadAloud(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <i class="fa-solid fa-volume-high"></i> Listen
+          </button>
         </div>
       </div>
 
-      <!-- Historical Source Card -->
+      <!-- Standard Narrative -->
+      <div id="standardNarrativeBlock">
+        <p class="narrative-para-block">
+          It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water.
+        </p>
+        <p class="narrative-para-block">
+          This simple way of life was completely transformed in AD 43 when the Roman Empire invaded Britain. The Romans brought revolutionary sanitation technology and a strong belief that clean, flowing water was vital for keeping a society healthy. To bring vast amounts of clean water into their newly built stone towns and military outposts, such as Corbridge, Roman engineers constructed stone channels called conduits. These conduits used the natural pull of gravity to transport fresh water over miles from distant natural springs directly into urban centres.
+        </p>
+        <p class="narrative-para-block">
+          In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers.
+        </p>
+        <p class="narrative-para-block">
+          Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian's Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. When the Romans finally left Britain around AD 410, much of this advanced engineering was abandoned, and sanitation slipped back into primitive patterns for centuries.
+        </p>
+      </div>
+
+      <!-- Simplified Narrative (SEND) -->
+      <div id="simplifiedNarrativeBlock" style="display: none;">
+        <p class="narrative-para-block" style="font-weight: 500;">
+          <strong>Iron Age:</strong> Families lived in roundhouses in the countryside. Because they were spread out, they dug simple earth cesspits to collect sewage safely without polluting wells.
+        </p>
+        <p class="narrative-para-block" style="font-weight: 500;">
+          <strong>Roman Invasion (AD 43):</strong> Romans built stone towns and brought clean running water using gravity-fed stone conduits.
+        </p>
+        <p class="narrative-para-block" style="font-weight: 500;">
+          <strong>Baths & Latrines:</strong> Romans bathed in public bathhouses (like Bearsden) to socialize and wash. They sat side-by-side in public running-water toilets (latrines) to flush waste away into sewers.
+        </p>
+        <p class="narrative-para-block" style="font-weight: 500;">
+          <strong>Decline (AD 410):</strong> When the Romans left, their sewers and conduits fell into ruin, and sanitation became primitive again.
+        </p>
+      </div>
+
+      <!-- Historical Source Card (Seneca) -->
       <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.95rem; line-height: 1.65; color: var(--text-main); margin-top: 20px;">
-        <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Contemporary Source Evidence</h4>
+        <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Contemporary Source Evidence: Source A</h4>
         <p style="font-style: italic; margin-bottom: 0.75rem;">
           "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths."
         </p>
@@ -232,7 +217,7 @@
           — Seneca the Younger, Roman Philosopher, Letters to Lucilius, Letter 56, c. AD 62
         </cite>
         
-        <!-- Class Discussion Prompt Callout Box -->
+        <!-- Class Discussion Callout Box -->
         <div style="background: rgba(var(--primary-rgb), 0.04); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; line-height: 1.5; margin-top: 1.5rem; color: var(--text-main);">
           <strong style="color: var(--primary); font-family: var(--font-title); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
             🗣️ Class Discussion: The Reality of Roman Baths
@@ -242,6 +227,33 @@
             <li style="margin-bottom: 4px;">Does Seneca's letter suggest that public bathhouses were primarily for hygiene or for socializing and business?</li>
             <li>How does this source challenge the stereotype that the past was completely quiet and simple?</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Additional Written Sources (Sources B & C) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 20px;">
+        <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.92rem; line-height: 1.6; color: var(--text-main); margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Source B: Roman Pride</h4>
+            <p style="font-style: italic; margin-bottom: 0.75rem;">
+              "With such an array of indispensable structures carrying so much water, compare, if you will, the idle Pyramids or the useless, though famous, works of the Greeks!"
+            </p>
+          </div>
+          <cite style="display: block; text-align: right; font-size: 0.8rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-top: auto;">
+            — Frontinus, Curator Aquarum, De Aquis, c. AD 97
+          </cite>
+        </div>
+        
+        <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.92rem; line-height: 1.6; color: var(--text-main); margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Source C: Frontier Infrastructure</h4>
+            <p style="font-style: italic; margin-bottom: 0.75rem;">
+              "For the soldiers of the Cohort... under the command of Marcellus... they built this aqueduct to bring fresh water to the fort which had previously suffered from water scarcity."
+            </p>
+          </div>
+          <cite style="display: block; text-align: right; font-size: 0.8rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-top: auto;">
+            — South Shields Inscription, Roman Britain, c. AD 222
+          </cite>
         </div>
       </div>
 
@@ -284,16 +296,16 @@
         </div>
 
         <!-- Part C -->
-        <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-indigo); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-indigo); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis</h5>
-          <p style="margin: 0 0 8px 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+        <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-green); padding-left: 12px;">
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-green); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis</h5>
+          <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
             9. Study the contemporary source by Seneca the Younger. What does this source tell us about what it was like to visit a Roman bathhouse?
           </p>
         </div>
 
         <!-- Part D -->
-        <div style="margin-bottom: 20px; border-left: 3px solid var(--text-gold); padding-left: 12px;">
-          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--text-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Liberation Task</h5>
+        <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-gold); padding-left: 12px;">
+          <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Research Tasks</h5>
           <ol start="10" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
             <li>Open your internet browser and search for <strong>"Silchester Roman Town excavation"</strong>. Write down two major objects or structures that archaeologists have uncovered at this site that reveal what life was like for the residents.</li>
             <li>Look up <strong>"Housesteads Roman Fort latrines reconstruction"</strong>. Use the virtual reconstruction images to draw a simple bird's-eye diagram of how the seating and flushing water channels were organized. Label the sewer line.</li>
@@ -347,533 +359,102 @@
               <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q9: Study the contemporary source by Seneca the Younger. What does this source tell us about what it was like to visit a Roman bathhouse?</strong>
               <strong>Model Answer:</strong> Seneca's letter shows that Roman bathhouses were busy, noisy, and highly social places. Bathers would hear the groans of people lifting weights, the cries of street food vendors like sausage-sellers and bakers hawking their goods, and the screeches of hair-pluckers, proving that the baths were about social activity and commerce as much as cleanliness.
             </div>
-          </div></div>
-      </div>
-      
-      <!-- Lesson Interactive Quiz Card -->
-      <div class="knowledge-card" style="margin-top: 24px; border: 2px solid var(--primary); background: rgba(var(--primary-rgb), 0.01);" id="lessonQuickQuizCard">
-        <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; margin-top: 0; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <i class="fa-solid fa-circle-question"></i> Lesson Check: Quick Quiz
-        </h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Complete these 5 multiple-choice questions to verify your understanding of Prehistoric & Roman Sanitation!</p>
-        
-        <div id="quickQuizQuestionContainer">
-          <!-- Rendered Dynamically via app.js -->
-        </div>
-      </div>
-    </template><section id="flashcardSection" class="tab-content">
-      <div class="flashcard-deck-container">
-        <div class="flashcard-deck-header">
-          <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--primary);">🎴 3D Key Fact Flashcards</h2>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Active recall deck of essential specification facts. Tap to flip, click next to progress!</p>
-          <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem;">
-            <select id="flashcardTopicSelector" onchange="loadFlashcardDeck(Number(this.value))" style="padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: var(--font-body); font-weight: 600;">
-              <option value="1">1.1: The Accession</option>
-              <option value="2">1.2: Religion Settlement</option>
-              <option value="3">1.3: Settlement Challenges</option>
-              <option value="4">1.4: Mary Queen of Scots</option>
-              <option value="5">2.1: Plots & Revolts</option>
-              <option value="6">2.2: Relations with Spain</option>
-              <option value="7">2.3: Outbreak of War</option>
-              <option value="8">2.4: Spanish Armada</option>
-              <option value="9">3.1: Education & Leisure</option>
-              <option value="10">3.2: Problem of the Poor</option>
-              <option value="11">3.3: Exploration Voyages</option>
-              <option value="12">3.4: Colonising Virginia</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="flashcard-wrapper" onclick="flipDeckCard()">
-          <div class="flashcard-inner" id="flashcardInner">
-            <div class="flashcard-face flashcard-front">
-              <span class="flashcard-front-topic" id="cardFrontTopic">KT 1.1</span>
-              <h3 id="cardFrontQuestion">Fact Question</h3>
-              <p style="font-size: 0.82rem; color: var(--text-muted); opacity: 0.8;">(Tap Card to Flip)</p>
-            </div>
-            <div class="flashcard-face flashcard-back">
-              <p id="cardBackAnswer">Fact Answer</p>
-              <div class="flashcard-back-fact" id="cardBackFact">Extra contextual info.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flashcard-controls">
-          <button class="btn" onclick="prevFlashcard()"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-          <span style="font-family: var(--font-title); font-weight: 700;" id="flashcardProgress">1 / 5</span>
-          <button class="btn" onclick="nextFlashcard()">Next <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAUSATION WEB TAB -->
-    <section id="causationWebSection" class="tab-content">
-      <div class="causation-panel">
-        <div class="blurting-header-card" style="text-align: center; margin-bottom: 2rem;">
-          <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--primary);">🔗 Q2 Causation Web: Explain Why</h2>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">
-            In the 12-mark 'Explain Why' questions, you must link facts directly to explanations. Click on a **Historical Cause** (on the left) and then click its corresponding **Analytical Consequence/Explanation** (on the right) to link them and build your PEEL argument!
-          </p>
-          <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <label for="causationTopicSelect" style="font-weight: 700; font-size: 0.9rem;">Select Question:</label>
-            <select id="causationTopicSelect" onchange="loadCausationWebChallenge(this.value)" style="padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: var(--font-body); font-weight: 600;">
-              <option value="cw-1.1">KT 1.1: Financial and Political Challenges (1558)</option>
-              <option value="cw-1.2">KT 1.2: Why the Religious Settlement was introduced</option>
-              <option value="cw-1.3">KT 1.3: Challenges to the Religious Settlement</option>
-              <option value="cw-1.4">KT 1.4: Instability of Mary, Queen of Scots (1568-69)</option>
-              <option value="cw-2.1">KT 2.1: Why Catholic opposition escalated (1569-87)</option>
-              <option value="cw-2.2">KT 2.2: Why Anglo-Spanish relations deteriorated</option>
-              <option value="cw-2.3">KT 2.3: Involvement in the Netherlands (1585)</option>
-              <option value="cw-2.4">KT 2.4: Why the Spanish Armada was defeated</option>
-              <option value="cw-3.1">KT 3.1: Increase in Elizabethan Grammar Schools</option>
-              <option value="cw-3.2">KT 3.2: Why poverty increased (1558-88)</option>
-              <option value="cw-3.3">KT 3.3: Why exploration increased (1558-88)</option>
-              <option value="cw-3.4">KT 3.4: Why the Virginia colony failed</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="background: rgba(var(--primary-rgb), 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem; position: relative;">
-          <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; text-align: center; margin-bottom: 1.5rem;" id="causationQuestionText">Explain why...</h3>
-          
-          <div class="causation-web-scaffold" id="causationWebScaffold">
-            <svg class="causation-svg-overlay" id="causationSvgOverlay"></svg>
-            
-            <div class="causation-node-column" id="causationCausesColumn">
-              <!-- Rendered Dynamically from app.js -->
-            </div>
-            
-            <div class="causation-node-column" id="causationExplanationsColumn">
-              <!-- Rendered Dynamically from app.js -->
-            </div>
-          </div>
-        </div>
-
-        <div class="causation-hint-box" id="causationHintBox">
-          Select a node on the left to start connecting!
-        </div>
-      </div>
-    </section>
-
-    <!-- BLURTING ARENA TAB -->
-    <section id="blurtingSection" class="tab-content">
-      <div class="blurting-container">
-        <div class="blurting-header-card" style="text-align: center;">
-          <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--primary);">🧠 Blurting Arena: Active Recall Test</h2>
-          <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 1rem;">
-            Blurting is the ultimate active recall technique. Select a lesson, write down absolutely everything you can remember about it in the box below, then submit to check what facts you retained!
-          </p>
-          <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <label for="blurtingTopicSelect" style="font-weight: 700; font-size: 0.9rem;">Select Lesson Topic:</label>
-            <select id="blurtingTopicSelect" style="padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: var(--font-body); font-weight: 600;">
-              <option value="1">1.1: The Accession</option>
-              <option value="2">1.2: Religion Settlement</option>
-              <option value="3">1.3: Settlement Challenges</option>
-              <option value="4">1.4: Mary Queen of Scots</option>
-              <option value="5">2.1: Plots & Revolts</option>
-              <option value="6">2.2: Relations with Spain</option>
-              <option value="7">2.3: Outbreak of War</option>
-              <option value="8">2.4: Spanish Armada</option>
-              <option value="9">3.1: Education & Leisure</option>
-              <option value="10">3.2: Problem of the Poor</option>
-              <option value="11">3.3: Exploration Voyages</option>
-              <option value="12">3.4: Colonising Virginia</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="blurting-textarea-wrapper">
-          <textarea class="blurting-textarea" id="blurtingInput" placeholder="Blurt here! Write everything you can remember about this topic... e.g. dates, names, key statistics, events, acts..." oninput="updateBlurtingWordCount(this.value)"></textarea>
-          <button id="blurtingMicBtn" class="blurting-mic-btn" onclick="window.toggleBlurtingSpeech()" title="Toggle microphone dictation">
-            <span class="mic-icon">🎙️</span>
-            <span class="mic-text">Start Speech</span>
-          </button>
-          <span class="blurting-word-count" id="blurtingWordCount">0 Words</span>
-        </div>
-
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-          <button class="btn btn-secondary" onclick="clearBlurtingText()">Clear</button>
-          <button class="btn btn-primary" onclick="submitBlurtingRecall()">Analyze My Recall ➔</button>
-        </div>
-
-        <div id="blurtingReport" style="display: none;">
-          <!-- Rendered dynamically from app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- RECALL QUIZ TAB -->
-    <section id="quizSection" class="tab-content">
-      <div id="quizAppContainer">
-        <!-- Managed dynamically from app.js -->
-      </div>
-    </section>
-
-    <!-- EXAM PRACTICE TAB -->
-    <section id="practiceSection" class="tab-content">
-      <div class="exam-layout">
-        <!-- Sidebar Navigation for Question Types -->
-        <aside class="exam-sidebar">
-          <button class="exam-nav-btn active" data-qtype="describe">
-            <h3>Question 1: Feature Description</h3>
-            <span>Describe 1 feature (2 Marks)</span>
-          </button>
-          <button class="exam-nav-btn" data-qtype="explain">
-            <h3>Question 2: Structured Cause</h3>
-            <span>Explain why... (12 Marks)</span>
-          </button>
-          <button class="exam-nav-btn" data-qtype="essay">
-            <h3>Question 3/4: Essay Judgment</h3>
-            <span>How far do you agree... (16 Marks)</span>
-          </button>
-          <button class="exam-nav-btn" data-qtype="wheel" style="border-color: rgba(234, 179, 8, 0.4);">
-            <h3 style="color: var(--text-gold);">🎡 Spin the Wheel</h3>
-            <span>Random Practice Challenge</span>
-          </button>
-          <button class="exam-nav-btn" data-qtype="mock" style="border-color: rgba(16, 185, 129, 0.4);">
-            <h3 style="color: #10b981;">📝 Mock Exam</h3>
-            <span>Generate 32-Mark Paper</span>
-          </button>
-          <button class="exam-nav-btn" data-qtype="past-paper" style="border-color: rgba(99, 102, 241, 0.4);">
-            <h3 style="color: var(--accent-indigo);">📄 Past Papers</h3>
-            <span>Official Edexcel Papers</span>
-          </button>
-        </aside>
-
-        <!-- Dynamic Exam Workspace -->
-        <main class="exam-workspace" id="examWorkspace">
-          <!-- Loaded dynamically from JS -->
-        </main>
-      </div>
-    </section>
-    <!-- EXAMINATION TECHNIQUE TAB -->
-    <section id="techniqueSection" class="tab-content">
-      <div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.7;">
-        
-        <!-- Header -->
-        <div style="margin-bottom: 30px;">
-          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
-            📝 Master the Exam: Paper 2, Section B (Early Elizabethan England)
-          </h2>
-          <p style="color: var(--text-muted); font-size: 1rem; margin: 0;">
-            This section is worth 20% of your total GCSE. To achieve top marks, you need to master three specific question types. Use this mark-ladder to understand exactly what the examiner is looking for!
-          </p>
-        </div>
-
-        <!-- Card 1 -->
-        <div class="knowledge-card" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; margin-bottom: 20px;">
-          <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-            🏗️ Q1(a) &amp; Q1(b): Describe one feature... (2 Marks each, 4 Marks total)
-          </h3>
-          <ul style="padding-left: 20px; margin: 0 0 15px 0; color: var(--text-main);">
-            <li style="margin-bottom: 8px;">
-              <strong>The Formula:</strong> Two separate 2-mark questions. For each question: Identify/state the feature (1 mark) + Add one specific detail/fact to support it (1 mark).
-            </li>
-            <li style="margin-bottom: 8px;">
-              <strong>The Technique:</strong> Keep it surgical. Write a short, direct statement. Do not write a massive paragraph.
-            </li>
-            <li>
-              <strong>Example:</strong> "One feature of Elizabethan theatres was the pit (1 mark), where the poorer 'groundlings' stood to watch the play for just one penny (1 mark)."
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="knowledge-card" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; margin-bottom: 20px;">
-          <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-            ⚖️ Q(b): Explain why... (12 Marks)
-          </h3>
-          <ul style="padding-left: 20px; margin: 0 0 15px 0; color: var(--text-main);">
-            <li style="margin-bottom: 8px;">
-              <strong>The Formula:</strong> 3 x PEEL Paragraphs (Point, Evidence, Explanation, Link).
-            </li>
-            <li style="margin-bottom: 8px;">
-              <strong>The Technique:</strong> This is a <em>causation</em> question. Do not just tell a story! You are given two stimulus points, but you <strong>must</strong> include a third point of your <em>Own Knowledge</em> to reach the top marks.
-            </li>
-            <li>
-              <strong>The Glue:</strong> The "L" in PEEL is crucial. You must link back to the question. Instead of just saying "This happened," use phrases like "This <span class="analytical-link-highlight">exacerbated</span> the tension because..." or "This <span class="analytical-link-highlight">directly led to</span> the failure because...".
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="knowledge-card" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; margin-bottom: 20px;">
-          <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-            🏆 Q(c) (i) or (ii): 'How far do you agree?' (16 Marks)
-          </h3>
-          <ul style="padding-left: 20px; margin: 0 0 15px 0; color: var(--text-main);">
-            <li style="margin-bottom: 8px;">
-              <strong>The Formula:</strong> Introduction (Thesis) ➔ Paragraph 1 (Agree) ➔ Paragraph 2 (Disagree/Alternative) ➔ Conclusion (Sustained Judgement).
-            </li>
-            <li style="margin-bottom: 8px;">
-              <strong>The Technique:</strong> This question requires a judgement. Do not sit on the fence! Plan your answer in two columns (For and Against) before you start writing to weigh up the evidence.
-            </li>
-            <li>
-              <strong>Own Knowledge:</strong> Just like the 12-mark question, you must use information of your own alongside the provided stimulus points to access the highest grades.
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="knowledge-card" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; margin-bottom: 0;">
-          <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-            ⏱️ Top Examiner Tips
-          </h3>
-          <div class="examiner-tip-box" style="background-color: #fef08a; border-left: 5px solid #eab308; padding: 15px; border-radius: 4px; color: #0f172a;">
-            <ul style="padding-left: 20px; margin: 0; line-height: 1.7;">
-              <li style="margin-bottom: 8px;">
-                <strong>Chronology is Key:</strong> A secure understanding of chronology is fundamentally important. Always carefully check the date ranges used in the questions so you don't write about the wrong events!
-              </li>
-              <li style="margin-bottom: 8px;">
-                <strong>Manage Your Time:</strong> Don’t write too much for the 4-mark and 12-mark questions. Use your time wisely so you have enough time to plan and write your 16-mark essay.
-              </li>
-              <li>
-                <strong>Never Leave a Blank:</strong> Aim to write something for every question, even if it is just general knowledge about the topic: every single mark counts towards your final grade!
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TIME-TRAVELLER GAME HUB TAB -->
-    <section id="chronologyGameSection" class="tab-content">
-      <!-- MAIN HUB DASHBOARD -->
-      <div class="game-container" id="ttGameHubDashboard">
-        <div class="game-header">
-          <h2>⏳ The 'Time-Traveller' Vault: Immersive Revision</h2>
-          <p class="examiner-warning" style="background-color: rgba(79, 70, 229, 0.04); border-left-color: var(--primary); color: var(--text-main);">
-            <strong>Vault Overview:</strong> Go beyond standard timelines! Roleplay as key Elizabethan figures making high-stakes decisions, interview historical characters, or hunt down chronological anomalies.
-          </p>
-        </div>
-
-        <div class="tt-category-section">
-          <h3>👑 1. 'Choose Your Own Adventure' Decision Matrices</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Make critical choices under real historical constraints and face the consequences.</p>
-          <div class="tt-hub-grid">
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('cyoa_walsingham')">
-              <div class="tt-card-badge">Decision Matrix</div>
-              <h4>🕵️ Sir Francis Walsingham</h4>
-              <p>Intercept coded letters in the Babington Plot. Will you act immediately or spring a trap?</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Play Decision Matrix</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('cyoa_elizabeth')">
-              <div class="tt-card-badge">Decision Matrix</div>
-              <h4>👑 Queen Elizabeth I</h4>
-              <p>Pass the Religious Settlement of 1559 through a hostile Catholic House of Lords.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Play Decision Matrix</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('game_armada_tactical')">
-              <div class="tt-card-badge">Tactical Map</div>
-              <h4>🚢 The Armada Tactical Map</h4>
-              <p>Command the English fleet against the Spanish Armada. Navigate sightings, delay logistics, launch fireships, and choose the correct tactics to survive the invasion.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Play Tactical Map</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tt-category-section" style="margin-top: 2rem;">
-          <h3>💬 2. First-Person Hotseats / "AI Viva"</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Uncover the motives, fears, and perspectives of key figures in the era.</p>
-          <div class="tt-hub-grid">
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('hotseat_armada')">
-              <div class="tt-card-badge">Viva Interview</div>
-              <h4>⛵ The Spanish Armada Sailor</h4>
-              <p>Interview Diego de Mendoza, stranded on the Irish coast after the defeat of 1588.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Begin Interview</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('hotseat_puritan')">
-              <div class="tt-card-badge">Viva Interview</div>
-              <h4>📖 The Puritan Dissenter</h4>
-              <p>Debate the radical John Stubbs to understand the Puritans' rejection of the settlement.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Begin Debate</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tt-category-section" style="margin-top: 2rem;">
-          <h3>⏳ 3. Chronological Time-Capsule Challenges</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Fix chronological anomalies and categorize legislative acts correctly.</p>
-          <div class="tt-hub-grid">
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('challenge_vagrancy')">
-              <div class="tt-card-badge">Timeline Sort</div>
-              <h4>🧹 The Vagrancy Crisis</h4>
-              <p>Sort punishments and laws between the 1572 Vagabonds Act and the 1576 Act for the Relief of the Poor.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Start Challenge</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('challenge_roanoke')">
-              <div class="tt-card-badge">Anachronism Hunt</div>
-              <h4>🪵 The New World Logbook</h4>
-              <p>Spot historical anachronisms in a sailor's journal from Raleigh's Roanoke colony in 1585.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Start Hunt</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('game_middle_way')">
-              <div class="tt-card-badge">Appeasement Scale</div>
-              <h4>⚖️ The "Middle Way" Tightrope</h4>
-              <p>Sort religious policies to balance the scales between Puritans and Catholics. Avoid tipping the country into civil war or foreign invasion!</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Balance the Scales</button>
-            </div>
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('game_cipher_room')">
-              <div class="tt-card-badge">Cipher Room</div>
-              <h4>🕵️‍♂️ Walsingham's Cipher Room</h4>
-              <p>Snoop on Catholic conspiracies! Decipher encrypted letters from 5 historical case files using Caesar Ciphers to uncover plots against the Queen.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Enter Cipher Room</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="tt-category-section" style="margin-top: 2rem;">
-          <h3>🃏 4. Taboo Revision Game</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Describe target terms without using obvious taboo words. Designed for the 4-mark exam feature questions!</p>
-          <div class="tt-hub-grid">
-            <div class="knowledge-card tt-hub-card" onclick="loadTTGame('game_taboo_generator')">
-              <div class="tt-card-badge">Taboo Cards</div>
-              <h4>🗣️ "Describe Two Features" Taboo Generator</h4>
-              <p>Test your active recall under a 60-second timer. Describe key terms without using forbidden words, and reveal valid features designed for the 4-mark exam questions.</p>
-              <button class="btn btn-primary btn-sm" style="margin-top: 1rem; width: 100%;">Play Taboo Generator</button>
-            </div>
           </div>
         </div>
       </div>
 
-      <!-- ACTIVE GAME SCREEN PANEL -->
-      <div class="game-container" id="ttActiveGamePanel" style="display: none;">
-        <div style="margin-bottom: 1.5rem;">
-          <button class="btn btn-secondary" onclick="closeTTGame()" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; border-radius: 20px; padding: 0.5rem 1rem;">
-            ← Return to Time-Traveller Vault
-          </button>
-        </div>
-        <div id="ttActiveGameContainer">
-          <!-- Dynamically filled by JS -->
-    </section>
-  </div>
-
-  <!-- Onboarding Instruction Modal -->
-  <div id="onboardingModal" class="modal-overlay" style="display: none;">
-    <div class="modal-content onboarding-card">
-      <div class="onboarding-header">
-        <span class="step-indicator">Step 1 of 4</span>
-        <button class="close-btn" onclick="closeOnboarding()">&times;</button>
-      </div>
-      
-      <!-- Slide 1: Welcome -->
-      <div class="onboarding-slide active" data-slide="1">
-        <div class="slide-icon"><i class="fa-solid fa-crown"></i></div>
-        <h2>Elizabethan Revision Master</h2>
-        <p>Welcome to the ultimate Edexcel GCSE History revision tool. Let's take a quick 30-second tour of the advanced active recall and practice features to boost your grade!</p>
-      </div>
-
-      <!-- Slide 2: Active Recall & Hard Mode -->
-      <div class="onboarding-slide" data-slide="2">
-        <div class="slide-icon"><i class="fa-solid fa-brain"></i></div>
-        <h2>12 Core Lessons & Hard Mode</h2>
-        <p>Read through step-by-step knowledge units detailing key events. Toggle <strong>🧠 Hard Mode</strong> to hide important facts, testing your memory via active recall before clicking to reveal them.</p>
-      </div>
-
-      <!-- Slide 3: Leitner Spaced Repetition -->
-      <div class="onboarding-slide" data-slide="3">
-        <div class="slide-icon"><i class="fa-solid fa-layer-group"></i></div>
-        <h2>Recall Quiz & Leitner Boxes</h2>
-        <p>Test facts in the Quiz. Correct answers promote cards to higher boxes (longer intervals), while incorrect answers return them to Box 1. Master all cards to complete the topic!</p>
-      </div>
-
-      <!-- Slide 4: Guided Exam Workspace -->
-      <div class="onboarding-slide" data-slide="4">
-        <div class="slide-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-        <h2>Guided Exam Workspace</h2>
-        <p>Spin the roulette wheel to choose a topic, practice writing under exam conditions with checklists, and self-assess using official Edexcel rubrics and model answers.</p>
-      </div>
-
-      <div class="onboarding-footer">
-        <button class="btn prev-btn" onclick="moveOnboardingSlide(-1)" style="visibility: hidden;">Previous</button>
-        <button class="btn next-btn btn-primary" onclick="moveOnboardingSlide(1)">Next</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating Exit Banner -->
-  <button class="exit-presentation-banner" onclick="togglePresentationMode()"><i class="fa-solid fa-arrow-left-long"></i> Exit Presentation Mode</button>
-
-  <!-- Historical Figure Detail Modal -->
-  <div id="figureDetailModal" class="modal-overlay" style="display: none; z-index: 2000;">
-    <div class="modal-content" style="max-width: 500px; text-align: left; padding: 1.5rem; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-        <h3 id="figureModalName" style="margin: 0; font-family: var(--font-title); font-size: 1.4rem; color: var(--primary); font-weight: 800;">Figure Name</h3>
-        <button class="close-btn" onclick="window.closeFigureModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
-      </div>
-      <div id="figureModalRoleBadge" style="margin-bottom: 1rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-        <!-- Category and role details loaded dynamically -->
-      </div>
-      <div id="figureModalBody" style="font-size: 0.92rem; line-height: 1.6; color: var(--text-main); max-height: 350px; overflow-y: auto; padding-right: 0.25rem;">
-        <!-- Detail content loaded dynamically -->
-      </div>
-    </div>
-  </div>
-
-  <!-- High Scoreboard Modal -->
-  <div id="scoreboardModal" class="modal-overlay" style="display: none; z-index: 2100;">
-    <div class="modal-content" style="max-width: 550px; text-align: left; padding: 1.5rem; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-        <h3 style="margin: 0; font-family: var(--font-title); font-size: 1.4rem; color: var(--primary); font-weight: 800; display: flex; align-items: center; gap: 0.5rem;">
-          🏆 Tudor High Scoreboard
+      <!-- Quick Quiz Widget -->
+      <div class="quick-quiz-container">
+        <h3 style="margin: 0 0 1rem 0; font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">
+          ✏️ Lesson Check: Quick Quiz
         </h3>
-        <button class="close-btn" onclick="window.closeScoreboardModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+        <div id="quickQuizQuestionContainer"></div>
       </div>
+    </section>
+
+    <!-- 2. TIMELINE SECTION -->
+    <section id="timelineSection" class="tab-content">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+        ⏳ Sanitation Chronology Timeline
+      </h2>
       
-      <!-- Leaderboard List -->
-      <div style="margin-bottom: 1.5rem;">
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Top scholars of early Elizabethan history who have climbed the ranks from vagabond to Supreme Governor.</p>
-        <div style="border-radius: var(--radius-sm); border: 1px solid var(--border-color); overflow: hidden; background: var(--bg-surface-alt);">
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left;">
-            <thead>
-              <tr style="background: rgba(var(--primary-rgb), 0.05); border-bottom: 1px solid var(--border-color); font-weight: 700; color: var(--text-main);">
-                <th style="padding: 0.5rem 0.75rem;">Rank</th>
-                <th style="padding: 0.5rem 0.75rem;">Initials</th>
-                <th style="padding: 0.5rem 0.75rem;">Year</th>
-                <th style="padding: 0.5rem 0.75rem;">Tudor Title</th>
-                <th style="padding: 0.5rem 0.75rem; text-align: right;">XP Score</th>
-              </tr>
-            </thead>
-            <tbody id="scoreboardTableBody">
-              <!-- Loaded Dynamically -->
-            </tbody>
-          </table>
+      <div class="timeline-filters" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: center;">
+        <input type="text" id="timelineSearch" placeholder="Search events..." style="flex: 1; min-width: 200px; padding: 0.5rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: var(--font-body);">
+        <div class="filter-tags" style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+          <button class="filter-tag active btn" data-filter="all" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">All</button>
+          <button class="filter-tag btn" data-filter="Prehistoric" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">Prehistoric</button>
+          <button class="filter-tag btn" data-filter="Roman" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">Roman</button>
+          <button class="filter-tag btn" data-filter="Sanitation" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">Sanitation</button>
+          <button class="filter-tag btn" data-filter="Engineering" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">Engineering</button>
         </div>
       </div>
 
-      <!-- Submit Form -->
-      <div id="scoreboardFormContainer" style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
-        <h4 style="margin: 0 0 0.5rem 0; font-family: var(--font-title); font-size: 1rem; color: var(--primary); font-weight: 700;">Submit Your Current Score</h4>
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">You currently have <strong id="scoreboardCurrentXP" style="color: var(--primary);">0</strong> XP. Enter your details to cement your place in history.</p>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end;">
-          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-            <label for="sbInitials" style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">Initials (3 Letters)</label>
-            <input type="text" id="sbInitials" maxlength="3" placeholder="ELZ" style="width: 80px; padding: 0.4rem 0.5rem; text-transform: uppercase; font-family: var(--font-title); font-weight: 800; font-size: 1rem; text-align: center; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main);" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z]/g, '')">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-            <label for="sbYearGroup" style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">Year Group</label>
-            <select id="sbYearGroup" style="padding: 0.45rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; min-width: 120px;">
-              <option value="Year 7">Year 7</option>
-              <option value="Year 8">Year 8</option>
-              <option value="Year 9">Year 9</option>
-              <option value="Year 10">Year 10</option>
-              <option value="Year 11">Year 11</option>
-              <option value="Staff">Staff</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" onclick="window.submitScoreboardEntry()" style="padding: 0.45rem 1rem; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-title); font-weight: 700; cursor: pointer;">
-            ⚔️ Record Score
-          </button>
+      <!-- Historical Figures Collapsible Directory -->
+      <div style="background: var(--bg-surface-alt); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="window.toggleFiguresDirectory()">
+          <h4 style="margin: 0; font-family: var(--font-title); font-size: 1.05rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+            👤 Historical Figures Directory
+          </h4>
+          <span id="directoryToggleIcon" style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Show Directory [Expand]</span>
         </div>
-        <div id="sbErrorDisplay" style="color: #ef4444; font-size: 0.78rem; font-weight: 600; margin-top: 0.5rem; display: none;"></div>
+        <div id="figuresDirectoryContent" style="display: none; margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+            <button class="btn" onclick="window.showFigureModal('Seneca the Younger')" style="text-align: left; padding: 0.5rem 0.75rem;">
+              <strong>Seneca the Younger</strong><br><span style="font-size: 0.75rem; color: var(--text-muted);">Roman Philosopher</span>
+            </button>
+            <button class="btn" onclick="window.showFigureModal('Roman Engineers')" style="text-align: left; padding: 0.5rem 0.75rem;">
+              <strong>Roman Engineers</strong><br><span style="font-size: 0.75rem; color: var(--text-muted);">Builders of Conduits</span>
+            </button>
+            <button class="btn" onclick="window.showFigureModal('Iron Age Britons')" style="text-align: left; padding: 0.5rem 0.75rem;">
+              <strong>Iron Age Britons</strong><br><span style="font-size: 0.75rem; color: var(--text-muted);">Roundhouse Residents</span>
+            </button>
+          </div>
+        </div>
       </div>
+
+      <div id="timelineList"></div>
+    </section>
+
+    <!-- 3. WORKSHEETS SECTION -->
+    <section id="worksheetsSection" class="tab-content">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
+        🖨️ KS3 Study Workbook Pack & PDF Preview
+      </h2>
+      
+      <!-- Preview Controls -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; background: var(--bg-surface-alt); border: 1px solid var(--border-color); padding: 0.75rem 1.25rem; border-radius: var(--radius-sm); flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <label for="was-preview-answers" style="font-weight: 700; font-size: 0.9rem; font-family: var(--font-title);">Preview Version:</label>
+          <select id="was-preview-answers" onchange="window.updateWorksheetPreview()" style="padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); font-family: var(--font-body); font-weight: 600;">
+            <option value="no">Student Copy (Blank Spaces)</option>
+            <option value="yes">Teacher Copy (With Answers)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="window.printWorksheetPreview()" style="font-family: var(--font-title); font-weight: 700; padding: 0.5rem 1.25rem;">
+          Print Pack (PDF)
+        </button>
+      </div>
+
+      <!-- Live PDF A4 preview wrapper -->
+      <div style="border: 2px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; background: #ffffff; height: 900px; box-shadow: var(--shadow-md);">
+        <iframe id="was-worksheet-preview-iframe" style="width: 100%; height: 100%; border: none; background: #ffffff;"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Figures Modal -->
+  <div id="figureModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 2000; padding: 1.5rem;">
+    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; max-width: 500px; width: 100%; box-shadow: var(--shadow-lg);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+        <h3 id="figureModalName" style="margin: 0; font-family: var(--font-title); color: var(--primary);">Figure Name</h3>
+        <button onclick="window.closeFigureModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+      </div>
+      <p id="figureModalBody" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main); margin: 0;"></p>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=was101"></script>
+  <script src="app.js?v=was101"></script>
 </body>
 </html>
-
