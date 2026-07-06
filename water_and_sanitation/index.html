@@ -116,11 +116,11 @@
 
       <!-- Lesson Selector Navigation -->
       <div class="lesson-selector" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-        <button id="btnLesson1" class="btn btn-lesson active" onclick="window.switchLesson(1)" style="font-size: 0.82rem; font-weight: 700; background: var(--primary); color: #ffffff; border-color: var(--primary); padding: 0.4rem 0.8rem;">Lesson 1: Roman Britain</button>
-        <button id="btnLesson2" class="btn btn-lesson" onclick="window.switchLesson(2)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 2: Medieval Britain</button>
-        <button id="btnLesson3" class="btn btn-lesson" onclick="window.switchLesson(3)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 3: Early Modern</button>
-        <button id="btnLesson4" class="btn btn-lesson" onclick="window.switchLesson(4)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 4: Industrial Britain</button>
-        <button id="btnLesson5" class="btn btn-lesson" onclick="window.switchLesson(5)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 5: Sanitation Sorted</button>
+        <button id="btnLesson1" class="btn btn-lesson active" onclick="window.switchLesson(1)" style="font-size: 0.82rem; font-weight: 700; background: var(--primary); color: #ffffff; border-color: var(--primary); padding: 0.4rem 0.8rem;">Lesson 1: Did Roman engineering revolutionise public health?</button>
+        <button id="btnLesson2" class="btn btn-lesson" onclick="window.switchLesson(2)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 2: Why did monasteries flush while towns drowned?</button>
+        <button id="btnLesson3" class="btn btn-lesson" onclick="window.switchLesson(3)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 3: Why did Londoners buy water in barrels in 1700?</button>
+        <button id="btnLesson4" class="btn btn-lesson" onclick="window.switchLesson(4)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 4: How did cholera kill thousands of workers?</button>
+        <button id="btnLesson5" class="btn btn-lesson" onclick="window.switchLesson(5)" style="font-size: 0.82rem; font-weight: 700; background: var(--bg-surface); color: var(--text-main); border-color: var(--border-color); padding: 0.4rem 0.8rem;">Lesson 5: Who really 'sorted' British sanitation?</button>
       </div>
 
       <div id="lessonContent1" class="lesson-content-block">
@@ -191,7 +191,7 @@
       </div>
 
       <!-- Standard Narrative -->
-      <div id="standardNarrativeBlock">
+      <div class="standard-narrative-block">
         <p class="narrative-para-block">
           It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water.
         </p>
@@ -207,7 +207,7 @@
       </div>
 
       <!-- Simplified Narrative (SEND) -->
-      <div id="simplifiedNarrativeBlock" style="display: none;">
+      <div class="simplified-narrative-block" style="display: none;">
         <p class="narrative-para-block" style="font-weight: 500;">
           <strong>Iron Age:</strong> Families lived in roundhouses in the countryside. Because they were spread out, they dug simple earth cesspits to collect sewage safely without polluting wells.
         </p>
@@ -335,7 +335,7 @@
         </div>
 
         <!-- Hidden Model Answers Block -->
-        <div id="modelAnswersBlock" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
+        <div class="model-answers-block" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
           <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800; margin-bottom: 12px;">Official Model Answers & Marking Guide</h5>
           <div style="display: flex; flex-direction: column; gap: 16px;">
             <div>
@@ -383,97 +383,481 @@
         <h3 style="margin: 0 0 1rem 0; font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">
           ✏️ Lesson Check: Quick Quiz
         </h3>
-        <div id="quickQuizQuestionContainer"></div>
+        <div class="quick-quiz-question-container"></div>
       </div>
+    </div>
 
-      <!-- Lesson 2 Content Block -->
-      <div id="lessonContent2" class="lesson-content-block" style="display: none;">
+    <!-- Lesson 2 Content Block -->
+    <div id="lessonContent2" class="lesson-content-block" style="display: none;">
+      <!-- Visual Source Card -->
+      <div class="knowledge-card" style="text-align: center; margin-bottom: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-image"></i> Visual Source Analysis
+          </h4>
+          <img src="assets/was_medieval_water_seller.png" alt="Medieval Water Seller Source" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 12px; max-height: 380px; width: 100%; object-fit: cover;">
+          <p style="font-size: 0.88rem; font-style: italic; color: var(--text-muted); margin: 0; text-align: left;">
+            <strong>Source A:</strong> A reconstruction showing a medieval water seller carting fresh river water in large barrels through the muddy streets of a British town, c. 1350.
+          </p>
+        </div>
+
+        <!-- Do Now Task Grid (Answers Hidden) -->
+        <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
+          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-brain"></i> Do Now Task: Retrieval Grid
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Test your historical foundations. Answer the questions below before moving into today's focus.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Roman Technology (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q1: What were the stone channels called that Roman engineers built to carry clean water over long distances?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">They were called conduits.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Prehistoric Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q3: Why was digging simple, temporary cesspits actually a hygienic and sustainable system for Iron Age people?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Because roundhouse settlements were spread far apart in the countryside, meaning waste did not collect in high enough density to contaminate their drinking water.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Historical Evidence (3 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q5: Why does Seneca’s letter complaining about noise at the baths count as a primary source?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Because it was a first-hand letter written by a person actually living in Rome during the first century AD, witnessing the events directly.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Roman Technology (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q2: How did natural gravity help Roman conduits bring water into towns?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Conduits were built on a very slight downward slope, allowing water to flow naturally downhill without pumps.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Prehistoric Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q4: What happened to Britain's advanced sewer systems and stone conduits after the Romans withdrew in AD 410?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">They fell into disrepair, were abandoned, and crumbled away.</span></p>
+            </div>
+          </div>
+          <div style="margin-top: 16px; text-align: right;">
+            <button class="btn btn-secondary" onclick="window.toggleDoNowAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Reveal Do Now Answers
+            </button>
+          </div>
+        </div>
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
-          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary);">
-            Lesson 2: Medieval Britain (AD 410–1450)
+          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1.3;">
+            Lesson 2 Enquiry: Why did medieval monasteries have flushing systems while towns drowned in filth?
           </h2>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn simplify-text-btn" onclick="window.toggleSimplifyText(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-compress"></i> Simplify Text
+            </button>
+            <button class="btn read-aloud-btn" onclick="window.toggleReadAloud(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
         </div>
 
-        <div class="knowledge-card" style="border-left: 4px solid var(--primary); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
-          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-question"></i> Enquiry Question
-          </h4>
-          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; color: var(--text-main);">
-            Why did medieval monasteries have flushing systems while towns drowned in filth?
+        <!-- Standard Narrative -->
+        <div class="standard-narrative-block">
+          <p class="narrative-para-block">
+            It is a common myth that people in the Middle Ages (AD 400–1450) were dirty and did not care about cleanliness. In reality, medieval people understood that fresh water was vital and desperately wanted to live in clean environments. However, without a single central government like the Roman Empire to fund massive public works, sanitation became highly unequal. Access to clean water and waste disposal depended entirely on where you lived and your social status.
+          </p>
+          <p class="narrative-para-block">
+            In rural villages, such as Wharram Percy in Yorkshire, ordinary peasants lived simple lives closely connected to the land. To get their daily water, they collected it directly from local springs, streams, or hand-dug wells. Since they had no indoor toilets, peasants built small wooden outhouses over earth holes in their gardens, using wild moss as a natural toilet paper. Because villages were small and spread out, these simple cesspits were practical and did not cause major health crises.
+          </p>
+          <p class="narrative-para-block">
+            In stark contrast, medieval monasteries were the pinnacle of engineering luxury. Christian monks were highly literate, exceptionally wealthy, and incredibly organized. Because they believed that cleanliness brought them closer to God and aided their spiritual lives, monasteries designed complex water systems using expensive lead and wooden pipes. For example, twelfth-century blueprints of Canterbury Priory show a sophisticated network of green pipes bringing fresh spring water into the monastery for drinking and washing, and red pipes directing dirty waste water away to flush the communal latrines.
+          </p>
+          <p class="narrative-para-block">
+            The most severe sanitation crises occurred in rapidly growing medieval towns. High population density meant shared toilets overflowed easily, leaking human waste into the streets and nearby wells. While wealthy merchants had private wells, poorer citizens had to buy river water from "water sellers" who hauled barrels through the streets on horseback. To keep towns from drowning in filth, councils employed specialized laborers called "gongfermers." Working strictly under the cover of night, these workers climbed into filthy, barrel-lined cesspits to shovel out human waste and cart it outside the town walls. Despite their efforts, the lack of clean piped water made medieval towns smelly and dangerous places to live.
           </p>
         </div>
 
-        <div class="knowledge-card" style="margin-bottom: 24px;">
-          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.15rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-compass"></i> Historical Focus & Core Content
-          </h4>
-          <p style="font-size: 0.95rem; margin-bottom: 12px;">
-            <strong>Historical Focus:</strong> Causation / Similarity and Difference
+        <!-- Simplified Narrative (SEND) -->
+        <div class="simplified-narrative-block" style="display: none;">
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Medieval Life:</strong> People in the Middle Ages (AD 400–1450) wanted to be clean, but without a strong central government like Rome, sanitation depended heavily on wealth and where people lived.
           </p>
-          <p style="font-size: 0.95rem; margin-bottom: 8px;">
-            <strong>Substantive Content Preview:</strong>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Peasants:</strong> In country villages like Wharram Percy, peasants got water from wells and streams. They used wooden garden outhouses over simple dirt holes (cesspits) and wiped with wild moss.
           </p>
-          <ul style="line-height: 1.6; font-size: 0.9rem; padding-left: 1.25rem;">
-            <li>Village wells and garden cesspits (Wharram Percy)</li>
-            <li>Monastic fresh and waste pipe systems (Canterbury Priory)</li>
-            <li>Water-sellers, urban privies, and the night-work of gongfermers</li>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Monasteries:</strong> Monks believed cleanliness brought them closer to God. Blueprints of Canterbury Priory show advanced plumbing: green pipes for fresh water, and red pipes to flush waste out of latrines.
+          </p>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Towns:</strong> In crowded towns, toilets overflowed and sewage leaked into streets and wells. Poor people had to buy river water from horse-drawn water sellers. Gongfermers worked at night to shovel out human waste from town cesspits.
+          </p>
+        </div>
+
+        <!-- Historical Source Card (Edward III) -->
+        <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.95rem; line-height: 1.65; color: var(--text-main); margin-top: 20px;">
+          <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Contemporary Source Evidence: Source B</h4>
+          <p style="font-style: italic; margin-bottom: 0.75rem; font-size: 1.05rem;">
+            "Have the filth lying in the streets removed... The filth from the houses is infecting the air, endangering people with this sickness."
+          </p>
+          <cite style="display: block; text-align: right; font-size: 0.82rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-bottom: 1rem;">
+            — King Edward III, Letter to the Mayor of London, 1357
+          </cite>
+          
+          <!-- Class Discussion Callout Box -->
+          <div style="background: rgba(var(--primary-rgb), 0.04); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; line-height: 1.5; margin-top: 1.5rem; color: var(--text-main);">
+            <strong style="color: var(--primary); font-family: var(--font-title); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+              🗣️ Class Discussion: The King's Mandate
+            </strong>
+            <ul style="margin: 0; padding-left: 1.25rem;">
+              <li style="margin-bottom: 4px;">Why was the King concerned about the filth in the streets of London in 1357?</li>
+              <li style="margin-bottom: 4px;">What link did medieval leaders make between bad smells ("infecting the air") and epidemic disease?</li>
+              <li>Does this source show that medieval authorities cared about public sanitation?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Vocabulary Block -->
+        <div class="knowledge-card" style="margin-top: 20px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-language"></i> Key Vocabulary</h4>
+          <ul style="line-height: 1.7; font-size: 0.92rem; font-family: var(--font-body); padding-left: 1.25rem; margin: 0;">
+            <li style="margin-bottom: 6px;"><strong>🧹 Gongfermer</strong>: A specialized medieval laborer paid to empty human waste from town cesspits, working exclusively under the cover of night.</li>
+            <li style="margin-bottom: 6px;"><strong>🚽 Privy</strong>: A small outdoor wooden toilet built over a cesspit, often shared by multiple families in medieval towns.</li>
+            <li><strong>🐴 Water Seller</strong>: A medieval merchant who transported fresh water from local rivers or conduits in large barrels on horseback to sell to townspeople.</li>
           </ul>
         </div>
 
-        <div class="knowledge-card" style="border-top: 3.5px dashed var(--border-color); text-align: center; padding: 2rem;">
-          <p style="font-size: 1rem; color: var(--text-muted); font-style: italic; margin: 0;">
-            ✏️ Content Coming Soon! Feed the main text for Lesson 2 when ready.
-          </p>
+        <!-- Pupil Activities Card -->
+        <div class="knowledge-card" style="margin-top: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-pen-to-square"></i> Pupil Activities & Writing Tasks
+          </h4>
+          
+          <!-- Part A -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700;">Part A: Core Comprehension</h5>
+            <ol style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>Why was sanitation so unequal in medieval Britain compared to Roman Britain?</li>
+              <li>How did peasant families in villages like Wharram Percy manage their sanitation?</li>
+              <li>What did the green and red lines on the Canterbury Priory blueprints represent, and what does this tell us about monasteries?</li>
+              <li>Why was the job of a "gongfermer" so important to medieval towns, and why did they work at night?</li>
+            </ol>
+          </div>
+
+          <!-- Part B -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); font-family: var(--font-title); font-weight: 700;">Part B: Conceptual Analysis</h5>
+            <ol start="5" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li><strong>Causation:</strong> Why was high population density in medieval towns the main cause of the urban sanitation crisis?</li>
+              <li><strong>Similarity and Difference:</strong> How did the worldview and daily routine of a Christian monk differ from that of a town laborer, and how did this affect their sanitation?</li>
+              <li><strong>Continuity and Change:</strong> To what extent did the lives of ordinary peasants change when Britain transitioned from the Roman Period to the Middle Ages?</li>
+            </ol>
+          </div>
+
+          <!-- Part C -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-green); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-green); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis</h5>
+            <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              8. Study the contemporary source by King Edward III. What does this source tell us about the government's attitude toward public health in medieval London?
+            </p>
+          </div>
+
+          <!-- Part D -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-gold); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Research Tasks</h5>
+            <ol start="9" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>Open your internet browser and search for <strong>"Wharram Percy medieval village"</strong>. Find the official English Heritage site and write down two reasons why this village was eventually abandoned by its inhabitants.</li>
+              <li>Look up <strong>"Canterbury Cathedral waterworks plan 1165"</strong>. Study the highly detailed drawings made by the monks. Write a brief description of where the water was sourced from and how it entered the monastery walls.</li>
+              <li>Search for <strong>"The Luttrell Psalter water seller"</strong>. Look at the fourteenth-century illustration of the horse and water cart. Draw a simple sketch of the water seller's equipment and write a brief description of how they transported their goods.</li>
+            </ol>
+          </div>
+
+          <div style="text-align: right; margin-top: 16px;">
+            <button class="btn btn-secondary" onclick="window.toggleModelAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Show Model Answers & Marking Guide
+            </button>
+          </div>
+
+          <!-- Hidden Model Answers Block -->
+          <div class="model-answers-block" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
+            <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800; margin-bottom: 12px;">Official Model Answers & Marking Guide</h5>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q1: Why was sanitation so unequal in medieval Britain compared to Roman Britain?</strong>
+                <strong>Model Answer:</strong> Sanitation was unequal because there was no longer a single central government to fund and maintain public plumbing, meaning clean water and waste disposal depended entirely on an individual’s wealth and social status.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q2: How did peasant families in villages like Wharram Percy manage their sanitation?</strong>
+                <strong>Model Answer:</strong> Peasants in Wharram Percy collected fresh water from local springs, streams, or hand-dug wells, and they used outhouses built over earth cesspits in their gardens, using moss for toilet paper.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q3: What did the green and red lines on the Canterbury Priory blueprints represent, and what does this tell us about monasteries?</strong>
+                <strong>Model Answer:</strong> The green lines represented pipes bringing fresh water in for drinking and washing, while the red lines carried waste water away to flush the toilets. This tells us that monasteries were wealthy enough to design and build highly advanced engineering systems.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q4: Why was the job of a "gongfermer" so important to medieval towns, and why did they work at night?</strong>
+                <strong>Model Answer:</strong> Gongfermers were vital because they shoveled out overflowing cesspits to keep towns clean. They worked exclusively at night so that the terrible smells and messy carts would not disrupt the crowded streets during the day.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q5: Causation: Why was high population density in medieval towns the main cause of the urban sanitation crisis?</strong>
+                <strong>Model Answer:</strong> High population density was the main cause of the crisis because thousands of people lived packed closely together, meaning communal privies overflowed quickly, and human waste easily leaked into the nearby shallow wells that people used for drinking water.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q6: Similarity and Difference: How did the worldview and daily routine of a Christian monk differ from that of a town laborer, and how did this affect their sanitation?</strong>
+                <strong>Model Answer:</strong> Monks valued strict daily routines, prayer, and physical cleanliness as a spiritual duty, and they had the collective wealth to build piped plumbing. Town laborers were poor, lived in unorganized, crowded spaces, and had to rely on dirty rivers or expensive water sellers because they lacked the money to build public systems.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q7: Continuity and Change: To what extent did the lives of ordinary peasants change when Britain transitioned from the Roman Period to the Middle Ages?</strong>
+                <strong>Model Answer:</strong> For ordinary peasants, there was almost absolute continuity. They did not have access to advanced Roman bathhouses or conduits in their countryside settlements, and in the Middle Ages, they continued to rely on natural wells, springs, and simple garden cesspits just as their ancestors had done for centuries.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q8: Study the contemporary source by King Edward III. What does this source tell us about the government's attitude toward public health in medieval London?</strong>
+                <strong>Model Answer:</strong> The letter reveals that the king felt responsible for municipal cleanliness, as he explicitly ordered the Mayor of London to remove the filth. It also shows that medieval leaders understood there was a direct link between the terrible smell of rotting waste in the streets ("infecting the air") and the spread of deadly diseases ("endangering people with this sickness").
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Quiz Widget -->
+        <div class="quick-quiz-container" style="margin-top: 24px;">
+          <h3 style="margin: 0 0 1rem 0; font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">
+            ✏️ Lesson Check: Quick Quiz
+          </h3>
+          <div class="quick-quiz-question-container"></div>
         </div>
       </div>
 
       <!-- Lesson 3 Content Block -->
       <div id="lessonContent3" class="lesson-content-block" style="display: none;">
+        <!-- Visual Source Card -->
+        <div class="knowledge-card" style="text-align: center; margin-bottom: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-image"></i> Visual Source Analysis
+          </h4>
+          <img src="assets/was_water_closet_1596.png" alt="Water Closet 1596 Source" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 12px; max-height: 380px; width: 100%; object-fit: cover;">
+          <p style="font-size: 0.88rem; font-style: italic; color: var(--text-muted); margin: 0; text-align: left;">
+            <strong>Source A:</strong> A reconstruction showing Sir John Harington's first water closet (flushing toilet) designed in 1596, featuring an overhead cistern and flushing mechanism.
+          </p>
+        </div>
+
+        <!-- Do Now Task Grid (Answers Hidden) -->
+        <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
+          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-brain"></i> Do Now Task: Retrieval Grid
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Test your historical foundations. Answer the questions below before moving into today's focus.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Medieval Sanitation (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q1: What was the name of the specialized medieval laborers who emptied urban cesspits under the cover of darkness?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">They were called gongfermers.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Roman Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q3: Why did Roman engineers build water conduits with a very gentle, downward slope?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">To allow natural gravity to pull the fresh water downhill over vast distances into towns without the need for mechanical pumps.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Disciplinary Skills (3 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q5: What is the difference between change and continuity when we study history?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Change describes things that become different over time, while continuity describes things that remain stable and stay the same across different eras.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Medieval Sanitation (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q2: Why was sanitation so unequal in medieval villages compared to wealthy monasteries?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Monasteries possessed the collective wealth, literacy, and organization to build lead-piped plumbing systems, while poor villagers had to rely on simple wells and garden cesspits.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Roman Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q4: How did Roman soldiers wipe themselves in communal latrines like the ones at Housesteads Fort?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">They used a shared sea sponge attached to the end of a long wooden stick, which was cleaned in a running channel of water.</span></p>
+            </div>
+          </div>
+          <div style="margin-top: 16px; text-align: right;">
+            <button class="btn btn-secondary" onclick="window.toggleDoNowAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Reveal Do Now Answers
+            </button>
+          </div>
+        </div>
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
-          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary);">
-            Lesson 3: Early Modern Britain (1450–1750)
+          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1.3;">
+            Lesson 3 Enquiry: If the flushing toilet was invented in 1596, why were Londoners still buying water from barrels in 1700?
           </h2>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn simplify-text-btn" onclick="window.toggleSimplifyText(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-compress"></i> Simplify Text
+            </button>
+            <button class="btn read-aloud-btn" onclick="window.toggleReadAloud(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
         </div>
 
-        <div class="knowledge-card" style="border-left: 4px solid var(--primary); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
-          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-question"></i> Enquiry Question
-          </h4>
-          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; color: var(--text-main);">
-            If the flushing toilet was invented in 1596, why were Londoners still buying water from barrels in 1700?
+        <!-- Standard Narrative -->
+        <div class="standard-narrative-block">
+          <p class="narrative-para-block">
+            Between 1450 and 1750, Britain entered the Early Modern era. During this period, cities like London experienced a massive population explosion. As tens of thousands of families migrated from the countryside to find work, urban neighborhoods grew incredibly overcrowded and came under intense pressure. Unfortunately, municipal sanitation systems did not grow to match this rapid urban expansion, creating a severe public health crisis.
+          </p>
+          <p class="narrative-para-block">
+            For the vast majority of ordinary citizens, everyday waste disposal changed very little from the Middle Ages—showing strong historical continuity. Most families still relied on a basic outdoor privy built over a deep earth cesspit. In crowded cities, many landlords built indoor toilets called "houses of easement." Instead of connecting to sewers, these toilets emptied directly into deep cellars below the floorboards. In his famous seventeenth-century diary, the government official Samuel Pepys complained about the terrible stench of his neighbor's cellar privy leaking directly through the walls and flooding his own basement.
+          </p>
+          <p class="narrative-para-block">
+            Water supply was also a constant struggle. In the countryside, people still hauled water from local wells, but city dwellers had to find new, expensive methods. Some gathered water for free from public stone conduits. Others paid a "water seller" to deliver river water to their doors in large wooden barrels on horseback. By the 1600s, private water companies began piping water directly into the homes of wealthy citizens who could afford to pay a regular subscription fee.
+          </p>
+          <p class="narrative-para-block">
+            The most surprising fact of this era is that the first flushing toilet—the water closet—was actually invented in 1596 by a courtier named Sir John Harington for his godmother, Queen Elizabeth I. Yet, almost no one used it. For a flushing toilet to function, a house needed a constant supply of pressurized, running water and a connection to a sewer system to wash the waste away. Because Early Modern London completely lacked these public networks, Harington’s invention remained a useless luxury for the royal court. For the next two centuries, ordinary Londoners had no choice but to keep using wooden privies and buying water by the barrel.
           </p>
         </div>
 
-        <div class="knowledge-card" style="margin-bottom: 24px;">
-          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.15rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-compass"></i> Historical Focus & Core Content
-          </h4>
-          <p style="font-size: 0.95rem; margin-bottom: 12px;">
-            <strong>Historical Focus:</strong> Continuity and Change
+        <!-- Simplified Narrative (SEND) -->
+        <div class="simplified-narrative-block" style="display: none;">
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Urban Crowding:</strong> Between 1450 and 1750 (Early Modern era), cities like London grew very fast. This overcrowding created a major sanitation crisis because there were no public systems to clean up.
           </p>
-          <p style="font-size: 0.95rem; margin-bottom: 8px;">
-            <strong>Substantive Content Preview:</strong>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Houses of Easement:</strong> Most people still used simple outdoor toilets over cesspits. In towns, some had indoor toilets called "houses of easement" that emptied directly into cellars. Samuel Pepys wrote that his basement flooded with a neighbor's toilet waste!
           </p>
-          <ul style="line-height: 1.6; font-size: 0.9rem; padding-left: 1.25rem;">
-            <li>Rapid urban growth under pressure</li>
-            <li>Samuel Pepys’ diary accounts of overflowing cellar privies</li>
-            <li>The lack of municipal sewage infrastructure</li>
-            <li>Sir John Harington's early water closet (1596) remaining a rare royal luxury</li>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Getting Water:</strong> People hauled water from wells, collected it from public conduits, or paid water sellers to deliver it in barrels on horses. Wealthy people paid private companies to pipe water into their houses.
+          </p>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>The First Flush:</strong> In 1596, Sir John Harington invented the first flushing toilet for Queen Elizabeth I. However, it was not used by ordinary citizens because there was no running water infrastructure or street sewers to make it work.
+          </p>
+        </div>
+
+        <!-- Historical Source Card (Pepys) -->
+        <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.95rem; line-height: 1.65; color: var(--text-main); margin-top: 20px;">
+          <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Contemporary Source Evidence: Source C</h4>
+          <p style="font-style: italic; margin-bottom: 0.75rem; font-size: 1.05rem;">
+            "Going down into my cellar, I put my foot into a great heap of [waste], by which I find that my neighbour's house of office [privy] is full and runs into my cellar, which do trouble me..."
+          </p>
+          <cite style="display: block; text-align: right; font-size: 0.82rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-bottom: 1rem;">
+            — Samuel Pepys, London Resident and Government Official, Diary Entry, 20 October 1660
+          </cite>
+          
+          <!-- Class Discussion Callout Box -->
+          <div style="background: rgba(var(--primary-rgb), 0.04); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; line-height: 1.5; margin-top: 1.5rem; color: var(--text-main);">
+            <strong style="color: var(--primary); font-family: var(--font-title); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+              🗣️ Class Discussion: Pepys' Cellar Crisis
+            </strong>
+            <ul style="margin: 0; padding-left: 1.25rem;">
+              <li style="margin-bottom: 4px;">What does this source tell us about the unexpected dangers of living in a crowded, wealthy Early Modern street?</li>
+              <li style="margin-bottom: 4px;">How does this source challenge the idea that sanitation problems only affected the very poorest members of society?</li>
+              <li>What does a "house of office" tell us about how waste was collected inside homes?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Vocabulary Block -->
+        <div class="knowledge-card" style="margin-top: 20px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-language"></i> Key Vocabulary</h4>
+          <ul style="line-height: 1.7; font-size: 0.92rem; font-family: var(--font-body); padding-left: 1.25rem; margin: 0;">
+            <li style="margin-bottom: 6px;"><strong>🚽 House of Easement</strong>: An Early Modern indoor or outdoor toilet built over a cesspit or cellar, used to collect human waste.</li>
+            <li style="margin-bottom: 6px;"><strong>💦 Water Closet</strong>: An early form of the flushing toilet, invented in 1596, which used a tank of water to wash waste down a pipe.</li>
+            <li><strong>🏗️ Infrastructure</strong>: The basic physical systems—such as water pipes, roads, and sewers—that a city or country needs to function effectively.</li>
           </ul>
         </div>
 
-        <div class="knowledge-card" style="border-top: 3.5px dashed var(--border-color); text-align: center; padding: 2rem;">
-          <p style="font-size: 1rem; color: var(--text-muted); font-style: italic; margin: 0;">
-            ✏️ Content Coming Soon! Feed the main text for Lesson 3 when ready.
-          </p>
+        <!-- Pupil Activities Card -->
+        <div class="knowledge-card" style="margin-top: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-pen-to-square"></i> Pupil Activities & Writing Tasks
+          </h4>
+          
+          <!-- Part A -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700;">Part A: Core Comprehension</h5>
+            <ol style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>Why did the growth of Early Modern towns put so much pressure on urban sanitation?</li>
+              <li>What were the three main ways people in Early Modern towns could obtain water?</li>
+              <li>Why did Sir John Harington’s flushing toilet fail to catch on when it was invented in 1596?</li>
+              <li>What was a "house of easement," and where did its waste go?</li>
+            </ol>
+          </div>
+
+          <!-- Part B -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); font-family: var(--font-title); font-weight: 700;">Part B: Conceptual Analysis</h5>
+            <ol start="5" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li><strong>Continuity and Change:</strong> To what extent did waste disposal change for most ordinary people between the Middle Ages and the Early Modern period?</li>
+              <li><strong>Causation (The "Infrastructure Lag"):</strong> Explain why technology (like Harington's flushing toilet) is useless without the infrastructure to support it.</li>
+              <li><strong>Similarity and Difference:</strong> How did the water supply of a wealthy merchant in London compare to a poor laborer in the same street?</li>
+            </ol>
+          </div>
+
+          <!-- Part C -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-green); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-green); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis</h5>
+            <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              8. Study the diary entry of Samuel Pepys. What does this tell us about the unexpected dangers of living in a crowded, wealthy Early Modern street?
+            </p>
+          </div>
+
+          <!-- Part D -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-gold); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Research Tasks</h5>
+            <ol start="9" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>Open your internet browser and search for <strong>"Samuel Pepys Great Fire of London diary"</strong>. Read his entry from September 2, 1666. Write down three things Pepys did to protect his belongings from the fire.</li>
+              <li>Look up <strong>"Sir John Harington Ajax water closet"</strong>. Find a diagram or description of his 1596 design. Draw a simple sketch showing the water tank, the valve, and the waste pipe, and label how the flush worked.</li>
+              <li>Research <strong>"The New River London 1613"</strong>. Write a short paragraph (50-80 words) explaining what this engineering project was, where the water came from, and why it was so important for London’s growth.</li>
+            </ol>
+          </div>
+
+          <div style="text-align: right; margin-top: 16px;">
+            <button class="btn btn-secondary" onclick="window.toggleModelAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Show Model Answers & Marking Guide
+            </button>
+          </div>
+
+          <!-- Hidden Model Answers Block -->
+          <div class="model-answers-block" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
+            <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800; margin-bottom: 12px;">Official Model Answers & Marking Guide</h5>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q1: Why did the growth of Early Modern towns put so much pressure on urban sanitation?</strong>
+                <strong>Model Answer:</strong> The rapid migration of people from the countryside caused a massive population explosion, meaning towns became incredibly overcrowded and generated far more waste than the existing systems could handle.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q2: What were the three main ways people in Early Modern towns could obtain water?</strong>
+                <strong>Model Answer:</strong> People could collect water for free from public stone conduits, buy river water delivered in barrels by water sellers, or pay a private water company to pipe water directly into their homes.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q3: Why did Sir John Harington’s flushing toilet fail to catch on when it was invented in 1596?</strong>
+                <strong>Model Answer:</strong> It failed to catch on because Britain lacked the essential municipal infrastructure, such as clean, running piped water to refill the toilet and a network of street sewers to carry the flushed waste away safely.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q4: What was a "house of easement," and where did its waste go?</strong>
+                <strong>Model Answer:</strong> A house of easement was an indoor toilet built inside a home that emptied human waste directly into a deep cellar below the floorboards.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q5: Continuity and Change: To what extent did waste disposal change for most ordinary people between the Middle Ages and the Early Modern period?</strong>
+                <strong>Model Answer:</strong> For ordinary people, waste disposal showed almost complete continuity. Despite the invention of the flushing toilet, most families still had to use basic outdoor wooden privies built over dirt cesspits, exactly as their medieval ancestors had done.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q6: Causation (The "Infrastructure Lag"): Explain why technology (like Harington's flushing toilet) is useless without the infrastructure to support it.</strong>
+                <strong>Model Answer:</strong> Technology like a flushing toilet is useless without infrastructure because it cannot function on its own. Without piped running water to flush the bowl and a proper sewage network to remove the waste, the physical toilet remains a decorative object rather than a working system.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q7: Similarity and Difference: How did the water supply of a wealthy merchant in London compare to a poor laborer in the same street?</strong>
+                <strong>Model Answer:</strong> There was a massive difference. A wealthy merchant could pay private water companies to pipe clean water directly into their home, whereas a poor laborer had to carry heavy buckets from public conduits or buy water by the bucket from street sellers.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q8: Study the diary entry of Samuel Pepys. What does this tell us about the unexpected dangers of living in a crowded, wealthy Early Modern street?</strong>
+                <strong>Model Answer:</strong> Pepys' diary entry reveals that even wealthy residents living in nice houses faced disgusting sanitary problems. Because houses were built so close together, a neighbor's cellar privy could overflow, seep through the walls, and fill an adjacent cellar with human waste, showing that lack of proper sewage affected everyone.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Quiz Widget -->
+        <div class="quick-quiz-container" style="margin-top: 24px;">
+          <h3 style="margin: 0 0 1rem 0; font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">
+            ✏️ Lesson Check: Quick Quiz
+          </h3>
+          <div class="quick-quiz-question-container"></div>
         </div>
       </div>
 
       <!-- Lesson 4 Content Block -->
       <div id="lessonContent4" class="lesson-content-block" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
-          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary);">
-            Lesson 4: Industrial Britain (1750–1850)
+          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1.3;">
+            Lesson 4 Enquiry: How did the "Workshop of the World" allow cholera to kill thousands of its workers?
           </h2>
         </div>
 
@@ -514,8 +898,8 @@
       <!-- Lesson 5 Content Block -->
       <div id="lessonContent5" class="lesson-content-block" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
-          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--primary);">
-            Lesson 5: Sanitation Sorted (1850–1900)
+          <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1.3;">
+            Lesson 5 Enquiry: Who really "sorted" British sanitation—the scientists, the engineers, or the politicians?
           </h2>
         </div>
 

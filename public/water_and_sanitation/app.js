@@ -6,7 +6,8 @@ const appState = {
   timelineFilter: "all",
   timelineSearchQuery: "",
   timelineSortMode: "topic",
-  isSimplifiedActive: false
+  isSimplifiedActive: false,
+  activeLesson: 1
 };
 
 // 1. Navigation Control
@@ -52,13 +53,16 @@ function setupNavigation() {
 // 2. Text Simplifier
 window.toggleSimplifyText = function(event) {
   const btn = event.currentTarget || document.getElementById('simplifyTextBtn');
-  const standardBlock = document.getElementById('standardNarrativeBlock');
-  const simplifiedBlock = document.getElementById('simplifiedNarrativeBlock');
-  if (!btn || !standardBlock || !simplifiedBlock) return;
+  if (!btn) return;
+  const parent = btn.closest('.lesson-content-block');
+  if (!parent) return;
+  const standardBlock = parent.querySelector('.standard-narrative-block');
+  const simplifiedBlock = parent.querySelector('.simplified-narrative-block');
+  if (!standardBlock || !simplifiedBlock) return;
 
-  appState.isSimplifiedActive = !appState.isSimplifiedActive;
+  const isSimplifiedActive = (standardBlock.style.display !== 'none');
 
-  if (appState.isSimplifiedActive) {
+  if (isSimplifiedActive) {
     standardBlock.style.display = 'none';
     simplifiedBlock.style.display = 'block';
     btn.innerHTML = '<i class="fa-solid fa-expand"></i> Standard Text';
@@ -73,7 +77,7 @@ window.toggleSimplifyText = function(event) {
   if (readAloudState.isSpeaking) {
     window.speechSynthesis.cancel();
     readAloudState.isSpeaking = false;
-    const readBtn = document.getElementById('readAloudBtn');
+    const readBtn = parent.querySelector('.read-aloud-btn') || document.getElementById('readAloudBtn');
     if (readBtn) {
       readBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
       readBtn.style.background = 'rgba(var(--primary-rgb), 0.05)';
@@ -91,6 +95,8 @@ let readAloudState = {
 window.toggleReadAloud = function(event) {
   const btn = event.currentTarget || document.getElementById('readAloudBtn');
   if (!btn) return;
+  const parent = btn.closest('.lesson-content-block');
+  if (!parent) return;
   
   if (readAloudState.isSpeaking) {
     window.speechSynthesis.cancel();
@@ -103,8 +109,10 @@ window.toggleReadAloud = function(event) {
       block.style.boxShadow = 'none';
     });
   } else {
-    const activeBlockId = appState.isSimplifiedActive ? 'simplifiedNarrativeBlock' : 'standardNarrativeBlock';
-    const container = document.getElementById(activeBlockId);
+    const standardBlock = parent.querySelector('.standard-narrative-block');
+    const simplifiedBlock = parent.querySelector('.simplified-narrative-block');
+    const isSimplifiedActive = (standardBlock && standardBlock.style.display === 'none' && simplifiedBlock && simplifiedBlock.style.display === 'block');
+    const container = isSimplifiedActive ? simplifiedBlock : standardBlock;
     if (!container) return;
     
     readAloudState.blocks = Array.from(container.querySelectorAll('.narrative-para-block'));
@@ -185,7 +193,8 @@ window.selectQuickQuizOption = function(optIdx) {
   if (quickQuizState.isSubmitted) return;
   quickQuizState.selectedAnswer = optIdx;
   
-  const optionBtns = document.querySelectorAll('.quick-quiz-option-btn');
+  const activeBlock = document.querySelector('.lesson-content-block[style*="display: block"]') || document.querySelector('.lesson-content-block:not([style*="display: none"])');
+  const optionBtns = activeBlock ? activeBlock.querySelectorAll('.quick-quiz-option-btn') : document.querySelectorAll('.quick-quiz-option-btn');
   optionBtns.forEach((btn, idx) => {
     if (idx === optIdx) {
       btn.style.borderColor = 'var(--primary)';
@@ -196,7 +205,7 @@ window.selectQuickQuizOption = function(optIdx) {
     }
   });
   
-  const submitBtn = document.getElementById('quickQuizSubmitBtn');
+  const submitBtn = activeBlock ? activeBlock.querySelector('.quick-quiz-submit-btn') : document.getElementById('quickQuizSubmitBtn');
   if (submitBtn) submitBtn.disabled = false;
 };
 
@@ -204,34 +213,42 @@ window.submitQuickQuizAnswer = function() {
   if (quickQuizState.isSubmitted || quickQuizState.selectedAnswer === null) return;
   quickQuizState.isSubmitted = true;
   
-  const q = quizData[quickQuizState.currentQuestionIndex];
+  const activeBlock = document.querySelector('.lesson-content-block[style*="display: block"]') || document.querySelector('.lesson-content-block:not([style*="display: none"])');
+  const lessonQuestions = quizData.slice((appState.activeLesson - 1) * 5, appState.activeLesson * 5);
+  const q = lessonQuestions[quickQuizState.currentQuestionIndex];
+  if (!q) return;
+  
   const options = [q.answer, ...q.distractors];
   const selectedText = options[quickQuizState.selectedAnswer];
   const isCorrect = (selectedText === q.answer);
   
-  const feedbackBlock = document.getElementById('quickQuizFeedback');
-  feedbackBlock.style.display = 'block';
-  if (isCorrect) {
-    feedbackBlock.style.borderColor = 'var(--success)';
-    feedbackBlock.style.background = 'rgba(16, 185, 129, 0.04)';
-    feedbackBlock.innerHTML = `<span style="color: var(--success); font-weight: 800;">✓ Correct!</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">${q.explanation}</p>`;
-    
-    appState.userXP += 50;
-    localStorage.setItem("was_user_xp", appState.userXP);
-    updateXPBadge();
-  } else {
-    feedbackBlock.style.borderColor = 'var(--error)';
-    feedbackBlock.style.background = 'rgba(239, 68, 68, 0.04)';
-    feedbackBlock.innerHTML = `<span style="color: var(--error); font-weight: 800;">✗ Incorrect.</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">The correct answer is: <strong>${q.answer}</strong>.<br>${q.explanation}</p>`;
+  const feedbackBlock = activeBlock ? activeBlock.querySelector('.quick-quiz-feedback') : document.getElementById('quickQuizFeedback');
+  if (feedbackBlock) {
+    feedbackBlock.style.display = 'block';
+    if (isCorrect) {
+      feedbackBlock.style.borderColor = 'var(--success)';
+      feedbackBlock.style.background = 'rgba(16, 185, 129, 0.04)';
+      feedbackBlock.innerHTML = `<span style="color: var(--success); font-weight: 800;">✓ Correct!</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">${q.explanation}</p>`;
+      
+      appState.userXP += 50;
+      localStorage.setItem("was_user_xp", appState.userXP);
+      updateXPBadge();
+    } else {
+      feedbackBlock.style.borderColor = 'var(--error)';
+      feedbackBlock.style.background = 'rgba(239, 68, 68, 0.04)';
+      feedbackBlock.innerHTML = `<span style="color: var(--error); font-weight: 800;">✗ Incorrect.</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">The correct answer is: <strong>${q.answer}</strong>.<br>${q.explanation}</p>`;
+    }
   }
   
-  const submitBtn = document.getElementById('quickQuizSubmitBtn');
-  if (quickQuizState.currentQuestionIndex < quizData.length - 1) {
-    submitBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
-    submitBtn.setAttribute('onclick', 'window.nextQuickQuizQuestion()');
-  } else {
-    submitBtn.innerHTML = 'Quiz Completed! 🎉';
-    submitBtn.disabled = true;
+  const submitBtn = activeBlock ? activeBlock.querySelector('.quick-quiz-submit-btn') : document.getElementById('quickQuizSubmitBtn');
+  if (submitBtn) {
+    if (quickQuizState.currentQuestionIndex < lessonQuestions.length - 1) {
+      submitBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+      submitBtn.setAttribute('onclick', 'window.nextQuickQuizQuestion()');
+    } else {
+      submitBtn.innerHTML = 'Quiz Completed! 🎉';
+      submitBtn.disabled = true;
+    }
   }
 };
 
@@ -243,10 +260,16 @@ window.nextQuickQuizQuestion = function() {
 };
 
 window.renderLessonQuickQuiz = function() {
-  const container = document.getElementById('quickQuizQuestionContainer');
+  const container = document.querySelector('.lesson-content-block[style*="display: block"] .quick-quiz-question-container') || document.querySelector('.lesson-content-block:not([style*="display: none"]) .quick-quiz-question-container') || document.getElementById('quickQuizQuestionContainer');
   if (!container) return;
   
-  const q = quizData[quickQuizState.currentQuestionIndex];
+  const lessonQuestions = quizData.slice((appState.activeLesson - 1) * 5, appState.activeLesson * 5);
+  if (lessonQuestions.length === 0) {
+    container.innerHTML = `<p style="font-style: italic; color: var(--text-muted); text-align: center; margin: 1.5rem 0;">✏️ Quiz questions coming soon! Feed the quiz data when ready.</p>`;
+    return;
+  }
+  
+  const q = lessonQuestions[quickQuizState.currentQuestionIndex];
   if (!q) return;
   
   const options = [q.answer, ...q.distractors];
@@ -260,7 +283,7 @@ window.renderLessonQuickQuiz = function() {
   
   container.innerHTML = `
     <div style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; font-family: var(--font-title);">
-      Question ${quickQuizState.currentQuestionIndex + 1} of ${quizData.length}:
+      Question ${quickQuizState.currentQuestionIndex + 1} of ${lessonQuestions.length}:
       <span style="font-weight: 500; font-family: var(--font-body); display: block; margin-top: 6px;">${q.question}</span>
     </div>
     
@@ -268,9 +291,9 @@ window.renderLessonQuickQuiz = function() {
       ${optionsHtml}
     </div>
     
-    <div id="quickQuizFeedback" style="display: none; padding: 10px 14px; border-left: 4px solid; border-radius: var(--radius-sm); margin-bottom: 16px; font-family: var(--font-body);"></div>
+    <div class="quick-quiz-feedback" style="display: none; padding: 10px 14px; border-left: 4px solid; border-radius: var(--radius-sm); margin-bottom: 16px; font-family: var(--font-body);"></div>
     
-    <button class="btn btn-primary" id="quickQuizSubmitBtn" onclick="window.submitQuickQuizAnswer()" disabled style="width: 100%;">
+    <button class="btn btn-primary quick-quiz-submit-btn" onclick="window.submitQuickQuizAnswer()" disabled style="width: 100%;">
       Submit Answer
     </button>`;
 };
@@ -519,8 +542,19 @@ async function loadLessonMarkdown() {
 
 window.generateWorksheetPackHtml = function(includeAnswers) {
   const data = parsedMarkdownData || { doNow: [], vocab: [], paragraphs: [], activities: [], senecaQuote: '', senecaCite: '' };
-  const answerStyle = includeAnswers ? 'color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.78rem; margin-top: 1px;' : 'display: none;';
-  
+  const extraLinesTable = includeAnswers 
+    ? '' 
+    : `<div style="margin-top: 15px; margin-bottom: 5px;">
+        <span style="font-size: 0.65rem; color: #9ca3af; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Extra Writing Space:</span>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+        </table>
+       </div>`;
+
   // Condense Do Now grid layout
   let doNowHtml = '';
   (data.doNow || []).forEach((q, idx) => {
@@ -554,10 +588,13 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   const activitiesList = data.activities || [];
   
   const getQuestionBlock = (questionText, answerText, qIndex, lineCount) => {
-    const height = lineCount * 20;
     const answerBlock = includeAnswers 
       ? `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: ${answerText}</div>`
-      : `<div class="writing-lines" style="background-image: linear-gradient(#e2e8f0 1px, transparent 1px); background-size: 100% 20px; height: ${height}px; margin-top: 4px; margin-bottom: 8px; border-left: 2px solid #fca5a5; padding-left: 8px;"></div>`;
+      : `<table style="width: 100%; height: 120px; border-collapse: collapse; margin-top: 4px; margin-bottom: 8px;">
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+         </table>`;
 
     return `
       <div style="margin-bottom: 6px; font-size: 0.76rem; page-break-inside: avoid; line-height: 1.25;">
@@ -603,7 +640,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
 
   const q11DrawingBox = includeAnswers
     ? `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: [Student diagram showing parallel stone benches built over deep, running-water sewers with a shallow freshwater channel in front for washing sponges.]</div>`
-    : `<div style="height: 60mm; margin: 6px 0;"></div>`;
+    : `<div style="height: 60mm; border: 1.5px dashed #ccc; margin: 6px 0; background: #fafafa; border-radius: 4px;"></div>`;
 
   page4ActivitiesHtml += `
     <div style="margin-bottom: 6px; font-size: 0.76rem; page-break-inside: avoid; line-height: 1.25;">
@@ -715,6 +752,16 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         page-break-after: avoid;
       }
     }
+    .writing-lines {
+      background-image: repeating-linear-gradient(transparent, transparent 30px, #ccc 30px, #ccc 31px);
+      background-size: 100% 31px;
+      border-left: 2px solid #fca5a5;
+      padding-left: 8px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
   </style>
 </head>
 <body>
@@ -722,11 +769,11 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 1: Do Now, Vocab, Core Summary Narrative, Seneca Quote -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div class="student-fields">
@@ -772,17 +819,18 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 2: Pupil Activities (Part A) -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <h2 class="section-title">5. Pupil Activities & Writing Tasks</h2>
     <div style="display: flex; flex-direction: column;">
       ${page2ActivitiesHtml}
     </div>
+    ${extraLinesTable}
 
     <div class="page-footer">
       <span>KS3 History Study Unit: Water and Sanitation</span>
@@ -793,11 +841,11 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 3: Pupil Activities (Part B), Written Sources, Part C -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column; margin-bottom: 4px;">
@@ -829,16 +877,17 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 4: Pupil Activities (Part D) -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column;">
       ${page4ActivitiesHtml}
     </div>
+    ${extraLinesTable}
 
     <div class="page-footer">
       <span>KS3 History Study Unit: Water and Sanitation</span>
@@ -873,7 +922,8 @@ window.printWorksheetPreview = function() {
 // 8.5 Toggle Do Now Answers & Pupil Activity Model Answers
 window.toggleDoNowAnswers = function(event) {
   const btn = event.currentTarget;
-  const answers = document.querySelectorAll('.do-now-answer');
+  const parent = btn.closest('.lesson-content-block') || btn.closest('.knowledge-card') || document;
+  const answers = parent.querySelectorAll('.do-now-answer');
   if (answers.length === 0) return;
   const isHidden = (answers[0].style.display === 'none');
   
@@ -890,7 +940,8 @@ window.toggleDoNowAnswers = function(event) {
 
 window.toggleModelAnswers = function(event) {
   const btn = event.currentTarget;
-  const block = document.getElementById('modelAnswersBlock');
+  const parent = btn.closest('.lesson-content-block') || document;
+  const block = parent.querySelector('.model-answers-block');
   if (!block) return;
   
   const isHidden = (block.style.display === 'none');
@@ -914,6 +965,63 @@ window.setupTheme = function() {
       localStorage.setItem("was_theme", nextTheme);
     });
   }
+};
+
+window.switchLesson = function(lessonNum) {
+  appState.activeLesson = lessonNum;
+  
+  // Reset quick quiz state for this lesson
+  quickQuizState.currentQuestionIndex = 0;
+  quickQuizState.selectedAnswer = null;
+  quickQuizState.isSubmitted = false;
+
+  // Hide all lesson content blocks
+  const blocks = document.querySelectorAll(".lesson-content-block");
+  blocks.forEach(b => {
+    b.style.display = "none";
+  });
+  
+  // Show target lesson block
+  const target = document.getElementById(`lessonContent${lessonNum}`);
+  if (target) {
+    target.style.display = "block";
+  }
+  
+  // Reset active state for all buttons in selector
+  const buttons = document.querySelectorAll(".btn-lesson");
+  buttons.forEach(btn => {
+    btn.classList.remove("active");
+    btn.style.background = "var(--bg-surface)";
+    btn.style.color = "var(--text-main)";
+    btn.style.borderColor = "var(--border-color)";
+  });
+  
+  // Activate selected button
+  const activeBtn = document.getElementById(`btnLesson${lessonNum}`);
+  if (activeBtn) {
+    activeBtn.classList.add("active");
+    activeBtn.style.background = "var(--primary)";
+    activeBtn.style.color = "#ffffff";
+    activeBtn.style.borderColor = "var(--primary)";
+  }
+
+  // Stop read aloud when switching lessons
+  if (typeof readAloudState !== 'undefined' && readAloudState.isSpeaking) {
+    window.speechSynthesis.cancel();
+    readAloudState.isSpeaking = false;
+    const btn = document.getElementById("readAloudBtn");
+    if (btn) {
+      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
+      btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
+    }
+    readAloudState.blocks.forEach(b => {
+      b.style.background = 'transparent';
+      b.style.boxShadow = 'none';
+    });
+  }
+
+  // Render the quiz for the active lesson
+  window.renderLessonQuickQuiz();
 };
 
 window.addEventListener("DOMContentLoaded", async () => {

@@ -6,7 +6,8 @@ const appState = {
   timelineFilter: "all",
   timelineSearchQuery: "",
   timelineSortMode: "topic",
-  isSimplifiedActive: false
+  isSimplifiedActive: false,
+  activeLesson: 1
 };
 
 // 1. Navigation Control
@@ -52,13 +53,16 @@ function setupNavigation() {
 // 2. Text Simplifier
 window.toggleSimplifyText = function(event) {
   const btn = event.currentTarget || document.getElementById('simplifyTextBtn');
-  const standardBlock = document.getElementById('standardNarrativeBlock');
-  const simplifiedBlock = document.getElementById('simplifiedNarrativeBlock');
-  if (!btn || !standardBlock || !simplifiedBlock) return;
+  if (!btn) return;
+  const parent = btn.closest('.lesson-content-block');
+  if (!parent) return;
+  const standardBlock = parent.querySelector('.standard-narrative-block');
+  const simplifiedBlock = parent.querySelector('.simplified-narrative-block');
+  if (!standardBlock || !simplifiedBlock) return;
 
-  appState.isSimplifiedActive = !appState.isSimplifiedActive;
+  const isSimplifiedActive = (standardBlock.style.display !== 'none');
 
-  if (appState.isSimplifiedActive) {
+  if (isSimplifiedActive) {
     standardBlock.style.display = 'none';
     simplifiedBlock.style.display = 'block';
     btn.innerHTML = '<i class="fa-solid fa-expand"></i> Standard Text';
@@ -73,7 +77,7 @@ window.toggleSimplifyText = function(event) {
   if (readAloudState.isSpeaking) {
     window.speechSynthesis.cancel();
     readAloudState.isSpeaking = false;
-    const readBtn = document.getElementById('readAloudBtn');
+    const readBtn = parent.querySelector('.read-aloud-btn') || document.getElementById('readAloudBtn');
     if (readBtn) {
       readBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
       readBtn.style.background = 'rgba(var(--primary-rgb), 0.05)';
@@ -91,6 +95,8 @@ let readAloudState = {
 window.toggleReadAloud = function(event) {
   const btn = event.currentTarget || document.getElementById('readAloudBtn');
   if (!btn) return;
+  const parent = btn.closest('.lesson-content-block');
+  if (!parent) return;
   
   if (readAloudState.isSpeaking) {
     window.speechSynthesis.cancel();
@@ -103,8 +109,10 @@ window.toggleReadAloud = function(event) {
       block.style.boxShadow = 'none';
     });
   } else {
-    const activeBlockId = appState.isSimplifiedActive ? 'simplifiedNarrativeBlock' : 'standardNarrativeBlock';
-    const container = document.getElementById(activeBlockId);
+    const standardBlock = parent.querySelector('.standard-narrative-block');
+    const simplifiedBlock = parent.querySelector('.simplified-narrative-block');
+    const isSimplifiedActive = (standardBlock && standardBlock.style.display === 'none' && simplifiedBlock && simplifiedBlock.style.display === 'block');
+    const container = isSimplifiedActive ? simplifiedBlock : standardBlock;
     if (!container) return;
     
     readAloudState.blocks = Array.from(container.querySelectorAll('.narrative-para-block'));
@@ -185,7 +193,8 @@ window.selectQuickQuizOption = function(optIdx) {
   if (quickQuizState.isSubmitted) return;
   quickQuizState.selectedAnswer = optIdx;
   
-  const optionBtns = document.querySelectorAll('.quick-quiz-option-btn');
+  const activeBlock = document.querySelector('.lesson-content-block[style*="display: block"]') || document.querySelector('.lesson-content-block:not([style*="display: none"])');
+  const optionBtns = activeBlock ? activeBlock.querySelectorAll('.quick-quiz-option-btn') : document.querySelectorAll('.quick-quiz-option-btn');
   optionBtns.forEach((btn, idx) => {
     if (idx === optIdx) {
       btn.style.borderColor = 'var(--primary)';
@@ -196,7 +205,7 @@ window.selectQuickQuizOption = function(optIdx) {
     }
   });
   
-  const submitBtn = document.getElementById('quickQuizSubmitBtn');
+  const submitBtn = activeBlock ? activeBlock.querySelector('.quick-quiz-submit-btn') : document.getElementById('quickQuizSubmitBtn');
   if (submitBtn) submitBtn.disabled = false;
 };
 
@@ -204,34 +213,42 @@ window.submitQuickQuizAnswer = function() {
   if (quickQuizState.isSubmitted || quickQuizState.selectedAnswer === null) return;
   quickQuizState.isSubmitted = true;
   
-  const q = quizData[quickQuizState.currentQuestionIndex];
+  const activeBlock = document.querySelector('.lesson-content-block[style*="display: block"]') || document.querySelector('.lesson-content-block:not([style*="display: none"])');
+  const lessonQuestions = quizData.slice((appState.activeLesson - 1) * 5, appState.activeLesson * 5);
+  const q = lessonQuestions[quickQuizState.currentQuestionIndex];
+  if (!q) return;
+  
   const options = [q.answer, ...q.distractors];
   const selectedText = options[quickQuizState.selectedAnswer];
   const isCorrect = (selectedText === q.answer);
   
-  const feedbackBlock = document.getElementById('quickQuizFeedback');
-  feedbackBlock.style.display = 'block';
-  if (isCorrect) {
-    feedbackBlock.style.borderColor = 'var(--success)';
-    feedbackBlock.style.background = 'rgba(16, 185, 129, 0.04)';
-    feedbackBlock.innerHTML = `<span style="color: var(--success); font-weight: 800;">✓ Correct!</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">${q.explanation}</p>`;
-    
-    appState.userXP += 50;
-    localStorage.setItem("was_user_xp", appState.userXP);
-    updateXPBadge();
-  } else {
-    feedbackBlock.style.borderColor = 'var(--error)';
-    feedbackBlock.style.background = 'rgba(239, 68, 68, 0.04)';
-    feedbackBlock.innerHTML = `<span style="color: var(--error); font-weight: 800;">✗ Incorrect.</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">The correct answer is: <strong>${q.answer}</strong>.<br>${q.explanation}</p>`;
+  const feedbackBlock = activeBlock ? activeBlock.querySelector('.quick-quiz-feedback') : document.getElementById('quickQuizFeedback');
+  if (feedbackBlock) {
+    feedbackBlock.style.display = 'block';
+    if (isCorrect) {
+      feedbackBlock.style.borderColor = 'var(--success)';
+      feedbackBlock.style.background = 'rgba(16, 185, 129, 0.04)';
+      feedbackBlock.innerHTML = `<span style="color: var(--success); font-weight: 800;">✓ Correct!</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">${q.explanation}</p>`;
+      
+      appState.userXP += 50;
+      localStorage.setItem("was_user_xp", appState.userXP);
+      updateXPBadge();
+    } else {
+      feedbackBlock.style.borderColor = 'var(--error)';
+      feedbackBlock.style.background = 'rgba(239, 68, 68, 0.04)';
+      feedbackBlock.innerHTML = `<span style="color: var(--error); font-weight: 800;">✗ Incorrect.</span><p style="margin: 4px 0 0 0; font-size: 0.85rem;">The correct answer is: <strong>${q.answer}</strong>.<br>${q.explanation}</p>`;
+    }
   }
   
-  const submitBtn = document.getElementById('quickQuizSubmitBtn');
-  if (quickQuizState.currentQuestionIndex < quizData.length - 1) {
-    submitBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
-    submitBtn.setAttribute('onclick', 'window.nextQuickQuizQuestion()');
-  } else {
-    submitBtn.innerHTML = 'Quiz Completed! 🎉';
-    submitBtn.disabled = true;
+  const submitBtn = activeBlock ? activeBlock.querySelector('.quick-quiz-submit-btn') : document.getElementById('quickQuizSubmitBtn');
+  if (submitBtn) {
+    if (quickQuizState.currentQuestionIndex < lessonQuestions.length - 1) {
+      submitBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+      submitBtn.setAttribute('onclick', 'window.nextQuickQuizQuestion()');
+    } else {
+      submitBtn.innerHTML = 'Quiz Completed! 🎉';
+      submitBtn.disabled = true;
+    }
   }
 };
 
@@ -243,10 +260,16 @@ window.nextQuickQuizQuestion = function() {
 };
 
 window.renderLessonQuickQuiz = function() {
-  const container = document.getElementById('quickQuizQuestionContainer');
+  const container = document.querySelector('.lesson-content-block[style*="display: block"] .quick-quiz-question-container') || document.querySelector('.lesson-content-block:not([style*="display: none"]) .quick-quiz-question-container') || document.getElementById('quickQuizQuestionContainer');
   if (!container) return;
   
-  const q = quizData[quickQuizState.currentQuestionIndex];
+  const lessonQuestions = quizData.slice((appState.activeLesson - 1) * 5, appState.activeLesson * 5);
+  if (lessonQuestions.length === 0) {
+    container.innerHTML = `<p style="font-style: italic; color: var(--text-muted); text-align: center; margin: 1.5rem 0;">✏️ Quiz questions coming soon! Feed the quiz data when ready.</p>`;
+    return;
+  }
+  
+  const q = lessonQuestions[quickQuizState.currentQuestionIndex];
   if (!q) return;
   
   const options = [q.answer, ...q.distractors];
@@ -260,7 +283,7 @@ window.renderLessonQuickQuiz = function() {
   
   container.innerHTML = `
     <div style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; font-family: var(--font-title);">
-      Question ${quickQuizState.currentQuestionIndex + 1} of ${quizData.length}:
+      Question ${quickQuizState.currentQuestionIndex + 1} of ${lessonQuestions.length}:
       <span style="font-weight: 500; font-family: var(--font-body); display: block; margin-top: 6px;">${q.question}</span>
     </div>
     
@@ -268,9 +291,9 @@ window.renderLessonQuickQuiz = function() {
       ${optionsHtml}
     </div>
     
-    <div id="quickQuizFeedback" style="display: none; padding: 10px 14px; border-left: 4px solid; border-radius: var(--radius-sm); margin-bottom: 16px; font-family: var(--font-body);"></div>
+    <div class="quick-quiz-feedback" style="display: none; padding: 10px 14px; border-left: 4px solid; border-radius: var(--radius-sm); margin-bottom: 16px; font-family: var(--font-body);"></div>
     
-    <button class="btn btn-primary" id="quickQuizSubmitBtn" onclick="window.submitQuickQuizAnswer()" disabled style="width: 100%;">
+    <button class="btn btn-primary quick-quiz-submit-btn" onclick="window.submitQuickQuizAnswer()" disabled style="width: 100%;">
       Submit Answer
     </button>`;
 };
@@ -899,7 +922,8 @@ window.printWorksheetPreview = function() {
 // 8.5 Toggle Do Now Answers & Pupil Activity Model Answers
 window.toggleDoNowAnswers = function(event) {
   const btn = event.currentTarget;
-  const answers = document.querySelectorAll('.do-now-answer');
+  const parent = btn.closest('.lesson-content-block') || btn.closest('.knowledge-card') || document;
+  const answers = parent.querySelectorAll('.do-now-answer');
   if (answers.length === 0) return;
   const isHidden = (answers[0].style.display === 'none');
   
@@ -916,7 +940,8 @@ window.toggleDoNowAnswers = function(event) {
 
 window.toggleModelAnswers = function(event) {
   const btn = event.currentTarget;
-  const block = document.getElementById('modelAnswersBlock');
+  const parent = btn.closest('.lesson-content-block') || document;
+  const block = parent.querySelector('.model-answers-block');
   if (!block) return;
   
   const isHidden = (block.style.display === 'none');
@@ -943,6 +968,13 @@ window.setupTheme = function() {
 };
 
 window.switchLesson = function(lessonNum) {
+  appState.activeLesson = lessonNum;
+  
+  // Reset quick quiz state for this lesson
+  quickQuizState.currentQuestionIndex = 0;
+  quickQuizState.selectedAnswer = null;
+  quickQuizState.isSubmitted = false;
+
   // Hide all lesson content blocks
   const blocks = document.querySelectorAll(".lesson-content-block");
   blocks.forEach(b => {
@@ -987,6 +1019,9 @@ window.switchLesson = function(lessonNum) {
       b.style.boxShadow = 'none';
     });
   }
+
+  // Render the quiz for the active lesson
+  window.renderLessonQuickQuiz();
 };
 
 window.addEventListener("DOMContentLoaded", async () => {
