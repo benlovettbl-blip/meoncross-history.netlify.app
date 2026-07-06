@@ -750,7 +750,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
         <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div class="student-fields">
@@ -800,7 +800,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
         <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <h2 class="section-title">5. Pupil Activities & Writing Tasks</h2>
@@ -822,7 +822,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
         <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column; margin-bottom: 4px;">
@@ -858,7 +858,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
         <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column;">
