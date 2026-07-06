@@ -942,6 +942,53 @@ window.setupTheme = function() {
   }
 };
 
+window.switchLesson = function(lessonNum) {
+  // Hide all lesson content blocks
+  const blocks = document.querySelectorAll(".lesson-content-block");
+  blocks.forEach(b => {
+    b.style.display = "none";
+  });
+  
+  // Show target lesson block
+  const target = document.getElementById(`lessonContent${lessonNum}`);
+  if (target) {
+    target.style.display = "block";
+  }
+  
+  // Reset active state for all buttons in selector
+  const buttons = document.querySelectorAll(".btn-lesson");
+  buttons.forEach(btn => {
+    btn.classList.remove("active");
+    btn.style.background = "var(--bg-surface)";
+    btn.style.color = "var(--text-main)";
+    btn.style.borderColor = "var(--border-color)";
+  });
+  
+  // Activate selected button
+  const activeBtn = document.getElementById(`btnLesson${lessonNum}`);
+  if (activeBtn) {
+    activeBtn.classList.add("active");
+    activeBtn.style.background = "var(--primary)";
+    activeBtn.style.color = "#ffffff";
+    activeBtn.style.borderColor = "var(--primary)";
+  }
+
+  // Stop read aloud when switching lessons
+  if (typeof readAloudState !== 'undefined' && readAloudState.isSpeaking) {
+    window.speechSynthesis.cancel();
+    readAloudState.isSpeaking = false;
+    const btn = document.getElementById("readAloudBtn");
+    if (btn) {
+      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
+      btn.style.background = 'rgba(var(--primary-rgb), 0.05)';
+    }
+    readAloudState.blocks.forEach(b => {
+      b.style.background = 'transparent';
+      b.style.boxShadow = 'none';
+    });
+  }
+};
+
 window.addEventListener("DOMContentLoaded", async () => {
   setupTheme();
   setupNavigation();
