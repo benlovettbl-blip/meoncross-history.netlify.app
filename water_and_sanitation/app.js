@@ -746,9 +746,9 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 1: Do Now, Vocab, Core Summary Narrative, Seneca Quote -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
       <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
     </div>
@@ -796,9 +796,9 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 2: Pupil Activities (Part A) -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
       <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
     </div>
@@ -818,9 +818,9 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 3: Pupil Activities (Part B), Written Sources, Part C -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
       <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
     </div>
@@ -854,9 +854,9 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   <!-- Page 4: Pupil Activities (Part D) -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
-      <div>
-        <span style="color: #4f46e5; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;">Meoncross School History</span>
-        <h1 style="font-size: 1.15rem; font-weight: 800; margin: 0; color: #1e1b4b;">Water & Sanitation Through Time</h1>
+      <div style="max-width: 80%;">
+        <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
       </div>
       <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Year 7 Workbook</span>
     </div>
