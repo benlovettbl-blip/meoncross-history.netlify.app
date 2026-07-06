@@ -1088,43 +1088,228 @@
 
       <!-- Lesson 5 Content Block -->
       <div id="lessonContent5" class="lesson-content-block" style="display: none;">
+        <!-- Visual Source Card -->
+        <div class="knowledge-card" style="text-align: center; margin-bottom: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-align: left; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-image"></i> Visual Source Analysis
+          </h4>
+          <img src="assets/was_cathedral_sanitation.png" alt="Cathedral of Sanitation Source" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 12px; max-height: 380px; width: 100%; object-fit: cover;">
+          <p style="font-size: 0.88rem; font-style: italic; color: var(--text-muted); margin: 0; text-align: left;">
+            <strong>Source A:</strong> A reconstruction showing the spectacular, cathedral-like interior of Joseph Bazalgette's Crossness Pumping Station in London, opened in 1865.
+          </p>
+        </div>
+
+        <!-- Do Now Task Grid (Answers Hidden) -->
+        <div class="knowledge-card" style="border-left: 4px solid var(--accent); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
+          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-brain"></i> Do Now Task: Retrieval Grid
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Test your historical foundations. Answer the questions below before moving into today's focus.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Industrial Britain (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q1: What was the name of the terrifying waterborne disease that first struck Britain in 1831, killing over 31,000 people?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Cholera.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Early Modern Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q3: Why was the rapid growth of London in the 1600s a major problem for the city’s water supply?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">The massive population explosion put intense pressure on water sources, forcing many poorer residents to buy dirty river water in barrels from horse-drawn water sellers.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Disciplinary Skills (3 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q5: What is "presentism" and why must historians avoid it when studying prehistoric sanitation?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">Presentism is judging past societies by modern standards. Historians must avoid it because Iron Age cesspits were actually highly practical and sustainable for low-density farming communities, rather than just "dirty."</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Industrial Britain (1 Point)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q2: What was the "Miasma Theory" that Victorian doctors believed in before germs were discovered?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">The belief that diseases were spread by breathing in noxious "bad air" or smells from rotting matter.</span></p>
+            </div>
+            <div style="background: var(--bg-surface); padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 6px;">Early Modern Sanitation (2 Points)</strong>
+              <p style="font-size: 0.88rem; font-weight: 600; margin: 0 0 8px 0;">Q4: In 1596, Sir John Harington invented the first flushing "water closet." Why did it remain a useless luxury for the royal court for two centuries?</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; font-style: italic;"><strong>Answer:</strong> <span class="do-now-answer" style="display: none;">A flushing toilet requires a constant supply of pressurized, running water and a connection to a sewer system to wash waste away. Early Modern Britain completely lacked this infrastructure.</span></p>
+            </div>
+          </div>
+          <div style="margin-top: 16px; text-align: right;">
+            <button class="btn btn-secondary" onclick="window.toggleDoNowAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Reveal Do Now Answers
+            </button>
+          </div>
+        </div>
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem;">
           <h2 style="margin: 0; font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1.3;">
             Lesson 5 Enquiry: Who really "sorted" British sanitation—the scientists, the engineers, or the politicians?
           </h2>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn simplify-text-btn" onclick="window.toggleSimplifyText(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-compress"></i> Simplify Text
+            </button>
+            <button class="btn read-aloud-btn" onclick="window.toggleReadAloud(event)" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(var(--primary-rgb), 0.05);">
+              <i class="fa-solid fa-volume-high"></i> Listen
+            </button>
+          </div>
         </div>
 
-        <div class="knowledge-card" style="border-left: 4px solid var(--primary); background: rgba(var(--primary-rgb), 0.01); margin-bottom: 24px;">
-          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-question"></i> Enquiry Question
-          </h4>
-          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; color: var(--text-main);">
-            Who really "sorted" British sanitation—the scientists, the engineers, or the politicians?
+        <!-- Standard Narrative -->
+        <div class="standard-narrative-block">
+          <p class="narrative-para-block">
+            By the 1850s, Britain's industrial cities had reached a breaking point. Cholera outbreaks repeatedly devastated urban communities, yet doctors remained powerless because they still blamed "miasma" (bad air). The breakthrough that began to solve this crisis came not from a massive government plan, but from the patient detective work of a London doctor named John Snow. During the 1854 cholera outbreak in Soho, Snow mapped the locations of deaths and traced the infection directly to a popular street pump on Broad Street. After he convinced the local parish to remove the pump’s handle, the local epidemic stopped. Snow proved that cholera was a waterborne disease spread by drinking water contaminated with sewage, though many conservative politicians and doctors refused to believe him for years.
+          </p>
+          <p class="narrative-para-block">
+            While Snow provided the scientific proof, London’s terrible infrastructure required an engineering triumph. In the hot summer of 1858, the stench of raw sewage in the River Thames became so overpowering that it disrupted Parliament—an event known as "The Great Stink." Driven by self-preservation, politicians finally gave the brilliant engineer Joseph Bazalgette the funding to rebuild the capital's sanitation system. Between 1858 and 1865, Bazalgette designed and constructed a spectacular network of 1,300 miles of brick sewers beneath London's streets. This massive engineering feat successfully diverted waste away from the river, saving thousands of working-class lives.
+          </p>
+          <p class="narrative-para-block">
+            The final piece of the puzzle fell into place in 1860 when French scientist Louis Pasteur proved "Germ Theory"—the revolutionary discovery that microscopic organisms cause disease. This scientific breakthrough destroyed the old miasma myth forever. With undeniable scientific proof, the British government could no longer ignore its duty. In 1875, Parliament passed the landmark Public Health Act. This powerful law forced local councils to take responsibility for public health by ensuring every citizen had access to clean, piped water and houses connected to street sewers. Two thousand years after the Romans left, Britain finally established a permanent, clean, and democratic system of public sanitation.
           </p>
         </div>
 
-        <div class="knowledge-card" style="margin-bottom: 24px;">
-          <h4 style="color: var(--accent); font-family: var(--font-title); font-weight: 800; font-size: 1.15rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fa-solid fa-compass"></i> Historical Focus & Core Content
-          </h4>
-          <p style="font-size: 0.95rem; margin-bottom: 12px;">
-            <strong>Historical Focus:</strong> Historical Significance
+        <!-- Simplified Narrative (SEND) -->
+        <div class="simplified-narrative-block" style="display: none;">
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>John Snow's Map:</strong> In 1854, Dr. John Snow mapped cholera deaths in London and proved that the disease was spread by contaminated drinking water from the Broad Street street pump. Removing the pump's handle stopped the local outbreak.
           </p>
-          <p style="font-size: 0.95rem; margin-bottom: 8px;">
-            <strong>Substantive Content Preview:</strong>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>The Great Stink:</strong> In 1858, the River Thames smelled so bad that it disrupted Parliament. To escape the stench, politicians funded Joseph Bazalgette to build a 1,300-mile brick sewer network beneath London.
           </p>
-          <ul style="line-height: 1.6; font-size: 0.9rem; padding-left: 1.25rem;">
-            <li>Dr. John Snow’s Broad Street pump discovery (1854)</li>
-            <li>Joseph Bazalgette’s construction of London's 1,300-mile sewer system (1858–65)</li>
-            <li>Louis Pasteur’s Germ Theory (1860)</li>
-            <li>The passage of the landmark 1875 Public Health Act</li>
+          <p class="narrative-para-block" style="font-weight: 500;">
+            <strong>Germ Theory & Clean Laws:</strong> In 1860, Louis Pasteur proved Germ Theory (microbes, not smells, cause disease). This forced the government to pass the 1875 Public Health Act, making clean piped water and home sewer connections a legal right.
+          </p>
+        </div>
+
+        <!-- Historical Source Card (Times 1848) -->
+        <div class="knowledge-card" style="border-top: 3px solid var(--accent); background: rgba(var(--primary-rgb), 0.02); font-family: Georgia, serif; font-size: 0.95rem; line-height: 1.65; color: var(--text-main); margin-top: 20px;">
+          <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-quote-left"></i> Contemporary Source Evidence: Source E</h4>
+          <p style="font-style: italic; margin-bottom: 0.75rem; font-size: 1.05rem;">
+            "We prefer to take our chance with cholera than be bullied into health. There is nothing a man hates so much as being cleansed against his will or having his floor swept, his hall whitewashed, his dung heaps cleared away..."
+          </p>
+          <cite style="display: block; text-align: right; font-size: 0.82rem; font-weight: 700; font-family: var(--font-title); color: var(--text-muted); margin-bottom: 1rem;">
+            — The Times Newspaper, Editorial on Sanitary Reform and Government Interference, 1848
+          </cite>
+          
+          <!-- Class Discussion Callout Box -->
+          <div style="background: rgba(var(--primary-rgb), 0.04); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.88rem; line-height: 1.5; margin-top: 1.5rem; color: var(--text-main);">
+            <strong style="color: var(--primary); font-family: var(--font-title); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+              🗣️ Class Discussion: Freedom vs. Cleanliness
+            </strong>
+            <ul style="margin: 0; padding-left: 1.25rem;">
+              <li style="margin-bottom: 4px;">What does this source reveal about why many Victorians resisted government plans to clean up cities?</li>
+              <li style="margin-bottom: 4px;">Is it ever right for the government to force citizens to clean their homes or get vaccinated to protect the wider public?</li>
+              <li>How does this source illustrate the difficulty politicians faced when passing public health laws?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Vocabulary Block -->
+        <div class="knowledge-card" style="margin-top: 20px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; margin-top: 0; margin-bottom: 0.75rem;"><i class="fa-solid fa-language"></i> Key Vocabulary</h4>
+          <ul style="line-height: 1.7; font-size: 0.92rem; font-family: var(--font-body); padding-left: 1.25rem; margin: 0;">
+            <li style="margin-bottom: 6px;"><strong>🔬 Germ Theory</strong>: The scientific breakthrough proved by Louis Pasteur in 1860 that microscopic organisms (germs), rather than bad smells, cause infectious diseases.</li>
+            <li style="margin-bottom: 6px;"><strong>👃 The Great Stink</strong>: The hot summer of 1858 when the smell of raw sewage in the River Thames became so intense that it forced Parliament to fund a new London sewer system.</li>
+            <li><strong>📜 Public Health Act of 1875</strong>: A landmark British law that forced local councils to take full responsibility for providing clean piped water and proper sewer connections to all homes.</li>
           </ul>
         </div>
 
-        <div class="knowledge-card" style="border-top: 3.5px dashed var(--border-color); text-align: center; padding: 2rem;">
-          <p style="font-size: 1rem; color: var(--text-muted); font-style: italic; margin: 0;">
-            ✏️ Content Coming Soon! Feed the main text for Lesson 5 when ready.
-          </p>
+        <!-- Pupil Activities Card -->
+        <div class="knowledge-card" style="margin-top: 24px;">
+          <h4 style="color: var(--primary); font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-pen-to-square"></i> Pupil Activities & Writing Tasks
+          </h4>
+          
+          <!-- Part A -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700;">Part A: Core Comprehension</h5>
+            <ol style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>How did Dr. John Snow prove that cholera was spread through contaminated water rather than bad air in 1854?</li>
+              <li>What was "The Great Stink" of 1858, and why was it a turning point for political action?</li>
+              <li>Explain how Joseph Bazalgette’s sewer system improved public health in London.</li>
+              <li>What was the significance of Louis Pasteur’s Germ Theory in 1860?</li>
+            </ol>
+          </div>
+
+          <!-- Part B -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent); font-family: var(--font-title); font-weight: 700;">Part B: Conceptual Analysis</h5>
+            <ol start="5" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li><strong>Causation / Weight of Factors:</strong> Who was most responsible for "sorting" British sanitation—the scientists (Snow/Pasteur), the engineer (Bazalgette), or the politicians (1875 Act)? Support your answer with specific evidence.</li>
+              <li><strong>Change and Continuity:</strong> Why did it take so long (from Snow's discovery in 1854 to the Public Health Act in 1875) for clean water to become a legal right for everyone in Britain?</li>
+              <li><strong>Significance:</strong> Why is the 1875 Public Health Act considered a major turning point in British history compared to previous individual water schemes?</li>
+            </ol>
+          </div>
+
+          <!-- Part C -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-green); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-green); font-family: var(--font-title); font-weight: 700;">Part C: Contemporary Source Analysis</h5>
+            <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              8. Study the quote from *The Times* newspaper from 1848. What does this source reveal about why many Victorians resisted government plans to clean up cities?
+            </p>
+          </div>
+
+          <!-- Part D -->
+          <div style="margin-bottom: 20px; border-left: 3px solid var(--accent-gold); padding-left: 12px;">
+            <h5 style="margin: 0 0 8px 0; font-size: 1rem; color: var(--accent-gold); font-family: var(--font-title); font-weight: 700;">Part D: Extension & Research Tasks</h5>
+            <ol start="9" style="padding-left: 16px; margin: 0; font-size: 0.92rem; line-height: 1.6; font-family: var(--font-body);">
+              <li>Open your internet browser and search for <strong>"John Snow Broad Street Pump cholera map"</strong>. Examine the original map he drew. Write a short paragraph describing how he used black bars to represent deaths and why this visual method was so persuasive to the local parish council.</li>
+              <li>Look up <strong>"Crossness Pumping Station Bazalgette architecture"</strong>. Find images of the interior of this Victorian sewage pumping station. Write down three ways the Victorians decorated this building and explain why they spent so much money making a sewer building look like a magnificent "cathedral of sanitation."</li>
+              <li>Search the news for <strong>"UK sewage dumping in rivers today"</strong>. Write a brief summary (50-80 words) comparing the water pollution issues we face in the 21st century with the sanitation challenges Joseph Bazalgette had to solve in Victorian London.</li>
+            </ol>
+          </div>
+
+          <div style="text-align: right; margin-top: 16px;">
+            <button class="btn btn-secondary" onclick="window.toggleModelAnswers(event)">
+              <i class="fa-solid fa-eye"></i> Show Model Answers & Marking Guide
+            </button>
+          </div>
+
+          <!-- Hidden Model Answers Block -->
+          <div class="model-answers-block" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.6; font-family: var(--font-body);">
+            <h5 style="margin-top: 0; font-size: 1.05rem; color: var(--primary); font-family: var(--font-title); font-weight: 800; margin-bottom: 12px;">Official Model Answers & Marking Guide</h5>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q1: How did Dr. John Snow prove that cholera was spread through contaminated water rather than bad air in 1854?</strong>
+                <strong>Model Answer:</strong> John Snow mapped the locations of cholera deaths in Soho and traced the outbreak back to a single water pump on Broad Street, proving the disease stopped when the pump's handle was removed.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q2: What was "The Great Stink" of 1858, and why was it a turning point for political action?</strong>
+                <strong>Model Answer:</strong> The Great Stink was the summer of 1858 when the smell of raw sewage in the River Thames became so terrible that it disrupted Parliament, forcing politicians to finally fund a new sewer system to save themselves from the smell.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q3: Explain how Joseph Bazalgette’s sewer system improved public health in London.</strong>
+                <strong>Model Answer:</strong> Bazalgette built a 1,300-mile network of brick sewers beneath the streets that diverted raw sewage away from the River Thames and residential areas, preventing the waste from contaminating drinking water supplies.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q4: What was the significance of Louis Pasteur’s Germ Theory in 1860?</strong>
+                <strong>Model Answer:</strong> Pasteur's Germ Theory was highly significant because it proved scientifically that microscopic organisms caused disease, which disproved the old "Miasma Theory" and forced governments to realize that clean water was essential to stop germs from spreading.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q5: Causation / Weight of Factors: Who was most responsible for "sorting" British sanitation—the scientists (Snow/Pasteur), the engineer (Bazalgette), or the politicians (1875 Act)?</strong>
+                <strong>Model Answer:</strong> While scientists and engineers were crucial, the politicians were ultimately most responsible because without the 1875 Public Health Act, clean water and sewers remained voluntary. The politicians used their legal power to force all local councils to install this vital infrastructure across the entire country.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q6: Change and Continuity: Why did it take so long (from Snow's discovery in 1854 to the Public Health Act in 1875) for clean water to become a legal right for everyone in Britain?</strong>
+                <strong>Model Answer:</strong> It took over twenty years because of the government's traditional *laissez-faire* attitude and fierce resistance from the public and landowners, who did not want to pay higher taxes or be "forced" to clean up their properties by national laws.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q7: Significance: Why is the 1875 Public Health Act considered a major turning point in British history compared to previous individual water schemes?</strong>
+                <strong>Model Answer:</strong> The 1875 Act is a major turning point because it ended the *laissez-faire* era and marked the first time the national government took legal responsibility for the physical health of its citizens, transforming clean water from a luxury for the rich into a legal right for all.
+              </div>
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 4px;">Q8: Study the quote from *The Times* newspaper from 1848. What does this source reveal about why many Victorians resisted government plans to clean up cities?</strong>
+                <strong>Model Answer:</strong> The source reveals that Victorians fiercely valued their personal freedom and disliked government interference. The writer explains that they would literally rather risk catching cholera than be "bullied" by government inspectors forcing them to clean their homes, clear away waste, or change their lifestyles.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Quiz Widget -->
+        <div class="quick-quiz-container" style="margin-top: 24px;">
+          <h3 style="margin: 0 0 1rem 0; font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">
+            ✏️ Lesson Check: Quick Quiz
+          </h3>
+          <div class="quick-quiz-question-container"></div>
         </div>
       </div>
     </section>

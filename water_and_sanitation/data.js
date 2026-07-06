@@ -184,6 +184,59 @@ const timelineData = [
         "significance": "The first major government study proposing that improving sanitation would reduce poverty and disease."
       }
     ]
+  },
+  {
+    "id": "kt5-1",
+    "section": "Lesson 5",
+    "topic": "Water and Sanitation Through Time",
+    "title": "Modern Britain (1850–Present)",
+    "events": [
+      {
+        "subtitle": "John Snow's Broad Street Map",
+        "text": "During the 1854 cholera outbreak in Soho, Dr. John Snow mapped locations of deaths and traced the infection directly to the Broad Street pump, proving cholera was waterborne rather than spread by miasma (bad air). Removing the pump handle stopped the Soho outbreak.",
+        "dates": ["AD 1854"],
+        "names": ["Dr. John Snow"],
+        "stats": ["Soho Broad Street Pump map"],
+        "tags": ["Science", "Sanitation"],
+        "significance": "Disproved miasma theory by demonstrating waterborne transmission of disease."
+      },
+      {
+        "subtitle": "The Great Stink of London",
+        "text": "A hot summer in 1858 caused the raw sewage in the River Thames to smell so overpowering that it disrupted parliamentary meetings, forcing politicians to finally fund rebuilds of the capital's sanitation networks.",
+        "dates": ["AD 1858"],
+        "names": ["British Politicians"],
+        "stats": ["Overpowering river stench"],
+        "tags": ["Politics", "Sanitation"],
+        "significance": "A political catalyst that forced the government to abandon laissez-faire regarding sanitation."
+      },
+      {
+        "subtitle": "Bazalgette's Sewer System",
+        "text": "Between 1858 and 1865, engineer Joseph Bazalgette designed and constructed a spectacular network of 1,300 miles of brick sewers beneath London. This diverted waste away from the River Thames, saving thousands of working-class lives.",
+        "dates": ["1858-1865"],
+        "names": ["Joseph Bazalgette"],
+        "stats": ["1,300 miles of brick sewers"],
+        "tags": ["Engineering", "Sanitation"],
+        "significance": "An engineering masterpiece that solved the urban waste crisis in the capital."
+      },
+      {
+        "subtitle": "Pasteur's Germ Theory",
+        "text": "French scientist Louis Pasteur proved Germ Theory in 1860, showing that microscopic organisms cause disease rather than bad smells, providing definitive scientific backing for sanitation and hygiene.",
+        "dates": ["AD 1860"],
+        "names": ["Louis Pasteur"],
+        "stats": ["Germ Theory"],
+        "tags": ["Science", "Hygiene"],
+        "significance": "Ended the miasma myth and provided the scientific foundation for clean water laws."
+      },
+      {
+        "subtitle": "Public Health Act of 1875",
+        "text": "Parliament passed the Public Health Act, forcing local councils to take legal responsibility for ensuring every citizen had clean piped water and home sewer connections, ending laissez-faire sanitation.",
+        "dates": ["AD 1875"],
+        "names": ["Parliament"],
+        "stats": ["Public Health Act of 1875"],
+        "tags": ["Politics", "Sanitation"],
+        "significance": "Marked a permanent, democratic system of public health and clean water as a legal right."
+      }
+    ]
   }
 ];
 
@@ -387,6 +440,56 @@ const quizData = [
       "Specialized gongfermers were banned from working in towns."
     ],
     "explanation": "Overflowing cesspits were common because landlords refused to pay to empty them and they had no sewer connections."
+  },
+  {
+    "question": "How did John Snow stop the Soho cholera outbreak of 1854?",
+    "answer": "He persuaded the local parish to remove the Broad Street pump handle.",
+    "distractors": [
+      "He poured chlorine chemicals directly into the River Thames.",
+      "He ordered all residents to burn their household rubbish.",
+      "He designed a brand new brick sewer system for the street."
+    ],
+    "explanation": "John Snow stopped the Soho outbreak by identifying the contaminated water source and getting the pump handle removed."
+  },
+  {
+    "question": "What event in the summer of 1858 finally forced politicians to fund London's sewer network?",
+    "answer": "The Great Stink of the River Thames",
+    "distractors": [
+      "The sudden death of the Prime Minister from cholera",
+      "A major rebellion by London's water sellers",
+      "A personal petition from Louis Pasteur"
+    ],
+    "explanation": "The Great Stink of 1858 made the smell of the Thames so awful in Parliament that politicians voted funding for sewers immediately."
+  },
+  {
+    "question": "Which French scientist proved 'Germ Theory' in 1860, showing that microscopic organisms cause disease?",
+    "answer": "Louis Pasteur",
+    "distractors": [
+      "John Snow",
+      "Edwin Chadwick",
+      "Joseph Bazalgette"
+    ],
+    "explanation": "Louis Pasteur proved Germ Theory in 1860, establishing the scientific basis for clean water and sanitation."
+  },
+  {
+    "question": "What did the landmark 1875 Public Health Act force local councils to do?",
+    "answer": "Ensure all houses had piped clean water and proper sewer connections.",
+    "distractors": [
+      "Close down all public bathhouses and communal latrines.",
+      "Hire gongfermers to empty residential cesspits every night.",
+      "Provide free sea sponges for personal hygiene."
+    ],
+    "explanation": "The 1875 Public Health Act legally forced councils to provide clean, piped water and sewer connections for all homes."
+  },
+  {
+    "question": "How many miles of brick sewers did Joseph Bazalgette construct beneath London?",
+    "answer": "1,300 miles",
+    "distractors": [
+      "50 miles",
+      "10,000 miles",
+      "500 miles"
+    ],
+    "explanation": "Joseph Bazalgette constructed 1,300 miles of brick sewers beneath London to carry waste away from the river and city."
   }
 ];
 
