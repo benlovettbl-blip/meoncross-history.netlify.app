@@ -663,9 +663,11 @@ window.generateWorksheetPackHtml = function(lessonNum, includeAnswers) {
         div.querySelector('h5') && div.querySelector('h5').textContent.includes('Part D')
       );
       if (partDSection) {
+        const olEl = partDSection.querySelector('ol');
+        const startVal = olEl && olEl.hasAttribute('start') ? parseInt(olEl.getAttribute('start'), 10) : 9;
         partDSection.querySelectorAll('li').forEach((li, idx) => {
           partDQuestions.push({
-            num: (9 + idx).toString(),
+            num: (startVal + idx).toString(),
             question: li.textContent.trim()
           });
         });
