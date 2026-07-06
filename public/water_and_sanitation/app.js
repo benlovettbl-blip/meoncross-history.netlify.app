@@ -540,27 +540,172 @@ async function loadLessonMarkdown() {
   }
 }
 
-window.generateWorksheetPackHtml = function(includeAnswers) {
-  const data = parsedMarkdownData || { doNow: [], vocab: [], paragraphs: [], activities: [], senecaQuote: '', senecaCite: '' };
+window.generateWorksheetPackHtml = function(lessonNum, includeAnswers) {
+  if (typeof lessonNum === 'boolean') {
+    includeAnswers = lessonNum;
+    lessonNum = 1;
+  }
+  if (!lessonNum) lessonNum = 1;
+
+  const lessonBlock = document.getElementById(`lessonContent${lessonNum}`);
+  
+  let doNow = [];
+  let vocab = [];
+  let paragraphs = [];
+  let activities = [];
+  let enquiryQuestion = "";
+  let sourceText = "";
+  let sourceCite = "";
+  let sourceTitle = "Contemporary Source Evidence";
+  let discussionPrompt = "";
+  let partDQuestions = [];
+
+  const answerStyle = includeAnswers 
+    ? "display: block; color: #16a34a; font-weight: bold; margin-top: 4px;" 
+    : "display: none;";
+
+  if (lessonBlock) {
+    // 1. Enquiry Question
+    const h2El = lessonBlock.querySelector('h2');
+    if (h2El) enquiryQuestion = h2El.textContent.trim();
+    
+    // 2. Do Now Questions
+    const doNowAnswers = lessonBlock.querySelectorAll('.do-now-answer');
+    doNowAnswers.forEach((ansSpan, idx) => {
+      const parentBox = ansSpan.closest('div');
+      const categoryEl = parentBox.querySelector('strong');
+      const category = categoryEl ? categoryEl.textContent.trim() : 'Retrieval Grid';
+      
+      const questionEl = parentBox.querySelector('p');
+      let question = questionEl ? questionEl.textContent.trim() : '';
+      question = question.replace(/^Q\d+:\s*/i, '');
+      
+      doNow.push({
+        num: (idx + 1).toString(),
+        category: category,
+        question: question,
+        answer: ansSpan.textContent.trim()
+      });
+    });
+    
+    // 3. Key Vocabulary
+    const vocabCard = Array.from(lessonBlock.querySelectorAll('.knowledge-card')).find(card => 
+      card.querySelector('h4') && card.querySelector('h4').textContent.includes('Vocabulary')
+    );
+    if (vocabCard) {
+      vocabCard.querySelectorAll('li').forEach(li => {
+        const strongEl = li.querySelector('strong');
+        if (strongEl) {
+          const word = strongEl.textContent.trim().replace(/^🚽\s*|^💦\s*|^🏗️\s*|^🏚️\s*|^💨\s*|^☣\s*|^🔬\s*|^👃\s*|^📜\s*/, '');
+          let definition = li.textContent.replace(strongEl.textContent, '').trim();
+          if (definition.startsWith(':')) definition = definition.substring(1).trim();
+          // Also strip leading emoji and dashes
+          const cleanWord = word.replace(/^[:\-\s\uFE0F]+/, '').trim();
+          const cleanDef = definition.replace(/^[:\-\s\uFE0F]+/, '').trim();
+          vocab.push({ word: cleanWord, definition: cleanDef });
+        }
+      });
+    }
+    
+    // 4. Core Summary Narrative
+    const standardNarrative = lessonBlock.querySelector('.standard-narrative-block');
+    if (standardNarrative) {
+      standardNarrative.querySelectorAll('p').forEach(p => {
+        paragraphs.push(p.textContent.trim());
+      });
+    }
+    
+    // 5. Contemporary Source
+    const sourceCard = Array.from(lessonBlock.querySelectorAll('.knowledge-card')).find(card => 
+      card.querySelector('h4') && card.querySelector('h4').textContent.includes('Source')
+    );
+    if (sourceCard) {
+      const h4 = sourceCard.querySelector('h4');
+      if (h4) sourceTitle = h4.textContent.replace(/^<i.*><\/i>\s*/, '').trim();
+      const pQuote = sourceCard.querySelector('p');
+      if (pQuote) sourceText = pQuote.textContent.trim().replace(/^"\s*|\s*"$/g, '');
+      const citeEl = sourceCard.querySelector('cite');
+      if (citeEl) sourceCite = citeEl.textContent.trim().replace(/^[—-\s]+/, '');
+      
+      const discEl = sourceCard.querySelector('div');
+      if (discEl) {
+        discussionPrompt = discEl.innerHTML.replace(/🗣️.*Discussion:.*<\/strong>/i, '').trim();
+      }
+    }
+    
+    // 6. Pupil Activities (Q1-Q8)
+    const modelAnswersBlock = lessonBlock.querySelector('.model-answers-block');
+    if (modelAnswersBlock) {
+      modelAnswersBlock.querySelectorAll('div > div').forEach((div, idx) => {
+        const qStrong = div.querySelector('strong:first-of-type');
+        if (qStrong) {
+          const qText = qStrong.textContent.trim();
+          let aText = div.textContent.replace(qText, '').trim();
+          aText = aText.replace(/^Model Answer:\s*/i, '').trim();
+          const match = qText.match(/^Q(\d+):\s*(.*)/i);
+          const qNum = match ? match[1] : (idx + 1).toString();
+          const question = match ? match[2] : qText;
+          activities.push({
+            num: qNum,
+            question: question,
+            answer: aText
+          });
+        }
+      });
+    }
+
+    // 7. Part D Questions
+    const partDContainer = Array.from(lessonBlock.querySelectorAll('.knowledge-card')).find(card => 
+      card.querySelector('h4') && card.querySelector('h4').textContent.includes('Pupil Activities')
+    );
+    if (partDContainer) {
+      const partDSection = Array.from(partDContainer.querySelectorAll('div')).find(div =>
+        div.querySelector('h5') && div.querySelector('h5').textContent.includes('Part D')
+      );
+      if (partDSection) {
+        partDSection.querySelectorAll('li').forEach((li, idx) => {
+          partDQuestions.push({
+            num: (9 + idx).toString(),
+            question: li.textContent.trim()
+          });
+        });
+      }
+    }
+  }
+
+  // Fallbacks if DOM parsing failed or is empty
+  if (doNow.length === 0) {
+    doNow = [
+      { category: 'Chronology', question: 'What does the term chronology mean when we study history?', answer: 'Chronology is the arrangement of historical events in the exact order in which they occurred over time.' },
+      { category: 'Chronology', question: 'What is the difference between BC and AD on a timeline?', answer: 'BC stands for "Before Christ" (counting backward from year 1), while AD stands for "Anno Domini" (in the year of our Lord, counting forward).' },
+      { category: 'Evidence', question: 'If an archaeologist uncovers a Roman coin buried in a field, is it a primary source or a secondary source?', answer: 'It is a primary source because it is a physical artifact created during the actual time period under study.' },
+      { category: 'Evidence', question: 'What is the name given to a professional historical detective who digs up and analyzes physical remains from the past?', answer: 'An archaeologist.' },
+      { category: 'Chronology', question: 'Put these three eras in the correct chronological order, starting with the oldest: Victorian Britain, Iron Age Britain, Roman Britain.', answer: '1. Iron Age Britain, 2. Roman Britain, 3. Victorian Britain.' }
+    ];
+  }
+  if (vocab.length === 0) {
+    vocab = [
+      { word: 'Cesspit', definition: 'A simple hole dug in the earth used by prehistoric and later societies to collect household sewage and human waste.' },
+      { word: 'Conduit', definition: 'A stone channel or pipe designed by Roman engineers to transport clean water over long distances using gravity.' },
+      { word: 'Latrine', definition: 'A communal Roman public toilet block, often flushed continuously by running water to carry waste into underground sewers.' }
+    ];
+  }
+
   const extraLinesTable = includeAnswers 
     ? '' 
-    : `<div style="margin-top: 15px; margin-bottom: 5px;">
-        <span style="font-size: 0.65rem; color: #9ca3af; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Extra Writing Space:</span>
+    : `<div style="margin-top: 10px; margin-bottom: 5px;">
         <table style="width: 100%; border-collapse: collapse;">
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+          <tr style="height: 35px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 35px;"></td></tr>
+          <tr style="height: 35px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 35px;"></td></tr>
+          <tr style="height: 35px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 35px;"></td></tr>
         </table>
        </div>`;
 
-  // Condense Do Now grid layout
   let doNowHtml = '';
-  (data.doNow || []).forEach((q, idx) => {
+  doNow.forEach((q, idx) => {
     doNowHtml += `
       <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 4px; padding: 6px 10px; font-size: 0.74rem; line-height: 1.25;">
-        <strong style="color: #4f46e5; display: block; margin-bottom: 2px;">Q${idx + 1}: ${q.question}</strong>
+        <strong style="color: #4f46e5; display: block; margin-bottom: 2px;">Q${idx + 1} [${q.category}]: ${q.question}</strong>
         <div style="${answerStyle}">A: ${q.answer}</div>
         ${includeAnswers ? '' : '<div style="border-bottom: 1px dashed #9ca3af; height: 14px; margin-top: 2px;"></div>'}
       </div>
@@ -568,7 +713,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   });
 
   let vocabHtml = '';
-  (data.vocab || []).forEach(v => {
+  vocab.forEach(v => {
     vocabHtml += `
       <div style="font-size: 0.74rem; line-height: 1.3;">
         <strong>${v.word}:</strong> ${v.definition}
@@ -577,7 +722,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
   });
 
   let narrativeHtml = '';
-  (data.paragraphs || []).forEach(p => {
+  paragraphs.forEach(p => {
     narrativeHtml += `
       <p style="font-size: 0.76rem; line-height: 1.35; text-align: justify; margin: 0 0 6px 0;">
         ${p}
@@ -585,16 +730,27 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     `;
   });
 
-  const activitiesList = data.activities || [];
-  
-  const getQuestionBlock = (questionText, answerText, qIndex, lineCount) => {
-    const answerBlock = includeAnswers 
-      ? `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: ${answerText}</div>`
-      : `<table style="width: 100%; height: 120px; border-collapse: collapse; margin-top: 4px; margin-bottom: 8px;">
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-          <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
-         </table>`;
+  const getQuestionBlock = (questionText, answerText, qIndex) => {
+    const isDrawing = questionText.toLowerCase().includes('draw') || questionText.toLowerCase().includes('sketch');
+    
+    let answerBlock = '';
+    if (includeAnswers) {
+      if (isDrawing) {
+        answerBlock = `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: [Student diagram / sketch illustrating: ${questionText.replace(/"/g, "'")}]</div>`;
+      } else {
+        answerBlock = `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: ${answerText}</div>`;
+      }
+    } else {
+      if (isDrawing) {
+        answerBlock = `<div style="height: 50mm; border: 1.5px dashed #ccc; margin: 6px 0; background: #fafafa; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 0.75rem;">[Space for Sketch / Diagram]</div>`;
+      } else {
+        answerBlock = `<table style="width: 100%; height: 120px; border-collapse: collapse; margin-top: 4px; margin-bottom: 8px;">
+            <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+            <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+            <tr style="height: 40px;"><td style="border-bottom: 1px solid #cccccc; padding: 0; height: 40px;"></td></tr>
+           </table>`;
+      }
+    }
 
     return `
       <div style="margin-bottom: 6px; font-size: 0.76rem; page-break-inside: avoid; line-height: 1.25;">
@@ -606,65 +762,43 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
 
   // Page 2: Part A (Q1-Q4)
   let page2ActivitiesHtml = '<h3 style="color: #4f46e5; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part A: Core Comprehension</h3>';
-  if (activitiesList[0]) page2ActivitiesHtml += getQuestionBlock(activitiesList[0].question, activitiesList[0].answer, 1, 3);
-  if (activitiesList[1]) page2ActivitiesHtml += getQuestionBlock(activitiesList[1].question, activitiesList[1].answer, 2, 3);
-  if (activitiesList[2]) page2ActivitiesHtml += getQuestionBlock(activitiesList[2].question, activitiesList[2].answer, 3, 4);
-  if (activitiesList[3]) page2ActivitiesHtml += getQuestionBlock(activitiesList[3].question, activitiesList[3].answer, 4, 4);
+  for (let i = 0; i < 4; i++) {
+    if (activities[i]) {
+      page2ActivitiesHtml += getQuestionBlock(activities[i].question, activities[i].answer, activities[i].num);
+    }
+  }
 
   // Page 3: Part B (Q5-Q7)
   let page3ActivitiesHtml = '<h3 style="color: #e11d48; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part B: Conceptual Analysis</h3>';
-  if (activitiesList[4]) page3ActivitiesHtml += getQuestionBlock(activitiesList[4].question, activitiesList[4].answer, 5, 4);
-  if (activitiesList[5]) page3ActivitiesHtml += getQuestionBlock(activitiesList[5].question, activitiesList[5].answer, 6, 4);
-  if (activitiesList[6]) page3ActivitiesHtml += getQuestionBlock(activitiesList[6].question, activitiesList[6].answer, 7, 4);
-
-  // Page 3 Bottom: Part C (Q8 & Q9)
-  let page3SourceAnalysisHtml = '<h3 style="color: #10b981; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part C: Source Analysis</h3>';
-  if (activitiesList[7]) {
-    page3SourceAnalysisHtml += getQuestionBlock(activitiesList[7].question, activitiesList[7].answer, 8, 4);
+  for (let i = 4; i < 7; i++) {
+    if (activities[i]) {
+      page3ActivitiesHtml += getQuestionBlock(activities[i].question, activities[i].answer, activities[i].num);
+    }
   }
-  page3SourceAnalysisHtml += getQuestionBlock(
-    'Study Source B (Frontinus) and Source C (South Shields Inscription). What do these sources tell us about the purpose and Roman attitudes towards aqueducts?',
-    'Frontinus (Source B) shows that Romans took great pride in their aqueducts, viewing them as superior to the idle Pyramids of Egypt. The South Shields Inscription (Source C) shows that aqueducts had the vital practical purpose of bringing fresh water to military forts to resolve water scarcity for soldiers.',
-    9,
-    4
-  );
 
-  // Page 4: Part D (Q10-Q12)
+  // Page 3 Bottom: Part C (Q8)
+  let page3SourceAnalysisHtml = '<h3 style="color: #10b981; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part C: Source Analysis</h3>';
+  if (activities[7]) {
+    page3SourceAnalysisHtml += getQuestionBlock(activities[7].question, activities[7].answer, activities[7].num);
+  }
+
+  // Page 4: Part D (Q9-Q11)
   let page4ActivitiesHtml = '<h3 style="color: #d97706; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part D: Extension & Research Tasks</h3>';
-  page4ActivitiesHtml += getQuestionBlock(
-    'Search for "Silchester Roman Town excavation" and write down two structures discovered.',
-    'Archaeologists excavated a large forum-basilica, public bathhouses, a temple precinct, and an amphitheatre just outside the town walls.',
-    10,
-    4
-  );
+  partDQuestions.forEach(q => {
+    const matchAct = activities.find(a => a.num === q.num);
+    const answerText = matchAct ? matchAct.answer : '[Student Independent Research / Practical Task]';
+    page4ActivitiesHtml += getQuestionBlock(q.question, answerText, q.num);
+  });
 
-  const q11DrawingBox = includeAnswers
-    ? `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: [Student diagram showing parallel stone benches built over deep, running-water sewers with a shallow freshwater channel in front for washing sponges.]</div>`
-    : `<div style="height: 60mm; border: 1.5px dashed #ccc; margin: 6px 0; background: #fafafa; border-radius: 4px;"></div>`;
-
-  page4ActivitiesHtml += `
-    <div style="margin-bottom: 6px; font-size: 0.76rem; page-break-inside: avoid; line-height: 1.25;">
-      <strong style="color: #374151;">Q11: Draw a diagram of "Housesteads Roman Fort latrines reconstruction".</strong>
-      ${q11DrawingBox}
-    </div>
-  `;
-
-  page4ActivitiesHtml += getQuestionBlock(
-    'Research "Bearsden Roman Bath House" and write a short travel guide.',
-    'Welcome to Bearsden Bath House! Visit the cold room (frigidarium), warm room (tepidarium), and hot room (caldarium). See the underfloor hypocaust pillars and the ancient latrine block used by Roman soldiers c. AD 140.',
-    12,
-    4
-  );
-
-  const quoteVal = data.senecaQuote || "I am surrounded by all kinds of noise...";
-  const citeVal = data.senecaCite || "Seneca the Younger";
+  const quoteVal = sourceText || "I am surrounded by all kinds of noise...";
+  const citeVal = sourceCite || "Seneca the Younger";
 
   return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KS3 Water & Sanitation Study Pack</title>
+  <title>KS3 Water & Sanitation Study Pack - Lesson ${lessonNum}</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
@@ -752,28 +886,18 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
         page-break-after: avoid;
       }
     }
-    .writing-lines {
-      background-image: repeating-linear-gradient(transparent, transparent 30px, #ccc 30px, #ccc 31px);
-      background-size: 100% 31px;
-      border-left: 2px solid #fca5a5;
-      padding-left: 8px;
-      margin-top: 4px;
-      margin-bottom: 8px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Page 1: Do Now, Vocab, Core Summary Narrative, Seneca Quote -->
+  <!-- Page 1: Do Now, Vocab, Core Summary Narrative, Quote -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
       <div style="max-width: 80%;">
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
-        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">${enquiryQuestion}</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson ${lessonNum} Workbook Pack</span>
     </div>
 
     <div class="student-fields">
@@ -783,7 +907,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     </div>
 
     <h2 class="section-title">1. Do Now: Retrieval Practice</h2>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-bottom: 8px;">
       ${doNowHtml}
     </div>
 
@@ -797,9 +921,8 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
       ${narrativeHtml}
     </div>
 
-    <h2 class="section-title">4. Contemporary Source Evidence (Source A)</h2>
+    <h2 class="section-title">4. ${sourceTitle}</h2>
     <div style="background: #fffcf4; border-left: 3px solid #8b5cf6; padding: 6px 12px; border-radius: 4px; font-family: Georgia, serif; font-size: 0.72rem; color: #4b5563; margin-bottom: 6px; line-height: 1.3;">
-      <strong style="color: #4f46e5; display: block; margin-bottom: 2px; font-family: sans-serif;">Source A: Seneca the Younger, Letters to Lucilius, c. AD 62</strong>
       "${quoteVal}"
       <div style="text-align: right; font-size: 0.68rem; margin-top: 2px; font-weight: bold; font-family: sans-serif; color: #374151;">
         — ${citeVal}
@@ -807,7 +930,7 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     </div>
 
     <div style="background: rgba(79, 70, 229, 0.03); border-left: 3.5px solid #4f46e5; padding: 6px 10px; border-radius: 0 4px 4px 0; font-size: 0.7rem; line-height: 1.25;">
-      <strong style="color: #4f46e5;">Class Discussion Prompt:</strong> Why might Seneca hate the noise of the bathhouse, while ordinary citizens enjoyed it? Does this show public baths were about cleanliness, or social and business meetings?
+      ${discussionPrompt}
     </div>
 
     <div class="page-footer">
@@ -821,9 +944,9 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
       <div style="max-width: 80%;">
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
-        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">${enquiryQuestion}</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson ${lessonNum} Workbook Pack</span>
     </div>
 
     <h2 class="section-title">5. Pupil Activities & Writing Tasks</h2>
@@ -838,30 +961,18 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     </div>
   </div>
 
-  <!-- Page 3: Pupil Activities (Part B), Written Sources, Part C -->
+  <!-- Page 3: Pupil Activities (Part B & C) -->
   <div class="page">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
       <div style="max-width: 80%;">
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
-        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">${enquiryQuestion}</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson ${lessonNum} Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column; margin-bottom: 4px;">
       ${page3ActivitiesHtml}
-    </div>
-
-    <h2 class="section-title">6. Further Written Sources (Sources B & C)</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 6px; page-break-inside: avoid;">
-      <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 4px; padding: 6px 10px; font-size: 0.68rem; line-height: 1.35;">
-        <strong style="color: #4f46e5; display: block; margin-bottom: 3px;">Source B: Frontinus, Curator Aquarum, c. AD 97</strong>
-        "With such an array of indispensable structures carrying so much water, compare, if you will, the idle Pyramids or the useless, though famous, works of the Greeks!"
-      </div>
-      <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 4px; padding: 6px 10px; font-size: 0.68rem; line-height: 1.35;">
-        <strong style="color: #4f46e5; display: block; margin-bottom: 3px;">Source C: South Shields Inscription, c. AD 222</strong>
-        "For the soldiers of the Cohort... under the command of Marcellus... they built this aqueduct to bring fresh water to the fort which had previously suffered from water scarcity."
-      </div>
     </div>
 
     <div style="display: flex; flex-direction: column;">
@@ -879,15 +990,14 @@ window.generateWorksheetPackHtml = function(includeAnswers) {
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">
       <div style="max-width: 80%;">
         <span style="color: #4f46e5; font-weight: 800; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">Meoncross School History • Unit Enquiry: Was the story of water and waste in Britain a steady climb of progress?</span>
-        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">Lesson 1 Enquiry: Did Roman engineering revolutionise public health for everyone in Britain?</h1>
+        <h1 style="font-size: 0.92rem; font-weight: 800; margin: 0; color: #1e1b4b; line-height: 1.2;">${enquiryQuestion}</h1>
       </div>
-      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson 1 Workbook Pack</span>
+      <span style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 2px 6px; border-radius: 8px; font-weight: 700; font-size: 0.65rem;">Lesson ${lessonNum} Workbook Pack</span>
     </div>
 
     <div style="display: flex; flex-direction: column;">
       ${page4ActivitiesHtml}
     </div>
-    ${extraLinesTable}
 
     <div class="page-footer">
       <span>KS3 History Study Unit: Water and Sanitation</span>
@@ -904,10 +1014,13 @@ window.updateWorksheetPreview = function() {
   const iframe = document.getElementById('was-worksheet-preview-iframe');
   if (!iframe) return;
   
+  const lessonSelect = document.getElementById('was-preview-lesson');
+  const lessonNum = lessonSelect ? parseInt(lessonSelect.value, 10) : 1;
+  
   const answersVal = document.getElementById('was-preview-answers').value;
   const includeAnswers = (answersVal === 'yes');
   
-  const html = window.generateWorksheetPackHtml(includeAnswers);
+  const html = window.generateWorksheetPackHtml(lessonNum, includeAnswers);
   iframe.srcdoc = html;
 };
 

@@ -1365,7 +1365,16 @@
       
       <!-- Preview Controls -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; background: var(--bg-surface-alt); border: 1px solid var(--border-color); padding: 0.75rem 1.25rem; border-radius: var(--radius-sm); flex-wrap: wrap; gap: 1rem;">
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <label for="was-preview-lesson" style="font-weight: 700; font-size: 0.9rem; font-family: var(--font-title);">Select Lesson:</label>
+          <select id="was-preview-lesson" onchange="window.updateWorksheetPreview()" style="padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); font-family: var(--font-body); font-weight: 600; margin-right: 15px;">
+            <option value="1">Lesson 1: Prehistoric and Roman Sanitation</option>
+            <option value="2">Lesson 2: Medieval Britain</option>
+            <option value="3">Lesson 3: Early Modern Britain</option>
+            <option value="4">Lesson 4: Industrial Britain</option>
+            <option value="5">Lesson 5: Modern Britain</option>
+          </select>
+
           <label for="was-preview-answers" style="font-weight: 700; font-size: 0.9rem; font-family: var(--font-title);">Preview Version:</label>
           <select id="was-preview-answers" onchange="window.updateWorksheetPreview()" style="padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-surface); font-family: var(--font-body); font-weight: 600;">
             <option value="no">Student Copy (Blank Spaces)</option>
