@@ -777,27 +777,9 @@
       85% { transform: translateY(-1px) scale(1.01) rotate(0.5deg); }
     }
 
-    .bouncy-chimney {
-      animation: chimneyBounce 2.5s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: filter var(--transition-fast), transform var(--transition-fast);
-      position: relative;
-    }
-
-    .bouncy-chimney:hover {
-      filter: drop-shadow(0 0 12px var(--primary-glow)) drop-shadow(0 0 4px var(--primary));
-      animation-play-state: paused;
-      transform: scale(1.15) rotate(3deg);
-    }
-
-    .bouncy-chimney:active {
-      transform: scale(0.95);
-    }
-
+    
+    
+    
     /* Smoke Particles */
     .smoke-particle {
       position: absolute;
@@ -831,20 +813,9 @@
       100% { transform: translate(-2px, -38px) scale(4.5); opacity: 0; filter: blur(6px); }
     }
 
-    .bouncy-chimney:hover .smoke-1 {
-      animation: smokeRise1 1.6s infinite linear;
-    }
-
-    .bouncy-chimney:hover .smoke-2 {
-      animation: smokeRise2 1.8s infinite linear;
-      animation-delay: 0.5s;
-    }
-
-    .bouncy-chimney:hover .smoke-3 {
-      animation: smokeRise3 2.0s infinite linear;
-      animation-delay: 1.0s;
-    }
-
+    
+    
+    
     /* Angry Chimney Shake & Heavy Red Smoke State */
     @keyframes chimneyAngryShake {
       0%, 100% { transform: scale(1.15) translate(0, 0) rotate(0deg); }

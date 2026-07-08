@@ -397,632 +397,6 @@ window.renderLessonQuickQuiz = function() {
 };
 
 // Meoncross History Brand Quotes Configuration
-const brandQuotes = {
-  1: [
-    "Meoncross History: Recall the structure of Roman baths and aqueducts.",
-    "Revision Check: Why did public health decline after the Romans left Britain?"
-  ],
-  2: [
-    "Meoncross History: Remember the difference between gongfermors and water sellers.",
-    "Revision Check: How did medieval towns attempt to regulate waste and cleanliness?"
-  ],
-  3: [
-    "Meoncross History: Sir John Harington invented the first flushing toilet in 1596.",
-    "Revision Check: How did population growth in early modern towns affect sanitation?"
-  ],
-  4: [
-    "Meoncross History: Learn about the impact of the 1848 Public Health Act.",
-    "Revision Check: How did Edwin Chadwick's report link disease and poverty?"
-  ],
-  5: [
-    "Meoncross History: Joseph Bazalgette designed London's massive sewer network.",
-    "Revision Check: How did the Great Stink of 1858 force Parliament to act?"
-  ]
-};
-
-let currentQuoteIndex = 0;
-let currentQuoteLesson = 1;
-
-window.updateChimneyQuoteForLesson = function(lessonNum) {
-  currentQuoteLesson = lessonNum;
-  currentQuoteIndex = 0;
-  const quotes = brandQuotes[lessonNum] || brandQuotes[1];
-  const quoteTextEl = document.getElementById("header-brand-quote-text");
-  if (quoteTextEl) {
-    quoteTextEl.textContent = quotes[currentQuoteIndex];
-  }
-};
-
-window.cycleBrandQuote = function() {
-  const quotes = brandQuotes[currentQuoteLesson] || brandQuotes[1];
-  currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-  const quoteTextEl = document.getElementById("header-brand-quote-text");
-  if (quoteTextEl) {
-    quoteTextEl.textContent = quotes[currentQuoteIndex];
-  }
-};
-
-// 5. XP Widget
-function updateXPBadge() {
-  const xpBadge = document.getElementById("xpBadge");
-  const xpText = document.getElementById("xpText");
-  const xp = appState.userXP;
-  if (xpText) xpText.innerText = `${xp} XP`;
-  
-  let title = "Peasant";
-  if (xp >= 200) title = "Lord of the Conduits";
-  else if (xp >= 100) title = "Roman Engineer";
-  else if (xp >= 50) title = "Cesspit Digger";
-  
-  if (xpBadge) xpBadge.innerText = title;
-}
-
-// 6. Timeline Rendering
-function setupTimeline() {
-  renderTimeline();
-  
-  const filters = document.querySelectorAll(".filter-tag");
-  filters.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filters.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      appState.timelineFilter = btn.getAttribute("data-filter");
-      renderTimeline();
-    });
-  });
-  
-  const search = document.getElementById("timelineSearch");
-  if (search) {
-    search.addEventListener("input", (e) => {
-      appState.timelineSearchQuery = e.target.value.toLowerCase();
-      renderTimeline();
-    });
-  }
-}
-
-function renderTimeline() {
-  const listEl = document.getElementById("timelineList");
-  if (!listEl) return;
-  listEl.innerHTML = "";
-  
-  const events = timelineData.flatMap(lesson => lesson.events);
-  const filtered = events.filter(evt => {
-    const matchesFilter = appState.timelineFilter === "all" || evt.tags.includes(appState.timelineFilter);
-    const matchesSearch = evt.subtitle.toLowerCase().includes(appState.timelineSearchQuery) || 
-                          evt.text.toLowerCase().includes(appState.timelineSearchQuery);
-    return matchesFilter && matchesSearch;
-  });
-  
-  if (filtered.length === 0) {
-    listEl.innerHTML = `<div style="text-align: center; padding: 2rem; color: var(--text-muted);">No events match your criteria.</div>`;
-    return;
-  }
-  
-  filtered.forEach(evt => {
-    const card = document.createElement("div");
-    card.className = "timeline-card";
-    card.innerHTML = `
-      <div style="font-weight: 800; font-family: var(--font-title); color: var(--primary); margin-bottom: 0.35rem; font-size: 1.1rem;">
-        ${evt.dates[0]} — ${evt.subtitle}
-      </div>
-      <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-main); margin: 0 0 0.75rem 0;">
-        ${evt.text}
-      </p>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        ${evt.tags.map(t => `<span class="badge badge-secondary">${t}</span>`).join("")}
-      </div>
-    `;
-    listEl.appendChild(card);
-  });
-}
-
-// 7. Figures Modal
-window.showFigureModal = function(name) {
-  const modal = document.getElementById("figureModal");
-  const modalName = document.getElementById("figureModalName");
-  const modalBody = document.getElementById("figureModalBody");
-  
-  if (!modal || !modalName || !modalBody) return;
-  
-  let content = "";
-  if (name === "About Unit") {
-    content = "Welcome to the 'Water and Sanitation Through Time' KS3 History Study Unit. This interactive learning dashboard guides you through 2,000 years of British public health history, from the Iron Age to the Victorian sanitation revolution and Bazalgette's sewers. Explore lessons, complete the interactive timeline, test yourself with quick quizzes to earn XP ranks, or compile and print the complete 31-page study booklet pack.";
-  } else if (name === "Seneca the Younger") {
-    content = "Seneca the Younger (c. 4 BC - AD 65) was a famous Roman philosopher and statesman. In his letters, he complained vividly about the noise and crowds of the public baths, proving they were social hubs.";
-  } else if (name === "Roman Engineers") {
-    content = "Roman engineers were master builders who transformed sanitation. They used the natural pull of gravity to transport fresh spring water over miles through stone conduits, built grand public bathhouses, and constructed flushing latrine sewers in cities and military garrisons.";
-  } else if (name === "Iron Age Britons") {
-    content = "Before the Roman invasion of AD 43, Iron Age farming communities lived in wood-and-thatch roundhouses. Because settlements were small and spread out, they relied on natural wells or fresh springs for water, and dug simple cesspits to collect household waste.";
-  } else if (name === "Christian Monks") {
-    content = "Christian monks in medieval monasteries designed advanced water systems using expensive lead and wooden pipes. They believed cleanliness brought them closer to God, using spring water for drinking and waste water to flush latrines.";
-  } else if (name === "Gongfermers") {
-    content = "Gongfermers were specialized laborers hired in medieval towns to clear human waste from cesspits. They worked strictly under cover of darkness (between 9 PM and 5 AM) to keep their smelly, hazardous work from disrupting the streets.";
-  } else if (name === "King Edward III") {
-    content = "Edward III was the King of England who famously sent a sanitation mandate letter to the Mayor of London in 1357, warning that street filth was infecting the air and causing deadly sickness, prompting clean-up efforts.";
-  } else if (name === "Sir John Harington") {
-    content = "Sir John Harington was a prominent Elizabethan courtier who invented the first flushing water closet in 1596 for his godmother, Queen Elizabeth I. However, it failed to catch on due to the lack of running water and street sewer networks.";
-  } else if (name === "Samuel Pepys") {
-    content = "Samuel Pepys was a government official and famous diarist. In 1660, he wrote about the disgusting state of London sanitation when his neighbor's cellar privy leaked directly through the walls, flooding his own basement with waste.";
-  } else if (name === "Edwin Chadwick") {
-    content = "Edwin Chadwick was a social reformer who published a landmark sanitation report in 1842. He argued that filth and overcrowded housing caused disease, and that providing clean water and sewers would improve public health and reduce poverty.";
-  } else if (name === "Dr. John Snow") {
-    content = "Dr. John Snow was a pioneering doctor who proved that cholera was spread by contaminated water during the 1854 Soho outbreak. By mapping deaths and removing the handle of the Broad Street pump, he stopped the spread and saved lives.";
-  } else if (name === "Joseph Bazalgette") {
-    content = "Joseph Bazalgette was the chief engineer of London's Metropolitan Board of Works. Between 1858 and 1865, he designed and constructed 1,300 miles of underground brick sewers, solving the Great Stink and saving thousands of lives.";
-  } else if (name === "Louis Pasteur") {
-    content = "Louis Pasteur was a French chemist who proved the Germ Theory of disease in 1860. By showing that microscopic organisms cause illness rather than bad smells (miasma), he laid the scientific foundation for clean water laws.";
-  }
-  
-  modalName.innerText = name;
-  modalBody.innerText = content;
-  modal.style.display = "flex";
-};
-
-window.closeFigureModal = function() {
-  const modal = document.getElementById("figureModal");
-  if (modal) modal.style.display = "none";
-};
-
-window.toggleFiguresDirectory = function() {
-  const content = document.getElementById("figuresDirectoryContent");
-  const icon = document.getElementById("directoryToggleIcon");
-  if (!content || !icon) return;
-  
-  if (content.style.display === "none") {
-    content.style.display = "block";
-    icon.innerText = "Hide Directory [Collapse]";
-  } else {
-    content.style.display = "none";
-    icon.innerText = "Show Directory [Expand]";
-  }
-};
-
-// 8. Worksheets Pack Generator
-let parsedMarkdownData = null;
-
-async function loadLessonMarkdown() {
-  try {
-    const response = await fetch('/content/ks3/water_and_sanitation.md');
-    if (!response.ok) throw new Error('Failed to fetch markdown file');
-    const text = await response.text();
-    
-    // Parse Do Now
-    const doNow = [];
-    const doNowRegex = /-\s+\*\*Q(\d+):\*\*\s+(.*?)\s+->\s+(.*)/g;
-    const doNowSectionIndex = text.indexOf('### Do Now Retrieval Grid');
-    const vocabSectionIndex = text.indexOf('### Vocabulary');
-    if (doNowSectionIndex !== -1 && vocabSectionIndex !== -1) {
-      const doNowText = text.substring(doNowSectionIndex, vocabSectionIndex);
-      let match;
-      while ((match = doNowRegex.exec(doNowText)) !== null) {
-        doNow.push({
-          num: match[1],
-          question: match[2].trim(),
-          answer: match[3].trim()
-        });
-      }
-    }
-    
-    // Parse Vocabulary
-    const vocab = [];
-    const vocabRegex = /-\s+\*\*(.*?)\*\*:\s+(.*)/g;
-    const vocabIdx = text.indexOf('### Vocabulary');
-    const nextSectionIndex = text.indexOf('### Pupil Activities');
-    if (vocabIdx !== -1 && nextSectionIndex !== -1) {
-      const vocabText = text.substring(vocabIdx, nextSectionIndex);
-      let vMatch;
-      while ((vMatch = vocabRegex.exec(vocabText)) !== null) {
-        vocab.push({
-          word: vMatch[1].trim(),
-          definition: vMatch[2].trim()
-        });
-      }
-    }
-    
-    // Parse Pupil Activities
-    const activities = [];
-    const actRegex = /-\s+\*\*Q(\d+):\*\*\s+(.*?)\s+->\s+(.*)/g;
-    const actSectionIndex = text.indexOf('### Pupil Activities');
-    const retrievalSectionIndex = text.indexOf('### Retrieval Questions');
-    if (actSectionIndex !== -1 && retrievalSectionIndex !== -1) {
-      const actText = text.substring(actSectionIndex, retrievalSectionIndex);
-      let aMatch;
-      while ((aMatch = actRegex.exec(actText)) !== null) {
-        activities.push({
-          num: aMatch[1],
-          question: aMatch[2].trim(),
-          answer: aMatch[3].trim()
-        });
-      }
-    }
-
-    // Parse Core Narrative
-    const paragraphs = [];
-    const startIdx = text.indexOf('## 1.1 Prehistoric and Roman Sanitation');
-    const endIdx = text.indexOf('> "I am surrounded');
-    if (startIdx !== -1 && endIdx !== -1) {
-      const narrativeText = text.substring(startIdx + '## 1.1 Prehistoric and Roman Sanitation'.length, endIdx).trim();
-      const paras = narrativeText.split('\n\n');
-      paras.forEach(p => {
-        if (p.trim()) paragraphs.push(p.trim().replace(/\s+/g, ' '));
-      });
-    }
-
-    // Parse Seneca Quote
-    let senecaQuote = '';
-    let senecaCite = '';
-    const quoteStart = text.indexOf('> "I am surrounded');
-    const quoteEnd = text.indexOf('### Do Now Retrieval Grid');
-    if (quoteStart !== -1 && quoteEnd !== -1) {
-      const quoteText = text.substring(quoteStart, quoteEnd).trim();
-      const lines = quoteText.split('\n');
-      lines.forEach(l => {
-        if (l.trim().startsWith('> "') || l.trim().startsWith('>  "')) {
-          senecaQuote = l.replace(/^>\s*"/, '').replace(/"\s*$/, '').trim();
-        } else if (l.trim().includes('Seneca the Younger')) {
-          senecaCite = l.replace(/^>\s*[—-]\s*/, '').replace(/\*/g, '').trim();
-        }
-      });
-    }
-
-    parsedMarkdownData = { doNow, vocab, activities, paragraphs, senecaQuote, senecaCite };
-  } catch (err) {
-    console.error('Error loading or parsing markdown:', err);
-    // Fallback data
-    parsedMarkdownData = {
-      doNow: [
-        { num: '1', question: 'What does the term chronology mean when we study history?', answer: 'Chronology is the arrangement of historical events in the exact order in which they occurred over time.' },
-        { num: '2', question: 'What is the difference between BC and AD on a timeline?', answer: 'BC stands for "Before Christ" (counting backward from year 1), while AD stands for "Anno Domini" (in the year of our Lord, counting forward).' },
-        { num: '3', question: 'If an archaeologist uncovers a Roman coin buried in a field, is it a primary source or a secondary source?', answer: 'It is a primary source because it is a physical artifact created during the actual time period under study.' },
-        { num: '4', question: 'What is the name given to a professional historical detective who digs up and analyzes physical remains from the past?', answer: 'An archaeologist.' },
-        { num: '5', question: 'Put these three eras in the correct chronological order, starting with the oldest: Victorian Britain, Iron Age Britain, Roman Britain.', answer: '1. Iron Age Britain, 2. Roman Britain, 3. Victorian Britain.' }
-      ],
-      vocab: [
-        { word: 'Cesspit', definition: 'A simple hole dug in the earth used by prehistoric and later societies to collect household sewage and human waste.' },
-        { word: 'Conduit', definition: 'A stone channel or pipe designed by Roman engineers to transport clean water over long distances using gravity.' },
-        { word: 'Latrine', definition: 'A communal Roman public toilet block, often flushed continuously by running water to carry waste into underground sewers.' }
-      ],
-      paragraphs: [
-        "It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water.",
-        "This simple way of life was completely transformed in AD 43 when the Roman Empire invaded Britain. The Romans brought revolutionary sanitation technology and a strong belief that clean, flowing water was vital for keeping a society healthy. To bring vast amounts of clean water into their newly built stone towns and military outposts, such as Corbridge, Roman engineers constructed stone channels called conduits. These conduits used the natural pull of gravity to transport fresh water over miles from distant natural springs directly into urban centres.",
-        "In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers.",
-        "Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian's Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. When the Romans left Britain around AD 410, this advanced engineering was abandoned, and sanitation slipped back into primitive patterns."
-      ],
-      senecaQuote: "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller...",
-      senecaCite: "Seneca the Younger, Roman Philosopher, Letters to Lucilius, Letter 56, c. AD 62",
-      activities: [
-        { num: '1', question: 'Where did Iron Age families get their fresh water, and how did they dispose of their waste?', answer: 'Iron Age families collected their water from natural springs, streams, or hand-dug wells, and they disposed of their waste by digging simple cesspits in the ground, which were buried with soil when full.' },
-        { num: '2', question: 'What was a Roman conduit, and how did it work?', answer: 'A Roman conduit was a stone-built channel designed to carry clean water over long distances into towns, utilizing the natural pull of gravity to move the water.' },
-        { num: '3', question: 'Describe the different rooms inside a Roman public bathhouse like the one at Bearsden.', answer: 'A Roman bathhouse contained a sequence of rooms with different temperatures that bathers walked through, including unheated cold rooms, warm rooms for relaxing, and steaming hot rooms for washing.' },
-        { num: '4', question: 'How did communal Roman latrines keep soldiers clean and healthy?', answer: 'Roman latrines used a continuous stream of running water underneath the seating benches to flush sewage into deep sewers, which swept the filth away and stopped diseases from spreading in crowded forts.' },
-        { num: '5', question: 'Explain why the Roman invasion of AD 43 was the main cause of change for sanitation in Britain.', answer: 'The Roman invasion of AD 43 was the main cause of change because the Romans brought highly advanced engineering skills, such as building stone conduits and flushing sewers, which did not exist in Iron Age Britain and completely changed how water and waste were managed.' },
-        { num: '6', question: 'Did the arrival of Roman sanitation benefit all people in Britain equally?', answer: 'No, Roman sanitation did not benefit everyone equally. While wealthy town-dwellers and Roman soldiers enjoyed the luxury of flushing public latrines and gravity-fed bathhouses, ordinary British peasants in the countryside experienced absolute continuity, continuing to rely on simple wells and earth cesspits just as their ancestors had done for centuries.' },
-        { num: '7', question: 'Why is archaeology more significant for historians studying the Iron Age compared to those studying Roman Britain?', answer: 'Archaeology is incredibly significant for studying the Iron Age because there are no written documents from that period, making physical ruins and unearthed cesspits the only evidence available. In contrast, historians studying Roman Britain can use written sources alongside physical remains.' },
-        { num: '8', question: 'Study the contemporary source by Seneca the Younger. What does this source tell us about what it was like to visit a Roman bathhouse?', answer: 'Seneca\'s letter shows that Roman bathhouses were busy, noisy, and highly social places. Bathers would hear the groans of people lifting weights, the cries of street food vendors like sausage-sellers and bakers hawking their goods, and the screeches of hair-pluckers, proving that the baths were about social activity and commerce as much as cleanliness.' }
-      ]
-    };
-  }
-}
-
-window.generateWorksheetPackHtml = function(lessonNum, includeAnswers) {
-  const linedSpaceHtml = includeAnswers ? '' : '<div class="page-lined-space"></div>';
-  if (typeof lessonNum === 'boolean') {
-    includeAnswers = lessonNum;
-    lessonNum = 1;
-  }
-  if (!lessonNum) lessonNum = 1;
-
-  const lessonBlock = document.getElementById(`lessonContent${lessonNum}`);
-  
-  let doNow = [];
-  let vocab = [];
-  let paragraphs = [];
-  let activities = [];
-  let enquiryQuestion = "";
-  let sourceText = "";
-  let sourceCite = "";
-  let sourceTitle = "Contemporary Source Evidence";
-  let discussionPrompt = "";
-  let partDQuestions = [];
-  let sourcesHtml = "";
-
-  const answerStyle = includeAnswers 
-    ? "display: block; color: #16a34a; font-weight: bold; margin-top: 4px;" 
-    : "display: none;";
-
-  if (lessonBlock) {
-    // 1. Enquiry Question
-    const h2El = lessonBlock.querySelector('h2');
-    if (h2El) enquiryQuestion = h2El.textContent.trim();
-    
-    // 2. Do Now Questions
-    const doNowAnswers = lessonBlock.querySelectorAll('.do-now-answer');
-    doNowAnswers.forEach((ansSpan, idx) => {
-      const parentBox = ansSpan.closest('div');
-      const categoryEl = parentBox.querySelector('strong');
-      const category = categoryEl ? categoryEl.textContent.trim() : 'Retrieval Grid';
-      
-      const questionEl = parentBox.querySelector('p');
-      let question = questionEl ? questionEl.textContent.trim() : '';
-      let qNum = 1;
-      const match = question.match(/^Q(\d+):/i);
-      if (match) {
-        qNum = parseInt(match[1], 10);
-        question = question.replace(/^Q\d+:\s*/i, '');
-      } else if (question.startsWith('Q')) {
-        const spaceIdx = question.indexOf(' ');
-        if (spaceIdx !== -1) {
-          const numStr = question.substring(1, spaceIdx).replace(':', '');
-          qNum = parseInt(numStr, 10) || 1;
-          question = question.substring(spaceIdx + 1).trim();
-        }
-      }
-      
-      doNow.push({
-        num: qNum,
-        category: category,
-        question: question,
-        answer: ansSpan.textContent.replace(/^Answer:\s*/i, '').trim()
-      });
-    });
-    // Chronological sorting
-    doNow.sort((a, b) => a.num - b.num);
-    
-    // 3. Key Vocabulary
-    const cards = lessonBlock.querySelectorAll('.knowledge-card');
-    let vocabCard = null;
-    cards.forEach(card => {
-      const h4 = card.querySelector('h4');
-      if (h4 && h4.textContent.toLowerCase().includes('vocabulary')) {
-        vocabCard = card;
-      }
-    });
-    if (vocabCard) {
-      vocabCard.querySelectorAll('ul li').forEach(li => {
-        const strongEl = li.querySelector('strong');
-        if (strongEl) {
-          const word = strongEl.textContent.trim().replace(/^🚽\s*|^💦\s*|^🏗️\s*|^🏚️\s*|^💨\s*|^☣\s*|^🔬\s*|^👃\s*|^📜\s*|^🧹\s*|^🐴\s*/, '');
-          let definition = li.textContent.replace(strongEl.textContent, '').trim();
-          if (definition.startsWith(':')) definition = definition.substring(1).trim();
-          const cleanWord = word.replace(/^[:\-\s\uFE0F]+/, '').trim();
-          const cleanDef = definition.replace(/^[:\-\s\uFE0F]+/, '').trim();
-          vocab.push({ word: cleanWord, definition: cleanDef });
-        }
-      });
-    }
-    
-    // 4. Core Summary Narrative
-    const standardNarrative = lessonBlock.querySelector('.standard-narrative-block');
-    if (standardNarrative) {
-      standardNarrative.querySelectorAll('p').forEach(p => {
-        paragraphs.push(p.textContent.trim());
-      });
-    }
-    
-    // 5. Contemporary Sources (Parse all that match)
-    sourcesHtml = "";
-    const sourceCards = Array.from(lessonBlock.querySelectorAll('.knowledge-card')).filter(card => 
-      card.querySelector('h4') && card.querySelector('h4').textContent.includes('Source')
-    );
-    
-    sourceCards.forEach((sCard, sIdx) => {
-      const h4 = sCard.querySelector('h4');
-      const pQuote = sCard.querySelector('p');
-      const citeEl = sCard.querySelector('cite');
-      
-      const sTitle = h4 ? h4.textContent.replace(/✍️|📝|📖|🗣️|👥|🔍|❓/g, '').trim() : 'Contemporary Source';
-      const sText = pQuote ? pQuote.textContent.trim().replace(/^"\s*|\s*"$/g, '') : '';
-      const sCite = citeEl ? citeEl.textContent.trim().replace(/^[—-\s]+/, '') : '';
-      
-      if (sIdx > 0) {
-        sourcesHtml += `<div style="border-top: 1px dashed #cbd5e1; margin: 6px 0; padding-top: 6px;"></div>`;
-      }
-      
-      sourcesHtml += `
-        <div style="font-family: Georgia, serif;">
-          <strong style="font-size: 0.76rem; color: #1e1b4b; font-family: 'Outfit', sans-serif; display: block; margin-bottom: 4px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 2px;">
-            <i class="fa-solid fa-quote-left"></i> ${sTitle}
-          </strong>
-          <p style="font-size: 0.72rem; font-style: italic; margin: 0 0 4px 0; line-height: 1.35; text-align: justify;">
-            "${sText}"
-          </p>
-          <cite style="display: block; text-align: right; font-size: 0.62rem; font-family: 'Outfit', sans-serif; font-weight: 700; color: #64748b;">
-            — ${sCite}
-          </cite>
-        </div>
-      `;
-      
-      const discEl = sCard.querySelector('div');
-      if (discEl && !discussionPrompt) {
-        discussionPrompt = discEl.innerHTML.replace(/🗣️.*Discussion:.*<\/strong>/i, '').trim();
-      }
-    });
-
-    if (sourcesHtml === "") {
-      const fallbackTitle = sourceTitle || "Contemporary Source Evidence";
-      const fallbackText = sourceText || "I am surrounded by all kinds of noise...";
-      const fallbackCite = sourceCite || "Seneca the Younger";
-      sourcesHtml = `
-        <div style="font-family: Georgia, serif;">
-          <strong style="font-size: 0.76rem; color: #1e1b4b; font-family: 'Outfit', sans-serif; display: block; margin-bottom: 4px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 2px;">
-            <i class="fa-solid fa-quote-left"></i> ${fallbackTitle}
-          </strong>
-          <p style="font-size: 0.72rem; font-style: italic; margin: 0 0 4px 0; line-height: 1.35; text-align: justify;">
-            "${fallbackText}"
-          </p>
-          <cite style="display: block; text-align: right; font-size: 0.62rem; font-family: 'Outfit', sans-serif; font-weight: 700; color: #64748b;">
-            — ${fallbackCite}
-          </cite>
-        </div>
-      `;
-    }
-    
-    // 6. Pupil Activities (Part A, Part B, Part C) & Model Answers
-    let actBlock = null;
-    cards.forEach(card => {
-      const h4 = card.querySelector('h4');
-      if (h4) {
-        const text = h4.textContent.toLowerCase();
-        if (text.includes('activities') || text.includes('writing tasks')) {
-          actBlock = card;
-        }
-      }
-    });
-
-    if (actBlock) {
-      const h5s = actBlock.querySelectorAll('h5');
-      h5s.forEach(h5 => {
-        const sectionTitle = h5.textContent.trim();
-        const parentDiv = h5.closest('div');
-        if (parentDiv) {
-          const olEl = parentDiv.querySelector('ol');
-          if (olEl) {
-            const startVal = olEl.hasAttribute('start') ? parseInt(olEl.getAttribute('start'), 10) : 1;
-            olEl.querySelectorAll('li').forEach((li, idx) => {
-              const computedNum = startVal + idx;
-              activities.push({
-                num: computedNum,
-                question: li.innerHTML.trim(),
-                section: sectionTitle,
-                answer: ""
-              });
-            });
-          }
-        }
-      });
-    }
-
-    const modelAnswersBlock = lessonBlock.querySelector('.model-answers-block');
-    if (modelAnswersBlock) {
-      const strongs = modelAnswersBlock.querySelectorAll('strong');
-      strongs.forEach(strongEl => {
-        const qNumMatch = strongEl.textContent.match(/^Q(\d+)/i);
-        if (qNumMatch) {
-          const qNum = parseInt(qNumMatch[1], 10);
-          const parentDiv = strongEl.closest('div');
-          if (parentDiv) {
-            let ansText = parentDiv.textContent.replace(strongEl.textContent, '').trim();
-            ansText = ansText.replace(/^Model Answer:\s*/i, '').trim();
-            const matchAct = activities.find(a => a.num === qNum);
-            if (matchAct) {
-              matchAct.answer = ansText;
-            }
-          }
-        }
-      });
-    }
-
-    // 7. Part D Questions
-    if (actBlock) {
-      const h5s = actBlock.querySelectorAll('h5');
-      h5s.forEach(h5 => {
-        const sectionTitle = h5.textContent.trim();
-        if (sectionTitle.toLowerCase().includes('part d')) {
-          const parentDiv = h5.closest('div');
-          if (parentDiv) {
-            const olEl = parentDiv.querySelector('ol');
-            if (olEl) {
-              const startVal = olEl.hasAttribute('start') ? parseInt(olEl.getAttribute('start'), 10) : 11;
-              olEl.querySelectorAll('li').forEach((li, idx) => {
-                const computedNum = startVal + idx;
-                partDQuestions.push({
-                  num: computedNum,
-                  question: li.innerHTML.trim()
-                });
-              });
-            }
-          }
-        }
-      });
-    }
-  }
-
-  // Fallbacks if DOM parsing failed or is empty
-  if (doNow.length === 0) {
-    doNow = [
-      { num: 1, category: 'Chronology', question: 'What does the term chronology mean when we study history?', answer: 'Chronology is the arrangement of historical events in the exact order in which they occurred over time.' },
-      { num: 2, category: 'Chronology', question: 'What is the difference between BC and AD on a timeline?', answer: 'BC stands for "Before Christ" (counting backward from year 1), while AD stands for "Anno Domini" (in the year of our Lord, counting forward).' },
-      { num: 3, category: 'Evidence', question: 'If an archaeologist uncovers a Roman coin buried in a field, is it a primary source or a secondary source?', answer: 'It is a primary source because it is a physical artifact created during the actual time period under study.' },
-      { num: 4, category: 'Evidence', question: 'What is the name given to a professional historical detective who digs up and analyzes physical remains from the past?', answer: 'An archaeologist.' },
-      { num: 5, category: 'Chronology', question: 'Put these three eras in the correct chronological order, starting with the oldest: Victorian Britain, Iron Age Britain, Roman Britain.', answer: '1. Iron Age Britain, 2. Roman Britain, 3. Victorian Britain.' }
-    ];
-  }
-  if (vocab.length === 0) {
-    vocab = [
-      { word: 'Cesspit', definition: 'A simple hole dug in the earth used by prehistoric and later societies to collect household sewage and human waste.' },
-      { word: 'Conduit', definition: 'A stone channel or pipe designed by Roman engineers to transport clean water over long distances using gravity.' },
-      { word: 'Latrine', definition: 'A communal Roman public toilet block, often flushed continuously by running water to carry waste into underground sewers.' }
-    ];
-  }
-
-  let doNowHtml = '';
-  doNow.forEach(q => {
-    doNowHtml += `
-      <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px; font-size: 0.68rem; line-height: 1.3; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; min-height: 100px;">
-        <div>
-          <strong style="color: #4f46e5; display: block; margin-bottom: 2px;">Q${q.num} [${q.category}]</strong>
-          <span>${q.question}</span>
-        </div>
-        ${includeAnswers ? `<div style="color: #16a34a; font-weight: bold; margin-top: 4px;">A: ${q.answer}</div>` : `
-          <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 14px;">
-            <div style="border-bottom: 1.2px dashed #555555; height: 1px;"></div>
-            <div style="border-bottom: 1.2px dashed #555555; height: 1px;"></div>
-          </div>
-        `}
-      </div>
-    `;
-  });
-
-  let vocabHtml = '';
-  vocab.forEach(v => {
-    vocabHtml += `
-      <div style="font-size: 11pt; line-height: 1.3;">
-        <strong>${v.word}:</strong> ${v.definition}
-      </div>
-    `;
-  });
-
-  let narrativeHtml = '';
-  paragraphs.forEach(p => {
-    narrativeHtml += `
-      <p style="font-size: 12.5pt; line-height: 1.6; text-align: justify; margin: 0 0 6px 0;">
-        ${p}
-      </p>
-    `;
-  });
-
-  const getQuestionBlock = (questionText, answerText, qIndex, lineCount = 3) => {
-    const isDrawing = questionText.toLowerCase().includes('draw') || questionText.toLowerCase().includes('sketch');
-    const isQ12OrQ13 = (qIndex === 12 || qIndex === 13);
-    
-    let answerBlock = '';
-    if (includeAnswers) {
-      if (isDrawing) {
-        answerBlock = `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: [Student diagram / sketch illustrating: ${questionText.replace(/"/g, "'")}]</div>`;
-      } else {
-        answerBlock = `<div style="color: #16a34a; font-style: italic; font-weight: 600; font-size: 0.74rem; margin-top: 2px; margin-bottom: 6px; line-height: 1.3;">A: ${answerText}</div>`;
-      }
-    } else {
-      if (isDrawing || isQ12OrQ13) {
-        answerBlock = `<div style="height: 35mm; margin: 4px 0; background: #ffffff;"></div>`;
-      } else {
-        let rowsHtml = '';
-        for (let i = 0; i < lineCount; i++) {
-          rowsHtml += `<tr style="height: 20px;"><td style="border-bottom: 1.2px solid #555555; padding: 0; height: 20px;"></td></tr>`;
-        }
-        answerBlock = `<table style="width: 100%; height: ${lineCount * 20}px; border-collapse: collapse; margin-top: 4px; margin-bottom: 6px;">
-            ${rowsHtml}
-           </table>`;
-      }
-    }
-
-    return `
-      <div class="question-block" style="margin-bottom: 4px; font-size: 0.76rem; page-break-inside: avoid; line-height: 1.25;">
-        <strong style="color: #374151; font-size: 12pt; font-weight: 700;">Q${qIndex}: ${questionText}</strong>
-        ${answerBlock}
-      </div>
-    `;
-  };
 
   let page2ActivitiesHtml = '<h3 style="color: #4f46e5; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part A: Core Comprehension</h3>';
   let page3ActivitiesHtml = '<h3 style="color: #e11d48; font-size: 0.82rem; text-transform: uppercase; font-weight: 700; margin-top: 6px; margin-bottom: 6px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">Part B: Conceptual Analysis</h3>';
@@ -1389,10 +763,14 @@ window.generateWorksheetPackHtml = function(lessonNum, includeAnswers) {
         height: 297mm;
         page-break-after: always;
         page-break-inside: avoid;
-        padding: 10mm 15mm;
+        padding: 8mm 15mm 14mm 15mm !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
+      }
+      .image-plate-img {
+        max-height: 55mm !important;
+        object-fit: contain;
       }
       .page-landscape {
         page: landscape-page;
@@ -1904,6 +1282,54 @@ window.generateUnifiedBookletHtml = function(includeAnswers) {
           <div style="border-bottom: 1.2px solid #555555; height: 1px;"></div>
           <div style="border-bottom: 1.2px solid #555555; height: 1px;"></div>
         </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+  </div>
+  `);
+
+  // --- Page 3b: Edexcel 12-Mark Framework ---
+  pages.push(`
+  <div class="page" style="page-break-before: always;">
+    <h2 class="lesson-title">Assessment Guide: Edexcel 12-Mark "Explain Why..."</h2>
+    <div class="page-content">
+      <h4 class="task-heading" style="margin-top: 0; font-size: 13pt;"><i class="fa-solid fa-graduation-cap"></i> How to Write Like a Historian</h4>
+      <p class="narrative-col" style="margin-bottom: 12px; font-size: 11pt !important;">In your GCSE History exam, Question 3 will always be an <strong>"Explain why..."</strong> question worth 12 marks. To score full marks, you must provide <strong>three distinct reasons</strong> (paragraphs), each following the <strong>P.E.E.L.</strong> framework below.</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <div style="border-left: 4px solid var(--accent-red, #dc2626); padding-left: 10px; background-color: #faf9f6; padding: 10px;">
+          <strong style="color: var(--accent-red, #dc2626); font-size: 12pt;">POINT (P)</strong>
+          <p style="margin: 4px 0 0 0; font-size: 10.5pt;">Start with a clear topic sentence that directly answers the question and introduces your first reason.</p>
+          <p style="margin: 4px 0 0 0; font-style: italic; color: #555;">e.g., "One main reason why public health was poor in Early Modern London was due to the rapid, unregulated population growth."</p>
+        </div>
+        
+        <div style="border-left: 4px solid #f39c12; padding-left: 10px; background-color: #faf9f6; padding: 10px;">
+          <strong style="color: #f39c12; font-size: 12pt;">EVIDENCE (E)</strong>
+          <p style="margin: 4px 0 0 0; font-size: 10.5pt;">Provide specific, accurate historical facts, dates, names, or statistics to support your point.</p>
+          <p style="margin: 4px 0 0 0; font-style: italic; color: #555;">e.g., "For example, between 1500 and 1700, London's population skyrocketed from around 50,000 to over 500,000. People lived in overcrowded, tightly-packed wooden houses, and there was no organized system to deal with the massive increase in human waste."</p>
+        </div>
+        
+        <div style="border-left: 4px solid #27ae60; padding-left: 10px; background-color: #faf9f6; padding: 10px;">
+          <strong style="color: #27ae60; font-size: 12pt;">EXPLAIN (E)</strong>
+          <p style="margin: 4px 0 0 0; font-size: 10.5pt;">This is where you earn the most marks! Explain <em>how</em> or <em>why</em> your evidence led to the outcome in the question.</p>
+          <p style="margin: 4px 0 0 0; font-style: italic; color: #555;">e.g., "This caused poor public health because the overcrowded conditions meant diseases like the Bubonic Plague could spread rapidly from person to person. Furthermore, because cesspits overflowed into the streets and rivers, the water supply became highly contaminated."</p>
+        </div>
+        
+        <div style="border-left: 4px solid #2980b9; padding-left: 10px; background-color: #faf9f6; padding: 10px;">
+          <strong style="color: #2980b9; font-size: 12pt;">LINK (L)</strong>
+          <p style="margin: 4px 0 0 0; font-size: 10.5pt;">Write a concluding sentence that links your explanation back to the exact wording of the question.</p>
+          <p style="margin: 4px 0 0 0; font-style: italic; color: #555;">e.g., "Therefore, rapid population growth directly resulted in a severely unsanitary and dangerous environment in Early Modern London."</p>
+        </div>
+      </div>
+
+      <div style="background-color: #1e3a8a; color: white; padding: 12px; border-radius: 6px;">
+        <strong style="font-size: 11pt;"><i class="fa-solid fa-list-ol"></i> The 12-Mark Checklist:</strong>
+        <ul style="margin-top: 6px; margin-bottom: 0; padding-left: 20px; font-size: 10.5pt;">
+          <li>Did you write exactly <strong>3 paragraphs</strong>?</li>
+          <li>Did you use the <strong>P.E.E.L.</strong> structure in every paragraph?</li>
+          <li>Are your three reasons genuinely <strong>different</strong> from each other?</li>
+          <li>Did you use specific <strong>historical vocabulary</strong> and dates?</li>
+        </ul>
       </div>
     </div>
     <!-- FOOTER -->
@@ -3020,10 +2446,14 @@ window.generateUnifiedBookletHtml = function(includeAnswers) {
         height: 297mm;
         page-break-after: always;
         page-break-inside: avoid;
-        padding: 10mm 15mm;
+        padding: 8mm 15mm 14mm 15mm !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
+      }
+      .image-plate-img {
+        max-height: 55mm !important;
+        object-fit: contain;
       }
       .page-landscape {
         page: landscape-page;
@@ -3059,6 +2489,56 @@ window.generateUnifiedBookletHtml = function(includeAnswers) {
 </head>
 <body>
   `;
+
+  // --- Final Page: Historiography ---
+  pages.push(`
+  <div class="page" style="page-break-before: always; background-color: #f8fafc;">
+    <h2 class="lesson-title" style="color: #0f172a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px;">Historian's Corner: The "Whig" Interpretation of History</h2>
+    <div class="page-content">
+      
+      <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+        <div style="flex: 1;">
+          <h4 style="color: #1d4ed8; margin-top: 0; font-size: 13pt;">A Straight Line of Progress?</h4>
+          <p class="narrative-col" style="font-size: 11pt !important;">When studying the history of medicine or public health, it is very easy to fall into a trap called the <strong>"Whig Interpretation of History."</strong></p>
+          <p class="narrative-col" style="font-size: 11pt !important;">This is the incorrect idea that history is just a straight line of constant progress—that every generation is smarter, cleaner, and healthier than the last, leading inevitably to our "perfect" modern world.</p>
+        </div>
+        <div style="flex: 0 0 160px; text-align: center; background: white; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <i class="fa-solid fa-arrow-trend-up" style="font-size: 3rem; color: #ef4444; margin-bottom: 10px; display: block;"></i>
+          <span style="font-size: 9pt; font-weight: bold; color: #475569;">The false "Whig" view of constant progress.</span>
+        </div>
+      </div>
+
+      <div style="background: white; padding: 15px; border-radius: 8px; border-left: 5px solid #10b981; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h4 style="margin: 0 0 10px 0; color: #047857; font-size: 12pt;">Why is this wrong for Water & Sanitation?</h4>
+        <p style="margin: 0; font-size: 10.5pt; line-height: 1.5; color: #334155;">
+          As you have learned in this unit, public health in Britain was <em>not</em> a straight line of progress. It was a rollercoaster. The <strong>Romans</strong> had highly advanced sewers, aqueducts, and public baths in 400 AD. Yet, 1,400 years later during the <strong>Industrial Revolution</strong>, Londoners were drinking sewage-contaminated water and dying of cholera in the tens of thousands. If history was a straight line of progress, 19th-century London should have been much cleaner than 1st-century Roman Britain!
+        </p>
+      </div>
+
+      <h4 class="task-heading" style="margin-top: 0; font-size: 13pt;"><i class="fa-solid fa-pen-nib"></i> Evaluation Task</h4>
+      <p style="font-size: 10.5pt; margin-bottom: 15px;">On the graph below, draw what you think the <em>real</em> line of progress looks like for Water and Sanitation in Britain. (Think about the Roman peak, the Medieval drop, the Monastic exceptions, the Industrial crash, and the Victorian clean-up).</p>
+      
+      <!-- Blank Graph Area -->
+      <div style="border-left: 2px solid #334155; border-bottom: 2px solid #334155; height: 80mm; position: relative; margin: 20px 20px 40px 40px;">
+        <!-- Y Axis Label -->
+        <div style="position: absolute; left: -35px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-weight: bold; font-size: 9pt; color: #334155;">Cleanliness / Health Quality</div>
+        
+        <!-- X Axis Labels -->
+        <div style="position: absolute; bottom: -25px; left: 0%; width: 20%; text-align: center; font-size: 8pt; font-weight: bold;">Roman<br>(c. 400)</div>
+        <div style="position: absolute; bottom: -25px; left: 20%; width: 20%; text-align: center; font-size: 8pt; font-weight: bold;">Medieval<br>(c. 1250)</div>
+        <div style="position: absolute; bottom: -25px; left: 40%; width: 20%; text-align: center; font-size: 8pt; font-weight: bold;">Early Modern<br>(c. 1600)</div>
+        <div style="position: absolute; bottom: -25px; left: 60%; width: 20%; text-align: center; font-size: 8pt; font-weight: bold;">Industrial<br>(c. 1850)</div>
+        <div style="position: absolute; bottom: -25px; left: 80%; width: 20%; text-align: center; font-size: 8pt; font-weight: bold;">Modern<br>(Present)</div>
+        
+        <!-- Grid Lines -->
+        <div style="position: absolute; left: 0; top: 25%; width: 100%; border-top: 1px dashed #cbd5e1; z-index: 1;"></div>
+        <div style="position: absolute; left: 0; top: 50%; width: 100%; border-top: 1px dashed #cbd5e1; z-index: 1;"></div>
+        <div style="position: absolute; left: 0; top: 75%; width: 100%; border-top: 1px dashed #cbd5e1; z-index: 1;"></div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+  </div>
+  `);
 
   const totalPageCount = pages.length;
   pages.forEach((pageContent, idx) => {
@@ -3195,8 +2675,7 @@ window.switchLesson = function(lessonNum) {
 
   // Update brand quote for the active lesson
   if (window.updateChimneyQuoteForLesson) {
-    window.updateChimneyQuoteForLesson(lessonNum);
-  }
+    window.  }
 };
 
 // Flashcard Data Deck
@@ -4143,8 +3622,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   updateXPBadge();
   
   if (window.updateChimneyQuoteForLesson) {
-    window.updateChimneyQuoteForLesson(1);
-  }
+    window.  }
   
   await loadLessonMarkdown();
   
