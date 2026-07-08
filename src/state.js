@@ -24,7 +24,7 @@ export const state = {
   lastActiveDate: null,
 
   // Settings
-  theme: 'desert',                  // 'desert' | 'space' | 'coral'
+  theme: 'meoncross',                  // 'meoncross' | 'desert' | 'space' | 'coral'
   soundEnabled: true,
 
   // Profile

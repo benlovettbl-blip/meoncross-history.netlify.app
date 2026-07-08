@@ -104,21 +104,41 @@ export function renderDashboard() {
     <div class="modules-grid">
   `;
 
+  const UNIT_ICONS = {
+    water_and_sanitation: { icon: 'fa-droplet', color: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+    norman_conquest: { icon: 'fa-shield-halved', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)' },
+    change_1450_1750: { icon: 'fa-flask', color: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+    great_war: { icon: 'fa-helmet-safety', color: '#b45309', bg: 'rgba(180, 83, 9, 0.1)' },
+    gcse_usa_1954_1975: { icon: 'fa-monument', color: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
+    gcse_middle_east_1945_1995: { icon: 'fa-dove', color: '#0d9488', bg: 'rgba(13, 148, 136, 0.1)' },
+    gcse_elizabethan_england: { icon: 'fa-crown', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' }
+  };
+
   UNITS.forEach(unit => {
     const isUnlocked = true; // Unlocked all topics for developer/admin preview
+    const iconData = UNIT_ICONS[unit.id] || { icon: 'fa-book-open', color: 'var(--primary)', bg: 'var(--border-glass)' };
     
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}">
-        <div class="module-header">
-          <span class="category-badge">${unit.category}</span>
-          <span class="year-badge">${unit.yearGroup}</span>
+        <div>
+          <div class="module-header" style="margin-bottom: 12px;">
+            <span class="category-badge">${unit.category}</span>
+            <span class="year-badge">${unit.yearGroup}</span>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="font-size: 1.3rem; color: ${iconData.color}; background: ${iconData.bg}; padding: 10px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.05);">
+              <i class="fa-solid ${iconData.icon}"></i>
+            </div>
+            <div style="flex-grow: 1; min-width: 0;">
+              <h4 style="margin: 0 0 6px 0; font-size: 1.1rem; font-weight: 700; line-height: 1.3;">${unit.title}</h4>
+              <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${unit.desc}</p>
+            </div>
+          </div>
         </div>
-        <h4>${unit.title}</h4>
-        <p>${unit.desc}</p>
         
         ${isUnlocked ? `
-          <div class="module-actions">
-            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' ? `
+          <div class="module-actions" style="margin-top: 14px;">
+            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' ? `
               <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
                 <i class="fa-solid fa-circle-play"></i> Launch Study App
               </button>
@@ -199,6 +219,8 @@ window.launchSubApp = function(unitId) {
     window.location.href = '/eee/';
   } else if (unitId === 'water_and_sanitation') {
     window.location.href = '/water_and_sanitation/';
+  } else if (unitId === 'great_war') {
+    window.location.href = '/great_war/';
   }
 };
 

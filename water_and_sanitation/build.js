@@ -17,14 +17,21 @@ fs.copyFileSync('index.html', path.join(wwwPath, 'index.html'));
 fs.copyFileSync('styles.css', path.join(wwwPath, 'styles.css'));
 fs.copyFileSync('data.js', path.join(wwwPath, 'data.js'));
 fs.copyFileSync('app.js', path.join(wwwPath, 'app.js'));
-fs.copyFileSync(
-  path.join('assets', 'data.json'),
-  path.join(wwwPath, 'assets', 'data.json')
-);
-fs.copyFileSync(
-  path.join('assets', 'fareham_chimney.png'),
-  path.join(wwwPath, 'assets', 'fareham_chimney.png')
-);
+// Copy all assets recursively
+console.log('Copying assets recursively to www/assets/...');
+fs.cpSync('assets', path.join(wwwPath, 'assets'), { recursive: true });
+
+// Sync with public/water_and_sanitation/ for Netlify/Vite build
+const publicPath = path.join(__dirname, '..', 'public', 'water_and_sanitation');
+if (fs.existsSync(publicPath)) {
+  console.log('Synchronizing assets with public/water_and_sanitation/...');
+  fs.mkdirSync(publicPath, { recursive: true });
+  fs.copyFileSync('styles.css', path.join(publicPath, 'styles.css'));
+  fs.copyFileSync('data.js', path.join(publicPath, 'data.js'));
+  fs.copyFileSync('app.js', path.join(publicPath, 'app.js'));
+  fs.cpSync('assets', path.join(publicPath, 'assets'), { recursive: true });
+}
+
 
 // Copy Font Awesome for offline support
 const faSrcDir = path.join(__dirname, 'node_modules', '@fortawesome', 'fontawesome-free');

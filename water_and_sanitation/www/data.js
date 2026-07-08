@@ -140,6 +140,103 @@ const timelineData = [
         "significance": "Water remained a distributed and manually transported commodity for most citizens."
       }
     ]
+  },
+  {
+    "id": "kt4-1",
+    "section": "Lesson 4",
+    "topic": "Water and Sanitation Through Time",
+    "title": "Industrial Britain (1750–1850)",
+    "events": [
+      {
+        "subtitle": "Population Surge and Urbanization",
+        "text": "Between 1750 and 1850, Britain's population skyrocketed from 6 million to 21 million. Thousands of rural families flooded into expanding cities to work in steam-powered factories and coal mines, resulting in rapid urbanization and intense crowding.",
+        "dates": ["1750-1850"],
+        "names": ["Factory Workers"],
+        "stats": ["6M to 21M population"],
+        "tags": ["Migration", "Sanitation"],
+        "significance": "A demographic explosion that overwhelmed basic housing and public health services."
+      },
+      {
+        "subtitle": "Shared Pumps and Back-to-Backs",
+        "text": "Landlords built cheap, back-to-back terraced brick housing blocks with shared yards. Poorer families did not have indoor running water, relying on shared street pumps which only supplied water for a few hours a day, which was often brown and polluted.",
+        "dates": ["AD 1800"],
+        "names": ["Urban Landlords"],
+        "stats": ["Back-to-back houses", "Shared street pumps"],
+        "tags": ["Water Supply", "Sanitation"],
+        "significance": "Sanitation deteriorated due to lack of municipal oversight and laissez-faire policies."
+      },
+      {
+        "subtitle": "The 1831 Cholera Epidemic",
+        "text": "Cholera, a terrifying waterborne disease, struck Britain for the first time in 1831, causing rapid dehydration and death. Over 31,000 people died in the first epidemic, triggering national panic and highlighting the failure of municipal public health.",
+        "dates": ["AD 1831"],
+        "names": ["Victims of Cholera"],
+        "stats": ["31,000+ deaths"],
+        "tags": ["Hygiene", "Sanitation"],
+        "significance": "Brought a terrifying new epidemic disease that exposed the hazards of dirty town water."
+      },
+      {
+        "subtitle": "Chadwick's Sanitation Report",
+        "text": "Poor Law Commissioner Edwin Chadwick published his landmark Report on the Sanitary Condition of the Labouring Population, documenting the filth, damp, and overcrowded conditions of the working class and advocating for drainage and clean water.",
+        "dates": ["AD 1842"],
+        "names": ["Edwin Chadwick"],
+        "stats": ["Sanitary Report"],
+        "tags": ["Engineering", "Sanitation"],
+        "significance": "The first major government study proposing that improving sanitation would reduce poverty and disease."
+      }
+    ]
+  },
+  {
+    "id": "kt5-1",
+    "section": "Lesson 5",
+    "topic": "Water and Sanitation Through Time",
+    "title": "Modern Britain (1850–Present)",
+    "events": [
+      {
+        "subtitle": "John Snow's Broad Street Map",
+        "text": "During the 1854 cholera outbreak in Soho, Dr. John Snow mapped locations of deaths and traced the infection directly to the Broad Street pump, proving cholera was waterborne rather than spread by miasma (bad air). Removing the pump handle stopped the Soho outbreak.",
+        "dates": ["AD 1854"],
+        "names": ["Dr. John Snow"],
+        "stats": ["Soho Broad Street Pump map"],
+        "tags": ["Science", "Sanitation"],
+        "significance": "Disproved miasma theory by demonstrating waterborne transmission of disease."
+      },
+      {
+        "subtitle": "The Great Stink of London",
+        "text": "A hot summer in 1858 caused the raw sewage in the River Thames to smell so overpowering that it disrupted parliamentary meetings, forcing politicians to finally fund rebuilds of the capital's sanitation networks.",
+        "dates": ["AD 1858"],
+        "names": ["British Politicians"],
+        "stats": ["Overpowering river stench"],
+        "tags": ["Politics", "Sanitation"],
+        "significance": "A political catalyst that forced the government to abandon laissez-faire regarding sanitation."
+      },
+      {
+        "subtitle": "Bazalgette's Sewer System",
+        "text": "Between 1858 and 1865, engineer Joseph Bazalgette designed and constructed a spectacular network of 1,300 miles of brick sewers beneath London. This diverted waste away from the River Thames, saving thousands of working-class lives.",
+        "dates": ["1858-1865"],
+        "names": ["Joseph Bazalgette"],
+        "stats": ["1,300 miles of brick sewers"],
+        "tags": ["Engineering", "Sanitation"],
+        "significance": "An engineering masterpiece that solved the urban waste crisis in the capital."
+      },
+      {
+        "subtitle": "Pasteur's Germ Theory",
+        "text": "French scientist Louis Pasteur proved Germ Theory in 1860, showing that microscopic organisms cause disease rather than bad smells, providing definitive scientific backing for sanitation and hygiene.",
+        "dates": ["AD 1860"],
+        "names": ["Louis Pasteur"],
+        "stats": ["Germ Theory"],
+        "tags": ["Science", "Hygiene"],
+        "significance": "Ended the miasma myth and provided the scientific foundation for clean water laws."
+      },
+      {
+        "subtitle": "Public Health Act of 1875",
+        "text": "Parliament passed the Public Health Act, forcing local councils to take legal responsibility for ensuring every citizen had clean piped water and home sewer connections, ending laissez-faire sanitation.",
+        "dates": ["AD 1875"],
+        "names": ["Parliament"],
+        "stats": ["Public Health Act of 1875"],
+        "tags": ["Politics", "Sanitation"],
+        "significance": "Marked a permanent, democratic system of public health and clean water as a legal right."
+      }
+    ]
   }
 ];
 
@@ -170,7 +267,7 @@ const quizData = [
     "distractors": [
       "Silchester farming roundhouse village",
       "Bearsden public bathing sequence",
-      "Fareham chimney sweep academy"
+      "Vindolanda military barracks"
     ],
     "explanation": "At Housesteads Fort, soldiers sat over deep, stone-lined channels flushed constantly by a stream of water."
   },
@@ -293,9 +390,246 @@ const quizData = [
       "Filtering well water through sand and charcoal beds"
     ],
     "explanation": "Water sellers transported fresh water from local rivers or conduits in large barrels to sell to townspeople."
+  },
+  {
+    "question": "By how much did Britain's population grow during the century of industrialisation (1750–1850)?",
+    "answer": "It skyrocketed from 6 million to 21 million.",
+    "distractors": [
+      "It remained stable at around 10 million.",
+      "It decreased from 15 million to 6 million due to cholera.",
+      "It grew from 3 million to 9 million."
+    ],
+    "explanation": "The population grew from 6 million in 1750 to a massive 21 million in 1850 due to the Industrial Revolution."
+  },
+  {
+    "question": "How did working-class families living in terraced yards usually obtain their water?",
+    "answer": "From a shared pump in the street or yard that only ran for a few hours.",
+    "distractors": [
+      "From copper pipes connected to indoor taps in their kitchens.",
+      "From private wells dug inside their cellars.",
+      "By collecting rainwater in barrels off their roofs."
+    ],
+    "explanation": "Workers had to share yard pumps, which were only turned on for a few hours a day by private water companies."
+  },
+  {
+    "question": "What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?",
+    "answer": "Cholera",
+    "distractors": [
+      "Smallpox",
+      "The Black Death",
+      "Tuberculosis"
+    ],
+    "explanation": "Britain's first cholera epidemic in 1831 was a national disaster that killed over 31,000 people."
+  },
+  {
+    "question": "What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?",
+    "answer": "Miasma Theory (the belief that disease is spread by bad smells)",
+    "distractors": [
+      "Germ Theory (the belief that micro-organisms cause disease)",
+      "Humoral Theory (the belief that body fluids must be balanced)",
+      "Astrological Theory (the belief that planetary positions cause disease)"
+    ],
+    "explanation": "Victorian doctors believed in Miasma Theory, thinking cholera was caught by breathing in bad air from decomposing waste."
+  },
+  {
+    "question": "Why did cesspits under shared yard privies frequently overflow in industrial cities?",
+    "answer": "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
+    "distractors": [
+      "Rainwater was channeled directly into them to help flush them.",
+      "Water companies used high-pressure steam pumps to clear them.",
+      "Specialized gongfermers were banned from working in towns."
+    ],
+    "explanation": "Overflowing cesspits were common because landlords refused to pay to empty them and they had no sewer connections."
+  },
+  {
+    "question": "How did John Snow stop the Soho cholera outbreak of 1854?",
+    "answer": "He persuaded the local parish to remove the Broad Street pump handle.",
+    "distractors": [
+      "He poured chlorine chemicals directly into the River Thames.",
+      "He ordered all residents to burn their household rubbish.",
+      "He designed a brand new brick sewer system for the street."
+    ],
+    "explanation": "John Snow stopped the Soho outbreak by identifying the contaminated water source and getting the pump handle removed."
+  },
+  {
+    "question": "What event in the summer of 1858 finally forced politicians to fund London's sewer network?",
+    "answer": "The Great Stink of the River Thames",
+    "distractors": [
+      "The sudden death of the Prime Minister from cholera",
+      "A major rebellion by London's water sellers",
+      "A personal petition from Louis Pasteur"
+    ],
+    "explanation": "The Great Stink of 1858 made the smell of the Thames so awful in Parliament that politicians voted funding for sewers immediately."
+  },
+  {
+    "question": "Which French scientist proved 'Germ Theory' in 1860, showing that microscopic organisms cause disease?",
+    "answer": "Louis Pasteur",
+    "distractors": [
+      "John Snow",
+      "Edwin Chadwick",
+      "Joseph Bazalgette"
+    ],
+    "explanation": "Louis Pasteur proved Germ Theory in 1860, establishing the scientific basis for clean water and sanitation."
+  },
+  {
+    "question": "What did the landmark 1875 Public Health Act force local councils to do?",
+    "answer": "Ensure all houses had piped clean water and proper sewer connections.",
+    "distractors": [
+      "Close down all public bathhouses and communal latrines.",
+      "Hire gongfermers to empty residential cesspits every night.",
+      "Provide free sea sponges for personal hygiene."
+    ],
+    "explanation": "The 1875 Public Health Act legally forced councils to provide clean, piped water and sewer connections for all homes."
+  },
+  {
+    "question": "How many miles of brick sewers did Joseph Bazalgette construct beneath London?",
+    "answer": "1,300 miles",
+    "distractors": [
+      "50 miles",
+      "10,000 miles",
+      "500 miles"
+    ],
+    "explanation": "Joseph Bazalgette constructed 1,300 miles of brick sewers beneath London to carry waste away from the river and city."
+  }
+];
+
+const tradingCardsData = [
+  {
+    "id": "tc1",
+    "name": "Iron Age Britons",
+    "era": "Prehistoric",
+    "bio": "Farming families living in scattered roundhouses. Localized and low-density waste disposal kept water clean naturally.",
+    "quote": "Digging temporary cesspits was safe and sustainable.",
+    "unlockedAtXP": 0,
+    "emoji": "🛖",
+    "color": "linear-gradient(135deg, #15803d 0%, #166534 100%)",
+    "image": "assets/card_iron_age_britons.png",
+    "stats": { "hygiene": 60, "engineering": 35, "legacy": 40, "democracy": 95 }
+  },
+  {
+    "id": "tc2",
+    "name": "Roman Engineers",
+    "era": "Roman",
+    "bio": "Revolutionary builders who introduced gravity-fed stone conduits, bathhouses, and sewer systems.",
+    "quote": "Flowing clean water is vital for keeping society healthy.",
+    "unlockedAtXP": 100,
+    "emoji": "🏛️",
+    "color": "linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)",
+    "image": "assets/card_roman_engineers.png",
+    "stats": { "hygiene": 90, "engineering": 95, "legacy": 85, "democracy": 75 }
+  },
+  {
+    "id": "tc3",
+    "name": "Seneca the Younger",
+    "era": "Roman",
+    "bio": "Roman philosopher who complained about the noise and crowds of the public baths, proving they were social hubs.",
+    "quote": "I am surrounded by all kinds of noise from the public baths.",
+    "unlockedAtXP": 150,
+    "emoji": "📜",
+    "color": "linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)",
+    "stats": { "hygiene": 80, "engineering": 20, "legacy": 90, "democracy": 50 }
+  },
+  {
+    "id": "tc4",
+    "name": "Christian Monks",
+    "era": "Medieval",
+    "bio": "Monasteries designed complex networks of wood and lead pipes, carrying fresh water in and flushing waste out.",
+    "quote": "Cleanliness brings us closer to God and aids our spiritual lives.",
+    "unlockedAtXP": 200,
+    "emoji": "⛪",
+    "color": "linear-gradient(135deg, #047857 0%, #065f46 100%)",
+    "stats": { "hygiene": 95, "engineering": 85, "legacy": 80, "democracy": 15 }
+  },
+  {
+    "id": "tc5",
+    "name": "Gongfermers",
+    "era": "Medieval",
+    "bio": "Specialized night-laborers who cleared town cesspits of night soil strictly in darkness to prevent street disruption.",
+    "quote": "Working under cover of night to keep towns clean.",
+    "unlockedAtXP": 300,
+    "emoji": "🧹",
+    "color": "linear-gradient(135deg, #4b5563 0%, #374151 100%)",
+    "stats": { "hygiene": 85, "engineering": 40, "legacy": 60, "democracy": 65 }
+  },
+  {
+    "id": "tc6",
+    "name": "King Edward III",
+    "era": "Medieval",
+    "bio": "Medieval king who warned the Mayor of London about street filth causing sickness, ordering cleanup mandates.",
+    "quote": "The filth lying in the streets is infecting the air.",
+    "unlockedAtXP": 350,
+    "emoji": "👑",
+    "color": "linear-gradient(135deg, #b45309 0%, #92400e 100%)",
+    "stats": { "hygiene": 55, "engineering": 30, "legacy": 70, "democracy": 40 }
+  },
+  {
+    "id": "tc7",
+    "name": "Sir John Harington",
+    "era": "Early Modern",
+    "bio": "Godson of Queen Elizabeth I who invented the first flushing toilet, though it failed due to lack of street sewers.",
+    "quote": "An early flushing closet built for the royal court.",
+    "unlockedAtXP": 400,
+    "emoji": "🚽",
+    "color": "linear-gradient(135deg, #6b21a8 0%, #581c87 100%)",
+    "stats": { "hygiene": 85, "engineering": 80, "legacy": 90, "democracy": 10 }
+  },
+  {
+    "id": "tc8",
+    "name": "Samuel Pepys",
+    "era": "Early Modern",
+    "bio": "Seventeenth-century London diarist who complained when his neighbor's cellar privy leaked into his basement.",
+    "quote": "I stepped into a heap of waste from my neighbor's cellar.",
+    "unlockedAtXP": 500,
+    "emoji": "✍️",
+    "color": "linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%)",
+    "stats": { "hygiene": 45, "engineering": 25, "legacy": 95, "democracy": 35 }
+  },
+  {
+    "id": "tc9",
+    "name": "Edwin Chadwick",
+    "era": "Industrial",
+    "bio": "Poor Law Commissioner whose 1842 Sanitary Report argued that clean water and sewage systems would reduce poverty.",
+    "quote": "Clean water and drainage will prevent disease and poverty.",
+    "unlockedAtXP": 600,
+    "emoji": "📜",
+    "color": "linear-gradient(135deg, #a16207 0%, #854d0e 100%)",
+    "stats": { "hygiene": 80, "engineering": 75, "legacy": 95, "democracy": 80 }
+  },
+  {
+    "id": "tc10",
+    "name": "Dr. John Snow",
+    "era": "Modern",
+    "bio": "Epidemiologist who proved cholera was waterborne in 1854 by mapping deaths and removing the Broad Street pump handle.",
+    "quote": "Cholera is spread by contaminated water, not bad air.",
+    "unlockedAtXP": 700,
+    "emoji": "🔬",
+    "color": "linear-gradient(135deg, #0f766e 0%, #115e59 100%)",
+    "stats": { "hygiene": 95, "engineering": 60, "legacy": 98, "democracy": 90 }
+  },
+  {
+    "id": "tc11",
+    "name": "Joseph Bazalgette",
+    "era": "Modern",
+    "bio": "Superb Victorian civil engineer who constructed 1,300 miles of brick sewers beneath London to end the Great Stink.",
+    "quote": "Diverting London's waste away from the Thames saved thousands of lives.",
+    "unlockedAtXP": 800,
+    "emoji": "⚙️",
+    "color": "linear-gradient(135deg, #0d9488 0%, #0f766e 100%)",
+    "stats": { "hygiene": 95, "engineering": 98, "legacy": 95, "democracy": 85 }
+  },
+  {
+    "id": "tc12",
+    "name": "Louis Pasteur",
+    "era": "Modern",
+    "bio": "French scientist who proved Germ Theory in 1860, showing that micro-organisms cause disease rather than bad air.",
+    "quote": "Microscopic organisms are the true cause of infectious diseases.",
+    "unlockedAtXP": 900,
+    "emoji": "🧪",
+    "color": "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
+    "stats": { "hygiene": 90, "engineering": 85, "legacy": 99, "democracy": 95 }
   }
 ];
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { timelineData, quizData };
+  module.exports = { timelineData, quizData, tradingCardsData };
 }

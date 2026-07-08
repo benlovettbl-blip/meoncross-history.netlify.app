@@ -3616,7 +3616,7 @@ export function validateScoreBoardInitials(initials) {
   ]);
   if (profane.has(initials)) {
     triggerChimneyAnger();
-    return { valid: false, message: "The Fareham chimney master will not allow that." };
+    return { valid: false, message: "Initials cannot contain inappropriate language." };
   }
   return { valid: true };
 }

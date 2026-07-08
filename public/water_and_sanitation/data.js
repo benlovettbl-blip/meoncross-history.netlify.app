@@ -267,7 +267,7 @@ const quizData = [
     "distractors": [
       "Silchester farming roundhouse village",
       "Bearsden public bathing sequence",
-      "Fareham chimney sweep academy"
+      "Vindolanda military barracks"
     ],
     "explanation": "At Housesteads Fort, soldiers sat over deep, stone-lined channels flushed constantly by a stream of water."
   },
@@ -493,6 +493,143 @@ const quizData = [
   }
 ];
 
+const tradingCardsData = [
+  {
+    "id": "tc1",
+    "name": "Iron Age Britons",
+    "era": "Prehistoric",
+    "bio": "Farming families living in scattered roundhouses. Localized and low-density waste disposal kept water clean naturally.",
+    "quote": "Digging temporary cesspits was safe and sustainable.",
+    "unlockedAtXP": 0,
+    "emoji": "🛖",
+    "color": "linear-gradient(135deg, #15803d 0%, #166534 100%)",
+    "image": "assets/card_iron_age_britons.png",
+    "stats": { "hygiene": 60, "engineering": 35, "legacy": 40, "democracy": 95 }
+  },
+  {
+    "id": "tc2",
+    "name": "Roman Engineers",
+    "era": "Roman",
+    "bio": "Revolutionary builders who introduced gravity-fed stone conduits, bathhouses, and sewer systems.",
+    "quote": "Flowing clean water is vital for keeping society healthy.",
+    "unlockedAtXP": 100,
+    "emoji": "🏛️",
+    "color": "linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)",
+    "image": "assets/card_roman_engineers.png",
+    "stats": { "hygiene": 90, "engineering": 95, "legacy": 85, "democracy": 75 }
+  },
+  {
+    "id": "tc3",
+    "name": "Seneca the Younger",
+    "era": "Roman",
+    "bio": "Roman philosopher who complained about the noise and crowds of the public baths, proving they were social hubs.",
+    "quote": "I am surrounded by all kinds of noise from the public baths.",
+    "unlockedAtXP": 150,
+    "emoji": "📜",
+    "color": "linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)",
+    "stats": { "hygiene": 80, "engineering": 20, "legacy": 90, "democracy": 50 }
+  },
+  {
+    "id": "tc4",
+    "name": "Christian Monks",
+    "era": "Medieval",
+    "bio": "Monasteries designed complex networks of wood and lead pipes, carrying fresh water in and flushing waste out.",
+    "quote": "Cleanliness brings us closer to God and aids our spiritual lives.",
+    "unlockedAtXP": 200,
+    "emoji": "⛪",
+    "color": "linear-gradient(135deg, #047857 0%, #065f46 100%)",
+    "stats": { "hygiene": 95, "engineering": 85, "legacy": 80, "democracy": 15 }
+  },
+  {
+    "id": "tc5",
+    "name": "Gongfermers",
+    "era": "Medieval",
+    "bio": "Specialized night-laborers who cleared town cesspits of night soil strictly in darkness to prevent street disruption.",
+    "quote": "Working under cover of night to keep towns clean.",
+    "unlockedAtXP": 300,
+    "emoji": "🧹",
+    "color": "linear-gradient(135deg, #4b5563 0%, #374151 100%)",
+    "stats": { "hygiene": 85, "engineering": 40, "legacy": 60, "democracy": 65 }
+  },
+  {
+    "id": "tc6",
+    "name": "King Edward III",
+    "era": "Medieval",
+    "bio": "Medieval king who warned the Mayor of London about street filth causing sickness, ordering cleanup mandates.",
+    "quote": "The filth lying in the streets is infecting the air.",
+    "unlockedAtXP": 350,
+    "emoji": "👑",
+    "color": "linear-gradient(135deg, #b45309 0%, #92400e 100%)",
+    "stats": { "hygiene": 55, "engineering": 30, "legacy": 70, "democracy": 40 }
+  },
+  {
+    "id": "tc7",
+    "name": "Sir John Harington",
+    "era": "Early Modern",
+    "bio": "Godson of Queen Elizabeth I who invented the first flushing toilet, though it failed due to lack of street sewers.",
+    "quote": "An early flushing closet built for the royal court.",
+    "unlockedAtXP": 400,
+    "emoji": "🚽",
+    "color": "linear-gradient(135deg, #6b21a8 0%, #581c87 100%)",
+    "stats": { "hygiene": 85, "engineering": 80, "legacy": 90, "democracy": 10 }
+  },
+  {
+    "id": "tc8",
+    "name": "Samuel Pepys",
+    "era": "Early Modern",
+    "bio": "Seventeenth-century London diarist who complained when his neighbor's cellar privy leaked into his basement.",
+    "quote": "I stepped into a heap of waste from my neighbor's cellar.",
+    "unlockedAtXP": 500,
+    "emoji": "✍️",
+    "color": "linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%)",
+    "stats": { "hygiene": 45, "engineering": 25, "legacy": 95, "democracy": 35 }
+  },
+  {
+    "id": "tc9",
+    "name": "Edwin Chadwick",
+    "era": "Industrial",
+    "bio": "Poor Law Commissioner whose 1842 Sanitary Report argued that clean water and sewage systems would reduce poverty.",
+    "quote": "Clean water and drainage will prevent disease and poverty.",
+    "unlockedAtXP": 600,
+    "emoji": "📜",
+    "color": "linear-gradient(135deg, #a16207 0%, #854d0e 100%)",
+    "stats": { "hygiene": 80, "engineering": 75, "legacy": 95, "democracy": 80 }
+  },
+  {
+    "id": "tc10",
+    "name": "Dr. John Snow",
+    "era": "Modern",
+    "bio": "Epidemiologist who proved cholera was waterborne in 1854 by mapping deaths and removing the Broad Street pump handle.",
+    "quote": "Cholera is spread by contaminated water, not bad air.",
+    "unlockedAtXP": 700,
+    "emoji": "🔬",
+    "color": "linear-gradient(135deg, #0f766e 0%, #115e59 100%)",
+    "stats": { "hygiene": 95, "engineering": 60, "legacy": 98, "democracy": 90 }
+  },
+  {
+    "id": "tc11",
+    "name": "Joseph Bazalgette",
+    "era": "Modern",
+    "bio": "Superb Victorian civil engineer who constructed 1,300 miles of brick sewers beneath London to end the Great Stink.",
+    "quote": "Diverting London's waste away from the Thames saved thousands of lives.",
+    "unlockedAtXP": 800,
+    "emoji": "⚙️",
+    "color": "linear-gradient(135deg, #0d9488 0%, #0f766e 100%)",
+    "stats": { "hygiene": 95, "engineering": 98, "legacy": 95, "democracy": 85 }
+  },
+  {
+    "id": "tc12",
+    "name": "Louis Pasteur",
+    "era": "Modern",
+    "bio": "French scientist who proved Germ Theory in 1860, showing that micro-organisms cause disease rather than bad air.",
+    "quote": "Microscopic organisms are the true cause of infectious diseases.",
+    "unlockedAtXP": 900,
+    "emoji": "🧪",
+    "color": "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
+    "stats": { "hygiene": 90, "engineering": 85, "legacy": 99, "democracy": 95 }
+  }
+];
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { timelineData, quizData };
+  module.exports = { timelineData, quizData, tradingCardsData };
 }

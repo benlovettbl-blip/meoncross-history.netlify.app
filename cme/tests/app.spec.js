@@ -11,7 +11,7 @@ test.describe('App Visual and Logic Tests', () => {
 
     // Check if the title text is correct
     const chimneyTitle = page.locator('#brand-subheader-title');
-    await expect(chimneyTitle).toHaveText('Fareham Chimney Sweep Inc.');
+    await expect(chimneyTitle).toHaveText('Meoncross History Department | GCSE Study Suite');
   });
 
   test('Syllabus Scumbags pack triggers on mastery', async ({ page }) => {

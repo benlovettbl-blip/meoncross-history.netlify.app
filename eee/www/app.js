@@ -149,12 +149,12 @@ const quizResultThemes = [
     ]
   },
   {
-    name: "Fareham Chimney Sweep Inc.",
+    name: "Meoncross History Guild",
     tiers: [
-      { trophy: "🧹💨", title: "Apprentice Sweep", desc: "Keep practicing! Don't get stuck in the flue. A lot of Victorian soot is still blocking your recall." },
-      { trophy: "🧱🔥", title: "Master Hearth-Tender", desc: "Splendid job! You stoked the fires of memory and cleared the grate completely." },
-      { trophy: "🧹✨", title: "Clean Flue Master", desc: "Perfect! Zero soot detected in your revision channels. A clean flue and a clear mind!" },
-      { trophy: "👑🧹", title: "Lord of the Chimneys", desc: "Masterful! Brushing away historical ignorance one flue at a time. The chimney sweep trade is proud of you!" }
+      { trophy: "📚✏️", title: "Apprentice Historian", desc: "Keep practicing! A little more study of the Elizabethan era will help you master this unit." },
+      { trophy: "🏰🛡️", title: "Court Chronicles Reader", desc: "Splendid job! You have built a solid foundation of key historical facts." },
+      { trophy: "👑📜", title: "Privy Councillor Advisor", desc: "Perfect! Excellent understanding of Elizabethan politics, religion, and society." },
+      { trophy: "🦅✨", title: "Elizabethan Scholar", desc: "Masterful! Your knowledge of early Elizabethan England is outstanding and GCSE-ready." }
     ]
   }
 ];
@@ -4055,7 +4055,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function getTrophyForTopic(topicIdx) {
-  let themeIndex = 4; // Default to Fareham Chimney Sweep Inc.!
+  let themeIndex = 4; // Default to Meoncross History Guild
   if ([0, 3].includes(topicIdx)) themeIndex = 0; // Spy Network
   else if ([8].includes(topicIdx)) themeIndex = 1; // Globe Theatre
   else if ([1, 2].includes(topicIdx)) themeIndex = 2; // Royal Court
@@ -4066,21 +4066,16 @@ function getTrophyForTopic(topicIdx) {
   return theme.tiers[tierIdx] || theme.tiers[0];
 }
 
-const farehamChimneyQuotes = [
-  "Much like the Spanish Armada, a blocked flue will quickly go up in smoke! Sweep clean to avoid your own fireship disaster at Calais!",
-  "Sir Francis Drake circumnavigated the globe for gold; we navigate your chimney for soot. Both require brave men and long brushes!",
-  "Mary Queen of Scots' plots were tightly sealed, but unlike a blocked chimney, Walsingham always found the opening. Keep your flues clear and your treasons sparse!",
-  "Elizabeth I inherited £300,000 of debt; neglecting your chimney will land you in even deeper financial ruins. Clean your flues to save your pocket!",
-  "Finding the 'Middle Way' in the 1559 Religious Settlement was tricky, but finding the sweet spot in a double-flue is our specialty! No half-measures allowed!",
-  "The Puritans hated fancy vestments and ceremonial clutter; we hate fancy soot build-ups and cluttered pipes. Keep it clean and unadorned!",
-  "Enclosure of common land left rural peasants with nowhere to graze; a blocked chimney leaves soot with nowhere to escape. Keep the vents open!",
-  "Raleigh's Roanoke colony failed because of poor supplies and terrible luck; don't let your heating system suffer the same catastrophic fate!",
-  "The Pope's Papal Bull excommunicated Elizabeth in 1570, releasing subjects from loyalty. But no bull can release you from the duty of sweeping your chimney!",
-  "Brushing away historical ignorance, one flue at a time.",
-  "We get into the tight spaces so your historical knowledge can expand.",
-  "Black soot, clear minds, can't lose.",
-  "Because a blocked chimney is bad, but a blocked memory is catastrophic.",
-  "Keeping your grades high and your carbon emissions locally compliant since 1842."
+const meoncrossHistoryQuotes = [
+  "Elizabethan Revision: Master the challenges of the Queen's accession in 1558.",
+  "Religious Settlement 1559: Why did Elizabeth choose the 'Middle Way' between Catholics and Protestants?",
+  "Threats Focus: Contrast the Revolt of the Northern Earls (1569) with the Ridolfi Plot (1571).",
+  "Foreign Policy: How did Drake's privateering and Spanish silver raids tension relations with Philip II?",
+  "Armada 1588: Remember the tactical significance of the fireships at Calais and the wind direction.",
+  "Social Change: Focus on the causes of rising poverty, including enclosure and population growth.",
+  "Privy Council: Sir William Cecil and Sir Francis Walsingham were crucial to maintaining Elizabeth's security.",
+  "Leitner Active Recall: Use the flashcard box regularly to transfer facts to long-term memory.",
+  "Exam Skills Focus: Practice analyzing 4-mark features, 12-mark explanations, and 16-mark judgment essays."
 ];
 
 let chimneyQuoteTimeout = null;
@@ -4095,8 +4090,8 @@ function rotateChimneyTaglines() {
   bar.style.pointerEvents = "auto";
   el.style.opacity = "1";
   
-  const randomIndex = Math.floor(Math.random() * farehamChimneyQuotes.length);
-  el.innerText = `"${farehamChimneyQuotes[randomIndex]}"`;
+  const randomIndex = Math.floor(Math.random() * meoncrossHistoryQuotes.length);
+  el.innerText = `"${meoncrossHistoryQuotes[randomIndex]}"`;
   
   if (chimneyQuoteTimeout) {
     clearTimeout(chimneyQuoteTimeout);

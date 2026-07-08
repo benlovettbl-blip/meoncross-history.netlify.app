@@ -6,6 +6,8 @@ $appJs = Get-Content -Encoding utf8 -Raw -Path "app.js"
 
 # Use literal Replace to avoid regex '$' template literal replacement corruption
 $html = $html.Replace('<link rel="stylesheet" href="styles.css">', "<style>`n$css`n</style>")
+$html = $html.Replace('<script src="data.js?v=was103"></script>', "<script>`n$dataJs`n</script>")
+$html = $html.Replace('<script src="app.js?v=was103"></script>', "<script>`n$appJs`n</script>")
 $html = $html.Replace('<script src="data.js"></script>', "<script>`n$dataJs`n</script>")
 $html = $html.Replace('<script src="app.js"></script>', "<script>`n$appJs`n</script>")
 

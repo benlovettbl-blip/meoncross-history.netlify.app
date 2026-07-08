@@ -21,10 +21,7 @@ fs.copyFileSync(
   path.join('assets', 'data.json'),
   path.join(wwwPath, 'assets', 'data.json')
 );
-fs.copyFileSync(
-  path.join('assets', 'fareham_chimney.png'),
-  path.join(wwwPath, 'assets', 'fareham_chimney.png')
-);
+
 
 // Copy Font Awesome for offline support
 const faSrcDir = path.join(__dirname, 'node_modules', '@fortawesome', 'fontawesome-free');

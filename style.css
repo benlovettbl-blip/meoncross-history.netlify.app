@@ -50,6 +50,46 @@
   --border-radius-sm: 8px;
 }
 
+:root[data-theme="meoncross"] {
+  --primary: #d4af37;
+  --primary-hover: #b89c30;
+  --bg-app: #f1f5f9;
+  --bg-sidebar: #0c2340;
+  --bg-card: #ffffff;
+  --text-main: #0c2340;
+  --text-muted: #475569;
+  --border-glass: rgba(12, 35, 64, 0.08);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --accent: #e2b13c;
+  --font-body: 'Outfit', sans-serif;
+  --border-radius-md: 16px;
+  --border-radius-sm: 8px;
+}
+
+/* Sidebar overrides for Meoncross theme to handle dark sidebar + light main area */
+[data-theme="meoncross"] .app-sidebar {
+  background-color: var(--bg-sidebar);
+  color: #f8fafc;
+}
+[data-theme="meoncross"] .sidebar-logo h2 {
+  color: #ffffff;
+}
+[data-theme="meoncross"] .sidebar-logo span {
+  color: #94a3b8;
+}
+[data-theme="meoncross"] .nav-item {
+  color: #cbd5e1;
+}
+[data-theme="meoncross"] .nav-item:hover, [data-theme="meoncross"] .nav-item.active {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #d4af37;
+}
+[data-theme="meoncross"] .theme-label {
+  color: #94a3b8;
+}
+
+
 /* --- Base Reset & Structure --- */
 * {
   box-sizing: border-box;
@@ -177,6 +217,7 @@ body {
 .color-dot.desert { background: #d4a373; }
 .color-dot.space { background: #6366f1; }
 .color-dot.coral { background: #f43f5e; }
+.color-dot.meoncross { background: linear-gradient(135deg, #0c2340 50%, #d4af37 50%); }
 
 /* --- App Body --- */
 .app-body {
@@ -262,6 +303,35 @@ body {
   align-items: center;
   margin-bottom: 30px;
   gap: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Custom Meoncross theme hero enhancements */
+[data-theme="meoncross"] .dashboard-hero {
+  background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%);
+  border: 2px solid #d4af37;
+  color: #ffffff;
+  box-shadow: 0 10px 30px -5px rgba(12, 35, 64, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+[data-theme="meoncross"] .dashboard-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+[data-theme="meoncross"] .hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+[data-theme="meoncross"] .hero-text p {
+  color: #cbd5e1;
 }
 
 .hero-text h2 {
@@ -349,11 +419,11 @@ body {
   transition: width 0.4s ease;
 }
 
-.bg-danger { background-color: #ef4444; }
-.bg-warning { background-color: #f59e0b; }
-.bg-info { background-color: #06b6d4; }
-.bg-primary { background-color: var(--primary); }
-.bg-success { background-color: #10b981; }
+.bg-danger { background: linear-gradient(to right, #f87171, #ef4444); }
+.bg-warning { background: linear-gradient(to right, #fbbf24, #f59e0b); }
+.bg-info { background: linear-gradient(to right, #22d3ee, #06b6d4); }
+.bg-primary { background: linear-gradient(to right, var(--primary), var(--primary-hover)); }
+.bg-success { background: linear-gradient(to right, #34d399, #10b981); }
 
 .bar-count {
   width: 30px;
@@ -390,6 +460,26 @@ body {
 .module-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Premium style enhancements for Meoncross Theme */
+[data-theme="meoncross"] .module-card {
+  border: 1px solid rgba(12, 35, 64, 0.08);
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+[data-theme="meoncross"] .module-card:hover {
+  border-top-color: var(--primary-hover);
+  box-shadow: 0 10px 15px -3px rgba(12, 35, 64, 0.1), 0 4px 6px -2px rgba(12, 35, 64, 0.05);
+}
+[data-theme="meoncross"] .category-badge {
+  background-color: rgba(12, 35, 64, 0.05);
+  color: var(--text-main);
+}
+[data-theme="meoncross"] .year-badge {
+  background-color: var(--primary);
+  color: #0c2340;
+  font-weight: 800;
 }
 
 .module-card.locked {
