@@ -28,10 +28,13 @@
 
     <!-- Header -->
     <header>
-      <div class="brand">
+      <div class="brand" style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="btn btn-secondary" onclick="window.location.href='/'" title="Back to Portal" style="padding: 0.4rem 0.6rem; font-size: 0.8rem; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; cursor: pointer; border-radius: var(--radius-sm); margin-right: 0.5rem;"><i class="fa-solid fa-house"></i></button>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crown"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z"/><path d="M5 20h14"/></svg>
-        <h1>Elizabethan England Revision</h1>
-        <span>Early Modern Depth Study</span>
+        <div style="display: flex; flex-direction: column;">
+          <h1 style="margin: 0; font-size: 1.2rem; font-weight: 800; line-height: 1.2;">Elizabethan England Revision</h1>
+          <span style="font-size: 0.7rem; color: var(--text-muted);">Early Modern Depth Study</span>
+        </div>
       </div>
       <div class="header-controls">
         <div class="xp-badge-container" id="xpBadgeContainer" style="margin-right: 0.5rem;">
