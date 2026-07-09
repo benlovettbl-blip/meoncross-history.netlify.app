@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Elizabethan Revision</string>
-    <string name="title_activity_main">Elizabethan Revision</string>
-    <string name="package_name">com.edexcel.elizabethanrevision</string>
-    <string name="custom_url_scheme">com.edexcel.elizabethanrevision</string>
-</resources>

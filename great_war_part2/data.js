@@ -1,0 +1,188 @@
+export const unitData = {
+  "lessons": [
+    {
+      "title": "Lesson 1: The Spark & The Stampede (1914)",
+      "narrative": [
+        "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?",
+        "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",
+        "The outbreak of the First World War in August 1914 was not an accidental occurrence; it was the explosive culmination of deep geopolitical rivalries that had polarized Europe since the creation of a unified German Empire in 1871. This new industrial giant in the center of Europe fundamentally disrupted the continent's historic balance of power. To secure their territories, European nations formed rigid, antagonistic military alliances: the Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy).",
+        "These alliances did not guarantee peace; instead, they guaranteed that any localized conflict would drag the entire continent into an industrial war. Tensions were further inflamed by a massive naval arms race, sparked by the British launch of the ultra-modern battleship HMS Dreadnought in 1906, which prompted Germany to build its own fleet to challenge Britain's global empire. Germany feared 'encirclement' by its hostile neighbors, while British politicians grew increasingly suspicious of German militarism.",
+        "The explosive spark was struck in the Balkans, a highly unstable region of southeastern Europe where ethnic groups sought independence from declining empires. In 1908, the Austro-Hungarian Empire annexed Bosnia and Herzegovina, a territory populated by thousands of nationalistic Serbs. This act of imperial expansion deeply angered neighboring Serbia and led to the creation of the Black Hand, a radical Pan-Serbian secret society led by Colonel Dragutin Dimitrijevic (codenamed 'Apis').",
+        "On 28 June 1914, Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, paid a state visit to the Bosnian capital of Sarajevo. Taking advantage of the highly publicized route, six young Black Hand assassins positioned themselves along the streets. After an initial bomb attempt failed, the Archduke’s car took a wrong turn, stopping directly in front of nineteen-year-old nationalist Gavrilo Princip. Princip fired twice, killing Franz Ferdinand and his wife Sophie. This localized act of terrorism triggered the diplomatic escalation of the July Crisis, dragging the allied powers into conflict. By 5 August 1914, Britain’s promise to defend Belgian neutrality drew its vast global empire into a total European war.",
+        "When war was declared in August 1914, Britain’s professional army was tiny compared to continental forces. Yet, within the first twelve months of the conflict, a staggering 1.1 million British men voluntarily enlisted to fight. This massive, enthusiastic rush to join—the 'stampede'—was driven by a powerful mixture of social and psychological factors:",
+        "<strong>Jingoism and Duty:</strong> Intense, aggressive patriotism swept the British public. Propelled by posters featuring Field Marshal Lord Kitchener, men were told that enlisting was a moral duty to defend King, Country, and the honor of weak nations like Belgium.",
+        "<strong>The Myth of a Quick War:</strong> There was a universal belief among politicians, media, and the public that modern industrial warfare would be swift and decisive. The common phrase was that the war would be 'over by Christmas'.",
+        "<strong>Escape from Grinding Labor:</strong> For working-class young men stuck in low-paid, monotonous factory, agricultural, or domestic jobs, the army offered a thrilling promise of travel, uniform, steady pay, and high social status.",
+        "To exploit this enlisting enthusiasm, the British government introduced a unique social experiment: the Pals' Battalions. The War Office promised that if men volunteered together, they would be kept in the same unit to train, travel, and fight side-by-side.",
+        "Whole factories, offices, neighborhood streets, and local football teams enlisted en masse. This collective volunteering transformed military enlistment from an individual choice into an intense community event. If a young man hesitated, he faced immense social shame, such as being handed a white feather (a symbol of cowardice) by local women.",
+        "While the Pals' Battalions successfully raised morale and built deep combat trust, they had a tragic structural flaw. When these highly localized units were sent into intense industrial combat—such as the devastating infantry charges on the first day of the Battle of the Somme in 1916—they suffered catastrophic casualties. In a single afternoon, entire towns and villages lost their entire young male population, leaving communities back home shattered by collective grief."
+      ],
+      "sources": [],
+      "tasks": [
+        {
+          "type": "written",
+          "text": "Q1: Identify the two military alliances that divided European power in 1914.",
+          "model": "The Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy)."
+        },
+        {
+          "type": "written",
+          "text": "Q2: State the exact location and date of the assassination of Archduke Franz Ferdinand.",
+          "model": "Sarajevo, Bosnia and Herzegovina, on 28 June 1914."
+        },
+        {
+          "type": "written",
+          "text": "Q3: Name the secret militant society responsible for organizing the Sarajevo assassination.",
+          "model": "The Black Hand (Pan-Serbian secret society)."
+        },
+        {
+          "type": "written",
+          "text": "Q4: Describe how the British government used 'Pals' Battalions' to encourage young men to volunteer for military service in 1914.",
+          "model": "The government promised that if men volunteered together from the same factory, office, or neighborhood, they would serve in the same unit. This made enlisting a community event and created social pressure to join."
+        },
+        {
+          "type": "written",
+          "text": "Q5: Describe two social or economic reasons why a working-class teenager in 1914 might find military enlisting highly attractive.",
+          "model": "1) Aggressive patriotism (jingoism) and a sense of duty to defend their country. 2) Escape from grinding, monotonous, low-paid factory or agricultural work, offering travel, steady pay, and social status."
+        },
+        {
+          "type": "written",
+          "text": "Q6: Explain how the localized assassination of an Austrian Archduke in Sarajevo escalated into a global war involving Great Britain by August 1914. Use strict causal transition words—such as because, as a result of, due to, and this led to—to structure your narrative.",
+          "model": "The localized assassination in Sarajevo escalated into a global war because of Europe's rigid alliance systems. When Gavrilo Princip shot the Austrian heir, Austria-Hungary blamed Serbia and declared war. As a result of this declaration, Russia mobilized its army to protect its Serbian ally. Due to the Schlieffen Plan, which required Germany to defeat France quickly before fighting Russia, Germany declared war on Russia and invaded neutral Belgium to reach French territory. This led to Great Britain entering the war, as Britain had signed a treaty promising to defend Belgian neutrality. Ultimately, Britain's entry brought its global empire into the war, converting a European dispute into a world war."
+        },
+        {
+          "type": "written",
+          "text": "Q7: Compare the long-term causes of the First World War (the alliance systems, the naval race, and imperial rivalries) with the short-term trigger (the Sarajevo assassination). To what extent was the war caused by the trigger event of 28 June 1914, rather than deep-seated European systems? Write a structured, balanced evaluation.",
+          "model": "While the assassination of Archduke Franz Ferdinand was the immediate spark of the conflict, the war was fundamentally caused by long-term structural factors. On one hand, the Sarajevo trigger on 28 June 1914 was important because it provided the political excuse that Austria-Hungary needed to try and destroy its rival, Serbia, which it feared was fueling Balkan nationalism. Without this high-profile assassination, the July Crisis would not have occurred when it did. However, the deep-seated systems of imperial rivalry and military alliances were far more significant long-term causes. Years of naval arms racing, initiated by the launch of HMS Dreadnought, had already placed Britain and Germany in a state of high tension. The division of Europe into the Triple Entente and Triple Alliance created a dangerous situation where any small conflict would inevitably drag the entire continent into war. On balance, the Sarajevo assassination was merely a contributory cause that set off the war, whereas the alliance systems and naval arms race were necessary causes. Without these deep structural tensions, the assassination of Franz Ferdinand would have remained a local crisis rather than escalating into a global conflict."
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Balance of Power",
+          "definition": "The distribution of power among nations to prevent any one nation from becoming strong enough to dominate the others."
+        },
+        {
+          "term": "Jingoism",
+          "definition": "Intense, aggressive patriotism and foreign policy."
+        },
+        {
+          "term": "Pals' Battalions",
+          "definition": "Special units of the British Army consisting of men who enlisted together from the same local area or workplace."
+        }
+      ],
+      "extended": null,
+      "do_now": {
+        "type": "questions",
+        "items": [
+          {
+            "question": "Q1: Under the pre-1832 British electoral system, what term described depopulated geographic areas (such as Old Sarum) that still sent two MPs to Parliament?",
+            "answer": "Rotten boroughs (constituencies with almost no voters but disproportionate parliamentary representation)"
+          },
+          {
+            "question": "Q2: Name the two distinct suffrage organizations that campaigned for female voting rights in early 20th-century Britain, specifying which was militant.",
+            "answer": "The National Union of Women's Suffrage Societies (NUWSS / Suffragists) led by Millicent Fawcett (peaceful/legal), and the Women's Social and Political Union (WSPU / Suffragettes) led by Emmeline Pankhurst (militant/illegal)."
+          },
+          {
+            "question": "Q3: Define the core Victorian middle-class ideology of 'Separate Spheres' (or the 'Angel in the House') that restricted women to domestic life.",
+            "answer": "The belief that a respectable woman's place was strictly inside the home to please her husband and raise children, sheltered from the corrupting influence of public and professional life."
+          },
+          {
+            "question": "Q4: Explain why European empires viewed control over territories like Egypt's Suez Canal as vital to maintaining global geopolitical dominance.",
+            "answer": "The canal was a vital shipping gateway that connected Britain to its empire in India and secured access to Persian oil supplies, which were needed to fuel modern naval warships."
+          },
+          {
+            "question": "Q5: Rearrange these three constitutional milestones in the correct chronological order: The Equal Franchise Act, The Great Reform Act, The Representation of the People Act.",
+            "answer": "The Great Reform Act (1832) -> The Representation of the People Act (1918) -> The Equal Franchise Act (1928)."
+          },
+          {
+            "question": "Q6: When evaluating a contemporary historical source, why must a historian examine its 'provenance' (nature, origin, purpose) rather than just its literal content?",
+            "answer": "To understand its limitations, bias, and reliability. Literal content can be faked, staged, or intended as propaganda; analyzing why, when, and by whom a source was constructed reveals its true historical utility."
+          }
+        ]
+      },
+      "gcse_task": null,
+      "flashcards": [
+        {
+          "term": "HMS Dreadnought",
+          "definition": "Which battleship, launched by Great Britain in 1906, revolutionized naval design and triggered a massive European arms race?"
+        },
+        {
+          "term": "Bosnia and Herzegovina",
+          "definition": "Which province did Austria-Hungary annex in 1908, deeply angering Serbian nationalists?"
+        },
+        {
+          "term": "Colonel Dragutin Dimitrijevic ('Apis')",
+          "definition": "Who was the leader of the radical Pan-Serbian secret society known as the Black Hand?"
+        },
+        {
+          "term": "1.1 million",
+          "definition": "Approximately how many British men voluntarily enlisted in the military during the first twelve months of World War I?"
+        },
+        {
+          "term": "Pals' Battalions",
+          "definition": "Why did the 'Pals' Battalions' prove to be a devastating experiment for local British communities?"
+        }
+      ]
+    },
+    {
+      "title": "Lesson 2: The Reality of the Mud (Western Front)",
+      "narrative": [
+        "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?",
+        "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
+        "Placeholder narrative paragraph."
+      ],
+      "sources": [],
+      "tasks": [],
+      "vocab": [],
+      "extended": null,
+      "do_now": null,
+      "gcse_task": null,
+      "flashcards": []
+    },
+    {
+      "title": "Lesson 3: The Forgotten Empire (The Global War)",
+      "narrative": [
+        "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?",
+        "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops).",
+        "Placeholder narrative paragraph."
+      ],
+      "sources": [],
+      "tasks": [],
+      "vocab": [],
+      "extended": null,
+      "do_now": null,
+      "gcse_task": null,
+      "flashcards": []
+    },
+    {
+      "title": "Lesson 4: Total War at Home (The Home Front)",
+      "narrative": [
+        "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?",
+        "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions).",
+        "Placeholder narrative paragraph."
+      ],
+      "sources": [],
+      "tasks": [],
+      "vocab": [],
+      "extended": null,
+      "do_now": null,
+      "gcse_task": null,
+      "flashcards": []
+    },
+    {
+      "title": "Lesson 5: The Fragile Peace (Armistice & Versailles)",
+      "narrative": [
+        "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+        "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII).",
+        "Placeholder narrative paragraph."
+      ],
+      "sources": [],
+      "tasks": [],
+      "vocab": [],
+      "extended": null,
+      "do_now": null,
+      "gcse_task": null,
+      "flashcards": []
+    }
+  ],
+  "staticPages": []
+};

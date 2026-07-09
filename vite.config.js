@@ -12,7 +12,8 @@ export default defineConfig({
         cme: 'cme/index.html',
         eee: 'eee/index.html',
         water_and_sanitation: 'water_and_sanitation/index.html',
-        great_war: 'great_war/index.html'
+        great_war: 'great_war/index.html',
+        great_war_v2: 'great_war_v2/index.html'
       }
     }
   },

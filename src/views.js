@@ -12,7 +12,8 @@ export const UNITS = [
   { id: 'water_and_sanitation', title: 'Water and Sanitation Through Time', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Exploring sanitation development from prehistoric roundhouses to Roman conduits.' },
   { id: 'norman_conquest', title: 'The Norman Conquest (1066)', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Enquiry into the succession crisis, battles of 1066, and Norman control.' },
   { id: 'change_1450_1750', title: 'Change from 1450-1750', category: 'Key Stage 3', yearGroup: 'Year 8', desc: 'Exploring the Renaissance, Reformation, Civil War, and Scientific Revolution.' },
-  { id: 'great_war', title: 'The Great War (1914-1918)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into the causes, trench warfare, and global impact of WWI.' },
+  { id: 'great_war', title: 'The Great War: Causes & Outbreak', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'New format: Accessible interactive digital app with built-in scaffolds and printable workbooks.' },
+  { id: 'great_war_part2', title: 'The Great War: Experience & Aftermath (Part 2)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into trench warfare, the global impact, and the flawed peace of the Treaty of Versailles.' },
   { id: 'gcse_usa_1954_1975', title: 'GCSE: USA (1954-1975)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Conflict at home and abroad: Civil Rights Movement and Vietnam War.' },
   { id: 'gcse_middle_east_1945_1995', title: 'GCSE: Conflict in the Middle East (1945-1995)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The birth of Israel, Suez Crisis, Six-Day War, Yom Kippur War, and peace process.' },
   { id: 'gcse_elizabethan_england', title: 'GCSE: Early Elizabethan England (1558-1588)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Queen, government, religion, challenges at home/abroad, and Elizabethan society.' }
@@ -105,10 +106,12 @@ export function renderDashboard() {
   `;
 
   const UNIT_ICONS = {
-    water_and_sanitation: { icon: 'fa-droplet', color: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+    water_and_sanitation: { icon: 'fa-faucet-drip', color: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
     norman_conquest: { icon: 'fa-shield-halved', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)' },
     change_1450_1750: { icon: 'fa-flask', color: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
     great_war: { icon: 'fa-helmet-safety', color: '#b45309', bg: 'rgba(180, 83, 9, 0.1)' },
+    great_war_part2: { icon: 'fa-globe', color: '#0369a1', bg: 'rgba(3, 105, 161, 0.1)' },
+    great_war_v2: { icon: 'fa-star', color: '#eab308', bg: 'rgba(234, 179, 8, 0.1)' },
     gcse_usa_1954_1975: { icon: 'fa-monument', color: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
     gcse_middle_east_1945_1995: { icon: 'fa-dove', color: '#0d9488', bg: 'rgba(13, 148, 136, 0.1)' },
     gcse_elizabethan_england: { icon: 'fa-crown', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' }
@@ -138,7 +141,7 @@ export function renderDashboard() {
         
         ${isUnlocked ? `
           <div class="module-actions" style="margin-top: 14px;">
-            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' ? `
+            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' || unit.id === 'great_war_part2' || unit.id === 'great_war_v2' ? `
               <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
                 <i class="fa-solid fa-circle-play"></i> Launch Study App
               </button>
@@ -219,8 +222,10 @@ window.launchSubApp = function(unitId) {
     window.location.href = '/eee/';
   } else if (unitId === 'water_and_sanitation') {
     window.location.href = '/water_and_sanitation/';
-  } else if (unitId === 'great_war') {
+  } else if (unitId === 'great_war' || unitId === 'great_war_v2') {
     window.location.href = '/great_war/';
+  } else if (unitId === 'great_war_part2') {
+    window.location.href = '/great_war_part2/';
   }
 };
 
