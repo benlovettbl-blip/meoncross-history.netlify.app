@@ -38,10 +38,11 @@ let html = `<!DOCTYPE html>
   <h1 style="margin-top: 50px; margin-bottom: 10px;">${unitData.title}</h1>
   <p style="text-align:center; font-size:16pt; margin-top: 0;">Student Workbook</p>
   
+  ${unitData.cover_image ? `
   <div style="text-align: center; margin: 30px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Anton_von_Werner_-_Er%C3%B6ffnung_des_Reichstags_1888_%281893%29.jpg" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="The Opening of the Reichstag">
-    <div style="font-size: 10pt; font-style: italic; margin-top: 8px;">Anton von Werner, 'The Opening of the Reichstag' (1893)</div>
-  </div>
+    <img src="${unitData.cover_image}" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
+    ${unitData.cover_caption ? `<div style="font-size: 10pt; font-style: italic; margin-top: 8px;">${unitData.cover_caption}</div>` : ''}
+  </div>` : ''}
 
   <div style="margin: 40px 10%; border: 2px solid #1a237e; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
     <h3 style="margin-top: 0; margin-bottom: 15px; color: #1a237e; text-align: center; font-family: 'Playfair Display', serif; font-size: 16pt;">Key Enquiry Questions</h3>

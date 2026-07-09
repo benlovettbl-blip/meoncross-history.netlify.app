@@ -293,6 +293,15 @@ export function initializeApp(unitData) {
       });
       navContainer.appendChild(link);
     });
+
+    const workbookLink = document.createElement('a');
+    workbookLink.className = 'lesson-link';
+    workbookLink.textContent = 'Pupil Workbook';
+    workbookLink.href = 'workbook.html';
+    workbookLink.target = '_blank';
+    workbookLink.style.marginTop = '15px';
+    workbookLink.style.border = '2px dashed #cbd5e1';
+    navContainer.appendChild(workbookLink);
   }
 
   // Render Lesson Content
