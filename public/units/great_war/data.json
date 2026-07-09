@@ -1,45 +1,8 @@
 {
   "id": "great_war",
-  "title": "🌍 The Great War: Causes & Outbreak",
-  "enquiry": "Was the outbreak of the First World War in 1914 an inevitable disaster?",
-  "badge": "Key Stage 3 Unit",
-  "tabs": [
-    {
-      "id": "cover",
-      "label": "📚 Cover & Plans"
-    },
-    {
-      "id": "timeline",
-      "label": "⏳ Timeline"
-    },
-    {
-      "id": "lesson1",
-      "label": "L1: Powder Keg"
-    },
-    {
-      "id": "lesson2",
-      "label": "L2: Empires"
-    },
-    {
-      "id": "lesson3",
-      "label": "L3: Navies"
-    },
-    {
-      "id": "lesson4",
-      "label": "L4: Alliances"
-    },
-    {
-      "id": "lesson5",
-      "label": "L5: Sarajevo"
-    },
-    {
-      "id": "assessment",
-      "label": "📝 Assessment"
-    },
-    {
-      "id": "exhibition",
-      "label": "🖼️ Exhibition"
-    }
-  ],
+  "title": "The Great War: Causes & Outbreak",
+  "enquiry": "",
+  "badge": "",
+  "tabs": [],
   "contentUrl": "/units/great_war/content.html"
 }

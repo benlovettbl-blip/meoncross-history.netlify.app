@@ -1,544 +1,255 @@
+import { unitData } from './data.js';
+
 window.initUnit = function() {
-  const pages = document.querySelectorAll('.page, .page-landscape');
-  const tabs = document.querySelectorAll('#engine-tabs-container .tb-tab');
+  const sidebar = document.getElementById('sidebar');
+  const contentArea = document.getElementById('engine-workbook-container');
+  const btnDyslexia = document.getElementById('btn-dyslexia');
 
-  // 1. Dynamically generate page footers for printing
-  pages.forEach((page, index) => {
-    const pageNum = index + 1;
-    const footer = document.createElement('div');
-    footer.className = 'page-footer';
-    footer.innerHTML = `
-      <div class="footer-left" style="font-weight: 600;">${pageNum}/${pages.length}</div>
+  // Toggle Dyslexia Mode
+  btnDyslexia.addEventListener('click', () => {
+    document.body.classList.toggle('sen-mode');
+    const isSen = document.body.classList.contains('sen-mode');
+    btnDyslexia.innerHTML = isSen 
+      ? '<i class="fa-solid fa-check"></i> Standard Mode' 
+      : '<i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode';
+  });
+
+  // Render Sidebar
+  function renderSidebar() {
+    sidebar.innerHTML = '';
+    unitData.lessons.forEach((lesson, index) => {
+      const link = document.createElement('a');
+      link.className = 'lesson-link';
+      if (index === 0) link.classList.add('active');
+      link.textContent = lesson.title;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        renderLesson(lesson);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      sidebar.appendChild(link);
+    });
+  }
+
+  // Render Lesson Content
+  function renderLesson(lesson) {
+    let html = `<div class="lesson-content">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 10px 15px; z-index: 1000; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h4 style="margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; color: var(--primary);">${lesson.title}</h4>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
+      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.location.href='../index.html'"><i class="fa-solid fa-house"></i> Main Dashboard</button>
+    </div>
+  </div>
+  <div id="progress-container" style="position: sticky; top: 62px; background: #e2e8f0; height: 6px; width: 100%; z-index: 1001;">
+    <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
+  </div>
     `;
-    page.appendChild(footer);
-  });
 
-  // Tab mapping to page indices (0-indexed)
-  const tabMappings = {
-    cover: [0, 1, 2],       // Pages 1, 2, 2A
-    timeline: [3, 4],       // Page 3, 3A (Assessment Guide)
-    lesson1: [5, 6, 7, 8, 9],
-    lesson2: [10, 11, 12, 13, 14],
-    lesson3: [15, 16, 17, 18, 19],
-    lesson4: [20, 21, 22, 23, 24],
-    lesson5: [25, 26, 27, 28, 29, 30, 31, 32], // Includes Historian's Corner & Voices
-    assessment: [33, 34, 35, 36, 37],          // Includes L5B, Glossary, Vault, Map
-    exhibition: [38, 39, 40, 41]               // Includes Curator, Canvas, Games, Cards
-  };
-
-  // 2. Dynamic Line Generation for visible pages
-  function adjustWorksheetLines() {
-    // Handled by pure CSS flex-grow now
-  }
-
-  // 3. Tab switching action
-  function selectTab(tabKey) {
-    const activeIndices = tabMappings[tabKey] || [0];
+    // Narrative
     
-    // Toggle active classes on pages
-    pages.forEach((page, index) => {
-      if (activeIndices.includes(index)) {
-        page.classList.add('active');
-      } else {
-        page.classList.remove('active');
+      let flashcardDict = {};
+      if (lesson.flashcards) {
+        lesson.flashcards.forEach(fc => {
+          flashcardDict[fc.term.toLowerCase()] = fc.definition;
+        });
       }
-    });
+      const highlightGlossary = (text) => {
+        if (Object.keys(flashcardDict).length === 0) return text;
+        let processedText = text;
+        for (const [term, def] of Object.entries(flashcardDict)) {
+          const regex = new RegExp(`\\b(${term})\\b`, 'gi');
+          processedText = processedText.replace(regex, `<span style="border-bottom: 1px dotted #1a237e; cursor: help; color: #1a237e; font-weight: 600;" title="${def.replace(/"/g, '&quot;')}">$1</span>`);
+        }
+        return processedText;
+      };
 
-    // Toggle active state on tab buttons
-    tabs.forEach(tab => {
-      if (tab.getAttribute('data-tab') === tabKey) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-
-    // Recalculate dynamic worksheet lines
-    adjustWorksheetLines();
-  }
-
-  // Bind tab click events
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      const tabKey = e.target.getAttribute('data-tab');
-      selectTab(tabKey);
-    });
-  });
-
-  window.printWorkbook = function() {
-    window.print();
-  };
-
-  window.toggleDoNow = function(lessonNum) {
-    const grid = document.getElementById(`doNowGrid${lessonNum}`);
-    if (grid) {
-      const cells = grid.querySelectorAll('.do-now-cell');
-      const firstCell = cells[0];
-      const isRevealed = firstCell ? firstCell.classList.contains('answers-revealed') : false;
-      
-      cells.forEach(cell => {
-        if (isRevealed) {
-          cell.classList.remove('answers-revealed');
+    if (lesson.narrative && lesson.narrative.length > 0) {
+      lesson.narrative.forEach(para => {
+        if(para.startsWith('"')) {
+           html += `<div class="task-item"><i class="fa-solid fa-clipboard-question"></i> ${para.replace(/"/g, '')}</div>`;
         } else {
-          cell.classList.add('answers-revealed');
+           html += `<p class="narrative-block">${highlightGlossary(para)}</p>`;
         }
       });
-      
-      // Update button text
-      const ev = window.event;
-      if (ev && ev.target) {
-        const btn = ev.target.closest('button');
-        if (btn) {
-          btn.innerHTML = isRevealed 
-            ? '<i class="fa-solid fa-eye"></i> Reveal Do Now Answers' 
-            : '<i class="fa-solid fa-eye-slash"></i> Hide Do Now Answers';
-        }
-      }
     }
-  };
 
-  let currentUtterance = null;
-  window.speakLesson = function(lessonNum) {
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-      const btns = document.querySelectorAll('.speak-btn');
-      btns.forEach(btn => {
-        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-      });
-      if (currentUtterance && currentUtterance.lessonNum === lessonNum) {
-        currentUtterance = null;
-        return;
-      }
-    }
-    
-    // Find reading content text to speak (we look for narrative-col elements on current active pages)
-    const activePages = document.querySelectorAll('.page.active, .page-landscape.active');
-    let textToRead = "";
-    activePages.forEach(page => {
-      const paragraphs = page.querySelectorAll('.narrative-col, p');
-      paragraphs.forEach(p => {
-        // Skip metadata/headers to only read the actual lesson content
-        if (!p.closest('.do-now-grid') && !p.closest('.vocabulary-box') && !p.closest('.glossary-table')) {
-          textToRead += p.innerText + " ";
+    // Sources
+    if (lesson.sources && lesson.sources.length > 0) {
+      html += `<div class="sources-grid">`;
+      lesson.sources.forEach(source => {
+        if(source.src) {
+           // Fix relative paths for v2 folder
+           let src = source.src.startsWith('../') ? source.src : `../great_war/${source.src}`;
+           html += `
+             <div class="source-card">
+               ${source.title ? `<h4>${source.title}</h4>` : ''}
+               <img src="${src}" alt="Source Image">
+               ${source.caption ? `<p class="source-caption">${source.caption}</p>` : ''}
+             </div>
+           `;
         }
       });
-    });
-    
-    if (!textToRead.trim()) return;
-    
-    const utterance = new SpeechSynthesisUtterance(textToRead);
-    utterance.lessonNum = lessonNum;
-    currentUtterance = utterance;
-    
-    const ev = window.event;
-    const btn = ev ? ev.target.closest('button') : null;
-    if (btn) {
-      btn.innerHTML = '<i class="fa-solid fa-stop"></i> Stop';
+      html += `</div>`;
     }
-    
-    utterance.onend = function() {
-      if (btn) {
-        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Listen';
-      }
-      currentUtterance = null;
-    };
-    
-    window.speechSynthesis.speak(utterance);
-  };
 
-  // Interactive Timeline Milestones Data
-  const milestoneData = {
-    1: {
-      year: "1871",
-      title: "The Unification of Germany",
-      desc: "Following victory in the Franco-Prussian War, the German states unified into the German Empire. The unification ceremony was deliberately held in the Hall of Mirrors at Versailles, France's historic royal palace. This created long-term French resentment and a desire for revenge (revanche).",
-      img: "assets/was_germany_unification.png",
-      trivia: "Which strategic border territory did France lose to Germany as a result of this war?"
-    },
-    2: {
-      year: "1897",
-      title: "Imperial Rivalries & 'Place in the Sun'",
-      desc: "Kaiser Wilhelm II declared Germany would pursue a 'World Policy' (Weltpolitik) to secure its 'place in the sun'-meaning colonial territory overseas. This directly challenged the existing global empires of Great Britain and France, sparking rivalries in Africa.",
-      img: "assets/was_greedy_boy.png",
-      trivia: "What message was the British cartoonist trying to send by showing the Kaiser biting into the globe?"
-    },
-    3: {
-      year: "1906",
-      title: "The Naval Arms Race",
-      desc: "Great Britain launched the revolutionary battleship HMS Dreadnought in 1906. With steam turbine engines and ten 12-inch guns, it made all older battleships obsolete overnight. Germany responded by building its own Dreadnoughts, setting off a dangerous shipbuilding race.",
-      img: "assets/was_dreadnought_blueprint.png",
-      trivia: "How many heavy guns did HMS Dreadnought carry?"
-    },
-    4: {
-      year: "1907",
-      title: "Encirclement & The Alliance System",
-      desc: "In response to Germany's growing military and naval power, Great Britain, France, and Russia joined together to form the Triple Entente in 1907. This completed a rival alliance system opposite the Triple Alliance (Germany, Austria-Hungary, Italy), making Germany feel surrounded.",
-      img: "assets/was_military_matrix.png",
-      trivia: "Which three nations belonged to the rival Triple Entente?"
-    },
-    5: {
-      year: "June 1914",
-      title: "The Spark in Sarajevo",
-      desc: "Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, was assassinated in Sarajevo by Gavrilo Princip, a member of the Serbian nationalist group 'Black Hand'. This short-term spark triggered the July Crisis, dragging Europe's allied empires into war.",
-      img: "assets/was_boiling_point.png",
-      trivia: "What was the name of the group that planned the assassination?"
-    }
-  };
-
-  window.showMilestoneModal = function(id) {
-    const data = milestoneData[id];
-    if (!data) return;
-    
-    const contentBox = document.getElementById('modalMilestoneContent');
-    if (contentBox) {
-      contentBox.innerHTML = `
-        <div style="font-size: 11pt; font-weight: bold; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Milestone ${id}: ${data.year}</div>
-        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 1.5px solid var(--gold); padding-bottom: 5px; color: #ffffff;">${data.title}</h3>
-        <img src="${data.img}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
-        <p style="font-size: 10.5pt; line-height: 1.5; color: #e2e8f0; margin-bottom: 15px; text-align: justify;">${data.desc}</p>
-        <div style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
-          <strong style="display: block; font-size: 9pt; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;"><i class="fa-solid fa-circle-question"></i> Retrieval Challenge</strong>
-          <span style="font-size: 9.5pt; line-height: 1.4; color: #f8fafc;">${data.trivia}</span>
-        </div>
+    // Tasks
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      html += `<div class="tasks-section">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Knowledge Check Tasks</h3>
       `;
-    }
-    
-    const modal = document.getElementById('milestoneModal');
-    if (modal) {
-      modal.style.display = 'flex';
-    }
-  };
-
-  window.closeMilestoneModal = function() {
-    const modal = document.getElementById('milestoneModal');
-    if (modal) {
-      modal.style.display = 'none';
-    }
-  };
-
-  window.toggleSimplifyText = function(pageId) {
-    const page = document.getElementById(pageId);
-    if (page) {
-      const isSimplified = page.classList.contains('text-simplified');
-      if (isSimplified) {
-        page.classList.remove('text-simplified');
-      } else {
-        page.classList.add('text-simplified');
-      }
-      
-      // Update toggle button label
-      const ev = window.event;
-      if (ev && ev.target) {
-        const btn = ev.target.closest('button');
-        if (btn) {
-          btn.innerHTML = isSimplified
-            ? '<i class="fa-solid fa-compress"></i> Simplify Text'
-            : '<i class="fa-solid fa-expand"></i> Show Academic Text';
+      lesson.tasks.forEach((task, tIdx) => {
+        html += `<div class="task-item" style="position:relative;">`;
+        if (task.type === 'tps') {
+          html += `<div style="display:inline-block; background:#f59e0b; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem; margin-bottom:8px; font-weight:bold;"><i class="fa-solid fa-users"></i> Think, Pair, Share</div> `;
         }
-      }
-      
-      // Re-trigger layout calculations to adjust writing lines
-      adjustWorksheetLines();
-    }
-  };
+        html += `${task.text}`;
 
-  // Re-run line calculations on window resize
-  window.addEventListener('resize', adjustWorksheetLines);
-
-  window.toggleLessonSentenceStarters = function(event) {
-    const btn = event.currentTarget;
-    const page = btn.closest('.page');
-    if (!page) return;
-    
-    const starters = page.querySelectorAll('.sentence-starter-inline');
-    const answers = page.querySelectorAll('.model-answer-inline');
-    
-    const anyVisible = Array.from(starters).some(el => el.style.display !== 'none' && el.style.display !== '');
-    starters.forEach(el => {
-      el.style.display = anyVisible ? 'none' : 'block';
-    });
-    
-    if (!anyVisible) {
-      answers.forEach(el => {
-        el.style.display = 'none';
+        if (task.scaffold) {
+          html += `<div style="margin-top: 10px; display:flex; gap: 8px;">`;
+          if (task.starter) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-starter-${tIdx}').style.display='block'">Sentence Starter</button>`;
+          if (task.clue) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-clue-${tIdx}').style.display='block'">Clue</button>`;
+          if (task.model) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-model-${tIdx}').style.display='block'">WAGOLL (Model)</button>`;
+          html += `</div>`;
+          
+          if (task.starter) html += `<div id="scaffold-starter-${tIdx}" class="scaffold-box starter" style="display:none;"><i class="fa-solid fa-play"></i> <strong>Start your sentence with:</strong> ${task.starter}</div>`;
+          if (task.clue) html += `<div id="scaffold-clue-${tIdx}" class="scaffold-box clue" style="display:none;"><i class="fa-solid fa-lightbulb"></i> <strong>Hint:</strong> ${task.clue}</div>`;
+          if (task.model) html += `<div id="scaffold-model-${tIdx}" class="scaffold-box model" style="display:none;"><i class="fa-solid fa-star"></i> <strong>WAGOLL:</strong> ${task.model}</div>`;
+        }
+        
+        if (task.teacher_note) {
+          html += `<div class="teacher-note"><i class="fa-solid fa-chalkboard-user"></i> <strong>Teacher Note:</strong> ${task.teacher_note}</div>`;
+        }
+        html += `</div>`;
       });
-      const modelBtn = page.querySelector('.model-answers-toggle-btn');
-      if (modelBtn) {
-        modelBtn.innerHTML = '<i class="fa-solid fa-check-double"></i> Model Answers';
-        modelBtn.classList.remove('active-btn');
-      }
+      html += `</div>`;
     }
-    
-    btn.innerHTML = anyVisible 
-      ? '<i class="fa-solid fa-pen-clip"></i> Sentence Starters' 
-      : '<i class="fa-solid fa-eye-slash"></i> Hide Starters';
-      
-    if (anyVisible) {
-      btn.classList.remove('active-btn');
-    } else {
-      btn.classList.add('active-btn');
-    }
-    
-    adjustWorksheetLines();
-  };
 
-  window.toggleLessonModelAnswersInline = function(event) {
-    const btn = event.currentTarget;
-    const page = btn.closest('.page');
-    if (!page) return;
-    
-    const starters = page.querySelectorAll('.sentence-starter-inline');
-    const answers = page.querySelectorAll('.model-answer-inline');
-    
-    const anyVisible = Array.from(answers).some(el => el.style.display !== 'none' && el.style.display !== '');
-    answers.forEach(el => {
-      el.style.display = anyVisible ? 'none' : 'block';
-    });
-    
-    if (!anyVisible) {
-      starters.forEach(el => {
-        el.style.display = 'none';
+    // Extended Reading
+    if (lesson.extended && lesson.extended.paragraphs) {
+      html += `
+        <div class="extended-reading">
+          <h3><i class="fa-solid fa-graduation-cap"></i> ${lesson.extended.title}</h3>
+      `;
+      lesson.extended.paragraphs.forEach(para => {
+        html += `<p class="narrative-block">${para}</p>`;
       });
-      const startersBtn = page.querySelector('.sentence-starters-toggle-btn');
-      if (startersBtn) {
-        startersBtn.innerHTML = '<i class="fa-solid fa-pen-clip"></i> Sentence Starters';
-        startersBtn.classList.remove('active-btn');
-      }
+      html += `</div>`;
     }
-    
-    btn.innerHTML = anyVisible 
-      ? '<i class="fa-solid fa-check-double"></i> Model Answers' 
-      : '<i class="fa-solid fa-eye-slash"></i> Hide Answers';
-      
-    if (anyVisible) {
-      btn.classList.remove('active-btn');
-    } else {
-      btn.classList.add('active-btn');
-    }
-    
-    adjustWorksheetLines();
-  };
 
-  // Dynamic creation of transparent textareas for student answer input over writing lines
-  const lineBoxes = document.querySelectorAll('.writing-lines-box');
-  lineBoxes.forEach((box) => {
-    if (!box.querySelector('textarea')) {
-      const textarea = document.createElement('textarea');
-      textarea.className = 'student-textarea no-print';
-      textarea.placeholder = 'Type your answer here for on-screen entry...';
-      textarea.style.width = '100%';
-      textarea.style.height = '100%';
-      textarea.style.position = 'absolute';
-      textarea.style.top = '0';
-      textarea.style.left = '0';
-      textarea.style.border = 'none';
-      textarea.style.background = 'transparent';
-      textarea.style.resize = 'none';
-      textarea.style.fontFamily = 'inherit';
-      textarea.style.fontSize = '11.5pt';
-      textarea.style.lineHeight = '8mm';
-      textarea.style.padding = '0 6px';
-      textarea.style.boxSizing = 'border-box';
-      textarea.style.outline = 'none';
-      textarea.style.color = '#1a1a1a';
-      textarea.style.overflow = 'hidden';
-      
-      box.style.position = 'relative';
-      box.appendChild(textarea);
-    }
+
+      // Historians Corner
+      if (lesson.historians_corner) {
+        html += `<div class="tasks-section" style="margin-top: 40px; background: #f3e5f5; border: 2px solid #ce93d8; border-radius: 8px; padding: 20px;">
+          <h3 style="color: #6a1b9a; margin-top: 0; border-bottom: 2px solid #e1bee7; padding-bottom: 10px;"><i class="fa-solid fa-book-journal-whills"></i> Historian's Corner: ${lesson.historians_corner.title}</h3>
+          <p style="margin: 0; font-size: 1.05rem; line-height: 1.6; color: #4a148c;">${lesson.historians_corner.text}</p>
+        </div>`;
+      }
+
+      // GCSE Cross-Source Analysis Task
+      if (lesson.gcse_task) {
+        html += `<div class="tasks-section" style="margin-top: 40px; background: #e3f2fd; border: 2px solid #90caf9; border-radius: 8px; padding: 20px;">
+          <h3 style="color: #1565c0; margin-top: 0; border-bottom: 2px solid #bbdefb; padding-bottom: 10px;"><i class="fa-solid fa-scale-balanced"></i> GCSE Cross-Source Analysis</h3>
+          <p style="font-weight: bold; font-size: 1.1rem; color: #0d47a1;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>
+          
+          <div style="display: flex; gap: 20px; margin-top: 20px;">
+            <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; border: 1px solid #90caf9;">
+              <img src="../great_war/${lesson.gcse_task.sources[0].src}" style="width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 10px; border-radius: 4px;">
+              <p style="margin:0; font-size: 0.9rem; font-weight: 600; color: #1565c0;">${lesson.gcse_task.sources[0].title}</p>
+            </div>
+            <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; border: 1px solid #90caf9; display: flex; flex-direction: column; justify-content: center;">
+              <blockquote style="font-size: 1.1rem; font-style: italic; color: #475569; border-left: 4px solid #1565c0; padding-left: 15px; margin: 0 0 15px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
+              <p style="margin:0; font-size: 0.9rem; font-weight: 600; color: #1565c0;">${lesson.gcse_task.sources[1].title}</p>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 25px; color: #1565c0;">Source Evaluation Scaffolding</h4>
+          <table style="width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <thead>
+              <tr style="background: #bbdefb; color: #0d47a1;">
+                <th style="padding: 10px; border: 1px solid #90caf9; width: 10%;">Source</th>
+                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">N.O.P. (Nature, Origin, Purpose)</th>
+                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">Content (What it shows/says)</th>
+                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">Contextual Knowledge</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #90caf9; font-weight: bold; text-align: center;">A</td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #90caf9; font-weight: bold; text-align: center;">B</td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 style="margin-top: 15px; color: #1565c0;">Final Written Evaluation</h4>
+          <textarea class="student-answer-input" placeholder="Write your full evaluation here using the notes from your table above..." style="width: 100%; height: 150px; margin-top: 10px; padding: 10px; border: 1px solid #90caf9; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
+          
+          <div id="scaffold-model-gcse" class="scaffold-box model" style="display:none; margin-top:15px;">
+            <i class="fa-solid fa-star"></i> <strong>Model Answer:</strong> ${lesson.gcse_task.model}
+          </div>
+        </div>`;
+      }
+
+      // Flashcards
+      if (lesson.flashcards && lesson.flashcards.length > 0) {
+        html += `
+          <div class="flashcard-section">
+            <h3><i class="fa-solid fa-layer-group"></i> Key Terms & Concepts</h3>
+            <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
+            <div class="flashcard-deck">
+        `;
+        lesson.flashcards.forEach(fc => {
+          html += `
+            <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
+              <div class="flashcard-inner">
+                <div class="flashcard-face flashcard-front">
+                  <h4>${fc.term}</h4>
+                  <p>Tap to reveal</p>
+                </div>
+                <div class="flashcard-face flashcard-back">
+                  ${fc.definition}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        html += `</div></div>`;
+      }
+
+    html += `</div>`;
+    contentArea.innerHTML = html;
+
+  }
+
+  // Initialize
+  if (unitData.lessons.length > 0) {
+    renderSidebar();
+    renderLesson(unitData.lessons[0]);
+  } else {
+    contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
+  }
+});
+
+window.updateProgress = () => {
+  const inputs = document.querySelectorAll('.student-answer-input');
+  let filled = 0;
+  inputs.forEach(input => {
+    if (input.value.trim().length > 0) filled++;
   });
-
-  // Global bridge for copying lesson answers to OneNote
-  window.copyAnswersToOneNote = function(pageId) {
-    const page = document.getElementById(pageId);
-    if (!page) return;
-    
-    const textareas = page.querySelectorAll('textarea');
-    let copyText = "";
-    
-    // Find all questions on the page
-    const questions = page.querySelectorAll('.task-question, .task-annotation-box label');
-    
-    textareas.forEach((ta, idx) => {
-      const qText = questions[idx] ? questions[idx].innerText.trim() : `Question ${idx + 1}`;
-      const aText = ta.value.trim();
-      if (aText) {
-        copyText += `${qText}\nAnswer: ${aText}\n\n`;
-      }
-    });
-    
-    if (!copyText.trim()) {
-      alert("Please type some answers in the on-screen boxes first!");
-      return;
-    }
-    
-    navigator.clipboard.writeText(copyText).then(() => {
-      const ev = window.event || window.Event;
-      let targetBtn = null;
-      if (ev && ev.target) {
-        targetBtn = ev.target.closest('button');
-      } else {
-        // Fallback: search for active element or the button on the page
-        targetBtn = page.querySelector('button[onclick*="copyAnswersToOneNote"]');
-      }
-      
-      if (targetBtn) {
-        const originalText = targetBtn.innerHTML;
-        targetBtn.innerHTML = "✓ Copied! Open OneNote and Press Ctrl+V";
-        targetBtn.style.backgroundColor = "#16a34a";
-        targetBtn.style.color = "#ffffff";
-        setTimeout(() => {
-          targetBtn.innerHTML = originalText;
-          targetBtn.style.backgroundColor = "";
-          targetBtn.style.color = "";
-        }, 4000);
-      }
-    }).catch(err => {
-      console.error("Failed to copy answers: ", err);
-      alert("Copy failed. Please copy manually.");
-    });
-  };
-
-  // Interactive WWI Cloze Passage Game checking logic
-  window.checkClozeWWI = function() {
-    const answers = {
-      "ww1-gap1": "Franco-Prussian War",
-      "ww1-gap2": "Alsace-Lorraine",
-      "ww1-gap3": "Weltpolitik",
-      "ww1-gap4": "place in the sun",
-      "ww1-gap5": "Agadir Crisis",
-      "ww1-gap6": "Dreadnought",
-      "ww1-gap7": "Two-Power Standard",
-      "ww1-gap8": "Triple Entente",
-      "ww1-gap9": "encirclement",
-      "ww1-gap10": "Gavrilo Princip",
-      "ww1-gap11": "Treaty of London (1839)"
-    };
-
-    let correct = 0;
-    const total = Object.keys(answers).length;
-
-    for (let gapId in answers) {
-      const select = document.getElementById(gapId);
-      if (!select) continue;
-      if (select.value === answers[gapId]) {
-        correct++;
-        select.style.borderColor = "#10b981";
-        select.style.background = "#ecfdf5";
-        select.style.color = "#065f46";
-      } else {
-        select.style.borderColor = "#ef4444";
-        select.style.background = "#fef2f2";
-        select.style.color = "#991b1b";
-      }
-    }
-
-    const feedback = document.getElementById("clozeFeedback");
-    if (feedback) {
-      feedback.style.display = "block";
-      if (correct === total) {
-        feedback.className = "feedback-box success";
-        feedback.innerHTML = "🎉 Excellent! You got 11/11 correct! You have mastered the core origins of WWI!";
-      } else {
-        feedback.className = "feedback-box error";
-        feedback.innerHTML = `❌ You got ${correct} out of ${total} correct. Please adjust the red selections and try again!`;
-      }
-    }
-  };
-
-  // Interactive WWI Timeline Matcher checking logic
-  window.checkTimelineWWI = function() {
-    const answers = {
-      "ww1-time1": "1871",
-      "ww1-time2": "1897",
-      "ww1-time3": "1906",
-      "ww1-time4": "1907",
-      "ww1-time5": "1911",
-      "ww1-time6": "June 1914",
-      "ww1-time7": "August 1914"
-    };
-
-    let correct = 0;
-    const total = Object.keys(answers).length;
-
-    for (let id in answers) {
-      const select = document.getElementById(id);
-      if (!select) continue;
-      if (select.value === answers[id]) {
-        correct++;
-        select.style.borderColor = "#10b981";
-        select.style.background = "#ecfdf5";
-        select.style.color = "#065f46";
-      } else {
-        select.style.borderColor = "#ef4444";
-        select.style.background = "#fef2f2";
-        select.style.color = "#991b1b";
-      }
-    }
-
-    const feedback = document.getElementById("timelineFeedback");
-    if (feedback) {
-      feedback.style.display = "block";
-      if (correct === total) {
-        feedback.className = "feedback-box success";
-        feedback.innerHTML = "🎉 Chronology Master! You matched all 7 major events to their correct dates!";
-      } else {
-        feedback.className = "feedback-box error";
-        feedback.innerHTML = `❌ You got ${correct} out of ${total} correct. Check the red selections and try again!`;
-      }
-    }
-  };
-
-  // GCSE Paper 3 Assessment Scaffolding Selector
-  const scaffoldGuides = {
-    supported: `
-      <strong>💡 Supported Level Guide:</strong><br>
-      • <strong>Word Bank:</strong> Encirclement, Weltpolitik, Dreadnought, Schlieffen Plan, Triple Entente, Blank Cheque, Sarajevo, Gavrilo Princip.<br>
-      • <strong>Sentence Starters:</strong><br>
-      &nbsp;&nbsp; - <em>Question 3a:</em> Source A is useful because it shows the German view that they were being... Source B is useful because it reveals that Britain felt trapped by... Together they show...<br>
-      &nbsp;&nbsp; - <em>Question 3b:</em> Interpretation 1 argues that Germany is to blame because... In contrast, Interpretation 2 argues that no single power...<br>
-      &nbsp;&nbsp; - <em>Question 3c:</em> The interpretations differ because they rely on different evidence. Interpretation 1 focuses on... while Interpretation 2 focuses on...
-    `,
-    standard: `
-      <strong>💡 Standard Level Guide:</strong><br>
-      • <strong>Sentence Stems:</strong><br>
-      &nbsp;&nbsp; - <em>Question 3a:</em> Both Source A and Source B are highly useful. Source A reveals the German belief in "encirclement" and the necessity of... while Source B illustrates the British attempt to...<br>
-      &nbsp;&nbsp; - <em>Question 3b:</em> The main difference is that Hastings (Interpretation 1) places primary blame on Germany's deliberate aggression, whereas MacMillan (Interpretation 2) argues that...<br>
-      &nbsp;&nbsp; - <em>Question 3c:</em> These differing views arise because Hastings emphasizes... whereas MacMillan takes a systemic view, arguing that...
-    `,
-    advanced: `
-      <strong>💡 Advanced Level (Exam-Ready Guide):</strong><br>
-      • <strong>PEEL structure:</strong> Point, Evidence, Explanation, Link.<br>
-      • <strong>Guidance:</strong> Compare the internal motivations of Germany (Source A) against the external systemic constraints of alliances (Source B). Focus on how Hastings emphasizes individual agency, while MacMillan emphasizes systemic structural pressures. No sentence starters provided.
-    `
-  };
-
-  window.setPaper3Scaffold = function(level) {
-    const box = document.getElementById("paper3-scaffold-box");
-    if (!box) return;
-    box.innerHTML = scaffoldGuides[level] || "";
-    
-    // Toggle active class on buttons
-    const btnIds = ["scaffold-supported-btn", "scaffold-standard-btn", "scaffold-advanced-btn"];
-    btnIds.forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) {
-        if (id.includes(level)) {
-          btn.classList.add("active-scaffold-btn");
-          btn.style.backgroundColor = "var(--navy)";
-          btn.style.color = "#ffffff";
-        } else {
-          btn.classList.remove("active-scaffold-btn");
-          btn.style.backgroundColor = "";
-          btn.style.color = "";
-        }
-      }
-    });
-  };
-
-  // Populate initial scaffold level
-  setPaper3Scaffold("supported");
-
-  // Initialize on "Cover & Log" Tab
-  selectTab('cover');
+  const bar = document.getElementById('progress-bar');
+  if (bar) {
+    if (inputs.length === 0) bar.style.width = '100%';
+    else bar.style.width = `${(filled / inputs.length) * 100}%`;
+  }
 };

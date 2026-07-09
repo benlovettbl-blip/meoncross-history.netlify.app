@@ -23,12 +23,12 @@ export const unitData = {
         {
           "type": "written",
           "text": "Q1: Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P1)",
-          "model": "Bismarck released an edited version of the Ems Telegram that made it look like the Prussian King had insulted the French ambassador. This provoked France into declaring war, allowing Prussia to look like the victim and uniting the southern German states against France."
+          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
         },
         {
           "type": "written",
           "text": "Q2: Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P2)",
-          "model": "Prussia used their advanced railway network to rapidly mobilize 500,000 troops, and their superior Krupp steel artillery to bombard the French from a longer, faster range."
+          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
         },
         {
           "type": "written",
@@ -38,7 +38,7 @@ export const unitData = {
         {
           "type": "written",
           "text": "Q4: Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace. (P4)",
-          "model": "France deeply resented the loss of the resource-rich territory of Alsace-Lorraine and the humiliation of a German occupation army. This created a long-term desire for 'revanche' (revenge)."
+          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
         },
         {
           "type": "written",
@@ -110,7 +110,7 @@ export const unitData = {
         "title": "Source A: Anton von Werner, 'The Proclamation of the German Empire at Versailles', painted in 1885.",
         "src": "assets/was_germany_unification.png",
         "caption": "<strong>What is this source showing?</strong> This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
-        "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
+        "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and what does the bag represent?",
         "tasks": [
           {
             "type": "draw",
@@ -356,7 +356,7 @@ export const unitData = {
           {
             "type": "visual",
             "src": "assets/was_greedy_boy.png",
-            "title": "Source A: 'The Greedy Boy', a British political cartoon published in Punch Magazine, 1885."
+            "title": "Source A: A British political cartoon from 1897 showing Kaiser Wilhelm II."
           },
           {
             "type": "written",
@@ -365,7 +365,7 @@ export const unitData = {
           }
         ],
         "topic": "the impact of Weltpolitik on international relations",
-        "model": "Source A is useful for showing the British perception of the Scramble for Africa; the cartoon's purpose is to mock Chancellor Bismarck as greedy, demonstrating the growing tension between Britain and Germany over colonies. Source B is useful for understanding the later German intent behind Weltpolitik; as a public speech by von Bülow, its purpose is to rally domestic support for empire-building. Together they show a continuous German ambition that directly caused British anxiety."
+        "model": "Source A is useful for showing the British perception of Weltpolitik; the cartoon's purpose is to mock Wilhelm II as greedy, demonstrating the growing tension between Britain and Germany. Source B is useful for understanding the German intent behind Weltpolitik; as a public speech to the Reichstag, its purpose is to rally domestic support for empire-building. Together they show how German ambition directly caused British anxiety."
       }
     },
     {
@@ -411,7 +411,7 @@ export const unitData = {
         {
           "type": "written",
           "text": "Q4: According to Sir Edward Grey (Source E), explain why a massive navy was considered a \"matter of life and death\" for Great Britain, but merely a matter of \"prestige\" for Germany. (P5)",
-          "model": "Germany felt it needed a massive navy to protect its growing global empire and trade routes, and to secure its 'place in the sun' as a top-tier world power."
+          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
         },
         {
           "type": "written",
