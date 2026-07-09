@@ -69,20 +69,20 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
   content = content.replace(/src="assets\//g, `src="units/${unitId}/assets/`);
   content = content.replace(/url\(['"]?assets\//g, `url('units/${unitId}/assets/`);
 
-  // We need to parse data.js directly since we don't have a reliable JSON export yet.
-  const sourceData = path.join(sourceDir, 'data.js');
-  if (fs.existsSync(sourceData)) {
-    fs.copyFileSync(sourceData, path.join(path.join(targetBaseDir, unitId), 'data.js'));
-    const contentData = fs.readFileSync(sourceData, 'utf8');
-    const titleMatch = contentData.match(/title:\s*['"]([^'"]+)['"]/);
-    if (titleMatch) title = titleMatch[1];
-  }
-
   // Generate output files
   try {
     const unitTargetDir = path.join(targetBaseDir, unitId);
     fs.mkdirSync(unitTargetDir, { recursive: true });
     fs.mkdirSync(path.join(unitTargetDir, 'assets'), { recursive: true });
+
+    // We need to parse data.js directly since we don't have a reliable JSON export yet.
+    const sourceData = path.join(sourceDir, 'data.js');
+    if (fs.existsSync(sourceData)) {
+      fs.copyFileSync(sourceData, path.join(unitTargetDir, 'data.js'));
+      const contentData = fs.readFileSync(sourceData, 'utf8');
+      const titleMatch = contentData.match(/title:\s*['"]([^'"]+)['"]/);
+      if (titleMatch) title = titleMatch[1];
+    }
   
     // Write data.json
     const data = {

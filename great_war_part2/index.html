@@ -32,9 +32,13 @@
       <header class="main-header" style="background: #1a237e; color: white; border-bottom: 1px solid var(--border-glass); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 10; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <div class="header-title-container" style="display: flex; align-items: center; gap: 1rem;">
           <button class="btn btn-secondary" onclick="window.location.href='/'" title="Back to Dashboard" style="padding: 6px 12px;"><i class="fa-solid fa-house"></i></button>
-          <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">The Great War: Experience & Aftermath</h1>
+          <div>
+            <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">The Great War: Experience & Aftermath</h1>
+            <div style="font-size: 0.9rem; font-style: italic; color: #a5b4fc; margin-top: 4px;">Unit Enquiry: Did the Great War destroy the old world or create the modern one?</div>
+          </div>
         </div>
         <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
+          <button id="btn-text-size" class="btn btn-secondary" style="margin-right: 5px;" onclick="document.body.classList.toggle('large-text')"><i class="fa-solid fa-text-height"></i> A+ / A-</button>
           <button id="btn-dyslexia" class="btn btn-secondary"><i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode</button>
         </div>
       </header>

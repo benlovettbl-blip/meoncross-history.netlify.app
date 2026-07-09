@@ -1,7 +1,7 @@
 export const unitData = {
   "lessons": [
     {
-      "title": "Lesson 1: The Spark & The Stampede (1914)",
+      "title": "Lesson 1: Why were young men so desperate to join the slaughter of 1914?",
       "narrative": [
         "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?",
         "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",
@@ -146,7 +146,7 @@ export const unitData = {
       }
     },
     {
-      "title": "Lesson 2: The Reality of the Mud (Western Front)",
+      "title": "Lesson 2: Did British generals make the horror of trench warfare worse?",
       "narrative": [
         "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?",
         "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
@@ -161,7 +161,7 @@ export const unitData = {
       "flashcards": []
     },
     {
-      "title": "Lesson 3: The Forgotten Empire (The Global War)",
+      "title": "Lesson 3: Was the Great War truly a global war of empires?",
       "narrative": [
         "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?",
         "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops).",
@@ -176,7 +176,7 @@ export const unitData = {
       "flashcards": []
     },
     {
-      "title": "Lesson 4: Total War at Home (The Home Front)",
+      "title": "Lesson 4: How did a war fought miles away completely control daily life in Britain?",
       "narrative": [
         "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?",
         "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions).",
@@ -191,7 +191,7 @@ export const unitData = {
       "flashcards": []
     },
     {
-      "title": "Lesson 5: The Fragile Peace (Armistice & Versailles)",
+      "title": "Lesson 5: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
       "narrative": [
         "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
         "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII).",
