@@ -21,13 +21,16 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "What is the definition of sanitation?"
+            "question": "What is the definition of sanitation?",
+            "answer": "Sanitation refers to public health conditions related to clean drinking water and adequate treatment and disposal of human excrement and sewage."
           },
           {
-            "question": "Why do humans need clean drinking water?"
+            "question": "Why do humans need clean drinking water?",
+            "answer": "Clean water is essential for hydration and prevents the spread of deadly waterborne diseases like cholera and dysentery."
           },
           {
-            "question": "What happens if waste is not properly disposed of?"
+            "question": "What happens if waste is not properly disposed of?",
+            "answer": "Waste contaminates local water sources, breeds disease-carrying pests, and creates toxic, foul-smelling environments."
           }
         ]
       },
@@ -41,47 +44,35 @@ export const unitData = {
       "tasks": [
         {
           "text": "Explain the significance of iron age settlements & cesspits in the development of sanitation.",
-          "lines": 3
+          "model": "Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.",
+          "starter": "Iron Age settlements and cesspits were significant because...",
+          "clue": "Think about population density and why simple methods worked when people were spread out."
         },
         {
           "text": "Explain the significance of roman conduits & water supply in the development of sanitation.",
-          "lines": 3
+          "model": "Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.",
+          "starter": "Roman conduits were significant because...",
+          "clue": "Think about the scale of engineering and moving water using gravity."
         },
         {
           "text": "Explain the significance of bathhouses and latrines in the development of sanitation.",
-          "lines": 3
+          "model": "They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.",
+          "starter": "Bathhouses and latrines were significant because...",
+          "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
         },
         {
           "text": "Explain the significance of the roman withdrawal in the development of sanitation.",
-          "lines": 3
+          "model": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
+          "starter": "The Roman withdrawal was significant because...",
+          "clue": "Consider what happened to the pipes and sewers when the engineers left."
         }
       ],
       "glossary": {
         "cesspit": "A pit for the disposal of liquid waste and sewage.",
-        "conduit": "A channel for conveying water or other fluid.",
-        "latrine": "A communal toilet, especially in a military camp."
+        "conduit": "A channel or pipe for conveying water or other fluid.",
+        "latrine": "A toilet or outhouse, especially a communal one in a camp or barracks."
       },
-      "gcse_task": {
-        "type": "cross_source",
-        "question": "How useful are Sources A and B for an enquiry into the changes in sanitation during this period?",
-        "sources": [
-          {
-            "type": "visual",
-            "src": "",
-            "title": "Source A: A visual representation of Prehistoric and Roman Sanitation."
-          },
-          {
-            "type": "written",
-            "text": "Sanitation during this era was heavily dependent on local geography and individual wealth. While some made efforts to clean their streets, many lacked the infrastructure to do so effectively.",
-            "title": "Source B: Modern historian commenting on Prehistoric and Roman Sanitation."
-          }
-        ],
-        "model": "Source A is useful for showing the visual reality of Prehistoric and Roman Sanitation; its purpose is to illustrate the living conditions. Source B is useful for understanding the broader structural issues; as a modern historian's account, it is objective and highlights the gap between wealth and infrastructure. Together, they provide a comprehensive view of the era's sanitation challenges."
-      },
-      "extended": {
-        "question": "Evaluate the overall success of sanitation measures during Prehistoric and Roman Sanitation.",
-        "lines": 8
-      }
+      "gcse_task": null
     },
     {
       "id": "lesson_2",
@@ -101,13 +92,16 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall from last lesson: What was the main feature of Iron Age Settlements & Cesspits?"
+            "question": "Recall from last lesson: What was the main feature of Iron Age Settlements & Cesspits?",
+            "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
           },
           {
-            "question": "Recall from last lesson: How did Roman Conduits & Water Supply impact society?"
+            "question": "Recall from last lesson: How did Roman Conduits & Water Supply impact society?",
+            "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
           },
           {
-            "question": "Recall from last lesson: Identify one major problem with The Roman Withdrawal."
+            "question": "Recall from last lesson: Identify one major problem with The Roman Withdrawal.",
+            "answer": "The advanced centralized sanitation infrastructure was abandoned, causing public hygiene to decline back into primitive, localized methods."
           }
         ]
       },
@@ -122,50 +116,40 @@ export const unitData = {
       "tasks": [
         {
           "text": "Explain the significance of peasant cesspits (wharram percy) in the development of sanitation.",
-          "lines": 3
+          "model": "They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.",
+          "starter": "Peasant cesspits in villages like Wharram Percy were significant because...",
+          "clue": "Think about why rural density prevented disease from spreading."
         },
         {
           "text": "Explain the significance of monastic luxury (canterbury priory) in the development of sanitation.",
-          "lines": 3
+          "model": "Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.",
+          "starter": "Monastic sanitation, such as at Canterbury Priory, was significant because...",
+          "clue": "Look at the Canterbury blueprints and who paid for the pipes."
         },
         {
           "text": "Explain the significance of urban filtration crisis in the development of sanitation.",
-          "lines": 3
+          "model": "Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.",
+          "starter": "The urban filtration crisis was significant because...",
+          "clue": "Consider how high density impacted shared wells and rivers."
         },
         {
           "text": "Explain the significance of gongfermers and night-work in the development of sanitation.",
-          "lines": 3
+          "model": "Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.",
+          "starter": "Gongfermers and their night-work were significant because...",
+          "clue": "Think about what happened when cesspits overflowed and why they worked at night."
         },
         {
           "text": "Explain the significance of edward iii's cleanliness mandate in the development of sanitation.",
-          "lines": 3
+          "model": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
+          "starter": "Edward III's cleanliness mandate was significant because...",
+          "clue": "Look at his 1357 letter to the Mayor of London."
         }
       ],
       "glossary": {
         "gongfermer": "A medieval worker who cleared human waste from cesspits.",
         "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
       },
-      "gcse_task": {
-        "type": "cross_source",
-        "question": "How useful are Sources A and B for an enquiry into the changes in sanitation during this period?",
-        "sources": [
-          {
-            "type": "visual",
-            "src": "",
-            "title": "Source A: A visual representation of Medieval Britain (AD 410–1450)."
-          },
-          {
-            "type": "written",
-            "text": "Sanitation during this era was heavily dependent on local geography and individual wealth. While some made efforts to clean their streets, many lacked the infrastructure to do so effectively.",
-            "title": "Source B: Modern historian commenting on Medieval Britain (AD 410–1450)."
-          }
-        ],
-        "model": "Source A is useful for showing the visual reality of Medieval Britain (AD 410–1450); its purpose is to illustrate the living conditions. Source B is useful for understanding the broader structural issues; as a modern historian's account, it is objective and highlights the gap between wealth and infrastructure. Together, they provide a comprehensive view of the era's sanitation challenges."
-      },
-      "extended": {
-        "question": "Evaluate the overall success of sanitation measures during Medieval Britain (AD 410–1450).",
-        "lines": 8
-      }
+      "gcse_task": null
     },
     {
       "id": "lesson_3",
@@ -185,13 +169,16 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall from last lesson: What was the main feature of Peasant Cesspits (Wharram Percy)?"
+            "question": "Recall from last lesson: What was the main feature of Peasant Cesspits?",
+            "answer": "Simple garden outhouses dug over earth holes. Safe in low-density rural villages like Wharram Percy, but highly problematic in crowded towns."
           },
           {
-            "question": "Recall from last lesson: How did Monastic Luxury (Canterbury Priory) impact society?"
+            "question": "Recall from last lesson: How did Monastic luxury (Canterbury Priory) impact society?",
+            "answer": "It showcased advanced water engineering (lead pipes, color-coded fresh and waste water lines) funded by wealthy, organized Christian orders."
           },
           {
-            "question": "Recall from last lesson: Identify one major problem with Edward III's Cleanliness Mandate."
+            "question": "Recall from last lesson: Identify one major problem with Gongfermers and night-work.",
+            "answer": "It was a dangerous, filthy task limited to nighttime, which only temporarily cleared overflowing urban cesspits without solving the lack of permanent sewers."
           }
         ]
       },
@@ -204,56 +191,44 @@ export const unitData = {
       ],
       "tasks": [
         {
-          "text": "Explain the significance of harington's flushing closet in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of sir john harington's flushing toilet in the development of sanitation.",
+          "model": "He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.",
+          "starter": "Sir John Harington's flushing toilet was significant because...",
+          "clue": "Think about why an invention is useless without a network (water & sewers)."
         },
         {
-          "text": "Explain the significance of the new river project in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of samuel pepys' diary (privy leak) in the development of sanitation.",
+          "model": "It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.",
+          "starter": "Samuel Pepys' diary entry was significant because...",
+          "clue": "Think about what he found in his cellar on October 20, 1660."
         },
         {
-          "text": "Explain the significance of samuel pepys' cellar overflow in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of the new river (1613) in the development of sanitation.",
+          "model": "It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.",
+          "starter": "The New River project was significant because...",
+          "clue": "Consider the distance the water traveled and how it was distributed."
         },
         {
-          "text": "Explain the significance of water sellers and barrels in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of early modern water sellers in the development of sanitation.",
+          "model": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
+          "starter": "Early Modern water sellers were significant because...",
+          "clue": "Think about who bought their water and where they got it from."
         }
       ],
       "glossary": {
-        "privy": "An outhouse or small room containing a toilet.",
-        "urbanization": "The process of making an area more urban."
+        "conduit": "A channel or pipe for conveying water.",
+        "water closet": "A flush toilet, or a room containing one."
       },
-      "gcse_task": {
-        "type": "cross_source",
-        "question": "How useful are Sources A and B for an enquiry into the changes in sanitation during this period?",
-        "sources": [
-          {
-            "type": "visual",
-            "src": "",
-            "title": "Source A: A visual representation of Early Modern Britain (1450–1750)."
-          },
-          {
-            "type": "written",
-            "text": "Sanitation during this era was heavily dependent on local geography and individual wealth. While some made efforts to clean their streets, many lacked the infrastructure to do so effectively.",
-            "title": "Source B: Modern historian commenting on Early Modern Britain (1450–1750)."
-          }
-        ],
-        "model": "Source A is useful for showing the visual reality of Early Modern Britain (1450–1750); its purpose is to illustrate the living conditions. Source B is useful for understanding the broader structural issues; as a modern historian's account, it is objective and highlights the gap between wealth and infrastructure. Together, they provide a comprehensive view of the era's sanitation challenges."
-      },
-      "extended": {
-        "question": "Evaluate the overall success of sanitation measures during Early Modern Britain (1450–1750).",
-        "lines": 8
-      }
+      "gcse_task": null
     },
     {
       "id": "lesson_4",
       "title": "Lesson 4: The Industrial Revolution and Public Health",
       "primary_source": {
         "src": "",
-        "title": "Source A: An artifact from Industrial Britain (1750–1850).",
-        "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of the Industrial Britain (1750–1850) era.",
-        "question": "Enquiry: What does this source reveal about Industrial Britain (1750–1850)?",
+        "title": "Source A: An artifact from The Industrial Revolution (1750–1850).",
+        "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of The Industrial Revolution (1750–1850) era.",
+        "question": "Enquiry: What does this source reveal about The Industrial Revolution (1750–1850)?",
         "tasks": [
           {
             "text": "Highlight the key technological features."
@@ -264,13 +239,16 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall from last lesson: What was the main feature of Harington's Flushing Closet?"
+            "question": "Recall from last lesson: What was the main feature of Sir John Harington's flushing toilet?",
+            "answer": "The first water closet invented in 1596, but it remained a royal luxury because London lacked running water and street sewers to flush the waste."
           },
           {
-            "question": "Recall from last lesson: How did The New River Project impact society?"
+            "question": "Recall from last lesson: How did Samuel Pepys' diary entry impact our understanding of sanitation?",
+            "answer": "It documented the disgusting reality of crowded cities, describing how his neighbor's cellar privy leaked directly through the walls into his own basement."
           },
           {
-            "question": "Recall from last lesson: Identify one major problem with Water Sellers and Barrels."
+            "question": "Recall from last lesson: Identify one major problem with Miasma theory.",
+            "answer": "It incorrectly blamed bad smells (miasma) for disease instead of waterborne bacteria, leading authorities to clean the air rather than water supplies."
           }
         ]
       },
@@ -284,55 +262,43 @@ export const unitData = {
       "tasks": [
         {
           "text": "Explain the significance of population surge and urbanization in the development of sanitation.",
-          "lines": 3
+          "model": "It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.",
+          "starter": "Population surge and urbanization were significant because...",
+          "clue": "Think about the shift from 6 million to 21 million people."
         },
         {
-          "text": "Explain the significance of shared pumps and back-to-backs in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of back-to-backs and shared pumps in the development of sanitation.",
+          "model": "They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.",
+          "starter": "Back-to-backs and shared pumps were significant because...",
+          "clue": "Consider how landlords built cheap housing for factory workers."
         },
         {
-          "text": "Explain the significance of the 1831 cholera epidemic in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of cholera epidemics (1831–1866) in the development of sanitation.",
+          "model": "They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.",
+          "starter": "Cholera epidemics were significant because...",
+          "clue": "Think about the rapid, terrifying nature of cholera deaths."
         },
         {
-          "text": "Explain the significance of chadwick's sanitation report in the development of sanitation.",
-          "lines": 3
+          "text": "Explain the significance of edwin chadwick's report (1842) in the development of sanitation.",
+          "model": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
+          "starter": "Edwin Chadwick's 1842 report was significant because...",
+          "clue": "Think about the evidence he gathered on the working class."
         }
       ],
       "glossary": {
-        "cholera": "A fatal bacterial disease contracted from infected water.",
-        "epidemic": "A widespread occurrence of an infectious disease."
+        "urbanization": "The process of making an area more urban (city-like).",
+        "cholera": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
       },
-      "gcse_task": {
-        "type": "cross_source",
-        "question": "How useful are Sources A and B for an enquiry into the changes in sanitation during this period?",
-        "sources": [
-          {
-            "type": "visual",
-            "src": "",
-            "title": "Source A: A visual representation of Industrial Britain (1750–1850)."
-          },
-          {
-            "type": "written",
-            "text": "Sanitation during this era was heavily dependent on local geography and individual wealth. While some made efforts to clean their streets, many lacked the infrastructure to do so effectively.",
-            "title": "Source B: Modern historian commenting on Industrial Britain (1750–1850)."
-          }
-        ],
-        "model": "Source A is useful for showing the visual reality of Industrial Britain (1750–1850); its purpose is to illustrate the living conditions. Source B is useful for understanding the broader structural issues; as a modern historian's account, it is objective and highlights the gap between wealth and infrastructure. Together, they provide a comprehensive view of the era's sanitation challenges."
-      },
-      "extended": {
-        "question": "Evaluate the overall success of sanitation measures during Industrial Britain (1750–1850).",
-        "lines": 8
-      }
+      "gcse_task": null
     },
     {
       "id": "lesson_5",
       "title": "Lesson 5: The Great Stink and Modern Sewers",
       "primary_source": {
         "src": "",
-        "title": "Source A: An artifact from Modern Britain (1850–Present).",
-        "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of the Modern Britain (1850–Present) era.",
-        "question": "Enquiry: What does this source reveal about Modern Britain (1850–Present)?",
+        "title": "Source A: An artifact from The Great Stink and Modern Sewers.",
+        "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of The Great Stink and Modern Sewers era.",
+        "question": "Enquiry: What does this source reveal about The Great Stink and Modern Sewers?",
         "tasks": [
           {
             "text": "Highlight the key technological features."
@@ -343,13 +309,16 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall from last lesson: What was the main feature of Population Surge and Urbanization?"
+            "question": "Recall from last lesson: What was the main feature of Population Surge and Urbanization?",
+            "answer": "Rapid migration of rural families to factory towns (1750–1850), causing massive overcrowding and housing blocks built back-to-back."
           },
           {
-            "question": "Recall from last lesson: How did Shared Pumps and Back-to-Backs impact society?"
+            "question": "Recall from last lesson: How did Shared Pumps and Back-to-Backs impact society?",
+            "answer": "Shared pumps only provided water for a few hours a day, which was often polluted, and back-to-back houses shared filthy, overflowing privies."
           },
           {
-            "question": "Recall from last lesson: Identify one major problem with Chadwick's Sanitation Report."
+            "question": "Recall from last lesson: Identify one major problem with Chadwick's Sanitation Report.",
+            "answer": "Chadwick still believed in miasma theory, so he advocated flushing sewage out of the streets and directly into the River Thames, polluting London's main water source."
           }
         ]
       },
@@ -364,50 +333,40 @@ export const unitData = {
       "tasks": [
         {
           "text": "Explain the significance of john snow's broad street map in the development of sanitation.",
-          "lines": 3
+          "model": "It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.",
+          "starter": "John Snow's Broad Street map was significant because...",
+          "clue": "Consider how he used geography and data to locate the infection."
         },
         {
           "text": "Explain the significance of the great stink of london in the development of sanitation.",
-          "lines": 3
+          "model": "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
+          "starter": "The Great Stink of London was significant because...",
+          "clue": "Think about why the smell of the Thames affected the politicians personally."
         },
         {
           "text": "Explain the significance of bazalgette's sewer system in the development of sanitation.",
-          "lines": 3
+          "model": "It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.",
+          "starter": "Joseph Bazalgette's sewer system was significant because...",
+          "clue": "Think about how it moved waste out of the city and where it sent it."
         },
         {
           "text": "Explain the significance of pasteur's germ theory in the development of sanitation.",
-          "lines": 3
+          "model": "It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.",
+          "starter": "Louis Pasteur's Germ Theory was significant because...",
+          "clue": "Think about how this disproved miasma theory permanently."
         },
         {
           "text": "Explain the significance of public health act of 1875 in the development of sanitation.",
-          "lines": 3
+          "model": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
+          "starter": "The Public Health Act of 1875 was significant because...",
+          "clue": "Think about the transition from voluntary hygiene to mandatory laws."
         }
       ],
       "glossary": {
         "sewer": "An underground conduit for carrying off drainage water and waste matter.",
         "germ theory": "The theory that infectious diseases are caused by certain microbes."
       },
-      "gcse_task": {
-        "type": "cross_source",
-        "question": "How useful are Sources A and B for an enquiry into the changes in sanitation during this period?",
-        "sources": [
-          {
-            "type": "visual",
-            "src": "",
-            "title": "Source A: A visual representation of Modern Britain (1850–Present)."
-          },
-          {
-            "type": "written",
-            "text": "Sanitation during this era was heavily dependent on local geography and individual wealth. While some made efforts to clean their streets, many lacked the infrastructure to do so effectively.",
-            "title": "Source B: Modern historian commenting on Modern Britain (1850–Present)."
-          }
-        ],
-        "model": "Source A is useful for showing the visual reality of Modern Britain (1850–Present); its purpose is to illustrate the living conditions. Source B is useful for understanding the broader structural issues; as a modern historian's account, it is objective and highlights the gap between wealth and infrastructure. Together, they provide a comprehensive view of the era's sanitation challenges."
-      },
-      "extended": {
-        "question": "Evaluate the overall success of sanitation measures during Modern Britain (1850–Present).",
-        "lines": 8
-      }
+      "gcse_task": null
     }
   ],
   "quizPack": [
