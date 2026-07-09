@@ -5,13 +5,138 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentArea = document.getElementById('content-area');
   const btnDyslexia = document.getElementById('btn-dyslexia');
 
-  // Toggle Dyslexia Mode
+  // Inject Custom Styles for Layout & SEN (No Icons)
+  const style = document.createElement('style');
+  style.textContent = `
+    .phase-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .phase-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .narrative-chunk {
+      background: #f8fafc;
+      border-left: 4px solid #002855;
+      padding: 15px 20px;
+      margin-bottom: 18px;
+      border-radius: 0 6px 6px 0;
+    }
+    .vocab-word {
+      position: relative;
+      border-bottom: 2px dashed #002855;
+      cursor: help;
+      color: #002855;
+      font-weight: 600;
+    }
+    .vocab-word:hover::after {
+      content: attr(data-definition);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      width: 260px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      line-height: 1.4;
+      z-index: 10000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      white-space: normal;
+      text-align: center;
+    }
+    .scaffold-box {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    .starter-box { border-left: 4px solid #2563eb; }
+    .clue-box { border-left: 4px solid #d97706; }
+    .model-box { border-left: 4px solid #059669; }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .do-now-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .do-now-card .answer {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .do-now-card.revealed .answer {
+      display: block;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Set up Speech Synthesis
+  let synth = window.speechSynthesis;
+  let utterance = null;
+
+  // Add Read Aloud Button to Header Container (No Icons)
+  const headerContainer = document.querySelector('.header-container');
+  const btnReadAloud = document.createElement('button');
+  btnReadAloud.className = 'btn btn-secondary';
+  btnReadAloud.id = 'btn-read-aloud';
+  btnReadAloud.style.marginLeft = '10px';
+  btnReadAloud.textContent = 'Read Aloud';
+  headerContainer.appendChild(btnReadAloud);
+
+  btnReadAloud.addEventListener('click', () => {
+    if (synth.speaking) {
+      synth.cancel();
+      btnReadAloud.textContent = 'Read Aloud';
+    } else {
+      const narrativeBlocks = document.querySelectorAll('.narrative-chunk');
+      let textToRead = "";
+      narrativeBlocks.forEach(block => {
+        textToRead += block.textContent + " ";
+      });
+      if (textToRead.trim() === "") return;
+      utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.onend = () => {
+        btnReadAloud.textContent = 'Read Aloud';
+      };
+      synth.speak(utterance);
+      btnReadAloud.textContent = 'Stop Reading';
+    }
+  });
+
+  // Toggle Dyslexia Mode (Remove icon if present)
+  btnDyslexia.innerHTML = 'SEN / Dyslexia Mode';
   btnDyslexia.addEventListener('click', () => {
     document.body.classList.toggle('sen-mode');
     const isSen = document.body.classList.contains('sen-mode');
-    btnDyslexia.innerHTML = isSen 
-      ? '<i class="fa-solid fa-check"></i> Standard Mode' 
-      : '<i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode';
+    btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
   });
 
   // Render Sidebar
@@ -33,204 +158,187 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Render Lesson Content
+  // Render Lesson Content in 4 Phases
   function renderLesson(lesson) {
+    // Header section
     let html = `<div class="lesson-content">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 10px 15px; z-index: 1000; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-    <h4 style="margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; color: var(--primary);">${lesson.title}</h4>
-    <div style="display: flex; gap: 8px;">
-      <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
-      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
-      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.location.href='../index.html'"><i class="fa-solid fa-house"></i> Main Dashboard</button>
-    </div>
-  </div>
-  <div id="progress-container" style="position: sticky; top: 62px; background: #e2e8f0; height: 6px; width: 100%; z-index: 1001;">
-    <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
-  </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 12px 18px; z-index: 1000; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h4 style="margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; color: var(--primary);">${lesson.title}</h4>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()">Unit Menu</button>
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.location.href='../index.html'">Main Dashboard</button>
+        </div>
+      </div>
+      <div id="progress-container" style="position: sticky; top: 62px; background: #e2e8f0; height: 6px; width: 100%; z-index: 1001; margin-bottom: 20px;">
+        <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
+      </div>
     `;
 
-    // Narrative
-    
-      let flashcardDict = {};
-      if (lesson.flashcards) {
-        lesson.flashcards.forEach(fc => {
-          flashcardDict[fc.term.toLowerCase()] = fc.definition;
-        });
+    // Process Narrative Glossary Highlight
+    let vocabDict = {};
+    if (lesson.vocab) {
+      lesson.vocab.forEach(v => {
+        vocabDict[v.term.toLowerCase()] = v.definition;
+      });
+    }
+
+    const highlightGlossary = (text) => {
+      if (Object.keys(vocabDict).length === 0) return text;
+      let processedText = text;
+      for (const [term, def] of Object.entries(vocabDict)) {
+        const regex = new RegExp(`\\b(${term})\\b`, 'gi');
+        processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
       }
-      const highlightGlossary = (text) => {
-        if (Object.keys(flashcardDict).length === 0) return text;
-        let processedText = text;
-        for (const [term, def] of Object.entries(flashcardDict)) {
-          const regex = new RegExp(`\\b(${term})\\b`, 'gi');
-          processedText = processedText.replace(regex, `<span style="border-bottom: 1px dotted #1a237e; cursor: help; color: #1a237e; font-weight: 600;" title="${def.replace(/"/g, '&quot;')}">$1</span>`);
-        }
-        return processedText;
-      };
+      return processedText;
+    };
 
-    if (lesson.narrative && lesson.narrative.length > 0) {
-      lesson.narrative.forEach(para => {
-        if(para.startsWith('"')) {
-           html += `<div class="task-item"><i class="fa-solid fa-clipboard-question"></i> ${para.replace(/"/g, '')}</div>`;
-        } else {
-           html += `<p class="narrative-block">${highlightGlossary(para)}</p>`;
-        }
-      });
-    }
-
-    // Sources
-    if (lesson.sources && lesson.sources.length > 0) {
-      html += `<div class="sources-grid">`;
-      lesson.sources.forEach(source => {
-        if(source.src) {
-           // Fix relative paths for v2 folder
-           let src = source.src.startsWith('../') ? source.src : `../great_war/${source.src}`;
-           html += `
-             <div class="source-card">
-               ${source.title ? `<h4>${source.title}</h4>` : ''}
-               <img src="${src}" alt="Source Image">
-               ${source.caption ? `<p class="source-caption">${source.caption}</p>` : ''}
-             </div>
-           `;
-        }
-      });
-      html += `</div>`;
-    }
-
-    // Tasks
-    if (lesson.tasks && lesson.tasks.length > 0) {
-      html += `<div class="tasks-section">
-        <h3><i class="fa-solid fa-pen-to-square"></i> Knowledge Check Tasks</h3>
-      `;
-      lesson.tasks.forEach((task, tIdx) => {
-        html += `<div class="task-item" style="position:relative;">`;
-        if (task.type === 'tps') {
-          html += `<div style="display:inline-block; background:#f59e0b; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem; margin-bottom:8px; font-weight:bold;"><i class="fa-solid fa-users"></i> Think, Pair, Share</div> `;
-        }
-        html += `${task.text}`;
-
-        if (task.scaffold) {
-          html += `<div style="margin-top: 10px; display:flex; gap: 8px;">`;
-          if (task.starter) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-starter-${tIdx}').style.display='block'">Sentence Starter</button>`;
-          if (task.clue) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-clue-${tIdx}').style.display='block'">Clue</button>`;
-          if (task.model) html += `<button class="btn btn-secondary" style="font-size: 0.8rem; padding: 4px 8px;" onclick="document.getElementById('scaffold-model-${tIdx}').style.display='block'">WAGOLL (Model)</button>`;
-          html += `</div>`;
-          
-          if (task.starter) html += `<div id="scaffold-starter-${tIdx}" class="scaffold-box starter" style="display:none;"><i class="fa-solid fa-play"></i> <strong>Start your sentence with:</strong> ${task.starter}</div>`;
-          if (task.clue) html += `<div id="scaffold-clue-${tIdx}" class="scaffold-box clue" style="display:none;"><i class="fa-solid fa-lightbulb"></i> <strong>Hint:</strong> ${task.clue}</div>`;
-          if (task.model) html += `<div id="scaffold-model-${tIdx}" class="scaffold-box model" style="display:none;"><i class="fa-solid fa-star"></i> <strong>WAGOLL:</strong> ${task.model}</div>`;
-        }
-        
-        if (task.teacher_note) {
-          html += `<div class="teacher-note"><i class="fa-solid fa-chalkboard-user"></i> <strong>Teacher Note:</strong> ${task.teacher_note}</div>`;
-        }
-        html += `</div>`;
-      });
-      html += `</div>`;
-    }
-
-    // Extended Reading
-    if (lesson.extended && lesson.extended.paragraphs) {
+    // PHASE 1: Retrieval Recall
+    if (lesson.do_now && lesson.do_now.items) {
       html += `
-        <div class="extended-reading">
-          <h3><i class="fa-solid fa-graduation-cap"></i> ${lesson.extended.title}</h3>
+        <div class="phase-card" id="phase-1">
+          <div class="phase-title">Phase 1: Retrieval Recall</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
-      lesson.extended.paragraphs.forEach(para => {
-        html += `<p class="narrative-block">${para}</p>`;
+      lesson.do_now.items.forEach((item, index) => {
+        html += `
+          <div class="do-now-card" id="do-now-card-${index}">
+            <div style="font-weight: 700; margin-bottom: 8px;">Question ${index + 1}</div>
+            <div>${item.question}</div>
+            <div class="answer" id="do-now-ans-${index}">${item.answer}</div>
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm" onclick="document.getElementById('do-now-card-${index}').classList.toggle('revealed')">Reveal Answer</button>
+            </div>
+          </div>
+        `;
       });
+      html += `</div></div>`;
+    }
+
+    // PHASE 2: Core Information & Sources
+    if (lesson.narrative && lesson.narrative.length > 0) {
+      html += `
+        <div class="phase-card" id="phase-2">
+          <div class="phase-title">Phase 2: Core Information & Sources</div>
+      `;
+      lesson.narrative.forEach(para => {
+        html += `<div class="narrative-chunk">${highlightGlossary(para)}</div>`;
+      });
+
+      if (lesson.sources && lesson.sources.length > 0) {
+        html += `<div class="sources-grid" style="margin-top: 20px;">`;
+        lesson.sources.forEach(source => {
+          if (source.src) {
+            let src = source.src.startsWith('../') ? source.src : `../great_war/${source.src}`;
+            html += `
+              <div class="source-card">
+                ${source.title ? `<h4>${source.title}</h4>` : ''}
+                <img src="${src}" alt="Source Image">
+                ${source.caption ? `<p class="source-caption">${source.caption}</p>` : ''}
+              </div>
+            `;
+          }
+        });
+        html += `</div>`;
+      }
       html += `</div>`;
     }
 
+    // PHASE 3: Application Tasks & Historian Debates
+    if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
+      html += `
+        <div class="phase-card" id="phase-3">
+          <div class="phase-title">Phase 3: Written Application</div>
+      `;
 
-      // Historians Corner
-      if (lesson.historians_corner) {
-        html += `<div class="tasks-section" style="margin-top: 40px; background: #f3e5f5; border: 2px solid #ce93d8; border-radius: 8px; padding: 20px;">
-          <h3 style="color: #6a1b9a; margin-top: 0; border-bottom: 2px solid #e1bee7; padding-bottom: 10px;"><i class="fa-solid fa-book-journal-whills"></i> Historian's Corner: ${lesson.historians_corner.title}</h3>
-          <p style="margin: 0; font-size: 1.05rem; line-height: 1.6; color: #4a148c;">${lesson.historians_corner.text}</p>
-        </div>`;
-      }
-
-      // GCSE Cross-Source Analysis Task
-      if (lesson.gcse_task) {
-        html += `<div class="tasks-section" style="margin-top: 40px; background: #e3f2fd; border: 2px solid #90caf9; border-radius: 8px; padding: 20px;">
-          <h3 style="color: #1565c0; margin-top: 0; border-bottom: 2px solid #bbdefb; padding-bottom: 10px;"><i class="fa-solid fa-scale-balanced"></i> GCSE Cross-Source Analysis</h3>
-          <p style="font-weight: bold; font-size: 1.1rem; color: #0d47a1;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>
-          
-          <div style="display: flex; gap: 20px; margin-top: 20px;">
-            <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; border: 1px solid #90caf9;">
-              <img src="../great_war/${lesson.gcse_task.sources[0].src}" style="width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 10px; border-radius: 4px;">
-              <p style="margin:0; font-size: 0.9rem; font-weight: 600; color: #1565c0;">${lesson.gcse_task.sources[0].title}</p>
-            </div>
-            <div style="flex: 1; background: white; padding: 15px; border-radius: 8px; border: 1px solid #90caf9; display: flex; flex-direction: column; justify-content: center;">
-              <blockquote style="font-size: 1.1rem; font-style: italic; color: #475569; border-left: 4px solid #1565c0; padding-left: 15px; margin: 0 0 15px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
-              <p style="margin:0; font-size: 0.9rem; font-weight: 600; color: #1565c0;">${lesson.gcse_task.sources[1].title}</p>
-            </div>
-          </div>
-
-          <h4 style="margin-top: 25px; color: #1565c0;">Source Evaluation Scaffolding</h4>
-          <table style="width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <thead>
-              <tr style="background: #bbdefb; color: #0d47a1;">
-                <th style="padding: 10px; border: 1px solid #90caf9; width: 10%;">Source</th>
-                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">N.O.P. (Nature, Origin, Purpose)</th>
-                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">Content (What it shows/says)</th>
-                <th style="padding: 10px; border: 1px solid #90caf9; width: 30%;">Contextual Knowledge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding: 10px; border: 1px solid #90caf9; font-weight: bold; text-align: center;">A</td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-              </tr>
-              <tr>
-                <td style="padding: 10px; border: 1px solid #90caf9; font-weight: bold; text-align: center;">B</td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-                <td style="padding: 10px; border: 1px solid #90caf9;"><textarea class="student-answer-input" oninput="window.updateProgress()" style="width:100%; height:80px; border:none; resize:none; font-family:inherit;"></textarea></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4 style="margin-top: 15px; color: #1565c0;">Final Written Evaluation</h4>
-          <textarea class="student-answer-input" placeholder="Write your full evaluation here using the notes from your table above..." style="width: 100%; height: 150px; margin-top: 10px; padding: 10px; border: 1px solid #90caf9; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
-          
-          <div id="scaffold-model-gcse" class="scaffold-box model" style="display:none; margin-top:15px;">
-            <i class="fa-solid fa-star"></i> <strong>Model Answer:</strong> ${lesson.gcse_task.model}
-          </div>
-        </div>`;
-      }
-
-      // Flashcards
-      if (lesson.flashcards && lesson.flashcards.length > 0) {
-        html += `
-          <div class="flashcard-section">
-            <h3><i class="fa-solid fa-layer-group"></i> Key Terms & Concepts</h3>
-            <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
-            <div class="flashcard-deck">
-        `;
-        lesson.flashcards.forEach(fc => {
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        lesson.tasks.forEach((task, tIdx) => {
           html += `
-            <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
-              <div class="flashcard-inner">
-                <div class="flashcard-face flashcard-front">
-                  <h4>${fc.term}</h4>
-                  <p>Tap to reveal</p>
-                </div>
-                <div class="flashcard-face flashcard-back">
-                  ${fc.definition}
-                </div>
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="font-weight: 700; margin-bottom: 10px;">Task ${tIdx + 1}</div>
+              <div style="font-size: 1.05rem; margin-bottom: 12px;">${task.text}</div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
+              
+              <div class="btn-group">
+                ${task.starter ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('starter-${tIdx}')">Sentence Starter</button>` : ''}
+                ${task.clue ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('clue-${tIdx}')">Clue</button>` : ''}
+                ${task.model ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('model-${tIdx}')">Reveal Model Answer</button>` : ''}
               </div>
+
+              ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
+              ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
+              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;"><strong>WAGOLL Model Answer:</strong> ${task.model}</div>` : ''}
             </div>
           `;
         });
-        html += `</div></div>`;
       }
+
+      // Historians Corner
+      if (lesson.historians_corner) {
+        const hc = lesson.historians_corner;
+        html += `
+          <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+            <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${hc.text}</p>
+            
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
+              <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
+              <div style="font-size: 1.05rem; margin-bottom: 12px;">${hc.stretch_question}</div>
+              <textarea class="student-answer-input" placeholder="Write your stretch response here..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
+              
+              <div class="btn-group">
+                ${hc.starter ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-starter')">Sentence Starter</button>` : ''}
+                ${hc.clue ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-clue')">Clue</button>` : ''}
+                ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-model')">Reveal Model Answer</button>` : ''}
+              </div>
+
+              ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
+              ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
+              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;"><strong>WAGOLL Model Answer:</strong> ${hc.stretch_model}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }
+
+      html += `</div>`;
+    }
+
+    // PHASE 4: Consolidation & Flashcards
+    if (lesson.flashcards && lesson.flashcards.length > 0) {
+      html += `
+        <div class="phase-card" id="phase-4">
+          <div class="phase-title">Phase 4: Consolidation & Recall</div>
+          <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
+          <div class="flashcard-deck">
+      `;
+      lesson.flashcards.forEach(fc => {
+        html += `
+          <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+              <div class="flashcard-face flashcard-front">
+                <h4>${fc.term}</h4>
+                <p>Tap to reveal</p>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                ${fc.definition}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div></div>`;
+    }
 
     html += `</div>`;
     contentArea.innerHTML = html;
-
   }
+
+  // Toggling elements helper
+  window.toggleElement = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  };
 
   // Initialize
   if (unitData.lessons.length > 0) {

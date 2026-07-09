@@ -22,37 +22,51 @@ export const unitData = {
         {
           "type": "written",
           "text": "Q1: Identify the two military alliances that divided European power in 1914.",
-          "model": "The Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy)."
+          "model": "The Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy).",
+          "starter": "The two military alliances that divided European power in 1914 were...",
+          "clue": "Look for the Triple Entente and the Triple Alliance in the first paragraph."
         },
         {
           "type": "written",
           "text": "Q2: State the exact location and date of the assassination of Archduke Franz Ferdinand.",
-          "model": "Sarajevo, Bosnia and Herzegovina, on 28 June 1914."
+          "model": "Sarajevo, Bosnia and Herzegovina, on 28 June 1914.",
+          "starter": "The assassination of Franz Ferdinand took place in...",
+          "clue": "It happened in Bosnia in late June."
         },
         {
           "type": "written",
           "text": "Q3: Name the secret militant society responsible for organizing the Sarajevo assassination.",
-          "model": "The Black Hand (Pan-Serbian secret society)."
+          "model": "The Black Hand (Pan-Serbian secret society).",
+          "starter": "The secret militant society was called...",
+          "clue": "It has a color and a hand in the name."
         },
         {
           "type": "written",
           "text": "Q4: Describe how the British government used 'Pals' Battalions' to encourage young men to volunteer for military service in 1914.",
-          "model": "The government promised that if men volunteered together from the same factory, office, or neighborhood, they would serve in the same unit. This made enlisting a community event and created social pressure to join."
+          "model": "The government promised that if men volunteered together from the same factory, office, or neighborhood, they would serve in the same unit. This made enlisting a community event and created social pressure to join.",
+          "starter": "The British government used Pals' Battalions by...",
+          "clue": "Think about promising friends they could serve and train together."
         },
         {
           "type": "written",
           "text": "Q5: Describe two social or economic reasons why a working-class teenager in 1914 might find military enlisting highly attractive.",
-          "model": "1) Aggressive patriotism (jingoism) and a sense of duty to defend their country. 2) Escape from grinding, monotonous, low-paid factory or agricultural work, offering travel, steady pay, and social status."
+          "model": "1) Aggressive patriotism (jingoism) and a sense of duty to defend their country. 2) Escape from grinding, monotonous, low-paid factory or agricultural work, offering travel, steady pay, and social status.",
+          "starter": "Two reasons a teenager would enlist were...",
+          "clue": "Think about patriotism (jingoism) and escaping monotonous factory work."
         },
         {
           "type": "written",
           "text": "Q6: Explain how the localized assassination of an Austrian Archduke in Sarajevo escalated into a global war involving Great Britain by August 1914. Use strict causal transition words—such as because, as a result of, due to, and this led to—to structure your narrative.",
-          "model": "The localized assassination in Sarajevo escalated into a global war because of Europe's rigid alliance systems. When Gavrilo Princip shot the Austrian heir, Austria-Hungary blamed Serbia and declared war. As a result of this declaration, Russia mobilized its army to protect its Serbian ally. Due to the Schlieffen Plan, which required Germany to defeat France quickly before fighting Russia, Germany declared war on Russia and invaded neutral Belgium to reach French territory. This led to Great Britain entering the war, as Britain had signed a treaty promising to defend Belgian neutrality. Ultimately, Britain's entry brought its global empire into the war, converting a European dispute into a world war."
+          "model": "The localized assassination in Sarajevo escalated into a global war because of Europe's rigid alliance systems. When Gavrilo Princip shot the Austrian heir, Austria-Hungary blamed Serbia and declared war. As a result of this declaration, Russia mobilized its army to protect its Serbian ally. Due to the Schlieffen Plan, which required Germany to defeat France quickly before fighting Russia, Germany declared war on Russia and invaded neutral Belgium to reach French territory. This led to Great Britain entering the war, as Britain had signed a treaty promising to defend Belgian neutrality. Ultimately, Britain's entry brought its global empire into the war, converting a European dispute into a world war.",
+          "starter": "The localized assassination in Sarajevo escalated into a global war because...",
+          "clue": "Chronologically track Austria, Russia, Germany's Schlieffen Plan, and Belgium."
         },
         {
           "type": "written",
           "text": "Q7: Compare the long-term causes of the First World War (the alliance systems, the naval race, and imperial rivalries) with the short-term trigger (the Sarajevo assassination). To what extent was the war caused by the trigger event of 28 June 1914, rather than deep-seated European systems? Write a structured, balanced evaluation.",
-          "model": "While the assassination of Archduke Franz Ferdinand was the immediate spark of the conflict, the war was fundamentally caused by long-term structural factors. On one hand, the Sarajevo trigger on 28 June 1914 was important because it provided the political excuse that Austria-Hungary needed to try and destroy its rival, Serbia, which it feared was fueling Balkan nationalism. Without this high-profile assassination, the July Crisis would not have occurred when it did. However, the deep-seated systems of imperial rivalry and military alliances were far more significant long-term causes. Years of naval arms racing, initiated by the launch of HMS Dreadnought, had already placed Britain and Germany in a state of high tension. The division of Europe into the Triple Entente and Triple Alliance created a dangerous situation where any small conflict would inevitably drag the entire continent into war. On balance, the Sarajevo assassination was merely a contributory cause that set off the war, whereas the alliance systems and naval arms race were necessary causes. Without these deep structural tensions, the assassination of Franz Ferdinand would have remained a local crisis rather than escalating into a global conflict."
+          "model": "While the assassination of Archduke Franz Ferdinand was the immediate spark of the conflict, the war was fundamentally caused by long-term structural factors. On one hand, the Sarajevo trigger on 28 June 1914 was important because it provided the political excuse that Austria-Hungary needed to try and destroy its rival, Serbia, which it feared was fueling Balkan nationalism. Without this high-profile assassination, the July Crisis would not have occurred when it did. However, the deep-seated systems of imperial rivalry and military alliances were far more significant long-term causes. Years of naval arms racing, initiated by the launch of HMS Dreadnought, had already placed Britain and Germany in a state of high tension. The division of Europe into the Triple Entente and Triple Alliance created a dangerous situation where any small conflict would inevitably drag the entire continent into war. On balance, the Sarajevo assassination was merely a contributory cause that set off the war, whereas the alliance systems and naval arms race were necessary causes. Without these deep structural tensions, the assassination of Franz Ferdinand would have remained a local crisis rather than escalating into a global conflict.",
+          "starter": "On one hand, the Sarajevo trigger was important because... On the other hand, long-term causes...",
+          "clue": "Compare the immediate 'spark' of the murder to the 'powder keg' of alliances and arms race."
         }
       ],
       "vocab": [
@@ -121,7 +135,15 @@ export const unitData = {
           "term": "Pals' Battalions",
           "definition": "Why did the 'Pals' Battalions' prove to be a devastating experiment for local British communities?"
         }
-      ]
+      ],
+      "historians_corner": {
+        "title": "The Outbreak of 1914: Fritz Fischer vs. Christopher Clark",
+        "text": "Historians have fiercely debated who was responsible for the outbreak of war. <strong>Fritz Fischer (1961)</strong> argued that Germany bore sole responsibility, having planned a war for European domination. Conversely, <strong>Christopher Clark (2012)</strong> described the leaders of Europe as 'sleepwalkers', stumbling into war through mutual paranoia and failures of diplomacy, rather than a single calculated conspiracy.",
+        "stretch_question": "Evaluate Fritz Fischer's argument. To what extent do you agree that Germany planned the outbreak of war in 1914?",
+        "stretch_model": "Fischer's argument is supported by the 'Blank Cheque' given to Austria-Hungary, which encouraged military action. However, Clark's 'sleepwalkers' thesis highlights how all Great Powers engaged in aggressive military mobilization timetables, which left no room for diplomatic compromise.",
+        "starter": "Fischer's argument that Germany planned the war is supported by...",
+        "clue": "Contrast Germany's Blank Cheque with the general paranoia and rigid mobilization timetables across all European powers."
+      }
     },
     {
       "title": "Lesson 2: The Reality of the Mud (Western Front)",
