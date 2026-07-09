@@ -102,14 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let synth = window.speechSynthesis;
   let utterance = null;
 
-  // Add Read Aloud Button to Header Container (No Icons)
-  const headerContainer = document.querySelector('.header-container');
+  // Add Read Aloud Button to Header Actions
+  const headerActions = document.querySelector('.header-actions');
   const btnReadAloud = document.createElement('button');
   btnReadAloud.className = 'btn btn-secondary';
   btnReadAloud.id = 'btn-read-aloud';
   btnReadAloud.style.marginLeft = '10px';
   btnReadAloud.textContent = 'Read Aloud';
-  headerContainer.appendChild(btnReadAloud);
+  if(headerActions) headerActions.appendChild(btnReadAloud);
 
   btnReadAloud.addEventListener('click', () => {
     if (synth.speaking) {
@@ -132,16 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Toggle Dyslexia Mode (Remove icon if present)
-  btnDyslexia.innerHTML = 'SEN / Dyslexia Mode';
+  btnDyslexia.innerHTML = '<i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode';
   btnDyslexia.addEventListener('click', () => {
     document.body.classList.toggle('sen-mode');
     const isSen = document.body.classList.contains('sen-mode');
-    btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+    btnDyslexia.innerHTML = isSen ? '<i class="fa-solid fa-glasses"></i> Standard Mode' : '<i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode';
   });
 
   // Render Sidebar
   function renderSidebar() {
-    sidebar.innerHTML = '';
+    const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
+    navContainer.innerHTML = '';
     unitData.lessons.forEach((lesson, index) => {
       const link = document.createElement('a');
       link.className = 'lesson-link';
@@ -154,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderLesson(lesson);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-      sidebar.appendChild(link);
+      navContainer.appendChild(link);
     });
   }
 
@@ -163,11 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Header section
     let html = `<div class="lesson-content">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 12px 18px; z-index: 1000; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-        <h4 style="margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; color: var(--primary);">${lesson.title}</h4>
-        <div style="display: flex; gap: 8px;">
-          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()">Unit Menu</button>
-          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.location.href='../index.html'">Main Dashboard</button>
-        </div>
+        <h4 style="margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%; color: var(--primary);">${lesson.title}</h4>
       </div>
       <div id="progress-container" style="position: sticky; top: 62px; background: #e2e8f0; height: 6px; width: 100%; z-index: 1001; margin-bottom: 20px;">
         <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>

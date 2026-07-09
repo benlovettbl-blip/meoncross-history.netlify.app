@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Render Sidebar
   function renderSidebar() {
-    sidebar.innerHTML = '';
+    const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
+    navContainer.innerHTML = '';
     unitData.lessons.forEach((lesson, index) => {
       const link = document.createElement('a');
       link.className = 'lesson-link';
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderLesson(lesson);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-      sidebar.appendChild(link);
+      navContainer.appendChild(link);
     });
   }
 
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <div style="display: flex; gap: 8px;">
       <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
       <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
-      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.location.href='../index.html'"><i class="fa-solid fa-house"></i> Main Dashboard</button>
     </div>
   </div>
   <div id="progress-container" style="position: sticky; top: 62px; background: #e2e8f0; height: 6px; width: 100%; z-index: 1001;">
