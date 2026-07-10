@@ -81,6 +81,20 @@ export function initializeApp(unitData) {
       margin-top: 10px;
       flex-wrap: wrap;
     }
+    .student-answer-input {
+      display: none;
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+    .laptop-mode-active .student-answer-input {
+      display: block;
+    }
     .do-now-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -119,6 +133,49 @@ export function initializeApp(unitData) {
     }
     .btn-primary:hover {
       background: #0d1659;
+    }
+    .btn-sm-icon {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .student-answer-input {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    .fab-copy {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .fab-copy:hover {
+      transform: scale(1.05);
+      background: #1e293b;
+    }
+    .laptop-mode-active .fab-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .btn-secondary {
       background: #e2e8f0;
@@ -297,6 +354,32 @@ export function initializeApp(unitData) {
   let synth = window.speechSynthesis;
   let utterance = null;
 
+  // Copy to OneNote FAB
+  const fab = document.createElement('button');
+  fab.className = 'fab-copy';
+  fab.innerHTML = '<i class="fa-solid fa-copy"></i>';
+  fab.title = "Copy all answers to OneNote";
+  fab.onclick = () => {
+    let text = "History Lesson Answers\n\n";
+    document.querySelectorAll('.do-now-card').forEach(card => {
+      let qTextEl = card.querySelector('div[style*="font-weight: 700"]');
+      let textarea = card.querySelector('.student-answer-input');
+      if (qTextEl && textarea) {
+        let clone = qTextEl.cloneNode(true);
+        let span = clone.querySelector('span');
+        if (span) span.remove();
+        text += clone.textContent.trim() + "\n";
+        text += "Answer: " + textarea.value + "\n\n";
+      }
+    });
+    navigator.clipboard.writeText(text).then(() => {
+      alert('All answers copied to clipboard! Ready to paste into OneNote.');
+    }).catch(err => {
+      alert('Failed to copy to clipboard.');
+    });
+  };
+  document.body.appendChild(fab);
+
   // Global Read Aloud logic (Per Paragraph)
   window.readAloudText = function(btnElement) {
     if (synth.speaking && btnElement.classList.contains('reading-active')) {
@@ -336,9 +419,31 @@ export function initializeApp(unitData) {
     btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
   });
 
-  // Inject Teacher Mode Button
+  // Inject Laptop Mode & Teacher Mode Buttons
   const headerActions = document.querySelector('.header-actions');
   if (headerActions) {
+    const btnLaptop = document.createElement('button');
+    btnLaptop.className = 'btn btn-secondary';
+    btnLaptop.style.marginRight = '10px';
+    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i> Laptop Mode';
+    
+    if (localStorage.getItem('laptopMode') === 'true') {
+      document.body.classList.add('laptop-mode-active');
+      btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i> Laptop Mode: ON';
+      btnLaptop.style.background = '#1e293b';
+      btnLaptop.style.color = '#ffffff';
+    }
+
+    btnLaptop.addEventListener('click', () => {
+      document.body.classList.toggle('laptop-mode-active');
+      const isActive = document.body.classList.contains('laptop-mode-active');
+      localStorage.setItem('laptopMode', isActive);
+      btnLaptop.innerHTML = isActive ? '<i class="fa-solid fa-laptop"></i> Laptop Mode: ON' : '<i class="fa-solid fa-laptop"></i> Laptop Mode';
+      btnLaptop.style.background = isActive ? '#1e293b' : '';
+      btnLaptop.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnLaptop);
+
     const btnTeacher = document.createElement('button');
     btnTeacher.className = 'btn btn-secondary';
     btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
@@ -583,12 +688,42 @@ export function initializeApp(unitData) {
       }
       html += `</div>`;
     }
+    // PHASE: Think, Pair, Share
+    if (lesson.pair_share) {
+      const ps = lesson.pair_share;
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase ${phaseNum++}: Think, Pair, Share</div>
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
+            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     // PHASE: Application Tasks & Historian Debates
     if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
       html += `
         <div class="phase-card" id="phase-${phaseNum}">
-          <div class="phase-title">Phase ${phaseNum++}: Written Application</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Written Application</div>
+            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+          </div>
       `;
 
       if (lesson.tasks && lesson.tasks.length > 0) {
@@ -598,24 +733,25 @@ export function initializeApp(unitData) {
           let clueBtn = '';
           if (clueParaMatch) {
             qText = qText.replace(clueParaMatch[0], '').trim();
-            clueBtn = `<button class="btn btn-secondary btn-sm" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i> Find Evidence</button>`;
+            clueBtn = `<button class="btn btn-secondary btn-sm-icon" title="Find Evidence" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i></button>`;
           }
 
           html += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${qText}</div>
-              <textarea class="student-answer-input" placeholder="Write your response here..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
-              
-              <div class="btn-group">
-                ${clueBtn}
-                ${task.starter ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('starter-${tIdx}')">Sentence Starter</button>` : ''}
-                ${task.clue ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('clue-${tIdx}')">Clue</button>` : ''}
-                ${task.model ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('model-${tIdx}')">Reveal Model Answer</button>` : ''}
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${qText}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${clueBtn}
+                  ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${task.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('clue-${tIdx}')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
               </div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
 
               ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
               ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
-              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;"><strong>WAGOLL Model Answer:</strong> ${task.model}</div>` : ''}
+              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${task.model}</div>` : ''}
             </div>
           `;
         });
@@ -631,18 +767,19 @@ export function initializeApp(unitData) {
             
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
               <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
-              <div style="font-size: 1.05rem; margin-bottom: 12px;">${hc.stretch_question}</div>
-              <textarea class="student-answer-input" placeholder="Write your stretch response here..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
-              
-              <div class="btn-group">
-                ${hc.starter ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-starter')">Sentence Starter</button>` : ''}
-                ${hc.clue ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-clue')">Clue</button>` : ''}
-                ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('hc-model')">Reveal Model Answer</button>` : ''}
+              <div style="font-size: 1.05rem; margin-bottom: 12px;">
+                ${hc.stretch_question}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${hc.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('hc-starter')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${hc.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('hc-clue')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('hc-model')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
               </div>
+              <textarea class="student-answer-input" placeholder="Write your stretch response here..." oninput="window.updateProgress()"></textarea>
 
               ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
               ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
-              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;"><strong>WAGOLL Model Answer:</strong> ${hc.stretch_model}</div>` : ''}
+              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${hc.stretch_model}</div>` : ''}
             </div>
           </div>
         `;

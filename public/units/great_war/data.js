@@ -25,28 +25,28 @@ export const unitData = {
       "tasks": [
         {
           "type": "written",
-          "text": "Q1: Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P1)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q1: Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P2)",
+          "model": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
         },
         {
           "type": "written",
-          "text": "Q2: Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P2)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q2: Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P3)",
+          "model": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
         },
         {
           "type": "written",
-          "text": "Q3: List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty. (P3)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q3: List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty. (P4)",
+          "model": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
         },
         {
           "type": "written",
-          "text": "Q4: Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace. (P4)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q4: Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace. (P5)",
+          "model": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
         },
         {
           "type": "written",
-          "text": "Q5: To what extent did the maps of central Europe fundamentally change between 1862 and 1871? Use the term \"North German Confederation\" in your answer. (P4)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q5: To what extent did the maps of central Europe fundamentally change between 1862 and 1871? Use the term \"North German Confederation\" in your answer. (P1)",
+          "model": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
         }
       ],
       "vocab": [
@@ -238,22 +238,22 @@ export const unitData = {
         {
           "type": "written",
           "text": "Q1: Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power. (P1)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "model": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
         },
         {
           "type": "written",
           "text": "Q2: Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871? (P2)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "model": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
         },
         {
           "type": "written",
-          "text": "Q3: What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany? (P3)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q3: What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany? (P3 & P4)",
+          "model": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
         },
         {
           "type": "written",
           "text": "Q4: Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain. (P4)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "model": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
         }
       ],
       "vocab": [
@@ -453,33 +453,33 @@ export const unitData = {
       "tasks": [
         {
           "type": "written",
-          "text": "Task 2: Underline the engine section and note how this changed the maximum top speed of the ship in knots. (P1)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q1: Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy. (P1)",
+          "model": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
         },
         {
           "type": "written",
-          "text": "Q1: Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct. (P2)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q2: Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct. (P2)",
+          "model": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
         },
         {
           "type": "written",
-          "text": "Q2: Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet. (P3)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q3: Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet. (P2)",
+          "model": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
         },
         {
           "type": "written",
-          "text": "Q3: Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships. (P4)",
-          "model": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
+          "text": "Q4: Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships. (P4)",
+          "model": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
         },
         {
           "type": "written",
-          "text": "Q4: According to Sir Edward Grey (Source E), explain why a massive navy was considered a \"matter of life and death\" for Great Britain, but merely a matter of \"prestige\" for Germany. (P5)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q5: Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany. (P1 & P2)",
+          "model": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
         },
         {
           "type": "written",
-          "text": "Q5: Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P5)",
-          "model": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
+          "text": "Q6: Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P4 & P8)",
+          "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
         }
       ],
       "vocab": [
@@ -559,7 +559,7 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
-            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
           }
         ],
         "teacher_note": "Launched in 1906, HMS Dreadnought was so heavily armored and carried such massive guns that it instantly made every older battleship in the world obsolete. Ironically, while intended to secure British naval supremacy, it effectively reset the naval arms race to zero, allowing Germany to start building their own Dreadnoughts on an equal footing."
@@ -665,28 +665,28 @@ export const unitData = {
       "tasks": [
         {
           "type": "written",
-          "text": "Q1: Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907. (P1)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q1: Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907. (P2)",
+          "model": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
         },
         {
           "type": "written",
           "text": "Q2: Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war. (P2)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "model": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
         },
         {
           "type": "written",
-          "text": "Q3: Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization. (P3)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q3: Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization. (P4)",
+          "model": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
         },
         {
           "type": "written",
-          "text": "Q4: According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable. (P4)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "text": "Q4: According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable. (P3)",
+          "model": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
         },
         {
           "type": "written",
           "text": "Q5: Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. (P4)",
-          "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
         }
       ],
       "vocab": [
