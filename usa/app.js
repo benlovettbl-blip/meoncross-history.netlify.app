@@ -37381,7 +37381,7 @@ rgba(255,255,255,0.2);">
   var BRAND_CONFIG = {
     units: {
       "conflict_middle_east": {
-        brandHeader: "Meoncross History Department | GCSE Study Suite",
+        brandHeader: "Mr Lovett's History Hub Department | GCSE Study Suite",
         quotes: [
           "Revision Focus: Master the key developments in USA Civil Rights (1954-1975) and the Vietnam War.",
           "AO1 Recall Check: Can you detail the causes and outcome of the Montgomery Bus Boycott of 1955?",
@@ -37431,7 +37431,7 @@ rgba(255,255,255,0.2);">
           const randomIndex = Math.floor(Math.random() * config2.quotes.length);
           const quoteText = config2.quotes[randomIndex];
           textEl.textContent = `"${quoteText}"`;
-          container.title = `Meoncross History: "${quoteText}" (Click to cycle)`;
+          container.title = `Mr Lovett's History Hub: "${quoteText}" (Click to cycle)`;
           container.style.display = "flex";
           container.style.opacity = "1";
           startDismissTimer();
@@ -37449,7 +37449,7 @@ rgba(255,255,255,0.2);">
       const randomIndex = Math.floor(Math.random() * config.quotes.length);
       const quoteText = config.quotes[randomIndex];
       textEl.textContent = `"${quoteText}"`;
-      container.title = `Meoncross History: "${quoteText}" (Click to cycle)`;
+      container.title = `Mr Lovett's History Hub: "${quoteText}" (Click to cycle)`;
       container.style.display = "flex";
       container.style.opacity = "1";
       startDismissTimer();

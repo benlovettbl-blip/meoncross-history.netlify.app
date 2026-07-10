@@ -9,7 +9,7 @@ const units = [
   'change_1450_1750'
 ];
 
-const basePath = 'c:\\Projects\\meoncross-history.netlify.app';
+const basePath = 'c:\\Projects\\history-mega-app.netlify.app';
 
 units.forEach(unit => {
   const filePath = path.join(basePath, unit, 'generate_worksheets.js');

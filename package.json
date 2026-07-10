@@ -1,7 +1,7 @@
 {
-  "name": "meoncross-history",
+  "name": "history-mega-app",
   "version": "1.0.0",
-  "description": "Meoncross History Mega App (KS3 & GCSE)",
+  "description": "Mr Lovett's History Hub Mega App (KS3 & GCSE)",
   "main": "index.html",
   "scripts": {
     "dev": "vite",

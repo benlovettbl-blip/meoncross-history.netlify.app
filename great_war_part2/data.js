@@ -1,7 +1,7 @@
 export const unitData = {
   "lessons": [
     {
-      "title": "Lesson 1: Why were young men so desperate to join the slaughter of 1914?",
+      "title": "Lesson 1: Why were young men so desperat...",
       "narrative": [
         "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?",
         "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",
@@ -143,10 +143,35 @@ export const unitData = {
         "stretch_model": "Fischer's argument is supported by the 'Blank Cheque' given to Austria-Hungary, which encouraged military action. However, Clark's 'sleepwalkers' thesis highlights how all Great Powers engaged in aggressive military mobilization timetables, which left no room for diplomatic compromise.",
         "starter": "Fischer's argument that Germany planned the war is supported by...",
         "clue": "Contrast Germany's Blank Cheque with the general paranoia and rigid mobilization timetables across all European powers."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate why were young men so desperate to join the slaughter of 1914.",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
       }
     },
     {
-      "title": "Lesson 2: Did British generals make the horror of trench warfare worse?",
+      "title": "Lesson 2: Did British generals make the ...",
       "narrative": [
         "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?",
         "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
@@ -158,10 +183,35 @@ export const unitData = {
       "extended": null,
       "do_now": null,
       "gcse_task": null,
-      "flashcards": []
+      "flashcards": [],
+      "learning_objectives": {
+        "overarching": "To understand did British generals make the horror of trench warfare worse.",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
-      "title": "Lesson 3: Was the Great War truly a global war of empires?",
+      "title": "Lesson 3: Was the Great War truly a glob...",
       "narrative": [
         "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?",
         "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops).",
@@ -173,10 +223,35 @@ export const unitData = {
       "extended": null,
       "do_now": null,
       "gcse_task": null,
-      "flashcards": []
+      "flashcards": [],
+      "learning_objectives": {
+        "overarching": "To understand was the Great War truly a global war of empires.",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
-      "title": "Lesson 4: How did a war fought miles away completely control daily life in Britain?",
+      "title": "Lesson 4: How did a war fought miles awa...",
       "narrative": [
         "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?",
         "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions).",
@@ -188,10 +263,35 @@ export const unitData = {
       "extended": null,
       "do_now": null,
       "gcse_task": null,
-      "flashcards": []
+      "flashcards": [],
+      "learning_objectives": {
+        "overarching": "To analyze how did a war fought miles away completely control daily life in Britain.",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
-      "title": "Lesson 5: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+      "title": "Lesson 5: Did the Treaty of Versailles s...",
       "narrative": [
         "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
         "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII).",
@@ -203,7 +303,32 @@ export const unitData = {
       "extended": null,
       "do_now": null,
       "gcse_task": null,
-      "flashcards": []
+      "flashcards": [],
+      "learning_objectives": {
+        "overarching": "To understand did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939.",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     }
   ],
   "staticPages": []

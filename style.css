@@ -50,7 +50,7 @@
   --border-radius-sm: 8px;
 }
 
-:root[data-theme="meoncross"] {
+:root[data-theme="primary"] {
   --primary: #d4af37;
   --primary-hover: #b89c30;
   --bg-app: #f1f5f9;
@@ -67,25 +67,25 @@
   --border-radius-sm: 8px;
 }
 
-/* Sidebar overrides for Meoncross theme to handle dark sidebar + light main area */
-[data-theme="meoncross"] .app-sidebar {
+/* Sidebar overrides for Mr Lovett's History Hub theme to handle dark sidebar + light main area */
+[data-theme="primary"] .app-sidebar {
   background-color: var(--bg-sidebar);
   color: #f8fafc;
 }
-[data-theme="meoncross"] .sidebar-logo h2 {
+[data-theme="primary"] .sidebar-logo h2 {
   color: #ffffff;
 }
-[data-theme="meoncross"] .sidebar-logo span {
+[data-theme="primary"] .sidebar-logo span {
   color: #94a3b8;
 }
-[data-theme="meoncross"] .nav-item {
+[data-theme="primary"] .nav-item {
   color: #cbd5e1;
 }
-[data-theme="meoncross"] .nav-item:hover, [data-theme="meoncross"] .nav-item.active {
+[data-theme="primary"] .nav-item:hover, [data-theme="primary"] .nav-item.active {
   background-color: rgba(255, 255, 255, 0.08);
   color: #d4af37;
 }
-[data-theme="meoncross"] .theme-label {
+[data-theme="primary"] .theme-label {
   color: #94a3b8;
 }
 
@@ -217,7 +217,7 @@ body {
 .color-dot.desert { background: #d4a373; }
 .color-dot.space { background: #6366f1; }
 .color-dot.coral { background: #f43f5e; }
-.color-dot.meoncross { background: linear-gradient(135deg, #0c2340 50%, #d4af37 50%); }
+.color-dot.primary { background: linear-gradient(135deg, #0c2340 50%, #d4af37 50%); }
 
 /* --- App Body --- */
 .app-body {
@@ -306,8 +306,8 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Custom Meoncross theme hero enhancements */
-[data-theme="meoncross"] .dashboard-hero {
+/* Custom Mr Lovett's History Hub theme hero enhancements */
+[data-theme="primary"] .dashboard-hero {
   background: linear-gradient(135deg, #0c2340 0%, #1e3a8a 100%);
   border: 2px solid #d4af37;
   color: #ffffff;
@@ -315,7 +315,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-[data-theme="meoncross"] .dashboard-hero::before {
+[data-theme="primary"] .dashboard-hero::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -325,12 +325,12 @@ body {
   background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
-[data-theme="meoncross"] .hero-text h2 {
+[data-theme="primary"] .hero-text h2 {
   font-family: 'Playfair Display', serif;
   color: #ffffff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-[data-theme="meoncross"] .hero-text p {
+[data-theme="primary"] .hero-text p {
   color: #cbd5e1;
 }
 
@@ -462,21 +462,21 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* Premium style enhancements for Meoncross Theme */
-[data-theme="meoncross"] .module-card {
+/* Premium style enhancements for Mr Lovett's History Hub Theme */
+[data-theme="primary"] .module-card {
   border: 1px solid rgba(12, 35, 64, 0.08);
   border-top: 4px solid var(--primary);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
-[data-theme="meoncross"] .module-card:hover {
+[data-theme="primary"] .module-card:hover {
   border-top-color: var(--primary-hover);
   box-shadow: 0 10px 15px -3px rgba(12, 35, 64, 0.1), 0 4px 6px -2px rgba(12, 35, 64, 0.05);
 }
-[data-theme="meoncross"] .category-badge {
+[data-theme="primary"] .category-badge {
   background-color: rgba(12, 35, 64, 0.05);
   color: var(--text-main);
 }
-[data-theme="meoncross"] .year-badge {
+[data-theme="primary"] .year-badge {
   background-color: var(--primary);
   color: #0c2340;
   font-weight: 800;

@@ -5,9 +5,9 @@ export const unitData = {
   "lessons": [
     {
       "id": "lesson_1",
-      "title": "Lesson 1: Prehistoric and Roman Sanitation",
+      "title": "Lesson 1: Prehistoric and Roman Sanitati...",
       "primary_source": {
-        "src": "",
+        "src": "https://placehold.co/600x400?text=Placeholder",
         "title": "Source A: An artifact from Prehistoric and Roman Sanitation.",
         "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of the Prehistoric and Roman Sanitation era.",
         "question": "Enquiry: What does this source reveal about Prehistoric and Roman Sanitation?",
@@ -31,6 +31,34 @@ export const unitData = {
           {
             "question": "What happens if waste is not properly disposed of?",
             "answer": "Waste contaminates local water sources, breeds disease-carrying pests, and creates toxic, foul-smelling environments."
+          },
+          {
+            "question": "What is a pathogen?",
+            "answer": "A bacterium, virus, or other microorganism that can cause disease."
+          },
+          {
+            "question": "What does the term 'public health' mean?",
+            "answer": "The health of the population as a whole, monitored and regulated by the state."
+          },
+          {
+            "question": "Why was infant mortality so high in the past?",
+            "answer": "Due to a lack of clean water, poor nutrition, and no vaccines against common diseases."
+          },
+          {
+            "question": "What is archaeology?",
+            "answer": "The study of human history through the excavation of sites and analysis of physical remains."
+          },
+          {
+            "question": "How do historians use physical evidence?",
+            "answer": "To understand how ordinary people lived when no written records survive."
+          },
+          {
+            "question": "What is a pandemic?",
+            "answer": "A disease epidemic that has spread across a large region, multiple continents, or worldwide."
+          },
+          {
+            "question": "Why do cities need infrastructure?",
+            "answer": "To provide essential services like water, sewage, and transport for large groups of people."
           }
         ]
       },
@@ -72,13 +100,39 @@ export const unitData = {
         "conduit": "A channel or pipe for conveying water or other fluid.",
         "latrine": "A toilet or outhouse, especially a communal one in a camp or barracks."
       },
-      "gcse_task": null
+      "gcse_task": null,
+      "learning_objective": "To understand the impact of Prehistoric and Roman Sanitation on public health.",
+      "learning_objectives": {
+        "overarching": "To understand prehistoric and Roman Sanitation",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
       "id": "lesson_2",
-      "title": "Lesson 2: Medieval Sanitation and The Church",
+      "title": "Lesson 2: Medieval Sanitation and The Ch...",
       "primary_source": {
-        "src": "",
+        "src": "https://placehold.co/600x400?text=Placeholder",
         "title": "Source A: An artifact from Medieval Britain (AD 410–1450).",
         "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of the Medieval Britain (AD 410–1450) era.",
         "question": "Enquiry: What does this source reveal about Medieval Britain (AD 410–1450)?",
@@ -102,6 +156,34 @@ export const unitData = {
           {
             "question": "Recall from last lesson: Identify one major problem with The Roman Withdrawal.",
             "answer": "The advanced centralized sanitation infrastructure was abandoned, causing public hygiene to decline back into primitive, localized methods."
+          },
+          {
+            "question": "Recall from last lesson: Why were Iron Age cesspits safe?",
+            "answer": "Because populations were small and spread out."
+          },
+          {
+            "question": "Recall from last lesson: How did the Romans move water?",
+            "answer": "Using gravity through stone conduits over many miles."
+          },
+          {
+            "question": "Recall from last lesson: What were Roman latrines?",
+            "answer": "Communal public toilets flushed continuously by running water."
+          },
+          {
+            "question": "Recall from last lesson: What happened to sanitation when the Romans left?",
+            "answer": "The systems collapsed and towns reverted to primitive methods."
+          },
+          {
+            "question": "Recall from last lesson: Did Iron Age people pollute their water?",
+            "answer": "No, they intentionally dug cesspits far from their drinking water."
+          },
+          {
+            "question": "Recall from last lesson: Why was flowing water important to Romans?",
+            "answer": "They believed it was vital for keeping society healthy and clean."
+          },
+          {
+            "question": "Recall from last lesson: What is a conduit?",
+            "answer": "A channel or pipe for conveying water."
           }
         ]
       },
@@ -149,13 +231,39 @@ export const unitData = {
         "gongfermer": "A medieval worker who cleared human waste from cesspits.",
         "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
       },
-      "gcse_task": null
+      "gcse_task": null,
+      "learning_objective": "To understand the impact of Medieval Sanitation and The Church on public health.",
+      "learning_objectives": {
+        "overarching": "To understand medieval Sanitation and The Church",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
       "id": "lesson_3",
-      "title": "Lesson 3: Early Modern Filth and Cesspits",
+      "title": "Lesson 3: Early Modern Filth and Cesspit...",
       "primary_source": {
-        "src": "",
+        "src": "https://placehold.co/600x400?text=Placeholder",
         "title": "Source A: An artifact from Early Modern Britain (1450–1750).",
         "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of the Early Modern Britain (1450–1750) era.",
         "question": "Enquiry: What does this source reveal about Early Modern Britain (1450–1750)?",
@@ -179,6 +287,34 @@ export const unitData = {
           {
             "question": "Recall from last lesson: Identify one major problem with Gongfermers and night-work.",
             "answer": "It was a dangerous, filthy task limited to nighttime, which only temporarily cleared overflowing urban cesspits without solving the lack of permanent sewers."
+          },
+          {
+            "question": "Recall from previous lessons: What was a Gongfermer?",
+            "answer": "A medieval worker who cleared human waste from cesspits at night."
+          },
+          {
+            "question": "Recall from previous lessons: Why did medieval monks build water systems?",
+            "answer": "They believed cleanliness brought them closer to God."
+          },
+          {
+            "question": "Recall from previous lessons: What did Edward III order in 1357?",
+            "answer": "The removal of filth from London's streets to prevent sickness."
+          },
+          {
+            "question": "Recall from previous lessons: Why were medieval towns dangerous for health?",
+            "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
+          },
+          {
+            "question": "Recall from previous lessons: How did the Romans keep forts clean?",
+            "answer": "Using deep sewers flushed continuously with running water."
+          },
+          {
+            "question": "Recall from previous lessons: How did water sellers make money?",
+            "answer": "By selling barrels of river water to townspeople."
+          },
+          {
+            "question": "Recall from previous lessons: What is Miasma?",
+            "answer": "A bad smell previously thought to cause disease."
           }
         ]
       },
@@ -219,13 +355,39 @@ export const unitData = {
         "conduit": "A channel or pipe for conveying water.",
         "water closet": "A flush toilet, or a room containing one."
       },
-      "gcse_task": null
+      "gcse_task": null,
+      "learning_objective": "To understand the impact of Early Modern Filth and Cesspits on public health.",
+      "learning_objectives": {
+        "overarching": "To understand early Modern Filth and Cesspits",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
       "id": "lesson_4",
-      "title": "Lesson 4: The Industrial Revolution and Public Health",
+      "title": "Lesson 4: The Industrial Revolution and ...",
       "primary_source": {
-        "src": "",
+        "src": "https://placehold.co/600x400?text=Placeholder",
         "title": "Source A: An artifact from The Industrial Revolution (1750–1850).",
         "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of The Industrial Revolution (1750–1850) era.",
         "question": "Enquiry: What does this source reveal about The Industrial Revolution (1750–1850)?",
@@ -249,6 +411,34 @@ export const unitData = {
           {
             "question": "Recall from last lesson: Identify one major problem with Miasma theory.",
             "answer": "It incorrectly blamed bad smells (miasma) for disease instead of waterborne bacteria, leading authorities to clean the air rather than water supplies."
+          },
+          {
+            "question": "Recall from previous lessons: Who invented the first flushing toilet in 1596?",
+            "answer": "Sir John Harington, an Elizabethan courtier."
+          },
+          {
+            "question": "Recall from previous lessons: Why didn't Harington's toilet solve the crisis?",
+            "answer": "Because there were no public sewers to connect it to."
+          },
+          {
+            "question": "Recall from previous lessons: What was the main source of water in Tudor towns?",
+            "answer": "Polluted rivers or expensive piped water for the wealthy."
+          },
+          {
+            "question": "Recall from previous lessons: What happens when a cesspit overflows?",
+            "answer": "Sewage seeps into the ground and contaminates the water table."
+          },
+          {
+            "question": "Recall from previous lessons: Why was the Thames increasingly polluted?",
+            "answer": "Because London's growing population dumped all waste directly into it."
+          },
+          {
+            "question": "Recall from previous lessons: How did medieval monks differ from peasants?",
+            "answer": "Monks had complex piped water; peasants relied on local streams."
+          },
+          {
+            "question": "Recall from previous lessons: What was the main danger of urban crowding?",
+            "answer": "Disease spread quickly through contaminated water and close contact."
           }
         ]
       },
@@ -289,13 +479,39 @@ export const unitData = {
         "urbanization": "The process of making an area more urban (city-like).",
         "cholera": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
       },
-      "gcse_task": null
+      "gcse_task": null,
+      "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
+      "learning_objectives": {
+        "overarching": "To understand the Industrial Revolution and Public Health",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     },
     {
       "id": "lesson_5",
-      "title": "Lesson 5: The Great Stink and Modern Sewers",
+      "title": "Lesson 5: The Great Stink and Modern Sew...",
       "primary_source": {
-        "src": "",
+        "src": "https://placehold.co/600x400?text=Placeholder",
         "title": "Source A: An artifact from The Great Stink and Modern Sewers.",
         "caption": "<strong>What is this source showing?</strong> This source represents the sanitary conditions and technological advancements of The Great Stink and Modern Sewers era.",
         "question": "Enquiry: What does this source reveal about The Great Stink and Modern Sewers?",
@@ -319,6 +535,34 @@ export const unitData = {
           {
             "question": "Recall from last lesson: Identify one major problem with Chadwick's Sanitation Report.",
             "answer": "Chadwick still believed in miasma theory, so he advocated flushing sewage out of the streets and directly into the River Thames, polluting London's main water source."
+          },
+          {
+            "question": "Recall from previous lessons: What disease terrorized Victorian Britain?",
+            "answer": "Cholera, a deadly waterborne disease."
+          },
+          {
+            "question": "Recall from previous lessons: What was the 'laissez-faire' attitude?",
+            "answer": "The government's belief that it should not interfere in public health."
+          },
+          {
+            "question": "Recall from previous lessons: What did John Snow prove in 1854?",
+            "answer": "That cholera was spread through contaminated water, not bad air."
+          },
+          {
+            "question": "Recall from previous lessons: What was the Broad Street pump?",
+            "answer": "The water source that caused the deadly 1854 cholera outbreak."
+          },
+          {
+            "question": "Recall from previous lessons: Why did the government ignore Snow?",
+            "answer": "Because the Miasma theory (bad air) was still widely believed."
+          },
+          {
+            "question": "Recall from previous lessons: When was the first flushing toilet invented?",
+            "answer": "1596, by Sir John Harington."
+          },
+          {
+            "question": "Recall from previous lessons: What did Roman conduits do?",
+            "answer": "Transported clean water into towns using gravity."
           }
         ]
       },
@@ -366,7 +610,33 @@ export const unitData = {
         "sewer": "An underground conduit for carrying off drainage water and waste matter.",
         "germ theory": "The theory that infectious diseases are caused by certain microbes."
       },
-      "gcse_task": null
+      "gcse_task": null,
+      "learning_objective": "To understand the impact of The Great Stink and Modern Sewers on public health.",
+      "learning_objectives": {
+        "overarching": "To understand the Great Stink and Modern Sewers",
+        "scaffolded": [
+          "Identify the key features of this topic.",
+          "Explain the core concepts and historical context.",
+          "Evaluate the overall significance."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "Identify the key features of this topic.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Explain the core concepts and historical context.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          },
+          {
+            "objective": "Evaluate the overall significance.",
+            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+          }
+        ]
+      }
     }
   ],
   "quizPack": [

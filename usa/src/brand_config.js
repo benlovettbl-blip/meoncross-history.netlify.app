@@ -4,7 +4,7 @@ import { state } from './state.js';
 export const BRAND_CONFIG = {
   units: {
     "conflict_middle_east": {
-      brandHeader: "Meoncross History Department | GCSE Study Suite",
+      brandHeader: "Mr Lovett's History Hub Department | GCSE Study Suite",
       quotes: [
         "Revision Focus: Master the key developments in USA Civil Rights (1954-1975) and the Vietnam War.",
         "AO1 Recall Check: Can you detail the causes and outcome of the Montgomery Bus Boycott of 1955?",

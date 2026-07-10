@@ -1,5 +1,5 @@
 /**
- * Markdown Parser for Meoncross History Mega App
+ * Markdown Parser for Mr Lovett's History Hub Mega App
  * Parses topic markdown files dynamically into curriculum objects and quiz databases.
  */
 

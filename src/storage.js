@@ -1,5 +1,5 @@
 /**
- * Storage & Progress Management for Meoncross History Mega App
+ * Storage & Progress Management for Mr Lovett's History Hub Mega App
  */
 
 import { state } from './state.js';
@@ -7,23 +7,23 @@ import { state } from './state.js';
 export function initData() {
   // Load state from local storage
   try {
-    const storedMastery = localStorage.getItem('meoncross_mastery');
+    const storedMastery = localStorage.getItem('history_mastery');
     if (storedMastery) {
       state.mastery = JSON.parse(storedMastery);
     }
     
-    const storedBookmarks = localStorage.getItem('meoncross_bookmarks');
+    const storedBookmarks = localStorage.getItem('history_bookmarks');
     if (storedBookmarks) {
       state.bookmarks = JSON.parse(storedBookmarks);
     }
 
-    const storedTheme = localStorage.getItem('meoncross_theme');
+    const storedTheme = localStorage.getItem('history_theme');
     if (storedTheme) {
       state.theme = storedTheme;
       document.documentElement.setAttribute('data-theme', storedTheme);
     }
 
-    const storedXp = localStorage.getItem('meoncross_xp');
+    const storedXp = localStorage.getItem('history_xp');
     if (storedXp) {
       state.dailyXp = parseInt(storedXp, 10);
     }
@@ -34,10 +34,10 @@ export function initData() {
 
 export function saveProgress() {
   try {
-    localStorage.setItem('meoncross_mastery', JSON.stringify(state.mastery));
-    localStorage.setItem('meoncross_bookmarks', JSON.stringify(state.bookmarks));
-    localStorage.setItem('meoncross_theme', state.theme);
-    localStorage.setItem('meoncross_xp', state.dailyXp.toString());
+    localStorage.setItem('history_mastery', JSON.stringify(state.mastery));
+    localStorage.setItem('history_bookmarks', JSON.stringify(state.bookmarks));
+    localStorage.setItem('history_theme', state.theme);
+    localStorage.setItem('history_xp', state.dailyXp.toString());
   } catch (e) {
     console.error('LocalStorage save error:', e);
   }

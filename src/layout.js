@@ -1,5 +1,5 @@
 /**
- * Layout and Event Binding Controller for Meoncross History Mega App
+ * Layout and Event Binding Controller for Mr Lovett's History Hub Mega App
  */
 
 import { state } from './state.js';
@@ -32,7 +32,7 @@ export function bindEvents() {
       const themeName = e.currentTarget.getAttribute('data-theme');
       state.theme = themeName;
       document.documentElement.setAttribute('data-theme', themeName);
-      localStorage.setItem('meoncross_theme', themeName);
+      localStorage.setItem('history_theme', themeName);
       
       // Update active class
       document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));

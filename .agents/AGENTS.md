@@ -23,3 +23,18 @@ Before running destructive commands (like `git reset --hard` or `git clean`) or 
 1. Stop and ask the user for explicit permission to overwrite their files.
 2. If approved, automatically create a timestamped backup copy of the target file in a `temp_backups` folder before executing the overwrite.
 
+## Unit Synchronization
+The `great_war` (Great War causes) unit is the template and gold standard for all Key Stage 3 units. Any changes made to the design, layout, features, and accessibility of one unit (especially `great_war`) must be consistently applied to all other Key Stage 3 units.
+
+
+## Copyright Checks
+Whenever generating new features or content (especially visual sources or text), you MUST always double-check for copyright issues. Ensure visual sources are copyright-free or explicitly note if they require licensing. Notify the user before adding potentially copyrighted material, as the software is intended for commercial sale.
+
+## Teacher Notes & Pedagogical Priming
+Whenever you are asked to generate or modify lesson content (e.g., adding a new lesson to `data.js`), you MUST automatically include a detailed, structured `teacher_notes` property at the root of the lesson object.
+The `teacher_notes` property MUST be an object following this exact schema:
+1. `primer`: A high-level paragraph explaining the overarching pedagogical goal of the lesson.
+2. `objectives`: An array of objects, one for each learning objective. Each object must contain:
+    - `objective`: The specific learning objective text.
+    - `primer`: Actionable instructions for the teacher on how to achieve this objective, referencing specific paragraphs or tasks in the narrative.
+    - `question`: A "Hinge Question" designed to check student understanding of this specific objective.

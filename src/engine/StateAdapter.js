@@ -1,6 +1,6 @@
 export default class StateAdapter {
   constructor() {
-    this.storageKey = 'meoncross_history_state';
+    this.storageKey = 'history_app_state';
     this.state = this.loadState();
   }
 

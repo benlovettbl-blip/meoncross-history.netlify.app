@@ -1,5 +1,5 @@
 /**
- * Global Application State for Meoncross History Mega App
+ * Global Application State for Mr Lovett's History Hub Mega App
  */
 
 export const state = {
@@ -24,7 +24,7 @@ export const state = {
   lastActiveDate: null,
 
   // Settings
-  theme: 'meoncross',                  // 'meoncross' | 'desert' | 'space' | 'coral'
+  theme: 'primary',                  // 'primary' | 'desert' | 'space' | 'coral'
   soundEnabled: true,
 
   // Profile

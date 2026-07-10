@@ -4,7 +4,7 @@ import { state } from './state.js';
 export const BRAND_CONFIG = {
   units: {
     "conflict_middle_east": {
-      brandHeader: "Meoncross History Department | GCSE Study Suite",
+      brandHeader: "Mr Lovett's History Hub Department | GCSE Study Suite",
       quotes: [
         "Revision Focus: Master the key milestones of Conflict in the Middle East, 1945-1995.",
         "AO1 Recall Check: Can you describe the McMahon-Hussein Correspondence and the Balfour Declaration?",

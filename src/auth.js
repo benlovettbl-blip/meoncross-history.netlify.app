@@ -23,7 +23,8 @@ let msalInstance = null;
 export function initAuth() {
   console.log("Initializing Microsoft SSO configuration with tenant...", msalConfig.auth.authority);
   // Prepare localStorage default session for developer mode / classroom testing
-  if (!localStorage.getItem('user_profile')) {
+  const existingProfile = localStorage.getItem('user_profile');
+  if (!existingProfile || existingProfile.includes('Meoncross')) {
     // Default mock user
     setMockUser("Admin");
   }
@@ -31,10 +32,10 @@ export function initAuth() {
 
 export function setMockUser(yearGroup) {
   const mockUser = {
-    username: "student@meoncross.co.uk",
-    name: "Meoncross Student",
+    username: "student@history-app.local",
+    name: "Mr Lovett's History Hub Student",
     yearGroup: yearGroup, // 'Year 7', 'Year 8', 'Year 9', 'GCSE'
-    tenant: "meoncross.co.uk"
+    tenant: "history-app.local"
   };
   localStorage.setItem('user_profile', JSON.stringify(mockUser));
   return mockUser;

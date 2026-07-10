@@ -1,5 +1,5 @@
 /**
- * Views Renderer for Meoncross History Mega App
+ * Views Renderer for Mr Lovett's History Hub Mega App
  * Handles rendering the Dashboard, Interactive Quizzes, Timelines, Printable Booklets, and Student Profiles.
  */
 
@@ -177,7 +177,7 @@ export function renderProfileView() {
   container.innerHTML = `
     <div class="card max-w-md mx-auto">
       <h3><i class="fa-solid fa-user-circle"></i> Microsoft SSO Student Profile</h3>
-      <p class="text-muted">Simulated tenant environment: <strong>meoncross.co.uk</strong></p>
+      <p class="text-muted">Simulated tenant environment: <strong>history-app.local</strong></p>
       
       <div class="profile-details">
         <div class="form-group">
@@ -365,7 +365,7 @@ export function renderBookletView() {
     <!-- Printable A4 Wrapper -->
     <div class="print-booklet-a4" id="booklet-a4-content">
       <div class="booklet-header">
-        <span class="school-title">MEONCROSS SCHOOL HISTORY DEPT</span>
+        <span class="school-title">MR LOVETT'S HISTORY HUB</span>
         <span class="unit-title">${data.metadata.title}</span>
       </div>
       

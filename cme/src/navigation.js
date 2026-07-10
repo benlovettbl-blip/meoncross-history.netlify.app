@@ -49,7 +49,7 @@ export function switchView(viewName, subtopicId = null) {
     }
   }
 
-  // Logo swapping logic removed - keep Meoncross History on all pages!
+  // Logo swapping logic removed - keep Mr Lovett's History Hub on all pages!
 
   const now = Date.now();
   if (now - lastViewSwitchTime > 3000) {

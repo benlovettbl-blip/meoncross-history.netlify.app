@@ -149,7 +149,7 @@ const quizResultThemes = [
     ]
   },
   {
-    name: "Meoncross History Guild",
+    name: "Mr Lovett's History Hub Guild",
     tiers: [
       { trophy: "📚✏️", title: "Apprentice Historian", desc: "Keep practicing! A little more study of the Elizabethan era will help you master this unit." },
       { trophy: "🏰🛡️", title: "Court Chronicles Reader", desc: "Splendid job! You have built a solid foundation of key historical facts." },
@@ -4055,7 +4055,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function getTrophyForTopic(topicIdx) {
-  let themeIndex = 4; // Default to Meoncross History Guild
+  let themeIndex = 4; // Default to Mr Lovett's History Hub Guild
   if ([0, 3].includes(topicIdx)) themeIndex = 0; // Spy Network
   else if ([8].includes(topicIdx)) themeIndex = 1; // Globe Theatre
   else if ([1, 2].includes(topicIdx)) themeIndex = 2; // Royal Court
@@ -4066,7 +4066,7 @@ function getTrophyForTopic(topicIdx) {
   return theme.tiers[tierIdx] || theme.tiers[0];
 }
 
-const meoncrossHistoryQuotes = [
+const historyAppQuotes = [
   "Elizabethan Revision: Master the challenges of the Queen's accession in 1558.",
   "Religious Settlement 1559: Why did Elizabeth choose the 'Middle Way' between Catholics and Protestants?",
   "Threats Focus: Contrast the Revolt of the Northern Earls (1569) with the Ridolfi Plot (1571).",
@@ -4090,8 +4090,8 @@ function rotateChimneyTaglines() {
   bar.style.pointerEvents = "auto";
   el.style.opacity = "1";
   
-  const randomIndex = Math.floor(Math.random() * meoncrossHistoryQuotes.length);
-  el.innerText = `"${meoncrossHistoryQuotes[randomIndex]}"`;
+  const randomIndex = Math.floor(Math.random() * historyAppQuotes.length);
+  el.innerText = `"${historyAppQuotes[randomIndex]}"`;
   
   if (chimneyQuoteTimeout) {
     clearTimeout(chimneyQuoteTimeout);

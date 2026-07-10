@@ -1,5 +1,5 @@
 /**
- * Navigation & Routing Controller for Meoncross History Mega App
+ * Navigation & Routing Controller for Mr Lovett's History Hub Mega App
  */
 
 import { state } from './state.js';

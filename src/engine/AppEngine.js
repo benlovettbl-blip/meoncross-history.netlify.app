@@ -28,7 +28,7 @@ export default class AppEngine {
         badgeEl.style.display = 'inline-block';
       }
       
-      document.title = `Meoncross History - ${this.unitData.title}`;
+      document.title = `Mr Lovett's History Hub - ${this.unitData.title}`;
 
       // Render Tabs
       const tabsContainer = document.getElementById('engine-tabs-container');

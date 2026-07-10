@@ -220,8 +220,69 @@ export function initializeApp(unitData) {
       font-size: 1.05rem;
       line-height: 1.5;
     }
+    .teacher-note {
+      display: none;
+      background: #1e293b;
+      color: #f8fafc;
+      border-left: 4px solid #facc15;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+    .teacher-note h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #facc15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+    }
+    .teacher-mode-active .teacher-note {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    .para-number {
+      background: #e2e8f0;
+      color: #475569;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    @keyframes highlightPulse {
+      0% { background: #fef08a; transform: scale(1.02); }
+      50% { background: #fef08a; transform: scale(1.02); }
+      100% { background: #f8fafc; transform: scale(1); }
+    }
+    .highlight-flash {
+      animation: highlightPulse 2.5s ease-out;
+    }
   `;
   document.head.appendChild(style);
+
+  window.scrollToPara = function(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.remove('highlight-flash');
+      // Trigger reflow to restart animation
+      void el.offsetWidth;
+      el.classList.add('highlight-flash');
+      setTimeout(() => el.classList.remove('highlight-flash'), 2600);
+    }
+  };
 
   let unitEnquiryText = "";
   const headerDivs = document.querySelectorAll('.header-title-container div div');
@@ -274,6 +335,22 @@ export function initializeApp(unitData) {
     const isSen = document.body.classList.contains('sen-mode');
     btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
   });
+
+  // Inject Teacher Mode Button
+  const headerActions = document.querySelector('.header-actions');
+  if (headerActions) {
+    const btnTeacher = document.createElement('button');
+    btnTeacher.className = 'btn btn-secondary';
+    btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+    btnTeacher.addEventListener('click', () => {
+      document.body.classList.toggle('teacher-mode-active');
+      const isActive = document.body.classList.contains('teacher-mode-active');
+      btnTeacher.innerHTML = isActive ? '<i class="fa-solid fa-user-tie"></i> Teacher Mode: ON' : '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+      btnTeacher.style.background = isActive ? '#1e293b' : '';
+      btnTeacher.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnTeacher);
+  }
 
   // Render Sidebar
   function renderSidebar() {
@@ -329,6 +406,68 @@ export function initializeApp(unitData) {
       </div>
     `;
 
+    if (lesson.learning_objectives) {
+      html += `
+        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
+          </h3>
+          <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
+            ${lesson.learning_objectives.overarching}
+          </p>
+          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+            ${lesson.learning_objectives.scaffolded.map(obj => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    if (lesson.teacher_notes) {
+      let notesHtml = '';
+      
+      // Handle the new comprehensive object structure
+      if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
+        const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
+        const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: ${note.question ? '10px' : '0'};">${note.primer}</div>
+            ${note.question ? `
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"${note.question}"</div>
+            </div>` : ''}
+          </div>
+        `).join('');
+        notesHtml = primerText + objectivesHtml;
+      } 
+      // Fallback for array structure
+      else if (Array.isArray(lesson.teacher_notes)) {
+        notesHtml = lesson.teacher_notes.map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: ${note.question ? '10px' : '0'};">${note.primer}</div>
+            ${note.question ? `
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"${note.question}"</div>
+            </div>` : ''}
+          </div>
+        `).join('');
+      } 
+      // Fallback for simple string
+      else {
+        notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
+      }
+
+      html += `
+        <div class="teacher-note">
+          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+          ${notesHtml}
+        </div>
+      `;
+    }
+
     // Process Narrative Glossary Highlight
     let vocabDict = {};
     if (lesson.vocab) {
@@ -364,7 +503,7 @@ export function initializeApp(unitData) {
       html += `
         <div class="phase-card">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Visual Source & Hook</div>
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: ${lesson.learning_objective || 'Visual Source & Hook'}</div>
           </div>
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
             <img src="${src}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
@@ -411,11 +550,12 @@ export function initializeApp(unitData) {
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">Phase ${phaseNum++}: ${enquiryTitle}</div>
           </div>
       `;
-      lesson.narrative.forEach(para => {
+      lesson.narrative.forEach((para, index) => {
         html += `
-          <div class="narrative-chunk" style="display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 4px solid #3b82f6;">
+          <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease;">
+            <div class="para-number">${index + 1}</div>
             <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${highlightGlossary(para)}</div>
-            <button class="btn btn-secondary" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+            <button class="btn btn-secondary" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         `;
       });
@@ -453,12 +593,21 @@ export function initializeApp(unitData) {
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         lesson.tasks.forEach((task, tIdx) => {
+          let qText = formatQuestion(task.text);
+          let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
+          let clueBtn = '';
+          if (clueParaMatch) {
+            qText = qText.replace(clueParaMatch[0], '').trim();
+            clueBtn = `<button class="btn btn-secondary btn-sm" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i> Find Evidence</button>`;
+          }
+
           html += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${formatQuestion(task.text)}</div>
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${qText}</div>
               <textarea class="student-answer-input" placeholder="Write your response here..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical;" oninput="window.updateProgress()"></textarea>
               
               <div class="btn-group">
+                ${clueBtn}
                 ${task.starter ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('starter-${tIdx}')">Sentence Starter</button>` : ''}
                 ${task.clue ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('clue-${tIdx}')">Clue</button>` : ''}
                 ${task.model ? `<button class="btn btn-secondary btn-sm" onclick="toggleElement('model-${tIdx}')">Reveal Model Answer</button>` : ''}

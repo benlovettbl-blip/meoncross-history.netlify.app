@@ -30,6 +30,15 @@ export const unitData = {
       "do_now": {
         "type": "timeline",
         "events": []
+      },
+      "teacher_notes": {
+        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "objectives": [
+          {
+            "objective": "General Lesson Objective",
+            "primer": "Teacher notes for this lesson have not been added yet."
+          }
+        ]
       }
     }
   ]

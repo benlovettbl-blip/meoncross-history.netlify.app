@@ -94,7 +94,7 @@ unitData.lessons.forEach(lesson => {
         html += `<p><strong>${ev.year}:</strong> ${ev.title} - <em>${ev.detail}</em></p>`;
       });
       if (lesson.do_now.prediction_question) {
-        html += `<div class="do-now-q"><strong>Q${lesson.do_now.qNum}. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\(P(\d+)\)/g, '<a href="#para-$1" class="scaffold-link">(P$1)</a>')}</strong></div>`;
+        html += `<div class="do-now-q"><strong>Q${lesson.do_now.qNum}. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\s*\((P|Para\s*)\d+\)/gi, '')}</strong></div>`;
         html += `<div class="task-lines-large"></div><div class="task-lines-large"></div>`;
       }
       html += `</div>`;
@@ -155,7 +155,7 @@ unitData.lessons.forEach(lesson => {
   if (writtenTasks.length > 0) {
     html += `<div class="task-box"><h3>Knowledge Check</h3>`;
     writtenTasks.forEach(task => {
-      html += `<p style="margin-top:20px;"><strong>Q${task.qNum}. ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\(P(\d+)\)/g, '<a href="#para-$1" class="scaffold-link">(P$1)</a>').replace(/\(Ext P(\d+)(-\d+)?\)/g, '<a href="#ext-para-$1" class="scaffold-link">(Ext P$1$2)</a>')}</strong></p>`;
+      html += `<p style="margin-top:20px;"><strong>Q${task.qNum}. ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></p>`;
       // Add 3 blank lines for writing
       html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
     });
@@ -169,7 +169,7 @@ unitData.lessons.forEach(lesson => {
       html += `<p class="narrative-block" style="font-size: 11pt; color: #444;">${para}</p>`;
     });
     if (lesson.extended.question) {
-      html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\(Ext P(\d+)(-\d+)?\)/g, '<a href="#ext-para-$1" class="scaffold-link">(Ext P$1$2)</a>')}</strong></div>`;
+      html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
       html += `<div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
     }
 
