@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCSE History Study Centre: Later Stages Mini-Games Suite</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Premium CSS Design System (Tactical Dark Slate & Glass Vibe) */
+    :root {
+      --bg-dark: #090c10;
+      --bg-card: #121824;
+      --bg-card-hover: #1b2436;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      
+      --primary: #f97316; /* Sunset Orange */
+      --primary-hover: #ea580c;
+      --primary-glow: rgba(249, 115, 22, 0.15);
+      
+      --secondary: #14b8a6; /* Oasis Teal */
+      --secondary-glow: rgba(20, 184, 166, 0.15);
+      
+      --accent: #eab308; /* Desert Gold */
+      --accent-glow: rgba(234, 179, 8, 0.15);
+      
+      --success: #10b981; /* Emerald Green */
+      --success-glow: rgba(16, 185, 129, 0.15);
+      
+      --error: #ef4444; /* Crimson Red */
+      --error-glow: rgba(239, 68, 68, 0.15);
+      
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(249, 115, 22, 0.4);
+      --border-radius-lg: 16px;
+      --border-radius-md: 12px;
+      --border-radius-sm: 8px;
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.15s ease;
+      
+      /* Game Specific Themes */
+      --radar-neon: #10b981;
+      --radar-neon-dim: rgba(16, 185, 129, 0.2);
+      --radar-grid: #064e3b;
+      
+      --sinai-amber: #f59e0b;
+      --sinai-amber-dim: rgba(245, 158, 11, 0.15);
+      --sinai-panel: #1e1e24;
+      
+      --oslo-navy: #1e293b;
+      --oslo-paper: #f8fafc;
+      --oslo-ink: #0f172a;
+    }
+
+    /* Light Theme academic option */
+    [data-theme="light"] {
+      --bg-dark: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-glass: rgba(15, 23, 42, 0.08);
+      --primary-glow: rgba(249, 115, 22, 0.1);
+      --secondary-glow: rgba(20, 184, 166, 0.1);
+      --accent-glow: rgba(234, 179, 8, 0.1);
+      --success-glow: rgba(16, 185, 129, 0.1);
+      --error-glow: rgba(239, 68, 68, 0.1);
+      --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+      
+      --radar-grid: #a7f3d0;
+      --sinai-panel: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Confetti Overlay */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      display: block;
+    }
+
+    /* Top Navigation & Scoreboard Header */
+    header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      background: transparent;
+      color: var(--primary);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .header-info p {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Live XP Counter */
+    .xp-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(234, 179, 8, 0.1);
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      border-radius: 30px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--accent);
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .xp-badge.grow {
+      transform: scale(1.15);
+      background: rgba(234, 179, 8, 0.2);
+    }
+
+    .xp-value {
+      font-size: 1rem;
+    }
+
+    /* Audio / Voiceover Controls */
+    .control-btn {
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .control-btn:hover {
+      background: var(--border-glass);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .control-btn.active {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Tabs Bar to select games */
+    .game-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .game-tabs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      padding: 16px;
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-btn:hover {
+      background: var(--bg-card-hover);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .tab-btn.active {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      color: var(--text-main);
+      box-shadow: 0 0 15px rgba(249, 115, 22, 0.15);
+      position: relative;
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .tab-btn i {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      transition: color var(--transition-normal);
+    }
+
+    .tab-btn.active i {
+      color: var(--primary);
+    }
+
+    .tab-btn-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn-subtitle {
+      font-size: 0.72rem;
+      opacity: 0.8;
+    }
+
+    /* Base Game Panel Setup */
+    .game-panel {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .game-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Panel Headers */
+    .panel-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .panel-title-info h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .panel-title-info p {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .game-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+    }
+
+    /* Global Info Screen Overlay (e.g. Success, Instructions) */
+    .game-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(9, 12, 16, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      text-align: center;
+      padding: 40px;
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .overlay-card {
+      max-width: 500px;
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .overlay-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .overlay-icon.success {
+      background: var(--success-glow);
+      color: var(--success);
+      border: 1px solid var(--success);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .overlay-icon.failure {
+      background: var(--error-glow);
+      color: var(--error);
+      border: 1px solid var(--error);
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+    }
+
+    .overlay-icon.instruction {
+      background: var(--primary-glow);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+    }
+
+    .overlay-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .overlay-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--border-radius-sm);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
+    }
+
+    .btn-action:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(249, 115, 22, 0.35);
+    }
+
+    .btn-action-sec {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 10px 24px;
+      border-radius: var(--border-radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-action-sec:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       GAME 1: RADAR STRIKE SPECIFICS
+       ========================================================================== */
+    .radar-grid-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .radar-grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Terminal logs styling */
+    .radar-terminal {
+      background: #06090e;
+      border: 1px solid #10b98133;
+      border-radius: var(--border-radius-md);
+      padding: 18px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      height: 380px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .radar-terminal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+      background-size: 100% 4px;
+      pointer-events: none;
+      border-radius: var(--border-radius-md);
+    }
+
+    .terminal-header {
+      border-bottom: 1px solid #10b98122;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      color: #10b981;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .terminal-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 4px;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar for green terminal */
+    .terminal-content::-webkit-scrollbar {
+      width: 4px;
+    }
+    .terminal-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .terminal-content::-webkit-scrollbar-thumb {
+      background: #10b98144;
+      border-radius: 2px;
+    }
+
+    .terminal-row {
+      line-height: 1.4;
+      white-space: pre-line;
+      border-left: 2px solid transparent;
+      padding-left: 8px;
+    }
+
+    .row-system {
+      color: #34d399; /* Greenish */
+    }
+
+    .row-prompt {
+      color: #60a5fa; /* Blue */
+      border-left-color: #3b82f6;
+    }
+
+    .row-error {
+      color: #f87171; /* Red */
+      border-left-color: #ef4444;
+      animation: pulseError 0.5s ease infinite alternate;
+    }
+
+    .row-success {
+      color: #fbbf24; /* Amber */
+      border-left-color: #f59e0b;
+      font-weight: 600;
+    }
+
+    @keyframes pulseError {
+      from { background: rgba(239, 68, 68, 0); }
+      to { background: rgba(239, 68, 68, 0.08); }
+    }
+
+    /* Radar Screen Canvas wrapper */
+    .radar-screen-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #04070a;
+      border: 2px solid #10b98122;
+      border-radius: var(--border-radius-md);
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.05);
+    }
+
+    #radar-canvas {
+      width: 360px;
+      height: 360px;
+      cursor: crosshair;
+    }
+
+    /* ==========================================================================
+       GAME 2: SINAI OPERATIONS DASHBOARD SPECIFICS
+       ========================================================================== */
+    .dashboard-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Resource row */
+    .resource-meters-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .resource-meters-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .meter-card {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 14px 18px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .meter-card.alarm {
+      border-color: var(--error);
+      animation: alarmFlash 0.8s ease infinite alternate;
+    }
+
+    @keyframes alarmFlash {
+      from { box-shadow: 0 0 4px rgba(239, 68, 68, 0.1); background: rgba(239, 68, 68, 0.02); }
+      to { box-shadow: 0 0 12px rgba(239, 68, 68, 0.25); background: rgba(239, 68, 68, 0.08); }
+    }
+
+    .meter-label-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .meter-label-row i {
+      font-size: 0.95rem;
+    }
+
+    .meter-progress-container {
+      height: 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .meter-progress-bar {
+      height: 100%;
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.1, 0.8, 0.3, 1), background var(--transition-normal);
+    }
+
+    /* Custom values colors */
+    .color-ammo { background: #f97316; }
+    .color-diplomacy { background: #06b6d4; }
+    .color-territory { background: #10b981; }
+
+    /* Central Dilemma Box */
+    .crisis-monitor {
+      background: var(--sinai-panel);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    .crisis-monitor::before {
+      content: 'TACTICAL INTRUSION ALERT';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.62rem;
+      color: var(--sinai-amber);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--sinai-amber-dim);
+      padding: 2px 6px;
+      border-radius: 3px;
+      opacity: 0.6;
+    }
+
+    .crisis-wave-indicator {
+      font-size: 0.72rem;
+      color: var(--sinai-amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .crisis-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    /* Decision list style buttons */
+    .dilemma-choices-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .choice-btn {
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 16px 20px;
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .choice-btn:hover {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.03);
+      transform: translateX(4px);
+    }
+
+    .choice-number {
+      background: var(--primary-glow);
+      color: var(--primary);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(249, 115, 22, 0.2);
+    }
+
+    .choice-btn:hover .choice-number {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ==========================================================================
+       GAME 3: OSLO ACCORDS ARCHITECT SPECIFICS
+       ========================================================================== */
+    .diplomat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 850px) {
+      .diplomat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diplomat-column {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .column-headline {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* Treaty Cards list */
+    .treaty-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .treaty-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+    }
+
+    .treaty-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--border-active);
+      transform: translateY(-2px);
+    }
+
+    .treaty-card.selected {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      border-style: solid;
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.05);
+    }
+
+    .treaty-card.matched {
+      background: var(--success-glow);
+      border-color: var(--success);
+      border-style: solid;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .treaty-card-content {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .treaty-card-icon {
+      font-size: 1rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .treaty-card.selected .treaty-card-icon {
+      color: var(--primary);
+    }
+
+    .treaty-card.matched .treaty-card-icon {
+      color: var(--success);
+    }
+
+    /* Destination Slots */
+    .slots-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .slot-item {
+      background: rgba(0,0,0,0.15);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 86px;
+      position: relative;
+    }
+
+    .slot-item:hover {
+      background: rgba(0,0,0,0.25);
+      border-color: var(--secondary);
+    }
+
+    .slot-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .slot-content-holder {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .slot-item.filled {
+      border-color: var(--success-glow);
+      background: rgba(16, 185, 129, 0.03);
+    }
+
+    .slot-item.filled .slot-content-holder {
+      color: var(--text-main);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .slot-tick {
+      position: absolute;
+      right: 16px;
+      top: calc(50% - 10px);
+      font-size: 1.1rem;
+      color: var(--success);
+      display: none;
+    }
+
+    .slot-item.filled .slot-tick {
+      display: block;
+    }
+
+    /* Diplomatic terminal console */
+    .diplomatic-terminal {
+      background: #0f172a;
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 14px 18px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.76rem;
+      color: #94a3b8;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+      margin-top: 18px;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .diplomatic-terminal-icon {
+      font-size: 1.2rem;
+      color: var(--primary);
+      animation: blinker 1.2s infinite;
+    }
+
+    @keyframes blinker {
+      50% { opacity: 0.4; }
+    }
+
+    .diplomatic-terminal-text {
+      line-height: 1.4;
+    }
+
+    /* Bottom Treaty Bar for game completion */
+    .diplomatic-sign-bar {
+      margin-top: 24px;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-sign {
+      background: #ea580c;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--border-radius-sm);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-sign.active {
+      opacity: 1;
+      pointer-events: auto;
+      background: linear-gradient(90deg, #ea580c, #d97706);
+      box-shadow: 0 0 15px rgba(234, 88, 12, 0.4);
+      animation: pulseSign 1.5s infinite;
+    }
+
+    @keyframes pulseSign {
+      0% { transform: scale(1); box-shadow: 0 0 15px rgba(234, 88, 12, 0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(234, 88, 12, 0.6); }
+      100% { transform: scale(1); box-shadow: 0 0 15px rgba(234, 88, 12, 0.4); }
+    }
+
+    /* Bouncy Chimney Sweeper Logo Animations */
+    @keyframes chimneyBounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      30% { transform: translateY(-5px) scale(0.96) rotate(-2deg); }
+      50% { transform: translateY(-8px) scale(1.05) rotate(2deg); }
+      70% { transform: translateY(-3px) scale(0.98) rotate(-1deg); }
+      85% { transform: translateY(-1px) scale(1.01) rotate(0.5deg); }
+    }
+
+    
+    
+    
+    /* Smoke Particles */
+    .smoke-particle {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(28, 25, 23, 0.85);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) scale(1);
+      filter: blur(1.5px);
+    }
+
+    @keyframes smokeRise1 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(-14px, -26px) scale(3.5); opacity: 0; filter: blur(4px); }
+    }
+
+    @keyframes smokeRise2 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(10px, -32px) scale(4); opacity: 0; filter: blur(5px); }
+    }
+
+    @keyframes smokeRise3 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.7; }
+      100% { transform: translate(-2px, -38px) scale(4.5); opacity: 0; filter: blur(6px); }
+    }
+
+    
+    
+    
+    /* Angry Chimney Shake & Heavy Red Smoke State */
+    @keyframes chimneyAngryShake {
+      0%, 100% { transform: scale(1.15) translate(0, 0) rotate(0deg); }
+      10% { transform: scale(1.15) translate(-2px, -1px) rotate(-1deg); }
+      20% { transform: scale(1.15) translate(1px, 2px) rotate(1deg); }
+      30% { transform: scale(1.15) translate(-1px, -2px) rotate(-1deg); }
+      40% { transform: scale(1.15) translate(2px, 1px) rotate(1deg); }
+      50% { transform: scale(1.15) translate(-2px, 2px) rotate(0deg); }
+      60% { transform: scale(1.15) translate(1px, -1px) rotate(1deg); }
+      70% { transform: scale(1.15) translate(-1px, 1px) rotate(-1deg); }
+      80% { transform: scale(1.15) translate(2px, -2px) rotate(1deg); }
+      90% { transform: scale(1.15) translate(-1px, 2px) rotate(0deg); }
+    }
+
+    
+            
+              </style>
+</head>
+<body>
+
+  <!-- Confetti Canvas for Celebrating Mastered Topics -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <div class="header-logo bouncy-chimney brand-icon" id="header-brand-logo" title="Mr Lovett's History Hub">
+          <div class="smoke-particle smoke-1"></div>
+          <div class="smoke-particle smoke-2"></div>
+          <div class="smoke-particle smoke-3"></div>
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="24" width="14" height="2" rx="0.5" fill="#a03018" />
+            <polygon points="6,24 8,4 16,4 18,24" fill="#e65c00" />
+            <rect x="7" y="2" width="10" height="2" rx="0.5" fill="#b34700" />
+            <rect x="7.8" y="6" width="8.4" height="1.5" fill="#ffffff" />
+            <rect x="8.0" y="9.5" width="8.0" height="1.5" fill="#ffffff" />
+            <rect x="8.2" y="13" width="7.6" height="1.5" fill="#ffffff" />
+          </svg>
+        </div>
+        <div class="header-info">
+          <h1>Conflict in the Middle East: Later Stages</h1>
+          <p>Edexcel GCSE History Paper 2 revision mini-games suite</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Persistent XP Score -->
+        <div class="xp-badge" id="xp-badge" title="Total XP Earned. Retained in local storage.">
+          <i class="fa-solid fa-bolt"></i>
+          <span class="xp-value" id="xp-display">0</span> XP
+        </div>
+
+        <!-- Voiceover Speech Toggle -->
+        <button class="control-btn" id="voice-toggle" onclick="toggleVoiceover()" title="Toggle Web Speech API Voiceover (Pitch 0.85, Rate 0.90)">
+          <i class="fa-solid fa-volume-xmark"></i> Voiceover: Off
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn" id="theme-toggle" onclick="toggleTheme()" title="Switch Themes">
+          <i class="fa-solid fa-moon"></i> Theme
+        </button>
+
+        <!-- Link to Falling Blocks -->
+        <button class="control-btn" id="falling-blocks-link" onclick="window.open('falling_blocks.html', '_blank')" title="Play Falling Blocks Arcade" style="border-color: #d946ef; color: #d946ef;">
+          <i class="fa-solid fa-gamepad"></i> Falling Blocks Arcade
+        </button>
+      </div>
+    </header>
+
+    <!-- Game selection tabs -->
+    <nav class="game-tabs">
+      <button class="tab-btn active" id="tab-game1" onclick="switchGame(1)">
+        <i class="fa-solid fa-radar"></i>
+        <span class="tab-btn-title">1. Pre-emptive Strike Radar</span>
+        <span class="tab-btn-subtitle">The Six-Day War (1967)</span>
+      </button>
+      <button class="tab-btn" id="tab-game2" onclick="switchGame(2)">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="tab-btn-title">2. Sinai Operations Dashboard</span>
+        <span class="tab-btn-subtitle">Yom Kippur War (1973)</span>
+      </button>
+      <button class="tab-btn" id="tab-game3" onclick="switchGame(3)">
+        <i class="fa-solid fa-signature"></i>
+        <span class="tab-btn-title">3. Oslo Accords Architect</span>
+        <span class="tab-btn-subtitle">Oslo Peace Accords (1993)</span>
+      </button>
+    </nav>
+
+    <!-- ========================================================================
+         GAME 1: PRE-EMPTIVE STRIKE RADAR
+         ======================================================================== -->
+    <section class="game-panel active" id="game-panel-1">
+      <!-- Welcome Instruction Overlay -->
+      <div class="game-overlay" id="g1-instruction-overlay">
+        <div class="overlay-card">
+          <div class="overlay-icon instruction">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="overlay-title">Pre-emptive Strike Radar</h3>
+          <p class="overlay-desc">
+            It is May–June 1967. Tensions in the Middle East have reached a boiling point. You must navigate the chronological timeline of the Six-Day War buildup.
+            <br><br>
+            Identify and click the active threats glowing on the radar in the <strong>exact chronological order</strong> of historical escalation. Don't cause a chronology paradox!
+          </p>
+          <button class="btn-action" onclick="startGame1()">
+            <i class="fa-solid fa-play"></i> Initialize Radar
+          </button>
+        </div>
+      </div>
+
+      <!-- Success Screen Overlay -->
+      <div class="game-overlay" id="g1-success-overlay" style="display: none;">
+        <div class="overlay-card">
+          <div class="overlay-icon success">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3 class="overlay-title">Air Superiority Achieved!</h3>
+          <p class="overlay-desc">
+            Superb strategic coordination. You blockaded the Straits of Tiran, navigated the Sinai troop withdrawal, and successfully launched Operation Focus to secure a tactical victory.
+          </p>
+          <div style="font-weight: 700; color: var(--success); margin: 8px 0;">+100 XP Earned</div>
+          <div style="display: flex; gap: 12px; width: 100%;">
+            <button class="btn-action-sec" style="flex: 1;" onclick="startGame1()">Replay Radar</button>
+            <button class="btn-action" style="flex: 1.2;" onclick="switchGame(2)">
+              Play Yom Kippur War <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-title-bar">
+        <div class="panel-title-info">
+          <h2><i class="fa-solid fa-radar" style="color:#10b981;"></i> Pre-emptive Strike Radar (1967)</h2>
+          <p>Chronological Chain Tapping: Map regional crises to chronological developments</p>
+        </div>
+        <span class="game-badge">Six-Day War</span>
+      </div>
+
+      <div class="radar-grid-container">
+        <!-- Terminal log panel -->
+        <div class="radar-terminal">
+          <div class="terminal-header">
+            <span>RADAR LOG CONSOLE v6.0</span>
+            <span id="g1-status-term">SYSTEM IDLE</span>
+          </div>
+          <div class="terminal-content" id="g1-log-content">
+            <!-- Programmatically populated rows -->
+          </div>
+        </div>
+
+        <!-- Radar Canvas panel -->
+        <div class="radar-screen-wrapper">
+          <canvas id="radar-canvas" width="360" height="360"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         GAME 2: SINAI OPERATIONS DASHBOARD
+         ======================================================================== -->
+    <section class="game-panel" id="game-panel-2">
+      <!-- Instruction Overlay -->
+      <div class="game-overlay" id="g2-instruction-overlay">
+        <div class="overlay-card">
+          <div class="overlay-icon instruction">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="overlay-title">Sinai Operations Command</h3>
+          <p class="overlay-desc">
+            It is October 6, 1973. A surprise coordinated multi-front invasion has breached the Golan Heights and Suez Canal lines.
+            <br><br>
+            You must navigate three high-stakes tactical dilemmas under pressure. Keep all resource meters: <strong>[Ammunition & Armor]</strong>, <strong>[Diplomacy]</strong>, and <strong>[Territory]</strong> above 0% to survive.
+          </p>
+          <button class="btn-action" onclick="startGame2()">
+            <i class="fa-solid fa-play"></i> Access Dashboard
+          </button>
+        </div>
+      </div>
+
+      <!-- Success Overlay -->
+      <div class="game-overlay" id="g2-success-overlay" style="display: none;">
+        <div class="overlay-card">
+          <div class="overlay-icon success">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3 class="overlay-title">Operations Successful</h3>
+          <p class="overlay-desc">
+            Tactical masterclass! You survived the Yom Kippur War waves, managed resources dynamically under emergency conditions, and preserved the state's security until the armistice was secured.
+          </p>
+          <div style="font-weight: 700; color: var(--success); margin: 8px 0;">+150 XP Earned</div>
+          <div style="display: flex; gap: 12px; width: 100%;">
+            <button class="btn-action-sec" style="flex: 1;" onclick="startGame2()">Replay Game</button>
+            <button class="btn-action" style="flex: 1.2;" onclick="switchGame(3)">
+              Play Oslo Accords <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failure Overlay -->
+      <div class="game-overlay" id="g2-failure-overlay" style="display: none;">
+        <div class="overlay-card">
+          <div class="overlay-icon failure">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <h3 class="overlay-title">Critical Resource Collapse!</h3>
+          <p class="overlay-desc" id="g2-failure-text">
+            One of your tactical columns hit 0%. The operation was compromised, resulting in military collapse or international condemnation.
+          </p>
+          <button class="btn-action" onclick="startGame2()">
+            <i class="fa-solid fa-rotate-left"></i> Reboot Dashboard
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-title-bar">
+        <div class="panel-title-info">
+          <h2><i class="fa-solid fa-chart-line" style="color:var(--sinai-amber);"></i> Sinai Operations Dashboard (1973)</h2>
+          <p>Resource Balancing Choices: Survive three surprise invasion dilemmas</p>
+        </div>
+        <span class="game-badge">Yom Kippur War</span>
+      </div>
+
+      <div class="dashboard-layout">
+        <!-- Resource Bars -->
+        <div class="resource-meters-grid">
+          <!-- Ammo & Armor -->
+          <div class="meter-card" id="meter-card-ammo">
+            <div class="meter-label-row">
+              <span><i class="fa-solid fa-box-archive"></i> Ammunition & Armor</span>
+              <span id="val-ammo">70%</span>
+            </div>
+            <div class="meter-progress-container">
+              <div class="meter-progress-bar color-ammo" id="bar-ammo"></div>
+            </div>
+          </div>
+
+          <!-- Diplomacy -->
+          <div class="meter-card" id="meter-card-diplomacy">
+            <div class="meter-label-row">
+              <span><i class="fa-solid fa-handshake"></i> International Diplomacy</span>
+              <span id="val-diplomacy">60%</span>
+            </div>
+            <div class="meter-progress-container">
+              <div class="meter-progress-bar color-diplomacy" id="bar-diplomacy"></div>
+            </div>
+          </div>
+
+          <!-- Territory -->
+          <div class="meter-card" id="meter-card-territory">
+            <div class="meter-label-row">
+              <span><i class="fa-solid fa-map"></i> Territory Secured</span>
+              <span id="val-territory">50%</span>
+            </div>
+            <div class="meter-progress-container">
+              <div class="meter-progress-bar color-territory" id="bar-territory"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crisis monitor text -->
+        <div class="crisis-monitor">
+          <div class="crisis-wave-indicator" id="g2-wave-indicator">WAVE 1 OF 3</div>
+          <div class="crisis-text" id="g2-crisis-text">Loading tactical intelligence feed...</div>
+        </div>
+
+        <!-- Dilemma Button Choices -->
+        <div class="dilemma-choices-container" id="g2-choices-box">
+          <!-- Rendered programmatically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         GAME 3: OSLO ACCORDS ARCHITECT
+         ======================================================================== -->
+    <section class="game-panel" id="game-panel-3">
+      <!-- Instruction Overlay -->
+      <div class="game-overlay" id="g3-instruction-overlay">
+        <div class="overlay-card">
+          <div class="overlay-icon instruction">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <h3 class="overlay-title">Oslo Accords Architect</h3>
+          <p class="overlay-desc">
+            It is September 1993. The secret negotiations in Norway have concluded, but the draft Oslo Accords clauses must be correctly matched to resolve diplomatic division.
+            <br><br>
+            Use <strong>Click-to-Assign</strong>: Select a Treaty Clause Card on the right to read its historical details, then click its corresponding structural designation slot on the left.
+          </p>
+          <button class="btn-action" onclick="startGame3()">
+            <i class="fa-solid fa-play"></i> Enter Conference Table
+          </button>
+        </div>
+      </div>
+
+      <!-- Success Overlay -->
+      <div class="game-overlay" id="g3-success-overlay" style="display: none;">
+        <div class="overlay-card">
+          <div class="overlay-icon success" style="background: rgba(234, 179, 8, 0.15); color: #eab308; border-color: #eab308;">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <h3 class="overlay-title">Treaty Signed & Sealed!</h3>
+          <p class="overlay-desc">
+            Masterful diplomacy! Yasser Arafat and Yitzhak Rabin sign the historic Declaration of Principles on the White House lawn. You have correctly aligned the obligations and territorial divisions.
+          </p>
+          <div style="font-weight: 700; color: var(--accent); margin: 8px 0;">+200 XP Earned</div>
+          <div style="display: flex; gap: 12px; width: 100%;">
+            <button class="btn-action-sec" style="flex: 1;" onclick="startGame3()">Replay Oslo Game</button>
+            <button class="btn-action" style="flex: 1.2;" onclick="resetAllSummary()">
+              <i class="fa-solid fa-rotate"></i> Reset All Games
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-title-bar">
+        <div class="panel-title-info">
+          <h2><i class="fa-solid fa-signature" style="color:var(--secondary);"></i> Oslo Accords Architect (1993)</h2>
+          <p>Clause Matrix Matching: Link historical clauses with their exact treaty categories</p>
+        </div>
+        <span class="game-badge">Oslo Peace Accords</span>
+      </div>
+
+      <div class="diplomat-grid">
+        <!-- Slots column (Left) -->
+        <div class="diplomat-column">
+          <div class="column-headline">Designation Slots (Left side map/table)</div>
+          <div class="slots-stack" id="g3-slots-container">
+            <!-- Filled programmatically -->
+          </div>
+        </div>
+
+        <!-- Cards column (Right) -->
+        <div class="diplomat-column">
+          <div class="column-headline">Treaty Clause Cards</div>
+          <div class="treaty-cards-stack" id="g3-cards-container">
+            <!-- Shuffled cards programmatically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Historical Context tooltip terminal -->
+      <div class="diplomatic-terminal">
+        <div class="diplomatic-terminal-icon"><i class="fa-solid fa-terminal"></i></div>
+        <div class="diplomatic-terminal-text" id="g3-tooltip-text">
+          Select a Clause Card on the right to inspect historical context tooltips here, then choose a slot on the left to assign it.
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="diplomatic-sign-bar">
+        <button class="btn-sign" id="g3-sign-btn" onclick="signOsloTreaty()">
+          <i class="fa-solid fa-feather-pointed"></i> Sign Treaty
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    /* ==========================================================================
+       GLOBAL APP STATE & INITIALIZATION
+       ========================================================================== */
+    let state = {
+      xp: 0,
+      voiceover: false,
+      theme: 'dark'
+    };
+
+    // Load state from localStorage on init
+    function loadPersistedState() {
+      const savedXp = localStorage.getItem('gcse_history_xp');
+      if (savedXp !== null) {
+        state.xp = parseInt(savedXp, 10);
+        updateXpUI();
+      }
+      
+      const savedVoice = localStorage.getItem('gcse_history_voiceover');
+      if (savedVoice === 'true') {
+        state.voiceover = true;
+        const voiceBtn = document.getElementById('voice-toggle');
+        voiceBtn.classList.add('active');
+        voiceBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Voiceover: On`;
+      }
+      
+      const savedTheme = localStorage.getItem('gcse_history_theme');
+      if (savedTheme === 'light') {
+        state.theme = 'light';
+        document.documentElement.setAttribute('data-theme', 'light');
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.innerHTML = `<i class="fa-solid fa-sun"></i> Theme`;
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem('gcse_history_xp', state.xp);
+      localStorage.setItem('gcse_history_voiceover', state.voiceover);
+      localStorage.setItem('gcse_history_theme', state.theme);
+    }
+
+    function addXP(amount) {
+      state.xp += amount;
+      updateXpUI();
+      saveState();
+      
+      // Visual feedback trigger on XP badge
+      const badge = document.getElementById('xp-badge');
+      badge.classList.add('grow');
+      setTimeout(() => badge.classList.remove('grow'), 300);
+    }
+
+    function updateXpUI() {
+      document.getElementById('xp-display').innerText = state.xp;
+    }
+
+    function toggleTheme() {
+      const themeBtn = document.getElementById('theme-toggle');
+      if (state.theme === 'dark') {
+        state.theme = 'light';
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeBtn.innerHTML = `<i class="fa-solid fa-sun"></i> Theme`;
+      } else {
+        state.theme = 'dark';
+        document.documentElement.removeAttribute('data-theme');
+        themeBtn.innerHTML = `<i class="fa-solid fa-moon"></i> Theme`;
+      }
+      saveState();
+    }
+
+    // Web Speech API wrapper
+    function speakText(text) {
+      if (!state.voiceover) return;
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Cancel any current speech
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.pitch = 0.85; // Low pitch requested
+        utterance.rate = 0.90;  // Pace rate requested
+        
+        // Find custom English voice if possible
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find(v => v.lang.startsWith('en'));
+        if (enVoice) {
+          utterance.voice = enVoice;
+        }
+        
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    function toggleVoiceover() {
+      state.voiceover = !state.voiceover;
+      const voiceBtn = document.getElementById('voice-toggle');
+      if (state.voiceover) {
+        voiceBtn.classList.add('active');
+        voiceBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Voiceover: On`;
+        // Speech API requires user interaction first, so we speak a confirmation
+        speakText("Voiceover activated. Pitch set to 0.85, rate set to 0.90.");
+      } else {
+        voiceBtn.classList.remove('active');
+        voiceBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> Voiceover: Off`;
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+      }
+      saveState();
+    }
+
+    function switchGame(gameNumber) {
+      // Hide all panels
+      document.querySelectorAll('.game-panel').forEach(panel => panel.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+      
+      // Show selected panel
+      document.getElementById(`game-panel-${gameNumber}`).classList.add('active');
+      document.getElementById(`tab-game${gameNumber}`).classList.add('active');
+
+      // Speak game details if active
+      if (gameNumber === 1) {
+        speakText("Selected game 1. The Pre-emptive Strike Radar, Six Day War, 1967.");
+        // Make sure radar canvas draws
+        initRadarGame();
+      } else if (gameNumber === 2) {
+        speakText("Selected game 2. The Sinai Operations Dashboard, Yom Kippur War, 1973.");
+      } else if (gameNumber === 3) {
+        speakText("Selected game 3. The Oslo Accords Architect, Oslo Peace Accords, 1993.");
+        initOsloGame();
+      }
+    }
+
+    function resetAllSummary() {
+      // Reset localStorage and reload page to clear all states
+      localStorage.removeItem('gcse_history_xp');
+      state.xp = 0;
+      updateXpUI();
+      saveState();
+      
+      // Hide all overlays that were open
+      document.getElementById('g1-success-overlay').style.display = 'none';
+      document.getElementById('g1-instruction-overlay').style.display = 'flex';
+      
+      document.getElementById('g2-success-overlay').style.display = 'none';
+      document.getElementById('g2-failure-overlay').style.display = 'none';
+      document.getElementById('g2-instruction-overlay').style.display = 'flex';
+      
+      document.getElementById('g3-success-overlay').style.display = 'none';
+      document.getElementById('g3-instruction-overlay').style.display = 'flex';
+
+      switchGame(1);
+    }
+
+    // Confetti celebration helper
+    function fireConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+      const colors = ['#f97316', '#14b8a6', '#eab308', '#10b981', '#3b82f6', '#ec4899'];
+
+      for (let i = 0; i < 120; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 4,
+          d: Math.random() * canvas.height,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          tilt: Math.random() * 10 - 5,
+          tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+          tiltAngle: 0
+        });
+      }
+
+      function drawConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach((p, index) => {
+          p.tiltAngle += p.tiltAngleIncremental;
+          p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+          p.x += Math.sin(p.tiltAngle);
+          p.tilt = Math.sin(p.tiltAngle - (index / 3)) * 15;
+
+          ctx.beginPath();
+          ctx.lineWidth = p.r;
+          ctx.strokeStyle = p.color;
+          ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+          ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+          ctx.stroke();
+        });
+
+        // Keep updating until all particles go off-screen
+        let active = particles.some(p => p.y < canvas.height);
+        if (active) {
+          requestAnimationFrame(drawConfetti);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      drawConfetti();
+    }
+
+
+    /* ==========================================================================
+       GAME 1: PRE-EMPTIVE STRIKE RADAR ENGINE
+       ========================================================================== */
+    let g1State = {
+      initialized: false,
+      active: false,
+      currentStep: 0,
+      targets: [
+        {
+          id: 'egypt',
+          name: 'Egypt (West Airfields)',
+          x: 100,
+          y: 260,
+          radius: 20,
+          details: 'President Nasser blockades the Straits of Tiran, cutting off shipping lanes from Israel.',
+          triggerMsg: '[CRISIS PHASE 1] Gamal Abdel Nasser closes the Straits of Tiran, choking Israeli maritime trade. Command orders identification of primary threat vector.',
+          successMsg: '[RESOLVED] Nasser blockades Straits of Tiran. Egypt threat lock confirmed! Escalation progresses.',
+          color: '#ef4444',
+          active: true,
+          locked: false
+        },
+        {
+          id: 'syria',
+          name: 'Syria (Sinai & North Buildup)',
+          x: 190,
+          y: 80,
+          radius: 20,
+          details: 'UN peacekeepers (UNEF) are ordered to withdraw from the Sinai. Soviet intelligence reports massing forces.',
+          triggerMsg: '[CRISIS PHASE 2] UN peacekeeping troops (UNEF) are withdrawn from Sinai. Nasser massing 100,000 troops. Syria massing forces in the North. Lock Sinai and Northern threat.',
+          successMsg: '[RESOLVED] Sinai/Syrian troop buildup identified. Defence pacts active. Hostilities imminent.',
+          color: '#ef4444',
+          active: true,
+          locked: false
+        },
+        {
+          id: 'jordan',
+          name: 'Jordan (Jordan/Syria airfields)',
+          x: 270,
+          y: 190,
+          radius: 20,
+          details: 'Operation Focus pre-emptive airstrikes destroy Jordan and Syrian airfield networks on the ground.',
+          triggerMsg: '[CRISIS PHASE 3] Final operational gate open. Initiate Operation Focus to neutralize remaining Jordan/Syrian active airfield networks.',
+          successMsg: '[TACTICAL VICTORY] Operation Focus completed successfully! 90% of Arab air force assets destroyed on the ground. Air supremacy established.',
+          color: '#ef4444',
+          active: true,
+          locked: false
+        }
+      ],
+      sweepAngle: 0
+    };
+
+    function addLogToTerminal(text, type = 'system') {
+      const logBox = document.getElementById('g1-log-content');
+      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      
+      const row = document.createElement('div');
+      row.className = `terminal-row row-${type}`;
+      row.innerHTML = `&gt; [${timeStr}] ${text}`;
+      logBox.appendChild(row);
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    function initRadarGame() {
+      if (g1State.initialized) return;
+      g1State.initialized = true;
+
+      const canvas = document.getElementById('radar-canvas');
+      
+      // Mouse/Touch Tap coordinate detection
+      canvas.addEventListener('mousedown', handleRadarClick);
+      canvas.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const clientX = touch.clientX - rect.left;
+        const clientY = touch.clientY - rect.top;
+        processRadarCoord(clientX, clientY);
+      });
+
+      // Start Radar sweep animation loop
+      requestAnimationFrame(updateRadarCanvas);
+    }
+
+    function startGame1() {
+      // Hide overlays
+      document.getElementById('g1-instruction-overlay').style.display = 'none';
+      document.getElementById('g1-success-overlay').style.display = 'none';
+      
+      // Reset game state
+      g1State.active = true;
+      g1State.currentStep = 0;
+      g1State.targets.forEach(t => t.locked = false);
+      
+      document.getElementById('g1-status-term').innerText = 'OPERATIONAL';
+      
+      // Clear logs and print first phase
+      const logBox = document.getElementById('g1-log-content');
+      logBox.innerHTML = '';
+      
+      addLogToTerminal("PRE-EMPTIVE STRIKE RADAR SIMULATOR INITIALIZED.", "system");
+      addLogToTerminal("CRISIS MATRIX DETECTED: Escalation May-June 1967.", "system");
+      addLogToTerminal("CAUTION: You must target regional threats in the exact chronological sequence to trigger Operation Focus.", "system");
+      addLogToTerminal("--------------------------------------------------", "system");
+      
+      // Post first prompt
+      addLogToTerminal(g1State.targets[0].triggerMsg, "prompt");
+      speakText(g1State.targets[0].triggerMsg);
+      
+      initRadarGame();
+    }
+
+    function handleRadarClick(e) {
+      const canvas = document.getElementById('radar-canvas');
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      processRadarCoord(x, y);
+    }
+
+    function processRadarCoord(x, y) {
+      if (!g1State.active) return;
+
+      // Find if we clicked within range of any target
+      let targetIndex = -1;
+      for (let i = 0; i < g1State.targets.length; i++) {
+        const t = g1State.targets[i];
+        const dist = Math.hypot(x - t.x, y - t.y);
+        if (dist <= t.radius) {
+          targetIndex = i;
+          break;
+        }
+      }
+
+      if (targetIndex === -1) {
+        addLogToTerminal("BLIND TARGET DETECTED. Coordinate noise ignored.", "system");
+        return;
+      }
+
+      const clickedTarget = g1State.targets[targetIndex];
+
+      // Check if it's already locked
+      if (clickedTarget.locked) {
+        addLogToTerminal(`TARGET [${clickedTarget.name.toUpperCase()}] is already locked in place.`, "system");
+        return;
+      }
+
+      // Chronological validation gate
+      if (targetIndex === g1State.currentStep) {
+        // Correct chronological sequence
+        clickedTarget.locked = true;
+        addLogToTerminal(clickedTarget.successMsg, "success");
+        speakText(clickedTarget.successMsg);
+        
+        g1State.currentStep++;
+
+        if (g1State.currentStep < g1State.targets.length) {
+          // Trigger next prompt
+          const nextTarget = g1State.targets[g1State.currentStep];
+          setTimeout(() => {
+            addLogToTerminal("--------------------------------------------------", "system");
+            addLogToTerminal(nextTarget.triggerMsg, "prompt");
+            speakText(nextTarget.triggerMsg);
+          }, 800);
+        } else {
+          // Completed game successfully!
+          g1State.active = false;
+          document.getElementById('g1-status-term').innerText = 'SECURED';
+          addLogToTerminal("ALL TARGETS RESOLVED. TIMELINE INTEGRITY STABILIZED.", "success");
+          addXP(100);
+          
+          setTimeout(() => {
+            document.getElementById('g1-success-overlay').style.display = 'flex';
+            fireConfetti();
+          }, 1200);
+        }
+      } else {
+        // Chronological Paradox Error!
+        let paradoxMsg = "";
+        if (targetIndex === 2 && g1State.currentStep === 0) {
+          paradoxMsg = "CRITICAL ANCHOR FAILURE: Chronological paradox. You cannot launch Operation Focus before the Straits of Tiran are blockaded. Try again.";
+        } else if (targetIndex === 2 && g1State.currentStep === 1) {
+          paradoxMsg = "CRITICAL ANCHOR FAILURE: Chronological paradox. You cannot launch Operation Focus before Sinai peacekeepers are withdrawn. Try again.";
+        } else if (targetIndex === 1 && g1State.currentStep === 0) {
+          paradoxMsg = "CRITICAL ANCHOR FAILURE: Chronological paradox. UN peacekeeping withdrawal/Sinai buildup occurs after the blockading of the Straits of Tiran. Try again.";
+        } else {
+          paradoxMsg = "CHRONOLOGY PARADOX DETECTED: Invalid cause-and-effect sequence. Align chronological parameters and try again.";
+        }
+        
+        addLogToTerminal(paradoxMsg, "error");
+        speakText(paradoxMsg);
+      }
+    }
+
+    function updateRadarCanvas() {
+      const canvas = document.getElementById('radar-canvas');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = canvas.width / 2 - 10;
+
+      // Draw background
+      ctx.fillStyle = '#020406';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw radar rings (Green grid)
+      ctx.strokeStyle = state.theme === 'light' ? '#34d399' : '#042f2e';
+      ctx.lineWidth = 1;
+      
+      for (let r = 50; r <= radius; r += 50) {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Draw radar crosshairs (x and y axis)
+      ctx.beginPath();
+      ctx.moveTo(10, centerY);
+      ctx.lineTo(canvas.width - 10, centerY);
+      ctx.moveTo(centerX, 10);
+      ctx.lineTo(centerX, canvas.height - 10);
+      ctx.stroke();
+
+      // Draw 30/60 degree dashed lines
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.translate(centerX, centerY);
+      for (let angle = 30; angle < 180; angle += 30) {
+        ctx.rotate(angle * Math.PI / 180);
+        ctx.beginPath();
+        ctx.moveTo(-radius, 0);
+        ctx.lineTo(radius, 0);
+        ctx.stroke();
+        ctx.rotate(-angle * Math.PI / 180);
+      }
+      ctx.restore();
+
+      // Draw sweep line
+      g1State.sweepAngle = (g1State.sweepAngle + 0.015) % (Math.PI * 2);
+      const sweepX = centerX + radius * Math.cos(g1State.sweepAngle);
+      const sweepY = centerY + radius * Math.sin(g1State.sweepAngle);
+
+      // Sweep gradient trail
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.arc(centerX, centerY, radius, g1State.sweepAngle - 0.4, g1State.sweepAngle);
+      ctx.lineTo(centerX, centerY);
+      ctx.clip();
+      
+      let gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, radius);
+      gradient.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+      gradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
+
+      // Sweep line itself
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.lineTo(sweepX, sweepY);
+      ctx.stroke();
+
+      // Draw Targets
+      g1State.targets.forEach((t, index) => {
+        // Determine opacity based on sweep angle
+        const targetAngle = Math.atan2(t.y - centerY, t.x - centerX);
+        let diff = g1State.sweepAngle - targetAngle;
+        if (diff < 0) diff += Math.PI * 2;
+        
+        let glowOpacity = 0.2;
+        if (diff < 0.8) {
+          glowOpacity = 1 - (diff / 0.8);
+        }
+
+        ctx.save();
+        
+        // Glow circle ring
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, t.radius + 6 * glowOpacity, 0, Math.PI * 2);
+        if (t.locked) {
+          ctx.fillStyle = `rgba(16, 185, 129, ${0.15 + 0.15 * glowOpacity})`;
+          ctx.strokeStyle = '#10b981';
+        } else {
+          ctx.fillStyle = `rgba(239, 68, 68, ${0.1 + 0.15 * glowOpacity})`;
+          ctx.strokeStyle = `rgba(239, 68, 68, ${0.3 + 0.5 * glowOpacity})`;
+        }
+        ctx.fill();
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Inner solid core
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = t.locked ? '#10b981' : '#ef4444';
+        ctx.fill();
+
+        // Target Text Label
+        ctx.font = '700 8px "Fira Code", monospace';
+        ctx.fillStyle = t.locked ? '#10b981' : '#9ca3af';
+        ctx.textAlign = 'center';
+        
+        // Draw label above target dot
+        ctx.fillText(t.name, t.x, t.y - t.radius);
+        
+        // If locked, draw a green checkmark
+        if (t.locked) {
+          ctx.font = '8px FontAwesome';
+          ctx.fillStyle = '#10b981';
+          ctx.fillText('\uf00c Locked', t.x, t.y + t.radius - 2);
+        } else {
+          ctx.font = 'italic 7px "Fira Code", monospace';
+          ctx.fillStyle = '#ef4444';
+          ctx.fillText(`THREAT v${index + 1}`, t.x, t.y + t.radius - 2);
+        }
+
+        ctx.restore();
+      });
+
+      // Call loop
+      requestAnimationFrame(updateRadarCanvas);
+    }
+
+
+    /* ==========================================================================
+       GAME 2: SINAI OPERATIONS DASHBOARD ENGINE
+       ========================================================================== */
+    let g2State = {
+      active: false,
+      currentWave: 0,
+      resources: {
+        ammo: 70,
+        diplomacy: 60,
+        territory: 50
+      },
+      scenarios: [
+        {
+          id: 'wave1',
+          text: 'The Syrian army has breached the Golan Heights line. Command requests tactical directive. Do you divert southern Sinai air support to save the settlement lines, hold positions, or request emergency US assistance?',
+          choices: [
+            {
+              text: 'Divert Sinai Air Support (Golan lines stabilized, but southern Sinai lines weakened)',
+              modifiers: { ammo: -15, diplomacy: 10, territory: 15 },
+              response: 'Sinai air wings redeployed. The Syrian breakthrough at Golan is halted and driven back. However, Egypt consolidates bridgeheads in Sinai.'
+            },
+            {
+              text: 'Hold positions in Sinai (Protect southern oil assets; Golan settlements abandoned)',
+              modifiers: { ammo: -10, diplomacy: -15, territory: -10 },
+              response: 'Sinai positions secure, but Syrian forces advance deep into northern settlements. Public outrage and international panic mounts.'
+            },
+            {
+              text: 'Mobilize emergency reserve divisions (Spreads logistics thin, but retains double defense posture)',
+              modifiers: { ammo: -25, diplomacy: 5, territory: 5 },
+              response: 'Reserve division mobilized rapidly. Spreads resource stockpiles critically thin, but stops major collapses on both fronts.'
+            }
+          ]
+        },
+        {
+          id: 'wave2',
+          text: 'Ammunition and armored reserves are critically depleted. High Command warns of offensive failure. Do you delay operations to secure the US Airlift (Operation Nickel Grass) or push forward unsupplied?',
+          choices: [
+            {
+              text: 'Secure US Airlift (Wait for Operation Nickel Grass resupply)',
+              modifiers: { ammo: 40, diplomacy: -20, territory: -20 },
+              response: 'Huge US cargo planes arrive. Armored reserve restored to capacity. However, the delay allows Egypt to fortify Suez lines, and the USSR complains.'
+            },
+            {
+              text: 'Push Forward Unsupplied (Strike immediately to maintain tactical surprise)',
+              modifiers: { ammo: -30, diplomacy: 15, territory: 25 },
+              response: 'Fierce armored drive catches Egypt off guard. General Sharon crosses the Suez Canal! But ammo reserves drop to critical danger limits.'
+            },
+            {
+              text: 'Ration munitions and negotiate regional truce mediation',
+              modifiers: { ammo: -5, diplomacy: 25, territory: -5 },
+              response: 'Operations scaled down to save shells. Diplomatic channels open in Washington and Moscow. Pressure mounts to cease hostilities.'
+            }
+          ]
+        },
+        {
+          id: 'wave3',
+          text: 'Soviet resupply ships carrying heavy weapons are arriving in Alexandria. Do you accept the UN Ceasefire or push forward to consolidate current territorial gains?',
+          choices: [
+            {
+              text: 'Accept UN Ceasefire immediately (End the conflict before superpowers clash directly)',
+              modifiers: { ammo: 10, diplomacy: 35, territory: -10 },
+              response: 'Ceasefire signed. The UN Security Council monitors armistice. Israel secures diplomatic recognition, but returns contested forward lines.'
+            },
+            {
+              text: 'Consolidate forward gains (Encircle the Egyptian Third Army first, securing Sinai bargaining chip)',
+              modifiers: { ammo: -20, diplomacy: -25, territory: 35 },
+              response: 'Egyptian forces cut off and encircled. Direct strategic advantage secured in Sinai. However, Soviet threat escalates, prompting global US alert.'
+            },
+            {
+              text: 'Launch cross-canal offensive towards Cairo (Decisive victory drive)',
+              modifiers: { ammo: -40, diplomacy: -45, territory: 50 },
+              response: 'IDF armor advances beyond Suez, threatening Cairo. Unprecedented international backlash and Soviet mobilization threat forces retreat.'
+            }
+          ]
+        }
+      ]
+    };
+
+    function startGame2() {
+      // Hide overlays
+      document.getElementById('g2-instruction-overlay').style.display = 'none';
+      document.getElementById('g2-success-overlay').style.display = 'none';
+      document.getElementById('g2-failure-overlay').style.display = 'none';
+
+      // Reset state
+      g2State.active = true;
+      g2State.currentWave = 0;
+      g2State.resources.ammo = 70;
+      g2State.resources.diplomacy = 60;
+      g2State.resources.territory = 50;
+
+      // Update meters display
+      updateResourceMeters();
+      
+      // Load first wave
+      loadDilemmaWave(0);
+    }
+
+    function updateResourceMeters() {
+      // Set values and progress bars
+      const ammoVal = Math.min(100, Math.max(0, g2State.resources.ammo));
+      const dipVal = Math.min(100, Math.max(0, g2State.resources.diplomacy));
+      const terrVal = Math.min(100, Math.max(0, g2State.resources.territory));
+
+      document.getElementById('val-ammo').innerText = `${ammoVal}%`;
+      document.getElementById('bar-ammo').style.width = `${ammoVal}%`;
+      
+      document.getElementById('val-diplomacy').innerText = `${dipVal}%`;
+      document.getElementById('bar-diplomacy').style.width = `${dipVal}%`;
+
+      document.getElementById('val-territory').innerText = `${terrVal}%`;
+      document.getElementById('bar-territory').style.width = `${terrVal}%`;
+
+      // Trigger danger alarms if resource is low (<= 25%)
+      toggleAlarmState('ammo', ammoVal <= 25);
+      toggleAlarmState('diplomacy', dipVal <= 25);
+      toggleAlarmState('territory', terrVal <= 25);
+    }
+
+    function toggleAlarmState(meterName, isAlarm) {
+      const card = document.getElementById(`meter-card-${meterName}`);
+      if (isAlarm) {
+        card.classList.add('alarm');
+      } else {
+        card.classList.remove('alarm');
+      }
+    }
+
+    function loadDilemmaWave(waveIndex) {
+      g2State.currentWave = waveIndex;
+      const scenario = g2State.scenarios[waveIndex];
+
+      // Update text UI
+      document.getElementById('g2-wave-indicator').innerText = `WAVE ${waveIndex + 1} OF 3`;
+      document.getElementById('g2-crisis-text').innerText = scenario.text;
+      
+      // Read text with optional Web Speech voiceover
+      speakText(scenario.text);
+
+      // Render choice buttons
+      const choicesBox = document.getElementById('g2-choices-box');
+      choicesBox.innerHTML = '';
+
+      scenario.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn';
+        btn.onclick = () => selectTacticalChoice(idx);
+        
+        btn.innerHTML = `
+          <div class="choice-number">${idx + 1}</div>
+          <div class="choice-btn-content">${choice.text}</div>
+        `;
+        choicesBox.appendChild(btn);
+      });
+    }
+
+    function selectTacticalChoice(choiceIndex) {
+      if (!g2State.active) return;
+
+      const wave = g2State.scenarios[g2State.currentWave];
+      const choice = wave.choices[choiceIndex];
+
+      // Apply modifiers
+      g2State.resources.ammo += choice.modifiers.ammo;
+      g2State.resources.diplomacy += choice.modifiers.diplomacy;
+      g2State.resources.territory += choice.modifiers.territory;
+
+      // Bound between 0 and 100
+      g2State.resources.ammo = Math.max(0, Math.min(100, g2State.resources.ammo));
+      g2State.resources.diplomacy = Math.max(0, Math.min(100, g2State.resources.diplomacy));
+      g2State.resources.territory = Math.max(0, Math.min(100, g2State.resources.territory));
+
+      // Update progress bars
+      updateResourceMeters();
+
+      // Speak choice outcomes
+      speakText(choice.response);
+
+      // Check if any resource collapsed
+      if (g2State.resources.ammo <= 0 || g2State.resources.diplomacy <= 0 || g2State.resources.territory <= 0) {
+        g2State.active = false;
+        
+        // Find which resource collapsed to report custom text
+        let collapsedRes = [];
+        if (g2State.resources.ammo <= 0) collapsedRes.push("Ammunition & Armor");
+        if (g2State.resources.diplomacy <= 0) collapsedRes.push("International Diplomacy");
+        if (g2State.resources.territory <= 0) collapsedRes.push("Territory Secured");
+
+        setTimeout(() => {
+          document.getElementById('g2-failure-text').innerHTML = `
+            CRITICAL COLLAPSE: Your reserves of <strong>[${collapsedRes.join(" & ")}]</strong> reached 0%! 
+            <br><br>
+            <em>Outcome:</em> ${choice.response} 
+            <br><br>
+            The war effort was lost. Maintain critical resource balances to clear the simulator.
+          `;
+          document.getElementById('g2-failure-overlay').style.display = 'flex';
+        }, 1500);
+        return;
+      }
+
+      // Progress wave
+      const nextWave = g2State.currentWave + 1;
+      if (nextWave < g2State.scenarios.length) {
+        // Clear buttons temporarily to show choice response log
+        const choicesBox = document.getElementById('g2-choices-box');
+        choicesBox.innerHTML = `
+          <div style="font-family: 'Fira Code', monospace; font-size: 0.82rem; color: var(--text-muted); padding: 12px; background: rgba(0,0,0,0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); line-height: 1.4;">
+            <span style="color: var(--secondary); font-weight:700;">COMMAND DISPATCH:</span> ${choice.response}
+          </div>
+        `;
+
+        setTimeout(() => {
+          loadDilemmaWave(nextWave);
+        }, 3500);
+      } else {
+        // Game Completed successfully!
+        g2State.active = false;
+        addXP(150);
+        
+        setTimeout(() => {
+          document.getElementById('g2-success-overlay').style.display = 'flex';
+          fireConfetti();
+        }, 1500);
+      }
+    }
+
+
+    /* ==========================================================================
+       GAME 3: OSLO ACCORDS ARCHITECT ENGINE
+       ========================================================================== */
+    let g3State = {
+      selectedCardId: null,
+      matches: {
+        plo: null,
+        israel: null,
+        pa: null,
+        territorial: null
+      },
+      cards: [
+        {
+          id: 'card-plo',
+          text: 'Yasser Arafat officially recognizes the State of Israel',
+          targetSlot: 'slot-plo',
+          details: 'Yasser Arafat, Chairman of the PLO, signed a letter recognizing the State of Israel\'s right to exist in peace, renouncing terrorism and violence.',
+          successMsg: 'Correct! Recognizing the State of Israel was a primary PLO obligation, allowing official peace negotiation.'
+        },
+        {
+          id: 'card-israel',
+          text: 'Withdrawal of Israeli military forces from parts of Gaza and the West Bank',
+          targetSlot: 'slot-israel',
+          details: 'Israel agreed to withdraw its troops in phases from parts of Gaza and the West Bank, handover policing to Palestinians.',
+          successMsg: 'Correct! Israeli forces agreed to pull back and redeploy out of populated Palestinian sectors.'
+        },
+        {
+          id: 'card-pa',
+          text: 'Establishment of a temporary Palestinian self-governing authority',
+          targetSlot: 'slot-pa',
+          details: 'A self-governing administration (the PA) was established for a five-year transitional period, allowing civil administration over local affairs.',
+          successMsg: 'Correct! The PA was created to act as the interim administrative and security self-government authority.'
+        },
+        {
+          id: 'card-territorial',
+          text: 'Division of the territories into highly specific zones: Areas A, B, and C',
+          targetSlot: 'slot-territorial',
+          details: 'Divided the West Bank into: Area A (Palestinian control), Area B (Palestinian civil, Israeli security), Area C (Israeli control).',
+          successMsg: 'Correct! The West Bank lands were split into complex Areas A, B, and C divisions to categorize security obligations.'
+        }
+      ],
+      slots: [
+        {
+          id: 'slot-plo',
+          label: 'PLO Obligations',
+          desc: 'Formal recognition commitments and renunciation of insurgent actions'
+        },
+        {
+          id: 'slot-israel',
+          label: 'Israeli Government Obligations',
+          desc: 'Security forces redeployment and civil-jurisdiction withdrawals'
+        },
+        {
+          id: 'slot-pa',
+          label: 'The Palestinian Authority',
+          desc: 'Interim administrative body created to manage civil affairs'
+        },
+        {
+          id: 'slot-territorial',
+          label: 'Territorial Division',
+          desc: 'Categorizing the West Bank and Gaza lands into distinct security/civil areas'
+        }
+      ]
+    };
+
+    function initOsloGame() {
+      // Render slots
+      const slotsContainer = document.getElementById('g3-slots-container');
+      slotsContainer.innerHTML = '';
+      
+      g3State.slots.forEach(slot => {
+        const div = document.createElement('div');
+        div.className = 'slot-item';
+        div.id = slot.id;
+        div.onclick = () => handleSlotClick(slot.id);
+        
+        div.innerHTML = `
+          <div class="slot-label">${slot.label}</div>
+          <div class="slot-content-holder" id="${slot.id}-text">${slot.desc}</div>
+          <div class="slot-tick"><i class="fa-solid fa-circle-check"></i></div>
+        `;
+        slotsContainer.appendChild(div);
+      });
+
+      // Render cards (shuffled)
+      const cardsContainer = document.getElementById('g3-cards-container');
+      cardsContainer.innerHTML = '';
+      
+      // Copy cards list and shuffle
+      const shuffledCards = [...g3State.cards].sort(() => Math.random() - 0.5);
+
+      shuffledCards.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'treaty-card';
+        div.id = card.id;
+        div.onclick = () => handleCardClick(card.id);
+        
+        div.innerHTML = `
+          <div class="treaty-card-content">${card.text}</div>
+          <div class="treaty-card-icon" id="${card.id}-icon"><i class="fa-solid fa-square-plus"></i></div>
+        `;
+        cardsContainer.appendChild(div);
+      });
+    }
+
+    function startGame3() {
+      // Hide overlays
+      document.getElementById('g3-instruction-overlay').style.display = 'none';
+      document.getElementById('g3-success-overlay').style.display = 'none';
+
+      // Reset state
+      g3State.selectedCardId = null;
+      g3State.matches = {
+        plo: null,
+        israel: null,
+        pa: null,
+        territorial: null
+      };
+
+      document.getElementById('g3-tooltip-text').innerText = 'Select a Clause Card on the right to inspect historical context tooltips here, then choose a slot on the left to assign it.';
+      document.getElementById('g3-sign-btn').className = 'btn-sign';
+
+      initOsloGame();
+    }
+
+    function handleCardClick(cardId) {
+      const card = g3State.cards.find(c => c.id === cardId);
+      
+      // If matched, do not allow selecting
+      const isMatched = Object.values(g3State.matches).some(id => id === cardId);
+      if (isMatched) return;
+
+      // Remove selected class from all cards
+      document.querySelectorAll('.treaty-card').forEach(c => c.classList.remove('selected'));
+
+      // Highlight selected
+      g3State.selectedCardId = cardId;
+      document.getElementById(cardId).classList.add('selected');
+
+      // Update terminal tooltip details
+      document.getElementById('g3-tooltip-text').innerHTML = `
+        <strong style="color:var(--primary);">[CLAUSE DETAILS]</strong> ${card.details}
+      `;
+
+      speakText(card.details);
+    }
+
+    function handleSlotClick(slotId) {
+      if (!g3State.selectedCardId) {
+        document.getElementById('g3-tooltip-text').innerHTML = `
+          <span style="color:var(--error);">[ALERT] Select a Clause Card on the right before trying to assign it to a slot!</span>
+        `;
+        speakText("Please select a Clause Card first.");
+        return;
+      }
+
+      const selectedCard = g3State.cards.find(c => c.id === g3State.selectedCardId);
+
+      // Verify match
+      if (selectedCard.targetSlot === slotId) {
+        // Successful Match!
+        const slotKey = slotId.replace('slot-', '');
+        g3State.matches[slotKey] = g3State.selectedCardId;
+
+        // Visual update on Card
+        const cardEl = document.getElementById(g3State.selectedCardId);
+        cardEl.classList.remove('selected');
+        cardEl.classList.add('matched');
+        document.getElementById(`${g3State.selectedCardId}-icon`).innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+
+        // Visual update on Slot
+        const slotEl = document.getElementById(slotId);
+        slotEl.classList.add('filled');
+        document.getElementById(`${slotId}-text`).innerText = selectedCard.text;
+
+        // Terminal feedback
+        document.getElementById('g3-tooltip-text').innerHTML = `
+          <strong style="color:var(--success);">[DIPLOMATIC ALIGNMENT SECURED]</strong> ${selectedCard.successMsg}
+        `;
+        speakText(selectedCard.successMsg);
+
+        // Clear selection
+        g3State.selectedCardId = null;
+
+        // Check if all matched
+        checkOsloGameCompletion();
+      } else {
+        // Error / Mismatch
+        let errorMsg = `DIPLOMATIC MISALIGNMENT: This clause card details "${selectedCard.text}" which does not correspond to the category "${document.getElementById(slotId).querySelector('.slot-label').innerText}". Try another category.`;
+        
+        document.getElementById('g3-tooltip-text').innerHTML = `
+          <span style="color:var(--error);">[ERR: MISALIGNMENT]</span> The selected clause does not fit here. Review details and try again.
+        `;
+        speakText("Diplomatic mismatch. The selected clause does not fit here.");
+        
+        // Flash slot red
+        const slotEl = document.getElementById(slotId);
+        slotEl.style.borderColor = 'var(--error)';
+        setTimeout(() => slotEl.style.borderColor = 'var(--border-glass)', 600);
+      }
+    }
+
+    function checkOsloGameCompletion() {
+      // Check if all matched
+      const allMatched = Object.values(g3State.matches).every(val => val !== null);
+      if (allMatched) {
+        // Unlock "Sign Treaty" Button
+        const signBtn = document.getElementById('g3-sign-btn');
+        signBtn.classList.add('active');
+        
+        document.getElementById('g3-tooltip-text').innerHTML = `
+          <strong style="color:var(--accent);">[ALL CONDITIONS SATISFIED]</strong> The Oslo Accords conditions are fully aligned. Tap "Sign Treaty" below to conclude the diplomacy.
+        `;
+        speakText("All conditions satisfied. The Oslo Accords conditions are fully aligned. Tap Sign Treaty below to conclude the diplomacy.");
+      }
+    }
+
+    function signOsloTreaty() {
+      // Lock everything and show success
+      addXP(200);
+      
+      setTimeout(() => {
+        document.getElementById('g3-success-overlay').style.display = 'flex';
+        fireConfetti();
+        speakText("Oslo Peace Accords successfully signed. You have completed the mini-games revision suite! Well done.");
+      }, 800);
+    }
+
+    /* ==========================================================================
+       STARTUP
+       ========================================================================== */
+    window.onload = function() {
+      loadPersistedState();
+      // Start with Game 1
+      initRadarGame();
+    };
+  </script>
+</body>
+</html>

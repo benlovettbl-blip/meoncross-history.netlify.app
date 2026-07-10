@@ -455,6 +455,77 @@ export function initializeApp(unitData) {
       btnTeacher.style.color = isActive ? '#ffffff' : '';
     });
     headerActions.appendChild(btnTeacher);
+
+    const btnCurriculum = document.createElement('button');
+    btnCurriculum.className = 'btn btn-secondary';
+    btnCurriculum.innerHTML = '<i class="fa-solid fa-list-check"></i> Curriculum Setup';
+    btnCurriculum.addEventListener('click', () => {
+      openCurriculumModal();
+    });
+    headerActions.appendChild(btnCurriculum);
+  }
+
+  function openCurriculumModal() {
+    let modal = document.getElementById('curriculum-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'curriculum-modal';
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
+      
+      const content = document.createElement('div');
+      content.style.cssText = 'background:var(--card-bg);padding:30px;border-radius:12px;width:90%;max-width:500px;color:var(--text-color);box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+      
+      content.innerHTML = `
+        <h2 style="margin-top:0"><i class="fa-solid fa-book-open"></i> Curriculum Setup</h2>
+        <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
+        <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+          <button id="close-curriculum" class="btn btn-primary">Save & Close</button>
+        </div>
+      `;
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+
+      const availableUnits = [
+        { id: 'norman_conquest', title: 'The Norman Conquest' },
+        { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
+        { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' }
+      ];
+
+      const container = content.querySelector('#unit-checkboxes');
+      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+
+      availableUnits.forEach(u => {
+        const label = document.createElement('label');
+        label.style.display = 'flex';
+        label.style.alignItems = 'center';
+        label.style.gap = '10px';
+        label.style.cursor = 'pointer';
+        label.style.fontSize = '1.1rem';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = u.id;
+        checkbox.style.width = '20px';
+        checkbox.style.height = '20px';
+        checkbox.checked = taught.includes(u.id);
+        checkbox.addEventListener('change', () => {
+          let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+          if (checkbox.checked) current.push(u.id);
+          else current = current.filter(id => id !== u.id);
+          localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
+        });
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(u.title));
+        container.appendChild(label);
+      });
+
+      content.querySelector('#close-curriculum').addEventListener('click', () => {
+        document.body.removeChild(modal);
+        // Refresh page to apply new Do Nows if we are currently looking at one
+        location.reload();
+      });
+    }
   }
 
   // Render Sidebar
@@ -626,6 +697,23 @@ export function initializeApp(unitData) {
 
     // PHASE: Retrieval Recall
     if (lesson.do_now && lesson.do_now.items) {
+      try {
+        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+          lesson.do_now.items.forEach(item => {
+            if (item.question.includes('PAST TOPIC:')) {
+              const unit = taught[Math.floor(Math.random() * taught.length)];
+              const bank = window.KNOWLEDGE_BANK[unit];
+              if (bank && bank.length > 0) {
+                const randQ = bank[Math.floor(Math.random() * bank.length)];
+                item.question = 'PAST TOPIC: ' + randQ.question;
+                item.answer = randQ.answer;
+              }
+            }
+          });
+        }
+      } catch(e) { console.error(e); }
+
       html += `
         <div class="phase-card" id="phase-${phaseNum}">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">

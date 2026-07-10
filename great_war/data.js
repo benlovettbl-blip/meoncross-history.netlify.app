@@ -311,15 +311,15 @@ export const unitData = {
             "answer": "Advanced railway networks for rapid mobilization and superior Krupp steel artillery."
           },
           {
-            "question": "8. Why was the location of the German Empire's proclamation so humiliating for France?",
+            "question": "8. PAST TOPIC: Why was the location of the German Empire's proclamation so humiliating for France?",
             "answer": "It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty."
           },
           {
-            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "question": "9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?",
             "answer": "To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war."
           },
           {
-            "question": "10. What was Bismarck's ultimate nightmare scenario?",
+            "question": "10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?",
             "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
@@ -509,44 +509,44 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "1. What territory did Germany take from France in 1871?",
-            "answer": "Alsace-Lorraine"
-          },
-          {
-            "question": "2. Which young Emperor dismissed Bismarck in 1890?",
-            "answer": "Kaiser Wilhelm II"
-          },
-          {
-            "question": "3. What was Wilhelm II's aggressive foreign policy called?",
+            "question": "1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
             "answer": "Weltpolitik (World Policy)"
           },
           {
-            "question": "4. What do we call the competitive rush to claim territory in Africa?",
-            "answer": "The Scramble for Africa"
+            "question": "2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
           },
           {
-            "question": "5. Which alliance was formed directly because Wilhelm let the Reinsurance Treaty expire?",
-            "answer": "The Franco-Russian Alliance"
+            "question": "3. Why was the Franco-Russian Alliance a strategic disaster for Germany?",
+            "answer": "It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war."
           },
           {
-            "question": "6. Explain how Wilhelm II's actions during the Moroccan Crises backfired.",
-            "answer": "By aggressively interfering in Morocco, he terrified Britain into forming a much closer military alliance with France (the Entente Cordiale)."
+            "question": "4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           },
           {
-            "question": "7. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
-            "answer": "Britain realized it could no longer defend its global empire alone and began actively seeking European allies against Germany."
+            "question": "5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
+            "answer": "Britain realized it could no longer defend its empire alone and sought European allies."
           },
           {
-            "question": "8. How did the Scramble for Colonies change European diplomacy?",
-            "answer": "It turned European empires into global rivals, causing constant friction and border disputes across Africa and Asia."
+            "question": "6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
+            "answer": "His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance."
           },
           {
-            "question": "9. Why was the Franco-Russian Alliance a strategic disaster for Germany?",
-            "answer": "It meant Germany was now surrounded on both sides and would face a devastating two-front war."
+            "question": "7. Who dismissed Otto von Bismarck in 1890?",
+            "answer": "Kaiser Wilhelm II"
           },
           {
-            "question": "10. Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
-            "answer": "His impulsive, aggressive, and unpredictable nature alienated potential allies and destroyed the careful balance Bismarck had built."
+            "question": "8. PAST TOPIC: What strategic territory did Germany take from France in 1871?",
+            "answer": "Alsace-Lorraine"
+          },
+          {
+            "question": "9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "answer": "To keep France diplomatically isolated so they could never start a revenge war."
+          },
+          {
+            "question": "10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?",
+            "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
       },
@@ -716,44 +716,44 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "1. What was the name of the revolutionary British battleship launched in 1906?",
+            "question": "1. What revolutionary British battleship was launched in 1906?",
             "answer": "HMS Dreadnought"
           },
           {
-            "question": "2. Who was the German Admiral pushing for a larger high seas fleet?",
-            "answer": "Admiral von Tirpitz"
+            "question": "2. What was the 'Two-Power Standard'?",
+            "answer": "A British policy stating their navy must be as large as the next two rival navies combined."
           },
           {
-            "question": "3. What British policy stated their navy must be as large as the next two combined?",
-            "answer": "The Two-Power Standard"
+            "question": "3. Why did Germany feel it needed a massive high seas fleet?",
+            "answer": "To protect their growing global trade and forcefully assert their status as a top-tier world power."
           },
           {
-            "question": "4. What organization did Tirpitz create to build public support for the navy?",
-            "answer": "The Navy League"
+            "question": "4. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
             "question": "5. What was the popular British slogan chanted by the public in 1909?",
             "answer": "We want eight, and we won't wait!"
           },
           {
-            "question": "6. Explain why Britain felt their survival depended on massive naval supremacy.",
-            "answer": "As an island nation with a global empire, Britain relied on the sea to import food, protect trade routes, and defend its shores."
+            "question": "6. Why did Britain feel their survival depended on massive naval supremacy?",
+            "answer": "As an island nation, Britain relied on the sea to import food and defend its global empire."
           },
           {
-            "question": "7. Why did Germany feel they needed a massive navy?",
-            "answer": "To protect their growing global trade and forcefully assert their 'place in the sun' as a top-tier world power."
+            "question": "7. How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           },
           {
-            "question": "8. How did the invention of the Dreadnought ironically hurt British supremacy?",
-            "answer": "It rendered all older ships obsolete, effectively wiping out Britain's numerical lead and allowing Germany to compete from scratch."
+            "question": "8. PAST TOPIC: What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "answer": "Weltpolitik (World Policy)"
           },
           {
-            "question": "9. Describe the psychological impact of the arms race on the British public.",
-            "answer": "It created intense paranoia, fueled by invasion-scare novels and a deeply entrenched fear of a German attack."
+            "question": "9. PAST TOPIC: Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
           },
           {
-            "question": "10. Why did the Anglo-German naval race make war more likely?",
-            "answer": "It convinced Britain that Germany was a direct existential threat, cementing Britain's commitment to the Triple Entente."
+            "question": "10. PAST TOPIC: Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           }
         ]
       },
@@ -963,36 +963,36 @@ export const unitData = {
             "answer": "Germany, Austria-Hungary, and Italy"
           },
           {
-            "question": "3. What military plan did Germany create to avoid a long two-front war?",
+            "question": "3. Explain the theoretical logic of how the alliance system was supposed to keep peace.",
+            "answer": "It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression."
+          },
+          {
+            "question": "4. Why did the alliance system actually increase paranoia instead of security?",
+            "answer": "Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack."
+          },
+          {
+            "question": "5. What military plan did Germany create to avoid a long two-front war?",
             "answer": "The Schlieffen Plan"
           },
           {
-            "question": "4. Which neutral country did the Schlieffen Plan require invading?",
+            "question": "6. Which neutral country did the Schlieffen Plan require invading?",
             "answer": "Belgium"
           },
           {
-            "question": "5. What feeling of being surrounded by enemies haunted German planners?",
+            "question": "7. What feeling of being surrounded by enemies haunted German planners?",
             "answer": "Encirclement"
           },
           {
-            "question": "6. Explain the theoretical logic of how the alliance system was supposed to keep peace.",
-            "answer": "It was believed that the blocs were so heavily armed that attacking one would trigger a massive, unwinnable war against all, deterring aggression."
+            "question": "8. PAST TOPIC: What revolutionary British battleship was launched in 1906?",
+            "answer": "HMS Dreadnought"
           },
           {
-            "question": "7. Why did German generals believe a European war was 'inevitable and necessary'?",
-            "answer": "They feared Russia was industrializing so rapidly that Germany had to fight a preventative war immediately before Russia became too strong to defeat."
+            "question": "9. PAST TOPIC: Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
-            "question": "8. How did the massive expansion of railways alter the speed of war?",
-            "answer": "It allowed generals to mobilize hundreds of thousands of troops to the front lines in a matter of hours, making military timetables inflexible."
-          },
-          {
-            "question": "9. Describe the danger of dividing Europe into two 'armed camps'.",
-            "answer": "Any single local dispute would no longer remain isolated; it would automatically drag all the Great Powers into a total global slaughter."
-          },
-          {
-            "question": "10. Why did the alliance system actually increase paranoia instead of security?",
-            "answer": "Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a coordinated sudden attack."
+            "question": "10. PAST TOPIC: How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           }
         ]
       },

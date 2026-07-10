@@ -15,7 +15,7 @@ export const UNITS = [
   { id: 'great_war', title: 'The Great War: Causes & Outbreak', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'New format: Accessible interactive digital app with built-in scaffolds and printable workbooks.' },
   { id: 'great_war_part2', title: 'The Great War: Experience & Aftermath (Part 2)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into trench warfare, the global impact, and the flawed peace of the Treaty of Versailles.' },
   { id: 'gcse_usa_1954_1975', title: 'GCSE: USA (1954-1975)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Conflict at home and abroad: Civil Rights Movement and Vietnam War.' },
-  { id: 'gcse_middle_east_1945_1995', title: 'GCSE: Conflict in the Middle East (1945-1995)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The birth of Israel, Suez Crisis, Six-Day War, Yom Kippur War, and peace process.' },
+  { id: 'gcse_middle_east_1945_1995', title: 'GCSE: Conflict in the Middle East', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The birth of Israel, Suez Crisis, Six-Day War, Yom Kippur War, and peace process.' },
   { id: 'gcse_elizabethan_england', title: 'GCSE: Early Elizabethan England (1558-1588)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Queen, government, religion, challenges at home/abroad, and Elizabethan society.' }
 ];
 

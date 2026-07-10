@@ -73,7 +73,7 @@ unitData.lessons.forEach(lesson => {
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') ? lesson.primary_source.src : `../water_and_sanitation/${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../water_and_sanitation/${lesson.primary_source.src}`;
     html += `
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
@@ -101,11 +101,7 @@ unitData.lessons.forEach(lesson => {
       html += `<div class="do-now-box"><h3>Do Now Activity</h3>`;
       lesson.do_now.items.forEach((item, index) => {
         html += `<div class="do-now-q"><strong>Q${item.qNum}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
-        if (index < 5) {
-          html += `<div class="task-lines"></div>`;
-        } else {
-          html += `<div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
-        }
+        html += `<div class="task-lines-large"></div>`;
       });
       html += `</div>`;
     }
@@ -131,7 +127,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
-        let src = source.src.startsWith('../') ? source.src : `../water_and_sanitation/${source.src}`;
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../water_and_sanitation/${source.src}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -271,7 +267,38 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
 }
 
 html += `
+
+<script src="/knowledge_bank.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    try {
+      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+      if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+        const doNows = document.querySelectorAll('.do-now-q');
+        doNows.forEach(q => {
+          if (q.textContent.includes('PAST TOPIC:')) {
+            const unit = taught[Math.floor(Math.random() * taught.length)];
+            const bank = window.KNOWLEDGE_BANK[unit];
+            if (bank && bank.length > 0) {
+              const randQ = bank[Math.floor(Math.random() * bank.length)];
+              const strong = q.querySelector('strong');
+              const prefix = strong ? strong.outerHTML + ' ' : '';
+              q.innerHTML = prefix + 'PAST TOPIC: ' + randQ.question;
+              
+              // If answer key, update the next sibling
+              const nextEl = q.nextElementSibling;
+              if (nextEl && nextEl.style && nextEl.style.color === 'red') {
+                nextEl.innerHTML = randQ.answer;
+              }
+            }
+          }
+        });
+      }
+    } catch (e) { console.error('Dynamic Do Now error:', e); }
+  });
+</script>
 </body>
+
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);

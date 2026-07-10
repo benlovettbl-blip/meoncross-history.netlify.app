@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel Middle East Conflict: Specification Audit Dashboard</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Midnight Slate / Teal Glass Vibe */
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #151d30;
+      --bg-card-hover: #1e2942;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --primary: #14b8a6; /* Teal */
+      --primary-hover: #0d9488;
+      --primary-glow: rgba(20, 184, 166, 0.15);
+      
+      --accent: #f59e0b; /* Gold */
+      --accent-glow: rgba(245, 158, 11, 0.15);
+      
+      --success: #10b981; /* Green */
+      --success-glow: rgba(16, 185, 129, 0.15);
+      
+      --error: #ef4444; /* Red */
+      --error-glow: rgba(239, 68, 68, 0.15);
+      
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(20, 184, 166, 0.35);
+      
+      --border-radius-lg: 16px;
+      --border-radius-md: 12px;
+      --border-radius-sm: 8px;
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+      
+      --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.12s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      padding: 30px 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: var(--border-radius-sm);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition-fast);
+    }
+
+    .back-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .header-title-section {
+      text-align: left;
+    }
+
+    .header-title-section h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .header-title-section p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-glow);
+      color: var(--primary);
+      border: 1px solid rgba(20, 184, 166, 0.25);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* Overall Progress Bar */
+    .progress-section {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .progress-bar-container {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--success));
+      width: 0%;
+      transition: width 0.4s ease-out;
+      box-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
+    }
+
+    .stats-counters {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 100px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.2rem;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 2px;
+    }
+
+    .stat-card.unsure strong { color: var(--error); }
+    .stat-card.review strong { color: var(--accent); }
+    .stat-card.mastered strong { color: var(--success); }
+
+    /* Filters bar */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .filter-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 8px rgba(20, 184, 166, 0.25);
+    }
+
+    /* Collapsible Accordion sections */
+    .accordion-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition-normal);
+    }
+
+    .accordion-item.active {
+      border-color: var(--border-active);
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-align: left;
+      transition: background var(--transition-fast);
+      user-select: none;
+    }
+
+    .accordion-header:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .accordion-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .accordion-header-left i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .accordion-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-muted);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 20px 20px 20px;
+      border-top: 1px solid var(--border-glass);
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Subtopics layout */
+    .subtopic-block {
+      margin-top: 20px;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 24px;
+    }
+
+    .subtopic-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .subtopic-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .subtopic-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .concept-map-toggle-btn {
+      background: rgba(20, 184, 166, 0.08);
+      border: 1px solid rgba(20, 184, 166, 0.25);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .concept-map-toggle-btn:hover {
+      background: var(--primary-glow);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Concept Map flow chart drop-down */
+    .concept-map-container {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(20, 184, 166, 0.04);
+      border: 1px solid rgba(20, 184, 166, 0.15);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .concept-map-card {
+      flex: 1;
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .concept-map-card.causes { border-left: 4px solid var(--error); }
+    .concept-map-card.events { border-left: 4px solid var(--accent); }
+    .concept-map-card.consequences { border-left: 4px solid var(--primary); }
+
+    .map-card-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .map-card-text {
+      font-size: 0.82rem;
+      color: var(--text-main);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .map-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .concept-map-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .map-arrow {
+        transform: rotate(90deg);
+        margin: -4px 0;
+      }
+    }
+
+    /* 3 Pillars layout */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 992px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .pillar-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0,0,0,0.15);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 14px;
+    }
+
+    .pillar-header {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-col.causes-col .pillar-header { color: var(--error); border-bottom-color: rgba(239, 68, 68, 0.2); }
+    .pillar-col.events-col .pillar-header { color: var(--accent); border-bottom-color: rgba(245, 158, 11, 0.2); }
+    .pillar-col.consequences-col .pillar-header { color: var(--primary); border-bottom-color: rgba(20, 184, 166, 0.2); }
+
+    /* Specification point/fact card */
+    .fact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      position: relative;
+    }
+
+    .fact-card:hover {
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-1px);
+    }
+
+    .fact-text {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .fact-text strong {
+      color: var(--primary);
+    }
+
+    /* Active recall status badge toggle */
+    .status-toggle-btn {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+
+    .status-toggle-btn.unsure {
+      background: var(--error-glow);
+      border-color: rgba(239, 68, 68, 0.25);
+      color: #fca5a5;
+    }
+
+    .status-toggle-btn.reviewing {
+      background: var(--accent-glow);
+      border-color: rgba(245, 158, 11, 0.25);
+      color: #fde047;
+    }
+
+    .status-toggle-btn.mastered {
+      background: var(--success-glow);
+      border-color: rgba(16, 185, 129, 0.25);
+      color: #86efac;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-toggle-btn.unsure .status-dot { background-color: var(--error); box-shadow: 0 0 6px var(--error); }
+    .status-toggle-btn.reviewing .status-dot { background-color: var(--accent); box-shadow: 0 0 6px var(--accent); }
+    .status-toggle-btn.mastered .status-dot { background-color: var(--success); box-shadow: 0 0 6px var(--success); }
+
+    /* Print Hub Section Styling */
+    .print-hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .print-hub-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .print-hub-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: -8px;
+    }
+
+    .print-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .print-option-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all var(--transition-fast);
+    }
+
+    .print-option-card:hover {
+      border-color: var(--primary);
+      background: rgba(20, 184, 166, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .print-option-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .print-option-info h3 i {
+      color: var(--primary);
+    }
+
+    .print-option-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .print-action-btn {
+      background: var(--primary);
+      color: var(--bg-dark);
+      border: none;
+      padding: 8px 12px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      width: 100%;
+    }
+
+    .print-action-btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
+    }
+
+    /* Print-specific area wrapper */
+    #print-area {
+      display: none;
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      /* Hide all on-screen UI components */
+      .container, header, .filter-bar, .accordion-container {
+        display: none !important;
+      }
+      
+      #print-area {
+        display: block !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        width: 100% !important;
+      }
+      
+      /* Booklet & Cram Sheet */
+      .print-booklet-title {
+        font-family: 'Outfit', Arial, sans-serif;
+        font-size: 22pt;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 4pt;
+        color: #000000;
+      }
+      
+      .print-booklet-subtitle {
+        font-size: 10pt;
+        text-align: center;
+        color: #555555;
+        margin-bottom: 20pt;
+        border-bottom: 1.5px solid #333333;
+        padding-bottom: 8pt;
+      }
+      
+      .print-topic-section {
+        margin-bottom: 24pt;
+        page-break-inside: avoid;
+      }
+      
+      .print-topic-header {
+        font-family: 'Outfit', Arial, sans-serif;
+        font-size: 14pt;
+        font-weight: 800;
+        border-bottom: 1.5px solid #000000;
+        padding-bottom: 2pt;
+        margin-bottom: 12pt;
+        text-transform: uppercase;
+      }
+      
+      .print-subtopic-block {
+        margin-bottom: 18pt;
+        page-break-inside: avoid;
+      }
+      
+      .print-subtopic-header {
+        font-family: 'Outfit', Arial, sans-serif;
+        font-size: 11pt;
+        font-weight: 700;
+        margin-bottom: 8pt;
+        color: #000000;
+      }
+      
+      .print-pillars-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10pt;
+        margin-bottom: 10pt;
+      }
+      
+      .print-pillar-column {
+        border: 1px solid #bbbbbb;
+        border-radius: 6px;
+        padding: 8pt;
+        background: #ffffff;
+        min-height: 100pt;
+      }
+      
+      .print-pillar-column h4 {
+        font-size: 8pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 4pt;
+        margin-bottom: 6pt;
+        color: #222222;
+      }
+      
+      .print-fact-item {
+        font-size: 7.5pt;
+        line-height: 1.35;
+        margin-bottom: 6pt;
+        padding-bottom: 6pt;
+        border-bottom: 1px dashed #e2e8f0;
+      }
+      
+      .print-fact-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .print-fact-item strong {
+        color: #000000;
+      }
+      
+      /* Active Recall Workbook Blank Box */
+      .print-workbook-box {
+        border: 1px solid #999999;
+        border-radius: 6px;
+        padding: 8pt;
+        height: 140pt;
+        position: relative;
+        background: #ffffff;
+      }
+      
+      .print-workbook-box-title {
+        font-size: 8.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #333333;
+        margin-bottom: 6pt;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 2pt;
+      }
+      
+      .print-workbook-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 16pt;
+        margin-top: 8pt;
+      }
+      
+      .print-workbook-line {
+        border-bottom: 1px dashed #cccccc;
+        height: 0;
+        width: 100%;
+      }
+      
+      /* Fold-and-Glue Double-Sided Flashcards */
+      .print-flashcard-page {
+        page-break-after: always;
+      }
+      .print-flashcard-page:last-child {
+        page-break-after: avoid;
+      }
+      
+      .print-flashcard-row {
+        display: flex;
+        border: 1px solid #000000;
+        margin-bottom: 15pt;
+        page-break-inside: avoid;
+        min-height: 170pt;
+      }
+      
+      .print-flashcard-side {
+        flex: 1;
+        padding: 10pt 12pt;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .print-flashcard-left {
+        border-right: 1.5px dotted #000000;
+        text-align: center;
+        background: #fafafa;
+        align-items: center;
+        position: relative;
+      }
+      
+      .print-flashcard-right {
+        text-align: left;
+        background: #ffffff;
+        font-size: 8pt;
+        line-height: 1.35;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: visible;
+      }
+      
+      .print-fc-topic {
+        font-size: 8pt;
+        text-transform: uppercase;
+        color: #555555;
+        margin-bottom: 4pt;
+        font-weight: 700;
+      }
+      
+      .print-fc-subtopic {
+        font-family: 'Outfit', Arial, sans-serif;
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin-bottom: 6pt;
+        color: #000000;
+        line-height: 1.3;
+      }
+      
+      .print-fc-badge {
+        display: inline-block;
+        border: 1px solid #000000;
+        padding: 2pt 6pt;
+        font-size: 6.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-top: 8pt;
+      }
+      
+      .print-fc-content-title {
+        font-weight: 700;
+        font-size: 8pt;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 2pt;
+        margin-bottom: 4pt;
+        color: #000000;
+      }
+      
+      .print-fc-bullet {
+        margin-bottom: 3pt;
+        font-size: 6.8pt;
+        line-height: 1.25;
+      }
+      
+      .print-fc-bullet:last-child {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Return to Revision Centre</a>
+        <span class="profile-badge" id="active-profile-badge">Student Profile: Default</span>
+      </div>
+      
+      <div class="header-title-section">
+        <h1>Specification Audit & Exam Tracker</h1>
+        <p>A meticulous fact-by-fact curriculum checklist for Edexcel Paper 2: Conflict in the Middle East (1945–1995).</p>
+      </div>
+
+      <!-- Overall Progress -->
+      <div class="progress-section">
+        <div class="progress-labels">
+          <span>Overall Syllabus Mastery</span>
+          <span id="overall-percentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="overall-progress-fill"></div>
+        </div>
+        
+        <div class="stats-counters">
+          <div class="stat-card unsure">
+            <strong id="count-unsure">0</strong> Unsure (🔴)
+          </div>
+          <div class="stat-card review">
+            <strong id="count-review">0</strong> Reviewing (🟡)
+          </div>
+          <div class="stat-card mastered">
+            <strong id="count-mastered">0</strong> Mastered (🟢)
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Offline Print & Flashcard Hub -->
+    <div class="print-hub-card">
+      <div class="print-hub-title">
+        <i class="fa-solid fa-print"></i> Offline Print &amp; Flashcard Hub
+      </div>
+      <p class="print-hub-desc">
+        Export your custom syllabus progress and active recall templates for physical, distraction-free study.
+      </p>
+      
+      <div class="print-grid">
+        <!-- Option 1: Booklet -->
+        <div class="print-option-card">
+          <div class="print-option-info">
+            <h3><i class="fa-solid fa-book-open"></i> Full Revision Booklet</h3>
+            <p>Generates a complete, linear revision guide of all 3 Key Topics with all official facts organized by pillar.</p>
+          </div>
+          <button class="print-action-btn" onclick="printMode('booklet')">
+            <i class="fa-solid fa-file-pdf"></i> Print Full Booklet
+          </button>
+        </div>
+        
+        <!-- Option 2: Cram Sheet -->
+        <div class="print-option-card">
+          <div class="print-option-info">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Weak-Spot Cram Sheet</h3>
+            <p>Filters out Mastered items and compiles only Unsure (🔴) and Reviewing (🟡) subtopics into a high-priority sheet.</p>
+          </div>
+          <button class="print-action-btn" onclick="printMode('cram')">
+            <i class="fa-solid fa-bolt"></i> Print Cram Sheet
+          </button>
+        </div>
+        
+        <!-- Option 3: Workbook -->
+        <div class="print-option-card">
+          <div class="print-option-info">
+            <h3><i class="fa-solid fa-pen-clip"></i> Active Recall Workbooks</h3>
+            <p>Prints official subtopic headers but leaves causes, events, and consequences boxes blank with writing lines.</p>
+          </div>
+          <button class="print-action-btn" onclick="printMode('workbook')">
+            <i class="fa-solid fa-pencil"></i> Print Workbooks
+          </button>
+        </div>
+        
+        <!-- Option 4: Flashcards -->
+        <div class="print-option-card">
+          <div class="print-option-info">
+            <h3><i class="fa-solid fa-ticket"></i> Double-Sided Flashcards</h3>
+            <p>Creates print-ready A4 cards. Cut and fold down the center dotted line to glue double-sided cards instantly.</p>
+          </div>
+          <button class="print-action-btn" onclick="printMode('flashcards')">
+            <i class="fa-solid fa-scissors"></i> Print Flashcards
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Points</button>
+      <button class="filter-btn" data-filter="unsure"><i class="fa-solid fa-circle" style="color: var(--error); font-size: 0.75rem;"></i> Unsure</button>
+      <button class="filter-btn" data-filter="reviewing"><i class="fa-solid fa-circle" style="color: var(--accent); font-size: 0.75rem;"></i> Reviewing</button>
+      <button class="filter-btn" data-filter="mastered"><i class="fa-solid fa-circle" style="color: var(--success); font-size: 0.75rem;"></i> Mastered</button>
+    </div>
+
+    <!-- Accordion Blocks -->
+    <div class="accordion-container" id="accordion-container">
+      <!-- Generated dynamically by script -->
+    </div>
+
+  </div>
+
+  <script>
+    // Audio engine using Web Audio API to play beeps & chimes
+    const AudioEngine = {
+      ctx: null,
+      
+      init() {
+        if (!this.ctx) {
+          this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+      },
+      
+      play(type) {
+        try {
+          this.init();
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          
+          const now = this.ctx.currentTime;
+          
+          if (type === 'unsure') {
+            osc.frequency.setValueAtTime(220, now); // Low A note
+            gain.gain.setValueAtTime(0.08, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+            osc.start(now);
+            osc.stop(now + 0.15);
+          } else if (type === 'reviewing') {
+            osc.frequency.setValueAtTime(440, now); // Middle A note
+            gain.gain.setValueAtTime(0.08, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+            osc.start(now);
+            osc.stop(now + 0.15);
+          } else if (type === 'mastered') {
+            // High chime (2 rapid notes)
+            osc.frequency.setValueAtTime(587.33, now); // D5
+            osc.frequency.setValueAtTime(880, now + 0.06); // A5
+            gain.gain.setValueAtTime(0.06, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+            osc.start(now);
+            osc.stop(now + 0.25);
+          }
+        } catch (e) {
+          console.warn("Audio Context blocked or unsupported:", e);
+        }
+      }
+    };
+
+    // Strict official syllabus points data database (NO truncation)
+    const SPEC_AUDIT_DATA = [
+      {
+        keyTopicNum: 1,
+        keyTopicTitle: "Key Topic 1: The birth of the state of Israel, 1945–63",
+        subtopics: [
+          {
+            id: "subtopic_1_1",
+            num: "1.1",
+            title: "The British withdrawal and the creation of Israel",
+            conceptMap: {
+              causes: "Conflicting Zionist and Palestinian claims; Post-WWII British economic ruin.",
+              events: "King David Hotel bombing (July 1946) ➔ UN Resolution 181 (Nov 1947) ➔ Invasion by five Arab armies (May 1948).",
+              consequences: "Centralized IDF command; Israeli border expansions; complete Arab defeat by 1949."
+            },
+            pillars: {
+              causes: [
+                { id: "1.1.c1", fact: "<strong>Conflicting claims:</strong> Zionist demands for a sovereign Jewish state and unlimited immigration to safeguard Holocaust survivors clashed directly with Palestinian Arab demands for immediate self-rule under their majority and an end to Zionist land purchases." },
+                { id: "1.1.c2", fact: "<strong>British exhaustion:</strong> Economically depleted by WWII and unable to police escalating Zionist insurgency and Arab riots, Britain limited immigration to 1,500/month, alienating both sides and leading to a decision to hand Palestine over to the UN." }
+              ],
+              events: [
+                { id: "1.1.e1", fact: "<strong>King David Hotel Bombing (July 1946):</strong> Zionist militant group Irgun detonated explosives at the British military and administrative headquarters in Jerusalem, killing 91 people and breaking Britain's will to maintain the Mandate." },
+                { id: "1.1.e2", fact: "<strong>UN Resolution 181 (Nov 1947):</strong> The UN Partition Plan proposed dividing Palestine into independent Jewish (55%) and Arab (45%) states, with Jerusalem under international control. Accepted by Jews; rejected by Arabs as unjust." },
+                { id: "1.1.e3", fact: "<strong>The 1948–49 War:</strong> Following Britain's withdrawal and David Ben-Gurion declaring the State of Israel on 14 May 1948, armies from Egypt, Transjordan, Syria, Lebanon, and Iraq invaded Palestine the next day." }
+              ],
+              consequences: [
+                { id: "1.1.q1", fact: "<strong>Creation of the IDF:</strong> In June 1948, Ben-Gurion ordered the unification of all rival Jewish militias (Haganah, Irgun, Stern Gang) under a single national command to prevent political division." },
+                { id: "1.1.q2", fact: "<strong>Israeli Victory:</strong> Using secretly imported Soviet-bloc weapons (Czech arms deal) acquired during the first UN truce, the IDF repelled Arab advances, securing its survival." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_1_2",
+            num: "1.2",
+            title: "Aftermath of the 1948–49 war",
+            conceptMap: {
+              causes: "Israel's military victory and the resulting armistice border lines.",
+              events: "Establishment of the Green Line ➔ Passage of the Law of Return (1950) ➔ Inflow of US funding.",
+              consequences: "Exile of 700,000 Palestinian refugees; Egypt blockades shipping; Fedayeen border clashes."
+            },
+            pillars: {
+              causes: [
+                { id: "1.2.c1", fact: "<strong>Arab military collapse:</strong> The defeat of the five invading Arab armies left Israel in control of vastly more territory than originally allocated by the UN Partition Plan." },
+                { id: "1.2.c2", fact: "<strong>Demographic vacuum:</strong> The departure of hundreds of thousands of Palestinian Arabs created empty towns and properties, which Israel seized for Jewish settlement." }
+              ],
+              events: [
+                { id: "1.2.e1", fact: "<strong>Territorial changes:</strong> Israel expanded to cover 79% of Palestine. Transjordan annexed the West Bank and East Jerusalem, while Egypt took administrative control of the Gaza Strip." },
+                { id: "1.2.e2", fact: "<strong>Law of Return (1950):</strong> Israeli law granted every Jew in the world the right to immigrate to Israel and receive automatic citizenship, doubling the population within two years." },
+                { id: "1.2.e3", fact: "<strong>US Economic Aid:</strong> The US provided vital grants ($65 million) and loans to prevent the bankruptcy of the state during early austerity, alongside German Holocaust reparations." }
+              ],
+              consequences: [
+                { id: "1.2.q1", fact: "<strong>The Refugee Crisis (Nakba):</strong> Over 700,000 Palestinians fled or were expelled. Israel blocked their right of return, leaving them permanently displaced in UNRWA-managed camps." },
+                { id: "1.2.q2", fact: "<strong>Egypt-Israel relations:</strong> Egypt closed the Suez Canal to Israeli shipping and blockaded the Straits of Tiran (Eilat), launching fedayeen guerrilla attacks from Gaza which provoked severe Israeli reprisals." },
+                { id: "1.2.q3", fact: "<strong>Assassination of Bernadotte:</strong> UN mediator Count Folke Bernadotte was assassinated in September 1948 by the Zionist Stern Gang (Lehi) for proposing border modifications and refugee returns." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_1_3",
+            num: "1.3",
+            title: "The Sinai Campaign and Suez Crisis",
+            conceptMap: {
+              causes: "Nasser's rise and Suez Canal nationalisation; Egypt's Soviet arms imports.",
+              events: "Gaza reprisal raid (1955) ➔ Secret Protocol of Sèvres collusion ➔ Israel invades Sinai (Oct 1956).",
+              consequences: "Nasser's political triumph; UNEF deployed in Sinai; Egypt-Syria UAR alliance (1958)."
+            },
+            pillars: {
+              causes: [
+                { id: "1.3.c1", fact: "<strong>Gamal Abdel Nasser:</strong> Nasser seized power in 1954, championing Pan-Arabism, nationalising colonial assets, blockading Israel, and seeking leadership of the Arab world." },
+                { id: "1.3.c2", fact: "<strong>Czech Arms Deal (Sept 1955):</strong> Frustrated by Western refusals, Nasser bought advanced Soviet fighter jets and tanks from Czechoslovakia, threatening Israel's military edge." },
+                { id: "1.3.c3", fact: "<strong>Canal Nationalisation (July 1956):</strong> Nasser nationalized the British-French Suez Canal to fund the Aswan High Dam after the US and UK cancelled loans." }
+              ],
+              events: [
+                { id: "1.3.e1", fact: "<strong>Gaza Raid (Feb 1955):</strong> An Israeli reprisal attack killed 38 Egyptian soldiers, exposing Egypt's military weakness and driving Nasser to finalize the Czech arms pact." },
+                { id: "1.3.e2", fact: "<strong>Sinai Invasion (Oct 1956):</strong> Under the secret Protocol of Sèvres, Israel invaded Sinai to clear fedayeen bases. This provided Britain and France a pretext to occupy the canal." },
+                { id: "1.3.e3", fact: "<strong>US Intervention:</strong> US President Dwight Eisenhower strongly condemned the tripartite invasion, threatening financial sanctions and forcing a withdrawal." }
+              ],
+              consequences: [
+                { id: "1.3.q1", fact: "<strong>Nasser's political victory:</strong> Though militarily defeated, Nasser successfully kept the canal and became the supreme champion of Arab nationalism." },
+                { id: "1.3.q2", fact: "<strong>UNEF Deployment:</strong> United Nations Emergency Forces deployed in Sinai to guarantee Israeli shipping rights through the Straits of Tiran." },
+                { id: "1.3.q3", fact: "<strong>Formation of the UAR (1958):</strong> Egypt and Syria united to form the United Arab Republic, heightening Israeli concerns of direct military encirclement." }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        keyTopicNum: 2,
+        keyTopicTitle: "Key Topic 2: The escalating conflict, 1964–73",
+        subtopics: [
+          {
+            id: "subtopic_2_1",
+            num: "2.1",
+            title: "The outbreak of the Six Day War",
+            conceptMap: {
+              causes: "Creation of the PLO; border skirmishes; false Soviet warnings of troop build-ups.",
+              events: "Nasser blockades Straits of Tiran ➔ Israel launches Operation Focus (June 5) ➔ 3-front blitz.",
+              consequences: "Israel occupies Sinai, Gaza, West Bank, Golan, and East Jerusalem; complete Arab air defeat."
+            },
+            pillars: {
+              causes: [
+                { id: "2.1.c1", fact: "<strong>Cairo Conference (1964):</strong> Arab League created the PLO to coordinate resistance, and agreed to divert the headwaters of the Jordan River to sabotage Israel's National Water Carrier." },
+                { id: "2.1.c2", fact: "<strong>Fatah raids & border clashes:</strong> Syria supported Fatah sabotage raids into northern Israel. Tensions spiked with the Israeli Samu Raid in Jordan (Nov 1966) and the border dogfight of 7 April 1967 (6 Syrian MiGs downed)." },
+                { id: "2.1.c3", fact: "<strong>False Soviet Intelligence:</strong> The USSR warned Egypt in May 1967 that Israel was massing troops to invade Syria, prompting Nasser to mobilize." }
+              ],
+              events: [
+                { id: "2.1.e1", fact: "<strong>Nasser's escalatory actions:</strong> Nasser expelled UNEF peacekeepers from Sinai, moved 100,000 troops to the border, and blockaded the Straits of Tiran, closing Eilat." },
+                { id: "2.1.e2", fact: "<strong>Operation Focus (5 June 1967):</strong> Israel launched a pre-emptive air strike, destroying 90% of the Egyptian air force on the ground, ensuring total air supremacy." },
+                { id: "2.1.e3", fact: "<strong>The Ground Campaigns:</strong> Israel launched a rapid multi-front campaign, routing the armies of Egypt, Jordan, and Syria in just six days." }
+              ],
+              consequences: [
+                { id: "2.1.q1", fact: "<strong>Occupied Territories:</strong> Israel captured the Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights, placing 1 million Palestinians under military rule." },
+                { id: "2.1.q2", fact: "<strong>Khartoum Resolution (Aug 1967):</strong> Arab states issued the 'Three Nos': No peace, No recognition, and No negotiations with Israel." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_2_2",
+            num: "2.2",
+            title: "Growth of Palestinian nationalism",
+            conceptMap: {
+              causes: "Palestinian disillusionment with Arab states; military occupation of West Bank/Gaza.",
+              events: "UN Resolution 242 ➔ PFLP plane hijackings (1970) ➔ Munich Olympics massacre (1972) ➔ Black September.",
+              consequences: "PLO expelled to Lebanon; global focus on Palestine; Israeli counter-terror campaigns."
+            },
+            pillars: {
+              causes: [
+                { id: "2.2.c1", fact: "<strong>Failure of Arab states:</strong> The complete defeat of Arab armies in 1967 convinced Palestinians that they had to take direct control of their own national struggle." },
+                { id: "2.2.c2", fact: "<strong>Refugee displacement:</strong> An additional 300,000 Palestinians became refugees after the Six Day War, relocating to Jordan and joining resistance groups." }
+              ],
+              events: [
+                { id: "2.2.e1", fact: "<strong>UN Resolution 242 (Nov 1967):</strong> Established the 'land for peace' framework, calling for Israeli withdrawal from occupied lands in exchange for peace. Rejected by Arab states initially." },
+                { id: "2.2.e2", fact: "<strong>The War of Attrition (1967–70):</strong> Nasser launched constant artillery bombardments and raids across the Suez Canal to prevent Israel from consolidating its grip on Sinai." },
+                { id: "2.2.e3", fact: "<strong>PFLP Hijackings (Sept 1970):</strong> The PFLP hijacked four international planes to Dawson's Field, Jordan, blowing them up on camera to secure global media coverage." },
+                { id: "2.2.e4", fact: "<strong>Black September (1970):</strong> King Hussein of Jordan crushed the PLO's 'state-within-a-state' in a bloody civil war to protect his monarchy." },
+                { id: "2.2.e5", fact: "<strong>Munich Olympics (Sept 1972):</strong> Fatah's Black September faction murdered 11 Israeli athletes at the Munich games, prompting Israel's retaliatory 'Wrath of God' campaign." }
+              ],
+              consequences: [
+                { id: "2.2.q1", fact: "<strong>PLO relocation:</strong> Expelled from Jordan, Arafat moved the PLO's bases to Lebanon, turning South Lebanon ('Fatahland') into their new military launchpad." },
+                { id: "2.2.q2", fact: "<strong>International awareness:</strong> The hijackings and Munich attacks horrified the West, yet successfully forced the unresolved Palestinian problem onto the world stage." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_2_3",
+            num: "2.3",
+            title: "The Yom Kippur War",
+            conceptMap: {
+              causes: "Sadat's resolve to reclaim Sinai; Israeli construction of Suez fortifications.",
+              events: "Surprise attack on Yom Kippur (Oct 1973) ➔ Breaching of Bar-Lev Line ➔ Superpower airlifts.",
+              consequences: "OPEC oil embargo; US-Soviet nuclear brinkmanship; opening of direct US peace mediation."
+            },
+            pillars: {
+              causes: [
+                { id: "2.3.c1", fact: "<strong>Anwar Sadat:</strong> Sadat succeeded Nasser in 1970, aiming to break the diplomatic deadlock, force the US to mediate, and reclaim the Sinai Peninsula." },
+                { id: "2.3.c2", fact: "<strong>Soviet expulsion (1972):</strong> Sadat expelled 15,000 Soviet advisors to show independence and court diplomatic backing from Washington." },
+                { id: "2.3.c3", fact: "<strong>Bar-Lev Line:</strong> Israel consolidated its hold by constructing a massive 25-meter sand fortification along the Suez Canal, fueling a false sense of security." }
+              ],
+              events: [
+                { id: "2.3.e1", fact: "<strong>Surprise Attack (6 October 1973):</strong> Egyptian forces crossed the Suez Canal using high-pressure water cannons, while Syrian forces simultaneously invaded the Golan Heights on Yom Kippur." },
+                { id: "2.3.e2", fact: "<strong>Superpower airlifts:</strong> The US launched Operation Nickel Grass to resupply Israel, while the USSR airlifted military hardware to Egypt and Syria." },
+                { id: "2.3.e3", fact: "<strong>IDF Counter-crossing:</strong> Israeli forces crossed the Suez Canal under Ariel Sharon, encircling the Egyptian Third Army and forcing a ceasefire." }
+              ],
+              consequences: [
+                { id: "2.3.q1", fact: "<strong>OPEC Oil Embargo:</strong> OPEC cut oil production and embargoed Western nations supporting Israel, causing global oil prices to quadruple, triggering massive inflation." },
+                { id: "2.3.q2", fact: "<strong>Superpower brinkmanship:</strong> The threat of Soviet unilateral intervention led the US to place its nuclear forces on DEFCON 3 alert before establishing a joint ceasefire." },
+                { id: "2.3.q3", fact: "<strong>Psychological change:</strong> The war shattered the myth of Israel's total military invincibility, opening the path for diplomatic negotiations." }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        keyTopicNum: 3,
+        keyTopicTitle: "Key Topic 3: Attempts at a solution, 1974–95",
+        subtopics: [
+          {
+            id: "subtopic_3_1",
+            num: "3.1",
+            title: "Diplomatic negotiations",
+            conceptMap: {
+              causes: "Global oil crisis inflation; Sadat's desire to secure Egyptian economic recovery.",
+              events: "Kissinger's shuttle diplomacy ➔ Sadat visits Jerusalem (1977) ➔ Camp David negotiations (1978).",
+              consequences: "Treaty of Washington (1979); Sinai returned; Arab states isolate Egypt; Sadat assassinated (1981)."
+            },
+            pillars: {
+              causes: [
+                { id: "3.1.c1", fact: "<strong>Global oil crisis:</strong> The OPEC embargo proved Middle East conflicts could devastate Western economies, forcing the US to prioritize regional peace." },
+                { id: "3.1.c2", fact: "<strong>Sadat's economic goals:</strong> Egypt was bankrupt after decades of war and desperately needed to reopen the Suez Canal and secure US financial aid." }
+              ],
+              events: [
+                { id: "3.1.e1", fact: "<strong>Kissinger's Shuttle Diplomacy:</strong> US Secretary of State Henry Kissinger flew between capitals to negotiate disengagement treaties (1974-75), returning the canal banks to Egypt." },
+                { id: "3.1.e2", fact: "<strong>Sadat's Jerusalem Visit (Nov 1977):</strong> Sadat made the historic decision to address the Knesset in Jerusalem, breaking decades of diplomatic isolation." },
+                { id: "3.1.e3", fact: "<strong>Camp David Accords (Sept 1978):</strong> US President Jimmy Carter brokered 13 days of secret talks between Sadat and PM Menachem Begin, drafting a peace framework." }
+              ],
+              consequences: [
+                { id: "3.1.q1", fact: "<strong>Treaty of Washington (1979):</strong> The first formal peace treaty between Israel and an Arab state. Israel withdrew all troops and settlements from the Sinai Peninsula." },
+                { id: "3.1.q2", fact: "<strong>Egyptian Isolation:</strong> Arab nations expelled Egypt from the Arab League, and Sadat was assassinated by Islamist extremists in October 1981." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_3_2",
+            num: "3.2",
+            title: "Invasion of Lebanon and the First Intifada",
+            conceptMap: {
+              causes: "PLO launching attacks from South Lebanon; Palestinian anger under military occupation.",
+              events: "Arafat speech to UN (1974) ➔ Israel invades Lebanon (1982) ➔ Grassroots outbreak of First Intifada (1987).",
+              consequences: "PLO relocated to Tunis; Sabra & Shatila massacres; Rabin's 'Iron Fist' policy; rise of Hamas."
+            },
+            pillars: {
+              causes: [
+                { id: "3.2.c1", fact: "<strong>Lebanese instability:</strong> The PLO established a state-within-a-state in South Lebanon, launching rocket attacks and border raids into northern Israel." },
+                { id: "3.2.c2", fact: "<strong>Occupied territories anger:</strong> 20 years of military rule, land confiscations, and expanding Jewish settlements created explosive frustration." }
+              ],
+              events: [
+                { id: "3.2.e1", fact: "<strong>Arafat's UN Speech (1974):</strong> Arafat spoke to the UN General Assembly holding 'an olive branch and a freedom fighter's gun,' earning UN observer status for the PLO." },
+                { id: "3.2.e2", fact: "<strong>Lebanon Invasion (June 1982):</strong> Israel launched Operation Peace for Galilee, besieging Beirut and forcing the PLO leadership to evacuate to Tunis, Tunisia." },
+                { id: "3.2.e3", fact: "<strong>Sabra & Shatila Massacres (Sept 1982):</strong> Lebanese Christian Phalangist militia slaughtered hundreds of refugees in camps controlled by the IDF, causing global outcry." },
+                { id: "3.2.e4", fact: "<strong>First Intifada (Dec 1987):</strong> A spontaneous grassroots uprising broke out in Gaza and the West Bank, featuring civil disobedience, strikes, and youth throwing stones at tanks." }
+              ],
+              consequences: [
+                { id: "3.2.q1", fact: "<strong>Iron Fist response:</strong> Defense Minister Rabin ordered the IDF to suppress protests with physical force ('Iron Fist'), drawing international condemnation." },
+                { id: "3.2.q2", fact: "<strong>Rise of Hamas:</strong> Radical Islamist group Hamas was formed, challenging the PLO's secular leadership and opposing peace talks." },
+                { id: "3.2.q3", fact: "<strong>Sharon's resignation:</strong> The Kahan Commission found Defense Minister Ariel Sharon indirectly responsible for Sabra & Shatila, forcing his resignation." }
+              ]
+            }
+          },
+          {
+            id: "subtopic_3_3",
+            num: "3.3",
+            title: "Oslo Accords",
+            conceptMap: {
+              causes: "First Intifada pressures; end of the Cold War; PLO isolation after supporting Saddam.",
+              events: "Arafat renounces terrorism (1988) ➔ Secret Oslo I talks (1993) ➔ Oslo II divided West Bank (1995).",
+              consequences: "Establishment of the PNA; Jordan-Israel peace (1994); Rabin's assassination by Yigal Amir (1995)."
+            },
+            pillars: {
+              causes: [
+                { id: "3.3.c1", fact: "<strong>End of the Cold War:</strong> The collapse of the USSR cut off military and financial aid to Arab states, leaving the US as the sole regional power broker." },
+                { id: "3.3.c2", fact: "<strong>Gulf War isolation:</strong> Arafat backed Saddam Hussein's 1990 invasion of Kuwait, prompting Gulf states to cut funding and leaving the PLO isolated and bankrupt." }
+              ],
+              events: [
+                { id: "3.3.e1", fact: "<strong>Arafat UN Speech (1988):</strong> In Geneva, Yasser Arafat renounced terrorism and recognized Israel's right to exist, initiating direct US-PLO dialogue." },
+                { id: "3.3.e2", fact: "<strong>Oslo I Accord (Sept 1993):</strong> Secret talks in Norway led to the Declaration of Principles, establishing the Palestinian National Authority (PNA) and Rabin-Arafat handshake." },
+                { id: "3.3.e3", fact: "<strong>Jordan Peace Treaty (1994):</strong> King Hussein of Jordan and Yitzhak Rabin signed a formal peace treaty, settling border and water disputes." },
+                { id: "3.3.e4", fact: "<strong>Oslo II Accord (1995):</strong> Divided the West Bank into Areas A (Palestinian control), B (joint control), and C (full Israeli control)." }
+              ],
+              consequences: [
+                { id: "3.3.q1", fact: "<strong>Assassination of Rabin (Nov 1995):</strong> Yitzhak Rabin was assassinated at a peace rally in Tel Aviv by Yigal Amir, an Israeli right-wing religious extremist." },
+                { id: "3.3.q2", fact: "<strong>Stall of peace:</strong> Rabin's murder shattered the peace consensus, leading to the rise of hardline governments and the ultimate stalling of the accords." }
+              ]
+            }
+          }
+        ]
+      }
+    ];
+
+    // Local profile resolver
+    const activeProfile = localStorage.getItem('edexcel_active_profile') || 'Default';
+    document.getElementById('active-profile-badge').textContent = `Student Profile: ${activeProfile}`;
+
+    // Get current status from localStorage
+    function getStatus(pointId) {
+      const key = `cme_audit_status_${activeProfile}_${pointId}`;
+      return localStorage.getItem(key) || 'unsure';
+    }
+
+    // Save status to localStorage
+    function setStatus(pointId, status) {
+      const key = `cme_audit_status_${activeProfile}_${pointId}`;
+      localStorage.setItem(key, status);
+    }
+
+    // Render stats and update overall progress bar
+    function updateProgress() {
+      let total = 0;
+      let unsure = 0;
+      let reviewing = 0;
+      let mastered = 0;
+
+      SPEC_AUDIT_DATA.forEach(topic => {
+        topic.subtopics.forEach(sub => {
+          ['causes', 'events', 'consequences'].forEach(pillar => {
+            sub.pillars[pillar].forEach(p => {
+              total++;
+              const status = getStatus(p.id);
+              if (status === 'unsure') unsure++;
+              else if (status === 'reviewing') reviewing++;
+              else if (status === 'mastered') mastered++;
+            });
+          });
+        });
+      });
+
+      document.getElementById('count-unsure').textContent = unsure;
+      document.getElementById('count-review').textContent = reviewing;
+      document.getElementById('count-mastered').textContent = mastered;
+
+      const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
+      document.getElementById('overall-percentage').textContent = `${pct}%`;
+      document.getElementById('overall-progress-fill').style.width = `${pct}%`;
+    }
+
+    // Cycle status on click: unsure -> reviewing -> mastered -> unsure
+    function cycleStatus(pointId, element) {
+      const current = getStatus(pointId);
+      let next = 'unsure';
+      
+      if (current === 'unsure') next = 'reviewing';
+      else if (current === 'reviewing') next = 'mastered';
+      
+      setStatus(pointId, next);
+      
+      // Update element styling
+      element.className = `status-toggle-btn ${next}`;
+      element.innerHTML = `<span class="status-dot"></span> ${capitalize(next)}`;
+      
+      // Play Audio Beep
+      AudioEngine.play(next);
+      
+      // Re-run stats & check active filters
+      updateProgress();
+      applyFilters();
+    }
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Apply Filter
+    let activeFilter = 'all';
+    function applyFilters() {
+      const cards = document.querySelectorAll('.fact-card');
+      cards.forEach(card => {
+        const id = card.getAttribute('data-point-id');
+        const status = getStatus(id);
+        
+        let show = false;
+        if (activeFilter === 'all') show = true;
+        else if (activeFilter === 'unsure' && status === 'unsure') show = true;
+        else if (activeFilter === 'reviewing' && status === 'reviewing') show = true;
+        else if (activeFilter === 'mastered' && status === 'mastered') show = true;
+        
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    // Toggle Accordions
+    function toggleAccordion(header) {
+      const item = header.parentElement;
+      const content = item.querySelector('.accordion-content');
+      const arrow = header.querySelector('.accordion-header-right i');
+      
+      const isOpen = item.classList.contains('active');
+      
+      if (isOpen) {
+        content.style.display = 'none';
+        item.classList.remove('active');
+        arrow.className = 'fa-solid fa-chevron-down';
+      } else {
+        content.style.display = 'block';
+        item.classList.add('active');
+        arrow.className = 'fa-solid fa-chevron-up';
+      }
+      AudioEngine.play('reviewing');
+    }
+
+    // Toggle Visual Concept Map
+    function toggleConceptMap(subtopicId, btn) {
+      const container = document.getElementById(`concept-map-${subtopicId}`);
+      const isVisible = container.style.display === 'flex';
+      
+      if (isVisible) {
+        container.style.display = 'none';
+        btn.innerHTML = `<i class="fa-solid fa-diagram-project"></i> View Visual Concept Map`;
+      } else {
+        container.style.display = 'flex';
+        btn.innerHTML = `<i class="fa-solid fa-diagram-project"></i> Hide Visual Concept Map`;
+      }
+      AudioEngine.play('reviewing');
+    }
+
+    // Build Syllabus Layout UI
+    function buildLayout() {
+      const container = document.getElementById('accordion-container');
+      container.innerHTML = '';
+      
+      SPEC_AUDIT_DATA.forEach(topic => {
+        const item = document.createElement('div');
+        item.className = 'accordion-item';
+        
+        // Accordion Header
+        const header = document.createElement('button');
+        header.className = 'accordion-header';
+        header.innerHTML = `
+          <div class="accordion-header-left">
+            <i class="fa-solid fa-book-open"></i>
+            <span>${topic.keyTopicTitle}</span>
+          </div>
+          <div class="accordion-header-right">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        `;
+        header.addEventListener('click', () => toggleAccordion(header));
+        item.appendChild(header);
+        
+        // Accordion Content containing subtopics
+        const content = document.createElement('div');
+        content.className = 'accordion-content';
+        
+        topic.subtopics.forEach(sub => {
+          const subBlock = document.createElement('div');
+          subBlock.className = 'subtopic-block';
+          
+          // Subtopic Header
+          const subHeader = document.createElement('div');
+          subHeader.className = 'subtopic-header';
+          subHeader.innerHTML = `
+            <div class="subtopic-title">Topic ${sub.num}: ${sub.title}</div>
+            <button class="concept-map-toggle-btn" id="btn-map-${sub.id}">
+              <i class="fa-solid fa-diagram-project"></i> View Visual Concept Map
+            </button>
+          `;
+          
+          subBlock.appendChild(subHeader);
+          
+          // Visual Concept Map Flow
+          const mapContainer = document.createElement('div');
+          mapContainer.className = 'concept-map-container';
+          mapContainer.id = `concept-map-${sub.id}`;
+          mapContainer.innerHTML = `
+            <div class="concept-map-card causes">
+              <div class="map-card-label">Causes & Origins</div>
+              <div class="map-card-text">${sub.conceptMap.causes}</div>
+            </div>
+            <div class="map-arrow"><i class="fa-solid fa-right-long"></i></div>
+            <div class="concept-map-card events">
+              <div class="map-card-label">Key Events & Details</div>
+              <div class="map-card-text">${sub.conceptMap.events}</div>
+            </div>
+            <div class="map-arrow"><i class="fa-solid fa-right-long"></i></div>
+            <div class="concept-map-card consequences">
+              <div class="map-card-label">Consequences & Importance</div>
+              <div class="map-card-text">${sub.conceptMap.consequences}</div>
+            </div>
+          `;
+          subBlock.appendChild(mapContainer);
+          
+          // Attach map toggle event
+          const mapBtn = subHeader.querySelector('.concept-map-toggle-btn');
+          mapBtn.addEventListener('click', () => toggleConceptMap(sub.id, mapBtn));
+          
+          // Pillars Grid
+          const grid = document.createElement('div');
+          grid.className = 'pillars-grid';
+          
+          // Pillar 1: Causes
+          const causesCol = document.createElement('div');
+          causesCol.className = 'pillar-col causes-col';
+          causesCol.innerHTML = `<div class="pillar-header"><i class="fa-solid fa-history"></i> Causes & Origins</div>`;
+          sub.pillars.causes.forEach(p => {
+            causesCol.appendChild(createFactCard(p));
+          });
+          grid.appendChild(causesCol);
+          
+          // Pillar 2: Events
+          const eventsCol = document.createElement('div');
+          eventsCol.className = 'pillar-col events-col';
+          eventsCol.innerHTML = `<div class="pillar-header"><i class="fa-solid fa-circle-info"></i> Key Events & Details</div>`;
+          sub.pillars.events.forEach(p => {
+            eventsCol.appendChild(createFactCard(p));
+          });
+          grid.appendChild(eventsCol);
+          
+          // Pillar 3: Consequences
+          const consCol = document.createElement('div');
+          consCol.className = 'pillar-col consequences-col';
+          consCol.innerHTML = `<div class="pillar-header"><i class="fa-solid fa-chart-line"></i> Consequences & Importance</div>`;
+          sub.pillars.consequences.forEach(p => {
+            consCol.appendChild(createFactCard(p));
+          });
+          grid.appendChild(consCol);
+          
+          subBlock.appendChild(grid);
+          content.appendChild(subBlock);
+        });
+        
+        item.appendChild(content);
+        container.appendChild(item);
+      });
+    }
+
+    // Helper to build fact card
+    function createFactCard(p) {
+      const card = document.createElement('div');
+      card.className = 'fact-card';
+      card.setAttribute('data-point-id', p.id);
+      
+      const text = document.createElement('div');
+      text.className = 'fact-text';
+      text.innerHTML = p.fact;
+      card.appendChild(text);
+      
+      const status = getStatus(p.id);
+      
+      const toggle = document.createElement('button');
+      toggle.className = `status-toggle-btn ${status}`;
+      toggle.innerHTML = `<span class="status-dot"></span> ${capitalize(status)}`;
+      toggle.addEventListener('click', () => cycleStatus(p.id, toggle));
+      
+      card.appendChild(toggle);
+      return card;
+    }
+
+    // Setup filter buttons
+    document.querySelectorAll('.filter-bar button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.getAttribute('data-filter');
+        applyFilters();
+        AudioEngine.play('reviewing');
+      });
+    });
+
+    function printMode(mode) {
+      const activeProfileName = localStorage.getItem('edexcel_active_profile') || 'Default';
+      const printArea = document.getElementById('print-area');
+      if (!printArea) {
+        console.error("Print area container not found.");
+        return;
+      }
+      
+      let html = '';
+      
+      if (mode === 'booklet') {
+        html += `<div class="print-booklet-title">Edexcel GCSE History: Conflict in the Middle East</div>`;
+        html += `<div class="print-booklet-subtitle">Full Syllabus Revision Booklet • Profile: ${activeProfileName}</div>`;
+        
+        SPEC_AUDIT_DATA.forEach(topic => {
+          html += `<div class="print-topic-section">`;
+          html += `  <div class="print-topic-header">${topic.keyTopicTitle}</div>`;
+          
+          topic.subtopics.forEach(sub => {
+            html += `  <div class="print-subtopic-block">`;
+            html += `    <div class="print-subtopic-header">Topic ${sub.num}: ${sub.title}</div>`;
+            html += `    <div class="print-pillars-layout">`;
+            
+            // Causes
+            html += `      <div class="print-pillar-column">`;
+            html += `        <h4>Causes &amp; Origins</h4>`;
+            sub.pillars.causes.forEach(p => {
+              html += `        <div class="print-fact-item">${p.fact}</div>`;
+            });
+            html += `      </div>`;
+            
+            // Events
+            html += `      <div class="print-pillar-column">`;
+            html += `        <h4>Key Events &amp; Details</h4>`;
+            sub.pillars.events.forEach(p => {
+              html += `        <div class="print-fact-item">${p.fact}</div>`;
+            });
+            html += `      </div>`;
+            
+            // Consequences
+            html += `      <div class="print-pillar-column">`;
+            html += `        <h4>Consequences &amp; Importance</h4>`;
+            sub.pillars.consequences.forEach(p => {
+              html += `        <div class="print-fact-item">${p.fact}</div>`;
+            });
+            html += `      </div>`;
+            
+            html += `    </div>`;
+            html += `  </div>`;
+          });
+          
+          html += `</div>`;
+        });
+      }
+      else if (mode === 'cram') {
+        html += `<div class="print-booklet-title">Targeted Weak-Spot Cram Sheet</div>`;
+        html += `<div class="print-booklet-subtitle">High-Priority Revision Focus [Filtered: Mastered 🟢 Excluded] • Profile: ${activeProfileName}</div>`;
+        
+        let totalWeakFacts = 0;
+        
+        SPEC_AUDIT_DATA.forEach(topic => {
+          let topicHtml = '';
+          let subtopicCount = 0;
+          
+          topic.subtopics.forEach(sub => {
+            let subHtml = '';
+            let hasWeakFacts = false;
+            
+            const pillarsToPrint = {
+              causes: [],
+              events: [],
+              consequences: []
+            };
+            
+            ['causes', 'events', 'consequences'].forEach(pillar => {
+              sub.pillars[pillar].forEach(p => {
+                const status = getStatus(p.id);
+                if (status === 'unsure' || status === 'reviewing') {
+                  pillarsToPrint[pillar].push(p);
+                  hasWeakFacts = true;
+                  totalWeakFacts++;
+                }
+              });
+            });
+            
+            if (hasWeakFacts) {
+              subtopicCount++;
+              subHtml += `  <div class="print-subtopic-block">`;
+              subHtml += `    <div class="print-subtopic-header">Topic ${sub.num}: ${sub.title}</div>`;
+              subHtml += `    <div class="print-pillars-layout">`;
+              
+              // Causes
+              subHtml += `      <div class="print-pillar-column">`;
+              subHtml += `        <h4>Causes &amp; Origins</h4>`;
+              if (pillarsToPrint.causes.length > 0) {
+                pillarsToPrint.causes.forEach(p => {
+                  const status = getStatus(p.id);
+                  const label = status === 'unsure' ? '[UNSURE] ' : '[REVIEW] ';
+                  subHtml += `        <div class="print-fact-item"><strong>${label}</strong> ${p.fact}</div>`;
+                });
+              } else {
+                subHtml += `        <div style="font-size: 8pt; color: #777777; font-style: italic; text-align: center; margin-top: 10px;">All Mastered 🟢</div>`;
+              }
+              subHtml += `      </div>`;
+              
+              // Events
+              subHtml += `      <div class="print-pillar-column">`;
+              subHtml += `        <h4>Key Events &amp; Details</h4>`;
+              if (pillarsToPrint.events.length > 0) {
+                pillarsToPrint.events.forEach(p => {
+                  const status = getStatus(p.id);
+                  const label = status === 'unsure' ? '[UNSURE] ' : '[REVIEW] ';
+                  subHtml += `        <div class="print-fact-item"><strong>${label}</strong> ${p.fact}</div>`;
+                });
+              } else {
+                subHtml += `        <div style="font-size: 8pt; color: #777777; font-style: italic; text-align: center; margin-top: 10px;">All Mastered 🟢</div>`;
+              }
+              subHtml += `      </div>`;
+              
+              // Consequences
+              subHtml += `      <div class="print-pillar-column">`;
+              subHtml += `        <h4>Consequences &amp; Importance</h4>`;
+              if (pillarsToPrint.consequences.length > 0) {
+                pillarsToPrint.consequences.forEach(p => {
+                  const status = getStatus(p.id);
+                  const label = status === 'unsure' ? '[UNSURE] ' : '[REVIEW] ';
+                  subHtml += `        <div class="print-fact-item"><strong>${label}</strong> ${p.fact}</div>`;
+                });
+              } else {
+                subHtml += `        <div style="font-size: 8pt; color: #777777; font-style: italic; text-align: center; margin-top: 10px;">All Mastered 🟢</div>`;
+              }
+              subHtml += `      </div>`;
+              
+              subHtml += `    </div>`;
+              subHtml += `  </div>`;
+              
+              topicHtml += subHtml;
+            }
+          });
+          
+          if (subtopicCount > 0) {
+            html += `<div class="print-topic-section">`;
+            html += `  <div class="print-topic-header">${topic.keyTopicTitle}</div>`;
+            html += topicHtml;
+            html += `</div>`;
+          }
+        });
+        
+        if (totalWeakFacts === 0) {
+          html += `<div style="text-align: center; margin-top: 60pt;">`;
+          html += `  <h2 style="font-size: 18pt; margin-bottom: 10pt;">🎉 Complete Mastery Achieved!</h2>`;
+          html += `  <p style="font-size: 11pt; color: #444;">There are no topics flagged as "Unsure" or "Reviewing" under profile <strong>${activeProfileName}</strong>.</p>`;
+          html += `  <p style="font-size: 11pt; color: #444; margin-top: 10pt;">All specification points are marked as "Mastered" 🟢!</p>`;
+          html += `</div>`;
+        }
+      }
+      else if (mode === 'workbook') {
+        html += `<div class="print-booklet-title">Active Recall Workbook Templates</div>`;
+        html += `<div class="print-booklet-subtitle">Physical Memory Recall Templates • Profile: ${activeProfileName}</div>`;
+        
+        SPEC_AUDIT_DATA.forEach(topic => {
+          html += `<div class="print-topic-section">`;
+          html += `  <div class="print-topic-header">${topic.keyTopicTitle}</div>`;
+          
+          topic.subtopics.forEach(sub => {
+            html += `  <div class="print-subtopic-block" style="margin-bottom: 25pt;">`;
+            html += `    <div class="print-subtopic-header">Topic ${sub.num}: ${sub.title}</div>`;
+            html += `    <div class="print-pillars-layout">`;
+            
+            // Causes Box
+            html += `      <div class="print-workbook-box">`;
+            html += `        <div class="print-workbook-box-title">Causes &amp; Origins</div>`;
+            html += `        <div class="print-workbook-lines">`;
+            for (let i = 0; i < 5; i++) {
+              html += `          <div class="print-workbook-line"></div>`;
+            }
+            html += `        </div>`;
+            html += `      </div>`;
+            
+            // Events Box
+            html += `      <div class="print-workbook-box">`;
+            html += `        <div class="print-workbook-box-title">Key Events &amp; Details</div>`;
+            html += `        <div class="print-workbook-lines">`;
+            for (let i = 0; i < 5; i++) {
+              html += `          <div class="print-workbook-line"></div>`;
+            }
+            html += `        </div>`;
+            html += `      </div>`;
+            
+            // Consequences Box
+            html += `      <div class="print-workbook-box">`;
+            html += `        <div class="print-workbook-box-title">Consequences &amp; Importance</div>`;
+            html += `        <div class="print-workbook-lines">`;
+            for (let i = 0; i < 5; i++) {
+              html += `          <div class="print-workbook-line"></div>`;
+            }
+            html += `        </div>`;
+            html += `      </div>`;
+            
+            html += `    </div>`;
+            html += `  </div>`;
+          });
+          
+          html += `</div>`;
+        });
+      }
+      else if (mode === 'flashcards') {
+        html += `<div class="print-booklet-title" style="margin-bottom: 6pt;">Fold-and-Glue Double-Sided Flashcards</div>`;
+        html += `<div class="print-booklet-subtitle" style="margin-bottom: 16pt;">Cut along solid borders, fold along center dotted line, and glue together • Profile: ${activeProfileName}</div>`;
+        
+        SPEC_AUDIT_DATA.forEach(topic => {
+          topic.subtopics.forEach(sub => {
+            html += `  <div class="print-flashcard-row">`;
+            
+            // Left Side: Question Front
+            html += `    <div class="print-flashcard-side print-flashcard-left">`;
+            html += `      <div class="print-fc-topic">Key Topic ${topic.keyTopicNum}</div>`;
+            html += `      <div class="print-fc-subtopic">Subtopic ${sub.num}: ${sub.title}</div>`;
+            html += `      <div style="font-size: 7.5pt; color: #555555; font-style: italic; margin-top: 15px;">Edexcel GCSE History Paper 2</div>`;
+            html += `      <div class="print-fc-badge">The Question Front (Fold Here ➔)</div>`;
+            html += `    </div>`;
+            
+            // Right Side: Answer Back
+            html += `    <div class="print-flashcard-side print-flashcard-right">`;
+            html += `      <div class="print-fc-content-title">Causes, Events &amp; Consequences (Back)</div>`;
+            
+            // Causes
+            html += `      <div style="font-weight: 700; font-size: 7.5pt; margin-top: 2px;">Causes &amp; Origins:</div>`;
+            sub.pillars.causes.forEach(p => {
+              html += `      <div class="print-fc-bullet" style="margin-left: 6px; text-indent: -6px; padding-left: 6px;">• ${p.fact}</div>`;
+            });
+            
+            // Events
+            html += `      <div style="font-weight: 700; font-size: 7.5pt; margin-top: 4px;">Key Events &amp; Details:</div>`;
+            sub.pillars.events.forEach(p => {
+              html += `      <div class="print-fc-bullet" style="margin-left: 6px; text-indent: -6px; padding-left: 6px;">• ${p.fact}</div>`;
+            });
+            
+            // Consequences
+            html += `      <div style="font-weight: 700; font-size: 7.5pt; margin-top: 4px;">Consequences &amp; Importance:</div>`;
+            sub.pillars.consequences.forEach(p => {
+              html += `      <div class="print-fc-bullet" style="margin-left: 6px; text-indent: -6px; padding-left: 6px;">• ${p.fact}</div>`;
+            });
+            
+            html += `    </div>`;
+            html += `  </div>`;
+          });
+        });
+      }
+      
+      printArea.innerHTML = html;
+      window.print();
+    }
+
+    // Initialize Layout
+    buildLayout();
+    updateProgress();
+  </script>
+  <div id="print-area"></div>
+</body>
+</html>

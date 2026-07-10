@@ -73,7 +73,7 @@ unitData.lessons.forEach(lesson => {
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') ? lesson.primary_source.src : `../great_war/${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../great_war/${lesson.primary_source.src}`;
     html += `
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
@@ -127,7 +127,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
-        let src = source.src.startsWith('../') ? source.src : `../great_war/${source.src}`;
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../great_war/${source.src}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -265,7 +265,38 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
 }
 
 html += `
+
+<script src="/knowledge_bank.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    try {
+      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+      if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+        const doNows = document.querySelectorAll('.do-now-q');
+        doNows.forEach(q => {
+          if (q.textContent.includes('PAST TOPIC:')) {
+            const unit = taught[Math.floor(Math.random() * taught.length)];
+            const bank = window.KNOWLEDGE_BANK[unit];
+            if (bank && bank.length > 0) {
+              const randQ = bank[Math.floor(Math.random() * bank.length)];
+              const strong = q.querySelector('strong');
+              const prefix = strong ? strong.outerHTML + ' ' : '';
+              q.innerHTML = prefix + 'PAST TOPIC: ' + randQ.question;
+              
+              // If answer key, update the next sibling
+              const nextEl = q.nextElementSibling;
+              if (nextEl && nextEl.style && nextEl.style.color === 'red') {
+                nextEl.innerHTML = randQ.answer;
+              }
+            }
+          }
+        });
+      }
+    } catch (e) { console.error('Dynamic Do Now error:', e); }
+  });
+</script>
 </body>
+
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'answer_key.html'), html);
