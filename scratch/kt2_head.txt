@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>GCSE History Lesson Resource - Workbook</title>
+  <style>
+    @page {
+      size: 21cm 29.7cm; /* A4 */
+      margin: 1.0cm;
+      mso-page-orientation: portrait;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      color: #1f2937;
+      line-height: 1.4;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .print-page, .print-page-last {
+      clear: both;
+      box-sizing: border-box;
+      position: relative;
+      background: #ffffff;
+    }
+    .print-page {
+      page-break-after: always;
+    }
+    .print-page-last {
+      page-break-after: avoid;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1f2937 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.4 !important;
+      }
+      .print-page, .print-page-last {
+        width: 100% !important;
+        min-height: 27.2cm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+    }
+    .main-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      border-bottom: 2px solid #111827;
+      padding-bottom: 3px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #111827;
+    }
+    .sub-title {
+      font-size: 8.5pt;
+      font-weight: bold;
+      color: #111827;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .dotted-writing-line {
+      border-bottom: 1px dashed #9ca3af;
+      height: 28px;
+      margin-bottom: 4px;
+    }
+
+    /* Cornell grid styles */
+    .print-cornell-grid {
+      display: table;
+      width: 100%;
+      border: 1.5px solid #111827;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .print-cornell-row {
+      display: table-row;
+    }
+    .print-cornell-cues {
+      display: table-cell;
+      width: 30%;
+      border-right: 1.5px solid #111827;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      font-size: 8pt;
+      font-weight: bold;
+      background: #f9fafb;
+    }
+    .print-cornell-notes {
+      display: table-cell;
+      width: 70%;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      background: #ffffff;
+    }
+    .print-cornell-summary-row {
+      display: table-row;
+    }
+    .print-cornell-summary-cell {
+      display: table-cell;
+      colspan: 2;
+      padding: 10px;
+      vertical-align: top;
+      background: #f9fafb;
+      font-size: 8.5pt;
+    }
+    /* Flowchart styles */
+    .flowchart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .flowchart-box {
+      border: 1.5px solid #111827;
+      padding: 8px;
+      width: 22%;
+      vertical-align: top;
+      background: #ffffff;
+      font-size: 8pt;
+    }
+    .flowchart-arrow {
+      text-align: center;
+      font-size: 14pt;
+      font-weight: bold;
+      width: 4%;
+      vertical-align: middle;
+      color: #4b5563;
+    }
+    /* Vocabulary Match-up styles */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .vocab-th {
+      font-weight: bold;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      background-color: #f3f4f6;
+      border: 1px solid #9ca3af;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .vocab-td {
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      font-size: 7.5pt;
+      vertical-align: middle;
+    }
+    /* Exam Rubric styles */
+    .rubric-box {
+      border: 1px solid #111827;
+      background: #f9fafb;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 8pt;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        background: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- LESSON subtopic_2_1 -->
+<!-- SIDE 1: STUDY REFERENCE -->
+      <div class="print-page" style="position: relative; min-height: 27.2cm; box-sizing: border-box;">
+        <h2 class="main-title">Topic 2.1: The Six Day War</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 7.5pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 8pt; color: #111827; display: block; margin-bottom: 3px;">ðŸ“‹ Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">â˜ The significance of the Cairo Conference (1964).</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">â˜ Escalating tension between Israel, Syria and Jordan: Syria's support for Fatah, Israel's raid on Samu and events of 7 April 1967.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">â˜ The actions of the USSR, Nasser and the USA in the period leading to war.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">â˜ Key events of the war.</li>
+      </ul>
+    </div>
+  
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 5px; table-layout: fixed;">
+          <tr>
+            <td style="width: 63%; vertical-align: top; padding-right: 12px; box-sizing: border-box;">
+              <strong style="text-transform: uppercase; font-size: 7.8pt; color: #111827; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #111827; padding-bottom: 2px;">ðŸ“– Lesson Narrative</strong>
+              
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 7.8pt; color: #111827; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. PLO Formation & Water Conflict (1964)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 7.2pt; line-height: 1.3; text-align: justify; color: #374151;">Tensions rose at the Cairo Conference in 1964, which established the <strong>PLO</strong> (Palestine Liberation Organization) to coordinate Palestinian resistance. Arab League states also agreed to divert the headwaters of the <strong>Jordan River</strong> to deny water to Israel's National Water Carrier, sparking frequent border skirmishes.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 7.8pt; color: #111827; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Border Skirmishes & samu reprisal (1966â€“1967)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 7.2pt; line-height: 1.3; text-align: justify; color: #374151;">Syria actively backed Arafat's Fatah group, allowing guerrilla raids into northern Israel. The IDF responded with harsh reprisals, including the <strong>Samu Raid</strong> in Jordan in November 1966. Tensions escalated on 7 April 1967 when Israeli jets shot down six Syrian <strong>MiG fighters</strong> over Damascus during border artillery duels.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 7.8pt; color: #111827; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. The May Mobilization & Blockade (1967)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 7.2pt; line-height: 1.3; text-align: justify; color: #374151;">In May 1967, the USSR falsely warned Egypt that Israel was massing troops to invade Syria. Nasser expelled UN peacekeepers (UNEF) from Sinai, deployed 100,000 troops, and closed the <strong>Straits of Tiran</strong> to Israeli shipping, blockading the port of Eilat. Jordan signed a mutual defense pact with Egypt, creating an encirclement crisis.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 7.8pt; color: #111827; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. Preemptive Strike & Six Days of Victory</h4>
+        <p style="margin: 0 0 4px 0; font-size: 7.2pt; line-height: 1.3; text-align: justify; color: #374151;">On 5 June 1967, Israel launched a preemptive air attack, <strong>Operation Focus</strong>, destroying 90% of the Egyptian air force on the ground. Secure in the air, the IDF fought a three-front war. In six days, Israel captured the <strong>Sinai Peninsula</strong> and <strong>Gaza Strip</strong> from Egypt, the <strong>West Bank</strong> and East Jerusalem from Jordan, and the <strong>Golan Heights</strong> from Syria. This massive victory established Israeli military dominance and created 300,000 new refugees.</p>
+      </div>
+    
+            </td>
+            <td style="width: 37%; vertical-align: top; border-left: 1px solid #d1d5db; padding-left: 12px; box-sizing: border-box;">
+              <div class="vocab-section" style="margin-bottom: 10px;">
+                <strong style="text-transform: uppercase; font-size: 7.8pt; color: #111827; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #111827; padding-bottom: 2px;">ðŸ“– Key Vocabulary</strong>
+                
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Cairo Conference</strong>: 1964 Arab League summit that founded the PLO and initiated water diversion plans.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">PLO</strong>: Palestine Liberation Organization, founded to coordinate national resistance.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Jordan River</strong>: Waterway whose headwaters were contested in the border water wars.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Samu Raid</strong>: Devastating 1966 Israeli reprisal raid in the Jordanian-controlled West Bank.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">MiG fighters</strong>: Soviet jet fighters flown by Syria, six of which were shot down in April 1967.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Straits of Tiran</strong>: Egyptian waterway closed by Nasser in May 1967, blockading Eilat port.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Operation Focus</strong>: Israel's preemptive airstrike on 5 June 1967 that destroyed Arab air capabilities.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Sinai Peninsula</strong>: Vast Egyptian desert territory captured by Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Gaza Strip</strong>: Densely populated coastal strip captured from Egypt.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">West Bank</strong>: Territory captured from Jordan, placing 1 million Palestinians under military rule.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Golan Heights</strong>: Strategic high ground captured from Syria in northern Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 7pt; line-height: 1.2; color: #374151;">
+        <strong style="color: #111827;">Preemptive Strike</strong>: A military strike launched to prevent an expected imminent attack by an enemy.
+      </div>
+    
+              </div>
+              <div class="timeline-section">
+                <strong style="text-transform: uppercase; font-size: 7.8pt; color: #111827; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #111827; padding-bottom: 2px;">â³ Chronology Reference</strong>
+                
+      <div style="margin-bottom: 5px; font-size: 7pt; line-height: 1.25; color: #374151;">
+        <strong style="color: #111827;">ðŸ’§ 1964: Cairo Conference</strong><br>
+        Arab League founds PLO; Jordan water diversion plan begins.

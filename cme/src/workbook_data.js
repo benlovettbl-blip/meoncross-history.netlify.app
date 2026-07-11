@@ -75,20 +75,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "⚡ 1945: Pressures",
-        "desc": "Holocaust survivors seek entry; US exerts diplomatic pressure; Bevin sets 1,500 quota."
+        "date": "July 1946",
+        "desc": "King David Hotel bombing by Irgun."
       },
       {
-        "date": "💥 1946-47: Insurgency",
-        "desc": "King David Hotel bombed (91 deaths); Irgun hangs two British sergeants, breaking UK domestic resolve."
+        "date": "Feb 1947",
+        "desc": "Britain hands the Palestine Mandate to the UN."
       },
       {
-        "date": "⚖️ 1947: UN Referral",
-        "desc": "SS Exodus turned away; Britain hands dilemma to UN; Resolution 181 partition plan passes."
+        "date": "Nov 1947",
+        "desc": "UN Resolution 181 proposes partition of Palestine."
       },
       {
-        "date": "🏁 1948-49: Outbreak",
-        "desc": "British forces withdraw; State of Israel declared; Arab armies invade; UN mediator Count Bernadotte assassinated; IDF victory results in Nakba."
+        "date": "May 1948",
+        "desc": "British mandate ends; State of Israel declared; Arab-Israeli War begins."
       }
     ],
     "comprehensionCheck": [
@@ -147,7 +147,6 @@ export const WORKBOOK_DATA = {
         "text": "\"Palestine is an Arab country. The United Nations has no right to partition our land against the will of its majority, giving 55% of the territory to a minority that represents only 33% of the population.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -488,20 +487,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "⚡ 1949: Armistice & Nakba",
-        "desc": "Armistice agreements establish the Green Line. 700,000 Palestinian refugees displaced during the Nakba; UNRWA founded."
+        "date": "1948-1949",
+        "desc": "The Nakba; 700,000 Palestinian Arabs become refugees."
       },
       {
-        "date": "📜 1950: Law of Return",
-        "desc": "Israel passes the Law of Return; population doubles in three years; Tzena austerity and rationing introduced."
+        "date": "1949",
+        "desc": "Armistice Agreements divide Jerusalem."
       },
       {
-        "date": "💥 1951-55: Fedayeen Cycle",
-        "desc": "Palestinian Fedayeen launch raids from Gaza; IDF responds with reprisal raids. Egypt blockades Suez and Straits of Tiran."
+        "date": "1948",
+        "desc": "Creation of the Israeli Defence Forces (IDF)."
       },
       {
-        "date": "🇺🇸 1950s: Superpower Aid",
-        "desc": "US grants $300 million in financial aid to prevent Israel's economic collapse."
+        "date": "July 1950",
+        "desc": "Israel passes the Law of Return."
       }
     ],
     "comprehensionCheck": [
@@ -559,7 +558,6 @@ export const WORKBOOK_DATA = {
         "text": "\"We cannot tolerate constant incursions that slaughter our border families. Reprisals are our only defense. Furthermore, the Egyptian blockade of the Straits of Tiran is a clear act of war closing Eilat to our shipping.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -893,20 +891,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "⚡ Sept 1955: Czech Arms Deal",
-        "desc": "Egypt signs Soviet arms deal; regional military balance shifts."
+        "date": "Feb 1955",
+        "desc": "Israeli forces launch a major raid on Gaza."
       },
       {
-        "date": "🌊 July 1956: Nationalisation",
-        "desc": "Nasser nationalizes Suez Canal to fund Aswan Dam after Western loans fail."
+        "date": "Sep 1955",
+        "desc": "Egypt signs the Czech Arms Deal."
       },
       {
-        "date": "⚔️ Oct 1956: Sinai Invasion",
-        "desc": "Israel invades Sinai; UK/France land paratroopers under secret Sèvres pact."
+        "date": "July 1956",
+        "desc": "President Nasser nationalises the Suez Canal Company."
       },
       {
-        "date": "🏁 Nov 1956: Superpower Halts",
-        "desc": "US economic pressure forces withdrawal; UNEF deployed; Nasser becomes hero."
+        "date": "Oct-Nov 1956",
+        "desc": "The Suez Crisis; formation of the United Arab Republic (UAR) in 1958."
       }
     ],
     "comprehensionCheck": [
@@ -964,7 +962,6 @@ export const WORKBOOK_DATA = {
         "text": "\"The Israeli forces will launch a large-scale attack on Egyptian forces in Sinai. The British and French governments will then appeal to both combatants to withdraw from the Canal, landing troops to secure navigation.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -1290,20 +1287,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "💧 1964: Cairo Conference",
-        "desc": "Arab League founds PLO; Jordan water diversion plan begins."
+        "date": "1964",
+        "desc": "Cairo Conference; PLO formed; Arab states plan to divert River Jordan."
       },
       {
-        "date": "💥 Nov 1966: Samu Raid",
-        "desc": "Israeli reprisal in Jordan; escalates West Bank/Jordan tensions."
+        "date": "Nov 1966",
+        "desc": "The Samu Raid by Israel into Jordanian territory."
       },
       {
-        "date": "🛡️ May 1967: Mobilization",
-        "desc": "UNEF expelled; Nasser blockades Tiran; Soviet false warning."
+        "date": "May 1967",
+        "desc": "Nasser expels UN peacekeepers and blocks Straits of Tiran."
       },
       {
-        "date": "🏁 June 1967: Six Day War",
-        "desc": "Israel launches preemptive strikes; captures Sinai, Gaza, West Bank, Golan."
+        "date": "June 1967",
+        "desc": "The Six-Day War; Israel captures vast new territories."
       }
     ],
     "comprehensionCheck": [
@@ -1361,7 +1358,6 @@ export const WORKBOOK_DATA = {
         "text": "\"The fulfillment of Charter principles requires the establishment of a just peace which should include: (i) Withdrawal of Israel armed forces from territories occupied in the recent conflict; (ii) Termination of all claims of belligerency.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -1689,20 +1685,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "⚖️ Nov 1967: Resolution 242",
-        "desc": "UN passes 'Land for Peace' framework; Khartoum Conference rejects it with 'Three Nos'."
+        "date": "Nov 1967",
+        "desc": "UN Resolution 242 proposes 'land for peace'."
       },
       {
-        "date": "🌊 1967-70: War of Attrition",
-        "desc": "Artillery exchanges along Suez; early Israeli settlements begin in West Bank."
+        "date": "1967-1970",
+        "desc": "War of Attrition along the Suez Canal."
       },
       {
-        "date": "✈️ Sept 1970: Dawson's Field",
-        "desc": "PFLP hijacks planes; King Hussein launches Black September civil war to expel PLO."
+        "date": "1968",
+        "desc": "Battle of Karameh elevates the PLO's status."
       },
       {
-        "date": "🏅 Sept 1972: Munich Massacre",
-        "desc": "Black September kills 11 Israeli athletes; Mossad launches Operation Wrath of God."
+        "date": "Sep 1970",
+        "desc": "Dawson's Field hijackings and Black September; Munich massacre in 1972."
       }
     ],
     "comprehensionCheck": [
@@ -1760,7 +1756,6 @@ export const WORKBOOK_DATA = {
         "text": "\"The slaughter of our athletes in Munich is an outrage against humanity. We will hunt down these murderers wherever they hide. There will be no sanctuary for terrorists.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -2090,20 +2085,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "🛡️ 1972: Soviet Expulsion",
-        "desc": "Sadat expels 15,000 Soviet advisors to signal US openness."
+        "date": "July 1972",
+        "desc": "President Sadat expels Soviet military advisors from Egypt."
       },
       {
-        "date": "⚔️ 6 Oct 1973: Surprise Attack",
-        "desc": "Egyptian/Syrian forces cross Suez/Golan on Yom Kippur."
+        "date": "6 Oct 1973",
+        "desc": "Egypt and Syria launch a surprise attack on Yom Kippur."
       },
       {
-        "date": "🛢️ Oct 1973: OPEC Embargo",
-        "desc": "Oil production cuts and embargo trigger global energy crisis."
+        "date": "Oct 1973",
+        "desc": "OPEC imposes an oil embargo on the USA and its allies."
       },
       {
-        "date": "🏁 Oct 1973: Ceasefire",
-        "desc": "Resolution 338; Israeli forces cross Suez; shuttle diplomacy starts."
+        "date": "Late Oct 1973",
+        "desc": "US and Soviet intervention forces a ceasefire."
       }
     ],
     "comprehensionCheck": [
@@ -2161,7 +2156,6 @@ export const WORKBOOK_DATA = {
         "text": "\"The war threatened global economic collapse and nuclear war. We had to supply Israel to prevent its defeat, but then force both sides into a ceasefire to protect our oil interests.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -2490,20 +2484,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "✈️ 1974-75: Shuttle Diplomacy",
-        "desc": "Kissinger brokers troop disengagements; Suez Canal reopens to global trade."
+        "date": "1974-1975",
+        "desc": "Henry Kissinger's 'Shuttle Diplomacy' secures disengagement."
       },
       {
-        "date": "🤝 Nov 1977: Knesset Visit",
-        "desc": "Sadat flies to Jerusalem, speaking to Israeli parliament, breaking diplomatic stalemate."
+        "date": "Nov 1977",
+        "desc": "President Sadat makes a historic visit to the Israeli Knesset."
       },
       {
-        "date": "🏡 Sept 1978: Camp David",
-        "desc": "Carter hosts Sadat and Begin; frameworks for peace and Palestinian autonomy signed."
+        "date": "Sep 1978",
+        "desc": "Camp David Accords signed by Sadat and Menachem Begin."
       },
       {
-        "date": "🏁 March 1979: Washington Treaty",
-        "desc": "Formal peace treaty signed; Israel returns Sinai; Egypt expelled from Arab League."
+        "date": "Mar 1979",
+        "desc": "The Washington Peace Treaty officially ends the Egypt-Israel conflict."
       }
     ],
     "comprehensionCheck": [
@@ -2561,7 +2555,6 @@ export const WORKBOOK_DATA = {
         "text": "\"Dismantling our civilian settlements in Sinai (Yamit) is a painful cost of peace. But securing our southern border with Egypt allows us to concentrate our military assets elsewhere.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -2890,20 +2883,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "🚀 1978: Litani Operation",
-        "desc": "IDF invades south Lebanon to push PLO back from border."
+        "date": "Mar 1978",
+        "desc": "Coastal Road Massacre triggers Israel's Litani Operation in Lebanon."
       },
       {
-        "date": "⚔️ June 1982: Lebanon Invasion",
-        "desc": "Israel besieges Beirut; Sabra & Shatila massacres occur; PLO moves to Tunis; Hezbollah forms."
+        "date": "June 1982",
+        "desc": "Israel invades Lebanon (Operation Peace for Galilee) to expel the PLO."
       },
       {
-        "date": "🪨 Dec 1987: First Intifada",
-        "desc": "Grassroots uprising starts in Gaza; stones campaign against IDF tanks."
+        "date": "Sep 1982",
+        "desc": "Sabra and Shatila massacres occur in Beirut."
       },
       {
-        "date": "👊 1988: Iron Fist",
-        "desc": "Rabin enforces physical force policy; Hamas publishes charter; global opinion shifts."
+        "date": "1983-1985",
+        "desc": "PLO relocates to Tunis; Israel withdraws to a 'security zone' in southern Lebanon."
       }
     ],
     "comprehensionCheck": [
@@ -2961,7 +2954,6 @@ export const WORKBOOK_DATA = {
         "text": "\"We must restore order. We will use force, power, and blows to break their will. We will prove that violence against our soldiers does not pay.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {
@@ -3287,20 +3279,20 @@ export const WORKBOOK_DATA = {
     ],
     "timeline": [
       {
-        "date": "🌍 Oct 1991: Madrid Conference",
-        "desc": "Post-Gulf War diplomatic summit brings parties together; direct talks begin."
+        "date": "Dec 1987",
+        "desc": "First Intifada breaks out in Gaza; Israel implements the 'Iron Fist'."
       },
       {
-        "date": "🤝 Sept 1993: Oslo I Accords",
-        "desc": "Declaration of Principles signed; Clinton hosts historic Rabin-Arafat handshake."
+        "date": "Oct 1991",
+        "desc": "Madrid Conference initiates face-to-face peace negotiations."
       },
       {
-        "date": "🇯🇴 Oct 1994: Jordan Peace",
-        "desc": "Israel and Jordan sign peace treaty, ending 46-year state of war."
+        "date": "Sep 1993",
+        "desc": "Oslo I Accords signed; PLO and Israel officially recognize each other."
       },
       {
-        "date": "🏁 Nov 1995: Rabin Assassinated",
-        "desc": "Right-wing Israeli extremist kills Rabin, freezing the peace process."
+        "date": "Nov 1995",
+        "desc": "Assassination of Yitzhak Rabin shatters the peace process."
       }
     ],
     "comprehensionCheck": [
@@ -3358,7 +3350,6 @@ export const WORKBOOK_DATA = {
         "text": "\"I acted alone on God's orders to save this country. Rabin was giving away our ancestral homeland of Judea and Samaria to terrorists. He had to be stopped.\""
       }
     ],
-    
     "examPractice": {
       "questions": [
         {

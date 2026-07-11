@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edexcel GCSE History Paper 2: Conflict in the Middle East, 1945-1995</title>
+  <title>Edexcel GCSE History Paper 2: Conflict in the Middle East, 1945-1995 (Structured Lessons)</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts for Handwriting effect -->
@@ -31,7 +31,7 @@
         </div>
         <div>
           <h2 class="brand-title" style="font-size: 0.9rem; line-height: 1.2; font-weight: 700;">Edexcel GCSE History</h2>
-          <span class="brand-subtitle" style="font-size: 0.65rem; line-height: 1.2; display: block; margin-top: 2px; color: var(--text-muted);">Paper 2: Conflict in the Middle East, 1945-1995</span>
+          <span class="brand-subtitle" style="font-size: 0.65rem; line-height: 1.2; display: block; margin-top: 2px; color: var(--text-muted);">Paper 2: Middle East (Structured)</span>
         </div>
       </div>
 
@@ -78,73 +78,90 @@
               <span class="nav-text">Syllabus Audit</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-exam-sim" title="Quiz Generator">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <span class="nav-text">Quiz Generator</span>
-            </span>
-          </a>
           <a class="nav-item" id="nav-exam-skills" title="Exam Practice (Q1-Q3)">
             <span class="nav-item-content">
               <i class="fa-solid fa-pen-fancy"></i>
               <span class="nav-text">Exam Practice (Q1-Q3)</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-past-papers" title="Resource Hub">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-file-invoice"></i>
-              <span class="nav-text">Resource Hub</span>
+
+          <!-- Toggle for More Tools -->
+          <div class="nav-item" id="nav-more-tools-toggle" title="More Tools" style="cursor: pointer; border-top: 1px dashed var(--border-glass); margin-top: 8px; padding-top: 8px;">
+            <span class="nav-item-content" style="color: var(--text-muted);">
+              <i class="fa-solid fa-ellipsis"></i>
+              <span class="nav-text">More Study Tools...</span>
             </span>
-          </a>
-          <a class="nav-item" id="nav-games" title="Revision Games Hub">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-gamepad"></i>
-              <span class="nav-text">Revision Games Hub</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-individuals" title="Key Individuals">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-users"></i>
-              <span class="nav-text">Key Individuals</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-later-games" href="later_stages_games.html" target="_blank" title="Later Stages Mini-Games" style="background: rgba(249, 115, 22, 0.05); border-left: 3px solid var(--primary);">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-rocket" style="color: var(--primary);"></i>
-              <span class="nav-text" style="color: var(--primary); font-weight: 700;">Later Stages Games</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-ai-videos" title="2min AI Video Revision">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-circle-play"></i>
-              <span class="nav-text">2min AI Videos</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-bookmarks" title="Bookmarks" style="display: none !important;">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-bookmark"></i>
-              <span class="nav-text">Bookmarks</span>
-            </span>
-            <span class="nav-item-progress" id="bookmarks-count-badge">0</span>
-          </a>
-          <a class="nav-item" id="nav-going-beyond" title="Going Beyond">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-compass"></i>
-              <span class="nav-text">Going Beyond</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-leaderboard" title="Leaderboard">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-trophy"></i>
-              <span class="nav-text">Leaderboard</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-map" title="Map Explorer">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-map-location-dot"></i>
-              <span class="nav-text">Map Explorer</span>
-            </span>
-          </a>
+          </div>
+
+          <div id="more-tools-container" style="display: none; padding-left: 10px; border-left: 2px solid var(--border-glass); margin-left: 14px; margin-top: 4px;">
+            <a class="nav-item" id="nav-glossary" title="Interactive Glossary" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-book-atlas"></i>
+                <span class="nav-text">Interactive Glossary</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-exam-sim" title="Quiz Generator" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span class="nav-text">Quiz Generator</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-past-papers" title="Resource Hub" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-file-invoice"></i>
+                <span class="nav-text">Resource Hub</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-games" title="Revision Games Hub" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-gamepad"></i>
+                <span class="nav-text">Revision Games Hub</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-individuals" title="Key Individuals" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-users"></i>
+                <span class="nav-text">Key Individuals</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-later-games" href="later_stages_games.html" target="_blank" title="Later Stages Mini-Games" style="padding: 6px 12px; margin-bottom: 2px; background: rgba(249, 115, 22, 0.05); border-left: 3px solid var(--primary);">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-rocket" style="color: var(--primary);"></i>
+                <span class="nav-text" style="color: var(--primary); font-weight: 700;">Later Stages Games</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-ai-videos" title="2min AI Video Revision" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-circle-play"></i>
+                <span class="nav-text">2min AI Videos</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-bookmarks" title="Bookmarks" style="display: none !important;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-bookmark"></i>
+                <span class="nav-text">Bookmarks</span>
+              </span>
+              <span class="nav-item-progress" id="bookmarks-count-badge">0</span>
+            </a>
+            <a class="nav-item" id="nav-going-beyond" title="Going Beyond" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-compass"></i>
+                <span class="nav-text">Going Beyond</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-leaderboard" title="Leaderboard" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-trophy"></i>
+                <span class="nav-text">Leaderboard</span>
+              </span>
+            </a>
+            <a class="nav-item" id="nav-map" title="Map Explorer" style="padding: 6px 12px; margin-bottom: 2px;">
+              <span class="nav-item-content">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span class="nav-text">Map Explorer</span>
+              </span>
+            </a>
+          </div>
         </div>
       </nav>
       <!-- Sidebar Preferences / Footer (Mobile Only) -->
@@ -207,6 +224,11 @@
           <!-- Settings Toggle Button -->
           <button class="header-icon-btn" id="btn-settings-toggle" title="Settings">
             <i class="fa-solid fa-gear"></i>
+          </button>
+
+          <!-- Dark Mode Toggle Button -->
+          <button class="header-icon-btn" id="btn-darkmode-toggle" title="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
           </button>
 
           <!-- Fullscreen Toggle Button -->
@@ -2210,6 +2232,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- Scripts -->
   <script src="questions.js?v=18"></script>
-  <script type="module" src="app.js?v=22"></script>
+  <script type="module" src="app.js?v=26"></script>
 </body>
 </html>

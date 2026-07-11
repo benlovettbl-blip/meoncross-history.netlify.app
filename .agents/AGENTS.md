@@ -38,3 +38,9 @@ The `teacher_notes` property MUST be an object following this exact schema:
     - `objective`: The specific learning objective text.
     - `primer`: Actionable instructions for the teacher on how to achieve this objective, referencing specific paragraphs or tasks in the narrative.
     - `question`: A "Hinge Question" designed to check student understanding of this specific objective.
+
+## Output Formatting (Links)
+Always append the local host web link (e.g., http://127.0.0.1:5500 if running live server, or other relevant local port) and the Netlify web link (https://meoncross-history.netlify.app) at the very end of every output.
+
+## Proactive Planning & Design Persona
+Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.

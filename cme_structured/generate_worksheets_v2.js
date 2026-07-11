@@ -6,14 +6,52 @@ const dataContent = fs.readFileSync(path.join(__dirname, 'src', 'lessons_data.js
 const cleanObjStr = dataContent.replace('export const LESSONS_DATA =', '').trim();
 const LESSONS_DATA = (new Function("return " + cleanObjStr.replace(/;$/, '')))();
 
-const kt1Subtopics = ['subtopic_1_1', 'subtopic_1_2', 'subtopic_1_3'];
+// 1b. Read WORKBOOK_DATA to get vocabulary
+const workbookContent = fs.readFileSync(path.join(__dirname, 'src', 'workbook_data.js'), 'utf8');
+const cleanWorkbookStr = workbookContent.replace('export const WORKBOOK_DATA =', '').trim();
+const WORKBOOK_DATA = (new Function("return " + cleanWorkbookStr.replace(/;$/, '')))();
 
-// 2. Define the stylesheet (adapted from Great War)
-let html = `<!DOCTYPE html>
+const keyTopics = [
+  { 
+    id: 'KT1', 
+    title: 'Key Topic 1: The Birth of the State of Israel (1945-63)', 
+    subtopics: ['subtopic_1_1', 'subtopic_1_2', 'subtopic_1_3'],
+    bullets: [
+      "1.1 The British withdrawal and the creation of Israel",
+      "1.2 Aftermath of the 1948-49 war",
+      "1.3 Increased tension, 1955-63"
+    ]
+  },
+  { 
+    id: 'KT2', 
+    title: 'Key Topic 2: The Escalating Conflict (1964-73)', 
+    subtopics: ['subtopic_2_1', 'subtopic_2_2', 'subtopic_2_3'],
+    bullets: [
+      "2.1 The Six Day War, 1967",
+      "2.2 Aftermath of the 1967 war",
+      "2.3 Israel and Egypt, 1967-73"
+    ]
+  },
+  { 
+    id: 'KT3', 
+    title: 'Key Topic 3: Attempts at a solution (1974-95)', 
+    subtopics: ['subtopic_3_1', 'subtopic_3_2', 'subtopic_3_3'],
+    bullets: [
+      "3.1 Diplomatic negotiations",
+      "3.2 The Palestinian issue",
+      "3.3 Attempts at a solution"
+    ]
+  }
+];
+
+const scratchDir = path.join(__dirname, 'workbook_stash');
+
+for (const kt of keyTopics) {
+  let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Conflict in the Middle East - KT1 Workbook</title>
+  <title>Conflict in the Middle East - ${kt.id} Workbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
   <style>
     @page { size: A4 portrait; margin: 20mm; }
@@ -57,11 +95,11 @@ let html = `<!DOCTYPE html>
 <body>
 
   <h1>Conflict in the Middle East</h1>
-  <p style="text-align:center; font-size:16pt; margin-top: 0; color: #555;">Key Topic 1: The Birth of the State of Israel (1945-63)</p>
+  <p style="text-align:center; font-size:16pt; margin-top: 0; color: #555;">${kt.title}</p>
   <p style="text-align:center; font-size:14pt; font-style: italic;">Student Workbook</p>
   
   <div style="text-align:center; margin: 20px 0;">
-    <img src="../public/assets/sources/kt1_cover.png" alt="Middle East Cover" style="max-width: 65%; height: auto; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);">
+    <img src="../public/assets/sources/${kt.id.toLowerCase()}_cover.png" alt="Middle East Cover" onerror="this.src='../public/assets/sources/kt1_cover.png'" style="max-width: 65%; height: auto; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);">
   </div>
 
   <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Name: </div>
@@ -96,10 +134,8 @@ let html = `<!DOCTYPE html>
       </tbody>
     </table>
   </div>
-`;
-
-// 3. Render Each Lesson
-kt1Subtopics.forEach((subId, lessonIndex) => {
+`;// 3. Render Each Lesson
+kt.subtopics.forEach((subId, lessonIndex) => {
   const lesson = LESSONS_DATA[subId];
   if (!lesson) return;
 
@@ -116,6 +152,19 @@ kt1Subtopics.forEach((subId, lessonIndex) => {
         <div class="task-lines-small"></div>
         <div class="task-lines-small" style="margin-bottom: 15px;"></div>
       `).join('')}
+    </div>`;
+  }
+
+  
+  // --- VOCABULARY ---
+  const vocabData = WORKBOOK_DATA[subId] && WORKBOOK_DATA[subId].vocabulary;
+  if (vocabData && vocabData.length > 0) {
+    html += `
+    <div class="vocab-box" style="border: 2px solid #004d40; padding: 15px; margin-bottom: 25px; background: #e0f2f1; border-radius: 4px; box-shadow: 2px 2px 0px #004d40;">
+      <div class="vocab-title" style="font-weight: 800; margin-bottom: 15px; font-size: 12pt; border-bottom: 1px solid #004d40; padding-bottom: 5px; color: #004d40; text-transform: uppercase; letter-spacing: 1px;">Key Vocabulary</div>
+      <ul style="margin: 0; padding-left: 20px;">
+        ${vocabData.map(v => `<li style="margin-bottom: 8px;"><strong style="color: #004d40;">${v.term}:</strong> ${v.definition}</li>`).join('')}
+      </ul>
     </div>`;
   }
 
@@ -275,7 +324,8 @@ html += `
 const outDir = path.join(__dirname, 'workbook_stash');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
-const outPath = path.join(outDir, 'workbook_KT1_v2.html');
+const outPath = path.join(outDir, `workbook_${kt.id}_v2.html`);
 fs.writeFileSync(outPath, html, 'utf8');
 
-console.log('Successfully generated new KT1 Workbook at: ' + outPath);
+console.log(`Successfully generated new ${kt.id} Workbook at: ` + outPath);
+} // end for loop

@@ -12,7 +12,8 @@ import {
   renderAiVideosView,
   openStreakLeaderboard,
   addXp,
-  renderKeyIndividualsView
+  renderKeyIndividualsView,
+  renderGlossaryView
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -132,6 +133,15 @@ export function switchView(viewName, subtopicId = null) {
     if (!state.examSession.isActive) {
       showExamSetup();
     }
+  } else if (viewName === 'glossary') {
+    const glossaryNav = document.getElementById('nav-glossary');
+    if (glossaryNav) glossaryNav.classList.add('active');
+    const headerModeSwitcher = document.getElementById('subtopic-mode-switcher');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Interactive Glossary";
+    state.selectedSubtopicId = null;
+    renderGlossaryView();
   } else if (viewName === 'exam-skills') {
     const skillsNav = document.getElementById('nav-exam-skills');
     if (skillsNav) skillsNav.classList.add('active');

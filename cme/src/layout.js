@@ -78,6 +78,19 @@ function bindEvents() {
     switchView('dashboard');
   });
   
+  const moreToolsToggle = document.getElementById('nav-more-tools-toggle');
+  const moreToolsContainer = document.getElementById('more-tools-container');
+  if (moreToolsToggle && moreToolsContainer) {
+    moreToolsToggle.addEventListener('click', () => {
+      AudioEngine.play('click');
+      const isHidden = moreToolsContainer.style.display === 'none';
+      moreToolsContainer.style.display = isHidden ? 'block' : 'none';
+      // Optional: change icon/color state
+      moreToolsToggle.querySelector('.nav-text').style.fontWeight = isHidden ? '700' : 'normal';
+      moreToolsToggle.querySelector('.nav-item-content').style.color = isHidden ? 'var(--primary)' : 'var(--text-muted)';
+    });
+  }
+  
   document.getElementById('nav-bookmarks').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('bookmarks');
@@ -92,6 +105,14 @@ function bindEvents() {
     AudioEngine.play('click');
     switchView('exam');
   });
+
+  const navGlossary = document.getElementById('nav-glossary');
+  if (navGlossary) {
+    navGlossary.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('glossary');
+    });
+  }
 
   document.getElementById('nav-going-beyond').addEventListener('click', () => {
     AudioEngine.play('click');
@@ -498,12 +519,55 @@ function bindEvents() {
         const otherSelect = document.getElementById(otherId);
         if (otherSelect) otherSelect.value = nextTheme;
         
+        // Update Dark Mode icon
+        const btnDarkMode = document.getElementById('btn-darkmode-toggle');
+        if (btnDarkMode) {
+          if (nextTheme === 'desert') {
+            btnDarkMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+          } else {
+            btnDarkMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+          }
+        }
+        
         AudioEngine.play('click');
       });
     }
   };
   bindThemeSelector('theme-selector');
   bindThemeSelector('sidebar-theme-selector');
+
+  // Dark Mode Toggle
+  const btnDarkMode = document.getElementById('btn-darkmode-toggle');
+  if (btnDarkMode) {
+    const updateDarkModeIcon = (theme) => {
+      if (theme === 'desert') {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      } else {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      }
+    };
+    
+    // Initial icon state
+    updateDarkModeIcon(state.theme);
+    
+    btnDarkMode.addEventListener('click', () => {
+      const isDark = state.theme === 'midnight' || state.theme === 'teal';
+      const nextTheme = isDark ? 'desert' : 'midnight';
+      
+      state.theme = nextTheme;
+      localStorage.setItem('edexcel_theme', nextTheme);
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      
+      // Sync selectors
+      const select = document.getElementById('theme-selector');
+      if (select) select.value = nextTheme;
+      const sidebarSelect = document.getElementById('sidebar-theme-selector');
+      if (sidebarSelect) sidebarSelect.value = nextTheme;
+      
+      updateDarkModeIcon(nextTheme);
+      AudioEngine.play('click');
+    });
+  }
 
   const bindResetBtn = (id) => {
     const btn = document.getElementById(id);

@@ -5,6 +5,8 @@ import { switchView, switchSubtopicMode } from './navigation.js';
 import { setMastered, toggleBookmark, getActiveProfile, getProfileStorageKey } from './storage.js';
 import { Confetti } from './confetti.js';
 import { LESSONS_DATA } from './lessons_data.js';
+import { GLOSSARY_TERMS } from './glossary_data.js';
+import { openWorkbookModal } from './lessons.js';
 import { MASTERY_DATA } from './mastery_data.js';
 import { DECISIONS_DATA } from './decisions_data.js';
 import { MINDMAP_DATA } from './mindmap_data.js';
@@ -458,6 +460,11 @@ function renderDashboard() {
           <div class="topic-list-progress-bar" style="height: 4px; margin: 0; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; width: 100%;">
             <div class="topic-list-progress-fill" style="width: ${subPct}%; height: 100%; background: var(--primary); border-radius: 2px;"></div>
           </div>
+          <div style="margin-top: 8px; display: flex; justify-content: flex-end; position: relative; z-index: 20;">
+            <button class="mastery-btn print-workbook-btn" data-subtopic="${sub.id}" style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; color: #10b981; font-size: 0.7rem; font-weight: 700; padding: 4px 8px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 4px;" onmouseover="this.style.background='rgba(16, 185, 129, 0.2)'" onmouseout="this.style.background='rgba(16, 185, 129, 0.1)'">
+              <i class="fa-solid fa-print"></i> Lesson Workbook
+            </button>
+          </div>
         </div>
       `;
     });
@@ -515,6 +522,15 @@ function renderDashboard() {
     
     // Attach individual subtopic row clicks
     if (card.querySelectorAll) {
+      card.querySelectorAll('.print-workbook-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          AudioEngine.play('click');
+          const subId = btn.getAttribute('data-subtopic');
+          openWorkbookModal(subId);
+        });
+      });
+
       card.querySelectorAll('.dashboard-subtopic-row').forEach(row => {
         row.addEventListener('click', (e) => {
           e.stopPropagation(); // Avoid triggering card click
@@ -6046,3 +6062,29 @@ export function triggerPackOpening(cardId) {
   }
 }
 window.triggerPackOpening = triggerPackOpening;
+
+export function renderGlossaryView() {
+  const container = document.getElementById('main-content');
+  if (!container) return;
+
+  let html = `<div class="study-tools-header">
+    <h2><i class="fa-solid fa-book-atlas"></i> Interactive Glossary (Tier 3 Words)</h2>
+    <p style="color: var(--text-muted);">Master the key vocabulary essential for GCSE History.</p>
+  </div>
+  <div class="glossary-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; padding: 16px;">`;
+
+  GLOSSARY_TERMS.forEach((term, index) => {
+    html += `  <div class="flashcard" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 8px; padding: 16px; cursor: pointer; transition: transform 0.2s;" onclick="this.classList.toggle('flipped');">
+        <div class="flashcard-inner" style="position: relative; width: 100%; height: 100%;">
+          <h3 style="color: var(--primary); margin-bottom: 8px;"></h3>
+          <p style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 12px;"></p>
+          <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 4px; border-left: 3px solid var(--accent);">
+            <small style="color: var(--text-muted); font-style: italic;">e.g., </small>
+          </div>
+        </div>
+      </div>  `;
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+}

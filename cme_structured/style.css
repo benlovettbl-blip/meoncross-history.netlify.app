@@ -9644,3 +9644,72 @@ details > summary::marker {
   z-index: 60 !important;
   box-shadow: 0 0 80px rgba(255, 215, 0, 0.9) !important;
 }
+
+/* =========================================
+   PHASE 2 MICRO-ANIMATIONS & PRINT CSS 
+   ========================================= */
+
+/* Hover Lifts */
+.mastery-card, .topic-list-card, .vault-question-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.mastery-card:hover, .topic-list-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Accordion slide-down effect */
+@keyframes slideDownSmooth {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tools-content-wrapper[style*="display: block"],
+.review-content-wrapper[style*="display: block"],
+.reference-content-wrapper[style*="display: block"],
+.do-now-content-wrapper[style*="display: block"] {
+  animation: slideDownSmooth 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Button Pulses */
+@keyframes pulseGradient {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.mastery-btn-success, .journey-next-btn {
+  animation: pulseGradient 2s infinite;
+}
+
+/* Print CSS for Workbooks */
+@media print {
+  /* Prevent awkward page breaks inside major components */
+  .retrieval-grid-row, .mastery-card, .contemporary-source-card, .vault-item, .scholarly-extension {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Save ink by stripping backgrounds */
+  body, .main-wrapper, .mastery-card, .topic-list-card, .dashboard-subtopic-row {
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+
+  /* Force headers black for print */
+  h1, h2, h3, h4, h5, h6, .mastery-card-title {
+    color: #000 !important;
+    border-bottom-color: #000 !important;
+  }
+
+  /* Hide navigation, headers, footers */
+  .sidebar, .main-header, .sidebar-footer, .mastery-controls, .tools-toggle-header, .review-toggle-header, .do-now-toggle-header, .reference-toggle-header, .btn-mark-mastery-mastered, .print-workbook-btn {
+    display: none !important;
+  }
+  
+  /* Show accordions fully expanded for print */
+  .tools-content-wrapper, .review-content-wrapper, .reference-content-wrapper, .do-now-content-wrapper {
+    display: block !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}

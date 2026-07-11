@@ -2538,168 +2538,167 @@ export function initWorkbookCreator() {
 const TIMELINE_WORKSHEET_PROMPTS = {
   "subtopic_1_1": [
     {
-      q: "Why did British Foreign Secretary Ernest Bevin restrict Jewish immigration to a quota of 1,500 a month in 1945?",
-      a: "Britain feared an Arab revolt that might threaten its access to vital Middle Eastern oil."
+      "q": "What consequence did the King David Hotel bombing have for British political willpower?",
+      "a": "It killed 91 people, shattered British morale, and made the Mandate politically and financially unsustainable."
     },
     {
-      q: "What consequence did the King David Hotel bombing (22 July 1946) have for British political willpower?",
-      a: "It killed 91 people, shattered British morale, and made the Mandate politically and financially unsustainable."
+      "q": "Why did the British government decide to refer the Palestine Mandate to the UN in February 1947?",
+      "a": "Britain was exhausted by Zionist insurgency and the immense financial cost of maintaining 100,000 troops."
     },
     {
-      q: "Why did the British government decide to refer the Palestine Mandate to the UN in February 1947?",
-      a: "Britain was exhausted by Zionist insurgency and the immense financial cost of maintaining 100,000 troops."
+      "q": "What was the immediate consequence of UN Resolution 181?",
+      "a": "It sparked immediate civil war in Palestine between Jewish and Arab militias as Arabs rejected the partition."
     },
     {
-      q: "What was the main consequence of the 1948-49 Arab-Israeli War for the Palestinian Arab population?",
-      a: "The Nakba (Catastrophe), which resulted in the displacement and refugee crisis of 700,000 Palestinians."
+      "q": "What was the main consequence of the 1948-49 Arab-Israeli War for the state of Israel?",
+      "a": "Israel survived and expanded its territory by 21% beyond the UN borders, securing its existence."
     }
   ],
   "subtopic_1_2": [
     {
-      q: "Explain one territorial consequence of the 1949 Armistice Agreements for the city of Jerusalem.",
-      a: "Jerusalem was divided: West Jerusalem was controlled by Israel, while Jordan occupied East Jerusalem."
+      "q": "What was the main consequence of the 1948-49 Arab-Israeli War for the Palestinian Arab population?",
+      "a": "The Nakba (Catastrophe), which resulted in the displacement and refugee crisis of 700,000 Palestinians into neighboring countries."
     },
     {
-      q: "What consequence did the Law of Return (July 1950) have on Israel's demographics and economy?",
-      a: "It doubled Israel's population in three years, providing military security but causing severe economic strain and food rationing."
+      "q": "Explain one territorial consequence of the 1949 Armistice Agreements for the city of Jerusalem.",
+      "a": "Jerusalem was divided: West Jerusalem was controlled by Israel, while Jordan occupied East Jerusalem."
     },
     {
-      q: "Why did Palestinian Fedayeen launch cross-border raids into Israel from the Gaza Strip in the early 1950s?",
-      a: "They were displaced refugees seeking to return to their lands, steal property, and attack Israeli settlements."
+      "q": "Why was the creation of the IDF significant for Israel's early security?",
+      "a": "It united various Jewish militias under one command, enforcing state control and establishing a powerful military deterrent."
     },
     {
-      q: "Why did the United States provide $300 million in financial aid to Israel during the 1950s?",
-      a: "To prevent the economic collapse of the new state under the heavy costs of absorbing mass Jewish immigration."
+      "q": "What consequence did the Law of Return have on Israel's demographics and economy?",
+      "a": "It rapidly doubled Israel's population, providing military security but causing severe economic strain and food rationing."
     }
   ],
   "subtopic_1_3": [
     {
-      q: "Why did Egypt sign a major arms deal with Czechoslovakia in September 1955?",
-      a: "To obtain modern Soviet-bloc weapons to defend against Israeli reprisal raids and end Western arms dominance."
+      "q": "What consequence did the 1955 Israeli raid on Gaza have for Egyptian policy?",
+      "a": "It humiliated Egypt, pushing Nasser to support Fedayeen raids and seek advanced Soviet weapons."
     },
     {
-      q: "What triggered President Nasser to nationalise the Suez Canal Company in July 1956?",
-      a: "The USA and Britain abruptly withdrew their funding for the Aswan High Dam, prompting Nasser to use canal tolls to fund it."
+      "q": "Why did Egypt sign a major arms deal with Czechoslovakia in September 1955?",
+      "a": "To obtain modern Soviet-bloc weapons to defend against Israeli reprisal raids and end Western arms dominance."
     },
     {
-      q: "What was the secret pretext agreed upon in the Protocol of Sèvres in October 1956?",
-      a: "Israel would invade Sinai, allowing Britain and France to intervene as 'peacekeepers' and seize the Suez Canal."
+      "q": "What triggered President Nasser to nationalise the Suez Canal Company in July 1956?",
+      "a": "The USA and Britain abruptly withdrew their funding for the Aswan High Dam, prompting Nasser to use canal tolls to fund it."
     },
     {
-      q: "What consequence did superpower intervention (US economic pressure) have on Britain's status in November 1956?",
-      a: "Britain was forced into a humiliating withdrawal, marking the end of its status as a global superpower."
+      "q": "What consequence did superpower intervention have on Britain's status in November 1956?",
+      "a": "Britain was forced into a humiliating withdrawal, marking the end of its status as a global superpower."
     }
   ],
   "subtopic_2_1": [
     {
-      q: "What was the key decision made by Arab leaders at the Cairo Conference in 1964 regarding water resources?",
-      a: "Arab states decided to divert the headwaters of the River Jordan to reduce Israel's water supply, escalating tensions."
+      "q": "What consequence did the 1964 Arab plan to divert the River Jordan have on Israeli-Syrian relations?",
+      "a": "It escalated tensions, leading Israel to launch airstrikes to destroy the Syrian diversion equipment."
     },
     {
-      q: "What consequence did the Samu Raid (November 1966) have on King Hussein of Jordan?",
-      a: "It sparked massive public protests in Jordan against the monarchy, pushing King Hussein to sign a defense pact with Egypt."
+      "q": "What consequence did the Samu Raid (November 1966) have on King Hussein of Jordan?",
+      "a": "It sparked massive public protests in Jordan against the monarchy, pushing King Hussein to sign a defense pact with Egypt."
     },
     {
-      q: "What aggressive military actions did President Nasser take in Sinai in May 1967?",
-      a: "He expelled UN peacekeepers, mobilized the Egyptian army, and blockaded the Straits of Tiran to Israeli shipping."
+      "q": "What aggressive military actions did President Nasser take in Sinai in May 1967?",
+      "a": "He expelled UN peacekeepers, mobilized the Egyptian army, and blockaded the Straits of Tiran to Israeli shipping."
     },
     {
-      q: "What territorial changes resulted from Israel's preemptive airstrikes and victories in the June 1967 Six-Day War?",
-      a: "Israel captured the Sinai Peninsula and Gaza Strip (from Egypt), the West Bank and East Jerusalem (from Jordan), and the Golan Heights (from Syria)."
+      "q": "What territorial changes resulted from Israel's victories in the June 1967 Six-Day War?",
+      "a": "Israel captured the Sinai Peninsula and Gaza Strip, the West Bank and East Jerusalem, and the Golan Heights."
     }
   ],
   "subtopic_2_2": [
     {
-      q: "Explain the central 'land for peace' formula proposed in UN Resolution 242 in November 1967.",
-      a: "It called for the withdrawal of Israeli forces from occupied territories in exchange for Arab recognition of Israel's right to exist."
+      "q": "Explain the central 'land for peace' formula proposed in UN Resolution 242.",
+      "a": "It called for the withdrawal of Israeli forces from occupied territories in exchange for Arab recognition of Israel's right to exist."
     },
     {
-      q: "What was the strategic objective of Egypt's War of Attrition (1967-70) along the Suez Canal?",
-      a: "Nasser wanted to wear down the Israeli military with constant artillery shelling and force a withdrawal from Sinai."
+      "q": "What was the strategic objective of Egypt's War of Attrition?",
+      "a": "Nasser wanted to wear down the Israeli military with constant artillery shelling and force a withdrawal from Sinai."
     },
     {
-      q: "What consequence did the Dawson's Field hijackings (September 1970) have for the PLO in Jordan?",
-      a: "It triggered King Hussein's military crackdown (Black September), resulting in the PLO's violent expulsion from Jordan to Lebanon."
+      "q": "What consequence did the Battle of Karameh (1968) have for the PLO?",
+      "a": "Despite military losses, the PLO's fierce resistance became a massive propaganda victory, boosting recruitment and Arafat's leadership."
     },
     {
-      q: "How did Israel respond to the Munich Olympics massacre in September 1972?",
-      a: "Israel launched Operation Wrath of God, a covert global assassination campaign targeting PLO militants."
+      "q": "What consequence did the Dawson's Field hijackings (1970) have for the PLO in Jordan?",
+      "a": "It triggered King Hussein's military crackdown (Black September), resulting in the PLO's violent expulsion from Jordan to Lebanon."
     }
   ],
   "subtopic_2_3": [
     {
-      q: "Why did Anwar Sadat expel 15,000 Soviet military advisors from Egypt in 1972?",
-      a: "To signal to the USA that Egypt was open to American diplomacy, and to gain sole control of Egypt's military strategy."
+      "q": "Why did Anwar Sadat expel 15,000 Soviet military advisors from Egypt in 1972?",
+      "a": "To signal to the USA that Egypt was open to American diplomacy, and to gain sole control of Egypt's military strategy."
     },
     {
-      q: "What was the main military objective of the joint Egypt-Syria surprise attack on 6 October 1973 (Yom Kippur)?",
-      a: "To break the diplomatic stalemate, cross the Suez Canal/Golan Heights, and force Israel to negotiate the return of occupied lands."
+      "q": "What was the main military objective of the joint Egypt-Syria surprise attack on 6 October 1973?",
+      "a": "To break the diplomatic stalemate, cross the Suez Canal and Golan Heights, and force Israel to negotiate the return of occupied lands."
     },
     {
-      q: "What consequence did the OPEC oil embargo have on Western countries supporting Israel during the war?",
-      a: "It caused a severe global energy crisis, quadrupling oil prices, triggering inflation, and forcing the West to push for peace."
+      "q": "What consequence did the OPEC oil embargo have on Western countries?",
+      "a": "It caused a severe global energy crisis, quadrupling oil prices, triggering inflation, and forcing the West to push for peace."
     },
     {
-      q: "What political consequence did the Yom Kippur War have for the Israeli government and public confidence?",
-      a: "It shattered the myth of IDF invincibility, leading to public outrage, an inquiry into intelligence failures, and the resignation of Golda Meir."
+      "q": "What political consequence did the Yom Kippur War have for the Israeli government?",
+      "a": "It shattered the myth of IDF invincibility, leading to public outrage, an inquiry into intelligence failures, and the resignation of Golda Meir."
     }
   ],
   "subtopic_3_1": [
     {
-      q: "What did Henry Kissinger's 'Shuttle Diplomacy' (1974-75) accomplish in the Middle East?",
-      a: "It negotiated military disengagement agreements in Sinai and Golan, establishing buffer zones and reducing Soviet influence."
+      "q": "What did Henry Kissinger's 'Shuttle Diplomacy' (1974-75) accomplish in the Middle East?",
+      "a": "It negotiated military disengagement agreements in Sinai and Golan, establishing buffer zones and reducing Soviet influence."
     },
     {
-      q: "What was the significance of Anwar Sadat's historic visit to the Israeli Knesset in November 1977?",
-      a: "It was the first time an Arab leader recognized Israel, breaking 30 years of hostility and opening direct peace talks."
+      "q": "What was the significance of Anwar Sadat's visit to the Israeli Knesset in November 1977?",
+      "a": "It was the first time an Arab leader officially visited Israel, breaking 30 years of hostility and opening direct peace talks."
     },
     {
-      q: "What was the main compromise agreed upon in the Camp David Accords (September 1978)?",
-      a: "Israel agreed to return the entire Sinai Peninsula to Egypt in exchange for full diplomatic recognition and peace."
+      "q": "What was the main compromise agreed upon in the Camp David Accords (September 1978)?",
+      "a": "Israel agreed to return the entire Sinai Peninsula to Egypt in exchange for full diplomatic recognition and peace."
     },
     {
-      q: "What consequence did the 1979 Washington Peace Treaty have for Egypt's relations with the wider Arab world?",
-      a: "Egypt was expelled from the Arab League and isolated, and President Sadat was assassinated by Islamist extremists in 1981."
+      "q": "What consequence did the 1979 Washington Peace Treaty have for Egypt's relations with the Arab world?",
+      "a": "Egypt was expelled from the Arab League and isolated, and President Sadat was later assassinated by Islamist extremists."
     }
   ],
   "subtopic_3_2": [
     {
-      q: "What triggered Israel's Litani Operation (invasion of southern Lebanon) in March 1978?",
-      a: "The Coastal Road Massacre, where PLO/Fatah militants hijacked buses in Israel and killed 38 civilians."
+      "q": "What triggered Israel's Litani Operation (invasion of southern Lebanon) in March 1978?",
+      "a": "The Coastal Road Massacre, where PLO/Fatah militants hijacked buses in Israel and killed 38 civilians."
     },
     {
-      q: "What consequence did the June 1982 Lebanon invasion have for Palestinian refugees in the Sabra and Shatila camps?",
-      a: "Christian Phalangist militias massacred hundreds of refugees while the Israeli military controlled the surrounding area."
+      "q": "What was the main objective of Israel's 1982 invasion of Lebanon?",
+      "a": "To destroy the PLO's military infrastructure in Lebanon and expel Yasser Arafat's forces from the country."
     },
     {
-      q: "What event triggered the outbreak of the First Intifada in Gaza in December 1987?",
-      a: "An Israeli military transport vehicle crashed into civilian cars, killing four Palestinian workers."
+      "q": "What consequence did the Sabra and Shatila massacres have on international opinion?",
+      "a": "It sparked global outrage and massive anti-war protests within Israel, deeply damaging the credibility of Defence Minister Ariel Sharon."
     },
     {
-      q: "What consequence did Yitzhak Rabin's 'Iron Fist' policy have on international public opinion?",
-      a: "It drew global criticism of Israel for excessive force, raising international sympathy for the Palestinian cause."
+      "q": "What was a major consequence of the PLO's expulsion to Tunis?",
+      "a": "The PLO lost its direct border access to Israel, diminishing its military capability and eventually pushing Arafat toward diplomacy."
     }
   ],
   "subtopic_3_3": [
     {
-      q: "Why was the Madrid Conference convened in October 1991 following the Gulf War?",
-      a: "To initiate the first face-to-face peace negotiations between Israel, Syria, Lebanon, Jordan, and a joint Jordanian-Palestinian delegation."
+      "q": "What event triggered the outbreak of the First Intifada in Gaza in December 1987?",
+      "a": "An Israeli military transport vehicle crashed into civilian cars, killing four Palestinian workers."
     },
     {
-      q: "What key agreements were established in the Oslo I Accords in September 1993?",
-      a: "Mutual recognition between Israel and the PLO, and the creation of the Palestinian Authority to manage self-rule in Gaza and Jericho."
+      "q": "What consequence did Yitzhak Rabin's 'Iron Fist' policy have on international public opinion?",
+      "a": "It drew global criticism of Israel for using excessive force against unarmed protestors, raising sympathy for the Palestinian cause."
     },
     {
-      q: "What was the significance of the October 1994 peace treaty between Israel and Jordan?",
-      a: "Jordan became the second Arab nation to officially sign a peace treaty and normalize diplomatic relations with Israel."
+      "q": "What key agreements were established in the Oslo I Accords in September 1993?",
+      "a": "Mutual recognition between Israel and the PLO, and the creation of the Palestinian Authority to manage self-rule in Gaza and Jericho."
     },
     {
-      q: "What consequence did the assassination of Yitzhak Rabin (November 1995) have on the peace process?",
-      a: "It shattered Israeli political unity, derailed the momentum of the Oslo peace process, and led to the election of right-wing opposition."
+      "q": "What consequence did the assassination of Yitzhak Rabin (November 1995) have on the peace process?",
+      "a": "It shattered Israeli political unity, derailed the momentum of the Oslo peace process, and led to the election of right-wing opposition."
     }
   ]
 };
-
 const TIMELINE_KEYWORDS = {
   "subtopic_1_1": [
     "Holocaust survivors", "diplomatic pressure", "Bevin", "1,500",
@@ -2805,15 +2804,25 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
 
   const detailsHtml = '';
 
-  const quizSubtopicData = QUIZ_DATA.flatMap(t => t.subtopics).find(s => s.id === subtopicId) || { easy: [], medium: [], difficult: [] };
-  const allQuizQs = [...(quizSubtopicData.easy || []), ...(quizSubtopicData.medium || [])];
-  const shuffledQs = [...allQuizQs].sort(() => 0.5 - Math.random());
-  const retrievalPrompts = shuffledQs.slice(0, 5).map(q => ({ q: q.question, a: q.answer }));
+  const lessonData = LESSONS_DATA[subtopicId];
+  let retrievalTitle = "✏️ Quick-Fire Retrieval Questions";
+  let retrievalPrompts = [];
+  
+  if (lessonData && lessonData.do_now && lessonData.do_now.items && lessonData.do_now.items.length > 0) {
+    retrievalTitle = "✏️ Do Now: Recall from Previous Lesson";
+    retrievalPrompts = lessonData.do_now.items.map(q => ({ q: q.question || q, a: q.answer || '' }));
+  } else {
+    const quizSubtopicData = QUIZ_DATA.flatMap(t => t.subtopics).find(s => s.id === subtopicId) || { easy: [], medium: [], difficult: [] };
+    const allQuizQs = [...(quizSubtopicData.easy || []), ...(quizSubtopicData.medium || [])];
+    const shuffledQs = [...allQuizQs].sort(() => 0.5 - Math.random());
+    retrievalPrompts = shuffledQs.slice(0, 5).map(q => ({ q: q.question, a: q.answer }));
+  }
+
   let retrievalQuestionsHtml = '';
   if (retrievalPrompts.length > 0) {
     retrievalQuestionsHtml = `
       <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
-        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Quick-Fire Retrieval Questions</strong>
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">${retrievalTitle}</strong>
         <div style="display: flex; flex-direction: column; gap: 6px;">
           ${retrievalPrompts.map((p, idx) => {
             const answerArea = includeAnswers 
@@ -3063,15 +3072,7 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
 
     // Page 2: Timeline Analysis (identical to Level 9 page 2 of 'timeline' style)
     const prompts = TIMELINE_WORKSHEET_PROMPTS[subtopicId] || [];
-    const dummyGridRow = `
-      <tr style="height: 0px; line-height: 0px; font-size: 0px;">
-        <td width="42%" style="width: 42%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="8%" style="width: 8%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="8%" style="width: 8%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="42%" style="width: 42%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-      </tr>
-    `;
-    let tableRowsL9 = dummyGridRow;
+    let tableRowsL9 = "";
     data.timeline.forEach((event, idx) => {
       const prompt = prompts[idx] || { q: "Connection question not found", a: "" };
       
@@ -3082,47 +3083,19 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
            <div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
            <div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>`;
            
-      const questionBox = `
-        <div class="timeline-box" style="border: 1px solid #000000; border-radius: 4px; padding: 8px 10px; background: #ffffff; min-height: 90px; box-sizing: border-box;">
-          <span style="font-size: 9pt; line-height: 1.35; display: block; color: #000000; font-weight: bold; margin-bottom: 4px;">
-            ${prompt.q}
-          </span>
-          ${answerArea}
+      tableRowsL9 += `
+        <div style="margin-bottom: 20px; page-break-inside: avoid; clear: both;">
+          <div style="background: #111827; color: #ffffff; padding: 4px 10px; border-radius: 4px 4px 0 0; font-size: 8.5pt; font-weight: bold; display: inline-block;">
+            ${event.date}
+          </div>
+          <div class="timeline-box" style="border: 2px solid #111827; border-top: none; border-radius: 0 4px 4px 4px; padding: 12px; background: #ffffff; box-sizing: border-box; width: 100%;">
+            <span style="font-size: 9.5pt; line-height: 1.4; display: block; color: #111827; font-weight: bold; margin-bottom: 8px;">
+              ${prompt.q}
+            </span>
+            ${answerArea}
+          </div>
         </div>
       `;
-      
-      const isLeft = idx % 2 === 0;
-      const leftContent = isLeft ? questionBox : '&nbsp;';
-      const rightContent = isLeft ? '&nbsp;' : questionBox;
-      
-      tableRowsL9 += `
-        <tr>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-          <td colspan="2" width="16%" style="width: 16%; text-align: center; vertical-align: middle; padding: 4px 0;">
-            <div style="background: #000000; color: #ffffff; padding: 3px 6px; border-radius: 4px; font-size: 8.3pt; font-weight: bold; display: inline-block; white-space: nowrap;">
-              ${event.date}
-            </div>
-          </td>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-        </tr>
-        <tr height="90" style="height: 90px;">
-          <td width="42%" style="width: 42%; vertical-align: top;">${leftContent}</td>
-          <td width="8%" style="width: 8%; border-right: 2px solid #000000;">&nbsp;</td>
-          <td width="8%" style="width: 8%;">&nbsp;</td>
-          <td width="42%" style="width: 42%; vertical-align: top;">${rightContent}</td>
-        </tr>
-      `;
-      
-      if (idx < data.timeline.length - 1) {
-        tableRowsL9 += `
-          <tr style="height: 12px; font-size: 1px; line-height: 1px;">
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; border-right: 2px solid #000000; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-          </tr>
-        `;
-      }
     });
 
     html += `
@@ -3158,17 +3131,9 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
           Topic ${topicName}: ${cleanTitle}${includeAnswers ? ' (Teacher Answer Key)' : ''}
         </h3>
         
-        <table class="timeline-recall-table" style="width: 100%; border-collapse: collapse; margin-top: 5px; table-layout: fixed;">
-          <colgroup>
-            <col width="42%" style="width: 42%;">
-            <col width="8%" style="width: 8%;">
-            <col width="8%" style="width: 8%;">
-            <col width="42%" style="width: 42%;">
-          </colgroup>
-          <tbody>
+        <div class="timeline-recall-container" style="margin-top: 15px; width: 100%;">
             ${tableRowsL9}
-          </tbody>
-        </table>
+        </div>
       </div>
     `;
 
@@ -3230,7 +3195,7 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
       const firstPageSpecHtml = qNum === 0 ? specBoxHtml : '';
       html += `
         <div class="${isQuestionLast ? 'print-page-last' : 'print-page'}">
-          <div class="main-title">Topic ${topicName}: ${cleanTitle}</div>
+          <div class="main-title">GCSE Exam Practice &bull; Topic ${topicName}: ${cleanTitle}</div>
           ${firstPageSpecHtml}
           <div style="font-size: 12.5pt; font-weight: bold; margin-bottom: 15px; border-bottom: 1.5px solid #000000; padding-bottom: 4px;">
             Question ${qNum + 1} [${marks} Marks]
@@ -3292,15 +3257,7 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
     const scrambledWordBank = uniqueBlanked.sort(() => Math.random() - 0.5);
     
     // --- PAGE 1: LEVEL 4 SUPPORT ---
-    const dummyGridRow = `
-      <tr style="height: 0px; line-height: 0px; font-size: 0px;">
-        <td width="42%" style="width: 42%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="8%" style="width: 8%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="8%" style="width: 8%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-        <td width="42%" style="width: 42%; height: 0px; padding: 0; margin: 0; border: 0;">&nbsp;</td>
-      </tr>
-    `;
-    let tableRowsL4 = dummyGridRow;
+    let tableRowsL4 = "";
     processedEvents.forEach((event, idx) => {
       const prompt = prompts[idx] || { q: "Connection question not found", a: "" };
       const descText = includeAnswers ? event.teacherText : event.studentText;
@@ -3310,57 +3267,26 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
         : `<div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
            <div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>`;
            
-      const recallBox = `
-        <div class="timeline-box" style="border: 1px solid #9ca3af; border-radius: 4px; padding: 6px 8px; background: #ffffff; min-height: 55px; box-sizing: border-box;">
-          <strong style="font-size: 9pt; color: #000000; text-transform: uppercase; display: block; margin-bottom: 2px;">Active Recall</strong>
-          <span style="font-size: 9pt; line-height: 1.35; display: block; color: #000000;">
-            ${descText}
-          </span>
-        </div>
-      `;
-      
-      const taskBox = `
-        <div class="timeline-box" style="border: 1px solid #000000; border-radius: 4px; padding: 6px 8px; background: #f9fafb; min-height: 55px; box-sizing: border-box;">
-          <strong style="font-size: 9pt; color: #000000; text-transform: uppercase; display: block; margin-bottom: 2px;">Guided Task</strong>
-          <span style="font-size: 8.7pt; line-height: 1.25; display: block; color: #000000; font-weight: bold; margin-bottom: 3px;">
-            ${prompt.q}
-          </span>
-          ${answerArea}
-        </div>
-      `;
-      
-      const isLeftRecall = idx % 2 === 0;
-      const leftContent = isLeftRecall ? recallBox : taskBox;
-      const rightContent = isLeftRecall ? taskBox : recallBox;
-      
       tableRowsL4 += `
-        <tr>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-          <td colspan="2" width="16%" style="width: 16%; text-align: center; vertical-align: middle; padding: 4px 0;">
-            <div style="background: #000000; color: #ffffff; padding: 3px 6px; border-radius: 4px; font-size: 8.3pt; font-weight: bold; display: inline-block; white-space: nowrap;">
-              ${event.date}
+        <div style="margin-bottom: 20px; page-break-inside: avoid; clear: both;">
+          <div style="background: #111827; color: #ffffff; padding: 4px 10px; border-radius: 4px 4px 0 0; font-size: 8.5pt; font-weight: bold; display: inline-block;">
+            ${event.date}
+          </div>
+          <div class="timeline-box" style="border: 2px solid #111827; border-top: none; border-radius: 0 4px 4px 4px; padding: 12px; background: #ffffff; box-sizing: border-box; width: 100%;">
+            <div style="background: #f3f4f6; border-left: 4px solid #6b7280; padding: 8px; margin-bottom: 10px; border-radius: 2px;">
+              <span style="font-size: 9pt; line-height: 1.35; display: block; color: #111827; margin-bottom: 2px;">
+                ${descText}
+              </span>
             </div>
-          </td>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-        </tr>
-        <tr height="55" style="height: 55px;">
-          <td width="42%" style="width: 42%; vertical-align: top;">${leftContent}</td>
-          <td width="8%" style="width: 8%; border-right: 2px solid #000000;">&nbsp;</td>
-          <td width="8%" style="width: 8%;">&nbsp;</td>
-          <td width="42%" style="width: 42%; vertical-align: top;">${rightContent}</td>
-        </tr>
+            <div style="padding-top: 5px;">
+              <span style="font-size: 9.5pt; line-height: 1.35; display: block; color: #111827; font-weight: bold; margin-bottom: 4px;">
+                ${prompt.q}
+              </span>
+              ${answerArea}
+            </div>
+          </div>
+        </div>
       `;
-      
-      if (idx < processedEvents.length - 1) {
-        tableRowsL4 += `
-          <tr style="height: 12px; font-size: 1px; line-height: 1px;">
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; border-right: 2px solid #000000; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-          </tr>
-        `;
-      }
     });
 
     const vocabSpotlight = `
@@ -3386,7 +3312,7 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
     const pageTitleL4 = includeAnswers ? 'Teacher Answer Key &bull; ' : '';
 
     // --- PAGE 2: LEVEL 9 CHALLENGE ---
-    let tableRowsL9 = dummyGridRow;
+    let tableRowsL9 = "";
     processedEvents.forEach((event, idx) => {
       const prompt = prompts[idx] || { q: "Connection question not found", a: "" };
       
@@ -3397,47 +3323,19 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
            <div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
            <div style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>`;
            
-      const questionBox = `
-        <div class="timeline-box" style="border: 1px solid #000000; border-radius: 4px; padding: 8px 10px; background: #ffffff; min-height: 90px; box-sizing: border-box;">
-          <span style="font-size: 9pt; line-height: 1.35; display: block; color: #000000; font-weight: bold; margin-bottom: 4px;">
-            ${prompt.q}
-          </span>
-          ${answerArea}
+      tableRowsL9 += `
+        <div style="margin-bottom: 20px; page-break-inside: avoid; clear: both;">
+          <div style="background: #111827; color: #ffffff; padding: 4px 10px; border-radius: 4px 4px 0 0; font-size: 8.5pt; font-weight: bold; display: inline-block;">
+            ${event.date}
+          </div>
+          <div class="timeline-box" style="border: 2px solid #111827; border-top: none; border-radius: 0 4px 4px 4px; padding: 12px; background: #ffffff; box-sizing: border-box; width: 100%;">
+            <span style="font-size: 9.5pt; line-height: 1.4; display: block; color: #111827; font-weight: bold; margin-bottom: 8px;">
+              ${prompt.q}
+            </span>
+            ${answerArea}
+          </div>
         </div>
       `;
-      
-      const isLeft = idx % 2 === 0;
-      const leftContent = isLeft ? questionBox : '&nbsp;';
-      const rightContent = isLeft ? '&nbsp;' : questionBox;
-      
-      tableRowsL9 += `
-        <tr>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-          <td colspan="2" width="16%" style="width: 16%; text-align: center; vertical-align: middle; padding: 4px 0;">
-            <div style="background: #000000; color: #ffffff; padding: 3px 6px; border-radius: 4px; font-size: 8.3pt; font-weight: bold; display: inline-block; white-space: nowrap;">
-              ${event.date}
-            </div>
-          </td>
-          <td width="42%" style="width: 42%;">&nbsp;</td>
-        </tr>
-        <tr height="90" style="height: 90px;">
-          <td width="42%" style="width: 42%; vertical-align: top;">${leftContent}</td>
-          <td width="8%" style="width: 8%; border-right: 2px solid #000000;">&nbsp;</td>
-          <td width="8%" style="width: 8%;">&nbsp;</td>
-          <td width="42%" style="width: 42%; vertical-align: top;">${rightContent}</td>
-        </tr>
-      `;
-      
-      if (idx < processedEvents.length - 1) {
-        tableRowsL9 += `
-          <tr style="height: 12px; font-size: 1px; line-height: 1px;">
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; border-right: 2px solid #000000; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="8%" style="width: 8%; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
-            <td width="42%" style="width: 42%; font-size: 1px; line-height: 1px;">&nbsp;</td>
-          </tr>
-        `;
-      }
     });
 
 
@@ -3448,17 +3346,9 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
         ${specBoxHtml}
         ${vocabSpotlight}
         
-        <table class="timeline-recall-table" style="width: 100%; border-collapse: collapse; margin-top: 5px; table-layout: fixed;">
-          <colgroup>
-            <col width="42%" style="width: 42%;">
-            <col width="8%" style="width: 8%;">
-            <col width="8%" style="width: 8%;">
-            <col width="42%" style="width: 42%;">
-          </colgroup>
-          <tbody>
+        <div class="timeline-recall-container" style="margin-top: 15px; width: 100%;">
             ${tableRowsL4}
-          </tbody>
-        </table>
+        </div>
         
         ${wordBankHtml}
         ${retrievalQuestionsHtml}
@@ -3470,19 +3360,75 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
           Topic ${topicName}: ${cleanTitle}${includeAnswers ? ' (Teacher Answer Key)' : ''}
         </h3>
         
-        <table class="timeline-recall-table" style="width: 100%; border-collapse: collapse; margin-top: 5px; table-layout: fixed;">
-          <colgroup>
-            <col width="42%" style="width: 42%;">
-            <col width="8%" style="width: 8%;">
-            <col width="8%" style="width: 8%;">
-            <col width="42%" style="width: 42%;">
-          </colgroup>
-          <tbody>
+        <div class="timeline-recall-container" style="margin-top: 15px; width: 100%;">
             ${tableRowsL9}
+        </div>
+      </div>
+    `;
+  } else if (style === 'cornell') {
+    const linesCount = density === 'compact' ? 5 : 8;
+    const makeDottedLines = (count) => Array(count).fill('<div class="dotted-writing-line"></div>').join('');
+    
+    const fillNote = (ans) => {
+      if (includeAnswers) {
+        return `<div style="font-size: 9.5pt; color: #16a34a; font-style: italic; padding: 5px 0;"><strong>Model Notes:</strong> ${ans}</div>`;
+      } else {
+        return makeDottedLines(linesCount);
+      }
+    };
+
+    const cues = data.cornell ? data.cornell.cues : data.narrative.map(sec => ({
+       title: sec.title,
+       subCues: [],
+       modelNotes: sec.paragraphs.join('<br><br>')
+    }));
+
+    const renderCueRow = (cue, idx) => {
+      return `
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            ${cue.title}
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            ${fillNote(cue.modelNotes)}
+          </td>
+        </tr>
+      `;
+    };
+    
+    const midPoint = Math.ceil(cues.length / 2);
+    const page1Cues = cues.slice(0, midPoint);
+    const page2Cues = cues.slice(midPoint);
+
+    html += `
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic ${topicName}: ${cleanTitle}</h2>
+        ${specBoxHtml}
+        ${retrievalQuestionsHtml}
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            ${page1Cues.map((cue, idx) => renderCueRow(cue, idx)).join('')}
           </tbody>
         </table>
       </div>
     `;
+    
+    if (page2Cues.length > 0) {
+      html += `
+        <div class="print-page-last">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              ${page2Cues.map((cue, idx) => renderCueRow(cue, idx + midPoint)).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
   } else if (style === 'quiz') {
     const subtopicData = QUIZ_DATA.flatMap(t => t.subtopics).find(s => s.id === subtopicId) || { easy: [], medium: [], difficult: [] };
     const easyQs = subtopicData.easy || [];
