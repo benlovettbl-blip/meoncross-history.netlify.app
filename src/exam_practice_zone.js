@@ -98,28 +98,39 @@ export function renderExamPracticeZone(container, unitData) {
         <button id="epz-back-btn" class="main-btn epz-btn" style="background: #f1f5f9; color: #475569; padding: 10px 20px; font-size: 1.05rem; border: 1px solid #e2e8f0; border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i> Back to Hub</button>
       </div>
       
-      <div style="display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-end; flex-wrap: wrap; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
-        <div style="flex: 1; min-width: 250px;">
-          <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-layer-group"></i> Target Key Topic:</label>
-          <select id="epz-topic-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-            <option value="all">🌍 All Topics</option>
-            <option value="kt1">📖 Key Topic 1</option>
-            <option value="kt2">📖 Key Topic 2</option>
-            <option value="kt3">📖 Key Topic 3</option>
-          </select>
+      <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 35px; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-layer-group"></i> Target Key Topic:</label>
+            <select id="epz-topic-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+              <option value="all">🌍 All Topics</option>
+              <option value="kt1">📖 Key Topic 1</option>
+              <option value="kt2">📖 Key Topic 2</option>
+              <option value="kt3">📖 Key Topic 3</option>
+            </select>
+          </div>
+          <div style="flex: 1; min-width: 200px;">
+            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
+            <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+              <option value="all">🎲 Surprise Me! (All Question Types)</option>
+              <option value="importance_8">🎯 8-Mark Explain the Importance</option>
+              <option value="narrative_8">📜 8-Mark Analytical Narrative</option>
+              <option value="consequence_4">⚡ 4-Mark Consequences</option>
+            </select>
+          </div>
         </div>
-        <div style="flex: 1; min-width: 250px;">
-          <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
-          <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-            <option value="all">🎲 Surprise Me! (All Question Types)</option>
-            <option value="importance_8">🎯 8-Mark Explain the Importance</option>
-            <option value="narrative_8">📜 8-Mark Analytical Narrative</option>
-            <option value="consequence_4">⚡ 4-Mark Consequences</option>
-          </select>
+        
+        <div style="display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px;">
+            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-bullseye"></i> Target Specific Question:</label>
+            <select id="epz-specific-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+              <option value="random">🎲 Random Question (From Filters Above)</option>
+            </select>
+          </div>
+          <button id="epz-generate-btn" class="main-btn epz-btn" style="background: linear-gradient(135deg, #3b82f6, #4f46e5); color: white; padding: 14px 28px; font-size: 1.15rem; flex-shrink: 0; border: none; border-radius: 10px; font-weight: 600;">
+            <i class="fa-solid fa-bolt"></i> Generate Question
+          </button>
         </div>
-        <button id="epz-generate-btn" class="main-btn epz-btn" style="background: linear-gradient(135deg, #3b82f6, #4f46e5); color: white; padding: 14px 28px; font-size: 1.15rem; flex-shrink: 0; border: none; border-radius: 10px; font-weight: 600;">
-          <i class="fa-solid fa-bolt"></i> Generate Question
-        </button>
       </div>
 
       <div id="epz-question-display" style="display: none;" class="epz-card">
@@ -157,6 +168,7 @@ export function renderExamPracticeZone(container, unitData) {
   // 4. Elements
   const typeFilter = document.getElementById('epz-type-filter');
   const topicFilter = document.getElementById('epz-topic-filter');
+  const specificFilter = document.getElementById('epz-specific-filter');
   const generateBtn = document.getElementById('epz-generate-btn');
   const backBtn = document.getElementById('epz-back-btn');
   const displayArea = document.getElementById('epz-question-display');
@@ -210,6 +222,52 @@ export function renderExamPracticeZone(container, unitData) {
     clearInterval(timerInterval);
   };
 
+  const populateSpecificQuestions = () => {
+    const selectedType = typeFilter.value;
+    const selectedTopic = topicFilter ? topicFilter.value : 'all';
+    let filteredBank = examBank;
+    
+    if (selectedType !== 'all') {
+      filteredBank = filteredBank.filter(q => q.type === selectedType);
+    }
+    
+    if (selectedTopic !== 'all') {
+      if (selectedTopic === 'kt1') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
+      } else if (selectedTopic === 'kt2') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
+      } else if (selectedTopic === 'kt3') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
+      }
+    }
+
+    // Preserve current selection if it still exists
+    const currentVal = specificFilter.value;
+    
+    let html = '<option value="random">🎲 Random Question (From Filters Above)</option>';
+    filteredBank.forEach((q) => {
+        // Find the index in the ORIGINAL examBank array to use as the value
+        const originalIndex = examBank.indexOf(q);
+        let typeIcon = "📄";
+        if (q.type === "importance_8") typeIcon = "🎯";
+        if (q.type === "narrative_8") typeIcon = "📜";
+        if (q.type === "consequence_4") typeIcon = "⚡";
+        
+        let truncatedText = q.text.length > 75 ? q.text.substring(0, 75) + "..." : q.text;
+        html += `<option value="${originalIndex}">${typeIcon} Q: ${truncatedText}</option>`;
+    });
+    
+    specificFilter.innerHTML = html;
+    
+    // Attempt to re-select
+    if (currentVal !== "random") {
+      let optionExists = Array.from(specificFilter.options).some(opt => opt.value === currentVal);
+      if (optionExists) {
+          specificFilter.value = currentVal;
+      }
+    }
+  };
+
   // Interactions
   backBtn.addEventListener('click', () => {
     stopTimer();
@@ -232,33 +290,42 @@ export function renderExamPracticeZone(container, unitData) {
     wagollPanel.style.display = wagollPanel.style.display === 'none' ? 'block' : 'none';
   });
 
-  generateBtn.addEventListener('click', () => {
-    const selectedType = typeFilter.value;
-    const selectedTopic = topicFilter ? topicFilter.value : 'all';
-    let filteredBank = examBank;
-    
-    if (selectedType !== 'all') {
-      filteredBank = filteredBank.filter(q => q.type === selectedType);
-    }
-    
-    if (selectedTopic !== 'all') {
-      if (selectedTopic === 'kt1') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
-      } else if (selectedTopic === 'kt2') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
-      } else if (selectedTopic === 'kt3') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
-      }
-    }
-    
-    if (filteredBank.length === 0) {
-      alert("No questions found for this filter.");
-      return;
-    }
+  typeFilter.addEventListener('change', populateSpecificQuestions);
+  if (topicFilter) topicFilter.addEventListener('change', populateSpecificQuestions);
 
-    // Pick random
-    const randIndex = Math.floor(Math.random() * filteredBank.length);
-    currentQuestion = filteredBank[randIndex];
+  generateBtn.addEventListener('click', () => {
+    const selectedSpecific = specificFilter ? specificFilter.value : 'random';
+    
+    if (selectedSpecific !== 'random') {
+      currentQuestion = examBank[parseInt(selectedSpecific)];
+    } else {
+      const selectedType = typeFilter.value;
+      const selectedTopic = topicFilter ? topicFilter.value : 'all';
+      let filteredBank = examBank;
+      
+      if (selectedType !== 'all') {
+        filteredBank = filteredBank.filter(q => q.type === selectedType);
+      }
+      
+      if (selectedTopic !== 'all') {
+        if (selectedTopic === 'kt1') {
+          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
+        } else if (selectedTopic === 'kt2') {
+          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
+        } else if (selectedTopic === 'kt3') {
+          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
+        }
+      }
+      
+      if (filteredBank.length === 0) {
+        alert("No questions found for this filter.");
+        return;
+      }
+
+      // Pick random
+      const randIndex = Math.floor(Math.random() * filteredBank.length);
+      currentQuestion = filteredBank[randIndex];
+    }
     
     // Reset UI
     stopTimer();
@@ -338,4 +405,6 @@ export function renderExamPracticeZone(container, unitData) {
     displayArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
+  // Initialize specific questions list on load
+  populateSpecificQuestions();
 }
