@@ -42,16 +42,16 @@ export function renderRevisionZone(container, unitData) {
 
   // 2. Build the UI wrapper
   container.innerHTML = `
-    <div style="max-width: 800px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 4px solid #1e3a8a;">
+    <div style="max-width: 800px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 25px 35px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 4px solid #1e3a8a;">
       <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #1e3a8a; margin-top: 0; margin-bottom: 10px;"><i class="fa-solid fa-gamepad"></i> Revision Zone</h1>
-      <p style="font-size: 1.2rem; color: #475569; margin-bottom: 30px;">Test your knowledge! You will face 10 random questions from across the entire unit. Can you achieve the rank of History Master?</p>
+      <p style="font-size: 1.2rem; color: #475569; margin-bottom: 20px;">Test your knowledge! You will face 10 random questions from across the entire unit. Can you achieve the rank of History Master?</p>
       
-      <div id="game-dashboard" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 1.5rem; font-weight: bold;">
+      <div id="game-dashboard" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 1.5rem; font-weight: bold;">
         <div style="color: #1e3a8a;"><i class="fa-solid fa-star"></i> Score: <span id="game-score">0</span></div>
         <div style="color: #047857;"><i class="fa-solid fa-list-ol"></i> Question: <span id="game-qnum">1</span>/10</div>
       </div>
 
-      <div id="game-card" style="display: none; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; font-size: 1.6rem; color: #0f172a; font-weight: 600; min-height: 150px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 4px 6px rgba(0,0,0,0.05); transition: background 0.3s;">
+      <div id="game-card" style="display: none; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 25px 20px; margin-bottom: 20px; font-size: 1.4rem; color: #0f172a; font-weight: 600; min-height: 100px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 4px 6px rgba(0,0,0,0.05); transition: background 0.3s;">
         <!-- Question goes here -->
       </div>
 
@@ -141,8 +141,8 @@ export function renderRevisionZone(container, unitData) {
     options.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'btn btn-secondary';
-      btn.style.padding = '20px';
-      btn.style.fontSize = '1.1rem';
+      btn.style.padding = '15px';
+      btn.style.fontSize = '1rem';
       btn.style.lineHeight = '1.4';
       btn.style.borderRadius = '8px';
       btn.style.height = '100%';
