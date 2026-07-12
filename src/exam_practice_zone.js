@@ -24,49 +24,115 @@ export function renderExamPracticeZone(container, unitData) {
 
   // 2. Build the UI wrapper
   container.innerHTML = `
-    <div style="max-width: 900px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 6px solid #1e3a8a;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 20px; margin-bottom: 30px;">
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1e3a8a; margin: 0;">
-          <i class="fa-solid fa-graduation-cap"></i> Exam Practice Zone
+    <style>
+      @keyframes slideUpFade {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .epz-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.4);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.05);
+        animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        position: relative;
+        overflow: hidden;
+      }
+      .epz-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 6px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+      }
+      .epz-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .epz-btn {
+        transition: all 0.2s ease;
+        transform: translateY(0);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .epz-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        filter: brightness(1.05);
+      }
+      .epz-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .epz-select {
+        transition: all 0.3s ease;
+      }
+      .epz-select:focus {
+        outline: none;
+        border-color: #8b5cf6 !important;
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+      }
+      .epz-card {
+        background: rgba(248, 250, 252, 0.9);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        border-radius: 16px;
+        padding: 35px;
+        box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 4px 6px rgba(0,0,0,0.02);
+        animation: slideUpFade 0.5s ease forwards;
+      }
+    </style>
+    <div class="epz-wrapper">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(241, 245, 249, 0.8); padding-bottom: 25px; margin-bottom: 30px;">
+        <h1 class="epz-title">
+          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Exam Practice Zone
         </h1>
-        <button id="epz-back-btn" class="main-btn" style="background: #e2e8f0; color: #475569; padding: 8px 16px; font-size: 1rem;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <button id="epz-back-btn" class="main-btn epz-btn" style="background: #f1f5f9; color: #475569; padding: 10px 20px; font-size: 1.05rem; border: 1px solid #e2e8f0; border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i> Back to Hub</button>
       </div>
       
-      <div style="display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-end; flex-wrap: wrap;">
+      <div style="display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-end; flex-wrap: wrap; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
         <div style="flex: 1; min-width: 250px;">
-          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #334155;">Filter by Question Type:</label>
-          <select id="epz-type-filter" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #cbd5e1; font-size: 1.1rem; background: #f8fafc;">
-            <option value="all">All Question Types</option>
-            <option value="importance_8">8-Mark Importance</option>
-            <option value="narrative_8">8-Mark Narrative Account</option>
-            <option value="consequence_4">4-Mark Consequences</option>
+          <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
+          <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+            <option value="all">🎲 Surprise Me! (All Question Types)</option>
+            <option value="importance_8">🎯 8-Mark Explain the Importance</option>
+            <option value="narrative_8">📜 8-Mark Analytical Narrative</option>
+            <option value="consequence_4">⚡ 4-Mark Consequences</option>
           </select>
         </div>
-        <button id="epz-generate-btn" class="main-btn" style="background: #2563eb; color: white; padding: 12px 24px; font-size: 1.1rem; flex-shrink: 0;">
-          <i class="fa-solid fa-dice"></i> Generate Random Question
+        <button id="epz-generate-btn" class="main-btn epz-btn" style="background: linear-gradient(135deg, #3b82f6, #4f46e5); color: white; padding: 14px 28px; font-size: 1.15rem; flex-shrink: 0; border: none; border-radius: 10px; font-weight: 600;">
+          <i class="fa-solid fa-bolt"></i> Generate Question
         </button>
       </div>
 
-      <div id="epz-question-display" style="display: none; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 30px; position: relative;">
+      <div id="epz-question-display" style="display: none;" class="epz-card">
         
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-          <div id="epz-q-meta" style="font-size: 0.9rem; font-weight: bold; color: #64748b; text-transform: uppercase; letter-spacing: 1px;"></div>
-          <div id="epz-timer-container" style="display: flex; align-items: center; gap: 10px; background: #1e293b; color: white; padding: 8px 16px; border-radius: 20px; font-family: monospace; font-size: 1.2rem; font-weight: bold;">
-            <i class="fa-solid fa-stopwatch"></i> <span id="epz-timer-display">00:00</span>
-            <button id="epz-timer-toggle" style="background: none; border: none; color: white; cursor: pointer; padding: 0 5px;"><i class="fa-solid fa-play"></i></button>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
+          <div id="epz-q-meta" style="font-size: 0.95rem; font-weight: 800; color: #6366f1; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(99, 102, 241, 0.1); padding: 6px 12px; border-radius: 8px;"></div>
+          <div id="epz-timer-container" style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 10px 20px; border-radius: 25px; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fa-solid fa-stopwatch" style="color: #38bdf8;"></i> <span id="epz-timer-display" style="letter-spacing: 2px;">00:00</span>
+            <button id="epz-timer-toggle" style="background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 50%; transition: background 0.2s;"><i class="fa-solid fa-play"></i></button>
           </div>
         </div>
 
-        <h2 id="epz-q-text" style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #0f172a; margin-top: 0; line-height: 1.4;"></h2>
-        <div id="epz-q-stimulus" style="font-size: 1.1rem; color: #475569; margin-top: 15px; font-style: italic;"></div>
+        <h2 id="epz-q-text" style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #0f172a; margin-top: 0; line-height: 1.3; font-weight: 700;"></h2>
+        <div id="epz-q-stimulus" style="font-size: 1.2rem; color: #475569; margin-top: 20px; font-style: italic; background: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px; border-left: 4px solid #cbd5e1;"></div>
 
-        <div style="margin-top: 30px; display: flex; gap: 10px;">
-          <button id="epz-hint-btn" class="main-btn" style="display: none; background: #f59e0b; color: white; padding: 8px 16px; font-size: 1rem;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
-          <button id="epz-wagoll-btn" class="main-btn" style="display: none; background: #10b981; color: white; padding: 8px 16px; font-size: 1rem;"><i class="fa-solid fa-star"></i> Show WAGOLL (Grade 9 Model)</button>
+        <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
+          <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
+          <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Grade 9 WAGOLL</button>
         </div>
 
-        <div id="epz-hint-panel" style="display: none; margin-top: 20px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; font-size: 1.1rem; color: #92400e;"></div>
-        <div id="epz-wagoll-panel" style="display: none; margin-top: 20px; padding: 25px; background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 0 8px 8px 0; font-size: 1.1rem; color: #065f46; line-height: 1.6; white-space: pre-wrap;"></div>
+        <div id="epz-hint-panel" style="display: none; margin-top: 25px; padding: 25px; background: linear-gradient(to right, #fffbeb, #fef3c7); border-left: 5px solid #f59e0b; border-radius: 0 12px 12px 0; font-size: 1.15rem; color: #92400e; box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1);"></div>
+        <div id="epz-wagoll-panel" style="display: none; margin-top: 25px; padding: 30px; background: linear-gradient(to right, #ecfdf5, #d1fae5); border-left: 5px solid #10b981; border-radius: 0 12px 12px 0; font-size: 1.15rem; color: #065f46; line-height: 1.8; white-space: pre-wrap; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);"></div>
 
       </div>
       
@@ -190,7 +256,7 @@ export function renderExamPracticeZone(container, unitData) {
     
     // Stimulus points for narrative
     if (currentQuestion.hint) {
-      const points = currentQuestion.hint.split('n').map(p => p.trim()).filter(p => p);
+      const points = currentQuestion.hint.split('\n').map(p => p.trim()).filter(p => p);
       qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
       
       // We will use the stimulus as the structural hint
@@ -212,7 +278,7 @@ export function renderExamPracticeZone(container, unitData) {
     if (currentQuestion.wagoll) {
       wagollBtn.style.display = 'block';
       // Format markdown bold
-      const formattedWagoll = currentQuestion.wagoll.replace(/**(.*?)**/g, '<strong>$1</strong>');
+      const formattedWagoll = currentQuestion.wagoll.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       wagollPanel.innerHTML = `<strong>Grade 9 Model Answer (WAGOLL):</strong><br><br>${formattedWagoll}`;
     } else {
       wagollBtn.style.display = 'none';

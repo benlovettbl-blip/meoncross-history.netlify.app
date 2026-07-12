@@ -330,6 +330,30 @@ const timelinesMap = {
   }
 });
 
+// Append Exam Practice Zone
+if (unitData.exam_blocks && unitData.exam_blocks.length > 0) {
+  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">Exam Practice Zone</h2>`;
+  
+  unitData.exam_blocks.forEach(block => {
+    html += `<h3 style="font-size: 18pt; margin-top: 30px; margin-bottom: 20px; color: #1a237e;">${block.title}</h3>`;
+    
+    block.questions.forEach((q, idx) => {
+      html += `<div style="page-break-inside: avoid; margin-bottom: 40px; ${q.marks === 8 ? 'page-break-before: always;' : ''}">`;
+      html += `<div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">Q${idx + 1}. ${q.text}</div>`;
+      if (q.hint) {
+        html += `<div style="font-style: italic; font-size: 10pt; color: #555; margin-bottom: 10px;">You may use the following in your answer:<ul style="margin-top:5px;margin-bottom:5px;">${q.hint.split('\\n').map(h => `<li>${h.trim()}</li>`).join('')}</ul>You must also use information of your own.</div>`;
+      }
+      
+      // Add handwriting lines based on marks
+      const numLines = q.marks === 8 ? 24 : 10;
+      for (let i = 0; i < numLines; i++) {
+        html += `<div class="task-lines"></div>`;
+      }
+      html += `</div>`;
+    });
+  });
+}
+
 // Append Quiz Pack
 if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
