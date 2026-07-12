@@ -682,7 +682,7 @@ export const unitData = {
           "definition": "A Latin phrase meaning an act or event that directly provokes or is used to justify a formal declaration of war."
         }
       ],
-      "vocab_cloze_text": "In 1964, the Arab League established the [PLO (Palestine Liberation Organisation)] to unite the fragmented Palestinian resistance. However, a more radical group known as [Fatah] began dominating military activity by launching cross-border sabotage raids. As tensions escalated in May 1967, Egypt closed the Straits of Tiran—an act Israel considered a formal [Casus Belli]. Facing imminent invasion, Israel launched a devastating [Pre-emptive Strike] on 5 June, destroying the Arab air forces on the ground.",
+      "vocab_cloze_text": "In the 1960s, Palestinian nationalism grew stronger with the creation of the [PLO], an umbrella organization, and its dominant guerrilla faction, [Fatah]. Border tensions flared violently when Israel launched the [Samu Raid] into the West Bank in 1966. These escalating events eventually culminated in June 1967 when Israel launched [Operation Focus], a devastating pre-emptive air strike that wiped out the Arab air forces on the ground.",
       "learning_objective": "To understand the causes and immediate consequences of the Six Day War.",
       "learning_objectives": {
         "overarching": "To evaluate how border tensions and political brinkmanship led to the Six Day War.",
@@ -730,7 +730,6 @@ export const unitData = {
           "definition": "Pre-emptive Israeli air strike on 5 June 1967 that destroyed Arab air capabilities on the ground."
         }
       ],
-      "vocab_cloze_text": "In the 1960s, Palestinian nationalism grew stronger with the creation of the [PLO], an umbrella organization, and its dominant guerrilla faction, [Fatah]. Border tensions flared violently when Israel launched the [Samu Raid] into the West Bank in 1966. These escalating events eventually culminated in June 1967 when Israel launched [Operation Focus], a devastating pre-emptive air strike that wiped out the Arab air forces on the ground.",
       "narrative_blocks": [
         {
           "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2; margin-bottom: 20px;\">\n======================================================================================\n                  SPECIFICATION STUDY MAP: KEY TOPIC 2.1\n======================================================================================\n1. Palestinian Nationalism ➔ Cairo Conference (1964), creation of the PLO and Fatah.\n2. Border Wars & Skirmishes ➔ Disputes over Jordan water, Samu Raid (1966), 7 April 1967.\n3. The Slide to War (May '67) ➔ Soviet misinformation, UNEF withdrawal, closure of Tiran.\n4. The Six Day War ➔ June 5 pre-emptive strike, lightning land war, redrawn boundaries.\n======================================================================================\n</pre>",
@@ -1885,6 +1884,506 @@ export const unitData = {
         }
       ],
       "draw_tasks": []
+    }
+  ],
+  "exam_blocks": [
+    {
+      "block_id": 1,
+      "title": "Exam Block 1 (Key Topics 1.1 & 1.2)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the bombing of the King David Hotel (1946) for British attitudes to the Mandate in Palestine."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of UN Resolution 181 (1947) for the creation of the state of Israel."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Law of Return (1950) for the development of the state of Israel."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the bombing of the King David Hotel (1946)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of UN Resolution 181 (1947)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the territorial changes following the 1948–49 Arab-Israeli war."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Law of Return (1950)."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key developments in the Middle East in the years 1945–49.",
+          "hint": "Bombing of the King David Hotel (1946) \\n The Arab-Israeli War (1948–49)"
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the developments in the new State of Israel in the years 1948–54.",
+          "hint": "Territory \\n The Law of Return (1950)"
+        }
+      ]
+    },
+    {
+      "block_id": 2,
+      "title": "Exam Block 2 (Key Topics 1.2 & 1.3)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the creation of the Israeli Defence Forces (IDF) (1948) for the protection of the state of Israel in the years 1948–49."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of Gamal Abdel Nasser for tension in the Middle East in the years 1955–63."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Suez Crisis (1956) for the strategic security of Israel."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Czech Arms Deal (1955)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the nationalisation of the Suez Canal (1956)."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key events of the Suez Crisis in 1956.",
+          "hint": "President Nasser \\n British and French troops"
+        }
+      ]
+    },
+    {
+      "block_id": 3,
+      "title": "Exam Block 3 (Key Topics 2.1 & 2.2)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Cairo Conference (1964) for the development of Palestinian nationalism."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the PFLP airplane hijacks (1970) for international attitudes towards the Palestine issue."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of Syria's support for Fatah in the years 1964–67."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of President Nasser's closure of the Straits of Tiran in May 1967."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Dawson's Field hijackings (1970)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Black September crisis in Jordan (1970) for the PLO."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key events in the Middle East in the years 1964–67 that led to the outbreak of the Six Day War.",
+          "hint": "The Cairo Conference (1964) \\n The closure of the Straits of Tiran (1967)"
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key events of the Six Day War (1967).",
+          "hint": "Israeli air strikes \\n The Sinai Peninsula"
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key developments in the Palestinian issue in the years 1970–72.",
+          "hint": "PFLP airplane hijacks (1970) \\n Munich Olympics (1972)"
+        }
+      ]
+    },
+    {
+      "block_id": 4,
+      "title": "Exam Block 4 (Key Topics 2.2 & 2.3)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the occupied territories for Arab-Israeli relations after the Six Day War (1967)."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Israeli settlement policy (1967–73) for relations between Israel and the Palestinians."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Yom Kippur War (1973) for relations between Egypt and Israel."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the terrorist attack at the Munich Olympics (1972)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Yom Kippur War (1973) for Israeli domestic politics."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key events of the Yom Kippur War (1973).",
+          "hint": "The surprise attack on Yom Kippur \\n The 'oil weapon'"
+        }
+      ]
+    },
+    {
+      "block_id": 5,
+      "title": "Exam Block 5 (Key Topics 3.1 & 3.2)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the oil crisis (1973–74) for diplomatic negotiations in the Middle East."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of Henry Kissinger's 'shuttle diplomacy' (1974–75) for negotiations between Arab states and Israel."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Israeli invasion of Lebanon (1982) for the Palestine Liberation Organisation (PLO)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the 1973–74 Oil Crisis for diplomatic negotiations in the Middle East."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of President Sadat of Egypt’s visit to Israel (1977)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the relocation of the PLO headquarters to Lebanon after 1970."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the First Palestinian Intifada (1987–93) for Yasser Arafat's PLO."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key developments in negotiations between Israel and Egypt in the years 1973–79.",
+          "hint": "Henry Kissinger's 'shuttle diplomacy' (1974–75) \\n The Camp David Accords (1978)"
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970–82.",
+          "hint": "The expulsion of the PLO from Jordan (1970) \\n Israel's 'Operation Peace for Galilee' (1982)"
+        }
+      ]
+    },
+    {
+      "block_id": 6,
+      "title": "Exam Block 6 (Key Topics 3.2 & 3.3)",
+      "questions": [
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of PLO activities in Lebanon in the years 1970–82 for Israeli security."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of Yasser Arafat's renunciation of terrorism (1988) for attempts to find a solution to the conflict."
+        },
+        {
+          "type": "importance_8",
+          "marks": 8,
+          "text": "Explain the importance of the Oslo Accords (1993) for attempts to find a solution to the Palestinian issue."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of Yasser Arafat’s address to the UN in Geneva (1988)."
+        },
+        {
+          "type": "consequence_4",
+          "marks": 4,
+          "text": "Explain one consequence of the Oslo I Accords (1993)."
+        },
+        {
+          "type": "narrative_8",
+          "marks": 8,
+          "text": "Write a narrative account analysing the key developments in negotiations between Israel and the Palestinians in the years 1987–95.",
+          "hint": "The First Palestinian Intifada (1987–93) \\n The Oslo I Accords (1993)"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "word": "Zionism",
+      "definition": "A Jewish nationalist movement emerging in the late nineteenth century that aimed to re-establish a sovereign Jewish homeland in Palestine, the historical region where the hill of Zion is located. It served as the driving ideological force behind Jewish immigration (Aliya) and political efforts, ultimately culminating in the declaration of the State of Israel in May 1948."
+    },
+    {
+      "word": "Anti-Semitism",
+      "definition": "Systematic feelings, prejudice, discrimination, or violent actions of hatred directed specifically against Jewish people. Historically prevalent in Europe, intense anti-Semitic persecution and the horrors of the Nazi Holocaust spurred massive global support for the Zionist movement's goal of establishing a secure, independent Jewish state in Palestine where Jews could protect themselves."
+    },
+    {
+      "word": "Mandate",
+      "definition": "A legal administrative authority or command issued by the League of Nations following the First World War. It granted victorious Allied powers, specifically Great Britain and France, formal control over former Ottoman Empire territories, charging them with governing these regions and preparing their populations for eventual self-determination and independent statehood."
+    },
+    {
+      "word": "Balfour Declaration",
+      "definition": "A historic letter sent on 2 November 1917 by British Foreign Secretary Arthur Balfour to Zionist leader Lord Rothschild. This document expressed official British government endorsement for establishing a national home for the Jewish people in Palestine, creating a major diplomatic milestone that conflicted with promises of Arab independence."
+    },
+    {
+      "word": "Haganah",
+      "definition": "The mainstream Jewish underground defense force established in the 1920s to protect Zionist agricultural settlements from Arab attacks. Operating under the guidance of the Jewish Agency, it developed a highly organized, competent paramilitary structure that successfully defended Jewish territory during the 1947–48 conflicts before forming the primary basis of the national Israeli army."
+    },
+    {
+      "word": "Irgun (IZL)",
+      "definition": "A militant Zionist paramilitary group that broke away from the Haganah in 1937 to adopt an aggressive, armed approach against Arab forces and the British administration. Led by Menachem Begin, the group carried out high-profile acts of sabotage and insurgency—most notably the July 1946 bombing of the King David Hotel—to force British withdrawal."
+    },
+    {
+      "word": "Lehi (The Stern Gang)",
+      "definition": "An extremist, ultra-nationalist Zionist breakaway group founded in 1939 by Avraham Stern. Rejecting the mainstream Jewish leadership’s cooperative policies, Lehi waged a violent campaign of guerrilla warfare and targeted political assassinations against British military forces and foreign mediators, such as Count Bernadotte, in their uncompromising fight for Jewish independence."
+    },
+    {
+      "word": "Nakba",
+      "definition": "An Arabic term meaning 'catastrophe' used by Palestinians to describe the 1948–49 Arab-Israeli War and its devastating aftermath. It refers to the military defeat of Arab forces, the destruction of hundreds of Palestinian villages, and the permanent expulsion and flight of over 700,000 Palestinian Arabs who became stateless refugees."
+    },
+    {
+      "word": "Israeli Defence Forces (IDF)",
+      "definition": "The unified national military forces of Israel, officially established on 26 May 1948 by Prime Minister David Ben-Gurion. Created in the midst of the War of Independence, the IDF absorbed pre-state underground militias like the Haganah, Irgun, and Lehi, implementing mandatory conscription and a robust reserve system to protect the fledgling state."
+    },
+    {
+      "word": "Law of Return",
+      "definition": "A landmark statute passed by the Israeli Knesset in July 1950 that granted any Jew worldwide the legal right to immigrate to Israel and receive automatic citizenship. This fundamental Zionist law aimed to facilitate the 'ingathering of the exiles', rapidly doubling Israel's population but drawing fierce Palestinian criticism."
+    },
+    {
+      "word": "Fedayeen",
+      "definition": "Trained Palestinian Arab guerrilla fighters—literally meaning 'those who sacrifice themselves'—who operated from bases in Egyptian-controlled Gaza and Jordan. Armed and supported by Arab states, they conducted cross-border sabotage, mining, and armed raids into Israel between 1949 and 1956, provoking heavy, retaliatory strikes by the Israeli military."
+    },
+    {
+      "word": "United Arab Republic (UAR)",
+      "definition": "A political and military union established in February 1958 between Egypt and Syria under the charismatic leadership of President Gamal Abdel Nasser. Championing the cause of Pan-Arabism, this short-lived unification aimed to consolidate Arab power against Western imperialism and Israel, raising deep security anxieties among Israeli military planners."
+    },
+    {
+      "word": "Fatah",
+      "definition": "A secular Palestinian nationalist political and military organization founded in 1959 by Yasser Arafat and other exiles. Advocating armed struggle as the primary means to liberate Palestine, Fatah launched cross-border guerrilla raids against Israel throughout the 1960s and quickly grew to become the most powerful, dominant faction within the PLO."
+    },
+    {
+      "word": "Palestine Liberation Organisation (PLO)",
+      "definition": "An umbrella nationalist organization established at the Cairo Conference in 1964 to centralize and coordinate the Palestinian struggle. Led by Yasser Arafat from 1969, the PLO initially waged guerrilla warfare and international campaigns to reclaim their homeland, eventually transitioning to diplomatic recognition and negotiating peace under the Oslo Accords."
+    },
+    {
+      "word": "Popular Front for the Liberation of Palestine (PFLP)",
+      "definition": "A Marxist-Leninist Palestinian revolutionary organization founded in 1967 by George Habash. Seeking to combine socialist revolution with national liberation, the PFLP rejected conventional warfare in favor of high-profile international terrorism, pioneering a wave of spectacular armed aircraft hijackings in the late 1960s and early 1970s to capture global attention."
+    },
+    {
+      "word": "UN Resolution 242",
+      "definition": "A landmark United Nations Security Council resolution adopted on 22 November 1967 following the Six Day War. Introducing the famous 'land for peace' formula, it called for the withdrawal of Israeli armed forces from occupied territories in exchange for Arab recognition, secure borders, and a just settlement of the refugee problem."
+    },
+    {
+      "word": "Black September Organization (BSO)",
+      "definition": "A highly secretive, militant Palestinian splinter group formed in 1971 following the PLO’s bloody expulsion from Jordan. Named after the civil war, the group carried out high-profile international acts of terrorism, most notably the hostage-taking and murder of 11 Israeli athletes and coaches at the 1972 Munich Olympics."
+    },
+    {
+      "word": "OPEC",
+      "definition": "An international cartel of oil-producing nations that dramatically asserted its geopolitical influence during the October 1973 Yom Kippur War. Dominated by Arab member states, OPEC implemented a total oil embargo against Western nations supporting Israel, quadrupling global crude prices and triggering a severe economic crisis that forced US diplomatic intervention."
+    },
+    {
+      "word": "Shuttle Diplomacy",
+      "definition": "An innovative method of international mediation pioneered by US Secretary of State Henry Kissinger in 1974–75. Flying continuously between Middle Eastern capitals, Kissinger acted as a direct intermediary to negotiate military disengagement treaties (Sinai I, Sinai II, and Golan Accords) and the reopening of the Suez Canal, bypassing face-to-face talks."
+    },
+    {
+      "word": "Camp David Accords",
+      "definition": "A historic peace framework brokered by US President Jimmy Carter during thirteen days of secret negotiations in September 1978. Signed by Egyptian President Anwar Sadat and Israeli Prime Minister Menachem Begin, the accords established a framework for Palestinian autonomy in the West Bank and Gaza and a bilateral Egypt-Israel peace treaty."
+    },
+    {
+      "word": "Treaty of Washington",
+      "definition": "The formal peace treaty signed by Egypt and Israel on 26 March 1979 on the White House lawn, ending thirty years of belligerency. It enacted the Camp David Accords, establishing diplomatic relations and trade in exchange for Israel returning the Sinai Peninsula and Egypt guaranteeing free passage through the Suez Canal."
+    },
+    {
+      "word": "Intifada",
+      "definition": "An Arabic word meaning 'uprising' or 'shaking off', referring to the popular, grassroots civilian rebellion that erupted in December 1987 in the Gaza Strip and West Bank. Characterized by mass strikes, tax resistance, boycotts, and youth throwing stones at the IDF, it protested twenty years of Israeli military occupation."
+    },
+    {
+      "word": "Hamas",
+      "definition": "An Islamic fundamentalist movement founded in Gaza in December 1987 by Sheikh Ahmed Yassin during the First Intifada. Challenging the secular PLO's leadership, Hamas rejected any territorial compromise, advocated holy war (jihad) to establish an Islamic state in historic Palestine, and actively worked to derail the Oslo peace process."
+    },
+    {
+      "word": "Hezbollah",
+      "definition": "An Iranian-backed Shia Islamist militant group and political party founded in Lebanon in the early 1980s. Emerging in the wake of the 1982 Israeli invasion, Hezbollah organized a disciplined, asymmetric guerrilla campaign of rocket attacks and suicide bombings to end the Israeli military occupation of southern Lebanon's security zone."
+    },
+    {
+      "word": "Palestinian National Authority (PNA)",
+      "definition": "The interim self-governing administrative body established in 1994 under the Oslo I Accords. Headed by Yasser Arafat, the PNA was granted civil and security jurisdiction over the Gaza Strip and the West Bank town of Jericho, marking the first time Palestinians exercised formal administrative control over their own territory."
+    },
+    {
+      "word": "Unified National Leadership of the Uprising (UNLU)",
+      "definition": "The underground coalition of secular Palestinian political factions that coordinated local resistance during the First Intifada (1987–93). Operating through clandestinely distributed leaflets, the UNLU organized general strikes, commercial boycotts, tax revolts, and tire-burning blockades, keeping the popular rebellion highly organized without relying on the PLO leadership in Tunis."
+    },
+    {
+      "word": "Area C",
+      "definition": "An administrative division of the West Bank established under the September 1995 Oslo II Accords. Covering roughly 70% of the territory, Area C contains all Jewish settlements, military installations, and bypass roads. Under the agreement, Israel retained complete civil and military security control, leaving the land fragmented for Palestinian self-rule."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "July 1946",
+      "title": "The Bombing of the King David Hotel",
+      "description": "The militant Zionist group Irgun bombs the British administrative headquarters in Jerusalem, killing 91 people and severely damaging British political resolve to maintain police control of the Mandate."
+    },
+    {
+      "date": "November 1947",
+      "title": "UN Resolution 181 (The Partition Plan)",
+      "description": "The United Nations votes in favor of partitioning Palestine into separate, independent Jewish and Arab states, with Jerusalem designated as an international zone."
+    },
+    {
+      "date": "May 1948",
+      "title": "Declaration of the State of Israel",
+      "description": "David Ben-Gurion proclaims the creation of the sovereign State of Israel as the British Mandate officially expires, prompting an immediate military invasion by five surrounding Arab states."
+    },
+    {
+      "date": "1949 (February–July)",
+      "title": "The Armistice Agreements",
+      "description": "Israel signs bilateral treaties with Egypt, Lebanon, Jordan, and Syria to establish the temporary 'Green Line' borders, leaving Jordan in control of the West Bank and Egypt in control of the Gaza Strip."
+    },
+    {
+      "date": "July 1950",
+      "title": "The Law of Return",
+      "description": "The Israeli Knesset passes a landmark law granting every Jewish person worldwide the legal right to immigrate to Israel and receive automatic, permanent citizenship."
+    },
+    {
+      "date": "February 1955",
+      "title": "The Gaza Raid",
+      "description": "A devastating Israeli military raid on an Egyptian military headquarters in Gaza kills 38 Egyptian soldiers, humiliating President Nasser and driving him to seek modern weaponry from the Soviet bloc."
+    },
+    {
+      "date": "September 1955",
+      "title": "The Czech Arms Deal",
+      "description": "Egypt announces a massive weapons agreement to import advanced Soviet combat jets and tanks via Czechoslovakia, breaking Western influence and alarming Israeli military planners."
+    },
+    {
+      "date": "26 July 1956",
+      "title": "Nationalisation of the Suez Canal",
+      "description": "President Nasser seizes and nationalises the Suez Canal Company to utilize its £35 million in annual toll revenues to construct the Aswan High Dam after the US and UK withdrew their loan offers."
+    },
+    {
+      "date": "October–November 1956",
+      "title": "The Suez Crisis (Sinai Campaign)",
+      "description": "Israel pre-emptively invades the Sinai Peninsula in secret collusion with Great Britain and France, who land troops at Port Said to seize the Suez Canal before international pressure forces a humiliating tripartite withdrawal."
+    },
+    {
+      "date": "January 1964",
+      "title": "The Cairo Conference",
+      "description": "Arab League heads of state meet in Egypt to unite their efforts against Israel, resulting in the establishment of the Palestine Liberation Organisation (PLO)."
+    },
+    {
+      "date": "7 April 1967",
+      "title": "Syrian-Israeli Dogfight",
+      "description": "Tensions over demilitarized border zones culminate in a major aerial battle in which Israeli fighter jets shoot down six Syrian Soviet-built MiG-21s over Damascus."
+    },
+    {
+      "date": "5–10 June 1967",
+      "title": "The Six Day War",
+      "description": "Israel launches a pre-emptive strike that destroys the Egyptian air force on the ground and wins a rapid land campaign, capturing the Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights."
+    },
+    {
+      "date": "22 November 1967",
+      "title": "UN Security Council Resolution 242",
+      "description": "The United Nations adopts a 'land for peace' formula that calls for Israeli military withdrawal from occupied territories in exchange for Arab states recognizing Israel's right to live within secure borders."
+    },
+    {
+      "date": "September 1970",
+      "title": "The Dawson's Field Hijackings",
+      "description": "The PFLP hijacks several commercial airliners and blows them up in Jordan, prompting King Hussein to launch a bloody civil war (Black September) that expels the PLO to Lebanon."
+    },
+    {
+      "date": "6–25 October 1973",
+      "title": "The Yom Kippur War",
+      "description": "Egypt and Syria launch a coordinated surprise attack on Israel during its holiest holiday to reclaim occupied lands, prompting a massive US weapons airlift and an Arab OPEC oil embargo that triggers a global energy crisis."
+    },
+    {
+      "date": "13 November 1974",
+      "title": "Yasser Arafat's Address to the UN",
+      "description": "PLO Chairman Yasser Arafat delivers his historic 'gun and olive branch' speech to the UN General Assembly, securing international legitimacy and UN permanent Observer Status for the PLO."
+    },
+    {
+      "date": "17 September 1978",
+      "title": "The Camp David Accords",
+      "description": "Egyptian President Anwar Sadat and Israeli Prime Minister Menachem Begin sign two historic peace frameworks brokered by US President Jimmy Carter after thirteen days of secret negotiations in Maryland."
+    },
+    {
+      "date": "26 March 1979",
+      "title": "The Treaty of Washington",
+      "description": "On the White House lawn, Egypt and Israel sign a formal bilateral peace treaty, making Egypt the first Arab state to recognize Israel in exchange for the complete return of the Sinai Peninsula."
+    },
+    {
+      "date": "6 June 1982",
+      "title": "Invasion of Lebanon ('Operation Peace for Galilee')",
+      "description": "Israel launches a full-scale invasion of Lebanon to destroy PLO bases, culminating in the Siege of Beirut and the evacuation of Yasser Arafat and 14,000 Palestinian fighters to Tunis."
+    },
+    {
+      "date": "8 December 1987",
+      "title": "Outbreak of the First Palestinian Intifada",
+      "description": "A military vehicle collision in Gaza killing four Palestinian workers sparks a massive, spontaneous popular uprising of civil disobedience and stone-throwing against the Israeli military administration in the occupied territories."
+    },
+    {
+      "date": "13 September 1993",
+      "title": "Signing of the Oslo I Accords",
+      "description": "After secret negotiations in Norway, Yasser Arafat and Yitzhak Rabin exchange letters of mutual recognition and sign a Declaration of Principles to establish the Palestinian National Authority."
+    },
+    {
+      "date": "September 1995",
+      "title": "The Oslo II Accord (The Taba Agreement)",
+      "description": "Rabin and Arafat sign an agreement dividing the West Bank into Areas A, B, and C to outline the complex transition of Palestinian self-rule, shortly before Rabin is assassinated by a right-wing Jewish extremist."
     }
   ]
 };
