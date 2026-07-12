@@ -128,7 +128,7 @@ export function renderExamPracticeZone(container, unitData) {
 
         <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
           <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
-          <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Grade 9 WAGOLL</button>
+          <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Grade 9 Model Answer</button>
         </div>
 
         <div id="epz-hint-panel" style="display: none; margin-top: 25px; padding: 25px; background: linear-gradient(to right, #fffbeb, #fef3c7); border-left: 5px solid #f59e0b; border-radius: 0 12px 12px 0; font-size: 1.15rem; color: #92400e; box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1);"></div>
@@ -256,7 +256,7 @@ export function renderExamPracticeZone(container, unitData) {
     
     // Stimulus points for narrative
     if (currentQuestion.hint) {
-      const points = currentQuestion.hint.split('\n').map(p => p.trim()).filter(p => p);
+      const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
       qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
       
       // We will use the stimulus as the structural hint
@@ -279,7 +279,7 @@ export function renderExamPracticeZone(container, unitData) {
       wagollBtn.style.display = 'block';
       // Format markdown bold
       const formattedWagoll = currentQuestion.wagoll.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      wagollPanel.innerHTML = `<strong>Grade 9 Model Answer (WAGOLL):</strong><br><br>${formattedWagoll}`;
+      wagollPanel.innerHTML = `<strong>Grade 9 Model Answer:</strong><br><br>${formattedWagoll}`;
     } else {
       wagollBtn.style.display = 'none';
     }
