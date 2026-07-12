@@ -1,6 +1,7 @@
 import { renderRevisionZone } from './revision_zone.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
 export function initializeApp(unitData) {
+  window.currentUnitData = unitData;
   document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('sidebar');
   const contentArea = document.getElementById('content-area');
@@ -982,7 +983,7 @@ export function initializeApp(unitData) {
              html += `
                <div style="margin-bottom: 10px;">
                  <strong>${qPrefix}${task.text.replace(/\s*\(P\d+\)/gi, '')}</strong>
-                 <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show Model</button>
+                 <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  <div class="answer" style="margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>
              `;
@@ -995,7 +996,7 @@ export function initializeApp(unitData) {
         html += `<div class="sources-grid" style="margin-top: 20px;">`;
         lesson.sources.forEach(source => {
           if (source.src) {
-            let src = source.src.startsWith('../') ? source.src : `../great_war/${source.src}`;
+            let src = source.src;
             html += `
               <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
                 ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
@@ -1014,34 +1015,6 @@ export function initializeApp(unitData) {
       }
       html += `</div>`;
     }
-    // PHASE: Think, Pair, Share
-    if (lesson.pair_share) {
-      const ps = lesson.pair_share;
-      html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase ${phaseNum++}: Think, Pair, Share</div>
-          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
-            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
-              </div>
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
-              </div>
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
     // PHASE: Application Tasks & Historian Debates
     if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
       html += `
@@ -1090,7 +1063,7 @@ export function initializeApp(unitData) {
           <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
             <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
             <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${hc.text}</p>
-            
+            ${hc.stretch_question ? `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
               <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
               <div style="font-size: 1.05rem; margin-bottom: 12px;">
@@ -1106,12 +1079,40 @@ export function initializeApp(unitData) {
               ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
               ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
               ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${hc.stretch_model}</div>` : ''}
-            </div>
+            </div>` : ''}
           </div>
         `;
       }
 
       html += `</div>`;
+    }
+
+    // PHASE: Think, Pair, Share
+    if (lesson.pair_share) {
+      const ps = lesson.pair_share;
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase ${phaseNum++}: Think, Pair, Share</div>
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
+            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
     }
 
     // PHASE: Consolidation & Flashcards
@@ -1140,13 +1141,37 @@ export function initializeApp(unitData) {
       html += `</div></div>`;
     }
 
+    // PHASE: Knowledge Check Quiz
+    if (lesson.quiz && lesson.quiz.length > 0) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Knowledge Check</div>
+            <button class="btn btn-primary no-print" onclick="window.startQuiz('${lesson.id}')" style="font-size: 1.1rem; padding: 10px 20px; border-radius: 8px;">
+              <i class="fa-solid fa-clipboard-check"></i> Start Quiz
+            </button>
+          </div>
+          <p style="color: #475569; font-size: 1.05rem; margin-bottom: 0;">Test your knowledge of this lesson with a quick multiple-choice quiz.</p>
+        </div>
+      `;
+    }
+
     html += `</div>`;
     
     if (hasVocab) {
       html += `</div>`; // End locked-content
     }
     contentArea.innerHTML = html;
-    window.vocabMatchesFound = 0; // reset for new lesson
+    window.vocabMatchesFound = 0;
+    setTimeout(() => {
+      if (window.mermaid) {
+        try {
+          mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        } catch (e) {
+          console.error("Mermaid render error:", e);
+        }
+      }
+    }, 100); // reset for new lesson
 
   }
 
@@ -1334,4 +1359,290 @@ window.toggleMap = function(btn) {
   
   // Update caption
   container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
+};
+
+// --- Debate Modal Global Functions ---
+window.currentDebateIndex = 0;
+
+window.injectDebateModalIfNeeded = function() {
+  if (document.getElementById('debateModal')) return;
+  const html = `
+  <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeDebateModal()">
+    <div class="modal-content" style="background: white; border: 3px solid var(--accent-red); border-radius: 12px; padding: 30px; max-width: 700px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button onclick="window.closeDebateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <i class="fa-solid fa-scale-balanced" style="font-size: 32pt; color: var(--accent-red);"></i>
+        <h2 style="font-family: var(--font-heading); font-size: 22pt; margin: 10px 0 0 0; color: var(--navy); text-transform: uppercase;">Classroom Oracy</h2>
+        <h3 style="font-family: var(--font-title); font-size: 14pt; margin: 5px 0 0 0; color: #555;" id="debateTopicSubtitle">Structured Debate Prompt</h3>
+      </div>
+      <div id="debateModalContent" style="font-size: 14pt; line-height: 1.5; text-align: center; background: #faf9f6; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+        <!-- Content dynamically populated -->
+      </div>
+      <div id="debateSentenceStarterContainer" style="display: none; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin-bottom: 20px; border-radius: 4px; text-align: left;">
+        <strong style="color: #d97706; font-size: 11pt; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-lightbulb"></i> Sentence Starter</strong>
+        <span id="debateSentenceStarterText" style="font-size: 12pt; color: #451a03; font-style: italic;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn btn-secondary" onclick="window.cycleDebatePrompt(-1)"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button id="btn-show-starter" class="btn" style="background: transparent; border: 2px dashed #cbd5e1; color: #64748b; border-radius: 6px; padding: 8px 15px; font-size: 11pt; cursor: pointer; transition: all 0.2s;" onclick="window.toggleDebateStarter()">Show Hint</button>
+        <button class="btn btn-primary" onclick="window.cycleDebatePrompt(1)">Next Prompt <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.openDebateModal = function() {
+  window.injectDebateModalIfNeeded();
+  const modal = document.getElementById('debateModal');
+  modal.style.display = 'flex';
+  // Trigger reflow
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  window.renderDebatePrompt();
+};
+
+window.closeDebateModal = function() {
+  const modal = document.getElementById('debateModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+};
+
+window.renderDebatePrompt = function() {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts || window.currentUnitData.debatePrompts.length === 0) {
+    document.getElementById('debateTopicSubtitle').innerText = "No prompts available";
+    document.getElementById('debateModalContent').innerHTML = "No debate prompts found for this unit.";
+    document.getElementById('btn-show-starter').style.display = 'none';
+    return;
+  }
+  const prompts = window.currentUnitData.debatePrompts;
+  const promptData = prompts[window.currentDebateIndex];
+  document.getElementById('debateTopicSubtitle').innerText = promptData.title;
+  document.getElementById('debateModalContent').innerHTML = promptData.prompt;
+  
+  const starterContainer = document.getElementById('debateSentenceStarterContainer');
+  const starterBtn = document.getElementById('btn-show-starter');
+  
+  // Hide starter by default when changing prompts
+  if (starterContainer) starterContainer.style.display = 'none';
+  
+  if (promptData.sentence_starter && starterBtn) {
+    starterBtn.style.display = 'inline-block';
+    starterBtn.innerText = 'Show Hint';
+    document.getElementById('debateSentenceStarterText').innerText = promptData.sentence_starter;
+  } else if (starterBtn) {
+    starterBtn.style.display = 'none';
+  }
+};
+
+window.toggleDebateStarter = function() {
+  const container = document.getElementById('debateSentenceStarterContainer');
+  const btn = document.getElementById('btn-show-starter');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    btn.innerText = 'Hide Hint';
+  } else {
+    container.style.display = 'none';
+    btn.innerText = 'Show Hint';
+  }
+};
+
+window.cycleDebatePrompt = function(direction) {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
+  const prompts = window.currentUnitData.debatePrompts;
+  window.currentDebateIndex += direction;
+  if (window.currentDebateIndex < 0) window.currentDebateIndex = prompts.length - 1;
+  if (window.currentDebateIndex >= prompts.length) window.currentDebateIndex = 0;
+  window.renderDebatePrompt();
+};
+
+// --- Milestone Modal Global Functions ---
+window.injectMilestoneModalIfNeeded = function() {
+  if (document.getElementById('milestoneModal')) return;
+  const html = `
+  <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeMilestoneModal()">
+    <div class="modal-content" style="background: var(--navy); border: 2.5px solid var(--gold); border-radius: 12px; padding: 25px; max-width: 500px; width: 90%; color: #ffffff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeMilestoneModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #ffffff; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalMilestoneContent">
+        <!-- Content dynamically populated via showMilestoneModal -->
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.showMilestoneModal = function(id) {
+  window.injectMilestoneModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.milestones) return;
+  const data = window.currentUnitData.milestones[id];
+  if (!data) return;
+  
+  const contentBox = document.getElementById('modalMilestoneContent');
+  if (contentBox) {
+    contentBox.innerHTML = `
+      <div style="font-size: 11pt; font-weight: bold; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Milestone ${id}: ${data.year}</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 1.5px solid var(--gold); padding-bottom: 5px; color: #ffffff;">${data.title}</h3>
+      <img src="${data.img}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
+      <p style="font-size: 10.5pt; line-height: 1.5; color: #e2e8f0; margin-bottom: 15px; text-align: justify;">${data.desc}</p>
+      <div style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
+        <strong style="display: block; font-size: 9pt; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;"><i class="fa-solid fa-circle-question"></i> Retrieval Challenge</strong>
+        <span style="font-size: 9.5pt; line-height: 1.4; color: #f8fafc;">${data.trivia}</span>
+      </div>
+    `;
+  }
+  
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    // Trigger reflow
+    void modal.offsetWidth;
+    modal.style.opacity = '1';
+    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  }
+};
+
+window.closeMilestoneModal = function() {
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+};
+
+// --- Quiz Modal Global Functions ---
+window.currentQuizData = [];
+window.currentQuizIndex = 0;
+window.currentQuizLessonId = null;
+
+window.injectQuizModalIfNeeded = function() {
+  if (document.getElementById('quizModal')) return;
+  const html = `
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
+    <div class="modal-content" style="background: #ffffff; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #64748b; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+        <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
+        <div>
+          <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check</h2>
+          <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / 4</span></p>
+        </div>
+      </div>
+      
+      <div id="quiz-question-container">
+        <!-- Populated dynamically -->
+      </div>
+      
+      <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+        <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
+        <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.startQuiz = function(lessonId) {
+  window.injectQuizModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.lessons) return;
+  const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
+  if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
+  
+  window.currentQuizData = lesson.quiz;
+  window.currentQuizIndex = 0;
+  window.currentQuizLessonId = lessonId;
+  
+  window.renderQuizQuestion();
+  
+  const modal = document.getElementById('quizModal');
+  modal.style.display = 'flex';
+  void modal.offsetWidth; // Trigger reflow
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+};
+
+window.renderQuizQuestion = function() {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
+  
+  let optionsHtml = '';
+  qData.options.forEach((opt, idx) => {
+    optionsHtml += `
+      <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+        ${opt}
+      </button>
+    `;
+  });
+  
+  document.getElementById('quiz-question-container').innerHTML = `
+    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question}</h3>
+    ${optionsHtml}
+  `;
+  
+  document.getElementById('quiz-feedback').innerHTML = '';
+  document.getElementById('quiz-next-btn').style.display = 'none';
+};
+
+window.checkQuizAnswer = function(btnEl, selectedIdx) {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  const isCorrect = (selectedIdx === qData.answer);
+  
+  // Disable all buttons
+  const allBtns = document.getElementById('quiz-question-container').querySelectorAll('.quiz-option-btn');
+  allBtns.forEach(btn => {
+    btn.disabled = true;
+    btn.style.cursor = 'default';
+    if (parseInt(btn.dataset.idx) === qData.answer) {
+      btn.style.borderColor = '#22c55e';
+      btn.style.background = '#f0fdf4';
+      btn.style.color = '#15803d';
+      btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
+    }
+  });
+  
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if (isCorrect) {
+    feedbackEl.innerHTML = '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+  } else {
+    btnEl.style.borderColor = '#ef4444';
+    btnEl.style.background = '#fef2f2';
+    btnEl.style.color = '#b91c1c';
+    btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
+    feedbackEl.innerHTML = '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+  }
+  
+  if (window.currentQuizIndex < window.currentQuizData.length - 1) {
+    document.getElementById('quiz-next-btn').innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
+  } else {
+    document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = window.closeQuizModal;
+  }
+};
+
+window.nextQuizQuestion = function() {
+  window.currentQuizIndex++;
+  window.renderQuizQuestion();
+};
+
+window.closeQuizModal = function() {
+  const modal = document.getElementById('quizModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
 };

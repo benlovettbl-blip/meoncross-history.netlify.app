@@ -283,17 +283,61 @@ export const unitData = {
           ]
         },
         {
-          "text": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. Instead of the 55% allocated under the UN Partition Plan, Israel's victory secured control of 79% of mandate Palestine. A independent Palestinian Arab state ceased to exist. Over 700,000 Palestinians were permanently displaced from their homes, becoming refugees. For Palestinian Arabs, the war is remembered as the Nakba ('The Catastrophe').",
-          "level_4": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. For Palestinian Arabs, the war is remembered as the Nakba ('The Catastrophe').",
+          "text": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. Instead of the 55% allocated under the UN Partition Plan, Israel's victory secured control of 79% of mandate Palestine. An independent Palestinian Arab state ceased to exist. Over 700,000 Palestinians were permanently displaced from their homes, becoming refugees in neighboring states. The historical narrative of this displacement remains deeply contested. Traditional Israeli historiography argued that Palestinians left voluntarily under the orders of Arab leaders who promised they could return after the Jews were defeated. Conversely, Palestinian historians, and later Israeli 'New Historians' utilizing declassified IDF archives, demonstrated that the vast majority were driven out by a combination of deliberate military expulsion (such as Plan Dalet), psychological warfare, and the terror induced by massacres like Deir Yassin. For the Palestinian people, the loss of their homeland and the subsequent refugee crisis is known as the Nakba ('The Catastrophe').",
+          "level_4": "The armistice borders of 1949 redrew the political map. Israel's victory secured control of 79% of mandate Palestine. Over 700,000 Palestinians were permanently displaced. The historical narrative of this displacement is contested between traditional Israeli views of voluntary flight and Palestinian historians demonstrating forced expulsion. For Palestinians, this is known as the Nakba ('The Catastrophe').",
           "tasks": [
             {
               "type": "written",
-              "text": "Explain the long-term consequence of the 1948-49 war for the Palestinian Arab population. (P9)",
-              "model": "The war resulted in the Nakba ('The Catastrophe'), where over 700,000 Palestinian Arabs were permanently displaced from their homes, becoming refugees in neighboring states and losing a sovereign homeland."
+              "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (P9)",
+              "model": "Traditional Israeli historians argued that Palestinians fled voluntarily on the orders of Arab leaders. However, Palestinian historians and 'New Historians' have demonstrated that the vast majority were systematically driven out through deliberate military expulsions and the terror of massacres like Deir Yassin, resulting in the Nakba."
             }
           ]
         }
       ],
+      "quiz": [
+        {
+          "question": "What was the 'dual obligation' placed on Britain under the League of Nations Mandate?",
+          "options": [
+            "To fight both Germany and the Ottoman Empire",
+            "To build a Jewish national home while protecting Arab civil rights",
+            "To provide equal military weapons to both Jews and Arabs",
+            "To divide Palestine equally into two identical states"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tragic event on 22 July 1946 broke British morale and accelerated their withdrawal from Palestine?",
+          "options": [
+            "The Night of the Trains",
+            "The Deir Yassin massacre",
+            "The bombing of the King David Hotel",
+            "The sinking of the SS Exodus"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What did UN Resolution 181 (The Partition Plan) propose in November 1947?",
+          "options": [
+            "Splitting Palestine into 55% Jewish land and 45% Arab land",
+            "Giving the entire territory to the Jewish population",
+            "Creating a single democratic state for both Jews and Arabs",
+            "Giving 79% of the land to the Arab population"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How did the 30-day UN truce in June 1948 give Israel a decisive advantage?",
+          "options": [
+            "It allowed them to surrender peacefully",
+            "It allowed them to evacuate civilians to Europe",
+            "It allowed the UN to send peacekeepers to defend them",
+            "It allowed them to unify the IDF and import modern weapons from Czechoslovakia"
+          ],
+          "answer": 3
+        }
+      ],
+
+
       "draw_tasks": []
     },
     {
@@ -506,6 +550,38 @@ export const unitData = {
               "model": "One consequence of the territorial changes following the 1948–49 Arab-Israeli War was the permanent displacement of the Palestinian Arab population and the creation of a massive refugee crisis. Prior to the war, the UN Partition Plan had allocated 45% of the land to a proposed Arab state; however, Israel's military victory expanded its borders to cover 79% of mandate Palestine, while Jordan occupied and annexed the West Bank and Egypt took control of the Gaza Strip.\n\nAs a direct result of these territorial changes, over 700,000 Palestinian Arabs lost their homes and became stateless refugees. They were forced to resettle in squalid, overcrowded refugee camps managed by UNRWA in the Gaza Strip, West Bank, Jordan, and Lebanon, where they were denied the \"right of return\" by Israel, cementing a permanent humanitarian crisis that remains unresolved."
             }
           ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was the purpose of the 1950 Law of Return?",
+          "options": [
+            "To allow Palestinian refugees to return",
+            "To guarantee every Jew the right to immigrate to Israel",
+            "To return the Sinai to Egypt",
+            "To force British soldiers to return"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Who were the Fedayeen?",
+          "options": [
+            "Israeli politicians",
+            "British diplomats",
+            "Palestinian militant groups launching cross-border raids",
+            "UN peacekeepers"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Why did Israel launch a reprisal against Qibya in 1953?",
+          "options": [
+            "To test new weapons",
+            "In retaliation for a Fedayeen grenade attack",
+            "To conquer the West Bank",
+            "To destroy an Egyptian base"
+          ],
+          "answer": 1
         }
       ],
       "draw_tasks": []
@@ -1012,6 +1088,38 @@ export const unitData = {
           ]
         }
       ],
+      "quiz": [
+        {
+          "question": "What false intelligence did the Soviet Union give to Arab states in 1967?",
+          "options": [
+            "That Israel had nuclear weapons",
+            "That the US was invading Egypt",
+            "That Israel was massing troops to invade Syria",
+            "That Jordan had surrendered"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How did Israel begin the Six Day War on June 5, 1967?",
+          "options": [
+            "By invading Jordan",
+            "With a pre-emptive airstrike that destroyed the Egyptian air force",
+            "By dropping a nuclear bomb",
+            "By assassinating Nasser"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What happened to Jerusalem during the Six Day War?",
+          "options": [
+            "It was destroyed",
+            "It was handed to the UN",
+            "Israel captured the Old City from Jordan, uniting Jerusalem",
+            "Egypt captured it from Israel"
+          ],
+          "answer": 2
+        }
+      ],
       "draw_tasks": []
     },
     {
@@ -1224,8 +1332,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                 [THE BLACK SEPTEMBER CIVIL WAR]\n                                |\n[PLO \"State-within-a-State\" in Jordan] -> [King Hussein's Sovereignty Undermined]\n                                |\n[Dawson's Field Hijackings (1970)] -> [Jordanian Army Launches All-Out Attack]\n                                |\n[PLO Defeated & Expelled] -> [PLO Re-establishes HQ in Southern Lebanon]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                 [THE BLACK SEPTEMBER CIVIL WAR]\n                                |\n[PLO \"State-within-a-State\" in Jordan] -> [King Hussein's Sovereignty Undermined]\n                                |\n[Dawson's Field Hijackings (1970)] -> [Jordanian Army Launches All-Out Attack]\n                                |\n[PLO Defeated & Expelled] -> [PLO Re-establishes HQ in Southern Lebanon]\n</pre>",
+          "text": "<div class=\"mermaid\" style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0; display: flex; justify-content: center;\">\nflowchart TD\n    classDef default fill:#ffffff,stroke:#94a3b8,stroke-width:2px,color:#334155,font-family:Inter\n    classDef event fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#0f172a,font-weight:bold\n    classDef conflict fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b,font-weight:bold\n    classDef outcome fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold\n\n    Title(\"THE BLACK SEPTEMBER CIVIL WAR\"):::event\n    \n    A[\"PLO 'State-within-a-State'<br>in Jordan\"]:::default \n    B[\"King Hussein's Sovereignty<br>Undermined\"]:::default\n    C[\"Dawson's Field Hijackings<br>(1970)\"]:::conflict\n    D[\"Jordanian Army Launches<br>All-Out Attack\"]:::conflict\n    E[\"PLO Defeated & Expelled\"]:::outcome\n    F[\"PLO Re-establishes HQ<br>in Southern Lebanon\"]:::outcome\n\n    Title ~~~ A\n    A -->|\"Causes\"| B\n    A -->|\"Escalates to\"| C\n    C -->|\"Provokes\"| D\n    C -->|\"Results in\"| E\n    E -->|\"Consequently\"| F\n</div>",
+          "level_4": "<div class=\"mermaid\" style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0; display: flex; justify-content: center;\">\nflowchart TD\n    classDef default fill:#ffffff,stroke:#94a3b8,stroke-width:2px,color:#334155,font-family:Inter\n    classDef event fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#0f172a,font-weight:bold\n    classDef conflict fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b,font-weight:bold\n    classDef outcome fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold\n\n    Title(\"THE BLACK SEPTEMBER CIVIL WAR\"):::event\n    \n    A[\"PLO 'State-within-a-State'<br>in Jordan\"]:::default \n    B[\"King Hussein's Sovereignty<br>Undermined\"]:::default\n    C[\"Dawson's Field Hijackings<br>(1970)\"]:::conflict\n    D[\"Jordanian Army Launches<br>All-Out Attack\"]:::conflict\n    E[\"PLO Defeated & Expelled\"]:::outcome\n    F[\"PLO Re-establishes HQ<br>in Southern Lebanon\"]:::outcome\n\n    Title ~~~ A\n    A -->|\"Causes\"| B\n    A -->|\"Escalates to\"| C\n    C -->|\"Provokes\"| D\n    C -->|\"Results in\"| E\n    E -->|\"Consequently\"| F\n</div>",
           "tasks": []
         },
         {
@@ -1270,6 +1378,38 @@ export const unitData = {
               "model": "<p>The escalation of Palestinian militant activity began in September 1970, when the <strong>Popular Front for the Liberation of Palestine (PFLP)</strong> launched a campaign of international aviation terrorism by hijacking commercial airliners and blowing them up at <strong>Dawson’s Field</strong> in Jordan. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This event acted as the immediate trigger</mark> for the 'Black September' crisis, prompting <strong>King Hussein</strong> to launch an all-out offensive that successfully crushed the militias and expelled the PLO from Jordan by July 1971.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a direct consequence of this expulsion</mark>, the PLO relocated its headquarters to <strong>Lebanon</strong>, establishing a new military base in the south. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Seeking revenge for their defeat in Jordan</mark> and desperate for global recognition, a radical PLO splinter group calling itself 'Black September' was formed. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This development culminated in</mark> the <strong>Munich Olympics attack</strong> in September 1972, where terrorists took Israeli athletes hostage, resulting in the deaths of 11 Israeli team members during a failed West German rescue attempt.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Ultimately, this tragic event drew</mark> widespread international condemnation of Palestinian tactics but forced the Palestinian issue onto the global diplomatic stage. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">In response to the Munich massacre</mark>, Israeli Prime Minister <strong>Golda Meir</strong> authorized a severe reprisal policy, launching <strong>'Operation Wrath of God'</strong>—a targeted global assassination campaign to hunt down the conspirators—which locked both sides into a violent shadow war.</p>"
             }
           ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was the significance of UN Resolution 242?",
+          "options": [
+            "It ordered Israel to destroy its weapons",
+            "It established the principle of land for peace",
+            "It created the state of Palestine",
+            "It expelled Egypt from the UN"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What were the \"Three Noes\" declared by the Arab League at Khartoum in 1967?",
+          "options": [
+            "No peace, no recognition, no negotiation with Israel",
+            "No oil, no gas, no water for Israel",
+            "No war, no peace, no treaties",
+            "No weapons, no borders, no UN"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which territory did Israel NOT capture during the Six Day War?",
+          "options": [
+            "Gaza Strip",
+            "Sinai Peninsula",
+            "Golan Heights",
+            "Amman"
+          ],
+          "answer": 3
         }
       ],
       "draw_tasks": []
@@ -1540,6 +1680,38 @@ export const unitData = {
               "model": "<p>The Yom Kippur War began on <strong>6 October 1973</strong>, when Egypt and Syria launched a coordinated surprise attack on the holiest day in the Jewish calendar. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Because the country was at a complete standstill</mark>, Israeli military mobilization was severely delayed, allowing Egyptian troops to easily overrun the outer sand fortifications of the <strong>Bar Lev Line</strong> while Syrian forces seized the <strong>Golan Heights</strong>.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This critical initial breakthrough prompted</mark> the United States to launch a massive military airlift on 12 October to resupply the heavily depleted Israeli forces. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a direct result of this American military support</mark>, the IDF successfully launched a decisive counter-offensive, driving Syrian forces back and enabling <strong>General Ariel Sharon’s tank divisions</strong> to cross the Suez Canal to encircle Egypt’s Third Army.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">With Egypt facing complete military collapse, the crisis escalated</mark> into a dangerous Cold War confrontation as the Soviet Union threatened to deploy troops, forcing the US to place its military on nuclear alert. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">To pressure the West into restraining Israel</mark>, Arab members of <strong>OPEC</strong> implemented the 'oil weapon' by placing a total oil embargo on nations supporting Israel. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Ultimately, this economic pressure forced</mark> the United States to compel Israel to agree to a UN ceasefire on <strong>25 October 1973</strong>. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">The long-term consequence of this conflict</mark> was a profound psychological shift: it shattered the myth of Israeli invincibility and paved the way for 'shuttle diplomacy'.</p>"
             }
           ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why did Anwar Sadat launch the Yom Kippur War in 1973?",
+          "options": [
+            "To completely destroy Israel",
+            "To break the diplomatic stalemate and force Israel to negotiate returning the Sinai",
+            "To help the Soviet Union",
+            "To conquer the West Bank"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Why was the 1973 Yom Kippur attack so successful initially?",
+          "options": [
+            "Israel had no weapons",
+            "The US supported Egypt",
+            "It was a total surprise attack on the holiest day of the Jewish calendar",
+            "Israel surrendered immediately"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How did the Arab oil-producing nations respond to US support for Israel during the 1973 war?",
+          "options": [
+            "They joined the war militarily",
+            "They launched an oil embargo, causing a global economic crisis",
+            "They signed a peace treaty",
+            "They asked the USSR to intervene"
+          ],
+          "answer": 1
         }
       ],
       "draw_tasks": []
@@ -2281,6 +2453,59 @@ export const unitData = {
               "model": "<p>The peace process began in December 1988 when PLO Chairman <strong>Yasser Arafat</strong>, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">who sought to regain political initiative from the grassroots leaders of the First Intifada</mark>, delivered a historic speech to the United Nations General Assembly in Geneva. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">By explicitly renouncing terrorism and officially recognizing Israel’s right to exist</mark>, Arafat fulfilled the strict conditions required for diplomatic dialogue with the United States. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Consequently, this diplomatic breakthrough, combined with</mark> the collapse of the <strong>Soviet Union</strong> in 1991, severely weakened the PLO's bargaining power and forced both Israel and the Arab states to participate in the <strong>Madrid Peace Conference</strong> in November 1991.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Although the formal public negotiations in Madrid and Washington ended in stalemate</mark>, the election of <strong>Yitzhak Rabin’s</strong> moderate Labor government in 1992 enabled the opening of a secret, back-channel negotiation in Norway. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">These secret meetings were accelerated in April 1993</mark> when <strong>Hamas</strong> launched its first suicide car bombing in a West Bank settlement, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">shocking Israeli society and convincing Rabin</mark> that he needed to strengthen the secular PLO before radical Islamists captured Palestinian public opinion. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a result of this mutual urgency</mark>, the two sides signed the historic <strong>Oslo I Accords</strong> on the White House lawn on 13 September 1993, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">which established</mark> the <strong>Palestinian National Authority (PNA)</strong> to govern Gaza and Jericho.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This breakthrough finally culminated in the signing of the Oslo II Accords</mark> on 28 September 1995, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">which expanded Palestinian self-rule</mark> across the West Bank by dividing the territory into <strong>Areas A, B, and C</strong>. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">However, this complex division triggered intense domestic opposition on both sides</mark>, leading to Hamas launching a campaign of suicide bus bombings and right-wing Israelis condemning Rabin's concessions. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This sequence of events reached a tragic climax</mark> on 4 November 1995, when Rabin was assassinated by a right-wing Jewish extremist, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">abruptly halting the peace process</mark> and leaving the status of Jerusalem, refugees, and settlements completely unresolved.</p>"
             }
           ]
+        },
+        {
+          "text": "The tragic assassination of Rabin highlighted the deep structural flaws of the Oslo Accords. While celebrated internationally as a breakthrough, the agreement was fundamentally ambiguous. It intentionally delayed the most difficult \"permanent status\" issues—such as the final borders, the status of Jerusalem, the right of return for Palestinian refugees, and the dismantling of Israeli settlements—to a later date. This delay created a dangerous vacuum of uncertainty. Right-wing Israelis viewed any land concessions as a threat to national security and biblical claims, while Palestinian hardliners argued that the PNA had essentially become a subcontractor for Israeli security, failing to deliver true sovereignty or halt settlement expansion. Ultimately, the Accords required a high level of mutual trust that simply did not exist on the ground.",
+          "level_4": "The assassination of Rabin highlighted the deep structural flaws of the Oslo Accords. The agreement delayed the most difficult 'permanent status' issues—such as borders, Jerusalem, refugees, and settlements—to a later date. This delay created a dangerous vacuum of uncertainty. Right-wing Israelis viewed land concessions as a threat, while Palestinian hardliners argued the PNA failed to deliver true sovereignty or halt settlement expansion. The Accords required a high level of mutual trust that did not exist.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain why the Oslo Accords were considered 'fundamentally ambiguous' and structurally flawed. (P17)",
+              "model": "The Accords intentionally delayed resolving the most difficult 'permanent status' issues, such as final borders, Jerusalem, refugees, and settlements. This created a dangerous vacuum of uncertainty and extreme distrust among hardliners on both sides, who felt their core demands were being ignored or betrayed."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What historic shift in PLO strategy did Yasser Arafat announce in his 1988 UN speech?",
+          "options": [
+            "He declared a full-scale war against Israel",
+            "He renounced terrorism and accepted a two-state solution",
+            "He demanded the complete dissolution of the UN",
+            "He officially allied the PLO with the Soviet Union"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How did the collapse of the Soviet Union in 1991 impact the PLO?",
+          "options": [
+            "It provided the PLO with nuclear weapons",
+            "It had no impact as the PLO was funded by the US",
+            "It caused the PLO to lose its primary funding and diplomatic backing",
+            "It forced the PLO to relocate to Moscow"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What was the result of the 1995 Oslo II Accords?",
+          "options": [
+            "The immediate creation of an independent Palestinian state",
+            "The division of the West Bank into Areas A, B, and C",
+            "The complete withdrawal of Israeli forces from the Middle East",
+            "The unification of Jerusalem under UN control"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following was a key structural flaw of the Oslo Accords?",
+          "options": [
+            "It was only signed by Egypt and Jordan",
+            "It intentionally delayed the resolution of 'permanent status' issues",
+            "It was immediately rejected by Yitzhak Rabin",
+            "It forced the PLO to move its headquarters to London"
+          ],
+          "answer": 1
         }
       ],
       "draw_tasks": []
@@ -3410,6 +3635,53 @@ export const unitData = {
       "date": "September 1995",
       "title": "The Oslo II Accord (The Taba Agreement)",
       "description": "Rabin and Arafat sign an agreement dividing the West Bank into Areas A, B, and C to outline the complex transition of Palestinian self-rule, shortly before Rabin is assassinated by a right-wing Jewish extremist."
+    }
+  ],
+  "debatePrompts": [
+    {
+      "title": "Lesson 1: The End of the British Mandate",
+      "prompt": "<strong>Debate:</strong> \"Britain's 'dual obligation' was the primary reason for the chaos leading up to the 1948 war.\" Do you agree, or did other factors play a bigger role?",
+      "sentence_starter": "I agree that Britain's dual obligation was the primary reason because..."
+    },
+    {
+      "title": "Lesson 2: The Aftermath of the 1948–49 War",
+      "prompt": "<strong>Roleplay:</strong> You are an Israeli leader in 1950. Defend the Law of Return despite the ongoing tension, while addressing the Palestinian refugee crisis.",
+      "sentence_starter": "While I understand the plight of the Palestinian refugees, the Law of Return is essential for Israel because..."
+    },
+    {
+      "title": "Lesson 3: Increased Tension, 1955–1963",
+      "prompt": "<strong>Debate:</strong> Was the 1956 Suez Crisis a political victory for Nasser, or a strategic military victory for Israel? Justify your stance.",
+      "sentence_starter": "The Suez Crisis was primarily a political victory for Nasser because he successfully..."
+    },
+    {
+      "title": "Lesson 4: The Six Day War, 1967",
+      "prompt": "<strong>Roleplay:</strong> You are an advisor to King Hussein of Jordan in June 1967. Explain why you feel compelled to join the war against Israel despite the obvious military risks.",
+      "sentence_starter": "Your Majesty, despite the military risks, we must join the war alongside Egypt and Syria because..."
+    },
+    {
+      "title": "Lesson 5: The Aftermath of the 1967 War",
+      "prompt": "<strong>Debate:</strong> Did the outcome of the 1967 Six Day War make Israel more secure or less secure in the long term?",
+      "sentence_starter": "Although Israel gained significant territory, the 1967 war ultimately made them less secure because..."
+    },
+    {
+      "title": "Lesson 6: Israel and Egypt, 1967–1973",
+      "prompt": "<strong>Roleplay:</strong> You are Anwar Sadat in 1973. Explain why launching the Yom Kippur War was necessary for Egypt's broader political and diplomatic goals.",
+      "sentence_starter": "We must launch this surprise attack not necessarily to destroy Israel, but because..."
+    },
+    {
+      "title": "Lesson 7: Diplomatic negotiations, 1974–1979",
+      "prompt": "<strong>Debate:</strong> \"The Camp David Accords were a betrayal of the Arab cause.\" Argue for or against this statement from the perspective of an Arab nationalist in 1979.",
+      "sentence_starter": "The Camp David Accords were a betrayal of the Arab cause because Egypt abandoned..."
+    },
+    {
+      "title": "Lesson 8: The Palestinian Issue, 1974–1993",
+      "prompt": "<strong>Roleplay:</strong> You are a Palestinian youth during the First Intifada. Explain to an international journalist why mass protests and throwing stones are your chosen methods of resistance.",
+      "sentence_starter": "We have resorted to throwing stones and mass protests because years of military occupation have..."
+    },
+    {
+      "title": "Lesson 9: Attempts at a solution, 1988–1995",
+      "prompt": "<strong>Debate:</strong> Were the 1993 Oslo Accords a genuine step toward peace, or a fundamentally flawed agreement doomed to fail from the start?",
+      "sentence_starter": "The Oslo Accords were a genuine step toward peace because for the first time..."
     }
   ]
 };
