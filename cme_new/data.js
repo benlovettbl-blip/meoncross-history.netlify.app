@@ -706,8 +706,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src="assets/nasser_aims.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="nasser_aims">",
-          "level_4": "<img src="assets/nasser_aims.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="nasser_aims">",
+          "text": "<img src=\"assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"nasser_aims\">",
+          "level_4": "<img src=\"assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"nasser_aims\">",
           "tasks": []
         },
         {
@@ -733,8 +733,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src="assets/gaza_raid.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="gaza_raid">",
-          "level_4": "<img src="assets/gaza_raid.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="gaza_raid">",
+          "text": "<img src=\"assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"gaza_raid\">",
+          "level_4": "<img src=\"assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"gaza_raid\">",
           "tasks": []
         },
         {
@@ -771,8 +771,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src="assets/sevres_protocol.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="sevres_protocol">",
-          "level_4": "<img src="assets/sevres_protocol.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="sevres_protocol">",
+          "text": "<img src=\"assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sevres_protocol\">",
+          "level_4": "<img src=\"assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sevres_protocol\">",
           "tasks": []
         },
         {
@@ -808,8 +808,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src="assets/suez_consequences.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="suez_consequences">",
-          "level_4": "<img src="assets/suez_consequences.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="suez_consequences">",
+          "text": "<img src=\"assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"suez_consequences\">",
+          "level_4": "<img src=\"assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"suez_consequences\">",
           "tasks": []
         },
         {
@@ -940,9 +940,9 @@ export const unitData = {
       "narrative_blocks": [
         {
           "text": "
-<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-  <h3 style="margin-top: 0; color: #333; text-align: center;">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
-  <ol style="line-height: 1.6; margin-bottom: 0;">
+<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">
+  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
+  <ol style=\"line-height: 1.6; margin-bottom: 0;\">
     <li><strong>Palestinian Nationalism</strong> &rarr; Cairo Conference (1964), creation of the PLO and Fatah.</li>
     <li><strong>Border Wars &amp; Skirmishes</strong> &rarr; Disputes over Jordan water, Samu Raid (1966), 7 April 1967.</li>
     <li><strong>The Slide to War (May '67)</strong> &rarr; Soviet misinformation, UNEF withdrawal, closure of Tiran.</li>
@@ -950,9 +950,9 @@ export const unitData = {
   </ol>
 </div>",
           "level_4": "
-<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-  <h3 style="margin-top: 0; color: #333; text-align: center;">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
-  <ol style="line-height: 1.6; margin-bottom: 0;">
+<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">
+  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
+  <ol style=\"line-height: 1.6; margin-bottom: 0;\">
     <li><strong>Palestinian Nationalism</strong> &rarr; Cairo Conference (1964), creation of the PLO and Fatah.</li>
     <li><strong>Border Wars &amp; Skirmishes</strong> &rarr; Disputes over Jordan water, Samu Raid (1966), 7 April 1967.</li>
     <li><strong>The Slide to War (May '67)</strong> &rarr; Soviet misinformation, UNEF withdrawal, closure of Tiran.</li>
@@ -973,8 +973,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src="assets/cairo_conference.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="cairo_conference">",
-          "level_4": "<img src="assets/cairo_conference.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="cairo_conference">",
+          "text": "<img src=\"assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cairo_conference\">",
+          "level_4": "<img src=\"assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cairo_conference\">",
           "tasks": []
         },
         {
@@ -1005,8 +1005,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src="assets/syria_fatah.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="syria_fatah">",
-          "level_4": "<img src="assets/syria_fatah.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="syria_fatah">",
+          "text": "<img src=\"assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"syria_fatah\">",
+          "level_4": "<img src=\"assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"syria_fatah\">",
           "tasks": []
         },
         {
@@ -1022,9 +1022,9 @@ export const unitData = {
         },
         {
           "text": "
-<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-  <h3 style="margin-top: 0; color: #333; text-align: center;">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
-  <ul style="line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;">
+<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">
+  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
+  <ul style=\"line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;\">
     <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>
     <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>
     <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>
@@ -1033,9 +1033,9 @@ export const unitData = {
   </ul>
 </div>",
           "level_4": "
-<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-  <h3 style="margin-top: 0; color: #333; text-align: center;">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
-  <ul style="line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;">
+<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">
+  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
+  <ul style=\"line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;\">
     <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>
     <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>
     <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>
@@ -1089,8 +1089,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src="assets/operation_focus.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="operation_focus">",
-          "level_4": "<img src="assets/operation_focus.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="operation_focus">",
+          "text": "<img src=\"assets/operation_focus.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"operation_focus\">",
+          "level_4": "<img src=\"assets/operation_focus.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"operation_focus\">",
           "tasks": []
         },
         {
