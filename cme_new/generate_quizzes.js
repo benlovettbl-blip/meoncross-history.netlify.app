@@ -1,9 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
 
-const dataContent = fs.readFileSync(path.join(__dirname, 'data.js'), 'utf8');
-const jsonContent = dataContent.replace('export const unitData = ', '').trim().replace(/;$/, '');
-const unitData = JSON.parse(jsonContent);
+const cmeDir = 'c:/Projects/meoncross-history.netlify.app/cme_new';
+const dataPath = `${cmeDir}/data.js`;
+const content = fs.readFileSync(dataPath, 'utf8');
+
+// Parse data
+let jsonStr = content.replace('export const unitData = ', '').replace(/;\s*$/, '');
+const unitData = eval('(' + jsonStr + ')');
 
 let html = `<!DOCTYPE html>
 <html lang="en">
@@ -15,15 +18,15 @@ let html = `<!DOCTYPE html>
     @page { size: A4 portrait; margin: 20mm; }
     body { font-family: 'Outfit', sans-serif; font-size: 12pt; line-height: 1.6; color: #000; background: #fff; }
     h1 { font-family: 'Playfair Display', serif; font-size: 28pt; text-align: center; border-bottom: 3px solid #1a237e; padding-bottom: 10px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 20pt; color: #1a237e; margin-top: 30px; border-bottom: 2px solid #ccc; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 18pt; color: #1a237e; margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
     .page-break { page-break-before: always; }
     .question-list { list-style: none; padding: 0; }
-    .question-item { margin-bottom: 25px; }
-    .q-text { font-weight: 600; font-size: 13pt; }
-    .a-lines { border-bottom: 1px dotted #999; height: 30px; margin-top: 10px; width: 100%; }
+    .question-item { margin-bottom: 35px; }
+    .q-text { font-weight: 600; font-size: 13pt; margin-bottom: 10px; }
+    .a-lines { border-bottom: 1px dotted #666; height: 30px; margin-top: 10px; width: 100%; }
     .answer-box { background: #f0fdf4; border-left: 5px solid #16a34a; padding: 15px; margin-top: 10px; border-radius: 4px; }
     .explanation { font-style: italic; color: #475569; margin-top: 5px; font-size: 11pt; }
-    .header-box { display: flex; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; font-weight: bold; }
+    .header-box { display: flex; justify-content: space-between; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; font-weight: bold; font-size: 14pt; }
   </style>
 </head>
 <body>
@@ -41,19 +44,17 @@ const allLessons = unitData.lessons.map(lesson => {
     lesson.narrative_blocks.forEach(block => {
       if (block.tasks) {
         block.tasks.forEach(task => {
-          let cleanQ = task.text.replace(/^(Q\\d+: |Task \\d+: |Question \\d+[a-z]?: |Enquiry Task: )/, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '');
+          // Skip long exam questions with marks
+          if (/\\(\\d+\\s*marks?\\)/i.test(task.text)) return;
+          
+          let cleanQ = task.text.replace(/^(Q\\d+:|Task \\d+:|Question \\d+[a-z]?:|Enquiry Task:)\\s*/i, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '');
           questions.push({ q: cleanQ, a: task.model || 'Model answer to be discussed in class.' });
         });
       }
     });
   }
   
-  if (lesson.tasks) {
-    lesson.tasks.forEach(task => {
-      let cleanQ = task.text.replace(/^(Q\\d+: |Task \\d+: |Question \\d+[a-z]?: |Enquiry Task: )/, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '');
-      questions.push({ q: cleanQ, a: task.model || 'Model answer to be discussed in class.' });
-    });
-  }
+  // NOTE: Intentionally skipping \`lesson.tasks\` because in GCSE these are long 4-mark and 8-mark questions!
   
   return { title: lesson.title, questions };
 });
@@ -86,6 +87,7 @@ allLessons.forEach((lesson, idx) => {
         <div class="q-text">Q${qIdx + 1}. ${cleanQ}</div>
         <div class="a-lines"></div>
         <div class="a-lines"></div>
+        <div class="a-lines"></div>
       </li>
     `;
   });
@@ -98,9 +100,9 @@ allLessons.forEach((lesson, idx) => {
 // ==========================================
 html += `<div class="page-break"></div>`;
 html += `<h1>Teacher Answer Key & Explanations</h1>`;
-html += `<p style="text-align: center; font-style: italic; color: #d32f2f;">Do not distribute to students.</p>`;
+html += `<p style="text-align: center; font-style: italic;">For Teacher Use Only</p>`;
 
-allLessons.forEach((lesson, idx) => {
+allLessons.forEach(lesson => {
   if (lesson.questions.length === 0) return;
   
   html += `<h2>${lesson.title}</h2>`;
@@ -109,10 +111,11 @@ allLessons.forEach((lesson, idx) => {
   lesson.questions.forEach((item, qIdx) => {
     let cleanQ = item.q.replace(/^\\d+\\.\\s*/, "");
     html += `
-      <li class="question-item" style="page-break-inside: avoid;">
+      <li class="question-item">
         <div class="q-text">Q${qIdx + 1}. ${cleanQ}</div>
         <div class="answer-box">
-          <strong>Answer:</strong> ${item.a}
+          <strong>Model Answer:</strong><br/>
+          ${item.a}
         </div>
       </li>
     `;
@@ -121,6 +124,10 @@ allLessons.forEach((lesson, idx) => {
   html += `</ul>`;
 });
 
-html += `</body>\n</html>`;
-fs.writeFileSync(path.join(__dirname, 'quiz_pack.html'), html, 'utf8');
-console.log('Successfully generated quiz_pack.html with ' + allLessons.reduce((acc, l) => acc + l.questions.length, 0) + ' total questions.');
+html += `
+</body>
+</html>
+`;
+
+fs.writeFileSync(`${cmeDir}/quiz_pack.html`, html);
+console.log("Generated updated quiz_pack.html");
