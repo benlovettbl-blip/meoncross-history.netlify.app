@@ -202,6 +202,19 @@ body.sen-mode h3 {
 }
 
 /* =========================================
+   Focus Mode (Fullscreen Timeline) 
+   ========================================= */
+body.focus-mode .sidebar,
+body.focus-mode .main-header {
+  display: none !important;
+}
+
+body.focus-mode .content-area {
+  padding: 2rem !important;
+  max-width: 100vw !important;
+}
+
+/* =========================================
    Mobile Optimization 
    ========================================= */
 @media (max-width: 768px) {

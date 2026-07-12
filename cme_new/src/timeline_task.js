@@ -9,19 +9,24 @@ export function initTimelineTask(container) {
         <p style="font-size: 1.2rem; color: #475569;">Select a topic and drag the events into the correct chronological sequence to build your flowchart!</p>
       </div>
 
-      <div style="margin-bottom: 30px; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
-        <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-list-ul"></i> Select Timeline:</label>
-        <select id="timeline-select" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-          <optgroup label="Lesson Overviews">
-            ${timelineData.filter(t => t.id.startsWith('lesson')).map(t => `<option value="${t.id}">${t.title}</option>`).join('')}
-          </optgroup>
-          <optgroup label="Specific Wars (Deep Dive)">
-            ${timelineData.filter(t => t.id.startsWith('war')).map(t => `<option value="${t.id}">⚔️ ${t.title}</option>`).join('')}
-          </optgroup>
-        </select>
+      <div style="margin-bottom: 30px; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: flex-end; gap: 15px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 250px;">
+          <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-list-ul"></i> Select Timeline:</label>
+          <select id="timeline-select" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+            <optgroup label="Lesson Overviews">
+              ${timelineData.filter(t => t.id.startsWith('lesson')).map(t => `<option value="${t.id}">${t.title}</option>`).join('')}
+            </optgroup>
+            <optgroup label="Specific Wars (Deep Dive)">
+              ${timelineData.filter(t => t.id.startsWith('war')).map(t => `<option value="${t.id}">⚔️ ${t.title}</option>`).join('')}
+            </optgroup>
+          </select>
+        </div>
+        <button id="btn-focus" class="main-btn" style="background: #1e3a8a; color: white; padding: 14px 20px; height: 55px; border-radius: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px; border: none; cursor: pointer; white-space: nowrap;">
+          <i class="fa-solid fa-expand"></i> Focus Mode
+        </button>
       </div>
 
-      <div id="timeline-container" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
+      <div id="timeline-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 30px;">
         <!-- Draggable items go here -->
       </div>
 
@@ -41,6 +46,19 @@ export function initTimelineTask(container) {
   const btnCheck = container.querySelector('#btn-check');
   const btnReset = container.querySelector('#btn-reset');
   const feedback = container.querySelector('#timeline-feedback');
+  const btnFocus = container.querySelector('#btn-focus');
+
+  // Focus Mode toggle
+  if (btnFocus) {
+    btnFocus.addEventListener('click', () => {
+      document.body.classList.toggle('focus-mode');
+      if (document.body.classList.contains('focus-mode')) {
+        btnFocus.innerHTML = '<i class="fa-solid fa-compress"></i> Exit Focus';
+      } else {
+        btnFocus.innerHTML = '<i class="fa-solid fa-expand"></i> Focus Mode';
+      }
+    });
+  }
 
   let currentTimeline = null;
   let activeItems = []; // Array of objects {id, text}
