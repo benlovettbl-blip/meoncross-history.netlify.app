@@ -140,7 +140,8 @@ chunkLessons.forEach((lesson, lessonIndex) => {
   
   let currentVocab = [];
   if (terminologyData && terminologyData.length > 0) {
-    const termSet = terminologyData.find(t => t.id === 'lesson' + (lessonIndex + 1));
+    const globalLessonIndex = (chunkIndex * CHUNK_SIZE) + lessonIndex;
+    const termSet = terminologyData.find(t => t.id === 'lesson' + (globalLessonIndex + 1));
     if (termSet && termSet.terms) {
       currentVocab = termSet.terms;
     }
