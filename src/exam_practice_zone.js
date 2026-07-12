@@ -100,6 +100,15 @@ export function renderExamPracticeZone(container, unitData) {
       
       <div style="display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-end; flex-wrap: wrap; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
         <div style="flex: 1; min-width: 250px;">
+          <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-layer-group"></i> Target Key Topic:</label>
+          <select id="epz-topic-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
+            <option value="all">🌍 All Topics</option>
+            <option value="kt1">📖 Key Topic 1</option>
+            <option value="kt2">📖 Key Topic 2</option>
+            <option value="kt3">📖 Key Topic 3</option>
+          </select>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
           <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
           <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
             <option value="all">🎲 Surprise Me! (All Question Types)</option>
@@ -147,6 +156,7 @@ export function renderExamPracticeZone(container, unitData) {
 
   // 4. Elements
   const typeFilter = document.getElementById('epz-type-filter');
+  const topicFilter = document.getElementById('epz-topic-filter');
   const generateBtn = document.getElementById('epz-generate-btn');
   const backBtn = document.getElementById('epz-back-btn');
   const displayArea = document.getElementById('epz-question-display');
@@ -224,10 +234,21 @@ export function renderExamPracticeZone(container, unitData) {
 
   generateBtn.addEventListener('click', () => {
     const selectedType = typeFilter.value;
+    const selectedTopic = topicFilter ? topicFilter.value : 'all';
     let filteredBank = examBank;
     
     if (selectedType !== 'all') {
-      filteredBank = examBank.filter(q => q.type === selectedType);
+      filteredBank = filteredBank.filter(q => q.type === selectedType);
+    }
+    
+    if (selectedTopic !== 'all') {
+      if (selectedTopic === 'kt1') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
+      } else if (selectedTopic === 'kt2') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
+      } else if (selectedTopic === 'kt3') {
+        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
+      }
     }
     
     if (filteredBank.length === 0) {
