@@ -258,21 +258,42 @@ export function renderExamPracticeZone(container, unitData) {
     if (currentQuestion.hint) {
       const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
       qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
-      
-      // We will use the stimulus as the structural hint
-      hintBtn.style.display = 'block';
-      hintPanel.innerHTML = '<strong>Structure Strip Reminder:</strong><br>Paragraph 1: ' + (points[0] || 'Point 1') + '<br>Paragraph 2: ' + (points[1] || 'Point 2') + '<br>Paragraph 3: Your own historical knowledge!<br><em>Ensure you use linking phrases like "This led to..." or "Consequently..."</em>';
     } else {
       qStimulus.innerHTML = '';
-      if (currentQuestion.type === "importance_8") {
+    }
+
+    if (currentQuestion.structure_strip) {
         hintBtn.style.display = 'block';
-        hintPanel.innerHTML = '<strong>Structure Strip Reminder (8 Marks):</strong><br>Paragraph 1: Identify the event and explain its FIRST impact on the situation (Point, Evidence, Explain).<br>Paragraph 2: Explain a SECOND impact or long-term consequence.';
-      } else if (currentQuestion.type === "consequence_4") {
-        hintBtn.style.display = 'block';
-        hintPanel.innerHTML = '<strong>Structure Strip Reminder (4 Marks):</strong><br>Write ONE detailed paragraph. State the consequence clearly, then provide 2-3 sentences of specific historical evidence to support it.';
-      } else {
-        hintBtn.style.display = 'none';
-      }
+        let stripHtml = `<strong>Structure Strip Scaffolding:</strong><br><br>`;
+        if (currentQuestion.structure_strip.starters && currentQuestion.structure_strip.starters.length > 0) {
+            currentQuestion.structure_strip.starters.forEach((starter, i) => {
+                stripHtml += `<em>Paragraph ${i+1} Starter:</em> ${starter}<br>`;
+            });
+        }
+        if (currentQuestion.structure_strip.fact_bank && currentQuestion.structure_strip.fact_bank.length > 0) {
+            stripHtml += `<br>🧠 <strong>Fact Bank (Try to use these!):</strong><br>`;
+            stripHtml += `<ul style="margin-top: 5px; margin-bottom: 5px;">`;
+            currentQuestion.structure_strip.fact_bank.forEach(fact => {
+                stripHtml += `<li>${fact}</li>`;
+            });
+            stripHtml += `</ul>`;
+        }
+        hintPanel.innerHTML = stripHtml;
+    } else {
+        // Fallback generic hints
+        if (currentQuestion.hint) {
+            const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
+            hintBtn.style.display = 'block';
+            hintPanel.innerHTML = '<strong>Structure Strip Reminder:</strong><br>Paragraph 1: ' + (points[0] || 'Point 1') + '<br>Paragraph 2: ' + (points[1] || 'Point 2') + '<br>Paragraph 3: Your own historical knowledge!<br><em>Ensure you use linking phrases like "This led to..." or "Consequently..."</em>';
+        } else if (currentQuestion.type === "importance_8") {
+            hintBtn.style.display = 'block';
+            hintPanel.innerHTML = '<strong>Structure Strip Reminder (8 Marks):</strong><br>Paragraph 1: Identify the event and explain its FIRST impact on the situation (Point, Evidence, Explain).<br>Paragraph 2: Explain a SECOND impact or long-term consequence.';
+        } else if (currentQuestion.type === "consequence_4") {
+            hintBtn.style.display = 'block';
+            hintPanel.innerHTML = '<strong>Structure Strip Reminder (4 Marks):</strong><br>Write ONE detailed paragraph. State the consequence clearly, then provide 2-3 sentences of specific historical evidence to support it.';
+        } else {
+            hintBtn.style.display = 'none';
+        }
     }
 
     if (currentQuestion.wagoll) {
