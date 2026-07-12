@@ -484,7 +484,7 @@ export function initializeApp(unitData) {
       modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
       
       const content = document.createElement('div');
-      content.style.cssText = 'background:var(--card-bg);padding:30px;border-radius:12px;width:90%;max-width:500px;color:var(--text-color);box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+      content.style.cssText = 'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
       
       content.innerHTML = `
         <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
