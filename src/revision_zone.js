@@ -55,7 +55,7 @@ export function renderRevisionZone(container, unitData) {
         <!-- Question goes here -->
       </div>
 
-      <div id="game-options" style="display: none; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <div id="game-options" class="options-grid" style="display: none; gap: 15px;">
         <!-- Options go here -->
       </div>
       

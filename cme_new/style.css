@@ -194,3 +194,45 @@ body.sen-mode h3 {
 .btn-secondary:hover {
   background: rgba(255,255,255,0.3);
 }
+
+/* Grid for Revision Zone Options */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* =========================================
+   Mobile Optimization 
+   ========================================= */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .content-area {
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-content h2 {
+    font-size: 2rem;
+  }
+
+  #game-dashboard {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+}
