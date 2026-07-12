@@ -591,15 +591,6 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(examPracticeLink);
 
-    const quizPackLink = document.createElement('a');
-    quizPackLink.className = 'lesson-link';
-    quizPackLink.innerHTML = '📝 Printable Quiz Pack';
-    quizPackLink.href = 'quiz_pack.html';
-    quizPackLink.target = '_blank';
-    quizPackLink.style.marginTop = '15px';
-    quizPackLink.style.border = '2px dashed #059669';
-    quizPackLink.style.color = '#10b981';
-    navContainer.appendChild(quizPackLink);
 
     const isCmeNew = window.location.pathname.includes('cme_new');
     
