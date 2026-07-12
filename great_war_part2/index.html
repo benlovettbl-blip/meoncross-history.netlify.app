@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>The Great War: Experience & Aftermath</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +38,7 @@
           </div>
         </div>
         <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
+          <button id="btn-fullscreen" class="btn btn-secondary" style="margin-right: 5px;" onclick="if (!document.fullscreenElement) { const el = document.querySelector('.main-wrapper') || document.documentElement; el.requestFullscreen(); } else { document.exitFullscreen(); }"><i class="fa-solid fa-expand"></i> Full Screen</button>
           <button id="btn-text-size" class="btn btn-secondary" style="margin-right: 5px;" onclick="document.body.classList.toggle('large-text')"><i class="fa-solid fa-text-height"></i> A+ / A-</button>
           <button id="btn-dyslexia" class="btn btn-secondary"><i class="fa-solid fa-glasses"></i> SEN / Dyslexia Mode</button>
         </div>

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const isCore = process.argv.includes('--core');
 
 const dataContent = fs.readFileSync(path.join(__dirname, 'data.js'), 'utf8');
 const jsonContent = dataContent.replace('export const unitData = ', '').trim().replace(/;$/, '');
@@ -14,11 +15,18 @@ try {
 }
 
 
-let html = `<!DOCTYPE html>
+const CHUNK_SIZE = 3;
+const totalChunks = Math.ceil(unitData.lessons.length / CHUNK_SIZE);
+
+for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
+  const ktNum = chunkIndex + 1;
+  const chunkLessons = unitData.lessons.slice(chunkIndex * CHUNK_SIZE, (chunkIndex + 1) * CHUNK_SIZE);
+  
+  let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${unitData.title} - Printable Workbook</title>
+  <title>${unitData.title} - ${isCore ? 'Core Workbook' : 'Printable Workbook'}</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
   <style>
     @page { size: A4 portrait; margin: 20mm; }
@@ -46,17 +54,17 @@ let html = `<!DOCTYPE html>
 <body>
 `;
 
-  let coverList = unitData.lessons.map((l, i) => `<li style="margin-bottom: 10px;">${l.title}</li>`).join('');
+  let coverList = chunkLessons.map((l, i) => `<li style="margin-bottom: 10px;">${l.title}</li>`).join('');
 
   html += `
   <h1 style="margin-top: 50px; margin-bottom: 10px;">${unitData.title}</h1>
-  <p style="text-align:center; font-size:16pt; margin-top: 0; font-weight: bold; color: #d32f2f;">Teacher Answer Key</p>
+  <p style="text-align:center; font-size:16pt; margin-top: 0; font-weight: bold; color: #d32f2f;">${isCore ? 'Core Workbook' : 'Printable Workbook'}</p>
   
-  ${unitData.cover_image ? `
-  <div style="text-align: center; margin: 30px 0;">
-    <img src="${unitData.cover_image}" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
-    ${unitData.cover_caption ? `<div style="font-size: 10pt; font-style: italic; margin-top: 8px;">${unitData.cover_caption}</div>` : ''}
-  </div>` : ''}
+    <div style="text-align: center; margin: 30px 0;">
+    <img src="../cme_new/assets/kt${ktNum}_cover.png" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
+    <div style="font-size: 10pt; font-style: italic; margin-top: 8px;">${ktNum === 1 ? '1945–1956: The End of the Mandate' : ktNum === 2 ? '1956–1979: Superpower Proxies' : '1979–1995: The Peace Process'}</div>
+  </div>
+
 
   <div style="margin: 40px 10%; border: 2px solid #1a237e; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
     <h3 style="margin-top: 0; margin-bottom: 15px; color: #1a237e; text-align: center; font-family: 'Playfair Display', serif; font-size: 16pt;">Key Enquiry Questions</h3>
@@ -79,10 +87,15 @@ let html = `<!DOCTYPE html>
       else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
     }
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => {
+        if (block.tasks) block.tasks.forEach(task => { task.qNum = q++; console.log("Numbered task:", task.text.substring(0, 30)); });
+      });
+    }
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
   }
 
-unitData.lessons.forEach((lesson, lessonIndex) => {
+chunkLessons.forEach((lesson, lessonIndex) => {
   assignQuestionNumbers(lesson);
   html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
 
@@ -352,10 +365,12 @@ const timelinesMap = {
 
 // Append Exam Practice Zone
 if (unitData.exam_blocks && unitData.exam_blocks.length > 0) {
-  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">Exam Practice Zone</h2>`;
-  
-  unitData.exam_blocks.forEach(block => {
-    html += `<h3 style="font-size: 18pt; margin-top: 30px; margin-bottom: 20px; color: #1a237e;">${block.title}</h3>`;
+  const relevantBlocks = unitData.exam_blocks.filter(b => b.block_id === (ktNum * 2 - 1) || b.block_id === (ktNum * 2));
+  if (relevantBlocks.length > 0) {
+    html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">Exam Practice Zone</h2>`;
+    
+    relevantBlocks.forEach(block => {
+      html += `<h3 style="font-size: 18pt; margin-top: 30px; margin-bottom: 20px; color: #1a237e;">${block.title}</h3>`;
     
     block.questions.forEach((q, idx) => {
       html += `<div style="page-break-inside: avoid; margin-bottom: 40px; ${q.marks === 8 ? 'page-break-before: always;' : ''}">`;
@@ -372,6 +387,7 @@ if (unitData.exam_blocks && unitData.exam_blocks.length > 0) {
       html += `</div>`;
     });
   });
+  }
 }
 
 // Append Quiz Pack
@@ -443,5 +459,10 @@ html += `
 
 </html>`;
 
-fs.writeFileSync(path.join(__dirname, 'workbook.html'), html, 'utf8');
-console.log("Successfully generated workbook.html!");
+
+  const outFileName = isCore ? `core_workbook_KT${ktNum}.html` : `workbook_KT${ktNum}.html`;
+  const outPath = path.join(__dirname, outFileName);
+  fs.writeFileSync(outPath, html, 'utf8');
+  console.log(`Successfully generated ${outFileName}!`);
+}
+

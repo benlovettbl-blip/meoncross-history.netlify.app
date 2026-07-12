@@ -601,14 +601,59 @@ export function initializeApp(unitData) {
     quizPackLink.style.color = '#10b981';
     navContainer.appendChild(quizPackLink);
 
-    const workbookLink = document.createElement('a');
-    workbookLink.className = 'lesson-link';
-    workbookLink.textContent = 'Pupil Workbook';
-    workbookLink.href = 'workbook.html';
-    workbookLink.target = '_blank';
-    workbookLink.style.marginTop = '15px';
-    workbookLink.style.border = '2px dashed #cbd5e1';
-    navContainer.appendChild(workbookLink);
+    const isCmeNew = window.location.pathname.includes('cme_new');
+    
+    if (isCmeNew) {
+      const wbHeader = document.createElement('div');
+      wbHeader.innerHTML = '<i class="fa-solid fa-book" style="margin-right: 5px;"></i> <strong>Printable Workbooks</strong>';
+      wbHeader.style.marginTop = '20px';
+      wbHeader.style.color = '#334155';
+      wbHeader.style.fontSize = '0.9rem';
+      wbHeader.style.paddingLeft = '5px';
+      wbHeader.style.textTransform = 'uppercase';
+      wbHeader.style.letterSpacing = '0.5px';
+      navContainer.appendChild(wbHeader);
+
+      for (let ktNum = 1; ktNum <= 3; ktNum++) {
+        const ktLink = document.createElement('a');
+        ktLink.className = 'lesson-link';
+        ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Pupil KT${ktNum}`;
+        ktLink.href = `workbook_KT${ktNum}.html`;
+        ktLink.target = '_blank';
+        ktLink.style.marginTop = '8px';
+        ktLink.style.border = '2px dashed #cbd5e1';
+        navContainer.appendChild(ktLink);
+        
+        const coreKtLink = document.createElement('a');
+        coreKtLink.className = 'lesson-link';
+        coreKtLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Core KT${ktNum}`;
+        coreKtLink.href = `core_workbook_KT${ktNum}.html`;
+        coreKtLink.target = '_blank';
+        coreKtLink.style.marginTop = '5px';
+        coreKtLink.style.border = '2px dashed #3b82f6';
+        coreKtLink.style.color = '#2563eb';
+        navContainer.appendChild(coreKtLink);
+      }
+    } else {
+      const workbookLink = document.createElement('a');
+      workbookLink.className = 'lesson-link';
+      workbookLink.textContent = 'Pupil Workbook';
+      workbookLink.href = 'workbook.html';
+      workbookLink.target = '_blank';
+      workbookLink.style.marginTop = '15px';
+      workbookLink.style.border = '2px dashed #cbd5e1';
+      navContainer.appendChild(workbookLink);
+
+      const coreWorkbookLink = document.createElement('a');
+      coreWorkbookLink.className = 'lesson-link';
+      coreWorkbookLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 5px;"></i> Core Workbook';
+      coreWorkbookLink.href = 'core_workbook.html';
+      coreWorkbookLink.target = '_blank';
+      coreWorkbookLink.style.marginTop = '10px';
+      coreWorkbookLink.style.border = '2px dashed #3b82f6';
+      coreWorkbookLink.style.color = '#2563eb';
+      navContainer.appendChild(coreWorkbookLink);
+    }
   }
 
   // Render Lesson Content
@@ -917,7 +962,7 @@ export function initializeApp(unitData) {
             <div class="level4-narrative-container" style="display: none;">
               <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
-                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;"><strong>[Level 4 Standard]</strong> <br> ${l4StyledContent}</div>
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
                 <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
               </div>
             </div>

@@ -229,6 +229,7 @@
         </div>
 
         <div class="header-actions">
+          <button id="btn-fullscreen" class="btn btn-secondary" style="margin-right: 5px;" onclick="if (!document.fullscreenElement) { const el = document.querySelector('.main-wrapper') || document.documentElement; el.requestFullscreen(); } else { document.exitFullscreen(); }"><i class="fa-solid fa-expand"></i> Full Screen</button>
           <!-- Gamification Hub -->
           <div style="display: flex; gap: 8px; align-items: center;">
             <!-- Mastery SVG Badge -->

@@ -277,20 +277,32 @@ function renderSidebarNav() {
     });
   });
 
-  const workbookLink = document.createElement('a');
-  workbookLink.className = 'nav-item';
-  workbookLink.innerHTML = `
-    <span class="nav-item-content" style="flex-shrink: 0; font-weight: 700; color: var(--primary);">
-      <i class="fa-solid fa-book-open"></i> Pupil Workbook
-    </span>
-  `;
-  workbookLink.href = '/cme_workbooks/workbook_combined.html';
-  workbookLink.target = '_blank';
-  workbookLink.style.marginTop = '15px';
-  workbookLink.style.border = '2px dashed var(--primary)';
-  workbookLink.style.background = 'rgba(59, 130, 246, 0.05)';
-  
-  container.appendChild(workbookLink);
+    const wbHeader = document.createElement('div');
+  wbHeader.innerHTML = '<i class="fa-solid fa-book" style="margin-right: 5px;"></i> <strong>Printable Workbooks</strong>';
+  wbHeader.style.marginTop = '25px';
+  wbHeader.style.color = '#334155';
+  wbHeader.style.fontSize = '0.9rem';
+  wbHeader.style.paddingLeft = '5px';
+  wbHeader.style.textTransform = 'uppercase';
+  wbHeader.style.letterSpacing = '0.5px';
+  container.appendChild(wbHeader);
+
+  for (let ktNum = 1; ktNum <= 3; ktNum++) {
+    const workbookLink = document.createElement('a');
+    workbookLink.className = 'nav-item';
+    workbookLink.innerHTML = `
+      <span class="nav-item-content" style="flex-shrink: 0; font-weight: 700; color: var(--primary);">
+        <i class="fa-solid fa-book-open"></i> KT${ktNum} Workbook
+      </span>
+    `;
+    workbookLink.href = `/cme_workbooks/workbook_KT${ktNum}.html`;
+    workbookLink.target = '_blank';
+    workbookLink.style.marginTop = '8px';
+    workbookLink.style.border = '2px dashed var(--primary)';
+    workbookLink.style.background = 'rgba(59, 130, 246, 0.05)';
+    
+    container.appendChild(workbookLink);
+  }
   
   updateBookmarksUI();
 }
