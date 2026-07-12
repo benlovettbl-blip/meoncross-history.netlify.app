@@ -116,7 +116,7 @@ async function generateWorksheets() {
               <p style="font-size:14pt; font-style: italic;">Student Workbook</p>
               
               <div style="margin: 20px 0;">
-                <img src="../public/assets/sources/kt1_cover.png" alt="Middle East Cover" style="max-width: 65%; height: auto; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);">
+                <img src="/assets/sources/kt1_cover.png" alt="Middle East Cover" style="max-width: 65%; height: auto; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);">
               </div>
 
               <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt; text-align: left;">Name: </div>

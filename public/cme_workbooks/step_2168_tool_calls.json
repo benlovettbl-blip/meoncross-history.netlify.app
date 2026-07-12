@@ -1,0 +1,17 @@
+[
+  {
+    "name": "replace_file_content",
+    "args": {
+      "AllowMultiple": "false",
+      "Description": "\"Appended Middle East Simulator Hub database and controllers to games.js.\"",
+      "EndLine": "1366",
+      "Instruction": "\"Append meSimulationDatabase, meCurrentNode variables, initMeSimGame, startMePath, returnToDashboard, renderMeEngine, and window bindings to games.js.\"",
+      "ReplacementContent": "\"  document.getElementById('btn-taboo-restart').addEventListener('click', initTabooGame);\\n}\\n\\n// =============================================================\\n// MIDDLE EAST DECISION SIMULATOR HUB\\n// =============================================================\\n\\nexport const meSimulationDatabase = {\\n  // -------------------------------------------------------------\\n  // PATH A: ZIONIST PROJECT & ISRAELI SECURITY (1945-1973)\\n  // -------------------------------------------------------------\\n  israeli_start: {\\n    year: \\\"1946\\\",\\n    topic: \\\"KT1: End of the British Mandate\\\",\\n    text: \\\"You are a Jewish Holocaust survivor arriving in the British Mandate of Palestine via an illegal immigration ship (Aliyah Bet). You encounter a blockade by British forces enforcing strict white-paper migration restrictions. Zionist underground paramilitary groups decide to launch direct retaliation targeting the hub of British operations.\\\\n\\\\nWhich parameter tracks the key paramilitary attack on British headquarters in July 1946?\\\",\\n    options: [\\n      {\\n        text: \\\"The Irgun bombing of the King David Hotel, which destroyed the British military and administrative wing, causing 91 fatalities.\\\",\\n        nextNode: \\\"israeli_1948\\\",\\n        isCorrect: true\\n      },\\n      {\\n        text: \\\"The Haganah mobilization to declare an immediate military siege on the city of Cairo.\\\",\\n        nextNode: \\\"israeli_mandate_fail\\\",\\n        isCorrect: false\\n      }\\n    ]\\n  },\\n  israeli_mandate_fail: {\\n    year: \\\"1946\\\",\\n    topic: \\\"⚠️ Specification Fact Error\\\",\\n    text: \\\"Incorrect. Zionist paramilitaries focused strictly within the British Mandate borders. The critical event in July 1946 was the bombing of the King David Hotel by the Irgun, which shattered British political resolve to stay in Palestine.\\\",\\n    options: [{ text: \\\"↩️ Correct your historical timeline pass\\\", nextNode: \\\"israeli_start\\\" }]\\n  },\\n  israeli_1948: {\\n    year: \\\"1947-1948\\\",\\n    topic: \\\"KT1: Partition and Statehood\\\",\\\n<truncated 30489 bytes>",
+      "StartLine": "1365",
+      "TargetContent": "\"  document.getElementById('btn-taboo-restart').addEventListener('click', initTabooGame);\\n}\"",
+      "TargetFile": "\"c:\\\\Users\\\\fives\\\\.gemini\\\\antigravity\\\\scratch\\\\edexcelgcsehistorycme.netlify.app\\\\src\\\\games.js\"",
+      "toolAction": "\"Appending simulator code to games.js\"",
+      "toolSummary": "\"Edit games.js\""
+    }
+  }
+]

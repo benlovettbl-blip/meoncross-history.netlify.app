@@ -16,6 +16,7 @@ export const UNITS = [
   { id: 'great_war_part2', title: 'The Great War: Experience & Aftermath (Part 2)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into trench warfare, the global impact, and the flawed peace of the Treaty of Versailles.' },
   { id: 'gcse_usa_1954_1975', title: 'GCSE: USA (1954-1975)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Conflict at home and abroad: Civil Rights Movement and Vietnam War.' },
   { id: 'gcse_middle_east_1945_1995', title: 'GCSE: Conflict in the Middle East', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The birth of Israel, Suez Crisis, Six-Day War, Yom Kippur War, and peace process.' },
+  { id: 'gcse_middle_east_1945_1995_new', title: 'GCSE: Conflict in the Middle East (NEW)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The brand new accessible interactive digital app format.' },
   { id: 'gcse_elizabethan_england', title: 'GCSE: Early Elizabethan England (1558-1588)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Queen, government, religion, challenges at home/abroad, and Elizabethan society.' }
 ];
 
@@ -114,6 +115,7 @@ export function renderDashboard() {
     great_war_v2: { icon: 'fa-star', color: '#eab308', bg: 'rgba(234, 179, 8, 0.1)' },
     gcse_usa_1954_1975: { icon: 'fa-monument', color: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
     gcse_middle_east_1945_1995: { icon: 'fa-dove', color: '#0d9488', bg: 'rgba(13, 148, 136, 0.1)' },
+    gcse_middle_east_1945_1995_new: { icon: 'fa-star', color: '#0ea5e9', bg: 'rgba(14, 165, 233, 0.1)' },
     gcse_elizabethan_england: { icon: 'fa-crown', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' }
   };
 
@@ -218,6 +220,8 @@ window.launchSubApp = function(unitId) {
     window.location.href = '/usa/';
   } else if (unitId === 'gcse_middle_east_1945_1995') {
     window.location.href = '/cme/';
+  } else if (unitId === 'gcse_middle_east_1945_1995_new') {
+    window.location.href = '/cme_new/';
   } else if (unitId === 'gcse_elizabethan_england') {
     window.location.href = '/eee/';
   } else if (unitId === 'water_and_sanitation') {

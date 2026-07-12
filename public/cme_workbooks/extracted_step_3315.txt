@@ -1,0 +1,98 @@
+Created At: 2026-06-07T08:24:54Z
+Completed At: 2026-06-07T08:24:54Z
+The following changes were made by the replace_file_content tool to: c:\Users\fives\.gemini\antigravity\scratch\edexcelgcsehistorycme.netlify.app\src\games.js. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -1630,4 +1630,449 @@
+ 
+ window.startMePath = startMePath;
+ window.returnToDashboard = returnToDashboard;
+-window.initMeSimGame = initMeSimGame;
++window.initMeSimGame = initMeSimGame;
++
++// =============================================================
++// CHRONOLOGY PARSER RETRO TEXT ADVENTURE GAME ENGINE
++// =============================================================
++
++const meEpicEngine = {
++  state: {
++    chapter: 1, // 1: Mandate, 2: 1948 War, 3: 1956 Suez Crisis
++    room: "DECK",
++    inventory: [],
++    ch1_crateChecked: false,
++    ch2_wireSecured: false,
++    ch2_radioRepaired: false,
++    ch2_reinforcementsCalled: false,
++    ch3_cabinetChecked: false
++  },
++
++  chapters: {
++    1: "1: MANDATE CRISIS (1947)",
++    2: "2: THE ARAB-ISRAELI WAR (1948-49)",
++    3: "3: THE SUEZ CRISIS (1956)"
++  },
++
++  rooms: {
++    // CHAPTER 1 MAP NODES
++    DECK: {
++      chap: 1, name: "SHIP DECK",
++      description: "You are standing on the sun-baked wooden deck of an unauthorized Jewish refugee immigration ship anchored in Haifa Port (July 1947). High wire fencing cuts off the docks from the city.\nTo the East, a wooden GANGWAY runs down toward a British military gate. A dark HATCH leads down into the ship's lower cargo hold.",
++      exits: { east: "PIER", down: "HOLD" }
++    },
++    HOLD: {
++      chap: 1, name: "SHIP'S HOLD",
++      description: "You are down inside the dark, stuffy cargo hold. Dozens of displaced European survivors wait on wooden benches in absolute silence.\nA heavy wooden CRATE sits in the corner stamped with transit labels. An iron ladder leads UP back to the main deck.",
++      exits: { up: "DECK" }
+<truncated 22146 bytes>
+/p>
++      <hr class="me-terminal-line">
++      <p id="me-story-output" class="me-story-text">${meEpicEngine.rooms.DECK.description}</p>
++    `;
++  }
++  
++  const insight = document.getElementById('me-exam-insight');
++  if (insight) {
++    insight.classList.add('me-hidden');
++  }
++
++  syncEngineHudDisplay();
++
++  if (!meParserFormBound) {
++    const formElement = document.getElementById('me-parser-form');
++    const inputField = document.getElementById('me-user-input');
++    if (formElement && inputField) {
++      formElement.addEventListener('submit', (event) => {
++        event.preventDefault();
++        const rawLine = inputField.value.trim();
++        if (!rawLine) return;
++
++        const logScroll = document.getElementById('me-scroll-screen');
++        if (logScroll) {
++          // Echo command onto terminal scrollback screen log
++          const userParagraph = document.createElement('p');
++          userParagraph.className = "me-user-print";
++          userParagraph.innerText = "> " + rawLine.toUpperCase();
++          logScroll.appendChild(userParagraph);
++
++          // Evaluate action through state processing loops
++          const feedbackReply = processCommandInterpreter(rawLine);
++          if (feedbackReply) {
++            const storyParagraph = document.createElement('p');
++            storyParagraph.className = "me-story-text";
++            storyParagraph.innerText = feedbackReply;
++            logScroll.appendChild(storyParagraph);
++          }
++
++          // Reset prompt field and scroll view window down
++          inputField.value = "";
++          logScroll.scrollTop = logScroll.scrollHeight;
++        }
++      });
++      meParserFormBound = true;
++    }
++  }
++}
++
++window.initParserGame = initParserGame;
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.

@@ -51,16 +51,20 @@ export const unitData = {
       ],
       "vocab": [
         {
-          "term": "Mobilise",
-          "definition": "To quickly prepare, assemble, and organize military troops and resources for active battlefield service."
+          "term": "Alsace-Lorraine",
+          "definition": "A resource-rich border region taken by Germany from France in 1871."
         },
         {
-          "term": "Kaiser",
-          "definition": "The official German word for Emperor; used to describe the absolute head of the unified German state after 1871."
+          "term": "Ems Telegram",
+          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
         },
         {
-          "term": "Nationalism",
-          "definition": "A powerful political ideology based on intense pride, devotion, and a sense of belonging to a single, unified national homeland."
+          "term": "Reparations",
+          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
+        },
+        {
+          "term": "Siege",
+          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
         }
       ],
       "extended": {
@@ -130,28 +134,20 @@ export const unitData = {
       },
       "flashcards": [
         {
-          "term": "Franco-Prussian War",
-          "definition": "A conflict in 1870-71 where German states defeated France, leading to the creation of the German Empire."
-        },
-        {
           "term": "Alsace-Lorraine",
-          "definition": "A wealthy, resource-rich region annexed by Germany from France in 1871, fueling French desire for revenge."
+          "definition": "A resource-rich border region taken by Germany from France in 1871."
         },
         {
-          "term": "Revanche",
-          "definition": "The French political desire to seek revenge against Germany and recapture lost territory."
+          "term": "Ems Telegram",
+          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
         },
         {
-          "term": "Otto von Bismarck",
-          "definition": "The German Chancellor who orchestrated the unification of Germany and established a defensive web of alliances."
+          "term": "Reparations",
+          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
         },
         {
-          "term": "Encirclement",
-          "definition": "Germany's geographic nightmare of being surrounded by hostile allied powers (France and Russia)."
-        },
-        {
-          "term": "Reinsurance Treaty",
-          "definition": "A secret 1887 agreement between Germany and Russia orchestrated by Bismarck to prevent a two-front war."
+          "term": "Siege",
+          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
         }
       ],
       "pair_share": {
@@ -208,7 +204,8 @@ export const unitData = {
             "question": "Bismarck created alliances to keep Germany safe, but how did these secret treaties actually make a future European war much more dangerous?"
           }
         ]
-      }
+      },
+      "vocab_cloze_text": "In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine]."
     },
     {
       "id": "lesson_2",
@@ -258,16 +255,20 @@ export const unitData = {
       ],
       "vocab": [
         {
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+        },
+        {
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+        },
+        {
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+        },
+        {
           "term": "Colony",
-          "definition": "An area of land permanently settled by, and placed under the direct political and military control of, a foreign nation."
-        },
-        {
-          "term": "Merchant Ships",
-          "definition": "Commercial vessels built to transport raw trading goods, materials, and civilian commodities rather than serving as warships."
-        },
-        {
-          "term": "Great Powers",
-          "definition": "Nations that possess massive international political influence, immense industrial wealth, and dominant military strength."
+          "definition": "A country or area under the full or partial political control of another country."
         }
       ],
       "extended": {
@@ -350,28 +351,20 @@ export const unitData = {
       },
       "flashcards": [
         {
-          "term": "Kaiser Wilhelm II",
-          "definition": "The ambitious and erratic German Emperor who dismissed Bismarck and pursued an aggressive global policy."
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
         },
         {
-          "term": "Weltpolitik",
-          "definition": "'World Policy'; Wilhelm II's aggressive strategy to turn Germany into a global imperial power with colonies and a large navy."
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
         },
         {
-          "term": "Entente Cordiale",
-          "definition": "A friendly 1904 agreement between Britain and France settling colonial disputes, which Germany later tried to break."
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
         },
         {
-          "term": "Tangier Crisis (1905)",
-          "definition": "The First Moroccan Crisis, where the Kaiser visited Morocco to support its independence, angering France and pushing Britain closer to France."
-        },
-        {
-          "term": "Agadir Crisis (1911)",
-          "definition": "The Second Moroccan Crisis, where Germany sent a gunboat to Morocco, further solidifying the Anglo-French military alliance."
-        },
-        {
-          "term": "Gunboat Diplomacy",
-          "definition": "Foreign policy supported by the use or threat of military force."
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country."
         }
       ],
       "pair_share": {
@@ -428,7 +421,8 @@ export const unitData = {
             "question": "Kaiser Wilhelm gambled that Britain wouldn't risk war to help France in Morocco. Why did his gamble actually make the alliance against Germany much stronger?"
           }
         ]
-      }
+      },
+      "vocab_cloze_text": "In the late 19th century, European powers engaged in a [Scramble for Africa]. This fierce [Imperialism] was driven by a desire for raw materials and global prestige. Every major power wanted to build a vast overseas [Empire] by taking control of another [Colony]."
     },
     {
       "id": "lesson_3",
@@ -484,16 +478,20 @@ export const unitData = {
       ],
       "vocab": [
         {
-          "term": "Arms Race",
-          "definition": "A fierce, direct competition between rival countries for the rapid development, production, and stockpiling of advanced weapons and military equipment."
-        },
-        {
-          "term": "Patriotism",
-          "definition": "A deep, passionate love, devotion, and sense of duty towards one's own native country."
-        },
-        {
           "term": "Dreadnought",
-          "definition": "A revolutionary class of heavy 20th-century battleships, characterized by an all-big-gun layout and fast steam-turbine propulsion, which instantly made all older warships out of date."
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+        },
+        {
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+        },
+        {
+          "term": "Two-Power Standard",
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+        },
+        {
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
         }
       ],
       "extended": {
@@ -566,24 +564,20 @@ export const unitData = {
       },
       "flashcards": [
         {
+          "term": "Dreadnought",
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+        },
+        {
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+        },
+        {
           "term": "Two-Power Standard",
-          "definition": "The British policy that their navy must be equal to or greater than the world's next two largest navies combined."
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
         },
         {
-          "term": "HMS Dreadnought",
-          "definition": "A revolutionary British battleship launched in 1906 that made all older ships obsolete and reset the naval arms race."
-        },
-        {
-          "term": "Splendid Isolation",
-          "definition": "Britain's traditional foreign policy of avoiding permanent alliances in Europe and focusing on its overseas empire."
-        },
-        {
-          "term": "Anglo-German Naval Race",
-          "definition": "The intense competition between Britain and Germany from 1898 to 1912 to build the most Dreadnought-class battleships."
-        },
-        {
-          "term": "Risk Theory",
-          "definition": "German Admiral Tirpitz's strategy of building a navy just large enough to threaten Britain, forcing them to make concessions."
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
         }
       ],
       "pair_share": {
@@ -640,7 +634,8 @@ export const unitData = {
             "question": "How does a massive arms race make war more likely, even if neither country originally planned to actually attack the other?"
           }
         ]
-      }
+      },
+      "vocab_cloze_text": "Britain's traditional [Naval Supremacy] was challenged when Germany began a rapid naval buildup. This sparked a fierce [Arms Race] between the two nations. Britain relied on the [Two-Power Standard] to maintain a massive fleet, but the invention of the heavily-armed [Dreadnought] battleship reset the competition."
     },
     {
       "id": "lesson_4",
@@ -691,16 +686,20 @@ export const unitData = {
       ],
       "vocab": [
         {
-          "term": "Alliance",
-          "definition": "A formal, binding agreement concluded between different nations promising mutual diplomatic or military support if attacked by a rival power."
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+        },
+        {
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+        },
+        {
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
         },
         {
           "term": "Encirclement",
-          "definition": "A strategic defensive nightmare where a country feels completely surrounded by hostile, allied enemy nations intent on blocking its ambitions."
-        },
-        {
-          "term": "Steel Production",
-          "definition": "A key 20th-century industrial economic indicator measuring a country's raw capacity to manufacture heavy armaments, artillery, and protective war machinery."
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
         }
       ],
       "extended": {
@@ -778,24 +777,20 @@ export const unitData = {
       },
       "flashcards": [
         {
-          "term": "The Balkans",
-          "definition": "A volatile region in southeastern Europe, nicknamed the 'Powder Keg', due to intense nationalism and competing empires."
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
         },
         {
-          "term": "Austro-Hungarian Empire",
-          "definition": "A declining, multi-ethnic empire threatened by rising Slavic nationalism within its borders."
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
         },
         {
-          "term": "Greater Serbia",
-          "definition": "The nationalist goal to unite all South Slavs into a single independent nation, at the expense of Austria-Hungary."
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
         },
         {
-          "term": "Bosnian Crisis (1908)",
-          "definition": "Austria-Hungary formally annexed Bosnia, infuriating Serbia and Russia, and severely increasing regional tensions."
-        },
-        {
-          "term": "The Blank Check (1914)",
-          "definition": "Germany's unconditional promise to support Austria-Hungary in any conflict with Serbia following the assassination."
+          "term": "Encirclement",
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
         }
       ],
       "pair_share": {
@@ -852,7 +847,8 @@ export const unitData = {
             "question": "Do you think Kaiser Wilhelm II gave Austria the 'Blank Check' because he actually wanted a world war, or because he felt trapped by the alliance system?"
           }
         ]
-      }
+      },
+      "vocab_cloze_text": "Bismarck feared a two-front war and created the [Reinsurance Treaty] to keep Russia friendly. However, after his dismissal, Germany faced a nightmare scenario: [Encirclement] by hostile powers. Europe split into two armed camps: the [Triple Entente] (Britain, France, Russia) and the [Triple Alliance] (Germany, Austria-Hungary, Italy)."
     },
     {
       "id": "lesson_5",
@@ -935,16 +931,20 @@ export const unitData = {
       ],
       "vocab": [
         {
-          "term": "Annex",
-          "definition": "Seizing an area of sovereign land by force and officially making it a permanent part of your own country."
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
         },
         {
-          "term": "Balkan Nationalism",
-          "definition": "A powerful, unstable movement where different ethnic groups in south-east Europe demanded full independence from foreign empires."
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
         },
         {
-          "term": "Trigger",
-          "definition": "A single, short-term historic event or catalyst that instantly sets off a massive chain reaction, turning long-term tensions into an open conflict."
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+        },
+        {
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
         }
       ],
       "extended": {
@@ -1017,24 +1017,20 @@ export const unitData = {
       },
       "flashcards": [
         {
-          "term": "Archduke Franz Ferdinand",
-          "definition": "The heir to the Austro-Hungarian throne whose assassination in Sarajevo sparked the July Crisis."
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
         },
         {
-          "term": "Gavrilo Princip",
-          "definition": "The 19-year-old Serbian nationalist and member of the Black Hand who assassinated the Archduke."
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
         },
         {
-          "term": "The Black Hand",
-          "definition": "A secret Serbian military society that used terrorism to promote the liberation of Serbs outside Serbia."
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
         },
         {
-          "term": "The July Crisis",
-          "definition": "The month-long chain reaction of diplomatic failures, ultimatums, and military mobilizations following the assassination."
-        },
-        {
-          "term": "The Schlieffen Plan",
-          "definition": "Germany's inflexible military strategy to fight a two-front war by rapidly invading France through neutral Belgium."
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
         }
       ],
       "pair_share": {
@@ -1091,7 +1087,8 @@ export const unitData = {
             "question": "After reading about the 'Willy-Nicky Telegrams' and the military timetables, do you think the politicians were in charge in July 1914, or were the generals running the show?"
           }
         ]
-      }
+      },
+      "vocab_cloze_text": "The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war."
     }
   ],
   "quizPack": [

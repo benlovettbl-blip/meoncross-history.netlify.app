@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>GCSE History Lesson Resource - Workbook</title>
+  <style>
+    @page {
+      size: 21cm 29.7cm; /* A4 */
+      margin: 1.0cm;
+      mso-page-orientation: portrait;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      color: #1f2937;
+      line-height: 1.4;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .print-page, .print-page-last {
+      clear: both;
+      box-sizing: border-box;
+      position: relative;
+      background: #ffffff;
+    }
+    .print-page {
+      page-break-after: always;
+    }
+    .print-page-last {
+      page-break-after: avoid;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1f2937 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.4 !important;
+      }
+      .print-page, .print-page-last {
+        width: 100% !important;
+        min-height: 27.2cm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+    }
+    .main-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      border-bottom: 2px solid #111827;
+      padding-bottom: 3px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #111827;
+    }
+    .sub-title {
+      font-size: 8.5pt;
+      font-weight: bold;
+      color: #111827;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .dotted-writing-line {
+      border-bottom: 1px dashed #9ca3af;
+      height: 28px;
+      margin-bottom: 4px;
+    }
+    .footer-note {
+      font-size: 7pt;
+      color: #6b7280;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 2px;
+      margin-top: 15px;
+      clear: both;
+    }
+    @media screen {
+      .footer-note {
+        position: absolute;
+        bottom: 1.0cm;
+        left: 1.0cm;
+        right: 1.0cm;
+        margin-top: 0;
+      }
+    }
+    @media print {
+      .footer-note {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+      }
+    }
+    /* Cornell grid styles */
+    .print-cornell-grid {
+      display: table;
+      width: 100%;
+      border: 1.5px solid #111827;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .print-cornell-row {
+      display: table-row;
+    }
+    .print-cornell-cues {
+      display: table-cell;
+      width: 30%;
+      border-right: 1.5px solid #111827;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      font-size: 8pt;
+      font-weight: bold;
+      background: #f9fafb;
+    }
+    .print-cornell-notes {
+      display: table-cell;
+      width: 70%;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      background: #ffffff;
+    }
+    .print-cornell-summary-row {
+      display: table-row;
+    }
+    .print-cornell-summary-cell {
+      display: table-cell;
+      colspan: 2;
+      padding: 10px;
+      vertical-align: top;
+      background: #f9fafb;
+      font-size: 8.5pt;
+    }
+    /* Flowchart styles */
+    .flowchart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .flowchart-box {
+      border: 1.5px solid #111827;
+      padding: 8px;
+      width: 22%;
+      vertical-align: top;
+      background: #ffffff;
+      font-size: 8pt;
+    }
+    .flowchart-arrow {
+      text-align: center;
+      font-size: 14pt;
+      font-weight: bold;
+      width: 4%;
+      vertical-align: middle;
+      color: #4b5563;
+    }
+    /* Vocabulary Match-up styles */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .vocab-th {
+      font-weight: bold;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      background-color: #f3f4f6;
+      border: 1px solid #9ca3af;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .vocab-td {
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      font-size: 7.5pt;
+      vertical-align: middle;
+    }
+    /* Exam Rubric styles */
+    .rubric-box {
+      border: 1px solid #111827;
+      background: #f9fafb;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 8pt;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        background: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+
+        <div class="print-page">
+          <div class="main-title">GCSE Exam Practice: The Aftermath of the 1948–49 War</div>
+          
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 12px; font-family: Arial, sans-serif;">
+      <tr>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 50%;"><strong>Student Name:</strong> ___________________________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Date:</strong> __________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Class:</strong> __________________</td>
+      </tr>
+    </table>
+  
+          <div style="font-size: 11pt; font-weight: bold; margin-bottom: 15px; border-bottom: 1.5px solid #111827; padding-bottom: 4px;">
+            Question 1 [4 Marks]
+          </div>
+          
+          <p style="font-size: 11pt; font-weight: bold; margin-bottom: 12px; line-height: 1.45;">
+            Explain one consequence of the Israeli Law of Return (1950). (4 marks)
+          </p>
+
+          <div style="margin-top: 15px;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </div>
+
+          <div class="rubric-box">
+            <strong style="text-transform: uppercase; display: block; margin-bottom: 4px;">Self-Evaluation Rubric</strong>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Answered in full, grammatically correct sentences.</label>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Included specific historical details (dates, names, events).</label>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Explained the connection between cause and consequence or narrative progression.</label>
+          </div>
+
+          <div class="footer-note">GCSE History Workbook &bull; Exam Practice &bull; Page 1</div>
+        </div>
+      
+        <div class="print-page-last">
+          <div class="main-title">GCSE Exam Practice: The Aftermath of the 1948–49 War</div>
+          
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 12px; font-family: Arial, sans-serif;">
+      <tr>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 50%;"><strong>Student Name:</strong> ___________________________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Date:</strong> __________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Class:</strong> __________________</td>
+      </tr>
+    </table>
+  
+          <div style="font-size: 11pt; font-weight: bold; margin-bottom: 15px; border-bottom: 1.5px solid #111827; padding-bottom: 4px;">
+            Question 2 [8 Marks]
+          </div>
+          
+          <p style="font-size: 11pt; font-weight: bold; margin-bottom: 12px; line-height: 1.45;">
+            Explain the importance of the Palestinian refugee crisis for Arab-Israeli relations in the years 1948–56. (8 marks)
+          </p>
+
+          <div style="margin-top: 15px;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </div>
+
+          <div class="rubric-box">
+            <strong style="text-transform: uppercase; display: block; margin-bottom: 4px;">Self-Evaluation Rubric</strong>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Answered in full, grammatically correct sentences.</label>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Included specific historical details (dates, names, events).</label>
+            <label style="display: block; margin-bottom: 4px;"><input type="checkbox"> [ ] Explained the connection between cause and consequence or narrative progression.</label>
+          </div>
+
+          <div class="footer-note">GCSE History Workbook &bull; Exam Practice &bull; Page 2</div>
+        </div>
+      
+</body>
+</html>
+  

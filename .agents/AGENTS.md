@@ -44,3 +44,13 @@ Always append the local host web link (e.g., http://127.0.0.1:5500 if running li
 
 ## Proactive Planning & Design Persona
 Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.
+
+## Printed Workbook Vocabulary Tasks
+Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, you MUST ensure that the vocabulary exercises dynamically rotate between three distinct pedagogical styles (e.g., based on the lesson index: `lessonIndex % 3`):
+1. **Contextual Cloze:** A fill-in-the-blank summary using the words.
+2. **Vocabulary Mapping:** A task asking the student to write a historically accurate sentence connecting two terms from a provided glossary box.
+3. **Mini-Frayer Model:** A grid for 1-2 words requiring a definition, historical example, and non-example/sketch.
+This prevents pupil fatigue and ensures diverse cognitive engagement.
+
+## Printed Workbook Timeline Tasks
+Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, if a lesson contains a `do_now.type === "timeline"`, you MUST render it as a 'Domino Flowchart'. The script must print the events inside randomly scattered/shuffled CSS boxes on the page. The instructions must tell the student to 'draw arrows connecting the events in the correct chronological and causal order'.

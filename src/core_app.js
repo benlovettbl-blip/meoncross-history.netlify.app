@@ -1,3 +1,4 @@
+import { renderRevisionZone } from './revision_zone.js';
 export function initializeApp(unitData) {
   document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('sidebar');
@@ -84,7 +85,7 @@ export function initializeApp(unitData) {
     .student-answer-input {
       display: none;
       width: 100%;
-      height: 80px;
+      height: 140px;
       padding: 10px;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
@@ -458,11 +459,20 @@ export function initializeApp(unitData) {
 
     const btnCurriculum = document.createElement('button');
     btnCurriculum.className = 'btn btn-secondary';
-    btnCurriculum.innerHTML = '<i class="fa-solid fa-list-check"></i> Curriculum Setup';
+    btnCurriculum.innerHTML = '<i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge (Teachers)';
     btnCurriculum.addEventListener('click', () => {
       openCurriculumModal();
     });
     headerActions.appendChild(btnCurriculum);
+
+    const btnWhiteboard = document.createElement('button');
+    btnWhiteboard.className = 'btn btn-secondary';
+    btnWhiteboard.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i> Task Whiteboard';
+    btnWhiteboard.addEventListener('click', () => {
+      openTaskWhiteboard();
+    });
+    headerActions.appendChild(btnWhiteboard);
+
   }
 
   function openCurriculumModal() {
@@ -476,7 +486,7 @@ export function initializeApp(unitData) {
       content.style.cssText = 'background:var(--card-bg);padding:30px;border-radius:12px;width:90%;max-width:500px;color:var(--text-color);box-shadow:0 10px 25px rgba(0,0,0,0.2);';
       
       content.innerHTML = `
-        <h2 style="margin-top:0"><i class="fa-solid fa-book-open"></i> Curriculum Setup</h2>
+        <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
         <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
         <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
         </div>
@@ -547,6 +557,33 @@ export function initializeApp(unitData) {
       navContainer.appendChild(link);
     });
 
+    const revisionLink = document.createElement('a');
+    revisionLink.className = 'lesson-link';
+    revisionLink.innerHTML = '🎮 Revision Zone';
+    revisionLink.style.marginTop = '15px';
+    revisionLink.style.borderTop = '2px solid rgba(255,255,255,0.1)';
+    revisionLink.style.color = '#fde047';
+    revisionLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      revisionLink.classList.add('active');
+      const contentArea = document.getElementById('content-area');
+      contentArea.innerHTML = ''; // clear
+      renderRevisionZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(revisionLink);
+
+    const quizPackLink = document.createElement('a');
+    quizPackLink.className = 'lesson-link';
+    quizPackLink.innerHTML = '📝 Printable Quiz Pack';
+    quizPackLink.href = 'quiz_pack.html';
+    quizPackLink.target = '_blank';
+    quizPackLink.style.marginTop = '15px';
+    quizPackLink.style.border = '2px dashed #059669';
+    quizPackLink.style.color = '#10b981';
+    navContainer.appendChild(quizPackLink);
+
     const workbookLink = document.createElement('a');
     workbookLink.className = 'lesson-link';
     workbookLink.textContent = 'Pupil Workbook';
@@ -559,6 +596,7 @@ export function initializeApp(unitData) {
 
   // Render Lesson Content
   function renderLesson(lesson) {
+    window.currentActiveLesson = lesson;
     let html = `<div class="lesson-content" style="max-width: 900px; margin: 0 auto;">`;
     
     if (unitEnquiryText) {
@@ -652,12 +690,21 @@ export function initializeApp(unitData) {
       });
     }
 
+    let seenTerms = new Set();
     const highlightGlossary = (text) => {
       if (Object.keys(vocabDict).length === 0) return text;
       let processedText = text;
-      for (const [term, def] of Object.entries(vocabDict)) {
-        const regex = new RegExp(`\\b(${term})\\b`, 'gi');
-        processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
+      const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
+      for (const term of sortedTerms) {
+        const def = vocabDict[term];
+        if (!seenTerms.has(term)) {
+          // No 'g' flag, so it only replaces the first occurrence in this chunk
+          const regex = new RegExp(`\\b(${term})\\b`, 'i');
+          if (regex.test(processedText)) {
+            processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
+            seenTerms.add(term);
+          }
+        }
       }
       return processedText;
     };
@@ -724,7 +771,7 @@ export function initializeApp(unitData) {
       `;
       lesson.do_now.items.forEach((item, index) => {
         html += `
-          <div class="do-now-card" id="do-now-card-${index}">
+          <div class="do-now-card" id="do-now-card-${index}" onclick="this.classList.toggle('revealed')" style="cursor: pointer;">
             <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
             <div>${item.question}</div>
             <div class="answer" id="do-now-ans-${index}">${item.answer}</div>
@@ -734,8 +781,47 @@ export function initializeApp(unitData) {
       html += `</div></div>`;
     }
 
+    
+    // PHASE: Vocabulary Unlock (Tier 3)
+    const hasVocab = lesson.vocab && lesson.vocab.length > 0;
+    if (hasVocab) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">Phase ${phaseNum++}: Vocabulary Unlock</div>
+          </div>
+          <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><i class="fa-solid fa-spell-check" style="color: #3b82f6;"></i> <strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+          
+          <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      lesson.vocab.forEach((v, idx) => {
+        html += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+      });
+      
+      html += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+      
+      let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
+      defs.sort(() => Math.random() - 0.5);
+      
+      defs.forEach(d => {
+        html += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+      });
+      
+      html += `
+            </div>
+          </div>
+          <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+            <i class="fa-solid fa-star"></i> Vocabulary Mastered!
+          </div>
+        </div>
+        <div id="locked-content">
+      `;
+    }
+
     // PHASE: Core Information & Sources
-    if (lesson.narrative && lesson.narrative.length > 0) {
+    if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
       let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
       html += `
         <div class="phase-card" id="phase-${phaseNum}">
@@ -743,14 +829,98 @@ export function initializeApp(unitData) {
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">Phase ${phaseNum++}: ${enquiryTitle}</div>
           </div>
       `;
-      lesson.narrative.forEach((para, index) => {
+      
+      lesson.narrative_blocks.forEach((block, index) => {
+        if (block.type === 'interactive_map') {
+          html += `
+            <div class="interactive-map-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+              <h3 style="margin-top: 0; color: #1e293b; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-map-location-dot"></i> Interactive Historical Map</h3>
+              <div class="map-img-wrapper" style="position: relative; height: 500px; width: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+          `;
+          
+          block.maps.forEach((m, idx) => {
+            html += `<img src="${m.src}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+          });
+          
+          html += `
+              </div>
+              <div id="map-caption-display" style="font-size: 1.1rem; font-style: italic; color: #334155; min-height: 3em; margin-bottom: 20px;">${block.maps[0].caption}</div>
+              <div class="map-controls" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+          `;
+          
+          block.maps.forEach((m, idx) => {
+            const activeClass = idx === 0 ? 'active-map-btn' : '';
+            html += `
+                <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" onclick="toggleMap(this)" style="border-radius: 30px; padding: 8px 16px; font-weight: bold;">
+                  ${m.year} ${m.label}
+                </button>
+            `;
+          });
+          
+          html += `
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        const bg = (index % 2 === 0) ? '#ffffff' : '#f0f9ff';
+        const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
+        let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
+        let styledContent = contentStr;
+        if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
+           const firstLetter = contentStr.charAt(0);
+           const rest = contentStr.slice(1);
+           styledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #1e3a8a;">${firstLetter}</span>` + rest;
+        }
+        
+        let l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.level_4}</em>` : highlightGlossary(block.level_4);
+        let l4StyledContent = l4ContentStr;
+        if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
+           const firstLetter = l4ContentStr.charAt(0);
+           const rest = l4ContentStr.slice(1);
+           l4StyledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` + rest;
+        }
+
+        // Render Standard Narrative Chunk
         html += `
-          <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease;">
-            <div class="para-number">${index + 1}</div>
-            <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${highlightGlossary(para)}</div>
-            <button class="btn btn-secondary" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+          <div class="standard-narrative-container">
+            <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">${index + 1}</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${styledContent}</div>
+              <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
           </div>
         `;
+
+        // Render Level 4 Narrative Chunk
+        if (block.level_4) {
+          html += `
+            <div class="level4-narrative-container" style="display: none;">
+              <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;"><strong>[Level 4 Standard]</strong> <br> ${l4StyledContent}</div>
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+              </div>
+            </div>
+          `;
+        }
+        
+        // Render Embedded Tasks for this chunk!
+        if (block.tasks && block.tasks.length > 0) {
+          html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
+          html += `<h4 style="margin-top: 0; color: #b45309; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-pen-to-square"></i> Knowledge Check</h4>`;
+          block.tasks.forEach(task => {
+             html += `
+               <div style="margin-bottom: 10px;">
+                 <strong>${task.text.replace(/\s*\(P\d+\)/gi, '')}</strong>
+                 <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show Model</button>
+                 <div class="answer" style="margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
+               </div>
+             `;
+          });
+          html += `</div>`;
+        }
       });
 
       if (lesson.sources && lesson.sources.length > 0) {
@@ -903,7 +1073,13 @@ export function initializeApp(unitData) {
     }
 
     html += `</div>`;
+    
+    if (hasVocab) {
+      html += `</div>`; // End locked-content
+    }
     contentArea.innerHTML = html;
+    window.vocabMatchesFound = 0; // reset for new lesson
+
   }
 
   // Toggling elements helper
@@ -913,6 +1089,64 @@ export function initializeApp(unitData) {
       el.style.display = el.style.display === 'none' ? 'block' : 'none';
     }
   };
+
+
+  // Matching Game Logic
+  let selectedTermIdx = null;
+  let selectedTermEl = null;
+  window.vocabMatchesFound = 0;
+
+  document.addEventListener('click', (e) => {
+    const termBtn = e.target.closest('.match-term-btn');
+    const defBtn = e.target.closest('.match-def-btn');
+
+    if (termBtn && !termBtn.disabled) {
+      document.querySelectorAll('.match-term-btn').forEach(b => {
+        if (!b.disabled) b.style.borderColor = '#cbd5e1';
+      });
+      termBtn.style.borderColor = '#3b82f6';
+      selectedTermIdx = termBtn.dataset.idx;
+      selectedTermEl = termBtn;
+    }
+
+    if (defBtn && !defBtn.disabled && selectedTermIdx !== null) {
+      if (defBtn.dataset.idx === selectedTermIdx) {
+        // Match found!
+        defBtn.style.background = '#10b981';
+        defBtn.style.color = '#fff';
+        defBtn.style.borderColor = '#059669';
+        defBtn.disabled = true;
+
+        selectedTermEl.style.background = '#10b981';
+        selectedTermEl.style.color = '#fff';
+        selectedTermEl.style.borderColor = '#059669';
+        selectedTermEl.disabled = true;
+
+        selectedTermIdx = null;
+        selectedTermEl = null;
+        window.vocabMatchesFound++;
+
+        const totalTerms = document.querySelectorAll('.match-term-btn').length;
+        if (window.vocabMatchesFound >= totalTerms) {
+           const successMsg = document.getElementById('unlock-success');
+           if (successMsg) successMsg.style.display = 'block';
+           
+           const lockedSec = document.getElementById('locked-content');
+           if (lockedSec) {
+             lockedSec.style.opacity = '1';
+             lockedSec.style.pointerEvents = 'auto';
+             lockedSec.style.filter = 'none';
+           }
+        }
+      } else {
+        // Wrong match
+        defBtn.style.borderColor = '#ef4444';
+        setTimeout(() => {
+          if (!defBtn.disabled) defBtn.style.borderColor = '#cbd5e1';
+        }, 500);
+      }
+    }
+  });
 
   // Initialize
   if (unitData.lessons.length > 0) {
@@ -936,3 +1170,100 @@ window.updateProgress = () => {
   }
 };
 }
+
+
+  function assignQuestionNumbers(lesson) {
+    let q = 1;
+    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
+    if (lesson.do_now) {
+      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
+      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
+    }
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => {
+        if (block.tasks) block.tasks.forEach(task => task.qNum = q++);
+      });
+    }
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
+  }
+
+  function openTaskWhiteboard() {
+    const modal = document.getElementById('task-whiteboard-modal');
+    if (!modal) return;
+    
+    const container = document.getElementById('whiteboard-questions-container');
+    container.innerHTML = '';
+    
+    const activeLesson = window.currentActiveLesson || unitData.lessons[0];
+    
+    assignQuestionNumbers(activeLesson);
+    
+    let html = '';
+    
+    const addQuestionCard = (qNum, questionText, answerText) => {
+      const finalAnswer = answerText || "Model answer to be discussed in class.";
+      html += `
+        <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
+          <div style="font-weight: bold;">Q${qNum}. ${questionText}</div>
+          <div class="wb-answer">${finalAnswer}</div>
+        </div>
+      `;
+    };
+
+    if (activeLesson.primary_source && activeLesson.primary_source.question) {
+      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question.replace(/^Enquiry:\s*/, ""), activeLesson.primary_source.model_answer || '');
+    }
+    
+    if (activeLesson.do_now) {
+      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
+        addQuestionCard(activeLesson.do_now.qNum, activeLesson.do_now.prediction_question.replace(/^Predict:\s*/, ""), activeLesson.do_now.model || activeLesson.do_now.answer || '');
+      } else if (activeLesson.do_now.type === "questions") {
+        activeLesson.do_now.items.forEach(item => {
+           addQuestionCard(item.qNum, item.question.replace(/^\d+\.\s*/, ""), item.answer || '');
+        });
+      }
+    }
+    
+    if (activeLesson.narrative_blocks) {
+      activeLesson.narrative_blocks.forEach(block => {
+        if (block.tasks) {
+          block.tasks.forEach(task => {
+            let cleanTask = task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, "").replace(/\s*\(P\d+\)/gi, "");
+            addQuestionCard(task.qNum, cleanTask, task.model || '');
+          });
+        }
+      });
+    }
+    
+    if (activeLesson.extended && activeLesson.extended.question) {
+       addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, ""), activeLesson.extended.model || activeLesson.extended.answer || '');
+    }
+    
+    container.innerHTML = html;
+    modal.classList.add('visible');
+  }
+
+
+window.toggleMap = function(btn) {
+  const container = btn.closest('.interactive-map-container');
+  // Update buttons
+  container.querySelectorAll('.map-toggle-btn').forEach(b => {
+    b.classList.remove('active-map-btn');
+    b.style.backgroundColor = '';
+    b.style.color = '';
+  });
+  btn.classList.add('active-map-btn');
+  btn.style.backgroundColor = '#1a237e';
+  btn.style.color = 'white';
+  
+  // Update images
+  const targetId = btn.getAttribute('data-map-id');
+  container.querySelectorAll('img[id^="map-img-"]').forEach(img => {
+    img.style.opacity = '0';
+  });
+  container.querySelector('#map-img-' + targetId).style.opacity = '1';
+  
+  // Update caption
+  container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
+};

@@ -1,0 +1,643 @@
+// =============================================================
+// MIDDLE EAST DECISION SIMULATOR HUB
+// =============================================================
+
+export const meSimulationDatabase = {
+  "israeli_start": {
+    "year": "1946",
+    "topic": "KT1: End of the British Mandate",
+    "text": "You are a Jewish Holocaust survivor arriving in the British Mandate of Palestine via an illegal immigration ship (Aliyah Bet). You encounter a blockade by British forces enforcing strict white-paper migration restrictions. Zionist underground paramilitary groups decide to launch direct retaliation targeting the hub of British operations.\n\nWhich parameter tracks the key paramilitary attack on British headquarters in July 1946?",
+    "options": [
+      {
+        "text": "The Irgun bombing of the King David Hotel, which destroyed the British military and administrative wing, causing 91 fatalities.",
+        "nextNode": "israeli_1948",
+        "isCorrect": true
+      },
+      {
+        "text": "The Haganah mobilization to declare an immediate military siege on the city of Cairo.",
+        "nextNode": "israeli_mandate_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "israeli_mandate_fail": {
+    "year": "1946",
+    "topic": "⚠️ Specification Fact Error",
+    "text": "Incorrect. Zionist paramilitaries focused strictly within the British Mandate borders. The critical event in July 1946 was the bombing of the King David Hotel by the Irgun, which shattered British political resolve to stay in Palestine.",
+    "options": [
+      {
+        "text": "↩️ Correct your historical timeline pass",
+        "nextNode": "israeli_start"
+      }
+    ]
+  },
+  "israeli_1948": {
+    "year": "1947-1948",
+    "topic": "KT1: Partition and Statehood",
+    "text": "Correct! The King David Hotel bombing severely weakened British mandate sustainability.\n\nNovember 1947. The United Nations passes UN Resolution 181 to partition Palestine into separate Jewish and Arab states. Arab leaders reject the plan as unfair. On May 14, 1948, the British withdraw, and David Ben-Gurion declares the State of Israel. Instantly, surrounding Arab nations mobilize armies and attack.\n\nWhich outcome traces the military resolution of this 1948–49 Arab-Israeli War?",
+    "evidenceKey": "king_david_46",
+    "evidenceText": "🏨 King David Bombing (1946): Executed by the Irgun, this attack broke British mandate administrative resolve and accelerated the hand-over to the UN.",
+    "options": [
+      {
+        "text": "Israel secures an armistice victory, expanding its territory beyond the original UN partition plan boundaries to control 78% of the area.",
+        "nextNode": "israeli_law_return",
+        "isCorrect": true
+      },
+      {
+        "text": "Arab armies successfully push Israeli forces completely back into pre-mandate boundaries.",
+        "nextNode": "israeli_1948_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "israeli_1948_fail": {
+    "year": "1948",
+    "topic": "⚠️ War Outcome Error",
+    "text": "Incorrect. Israel won the 1948-49 war, capturing significant amounts of territory beyond UN Resolution 181 lines, including West Jerusalem, while the remaining areas became the West Bank (Jordan) and Gaza (Egypt).",
+    "options": [
+      {
+        "text": "↩️ Readjust the territorial baseline",
+        "nextNode": "israeli_1948"
+      }
+    ]
+  },
+  "israeli_law_return": {
+    "year": "1950-1956",
+    "topic": "KT1: Aftermath & Structural Growth",
+    "text": "Correct! Israel consolidated its victory, leading to massive territorial changes.\n\nTo ensure state preservation, the Knesset passes the 'Law of Return' granting any Jew worldwide the right to immigrate, while integrating paramilitaries into the unified Israeli Defence Forces (IDF). \n\nBy 1956, borders clash. Egyptian President Nasser blocks Israeli shipping lanes through the Straits of Tiran. Israel launches a pre-emptive assault into the Sinai Peninsula as part of a secret tripartite agreement.\n\nWho were Israel's secret allies during this 1956 Suez Crisis?",
+    "evidenceKey": "war_48_territory",
+    "evidenceText": "🗺️ 1948 War Armistice: Israel expanded its borders to absorb 78% of mandatory Palestine, leaving borders highly contested.",
+    "options": [
+      {
+        "text": "Britain and France, who wanted to regain control of the nationalized Suez Canal.",
+        "nextNode": "israeli_six_day",
+        "isCorrect": true
+      },
+      {
+        "text": "The United States and the Soviet Union, operating under a joint UN mandate.",
+        "nextNode": "israeli_suez_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "israeli_suez_fail": {
+    "year": "1956",
+    "topic": "⚠️ Suez Alliance Misconception",
+    "text": "Incorrect. The US and USSR actually united politically to *condemn* the attack. Israel's secret allies were Britain and France, who coordinated the attack to protect their imperial assets.",
+    "options": [
+      {
+        "text": "↩️ Correct your alliance mapping parameters",
+        "nextNode": "israeli_law_return"
+      }
+    ]
+  },
+  "israeli_six_day": {
+    "year": "1967",
+    "topic": "KT2: The Six-Day War",
+    "text": "Correct! Israel's military success in Sinai proved the effectiveness of the IDF, even though international pressure forced a withdrawal later.\n\nJune 1967. Border skirmishes with Syria escalate, and Egypt evicts UN peacekeepers from Sinai. Fearing an imminent Arab attack, Israel launches a pre-emptive strike, destroying the entire Egyptian air force on the tarmac in a single morning.\n\nWhich new territories did Israel capture by the end of this Six-Day War?",
+    "evidenceKey": "suez_56_alliance",
+    "evidenceText": "🚢 Suez Crisis (1956): Proved Israeli military capability via the Sinai sweep alongside secret allies Britain and France.",
+    "options": [
+      {
+        "text": "The Golan Heights (from Syria), the West Bank and East Jerusalem (from Jordan), and the Gaza Strip and Sinai Peninsula (from Egypt).",
+        "nextNode": "israeli_yom_kippur",
+        "isCorrect": true
+      },
+      {
+        "text": "The cities of Damascus, Cairo, and Amman proper.",
+        "nextNode": "israeli_6day_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "israeli_6day_fail": {
+    "year": "1967",
+    "topic": "⚠️ Occupation Limits Error",
+    "text": "Incorrect. Israel did not capture Arab capital cities. It occupied specific strategic buffer zones: the Golan Heights, West Bank, Gaza, East Jerusalem, and Sinai.",
+    "options": [
+      {
+        "text": "↩️ Adjust territorial occupation data",
+        "nextNode": "israeli_six_day"
+      }
+    ]
+  },
+  "israeli_yom_kippur": {
+    "year": "1973",
+    "topic": "KT2: The Yom Kippur War",
+    "text": "Correct! These captured regions became the 'Occupied Territories' that redefined Middle Eastern diplomacy.\n\nOctober 1973. Seeking to reclaim their lost territories, Egypt and Syria launch a coordinated surprise assault on Israel during the holiest day of the Jewish calendar. The initial attack breaks through the Bar-Lev line along the Suez Canal, catching Israeli forces off-guard.\n\nHow did Israel secure container recovery during this Yom Kippur War?",
+    "evidenceKey": "occupied_territories_67",
+    "evidenceText": "⛰️ Six-Day War (1967): Israel occupied the Golan Heights, West Bank, Gaza, and Sinai, shifting regional defensive depth entirely.",
+    "options": [
+      {
+        "text": "A massive US military airlift of weapons (Operation Nickel Grass) allowed Israel to stabilize fronts and launch successful counter-attacks.",
+        "nextNode": "israeli_complete",
+        "isCorrect": true
+      },
+      {
+        "text": "Direct combat support from British and French amphibious troop landings.",
+        "nextNode": "israeli_73_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "israeli_73_fail": {
+    "year": "1973",
+    "topic": "⚠️ Superpower Alignment Error",
+    "text": "Incorrect. By 1973, US aid was Israel's primary strategic lifeline. Massive American resupply efforts allowed Israel to stabilize its lines and counter-attack across the Suez Canal.",
+    "options": [
+      {
+        "text": "↩️ Correct your superpower aid variables",
+        "nextNode": "israeli_yom_kippur"
+      }
+    ]
+  },
+  "israeli_complete": {
+    "year": "1973+",
+    "topic": "🏆 Israeli Path Completed!",
+    "text": "You have traced the security trajectory of Israel from early migration struggles directly through to the defensive parameters of the 1973 war. You have secured all structural historical evidence metrics for this sector.",
+    "options": [
+      {
+        "text": "🔄 Return to Dashboard Hub",
+        "nextNode": "RESET_TO_DASHBOARD",
+        "isReset": true
+      }
+    ]
+  },
+  "palestinian_start": {
+    "year": "1947-1948",
+    "topic": "KT1: Partition and Al-Nakba",
+    "text": "You are a Palestinian Arab living in Jaffa in 1947. The United Nations announces UN Resolution 181, partitioning your homeland to create a Jewish state without consulting your local leadership. Violence erupts. As the 1948 war escalates, rumors of village massacres like Deir Yassin spread panic across Arab neighborhoods.\n\nWhat was the immediate demographic consequence of this war for the Palestinian Arab population?",
+    "options": [
+      {
+        "text": "Over 700,000 Palestinian Arabs flee or are expelled from their homes, becoming refugees displaced into Gaza, the West Bank, Jordan, and Lebanon.",
+        "nextNode": "palestinian_occupied",
+        "isCorrect": true
+      },
+      {
+        "text": "The entire Arab population is granted dual passport status inside a single federated system.",
+        "nextNode": "palestinian_48_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "palestinian_48_fail": {
+    "year": "1948",
+    "topic": "⚠️ Refugee Crisis Misconception",
+    "text": "Incorrect. The war caused a massive displacement crisis known as Al-Nakba ('The Catastrophe'), leaving over 700,000 Palestinians stateless refugees dependent on UNRWA camps.",
+    "options": [
+      {
+        "text": "↩️ Trace the refugee pathway correctly",
+        "nextNode": "palestinian_start"
+      }
+    ]
+  },
+  "palestinian_occupied": {
+    "year": "1967",
+    "topic": "KT2: Structural Occupation Life",
+    "text": "Correct! The Palestinian refugee status became a permanent point of contention across the Middle East.\n\nIn 1967, the Six-Day War brings the remaining parts of mandatory Palestine under Israeli control. Your refugee camp in the West Bank or Gaza is now governed by Israeli military rule.\n\nWhich political umbrella body, led from 1969 by Yasser Arafat, becomes the primary voice of Palestinian nationalist resistance?",
+    "evidenceKey": "nakba_refugees_48",
+    "evidenceText": "⛺ Al-Nakba Displacements (1948): Left over 700,000 Palestinians as permanent refugees, reshaping regional political stability.",
+    "options": [
+      {
+        "text": "The PLO (Palestine Liberation Organization), which integrated groups like Fatah to pursue liberation.",
+        "nextNode": "palestinian_terrorism",
+        "isCorrect": true
+      },
+      {
+        "text": "The Arab League Unified High Command.",
+        "nextNode": "palestinian_plo_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "palestinian_plo_fail": {
+    "year": "1967",
+    "topic": "⚠️ Organizational Error",
+    "text": "Incorrect. While the Arab League supported the cause, the specific organization that represented the Palestinian national movement was the PLO, led by Yasser Arafat's Fatah faction.",
+    "options": [
+      {
+        "text": "↩️ Rectify institutional structures",
+        "nextNode": "palestinian_occupied"
+      }
+    ]
+  },
+  "palestinian_terrorism": {
+    "year": "1970-1972",
+    "topic": "KT2: Armed Resistance & Radicalization",
+    "text": "Correct! The PLO coordinated both political and armed resistance campaigns.\n\nFrustrated by a lack of international diplomatic progress, radical factions like the PFLP carry out international operations, including airplane hijacks in 1970. In late 1970, King Hussein of Jordan views the armed Palestinian factions as a threat to his throne and launches a military campaign to expel the PLO from his country.\n\nWhat was this event called, and where did the PLO relocate its operational base?",
+    "evidenceKey": "plo_consolidation_69",
+    "evidenceText": "✊ PLO Emergence: Under Arafat, the PLO transformed the Palestinian issue from a humanitarian refugee problem into a nationalist movement.",
+    "options": [
+      {
+        "text": "Black September; the PLO was violently expelled from Jordan and moved its headquarters to Lebanon.",
+        "nextNode": "palestinian_lebanon",
+        "isCorrect": true
+      },
+      {
+        "text": "The Suez Containment; the PLO relocated to the Sinai Peninsula.",
+        "nextNode": "palestinian_jordan_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "palestinian_jordan_fail": {
+    "year": "1970",
+    "topic": "⚠️ Black September Misconception",
+    "text": "Incorrect. The expulsion from Jordan by King Hussein is known as Black September. Driven out of Amman, the PLO re-established its primary military operations in Beirut, Lebanon.",
+    "options": [
+      {
+        "text": "↩️ Correct your regional geography data",
+        "nextNode": "palestinian_terrorism"
+      }
+    ]
+  },
+  "palestinian_lebanon": {
+    "year": "1982",
+    "topic": "KT3: Invasion of Lebanon",
+    "text": "Correct! The PLO's move to Lebanon shifted the focus of cross-border conflict to the northern Israeli border.\n\nFrom southern Lebanon, Palestinian factions launch rocket strikes and cross-border raids into northern Israel. In June 1982, following an assassination attempt on its UK ambassador, Israel launches a full-scale invasion of Lebanon ('Operation Peace for Galilee') to destroy the PLO infrastructure.\n\nWhat was the primary political result of this 1982 war for the PLO leadership?",
+    "evidenceKey": "black_september_70",
+    "evidenceText": "💥 Black September (1970): The PLO was violently expelled from Jordan, shifting its base of operations to Lebanon and increasing factional radicalization.",
+    "options": [
+      {
+        "text": "The PLO is forced to evacuate Beirut under a UN-brokered deal, relocating its political leadership far away to Tunis, Tunisia.",
+        "nextNode": "palestinian_complete",
+        "isCorrect": true
+      },
+      {
+        "text": "The PLO successfully captured northern Galilee, establishing an independent state enclave.",
+        "nextNode": "palestinian_lebanon_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "palestinian_lebanon_fail": {
+    "year": "1982",
+    "topic": "⚠️ Lebanon Campaign Evaluation Error",
+    "text": "Incorrect. Israel's invasion successfully forced the PLO out of Beirut. Arafat and his leadership cadre were exiled to Tunis, moving them far from the borders of Israel.",
+    "options": [
+      {
+        "text": "↩️ Correct your operational outcomes",
+        "nextNode": "palestinian_lebanon"
+      }
+    ]
+  },
+  "palestinian_complete": {
+    "year": "1982+",
+    "topic": "🏆 Palestinian Path Completed!",
+    "text": "You have successfully navigated the complex timeline of the Palestinian national movement from 1948 up to the 1982 exile to Tunis. All historical revision points are locked in.",
+    "options": [
+      {
+        "text": "🔄 Return to Dashboard Hub",
+        "nextNode": "RESET_TO_DASHBOARD",
+        "isReset": true
+      }
+    ]
+  },
+  "egyptian_start": {
+    "year": "1956",
+    "topic": "KT1: Nasser and the Suez Crisis",
+    "text": "You are an Egyptian nationalist officer working alongside President Gamal Abdel Nasser in Cairo. Nasser aims to assert Arab leadership by nationalizing the Suez Canal to fund the Aswan High Dam. In response, Britain, France, and Israel launch a joint military attack, capturing the Sinai Peninsula.\n\nDespite losing the military battles, how did Nasser secure a massive political victory during this Suez Crisis?",
+    "options": [
+      {
+        "text": "The US and USSR applied heavy economic and political pressure, forcing Britain, France, and Israel to withdraw, leaving Nasser in full control of the canal.",
+        "nextNode": "egyptian_uar",
+        "isCorrect": true
+      },
+      {
+        "text": "The Egyptian military successfully destroyed the combined navies of Britain and France.",
+        "nextNode": "egyptian_suez_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "egyptian_suez_fail": {
+    "year": "1956",
+    "topic": "⚠️ Strategic Evaluation Error",
+    "text": "Incorrect. Egypt's forces were outmatched militarily. Nasser's triumph was purely political, achieved because Superpower intervention forced the imperial powers to withdraw.",
+    "options": [
+      {
+        "text": "↩️ Re-evaluate Suez political outcomes",
+        "nextNode": "egyptian_start"
+      }
+    ]
+  },
+  "egyptian_uar": {
+    "year": "1958-1967",
+    "topic": "KT1/KT2: Pan-Arabism and Buildup to War",
+    "text": "Correct! The Suez Crisis turned Nasser into a hero across the Arab world.\n\nIn 1958, Nasser pursues his Pan-Arab vision by merging Egypt and Syria into a single state called the United Arab Republic (UAR). By May 1967, regional tensions hit a breaking point. Misled by false Soviet intelligence reports of Israeli troop build-ups on the Syrian border, Nasser takes a decisive step: he evicts UN peacekeepers from Sinai and blockades Israeli shipping.\n\nWhich vital international shipping lane did Egypt close in May 1967, triggering the Six-Day War?",
+    "evidenceKey": "nasser_suez_56",
+    "evidenceText": "🌊 Suez Triumph (1956): Nasser turned a military defeat into a major political victory through Superpower intervention, establishing Egypt as the leader of the Arab world.",
+    "options": [
+      {
+        "text": "The Straits of Tiran, cutting off Israel's access to the Red Sea via the port of Eilat.",
+        "nextNode": "egyptian_sadat",
+        "isCorrect": true
+      },
+      {
+        "text": "The Bab-el-Mandeb Strait, blocking oil routes to Western Europe.",
+        "nextNode": "egyptian_6day_buildup_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "egyptian_6day_buildup_fail": {
+    "year": "1967",
+    "topic": "⚠️ Geographic Location Error",
+    "text": "Incorrect. The specific chokepoint Nasser closed was the Straits of Tiran. Israel had explicitly warned that closing these straits would be considered an act of war, leading directly to their pre-emptive strike.",
+    "options": [
+      {
+        "text": "↩️ Correct your geographical landmarks",
+        "nextNode": "egyptian_uar"
+      }
+    ]
+  },
+  "egyptian_sadat": {
+    "year": "1970-1973",
+    "topic": "KT2: Anwar Sadat & Yom Kippur",
+    "text": "Correct! The closure of the Straits of Tiran served as the immediate trigger for the 1967 war, which ended with Egypt losing the entire Sinai Peninsula.\n\nNasser passes away in 1970, and Anwar Sadat assumes the presidency. Sadat realizes Egypt cannot afford long-term economic stagnation without its lost territories. He decides on a calculated risk: launch a limited surprise attack across the Suez Canal to break the diplomatic stalemate and force the US into negotiations.\n\nWhat was the outcome of this October 1973 Yom Kippur War for Egypt?",
+    "evidenceKey": "straits_tiran_67",
+    "evidenceText": "⚓ Straits of Tiran: Egypt's closure of this strategic waterway served as the immediate trigger for Israel's pre-emptive air strike in 1967.",
+    "options": [
+      {
+        "text": "Egyptian forces successfully crossed the canal and broke the Bar-Lev line. Although later encircled, the action restored Egyptian pride and brought the US to the negotiating table.",
+        "nextNode": "egyptian_camp_david",
+        "isCorrect": true
+      },
+      {
+        "text": "The Egyptian army completely reclaimed the entire Sinai Peninsula within 48 hours.",
+        "nextNode": "egyptian_73_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "egyptian_73_fail": {
+    "year": "1973",
+    "topic": "⚠️ Military Realities Error",
+    "text": "Incorrect. Egypt did not win a total military victory; Israeli forces counter-attacked and crossed to the west bank of the canal. However, the initial success broke the myth of Israeli invincibility, achieving Sadat's political goals.",
+    "options": [
+      {
+        "text": "↩️ Recalibrate the war outcomes",
+        "nextNode": "egyptian_sadat"
+      }
+    ]
+  },
+  "egyptian_camp_david": {
+    "year": "1977-1979",
+    "topic": "KT3: Camp David & Peace",
+    "text": "Correct! The war broke the diplomatic deadlock, leading to US-led 'shuttle diplomacy' by Henry Kissinger.\n\nIn 1977, Sadat takes a historic step by visiting Jerusalem to address the Knesset directly. US President Jimmy Carter invites Sadat and Israeli Prime Minister Menachem Begin to the presidential retreat at Camp David in 1978.\n\nWhat did the resulting Treaty of Washington (1979) accomplish?",
+    "evidenceKey": "sadat_73_strategy",
+    "evidenceText": "🎯 Yom Kippur War (1973): Re-established Egyptian military credibility, forcing the US to launch diplomatic negotiations.",
+    "options": [
+      {
+        "text": "Egypt officially recognizes the State of Israel in exchange for the complete return of the Sinai Peninsula, becoming the first Arab nation to sign a peace treaty with Israel.",
+        "nextNode": "egyptian_complete",
+        "isCorrect": true
+      },
+      {
+        "text": "Egypt and Israel agree to form a joint military command to govern the Gaza Strip together.",
+        "nextNode": "egyptian_camp_david_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "egyptian_camp_david_fail": {
+    "year": "1979",
+    "topic": "⚠️ Treaty Interpretation Error",
+    "text": "Incorrect. The Washington Treaty focused on trading land for peace. Israel returned the Sinai Peninsula, and Egypt recognized Israel, which led to Egypt being suspended from the Arab League for breaking Arab solidarity.",
+    "options": [
+      {
+        "text": "↩️ Align treaty terms accurately",
+        "nextNode": "egyptian_camp_david"
+      }
+    ]
+  },
+  "egyptian_complete": {
+    "year": "1979",
+    "topic": "🏆 Egyptian Path Completed!",
+    "text": "You have completed the trajectory of Egyptian statecraft from Nasser's regional leadership directly through to Sadat's historic peace treaty. All critical evidence points are locked in.",
+    "options": [
+      {
+        "text": "🔄 Return to Dashboard Hub",
+        "nextNode": "RESET_TO_DASHBOARD",
+        "isReset": true
+      }
+    ]
+  },
+  "peace_start": {
+    "year": "1987",
+    "topic": "KT3: The First Intifada",
+    "text": "You are a young Palestinian living under military occupation in the Gaza Strip in December 1987. Decades of built-up frustration boil over after an Israeli military vehicle hits a civilian car. A massive, spontaneous grassroots uprising explodes across Gaza and the West Bank, characterized by stone-throwing, strikes, and civil disobedience.\n\nWhat historical name is given to this uprising, and how did it impact international perceptions of the conflict?",
+    "options": [
+      {
+        "text": "The First Intifada; media coverage of Israeli soldiers using heavy force against stone-throwing youths generated international sympathy for the Palestinian cause.",
+        "nextNode": "peace_arafat_88",
+        "isCorrect": true
+      },
+      {
+        "text": "The Fatah Revolution; it led to an immediate military withdrawal by Israeli forces from the entire West Bank within weeks.",
+        "nextNode": "peace_intifada_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "peace_intifada_fail": {
+    "year": "1987",
+    "topic": "⚠️ Intifada Impact Error",
+    "text": "Incorrect. The uprising did not cause an immediate military withdrawal. Known as the First Intifada ('shaking off'), it relied on long-term civil disobedience that pressured both Israel and the PLO to find a diplomatic solution.",
+    "options": [
+      {
+        "text": "↩️ Correct your understanding of the Intifada framework",
+        "nextNode": "peace_start"
+      }
+    ]
+  },
+  "peace_arafat_88": {
+    "year": "1988-1991",
+    "topic": "KT3: Diplomatic Shifts & Superpower Changes",
+    "text": "Correct! The First Intifada brought the realities of the occupation onto the international stage.\n\nPressured by the ongoing uprising, Yasser Arafat makes a dramatic shift during a 1988 speech to the UN in Geneva: he explicitly renounces terrorism and recognizes Israel's right to exist. Shortly after, the global landscape changes as the Cold War ends, and the US leads a coalition in the 1991 Gulf War, altering regional alliances.\n\nWhere did these diplomatic shifts force Israeli and Palestinian delegates to sit down for formal peace talks for the first time in late 1991?",
+    "evidenceKey": "first_intifada_87",
+    "evidenceText": "🪨 First Intifada (1987-93): Grassroots civil resistance that transformed international awareness and pressured leaders toward a diplomatic track.",
+    "options": [
+      {
+        "text": "The Madrid Conference, co-sponsored by the USA and the collapsing USSR.",
+        "nextNode": "peace_oslo_93",
+        "isCorrect": true
+      },
+      {
+        "text": "The Washington Accord Summit.",
+        "nextNode": "peace_madrid_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "peace_madrid_fail": {
+    "year": "1991",
+    "topic": "⚠️ Diplomatic Timeline Error",
+    "text": "Incorrect. The first historic roundtable conference following the Gulf War took place at the Madrid Conference in Spain in late 1991, setting up the framework for future secret negotiations.",
+    "options": [
+      {
+        "text": "↩️ Map the diplomatic roadmap correctly",
+        "nextNode": "peace_arafat_88"
+      }
+    ]
+  },
+  "peace_oslo_93": {
+    "year": "1993-1995",
+    "topic": "KT3: The Oslo Accords",
+    "text": "Correct! The Madrid Conference broke the ice, opening pathways for secret back-channel negotiations in Norway.\n\nIn 1993, secret talks produce the historic Oslo Accords. Yasser Arafat and Israeli Prime Minister Yitzhak Rabin share a historic handshake on the White House lawn alongside President Bill Clinton. \n\nWhat structural authority was established by the Oslo Accords to provide temporary self-governance for Palestinians?",
+    "evidenceKey": "madrid_conference_91",
+    "evidenceText": "🤝 Madrid Conference (1991): First time Israeli and Palestinian representatives sat down for direct negotiations, reshaped by post-Cold War politics.",
+    "options": [
+      {
+        "text": "The Palestinian National Authority (PNA), gaining civil control over parts of the Gaza Strip and Jericho.",
+        "nextNode": "peace_complete",
+        "isCorrect": true
+      },
+      {
+        "text": "A fully sovereign, independent State of Palestine with East Jerusalem as its capital.",
+        "nextNode": "peace_oslo_fail",
+        "isCorrect": false
+      }
+    ]
+  },
+  "peace_oslo_fail": {
+    "year": "1993",
+    "topic": "⚠️ Accord Content Misconception",
+    "text": "Incorrect. The Oslo Accords did not establish a fully independent Palestinian state or resolve the status of Jerusalem. It set up an interim self-governing body, the Palestinian National Authority (PNA), deferring final statehood questions to future talks.",
+    "options": [
+      {
+        "text": "↩️ Review the exact terms of the Oslo Accords",
+        "nextNode": "peace_oslo_93"
+      }
+    ]
+  },
+  "peace_complete": {
+    "year": "1995",
+    "topic": "🏆 Peace & Street Path Completed!",
+    "text": "You have completed the final arc of the Edexcel specification, tracing the conflict from the rock-throwing resistance of the Intifada to the diplomatic frameworks of the Oslo Accords (1993–1995). All historical evidence points are locked in.",
+    "options": [
+      {
+        "text": "🔄 Return to Dashboard Hub",
+        "nextNode": "RESET_TO_DASHBOARD",
+        "isReset": true
+      }
+    ]
+  }
+};
+
+let meCurrentPath = "";
+let meCurrentNode = "";
+let meScore = 0;
+const meUnlockedEvidence = new Set();
+
+export function initMeSimGame() {
+  meCurrentPath = "";
+  meCurrentNode = "";
+  meScore = 0;
+  meUnlockedEvidence.clear();
+  
+  const list = document.getElementById('me-evidence-list');
+  if (list) list.innerHTML = '';
+  
+  returnToDashboard();
+}
+
+export function startMePath(pathKey) {
+  meCurrentPath = pathKey;
+  meCurrentNode = pathKey + "_start";
+  
+  const dash = document.getElementById('me-dashboard');
+  const core = document.getElementById('me-simulator-core');
+  if (dash) dash.classList.add('hidden');
+  if (core) core.classList.remove('hidden');
+  
+  renderMeEngine();
+}
+
+export function returnToDashboard() {
+  const core = document.getElementById('me-simulator-core');
+  const dash = document.getElementById('me-dashboard');
+  if (core) core.classList.add('hidden');
+  if (dash) dash.classList.remove('hidden');
+}
+
+export function renderMeEngine() {
+  const data = meSimulationDatabase[meCurrentNode];
+  if (!data) return;
+
+  if (data.options[0] && data.options[0].isReset) {
+    meScore = 0;
+    meUnlockedEvidence.clear();
+    const list = document.getElementById('me-evidence-list');
+    if (list) list.innerHTML = '';
+    returnToDashboard();
+    return;
+  }
+
+  const yearEl = document.getElementById('me-year');
+  const topicEl = document.getElementById('me-topic');
+  const storyEl = document.getElementById('me-story-text');
+  const scoreEl = document.getElementById('me-score');
+  
+  if (yearEl) yearEl.innerText = data.year;
+  if (topicEl) topicEl.innerText = data.topic;
+  if (storyEl) storyEl.innerText = data.text;
+  if (scoreEl) scoreEl.innerText = meScore;
+
+  const insightBox = document.getElementById('me-historical-insight');
+  if (insightBox) {
+    if (data.evidenceKey) {
+      if (!meUnlockedEvidence.has(data.evidenceKey)) {
+        meUnlockedEvidence.add(data.evidenceKey);
+        appendMeEvidenceDOM(data.evidenceText);
+      }
+      insightBox.className = "insight-box correct-node";
+      insightBox.innerHTML = `<strong>✓ Spec Fact Unlocked:</strong> Context evidence appended to your active essay bank profile on the right panel.`;
+      insightBox.classList.remove('hidden');
+    } else if (data.topic && (data.topic.includes("Misconception") || data.topic.includes("Error"))) {
+      insightBox.className = "insight-box";
+      insightBox.innerHTML = `<strong>⚠️ Syllabus Distractor Blocked:</strong> Note this correction carefully to safeguard your marks against common exam mistakes.`;
+      insightBox.classList.remove('hidden');
+    } else {
+      insightBox.classList.add('hidden');
+    }
+  }
+
+  const controlsBox = document.getElementById('me-options-container');
+  if (controlsBox) {
+    controlsBox.innerHTML = '';
+    data.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-option';
+      btn.innerText = opt.text;
+      
+      btn.addEventListener('click', () => {
+        if (opt.isCorrect) {
+          meScore += 20;
+          AudioEngine.play('success');
+        } else if (opt.isCorrect === false) {
+          AudioEngine.play('fail');
+        } else {
+          AudioEngine.play('click');
+        }
+        meCurrentNode = opt.nextNode;
+        renderMeEngine();
+      });
+      controlsBox.appendChild(btn);
+    });
+  }
+}
+
+function appendMeEvidenceDOM(text) {
+  const list = document.getElementById('me-evidence-list');
+  if (list) {
+    const li = document.createElement('li');
+    li.className = 'evidence-item';
+    li.innerText = text;
+    list.appendChild(li);
+  }
+}
+
+window.startMePath = startMePath;
+window.returnToDashboard = returnToDashboard;
+window.initMeSimGame = initMeSimGame;

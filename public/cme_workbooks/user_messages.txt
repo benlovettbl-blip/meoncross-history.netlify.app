@@ -1,0 +1,141 @@
+
+=== Line 1 [USER INPUT] ===
+<USER_REQUEST>
+I think we need to think more carefully about the knowledge that we are expecting the user to be tested on through the various quizzes and flashcards. I don't want to have different names for the different cards. So, for example, I don't want it to be called Top Tier Trivia. I just want the cards to be called Easy, Medium, or Difficult. And each card should have the name of the key topic, so for example, KT 1.1, and the title of that key topic. So, I'm expecting you to change this for Quiz Generator, all of the questions in there for all topics, as well as for the flashcards anOnce you have changed the names, I want you to thoroughly check through every single one to make sure it is strictly aligned to 100% focus on the specification of the exam and that it is in the correct key topic for the easy questions, and then for the medium and difficult to gradually build the depth of knowledge required for top level 9 at the difficult level. The aim of this task is to ensure that the learner has the most efficient method to a high level of proficiency for GCSE History level 7-9, but with the scaffolding built in with the easy questions to support those at level 4, hence the strict requirement to focus specifically on the bullet points within the specification for each key topic. Please use whatever skills are required to carry this out to ensure that this is a significant improvement in the recall feature across the various aspects of this app. For example, it may be that you need to also enhance any questions provided in each of the lessons to ensure they are strictly aligned with the specification easy, medium, difficult levels 4, 5, 6, 7, 8, 9. 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:50:39+01:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.5 Flash (Medium). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== Line 5 [USER INPUT] ===
+<USER_REQUEST>
+done yet?
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:57:06+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 101 [USER INPUT] ===
+<USER_REQUEST>
+do it
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:35:24+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 257 [USER INPUT] ===
+<USER_REQUEST>
+Restructured Database: Remapped questions.js to split the 15 questions per subtopic into exactly 5 Easy, 5 Medium, and 5 Difficult questions, aligned strictly to the GCSE exam specification.I can see that you've done 10 easy, 10 medium, and 10 difficult for every key topic. 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:20:09+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 290 [USER INPUT] ===
+<USER_REQUEST>
+No, I think you've misunderstood. I want 10 Easy, 10 Medium, and 10 Difficult per Key Topic 1.1. So what I mean by that is 30 for 1.1 in total, 30 for 1.2, 30 for 1.3, etc. etc. 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:24:10+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 413 [USER INPUT] ===
+<USER_REQUEST>
+In topic 2.3, the model answer isn't very good for the how useful question. Can you use this one instead, please? And can you please use this as a template and standard for all of the others in this app? Here is the refined 'antigravity' system prompt with all the emojis removed, leaving only the clean HTML colour coding. I have also included the cleaned-up version of the Black Panther model answer so you can drop it straight into your app.
+
+***
+
+### **UPDATED SYSTEM PROMPT: EDEXCEL Q3(a) MODEL ANSWER GENERATOR**
+
+**Role:** You are a Lead Examiner for Edexcel GCSE History (Paper 3). Your task is to generate perfect 8-mark model answers for Question 3(a): *"How useful are Sources B and C for an enquiry into [Topic]?"*
+
+**Context:** This output is for a GCSE revision app. Students will read dozens of these model answers. Therefore, you must deliberately **MIX UP** the types of provenance you evaluate (Nature, Origin, or Purpose) so students learn that they do not have to rigidly evaluate 'Purpose' every single time.
+
+**Strict Output Structure (Follow exactly):**
+Write exactly two paragraphs. Paragraph 1 is about Source B. Paragraph 2 is about Source C. Do not write an introduction. Do not compare the sources against each other.
+
+**Colour Coding Requirements:**
+To help students identify the three required skills for a Level 3 answer, you must wrap specific parts of your response in HTML `<span>` tags. 
+*   **1. Content & Enquiry Link:** Wrap in `<span style="color: blue;"> [Text here] </span>`
+*   **2. Contextual Knowledge:** Wrap in `<span style="color: green;"> [Text here] </span>`
+*   **3. Provenance Evaluation (NOP):** Wrap in `<span style="color: purple;"> [Text here] </span>`
+
+**For EACH paragraph, you must include the following 3 elements:**
+1. **Content & Enquiry Link (Blue):** Start by stating how the source is useful for the specific enquiry. Quote a specific detail from the source text.
+2. **Contextual Knowledge (Green):** Integrate precise own knowledge (specific dates
+<truncated 5615 bytes>
+hrough initiatives like free health clinics. </span> <span style="color: purple;"> Regarding its provenance, the nature of the source as the official party manifesto, combined with its origin directly from the party's foundation in October 1966, makes it highly useful. Because it was written by the founders themselves to publicly declare their ideology, it provides an incredibly reliable, foundational insight into exactly what the Black Panthers fundamentally aimed to achieve before their message could be distorted by the mainstream media. </span>
+
+<span style="color: blue;"> Source C is highly useful for revealing how the federal government viewed the aims of the Panthers and actively targeted them. The content claims they are "preaching violent revolution" and explicitly instructs agents to "destroy their community school breakfast programs". </span> <span style="color: green;"> My contextual knowledge confirms that the FBI viewed the Panthers as a massive threat and targeted them through a secret counter-intelligence programme known as COINTELPRO. The Panthers' Free Breakfast for Children Programme, which successfully fed up to 10,000 children daily across various cities, was specifically targeted by police raids because it built massive community support and embarrassed the government. </span> <span style="color: purple;"> Regarding its provenance, as an internal memo from FBI Director J. Edgar Hoover in 1968, its purpose was to instruct field agents to actively disrupt the party. While the source is extremely hostile and biased in framing charitable social services as dangerous 'indoctrination', this actually enhances its utility. It perfectly reveals how the government's purpose of maintaining control caused them to deliberately misinterpret the Panthers' community welfare aims as a subversive threat, providing highly useful evidence of the intense state opposition the movement faced. </span>
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:15:51+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 483 [USER INPUT] ===
+<USER_REQUEST>
+In topic 2.3, the model answer isn't very good for the how useful question. Can you use this one instead, please? And can you please use this as a template and standard for all of the others in this app? Here is the refined 'antigravity' system prompt with all the emojis removed, leaving only the clean HTML colour coding. I have also included the cleaned-up version of the Black Panther model answer so you can drop it straight into your app.
+
+***
+
+### **UPDATED SYSTEM PROMPT: EDEXCEL Q3(a) MODEL ANSWER GENERATOR**
+
+**Role:** You are a Lead Examiner for Edexcel GCSE History (Paper 3). Your task is to generate perfect 8-mark model answers for Question 3(a): *"How useful are Sources B and C for an enquiry into [Topic]?"*
+
+**Context:** This output is for a GCSE revision app. Students will read dozens of these model answers. Therefore, you must deliberately **MIX UP** the types of provenance you evaluate (Nature, Origin, or Purpose) so students learn that they do not have to rigidly evaluate 'Purpose' every single time.
+
+**Strict Output Structure (Follow exactly):**
+Write exactly two paragraphs. Paragraph 1 is about Source B. Paragraph 2 is about Source C. Do not write an introduction. Do not compare the sources against each other.
+
+**Colour Coding Requirements:**
+To help students identify the three required skills for a Level 3 answer, you must wrap specific parts of your response in HTML `<span>` tags. 
+*   **1. Content & Enquiry Link:** Wrap in `<span style="color: blue;"> [Text here] </span>`
+*   **2. Contextual Knowledge:** Wrap in `<span style="color: green;"> [Text here] </span>`
+*   **3. Provenance Evaluation (NOP):** Wrap in `<span style="color: purple;"> [Text here] </span>`
+
+**For EACH paragraph, you must include the following 3 elements:**
+1. **Content & Enquiry Link (Blue):** Start by stating how the source is useful for the specific enquiry. Quote a specific detail from the source text.
+2. **Contextual Knowledge (Green):** Integrate precise own knowledge (specific dates
+<truncated 5615 bytes>
+hrough initiatives like free health clinics. </span> <span style="color: purple;"> Regarding its provenance, the nature of the source as the official party manifesto, combined with its origin directly from the party's foundation in October 1966, makes it highly useful. Because it was written by the founders themselves to publicly declare their ideology, it provides an incredibly reliable, foundational insight into exactly what the Black Panthers fundamentally aimed to achieve before their message could be distorted by the mainstream media. </span>
+
+<span style="color: blue;"> Source C is highly useful for revealing how the federal government viewed the aims of the Panthers and actively targeted them. The content claims they are "preaching violent revolution" and explicitly instructs agents to "destroy their community school breakfast programs". </span> <span style="color: green;"> My contextual knowledge confirms that the FBI viewed the Panthers as a massive threat and targeted them through a secret counter-intelligence programme known as COINTELPRO. The Panthers' Free Breakfast for Children Programme, which successfully fed up to 10,000 children daily across various cities, was specifically targeted by police raids because it built massive community support and embarrassed the government. </span> <span style="color: purple;"> Regarding its provenance, as an internal memo from FBI Director J. Edgar Hoover in 1968, its purpose was to instruct field agents to actively disrupt the party. While the source is extremely hostile and biased in framing charitable social services as dangerous 'indoctrination', this actually enhances its utility. It perfectly reveals how the government's purpose of maintaining control caused them to deliberately misinterpret the Panthers' community welfare aims as a subversive threat, providing highly useful evidence of the intense state opposition the movement faced. </span>
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:15:51+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 698 [USER INPUT] ===
+<USER_REQUEST>
+Oh yes, I've accidentally been working in the wrong conversation. Is that okay or is it a problem? 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:31:24+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 700 [USER INPUT] ===
+<USER_REQUEST>
+What should I do now? Should I carry on or should I move to the correct conversation? 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:31:49+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 702 [USER INPUT] ===
+<USER_REQUEST>
+i want to make available for each lesson the relevant 2 minute AI videos i have made, which you will find I think uploaded to my youtube channel. can you cinform first that you can list each of them for me below?
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-04T09:47:37+01:00.
+</ADDITIONAL_METADATA>
+
+=== Line 720 [USER INPUT] ===
+<USER_REQUEST>
+to be clear, I mean for conflict n the middle east only, not usa
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-04T09:48:20+01:00.
+</ADDITIONAL_METADATA>

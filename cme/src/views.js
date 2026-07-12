@@ -242,63 +242,16 @@ function renderSidebarNav() {
   const container = document.getElementById('topics-nav-list');
   container.innerHTML = '';
   
+  let lessonCounter = 1;
+
   QUIZ_DATA.forEach(topic => {
-    const section = document.createElement('div');
-    section.style.marginBottom = '6px';
-    
-    const header = document.createElement('div');
-    header.className = 'nav-section-header';
-    header.setAttribute('data-topic-id', topic.id);
-    header.style.padding = '8px 10px';
-    header.style.margin = '4px 0';
-    header.style.display = 'flex';
-    header.style.flexDirection = 'column';
-    header.style.gap = '2px';
-    header.style.cursor = 'pointer';
-    header.style.borderRadius = 'var(--border-radius-md)';
-    header.style.transition = 'all var(--transition-fast)';
-    
-    if (state.selectedKeyTopicId === topic.id) {
-      header.classList.add('active');
-    }
-    
-    const numSpan = document.createElement('span');
-    numSpan.className = 'nav-section-num';
-    numSpan.style.fontFamily = 'var(--font-heading)';
-    numSpan.style.fontSize = '0.62rem';
-    numSpan.style.fontWeight = '700';
-    numSpan.style.textTransform = 'uppercase';
-    numSpan.style.color = 'var(--primary)';
-    numSpan.style.letterSpacing = '0.5px';
-    numSpan.textContent = topic.title.split(':')[0] || 'Key Topic';
-    
-    const descSpan = document.createElement('span');
-    descSpan.className = 'nav-section-desc';
-    descSpan.style.fontSize = '0.72rem';
-    descSpan.style.fontWeight = '600';
-    descSpan.style.color = 'var(--text-muted)';
-    descSpan.style.lineHeight = '1.3';
-    descSpan.textContent = topic.title.split(':').slice(1).join(':').trim() || '';
-    
-    header.appendChild(numSpan);
-    header.appendChild(descSpan);
-    
-    header.addEventListener('click', () => {
-      AudioEngine.play('click');
-      switchView('key-topic', topic.id);
-    });
-    
-    section.appendChild(header);
-    
     topic.subtopics.forEach(sub => {
       const a = document.createElement('a');
       a.className = 'nav-item';
       a.id = `nav-subtopic-${sub.id}`;
       a.title = sub.title;
       
-      const numCode = sub.title.match(/Topic\s(\d\.\d)/);
-      const shortName = numCode ? numCode[1] : sub.title;
-      const subDescText = sub.title.split(':').slice(1).join(':').trim() || '';
+      const subDescText = sub.title.split(':').slice(1).join(':').trim() || sub.title;
       
       // Calculate individual subtopic progress
       const subQuestions = state.allQuestions.filter(q => q.subtopicId === sub.id);
@@ -307,9 +260,9 @@ function renderSidebarNav() {
       
       a.innerHTML = `
         <span class="nav-item-content" style="flex-shrink: 0; font-weight: 600;">
-          <span class="topic-prefix">Topic </span>${shortName}
+          Lesson ${lessonCounter++}
         </span>
-        <span class="nav-item-desc" style="flex: 1; min-width: 0; margin: 0 8px; font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; opacity: 0.85;">
+        <span class="nav-item-desc" style="flex: 1; min-width: 0; margin: 0 8px; font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; opacity: 0.85;" title="${subDescText}">
           ${subDescText}
         </span>
         <span class="nav-item-progress" id="nav-pct-${sub.id}" style="flex-shrink: 0;">${pct}%</span>
@@ -320,11 +273,24 @@ function renderSidebarNav() {
         switchView('subtopic', sub.id);
       });
       
-      section.appendChild(a);
+      container.appendChild(a);
     });
-    
-    container.appendChild(section);
   });
+
+  const workbookLink = document.createElement('a');
+  workbookLink.className = 'nav-item';
+  workbookLink.innerHTML = `
+    <span class="nav-item-content" style="flex-shrink: 0; font-weight: 700; color: var(--primary);">
+      <i class="fa-solid fa-book-open"></i> Pupil Workbook
+    </span>
+  `;
+  workbookLink.href = '/cme_workbooks/workbook_combined.html';
+  workbookLink.target = '_blank';
+  workbookLink.style.marginTop = '15px';
+  workbookLink.style.border = '2px dashed var(--primary)';
+  workbookLink.style.background = 'rgba(59, 130, 246, 0.05)';
+  
+  container.appendChild(workbookLink);
   
   updateBookmarksUI();
 }
@@ -484,11 +450,11 @@ function renderDashboard() {
     if (ktNumber) {
       workbookTabHTML = `
       <div style="display: flex; justify-content: flex-end; margin-bottom: 0px; z-index: 10; position: relative;">
-        <a href="workbook_stash/workbook_${ktNumber}_v2.html" target="_blank" title="Open ${ktNumber} Workbook (v2)" style="background: rgba(255,183,3,0.15); border: 1px solid var(--accent); border-bottom: 1px solid rgba(255,183,3,0.3); border-radius: 8px 0 0 0; padding: 4px 14px; font-size: 0.75rem; font-weight: 600; color: #ffb703; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: all 0.2s; margin-top: -8px; margin-right: 0px;" onmouseover="this.style.background='rgba(255,183,3,0.25)'" onmouseout="this.style.background='rgba(255,183,3,0.15)'" onclick="event.stopPropagation();">
-          <i class="fa-solid fa-file-pdf"></i> ${ktNumber} (v2)
+        <a href="/cme_workbooks/workbook_${ktNumber}_v2.html" target="_blank" title="Open ${ktNumber} Workbook (v2)" style="background: rgba(255,183,3,0.15); border: 1px solid var(--accent); border-bottom: 1px solid rgba(255,183,3,0.3); border-radius: 8px 0 0 0; padding: 4px 14px; font-size: 0.75rem; font-weight: 600; color: #ffb703; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: all 0.2s; margin-top: -8px; margin-right: 0px;" onmouseover="this.style.background='rgba(255,183,3,0.25)'" onmouseout="this.style.background='rgba(255,183,3,0.15)'" onclick="event.stopPropagation();">
+          <i class="fa-solid fa-book-open"></i> v2 Workbook
         </a>
-        <a href="workbook_stash/workbook_${ktNumber}.html" target="_blank" title="Open ${ktNumber} Workbook (Original)" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-glass); border-bottom: 1px solid rgba(255,255,255,0.1); border-radius: 0 8px 0 0; padding: 4px 14px; font-size: 0.75rem; font-weight: 600; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: all 0.2s; margin-top: -8px; margin-right: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'" onclick="event.stopPropagation();">
-          <i class="fa-solid fa-file-pdf"></i> ${ktNumber} (Old)
+        <a href="/cme_workbooks/workbook_${ktNumber}.html" target="_blank" title="Open ${ktNumber} Workbook (Original)" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-glass); border-bottom: 1px solid rgba(255,255,255,0.1); border-radius: 0 8px 0 0; padding: 4px 14px; font-size: 0.75rem; font-weight: 600; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: all 0.2s; margin-top: -8px; margin-right: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'" onclick="event.stopPropagation();">
+          <i class="fa-solid fa-file-pdf"></i> v1
         </a>
       </div>`;
     }

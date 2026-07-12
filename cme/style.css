@@ -6829,17 +6829,6 @@ details > summary::marker {
   animation: gb-card-glow 3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* --- Distraction-Free Full-Screen Layout Overrides --- */
-.sidebar {
-  display: none !important;
-}
-.menu-toggle {
-  display: none !important;
-}
-.main-wrapper {
-  margin-left: 0 !important;
-}
-
 /* Bouncy Chimney Sweeper Logo Animations */
 @keyframes chimneyBounce {
   0%, 100% {

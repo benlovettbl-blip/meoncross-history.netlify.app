@@ -1,0 +1,52 @@
+  // Render Interleaved Narrative Blocks & Tasks
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach((block, index) => {
+      // Print the paragraph text
+      if (block.text) {
+        if (typeof block.text === 'string' && block.text.startsWith('"')) {
+          html += `<div style="font-weight: bold; margin: 15px 0; font-size: 13pt;">${block.text.replace(/"/g, '')}</div>`;
+        } else {
+          html += `<p class="narrative-block">${block.text}</p>`;
+        }
+      }
+
+      // If this block has tasks, print them immediately underneath
+      if (block.tasks && block.tasks.length > 0) {
+        html += `<div class="task-box" style="margin-top: 15px;">`;
+        html += `<h3 style="margin-top: 0; font-size: 14pt;">Knowledge Check</h3>`;
+        block.tasks.forEach(task => {
+          let cleanTask = task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '');
+          html += `<p style="margin-top:10px; font-weight: bold;">${cleanTask}</p>`;
+          // Add 3 blank lines for writing
+          html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
+        });
+        html += `</div>`;
+      }
+    });
+  }
+
+  // Identify Draw Tasks (if any remain)
+  const drawTasks = lesson.draw_tasks || [];
+  
+  // Render Sources and append Draw Tasks immediately beneath them
+  if (lesson.sources && lesson.sources.length > 0) {
+    lesson.sources.forEach(source => {
+      if(source.src) {
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../cme_new/${source.src}`;
+        html += `
+          <div class="source-container" style="page-break-inside: avoid;">
+            ${source.title ? `<strong>${source.title}</strong><br>` : ''}
+            <img src="${src}" alt="Source">
+            ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
+          </div>
+        `;
+      }
+    });
+    
+    // Append draw tasks right after the sources block
+    if (drawTasks.length > 0) {
+      drawTasks.forEach(task => {
+        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
+      });
+    }
+  }
