@@ -1,4 +1,5 @@
 import { renderRevisionZone } from './revision_zone.js';
+import { renderExamPracticeZone } from './exam_practice_zone.js';
 export function initializeApp(unitData) {
   document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('sidebar');
@@ -573,6 +574,22 @@ export function initializeApp(unitData) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     navContainer.appendChild(revisionLink);
+
+    const examPracticeLink = document.createElement('a');
+    examPracticeLink.className = 'lesson-link';
+    examPracticeLink.innerHTML = '✍️ Exam Practice Zone';
+    examPracticeLink.style.marginTop = '15px';
+    examPracticeLink.style.color = '#60a5fa'; // Blue-400
+    examPracticeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      examPracticeLink.classList.add('active');
+      const contentArea = document.getElementById('content-area');
+      contentArea.innerHTML = ''; // clear
+      renderExamPracticeZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(examPracticeLink);
 
     const quizPackLink = document.createElement('a');
     quizPackLink.className = 'lesson-link';

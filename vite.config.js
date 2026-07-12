@@ -26,7 +26,11 @@ export default defineConfig({
         norman_conquest_answers: 'norman_conquest/answer_key.html',
         change_1450_1750: 'change_1450_1750/index.html',
         change_1450_1750_workbook: 'change_1450_1750/workbook.html',
-        change_1450_1750_answers: 'change_1450_1750/answer_key.html'
+        change_1450_1750_answers: 'change_1450_1750/answer_key.html',
+        cme_new: 'cme_new/index.html',
+        cme_new_workbook: 'cme_new/workbook.html',
+        cme_new_answers: 'cme_new/answer_key.html',
+        cme_new_quiz_pack: 'cme_new/quiz_pack.html'
       }
     }
   },
