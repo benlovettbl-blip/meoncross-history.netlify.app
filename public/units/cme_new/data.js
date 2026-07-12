@@ -5,7 +5,7 @@ export const unitData = {
   "lessons": [
     {
       "id": "lesson_1",
-      "title": "Lesson 1: The End of the British Mandate and the Creation of Israel, 1945–1949",
+      "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
       "sources": [
         {
           "title": "Reference Map: UN Partition Plan (Resolution 181)",
@@ -342,7 +342,7 @@ export const unitData = {
     },
     {
       "id": "lesson_2",
-      "title": "Lesson 2: The Aftermath of the 1948–49 War",
+      "title": "KT1.2: The Aftermath of the 1948–49 War",
       "learning_objective": "To understand the consequences of the 1948-49 war for Palestinians, Israelis, and regional borders.",
       "vocab": [
         {
@@ -588,7 +588,7 @@ export const unitData = {
     },
     {
       "id": "lesson_3",
-      "title": "Lesson 3: Increased Tension, 1955–1963",
+      "title": "KT1.3: Increased Tension, 1955–1963",
       "learning_objective": "To understand the causes and consequences of the 1956 Suez Crisis and its impact on the Middle East.",
       "vocab": [
         {
@@ -845,7 +845,7 @@ export const unitData = {
     },
     {
       "id": "lesson_4",
-      "title": "Lesson 4: The Six Day War, 1967",
+      "title": "KT2.1: The Six Day War, 1967",
       "do_now": {
         "type": "retrieval",
         "items": [
@@ -1124,7 +1124,7 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
-      "title": "Lesson 5: The Aftermath of the 1967 War",
+      "title": "KT2.2: The Aftermath of the 1967 War",
       "teacher_notes": {
         "primer": "This lesson shifts focus from conventional warfare to the diplomatic stalemate and the rise of asymmetrical guerrilla conflict. Students will explore how the Six Day War created the occupied territories and triggered the radicalization of the PLO, culminating in the Black September civil war and the Munich Olympics massacre.",
         "objectives": [
@@ -1416,7 +1416,7 @@ export const unitData = {
     },
     {
       "id": "lesson_6",
-      "title": "Lesson 6: Israel and Egypt, 1967–1973",
+      "title": "KT2.3: Israel and Egypt, 1967–1973",
       "teacher_notes": {
         "primer": "This lesson focuses on the transition from the War of Attrition to the dramatic outbreak of the Yom Kippur War. Students will explore Sadat's diplomatic maneuvers, the failure of the Bar Lev Line, and the devastating global impact of the OPEC oil weapon.",
         "objectives": [
@@ -1718,7 +1718,7 @@ export const unitData = {
     },
     {
       "id": "lesson_7",
-      "title": "Lesson 7: Diplomatic negotiations, 1974–1979",
+      "title": "KT3.1: Diplomatic negotiations, 1974–1979",
       "teacher_notes": {
         "primer": "This lesson explores the shift from military conflict to high-stakes diplomacy in the Middle East. Students will examine how the 1973 Oil Crisis incentivized the superpowers to broker peace, the intricacies of Kissinger's 'shuttle diplomacy', and the dramatic breakthrough of the Camp David Accords.",
         "objectives": [
@@ -1945,7 +1945,7 @@ export const unitData = {
     },
     {
       "id": "lesson_8",
-      "title": "Lesson 8: The Palestinian Issue, 1974–1993",
+      "title": "KT3.2: The Palestinian Issue, 1974–1993",
       "teacher_notes": {
         "primer": "This lesson covers the diplomatic shift of the PLO, its military relocation to Lebanon, and the brutal civil uprising of the First Intifada. Students will trace Arafat's dual strategy of 'the gun and the olive branch' and evaluate the consequences of the 1982 Lebanese invasion.",
         "objectives": [
@@ -2214,7 +2214,7 @@ export const unitData = {
     },
     {
       "id": "lesson_9",
-      "title": "Lesson 9: Attempts at a solution, 1988–1995",
+      "title": "KT3.3: Attempts at a solution, 1988–1995",
       "teacher_notes": {
         "primer": "This final lesson explores the culmination of the peace process, analyzing the geopolitical shifts that forced the PLO and Israel to the negotiating table, the breakthrough of the Oslo Accords, and the tragic collapse of the process following Rabin's assassination.",
         "objectives": [
@@ -3639,47 +3639,47 @@ export const unitData = {
   ],
   "debatePrompts": [
     {
-      "title": "Lesson 1: The End of the British Mandate",
+      "title": "KT1.1: The End of the British Mandate",
       "prompt": "<strong>Debate:</strong> \"Britain's 'dual obligation' was the primary reason for the chaos leading up to the 1948 war.\" Do you agree, or did other factors play a bigger role?",
       "sentence_starter": "I agree that Britain's dual obligation was the primary reason because..."
     },
     {
-      "title": "Lesson 2: The Aftermath of the 1948–49 War",
+      "title": "KT1.2: The Aftermath of the 1948–49 War",
       "prompt": "<strong>Roleplay:</strong> You are an Israeli leader in 1950. Defend the Law of Return despite the ongoing tension, while addressing the Palestinian refugee crisis.",
       "sentence_starter": "While I understand the plight of the Palestinian refugees, the Law of Return is essential for Israel because..."
     },
     {
-      "title": "Lesson 3: Increased Tension, 1955–1963",
+      "title": "KT1.3: Increased Tension, 1955–1963",
       "prompt": "<strong>Debate:</strong> Was the 1956 Suez Crisis a political victory for Nasser, or a strategic military victory for Israel? Justify your stance.",
       "sentence_starter": "The Suez Crisis was primarily a political victory for Nasser because he successfully..."
     },
     {
-      "title": "Lesson 4: The Six Day War, 1967",
+      "title": "KT2.1: The Six Day War, 1967",
       "prompt": "<strong>Roleplay:</strong> You are an advisor to King Hussein of Jordan in June 1967. Explain why you feel compelled to join the war against Israel despite the obvious military risks.",
       "sentence_starter": "Your Majesty, despite the military risks, we must join the war alongside Egypt and Syria because..."
     },
     {
-      "title": "Lesson 5: The Aftermath of the 1967 War",
+      "title": "KT2.2: The Aftermath of the 1967 War",
       "prompt": "<strong>Debate:</strong> Did the outcome of the 1967 Six Day War make Israel more secure or less secure in the long term?",
       "sentence_starter": "Although Israel gained significant territory, the 1967 war ultimately made them less secure because..."
     },
     {
-      "title": "Lesson 6: Israel and Egypt, 1967–1973",
+      "title": "KT2.3: Israel and Egypt, 1967–1973",
       "prompt": "<strong>Roleplay:</strong> You are Anwar Sadat in 1973. Explain why launching the Yom Kippur War was necessary for Egypt's broader political and diplomatic goals.",
       "sentence_starter": "We must launch this surprise attack not necessarily to destroy Israel, but because..."
     },
     {
-      "title": "Lesson 7: Diplomatic negotiations, 1974–1979",
+      "title": "KT3.1: Diplomatic negotiations, 1974–1979",
       "prompt": "<strong>Debate:</strong> \"The Camp David Accords were a betrayal of the Arab cause.\" Argue for or against this statement from the perspective of an Arab nationalist in 1979.",
       "sentence_starter": "The Camp David Accords were a betrayal of the Arab cause because Egypt abandoned..."
     },
     {
-      "title": "Lesson 8: The Palestinian Issue, 1974–1993",
+      "title": "KT3.2: The Palestinian Issue, 1974–1993",
       "prompt": "<strong>Roleplay:</strong> You are a Palestinian youth during the First Intifada. Explain to an international journalist why mass protests and throwing stones are your chosen methods of resistance.",
       "sentence_starter": "We have resorted to throwing stones and mass protests because years of military occupation have..."
     },
     {
-      "title": "Lesson 9: Attempts at a solution, 1988–1995",
+      "title": "KT3.3: Attempts at a solution, 1988–1995",
       "prompt": "<strong>Debate:</strong> Were the 1993 Oslo Accords a genuine step toward peace, or a fundamentally flawed agreement doomed to fail from the start?",
       "sentence_starter": "The Oslo Accords were a genuine step toward peace because for the first time..."
     }

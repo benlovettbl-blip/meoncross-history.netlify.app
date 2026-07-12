@@ -94,6 +94,15 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
     </table>
   `;
 
+  let coverCaption = '';
+  if (ktNum === 1) {
+    coverCaption = "Cover Image: The SS Exodus carrying Jewish refugees, intercepted by the British Royal Navy in 1947. (Source: Wikipedia/Public Domain)";
+  } else if (ktNum === 2) {
+    coverCaption = "Cover Image: Israeli paratroopers standing before the Western Wall in Jerusalem shortly after its capture during the Six-Day War, June 1967. Photograph by David Rubinger. (Source: Wikipedia/Public Domain)";
+  } else if (ktNum === 3) {
+    coverCaption = "Cover Image: Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands, flanked by US President Bill Clinton, at the signing of the Oslo I Accord, 13 September 1993. (Source: Wikipedia/Public Domain)";
+  }
+
   html += `
   <h1 style="margin-top: 30px; margin-bottom: 5px; font-size: 28pt;">Edexcel GCSE History Paper 2</h1>
   <p style="text-align:center; font-size:18pt; margin-top: 0; font-weight: bold; color: #1a237e;">${unitData.title}</p>
@@ -102,6 +111,7 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
   <div style="text-align: center; margin: 15px 0;">
     <img src="../cme_new/assets/kt${ktNum}_cover.png" style="max-height: 250px; width: auto; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
     <div style="font-size: 12pt; font-weight: bold; margin-top: 8px; color: #1a237e;">${ktTitle}</div>
+    <div style="font-size: 9pt; font-style: italic; color: #555; margin-top: 5px; max-width: 80%; margin-left: auto; margin-right: auto;">${coverCaption}</div>
   </div>
 
   <div style="margin: 20px 5%; border: 2px solid #1a237e; background: #f8f9fa; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
