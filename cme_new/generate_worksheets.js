@@ -196,7 +196,6 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
       // If this block has tasks, print them immediately underneath
       if (block.tasks && block.tasks.length > 0) {
         html += `<div class="task-box" style="margin-top: 15px;">`;
-        html += `<h3 style="margin-top: 0; font-size: 14pt;">Knowledge Check</h3>`;
         block.tasks.forEach(task => {
           let cleanTask = task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '');
           html += `<p style="margin-top:10px; font-weight: bold;">Q${task.qNum}. ${cleanTask}</p>`;

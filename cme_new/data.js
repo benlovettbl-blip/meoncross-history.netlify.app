@@ -159,7 +159,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: What was the 'dual obligation' that Britain faced under the League of Nations Mandate of Palestine? (P1)",
+              "text": "What was the 'dual obligation' that Britain faced under the League of Nations Mandate of Palestine? (P1)",
               "model": "Britain was bound by a 'dual obligation': to establish a 'national home' for the Jewish people, and on the other hand, to safeguard the civil and religious rights of the existing Arab majority."
             }
           ]
@@ -170,7 +170,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Identify two reasons why Foreign Secretary Ernest Bevin set a strict immigration quota of 1,500 Jewish immigrants per month. (P4)",
+              "text": "Identify two reasons why Foreign Secretary Ernest Bevin set a strict immigration quota of 1,500 Jewish immigrants per month. (P2)",
               "model": "First, Bevin calculated that allowing a massive influx of Jewish refugees would trigger an uncontrollable civil war. Second, Britain was economically dependent on maintaining close relations with oil-rich Arab states that opposed unrestricted Jewish immigration."
             }
           ]
@@ -181,8 +181,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: How did the United Nations Partition Plan (Resolution 181) divide the land of Palestine, and what was the reaction of the two communities? (P13)",
-              "model": "Resolution 181 allocated 55% of Palestine to the Jewish population and 45% to the Arab majority, with Jerusalem as an international zone. The Zionist leadership accepted the plan with joy, while Arab leaders vehemently rejected it and vowed to fight to prevent the partition of their homeland."
+              "text": "What was the 'Jewish Insurgency' and which three Zionist groups united to launch it? (P3)",
+              "model": "The Jewish Insurgency was a coordinated, violent campaign against British rule in Palestine. It was led by the moderate Haganah, working alongside the extreme paramilitary splinter groups: the Irgun and the Lehi."
             }
           ]
         },
@@ -192,8 +192,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Describe the tactical advantage Israel gained during the first UN truce in June 1948. (P19)",
-              "model": "Israel used the one-month truce to unify its forces into a single national army (the IDF) and illegally import modern military hardware from Czechoslovakia, including 30,000 rifles and 84 combat aircraft. This completely neutralized the Arabs' initial material superiority."
+              "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (P4)",
+              "model": "The deadliest act was the bombing of the King David Hotel in Jerusalem by the Irgun. The hotel's southern wing was targeted because it housed the central administrative headquarters of the British Mandate and the military command of the British Army."
             }
           ]
         },
@@ -203,15 +203,21 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q5: Explain the long-term consequence of the 1948-49 war for the Palestinian Arab population. (P21)",
-              "model": "The war resulted in the Nakba ('The Catastrophe'), where over 700,000 Palestinian Arabs were permanently displaced from their homes, becoming refugees in neighboring states and losing a sovereign homeland."
+              "text": "How did the British public react to the 'Sergeants Affair', and what was the political result? (P5)",
+              "model": "The public reaction was explosive, with anti-Semitic riots erupting in British cities and a war-weary public demanding withdrawal. This forced the British government to admit Palestine was ungovernable and hand the problem to the United Nations."
             }
           ]
         },
         {
           "text": "The public reaction in Britain was explosive. Angry anti-Semitic riots erupted in major British cities. Faced with a war-weary public demanding that the government 'bring the boys home,' Prime Minister Attlee and Foreign Secretary Bevin admitted that Palestine had become ungovernable. Unable to find a compromise that satisfied both Jewish and Arab demands, Britain formally referred the entire problem to the newly created United Nations (UN) in February 1947. The United Nations Special Committee on Palestine (UNSCOP) concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone (corpus separatum) under UN control. On 29 November 1947, the UN General Assembly voted on Resolution 181. The US and Soviet Union both supported partition, hoping to expand their own influence.",
           "level_4": "The public reaction in Britain was explosive. The US and Soviet Union both supported partition, hoping to expand their own influence.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "written",
+              "text": "How did the United Nations Partition Plan (Resolution 181) divide the land of Palestine, and what was the reaction of the two communities? (P6)",
+              "model": "Resolution 181 allocated 55% of Palestine to the Jewish population and 45% to the Arab majority, with Jerusalem as an international zone. The Zionist leadership accepted the plan with joy, while Arab leaders vehemently rejected it and vowed to fight to prevent the partition of their homeland."
+            }
+          ]
         },
         {
           "text": "The final vote was 33 in favor, 13 against, and 10 abstentions. Under Resolution 181, the Jewish population (which owned less than 10% of the land and made up only one-third of the population) was allocated 55% of Palestine, including the fertile coastal plains. The Arab majority was allocated just 45% of the land, much of it mountainous and fragmented. While the Zionist leadership accepted the plan with joy, Arab leaders and the Arab League rejected it, declaring that they would fight to prevent the partition of their homeland. The passage of Resolution 181 acted as the catalyst for immediate violence. In December 1947, Britain announced that it would formally terminate its Mandate and withdraw all forces on 15 May 1948. For the remaining five months, British troops stood aside and refused to intervene, leaving Palestine to slide into a bloody, chaotic civil war between Jewish and Arab communities.",
@@ -247,7 +253,13 @@ export const unitData = {
         {
           "text": "In March 1948, the leadership of the Haganah implemented Plan Dalet (Plan D). Many historians argue that Plan D was a defensive military strategy designed to secure the borders of the future Jewish state by taking control of all Arab towns. Other historians argue that Plan D was an offensive operation that intentionally cleared Arab populations from strategic areas, effectively paving the way for the systematic ethnic cleansing of Palestine. The most critical flashpoint of the civil war occurred on 9 April 1948, when approximately 100 fighters from the extremist Irgun and Lehi launched an assault on Deir Yassin, a quiet Arab village. The attack resulted in the brutal massacre of over 100 Arab villagers. Hoping to rally the Arab world to intervene, Arab radio stations broadcast sensationalized, graphic accounts of the atrocities at Deir Yassin. However, this triggered widespread, uncontrollable panic among the Arab population. Believing that they would face the same brutal fate if they stayed, over 250,000 Palestinian Arabs abandoned their homes and fled in terror.",
           "level_4": "In March 1948, the leadership of the Haganah implemented Plan Dalet (Plan D). Believing that they would face the same brutal fate if they stayed, over 250,000 Palestinian Arabs abandoned their homes and fled in terror.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "written",
+              "text": "What was the impact of the Deir Yassin massacre on the Palestinian Arab population in April 1948? (P7)",
+              "model": "The brutal massacre of over 100 Arab villagers triggered widespread, uncontrollable panic. Believing they would face the same fate, over 250,000 Palestinian Arabs abandoned their homes and fled in terror."
+            }
+          ]
         },
         {
           "text": "On 14 May 1948, the last British troops departed Palestine. That afternoon, David Ben-Gurion stood in Tel Aviv and officially declared the birth of the sovereign State of Israel. The very next day, on 15 May 1948, five sovereign Arab nations—Egypt, Syria, Jordan, Lebanon, and Iraq—committed their armies to a coordinated invasion of the newly declared state, launching the first official Arab-Israeli War. At the outset, the survival of Israel hung in the balance. Jewish forces were heavily outnumbered, short of heavy weaponry, and faced a multi-front assault. By June, both sides were exhausted, and on 11 June 1948, the United Nations intervened, brokering a crucial one-month truce managed by UN mediator Count Folke Bernadotte.",
@@ -257,12 +269,24 @@ export const unitData = {
         {
           "text": "Israel used this one-month breathing space with exceptional efficiency. Prime Minister David Ben-Gurion dissolved the independent paramilitary groups and unified them into a single, professional national army: the Israeli Defence Forces (IDF). In direct violation of the UN weapons embargo, Israel used massive financial donations to purchase modern military hardware from Soviet-controlled Czechoslovakia, completely neutralizing the Arabs' initial material superiority. When the truce expired on 9 July 1948, the newly equipped IDF immediately went on the offensive, catching the Arab forces completely by surprise. In October 1948, Israel breached the second truce to launch its final offensives. Exhausted and politically divided, the Arab states signed separate Armistice Agreements with Israel between February and July 1949.",
           "level_4": "Israel used this one-month breathing space with exceptional efficiency. Exhausted and politically divided, the Arab states signed separate Armistice Agreements with Israel between February and July 1949.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (P8)",
+              "model": "Israel used the one-month truce to unify its forces into a single national army (the IDF) and illegally import modern military hardware from Czechoslovakia, completely neutralizing the Arabs' initial material superiority."
+            }
+          ]
         },
         {
           "text": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. Instead of the 55% allocated under the UN Partition Plan, Israel's victory secured control of 79% of mandate Palestine. A independent Palestinian Arab state ceased to exist. Over 700,000 Palestinians were permanently displaced from their homes, becoming refugees. For Palestinian Arabs, the war is remembered as the Nakba ('The Catastrophe').",
           "level_4": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. For Palestinian Arabs, the war is remembered as the Nakba ('The Catastrophe').",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain the long-term consequence of the 1948-49 war for the Palestinian Arab population. (P9)",
+              "model": "The war resulted in the Nakba ('The Catastrophe'), where over 700,000 Palestinian Arabs were permanently displaced from their homes, becoming refugees in neighboring states and losing a sovereign homeland."
+            }
+          ]
         }
       ],
       "draw_tasks": []
