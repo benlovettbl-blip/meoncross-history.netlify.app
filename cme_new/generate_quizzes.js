@@ -37,8 +37,22 @@ const allLessons = unitData.lessons.map(lesson => {
     lesson.do_now.items.forEach(q => questions.push({ q: q.question, a: q.answer }));
   }
   
-  if (lesson.knowledge_check) {
-    lesson.knowledge_check.forEach(q => questions.push({ q: q.question, a: q.answer }));
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach(block => {
+      if (block.tasks) {
+        block.tasks.forEach(task => {
+          let cleanQ = task.text.replace(/^(Q\\d+: |Task \\d+: |Question \\d+[a-z]?: |Enquiry Task: )/, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '');
+          questions.push({ q: cleanQ, a: task.model || 'Model answer to be discussed in class.' });
+        });
+      }
+    });
+  }
+  
+  if (lesson.tasks) {
+    lesson.tasks.forEach(task => {
+      let cleanQ = task.text.replace(/^(Q\\d+: |Task \\d+: |Question \\d+[a-z]?: |Enquiry Task: )/, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '');
+      questions.push({ q: cleanQ, a: task.model || 'Model answer to be discussed in class.' });
+    });
   }
   
   return { title: lesson.title, questions };
@@ -66,7 +80,7 @@ allLessons.forEach((lesson, idx) => {
   `;
   
   lesson.questions.forEach((item, qIdx) => {
-    let cleanQ = item.q.replace(/^\d+\.\s*/, "");
+    let cleanQ = item.q.replace(/^\\d+\\.\\s*/, "");
     html += `
       <li class="question-item">
         <div class="q-text">Q${qIdx + 1}. ${cleanQ}</div>
@@ -93,13 +107,12 @@ allLessons.forEach((lesson, idx) => {
   html += `<ul class="question-list">`;
   
   lesson.questions.forEach((item, qIdx) => {
-    let cleanQ = item.q.replace(/^\d+\.\s*/, "");
+    let cleanQ = item.q.replace(/^\\d+\\.\\s*/, "");
     html += `
       <li class="question-item" style="page-break-inside: avoid;">
         <div class="q-text">Q${qIdx + 1}. ${cleanQ}</div>
         <div class="answer-box">
           <strong>Answer:</strong> ${item.a}
-          <div class="explanation">Provide context if students miss the mark. Award marks for historically accurate variations.</div>
         </div>
       </li>
     `;
@@ -108,10 +121,6 @@ allLessons.forEach((lesson, idx) => {
   html += `</ul>`;
 });
 
-html += `
-</body>
-</html>
-`;
-
-fs.writeFileSync(path.join(__dirname, 'quiz_pack.html'), html);
-console.log('Successfully generated quiz_pack.html!');
+html += `</body>\n</html>`;
+fs.writeFileSync(path.join(__dirname, 'quiz_pack.html'), html, 'utf8');
+console.log('Successfully generated quiz_pack.html with ' + allLessons.reduce((acc, l) => acc + l.questions.length, 0) + ' total questions.');
