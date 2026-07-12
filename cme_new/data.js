@@ -706,8 +706,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                 [Nasser's Domestic & Geopolitical Aims]\n                                    │\n       ┌────────────────────────────┼────────────────────────────┐\n       ▼                            ▼                            ▼\n[Throw Off British Imperialism]   [Socialist Internal Reforms]   [The Aswan High Dam]\n- Expelled 80,000 British         - Redistributed fertile land   - Ultimate pride project\n  troops from Suez Canal zone       to the poor peasants          - Required massive foreign\n- Stood as champion of Arab pride  - Built schools & hospitals     loans to build on Nile\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                 [Nasser's Domestic & Geopolitical Aims]\n                                    │\n       ┌────────────────────────────┼────────────────────────────┐\n       ▼                            ▼                            ▼\n[Throw Off British Imperialism]   [Socialist Internal Reforms]   [The Aswan High Dam]\n- Expelled 80,000 British         - Redistributed fertile land   - Ultimate pride project\n  troops from Suez Canal zone       to the poor peasants          - Required massive foreign\n- Stood as champion of Arab pride  - Built schools & hospitals     loans to build on Nile\n</pre>",
+          "text": "<img src="assets/nasser_aims.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="nasser_aims">",
+          "level_4": "<img src="assets/nasser_aims.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="nasser_aims">",
           "tasks": []
         },
         {
@@ -733,8 +733,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n[1955 Gaza Raid Humiliates Egypt] ➔ [Nasser Realises Military Weakness]\n                                                │\n[1955 Czech Arms Deal (Soviet Bloc)] ➔ [Egypt Receives Advanced Jets/Tanks]\n                                                │\n[Western Alarm: US/UK Cancel Dam Loan] ➔ [Nasser Nationalises Suez Canal]\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n[1955 Gaza Raid Humiliates Egypt] ➔ [Nasser Realises Military Weakness]\n                                                │\n[1955 Czech Arms Deal (Soviet Bloc)] ➔ [Egypt Receives Advanced Jets/Tanks]\n                                                │\n[Western Alarm: US/UK Cancel Dam Loan] ➔ [Nasser Nationalises Suez Canal]\n</pre>",
+          "text": "<img src="assets/gaza_raid.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="gaza_raid">",
+          "level_4": "<img src="assets/gaza_raid.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="gaza_raid">",
           "tasks": []
         },
         {
@@ -771,8 +771,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                     [THE SECRET PROTOCOL OF SÈVRES]\n                                   │\n[Step 1: IDF Invades Sinai] ➔ [Step 2: UK/France Demand Ceasefire & Pullback]\n                                   │\n[Step 3: Egypt Refuses] ➔ [Step 4: Anglo-French Troops Occupy Canal to \"Protect\" It]\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                     [THE SECRET PROTOCOL OF SÈVRES]\n                                   │\n[Step 1: IDF Invades Sinai] ➔ [Step 2: UK/France Demand Ceasefire & Pullback]\n                                   │\n[Step 3: Egypt Refuses] ➔ [Step 4: Anglo-French Troops Occupy Canal to \"Protect\" It]\n</pre>",
+          "text": "<img src="assets/sevres_protocol.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="sevres_protocol">",
+          "level_4": "<img src="assets/sevres_protocol.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="sevres_protocol">",
           "tasks": []
         },
         {
@@ -808,8 +808,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n              [CONSEQUENCES OF SUEZ FOR ISRAEL]\n                              │\n     ┌────────────────────────┼────────────────────────┐\n     ▼                        ▼                        ▼\n[UNEF Deployment in Sinai]  [Straits of Tiran Open]  [IDF Military Deterrence]\n- Stationed as a buffer     - Port of Eilat reopened - Egyptian army routed\n- Gaza Fedayeen raids       - Secured vital trade    - Deterred Arab states\n  stopped for 10 years        with Asia/Africa        from war until 1967\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n              [CONSEQUENCES OF SUEZ FOR ISRAEL]\n                              │\n     ┌────────────────────────┼────────────────────────┐\n     ▼                        ▼                        ▼\n[UNEF Deployment in Sinai]  [Straits of Tiran Open]  [IDF Military Deterrence]\n- Stationed as a buffer     - Port of Eilat reopened - Egyptian army routed\n- Gaza Fedayeen raids       - Secured vital trade    - Deterred Arab states\n  stopped for 10 years        with Asia/Africa        from war until 1967\n</pre>",
+          "text": "<img src="assets/suez_consequences.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="suez_consequences">",
+          "level_4": "<img src="assets/suez_consequences.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="suez_consequences">",
           "tasks": []
         },
         {
@@ -939,8 +939,26 @@ export const unitData = {
       ],
       "narrative_blocks": [
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2; margin-bottom: 20px;\">\n======================================================================================\n                  SPECIFICATION STUDY MAP: KEY TOPIC 2.1\n======================================================================================\n1. Palestinian Nationalism ➔ Cairo Conference (1964), creation of the PLO and Fatah.\n2. Border Wars & Skirmishes ➔ Disputes over Jordan water, Samu Raid (1966), 7 April 1967.\n3. The Slide to War (May '67) ➔ Soviet misinformation, UNEF withdrawal, closure of Tiran.\n4. The Six Day War ➔ June 5 pre-emptive strike, lightning land war, redrawn boundaries.\n======================================================================================\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2; margin-bottom: 20px;\">\n======================================================================================\n                  SPECIFICATION STUDY MAP: KEY TOPIC 2.1\n======================================================================================\n1. Palestinian Nationalism ➔ Cairo Conference (1964), creation of the PLO and Fatah.\n2. Border Wars & Skirmishes ➔ Disputes over Jordan water, Samu Raid (1966), 7 April 1967.\n3. The Slide to War (May '67) ➔ Soviet misinformation, UNEF withdrawal, closure of Tiran.\n4. The Six Day War ➔ June 5 pre-emptive strike, lightning land war, redrawn boundaries.\n======================================================================================\n</pre>",
+          "text": "
+<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+  <h3 style="margin-top: 0; color: #333; text-align: center;">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
+  <ol style="line-height: 1.6; margin-bottom: 0;">
+    <li><strong>Palestinian Nationalism</strong> &rarr; Cairo Conference (1964), creation of the PLO and Fatah.</li>
+    <li><strong>Border Wars &amp; Skirmishes</strong> &rarr; Disputes over Jordan water, Samu Raid (1966), 7 April 1967.</li>
+    <li><strong>The Slide to War (May '67)</strong> &rarr; Soviet misinformation, UNEF withdrawal, closure of Tiran.</li>
+    <li><strong>The Six Day War</strong> &rarr; June 5 pre-emptive strike, lightning land war, redrawn boundaries.</li>
+  </ol>
+</div>",
+          "level_4": "
+<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+  <h3 style="margin-top: 0; color: #333; text-align: center;">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>
+  <ol style="line-height: 1.6; margin-bottom: 0;">
+    <li><strong>Palestinian Nationalism</strong> &rarr; Cairo Conference (1964), creation of the PLO and Fatah.</li>
+    <li><strong>Border Wars &amp; Skirmishes</strong> &rarr; Disputes over Jordan water, Samu Raid (1966), 7 April 1967.</li>
+    <li><strong>The Slide to War (May '67)</strong> &rarr; Soviet misinformation, UNEF withdrawal, closure of Tiran.</li>
+    <li><strong>The Six Day War</strong> &rarr; June 5 pre-emptive strike, lightning land war, redrawn boundaries.</li>
+  </ol>
+</div>",
           "tasks": []
         },
         {
@@ -955,8 +973,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                  [THE 1964 CAIRO CONFERENCE]\n                               │\n         ┌─────────────────────┴─────────────────────┐\n         ▼                                           ▼\n[Establishment of the PLO]                  [Dispute Over River Jordan]\n- Goal: Unite resistance groups             - Israel builds National Water Carrier\n- Officially backed by Arab League          - Arab states build diversion canals\n- Emergence of Fatah as military force      - Led to intense border tank/artillery battles\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                  [THE 1964 CAIRO CONFERENCE]\n                               │\n         ┌─────────────────────┴─────────────────────┐\n         ▼                                           ▼\n[Establishment of the PLO]                  [Dispute Over River Jordan]\n- Goal: Unite resistance groups             - Israel builds National Water Carrier\n- Officially backed by Arab League          - Arab states build diversion canals\n- Emergence of Fatah as military force      - Led to intense border tank/artillery battles\n</pre>",
+          "text": "<img src="assets/cairo_conference.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="cairo_conference">",
+          "level_4": "<img src="assets/cairo_conference.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="cairo_conference">",
           "tasks": []
         },
         {
@@ -987,8 +1005,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n[Syria funds/arms Fatah guerrillas] ➔ [Fatah launches sabotage raids into Israel]\n                                                   │\n[IDF launches massive reprisal on Jordanian Samu] ➔ [King Hussein is deeply alienated]\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n[Syria funds/arms Fatah guerrillas] ➔ [Fatah launches sabotage raids into Israel]\n                                                   │\n[IDF launches massive reprisal on Jordanian Samu] ➔ [King Hussein is deeply alienated]\n</pre>",
+          "text": "<img src="assets/syria_fatah.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="syria_fatah">",
+          "level_4": "<img src="assets/syria_fatah.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="syria_fatah">",
           "tasks": []
         },
         {
@@ -1003,8 +1021,28 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n======================================================================================\n                     THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS\n======================================================================================\n13 May ➔ Soviet Misinformation: USSR falsely tells Nasser Israel is massing troops on Syria.\n15 May ➔ Egyptian Mobilization: Nasser puts army on alert, moves troops into Sinai.\n16 May ➔ UN Out: Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.\n23 May ➔ Maritime Blockade: Egypt closes the Straits of Tiran, choking Israel's port of Eilat.\n30 May ➔ Encirclement: King Hussein of Jordan signs a joint defence pact with Egypt.\n======================================================================================\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n======================================================================================\n                     THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS\n======================================================================================\n13 May ➔ Soviet Misinformation: USSR falsely tells Nasser Israel is massing troops on Syria.\n15 May ➔ Egyptian Mobilization: Nasser puts army on alert, moves troops into Sinai.\n16 May ➔ UN Out: Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.\n23 May ➔ Maritime Blockade: Egypt closes the Straits of Tiran, choking Israel's port of Eilat.\n30 May ➔ Encirclement: King Hussein of Jordan signs a joint defence pact with Egypt.\n======================================================================================\n</pre>",
+          "text": "
+<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+  <h3 style="margin-top: 0; color: #333; text-align: center;">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
+  <ul style="line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;">
+    <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>
+    <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>
+    <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>
+    <li><strong>23 May</strong> &rarr; <em>Maritime Blockade:</em> Egypt closes the Straits of Tiran, choking Israel's port of Eilat.</li>
+    <li><strong>30 May</strong> &rarr; <em>Encirclement:</em> King Hussein of Jordan signs a joint defence pact with Egypt.</li>
+  </ul>
+</div>",
+          "level_4": "
+<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+  <h3 style="margin-top: 0; color: #333; text-align: center;">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>
+  <ul style="line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;">
+    <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>
+    <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>
+    <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>
+    <li><strong>23 May</strong> &rarr; <em>Maritime Blockade:</em> Egypt closes the Straits of Tiran, choking Israel's port of Eilat.</li>
+    <li><strong>30 May</strong> &rarr; <em>Encirclement:</em> King Hussein of Jordan signs a joint defence pact with Egypt.</li>
+  </ul>
+</div>",
           "tasks": []
         },
         {
@@ -1051,8 +1089,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                 [OPERATION FOCUS: 5 JUNE 1967]\n                               │\n[Low-altitude surprise air strike] ➔ [Egyptian radar successfully bypassed]\n                               │\n[Bomb runways & destroy 309 Egyptian jets] ➔ [Total Israeli air superiority secured]\n</pre>",
-          "level_4": "<pre style=\"background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace; overflow-x: auto; font-size: 14px; line-height: 1.2;\">\n                 [OPERATION FOCUS: 5 JUNE 1967]\n                               │\n[Low-altitude surprise air strike] ➔ [Egyptian radar successfully bypassed]\n                               │\n[Bomb runways & destroy 309 Egyptian jets] ➔ [Total Israeli air superiority secured]\n</pre>",
+          "text": "<img src="assets/operation_focus.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="operation_focus">",
+          "level_4": "<img src="assets/operation_focus.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="operation_focus">",
           "tasks": []
         },
         {
