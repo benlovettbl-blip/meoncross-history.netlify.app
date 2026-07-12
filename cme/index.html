@@ -109,47 +109,11 @@
           </div>
         </div>
 
-        <div class="header-actions">
-          <button id="btn-fullscreen" class="btn btn-secondary" style="margin-right: 5px;" onclick="if (!document.fullscreenElement) { const el = document.querySelector('.main-wrapper') || document.documentElement; el.requestFullscreen(); } else { document.exitFullscreen(); }"><i class="fa-solid fa-expand"></i> Full Screen</button>
-          <!-- Live XP Counter Badge -->
-          <div class="live-xp-counter-badge" id="live-xp-counter-badge" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 20px; font-weight: bold; font-size: 0.85rem; color: var(--text-main); transition: all 0.25s;" title="Total XP Earned">
-            <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i>
-            <span id="header-xp-value">0</span> <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">XP</span>
-          </div>
-
-          <!-- Overall Progress Badge -->
-          <div class="overall-progress-badge" id="header-progress-badge" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 20px; font-weight: bold; font-size: 0.85rem; color: var(--text-main); transition: all 0.25s;" title="Overall Progress">
-            <i class="fa-solid fa-circle-notch" style="color: var(--primary);"></i>
-            <span id="header-progress-value">0%</span>
-          </div>
-
-          <!-- Settings Toggle Button -->
-          <button class="header-icon-btn" id="btn-settings-toggle" title="Settings">
-            <i class="fa-solid fa-gear"></i>
-          </button>
-
-          <!-- Dark Mode Toggle Button -->
-          <button class="header-icon-btn" id="btn-darkmode-toggle" title="Toggle Dark Mode">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-
-          <!-- Fullscreen Toggle Button -->
-          <button class="header-icon-btn fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">
-            <i class="fa-solid fa-expand"></i>
-          </button>
-
-          <!-- Study Mode Switcher (shown when subtopic is selected) -->
-          <div class="mode-switcher" id="subtopic-mode-switcher" style="display: none;">
-            <button class="mode-btn active" data-mode="lessons">
-              <i class="fa-solid fa-book-open"></i> <span>Lessons</span>
-            </button>
-            <button class="mode-btn" data-mode="classic">
-              <i class="fa-solid fa-list-ul"></i> <span>Accordions</span>
-            </button>
-            <button class="mode-btn" data-mode="flashcards">
-              <i class="fa-solid fa-clone"></i> <span>Flashcards</span>
-            </button>
-          </div>
+        <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
+          <button id="btn-fullscreen" class="btn btn-secondary" style="margin-right: 5px; padding: 6px 12px;" onclick="if (!document.fullscreenElement) { const el = document.querySelector('.main-wrapper') || document.documentElement; el.requestFullscreen(); } else { document.exitFullscreen(); }" title="Full Screen"><i class="fa-solid fa-expand"></i></button>
+          <button id="btn-simplify" class="btn btn-secondary" style="margin-right: 5px; padding: 6px 12px;" onclick="document.body.classList.toggle('simplified-mode')" title="Simplify Text"><i class="fa-solid fa-language"></i></button>
+          <button id="btn-text-size" class="btn btn-secondary" style="margin-right: 5px; padding: 6px 12px;" onclick="document.body.classList.toggle('large-text')" title="A+ / A-"><i class="fa-solid fa-text-height"></i></button>
+          <button id="btn-dyslexia" class="btn btn-secondary" style="padding: 6px 12px;" title="SEN / Dyslexia Mode"><i class="fa-solid fa-glasses"></i></button>
         </div>
       </header>
 

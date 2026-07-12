@@ -413,12 +413,19 @@ export function initializeApp(unitData) {
 
 
 
-  // Toggle Dyslexia Mode (Remove icon if present)
-  btnDyslexia.innerHTML = 'SEN / Dyslexia Mode';
+  // Toggle Dyslexia Mode (Preserve icon)
   btnDyslexia.addEventListener('click', () => {
     document.body.classList.toggle('sen-mode');
     const isSen = document.body.classList.contains('sen-mode');
-    btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+    if (btnDyslexia.title === 'SEN / Dyslexia Mode' || btnDyslexia.title === 'Standard Mode') {
+      // It's an icon button with title
+      btnDyslexia.title = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+      btnDyslexia.style.background = isSen ? '#1e293b' : '';
+      btnDyslexia.style.color = isSen ? '#ffffff' : '';
+    } else {
+      // Legacy text button
+      btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+    }
   });
 
   // Inject Laptop Mode & Teacher Mode Buttons
@@ -426,12 +433,13 @@ export function initializeApp(unitData) {
   if (headerActions) {
     const btnLaptop = document.createElement('button');
     btnLaptop.className = 'btn btn-secondary';
-    btnLaptop.style.marginRight = '10px';
-    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i> Laptop Mode';
+    btnLaptop.style.marginRight = '5px';
+    btnLaptop.style.padding = '6px 12px';
+    btnLaptop.title = 'Laptop Mode';
+    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i>';
     
     if (localStorage.getItem('laptopMode') === 'true') {
       document.body.classList.add('laptop-mode-active');
-      btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i> Laptop Mode: ON';
       btnLaptop.style.background = '#1e293b';
       btnLaptop.style.color = '#ffffff';
     }
@@ -440,7 +448,6 @@ export function initializeApp(unitData) {
       document.body.classList.toggle('laptop-mode-active');
       const isActive = document.body.classList.contains('laptop-mode-active');
       localStorage.setItem('laptopMode', isActive);
-      btnLaptop.innerHTML = isActive ? '<i class="fa-solid fa-laptop"></i> Laptop Mode: ON' : '<i class="fa-solid fa-laptop"></i> Laptop Mode';
       btnLaptop.style.background = isActive ? '#1e293b' : '';
       btnLaptop.style.color = isActive ? '#ffffff' : '';
     });
