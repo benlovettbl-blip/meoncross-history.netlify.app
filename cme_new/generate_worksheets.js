@@ -98,7 +98,7 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
   if (ktNum === 1) {
     coverCaption = "Cover Image: The SS Exodus carrying Jewish refugees, intercepted by the British Royal Navy in 1947. (Source: Wikipedia/Public Domain)";
   } else if (ktNum === 2) {
-    coverCaption = "Cover Image: Israeli paratroopers standing before the Western Wall in Jerusalem shortly after its capture during the Six-Day War, June 1967. Photograph by David Rubinger. (Source: Wikipedia/Public Domain)";
+    coverCaption = "Cover Image: Six Day War. Army chief chaplain Rabbi Shlomo Goren, surrounded by IDF soldiers, blows the shofar in front of the Western Wall in Jerusalem. June 1967. Photograph by David Rubinger.";
   } else if (ktNum === 3) {
     coverCaption = "Cover Image: Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands, flanked by US President Bill Clinton, at the signing of the Oslo I Accord, 13 September 1993. (Source: Wikipedia/Public Domain)";
   }
