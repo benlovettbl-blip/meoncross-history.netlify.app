@@ -101,7 +101,7 @@ export function renderExamPracticeZone(container, unitData) {
   const formatTime = (seconds) => {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
-    return \`\${m.toString().padStart(2, '0')}:\${s.toString().padStart(2, '0')}\`;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
   const updateTimerDisplay = () => {
@@ -185,13 +185,13 @@ export function renderExamPracticeZone(container, unitData) {
     if (currentQuestion.type === "narrative_8") typeFriendly = "Analytical Narrative (8 Marks)";
     if (currentQuestion.type === "consequence_4") typeFriendly = "Consequence (4 Marks)";
 
-    qMeta.innerHTML = \`<i class="fa-solid fa-book-open"></i> \${currentQuestion.blockTitle} &bull; \${typeFriendly}\`;
+    qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${typeFriendly}`;
     qText.textContent = currentQuestion.text;
     
     // Stimulus points for narrative
     if (currentQuestion.hint) {
-      const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
-      qStimulus.innerHTML = \`You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">\${points.map(p => \`<li>\${p}</li>\`).join('')}</ul><em>You must also use information of your own.</em>\`;
+      const points = currentQuestion.hint.split('n').map(p => p.trim()).filter(p => p);
+      qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
       
       // We will use the stimulus as the structural hint
       hintBtn.style.display = 'block';
@@ -212,8 +212,8 @@ export function renderExamPracticeZone(container, unitData) {
     if (currentQuestion.wagoll) {
       wagollBtn.style.display = 'block';
       // Format markdown bold
-      const formattedWagoll = currentQuestion.wagoll.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>');
-      wagollPanel.innerHTML = \`<strong>Grade 9 Model Answer (WAGOLL):</strong><br><br>\${formattedWagoll}\`;
+      const formattedWagoll = currentQuestion.wagoll.replace(/**(.*?)**/g, '<strong>$1</strong>');
+      wagollPanel.innerHTML = `<strong>Grade 9 Model Answer (WAGOLL):</strong><br><br>${formattedWagoll}`;
     } else {
       wagollBtn.style.display = 'none';
     }
