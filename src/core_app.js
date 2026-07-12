@@ -613,6 +613,7 @@ export function initializeApp(unitData) {
 
   // Render Lesson Content
   function renderLesson(lesson) {
+    assignQuestionNumbers(lesson);
     window.currentActiveLesson = lesson;
     let html = `<div class="lesson-content" style="max-width: 900px; margin: 0 auto;">`;
     
@@ -926,11 +927,11 @@ export function initializeApp(unitData) {
         // Render Embedded Tasks for this chunk!
         if (block.tasks && block.tasks.length > 0) {
           html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
-          html += `<h4 style="margin-top: 0; color: #b45309; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-pen-to-square"></i> Knowledge Check</h4>`;
           block.tasks.forEach(task => {
+             const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
              html += `
                <div style="margin-bottom: 10px;">
-                 <strong>${task.text.replace(/\s*\(P\d+\)/gi, '')}</strong>
+                 <strong>${qPrefix}${task.text.replace(/\s*\(P\d+\)/gi, '')}</strong>
                  <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show Model</button>
                  <div class="answer" style="margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>

@@ -196,7 +196,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
 
   // Render Written Tasks
   if (writtenTasks.length > 0) {
-    html += `<div class="task-box"><h3>Knowledge Check</h3>`;
+    html += `<div class="task-box">`;
     writtenTasks.forEach(task => {
       html += `<p style="margin-top:20px;"><strong>Q${task.qNum}. ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></p>`;
       // Add 3 blank lines for writing
