@@ -148,7 +148,7 @@ const diagrams = [
   },
   {
     id: 'fatahland',
-    matchStr: '[THE RISE OF "FATAHLAND" IN LEBANON]',
+    matchStr: '[THE RISE OF \\"FATAHLAND\\" IN LEBANON]',
     mmd: `flowchart TD
   A[THE RISE OF 'FATAHLAND' IN LEBANON]
   A --> B[PLO Expelled from Jordan 1970]
@@ -374,24 +374,24 @@ let dataJs = fs.readFileSync('cme_new/data.js', 'utf8');
 
 // Replace standard flowchart diagrams
 for (const diag of diagrams) {
-  const replacement = `<img src="assets/${diag.id}.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="${diag.id}">`;
-  dataJs = dataJs.replace(/<pre class="ascii-diagram">([\s\S]*?)<\/pre>/g, (match, content) => {
+  const replacement = `<img src=\\"assets/${diag.id}.svg\\" class=\\"svg-diagram\\" style=\\"max-width: 100%; border-radius: 8px;\\" alt=\\"${diag.id}\\">`;
+  dataJs = dataJs.replace(/<pre class=\\"ascii-diagram\\">([\s\S]*?)<\/pre>/g, (match, content) => {
+    console.log('Found a match! Checking against:', diag.id);
     if (content.includes(diag.matchStr)) return replacement;
     return match;
   });
 }
 
-// Replace the Black September diagram since we already have the SVG
-const bsReplacement = `<img src="assets/black_september.svg" class="svg-diagram" style="max-width: 100%; border-radius: 8px;" alt="black_september">`;
-dataJs = dataJs.replace(/<pre class="ascii-diagram">([\s\S]*?)<\/pre>/g, (match, content) => {
+const bsReplacement = `<img src=\\"assets/black_september.svg\\" class=\\"svg-diagram\\" style=\\"max-width: 100%; border-radius: 8px;\\" alt=\\"black_september\\">`;
+dataJs = dataJs.replace(/<pre class=\\"ascii-diagram\\">([\s\S]*?)<\/pre>/g, (match, content) => {
   if (content.includes(blackSeptemberMatch)) return bsReplacement;
   return match;
 });
 
-// Replace Tables
-for (const table of tables) {
-  dataJs = dataJs.replace(/<pre class="ascii-diagram">([\s\S]*?)<\/pre>/g, (match, content) => {
-    if (content.includes(table.matchStr)) return table.html;
+// Replace text tables
+for (const tableBlock of tables) {
+  dataJs = dataJs.replace(/<pre class=\\"ascii-diagram\\">([\s\S]*?)<\/pre>/g, (match, content) => {
+    if (content.includes(tableBlock.matchStr)) return tableBlock.html.replace(/"/g, '\\"').replace(/\n/g, '\\n');
     return match;
   });
 }

@@ -1241,8 +1241,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                     [UN RESOLUTION 242 (NOV 1967)]\n                                   |\n         +-------------------------+-------------------------+\n         v                                                   v\n[English Wording: Loophole]                       [French Wording: Strict]\n- \"Withdrawal from territories\"                   - \"des territoires occupés\"\n- Israel argued it did NOT mean ALL               - Interpreted as requiring a\n  territories; allowed border expansion       complete withdrawal to 1967 lines\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                     [UN RESOLUTION 242 (NOV 1967)]\n                                   |\n         +-------------------------+-------------------------+\n         v                                                   v\n[English Wording: Loophole]                       [French Wording: Strict]\n- \"Withdrawal from territories\"                   - \"des territoires occupés\"\n- Israel argued it did NOT mean ALL               - Interpreted as requiring a\n  territories; allowed border expansion       complete withdrawal to 1967 lines\n</pre>",
+          "text": "<img src=\"assets/un242.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"un242\">",
+          "level_4": "<img src=\"assets/un242.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"un242\">",
           "tasks": []
         },
         {
@@ -1273,8 +1273,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n               [THE STRATEGIC OCCUPIED Buffer ZONES]\n                                 |\n     +---------------------------+---------------------------+\n     v                           v                           v\n[The Golan Heights]       [The Sinai Peninsula]       [The West Bank & Gaza]\n- Prevented Syrian shelling  - Kept Egyptian artillery  - Created defensible borders\n  of Galilee farming        far from Israeli cities    - Blocked cross-border raids\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n               [THE STRATEGIC OCCUPIED Buffer ZONES]\n                                 |\n     +---------------------------+---------------------------+\n     v                           v                           v\n[The Golan Heights]       [The Sinai Peninsula]       [The West Bank & Gaza]\n- Prevented Syrian shelling  - Kept Egyptian artillery  - Created defensible borders\n  of Galilee farming        far from Israeli cities    - Blocked cross-border raids\n</pre>",
+          "text": "<img src=\"assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"buffer_zones\">",
+          "level_4": "<img src=\"assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"buffer_zones\">",
           "tasks": []
         },
         {
@@ -1305,8 +1305,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\nConventional Arab Armies Defeated (1967) -> Grassroots Nationalist Awakening\n                                                      |\nRadical Splinter Groups Form (e.g., PFLP) -> Strategy of \"Internationalized\" Terror\n                                                      |\nDawson's Field Hijackings (1970) -> World Spotlight Forced onto Palestinian Issue\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\nConventional Arab Armies Defeated (1967) -> Grassroots Nationalist Awakening\n                                                      |\nRadical Splinter Groups Form (e.g., PFLP) -> Strategy of \"Internationalized\" Terror\n                                                      |\nDawson's Field Hijackings (1970) -> World Spotlight Forced onto Palestinian Issue\n</pre>",
+          "text": "<img src=\"assets/arab_armies.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arab_armies\">",
+          "level_4": "<img src=\"assets/arab_armies.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arab_armies\">",
           "tasks": []
         },
         {
@@ -1353,8 +1353,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Black September Infiltrates Olympic Village] -> [11 Israeli Athletes Taken Hostage]\n                                                        |\n[Failed German Rescue Attempt at Airport] -> [All Hostages & 5 Terrorists Killed]\n                                                        |\n[Worldwide TV Broadcast: Severe Condemnation] -> [Israel Launches Operation Wrath of God]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Black September Infiltrates Olympic Village] -> [11 Israeli Athletes Taken Hostage]\n                                                        |\n[Failed German Rescue Attempt at Airport] -> [All Hostages & 5 Terrorists Killed]\n                                                        |\n[Worldwide TV Broadcast: Severe Condemnation] -> [Israel Launches Operation Wrath of God]\n</pre>",
+          "text": "<img src=\"assets/black_september.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"black_september\">",
+          "level_4": "<img src=\"assets/black_september.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"black_september\">",
           "tasks": []
         },
         {
@@ -1533,8 +1533,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n               [THE COLD WAR ESCALATION ON THE SUEZ]\n                                |\n[Nasser launches artillery bombardments] -> [Israel retaliates with deep air strikes]\n                                |\n[Egypt receives 15,000 Soviet advisors] -> [Soviet SAM-3 missile sites built (1970)]\n                                |\n[US mediates August 1970 Ceasefire] -> [Uneasy stalemate remains unaddressed]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n               [THE COLD WAR ESCALATION ON THE SUEZ]\n                                |\n[Nasser launches artillery bombardments] -> [Israel retaliates with deep air strikes]\n                                |\n[Egypt receives 15,000 Soviet advisors] -> [Soviet SAM-3 missile sites built (1970)]\n                                |\n[US mediates August 1970 Ceasefire] -> [Uneasy stalemate remains unaddressed]\n</pre>",
+          "text": "<img src=\"assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cold_war_escalation\">",
+          "level_4": "<img src=\"assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cold_war_escalation\">",
           "tasks": []
         },
         {
@@ -1565,8 +1565,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                  [SADAT'S DIPLOMATIC ATTEMPTS (1971-72)]\n                                     |\n         +---------------------------+---------------------------+\n         v                                                       v\n[The Golda Meir Proposal]                            [Expelling the Soviets]\n- Sadat offers peace in return                       - Sadat expels 15,000 Soviet advisors\n  for the complete return of Sinai                   - Aim: Please USA and force them\n- Rejected by Golda Meir                             - Result: Met with complete US indifference\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                  [SADAT'S DIPLOMATIC ATTEMPTS (1971-72)]\n                                     |\n         +---------------------------+---------------------------+\n         v                                                       v\n[The Golda Meir Proposal]                            [Expelling the Soviets]\n- Sadat offers peace in return                       - Sadat expels 15,000 Soviet advisors\n  for the complete return of Sinai                   - Aim: Please USA and force them\n- Rejected by Golda Meir                             - Result: Met with complete US indifference\n</pre>",
+          "text": "<img src=\"assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
+          "level_4": "<img src=\"assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
           "tasks": []
         },
         {
@@ -1597,8 +1597,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                      [ISRAELI SETTLEMENT POLICY]\n                                   |\n         +-------------------------+-------------------------+\n         v                                                   v\n[Labor Government: Security]                        [Likud/Gush Emunim: Biblical]\n- Guided by the \"Allon Plan\"                        - Claimed divine right to Eretz Israel\n- Built settlements as defensive                    - Aimed to block any future\n  barriers along borders                            - Palestinian statehood\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                      [ISRAELI SETTLEMENT POLICY]\n                                   |\n         +-------------------------+-------------------------+\n         v                                                   v\n[Labor Government: Security]                        [Likud/Gush Emunim: Biblical]\n- Guided by the \"Allon Plan\"                        - Claimed divine right to Eretz Israel\n- Built settlements as defensive                    - Aimed to block any future\n  barriers along borders                            - Palestinian statehood\n</pre>",
+          "text": "<img src=\"assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"settlement_policy\">",
+          "level_4": "<img src=\"assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"settlement_policy\">",
           "tasks": []
         },
         {
@@ -1618,8 +1618,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\nSurprise Attack launched on Yom Kippur -> IDF caught off-guard; mobilization slowed\n                                                 |\nEgyptians breach the Bar Lev Line -> Syrian tanks overrun the Golan Heights\n                                                 |\nIDF suffers heavy initial losses -> Superpower arms airlifts begin (15 Oct)\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\nSurprise Attack launched on Yom Kippur -> IDF caught off-guard; mobilization slowed\n                                                 |\nEgyptians breach the Bar Lev Line -> Syrian tanks overrun the Golan Heights\n                                                 |\nIDF suffers heavy initial losses -> Superpower arms airlifts begin (15 Oct)\n</pre>",
+          "text": "<img src=\"assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"surprise_attack\">",
+          "level_4": "<img src=\"assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"surprise_attack\">",
           "tasks": []
         },
         {
@@ -1650,8 +1650,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                  [THE SUPERPOWER GEOPOLITICAL FACE-OFF]\n                                     |\n         +---------------------------+---------------------------+\n         v                           v                           v\n[The US Weapons Airlift]    [Soviet Intervention Threat]  [The Arab OPEC Oil Embargo]\n- Nixon sends tanks/jets    - Brezhnev threatens troops   - OPEC quadruples oil prices\n- Stabilizes IDF defenses   - US goes to DEFCON 3 alert   - Chokes Western economies\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                  [THE SUPERPOWER GEOPOLITICAL FACE-OFF]\n                                     |\n         +---------------------------+---------------------------+\n         v                           v                           v\n[The US Weapons Airlift]    [Soviet Intervention Threat]  [The Arab OPEC Oil Embargo]\n- Nixon sends tanks/jets    - Brezhnev threatens troops   - OPEC quadruples oil prices\n- Stabilizes IDF defenses   - US goes to DEFCON 3 alert   - Chokes Western economies\n</pre>",
+          "text": "<img src=\"assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"superpower_faceoff\">",
+          "level_4": "<img src=\"assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"superpower_faceoff\">",
           "tasks": []
         },
         {
@@ -1671,8 +1671,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n+------------------------------------------------------------------------------------+\n|                       THE SIGNIFICANCE OF THE YOM KIPPUR WAR                       |\n+--------------------------+---------------------------+-----------------------------+\n|      For Egypt           |         For Israel        |      For the Peace Road     |\n+--------------------------+---------------------------+-----------------------------+\n| Sadat restored Egyptian  | Golda Meir and Moshe      | Proved military force had   |\n| honor and proved the     | Dayan resigned due to     | limits; forced US into      |\n| Bar Lev Line was not     | immense public anger over | exhaustive \"shuttle         |\n| invincible.              | initial war failures      | diplomacy\".                 |\n+--------------------------+---------------------------+-----------------------------+\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n+------------------------------------------------------------------------------------+\n|                       THE SIGNIFICANCE OF THE YOM KIPPUR WAR                       |\n+--------------------------+---------------------------+-----------------------------+\n|      For Egypt           |         For Israel        |      For the Peace Road     |\n+--------------------------+---------------------------+-----------------------------+\n| Sadat restored Egyptian  | Golda Meir and Moshe      | Proved military force had   |\n| honor and proved the     | Dayan resigned due to     | limits; forced US into      |\n| Bar Lev Line was not     | immense public anger over | exhaustive \"shuttle         |\n| invincible.              | initial war failures      | diplomacy\".                 |\n+--------------------------+---------------------------+-----------------------------+\n</pre>",
+          "text": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">THE SIGNIFICANCE OF THE YOM KIPPUR WAR</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Egypt</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the Peace Road</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Sadat restored Egyptian honor and proved the Bar Lev Line was not invincible.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Golda Meir and Moshe Dayan resigned due to immense public anger over initial war failures.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Proved military force had limits; forced US into exhaustive \"shuttle diplomacy\".</td>\n    </tr>\n  </tbody>\n</table>",
+          "level_4": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">THE SIGNIFICANCE OF THE YOM KIPPUR WAR</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Egypt</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the Peace Road</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Sadat restored Egyptian honor and proved the Bar Lev Line was not invincible.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Golda Meir and Moshe Dayan resigned due to immense public anger over initial war failures.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Proved military force had limits; forced US into exhaustive \"shuttle diplomacy\".</td>\n    </tr>\n  </tbody>\n</table>",
           "tasks": [
             {
               "text": "Write a narrative account analysing the key developments of the Yom Kippur War (1973) and its aftermath. (8 marks)",
@@ -1839,8 +1839,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                 [THE COGNITIVE IMPACT OF OPEC'S EMBARGO]\n                                    |\n+-----------------------------------+-----------------------------------+\n|                                   v                                   |\n|                     [United States Peace Incentive]                   |\n| - Economy severely damaged by inflation and fuel shortages.           |\n| - Realized they must stabilize the Middle East to prevent future oil  |\n|   crises and limit expanding Soviet influence in Egypt and Syria.     |\n+-----------------------------------------------------------------------+\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                 [THE COGNITIVE IMPACT OF OPEC'S EMBARGO]\n                                    |\n+-----------------------------------+-----------------------------------+\n|                                   v                                   |\n|                     [United States Peace Incentive]                   |\n| - Economy severely damaged by inflation and fuel shortages.           |\n| - Realized they must stabilize the Middle East to prevent future oil  |\n|   crises and limit expanding Soviet influence in Egypt and Syria.     |\n+-----------------------------------------------------------------------+\n</pre>",
+          "text": "<img src=\"assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cognitive_impact\">",
+          "level_4": "<img src=\"assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"cognitive_impact\">",
           "tasks": []
         },
         {
@@ -1855,8 +1855,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n               [KISSINGER'S SHUTTLE DIPLOMACY PIPELINE (1974-75)]\n                                       |\n[Sinai I (Jan 1974)] -> [Golan Accord (May 1974)] -> [Sinai II (Sept 1975)]\n- Egypt-Israel pull-back  - Syria-Israel cease-fire   - Israel abandons passes\n- Reopened Suez Canal     - UN buffer zone created    - US early-warning hubs built\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n               [KISSINGER'S SHUTTLE DIPLOMACY PIPELINE (1974-75)]\n                                       |\n[Sinai I (Jan 1974)] -> [Golan Accord (May 1974)] -> [Sinai II (Sept 1975)]\n- Egypt-Israel pull-back  - Syria-Israel cease-fire   - Israel abandons passes\n- Reopened Suez Canal     - UN buffer zone created    - US early-warning hubs built\n</pre>",
+          "text": "<img src=\"assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
+          "level_4": "<img src=\"assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
           "tasks": []
         },
         {
@@ -1876,8 +1876,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Sadat faces economic collapse & riots] -> [Realises conventional war is too costly]\n                                               |\n[Declares to Egyptian Parliament] -> [Will go to \"the ends of the earth\" for peace]\n                                               |\n[Begin extends formal invitation] -> [Sadat lands at Ben Gurion Airport (19 Nov 1977)]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Sadat faces economic collapse & riots] -> [Realises conventional war is too costly]\n                                               |\n[Declares to Egyptian Parliament] -> [Will go to \"the ends of the earth\" for peace]\n                                               |\n[Begin extends formal invitation] -> [Sadat lands at Ben Gurion Airport (19 Nov 1977)]\n</pre>",
+          "text": "<img src=\"assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sadat_faces\">",
+          "level_4": "<img src=\"assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sadat_faces\">",
           "tasks": []
         },
         {
@@ -1892,8 +1892,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                     [THE CAMP DAVID SUMMIT (SEPT 1978)]\n                                     |\n[13 Days of Seclusion] -> [Jimmy Carter's Mediation] -> [Two Framework Agreements]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                     [THE CAMP DAVID SUMMIT (SEPT 1978)]\n                                     |\n[13 Days of Seclusion] -> [Jimmy Carter's Mediation] -> [Two Framework Agreements]\n</pre>",
+          "text": "<img src=\"assets/camp_david.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"camp_david\">",
+          "level_4": "<img src=\"assets/camp_david.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"camp_david\">",
           "tasks": []
         },
         {
@@ -1908,8 +1908,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Sinai returned to Egypt (phased)] -> [Egypt grants diplomatic recognition to Israel]\n                                                 |\n[Sinai demilitarised & monitored] -> [Suez Canal & Straits of Tiran fully open to IDF]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Sinai returned to Egypt (phased)] -> [Egypt grants diplomatic recognition to Israel]\n                                                 |\n[Sinai demilitarised & monitored] -> [Suez Canal & Straits of Tiran fully open to IDF]\n</pre>",
+          "text": "<img src=\"assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sinai_returned\">",
+          "level_4": "<img src=\"assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sinai_returned\">",
           "tasks": []
         },
         {
@@ -2070,8 +2070,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                     [ARAFAT'S 1974 DIPLOMATIC COGNITION]\n                                      |\n         +----------------------------+----------------------------+\n         v                                                         v\n[Arafat's Metaphorical Warning]                     [UN Resolution 3236 (Nov 1974)]\n- Bearer of \"olive branch\" (diplomacy)               - Recognized right to self-determination\n- Bearer of \"freedom fighter's gun\" (violence)       - Conferred permanent UN Observer Status\n- Demanded sovereign homeland                        - Legitimized PLO as sole representative\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                     [ARAFAT'S 1974 DIPLOMATIC COGNITION]\n                                      |\n         +----------------------------+----------------------------+\n         v                                                         v\n[Arafat's Metaphorical Warning]                     [UN Resolution 3236 (Nov 1974)]\n- Bearer of \"olive branch\" (diplomacy)               - Recognized right to self-determination\n- Bearer of \"freedom fighter's gun\" (violence)       - Conferred permanent UN Observer Status\n- Demanded sovereign homeland                        - Legitimized PLO as sole representative\n</pre>",
+          "text": "<img src=\"assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_1974\">",
+          "level_4": "<img src=\"assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_1974\">",
           "tasks": []
         },
         {
@@ -2086,8 +2086,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                 [THE RISE OF \"FATAHLAND\" IN LEBANON]\n                                  |\n[PLO Expelled from Jordan (1970)] -> [PLO Establishes HQ in Southern Lebanon]\n                                  |\n[Cross-Border Katyusha Rocket Attacks] -> [Galilee Settlements Targeted]\n                                  |\n[1975 Lebanese Civil War Erupts] -> [PLO Allies with Leftist Muslim Coalition]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                 [THE RISE OF \"FATAHLAND\" IN LEBANON]\n                                  |\n[PLO Expelled from Jordan (1970)] -> [PLO Establishes HQ in Southern Lebanon]\n                                  |\n[Cross-Border Katyusha Rocket Attacks] -> [Galilee Settlements Targeted]\n                                  |\n[1975 Lebanese Civil War Erupts] -> [PLO Allies with Leftist Muslim Coalition]\n</pre>",
+          "text": "<img src=\"assets/fatahland.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"fatahland\">",
+          "level_4": "<img src=\"assets/fatahland.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"fatahland\">",
           "tasks": []
         },
         {
@@ -2102,8 +2102,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Fatah Coastal Road Massacre (37 Dead)] -> [Operation Litani Launched (March 1978)]\n                                                     |\n[IDF Occupies Southern Lebanon Buffer Zone] -> [UN Security Council Resolution 425]\n                                                     |\n[UNIFIL Deployed to Border] -> [Israel Builds South Lebanon Army (SLA) Militia]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Fatah Coastal Road Massacre (37 Dead)] -> [Operation Litani Launched (March 1978)]\n                                                     |\n[IDF Occupies Southern Lebanon Buffer Zone] -> [UN Security Council Resolution 425]\n                                                     |\n[UNIFIL Deployed to Border] -> [Israel Builds South Lebanon Army (SLA) Militia]\n</pre>",
+          "text": "<img src=\"assets/coastal_road.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"coastal_road\">",
+          "level_4": "<img src=\"assets/coastal_road.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"coastal_road\">",
           "tasks": []
         },
         {
@@ -2118,8 +2118,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                             [THE 1982 LEBANESE INVASION]\n                                          |\n[Ambassador Shlomo Argov Shot (3 June)] -> [Operation Peace for Galilee (6 June)]\n                                          |\n[IDF Bypasses UNIFIL and Races North] -> [Heavy Syrian Air Clashes (100 MiGs Shot Down)]\n                                          |\n[Siege of West Beirut Encirclement] -> [14,000 PLO Fighters Evacuated to Tunis]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                             [THE 1982 LEBANESE INVASION]\n                                          |\n[Ambassador Shlomo Argov Shot (3 June)] -> [Operation Peace for Galilee (6 June)]\n                                          |\n[IDF Bypasses UNIFIL and Races North] -> [Heavy Syrian Air Clashes (100 MiGs Shot Down)]\n                                          |\n[Siege of West Beirut Encirclement] -> [14,000 PLO Fighters Evacuated to Tunis]\n</pre>",
+          "text": "<img src=\"assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"lebanese_invasion\">",
+          "level_4": "<img src=\"assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"lebanese_invasion\">",
           "tasks": []
         },
         {
@@ -2139,8 +2139,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Bashir Gemayel Assassinated (14 Sept)] -> [IDF Encirclement of Sabra & Shatila Camps]\n                                                   |\n[Phalangist Militias Allowed Into Camps] -> [Three-Day Brutal Massacre of Civilians]\n                                                   |\n[Global Outrage & Kahan Commission] -> [Ariel Sharon Forced to Resign]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Bashir Gemayel Assassinated (14 Sept)] -> [IDF Encirclement of Sabra & Shatila Camps]\n                                                   |\n[Phalangist Militias Allowed Into Camps] -> [Three-Day Brutal Massacre of Civilians]\n                                                   |\n[Global Outrage & Kahan Commission] -> [Ariel Sharon Forced to Resign]\n</pre>",
+          "text": "<img src=\"assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sabra_shatila\">",
+          "level_4": "<img src=\"assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"sabra_shatila\">",
           "tasks": []
         },
         {
@@ -2155,8 +2155,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n               [LONG-TERM RESULTS OF LEBANESE INVASION]\n                                  |\n     +----------------------------+----------------------------+\n     v                            v                            v\n[PLO Expelled to Tunis]      [The Rise of Hezbollah]      [Israeli Security Zone]\n- Leadership moved 2,400km   - Formed by Shia militants   - Narrow corridor (5-15km)\n  away from Israel's borders   to resist IDF occupation   - SLA and IDF manned corridor\n- Weakened military threat   - Backed directly by Iran    - High IDF casualties\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n               [LONG-TERM RESULTS OF LEBANESE INVASION]\n                                  |\n     +----------------------------+----------------------------+\n     v                            v                            v\n[PLO Expelled to Tunis]      [The Rise of Hezbollah]      [Israeli Security Zone]\n- Leadership moved 2,400km   - Formed by Shia militants   - Narrow corridor (5-15km)\n  away from Israel's borders   to resist IDF occupation   - SLA and IDF manned corridor\n- Weakened military threat   - Backed directly by Iran    - High IDF casualties\n</pre>",
+          "text": "<img src=\"assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"longterm_lebanon\">",
+          "level_4": "<img src=\"assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"longterm_lebanon\">",
           "tasks": []
         },
         {
@@ -2171,8 +2171,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                 [THE INTIFADA ESCALATION CYCLE]\n                                |\n[Israeli Military Truck Collision kills 4 Palestinians] -> [Spontaneous Mass Uprising]\n                                |\n[Grassroots Civil Disobedience & Stone Throwing] -> [Yitzhak Rabin's \"Iron Fist\" Reprisal]\n                                |\n[Global Sympathy Shifts to Palestinian Cause] -> [Emergence of Militant Hamas]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                 [THE INTIFADA ESCALATION CYCLE]\n                                |\n[Israeli Military Truck Collision kills 4 Palestinians] -> [Spontaneous Mass Uprising]\n                                |\n[Grassroots Civil Disobedience & Stone Throwing] -> [Yitzhak Rabin's \"Iron Fist\" Reprisal]\n                                |\n[Global Sympathy Shifts to Palestinian Cause] -> [Emergence of Militant Hamas]\n</pre>",
+          "text": "<img src=\"assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"intifada_escalation\">",
+          "level_4": "<img src=\"assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"intifada_escalation\">",
           "tasks": []
         },
         {
@@ -2187,8 +2187,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n+------------------------------------------------------------------------------------+\n|                        CONSEQUENCES OF THE FIRST INTIFADA                          |\n+--------------------------+---------------------------+-----------------------------+\n|      For the PLO         |         For Israel        |     The Rise of Hamas       |\n+--------------------------+---------------------------+-----------------------------+\n| Forced Yasser Arafat to  | Convinced Yitzhak Rabin   | Formed in 1987 as a rival   |\n| renounce terrorism and   | and military planners     | to the PLO, Hamas rejected  |\n| officially accept the    | that there was no purely  | compromises and conducted   |\n| two-state solution (1988)| military solution to the  | violent armed attacks       |\n| to retain leadership     | Palestinian issue         | against Israelis            |\n+--------------------------+---------------------------+-----------------------------+\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n+------------------------------------------------------------------------------------+\n|                        CONSEQUENCES OF THE FIRST INTIFADA                          |\n+--------------------------+---------------------------+-----------------------------+\n|      For the PLO         |         For Israel        |     The Rise of Hamas       |\n+--------------------------+---------------------------+-----------------------------+\n| Forced Yasser Arafat to  | Convinced Yitzhak Rabin   | Formed in 1987 as a rival   |\n| renounce terrorism and   | and military planners     | to the PLO, Hamas rejected  |\n| officially accept the    | that there was no purely  | compromises and conducted   |\n| two-state solution (1988)| military solution to the  | violent armed attacks       |\n| to retain leadership     | Palestinian issue         | against Israelis            |\n+--------------------------+---------------------------+-----------------------------+\n</pre>",
+          "text": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the PLO</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>",
+          "level_4": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the PLO</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>",
           "tasks": []
         },
         {
@@ -2339,8 +2339,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n               [Arafat's 1988 Tactical Recalculation]\n                                  |\n       +--------------------------+--------------------------+\n       v                          v                          v\n[Reclaim the Spotlight]   [Acknowledge Israeli Power]  [Jordan's Land Renunciation]\n- Sidelined in Tunis by   - Proved armed struggle      - King Hussein surrendered\n  local UNLU and Hamas      could not destroy Israel;    claims to West Bank; opened\n  guerrillas on the ground   ordinary people need peace   door for Palestinian state\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n               [Arafat's 1988 Tactical Recalculation]\n                                  |\n       +--------------------------+--------------------------+\n       v                          v                          v\n[Reclaim the Spotlight]   [Acknowledge Israeli Power]  [Jordan's Land Renunciation]\n- Sidelined in Tunis by   - Proved armed struggle      - King Hussein surrendered\n  local UNLU and Hamas      could not destroy Israel;    claims to West Bank; opened\n  guerrillas on the ground   ordinary people need peace   door for Palestinian state\n</pre>",
+          "text": "<img src=\"assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_1988\">",
+          "level_4": "<img src=\"assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_1988\">",
           "tasks": []
         },
         {
@@ -2360,8 +2360,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n       [THE SOVIET COLLAPSE GEOPOLITICAL DOMINO EFFECT]\n                              |\n[USSR Dissolves (Dec 1991)] -> [PLO loses main finance & arms supplier]\n                              |\n[200000 Soviet Jews migrate to Israel] -> [Settlement expansion in West Bank]\n                              |\n[Unemployed Palestinians displaced] -> [Arafat pressured to seek urgent peace]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n       [THE SOVIET COLLAPSE GEOPOLITICAL DOMINO EFFECT]\n                              |\n[USSR Dissolves (Dec 1991)] -> [PLO loses main finance & arms supplier]\n                              |\n[200000 Soviet Jews migrate to Israel] -> [Settlement expansion in West Bank]\n                              |\n[Unemployed Palestinians displaced] -> [Arafat pressured to seek urgent peace]\n</pre>",
+          "text": "<img src=\"assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"soviet_collapse\">",
+          "level_4": "<img src=\"assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"soviet_collapse\">",
           "tasks": []
         },
         {
@@ -2376,8 +2376,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Arafat backs Saddam Hussein in Gulf War] -> [Gulf States cut off vital PLO funding]\n                                                        |\n[PLO is diplomatically & financially isolated] -> [US/USSR co-sponsor Madrid Conference (1991)]\n                                                        |\n[Direct Arab-Israeli talks deadlocked] -> [Paves way for secret Norwegian channel]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Arafat backs Saddam Hussein in Gulf War] -> [Gulf States cut off vital PLO funding]\n                                                        |\n[PLO is diplomatically & financially isolated] -> [US/USSR co-sponsor Madrid Conference (1991)]\n                                                        |\n[Direct Arab-Israeli talks deadlocked] -> [Paves way for secret Norwegian channel]\n</pre>",
+          "text": "<img src=\"assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_saddam\">",
+          "level_4": "<img src=\"assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"arafat_saddam\">",
           "tasks": []
         },
         {
@@ -2392,8 +2392,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n[Labour Government elected under Yitzhak Rabin] -> [Secret talks opened in Norway (Dec 1992)]\n                                                                |\n[Hamas launches first suicide bombings (1993)] -> [Rabin views PLO as a moderate alternative]\n                                                                |\n[Arafat and Rabin sign Oslo I Accords] -> [Establishment of Palestinian Authority (PNA)]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n[Labour Government elected under Yitzhak Rabin] -> [Secret talks opened in Norway (Dec 1992)]\n                                                                |\n[Hamas launches first suicide bombings (1993)] -> [Rabin views PLO as a moderate alternative]\n                                                                |\n[Arafat and Rabin sign Oslo I Accords] -> [Establishment of Palestinian Authority (PNA)]\n</pre>",
+          "text": "<img src=\"assets/labour_govt.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"labour_govt\">",
+          "level_4": "<img src=\"assets/labour_govt.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"labour_govt\">",
           "tasks": []
         },
         {
@@ -2408,8 +2408,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                  [THE ISRAEL-JORDAN PEACE TREATY (1994)]\n                                     |\n         +---------------------------+---------------------------+\n         v                                                       v\n[King Hussein's Economic Crisis]                    [US Financial Inducements]\n- Jordan badly hit by Gulf War and                 - Clinton promises to cancel\n  loss of trade; needed peace to rebuild              Jordan's multi-million-dollar debts\n                     \\                                   /\n                      \\                                 /\n              [Jordan becomes 2nd Arab nation to recognize Israel]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                  [THE ISRAEL-JORDAN PEACE TREATY (1994)]\n                                     |\n         +---------------------------+---------------------------+\n         v                                                       v\n[King Hussein's Economic Crisis]                    [US Financial Inducements]\n- Jordan badly hit by Gulf War and                 - Clinton promises to cancel\n  loss of trade; needed peace to rebuild              Jordan's multi-million-dollar debts\n                     \\                                   /\n                      \\                                 /\n              [Jordan becomes 2nd Arab nation to recognize Israel]\n</pre>",
+          "text": "<img src=\"assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"israel_jordan\">",
+          "level_4": "<img src=\"assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"israel_jordan\">",
           "tasks": []
         },
         {
@@ -2418,8 +2418,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                      [THE OSLO II DIVISION OF LAND]\n                                    |\n       +----------------------------+----------------------------+\n       v                            v                            v\n[Area A: 3% of West Bank]    [Area B: 27% of West Bank]   [Area C: 70% of West Bank]\n- Full Palestinian PNA civil  - Palestinian civil control,  - Full Israeli military &\n  and internal security        but joint Israeli-           civil control\n- Encompassed major cities     Palestinian security         - Encompassed settlements,\n  (Ramallah, Nablus, Jenin)    - Covered 450 small towns      bases, and bypass roads\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                      [THE OSLO II DIVISION OF LAND]\n                                    |\n       +----------------------------+----------------------------+\n       v                            v                            v\n[Area A: 3% of West Bank]    [Area B: 27% of West Bank]   [Area C: 70% of West Bank]\n- Full Palestinian PNA civil  - Palestinian civil control,  - Full Israeli military &\n  and internal security        but joint Israeli-           civil control\n- Encompassed major cities     Palestinian security         - Encompassed settlements,\n  (Ramallah, Nablus, Jenin)    - Covered 450 small towns      bases, and bypass roads\n</pre>",
+          "text": "<img src=\"assets/oslo2.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"oslo2\">",
+          "level_4": "<img src=\"assets/oslo2.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"oslo2\">",
           "tasks": []
         },
         {
@@ -2434,8 +2434,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<pre class=\"ascii-diagram\">\n                       [THE UNRESOLVED DEADLOCK]\n                                  |\n[Oslo Accords Signed (1993-95)] -> [Rabin Assassinated & Hamas Bombings]\n                                  |\n[Extreme distrust permanently restored] -> [Five \"Permanent Status\" Issues Unresolved]\n                                  |\n        +-------------------------+-------------------------+\n        v                         v                         v\n[Status of Jerusalem]     [Palestinian Refugee Return]   [Dismantling Settlements]\n</pre>",
-          "level_4": "<pre class=\"ascii-diagram\">\n                       [THE UNRESOLVED DEADLOCK]\n                                  |\n[Oslo Accords Signed (1993-95)] -> [Rabin Assassinated & Hamas Bombings]\n                                  |\n[Extreme distrust permanently restored] -> [Five \"Permanent Status\" Issues Unresolved]\n                                  |\n        +-------------------------+-------------------------+\n        v                         v                         v\n[Status of Jerusalem]     [Palestinian Refugee Return]   [Dismantling Settlements]\n</pre>",
+          "text": "<img src=\"assets/deadlock.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"deadlock\">",
+          "level_4": "<img src=\"assets/deadlock.svg\" class=\"svg-diagram\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"deadlock\">",
           "tasks": []
         },
         {
