@@ -591,7 +591,14 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(examPracticeLink);
 
-
+    const quizPackLink = document.createElement('a');
+    quizPackLink.className = 'lesson-link';
+    quizPackLink.innerHTML = '📝 Printable Quiz Pack';
+    quizPackLink.href = 'quiz_pack.html';
+    quizPackLink.target = '_blank';
+    quizPackLink.style.marginTop = '15px';
+    quizPackLink.style.color = '#34d399'; // Emerald-400
+    navContainer.appendChild(quizPackLink);
     const isCmeNew = window.location.pathname.includes('cme_new');
     
     if (isCmeNew) {
