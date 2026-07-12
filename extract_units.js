@@ -109,6 +109,14 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
     if (fs.existsSync(sourceStyles)) {
       fs.copyFileSync(sourceStyles, path.join(unitTargetDir, 'styles.css'));
     }
+
+    // Copy extra HTML tools (Quiz Pack, Workbooks, Answer Keys)
+    ['quiz_pack.html', 'workbook.html', 'answer_key.html'].forEach(file => {
+      const sourceFile = path.join(sourceDir, file);
+      if (fs.existsSync(sourceFile)) {
+        fs.copyFileSync(sourceFile, path.join(unitTargetDir, file));
+      }
+    });
   
     // Copy app.js -> unit_script.js and patch DOMContentLoaded
     const sourceJs = path.join(sourceDir, 'app.js');
