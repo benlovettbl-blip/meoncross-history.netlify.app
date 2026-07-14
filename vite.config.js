@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        unit: 'unit.html',
         usa: 'usa/index.html',
         cme: 'cme/index.html',
         cme_structured: 'cme_structured/index.html',
