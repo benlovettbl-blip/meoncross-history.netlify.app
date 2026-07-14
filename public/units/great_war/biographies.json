@@ -1,77 +1,57 @@
 [
   {
-    "name": "Yitzhak Rabin",
-    "role": "Prime Minister of Israel",
-    "lifespan": "1922 – 1995",
+    "name": "Kaiser Wilhelm II",
+    "role": "Emperor of Germany",
+    "lifespan": "1859 – 1941",
     "achievements": [
-      "Chief of Staff of the IDF during the 1967 Six-Day War.",
-      "Signed the historic 1993 Oslo Accords with Yasser Arafat.",
-      "Awarded the Nobel Peace Prize in 1994."
+      "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+      "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+      "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
     ],
-    "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination."
+    "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War."
   },
   {
-    "name": "Yasser Arafat",
-    "role": "Chairman of the Palestine Liberation Organization (PLO)",
-    "lifespan": "1929 – 2004",
+    "name": "Tsar Nicholas II",
+    "role": "Emperor of Russia",
+    "lifespan": "1868 – 1918",
     "achievements": [
-      "Founded Fatah and led the PLO for decades.",
-      "Recognized Israel's right to exist in 1988, shifting the PLO's diplomatic stance.",
-      "Signed the 1993 Oslo Accords and became the first President of the Palestinian Authority."
+      "Led the rapid industrialisation of the Russian Empire.",
+      "Formed an alliance with France to counter the Triple Alliance.",
+      "Ordered the mobilization of the Russian army in July 1914."
     ],
-    "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s."
+    "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war."
   },
   {
-    "name": "Bill Clinton",
-    "role": "President of the United States",
-    "lifespan": "1946 – Present",
+    "name": "Gavrilo Princip",
+    "role": "Bosnian Serb Nationalist",
+    "lifespan": "1894 – 1918",
     "achievements": [
-      "Brokered and hosted the signing of the 1993 Oslo Accords.",
-      "Hosted the 2000 Camp David Summit in an attempt to reach a final status agreement."
+      "Joined the secret nationalist society 'Young Bosnia'.",
+      "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+      "Fired the fatal shots in Sarajevo on June 28, 1914."
     ],
-    "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict."
+    "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I."
   },
   {
-    "name": "Anwar Sadat",
-    "role": "President of Egypt",
-    "lifespan": "1918 – 1981",
+    "name": "Count Leopold Berchtold",
+    "role": "Austro-Hungarian Foreign Minister",
+    "lifespan": "1863 – 1942",
     "achievements": [
-      "Led Egypt during the 1973 Yom Kippur War.",
-      "Became the first Arab leader to officially visit Israel (1977).",
-      "Signed the 1978 Camp David Accords, securing peace with Israel."
+      "Drafted the severe July Ultimatum presented to Serbia.",
+      "Convinced Emperor Franz Joseph to declare war on Serbia.",
+      "Secured Germany's unconditional support (the 'Blank Cheque')."
     ],
-    "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East."
+    "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
   },
   {
-    "name": "Menachem Begin",
-    "role": "Prime Minister of Israel",
-    "lifespan": "1913 – 1992",
+    "name": "Alfred von Schlieffen",
+    "role": "German Field Marshal",
+    "lifespan": "1833 – 1913",
     "achievements": [
-      "Former leader of the Irgun paramilitary group.",
-      "Signed the 1978 Camp David Accords with Egypt.",
-      "Authorized the 1982 invasion of Lebanon."
+      "Chief of the Imperial German General Staff (1891–1906).",
+      "Authored the famous 'Schlieffen Plan' for a two-front war.",
+      "Prioritized military strategy over diplomatic consequences."
     ],
-    "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial."
-  },
-  {
-    "name": "Jimmy Carter",
-    "role": "President of the United States",
-    "lifespan": "1924 – Present",
-    "achievements": [
-      "Brokered the 1978 Camp David Accords.",
-      "Championed human rights as a core pillar of US foreign policy."
-    ],
-    "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East."
-  },
-  {
-    "name": "Ariel Sharon",
-    "role": "Minister of Defence / Prime Minister of Israel",
-    "lifespan": "1928 – 2014",
-    "achievements": [
-      "Masterminded the 1982 invasion of Lebanon.",
-      "Led Israel during the Second Intifada.",
-      "Engineered the unilateral disengagement from Gaza in 2005."
-    ],
-    "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy."
+    "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war."
   }
 ]

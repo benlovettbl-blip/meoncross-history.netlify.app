@@ -1,9 +1,19 @@
 import { renderRevisionZone } from './revision_zone.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
+
+export function getAssetUrl(path) {
+  if (!path) return path;
+  if (path.startsWith('http') || path.startsWith('/')) return path;
+  if (window.currentUnitId) {
+    return `/${window.currentUnitId}/${path}`;
+  }
+  return path;
+}
+
 export function initializeApp(unitData) {
   window.currentUnitData = unitData;
-  document.addEventListener('DOMContentLoaded', () => {
+  const init = () => {
   const sidebar = document.getElementById('sidebar');
   const contentArea = document.getElementById('content-area');
   const btnDyslexia = document.getElementById('btn-dyslexia');
@@ -853,7 +863,7 @@ export function initializeApp(unitData) {
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: ${lesson.learning_objective || 'Visual Source & Hook'}</div>
           </div>
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-            <img src="${src}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
+            <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
             <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
             ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
             ${lesson.primary_source.question ? `
@@ -963,7 +973,7 @@ export function initializeApp(unitData) {
           `;
           
           block.maps.forEach((m, idx) => {
-            html += `<img src="${m.src}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+            html += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
           });
           
           html += `
@@ -1063,7 +1073,7 @@ export function initializeApp(unitData) {
             html += `
               <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
                 ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
-                <img src="${src}" alt="Source Image">
+                <img src="${getAssetUrl(src)}" alt="Source Image">
                 ${source.caption ? `<p class="source-caption" style="text-align: left; color: #475569;">${source.caption}</p>` : ''}
                 ${source.question ? `
                   <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
@@ -1321,7 +1331,13 @@ export function initializeApp(unitData) {
   } else {
     contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
   }
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
 window.updateProgress = () => {
   const inputs = document.querySelectorAll('.student-answer-input');
@@ -1561,7 +1577,7 @@ window.showMilestoneModal = function(id) {
     contentBox.innerHTML = `
       <div style="font-size: 11pt; font-weight: bold; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Milestone ${id}: ${data.year}</div>
       <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 1.5px solid var(--gold); padding-bottom: 5px; color: #ffffff;">${data.title}</h3>
-      <img src="${data.img}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
+      <img src="${getAssetUrl(data.img)}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
       <p style="font-size: 10.5pt; line-height: 1.5; color: #e2e8f0; margin-bottom: 15px; text-align: justify;">${data.desc}</p>
       <div style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
         <strong style="display: block; font-size: 9pt; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;"><i class="fa-solid fa-circle-question"></i> Retrieval Challenge</strong>

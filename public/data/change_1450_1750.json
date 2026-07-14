@@ -1,0 +1,133 @@
+{
+  "data": {
+    "title": "Change from 1450-1750",
+    "lessons": [
+      {
+        "id": "lesson_1",
+        "title": "2.1 The Print Revolution",
+        "narrative": [
+          "In the mid-15th century, German goldsmith Johannes Gutenberg developed the movable type printing press in Mainz. This invention sparked a massive transformation in Europe by making the replication of texts fast and affordable:",
+          "- Before the press, books were copied by hand, meaning they were rare, expensive, and mostly owned by the Church.",
+          "- The printing press allowed ideas (scientific, religious, and political) to spread quickly across national borders.",
+          "- It directly supported the spread of Protestant ideas during the Reformation."
+        ],
+        "tasks": [
+          {
+            "type": "written",
+            "text": "Who is credited with inventing the movable type printing press in Europe?",
+            "model": "Johannes Gutenberg"
+          }
+        ],
+        "vocab": [
+          {
+            "term": "Movable Type",
+            "definition": "Separate metal blocks for each letter that can be rearranged and reused for printing."
+          },
+          {
+            "term": "Monopoly",
+            "definition": "Exclusive control of a commodity or service in a particular market."
+          }
+        ],
+        "do_now": {
+          "type": "timeline",
+          "events": []
+        },
+        "teacher_notes": {
+          "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+          "objectives": [
+            {
+              "objective": "General Lesson Objective",
+              "primer": "Teacher notes for this lesson have not been added yet."
+            }
+          ]
+        },
+        "learning_objectives": {
+          "overarching": "To understand the profound impact of the printing press on religion, science, and society.",
+          "scaffolded": [
+            "Describe how books were produced before Johannes Gutenberg.",
+            "Explain the immediate effects of mass-produced texts on literacy rates.",
+            "Analyze why the printing press was crucial to the success of the Reformation and Scientific Revolution."
+          ]
+        },
+        "enquiry": "How did the printing press revolutionize the spread of ideas in early modern Europe?"
+      }
+    ]
+  },
+  "biographies": [
+    {
+      "name": "Yitzhak Rabin",
+      "role": "Prime Minister of Israel",
+      "lifespan": "1922 – 1995",
+      "achievements": [
+        "Chief of Staff of the IDF during the 1967 Six-Day War.",
+        "Signed the historic 1993 Oslo Accords with Yasser Arafat.",
+        "Awarded the Nobel Peace Prize in 1994."
+      ],
+      "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination."
+    },
+    {
+      "name": "Yasser Arafat",
+      "role": "Chairman of the Palestine Liberation Organization (PLO)",
+      "lifespan": "1929 – 2004",
+      "achievements": [
+        "Founded Fatah and led the PLO for decades.",
+        "Recognized Israel's right to exist in 1988, shifting the PLO's diplomatic stance.",
+        "Signed the 1993 Oslo Accords and became the first President of the Palestinian Authority."
+      ],
+      "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s."
+    },
+    {
+      "name": "Bill Clinton",
+      "role": "President of the United States",
+      "lifespan": "1946 – Present",
+      "achievements": [
+        "Brokered and hosted the signing of the 1993 Oslo Accords.",
+        "Hosted the 2000 Camp David Summit in an attempt to reach a final status agreement."
+      ],
+      "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict."
+    },
+    {
+      "name": "Anwar Sadat",
+      "role": "President of Egypt",
+      "lifespan": "1918 – 1981",
+      "achievements": [
+        "Led Egypt during the 1973 Yom Kippur War.",
+        "Became the first Arab leader to officially visit Israel (1977).",
+        "Signed the 1978 Camp David Accords, securing peace with Israel."
+      ],
+      "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East."
+    },
+    {
+      "name": "Menachem Begin",
+      "role": "Prime Minister of Israel",
+      "lifespan": "1913 – 1992",
+      "achievements": [
+        "Former leader of the Irgun paramilitary group.",
+        "Signed the 1978 Camp David Accords with Egypt.",
+        "Authorized the 1982 invasion of Lebanon."
+      ],
+      "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial."
+    },
+    {
+      "name": "Jimmy Carter",
+      "role": "President of the United States",
+      "lifespan": "1924 – Present",
+      "achievements": [
+        "Brokered the 1978 Camp David Accords.",
+        "Championed human rights as a core pillar of US foreign policy."
+      ],
+      "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East."
+    },
+    {
+      "name": "Ariel Sharon",
+      "role": "Minister of Defence / Prime Minister of Israel",
+      "lifespan": "1928 – 2014",
+      "achievements": [
+        "Masterminded the 1982 invasion of Lebanon.",
+        "Led Israel during the Second Intifada.",
+        "Engineered the unilateral disengagement from Gaza in 2005."
+      ],
+      "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy."
+    }
+  ]
+}

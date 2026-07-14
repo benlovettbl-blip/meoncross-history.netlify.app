@@ -13,7 +13,7 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
   header.style.marginBottom = '40px';
   header.innerHTML = `
     <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">Key Individuals</h1>
-    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped the conflict in the Middle East.</p>
+    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped these events.</p>
   `;
   wrapper.appendChild(header);
 

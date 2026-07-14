@@ -1,77 +1,57 @@
 [
   {
-    "name": "Yitzhak Rabin",
-    "role": "Prime Minister of Israel",
-    "lifespan": "1922 – 1995",
+    "name": "John Snow",
+    "role": "Physician and Epidemiologist",
+    "lifespan": "1813 – 1858",
     "achievements": [
-      "Chief of Staff of the IDF during the 1967 Six-Day War.",
-      "Signed the historic 1993 Oslo Accords with Yasser Arafat.",
-      "Awarded the Nobel Peace Prize in 1994."
+      "Traced the 1854 Broad Street cholera outbreak to a contaminated water pump.",
+      "Pioneered the use of data mapping in epidemiology.",
+      "Challenged the prevailing 'miasma' theory of disease."
     ],
-    "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination."
+    "significance": "By proving that cholera was a waterborne disease, he laid the foundations for modern epidemiology and demonstrated the critical need for clean drinking water to protect public health."
   },
   {
-    "name": "Yasser Arafat",
-    "role": "Chairman of the Palestine Liberation Organization (PLO)",
-    "lifespan": "1929 – 2004",
+    "name": "Edwin Chadwick",
+    "role": "Social Reformer",
+    "lifespan": "1800 – 1890",
     "achievements": [
-      "Founded Fatah and led the PLO for decades.",
-      "Recognized Israel's right to exist in 1988, shifting the PLO's diplomatic stance.",
-      "Signed the 1993 Oslo Accords and became the first President of the Palestinian Authority."
+      "Authored the groundbreaking 1842 report on the Sanitary Condition of the Labouring Population.",
+      "Architect of the 1848 Public Health Act.",
+      "Campaigned tirelessly for state-funded drainage and sanitation systems."
     ],
-    "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s."
+    "significance": "Despite his abrasive personality and belief in the flawed miasma theory, his relentless campaign forced the British government to take responsibility for the health and living conditions of the urban poor."
   },
   {
-    "name": "Bill Clinton",
-    "role": "President of the United States",
-    "lifespan": "1946 – Present",
+    "name": "Joseph Bazalgette",
+    "role": "Chief Engineer of London's Metropolitan Board of Works",
+    "lifespan": "1819 – 1891",
     "achievements": [
-      "Brokered and hosted the signing of the 1993 Oslo Accords.",
-      "Hosted the 2000 Camp David Summit in an attempt to reach a final status agreement."
+      "Designed and constructed London's monumental sewer network.",
+      "Built the Victoria, Albert, and Chelsea Embankments along the Thames.",
+      "Eliminated the 'Great Stink' of 1858."
     ],
-    "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict."
+    "significance": "His visionary engineering masterpiece transformed London's sanitation, drastically reduced cholera outbreaks, and established a blueprint for modern urban infrastructure across the globe."
   },
   {
-    "name": "Anwar Sadat",
-    "role": "President of Egypt",
-    "lifespan": "1918 – 1981",
+    "name": "Louis Pasteur",
+    "role": "Microbiologist and Chemist",
+    "lifespan": "1822 – 1895",
     "achievements": [
-      "Led Egypt during the 1973 Yom Kippur War.",
-      "Became the first Arab leader to officially visit Israel (1977).",
-      "Signed the 1978 Camp David Accords, securing peace with Israel."
+      "Published the Germ Theory of Disease in 1861.",
+      "Developed the process of pasteurization to kill harmful microbes.",
+      "Created vaccines for anthrax and rabies."
     ],
-    "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East."
+    "significance": "His groundbreaking scientific proof that microscopic organisms caused disease fundamentally revolutionized medicine, finally replacing the miasma theory and accelerating global sanitation efforts."
   },
   {
-    "name": "Menachem Begin",
-    "role": "Prime Minister of Israel",
-    "lifespan": "1913 – 1992",
+    "name": "Charles Dickens",
+    "role": "Novelist and Social Critic",
+    "lifespan": "1812 – 1870",
     "achievements": [
-      "Former leader of the Irgun paramilitary group.",
-      "Signed the 1978 Camp David Accords with Egypt.",
-      "Authorized the 1982 invasion of Lebanon."
+      "Authored iconic novels such as Oliver Twist and Bleak House.",
+      "Vividly exposed the squalor and poverty of industrial London.",
+      "Campaigned for social reform through his journalism."
     ],
-    "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial."
-  },
-  {
-    "name": "Jimmy Carter",
-    "role": "President of the United States",
-    "lifespan": "1924 – Present",
-    "achievements": [
-      "Brokered the 1978 Camp David Accords.",
-      "Championed human rights as a core pillar of US foreign policy."
-    ],
-    "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East."
-  },
-  {
-    "name": "Ariel Sharon",
-    "role": "Minister of Defence / Prime Minister of Israel",
-    "lifespan": "1928 – 2014",
-    "achievements": [
-      "Masterminded the 1982 invasion of Lebanon.",
-      "Led Israel during the Second Intifada.",
-      "Engineered the unilateral disengagement from Gaza in 2005."
-    ],
-    "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy."
+    "significance": "His immense popularity and emotive storytelling forced middle and upper-class Victorians to confront the horrific realities of urban slums, generating powerful public pressure for sanitary reform."
   }
 ]

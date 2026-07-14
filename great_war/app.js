@@ -1,8 +1,15 @@
-import { unitData } from './data.js';
+
 import { initializeApp } from '../src/core_app.js';
 import { initKeyIndividualsTask } from '../src/key_individuals.js';
 
-initializeApp(unitData);
+fetch('/database.json').then(r => r.json()).then(db => {
+  const pathParts = window.location.pathname.split('/').filter(p => p);
+  let unitId = pathParts[pathParts.length - 1] === 'index.html' ? pathParts[pathParts.length - 2] : pathParts[pathParts.length - 1];
+  if (!unitId || !db[unitId]) unitId = 'great_war'; // default to folder name
+  
+  const unitData = db[unitId].data || {};
+
+  initializeApp(unitData);
 
 // Add custom tabs for this unit
 setTimeout(() => {
@@ -19,8 +26,10 @@ setTimeout(() => {
       kiLink.classList.add('active');
       const contentArea = document.getElementById('content-area');
       contentArea.innerHTML = '';
-      initKeyIndividualsTask(contentArea, unitData.key_individuals);
+      if (db[unitId].biographies) initKeyIndividualsTask(contentArea, db[unitId].biographies);
     };
     sidebarNav.appendChild(kiLink);
   }
 }, 500);
+
+});

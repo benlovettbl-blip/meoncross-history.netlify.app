@@ -215,26 +215,22 @@ window.updateProfileYearGroup = function(val) {
   renderDashboard();
 };
 
-window.launchSubApp = function(unitId) {
-  if (unitId === 'gcse_usa_1954_1975') {
-    window.location.href = '/usa/';
-  } else if (unitId === 'gcse_middle_east_1945_1995') {
+window.launchSubApp = function(subAppName) {
+  if (subAppName === 'gcse_middle_east_1945_1995') {
     window.location.href = '/cme/';
-  } else if (unitId === 'gcse_middle_east_1945_1995_new') {
-    window.location.href = '/cme_new/';
-  } else if (unitId === 'gcse_elizabethan_england') {
-    window.location.href = '/eee/';
-  } else if (unitId === 'water_and_sanitation') {
-    window.location.href = '/water_and_sanitation/';
-  } else if (unitId === 'great_war' || unitId === 'great_war_v2') {
-    window.location.href = '/great_war/';
-  } else if (unitId === 'great_war_part2') {
-    window.location.href = '/great_war_part2/';
-  } else if (unitId === 'norman_conquest') {
-    window.location.href = '/norman_conquest/';
-  } else if (unitId === 'change_1450_1750') {
-    window.location.href = '/change_1450_1750/';
+    return;
   }
+  if (subAppName === 'gcse_usa_1954_1975') {
+    window.location.href = '/usa/';
+    return;
+  }
+
+  let mappedName = subAppName;
+  if (subAppName === 'gcse_middle_east_1945_1995_new') mappedName = 'cme_new';
+  if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
+  if (subAppName === 'great_war_v2') mappedName = 'great_war';
+  
+  window.location.href = `/unit.html?id=${mappedName}`;
 };
 
 export function renderInteractiveQuiz() {

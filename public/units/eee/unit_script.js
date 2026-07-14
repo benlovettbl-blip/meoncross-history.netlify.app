@@ -7790,3 +7790,5 @@ window.sortMiddleWayTile = function(category) {
   
   renderMiddleWayGame();
 };
+
+});
