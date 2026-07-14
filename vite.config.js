@@ -31,6 +31,9 @@ export default defineConfig({
         cme_new: 'cme_new/index.html',
         cme_new_quiz_pack: 'cme_new/quiz_pack.html',
         cme_new_workbook: 'cme_new/workbook.html',
+        cme_new_workbook_kt1: 'cme_new/workbook_KT1.html',
+        cme_new_workbook_kt2: 'cme_new/workbook_KT2.html',
+        cme_new_workbook_kt3: 'cme_new/workbook_KT3.html',
         cme_new_answers: 'cme_new/answer_key.html',
       }
     }
