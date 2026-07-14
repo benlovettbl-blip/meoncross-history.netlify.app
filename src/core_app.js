@@ -1250,6 +1250,13 @@ export function initializeApp(unitData) {
     if (hasVocab) {
       html += `</div>`; // End locked-content
     }
+
+    html += `
+      <div style="text-align: center; margin-top: 40px; margin-bottom: 40px; padding: 30px; border-top: 2px dashed #cbd5e1; color: #64748b;">
+        <h3 style="margin-bottom: 10px; color: #334155;"><i class="fa-solid fa-flag-checkered"></i> Lesson Complete</h3>
+        <p style="margin: 0;">You have reached the end of the core narrative phases for this lesson.</p>
+      </div>
+    `;
     contentArea.innerHTML = html;
     window.vocabMatchesFound = 0;
     setTimeout(() => {

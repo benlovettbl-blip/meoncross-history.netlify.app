@@ -6,7 +6,7 @@
     "lessons": [
       {
         "id": "lesson_1",
-        "title": "Lesson 1: Prehistoric and Roman Sanitati...",
+        "title": "Lesson 1: Prehistoric and Roman Sanitation",
         "primary_source": {
           "src": "assets/roman_latrine.jpg",
           "title": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
@@ -81,7 +81,7 @@
               "question": "Looking at this communal latrine, how does it challenge our modern ideas of privacy and hygiene compared to Roman priorities of engineering?"
             }
           ],
-          "source_context": "This visual source provides students with direct evidence regarding Lesson 1: Prehistoric and Roman Sanitati.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How does this source demonstrate both the advancements and limitations of Roman public health?**"
+          "source_context": "This visual source provides students with direct evidence regarding Lesson 1: Prehistoric and Roman Sanitation. Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How does this source demonstrate both the advancements and limitations of Roman public health?**"
         },
         "narrative_blocks": [
           {
@@ -137,11 +137,11 @@
             ]
           }
         ],
-        "enquiry": "Why was the historical context of Prehistoric and Roman Sanitati... so significant?"
+        "enquiry": "Why was the historical context of Prehistoric and Roman Sanitation so significant?"
       },
       {
         "id": "lesson_2",
-        "title": "Lesson 2: Medieval Sanitation and The Ch...",
+        "title": "Lesson 2: Medieval Sanitation and The Church",
         "primary_source": {
           "src": "assets/canterbury_waterworks.jpg",
           "title": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
@@ -235,7 +235,7 @@
               "question": "If most ordinary Medieval towns lacked complex plumbing, why do you think monasteries like Canterbury Cathedral invested so heavily in advanced water systems?"
             }
           ],
-          "source_context": "This visual source provides students with direct evidence regarding Lesson 2: Medieval Sanitation and The Ch.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?**"
+          "source_context": "This visual source provides students with direct evidence regarding Lesson 2: Medieval Sanitation and The Church. Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?**"
         },
         "narrative_blocks": [
           {
@@ -304,11 +304,11 @@
             ]
           }
         ],
-        "enquiry": "Why was the historical context of Medieval Sanitation and The Ch... so significant?"
+        "enquiry": "Why was the historical context of Medieval Sanitation and The Church so significant?"
       },
       {
         "id": "lesson_3",
-        "title": "Lesson 3: Early Modern Filth and Cesspit...",
+        "title": "Lesson 3: Early Modern Filth and Cesspits",
         "primary_source": {
           "src": "assets/harington_toilet.jpg",
           "title": "Source A: Sir John Harington's flushing toilet design (1596)",
@@ -402,7 +402,7 @@
               "question": "Harington invented a working flushing toilet in 1596, yet it wasn't widely adopted for another 250 years. What crucial piece of town infrastructure was missing that made his invention useless for the average person?"
             }
           ],
-          "source_context": "This visual source provides students with direct evidence regarding Lesson 3: Early Modern Filth and Cesspit.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?**"
+          "source_context": "This visual source provides students with direct evidence regarding Lesson 3: Early Modern Filth and Cesspits. Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?**"
         },
         "narrative_blocks": [
           {
@@ -458,11 +458,11 @@
             ]
           }
         ],
-        "enquiry": "Why was the historical context of Early Modern Filth and Cesspit... so significant?"
+        "enquiry": "Why was the historical context of Early Modern Filth and Cesspits so significant?"
       },
       {
         "id": "lesson_4",
-        "title": "Lesson 4: The Industrial Revolution and ...",
+        "title": "Lesson 4: The Industrial Revolution and Cholera",
         "primary_source": {
           "src": "assets/snow_cholera_map.jpg",
           "title": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
@@ -556,7 +556,7 @@
               "question": "How does this map prove that cholera was waterborne, rather than airborne (miasma), simply by looking at the location of the black bars?"
             }
           ],
-          "source_context": "This visual source provides students with direct evidence regarding Lesson 4: The Industrial Revolution and .... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?**"
+          "source_context": "This visual source provides students with direct evidence regarding Lesson 4: The Industrial Revolution and Cholera. Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?**"
         },
         "narrative_blocks": [
           {
@@ -612,11 +612,11 @@
             ]
           }
         ],
-        "enquiry": "Why was the historical context of The Industrial Revolution and ... so significant?"
+        "enquiry": "Why was the historical context of The Industrial Revolution and Cholera so significant?"
       },
       {
         "id": "lesson_5",
-        "title": "Lesson 5: The Great Stink and Modern Sew...",
+        "title": "Lesson 5: The Great Stink and Modern Sewers",
         "primary_source": {
           "src": "assets/bazalgette_sewer.jpg",
           "title": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
@@ -710,7 +710,7 @@
               "question": "Given the immense cost and labor required to build these sewers, what does it tell us about the political impact of the 'Great Stink' on the government?"
             }
           ],
-          "source_context": "This visual source provides students with direct evidence regarding Lesson 5: The Great Stink and Modern Sew.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?**"
+          "source_context": "This visual source provides students with direct evidence regarding Lesson 5: The Great Stink and Modern Sewers. Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?**"
         },
         "narrative_blocks": [
           {
@@ -779,7 +779,7 @@
             ]
           }
         ],
-        "enquiry": "Why was the historical context of The Great Stink and Modern Sew... so significant?"
+        "enquiry": "Why was the historical context of The Great Stink and Modern Sewers so significant?"
       }
     ],
     "quizPack": [
