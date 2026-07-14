@@ -1,6 +1,4 @@
-import { terminologyData } from '../terminology_data.js';
-
-export function initTerminologyTask(container) {
+export function initTerminologyTask(container, terminologyData) {
   container.innerHTML = `
     <div style="max-width: 1000px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 4px solid #8b5cf6;">
       <div style="text-align: center; margin-bottom: 25px;">

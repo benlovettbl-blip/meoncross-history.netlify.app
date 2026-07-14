@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const isCore = process.argv.includes('--core');
 
 const dataContent = fs.readFileSync(path.join(__dirname, 'data.js'), 'utf8');
 const jsonContent = dataContent.replace('export const unitData = ', '').trim().replace(/;$/, '');
@@ -26,7 +25,7 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${unitData.title} - ${isCore ? 'Core Workbook' : 'Printable Workbook'}</title>
+  <title>${unitData.title} - Printable Workbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
   <style>
     @page { size: A4 portrait; margin: 20mm; }
@@ -104,9 +103,10 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
   }
 
   html += `
-  <h1 style="margin-top: 30px; margin-bottom: 5px; font-size: 28pt;">Edexcel GCSE History Paper 2</h1>
-  <p style="text-align:center; font-size:18pt; margin-top: 0; font-weight: bold; color: #1a237e;">${unitData.title}</p>
-  <p style="text-align:center; font-size:14pt; margin-top: 0; font-weight: bold; color: #d32f2f;">${isCore ? 'Core Workbook' : 'Printable Workbook'}</p>
+  <div style="page-break-after: always; padding: 40px; font-family: 'Georgia', serif;">
+  <p style="text-align:center; font-size:14pt; margin-top: 0; font-weight: bold; color: #d32f2f;">Printable Workbook</p>
+  
+  <h1 style="font-size: 36pt; text-align: center; margin-bottom: 20px; color: #1e3a8a; border-bottom: 3px solid #1e3a8a; padding-bottom: 20px;">${unitData.title}</h1>
   
   <div style="text-align: center; margin: 15px 0;">
     <img src="../cme_new/assets/kt${ktNum}_cover.png" style="max-height: 250px; width: auto; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
@@ -121,17 +121,14 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
 
   <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Name: </div>
   <div style="margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Class: </div>
-  <div style="page-break-after: always;"></div>
+  </div>
   `;
 
 
   function assignQuestionNumbers(lesson) {
     let q = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    if (lesson.do_now) {
-      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
-      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
-    }
+
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
@@ -147,13 +144,33 @@ chunkLessons.forEach((lesson, lessonIndex) => {
   let lessonTitleStr = lesson.title.replace(/^Lesson \d+:/i, lessonNumStr + ':');
   html += `<h2 style="margin-bottom: 20px;">${lessonTitleStr}</h2>`;
 
+  if (lesson.enquiry || lesson.learning_objectives) {
+    html += `<div style="border: 2px solid #1a237e; border-radius: 8px; padding: 15px; margin-bottom: 20px; background: #e8eaf6;">`;
+    if (lesson.enquiry) {
+      html += `<div style="font-weight: bold; font-size: 14pt; color: #1a237e; margin-bottom: 15px; text-align: center;">Enquiry: ${lesson.enquiry}</div>`;
+    }
+    if (lesson.learning_objectives && lesson.learning_objectives.scaffolded) {
+      html += `<div style="font-weight: bold; margin-bottom: 10px;">By the end of this lesson, I can:</div>`;
+      html += `<div style="display: flex; flex-direction: column; gap: 8px; margin-left: 10px;">`;
+      lesson.learning_objectives.scaffolded.forEach(obj => {
+        html += `<div style="display: flex; align-items: flex-start;">
+                   <div style="width: 20px; height: 20px; border: 2px solid #333; margin-right: 10px; background: #fff; flex-shrink: 0;"></div>
+                   <div style="font-size: 11pt; line-height: 1.4;">${obj}</div>
+                 </div>`;
+      });
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
   // Primary Source at the top
   if (lesson.primary_source) {
     let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../cme_new/${lesson.primary_source.src}`;
     html += `
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
         ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
-        <img src="${src}" alt="Primary Source">
+        <div class="source-container">
+          <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
       </div>
     `;
@@ -161,21 +178,37 @@ chunkLessons.forEach((lesson, lessonIndex) => {
 
   // Render Do Now
   if (lesson.do_now) {
-    if (lesson.do_now.type === "timeline") {
-      // Don't render interactive timeline on PDF, or maybe just list the events?
-      html += `<div class="do-now-box"><h3>Chronological Big Picture</h3>`;
-      lesson.do_now.events.forEach(ev => {
-        html += `<p><strong>${ev.year}:</strong> ${ev.title} - <em>${ev.detail}</em></p>`;
+        if (lesson.do_now.type === "timeline") {
+      html += `<div class="do-now-box">
+                 <h3>Chronological Domino Flowchart</h3>
+                 <p style="font-style: italic; color: #555;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
+                 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">`;
+                 
+      // Shuffle the events
+      let shuffledEvents = [...lesson.do_now.events];
+      shuffledEvents.sort(() => Math.random() - 0.5);
+      
+      shuffledEvents.forEach((ev, idx) => {
+        // Create scattered boxes by adding random margins and a solid border
+        const margins = ["margin-top: 10px;", "margin-top: 30px;", "margin-bottom: 20px;", "margin-top: 0px;"];
+        const m = margins[idx % margins.length];
+        html += `<div style="width: 45%; border: 2px solid #333; padding: 10px; box-sizing: border-box; background: #fff; ${m} box-shadow: 2px 2px 0px #aaa;">
+                    <strong>${ev.year}</strong><br>
+                    <strong>${ev.title}</strong><br>
+                    <span style="font-size: 10pt;">${ev.detail}</span>
+                 </div>`;
       });
+      html += `</div><div style="clear: both; margin-bottom: 20px;"></div>`;
+
       if (lesson.do_now.prediction_question) {
-        html += `<div class="do-now-q"><strong>Q${lesson.do_now.qNum}. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\s*\((P|Para\s*)\d+\)/gi, '')}</strong></div>`;
+        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>1. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '')}</strong></div>`;
         html += `<div class="task-lines-large"></div><div class="task-lines-large"></div>`;
       }
       html += `</div>`;
-    } else if (lesson.do_now.type === "questions") {
+    } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && lesson.do_now.items)) {
       html += `<div class="do-now-box"><h3>Do Now Activity</h3>`;
       lesson.do_now.items.forEach((item, index) => {
-        html += `<div class="do-now-q"><strong>Q${item.qNum}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
+        html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
         html += `<div class="task-lines-large"></div>`;
       });
       html += `</div>`;
@@ -303,6 +336,7 @@ chunkLessons.forEach((lesson, lessonIndex) => {
       html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
       html += `<div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
     }
+  }
 
   // Historians Corner
   if (lesson.historians_corner) {
@@ -377,7 +411,7 @@ const timelinesMap = {
   ]
 };
 
-  const events = timelinesMap[lessonIndex + 1];
+  const events = timelinesMap[(chunkIndex * CHUNK_SIZE) + lessonIndex + 1];
   
   if (events && events.length > 0) {
     html += `<div style="page-break-before: always;">
@@ -407,8 +441,6 @@ const timelinesMap = {
       </div>
     </div>`;
   }
-
-  }
 });
 
 // Append Exam Practice Zone
@@ -508,9 +540,7 @@ html += `
 </html>`;
 
 
-  const outFileName = isCore ? `core_workbook_KT${ktNum}.html` : `workbook_KT${ktNum}.html`;
-  const outPath = path.join(__dirname, outFileName);
-  fs.writeFileSync(outPath, html, 'utf8');
+  const outFileName = `workbook_KT${ktNum}.html`;
+  fs.writeFileSync(path.join(__dirname, outFileName), html, 'utf8');
   console.log(`Successfully generated ${outFileName}!`);
 }
-

@@ -1,5 +1,6 @@
 import { renderRevisionZone } from './revision_zone.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
+import { initKeyIndividualsTask } from './key_individuals.js';
 export function initializeApp(unitData) {
   window.currentUnitData = unitData;
   document.addEventListener('DOMContentLoaded', () => {
@@ -398,7 +399,7 @@ export function initializeApp(unitData) {
       b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
     });
 
-    const textToRead = btnElement.parentElement.querySelector('.narrative-text').textContent;
+    const textToRead = btnElement.closest('.narrative-chunk').querySelector('.narrative-text').textContent;
     if (textToRead.trim() === "") return;
 
     btnElement.classList.add('reading-active');
@@ -412,7 +413,7 @@ export function initializeApp(unitData) {
     synth.speak(utterance);
   };
 
-
+  
 
   // Toggle Dyslexia Mode (Preserve icon)
   btnDyslexia.addEventListener('click', () => {
@@ -566,6 +567,36 @@ export function initializeApp(unitData) {
       navContainer.appendChild(link);
     });
 
+    // Add Guided Reading Tab if available
+    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
+      const grLink = document.createElement('a');
+      grLink.className = 'lesson-link';
+      grLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Guided Reading';
+      grLink.href = '#';
+      grLink.style.marginTop = '15px';
+      grLink.style.borderTop = '1px solid #e2e8f0';
+      grLink.style.paddingTop = '15px';
+      grLink.onclick = async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        grLink.classList.add('active');
+        
+        // Dynamically load the guided reading module to avoid cluttering core_app.js
+        const { initGuidedReadingTask } = await import('./guided_reading.js');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        
+        let currentLessonIndex = 0;
+        if (window.currentActiveLesson && unitData.lessons) {
+          currentLessonIndex = unitData.lessons.findIndex(l => l.title === window.currentActiveLesson.title);
+        }
+        
+        initGuidedReadingTask(contentArea, unitData.guided_reading, { currentLessonIndex });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+      navContainer.appendChild(grLink);
+    }
+
     const revisionLink = document.createElement('a');
     revisionLink.className = 'lesson-link';
     revisionLink.innerHTML = '🎮 Revision Zone';
@@ -599,6 +630,36 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(examPracticeLink);
 
+    const keyIndivLink = document.createElement('a');
+    keyIndivLink.className = 'lesson-link';
+    keyIndivLink.innerHTML = '👤 Key Individuals';
+    keyIndivLink.style.marginTop = '15px';
+    keyIndivLink.style.color = '#c084fc'; // Purple-400
+    keyIndivLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      keyIndivLink.classList.add('active');
+      const contentArea = document.getElementById('content-area');
+      contentArea.innerHTML = '<div style="text-align: center; padding: 50px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i></div>'; 
+      
+      try {
+        const response = await fetch('biographies.json');
+        if (response.ok) {
+          const bios = await response.json();
+          contentArea.innerHTML = '';
+          initKeyIndividualsTask(contentArea, bios);
+        } else {
+          contentArea.innerHTML = '<div style="padding: 20px;">No key individuals data found for this unit.</div>';
+        }
+      } catch (err) {
+        contentArea.innerHTML = '<div style="padding: 20px;">Error loading key individuals.</div>';
+      }
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(keyIndivLink);
+
+
     const quizPackLink = document.createElement('a');
     quizPackLink.className = 'lesson-link';
     quizPackLink.innerHTML = '📝 Printable Quiz Pack';
@@ -623,22 +684,12 @@ export function initializeApp(unitData) {
       for (let ktNum = 1; ktNum <= 3; ktNum++) {
         const ktLink = document.createElement('a');
         ktLink.className = 'lesson-link';
-        ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Pupil KT${ktNum}`;
+        ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Workbook KT${ktNum}`;
         ktLink.href = `workbook_KT${ktNum}.html`;
         ktLink.target = '_blank';
         ktLink.style.marginTop = '8px';
         ktLink.style.border = '2px dashed #cbd5e1';
         navContainer.appendChild(ktLink);
-        
-        const coreKtLink = document.createElement('a');
-        coreKtLink.className = 'lesson-link';
-        coreKtLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Core KT${ktNum}`;
-        coreKtLink.href = `core_workbook_KT${ktNum}.html`;
-        coreKtLink.target = '_blank';
-        coreKtLink.style.marginTop = '5px';
-        coreKtLink.style.border = '2px dashed #3b82f6';
-        coreKtLink.style.color = '#2563eb';
-        navContainer.appendChild(coreKtLink);
       }
     } else {
       const workbookLink = document.createElement('a');
@@ -649,16 +700,6 @@ export function initializeApp(unitData) {
       workbookLink.style.marginTop = '15px';
       workbookLink.style.border = '2px dashed #cbd5e1';
       navContainer.appendChild(workbookLink);
-
-      const coreWorkbookLink = document.createElement('a');
-      coreWorkbookLink.className = 'lesson-link';
-      coreWorkbookLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 5px;"></i> Core Workbook';
-      coreWorkbookLink.href = 'core_workbook.html';
-      coreWorkbookLink.target = '_blank';
-      coreWorkbookLink.style.marginTop = '10px';
-      coreWorkbookLink.style.border = '2px dashed #3b82f6';
-      coreWorkbookLink.style.color = '#2563eb';
-      navContainer.appendChild(coreWorkbookLink);
     }
   }
 
@@ -689,6 +730,19 @@ export function initializeApp(unitData) {
       </div>
     `;
 
+    if (lesson.enquiry) {
+      html += `
+        <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Enquiry Question
+          </h3>
+          <p style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+            ${lesson.enquiry}
+          </p>
+        </div>
+      `;
+    }
+
     if (lesson.learning_objectives) {
       html += `
         <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
@@ -711,6 +765,7 @@ export function initializeApp(unitData) {
       // Handle the new comprehensive object structure
       if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
         const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
+        const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
         const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
             <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
@@ -722,7 +777,7 @@ export function initializeApp(unitData) {
             </div>` : ''}
           </div>
         `).join('');
-        notesHtml = primerText + objectivesHtml;
+        notesHtml = primerText + sourceContext + objectivesHtml;
       } 
       // Fallback for array structure
       else if (Array.isArray(lesson.teacher_notes)) {
@@ -951,13 +1006,18 @@ export function initializeApp(unitData) {
            l4StyledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` + rest;
         }
 
+        const simplifyBtn = '';
+
         // Render Standard Narrative Chunk
         html += `
           <div class="standard-narrative-container">
             <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
               <div class="para-number">${index + 1}</div>
               <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${styledContent}</div>
-              <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                ${simplifyBtn}
+              </div>
             </div>
           </div>
         `;
@@ -969,7 +1029,10 @@ export function initializeApp(unitData) {
               <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
-                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                <div style="display: flex; align-items: flex-start;">
+                  <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                  
+                </div>
               </div>
             </div>
           `;
@@ -982,7 +1045,7 @@ export function initializeApp(unitData) {
              const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
              html += `
                <div style="margin-bottom: 10px;">
-                 <strong>${qPrefix}${task.text.replace(/\s*\(P\d+\)/gi, '')}</strong>
+                 <strong>${qPrefix}${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong>
                  <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  <div class="answer" style="margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>
@@ -1017,11 +1080,21 @@ export function initializeApp(unitData) {
     }
     // PHASE: Application Tasks & Historian Debates
     if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
+      let hasModels = false;
+      if (lesson.tasks) {
+        hasModels = lesson.tasks.some(t => !!t.model);
+      }
+      if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
+        hasModels = true;
+      }
+      
+      const revealBtn = hasModels ? `<button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>` : '';
+
       html += `
         <div class="phase-card" id="phase-${phaseNum}">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Written Application</div>
-            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+            ${revealBtn}
           </div>
       `;
 

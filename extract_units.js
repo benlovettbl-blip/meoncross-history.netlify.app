@@ -111,7 +111,15 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
     }
 
     // Copy extra HTML tools (Quiz Pack, Workbooks, Answer Keys)
-    ['quiz_pack.html', 'workbook.html', 'answer_key.html'].forEach(file => {
+    // Copy extra HTML tools (Quiz Pack, Answer Keys, and ALL workbooks)
+    const filesToCopy = ['quiz_pack.html', 'answer_key.html', 'biographies.json'];
+    const allFiles = fs.readdirSync(sourceDir);
+    allFiles.forEach(f => {
+      if (f.startsWith('workbook') && f.endsWith('.html')) {
+        filesToCopy.push(f);
+      }
+    });
+    filesToCopy.forEach(file => {
       const sourceFile = path.join(sourceDir, file);
       if (fs.existsSync(sourceFile)) {
         fs.copyFileSync(sourceFile, path.join(unitTargetDir, file));

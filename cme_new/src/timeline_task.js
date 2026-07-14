@@ -1,6 +1,4 @@
-import { timelineData } from '../timeline_data.js';
-
-export function initTimelineTask(container) {
+export function initTimelineTask(container, timelineData) {
   // Build the UI wrapper
   container.innerHTML = `
     <div style="max-width: 900px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 4px solid #3b82f6;">
@@ -215,7 +213,26 @@ export function initTimelineTask(container) {
       feedback.innerHTML = '<i class="fa-solid fa-trophy"></i> Perfect Sequence! Outstanding Historical Knowledge!';
     } else {
       feedback.style.color = '#ef4444';
-      feedback.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Not quite! ${correctCount} out of ${activeItems.length} are in the exact correct position.`;
+      
+      // Generate a smart hint by finding two adjacent items that are chronologically reversed
+      let hintHTML = '';
+      for (let i = 0; i < activeItems.length - 1; i++) {
+        const trueIndexA = currentTimeline.events.findIndex(e => e.id === activeItems[i].id);
+        const trueIndexB = currentTimeline.events.findIndex(e => e.id === activeItems[i+1].id);
+        
+        if (trueIndexA > trueIndexB) {
+          // Inversion found! A happened AFTER B, but the user placed A BEFORE B.
+          const textA = activeItems[i].text.substring(0, 45).trim() + "...";
+          const textB = activeItems[i+1].text.substring(0, 45).trim() + "...";
+          
+          hintHTML = `<div style="font-size: 1.1rem; color: #b91c1c; margin-top: 15px; background: #fee2e2; padding: 12px 18px; border-radius: 8px; border: 1px solid #fca5a5;">
+            <strong><i class="fa-solid fa-lightbulb"></i> Hint:</strong> Look closely at your sequence. Did <em>"${textA}"</em> really happen <strong>before</strong> <em>"${textB}"</em>?
+          </div>`;
+          break; // Only show one hint at a time
+        }
+      }
+      
+      feedback.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Not quite! ${correctCount} out of ${activeItems.length} are in the exact correct position. ${hintHTML}`;
     }
   }
 

@@ -59,10 +59,7 @@ let html = `<!DOCTYPE html>
   function assignQuestionNumbers(lesson) {
     let q = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    if (lesson.do_now) {
-      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
-      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
-    }
+    
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
   }
@@ -78,7 +75,8 @@ unitData.lessons.forEach(lesson => {
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
         ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
-        <img src="${src}" alt="Primary Source">
+        <div class="source-container">
+          <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
       </div>
     `;
@@ -86,21 +84,37 @@ unitData.lessons.forEach(lesson => {
 
   // Render Do Now
   if (lesson.do_now) {
-    if (lesson.do_now.type === "timeline") {
-      // Don't render interactive timeline on PDF, or maybe just list the events?
-      html += `<div class="do-now-box"><h3>Chronological Big Picture</h3>`;
-      lesson.do_now.events.forEach(ev => {
-        html += `<p><strong>${ev.year}:</strong> ${ev.title} - <em>${ev.detail}</em></p>`;
+        if (lesson.do_now.type === "timeline") {
+      html += `<div class="do-now-box">
+                 <h3>Chronological Domino Flowchart</h3>
+                 <p style="font-style: italic; color: #555;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
+                 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">`;
+                 
+      // Shuffle the events
+      let shuffledEvents = [...lesson.do_now.events];
+      shuffledEvents.sort(() => Math.random() - 0.5);
+      
+      shuffledEvents.forEach((ev, idx) => {
+        // Create scattered boxes by adding random margins and a solid border
+        const margins = ["margin-top: 10px;", "margin-top: 30px;", "margin-bottom: 20px;", "margin-top: 0px;"];
+        const m = margins[idx % margins.length];
+        html += `<div style="width: 45%; border: 2px solid #333; padding: 10px; box-sizing: border-box; background: #fff; ${m} box-shadow: 2px 2px 0px #aaa;">
+                    <strong>${ev.year}</strong><br>
+                    <strong>${ev.title}</strong><br>
+                    <span style="font-size: 10pt;">${ev.detail}</span>
+                 </div>`;
       });
+      html += `</div><div style="clear: both; margin-bottom: 20px;"></div>`;
+
       if (lesson.do_now.prediction_question) {
-        html += `<div class="do-now-q"><strong>Q${lesson.do_now.qNum}. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\s*\((P|Para\s*)\d+\)/gi, '')}</strong></div>`;
+        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>1. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '')}</strong></div>`;
         html += `<div class="task-lines-large"></div><div class="task-lines-large"></div>`;
       }
       html += `</div>`;
-    } else if (lesson.do_now.type === "questions") {
+    } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && lesson.do_now.items)) {
       html += `<div class="do-now-box"><h3>Do Now Activity</h3>`;
       lesson.do_now.items.forEach((item, index) => {
-        html += `<div class="do-now-q"><strong>Q${item.qNum}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
+        html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
         html += `<div class="task-lines-large"></div>`;
       });
       html += `</div>`;
