@@ -678,7 +678,7 @@ export function initializeApp(unitData) {
     quizPackLink.style.marginTop = '15px';
     quizPackLink.style.color = '#34d399'; // Emerald-400
     navContainer.appendChild(quizPackLink);
-    const isCmeNew = window.location.pathname.includes('cme_new');
+    const isCmeNew = window.currentUnitId === 'cme_new';
     
     if (isCmeNew) {
       const wbHeader = document.createElement('div');
@@ -904,11 +904,17 @@ export function initializeApp(unitData) {
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
       lesson.do_now.items.forEach((item, index) => {
+        let qText = item.question;
+        let aText = item.answer;
+        if (window.currentUnitId) {
+          qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+          aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+        }
         html += `
           <div class="do-now-card" id="do-now-card-${index}" onclick="this.classList.toggle('revealed')" style="cursor: pointer;">
             <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
-            <div>${item.question}</div>
-            <div class="answer" id="do-now-ans-${index}">${item.answer}</div>
+            <div>${qText}</div>
+            <div class="answer" id="do-now-ans-${index}">${aText}</div>
           </div>
         `;
       });
