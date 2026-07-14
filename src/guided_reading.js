@@ -1,3 +1,5 @@
+import { getAssetUrl } from './core_app.js';
+
 export function initGuidedReadingTask(container, guidedReadingData, globalState) {
   const currentLessonIndex = globalState ? globalState.currentLessonIndex : 0;
   
@@ -17,7 +19,7 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
       
       <!-- Header: Image, Title, Author, and Questions -->
       <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">
-        <img src="${readingData.cover_image}" alt="Book Cover" style="width: 150px; height: auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <img src="${getAssetUrl(readingData.cover_image)}" alt="Book Cover" style="width: 150px; height: auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
         
         <div style="flex: 1; min-width: 300px;">
           <h2 style="margin: 0 0 10px 0; color: #1e293b; font-size: 2rem; font-family: 'Playfair Display', serif;">${readingData.book_title}</h2>
@@ -42,7 +44,7 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
             <button class="btn btn-primary" onclick="const a = document.getElementById('audio-${readingData.lesson_index}'); if(a.paused){a.play(); this.innerHTML='<i class=\\\'fa-solid fa-pause\\\'></i> Pause Reading';}else{a.pause(); this.innerHTML='<i class=\\\'fa-solid fa-play\\\'></i> Play Audio Reading';}" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px;">
               <i class="fa-solid fa-play"></i> Play Audio Reading
             </button>
-            <audio id="audio-${readingData.lesson_index}" src="${readingData.audio_file}" onended="this.previousElementSibling.innerHTML='<i class=\\\'fa-solid fa-play\\\'></i> Play Audio Reading';"></audio>
+            <audio id="audio-${readingData.lesson_index}" src="${getAssetUrl(readingData.audio_file)}" onended="this.previousElementSibling.innerHTML='<i class=\\\'fa-solid fa-play\\\'></i> Play Audio Reading';"></audio>
           </div>
           
           <!-- Think-Pair-Share Section -->

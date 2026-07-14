@@ -673,7 +673,7 @@ export function initializeApp(unitData) {
     const quizPackLink = document.createElement('a');
     quizPackLink.className = 'lesson-link';
     quizPackLink.innerHTML = '📝 Printable Quiz Pack';
-    quizPackLink.href = 'quiz_pack.html';
+    quizPackLink.href = window.currentUnitId ? `/${window.currentUnitId}/quiz_pack.html` : 'quiz_pack.html';
     quizPackLink.target = '_blank';
     quizPackLink.style.marginTop = '15px';
     quizPackLink.style.color = '#34d399'; // Emerald-400
@@ -695,7 +695,7 @@ export function initializeApp(unitData) {
         const ktLink = document.createElement('a');
         ktLink.className = 'lesson-link';
         ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Workbook KT${ktNum}`;
-        ktLink.href = `workbook_KT${ktNum}.html`;
+        ktLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook_KT${ktNum}.html` : `workbook_KT${ktNum}.html`;
         ktLink.target = '_blank';
         ktLink.style.marginTop = '8px';
         ktLink.style.border = '2px dashed #cbd5e1';
@@ -705,7 +705,7 @@ export function initializeApp(unitData) {
       const workbookLink = document.createElement('a');
       workbookLink.className = 'lesson-link';
       workbookLink.textContent = 'Pupil Workbook';
-      workbookLink.href = 'workbook.html';
+      workbookLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
       workbookLink.target = '_blank';
       workbookLink.style.marginTop = '15px';
       workbookLink.style.border = '2px dashed #cbd5e1';

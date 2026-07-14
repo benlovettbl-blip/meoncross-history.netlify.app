@@ -1,3 +1,4 @@
+import { getAssetUrl } from './core_app.js';
 
 export function initKeyIndividualsTask(container, keyIndividualsData) {
   if (!keyIndividualsData || keyIndividualsData.length === 0) return;
@@ -54,7 +55,7 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
     imgContainer.style.overflow = 'hidden';
 
     const img = document.createElement('img');
-    img.src = person.image;
+    img.src = getAssetUrl(person.image);
     img.style.width = '100%';
     img.style.height = '100%';
     img.style.objectFit = 'contain';
