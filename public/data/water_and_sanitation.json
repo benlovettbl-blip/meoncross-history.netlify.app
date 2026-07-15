@@ -6,7 +6,7 @@
     "lessons": [
       {
         "id": "lesson_1",
-        "title": "Lesson 1: Prehistoric and Roman Sanitati...",
+        "title": "Lesson 1: Prehistoric and Roman Sanitation",
         "primary_source": {
           "src": "assets/roman_latrine.jpg",
           "title": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
@@ -224,7 +224,7 @@
       },
       {
         "id": "lesson_2",
-        "title": "Lesson 2: Medieval Sanitation and The Ch...",
+        "title": "Lesson 2: Medieval Sanitation and The Church",
         "primary_source": {
           "src": "assets/canterbury_waterworks.jpg",
           "title": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
@@ -443,7 +443,7 @@
       },
       {
         "id": "lesson_3",
-        "title": "Lesson 3: Early Modern Filth and Cesspit...",
+        "title": "Lesson 3: Early Modern Filth and Cesspits",
         "primary_source": {
           "src": "assets/harington_toilet.jpg",
           "title": "Source A: Sir John Harington's flushing toilet design (1596)",
@@ -649,7 +649,7 @@
       },
       {
         "id": "lesson_4",
-        "title": "Lesson 4: The Industrial Revolution and ...",
+        "title": "Lesson 4: The Industrial Revolution and Cholera",
         "primary_source": {
           "src": "assets/snow_cholera_map.jpg",
           "title": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
@@ -855,7 +855,7 @@
       },
       {
         "id": "lesson_5",
-        "title": "Lesson 5: The Great Stink and Modern Sew...",
+        "title": "Lesson 5: The Great Stink and Modern Sewers",
         "primary_source": {
           "src": "assets/bazalgette_sewer.jpg",
           "title": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
