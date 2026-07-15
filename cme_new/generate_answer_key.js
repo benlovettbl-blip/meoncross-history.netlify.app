@@ -57,19 +57,10 @@ let html = `<!DOCTYPE html>
   `;
 
 
-  function assignQuestionNumbers(lesson) {
-    let q = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    if (lesson.do_now) {
-      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
-      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
-    }
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
-  }
+  
 
 unitData.lessons.forEach((lesson, lessonIndex) => {
-  assignQuestionNumbers(lesson);
+  
   html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
 
   // Primary Source at the top
@@ -189,7 +180,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
     // Append draw tasks right after the sources block
     if (drawTasks.length > 0) {
       drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
+        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: |Q\d+\.\s*)/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</div>`;
       });
     }
   }
@@ -215,6 +206,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
       html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
       html += `<div style="color:red; font-weight:bold; padding: 10px; background: #fff0f0; border: 1px dashed red; margin-top: 10px;">${lesson.extended.model}</div>`;
     }
+  }
 
   // Historians Corner
   if (lesson.historians_corner) {
@@ -290,43 +282,10 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
     html += `</div>`;
   }
 
-  }
 });
 
 
-// Append Quiz Pack
-if (unitData.quizPack && unitData.quizPack.length > 0) {
-  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
-  html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
-  
-  html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
-  
-  // Format into two columns roughly
-  html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
-  unitData.quizPack.forEach((item, idx) => {
-    html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
-    html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;
-    html += `<div class="task-lines"></div>`;
-    html += `</div>`;
-  });
-  html += `</div>`;
-  html += `</div>`;
 
-  // Answer Bank
-  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 20pt; text-align: center;">Quiz Pack Answer Bank</h2>`;
-  html += `<div style="border: 2px solid #1a237e; padding: 20px; background: #f8f9fa; border-radius: 8px;">`;
-  
-  // Extract and scramble answers alphabetically
-  let answers = unitData.quizPack.map(item => item.a).sort((a, b) => a.localeCompare(b));
-  
-  html += `<p style="text-align: center; font-size: 11pt; line-height: 1.8;">`;
-  answers.forEach((ans, idx) => {
-    html += `<strong>${ans}</strong>`;
-    if (idx < answers.length - 1) html += ` &nbsp;&bull;&nbsp; `;
-  });
-  html += `</p>`;
-  html += `</div>`;
-}
 
 html += `
 

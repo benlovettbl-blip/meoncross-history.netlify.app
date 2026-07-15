@@ -56,19 +56,17 @@ let html = `<!DOCTYPE html>
   `;
 
 
-  function assignQuestionNumbers(lesson) {
-    let q = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    if (lesson.do_now) {
-      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
-      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
-    }
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
-  }
+  
 
 unitData.lessons.forEach(lesson => {
-  assignQuestionNumbers(lesson);
+  let globalQNum = 1;
+  if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+  if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+  if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => task.qNum = globalQNum++); });
+  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+  
   html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
 
   // Primary Source at the top
@@ -238,7 +236,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
   // Format into two columns roughly
-  html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
+  html += `<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">`;
   unitData.quizPack.forEach((item, idx) => {
     html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
     html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;

@@ -39,7 +39,7 @@ let html = `<!DOCTYPE html>
   <p style="text-align:center; font-size:16pt; margin-top: 0;">Student Workbook</p>
   
   <div style="text-align: center; margin: 30px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Anton_von_Werner_-_Er%C3%B6ffnung_des_Reichstags_1888_%281893%29.jpg" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="The Opening of the Reichstag">
+    <img src="assets/roman_latrine.jpg" style="max-width: 80%; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Roman Communal Latrine">
     
   </div>
 
@@ -56,16 +56,17 @@ let html = `<!DOCTYPE html>
   `;
 
 
-  function assignQuestionNumbers(lesson) {
-    let q = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
-  }
+  
 
 unitData.lessons.forEach(lesson => {
-  assignQuestionNumbers(lesson);
+  let globalQNum = 1;
+  if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+  if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+  if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => task.qNum = globalQNum++); });
+  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+  
   html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
 
   // Primary Source at the top
@@ -121,23 +122,26 @@ unitData.lessons.forEach(lesson => {
     }
   }
 
-  // Render Narrative
-  if (lesson.narrative) {
-    let pCounter = 1;
-      lesson.narrative.forEach(para => {
-      if (para.startsWith('"')) {
-        html += `<div style="font-weight: bold; margin: 15px 0; font-size: 13pt;">${para.replace(/"/g, '')}</div>`;
-      } else {
-        html += `<p class="narrative-block" id="para-${pCounter}">${para}</p>`; pCounter++;
+  // Render Narrative Blocks & Tasks
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach((block, bIdx) => {
+      html += `<p class="narrative-block" id="para-${bIdx+1}">${block.text}</p>`;
+      if (block.tasks && block.tasks.length > 0) {
+        html += `<div class="task-box">`;
+        block.tasks.forEach(task => {
+          if (task.type === 'draw') {
+             html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Q${task.qNum}: ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: |Q\d+\.\s*)/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</div>`;
+          } else {
+             html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '')}</strong></p>`;
+             html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
+          }
+        });
+        html += `</div>`;
       }
     });
   }
 
-  // Identify Draw Tasks
-  const drawTasks = lesson.tasks ? lesson.tasks.filter(t => t.type === 'draw') : [];
-  const writtenTasks = lesson.tasks ? lesson.tasks.filter(t => t.type !== 'draw') : [];
-
-  // Render Sources and append Draw Tasks immediately beneath them
+  // Render Sources
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
@@ -151,24 +155,6 @@ unitData.lessons.forEach(lesson => {
         `;
       }
     });
-    
-    // Append draw tasks right after the sources block
-    if (drawTasks.length > 0) {
-      drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
-      });
-    }
-  }
-
-  // Render Written Tasks
-  if (writtenTasks.length > 0) {
-    html += `<div class="task-box"><h3>Knowledge Check</h3>`;
-    writtenTasks.forEach(task => {
-      html += `<p style="margin-top:20px;"><strong>Q${task.qNum}. ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></p>`;
-      // Add 3 blank lines for writing
-      html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
-    });
-    html += `</div>`;
   }
 
   // Extended Scholarship
@@ -254,7 +240,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
   // Format into two columns roughly
-  html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
+  html += `<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">`;
   unitData.quizPack.forEach((item, idx) => {
     html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
     html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;

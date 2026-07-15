@@ -8,7 +8,8 @@
       "Expanded the German Imperial Navy, sparking an arms race with Britain.",
       "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
     ],
-    "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War."
+    "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+    "image": "assets/card_wilhelm.png"
   },
   {
     "name": "Tsar Nicholas II",
@@ -19,7 +20,8 @@
       "Formed an alliance with France to counter the Triple Alliance.",
       "Ordered the mobilization of the Russian army in July 1914."
     ],
-    "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war."
+    "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+    "image": "assets/card_nicholas.png"
   },
   {
     "name": "Gavrilo Princip",
@@ -30,7 +32,8 @@
       "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
       "Fired the fatal shots in Sarajevo on June 28, 1914."
     ],
-    "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I."
+    "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+    "image": "assets/card_princip.png"
   },
   {
     "name": "Count Leopold Berchtold",
@@ -52,6 +55,7 @@
       "Authored the famous 'Schlieffen Plan' for a two-front war.",
       "Prioritized military strategy over diplomatic consequences."
     ],
-    "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war."
+    "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+    "image": "assets/alfred_von_schlieffen.jpg"
   }
 ]

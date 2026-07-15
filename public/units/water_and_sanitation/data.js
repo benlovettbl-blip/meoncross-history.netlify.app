@@ -54,9 +54,9 @@ export const unitData = {
             "learning_objectives": {
                 "overarching": "To understand prehistoric and Roman Sanitation",
                 "scaffolded": [
-                    "Identify the key features of this topic.",
-                    "Explain the core concepts and historical context.",
-                    "Evaluate the overall significance."
+                    "Describe the simple, practical sanitation methods used by Iron Age Britons.",
+                    "Explain how Roman engineers introduced revolutionary sanitation technology.",
+                    "Evaluate the significance of Roman bathhouses and latrines for public health."
                 ]
             },
             "teacher_notes": {
@@ -82,6 +82,18 @@ export const unitData = {
                 ],
                 "source_context": "This visual source provides students with direct evidence regarding Lesson 1: Prehistoric and Roman Sanitati.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How does this source demonstrate both the advancements and limitations of Roman public health?**"
             },
+            "sources": [
+                {
+                    "src": "assets/seneca.jpg",
+                    "title": "Source B: Seneca the Younger on Roman Bathhouses (c. AD 62)",
+                    "caption": "<strong>What is this source showing?</strong> This is an extract from a letter by the Roman philosopher Seneca the Younger, complaining about the intense noise and activity of a Roman bathhouse he lived above. It shows that baths were busy, social hubs, not just places for quiet hygiene. <br><br>\"I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.\"",
+                    "question": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?",
+                    "tasks": [
+                        { "text": "Highlight three different sounds Seneca complains about." }
+                    ],
+                    "model_answer": "Student responses should focus on the evidence of commerce and social activity, noting that the baths were loud, chaotic places where people exercised, received treatments, and bought food, demonstrating they were a central part of Roman daily life rather than strictly hygienic facilities."
+                }
+            ],
             "narrative_blocks": [
                 {
                     "text": "It is easy to assume that people in the past did not care about cleanliness, but Iron Age communities developed highly practical systems that suited their way of life. Because farming roundhouses were spread out across the countryside, digging simple, temporary cesspits was a safe, hygienic, and sustainable way to manage waste without polluting nearby drinking water. During the British Iron Age (700 BC - AD 43), most families lived in circular wooden homes called roundhouses, such as those discovered by archaeologists at Silchester. Because the people of this era left no written documents behind, historians must rely on physical clues unearthed from the ground—a field of study known as archaeology. These physical discoveries show that Iron Age communities intentionally built their settlements near fresh springs, streams, or hand-dug wells to secure their daily water supply.",
@@ -136,7 +148,63 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Prehistoric and Roman Sanitati... so significant?"
+            "enquiry": "Why was the historical context of Prehistoric and Roman Sanitati... so significant?",
+            "flashcards": [
+                {
+                    "term": "cesspit",
+                    "definition": "A pit for the disposal of liquid waste and sewage."
+                },
+                {
+                    "term": "conduit",
+                    "definition": "A channel or pipe for conveying water or other fluid."
+                },
+                {
+                    "term": "latrine",
+                    "definition": "A toilet or outhouse, especially a communal one in a camp or barracks."
+                }
+            ],
+            "quiz": [
+                {
+                    "question": "Why was digging cesspits in the Iron Age a hygienic way to manage waste?",
+                    "options": [
+                        "Waste was collected daily by town sweepers and recycled as crop fertilizer",
+                        "Roman military engineers oversaw the cleaning of public clay sewers",
+                        "Roundhouse settlements were spread out and temporary pits kept waste away from springs",
+                        "Peasants built stone-lined channels to sweep waste directly into clean rivers"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "What technology did Roman engineers use to bring fresh water over miles into British towns?",
+                    "options": [
+                        "Cast-iron pumps driven by high-pressure steam power",
+                        "Deep underground wells equipped with wooden hand windlasses",
+                        "Large clay pipes carrying water driven by electric siphons",
+                        "Stone channels called conduits that utilized the natural pull of gravity"
+                    ],
+                    "answer": 3
+                },
+                {
+                    "question": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+                    "options": [
+                        "Silchester farming roundhouse village",
+                        "Bearsden public bathing sequence",
+                        "Housesteads Fort on Hadrian's Wall",
+                        "Vindolanda military barracks"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "What did Roman soldiers use to wipe themselves in communal latrines?",
+                    "options": [
+                        "Bundles of dried straw or coarse wool",
+                        "High-pressure water jets and linen towels",
+                        "Broad green leaves gathered from local woods",
+                        "A wet sponge attached to the end of a shared wooden stick"
+                    ],
+                    "answer": 3
+                }
+            ]
         },
         {
             "id": "lesson_2",
@@ -208,9 +276,9 @@ export const unitData = {
             "learning_objectives": {
                 "overarching": "To understand medieval Sanitation and The Church",
                 "scaffolded": [
-                    "Identify the key features of this topic.",
-                    "Explain the core concepts and historical context.",
-                    "Evaluate the overall significance."
+                    "Describe the simple cesspits used by peasants in rural Medieval villages.",
+                    "Explain why Medieval monasteries built complex water systems.",
+                    "Evaluate the role of gongfermers and night-work in medieval towns."
                 ]
             },
             "teacher_notes": {
@@ -303,7 +371,59 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Medieval Sanitation and The Ch... so significant?"
+            "enquiry": "Why was the historical context of Medieval Sanitation and The Ch... so significant?",
+            "flashcards": [
+                {
+                    "term": "gongfermer",
+                    "definition": "A medieval worker who cleared human waste from cesspits."
+                },
+                {
+                    "term": "miasma",
+                    "definition": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
+                }
+            ],
+            "quiz": [
+                {
+                    "question": "What did Roman bathers experience inside a bathhouse like Bearsden?",
+                    "options": [
+                        "Swimming in deep reservoirs filled with rainwater",
+                        "Paying water sellers to pour buckets of cold river water over them",
+                        "Washing in sequence through cold, warm, and hot rooms",
+                        "Sitting in a single room with a fireplace"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?",
+                    "options": [
+                        "The low population density meant waste did not build up enough to contaminate water supplies",
+                        "Peasants had access to Roman sewer systems",
+                        "Village councils treated the water with chemical purifiers",
+                        "Peasants built stone-lined channels to sweep waste directly into clean rivers"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "On the twelfth-century plans of Canterbury Priory, what did the red lines represent?",
+                    "options": [
+                        "Pipes transporting fresh drinking water into the kitchen",
+                        "Stone pathways used by the monks to walk to church",
+                        "Pipes carrying dirty waste water away to flush the toilets",
+                        "Boundaries marking the outer wall of the cathedral grounds"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "How did poorer townspeople get their fresh water if they did not own a private well?",
+                    "options": [
+                        "They collected it from the indoor taps in their houses",
+                        "They traveled to nearby monasteries to use their conduits",
+                        "They bought it from water sellers who hauled river water in barrels",
+                        "They used electric pumps to draw water from deep aquifers"
+                    ],
+                    "answer": 2
+                }
+            ]
         },
         {
             "id": "lesson_3",
@@ -375,9 +495,9 @@ export const unitData = {
             "learning_objectives": {
                 "overarching": "To understand early Modern Filth and Cesspits",
                 "scaffolded": [
-                    "Identify the key features of this topic.",
-                    "Explain the core concepts and historical context.",
-                    "Evaluate the overall significance."
+                    "Describe the sanitation problems in growing Tudor and Stuart towns.",
+                    "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
+                    "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation."
                 ]
             },
             "teacher_notes": {
@@ -457,7 +577,59 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Early Modern Filth and Cesspit... so significant?"
+            "enquiry": "Why was the historical context of Early Modern Filth and Cesspit... so significant?",
+            "flashcards": [
+                {
+                    "term": "conduit",
+                    "definition": "A channel or pipe for conveying water."
+                },
+                {
+                    "term": "water closet",
+                    "definition": "A flush toilet, or a room containing one."
+                }
+            ],
+            "quiz": [
+                {
+                    "question": "What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?",
+                    "options": [
+                        "Woven wool",
+                        "Roman sponges",
+                        "Wild moss",
+                        "Parchment sheets"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?",
+                    "options": [
+                        "Because they were banned by the king from working during the day",
+                        "Because they believed that daylight made human waste more infectious",
+                        "To avoid disrupting the busy town streets with terrible smells and waste carts",
+                        "To avoid paying taxes on the waste they removed"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "Why did London's sanitation problems get worse during the Early Modern period?",
+                    "options": [
+                        "The population grew rapidly, putting too much pressure on crowded town systems",
+                        "The King banned people from cleaning the streets",
+                        "Severe droughts dried up all the natural water wells",
+                        "Most public conduits were destroyed by invading armies"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?",
+                    "options": [
+                        "Sir John Harington",
+                        "Samuel Pepys",
+                        "King Charles I",
+                        "Joseph Bazalgette"
+                    ],
+                    "answer": 1
+                }
+            ]
         },
         {
             "id": "lesson_4",
@@ -529,9 +701,9 @@ export const unitData = {
             "learning_objectives": {
                 "overarching": "To understand the Industrial Revolution and Public Health",
                 "scaffolded": [
-                    "Identify the key features of this topic.",
-                    "Explain the core concepts and historical context.",
-                    "Evaluate the overall significance."
+                    "Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.",
+                    "Explain how Edwin Chadwick argued for public health reform in his 1842 report.",
+                    "Evaluate Dr. John Snow's discovery that cholera was waterborne."
                 ]
             },
             "teacher_notes": {
@@ -611,7 +783,59 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Industrial Revolution and ... so significant?"
+            "enquiry": "Why was the historical context of The Industrial Revolution and ... so significant?",
+            "flashcards": [
+                {
+                    "term": "urbanization",
+                    "definition": "The process of making an area more urban (city-like)."
+                },
+                {
+                    "term": "cholera",
+                    "definition": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
+                }
+            ],
+            "quiz": [
+                {
+                    "question": "Who invented the first water closet (flushing toilet) in Britain in 1596?",
+                    "options": [
+                        "Samuel Pepys",
+                        "Joseph Bazalgette",
+                        "Dr. John Snow",
+                        "Sir John Harington"
+                    ],
+                    "answer": 3
+                },
+                {
+                    "question": "Why was the 1596 flushing toilet not used by ordinary citizens?",
+                    "options": [
+                        "It was illegal for anyone except the Queen to use it",
+                        "It was made of solid gold and was too expensive to manufacture",
+                        "Houses lacked running piped water and connections to street sewers",
+                        "It required electricity to operate the flushing valve"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "What was a 'water seller's' job in an Early Modern town?",
+                    "options": [
+                        "Transporting river water in large barrels on horseback to sell to homes",
+                        "Digging deep stone-lined conduits for town councils",
+                        "Designing indoor plumbing systems for wealthy merchants",
+                        "Filtering well water through sand and charcoal beds"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "By how much did Britain's population grow during the century of industrialisation (1750–1850)?",
+                    "options": [
+                        "It remained stable at around 10 million.",
+                        "It skyrocketed from 6 million to 21 million.",
+                        "It decreased from 15 million to 6 million due to cholera.",
+                        "It grew from 3 million to 9 million."
+                    ],
+                    "answer": 1
+                }
+            ]
         },
         {
             "id": "lesson_5",
@@ -683,9 +907,9 @@ export const unitData = {
             "learning_objectives": {
                 "overarching": "To understand the Great Stink and Modern Sewers",
                 "scaffolded": [
-                    "Identify the key features of this topic.",
-                    "Explain the core concepts and historical context.",
-                    "Evaluate the overall significance."
+                    "Describe the events of the Great Stink in 1858.",
+                    "Explain how Joseph Bazalgette's sewer system transformed London.",
+                    "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease."
                 ]
             },
             "teacher_notes": {
@@ -778,7 +1002,59 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Great Stink and Modern Sew... so significant?"
+            "enquiry": "Why was the historical context of The Great Stink and Modern Sew... so significant?",
+            "flashcards": [
+                {
+                    "term": "sewer",
+                    "definition": "An underground conduit for carrying off drainage water and waste matter."
+                },
+                {
+                    "term": "germ theory",
+                    "definition": "The theory that infectious diseases are caused by certain microbes."
+                }
+            ],
+            "quiz": [
+                {
+                    "question": "How did working-class families living in terraced yards usually obtain their water?",
+                    "options": [
+                        "From a shared pump in the street or yard that only ran for a few hours.",
+                        "From copper pipes connected to indoor taps in their kitchens.",
+                        "From private wells dug inside their cellars.",
+                        "By collecting rainwater in barrels off their roofs."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?",
+                    "options": [
+                        "Smallpox",
+                        "The Black Death",
+                        "Tuberculosis",
+                        "Cholera"
+                    ],
+                    "answer": 3
+                },
+                {
+                    "question": "What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?",
+                    "options": [
+                        "Germ Theory (the belief that micro-organisms cause disease)",
+                        "Humoral Theory (the belief that body fluids must be balanced)",
+                        "Miasma Theory (the belief that disease is spread by bad smells)",
+                        "Astrological Theory (the belief that planetary positions cause disease)"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "Why did cesspits under shared yard privies frequently overflow in industrial cities?",
+                    "options": [
+                        "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
+                        "Rainwater was channeled directly into them to help flush them.",
+                        "Water companies used high-pressure steam pumps to clear them.",
+                        "Specialized gongfermers were banned from working in towns."
+                    ],
+                    "answer": 0
+                }
+            ]
         }
     ],
     "quizPack": [

@@ -1,57 +1,32 @@
 [
   {
-    "name": "John Snow",
-    "role": "Physician and Epidemiologist",
-    "lifespan": "1813 – 1858",
-    "achievements": [
-      "Traced the 1854 Broad Street cholera outbreak to a contaminated water pump.",
-      "Pioneered the use of data mapping in epidemiology.",
-      "Challenged the prevailing 'miasma' theory of disease."
-    ],
-    "significance": "By proving that cholera was a waterborne disease, he laid the foundations for modern epidemiology and demonstrated the critical need for clean drinking water to protect public health."
+    "name": "Seneca the Younger",
+    "role": "Roman Philosopher & Statesman",
+    "bio": "A Stoic philosopher whose writings provide vital insight into daily life in Ancient Rome. He famously documented the noise, smells, and chaotic conditions of the public baths, highlighting that despite their advanced engineering, Roman public health still faced serious limitations.",
+    "image": "assets/seneca.jpg"
   },
   {
     "name": "Edwin Chadwick",
     "role": "Social Reformer",
-    "lifespan": "1800 – 1890",
-    "achievements": [
-      "Authored the groundbreaking 1842 report on the Sanitary Condition of the Labouring Population.",
-      "Architect of the 1848 Public Health Act.",
-      "Campaigned tirelessly for state-funded drainage and sanitation systems."
-    ],
-    "significance": "Despite his abrasive personality and belief in the flawed miasma theory, his relentless campaign forced the British government to take responsibility for the health and living conditions of the urban poor."
+    "bio": "A Victorian social reformer whose 1842 report on the Sanitary Condition of the Labouring Population argued that disease was caused by bad air (miasma) and poor living conditions. His tireless campaigning eventually led to the 1848 Public Health Act.",
+    "image": "assets/edwin_chadwick.jpg"
   },
   {
-    "name": "Joseph Bazalgette",
-    "role": "Chief Engineer of London's Metropolitan Board of Works",
-    "lifespan": "1819 – 1891",
-    "achievements": [
-      "Designed and constructed London's monumental sewer network.",
-      "Built the Victoria, Albert, and Chelsea Embankments along the Thames.",
-      "Eliminated the 'Great Stink' of 1858."
-    ],
-    "significance": "His visionary engineering masterpiece transformed London's sanitation, drastically reduced cholera outbreaks, and established a blueprint for modern urban infrastructure across the globe."
+    "name": "Dr John Snow",
+    "role": "Physician & Epidemiologist",
+    "bio": "A pioneering Victorian physician who famously traced the source of the 1854 Broad Street cholera outbreak to a single contaminated public water pump. His work proved that cholera was a waterborne disease, fundamentally challenging the prevailing miasma theory.",
+    "image": "assets/john_snow.jpg"
+  },
+  {
+    "name": "Sir Joseph Bazalgette",
+    "role": "Chief Engineer",
+    "bio": "The brilliant Chief Engineer of London's Metropolitan Board of Works. Following the unbearable 'Great Stink' of 1858, he designed and constructed an extensive, revolutionary sewer network that fundamentally transformed London's sanitation and eliminated cholera.",
+    "image": "assets/joseph_bazalgette.jpg"
   },
   {
     "name": "Louis Pasteur",
-    "role": "Microbiologist and Chemist",
-    "lifespan": "1822 – 1895",
-    "achievements": [
-      "Published the Germ Theory of Disease in 1861.",
-      "Developed the process of pasteurization to kill harmful microbes.",
-      "Created vaccines for anthrax and rabies."
-    ],
-    "significance": "His groundbreaking scientific proof that microscopic organisms caused disease fundamentally revolutionized medicine, finally replacing the miasma theory and accelerating global sanitation efforts."
-  },
-  {
-    "name": "Charles Dickens",
-    "role": "Novelist and Social Critic",
-    "lifespan": "1812 – 1870",
-    "achievements": [
-      "Authored iconic novels such as Oliver Twist and Bleak House.",
-      "Vividly exposed the squalor and poverty of industrial London.",
-      "Campaigned for social reform through his journalism."
-    ],
-    "significance": "His immense popularity and emotive storytelling forced middle and upper-class Victorians to confront the horrific realities of urban slums, generating powerful public pressure for sanitary reform."
+    "role": "Chemist & Microbiologist",
+    "bio": "A French chemist whose groundbreaking experiments in 1861 proved the Germ Theory of Disease. By demonstrating that microorganisms cause decay and illness, he finally discredited the miasma theory and revolutionized modern public health and sanitation.",
+    "image": "assets/louis_pasteur.jpg"
   }
 ]

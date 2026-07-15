@@ -48,20 +48,35 @@
           "model": "Israel won due to superior organization, unified leadership, and critical material support. While the Arab states were deeply divided by political rivalries and failed to commit their full military strength, Israel mobilized its entire society, creating a unified IDF command. The crucial one-month UN truce allowed Israel to import modern Czech weapons, overturning the initial military imbalance and allowing a highly motivated force to outnumber and defeat the fragmented Arab coalition."
         },
         "do_now": {
-          "items": [
+          "type": "timeline",
+          "events": [
             {
-              "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
-              "answer": "Arthur Balfour. He promised British support for a 'national home' for the Jewish people in Palestine."
+              "year": "1917",
+              "title": "Balfour Declaration",
+              "detail": "Britain promises a national home for the Jewish people."
             },
             {
-              "question": "How many Jewish people were systematically murdered during the Holocaust (1939-1945)?",
-              "answer": "6 million."
+              "year": "1920-1947",
+              "title": "British Mandate",
+              "detail": "Britain governs Palestine under League of Nations."
             },
             {
-              "question": "At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?",
-              "answer": "They were stuck in European Displaced Persons (DP) camps, seeking a new home."
+              "year": "1936-1939",
+              "title": "Arab Revolt",
+              "detail": "Violent uprising against British rule and Jewish immigration."
+            },
+            {
+              "year": "1939",
+              "title": "White Paper",
+              "detail": "Britain restricts Jewish immigration to Palestine."
+            },
+            {
+              "year": "1945",
+              "title": "Post-WWII Crisis",
+              "detail": "Holocaust survivors seek refuge; Jewish Insurgency begins."
             }
-          ]
+          ],
+          "prediction_question": "Predict: Based on these events, why did the British finally decide to give up the mandate in 1947?"
         },
         "primary_source": {
           "title": "Source A: The Ruins of the King David Hotel, 1946",
@@ -75,7 +90,8 @@
               "model": "The student should circle the destroyed southern wing."
             }
           ],
-          "teacher_note": "Ensure students understand this was a turning point. The sheer destruction and loss of life broke British resolve to maintain the Mandate."
+          "teacher_note": "Ensure students understand this was a turning point. The sheer destruction and loss of life broke British resolve to maintain the Mandate.",
+          "model_answer": "Students should circle the destroyed southern wing, connecting the massive structural damage to the Irgun's strategy of targeting the British administrative and military headquarters to force a British withdrawal."
         },
         "flashcards": [
           {
@@ -111,7 +127,8 @@
         },
         "historians_corner": {
           "title": "The Debate over Plan Dalet",
-          "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+          "author_context": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
+          "extract": "The debate centers on whether the actions taken were premeditated strategy or desperate reactions to wartime chaos."
         },
         "gcse_task": {
           "sources": [
@@ -4128,7 +4145,8 @@
         "Signed the historic 1993 Oslo Accords with Yasser Arafat.",
         "Awarded the Nobel Peace Prize in 1994."
       ],
-      "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination."
+      "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination.",
+      "image": "assets/yitzhak_rabin.jpg"
     },
     {
       "name": "Yasser Arafat",
@@ -4139,7 +4157,8 @@
         "Recognized Israel's right to exist in 1988, shifting the PLO's diplomatic stance.",
         "Signed the 1993 Oslo Accords and became the first President of the Palestinian Authority."
       ],
-      "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s."
+      "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s.",
+      "image": "assets/yasser_arafat.jpg"
     },
     {
       "name": "Bill Clinton",
@@ -4149,7 +4168,8 @@
         "Brokered and hosted the signing of the 1993 Oslo Accords.",
         "Hosted the 2000 Camp David Summit in an attempt to reach a final status agreement."
       ],
-      "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict."
+      "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict.",
+      "image": "assets/bill_clinton.jpg"
     },
     {
       "name": "Anwar Sadat",
@@ -4160,7 +4180,8 @@
         "Became the first Arab leader to officially visit Israel (1977).",
         "Signed the 1978 Camp David Accords, securing peace with Israel."
       ],
-      "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East."
+      "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East.",
+      "image": "assets/anwar_sadat.jpg"
     },
     {
       "name": "Menachem Begin",
@@ -4171,7 +4192,8 @@
         "Signed the 1978 Camp David Accords with Egypt.",
         "Authorized the 1982 invasion of Lebanon."
       ],
-      "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial."
+      "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial.",
+      "image": "assets/menachem_begin.jpeg"
     },
     {
       "name": "Jimmy Carter",
@@ -4181,7 +4203,8 @@
         "Brokered the 1978 Camp David Accords.",
         "Championed human rights as a core pillar of US foreign policy."
       ],
-      "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East."
+      "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East.",
+      "image": "assets/jimmy_carter.jpg"
     },
     {
       "name": "Ariel Sharon",
@@ -4192,7 +4215,8 @@
         "Led Israel during the Second Intifada.",
         "Engineered the unilateral disengagement from Gaza in 2005."
       ],
-      "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy."
+      "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy.",
+      "image": "assets/ariel_sharon.webp"
     }
   ]
 }

@@ -1,0 +1,187 @@
+
+========== AUDITING undefined ==========
+
+--- Lesson 1: Lesson 1: The Franco-Prussian War ---
+[DO NOW] Type: timeline
+  - Event: 1871 - The Unification of Germany
+  - Event: 1897 - Imperial Rivalries
+  - Event: 1906 - The Naval Arms Race
+  - Event: 1907 - Encirclement & Alliances
+  - Event: June 1914 - The Spark in Sarajevo
+[PRIMARY SOURCE] assets/was_germany_unification.png
+  - Caption: <strong>What is this source showing?</strong> This painting depicts the official birth of the unifie
+  - Question: Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?
+  - Task: Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.
+  - Task: Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.
+  - Model Answer: MISSING
+[NARRATIVE BLOCK 1] Text: "There was no country called Germany until 1871. Instead, central Europe was a fr..."
+  - Task: Q5: To what extent did the maps of central Europe fundamentally change between 1862 and 1871? Use the term "North German Confederation" in your answer. (P1)
+[NARRATIVE BLOCK 2] Text: "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holida..."
+  - Task: Q1: Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P2)
+[NARRATIVE BLOCK 3] Text: "Prussia's military strategy relied on two distinct advantages. First, they utili..."
+  - Task: Q2: Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P3)
+[NARRATIVE BLOCK 4] Text: "The war permanently transformed the balance of power. In a final, agonizing humi..."
+  - Task: Q3: List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty. (P4)
+[NARRATIVE BLOCK 5] Text: "Following the crushing defeat of France in 1871, German Chancellor Otto von Bism..."
+  - Task: Q4: Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term "nightmare" for European peace. (P5)
+[NARRATIVE BLOCK 6] Text: "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzyin..."
+[NARRATIVE BLOCK 7] Text: "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he d..."
+[HISTORIANS CORNER] Title: The 'Master Planner' Debate
+  - Author Context: MISSING
+  - Extract: MISSING
+  - Question: How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?
+[GCSE TASK] MISSING
+
+--- Lesson 2: Lesson 2: Imperial Rivalries ---
+[DO NOW] Type: questions
+  - Q: 1. Who was the first Emperor of the newly unified Germany in 1871?
+  - Q: 2. Which brilliant Chancellor united the German states?
+  - Q: 3. Which country was humiliatingly defeated in the Franco-Prussian War?
+  - Q: 4. What strategic border territory did Germany take in 1871?
+  - Q: 5. What is the French word for their desire for revenge?
+  - Q: 6. Explain how Bismarck used the Ems Telegram to trap France into a war.
+  - Q: 7. Detail the two military advantages the Prussian army possessed.
+  - Q: 8. PAST TOPIC: Why was the location of the German Empire's proclamation so humiliating for France?
+  - Q: 9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?
+  - Q: 10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?
+[PRIMARY SOURCE] assets/was_greedy_boy.png
+  - Caption: <strong>What is this source showing?</strong> This British cartoon satirizes Germany's Chancellor Ot
+  - Question: Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?
+  - Task: Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.
+  - Task: Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.
+  - Task: Q5: Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word "obstacle" or "encirclement" in your answer.
+  - Model Answer: MISSING
+[NARRATIVE BLOCK 1] Text: "By the turn of the 20th century, the Great Powers of Europe were locked in a fie..."
+  - Task: Q1: Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power. (P1)
+[NARRATIVE BLOCK 2] Text: "Great Britain possessed the vastest overseas empire in human history. Because Gr..."
+  - Task: Q2: Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871? (P2)
+[NARRATIVE BLOCK 3] Text: "The entire geopolitical landscape destabilized when Germany entered the race. Ha..."
+[NARRATIVE BLOCK 4] Text: "Germany rapidly seized territories across the globe, including the Cameroons, Ea..."
+  - Task: Q4: Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain. (P4)
+  - Task: Q3: What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a "place in the sun" for Germany? (P3 & P4)
+[NARRATIVE BLOCK 5] Text: "In 1904, Britain and France ended centuries of bitter rivalry by signing the Ent..."
+[NARRATIVE BLOCK 6] Text: "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroc..."
+[NARRATIVE BLOCK 7] Text: "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending..."
+[NARRATIVE BLOCK 8] Text: "<div style="background: white; padding: 20px; border-radius: 8px; border: 1px so..."
+[HISTORIANS CORNER] Title: The Primat der Innenpolitik
+  - Author Context: MISSING
+  - Extract: MISSING
+  - Question: Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.
+[GCSE TASK] MISSING
+
+--- Lesson 3: Lesson 3: The Naval Arms Race ---
+[DO NOW] Type: questions
+  - Q: 1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?
+  - Q: 2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.
+  - Q: 3. Why was the Franco-Russian Alliance a strategic disaster for Germany?
+  - Q: 4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.
+  - Q: 5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.
+  - Q: 6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.
+  - Q: 7. Who dismissed Otto von Bismarck in 1890?
+  - Q: 8. PAST TOPIC: What strategic territory did Germany take from France in 1871?
+  - Q: 9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?
+  - Q: 10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?
+[PRIMARY SOURCE] assets/was_dreadnought_blueprint.png
+  - Caption: <strong>What is this source showing?</strong> This is a technical naval diagram of HMS Dreadnought, 
+  - Question: Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?
+  - Task: Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.
+  - Model Answer: MISSING
+[NARRATIVE BLOCK 1] Text: "For nearly a century following the Battle of Trafalgar in 1805, Great Britain ha..."
+  - Task: Q1: Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy. (P1)
+[NARRATIVE BLOCK 2] Text: "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilh..."
+  - Task: Q2: Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct. (P2)
+  - Task: Q3: Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet. (P2)
+  - Task: Q5: Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany. (P1 & P2)
+[NARRATIVE BLOCK 3] Text: "British politicians were profoundly alarmed by Germany's actions. They believed ..."
+[NARRATIVE BLOCK 4] Text: "Britain's defensive response was to design and construct the most powerful warsh..."
+  - Task: Q4: Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships. (P4)
+[NARRATIVE BLOCK 5] Text: "This competitive race culminated in a highly strategic naval standoff. The Briti..."
+[NARRATIVE BLOCK 6] Text: "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Stand..."
+[NARRATIVE BLOCK 7] Text: "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, ..."
+[NARRATIVE BLOCK 8] Text: "Germany recognized the opportunity immediately. The naval race was no longer abo..."
+  - Task: Q6: Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P4 & P8)
+[HISTORIANS CORNER] Title: The Anglo-German Antagonism
+  - Author Context: MISSING
+  - Extract: MISSING
+  - Question: Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?
+[GCSE TASK] MISSING
+
+--- Lesson 4: Lesson 4: The Alliance System ---
+[DO NOW] Type: questions
+  - Q: 1. What revolutionary British battleship was launched in 1906?
+  - Q: 2. What was the 'Two-Power Standard'?
+  - Q: 3. Why did Germany feel it needed a massive high seas fleet?
+  - Q: 4. Explain how the invention of the Dreadnought ironically hurt British supremacy.
+  - Q: 5. What was the popular British slogan chanted by the public in 1909?
+  - Q: 6. Why did Britain feel their survival depended on massive naval supremacy?
+  - Q: 7. How did the Anglo-German naval race make war more likely?
+  - Q: 8. PAST TOPIC: What was the name of Kaiser Wilhelm II's aggressive foreign policy?
+  - Q: 9. PAST TOPIC: Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.
+  - Q: 10. PAST TOPIC: Evaluate how the 'Scramble for Africa' increased tensions in Europe.
+[PRIMARY SOURCE] assets/was_military_matrix.png
+  - Caption: <strong>What is this source showing?</strong> This cartoon shows how the complex web of alliances dr
+  - Question: Enquiry: Study the intertwined hands and figures in this map. What does it suggest about how a local conflict might spread?
+  - Task: Task 1: Identify which figure represents Germany and explain how you know.
+  - Task: Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.
+  - Model Answer: MISSING
+[NARRATIVE BLOCK 1] Text: "As European empires expanded and resources grew tightly contested, nations looke..."
+[NARRATIVE BLOCK 2] Text: "By 1907, the European alliance system had solidified into two balanced groups. O..."
+  - Task: Q1: Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907. (P2)
+  - Task: Q2: Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war. (P2)
+[NARRATIVE BLOCK 3] Text: "However, the alliance system did not create a sense of safety; instead, it bred ..."
+  - Task: Q4: According to Germany's military leaders, explain why a European war was considered "inevitable and necessary" rather than avoidable. (P3)
+[NARRATIVE BLOCK 4] Text: "Concurrently, the nature of war was becoming highly industrialization-driven. Al..."
+  - Task: Q3: Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization. (P4)
+  - Task: Q5: Explain how the transformation of Europe into two "armed camps" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. (P4)
+[NARRATIVE BLOCK 5] Text: "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted ..."
+[NARRATIVE BLOCK 6] Text: "This 'Blank Check' is one of the most debated actions in modern history. Some hi..."
+[NARRATIVE BLOCK 7] Text: "However, other historians argue that the German High Command deliberately used t..."
+[HISTORIANS CORNER] Title: The 'Powder Keg' Inevitability
+  - Author Context: MISSING
+  - Extract: MISSING
+  - Question: Do you agree with Richard Evans that war was "inevitable" in the Balkans, or could diplomacy have dismantled the "doomsday machine"?
+[GCSE TASK] MISSING
+
+--- Lesson 5: Lesson 5: The Spark in Sarajevo ---
+[DO NOW] Type: questions
+  - Q: 1. Which three countries made up the Triple Entente?
+  - Q: 2. Which three countries made up the Triple Alliance?
+  - Q: 3. Explain the theoretical logic of how the alliance system was supposed to keep peace.
+  - Q: 4. Why did the alliance system actually increase paranoia instead of security?
+  - Q: 5. What military plan did Germany create to avoid a long two-front war?
+  - Q: 6. Which neutral country did the Schlieffen Plan require invading?
+  - Q: 7. What feeling of being surrounded by enemies haunted German planners?
+  - Q: 8. PAST TOPIC: What revolutionary British battleship was launched in 1906?
+  - Q: 9. PAST TOPIC: Explain how the invention of the Dreadnought ironically hurt British supremacy.
+  - Q: 10. PAST TOPIC: How did the Anglo-German naval race make war more likely?
+[PRIMARY SOURCE] assets/was_boiling_point.png
+  - Caption: <strong>What is this source showing?</strong> This famous cartoon represents the Balkans region as a
+  - Question: Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?
+  - Task: Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.
+  - Task: Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.
+  - Model Answer: MISSING
+[NARRATIVE BLOCK 1] Text: "The region of south-east Europe known as the Balkans had once been ruled securel..."
+[NARRATIVE BLOCK 2] Text: "For the neighboring empire of Austria-Hungary, this <strong></strong> was an abs..."
+  - Task: Q1: Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire. (P2)
+[NARRATIVE BLOCK 3] Text: "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Se..."
+  - Task: Q2: Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke. (P3)
+[NARRATIVE BLOCK 4] Text: "The initial assassination attempts failed completely. One terrorist couldn't get..."
+  - Task: Q3: Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war between alliances. (P4)
+[NARRATIVE BLOCK 5] Text: "The car ground to a halt a fraction of a second away from where 19-year-old Blac..."
+  - Task: Q4: Contrast the historical argument of Tony Howarth (Interpretation 3), who blames competing nationalist ideologies, with Germany's military leaders who blame external threats. (P5)
+[NARRATIVE BLOCK 6] Text: "This local double-murder triggered a rapid, unstoppable countdown to global war...."
+[NARRATIVE BLOCK 7] Text: "The 37 days between the assassination in Sarajevo and the outbreak of war are kn..."
+  - Task: Q5: Explain why the assassination in Sarajevo acted merely as a contributory trigger to set off a general explosion, rather than being the lone necessary cause of the war. (P7)
+[NARRATIVE BLOCK 8] Text: "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of de..."
+  - Task: Question 3a: How useful are Source A and Source B together to a historian researching why the European alliance system failed to maintain peace in July 1914? (P8)
+[NARRATIVE BLOCK 9] Text: "Ultimately, the crisis revealed a terrifying reality: the civilian politicians a..."
+  - Task: Question 3b: What is the main difference between Interpretation 1 and Interpretation 2 regarding who or what was to blame for starting the First World War? (P9)
+[NARRATIVE BLOCK 10] Text: "When war broke out in 1914, it was not just a European conflict. Because of the ..."
+  - Task: Question 3c: Suggest why Interpretation 1 and Interpretation 2 give different views on the causes of the war. (P10)
+[NARRATIVE BLOCK 11] Text: "<div style="background: white; padding: 20px; border-radius: 8px; border: 1px so..."
+  - Task: Enquiry Task: Explain how the creation of Poland and Czechoslovakia in 1919 acted as a strategic boundary buffer between Germany and the newly formed Soviet Union. (P11)
+[HISTORIANS CORNER] Title: The Fischer Controversy
+  - Author Context: MISSING
+  - Extract: MISSING
+  - Question: How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?
+[GCSE TASK] MISSING

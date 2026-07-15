@@ -44,22 +44,26 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
       card.style.boxShadow = 'none';
     };
 
-    const imgContainer = document.createElement('div');
-    imgContainer.style.width = '100%';
-    imgContainer.style.height = '280px';
-    imgContainer.style.background = 'var(--bg-card)';
-    imgContainer.style.display = 'flex';
-    imgContainer.style.alignItems = 'center';
-    imgContainer.style.justifyContent = 'center';
-    imgContainer.style.borderBottom = '1px solid var(--border-glass)';
-    imgContainer.style.overflow = 'hidden';
+    if (person.image) {
+      const imgContainer = document.createElement('div');
+      imgContainer.style.width = '100%';
+      imgContainer.style.height = '280px';
+      imgContainer.style.background = 'var(--bg-card)';
+      imgContainer.style.display = 'flex';
+      imgContainer.style.alignItems = 'center';
+      imgContainer.style.justifyContent = 'center';
+      imgContainer.style.borderBottom = '1px solid var(--border-glass)';
+      imgContainer.style.overflow = 'hidden';
 
-    const img = document.createElement('img');
-    img.src = getAssetUrl(person.image);
-    img.style.width = '100%';
-    img.style.height = '100%';
-    img.style.objectFit = 'contain';
-    imgContainer.appendChild(img);
+      const img = document.createElement('img');
+      img.src = getAssetUrl(person.image);
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      img.onerror = () => { imgContainer.style.display = 'none'; };
+      imgContainer.appendChild(img);
+      card.appendChild(imgContainer);
+    }
 
     const info = document.createElement('div');
     info.style.padding = '20px';
@@ -79,18 +83,36 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
     role.style.textTransform = 'uppercase';
     role.style.letterSpacing = '1px';
 
-    const bio = document.createElement('p');
-    bio.textContent = person.bio;
+    const bio = document.createElement('div');
     bio.style.margin = '0';
     bio.style.color = 'var(--text-main)';
     bio.style.fontSize = '0.95rem';
     bio.style.lineHeight = '1.5';
 
+    if (person.bio) {
+      bio.textContent = person.bio;
+    } else if (person.significance) {
+      bio.innerHTML = `<strong>Significance:</strong> ${person.significance}`;
+      if (person.achievements && person.achievements.length > 0) {
+        bio.innerHTML += `<br><br><strong>Achievements:</strong><ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>`;
+      }
+    }
+
     info.appendChild(name);
+    
+    if (person.lifespan) {
+      const life = document.createElement('p');
+      life.textContent = person.lifespan;
+      life.style.fontSize = '0.85rem';
+      life.style.color = 'var(--text-muted)';
+      life.style.marginTop = '-10px';
+      life.style.marginBottom = '10px';
+      info.appendChild(life);
+    }
+
     info.appendChild(role);
     info.appendChild(bio);
 
-    card.appendChild(imgContainer);
     card.appendChild(info);
 
     grid.appendChild(card);

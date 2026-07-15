@@ -1,0 +1,101 @@
+
+========== AUDITING undefined ==========
+
+--- Lesson 1 ---
+[DO NOW] Q: <div style="display: flex; align-items: center; gap: 15px;"><img src="assets/card_balfour.png" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>
+[DO NOW] Q: How many Jewish people were systematically murdered during the Holocaust (1939-1945)?
+[DO NOW] Q: At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?
+[PRIMARY SOURCE] Model: MISSING
+[PS TASK] Task 1: Circle the area of the building that housed the British military and administrative headquarters.
+[HISTORIANS CORNER] Has Extract? false
+
+--- Lesson 2 ---
+[DO NOW] Q: In what month and year did the British Mandate officially end and the State of Israel get declared?
+[DO NOW] Q: Which extreme Jewish paramilitary group carried out the bombing of the King David Hotel in July 1946?
+[DO NOW] Q: What was the name of the British Foreign Secretary who ultimately decided to hand the Palestine Mandate over to the United Nations in 1947?
+[DO NOW] Q: Under UN Resolution 181 (the 1947 Partition Plan), what percentage of Palestine was allocated to the proposed Jewish state, and what was to be the status of Jerusalem?
+[DO NOW] Q: Give two reasons why the Arab League and Palestinian leaders rejected UN Resolution 181.
+[DO NOW] Q: What was 'Plan Dalet' (Plan D), implemented by the Haganah in March 1948, and why is it a subject of intense historical debate?
+[DO NOW] Q: Name the five sovereign Arab states that launched a coordinated invasion of Israel on 15 May 1948.
+[DO NOW] Q: Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor.
+[DO NOW] Q: Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight.
+[DO NOW] Q: In a narrative account of the end of the British Mandate, how would you link the bombing of the King David Hotel to UN Resolution 181?
+
+--- Lesson 3 ---
+[DO NOW] Q: What is the historical name given to the 1949 armistice line that established Israel's borders after its victory in the first Arab-Israeli War?
+[DO NOW] Q: Which neighbouring Arab country occupied and annexed the West Bank and East Jerusalem following the 1948–49 war?
+[DO NOW] Q: What Arabic term, meaning "The Catastrophe," do Palestinians use to describe the 1948–49 war and its immediate consequences?
+[DO NOW] Q: Approximately how many Palestinian Arabs became refugees as a result of the 1948–49 war, and what agency was set up by the UN in December 1949 to support them?
+[DO NOW] Q: Give one reason why Israel strictly denied Palestinian refugees the "right of return," and one reason why Arab host states (except Jordan) refused to permanently integrate these refugees.
+[DO NOW] Q: Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950.
+[DO NOW] Q: What was the value of the vital economic grant given to Israel by the US government in 1949, and what was the further amount provided by 1960?
+[DO NOW] Q: Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice.
+[DO NOW] Q: What were the Fedayeen, and how did Israel's official reprisal policy under David Ben-Gurion attempt to deal with them?
+[DO NOW] Q: Write an analytical sentence linking the 1948-49 Arab-Israeli War to the creation of the Israeli Defence Forces (IDF).
+
+--- Lesson 4 ---
+[DO NOW] Q: Who became the President of Egypt in 1954 and positioned himself as the leading champion of Pan-Arabism?
+[DO NOW] Q: What was the name of the highly secret agreement signed in October 1956 where Britain, France, and Israel planned the tripartite invasion of Egypt?
+[DO NOW] Q: Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956.
+[DO NOW] Q: What was the 1955 Gaza Raid, and why was it a turning point for Egyptian defense policy?
+[DO NOW] Q: How did Nasser successfully bypass Western weapons restrictions in September 1955 to rearm Egypt?
+
+--- Lesson 5 ---
+[DO NOW] Q: What major political organization was established at the Cairo Conference in January 1964 with the backing of the Arab League, and what was its primary objective?
+[DO NOW] Q: <div style="display: flex; align-items: center; gap: 15px;"><img src="assets/card_arafat.png" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;"> <span>Who is this leader, and what organisation did he take over in 1969?</span></div>
+[DO NOW] Q: Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions.
+[DO NOW] Q: What was the Samu Raid of November 1966, and how did it affect King Hussein of Jordan's position?
+[DO NOW] Q: What major air battle occurred on 7 April 1967, and how did it affect Syrian military morale?
+[DO NOW] Q: How did the Soviet Union act as a catalyst for the May 1967 crisis?
+[DO NOW] Q: Detail three specific actions taken by Gamal Abdel Nasser in May 1967 that Israel considered a direct casus belli (act of war).
+[DO NOW] Q: What was Operation Focus, launched on 5 June 1967, and why was it so critical to the outcome of the war?
+[DO NOW] Q: List the territories captured by Israel during the Six Day War and identify the nation from which each was taken.
+[DO NOW] Q: Write an analytical sentence linking the May 1967 Crisis to the ultimate outcome of the Six Day War.
+
+--- Lesson 6 ---
+[DO NOW] Q: What major United Nations Security Council Resolution was passed on 22 November 1967 to establish the guiding principles of a 'land for peace' formula?
+[DO NOW] Q: Name the radical, Marxist-leaning Palestinian group founded by George Habash that pioneered international aviation terrorism in the early 1970s.
+[DO NOW] Q: Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation.
+[DO NOW] Q: What Arabic term refers to the Arab League Summit of August 1967, and what were the famous declarations issued there?
+[DO NOW] Q: What was the immediate result of the Dawson's Field hijackings of September 1970 for the PLO's position in Jordan?
+[DO NOW] Q: To which country did the PLO relocate its central headquarters after its expulsion from Jordan in 1970–71?
+[DO NOW] Q: Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded.
+[DO NOW] Q: How did Israel's capture of the Golan Heights, the West Bank, the Gaza Strip, and the Sinai Peninsula in 1967 initially improve its military security?
+[DO NOW] Q: Why did the PLO reject UN Resolution 242?
+[DO NOW] Q: Write an analytical sentence linking the outcome of the Six Day War to the rise of international Palestinian terrorism.
+
+--- Lesson 7 ---
+[DO NOW] Q: Who succeeded Gamal Abdel Nasser as President of Egypt following his death in September 1970?
+[DO NOW] Q: On which major Jewish holy day did Egypt and Syria launch their coordinated surprise attack in October 1973?
+[DO NOW] Q: What was the name of the massive sand-wall fortification built by Israel along the east bank of the Suez Canal that Egyptian forces successfully overran?
+[DO NOW] Q: Which global organisation, dominated by Arab oil-producing countries, implemented the 'oil weapon' in October 1973 to pressure Western nations?
+[DO NOW] Q: What was the static, attrition-based conflict along the Suez Canal from 1969 to 1970 called, and which superpower provided Egypt with 15,000 advisors and SAM-3 missiles during it?
+[DO NOW] Q: Why did Anwar Sadat make the dramatic decision to expel 15,000 Soviet military advisors from Egypt in July 1972?
+[DO NOW] Q: Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War.
+[DO NOW] Q: What were the two primary targets of Egypt's maritime blockade established in the years immediately following the 1949 armistice?
+[DO NOW] Q: Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973.
+[DO NOW] Q: Write an analytical sentence linking the outcome of the Yom Kippur War to the emergence of diplomatic negotiations in the mid-1970s.
+
+--- Lesson 8 ---
+[DO NOW] Q: Who was the US Secretary of State who pioneered the stage-by-step mediation strategy known as 'shuttle diplomacy' following the 1973 Yom Kippur War?
+[DO NOW] Q: In what month and year did Egypt officially reopen the Suez Canal to international shipping, exactly eight years to the day after its closure?
+[DO NOW] Q: Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy.
+[DO NOW] Q: Which right-wing, revisionist Zionist leader won the May 1977 Israeli election, ending nearly thirty years of Labor Party dominance?
+[DO NOW] Q: Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo.
+[DO NOW] Q: Name the two distinct framework agreements that comprised the Camp David Accords signed on 17 September 1978.
+[DO NOW] Q: Detail the primary bilateral terms of the Treaty of Washington signed on 26 March 1979.
+[DO NOW] Q: How did the wider Arab world react to Egypt signing a separate peace treaty with Israel in 1979?
+[DO NOW] Q: Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements.
+[DO NOW] Q: Using a relative clause and an analytical linking phrase, write a single sentence showing how the 1973 Oil Crisis historically connected to the Treaty of Washington (1979).
+
+--- Lesson 9 ---
+[DO NOW] Q: What was the famous metaphor Yasser Arafat used in his historic 1974 address to the United Nations General Assembly?
+[DO NOW] Q: What major diplomatic status did the UN General Assembly award the PLO under Resolution 3236 following Arafat's speech?
+[DO NOW] Q: Why did the PLO choose to relocate its central headquarters and fighters to Lebanon after being expelled from Jordan in 1970–71?
+[DO NOW] Q: What was 'Fatahland,' and how did its existence affect northern Israeli security?
+[DO NOW] Q: Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon.
+[DO NOW] Q: Following the Siege of Beirut in August 1982, where were Yasser Arafat and the PLO leadership evacuated to under international supervision?
+[DO NOW] Q: Why did the Israeli Kahan Commission (1983) find Defense Minister Ariel Sharon 'indirectly responsible' for the Sabra and Shatila massacre?
+[DO NOW] Q: What spontaneous event in December 1987 served as the immediate catalyst for the outbreak of the First Palestinian Intifada?
+[DO NOW] Q: Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally.
+[DO NOW] Q: Write an analytical sentence linking the First Palestinian Intifada to the emergence of Hamas.

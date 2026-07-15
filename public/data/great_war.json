@@ -95,7 +95,8 @@
               "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
             }
           ],
-          "model": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
+          "model": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914.",
+          "model_answer": "Students should identify Kaiser Wilhelm and Bismarck in the center, and note the location is Versailles, which was chosen to deliberately humiliate the defeated French."
         },
         "flashcards": [
           {
@@ -123,25 +124,18 @@
         },
         "historians_corner": {
           "title": "The 'Master Planner' Debate",
-          "text": "Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
           "stretch_question": "How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?",
-          "stretch_model": "Traditional historians argue Bismarck provoked France deliberately to unite Germany. However, Taylor challenges this by suggesting Bismarck didn't have a grand masterplan; instead, he was just incredibly skilled at reacting to events (like the Spanish succession crisis) and twisting them to Germany's advantage at the last minute."
+          "stretch_model": "Traditional historians argue Bismarck provoked France deliberately to unite Germany. However, Taylor challenges this by suggesting Bismarck didn't have a grand masterplan; instead, he was just incredibly skilled at reacting to events (like the Spanish succession crisis) and twisting them to Germany's advantage at the last minute.",
+          "author_context": "Historical interpretations differ on this topic. Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
+          "extract": "Historians remain deeply divided on the underlying causes and exact sequence of events, highlighting the complexity of early 20th-century diplomacy."
         },
         "gcse_task": {
-          "sources": [
-            {
-              "type": "visual",
-              "src": "assets/alsace_lorraine_simple_map.svg",
-              "title": "Source A: Map of Alsace-Lorraine, annexed by Germany in 1871."
-            },
-            {
-              "type": "written",
-              "text": "“France will never forgive us for taking Alsace-Lorraine. We must ensure she never finds an ally to help her take it back.”",
-              "title": "Source B: Extract from a private letter written by Otto von Bismarck, 1872."
-            }
-          ],
-          "topic": "the reasons for French hatred of Germany after 1871",
-          "model": "Source A is highly useful as it visually proves the strategic and economic loss of Alsace-Lorraine to Germany. Its origin as a factual map makes the content reliable. Source B is also highly useful; as a private letter from Bismarck (the Chancellor), it provides honest insight into Germany's awareness of French desire for 'revanche', giving us the motive for Bismarck's future alliance system. Together, they explain both the geographic cause of the hatred and the political consequences."
+          "question": "GCSE Practice: Write a narrative account analysing the key events of Lesson 1.",
+          "structure": [
+            "Write two chronological paragraphs.",
+            "Use connective phrases like 'This led to...' or 'Consequently...'",
+            "Include specific historical details (dates, names, places)."
+          ]
         },
         "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
         "learning_objectives": {
@@ -247,7 +241,7 @@
         "sources": [
           {
             "title": "Map A: Partition of Africa (1914)",
-            "src": "assets/map_lesson2.png",
+            "src": "https://placehold.co/600x400/eeeeee/333333?text=Simplified+Map+of+Africa",
             "caption": ""
           },
           {
@@ -350,7 +344,8 @@
               "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
             }
           ],
-          "model": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire."
+          "model": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire.",
+          "model_answer": "Students should analyze the Kaiser's greedy expression and posture over Africa, contrasting it with the perceived threat this posed to the established British Empire."
         },
         "flashcards": [
           {
@@ -378,25 +373,18 @@
         },
         "historians_corner": {
           "title": "The Primat der Innenpolitik",
-          "text": "Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
           "stretch_question": "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
-          "stretch_model": "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms."
+          "stretch_model": "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms.",
+          "author_context": "Historical interpretations differ on this topic. Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
+          "extract": "Historians remain deeply divided on the underlying causes and exact sequence of events, highlighting the complexity of early 20th-century diplomacy."
         },
         "gcse_task": {
-          "sources": [
-            {
-              "type": "visual",
-              "src": "assets/was_greedy_boy.png",
-              "title": "Source A: A British political cartoon from 1897 showing Kaiser Wilhelm II."
-            },
-            {
-              "type": "written",
-              "text": "“We do not want to put anyone in the shade, but we too demand our place in the sun.”",
-              "title": "Source B: Speech by German Foreign Minister Bernhard von Bülow to the Reichstag, 1897."
-            }
-          ],
-          "topic": "the impact of Weltpolitik on international relations",
-          "model": "Source A is useful for showing the British perception of Weltpolitik; the cartoon's purpose is to mock Wilhelm II as greedy, demonstrating the growing tension between Britain and Germany. Source B is useful for understanding the German intent behind Weltpolitik; as a public speech to the Reichstag, its purpose is to rally domestic support for empire-building. Together they show how German ambition directly caused British anxiety."
+          "question": "GCSE Practice: Write a narrative account analysing the key events of Lesson 2.",
+          "structure": [
+            "Write two chronological paragraphs.",
+            "Use connective phrases like 'This led to...' or 'Consequently...'",
+            "Include specific historical details (dates, names, places)."
+          ]
         },
         "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
         "learning_objectives": {
@@ -585,7 +573,8 @@
               "model": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
             }
           ],
-          "model": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete."
+          "model": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete.",
+          "model_answer": "Students should draw arrows to the main gun turrets and note that their massive range (up to 20 miles) and the ship's speed made all older battleships completely obsolete overnight."
         },
         "flashcards": [
           {
@@ -613,25 +602,18 @@
         },
         "historians_corner": {
           "title": "The Anglo-German Antagonism",
-          "text": "Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
           "stretch_question": "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
-          "stretch_model": "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival."
+          "stretch_model": "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival.",
+          "author_context": "Historical interpretations differ on this topic. Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
+          "extract": "Historians remain deeply divided on the underlying causes and exact sequence of events, highlighting the complexity of early 20th-century diplomacy."
         },
         "gcse_task": {
-          "sources": [
-            {
-              "type": "visual",
-              "src": "assets/was_dreadnought_blueprint.png",
-              "title": "Source A: Official technical blueprint of HMS Dreadnought, 1906."
-            },
-            {
-              "type": "written",
-              "text": "“We want eight, and we won't wait!”",
-              "title": "Source B: Popular British political slogan chanted by the public in 1909."
-            }
-          ],
-          "topic": "the effects of the Anglo-German naval arms race",
-          "model": "Source A is useful for showing the technological leap that triggered the arms race; its origin as an official blueprint makes it highly reliable evidence of the ship's massive guns. Source B is highly useful for showing the psychological impact of the arms race on the British public; its purpose was to pressure the government to build more ships. Together, they show how technological advances fueled public panic."
+          "question": "GCSE Practice: Write a narrative account analysing the key events of Lesson 3.",
+          "structure": [
+            "Write two chronological paragraphs.",
+            "Use connective phrases like 'This led to...' or 'Consequently...'",
+            "Include specific historical details (dates, names, places)."
+          ]
         },
         "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
         "learning_objectives": {
@@ -843,7 +825,8 @@
               "model": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
             }
           ],
-          "model": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war."
+          "model": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war.",
+          "model_answer": "Students should point out how the figures are physically tied together, demonstrating that the rigid alliance system meant a small conflict involving one nation would inevitably drag all the others into war."
         },
         "flashcards": [
           {
@@ -871,25 +854,18 @@
         },
         "historians_corner": {
           "title": "The 'Powder Keg' Inevitability",
-          "text": "Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.",
           "stretch_question": "Do you agree with Richard Evans that war was \"inevitable\" in the Balkans, or could diplomacy have dismantled the \"doomsday machine\"?",
-          "stretch_model": "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started."
+          "stretch_model": "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started.",
+          "author_context": "Historical interpretations differ on this topic. Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.",
+          "extract": "Historians remain deeply divided on the underlying causes and exact sequence of events, highlighting the complexity of early 20th-century diplomacy."
         },
         "gcse_task": {
-          "sources": [
-            {
-              "type": "visual",
-              "src": "assets/balkans_1914_simple_map.png",
-              "title": "Source A: Map of the Balkans showing the expansion of Serbia after 1913."
-            },
-            {
-              "type": "written",
-              "text": "“Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”",
-              "title": "Source B: Diary entry of the Austro-Hungarian Chief of Staff, Conrad von Hötzendorf, 1913."
-            }
-          ],
-          "topic": "the threat posed by Serbia to Austria-Hungary",
-          "model": "Source A is useful because it visually demonstrates how Serbia nearly doubled in size after the Balkan Wars, making it a much larger physical threat. Source B is extremely useful because, as a private diary entry, it reveals the genuine panic and aggressive intentions of the Austro-Hungarian military command without political censorship. Together, they prove that Austria-Hungary felt an existential need to destroy Serbia."
+          "question": "GCSE Practice: Write a narrative account analysing the key events of Lesson 4.",
+          "structure": [
+            "Write two chronological paragraphs.",
+            "Use connective phrases like 'This led to...' or 'Consequently...'",
+            "Include specific historical details (dates, names, places)."
+          ]
         },
         "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
         "learning_objectives": {
@@ -1094,7 +1070,8 @@
               "model": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
             }
           ],
-          "model": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war."
+          "model": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war.",
+          "model_answer": "Students should identify the escaping steam as extreme Balkan nationalism and note that the European leaders are desperately trying to sit on the pot to prevent a massive explosion of war."
         },
         "flashcards": [
           {
@@ -1121,26 +1098,19 @@
           "share": "Be ready to defend your group's chosen turning point to the class."
         },
         "historians_corner": {
-          "title": "The Fischer Controversy",
-          "text": "In 1961, German historian Fritz Fischer shocked the world by arguing that Germany deliberately caused WWI to achieve world power status. He pointed to the 'Blank Cheque' as evidence that Germany actively pushed Austria into war, knowing it would provoke Russia.",
+          "title": "The Primacy of Domestic Politics",
           "stretch_question": "How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?",
-          "stretch_model": "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe."
+          "stretch_model": "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe.",
+          "author_context": "While many historians focus on international alliances, historians like Eckart Kehr argue that Germany's foreign policy was actually driven by domestic fears. This theory is known as the 'Primacy of Domestic Politics' (Primat der Innenpolitik).",
+          "extract": "Kehr suggested that the Kaiser and conservative elites were terrified of the growing socialist movement inside Germany. To distract the working class from a potential revolution at home, the government launched an aggressive, nationalist foreign policy—a 'flight forward'—to unite the country behind the Kaiser."
         },
         "gcse_task": {
-          "sources": [
-            {
-              "type": "visual",
-              "src": "assets/was_boiling_point.png",
-              "title": "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912."
-            },
-            {
-              "type": "written",
-              "text": "“You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”",
-              "title": "Source B: The 'Blank Cheque' telegram sent from Germany to Austria-Hungary, 5 July 1914."
-            }
-          ],
-          "topic": "the causes of the outbreak of World War I",
-          "model": "Source A is useful for showing the long-term tension in the Balkans; its purpose is to warn the British public that the 'Great Powers' were struggling to keep the peace. Source B is crucial for understanding the short-term trigger; as an official diplomatic telegram, it proves that Germany gave Austria-Hungary unconditional support, which gave Austria the confidence to attack Serbia. Together, they explain why a regional crisis exploded into a world war."
+          "question": "GCSE Practice: Write a narrative account analysing the key events of Lesson 5.",
+          "structure": [
+            "Write two chronological paragraphs.",
+            "Use connective phrases like 'This led to...' or 'Consequently...'",
+            "Include specific historical details (dates, names, places)."
+          ]
         },
         "learning_objective": "To understand How did a wrong turn in Sarajevo trigger a world war?",
         "learning_objectives": {
@@ -1685,7 +1655,8 @@
         "Expanded the German Imperial Navy, sparking an arms race with Britain.",
         "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
       ],
-      "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War."
+      "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+      "image": "assets/card_wilhelm.png"
     },
     {
       "name": "Tsar Nicholas II",
@@ -1696,7 +1667,8 @@
         "Formed an alliance with France to counter the Triple Alliance.",
         "Ordered the mobilization of the Russian army in July 1914."
       ],
-      "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war."
+      "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+      "image": "assets/card_nicholas.png"
     },
     {
       "name": "Gavrilo Princip",
@@ -1707,7 +1679,8 @@
         "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
         "Fired the fatal shots in Sarajevo on June 28, 1914."
       ],
-      "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I."
+      "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+      "image": "assets/card_princip.png"
     },
     {
       "name": "Count Leopold Berchtold",
@@ -1729,7 +1702,8 @@
         "Authored the famous 'Schlieffen Plan' for a two-front war.",
         "Prioritized military strategy over diplomatic consequences."
       ],
-      "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war."
+      "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+      "image": "assets/alfred_von_schlieffen.jpg"
     }
   ]
 }

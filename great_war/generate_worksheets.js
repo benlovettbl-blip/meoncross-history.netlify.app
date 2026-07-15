@@ -125,21 +125,10 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
   `;
 
 
-  function assignQuestionNumbers(lesson) {
-    let q = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
-    if (lesson.narrative_blocks) {
-      lesson.narrative_blocks.forEach(block => {
-        if (block.tasks) block.tasks.forEach(task => { task.qNum = q++; console.log("Numbered task:", task.text.substring(0, 30)); });
-      });
-    }
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
-  }
+  
 
 chunkLessons.forEach((lesson, lessonIndex) => {
-  assignQuestionNumbers(lesson);
+  
   let lessonNumStr = `KT${ktNum}.${lessonIndex + 1}`;
   let lessonTitleStr = lesson.title.replace(/^Lesson \d+:/i, lessonNumStr + ':');
   html += `<h2 style="margin-bottom: 20px;">${lessonTitleStr}</h2>`;
@@ -322,7 +311,7 @@ chunkLessons.forEach((lesson, lessonIndex) => {
     // Append draw tasks right after the sources block
     if (drawTasks.length > 0) {
       drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
+        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: |Q\d+\.\s*)/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</div>`;
       });
     }
   }
@@ -478,7 +467,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
   // Format into two columns roughly
-  html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
+  html += `<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">`;
   unitData.quizPack.forEach((item, idx) => {
     html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
     html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;

@@ -6361,3 +6361,5 @@ const blurtingData = [
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { timelineData, quizData, examData, elizabethanWheelData, officialPastPapers, causationWebData, blurtingData };
 }
+
+window.timelineData = timelineData;

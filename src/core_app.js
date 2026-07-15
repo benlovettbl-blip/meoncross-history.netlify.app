@@ -640,36 +640,6 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(examPracticeLink);
 
-    const keyIndivLink = document.createElement('a');
-    keyIndivLink.className = 'lesson-link';
-    keyIndivLink.innerHTML = '👤 Key Individuals';
-    keyIndivLink.style.marginTop = '15px';
-    keyIndivLink.style.color = '#c084fc'; // Purple-400
-    keyIndivLink.addEventListener('click', async (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-      keyIndivLink.classList.add('active');
-      const contentArea = document.getElementById('content-area');
-      contentArea.innerHTML = '<div style="text-align: center; padding: 50px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i></div>'; 
-      
-      try {
-        const response = await fetch('biographies.json');
-        if (response.ok) {
-          const bios = await response.json();
-          contentArea.innerHTML = '';
-          initKeyIndividualsTask(contentArea, bios);
-        } else {
-          contentArea.innerHTML = '<div style="padding: 20px;">No key individuals data found for this unit.</div>';
-        }
-      } catch (err) {
-        contentArea.innerHTML = '<div style="padding: 20px;">Error loading key individuals.</div>';
-      }
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    navContainer.appendChild(keyIndivLink);
-
-
     const quizPackLink = document.createElement('a');
     quizPackLink.className = 'lesson-link';
     quizPackLink.innerHTML = '📝 Printable Quiz Pack';
@@ -877,7 +847,28 @@ export function initializeApp(unitData) {
     }
 
     // PHASE: Retrieval Recall
-    if (lesson.do_now && lesson.do_now.items) {
+    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Chronological Timeline</div>
+          </div>
+          <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+      `;
+      lesson.do_now.events.forEach((ev, idx) => {
+        html += `
+          <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+            <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
+            <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+            <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+            ${ev.img ? `<img src="${getAssetUrl(ev.img)}" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid #e2e8f0;">` : ''}
+          </div>
+        `;
+      });
+      html += `</div></div>`;
+    } else if (lesson.do_now && lesson.do_now.items) {
+
       try {
         const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
         if (taught.length > 0 && window.KNOWLEDGE_BANK) {
@@ -1007,6 +998,7 @@ export function initializeApp(unitData) {
         const bg = (index % 2 === 0) ? '#ffffff' : '#f0f9ff';
         const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
         let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
+        contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/' + window.currentUnitId + '/assets/');
         let styledContent = contentStr;
         if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
            const firstLetter = contentStr.charAt(0);
@@ -1062,7 +1054,7 @@ export function initializeApp(unitData) {
              html += `
                <div style="margin-bottom: 10px;">
                  <strong>${qPrefix}${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong>
-                 <button class="btn btn-secondary" onclick="this.nextElementSibling.classList.toggle('revealed')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  <div class="answer" style="margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>
              `;
@@ -1151,7 +1143,7 @@ export function initializeApp(unitData) {
         html += `
           <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
             <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
-            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${hc.text}</p>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${hc.text || (hc.author_context + "<br><br><i>" + hc.extract + "</i>")}</p>
             ${hc.stretch_question ? `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
               <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
@@ -1163,7 +1155,7 @@ export function initializeApp(unitData) {
                   ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('hc-model')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                 </span>
               </div>
-              <textarea class="student-answer-input" placeholder="Write your stretch response here..." oninput="window.updateProgress()"></textarea>
+              
 
               ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
               ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
