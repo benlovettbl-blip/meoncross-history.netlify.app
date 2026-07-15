@@ -46,7 +46,7 @@
         },
         "sources": [
           {
-            "src": "",
+            "src": "assets/seneca.jpg",
             "title": "Source B: Seneca the Younger (c. 4 BC – AD 65)",
             "caption": "<strong>Who is this?</strong> This is a bust of the Roman philosopher Seneca the Younger.",
             "question": null,
@@ -54,9 +54,9 @@
             "model_answer": null
           },
           {
-            "src": "assets/seneca_letter.png",
+            "src": "",
             "title": "Source C: Seneca the Younger on Roman Bathhouses (c. AD 62)",
-            "caption": "<strong>What is this source showing?</strong> This is an extract from a letter by the Roman philosopher Seneca the Younger, complaining about the intense noise and activity of a Roman bathhouse he lived above. It shows that baths were busy, social hubs, not just places for quiet hygiene. <br><br>\"I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.\"",
+            "caption": "This is an extract from a letter by the Roman philosopher Seneca the Younger, complaining about the intense noise and activity of a Roman bathhouse he lived above. It shows that baths were busy, social hubs, not just places for quiet hygiene. <br><br>\"I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.\"",
             "question": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?",
             "tasks": [
               {

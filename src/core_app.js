@@ -895,7 +895,7 @@ export function initializeApp(unitData) {
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
       lesson.do_now.items.forEach((item, index) => {
-        let qText = item.question;
+        let qText = item.question.replace(/PAST TOPIC:\s*/i, '');
         let aText = item.answer;
         if (window.currentUnitId) {
           qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
@@ -1054,7 +1054,7 @@ export function initializeApp(unitData) {
              html += `
                <div style="margin-bottom: 10px;">
                  <strong>${qPrefix}${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong>
-                 <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 <button class="btn btn-secondary" onclick="const ans = this.parentElement.querySelector('.answer'); ans.style.display = ans.style.display === 'block' ? 'none' : 'block';" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  <div class="answer" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>
              `;
