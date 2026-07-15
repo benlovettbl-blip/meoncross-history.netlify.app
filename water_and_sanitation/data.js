@@ -63,17 +63,17 @@ export const unitData = {
                 "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
                 "objectives": [
                     {
-                        "objective": "Identify the key features of this topic.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Explain the core concepts and historical context.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Evaluate the overall significance.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
+      "objective": "Describe the simple, practical sanitation methods used by Iron Age Britons.",
+      "primer": "Ensure you guide the students to the relevant paragraph in the narrative to identify key features."
+    },
+    {
+      "objective": "Explain how Roman engineers introduced revolutionary sanitation technology.",
+      "primer": "Guide the students to connect the core concepts to the historical context provided."
+    },
+    {
+      "objective": "Evaluate the significance of Roman bathhouses and latrines for public health.",
+      "primer": "Facilitate a discussion to evaluate the overall significance based on the lesson's themes."
+    },
                     {
                         "objective": "Analyze a primary source related to the lesson theme.",
                         "primer": "Guide students through a visual analysis of the primary source.",
@@ -285,17 +285,17 @@ export const unitData = {
                 "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
                 "objectives": [
                     {
-                        "objective": "Identify the key features of this topic.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Explain the core concepts and historical context.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Evaluate the overall significance.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
+      "objective": "Describe the simple cesspits used by peasants in rural Medieval villages.",
+      "primer": "Ensure you guide the students to the relevant paragraph in the narrative to identify key features."
+    },
+    {
+      "objective": "Explain why Medieval monasteries built complex water systems.",
+      "primer": "Guide the students to connect the core concepts to the historical context provided."
+    },
+    {
+      "objective": "Evaluate the role of gongfermers and night-work in medieval towns.",
+      "primer": "Facilitate a discussion to evaluate the overall significance based on the lesson's themes."
+    },
                     {
                         "objective": "Analyze a primary source related to the lesson theme.",
                         "primer": "Guide students through a visual analysis of the primary source.",
@@ -504,17 +504,17 @@ export const unitData = {
                 "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
                 "objectives": [
                     {
-                        "objective": "Identify the key features of this topic.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Explain the core concepts and historical context.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Evaluate the overall significance.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
+      "objective": "Describe the sanitation problems in growing Tudor and Stuart towns.",
+      "primer": "Ensure you guide the students to the relevant paragraph in the narrative to identify key features."
+    },
+    {
+      "objective": "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
+      "primer": "Guide the students to connect the core concepts to the historical context provided."
+    },
+    {
+      "objective": "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation.",
+      "primer": "Facilitate a discussion to evaluate the overall significance based on the lesson's themes."
+    },
                     {
                         "objective": "Analyze a primary source related to the lesson theme.",
                         "primer": "Guide students through a visual analysis of the primary source.",
@@ -710,17 +710,17 @@ export const unitData = {
                 "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
                 "objectives": [
                     {
-                        "objective": "Identify the key features of this topic.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Explain the core concepts and historical context.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Evaluate the overall significance.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
+      "objective": "Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.",
+      "primer": "Ensure you guide the students to the relevant paragraph in the narrative to identify key features."
+    },
+    {
+      "objective": "Explain how Edwin Chadwick argued for public health reform in his 1842 report.",
+      "primer": "Guide the students to connect the core concepts to the historical context provided."
+    },
+    {
+      "objective": "Evaluate Dr. John Snow's discovery that cholera was waterborne.",
+      "primer": "Facilitate a discussion to evaluate the overall significance based on the lesson's themes."
+    },
                     {
                         "objective": "Analyze a primary source related to the lesson theme.",
                         "primer": "Guide students through a visual analysis of the primary source.",
@@ -916,17 +916,17 @@ export const unitData = {
                 "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
                 "objectives": [
                     {
-                        "objective": "Identify the key features of this topic.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Explain the core concepts and historical context.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
-                    {
-                        "objective": "Evaluate the overall significance.",
-                        "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-                    },
+      "objective": "Describe the events of the Great Stink in 1858.",
+      "primer": "Ensure you guide the students to the relevant paragraph in the narrative to identify key features."
+    },
+    {
+      "objective": "Explain how Joseph Bazalgette's sewer system transformed London.",
+      "primer": "Guide the students to connect the core concepts to the historical context provided."
+    },
+    {
+      "objective": "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease.",
+      "primer": "Facilitate a discussion to evaluate the overall significance based on the lesson's themes."
+    },
                     {
                         "objective": "Analyze a primary source related to the lesson theme.",
                         "primer": "Guide students through a visual analysis of the primary source.",
