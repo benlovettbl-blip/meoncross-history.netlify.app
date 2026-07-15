@@ -45,7 +45,7 @@ export const unitData = {
             },
             "sources": [
                 {
-                    "src": "assets/seneca.jpg",
+                    "src": "",
                     "title": "Source B: Seneca the Younger (c. 4 BC – AD 65)",
                     "caption": "<strong>Who is this?</strong> This is a bust of the Roman philosopher Seneca the Younger.",
                     "question": null,
@@ -157,7 +157,7 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Prehistoric and Roman Sanitati... so significant?",
+            "enquiry": "Why was the historical context of Prehistoric and Roman Sanitation so significant?",
             "flashcards": [
                 {
                     "term": "cesspit",
@@ -234,43 +234,43 @@ export const unitData = {
                 "type": "questions",
                 "items": [
                     {
-                        "question": "Recall from last lesson: What was the main feature of Iron Age Settlements & Cesspits?",
+                        "question": "What was the main feature of Iron Age Settlements & Cesspits?",
                         "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
                     },
                     {
-                        "question": "Recall from last lesson: How did Roman Conduits & Water Supply impact society?",
+                        "question": "How did Roman Conduits & Water Supply impact society?",
                         "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
                     },
                     {
-                        "question": "Recall from last lesson: Identify one major problem with The Roman Withdrawal.",
+                        "question": "Identify one major problem with The Roman Withdrawal.",
                         "answer": "The advanced centralized sanitation infrastructure was abandoned, causing public hygiene to decline back into primitive, localized methods."
                     },
                     {
-                        "question": "Recall from last lesson: Why were Iron Age cesspits safe?",
+                        "question": "Why were Iron Age cesspits safe?",
                         "answer": "Because populations were small and spread out."
                     },
                     {
-                        "question": "Recall from last lesson: How did the Romans move water?",
+                        "question": "How did the Romans move water?",
                         "answer": "Using gravity through stone conduits over many miles."
                     },
                     {
-                        "question": "Recall from last lesson: What were Roman latrines?",
+                        "question": "What were Roman latrines?",
                         "answer": "Communal public toilets flushed continuously by running water."
                     },
                     {
-                        "question": "Recall from last lesson: What happened to sanitation when the Romans left?",
+                        "question": "What happened to sanitation when the Romans left?",
                         "answer": "The systems collapsed and towns reverted to primitive methods."
                     },
                     {
-                        "question": "Recall from last lesson: Did Iron Age people pollute their water?",
+                        "question": "Did Iron Age people pollute their water?",
                         "answer": "No, they intentionally dug cesspits far from their drinking water."
                     },
                     {
-                        "question": "Recall from last lesson: Why was flowing water important to Romans?",
+                        "question": "Why was flowing water important to Romans?",
                         "answer": "They believed it was vital for keeping society healthy and clean."
                     },
                     {
-                        "question": "Recall from last lesson: What is a conduit?",
+                        "question": "What is a conduit?",
                         "answer": "A channel or pipe for conveying water."
                     }
                 ]
@@ -278,7 +278,10 @@ export const unitData = {
             "sources": [],
             "glossary": {
                 "gongfermer": "A medieval worker who cleared human waste from cesspits.",
-                "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
+                "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease.",
+                "monastery": "A building or buildings occupied by a community of monks living under religious vows.",
+                "cesspit": "A pit for the disposal of liquid waste and sewage.",
+                "privy": "A toilet, especially a simple one such as an outhouse."
             },
             "gcse_task": null,
             "learning_objective": "To understand the impact of Medieval Sanitation and The Church on public health.",
@@ -380,7 +383,7 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Medieval Sanitation and The Ch... so significant?",
+            "enquiry": "Why was the historical context of Medieval Sanitation and The Church so significant?",
             "flashcards": [
                 {
                     "term": "gongfermer",
@@ -453,43 +456,43 @@ export const unitData = {
                 "type": "questions",
                 "items": [
                     {
-                        "question": "Recall from last lesson: What was the main feature of Peasant Cesspits?",
+                        "question": "What was the main feature of Peasant Cesspits?",
                         "answer": "Simple garden outhouses dug over earth holes. Safe in low-density rural villages like Wharram Percy, but highly problematic in crowded towns."
                     },
                     {
-                        "question": "Recall from last lesson: How did Monastic luxury (Canterbury Priory) impact society?",
+                        "question": "How did Monastic luxury (Canterbury Priory) impact society?",
                         "answer": "It showcased advanced water engineering (lead pipes, color-coded fresh and waste water lines) funded by wealthy, organized Christian orders."
                     },
                     {
-                        "question": "Recall from last lesson: Identify one major problem with Gongfermers and night-work.",
+                        "question": "Identify one major problem with Gongfermers and night-work.",
                         "answer": "It was a dangerous, filthy task limited to nighttime, which only temporarily cleared overflowing urban cesspits without solving the lack of permanent sewers."
                     },
                     {
-                        "question": "Recall from previous lessons: What was a Gongfermer?",
+                        "question": "What was a Gongfermer?",
                         "answer": "A medieval worker who cleared human waste from cesspits at night."
                     },
                     {
-                        "question": "Recall from previous lessons: Why did medieval monks build water systems?",
+                        "question": "Why did medieval monks build water systems?",
                         "answer": "They believed cleanliness brought them closer to God."
                     },
                     {
-                        "question": "Recall from previous lessons: What did Edward III order in 1357?",
+                        "question": "What did Edward III order in 1357?",
                         "answer": "The removal of filth from London's streets to prevent sickness."
                     },
                     {
-                        "question": "Recall from previous lessons: Why were medieval towns dangerous for health?",
+                        "question": "Why were medieval towns dangerous for health?",
                         "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
                     },
                     {
-                        "question": "Recall from previous lessons: How did the Romans keep forts clean?",
+                        "question": "How did the Romans keep forts clean?",
                         "answer": "Using deep sewers flushed continuously with running water."
                     },
                     {
-                        "question": "Recall from previous lessons: How did water sellers make money?",
+                        "question": "How did water sellers make money?",
                         "answer": "By selling barrels of river water to townspeople."
                     },
                     {
-                        "question": "Recall from previous lessons: What is Miasma?",
+                        "question": "What is Miasma?",
                         "answer": "A bad smell previously thought to cause disease."
                     }
                 ]
@@ -497,7 +500,10 @@ export const unitData = {
             "sources": [],
             "glossary": {
                 "conduit": "A channel or pipe for conveying water.",
-                "water closet": "A flush toilet, or a room containing one."
+                "water closet": "A flush toilet, or a room containing one.",
+                "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly thought to cause disease.",
+                "gong farmer": "A person employed to empty cesspits and privies in early modern cities.",
+                "urbanisation": "The increase in the proportion of people living in towns and cities."
             },
             "gcse_task": null,
             "learning_objective": "To understand the impact of Early Modern Filth and Cesspits on public health.",
@@ -586,7 +592,7 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Early Modern Filth and Cesspit... so significant?",
+            "enquiry": "Why was the historical context of Early Modern Filth and Cesspits so significant?",
             "flashcards": [
                 {
                     "term": "conduit",
@@ -689,7 +695,10 @@ export const unitData = {
             "sources": [],
             "glossary": {
                 "urbanization": "The process of making an area more urban (city-like).",
-                "cholera": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
+                "cholera": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies.",
+                "epidemic": "A widespread occurrence of an infectious disease in a community at a particular time.",
+                "public health": "The health of the population as a whole, especially as monitored and regulated by the state.",
+                "laissez-faire": "A policy or attitude of letting things take their own course, without interfering."
             },
             "gcse_task": null,
             "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
@@ -778,7 +787,7 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Industrial Revolution and ... so significant?",
+            "enquiry": "Why was the historical context of The Industrial Revolution and Cholera so significant?",
             "flashcards": [
                 {
                     "term": "urbanization",
@@ -851,43 +860,43 @@ export const unitData = {
                 "type": "questions",
                 "items": [
                     {
-                        "question": "Recall from last lesson: What was the main feature of Population Surge and Urbanization?",
+                        "question": "What was the main feature of Population Surge and Urbanization?",
                         "answer": "Rapid migration of rural families to factory towns (1750–1850), causing massive overcrowding and housing blocks built back-to-back."
                     },
                     {
-                        "question": "Recall from last lesson: How did Shared Pumps and Back-to-Backs impact society?",
+                        "question": "How did Shared Pumps and Back-to-Backs impact society?",
                         "answer": "Shared pumps only provided water for a few hours a day, which was often polluted, and back-to-back houses shared filthy, overflowing privies."
                     },
                     {
-                        "question": "Recall from last lesson: Identify one major problem with Chadwick's Sanitation Report.",
+                        "question": "Identify one major problem with Chadwick's Sanitation Report.",
                         "answer": "Chadwick still believed in miasma theory, so he advocated flushing sewage out of the streets and directly into the River Thames, polluting London's main water source."
                     },
                     {
-                        "question": "Recall from previous lessons: What disease terrorized Victorian Britain?",
+                        "question": "What disease terrorized Victorian Britain?",
                         "answer": "Cholera, a deadly waterborne disease."
                     },
                     {
-                        "question": "Recall from previous lessons: What was the 'laissez-faire' attitude?",
+                        "question": "What was the 'laissez-faire' attitude?",
                         "answer": "The government's belief that it should not interfere in public health."
                     },
                     {
-                        "question": "Recall from previous lessons: What did Edwin Chadwick advocate for in his 1842 report?",
+                        "question": "What did Edwin Chadwick advocate for in his 1842 report?",
                         "answer": "That cholera was spread through contaminated water, not bad air."
                     },
                     {
-                        "question": "Recall from previous lessons: Why did 'back-to-back' housing increase disease?",
+                        "question": "Why did 'back-to-back' housing increase disease?",
                         "answer": "The water source that caused the deadly 1854 cholera outbreak."
                     },
                     {
-                        "question": "Recall from previous lessons: What happened to Britain's population between 1750 and 1850?",
+                        "question": "What happened to Britain's population between 1750 and 1850?",
                         "answer": "Because the Miasma theory (bad air) was still widely believed."
                     },
                     {
-                        "question": "Recall from previous lessons: When was the first flushing toilet invented?",
+                        "question": "When was the first flushing toilet invented?",
                         "answer": "1596, by Sir John Harington."
                     },
                     {
-                        "question": "Recall from previous lessons: What did Roman conduits do?",
+                        "question": "What did Roman conduits do?",
                         "answer": "Transported clean water into towns using gravity."
                     }
                 ]
@@ -895,7 +904,10 @@ export const unitData = {
             "sources": [],
             "glossary": {
                 "sewer": "An underground conduit for carrying off drainage water and waste matter.",
-                "germ theory": "The theory that infectious diseases are caused by certain microbes."
+                "germ theory": "The theory that infectious diseases are caused by certain microbes.",
+                "sewage": "Waste water and excrement conveyed in sewers.",
+                "civil engineering": "The design and construction of public works, such as dams, bridges and other large-scale projects.",
+                "infrastructure": "The basic physical and organizational structures and facilities needed for the operation of a society."
             },
             "gcse_task": null,
             "learning_objective": "To understand the impact of The Great Stink and Modern Sewers on public health.",
@@ -997,7 +1009,7 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Great Stink and Modern Sew... so significant?",
+            "enquiry": "Why was the historical context of The Great Stink and Modern Sewers so significant?",
             "flashcards": [
                 {
                     "term": "sewer",

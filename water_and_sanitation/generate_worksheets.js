@@ -58,7 +58,7 @@ let html = `<!DOCTYPE html>
 
   
 
-unitData.lessons.forEach(lesson => {
+unitData.lessons.forEach((lesson, lessonIndex) => {
   let globalQNum = 1;
   if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
   if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);

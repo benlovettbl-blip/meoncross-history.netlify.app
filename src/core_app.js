@@ -890,7 +890,7 @@ export function initializeApp(unitData) {
         <div class="phase-card" id="phase-${phaseNum}">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Do Now Tasks</div>
-            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.do-now-card').forEach(c => c.classList.toggle('revealed'))" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.answer').forEach(ans => ans.style.display = ans.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
           </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
@@ -902,10 +902,10 @@ export function initializeApp(unitData) {
           aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
         }
         html += `
-          <div class="do-now-card" id="do-now-card-${index}" onclick="this.classList.toggle('revealed')" style="cursor: pointer;">
+          <div class="do-now-card" id="do-now-card-${index}" onclick="const ans = this.querySelector('.answer'); ans.style.display = ans.style.display === 'block' ? 'none' : 'block';" style="cursor: pointer;">
             <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
             <div>${qText}</div>
-            <div class="answer" id="do-now-ans-${index}">${aText}</div>
+            <div class="answer" id="do-now-ans-${index}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
           </div>
         `;
       });
@@ -1066,21 +1066,18 @@ export function initializeApp(unitData) {
       if (lesson.sources && lesson.sources.length > 0) {
         html += `<div class="sources-grid" style="margin-top: 20px;">`;
         lesson.sources.forEach(source => {
-          if (source.src) {
-            let src = source.src;
-            html += `
-              <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-                ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
-                <img src="${getAssetUrl(src)}" alt="Source Image">
-                ${source.caption ? `<p class="source-caption" style="text-align: left; color: #475569;">${source.caption}</p>` : ''}
-                ${source.question ? `
-                  <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                    <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
-                  </div>
-                ` : ''}
-              </div>
-            `;
-          }
+          html += `
+            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+              ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
+              ${source.src ? `<img src="${getAssetUrl(source.src)}" alt="Source Image">` : ''}
+              ${source.caption ? `<p class="source-caption" style="text-align: left; color: #475569;">${source.caption}</p>` : ''}
+              ${source.question ? `
+                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
+                </div>
+              ` : ''}
+            </div>
+          `;
         });
         html += `</div>`;
       }
