@@ -19,35 +19,29 @@ export const unitData = {
                 "model_answer": "Students should observe the deep, continuous channel beneath the seating designed for running water to flush away waste, demonstrating advanced Roman hydraulic engineering, while noting the lack of privacy as a limitation by modern standards."
             },
             "do_now": {
-                "type": "timeline",
-                "events": [
+                "type": "questions",
+                "items": [
                     {
-                        "year": "1750",
-                        "title": "Rural Britain",
-                        "detail": "Most of the population lives and works in the countryside."
+                        "question": "PAST TOPIC: What is a primary source?",
+                        "answer": "A piece of evidence created at the time of the event being studied (e.g., a diary, photograph, or artefact)."
                     },
                     {
-                        "year": "1780s",
-                        "title": "First Factories",
-                        "detail": "Steam-powered textile mills begin mass production."
+                        "question": "PAST TOPIC: What is a secondary source?",
+                        "answer": "A piece of evidence created after the event by someone who was not there (e.g., a modern history book)."
                     },
                     {
-                        "year": "1800-1850",
-                        "title": "Rapid Urbanisation",
-                        "detail": "Millions migrate to industrial towns looking for work."
+                        "question": "PAST TOPIC: What does 'chronological order' mean?",
+                        "answer": "Arranging events in the order in which they happened in time, from earliest to most recent."
                     },
                     {
-                        "year": "1831",
-                        "title": "First Cholera Epidemic",
-                        "detail": "Cholera arrives in Britain, killing thousands."
+                        "question": "PAST TOPIC: What century is the year 1854 in?",
+                        "answer": "The 19th Century."
                     },
                     {
-                        "year": "1842",
-                        "title": "Chadwick's Report",
-                        "detail": "Edwin Chadwick publishes his damning report on sanitary conditions."
+                        "question": "PAST TOPIC: What is the difference between BC and AD (or BCE and CE)?",
+                        "answer": "BC (Before Christ) refers to years before the birth of Jesus, while AD (Anno Domini) refers to years after. The numbers in BC count backwards, while AD count forwards."
                     }
-                ],
-                "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
+                ]
             },
             "sources": [
                 {
@@ -662,49 +656,35 @@ export const unitData = {
                 "model_answer": "By mapping the deaths visually, Snow provided undeniable statistical proof that the cholera outbreak was geographically concentrated around a single contaminated water source, fundamentally disproving the idea that it was caused by a random cloud of 'bad air' (miasma)."
             },
             "do_now": {
-                "type": "questions",
-                "items": [
+                "type": "timeline",
+                "events": [
                     {
-                        "question": "Recall from last lesson: What was the main feature of Sir John Harington's flushing toilet?",
-                        "answer": "The first water closet invented in 1596, but it remained a royal luxury because London lacked running water and street sewers to flush the waste."
+                        "year": "1750",
+                        "title": "Rural Britain",
+                        "detail": "Most of the population lives and works in the countryside."
                     },
                     {
-                        "question": "Recall from last lesson: How did Samuel Pepys' diary entry impact our understanding of sanitation?",
-                        "answer": "It documented the disgusting reality of crowded cities, describing how his neighbor's cellar privy leaked directly through the walls into his own basement."
+                        "year": "1780s",
+                        "title": "First Factories",
+                        "detail": "Steam-powered textile mills begin mass production."
                     },
                     {
-                        "question": "Recall from last lesson: Identify one major problem with the New River project for poorer citizens.",
-                        "answer": "It incorrectly blamed bad smells (miasma) for disease instead of waterborne bacteria, leading authorities to clean the air rather than water supplies."
+                        "year": "1800-1850",
+                        "title": "Rapid Urbanisation",
+                        "detail": "Millions migrate to industrial towns looking for work."
                     },
                     {
-                        "question": "Recall from previous lessons: Who invented the first flushing toilet in 1596?",
-                        "answer": "Sir John Harington, an Elizabethan courtier."
+                        "year": "1831",
+                        "title": "First Cholera Epidemic",
+                        "detail": "Cholera arrives in Britain, killing thousands."
                     },
                     {
-                        "question": "Recall from previous lessons: Why didn't Harington's toilet solve the crisis?",
-                        "answer": "Because there were no public sewers to connect it to."
-                    },
-                    {
-                        "question": "Recall from previous lessons: What was the main source of water in Tudor towns?",
-                        "answer": "Polluted rivers or expensive piped water for the wealthy."
-                    },
-                    {
-                        "question": "Recall from previous lessons: What happens when a cesspit overflows?",
-                        "answer": "Sewage seeps into the ground and contaminates the water table."
-                    },
-                    {
-                        "question": "Recall from previous lessons: Why was the Thames increasingly polluted?",
-                        "answer": "Because London's growing population dumped all waste directly into it."
-                    },
-                    {
-                        "question": "Recall from previous lessons: How did medieval monks differ from peasants?",
-                        "answer": "Monks had complex piped water; peasants relied on local streams."
-                    },
-                    {
-                        "question": "Recall from previous lessons: What was the main danger of urban crowding?",
-                        "answer": "Disease spread quickly through contaminated water and close contact."
+                        "year": "1842",
+                        "title": "Chadwick's Report",
+                        "detail": "Edwin Chadwick publishes his damning report on sanitary conditions."
                     }
-                ]
+                ],
+                "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
             },
             "sources": [],
             "glossary": {
