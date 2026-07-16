@@ -607,7 +607,7 @@ export function initializeApp(unitData) {
     resourcesHTML += '</div>';
 
     contentArea.innerHTML = `
-      <div style="text-align: center; max-width: 900px; margin: 0 auto; padding-bottom: 50px;">
+      <div style="text-align: center; padding-bottom: 50px;">
         <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;">${unitData.title}</h1>
         <h2 style="margin-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
           Unit Enquiry: <i>${unitData.enquiry || 'What can we learn from this period in history?'}</i>
@@ -851,7 +851,7 @@ export function initializeApp(unitData) {
     lesson = sanitizeLessonData(lesson);
     assignQuestionNumbers(lesson);
     window.currentActiveLesson = lesson;
-    let html = `<div class="lesson-content" style="max-width: 900px; margin: 0 auto;">`;
+    let html = `<div class="lesson-content">`;
     
     if (unitEnquiryText) {
       html += `
