@@ -53,7 +53,7 @@ let html = `<!DOCTYPE html>
 
   <div style="margin-top: 50px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Name: </div>
   <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Class: </div>
-  <div style="page-break-after: always;"></div>
+  
   `;
 
 

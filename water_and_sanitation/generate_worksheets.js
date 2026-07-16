@@ -111,7 +111,7 @@ let html = `<!DOCTYPE html>
     </table>
   </div>
 
-  <div style="page-break-after: always;"></div>
+  
   `;
 
 
