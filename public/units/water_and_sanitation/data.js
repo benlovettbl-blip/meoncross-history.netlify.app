@@ -110,9 +110,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain the significance of iron age settlements & cesspits in the development of sanitation.",
+                            "text": "Q1: Identify how Iron Age communities managed their waste.",
                             "model": "Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.",
-                            "starter": "Iron Age settlements and cesspits were significant because...",
+                            "starter": "Iron Age communities managed their waste by...",
                             "clue": "Think about population density and why simple methods worked when people were spread out."
                         }
                     ]
@@ -123,9 +123,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Explain the significance of roman conduits & water supply in the development of sanitation.",
+                            "text": "Q2: Describe the purpose of Roman conduits and aqueducts.",
                             "model": "Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.",
-                            "starter": "Roman conduits were significant because...",
+                            "starter": "The purpose of Roman conduits and aqueducts was to...",
                             "clue": "Think about the scale of engineering and moving water using gravity."
                         }
                     ]
@@ -136,9 +136,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Explain the significance of bathhouses and latrines in the development of sanitation.",
+                            "text": "Q3: Explain how bathhouses and latrines improved public health in Roman towns.",
                             "model": "They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.",
-                            "starter": "Bathhouses and latrines were significant because...",
+                            "starter": "Bathhouses and latrines improved public health because...",
                             "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
                         }
                     ]
@@ -149,9 +149,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain the significance of the roman withdrawal in the development of sanitation.",
+                            "text": "Q4: Evaluate the impact of the Roman withdrawal on Britain's sanitation.",
                             "model": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
-                            "starter": "The Roman withdrawal was significant because...",
+                            "starter": "The Roman withdrawal significantly impacted sanitation because...",
                             "clue": "Consider what happened to the pipes and sewers when the engineers left."
                         }
                     ]
@@ -323,9 +323,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain the significance of peasant cesspits (wharram percy) in the development of sanitation.",
+                            "text": "Q1: Identify the main method of waste disposal in medieval villages like Wharram Percy.",
                             "model": "They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.",
-                            "starter": "Peasant cesspits in villages like Wharram Percy were significant because...",
+                            "starter": "The main method of waste disposal in medieval villages was...",
                             "clue": "Think about why rural density prevented disease from spreading."
                         }
                     ]
@@ -336,9 +336,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Explain the significance of monastic luxury (canterbury priory) in the development of sanitation.",
+                            "text": "Q2: Describe the sanitation facilities found in medieval monasteries like Canterbury Priory.",
                             "model": "Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.",
-                            "starter": "Monastic sanitation, such as at Canterbury Priory, was significant because...",
+                            "starter": "Medieval monasteries had sanitation facilities such as...",
                             "clue": "Look at the Canterbury blueprints and who paid for the pipes."
                         }
                     ]
@@ -349,9 +349,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Explain the significance of urban filtration crisis in the development of sanitation.",
+                            "text": "Q3: Explain why overcrowded medieval towns faced a filtration crisis.",
                             "model": "Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.",
-                            "starter": "The urban filtration crisis was significant because...",
+                            "starter": "Overcrowded medieval towns faced a filtration crisis because...",
                             "clue": "Consider how high density impacted shared wells and rivers."
                         }
                     ]
@@ -362,9 +362,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain the significance of gongfermers and night-work in the development of sanitation.",
+                            "text": "Q4: Explain the role of gongfermers in medieval towns.",
                             "model": "Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.",
-                            "starter": "Gongfermers and their night-work were significant because...",
+                            "starter": "The role of gongfermers was to...",
                             "clue": "Think about what happened when cesspits overflowed and why they worked at night."
                         }
                     ]
@@ -375,7 +375,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q5: Explain the significance of edward iii's cleanliness mandate in the development of sanitation.",
+                            "text": "Q5: Evaluate the significance of Edward III's cleanliness mandate in 1349.",
                             "model": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
                             "starter": "Edward III's cleanliness mandate was significant because...",
                             "clue": "Look at his 1357 letter to the Mayor of London."
@@ -545,9 +545,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain the significance of sir john harington's flushing toilet in the development of sanitation.",
+                            "text": "Q1: Identify who invented the first flushing water closet.",
                             "model": "He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.",
-                            "starter": "Sir John Harington's flushing toilet was significant because...",
+                            "starter": "The first flushing water closet was invented by...",
                             "clue": "Think about why an invention is useless without a network (water & sewers)."
                         }
                     ]
@@ -558,9 +558,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Explain the significance of the new river (1613) in the development of sanitation.",
+                            "text": "Q2: Describe the purpose of the New River project in 1613.",
                             "model": "It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.",
-                            "starter": "The New River project was significant because...",
+                            "starter": "The purpose of the New River project was to...",
                             "clue": "Consider the distance the water traveled and how it was distributed."
                         }
                     ]
@@ -571,9 +571,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Explain the significance of samuel pepys' diary (privy leak) in the development of sanitation.",
+                            "text": "Q3: Explain what Samuel Pepys' diary reveals about Early Modern privies.",
                             "model": "It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.",
-                            "starter": "Samuel Pepys' diary entry was significant because...",
+                            "starter": "Samuel Pepys' diary reveals that Early Modern privies...",
                             "clue": "Think about what he found in his cellar on October 20, 1660."
                         }
                     ]
@@ -584,9 +584,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain the significance of early modern water sellers in the development of sanitation.",
+                            "text": "Q4: Evaluate the effectiveness of Early Modern water sellers for public health.",
                             "model": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
-                            "starter": "Early Modern water sellers were significant because...",
+                            "starter": "Early Modern water sellers were only partially effective because...",
                             "clue": "Think about who bought their water and where they got it from."
                         }
                     ]
@@ -740,9 +740,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain the significance of population surge and urbanization in the development of sanitation.",
+                            "text": "Q1: Identify two effects of the industrial population surge on factory towns.",
                             "model": "It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.",
-                            "starter": "Population surge and urbanization were significant because...",
+                            "starter": "Two effects of the industrial population surge were...",
                             "clue": "Think about the shift from 6 million to 21 million people."
                         }
                     ]
@@ -753,9 +753,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Explain the significance of back-to-backs and shared pumps in the development of sanitation.",
+                            "text": "Q2: Describe the living conditions in industrial back-to-back housing.",
                             "model": "They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.",
-                            "starter": "Back-to-backs and shared pumps were significant because...",
+                            "starter": "Living conditions in industrial back-to-back housing were...",
                             "clue": "Consider how landlords built cheap housing for factory workers."
                         }
                     ]
@@ -766,9 +766,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Explain the significance of cholera epidemics (1831–1866) in the development of sanitation.",
+                            "text": "Q3: Explain how the cholera epidemics forced the government to act.",
                             "model": "They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.",
-                            "starter": "Cholera epidemics were significant because...",
+                            "starter": "The cholera epidemics forced the government to act by...",
                             "clue": "Think about the rapid, terrifying nature of cholera deaths."
                         }
                     ]
@@ -779,7 +779,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain the significance of edwin chadwick's report (1842) in the development of sanitation.",
+                            "text": "Q4: Evaluate the significance of Edwin Chadwick's 1842 report.",
                             "model": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
                             "starter": "Edwin Chadwick's 1842 report was significant because...",
                             "clue": "Think about the evidence he gathered on the working class."
@@ -860,44 +860,44 @@ export const unitData = {
                 "type": "questions",
                 "items": [
                     {
-                        "question": "What was the main feature of Population Surge and Urbanization?",
-                        "answer": "Rapid migration of rural families to factory towns (1750–1850), causing massive overcrowding and housing blocks built back-to-back."
+                        "question": "What was the main feature of Iron Age Settlements & Cesspits?",
+                        "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
                     },
                     {
-                        "question": "How did Shared Pumps and Back-to-Backs impact society?",
-                        "answer": "Shared pumps only provided water for a few hours a day, which was often polluted, and back-to-back houses shared filthy, overflowing privies."
+                        "question": "How did Roman Conduits & Water Supply impact society?",
+                        "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
                     },
                     {
-                        "question": "Identify one major problem with Chadwick's Sanitation Report.",
-                        "answer": "Chadwick still believed in miasma theory, so he advocated flushing sewage out of the streets and directly into the River Thames, polluting London's main water source."
+                        "question": "What was a Gongfermer?",
+                        "answer": "A medieval worker who cleared human waste from cesspits at night."
                     },
                     {
-                        "question": "What disease terrorized Victorian Britain?",
-                        "answer": "Cholera, a deadly waterborne disease."
+                        "question": "Why did medieval monks build water systems?",
+                        "answer": "They believed cleanliness brought them closer to God."
+                    },
+                    {
+                        "question": "What did Edward III order in 1357?",
+                        "answer": "The removal of filth from London's streets to prevent sickness."
+                    },
+                    {
+                        "question": "Why were medieval towns dangerous for health?",
+                        "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
+                    },
+                    {
+                        "question": "What terrifying waterborne disease first struck Britain in 1831?",
+                        "answer": "Cholera."
+                    },
+                    {
+                        "question": "What scientific theory did doctors wrongly believe caused disease before 1860?",
+                        "answer": "Miasma Theory (bad smells)."
+                    },
+                    {
+                        "question": "Who published a damning report on sanitary conditions in 1842?",
+                        "answer": "Edwin Chadwick."
                     },
                     {
                         "question": "What was the 'laissez-faire' attitude?",
-                        "answer": "The government's belief that it should not interfere in public health."
-                    },
-                    {
-                        "question": "What did Edwin Chadwick advocate for in his 1842 report?",
-                        "answer": "That cholera was spread through contaminated water, not bad air."
-                    },
-                    {
-                        "question": "Why did 'back-to-back' housing increase disease?",
-                        "answer": "The water source that caused the deadly 1854 cholera outbreak."
-                    },
-                    {
-                        "question": "What happened to Britain's population between 1750 and 1850?",
-                        "answer": "Because the Miasma theory (bad air) was still widely believed."
-                    },
-                    {
-                        "question": "When was the first flushing toilet invented?",
-                        "answer": "1596, by Sir John Harington."
-                    },
-                    {
-                        "question": "What did Roman conduits do?",
-                        "answer": "Transported clean water into towns using gravity."
+                        "answer": "The government's belief that it should not interfere in public health or people's daily lives."
                     }
                 ]
             },
@@ -949,9 +949,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain the significance of john snow's broad street map in the development of sanitation.",
+                            "text": "Q1: Identify what John Snow's Broad Street map proved about cholera.",
                             "model": "It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.",
-                            "starter": "John Snow's Broad Street map was significant because...",
+                            "starter": "John Snow's Broad Street map proved that...",
                             "clue": "Consider how he used geography and data to locate the infection."
                         }
                     ]
@@ -962,9 +962,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Explain the significance of the great stink of london in the development of sanitation.",
+                            "text": "Q2: Describe the impact of the Great Stink on Parliament in 1858.",
                             "model": "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
-                            "starter": "The Great Stink of London was significant because...",
+                            "starter": "The Great Stink impacted Parliament by...",
                             "clue": "Think about why the smell of the Thames affected the politicians personally."
                         }
                     ]
@@ -975,9 +975,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Explain the significance of bazalgette's sewer system in the development of sanitation.",
+                            "text": "Q3: Explain how Joseph Bazalgette's sewer system solved London's waste problem.",
                             "model": "It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.",
-                            "starter": "Joseph Bazalgette's sewer system was significant because...",
+                            "starter": "Joseph Bazalgette's sewer system solved the problem by...",
                             "clue": "Think about how it moved waste out of the city and where it sent it."
                         }
                     ]
@@ -988,9 +988,9 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain the significance of pasteur's germ theory in the development of sanitation.",
+                            "text": "Q4: Explain the link between Louis Pasteur's Germ Theory and sanitation.",
                             "model": "It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.",
-                            "starter": "Louis Pasteur's Germ Theory was significant because...",
+                            "starter": "Louis Pasteur's Germ Theory linked to sanitation because...",
                             "clue": "Think about how this disproved miasma theory permanently."
                         }
                     ]
@@ -1001,7 +1001,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q5: Explain the significance of public health act of 1875 in the development of sanitation.",
+                            "text": "Q5: Evaluate the significance of the 1875 Public Health Act for modern sanitation.",
                             "model": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
                             "starter": "The Public Health Act of 1875 was significant because...",
                             "clue": "Think about the transition from voluntary hygiene to mandatory laws."
@@ -1067,103 +1067,253 @@ export const unitData = {
     "quizPack": [
         {
             "q": "Why was digging cesspits in the Iron Age a hygienic way to manage waste?",
-            "a": "Roundhouse settlements were spread out and temporary pits kept waste away from springs"
+            "a": "Roundhouse settlements were spread out and temporary pits kept waste away from springs",
+            "options": [
+                "They lined them with imported Roman lead",
+                "They piped the waste into the ocean",
+                "They used chemical disinfectants to kill germs",
+                "Roundhouse settlements were spread out and temporary pits kept waste away from springs"
+            ]
         },
         {
             "q": "What technology did Roman engineers use to bring fresh water over miles into British towns?",
-            "a": "Stone channels called conduits that utilized the natural pull of gravity"
+            "a": "Stone channels called conduits that utilized the natural pull of gravity",
+            "options": [
+                "Underground iron pipes and valves",
+                "Steam-powered pumping stations",
+                "Stone channels called conduits that utilized the natural pull of gravity",
+                "Wooden windmills connected to wells"
+            ]
         },
         {
             "q": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
-            "a": "Housesteads Fort on Hadrian's Wall"
+            "a": "Housesteads Fort on Hadrian's Wall",
+            "options": [
+                "Housesteads Fort on Hadrian's Wall",
+                "Stonehenge",
+                "The Tower of London",
+                "Skara Brae"
+            ]
         },
         {
             "q": "What did Roman soldiers use to wipe themselves in communal latrines?",
-            "a": "A wet sponge attached to the end of a shared wooden stick"
+            "a": "A wet sponge attached to the end of a shared wooden stick",
+            "options": [
+                "Toilet paper made from papyrus",
+                "Woollen cloths washed in vinegar",
+                "Leaves from the surrounding forest",
+                "A wet sponge attached to the end of a shared wooden stick"
+            ]
         },
         {
             "q": "What did Roman bathers experience inside a bathhouse like Bearsden?",
-            "a": "Washing in sequence through cold, warm, and hot rooms"
+            "a": "Washing in sequence through cold, warm, and hot rooms",
+            "options": [
+                "Swimming in a single massive outdoor pool",
+                "Sitting in a steam room to sweat out disease",
+                "Taking a shower under a mechanical waterfall",
+                "Washing in sequence through cold, warm, and hot rooms"
+            ]
         },
         {
             "q": "Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?",
-            "a": "The low population density meant waste did not build up enough to contaminate water supplies"
+            "a": "The low population density meant waste did not build up enough to contaminate water supplies",
+            "options": [
+                "They built complex underground sewers",
+                "They had strict hygiene laws enforced by the King",
+                "They boiled all their drinking water",
+                "The low population density meant waste did not build up enough to contaminate water supplies"
+            ]
         },
         {
             "q": "On the twelfth-century plans of Canterbury Priory, what did the red lines represent?",
-            "a": "Pipes carrying dirty waste water away to flush the toilets"
+            "a": "Pipes carrying dirty waste water away to flush the toilets",
+            "options": [
+                "Pipes carrying dirty waste water away to flush the toilets",
+                "Lines showing where burials were",
+                "Paths for the monks to walk",
+                "Walls of the monastery"
+            ]
         },
         {
             "q": "How did poorer townspeople get their fresh water if they did not own a private well?",
-            "a": "They bought it from water sellers who hauled river water in barrels"
+            "a": "They bought it from water sellers who hauled river water in barrels",
+            "options": [
+                "They walked to the nearest Roman aqueduct",
+                "They collected rainwater in stone basins",
+                "They had indoor plumbing installed",
+                "They bought it from water sellers who hauled river water in barrels"
+            ]
         },
         {
             "q": "What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?",
-            "a": "Wild moss"
+            "a": "Wild moss",
+            "options": [
+                "Wild moss",
+                "Parchment paper",
+                "Woven cloth",
+                "Animal skins"
+            ]
         },
         {
             "q": "Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?",
-            "a": "To avoid disrupting the busy town streets with terrible smells and waste carts"
+            "a": "To avoid disrupting the busy town streets with terrible smells and waste carts",
+            "options": [
+                "Because they were ashamed of their job",
+                "To avoid disrupting the busy town streets with terrible smells and waste carts",
+                "Because vampires only work at night",
+                "Because it was illegal to do it during the day"
+            ]
         },
         {
             "q": "Why did London's sanitation problems get worse during the Early Modern period?",
-            "a": "The population grew rapidly, putting too much pressure on crowded town systems"
+            "a": "The population grew rapidly, putting too much pressure on crowded town systems",
+            "options": [
+                "The population grew rapidly, putting too much pressure on crowded town systems",
+                "The Great Fire destroyed all the sewers",
+                "People stopped caring about hygiene completely",
+                "The Romans returned and destroyed the pipes"
+            ]
         },
         {
             "q": "Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?",
-            "a": "Samuel Pepys"
+            "a": "Samuel Pepys",
+            "options": [
+                "Oliver Cromwell",
+                "King James I",
+                "William Shakespeare",
+                "Samuel Pepys"
+            ]
         },
         {
             "q": "Who invented the first water closet (flushing toilet) in Britain in 1596?",
-            "a": "Sir John Harington"
+            "a": "Sir John Harington",
+            "options": [
+                "Edwin Chadwick",
+                "Joseph Bazalgette",
+                "Thomas Crapper",
+                "Sir John Harington"
+            ]
         },
         {
             "q": "Why was the 1596 flushing toilet not used by ordinary citizens?",
-            "a": "Houses lacked running piped water and connections to street sewers"
+            "a": "Houses lacked running piped water and connections to street sewers",
+            "options": [
+                "Houses lacked running piped water and connections to street sewers",
+                "It was too loud",
+                "It was illegal to own one",
+                "It was considered bad for your health"
+            ]
         },
         {
             "q": "What was a 'water seller's' job in an Early Modern town?",
-            "a": "Transporting river water in large barrels on horseback to sell to homes"
+            "a": "Transporting river water in large barrels on horseback to sell to homes",
+            "options": [
+                "Selling bottled spring water from France",
+                "Filtering muddy water through sand",
+                "Fixing broken wells",
+                "Transporting river water in large barrels on horseback to sell to homes"
+            ]
         },
         {
             "q": "By how much did Britain's population grow during the century of industrialisation (1750–1850)?",
-            "a": "It skyrocketed from 6 million to 21 million."
+            "a": "It skyrocketed from 6 million to 21 million.",
+            "options": [
+                "It skyrocketed from 6 million to 21 million.",
+                "It fell from 10 million to 6 million",
+                "It grew from 1 million to 5 million",
+                "It stayed exactly the same"
+            ]
         },
         {
             "q": "How did working-class families living in terraced yards usually obtain their water?",
-            "a": "From a shared pump in the street or yard that only ran for a few hours."
+            "a": "From a shared pump in the street or yard that only ran for a few hours.",
+            "options": [
+                "From a local water seller",
+                "From a nearby river or stream",
+                "From private taps inside their homes",
+                "From a shared pump in the street or yard that only ran for a few hours."
+            ]
         },
         {
             "q": "What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?",
-            "a": "Cholera"
+            "a": "Cholera",
+            "options": [
+                "Tuberculosis",
+                "Smallpox",
+                "The Black Death",
+                "Cholera"
+            ]
         },
         {
             "q": "What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?",
-            "a": "Miasma Theory (the belief that disease is spread by bad smells)"
+            "a": "Miasma Theory (the belief that disease is spread by bad smells)",
+            "options": [
+                "Four Humours Theory",
+                "Germ Theory",
+                "Miasma Theory (the belief that disease is spread by bad smells)",
+                "Genetic Theory"
+            ]
         },
         {
             "q": "Why did cesspits under shared yard privies frequently overflow in industrial cities?",
-            "a": "Landlords refused to pay for them to be emptied, and they were not connected to sewers."
+            "a": "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
+            "options": [
+                "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
+                "They were built too small",
+                "The landlords paid too much to empty them",
+                "They were deliberately flooded by the council"
+            ]
         },
         {
             "q": "How did John Snow stop the Soho cholera outbreak of 1854?",
-            "a": "He persuaded the local parish to remove the Broad Street pump handle."
+            "a": "He persuaded the local parish to remove the Broad Street pump handle.",
+            "options": [
+                "He persuaded the local parish to remove the Broad Street pump handle.",
+                "He closed down the local pub",
+                "He invented a vaccine for cholera",
+                "He ordered the streets to be washed with bleach"
+            ]
         },
         {
             "q": "What event in the summer of 1858 finally forced politicians to fund London's sewer network?",
-            "a": "The Great Stink of the River Thames"
+            "a": "The Great Stink of the River Thames",
+            "options": [
+                "The outbreak of the Black Death",
+                "The collapse of the Thames bridge",
+                "The Great Stink of the River Thames",
+                "A massive riot by gongfermers"
+            ]
         },
         {
             "q": "Which French scientist proved 'Germ Theory' in 1860, showing that microscopic organisms cause disease?",
-            "a": "Louis Pasteur"
+            "a": "Louis Pasteur",
+            "options": [
+                "Antoine Lavoisier",
+                "Louis Pasteur",
+                "Marie Curie",
+                "Rene Descartes"
+            ]
         },
         {
             "q": "What did the landmark 1875 Public Health Act force local councils to do?",
-            "a": "Ensure all houses had piped clean water and proper sewer connections."
+            "a": "Ensure all houses had piped clean water and proper sewer connections.",
+            "options": [
+                "Provide free healthcare to all citizens",
+                "Build hospitals in every town",
+                "Ban all cesspits immediately",
+                "Ensure all houses had piped clean water and proper sewer connections."
+            ]
         },
         {
             "q": "How many miles of brick sewers did Joseph Bazalgette construct beneath London?",
-            "a": "1,300 miles"
+            "a": "1,300 miles",
+            "options": [
+                "500 miles",
+                "1,300 miles",
+                "10 miles",
+                "50 miles"
+            ]
         }
     ],
     "guided_reading": [
@@ -1285,5 +1435,84 @@ export const unitData = {
             "word": "Industrial Revolution",
             "definition": "A period of rapid urbanization and industrial growth that led to overcrowded and unsanitary living conditions."
         }
-    ]
+    ],
+    "assessments": [
+        {
+            "id": "timeline",
+            "title": "Assessment Option 1: Public Health Domino Flowchart",
+            "type": "timeline",
+            "description": "The development of public health is mixed up below. Draw arrows to connect them in chronological order.",
+            "events": [
+                {
+                    "year": "312 BC",
+                    "title": "Roman Aqueducts",
+                    "detail": "The Romans begin building vast aqueducts and bathhouses."
+                },
+                {
+                    "year": "1348",
+                    "title": "The Black Death",
+                    "detail": "The plague kills a third of England, blamed on miasma."
+                },
+                {
+                    "year": "1842",
+                    "title": "Chadwick's Report",
+                    "detail": "Edwin Chadwick publishes his report on sanitary conditions."
+                },
+                {
+                    "year": "1854",
+                    "title": "Broad Street Pump",
+                    "detail": "John Snow proves cholera is waterborne."
+                },
+                {
+                    "year": "1858",
+                    "title": "The Great Stink",
+                    "detail": "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers."
+                }
+            ]
+        },
+        {
+            "id": "essay_cholera",
+            "title": "Assessment Option 2: Cholera Investigation",
+            "type": "essay",
+            "description": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak."
+        }
+    ],
+    "key_individuals": [
+        {
+            "id": "seneca",
+            "name": "Seneca the Younger",
+            "role": "Roman Philosopher",
+            "image": "assets/seneca.jpg",
+            "bio": "A Roman philosopher who famously complained about the intense noise and activity of Roman bathhouses in 62 AD."
+        },
+        {
+            "id": "chadwick",
+            "name": "Edwin Chadwick",
+            "role": "Public Health Reformer",
+            "image": "assets/card_default.png",
+            "bio": "Author of the 1842 Report on the Sanitary Condition of the Labouring Population, which led to the 1848 Public Health Act."
+        },
+        {
+            "id": "snow",
+            "name": "John Snow",
+            "role": "Physician",
+            "image": "assets/card_default.png",
+            "bio": "Proved that cholera was waterborne by mapping the 1854 Broad Street outbreak and removing the pump handle."
+        },
+        {
+            "id": "bazalgette",
+            "name": "Joseph Bazalgette",
+            "role": "Civil Engineer",
+            "image": "assets/card_default.png",
+            "bio": "Designed and built London's massive sewer system after the Great Stink of 1858, virtually eliminating cholera."
+        },
+        {
+            "id": "myddelton",
+            "name": "Sir Hugh Myddelton",
+            "role": "Engineer",
+            "image": "assets/card_default.png",
+            "bio": "Constructed the New River in 1613 to bring fresh drinking water to London."
+        }
+    ],
+    "cover_image": "assets/was_industrial_street.png"
 };

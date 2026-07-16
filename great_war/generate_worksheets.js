@@ -5,23 +5,15 @@ const dataContent = fs.readFileSync(path.join(__dirname, 'data.js'), 'utf8');
 const jsonContent = dataContent.replace('export const unitData = ', '').trim().replace(/;$/, '');
 const unitData = JSON.parse(jsonContent);
 
-let terminologyData = [];
-try {
-  const termContent = fs.readFileSync(path.join(__dirname, 'terminology_data.js'), 'utf8');
-  terminologyData = new Function(termContent.replace('export const terminologyData =', 'return').replace(/;$/, '') + ';')();
-} catch(e) {
-  console.log("Could not load terminology data");
-}
+const dataParserSrc = fs.readFileSync(path.join(__dirname, '../src/data_parser.js'), 'utf8');
+const dataParserCode = dataParserSrc.replace(/export /g, '');
+eval(dataParserCode);
 
+unitData.lessons.forEach(lesson => {
+  sanitizeLessonData(lesson);
+});
 
-const CHUNK_SIZE = 3;
-const totalChunks = Math.ceil(unitData.lessons.length / CHUNK_SIZE);
-
-for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
-  const ktNum = chunkIndex + 1;
-  const chunkLessons = unitData.lessons.slice(chunkIndex * CHUNK_SIZE, (chunkIndex + 1) * CHUNK_SIZE);
-  
-  let html = `<!DOCTYPE html>
+let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -31,135 +23,125 @@ for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
     @page { size: A4 portrait; margin: 20mm; }
     body { font-family: 'Outfit', sans-serif; font-size: 12pt; line-height: 1.6; color: #000; }
     h1 { font-family: 'Playfair Display', serif; font-size: 32pt; text-align: center; margin-top: 100px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 20pt; color: #1a237e; border-bottom: 2px solid #ccc; padding-bottom: 5px; page-break-before: always; }
-    h3 { font-size: 14pt; color: #333; margin-top: 20px; }
-    .narrative-block { margin-bottom: 15pt; text-align: justify; }
-    .task-box { border: 2px solid #333; padding: 15px; margin-top: 20px; background: #fafafa; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 20pt; color: #1a237e; border-bottom: 2px solid #ccc; padding-bottom: 5px; page-break-before: always; page-break-after: avoid; }
+    h3 { font-size: 14pt; color: #333; margin-top: 20px; page-break-after: avoid; }
+    .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; }
+    .task-box { border: 2px solid #333; padding: 15px; margin-top: 20px; background: #fafafa; page-break-inside: avoid; }
     .task-lines { border-bottom: 1px solid #ccc; height: 30px; margin-top: 10px; }
     .task-lines-large { border-bottom: 1px solid #ccc; height: 45px; margin-top: 10px; }
     .source-container { text-align: center; margin: 20px 0; }
     .source-container img { max-width: 100%; max-height: 350px; border: 1px solid #000; }
     .source-caption { font-size: 10pt; font-style: italic; margin-top: 5px; }
-    .do-now-box { border: 2px solid #1a237e; padding: 15px; margin-bottom: 30px; background: #f8f9fa; }
-    .do-now-q { margin-top: 15px; font-weight: 500; }
-    .draw-task { background: #e8eaf6; padding: 10px; margin-top: 10px; font-weight: bold; text-align: center; border-radius: 5px; border: 1px solid #1a237e; }
-  
-    .task-box, .narrative-chunk, table, .ascii-diagram {
-      page-break-inside: avoid;
-    }
-  
+    .do-now-box { border: 2px solid #1a237e; padding: 15px; margin-bottom: 30px; background: #f8f9fa; page-break-inside: avoid; }
+    .do-now-q { margin-top: 15px; font-weight: 500; font-size: 11pt; }
+    .draw-task { background: #e8eaf6; padding: 10px; margin-top: 10px; font-weight: bold; text-align: center; border-radius: 5px; border: 1px solid #1a237e; page-break-inside: avoid; }
+    .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: avoid; }
+    .grading-boxes { display: flex; justify-content: space-between; }
+    .grade-box { display: flex; align-items: center; gap: 5px; }
+    .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px; background: #fff; }
+    .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
   </style>
 </head>
 <body>
 `;
 
-  let ktTitle = ktNum === 1 ? 'Key Topic 1: The birth of the state of Israel, 1945–1963' : 
-                ktNum === 2 ? 'Key Topic 2: The escalating conflict, 1964–1973' : 
-                'Key Topic 3: Attempts at a solution, 1974–1995';
-
-  let tableRows = chunkLessons.map((l, i) => {
-    let lessonNumStr = `KT${ktNum}.${i + 1}`;
-    let lessonTitleStr = l.title.replace(/^Lesson \d+:/i, lessonNumStr + ':');
-    
-    // Extract hinge questions
-    let hingeQs = '';
-    if (l.teacher_notes && l.teacher_notes.objectives) {
-        hingeQs = '<ul style="margin: 0; padding-left: 20px;">' + 
-            l.teacher_notes.objectives.slice(0, 3).map(obj => `<li style="margin-bottom: 5px;">${obj.question}</li>`).join('') +
-            '</ul>';
-    } else {
-        hingeQs = '<em>No hinge questions defined</em>';
-    }
-
-    return `
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc; font-weight: bold; width: 35%; vertical-align: top;">${lessonTitleStr}</td>
-        <td style="padding: 10px; border: 1px solid #ccc; font-size: 11pt; vertical-align: top;">${hingeQs}</td>
-      </tr>
-    `;
-  }).join('');
-
-  let tableHtml = `
-    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff;">
-      <thead>
-        <tr style="background: #e8eaf6;">
-          <th style="padding: 10px; border: 1px solid #ccc; text-align: left;">Key Enquiry Focus</th>
-          <th style="padding: 10px; border: 1px solid #ccc; text-align: left;">Hinge Questions (Self-Assessment)</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${tableRows}
-      </tbody>
-    </table>
-  `;
-
-  let coverCaption = '';
-  if (ktNum === 1) {
-    coverCaption = "Cover Image: The SS Exodus carrying Jewish refugees, intercepted by the British Royal Navy in 1947. (Source: Wikipedia/Public Domain)";
-  } else if (ktNum === 2) {
-    coverCaption = "Cover Image: Six Day War. Army chief chaplain Rabbi Shlomo Goren, surrounded by IDF soldiers, blows the shofar in front of the Western Wall in Jerusalem. June 1967. Photograph by David Rubinger.";
-  } else if (ktNum === 3) {
-    coverCaption = "Cover Image: Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands, flanked by US President Bill Clinton, at the signing of the Oslo I Accord, 13 September 1993. (Source: Wikipedia/Public Domain)";
+  let trackerRows = '';
+  unitData.lessons.forEach(l => {
+    let maxScore = 5;
+    if (l.do_now && l.do_now.items) maxScore = l.do_now.items.length;
+    trackerRows += `<tr><td style="border:1px solid #333; padding:4px;">${l.title}</td><td style="border:1px solid #333; padding:4px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</td><td style="border:1px solid #333; padding:4px; width:60px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>`;
+  });
+  if (unitData.assessments) {
+    unitData.assessments.forEach(a => {
+      trackerRows += `<tr><td style="border:1px solid #333; padding:4px;">${a.title}</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>`;
+    });
   }
 
   html += `
-  <div style="page-break-after: always; padding: 40px; font-family: 'Georgia', serif;">
-  <p style="text-align:center; font-size:14pt; margin-top: 0; font-weight: bold; color: #d32f2f;">Printable Workbook</p>
+  <h1 style="margin-top: 20px; margin-bottom: 5px; font-size: 28pt;">${unitData.title}</h1>
+  <p style="text-align:center; font-size:14pt; margin-top: 0; margin-bottom: 15px;">Student Workbook</p>
   
-  <h1 style="font-size: 36pt; text-align: center; margin-bottom: 20px; color: #1e3a8a; border-bottom: 3px solid #1e3a8a; padding-bottom: 20px;">${unitData.title}</h1>
-  
-  <div style="text-align: center; margin: 15px 0;">
-    <img src="../cme_new/assets/kt${ktNum}_cover.png" style="max-height: 250px; width: auto; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="Cover Image">
-    <div style="font-size: 12pt; font-weight: bold; margin-top: 8px; color: #1a237e;">${ktTitle}</div>
-    <div style="font-size: 9pt; font-style: italic; color: #555; margin-top: 5px; max-width: 80%; margin-left: auto; margin-right: auto;">${coverCaption}</div>
+  <!-- Top Section: Name, Class, Guide and Image -->
+  <div style="display: flex; gap: 30px; margin: 0 5%; width: 90%; align-items: stretch;">
+    
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; gap: 10px;">
+        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Name: </div>
+        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Class: </div>
+      </div>
+      
+      <div style="border: 2px solid #1a237e; background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 9.5pt;">
+        <h3 style="margin-top: 0; margin-bottom: 10px; color: #1a237e; text-align: center; font-size: 11pt;">Assessment Levels Guide</h3>
+        <ul style="margin: 0; padding-left: 15px; color: #333; line-height: 1.4;">
+          <li style="margin-bottom: 4px;"><strong>Emerging (1-2):</strong> Basic understanding of key events.</li>
+          <li style="margin-bottom: 4px;"><strong>Emerging+ (3):</strong> Describes events with some historical details.</li>
+          <li style="margin-bottom: 4px;"><strong>Expected (4-5):</strong> Explains causes, consequences, and significance clearly.</li>
+          <li style="margin-bottom: 4px;"><strong>Expected+ (6-7):</strong> Analyzes context and links different factors.</li>
+          <li><strong>Greater Depth (8-9):</strong> Highly detailed, analytical, and evaluates complex changes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      ${Array.isArray(unitData.cover_image) ? 
+        `<div style="display: flex; gap: 10px; justify-content: center; align-items: center; height: 230px;">
+          ${unitData.cover_image.map(img => `<img src="${img}" style="max-height: 100%; max-width: 32%; object-fit: contain; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="${unitData.title}">`).join('')}
+        </div>`
+        : 
+        `<img src="${unitData.cover_image || ''}" style="max-width: 100%; max-height: 230px; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="${unitData.title}">`
+      }
+      ${unitData.cover_caption ? `<p style="margin-top: 10px; font-style: italic; font-size: 10pt; color: #555; text-align: center;">${unitData.cover_caption}</p>` : ''}
+    </div>
+
   </div>
 
-  <div style="margin: 20px 5%; border: 2px solid #1a237e; background: #f8f9fa; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
-    <h3 style="margin-top: 0; margin-bottom: 10px; color: #1a237e; text-align: center; font-family: 'Playfair Display', serif; font-size: 16pt;">Unit Overview</h3>
-    ${tableHtml}
+  <!-- Bottom Section: Tracker Table -->
+  <div style="margin: 25px 5% 0 5%; width: 90%;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
+      <thead>
+        <tr style="background: #1a237e; color: white;">
+          <th style="border: 1px solid #333; padding: 6px; width: 35%;">Progress & Assessment Tracker</th>
+          <th style="border: 1px solid #333; padding: 6px; width: 12%; text-align: center;">Do Now</th>
+          <th style="border: 1px solid #333; padding: 6px; width: 13%; text-align: center;">Level</th>
+          <th style="border: 1px solid #333; padding: 6px; width: 40%;">Teacher Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${trackerRows}
+        <tr style="background: #e8eaf6; font-weight: bold;">
+          <td style="border: 1px solid #333; padding: 8px; text-align: right;">Final Unit Grade:</td>
+          <td style="border: 1px solid #333; padding: 8px; background:#eee;"></td>
+          <td style="border: 1px solid #333; padding: 8px;"></td>
+          <td style="border: 1px solid #333; padding: 8px;"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Name: </div>
-  <div style="margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt;">Class: </div>
-  </div>
   `;
 
 
   
 
-chunkLessons.forEach((lesson, lessonIndex) => {
+unitData.lessons.forEach((lesson, lessonIndex) => {
+  let globalQNum = 1;
+  if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+  if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+  if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => task.qNum = globalQNum++); });
+  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
   
-  let lessonNumStr = `KT${ktNum}.${lessonIndex + 1}`;
-  let lessonTitleStr = lesson.title.replace(/^Lesson \d+:/i, lessonNumStr + ':');
-  html += `<h2 style="margin-bottom: 20px;">${lessonTitleStr}</h2>`;
-
-  if (lesson.enquiry || lesson.learning_objectives) {
-    html += `<div style="border: 2px solid #1a237e; border-radius: 8px; padding: 15px; margin-bottom: 20px; background: #e8eaf6;">`;
-    if (lesson.enquiry) {
-      html += `<div style="font-weight: bold; font-size: 14pt; color: #1a237e; margin-bottom: 15px; text-align: center;">Enquiry: ${lesson.enquiry}</div>`;
-    }
-    if (lesson.learning_objectives && lesson.learning_objectives.scaffolded) {
-      html += `<div style="font-weight: bold; margin-bottom: 10px;">By the end of this lesson, I can:</div>`;
-      html += `<div style="display: flex; flex-direction: column; gap: 8px; margin-left: 10px;">`;
-      lesson.learning_objectives.scaffolded.forEach(obj => {
-        html += `<div style="display: flex; align-items: flex-start;">
-                   <div style="width: 20px; height: 20px; border: 2px solid #333; margin-right: 10px; background: #fff; flex-shrink: 0;"></div>
-                   <div style="font-size: 11pt; line-height: 1.4;">${obj}</div>
-                 </div>`;
-      });
-      html += `</div>`;
-    }
-    html += `</div>`;
-  }
+  html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../cme_new/${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../great_war/${lesson.primary_source.src}`;
     html += `
+      <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
         ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
-        <div class="source-container">
-          <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+        <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
       </div>
     `;
@@ -169,8 +151,11 @@ chunkLessons.forEach((lesson, lessonIndex) => {
   if (lesson.do_now) {
         if (lesson.do_now.type === "timeline") {
       html += `<div class="do-now-box">
-                 <h3>Chronological Domino Flowchart</h3>
-                 <p style="font-style: italic; color: #555;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
+                 <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+                   <h3 style="margin: 0;">Chronological Domino Flowchart</h3>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+                 </div>
+                 <p style="font-style: italic; color: #555; margin-top: 0;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">`;
                  
       // Shuffle the events
@@ -190,114 +175,30 @@ chunkLessons.forEach((lesson, lessonIndex) => {
       html += `</div><div style="clear: both; margin-bottom: 20px;"></div>`;
 
       if (lesson.do_now.prediction_question) {
-        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>1. ${lesson.do_now.prediction_question.replace('Predict: ', '').replace(/\\s*\\((P|Para\\s*)\\d+\\)/gi, '')}</strong></div>`;
-        html += `<div class="task-lines-large"></div><div class="task-lines-large"></div>`;
+        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+        html += `<div class="task-lines"></div>`;
       }
       html += `</div>`;
     } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && lesson.do_now.items)) {
-      html += `<div class="do-now-box"><h3>Do Now Activity</h3>`;
+      let maxScore = lesson.do_now.items ? lesson.do_now.items.length : 5;
+      html += `<div class="do-now-box">
+                 <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+                   <h3 style="margin: 0;">Do Now Activity</h3>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
+                 </div>`;
       lesson.do_now.items.forEach((item, index) => {
-        html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question.replace(/^\d+\.\s*/, '')}</div>`;
-        html += `<div class="task-lines-large"></div>`;
+        html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question}</div>`;
+        html += `<div class="task-lines"></div>`;
       });
       html += `</div>`;
     }
   }
 
-
-  // Render Vocab Pre-Teach Task (Rotated)
-  
-  let currentVocab = [];
-  if (terminologyData && terminologyData.length > 0) {
-    const globalLessonIndex = (chunkIndex * CHUNK_SIZE) + lessonIndex;
-    const termSet = terminologyData.find(t => t.id === 'lesson' + (globalLessonIndex + 1));
-    if (termSet && termSet.terms) {
-      currentVocab = termSet.terms;
-    }
-  }
-  
-  if (currentVocab.length > 0) {
-
-    const vocabStyle = lessonIndex % 3; 
-    
-    html += `<div class="task-box"><h3>Vocabulary Focus</h3>`;
-    
-    if (vocabStyle === 0) {
-      // Contextual Cloze
-      html += `<p><strong>Task:</strong> Fill in the blanks in the summary below using the correct words from the word bank.</p>`;
-      const words = currentVocab.map(v => v.term).join(' &nbsp; | &nbsp; ');
-      html += `<div style="border: 1px dashed #666; padding: 10px; text-align: center; font-weight: bold; margin-bottom: 15px; background: #fff;">Word Bank: ${words}</div>`;
-      
-      // Auto-generate cloze if missing
-      let clozeHtml = currentVocab.map(v => `The concept of ______________________ is best defined as ${v.definition.toLowerCase()}`).join('. ');
-
-      html += `<p style="line-height: 2.5; font-size: 13pt;">${clozeHtml}</p>`;
-    } else if (vocabStyle === 1) {
-      // Vocabulary Mapping
-      html += `<p><strong>Task:</strong> Read the key terms and their definitions. Choose <strong>two</strong> terms and write a single, historically accurate sentence that connects them.</p>`;
-      html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; background: #fff;">`;
-      currentVocab.forEach(v => {
-        html += `<div style="margin-bottom: 5px;"><strong>${v.term}:</strong> ${v.definition}</div>`;
-      });
-      html += `</div>`;
-      html += `<div class="task-lines"></div><div class="task-lines"></div>`;
-    } else if (vocabStyle === 2) {
-      // Mini-Frayer Model
-      html += `<p><strong>Task:</strong> Complete the Frayer Models for the key concepts below. Write the definition, one historical example, and one non-example (or a sketch).</p>`;
-      const wordsToFrayer = currentVocab.slice(0, 2);
-      wordsToFrayer.forEach(v => {
-        html += `<div style="margin-top: 15px;"><strong>Concept: ${v.term}</strong></div>`;
-        html += `
-          <table style="width: 100%; border-collapse: collapse; margin-top: 5px; background: #fff;">
-            <tr>
-              <td style="border: 2px solid #000; width: 50%; height: 80px; padding: 8px; vertical-align: top;"><strong>Definition:</strong><br><span style="color:#666; font-size:10pt;">${v.definition}</span></td>
-              <td style="border: 2px solid #000; width: 50%; height: 80px; padding: 8px; vertical-align: top;"><strong>Historical Example:</strong></td>
-            </tr>
-            <tr>
-              <td style="border: 2px solid #000; width: 50%; height: 80px; padding: 8px; vertical-align: top;"><strong>Characteristics:</strong></td>
-              <td style="border: 2px solid #000; width: 50%; height: 80px; padding: 8px; vertical-align: top;"><strong>Non-example / Sketch:</strong></td>
-            </tr>
-          </table>
-        `;
-      });
-    }
-    html += `</div>`;
-  }
-
-  // Render Interleaved Narrative Blocks & Tasks
-  if (lesson.narrative_blocks) {
-    lesson.narrative_blocks.forEach((block, index) => {
-      // Print the paragraph text
-      if (block.text) {
-        if (typeof block.text === 'string' && block.text.startsWith('"')) {
-          html += `<div style="font-weight: bold; margin: 15px 0; font-size: 13pt;">${block.text.replace(/"/g, '')}</div>`;
-        } else {
-          html += `<p class="narrative-block">${block.text}</p>`;
-        }
-      }
-
-      // If this block has tasks, print them immediately underneath
-      if (block.tasks && block.tasks.length > 0) {
-        html += `<div class="task-box" style="margin-top: 15px;">`;
-        block.tasks.forEach(task => {
-          let cleanTask = task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '');
-          html += `<p style="margin-top:10px; font-weight: bold;">Q${task.qNum}. ${cleanTask}</p>`;
-          // Add 3 blank lines for writing
-          html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
-        });
-        html += `</div>`;
-      }
-    });
-  }
-
-  // Identify Draw Tasks (if any remain)
-  const drawTasks = lesson.draw_tasks || [];
-  
-  // Render Sources and append Draw Tasks immediately beneath them
+  // Render Sources
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
-        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../cme_new/${source.src}`;
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../great_war/${source.src}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -307,14 +208,29 @@ chunkLessons.forEach((lesson, lessonIndex) => {
         `;
       }
     });
-    
-    // Append draw tasks right after the sources block
-    if (drawTasks.length > 0) {
-      drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: |Q\d+\.\s*)/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</div>`;
-      });
-    }
   }
+
+  // Render Narrative Blocks & Tasks
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach((block, bIdx) => {
+      html += `<p class="narrative-block" id="para-${bIdx+1}">${block.text}</p>`;
+      if (block.tasks && block.tasks.length > 0) {
+        html += `<div class="task-box">`;
+        block.tasks.forEach(task => {
+          if (task.type === 'draw') {
+             html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Q${task.qNum}: ${task.text}</div>`;
+          } else {
+             html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text}</strong></p>`;
+             html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
+          }
+        });
+        html += `</div>`;
+      }
+    });
+  }
+
+
+
   // Extended Scholarship
   if (lesson.extended && lesson.extended.paragraphs) {
     html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
@@ -322,10 +238,9 @@ chunkLessons.forEach((lesson, lessonIndex) => {
       html += `<p class="narrative-block" style="font-size: 11pt; color: #444;">${para}</p>`;
     });
     if (lesson.extended.question) {
-      html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
+      html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question}</strong></div>`;
       html += `<div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
     }
-  }
 
   // Historians Corner
   if (lesson.historians_corner) {
@@ -334,130 +249,176 @@ chunkLessons.forEach((lesson, lessonIndex) => {
     html += `<p style="font-size: 11pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
     html += `</div>`;
   }
-const timelinesMap = {
-  1: [
-    { title: "Jewish Insurgency", prompt: "Why did Jewish paramilitary groups target British forces?" },
-    { title: "King David Hotel Bombing", prompt: "What was the impact of this attack on British morale?" },
-    { title: "The Exodus Incident", prompt: "How did this event sway international opinion?" },
-    { title: "UN Partition Plan (Res 181)", prompt: "What was the UN's proposed solution?" },
-    { title: "Declaration of the State of Israel", prompt: "Who declared it and what was the immediate reaction?" }
-  ],
-  2: [
-    { title: "The Arab Invasion", prompt: "Which nations attacked Israel immediately after its creation?" },
-    { title: "First Truce", prompt: "How did Israel use the UN-brokered truce to its advantage?" },
-    { title: "Deir Yassin Massacre", prompt: "What impact did this have on the Palestinian population?" },
-    { title: "The Palestinian Exodus (Nakba)", prompt: "Why did 700,000 Palestinians become refugees?" },
-    { title: "1949 Armistice Agreements", prompt: "What were the new borders established?" }
-  ],
-  3: [
-    { title: "The Baghdad Pact", prompt: "Why did this Western alliance anger Nasser?" },
-    { title: "Czech Arms Deal", prompt: "How did this shift the balance of power in the region?" },
-    { title: "Nationalisation of the Suez Canal", prompt: "Why did Nasser take control of the canal?" },
-    { title: "The Suez Crisis", prompt: "Who colluded to attack Egypt, and what was the outcome?" },
-    { title: "Formation of the PLO", prompt: "What was the goal of the Palestine Liberation Organisation?" }
-  ],
-  4: [
-    { title: "False Soviet Intelligence", prompt: "What incorrect information sparked the crisis?" },
-    { title: "Closure of the Straits of Tiran", prompt: "Why was this considered an act of war by Israel?" },
-    { title: "Operation Focus", prompt: "How did Israel achieve total air superiority?" },
-    { title: "Capture of East Jerusalem", prompt: "What was the significance of taking the Old City?" },
-    { title: "UN Resolution 242", prompt: "What 'land for peace' formula was proposed?" }
-  ],
-  5: [
-    { title: "War of Attrition", prompt: "How did Egypt attempt to wear down Israeli forces?" },
-    { title: "Rise of Yasser Arafat", prompt: "How did Arafat transform the PLO?" },
-    { title: "Battle of Karameh", prompt: "Why was this a psychological victory for Fatah?" },
-    { title: "Dawson's Field Hijackings", prompt: "How did the PFLP gain international attention?" },
-    { title: "Black September", prompt: "Why did King Hussein expel the PLO from Jordan?" }
-  ],
-  6: [
-    { title: "Sadat becomes President", prompt: "How did Anwar Sadat differ from Nasser?" },
-    { title: "Expulsion of Soviet Advisors", prompt: "Why did Sadat distance Egypt from the USSR?" },
-    { title: "The Yom Kippur Surprise Attack", prompt: "How did Egypt and Syria catch Israel off-guard?" },
-    { title: "Crossing the Suez Canal", prompt: "How did Egypt breach the Bar Lev line?" },
-    { title: "The Oil Weapon", prompt: "How did OPEC pressure Western nations?" }
-  ],
-  7: [
-    { title: "Kissinger's Shuttle Diplomacy", prompt: "How did the US mediate post-war disengagement?" },
-    { title: "Sadat's Visit to Jerusalem", prompt: "Why was this a historic breakthrough?" },
-    { title: "The Camp David Accords", prompt: "What framework for peace was agreed upon?" },
-    { title: "The Egypt-Israel Peace Treaty", prompt: "What did each side gain from the 1979 treaty?" },
-    { title: "Assassination of Sadat", prompt: "Why was Sadat assassinated by Islamic extremists?" }
-  ],
-  8: [
-    { title: "Arafat's UN Address", prompt: "What was the significance of the 'olive branch and freedom fighter's gun' speech?" },
-    { title: "PLO Moves to Lebanon", prompt: "Why did southern Lebanon become known as 'Fatahland'?" },
-    { title: "Israeli Invasion of Lebanon", prompt: "What were the objectives of Operation Peace for Galilee?" },
-    { title: "Sabra and Shatila Massacre", prompt: "What happened, and what was the international reaction?" },
-    { title: "Outbreak of the First Intifada", prompt: "What sparked the 1987 Palestinian uprising?" }
-  ],
-  9: [
-    { title: "PLO Recognizes Israel", prompt: "What shift occurred in Arafat's policy in 1988?" },
-    { title: "The Gulf War", prompt: "How did the PLO's support for Saddam Hussein affect its standing?" },
-    { title: "The Madrid Conference", prompt: "Why was this conference a diplomatic milestone?" },
-    { title: "The Oslo Accords", prompt: "What self-rule was granted to the Palestinians?" },
-    { title: "Assassination of Yitzhak Rabin", prompt: "How did this tragic event impact the peace process?" }
-  ]
-};
 
-  const events = timelinesMap[(chunkIndex * CHUNK_SIZE) + lessonIndex + 1];
-  
-  if (events && events.length > 0) {
-    html += `<div style="page-break-before: always;">
-      <h2 style="text-align: center; font-size: 24pt; margin-bottom: 5px; color: #1a237e;">Revision Timeline</h2>
-      <h3 style="text-align: center; font-size: 16pt; margin-top: 0; margin-bottom: 25px; font-weight: normal;">${lesson.title}</h3>
-      <p style="text-align: center; font-style: italic; margin-bottom: 40px; font-size: 12pt;">
-        Map out the key events chronologically. Read the title and prompt to guide your summary.
-      </p>
-      
-      <div style="margin: 0 auto; width: 85%; border-left: 4px solid #1a237e; padding-left: 40px; position: relative; padding-bottom: 20px;">`;
+  // GCSE Cross-Source Analysis
+  if (lesson.gcse_task) {
+    html += `<div>`;
+    html += `<h2>GCSE Cross-Source Analysis</h2>`;
+    html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
     
-    events.forEach(ev => {
-      html += `
-        <div style="position: relative; margin-bottom: 40px; page-break-inside: avoid;">
-          <!-- Node dot -->
-          <div style="position: absolute; left: -50px; top: 0; width: 16px; height: 16px; background: #fff; border: 4px solid #1a237e; border-radius: 50%;"></div>
-          
-          <div style="background: #f8f9fa; border: 1px solid #ccc; border-radius: 8px; padding: 15px;">
-            <div style="font-weight: bold; font-size: 14pt; margin-bottom: 8px;">${ev.title}</div>
-            <div style="font-style: italic; font-size: 11pt; color: #555; margin-bottom: 15px;">${ev.prompt}</div>
-            <div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>
-          </div>
-        </div>`;
+    let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 20px;">';
+    
+    lesson.gcse_task.sources.forEach(srcObj => {
+      sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding: 10px; text-align: center;">';
+      if (srcObj.type === 'visual') {
+        let imgSrc = srcObj.src.startsWith('../') ? srcObj.src : `../great_war/${srcObj.src}`;
+        sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+      } else {
+        sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
+      }
+      sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;
+      sourceHTML += '</div>';
     });
     
+    sourceHTML += '</div>';
+    html += sourceHTML;
+
+    html += `<h3 style="margin-top: 0;">Source Evaluation Notes</h3>`;
     html += `
-      </div>
-    </div>`;
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; page-break-inside: avoid;">
+        <tr>
+          <th style="border: 2px solid #000; padding: 8px; width: 10%;">Source</th>
+          <th style="border: 2px solid #000; padding: 8px; width: 30%;">N.O.P. (Nature, Origin, Purpose)</th>
+          <th style="border: 2px solid #000; padding: 8px; width: 30%;">Content (What it shows/says)</th>
+          <th style="border: 2px solid #000; padding: 8px; width: 30%;">Contextual Knowledge</th>
+        </tr>
+        <tr>
+          <td style="border: 2px solid #000; padding: 8px; text-align: center; font-weight: bold; height: 120px;">A</td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+        </tr>
+        <tr>
+          <td style="border: 2px solid #000; padding: 8px; text-align: center; font-weight: bold; height: 120px;">B</td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+          <td style="border: 2px solid #000; padding: 8px;"></td>
+        </tr>
+      </table>
+    `;
+
+    html += `<h3 style="margin-top: 0;">Final Written Evaluation</h3>`;
+    for(let i=0; i<10; i++) {
+      html += `<div class="task-lines-large"></div>`;
+    }
+    
+    html += `</div>`;
   }
+
+  }
+
+  // Inject Discreet Grading Footer for the Lesson
+  html += `
+    <div style="margin-top: 20px;"></div>
+    <div class="grading-footer">
+      <div class="grading-boxes">
+        <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+        <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+        <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+        <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+        <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+      </div>
+      <div>
+        Teacher Comment: <span class="teacher-comment"></span>
+      </div>
+    </div>
+  `;
+
 });
 
-// Append Exam Practice Zone
-if (unitData.exam_blocks && unitData.exam_blocks.length > 0) {
-  const relevantBlocks = unitData.exam_blocks.filter(b => b.block_id === (ktNum * 2 - 1) || b.block_id === (ktNum * 2));
-  if (relevantBlocks.length > 0) {
-    html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">Exam Practice Zone</h2>`;
+// Render Assessments
+if (unitData.assessments && unitData.assessments.length > 0) {
+  unitData.assessments.forEach((assessment, idx) => {
+    html += `<h2 style="margin-bottom: 20px; page-break-before: always;">${assessment.title}</h2>`;
+    html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> ${assessment.description}</p>`;
     
-    relevantBlocks.forEach(block => {
-      html += `<h3 style="font-size: 18pt; margin-top: 30px; margin-bottom: 20px; color: #1a237e;">${block.title}</h3>`;
-    
-    block.questions.forEach((q, idx) => {
-      html += `<div style="page-break-inside: avoid; margin-bottom: 40px; ${q.marks === 8 ? 'page-break-before: always;' : ''}">`;
-      html += `<div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">Q${idx + 1}. ${q.text}</div>`;
-      if (q.hint) {
-        html += `<div style="font-style: italic; font-size: 10pt; color: #555; margin-bottom: 10px;">You may use the following in your answer:<ul style="margin-top:5px;margin-bottom:5px;">${q.hint.split('\\n').map(h => `<li>${h.trim()}</li>`).join('')}</ul>You must also use information of your own.</div>`;
-      }
-      
-      // Add handwriting lines based on marks
-      const numLines = q.marks === 8 ? 24 : 10;
-      for (let i = 0; i < numLines; i++) {
-        html += `<div class="task-lines"></div>`;
-      }
+    if (assessment.type === 'timeline') {
+      html += `<div style="height: 600px; border: 2px dashed #999; border-radius: 8px; position: relative; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; background: #fafafa;">`;
+      html += `<div style="width: 90%; border-top: 3px solid #333; position: absolute; top: 50%;"></div>`;
+      html += `<span style="position: absolute; bottom: 10px; right: 10px; font-style: italic; color: #666;">Timeline Workspace</span>`;
       html += `</div>`;
-    });
+    } else if (assessment.type === 'diamond9') {
+      html += `<div style="display: flex; gap: 20px; margin-bottom: 20px;">`;
+      html += `<div style="flex: 1; border: 2px dashed #999; border-radius: 8px; padding: 15px; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 350px;">`;
+      html += `<span style="font-style: italic; color: #666; margin-bottom: 10px;">Diamond 9 Workspace</span>`;
+      
+      // Draw a small diamond template
+      html += `<div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">`;
+      html += `<div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div>`;
+      html += `<div style="display: flex; gap: 5px;"><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div></div>`;
+      html += `<div style="display: flex; gap: 5px;"><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div></div>`;
+      html += `<div style="display: flex; gap: 5px;"><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div><div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div></div>`;
+      html += `<div style="width: 40px; height: 25px; border: 1px solid #ccc; background: transparent;"></div>`;
+      html += `</div>`;
+      html += `</div>`;
+      
+      html += `<div style="flex: 1;">`;
+      html += `<strong>Factors to sort:</strong>`;
+      html += `<ul style="font-size: 10pt; line-height: 1.4; padding-left: 20px; margin-top: 5px;">`;
+      assessment.factors.forEach(f => {
+        html += `<li>${f}</li>`;
+      });
+      html += `</ul>`;
+      html += `</div>`;
+      html += `</div>`;
+      
+      html += `<strong>Top Choice Justification:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
+      html += `<strong style="display: block; margin-top: 15px;">Bottom Choice Justification:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
+    } else if (assessment.type === 'source_utility') {
+      html += `<div style="display: flex; gap: 20px; margin-bottom: 20px;">`;
+      assessment.sources.forEach(source => {
+        html += `<div style="flex: 1; border: 1px solid #333; padding: 15px; background: #fafafa;">`;
+        html += `<strong style="font-size: 13pt;">${source.id}</strong>`;
+        html += `<p style="font-size: 11pt; font-style: italic; margin-top: 5px; margin-bottom: 15px;">${source.provenance}</p>`;
+        html += `<p style="font-size: 11pt; line-height: 1.5;">${source.text}</p>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+      html += `<p style="font-style: italic; color: #555;">Use the writing lines below to answer the 8-mark question. Remember to analyze the content, provenance, and apply your contextual knowledge for both sources.</p>`;
+      for(let i=0; i<16; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
+    } else if (assessment.type === 'interpretations') {
+      html += `<div style="display: flex; gap: 20px; margin-bottom: 20px;">`;
+      assessment.interpretations.forEach(interp => {
+        html += `<div style="flex: 1; border: 1px solid #333; padding: 15px; background: #fafafa;">`;
+        html += `<strong style="font-size: 13pt;">${interp.id}</strong>`;
+        html += `<p style="font-size: 11pt; line-height: 1.5; margin-top: 10px;">${interp.text}</p>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+      
+      assessment.questions.forEach((q, qIndex) => {
+        html += `<div style="margin-top: 25px; ${qIndex === 2 ? 'page-break-before: always;' : 'page-break-inside: avoid;'}">`;
+        html += `<strong>${q}</strong>`;
+        let linesCount = q.includes("16 marks") ? 22 : 6;
+        for(let i=0; i<linesCount; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+      });
+    }
+
+    // Inject Discreet Grading Footer for the Assessment
+    html += `
+      <div style="margin-top: 30px;"></div>
+      <div class="grading-footer">
+        <div class="grading-boxes">
+          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        </div>
+        <div>
+          Teacher Comment: <span class="teacher-comment"></span>
+        </div>
+      </div>
+    `;
   });
-  }
 }
+
+
 
 // Append Quiz Pack
 if (unitData.quizPack && unitData.quizPack.length > 0) {
@@ -528,8 +489,5 @@ html += `
 
 </html>`;
 
-
-  const outFileName = `workbook_KT${ktNum}.html`;
-  fs.writeFileSync(path.join(__dirname, outFileName), html, 'utf8');
-  console.log(`Successfully generated ${outFileName}!`);
-}
+fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);
+console.log('Successfully generated workbook.html!');

@@ -48,35 +48,20 @@
           "model": "Israel won due to superior organization, unified leadership, and critical material support. While the Arab states were deeply divided by political rivalries and failed to commit their full military strength, Israel mobilized its entire society, creating a unified IDF command. The crucial one-month UN truce allowed Israel to import modern Czech weapons, overturning the initial military imbalance and allowing a highly motivated force to outnumber and defeat the fragmented Arab coalition."
         },
         "do_now": {
-          "type": "timeline",
-          "events": [
+          "items": [
             {
-              "year": "1917",
-              "title": "Balfour Declaration",
-              "detail": "Britain promises a national home for the Jewish people."
+              "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
+              "answer": "Arthur Balfour. He promised British support for a 'national home' for the Jewish people in Palestine."
             },
             {
-              "year": "1920-1947",
-              "title": "British Mandate",
-              "detail": "Britain governs Palestine under League of Nations."
+              "question": "How many Jewish people were systematically murdered during the Holocaust (1939-1945)?",
+              "answer": "6 million."
             },
             {
-              "year": "1936-1939",
-              "title": "Arab Revolt",
-              "detail": "Violent uprising against British rule and Jewish immigration."
-            },
-            {
-              "year": "1939",
-              "title": "White Paper",
-              "detail": "Britain restricts Jewish immigration to Palestine."
-            },
-            {
-              "year": "1945",
-              "title": "Post-WWII Crisis",
-              "detail": "Holocaust survivors seek refuge; Jewish Insurgency begins."
+              "question": "At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?",
+              "answer": "They were stuck in European Displaced Persons (DP) camps, seeking a new home."
             }
-          ],
-          "prediction_question": "Predict: Based on these events, why did the British finally decide to give up the mandate in 1947?"
+          ]
         },
         "primary_source": {
           "title": "Source A: The Ruins of the King David Hotel, 1946",
@@ -90,8 +75,7 @@
               "model": "The student should circle the destroyed southern wing."
             }
           ],
-          "teacher_note": "Ensure students understand this was a turning point. The sheer destruction and loss of life broke British resolve to maintain the Mandate.",
-          "model_answer": "Students should circle the destroyed southern wing, connecting the massive structural damage to the Irgun's strategy of targeting the British administrative and military headquarters to force a British withdrawal."
+          "teacher_note": "Ensure students understand this was a turning point. The sheer destruction and loss of life broke British resolve to maintain the Mandate."
         },
         "flashcards": [
           {
@@ -127,8 +111,7 @@
         },
         "historians_corner": {
           "title": "The Debate over Plan Dalet",
-          "author_context": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
-          "extract": "The debate centers on whether the actions taken were premeditated strategy or desperate reactions to wartime chaos."
+          "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
         },
         "gcse_task": {
           "sources": [

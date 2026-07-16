@@ -1,14 +1,15 @@
 export const unitData = {
     "title": "The Great War: Causes & Outbreak",
-    "cover_image": "assets/was_germany_unification.png",
-    "cover_caption": "Anton von Werner, 'The Proclamation of the German Empire at Versailles' (1885)",
+    "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
+    "cover_image": "assets/Naval-race-1909.jpg",
+    "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
     "lessons": [
         {
             "id": "lesson_1",
-            "title": "Lesson 1: The Franco-Prussian War",
+            "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
             "sources": [
                 {
-                    "title": "Reference Map: Alsace-Lorraine Border Region (1871)",
+                    "title": "Map A: Alsace-Lorraine Border Region (1871)",
                     "src": "assets/alsace_lorraine_simple_map.svg",
                     "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
                 }
@@ -129,18 +130,18 @@ export const unitData = {
             "gcse_task": {
                 "sources": [
                     {
-                        "type": "visual",
-                        "src": "assets/alsace_lorraine_simple_map.svg",
-                        "title": "Source A: Map of Alsace-Lorraine, annexed by Germany in 1871."
+                        "type": "written",
+                        "text": "“We must never forget the humiliation of 1871. The German Empire was proclaimed in our own Palace of Versailles, tearing away the bleeding wounds of Alsace and Lorraine. They have stolen our iron and our factories, and forced us to pay a crushing ransom of 5 billion francs. Every French child must grow up with one single thought: to rebuild our army and take back what was stolen from the motherland.”",
+                        "title": "Source A: Adapted from a French school textbook, published in Paris, 1885."
                     },
                     {
                         "type": "written",
-                        "text": "“France will never forgive us for taking Alsace-Lorraine. We must ensure she never finds an ally to help her take it back.”",
-                        "title": "Source B: Extract from a private letter written by Otto von Bismarck, 1872."
+                        "text": "“France will never forgive us for taking Alsace-Lorraine. The peace we have forced upon them has left a bitter resentment that will not fade. We must accept that a French war of revenge is a certainty in the future. Therefore, our entire diplomatic focus must be to ensure she never finds an ally to help her take it back. As long as France remains diplomatically isolated, particularly from Russia, Germany will remain secure.”",
+                        "title": "Source B: Adapted from a private letter written by German Chancellor Otto von Bismarck to a fellow diplomat, 1872."
                     }
                 ],
                 "topic": "the reasons for French hatred of Germany after 1871",
-                "model": "Source A is highly useful as it visually proves the strategic and economic loss of Alsace-Lorraine to Germany. Its origin as a factual map makes the content reliable. Source B is also highly useful; as a private letter from Bismarck (the Chancellor), it provides honest insight into Germany's awareness of French desire for 'revanche', giving us the motive for Bismarck's future alliance system. Together, they explain both the geographic cause of the hatred and the political consequences."
+                "model": "Source A is highly useful because it shows the deep, emotional humiliation felt by the French people over the loss of Alsace-Lorraine and the 5 billion franc ransom. As a school textbook, its purpose is to indoctrinate the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture. Source B is also extremely useful as it shows the German perspective. Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a future 'war of revenge'. Together, they prove that the hatred was mutual and structural, shaping the future alliance system."
             },
             "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
             "learning_objectives": {
@@ -180,7 +181,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q5: To what extent did the maps of central Europe fundamentally change between 1862 and 1871? Use the term \"North German Confederation\" in your answer. (P1)",
+                            "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer. (P1)",
                             "model": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
                         }
                     ]
@@ -191,7 +192,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P2)",
+                            "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870. (P2)",
                             "model": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
                         }
                     ]
@@ -202,7 +203,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P3)",
+                            "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces. (P3)",
                             "model": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
                         }
                     ]
@@ -213,7 +214,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty. (P4)",
+                            "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty. (P4)",
                             "model": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
                         }
                     ]
@@ -224,7 +225,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace. (P5)",
+                            "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace. (P5)",
                             "model": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
                         }
                     ]
@@ -237,16 +238,15 @@ export const unitData = {
                     "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
                     "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
                 }
-            ],
-            "enquiry": "How did the Franco-Prussian War sow the seeds of long-term European conflict?"
+            ]
         },
         {
             "id": "lesson_2",
-            "title": "Lesson 2: Imperial Rivalries",
+            "title": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
             "sources": [
                 {
                     "title": "Map A: Partition of Africa (1914)",
-                    "src": "assets/map_lesson2.png",
+                    "src": "assets/map_africa_1914.png",
                     "caption": ""
                 },
                 {
@@ -314,15 +314,15 @@ export const unitData = {
                         "answer": "Advanced railway networks for rapid mobilization and superior Krupp steel artillery."
                     },
                     {
-                        "question": "8. PAST TOPIC: Why was the location of the German Empire's proclamation so humiliating for France?",
+                        "question": "8. Why was the location of the German Empire's proclamation so humiliating for France?",
                         "answer": "It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty."
                     },
                     {
-                        "question": "9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?",
+                        "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
                         "answer": "To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war."
                     },
                     {
-                        "question": "10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?",
+                        "question": "10. What was Bismarck's ultimate nightmare scenario?",
                         "answer": "A two-front war against both France and Russia simultaneously."
                     }
                 ]
@@ -345,7 +345,7 @@ export const unitData = {
                     },
                     {
                         "type": "draw",
-                        "text": "Q5: Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word \"obstacle\" or \"encirclement\" in your answer.",
+                        "text": "Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word \"obstacle\" or \"encirclement\" in your answer.",
                         "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
                     }
                 ],
@@ -435,7 +435,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power. (P1)",
+                            "text": "Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power. (P1)",
                             "model": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
                         }
                     ]
@@ -446,7 +446,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871? (P2)",
+                            "text": "Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871? (P2)",
                             "model": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
                         }
                     ]
@@ -461,12 +461,12 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain. (P4)",
+                            "text": "Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain. (P4)",
                             "model": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
                         },
                         {
                             "type": "written",
-                            "text": "Q3: What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany? (P3 & P4)",
+                            "text": "What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany? (P3 & P4)",
                             "model": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
                         }
                     ]
@@ -487,15 +487,14 @@ export const unitData = {
                     "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
                     "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>"
                 }
-            ],
-            "enquiry": "Why did the scramble for African colonies heighten tensions between European powers?"
+            ]
         },
         {
             "id": "lesson_3",
-            "title": "Lesson 3: The Naval Arms Race",
+            "title": "Why did a battleship building contest destroy Anglo-German relations?",
             "sources": [
                 {
-                    "title": "MAP SUITE PLATE 4: The North Sea & Naval Chokepoints",
+                    "title": "Map A: The North Sea & Naval Chokepoints",
                     "src": "assets/map_lesson3.png",
                     "caption": ""
                 }
@@ -559,15 +558,15 @@ export const unitData = {
                         "answer": "Kaiser Wilhelm II"
                     },
                     {
-                        "question": "8. PAST TOPIC: What strategic territory did Germany take from France in 1871?",
+                        "question": "8. What strategic territory did Germany take from France in 1871?",
                         "answer": "Alsace-Lorraine"
                     },
                     {
-                        "question": "9. PAST TOPIC: Why did Bismarck weave a complex web of secret alliances after 1871?",
+                        "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
                         "answer": "To keep France diplomatically isolated so they could never start a revenge war."
                     },
                     {
-                        "question": "10. PAST TOPIC: What was Bismarck's ultimate nightmare scenario?",
+                        "question": "10. What was Bismarck's ultimate nightmare scenario?",
                         "answer": "A two-front war against both France and Russia simultaneously."
                     }
                 ]
@@ -670,7 +669,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy. (P1)",
+                            "text": "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy. (P1)",
                             "model": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
                         }
                     ]
@@ -681,17 +680,17 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q2: Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct. (P2)",
+                            "text": "Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct. (P2)",
                             "model": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
                         },
                         {
                             "type": "written",
-                            "text": "Q3: Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet. (P2)",
+                            "text": "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet. (P2)",
                             "model": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
                         },
                         {
                             "type": "written",
-                            "text": "Q5: Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany. (P1 & P2)",
+                            "text": "Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany. (P1 & P2)",
                             "model": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
                         }
                     ]
@@ -706,7 +705,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships. (P4)",
+                            "text": "Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships. (P4)",
                             "model": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
                         }
                     ]
@@ -729,25 +728,24 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q6: Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P4 & P8)",
+                            "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P4 & P8)",
                             "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
                         }
                     ]
                 }
-            ],
-            "enquiry": "How did the Anglo-German naval arms race push Europe closer to war?"
+            ]
         },
         {
             "id": "lesson_4",
-            "title": "Lesson 4: The Alliance System",
+            "title": "Did the Alliance System protect Europe or guarantee a global war?",
             "sources": [
                 {
-                    "title": "Interactive Diagram: The Alliance System (1914)",
+                    "title": "Diagram A: The Alliance System (1914)",
                     "src": "assets/alliance_system.svg",
                     "caption": "The complex web of treaties that dragged Europe into a global war."
                 },
                 {
-                    "title": "Reference Map: European Military Alliance Blocs (1914)",
+                    "title": "Map A: European Military Alliance Blocs (1914)",
                     "src": "assets/map_lesson4.png",
                     "caption": "",
                     "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
@@ -812,15 +810,15 @@ export const unitData = {
                         "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
                     },
                     {
-                        "question": "8. PAST TOPIC: What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+                        "question": "8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
                         "answer": "Weltpolitik (World Policy)"
                     },
                     {
-                        "question": "9. PAST TOPIC: Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+                        "question": "9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
                         "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
                     },
                     {
-                        "question": "10. PAST TOPIC: Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+                        "question": "10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
                         "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
                     }
                 ]
@@ -932,12 +930,12 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907. (P2)",
+                            "text": "Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907. (P2)",
                             "model": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
                         },
                         {
                             "type": "written",
-                            "text": "Q2: Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war. (P2)",
+                            "text": "Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war. (P2)",
                             "model": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
                         }
                     ]
@@ -948,7 +946,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q4: According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable. (P3)",
+                            "text": "According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable. (P3)",
                             "model": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
                         }
                     ]
@@ -959,12 +957,12 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization. (P4)",
+                            "text": "Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization. (P4)",
                             "model": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
                         },
                         {
                             "type": "written",
-                            "text": "Q5: Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. (P4)",
+                            "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. (P4)",
                             "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
                         }
                     ]
@@ -981,15 +979,14 @@ export const unitData = {
                     "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
                     "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
                 }
-            ],
-            "enquiry": "Did the alliance system provide security or guarantee a continent-wide war?"
+            ]
         },
         {
             "id": "lesson_5",
-            "title": "Lesson 5: The Spark in Sarajevo",
+            "title": "Why did a single assassination in Sarajevo ignite a World War?",
             "sources": [
                 {
-                    "title": "Interactive Diagram: The July Crisis Domino Effect",
+                    "title": "Diagram A: The July Crisis Domino Effect",
                     "src": "assets/july_crisis.svg",
                     "caption": "How a single assassination in the Balkans escalated into a world war within a month."
                 },
@@ -1001,11 +998,6 @@ export const unitData = {
                 {
                     "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
                     "src": "assets/map_sarajevo_route.jpg",
-                    "caption": ""
-                },
-                {
-                    "title": "",
-                    "src": "assets/map_postwar_europe.jpg",
                     "caption": ""
                 }
             ],
@@ -1063,15 +1055,15 @@ export const unitData = {
                         "answer": "Encirclement"
                     },
                     {
-                        "question": "8. PAST TOPIC: What revolutionary British battleship was launched in 1906?",
+                        "question": "8. What revolutionary British battleship was launched in 1906?",
                         "answer": "HMS Dreadnought"
                     },
                     {
-                        "question": "9. PAST TOPIC: Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+                        "question": "9. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
                         "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
                     },
                     {
-                        "question": "10. PAST TOPIC: How did the Anglo-German naval race make war more likely?",
+                        "question": "10. How did the Anglo-German naval race make war more likely?",
                         "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
                     }
                 ]
@@ -1183,21 +1175,14 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q1: Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire. (P2)",
-                            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+                            "text": "Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire. (P2)",
+                            "model": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
                         }
                     ]
                 },
                 {
                     "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong></strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
-                    "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
-                    "tasks": [
-                        {
-                            "type": "written",
-                            "text": "Q2: Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke. (P3)",
-                            "model": "The first assassin threw a bomb that bounced off the Archduke's car and exploded behind them. Because of this, the Archduke's driver later changed the route to visit the injured in the hospital. However, the driver wasn't informed of the route change, took a wrong turn, and stalled the car right in front of a cafe where Gavrilo Princip was standing, giving him a point-blank shot."
-                        }
-                    ]
+                    "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules."
                 },
                 {
                     "text": "The initial assassination attempts failed completely. One terrorist couldn't get his gun out, another went home out of pity, and a third threw a bomb that bounced off the Archduke's car and exploded under the vehicle behind. Furious, Franz Ferdinand canceled the rest of his itinerary and decided to head back to the train station, ordering his driver to stop by the hospital first to visit the wounded officers. However, the route map was altered and the drivers took a critical wrong turn onto Franz Josef Street. Realizing the error, the drivers stopped and attempted to reverse.",
@@ -1205,36 +1190,29 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q3: Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war between alliances. (P4)",
-                            "model": "Austria-Hungary issued a harsh ultimatum to Serbia (July 23). When Serbia refused one term, Austria declared war (July 28). Russia mobilized its army to defend Serbia (July 30). In response, Germany declared war on Russia (Aug 1) and France (Aug 3). To attack France quickly, Germany invaded neutral Belgium, forcing Britain to declare war on Germany (Aug 4)."
+                            "text": "Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke. (P4)",
+                            "model": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
                         }
                     ]
                 },
                 {
                     "text": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Seizing his unexpected luck, Princip stepped forward, pulled his pistol, and fired twice into the car. One bullet tore through the Archduke's throat; the second struck his wife, Sophie, in the stomach. Both died within minutes.",
-                    "level_4": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes.",
-                    "tasks": [
-                        {
-                            "type": "written",
-                            "text": "Q4: Contrast the historical argument of Tony Howarth (Interpretation 3), who blames competing nationalist ideologies, with Germany's military leaders who blame external threats. (P5)",
-                            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
-                        }
-                    ]
+                    "level_4": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes."
                 },
                 {
                     "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong></strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
-                    "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter."
-                },
-                {
-                    "text": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
-                    "level_4": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+                    "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Q5: Explain why the assassination in Sarajevo acted merely as a contributory trigger to set off a general explosion, rather than being the lone necessary cause of the war. (P7)",
-                            "model": "The assassination was merely the spark that ignited the 'powder keg'. The true, necessary causes were the decades of deep-rooted, structural tensions: the aggressive imperialism (Weltpolitik), the paranoid arms race (Dreadnoughts), the inflexible alliance systems dividing Europe into two armed camps, and the inflexible military mobilization timetables."
+                            "text": "Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war. (P6)",
+                            "model": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
                         }
                     ]
+                },
+                {
+                    "text": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+                    "level_4": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes."
                 },
                 {
                     "text": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. Both monarchs pleaded with each other to stop military mobilizations, signing their telegrams with familiar nicknames. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
@@ -1242,8 +1220,8 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Question 3a: How useful are Source A and Source B together to a historian researching why the European alliance system failed to maintain peace in July 1914? (P8)",
-                            "model": "Source A (Boiling Point) is highly useful for showing the extreme tension in the Balkans and how all Great Powers were precariously trying to keep the peace. However, it doesn't show the alliance treaties. Source B (Senegalese troops) is not useful for understanding the failure of diplomacy in July 1914, as it shows colonial troops fighting much later during the actual trench warfare phase."
+                            "text": "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis? (P8)",
+                            "model": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
                         }
                     ]
                 },
@@ -1253,237 +1231,572 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Question 3b: What is the main difference between Interpretation 1 and Interpretation 2 regarding who or what was to blame for starting the First World War? (P9)",
-                            "model": "Interpretation 1 places the blame squarely on the shoulders of the German leadership, accusing them of launching a deliberate war of aggression. Interpretation 2 argues against blaming a single nation, instead claiming that the rigidly structured alliance system and military timetables caused a systemic failure where everyone blundered into war."
+                            "text": "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914. (P9)",
+                            "model": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
                         }
                     ]
                 },
                 {
                     "text": "When war broke out in 1914, it was not just a European conflict. Because of the aggressive Scramble for Colonies (Lesson 2), millions of colonized people across Africa, Asia, and the Middle East were dragged into a war they had no part in causing. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
-                    "level_4": "When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
-                    "tasks": [
-                        {
-                            "type": "written",
-                            "text": "Question 3c: Suggest why Interpretation 1 and Interpretation 2 give different views on the causes of the war. (P10)",
-                            "model": "They give different views because they emphasize different historical factors. Interpretation 1 focuses on the deliberate political decisions of individuals (like the Kaiser issuing the 'blank cheque'). Interpretation 2 focuses on structural, long-term factors (like the alliance networks and the inflexible Schlieffen Plan) that forced the hands of the politicians."
-                        }
-                    ]
+                    "level_4": "When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed."
                 },
                 {
                     "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
-                    "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
-                    "tasks": [
-                        {
-                            "type": "written",
-                            "text": "Enquiry Task: Explain how the creation of Poland and Czechoslovakia in 1919 acted as a strategic boundary buffer between Germany and the newly formed Soviet Union. (P11)",
-                            "model": "The Treaty of Versailles intentionally carved out the independent nations of Poland and Czechoslovakia from the ruins of the German, Austro-Hungarian, and Russian empires. These new states acted as a physical 'buffer zone' (a cordon sanitaire) separating defeated Germany from the ideological threat of communist Soviet Russia, aiming to prevent them from allying or sharing a border."
-                        }
-                    ]
+                    "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>"
                 }
-            ],
-            "enquiry": "How did the assassination of Archduke Franz Ferdinand trigger the outbreak of the Great War?"
+            ]
         }
     ],
     "quizPack": [
         {
             "q": "In what year did the Franco-Prussian War end?",
-            "a": "1871"
+            "a": "1871",
+            "options": [
+                "1871",
+                "1882",
+                "1914",
+                "1890"
+            ],
+            "id": "gw_q1"
         },
         {
             "q": "Which wealthy region did Germany take from France in 1871?",
-            "a": "Alsace-Lorraine"
+            "a": "Alsace-Lorraine",
+            "options": [
+                "Alsace-Lorraine",
+                "The Rhineland",
+                "The Sudetenland",
+                "The Ruhr Valley"
+            ],
+            "id": "gw_q2"
         },
         {
             "q": "What was the French desire for revenge called?",
-            "a": "Revanche"
+            "a": "Revanche",
+            "options": [
+                "Revanche",
+                "Weltpolitik",
+                "Encirclement",
+                "Pan-Slavism"
+            ],
+            "id": "gw_q3"
         },
         {
             "q": "Who was the German Chancellor that unified Germany?",
-            "a": "Otto von Bismarck"
+            "a": "Otto von Bismarck",
+            "options": [
+                "Otto von Bismarck",
+                "Kaiser Wilhelm II",
+                "Count Leo von Caprivi",
+                "Theobald von Bethmann-Hollweg"
+            ],
+            "id": "gw_q4"
         },
         {
             "q": "What was Bismarck's greatest strategic fear?",
-            "a": "A war on two fronts (Encirclement)"
+            "a": "A war on two fronts (Encirclement)",
+            "options": [
+                "A war on two fronts (Encirclement)",
+                "A British naval blockade",
+                "An uprising by the working class",
+                "The collapse of Austria-Hungary"
+            ],
+            "id": "gw_q5"
         },
         {
             "q": "Which two countries did Bismarck fear would ally against Germany?",
-            "a": "France and Russia"
+            "a": "France and Russia",
+            "options": [
+                "France and Russia",
+                "Britain and France",
+                "Russia and Austria-Hungary",
+                "Britain and Russia"
+            ],
+            "id": "gw_q6"
         },
         {
             "q": "What was the secret 1887 agreement between Germany and Russia?",
-            "a": "The Reinsurance Treaty"
+            "a": "The Reinsurance Treaty",
+            "options": [
+                "The Reinsurance Treaty",
+                "The Entente Cordiale",
+                "The Dual Alliance",
+                "The Treaty of London"
+            ],
+            "id": "gw_q7"
         },
         {
             "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
-            "a": "Kaiser Wilhelm II"
+            "a": "Kaiser Wilhelm II",
+            "options": [
+                "Kaiser Wilhelm II",
+                "Kaiser Wilhelm I",
+                "Archduke Franz Ferdinand",
+                "Tsar Nicholas II"
+            ],
+            "id": "gw_q8"
         },
         {
             "q": "What was Wilhelm II's aggressive global policy called?",
-            "a": "Weltpolitik (World Policy)"
+            "a": "Weltpolitik (World Policy)",
+            "options": [
+                "Weltpolitik (World Policy)",
+                "Realpolitik",
+                "Lebensraum",
+                "Splendid Isolation"
+            ],
+            "id": "gw_q9"
         },
         {
             "q": "What previous policy of Bismarck's focused on European peace?",
-            "a": "Realpolitik"
+            "a": "Realpolitik",
+            "options": [
+                "Realpolitik",
+                "Weltpolitik (World Policy)",
+                "Mitteleuropa",
+                "Pan-Slavism"
+            ],
+            "id": "gw_q10"
         },
         {
             "q": "What agreement did Britain and France sign in 1904?",
-            "a": "The Entente Cordiale"
+            "a": "The Entente Cordiale",
+            "options": [
+                "The Entente Cordiale",
+                "The Triple Entente",
+                "The Treaty of Versailles",
+                "The Reinsurance Treaty"
+            ],
+            "id": "gw_q11"
         },
         {
             "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
-            "a": "Morocco"
+            "a": "Morocco",
+            "options": [
+                "Morocco",
+                "Egypt",
+                "South Africa",
+                "Sudan"
+            ],
+            "id": "gw_q12"
         },
         {
             "q": "What was the result of the First Moroccan (Tangier) Crisis?",
-            "a": "Britain and France grew closer, isolating Germany"
+            "a": "Britain and France grew closer, isolating Germany",
+            "options": [
+                "Britain and France grew closer, isolating Germany",
+                "Germany gained control of Morocco",
+                "The Entente Cordiale was dissolved",
+                "Russia declared war on Germany"
+            ],
+            "id": "gw_q13"
         },
         {
             "q": "What name was given to Germany's aggressive threat of military force?",
-            "a": "Gunboat Diplomacy"
+            "a": "Gunboat Diplomacy",
+            "options": [
+                "Gunboat Diplomacy",
+                "Dollar Diplomacy",
+                "Appeasement",
+                "Risk Theory"
+            ],
+            "id": "gw_q14"
         },
         {
             "q": "What was the name of the German gunboat sent to Agadir in 1911?",
-            "a": "SMS Panther"
+            "a": "SMS Panther",
+            "options": [
+                "SMS Panther",
+                "HMS Dreadnought",
+                "SMS Emden",
+                "SMS Bismarck"
+            ],
+            "id": "gw_q15"
         },
         {
             "q": "What was the British policy requiring their navy to be larger than the next two combined?",
-            "a": "The Two-Power Standard"
+            "a": "The Two-Power Standard",
+            "options": [
+                "The Two-Power Standard",
+                "The Risk Theory",
+                "The Imperial Defense Act",
+                "The Continental Commitment"
+            ],
+            "id": "gw_q16"
         },
         {
             "q": "What revolutionary British battleship was launched in 1906?",
-            "a": "HMS Dreadnought"
+            "a": "HMS Dreadnought",
+            "options": [
+                "HMS Dreadnought",
+                "HMS Victory",
+                "HMS Invincible",
+                "HMS Iron Duke"
+            ],
+            "id": "gw_q17"
         },
         {
             "q": "Why did the Dreadnought ironically threaten British supremacy?",
-            "a": "It made all older ships obsolete, resetting the naval race"
+            "a": "It made all older ships obsolete, resetting the naval race",
+            "options": [
+                "It made all older ships obsolete, resetting the naval race",
+                "It was too expensive to build more than one",
+                "It was easily destroyed by German U-Boats",
+                "Its guns could not hit moving targets"
+            ],
+            "id": "gw_q18"
         },
         {
             "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
-            "a": "Splendid Isolation"
+            "a": "Splendid Isolation",
+            "options": [
+                "Splendid Isolation",
+                "The Two-Power Standard",
+                "Balance of Power",
+                "Appeasement"
+            ],
+            "id": "gw_q19"
         },
         {
             "q": "What was German Admiral Tirpitz's naval strategy called?",
-            "a": "Risk Theory"
+            "a": "Risk Theory",
+            "options": [
+                "Risk Theory",
+                "The Schlieffen Plan",
+                "Weltpolitik",
+                "Unrestricted Submarine Warfare"
+            ],
+            "id": "gw_q20"
         },
         {
             "q": "What volatile region was known as the 'Powder Keg of Europe'?",
-            "a": "The Balkans"
+            "a": "The Balkans",
+            "options": [
+                "The Balkans",
+                "The Rhineland",
+                "The Middle East",
+                "The Caucasus"
+            ],
+            "id": "gw_q21"
         },
         {
             "q": "What declining multi-ethnic empire dominated the northern Balkans?",
-            "a": "The Austro-Hungarian Empire"
+            "a": "The Austro-Hungarian Empire",
+            "options": [
+                "The Austro-Hungarian Empire",
+                "The Ottoman Empire",
+                "The Russian Empire",
+                "The British Empire"
+            ],
+            "id": "gw_q22"
         },
         {
             "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
-            "a": "The Ottoman Empire"
+            "a": "The Ottoman Empire",
+            "options": [
+                "The Ottoman Empire",
+                "The Austro-Hungarian Empire",
+                "The Russian Empire",
+                "The German Empire"
+            ],
+            "id": "gw_q23"
         },
         {
             "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
-            "a": "Serbia"
+            "a": "Serbia",
+            "options": [
+                "Serbia",
+                "Bosnia",
+                "Croatia",
+                "Bulgaria"
+            ],
+            "id": "gw_q24"
         },
         {
             "q": "Which region did Austria-Hungary formally annex in 1908?",
-            "a": "Bosnia"
+            "a": "Bosnia",
+            "options": [
+                "Bosnia",
+                "Serbia",
+                "Romania",
+                "Albania"
+            ],
+            "id": "gw_q25"
         },
         {
             "q": "Which major power considered itself the protector of the Slavic people?",
-            "a": "Russia"
+            "a": "Russia",
+            "options": [
+                "Russia",
+                "Germany",
+                "France",
+                "Britain"
+            ],
+            "id": "gw_q26"
         },
         {
             "q": "Who was the heir to the Austro-Hungarian throne?",
-            "a": "Archduke Franz Ferdinand"
+            "a": "Archduke Franz Ferdinand",
+            "options": [
+                "Archduke Franz Ferdinand",
+                "Emperor Franz Joseph",
+                "Kaiser Wilhelm II",
+                "Tsar Nicholas II"
+            ],
+            "id": "gw_q27"
         },
         {
             "q": "In which city was the Archduke assassinated?",
-            "a": "Sarajevo"
+            "a": "Sarajevo",
+            "options": [
+                "Sarajevo",
+                "Belgrade",
+                "Vienna",
+                "Berlin"
+            ],
+            "id": "gw_q28"
         },
         {
             "q": "On what date was the Archduke assassinated?",
-            "a": "June 28, 1914"
+            "a": "June 28, 1914",
+            "options": [
+                "June 28, 1914",
+                "July 23, 1914",
+                "August 4, 1914",
+                "November 11, 1918"
+            ],
+            "id": "gw_q29"
         },
         {
             "q": "Who assassinated the Archduke?",
-            "a": "Gavrilo Princip"
+            "a": "Gavrilo Princip",
+            "options": [
+                "Gavrilo Princip",
+                "Nedeljko Čabrinović",
+                "Dragutin Dimitrijević",
+                "Leon Trotsky"
+            ],
+            "id": "gw_q30"
         },
         {
             "q": "What secret Serbian society did the assassin belong to?",
-            "a": "The Black Hand"
+            "a": "The Black Hand",
+            "options": [
+                "The Black Hand",
+                "The White Rose",
+                "The Young Turks",
+                "The Bolsheviks"
+            ],
+            "id": "gw_q31"
         },
         {
             "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
-            "a": "The 'Blank Check'"
+            "a": "The 'Blank Check'",
+            "options": [
+                "The 'Blank Check'",
+                "The Reinsurance Treaty",
+                "The Entente Cordiale",
+                "The Ultimatum"
+            ],
+            "id": "gw_q32"
         },
         {
             "q": "What is the month of diplomatic failures after the assassination called?",
-            "a": "The July Crisis"
+            "a": "The July Crisis",
+            "options": [
+                "The July Crisis",
+                "The Sarajevo Crisis",
+                "The Balkan Wars",
+                "The Blank Check Incident"
+            ],
+            "id": "gw_q33"
         },
         {
             "q": "What did Austria-Hungary issue to Serbia on July 23?",
-            "a": "An ultimatum"
+            "a": "An ultimatum",
+            "options": [
+                "An ultimatum",
+                "A declaration of war",
+                "A peace treaty",
+                "A demand for reparations"
+            ],
+            "id": "gw_q34"
         },
         {
             "q": "Which country began mobilizing its army to protect Serbia?",
-            "a": "Russia"
+            "a": "Russia",
+            "options": [
+                "Russia",
+                "France",
+                "Britain",
+                "Germany"
+            ],
+            "id": "gw_q35"
         },
         {
             "q": "What was the name of Germany's military strategy for a two-front war?",
-            "a": "The Schlieffen Plan"
+            "a": "The Schlieffen Plan",
+            "options": [
+                "The Schlieffen Plan",
+                "The Risk Theory",
+                "Plan XVII",
+                "The Bismarck Strategy"
+            ],
+            "id": "gw_q36"
         },
         {
             "q": "Which neutral country did Germany invade to attack France?",
-            "a": "Belgium"
+            "a": "Belgium",
+            "options": [
+                "Belgium",
+                "Switzerland",
+                "The Netherlands",
+                "Luxembourg"
+            ],
+            "id": "gw_q37"
         },
         {
             "q": "Which country declared war on Germany due to the invasion of Belgium?",
-            "a": "Britain"
+            "a": "Britain",
+            "options": [
+                "Britain",
+                "Russia",
+                "Italy",
+                "The United States"
+            ],
+            "id": "gw_q38"
         },
         {
             "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
-            "a": "The Triple Alliance"
+            "a": "The Triple Alliance",
+            "options": [
+                "The Triple Alliance",
+                "The Triple Entente",
+                "The Central Powers",
+                "The League of Three Emperors"
+            ],
+            "id": "gw_q39"
         },
         {
             "q": "What was the alliance of Britain, France, and Russia called?",
-            "a": "The Triple Entente"
+            "a": "The Triple Entente",
+            "options": [
+                "The Triple Entente",
+                "The Triple Alliance",
+                "The Allied Powers",
+                "The Grand Alliance"
+            ],
+            "id": "gw_q40"
         },
         {
             "q": "What treaty ended the First World War in 1919?",
-            "a": "The Treaty of Versailles"
+            "a": "The Treaty of Versailles",
+            "options": [
+                "The Treaty of Versailles",
+                "The Treaty of Brest-Litovsk",
+                "The Treaty of Trianon",
+                "The Congress of Vienna"
+            ],
+            "id": "gw_q41"
         },
         {
             "q": "Which clause forced Germany to accept full responsibility for the war?",
-            "a": "Article 231 (War Guilt Clause)"
+            "a": "Article 231 (War Guilt Clause)",
+            "options": [
+                "Article 231 (War Guilt Clause)",
+                "Article 48",
+                "The Blank Check",
+                "The Reparations Clause"
+            ],
+            "id": "gw_q42"
         },
         {
             "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
-            "a": "Preventative War"
+            "a": "Preventative War",
+            "options": [
+                "Preventative War",
+                "Total War",
+                "War of Attrition",
+                "Proxy War"
+            ],
+            "id": "gw_q43"
         },
         {
             "q": "Which historian famously argued Germany planned a war of aggression?",
-            "a": "Fritz Fischer / Max Hastings"
+            "a": "Fritz Fischer",
+            "options": [
+                "Fritz Fischer",
+                "Margaret MacMillan",
+                "A.J.P. Taylor",
+                "Christopher Clark"
+            ],
+            "id": "gw_q44"
         },
         {
             "q": "Which historian argued the nations blundered into war due to rigid alliances?",
-            "a": "Margaret MacMillan"
+            "a": "Margaret MacMillan",
+            "options": [
+                "Margaret MacMillan",
+                "Fritz Fischer",
+                "Ian Kershaw",
+                "Richard Evans"
+            ],
+            "id": "gw_q45"
         },
         {
             "q": "What was the 'quarantine line' of new states created after WWI called?",
-            "a": "Cordon Sanitaire"
+            "a": "Cordon Sanitaire",
+            "options": [
+                "Cordon Sanitaire",
+                "The Iron Curtain",
+                "The Maginot Line",
+                "Mitteleuropa"
+            ],
+            "id": "gw_q46"
         },
         {
             "q": "Name one new state created by the Treaty of Versailles.",
-            "a": "Poland / Czechoslovakia"
+            "a": "Poland",
+            "options": [
+                "Poland",
+                "Serbia",
+                "Bulgaria",
+                "Romania"
+            ],
+            "id": "gw_q47"
         },
         {
             "q": "What European power was completely dismantled by the peace treaties?",
-            "a": "The Austro-Hungarian Empire"
+            "a": "The Austro-Hungarian Empire",
+            "options": [
+                "The Austro-Hungarian Empire",
+                "The German Empire",
+                "The British Empire",
+                "The Russian Empire"
+            ],
+            "id": "gw_q48"
         },
         {
             "q": "What ideological threat did the Allies want to separate from Germany after the war?",
-            "a": "Soviet Communism"
+            "a": "Soviet Communism",
+            "options": [
+                "Soviet Communism",
+                "Fascism",
+                "Anarchism",
+                "Imperialism"
+            ],
+            "id": "gw_q49"
         },
         {
             "q": "Which country did Germany invade on 3 August 1914?",
-            "a": "Belgium"
+            "a": "Belgium",
+            "options": [
+                "Belgium",
+                "France",
+                "Russia",
+                "Serbia"
+            ],
+            "id": "gw_q50"
         }
     ],
     "glossary": [
@@ -1671,6 +1984,97 @@ export const unitData = {
             ],
             "is_adapted": true,
             "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
+        }
+    ],
+    "assessments": [
+        {
+            "id": "timeline",
+            "title": "Assessment Option 1: The July Crisis Domino Flowchart",
+            "type": "timeline",
+            "description": "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
+            "events": [
+                {
+                    "year": "28 June 1914",
+                    "title": "The Spark",
+                    "detail": "Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo."
+                },
+                {
+                    "year": "5 July 1914",
+                    "title": "The Blank Cheque",
+                    "detail": "Germany promises unconditional support to Austria-Hungary for any action against Serbia."
+                },
+                {
+                    "year": "23 July 1914",
+                    "title": "The Ultimatum",
+                    "detail": "Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it."
+                },
+                {
+                    "year": "30 July 1914",
+                    "title": "Russian Mobilisation",
+                    "detail": "Russia mobilises its massive army to defend its Slavic ally, Serbia."
+                },
+                {
+                    "year": "3 August 1914",
+                    "title": "The Schlieffen Plan",
+                    "detail": "Germany declares war on France and invades neutral Belgium to avoid a two-front war."
+                }
+            ]
+        },
+        {
+            "id": "diamond9",
+            "title": "Assessment Option 2: The M.A.I.N. Significance Diamond",
+            "type": "diamond9",
+            "description": "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
+            "factors": [
+                "The Assassination of Franz Ferdinand (The Spark)",
+                "The Alliance System dividing Europe",
+                "Germany's 'Blank Cheque' to Austria",
+                "Anglo-German Naval Race (Militarism)",
+                "The scramble for Imperial colonies in Africa",
+                "Serbian Nationalism (The Black Hand)",
+                "Russian Mobilisation schedules",
+                "The Schlieffen Plan's invasion of Belgium",
+                "The decline of the Ottoman Empire (Balkan instability)"
+            ]
+        },
+        {
+            "id": "source_utility",
+            "title": "Assessment Option 3: Source Utility Analysis",
+            "type": "source_utility",
+            "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)",
+            "sources": [
+                {
+                    "id": "Source B",
+                    "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
+                    "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919."
+                },
+                {
+                    "id": "Source C",
+                    "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
+                    "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919."
+                }
+            ]
+        },
+        {
+            "id": "interpretations",
+            "title": "Assessment Option 4: The Historians' Debate",
+            "type": "interpretations",
+            "description": "Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.",
+            "interpretations": [
+                {
+                    "id": "Interpretation 1",
+                    "text": "No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first."
+                },
+                {
+                    "id": "Interpretation 2",
+                    "text": "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+                }
+            ],
+            "questions": [
+                "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
+                "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+                "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)"
+            ]
         }
     ]
 };

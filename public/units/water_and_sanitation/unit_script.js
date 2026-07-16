@@ -10,4 +10,30 @@ fetch('/database.json').then(r => r.json()).then(db => {
 
   initializeApp(unitData);
 
+// Add custom tabs for this unit
+setTimeout(() => {
+  const sidebarNav = document.getElementById('sidebar-nav-container');
+  if (sidebarNav) {
+    // Key Individuals Tab
+    const kiLink = document.createElement('a');
+    kiLink.className = 'lesson-link';
+    kiLink.innerHTML = '<i class="fa-solid fa-users" style="margin-right: 8px;"></i> Key Individuals';
+    kiLink.href = '#';
+    kiLink.onclick = (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      kiLink.classList.add('active');
+      const contentArea = document.getElementById('engine-workbook-container');
+      contentArea.innerHTML = '';
+      if (db[unitId].data.key_individuals) {
+        import('../src/key_individuals.js').then(m => {
+          m.initKeyIndividualsTask(contentArea, db[unitId].data.key_individuals);
+        });
+      }
+    };
+    sidebarNav.appendChild(kiLink);
+  }
+}, 500);
+
+
 });

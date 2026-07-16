@@ -12,11 +12,11 @@ export function renderExamPracticeZone(container, unitData) {
     });
   }
 
-  if (examBank.length === 0) {
+  if (examBank.length === 0 && (!unitData.assessments || unitData.assessments.length === 0)) {
     container.innerHTML = `
       <div style="text-align:center; padding: 40px; background: #fff; border-radius: 12px; color: #64748b; font-size: 1.2rem;">
         <i class="fa-solid fa-file-circle-xmark fa-3x" style="margin-bottom:20px; color:#cbd5e1;"></i>
-        <br>No exam questions found for this unit.
+        <br>No assessments or exam questions found for this unit.
       </div>
     `;
     return;
@@ -93,10 +93,12 @@ export function renderExamPracticeZone(container, unitData) {
     <div class="epz-wrapper">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(241, 245, 249, 0.8); padding-bottom: 25px; margin-bottom: 30px;">
         <h1 class="epz-title">
-          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Exam Practice Zone
+          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Assessments & Exam Practice
         </h1>
         <button id="epz-back-btn" class="main-btn epz-btn" style="background: #f1f5f9; color: #475569; padding: 10px 20px; font-size: 1.05rem; border: 1px solid #e2e8f0; border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i> Back to Hub</button>
       </div>
+
+      <div id="assessments-container"></div>
       
       <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 35px; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
@@ -271,7 +273,13 @@ export function renderExamPracticeZone(container, unitData) {
   // Interactions
   backBtn.addEventListener('click', () => {
     stopTimer();
-    import('./navigation.js').then(nav => nav.switchView('dashboard'));
+    const links = Array.from(document.querySelectorAll('.lesson-link'));
+    const homeLink = links.find(l => l.innerHTML.includes('Unit Homepage'));
+    if (homeLink) {
+      homeLink.click();
+    } else {
+      window.location.href = '/';
+    }
   });
 
   timerToggle.addEventListener('click', () => {
@@ -404,6 +412,120 @@ export function renderExamPracticeZone(container, unitData) {
     // Scroll to the question
     displayArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  // Populate assessments
+  const assessmentsContainer = document.getElementById('assessments-container');
+  if (unitData.assessments && unitData.assessments.length > 0) {
+    let html = '<div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #e2e8f0;">';
+    html += '<h2 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 20px;"><i class="fa-solid fa-file-pen" style="color: #4f46e5;"></i> End of Unit Assessments</h2>';
+    
+    unitData.assessments.forEach((assessment, aIdx) => {
+      html += `<div class="epz-card" style="margin-bottom: 20px;">`;
+      html += `<h3 style="font-size: 1.4rem; color: #334155; margin-bottom: 10px;">${assessment.title}</h3>`;
+      html += `<p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">${assessment.description}</p>`;
+      
+      if (assessment.type === 'timeline') {
+        if (assessment.events && assessment.events.length > 0) {
+          html += `<ul style="list-style-type: none; padding: 0;">`;
+          assessment.events.forEach(ev => {
+            html += `<li style="background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"><strong>${ev.year}: ${ev.title}</strong> - ${ev.detail}</li>`;
+          });
+          html += `</ul>`;
+        }
+      } else if (assessment.type === 'diamond9') {
+        html += `<div style="display: flex; flex-wrap: wrap; gap: 10px;">`;
+        assessment.factors.forEach(f => {
+          html += `<div style="background: #e0e7ff; color: #3730a3; padding: 10px 15px; border-radius: 8px; font-weight: 500;">${f}</div>`;
+        });
+        html += `</div>`;
+      } else if (assessment.type === 'source_utility') {
+        html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
+        assessment.sources.forEach(source => {
+          html += `<div style="flex: 1; min-width: 300px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">`;
+          html += `<h4 style="color: #1e293b; margin-bottom: 10px;">${source.id}</h4>`;
+          html += `<p style="font-size: 0.95rem; font-style: italic; color: #64748b; margin-bottom: 15px;">${source.provenance}</p>`;
+          html += `<p style="font-size: 1.05rem; color: #334155; line-height: 1.6;">"${source.text}"</p>`;
+          html += `</div>`;
+        });
+        html += `</div>`;
+        
+        // Scaffolding for Source Utility
+        html += `<div style="margin-top: 20px;">`;
+        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-su-${aIdx}').style.display = document.getElementById('scaffold-su-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
+        html += `<div id="scaffold-su-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
+        html += `<strong>Structure Strip (8 Marks):</strong><br>`;
+        html += `<ul style="margin-top: 10px; padding-left: 20px;">`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (Source B):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
+        html += `<li><strong>Paragraph 2 (Source C):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
+        html += `</ul>`;
+        html += `<strong style="display: block; margin-top: 15px;">Sentence Starters:</strong>`;
+        html += `<ul style="margin-top: 5px; list-style-type: none; padding-left: 0;">`;
+        html += `<li style="margin-bottom: 5px;"><em>"Source B is useful for an enquiry into... because it shows..."</em></li>`;
+        html += `<li style="margin-bottom: 5px;"><em>"I know from my own knowledge that this is accurate because..."</em></li>`;
+        html += `<li><em>"However, the source has limitations because it was written by..."</em></li>`;
+        html += `</ul></div></div>`;
+        
+      } else if (assessment.type === 'interpretations') {
+        html += `<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px;">`;
+        assessment.interpretations.forEach(interp => {
+          html += `<div style="flex: 1; min-width: 300px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">`;
+          html += `<h4 style="color: #1e293b; margin-bottom: 10px;">${interp.id}</h4>`;
+          html += `<p style="font-size: 1.05rem; color: #334155; line-height: 1.6;">"${interp.text}"</p>`;
+          html += `</div>`;
+        });
+        html += `</div>`;
+        html += `<ul style="font-size: 1.1rem; color: #1e293b; font-weight: 500; padding-left: 20px;">`;
+        assessment.questions.forEach(q => {
+          html += `<li style="margin-bottom: 15px;">${q}</li>`;
+        });
+        html += `</ul>`;
+        
+        // Scaffolding for Interpretations
+        html += `<div style="margin-top: 20px;">`;
+        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-int-${aIdx}').style.display = document.getElementById('scaffold-int-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
+        html += `<div id="scaffold-int-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
+        html += `<strong>Structure Strip (16 Marks):</strong><br>`;
+        html += `<ul style="margin-top: 10px; padding-left: 20px; margin-bottom: 15px;">`;
+        html += `<li style="margin-bottom: 5px;"><strong>Introduction:</strong> Briefly state your overall judgement on Interpretation 2.</li>`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (Agree):</strong> Why is Interpretation 2 convincing? Use evidence from the interpretation and your own knowledge.</li>`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (Disagree/Alternative):</strong> Why might Interpretation 1 also be valid? Use evidence and knowledge.</li>`;
+        html += `<li><strong>Conclusion:</strong> Final judgement. Which interpretation is stronger and why?</li>`;
+        html += `</ul>`;
+        html += `<strong>Fact Bank:</strong> Alliance Systems, Schlieffen Plan, 'Blank Cheque', Naval Race, Assassination in Sarajevo.`;
+        html += `</div></div>`;
+      } else if (assessment.type === 'essay') {
+        html += `<div style="background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px;">`;
+        html += `<p style="font-size: 1.1rem; color: #334155; line-height: 1.6;"><strong>Task:</strong> ${assessment.description}</p>`;
+        html += `</div>`;
+        
+        // Scaffolding for Essay
+        html += `<div style="margin-top: 20px;">`;
+        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-essay-${aIdx}').style.display = document.getElementById('scaffold-essay-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
+        html += `<div id="scaffold-essay-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
+        html += `<strong>Structure Strip (Report):</strong><br>`;
+        html += `<ul style="margin-top: 10px; padding-left: 20px;">`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (The Problem):</strong> Describe the filthy conditions using the Miasma theory vs Germ theory. Why is the town sick?</li>`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (Historical Solutions):</strong> Recommend clean water mapping (John Snow) and a sewer system (Bazalgette).</li>`;
+        html += `<li><strong>Paragraph 3 (Government Action):</strong> Recommend rules and mandates like Edward III's cleanliness mandates or the 1875 Public Health Act.</li>`;
+        html += `</ul>`;
+        html += `<strong style="display: block; margin-top: 15px;">Fact Bank:</strong> Cholera, Miasma, Cesspits, Broad Street Pump, Joseph Bazalgette.`;
+        html += `</div></div>`;
+      }
+      
+      html += `</div>`;
+    });
+    
+    html += '</div>';
+    const targetContainer = document.getElementById('assessments-container') || container;
+    if (targetContainer.id === 'assessments-container') {
+      targetContainer.innerHTML = html;
+      targetContainer.style.marginBottom = '40px';
+    } else {
+      assessmentsContainer.innerHTML = html;
+      const wrapper = container.querySelector('.epz-wrapper');
+      if (wrapper) wrapper.insertBefore(assessmentsContainer, wrapper.children[1]); // after title
+    }
+  }
 
   // Initialize specific questions list on load
   populateSpecificQuestions();

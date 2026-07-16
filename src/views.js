@@ -10,13 +10,10 @@ import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from
 // Unit Definitions & Target Year Groups
 export const UNITS = [
   { id: 'water_and_sanitation', title: 'Water and Sanitation Through Time', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Exploring sanitation development from prehistoric roundhouses to Roman conduits.' },
-  { id: 'norman_conquest', title: 'The Norman Conquest (1066)', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Enquiry into the succession crisis, battles of 1066, and Norman control.' },
   { id: 'change_1450_1750', title: 'Change from 1450-1750', category: 'Key Stage 3', yearGroup: 'Year 8', desc: 'Exploring the Renaissance, Reformation, Civil War, and Scientific Revolution.' },
   { id: 'great_war', title: 'The Great War: Causes & Outbreak', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'New format: Accessible interactive digital app with built-in scaffolds and printable workbooks.' },
   { id: 'great_war_part2', title: 'The Great War: Experience & Aftermath (Part 2)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into trench warfare, the global impact, and the flawed peace of the Treaty of Versailles.' },
-  { id: 'gcse_usa_1954_1975', title: 'GCSE: USA (1954-1975)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Conflict at home and abroad: Civil Rights Movement and Vietnam War.' },
-  { id: 'gcse_middle_east_1945_1995', title: 'GCSE: Conflict in the Middle East', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The birth of Israel, Suez Crisis, Six-Day War, Yom Kippur War, and peace process.' },
-  { id: 'gcse_middle_east_1945_1995_new', title: 'GCSE: Conflict in the Middle East (NEW)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The brand new accessible interactive digital app format.' },
+  { id: 'gcse_middle_east_1945_1995_new', title: 'GCSE: Conflict in the Middle East', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The brand new accessible interactive digital app format.' },
   { id: 'gcse_elizabethan_england', title: 'GCSE: Early Elizabethan England (1558-1588)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Queen, government, religion, challenges at home/abroad, and Elizabethan society.' }
 ];
 

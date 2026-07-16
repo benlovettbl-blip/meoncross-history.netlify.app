@@ -1,6 +1,8 @@
 import { renderRevisionZone } from './revision_zone.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
+import { renderQuizZone } from './quiz_zone.js';
+import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
 
 export function getAssetUrl(path) {
   if (!path) return path;
@@ -558,15 +560,167 @@ export function initializeApp(unitData) {
     }
   }
 
+  function renderHomepage() {
+    let lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
+    unitData.lessons.forEach((lesson, index) => {
+      lessonsHTML += `
+        <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+          <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Lesson ${index + 1}</h3>
+          <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${lesson.title}</p>
+        </div>
+      `;
+    });
+    lessonsHTML += '</div>';
+
+    let resourcesHTML = '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Resources</h2><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; text-align: left;">';
+    
+    // Helper for cards
+    const resourceCard = (id, icon, title, color) => `
+      <div class="homepage-resource-card" data-resource-id="${id}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid ${icon}" style="font-size: 1.5rem; color: ${color};"></i>
+        <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">${title}</h4>
+      </div>
+    `;
+
+    if (unitData.biographies) {
+      resourcesHTML += resourceCard('key-individuals', 'fa-users', 'Key Individuals', '#8b5cf6');
+    }
+    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
+      resourcesHTML += resourceCard('guided-reading', 'fa-book-open', 'Guided Reading', '#10b981');
+    }
+    resourcesHTML += resourceCard('revision-zone', 'fa-gamepad', 'Revision Zone', '#f59e0b');
+    resourcesHTML += resourceCard('exam-practice', 'fa-pen-to-square', 'Assessments', '#3b82f6');
+    
+    // Links (open in new tab)
+    resourcesHTML += resourceCard('quiz-zone', 'fa-file-pdf', 'Knowledge Quiz Zone', '#ef4444');
+
+    const wbHref = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
+    resourcesHTML += `
+      <a href="${wbHref}" target="_blank" style="text-decoration: none;">
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-book" style="font-size: 1.5rem; color: #64748b;"></i>
+          <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">Pupil Workbook</h4>
+        </div>
+      </a>
+    `;
+    
+    resourcesHTML += '</div>';
+
+    contentArea.innerHTML = `
+      <div style="text-align: center; max-width: 900px; margin: 0 auto; padding-bottom: 50px;">
+        <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;">${unitData.title}</h1>
+        <h2 style="margin-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+          Unit Enquiry: <i>${unitData.enquiry || 'What can we learn from this period in history?'}</i>
+        </h2>
+        
+        ${Array.isArray(unitData.cover_image) ? `
+          <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
+            ${unitData.cover_image.map(img => `
+              <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; flex: 1; max-height: 400px; display: flex; align-items: center; justify-content: center; background: #0f172a;">
+                <img src="${getAssetUrl(img)}" alt="Unit Cover" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            `).join('')}
+          </div>
+        ` : `
+          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: inline-block; margin-bottom: 5px;">
+            <img src="${getAssetUrl(unitData.cover_image || 'assets/cover.jpg')}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 500px;">
+          </div>
+        `}
+        
+        ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+        
+        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Lessons</h2>
+        ${lessonsHTML}
+        
+        ${resourcesHTML}
+      </div>
+    `;
+
+    // Add click listeners to cards
+    const cards = contentArea.querySelectorAll('.homepage-lesson-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'none';
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      });
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.dataset.index);
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        // sidebar links: index 0 is Homepage, index 1 is Lesson 1
+        const sidebarLinks = document.querySelectorAll('.lesson-link');
+        if(sidebarLinks[idx + 1]) sidebarLinks[idx + 1].classList.add('active');
+        renderLesson(unitData.lessons[idx]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Add click listeners to resource cards
+    const resourceCards = contentArea.querySelectorAll('.homepage-resource-card');
+    resourceCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'none';
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      });
+      card.addEventListener('click', () => {
+        const id = card.dataset.resourceId;
+        const findLink = (text) => Array.from(document.querySelectorAll('.lesson-link')).find(l => l.innerHTML.includes(text));
+        const resourceMap = {
+          'key-individuals': () => {
+            const kiLink = findLink("Key Individuals") || findLink("People");
+            if (kiLink) kiLink.click();
+          },
+          'guided-reading': () => {
+            const grLink = findLink("Guided Reading");
+            if (grLink) grLink.click();
+          },
+          'revision-zone': () => {
+            const revLink = findLink("Revision Zone");
+            if (revLink) revLink.click();
+          },
+          'exam-practice': () => {
+            const exLink = findLink("Assessments");
+            if (exLink) exLink.click();
+          },
+          'quiz-zone': () => {
+            const qzLink = document.getElementById('quiz-zone-link');
+            if (qzLink) qzLink.click();
+          }
+        };
+        if (resourceMap[id]) resourceMap[id]();
+      });
+    });
+  }
+
   // Render Sidebar
   function renderSidebar() {
     const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
     navContainer.innerHTML = '';
+
+    // Unit Homepage Tab
+    const homeLink = document.createElement('a');
+    homeLink.className = 'lesson-link active';
+    homeLink.innerHTML = '<i class="fa-solid fa-home" style="margin-right: 8px;"></i> Unit Homepage';
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      homeLink.classList.add('active');
+      renderHomepage();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(homeLink);
+
     unitData.lessons.forEach((lesson, index) => {
       const link = document.createElement('a');
       link.className = 'lesson-link';
-      if (index === 0) link.classList.add('active');
-      link.textContent = lesson.title;
+      link.textContent = `L${index + 1}: ${lesson.title}`;
       link.addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
@@ -626,7 +780,7 @@ export function initializeApp(unitData) {
 
     const examPracticeLink = document.createElement('a');
     examPracticeLink.className = 'lesson-link';
-    examPracticeLink.innerHTML = '✍️ Exam Practice Zone';
+    examPracticeLink.innerHTML = '✍️ Assessments & Exam Practice';
     examPracticeLink.style.marginTop = '15px';
     examPracticeLink.style.color = '#60a5fa'; // Blue-400
     examPracticeLink.addEventListener('click', (e) => {
@@ -641,12 +795,21 @@ export function initializeApp(unitData) {
     navContainer.appendChild(examPracticeLink);
 
     const quizPackLink = document.createElement('a');
+    quizPackLink.id = 'quiz-zone-link';
     quizPackLink.className = 'lesson-link';
-    quizPackLink.innerHTML = '📝 Printable Quiz Pack';
-    quizPackLink.href = window.currentUnitId ? `/${window.currentUnitId}/quiz_pack.html` : 'quiz_pack.html';
-    quizPackLink.target = '_blank';
+    quizPackLink.innerHTML = '📝 Knowledge Quiz Zone';
     quizPackLink.style.marginTop = '15px';
     quizPackLink.style.color = '#34d399'; // Emerald-400
+    quizPackLink.style.cursor = 'pointer';
+    quizPackLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      quizPackLink.classList.add('active');
+      const contentArea = document.getElementById('content-area');
+      contentArea.innerHTML = '';
+      renderQuizZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     navContainer.appendChild(quizPackLink);
     const isCmeNew = window.currentUnitId === 'cme_new';
     
@@ -685,6 +848,7 @@ export function initializeApp(unitData) {
 
   // Render Lesson Content
   function renderLesson(lesson) {
+    lesson = sanitizeLessonData(lesson);
     assignQuestionNumbers(lesson);
     window.currentActiveLesson = lesson;
     let html = `<div class="lesson-content" style="max-width: 900px; margin: 0 auto;">`;
@@ -890,22 +1054,23 @@ export function initializeApp(unitData) {
         <div class="phase-card" id="phase-${phaseNum}">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Do Now Tasks</div>
-            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.answer').forEach(ans => ans.style.display = ans.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+            <button class="btn btn-secondary" onclick="window.toggleAllAnswers(this)" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
           </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
       lesson.do_now.items.forEach((item, index) => {
-        let qText = item.question.replace(/PAST TOPIC:\s*/i, '');
+        let qText = item.question;
         let aText = item.answer;
         if (window.currentUnitId) {
           qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
           aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
         }
+        const cardId = `donow-${phaseNum}-${index}`;
         html += `
-          <div class="do-now-card" id="do-now-card-${index}" onclick="const ans = this.querySelector('.answer'); ans.style.display = ans.style.display === 'block' ? 'none' : 'block';" style="cursor: pointer;">
+          <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
             <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
             <div>${qText}</div>
-            <div class="answer" id="do-now-ans-${index}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
+            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
           </div>
         `;
       });
@@ -1049,13 +1214,18 @@ export function initializeApp(unitData) {
         // Render Embedded Tasks for this chunk!
         if (block.tasks && block.tasks.length > 0) {
           html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
-          block.tasks.forEach(task => {
+          block.tasks.forEach((task, tIdx) => {
              const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
+             const ansId = `ans-emb-${index}-${tIdx}`;
+             const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
+             const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
              html += `
                <div style="margin-bottom: 10px;">
-                 <strong>${qPrefix}${task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/i, '').replace(/\s*\((P|Para\s*)\d+\)/gi, '').replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong>
-                 <button class="btn btn-secondary" onclick="const ans = this.parentElement.querySelector('.answer'); ans.style.display = ans.style.display === 'block' ? 'none' : 'block';" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
-                 <div class="answer" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
+                 <strong>${qPrefix}${task.text}</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 ${starterBtn}
+                 ${starterDiv}
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
                </div>
              `;
           });
@@ -1329,7 +1499,9 @@ export function initializeApp(unitData) {
   // Initialize
   if (unitData.lessons.length > 0) {
     renderSidebar();
-    renderLesson(unitData.lessons[0]);
+    
+    // Initial Render - load homepage
+    renderHomepage();
   } else {
     contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
   }
@@ -1396,15 +1568,15 @@ window.updateProgress = () => {
     };
 
     if (activeLesson.primary_source && activeLesson.primary_source.question) {
-      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question.replace(/^Enquiry:\s*/, ""), activeLesson.primary_source.model_answer || '');
+      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
     }
     
     if (activeLesson.do_now) {
       if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
-        addQuestionCard(activeLesson.do_now.qNum, activeLesson.do_now.prediction_question.replace(/^Predict:\s*/, ""), activeLesson.do_now.model || activeLesson.do_now.answer || '');
+        addQuestionCard(activeLesson.do_now.qNum, activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
       } else if (activeLesson.do_now.type === "questions") {
         activeLesson.do_now.items.forEach(item => {
-           addQuestionCard(item.qNum, item.question.replace(/^\d+\.\s*/, ""), item.answer || '');
+           addQuestionCard(item.qNum, item.question, item.answer || '');
         });
       }
     }
@@ -1413,21 +1585,70 @@ window.updateProgress = () => {
       activeLesson.narrative_blocks.forEach(block => {
         if (block.tasks) {
           block.tasks.forEach(task => {
-            let cleanTask = task.text.replace(/^(Q\d+: |Task \d+: |Question \d+[a-z]?: |Enquiry Task: )/, "").replace(/\s*\(P\d+\)/gi, "");
-            addQuestionCard(task.qNum, cleanTask, task.model || '');
+            addQuestionCard(task.qNum, task.text, task.model || '');
           });
         }
       });
     }
     
     if (activeLesson.extended && activeLesson.extended.question) {
-       addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, ""), activeLesson.extended.model || activeLesson.extended.answer || '');
+       addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model || activeLesson.extended.answer || '');
     }
     
     container.innerHTML = html;
     modal.classList.add('visible');
   }
+  
+window.toggleStarterById = function(id) {
+  const starter = document.getElementById(id);
+  if (starter) {
+    starter.style.display = starter.style.display === 'block' ? 'none' : 'block';
+  }
+};
+window.toggleAnswerById = function(id) {
+  const ans = document.getElementById(id);
+  if (ans) {
+    if (ans.classList.contains('revealed')) {
+      ans.classList.remove('revealed');
+      ans.style.display = 'none';
+    } else {
+      ans.classList.add('revealed');
+      ans.style.display = 'block';
+    }
+  }
+};
 
+window.toggleAllAnswers = function(btn) {
+  const container = btn.closest('.phase-card') || btn.closest('.do-now-box');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+};
+
+window.toggleAllWhiteboardAnswers = function() {
+  const container = document.getElementById('taskWhiteboardContent');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+};
 
 window.toggleMap = function(btn) {
   const container = btn.closest('.interactive-map-container');
@@ -1669,6 +1890,7 @@ window.renderQuizQuestion = function() {
   qData.options.forEach((opt, idx) => {
     optionsHtml += `
       <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+        <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
         ${opt}
       </button>
     `;
