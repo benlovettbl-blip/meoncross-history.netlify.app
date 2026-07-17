@@ -24,7 +24,7 @@ export function renderQuizZone(container, unitData) {
                 <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;">Knowledge Quiz Zone</h1>
                 <p style="color: #64748b; font-size: 1.1rem;">Test your recall of key historical facts!</p>
                 <div style="margin-top: 20px;">
-                    <a href="${window.currentUnitId ? `/${window.currentUnitId}/quiz_pack.html` : 'quiz_pack.html'}" target="_blank" style="display: inline-block; background-color: #f1f5f9; color: #334155; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; border: 1px solid #cbd5e1; transition: background 0.2s;">
+                    <a href="${window.currentUnitId ? `/units/${window.currentUnitId}/quiz_pack.html` : 'quiz_pack.html'}" target="_blank" style="display: inline-block; background-color: #f1f5f9; color: #334155; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; border: 1px solid #cbd5e1; transition: background 0.2s;">
                         <i class="fa-solid fa-print"></i> Download A4 Printable PDF
                     </a>
                 </div>

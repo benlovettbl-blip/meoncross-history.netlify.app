@@ -5,7 +5,7 @@ export const unitData = {
     "lessons": [
         {
             "id": "lesson_1",
-            "title": "Lesson 1: Prehistoric and Roman Sanitation",
+            "title": "How much progress did the Romans make in public health?",
             "primary_source": {
                 "src": "assets/roman_latrine.jpg",
                 "title": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
@@ -65,11 +65,6 @@ export const unitData = {
                     "model_answer": "Student responses should focus on the evidence of commerce and social activity, noting that the baths were loud, chaotic places where people exercised, received treatments, and bought food, demonstrating they were a central part of Roman daily life rather than strictly hygienic facilities."
                 }
             ],
-            "glossary": {
-                "cesspit": "A pit for the disposal of liquid waste and sewage.",
-                "conduit": "A channel or pipe for conveying water or other fluid.",
-                "latrine": "A toilet or outhouse, especially a communal one in a camp or barracks."
-            },
             "gcse_task": null,
             "learning_objective": "To understand the impact of Prehistoric and Roman Sanitation on public health.",
             "learning_objectives": {
@@ -144,8 +139,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "When the Romans finally left Britain around AD 410, much of this advanced engineering was abandoned, and sanitation slipped back into primitive patterns for centuries.",
-                    "level_4": "When the Romans finally left Britain around AD 410, much of this advanced engineering was abandoned, and sanitation slipped back into primitive patterns for centuries.",
+                    "text": "When the Roman legions finally withdrew from Britain around AD 410 to defend their crumbling empire, they left behind their advanced engineering. Without Roman authorities and engineers to maintain the aqueducts, sewers, and bathhouses, the systems quickly fell into ruin. Local Britons did not possess the technical knowledge, wealth, or centralized government needed to repair them. As a result, Britain's sanitation slipped back into primitive patterns, and it would take well over a thousand years before towns enjoyed clean running water and public sewers again.",
+                    "level_4": "When the Roman legions finally withdrew from Britain around AD 410 to defend their crumbling empire, they left behind their advanced engineering. Without Roman authorities and engineers to maintain the aqueducts, sewers, and bathhouses, the systems quickly fell into ruin. Local Britons did not possess the technical knowledge, wealth, or centralized government needed to repair them. As a result, Britain's sanitation slipped back into primitive patterns, and it would take well over a thousand years before towns enjoyed clean running water and public sewers again.",
                     "tasks": [
                         {
                             "type": "written",
@@ -157,7 +152,6 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Prehistoric and Roman Sanitation so significant?",
             "flashcards": [
                 {
                     "term": "cesspit",
@@ -213,11 +207,43 @@ export const unitData = {
                     ],
                     "answer": 3
                 }
-            ]
+            ],
+            "vocab": [
+                {
+                    "term": "cesspit",
+                    "definition": "A pit for the disposal of liquid waste and sewage."
+                },
+                {
+                    "term": "conduit",
+                    "definition": "A channel or pipe for conveying water or other fluid."
+                },
+                {
+                    "term": "latrine",
+                    "definition": "A toilet or outhouse, especially a communal one in a camp or barracks."
+                }
+            ],
+            "vocab_cloze_text": "The Romans built massive aqueducts that acted as a [conduit] for fresh water. For waste, they used a [cesspit] or went to a communal [latrine] where water flushed the waste away.",
+            "pair_share": {
+                "topic": "Discuss with your partner: Why would the Romans spend so much money on public health?",
+                "instructions": "Person A argues it was to keep soldiers healthy. Person B argues it was to show off Roman wealth."
+            },
+            "extended": {
+                "question": "Write a PEEL paragraph explaining how the Romans tried to keep their towns clean.",
+                "hints": [
+                    "Mention aqueducts.",
+                    "Mention public baths."
+                ]
+            },
+            "historians_corner": {
+                "title": "Historian's Corner",
+                "quote": "The Romans were the first to provide their citizens with the basic requirements of public health.",
+                "historian": "Simon Schama",
+                "question": "Does Schama believe the Romans cared about the health of ordinary people?"
+            }
         },
         {
             "id": "lesson_2",
-            "title": "Lesson 2: Medieval Sanitation and The Church",
+            "title": "Why did public health decline during the Middle Ages?",
             "primary_source": {
                 "src": "assets/canterbury_waterworks.jpg",
                 "title": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
@@ -276,13 +302,6 @@ export const unitData = {
                 ]
             },
             "sources": [],
-            "glossary": {
-                "gongfermer": "A medieval worker who cleared human waste from cesspits.",
-                "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease.",
-                "monastery": "A building or buildings occupied by a community of monks living under religious vows.",
-                "cesspit": "A pit for the disposal of liquid waste and sewage.",
-                "privy": "A toilet, especially a simple one such as an outhouse."
-            },
             "gcse_task": null,
             "learning_objective": "To understand the impact of Medieval Sanitation and The Church on public health.",
             "learning_objectives": {
@@ -383,7 +402,6 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Medieval Sanitation and The Church so significant?",
             "flashcards": [
                 {
                     "term": "gongfermer",
@@ -435,11 +453,51 @@ export const unitData = {
                     ],
                     "answer": 2
                 }
-            ]
+            ],
+            "vocab": [
+                {
+                    "term": "gongfermer",
+                    "definition": "A medieval worker who cleared human waste from cesspits."
+                },
+                {
+                    "term": "miasma",
+                    "definition": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
+                },
+                {
+                    "term": "monastery",
+                    "definition": "A building or buildings occupied by a community of monks living under religious vows."
+                },
+                {
+                    "term": "cesspit",
+                    "definition": "A pit for the disposal of liquid waste and sewage."
+                },
+                {
+                    "term": "privy",
+                    "definition": "A toilet, especially a simple one such as an outhouse."
+                }
+            ],
+            "vocab_cloze_text": "During the Middle Ages, people feared [miasma] (bad air) caused disease. Without sewers, waste went into a [cesspit] or a simple [privy], which was eventually emptied by a [gongfermer]. The cleanest places were usually a [monastery] where monks lived.",
+            "pair_share": {
+                "topic": "Discuss with your partner: Who had better public health, a Roman soldier or a Medieval monk?",
+                "instructions": "Person A argues for the Roman soldier. Person B argues for the Medieval monk."
+            },
+            "extended": {
+                "question": "Write a PEEL paragraph explaining why public health in towns got worse during the Middle Ages.",
+                "hints": [
+                    "Mention the lack of sewers.",
+                    "Mention what people believed caused disease (miasma)."
+                ]
+            },
+            "historians_corner": {
+                "title": "Historian's Corner",
+                "quote": "Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house.",
+                "historian": "Carole Rawcliffe",
+                "question": "How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?"
+            }
         },
         {
             "id": "lesson_3",
-            "title": "Lesson 3: Early Modern Filth and Cesspits",
+            "title": "To what extent did towns become filthier during the Early Modern period?",
             "primary_source": {
                 "src": "assets/harington_toilet.jpg",
                 "title": "Source A: Sir John Harington's flushing toilet design (1596)",
@@ -498,13 +556,6 @@ export const unitData = {
                 ]
             },
             "sources": [],
-            "glossary": {
-                "conduit": "A channel or pipe for conveying water.",
-                "water closet": "A flush toilet, or a room containing one.",
-                "miasma": "A highly unpleasant or unhealthy smell or vapor, formerly thought to cause disease.",
-                "gong farmer": "A person employed to empty cesspits and privies in early modern cities.",
-                "urbanisation": "The increase in the proportion of people living in towns and cities."
-            },
             "gcse_task": null,
             "learning_objective": "To understand the impact of Early Modern Filth and Cesspits on public health.",
             "learning_objectives": {
@@ -592,7 +643,6 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of Early Modern Filth and Cesspits so significant?",
             "flashcards": [
                 {
                     "term": "conduit",
@@ -644,11 +694,51 @@ export const unitData = {
                     ],
                     "answer": 1
                 }
-            ]
+            ],
+            "vocab": [
+                {
+                    "term": "conduit",
+                    "definition": "A channel or pipe for conveying water."
+                },
+                {
+                    "term": "water closet",
+                    "definition": "A flush toilet, or a room containing one."
+                },
+                {
+                    "term": "miasma",
+                    "definition": "A highly unpleasant or unhealthy smell or vapor, formerly thought to cause disease."
+                },
+                {
+                    "term": "gong farmer",
+                    "definition": "A person employed to empty cesspits and privies in early modern cities."
+                },
+                {
+                    "term": "urbanisation",
+                    "definition": "The increase in the proportion of people living in towns and cities."
+                }
+            ],
+            "vocab_cloze_text": "As [urbanisation] grew, towns became overcrowded. People still blamed [miasma] for illness. Waste went into a [cesspit] cleaned by a [gong farmer]. Sometimes water flowed through a [conduit], but only the rich had a new [water closet].",
+            "pair_share": {
+                "topic": "Discuss with your partner: Why didn't Sir John Harington's flush toilet become popular instantly?",
+                "instructions": "Person A argues it was too expensive. Person B argues there were no sewers to connect it to."
+            },
+            "extended": {
+                "question": "Write a PEEL paragraph explaining why the growth of towns (urbanisation) made public health worse in the Early Modern period.",
+                "hints": [
+                    "Mention overcrowding.",
+                    "Mention the amount of waste produced."
+                ]
+            },
+            "historians_corner": {
+                "title": "Historian's Corner",
+                "quote": "The rapid growth of London meant that traditional methods of waste disposal simply could not cope.",
+                "historian": "Roy Porter",
+                "question": "What does Porter say was the main reason towns became so filthy?"
+            }
         },
         {
             "id": "lesson_4",
-            "title": "Lesson 4: The Industrial Revolution and Cholera",
+            "title": "How did the Industrial Revolution lead to a public health crisis?",
             "primary_source": {
                 "src": "assets/snow_cholera_map.jpg",
                 "title": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
@@ -693,13 +783,6 @@ export const unitData = {
                 "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
             },
             "sources": [],
-            "glossary": {
-                "urbanization": "The process of making an area more urban (city-like).",
-                "cholera": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies.",
-                "epidemic": "A widespread occurrence of an infectious disease in a community at a particular time.",
-                "public health": "The health of the population as a whole, especially as monitored and regulated by the state.",
-                "laissez-faire": "A policy or attitude of letting things take their own course, without interfering."
-            },
             "gcse_task": null,
             "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
             "learning_objectives": {
@@ -787,7 +870,6 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Industrial Revolution and Cholera so significant?",
             "flashcards": [
                 {
                     "term": "urbanization",
@@ -839,11 +921,51 @@ export const unitData = {
                     ],
                     "answer": 1
                 }
-            ]
+            ],
+            "vocab": [
+                {
+                    "term": "urbanization",
+                    "definition": "The process of making an area more urban (city-like)."
+                },
+                {
+                    "term": "cholera",
+                    "definition": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
+                },
+                {
+                    "term": "epidemic",
+                    "definition": "A widespread occurrence of an infectious disease in a community at a particular time."
+                },
+                {
+                    "term": "public health",
+                    "definition": "The health of the population as a whole, especially as monitored and regulated by the state."
+                },
+                {
+                    "term": "laissez-faire",
+                    "definition": "A policy or attitude of letting things take their own course, without interfering."
+                }
+            ],
+            "vocab_cloze_text": "Rapid [urbanization] meant cities grew too fast. The government believed in [laissez-faire], doing nothing to help. This led to a terrible [epidemic] of [cholera], forcing people to finally take [public health] seriously.",
+            "pair_share": {
+                "topic": "Discuss with your partner: Was it fair for the government to follow a 'laissez-faire' attitude?",
+                "instructions": "Person A argues it saved the government money. Person B argues it cost thousands of lives."
+            },
+            "extended": {
+                "question": "Write a PEEL paragraph explaining why John Snow's discovery at the Broad Street pump was a turning point.",
+                "hints": [
+                    "Explain what people used to believe (miasma).",
+                    "Explain what Snow proved about water."
+                ]
+            },
+            "historians_corner": {
+                "title": "Historian's Corner",
+                "quote": "John Snow's map of the Broad Street cholera outbreak was a triumph of medical detective work.",
+                "historian": "Steven Johnson",
+                "question": "Why does Johnson call Snow's work 'detective work'?"
+            }
         },
         {
             "id": "lesson_5",
-            "title": "Lesson 5: The Great Stink and Modern Sewers",
+            "title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
             "primary_source": {
                 "src": "assets/bazalgette_sewer.jpg",
                 "title": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
@@ -902,13 +1024,6 @@ export const unitData = {
                 ]
             },
             "sources": [],
-            "glossary": {
-                "sewer": "An underground conduit for carrying off drainage water and waste matter.",
-                "germ theory": "The theory that infectious diseases are caused by certain microbes.",
-                "sewage": "Waste water and excrement conveyed in sewers.",
-                "civil engineering": "The design and construction of public works, such as dams, bridges and other large-scale projects.",
-                "infrastructure": "The basic physical and organizational structures and facilities needed for the operation of a society."
-            },
             "gcse_task": null,
             "learning_objective": "To understand the impact of The Great Stink and Modern Sewers on public health.",
             "learning_objectives": {
@@ -1009,7 +1124,6 @@ export const unitData = {
                     ]
                 }
             ],
-            "enquiry": "Why was the historical context of The Great Stink and Modern Sewers so significant?",
             "flashcards": [
                 {
                     "term": "sewer",
@@ -1061,259 +1175,249 @@ export const unitData = {
                     ],
                     "answer": 0
                 }
-            ]
+            ],
+            "vocab": [
+                {
+                    "term": "sewer",
+                    "definition": "An underground conduit for carrying off drainage water and waste matter."
+                },
+                {
+                    "term": "germ theory",
+                    "definition": "The theory that infectious diseases are caused by certain microbes."
+                },
+                {
+                    "term": "sewage",
+                    "definition": "Waste water and excrement conveyed in sewers."
+                },
+                {
+                    "term": "civil engineering",
+                    "definition": "The design and construction of public works, such as dams, bridges and other large-scale projects."
+                },
+                {
+                    "term": "infrastructure",
+                    "definition": "The basic physical and organizational structures and facilities needed for the operation of a society."
+                }
+            ],
+            "vocab_cloze_text": "The Great Stink forced the government to build a new [sewer] system to carry away [sewage]. This huge [civil engineering] project improved the city's [infrastructure]. Later, Pasteur's [germ theory] finally proved exactly why the dirty water was making people sick.",
+            "pair_share": {
+                "topic": "Discuss with your partner: What finally forced Parliament to act?",
+                "instructions": "Person A argues it was the thousands of deaths from cholera. Person B argues it was the smell of the Great Stink reaching Parliament."
+            },
+            "extended": {
+                "question": "Write a PEEL paragraph explaining how Joseph Bazalgette's sewers improved public health in London.",
+                "hints": [
+                    "Mention the removal of sewage.",
+                    "Mention the end of cholera epidemics."
+                ]
+            },
+            "historians_corner": {
+                "title": "Historian's Corner",
+                "quote": "Bazalgette's sewer system was the most extensive and wonderful work of modern times.",
+                "historian": "The Observer Newspaper, 1861",
+                "question": "How did the media at the time view Bazalgette's sewers?"
+            }
         }
     ],
     "quizPack": [
         {
-            "q": "Why was digging cesspits in the Iron Age a hygienic way to manage waste?",
-            "a": "Roundhouse settlements were spread out and temporary pits kept waste away from springs",
-            "options": [
-                "They lined them with imported Roman lead",
-                "They piped the waste into the ocean",
-                "They used chemical disinfectants to kill germs",
-                "Roundhouse settlements were spread out and temporary pits kept waste away from springs"
-            ]
-        },
-        {
             "q": "What technology did Roman engineers use to bring fresh water over miles into British towns?",
-            "a": "Stone channels called conduits that utilized the natural pull of gravity",
-            "options": [
-                "Underground iron pipes and valves",
-                "Steam-powered pumping stations",
-                "Stone channels called conduits that utilized the natural pull of gravity",
-                "Wooden windmills connected to wells"
-            ]
+            "a": "Stone channels called conduits that utilized the natural pull of gravity"
         },
         {
             "q": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
-            "a": "Housesteads Fort on Hadrian's Wall",
-            "options": [
-                "Housesteads Fort on Hadrian's Wall",
-                "Stonehenge",
-                "The Tower of London",
-                "Skara Brae"
-            ]
+            "a": "Housesteads Fort on Hadrian's Wall"
         },
         {
             "q": "What did Roman soldiers use to wipe themselves in communal latrines?",
-            "a": "A wet sponge attached to the end of a shared wooden stick",
-            "options": [
-                "Toilet paper made from papyrus",
-                "Woollen cloths washed in vinegar",
-                "Leaves from the surrounding forest",
-                "A wet sponge attached to the end of a shared wooden stick"
-            ]
+            "a": "A wet sponge attached to the end of a shared wooden stick"
         },
         {
             "q": "What did Roman bathers experience inside a bathhouse like Bearsden?",
-            "a": "Washing in sequence through cold, warm, and hot rooms",
-            "options": [
-                "Swimming in a single massive outdoor pool",
-                "Sitting in a steam room to sweat out disease",
-                "Taking a shower under a mechanical waterfall",
-                "Washing in sequence through cold, warm, and hot rooms"
-            ]
+            "a": "Washing in sequence through cold, warm, and hot rooms"
+        },
+        {
+            "q": "What is a famous Roman bath complex located in Somerset, England?",
+            "a": "Aquae Sulis (Bath)"
+        },
+        {
+            "q": "What is a 'hypocaust' in Roman architecture?",
+            "a": "An underfloor heating system used in bathhouses"
+        },
+        {
+            "q": "What were Roman public toilets called?",
+            "a": "Latrines"
+        },
+        {
+            "q": "What Roman philosopher complained about the noise in a public bathhouse?",
+            "a": "Seneca the Younger"
+        },
+        {
+            "q": "How did early Iron Age Britons dispose of waste safely?",
+            "a": "By digging simple cesspits in spread-out roundhouse settlements"
+        },
+        {
+            "q": "Why was Iron Age waste disposal effective?",
+            "a": "Low population density meant waste didn't contaminate water supplies"
         },
         {
             "q": "Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?",
-            "a": "The low population density meant waste did not build up enough to contaminate water supplies",
-            "options": [
-                "They built complex underground sewers",
-                "They had strict hygiene laws enforced by the King",
-                "They boiled all their drinking water",
-                "The low population density meant waste did not build up enough to contaminate water supplies"
-            ]
+            "a": "The low population density meant waste did not build up enough to contaminate water supplies"
         },
         {
             "q": "On the twelfth-century plans of Canterbury Priory, what did the red lines represent?",
-            "a": "Pipes carrying dirty waste water away to flush the toilets",
-            "options": [
-                "Pipes carrying dirty waste water away to flush the toilets",
-                "Lines showing where burials were",
-                "Paths for the monks to walk",
-                "Walls of the monastery"
-            ]
+            "a": "Pipes carrying dirty waste water away to flush the toilets"
         },
         {
             "q": "How did poorer townspeople get their fresh water if they did not own a private well?",
-            "a": "They bought it from water sellers who hauled river water in barrels",
-            "options": [
-                "They walked to the nearest Roman aqueduct",
-                "They collected rainwater in stone basins",
-                "They had indoor plumbing installed",
-                "They bought it from water sellers who hauled river water in barrels"
-            ]
+            "a": "They bought it from water sellers who hauled river water in barrels"
         },
         {
             "q": "What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?",
-            "a": "Wild moss",
-            "options": [
-                "Wild moss",
-                "Parchment paper",
-                "Woven cloth",
-                "Animal skins"
-            ]
+            "a": "Wild moss"
         },
         {
             "q": "Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?",
-            "a": "To avoid disrupting the busy town streets with terrible smells and waste carts",
-            "options": [
-                "Because they were ashamed of their job",
-                "To avoid disrupting the busy town streets with terrible smells and waste carts",
-                "Because vampires only work at night",
-                "Because it was illegal to do it during the day"
-            ]
+            "a": "To avoid disrupting the busy town streets with terrible smells and waste carts"
+        },
+        {
+            "q": "What was the term for a medieval toilet, meaning 'wardrobe'?",
+            "a": "Garderobe"
+        },
+        {
+            "q": "Where did garderobes in castles usually empty their waste?",
+            "a": "Directly into the moat or a cesspit at the base of the wall"
+        },
+        {
+            "q": "What organization in medieval times had the best access to clean piped water?",
+            "a": "Monasteries and Priories"
+        },
+        {
+            "q": "Who was employed to clean out medieval cesspits?",
+            "a": "Gongfermers (or Gong Farmers)"
+        },
+        {
+            "q": "What was the main source of water for early medieval towns before pipes were common?",
+            "a": "Rivers, streams, and local wells"
         },
         {
             "q": "Why did London's sanitation problems get worse during the Early Modern period?",
-            "a": "The population grew rapidly, putting too much pressure on crowded town systems",
-            "options": [
-                "The population grew rapidly, putting too much pressure on crowded town systems",
-                "The Great Fire destroyed all the sewers",
-                "People stopped caring about hygiene completely",
-                "The Romans returned and destroyed the pipes"
-            ]
+            "a": "The population grew rapidly, putting too much pressure on crowded town systems"
         },
         {
             "q": "Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?",
-            "a": "Samuel Pepys",
-            "options": [
-                "Oliver Cromwell",
-                "King James I",
-                "William Shakespeare",
-                "Samuel Pepys"
-            ]
+            "a": "Samuel Pepys"
         },
         {
             "q": "Who invented the first water closet (flushing toilet) in Britain in 1596?",
-            "a": "Sir John Harington",
-            "options": [
-                "Edwin Chadwick",
-                "Joseph Bazalgette",
-                "Thomas Crapper",
-                "Sir John Harington"
-            ]
+            "a": "Sir John Harington"
         },
         {
             "q": "Why was the 1596 flushing toilet not used by ordinary citizens?",
-            "a": "Houses lacked running piped water and connections to street sewers",
-            "options": [
-                "Houses lacked running piped water and connections to street sewers",
-                "It was too loud",
-                "It was illegal to own one",
-                "It was considered bad for your health"
-            ]
+            "a": "Houses lacked running piped water and connections to street sewers"
         },
         {
             "q": "What was a 'water seller's' job in an Early Modern town?",
-            "a": "Transporting river water in large barrels on horseback to sell to homes",
-            "options": [
-                "Selling bottled spring water from France",
-                "Filtering muddy water through sand",
-                "Fixing broken wells",
-                "Transporting river water in large barrels on horseback to sell to homes"
-            ]
+            "a": "Transporting river water in large barrels on horseback to sell to homes"
+        },
+        {
+            "q": "Who constructed the New River to bring fresh water to London?",
+            "a": "Sir Hugh Myddelton"
+        },
+        {
+            "q": "In what year was the New River completed?",
+            "a": "1613"
+        },
+        {
+            "q": "What were Early Modern 'conduits'?",
+            "a": "Public water fountains where citizens could collect fresh water"
+        },
+        {
+            "q": "Why did Samuel Pepys' cellar flood with waste?",
+            "a": "His neighbor's cesspit overflowed directly into it"
+        },
+        {
+            "q": "What was a major consequence of overcrowded towns in the Early Modern period?",
+            "a": "Cesspits overflowed and contaminated drinking water supplies"
         },
         {
             "q": "By how much did Britain's population grow during the century of industrialisation (1750–1850)?",
-            "a": "It skyrocketed from 6 million to 21 million.",
-            "options": [
-                "It skyrocketed from 6 million to 21 million.",
-                "It fell from 10 million to 6 million",
-                "It grew from 1 million to 5 million",
-                "It stayed exactly the same"
-            ]
+            "a": "It skyrocketed from 6 million to 21 million"
         },
         {
             "q": "How did working-class families living in terraced yards usually obtain their water?",
-            "a": "From a shared pump in the street or yard that only ran for a few hours.",
-            "options": [
-                "From a local water seller",
-                "From a nearby river or stream",
-                "From private taps inside their homes",
-                "From a shared pump in the street or yard that only ran for a few hours."
-            ]
+            "a": "From a shared pump in the street or yard that only ran for a few hours"
         },
         {
             "q": "What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?",
-            "a": "Cholera",
-            "options": [
-                "Tuberculosis",
-                "Smallpox",
-                "The Black Death",
-                "Cholera"
-            ]
+            "a": "Cholera"
         },
         {
             "q": "What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?",
-            "a": "Miasma Theory (the belief that disease is spread by bad smells)",
-            "options": [
-                "Four Humours Theory",
-                "Germ Theory",
-                "Miasma Theory (the belief that disease is spread by bad smells)",
-                "Genetic Theory"
-            ]
+            "a": "Miasma Theory (the belief that disease is spread by bad smells)"
         },
         {
             "q": "Why did cesspits under shared yard privies frequently overflow in industrial cities?",
-            "a": "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
-            "options": [
-                "Landlords refused to pay for them to be emptied, and they were not connected to sewers.",
-                "They were built too small",
-                "The landlords paid too much to empty them",
-                "They were deliberately flooded by the council"
-            ]
+            "a": "Landlords refused to pay for them to be emptied, and they were not connected to sewers"
+        },
+        {
+            "q": "What was a 'back-to-back' house?",
+            "a": "Cheap, crowded industrial housing with shared privies and no back gardens"
+        },
+        {
+            "q": "Who published the 1842 Report on the Sanitary Condition of the Labouring Population?",
+            "a": "Edwin Chadwick"
+        },
+        {
+            "q": "What act was passed in 1848 as a result of Chadwick's report?",
+            "a": "The Public Health Act 1848"
+        },
+        {
+            "q": "What was the main problem with the 1848 Public Health Act?",
+            "a": "It was not compulsory, so many towns ignored it to save money"
+        },
+        {
+            "q": "What was the primary symptom of Cholera?",
+            "a": "Severe diarrhea, dehydration, and blue skin"
         },
         {
             "q": "How did John Snow stop the Soho cholera outbreak of 1854?",
-            "a": "He persuaded the local parish to remove the Broad Street pump handle.",
-            "options": [
-                "He persuaded the local parish to remove the Broad Street pump handle.",
-                "He closed down the local pub",
-                "He invented a vaccine for cholera",
-                "He ordered the streets to be washed with bleach"
-            ]
+            "a": "He persuaded the local parish to remove the Broad Street pump handle"
         },
         {
             "q": "What event in the summer of 1858 finally forced politicians to fund London's sewer network?",
-            "a": "The Great Stink of the River Thames",
-            "options": [
-                "The outbreak of the Black Death",
-                "The collapse of the Thames bridge",
-                "The Great Stink of the River Thames",
-                "A massive riot by gongfermers"
-            ]
+            "a": "The Great Stink of the River Thames"
         },
         {
             "q": "Which French scientist proved 'Germ Theory' in 1860, showing that microscopic organisms cause disease?",
-            "a": "Louis Pasteur",
-            "options": [
-                "Antoine Lavoisier",
-                "Louis Pasteur",
-                "Marie Curie",
-                "Rene Descartes"
-            ]
+            "a": "Louis Pasteur"
         },
         {
             "q": "What did the landmark 1875 Public Health Act force local councils to do?",
-            "a": "Ensure all houses had piped clean water and proper sewer connections.",
-            "options": [
-                "Provide free healthcare to all citizens",
-                "Build hospitals in every town",
-                "Ban all cesspits immediately",
-                "Ensure all houses had piped clean water and proper sewer connections."
-            ]
+            "a": "Ensure all houses had piped clean water and proper sewer connections"
         },
         {
             "q": "How many miles of brick sewers did Joseph Bazalgette construct beneath London?",
-            "a": "1,300 miles",
-            "options": [
-                "500 miles",
-                "1,300 miles",
-                "10 miles",
-                "50 miles"
-            ]
+            "a": "1,300 miles"
+        },
+        {
+            "q": "What was Joseph Bazalgette's profession?",
+            "a": "Civil Engineer"
+        },
+        {
+            "q": "What modern facility replaced the old, unhygienic shared privies by the late 19th century?",
+            "a": "Flushing toilets connected to Bazalgette's sewer system"
+        },
+        {
+            "q": "What happened to the River Thames during the Great Stink?",
+            "a": "The river level dropped during a heatwave, exposing rotting sewage"
+        },
+        {
+            "q": "Why did Parliament suddenly care about the Great Stink?",
+            "a": "The smell was so terrible it reached the Houses of Parliament"
+        },
+        {
+            "q": "How did John Snow map the 1854 Cholera outbreak?",
+            "a": "He mapped the deaths and noticed they clustered around the Broad Street pump"
         }
     ],
     "guided_reading": [
@@ -1475,6 +1579,19 @@ export const unitData = {
             "title": "Assessment Option 2: Cholera Investigation",
             "type": "essay",
             "description": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak."
+        },
+        {
+            "id": "source_utility",
+            "title": "Assessment Option 3: Source Utility Analysis",
+            "type": "source_utility",
+            "description": "Study Source B below. How useful is Source B for an enquiry into the social and commercial atmosphere of a Roman bathhouse? (8 marks)",
+            "sources": [
+                {
+                    "id": "Source B",
+                    "text": "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.",
+                    "provenance": "Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above."
+                }
+            ]
         }
     ],
     "key_individuals": [

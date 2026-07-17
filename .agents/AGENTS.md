@@ -54,3 +54,7 @@ This prevents pupil fatigue and ensures diverse cognitive engagement.
 
 ## Printed Workbook Timeline Tasks
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, if a lesson contains a `do_now.type === "timeline"`, you MUST render it as a 'Domino Flowchart'. The script must print the events inside randomly scattered/shuffled CSS boxes on the page. The instructions must tell the student to 'draw arrows connecting the events in the correct chronological and causal order'.
+
+
+## Automated Database Sync
+Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, or add a new unit, you MUST automatically run `npm run sync` before finishing your task. You must do this proactively so the user never has to remember to run the database build setup themselves.

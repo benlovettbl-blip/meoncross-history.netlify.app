@@ -12,7 +12,9 @@ export function renderExamPracticeZone(container, unitData) {
     });
   }
 
-  if (examBank.length === 0 && (!unitData.assessments || unitData.assessments.length === 0)) {
+    let hasAnyAssessments = (unitData.assessments && unitData.assessments.length > 0) || 
+                          (unitData.lessons && unitData.lessons.some(l => (l.assessments && l.assessments.length > 0) || l.gcse_task));
+  if (examBank.length === 0 && !hasAnyAssessments) {
     container.innerHTML = `
       <div style="text-align:center; padding: 40px; background: #fff; border-radius: 12px; color: #64748b; font-size: 1.2rem;">
         <i class="fa-solid fa-file-circle-xmark fa-3x" style="margin-bottom:20px; color:#cbd5e1;"></i>
@@ -415,11 +417,33 @@ export function renderExamPracticeZone(container, unitData) {
 
   // Populate assessments
   const assessmentsContainer = document.getElementById('assessments-container');
-  if (unitData.assessments && unitData.assessments.length > 0) {
+  let allAssessments = [];
+  if (unitData.assessments) {
+    allAssessments = allAssessments.concat(unitData.assessments);
+  }
+  if (unitData.lessons) {
+    unitData.lessons.forEach((l, idx) => {
+      if (l.assessments) {
+        allAssessments = allAssessments.concat(l.assessments.map(a => ({
+          ...a,
+          title: a.title || `Lesson ${idx+1}: Source Assessment`
+        })));
+      }
+      if (l.gcse_task) {
+        allAssessments.push({
+          ...l.gcse_task,
+          type: 'source_utility', // Treat gcse_task as source_utility
+          title: `Lesson ${idx+1}: ${l.gcse_task.topic || 'Source Task'}`
+        });
+      }
+    });
+  }
+
+  if (allAssessments.length > 0) {
     let html = '<div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #e2e8f0;">';
-    html += '<h2 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 20px;"><i class="fa-solid fa-file-pen" style="color: #4f46e5;"></i> End of Unit Assessments</h2>';
+    html += '<h2 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 20px;"><i class="fa-solid fa-file-pen" style="color: #4f46e5;"></i> Unit Assessments</h2>';
     
-    unitData.assessments.forEach((assessment, aIdx) => {
+    allAssessments.forEach((assessment, aIdx) => {
       html += `<div class="epz-card" style="margin-bottom: 20px;">`;
       html += `<h3 style="font-size: 1.4rem; color: #334155; margin-bottom: 10px;">${assessment.title}</h3>`;
       html += `<p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">${assessment.description}</p>`;
@@ -427,8 +451,9 @@ export function renderExamPracticeZone(container, unitData) {
       if (assessment.type === 'timeline') {
         if (assessment.events && assessment.events.length > 0) {
           html += `<ul style="list-style-type: none; padding: 0;">`;
-          assessment.events.forEach(ev => {
-            html += `<li style="background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"><strong>${ev.year}: ${ev.title}</strong> - ${ev.detail}</li>`;
+          let shuffledEvents = [...assessment.events].sort(() => Math.random() - 0.5);
+          shuffledEvents.forEach(ev => {
+            html += `<li style="background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"><strong>${ev.title}</strong> - ${ev.detail}</li>`;
           });
           html += `</ul>`;
         }
@@ -494,8 +519,9 @@ export function renderExamPracticeZone(container, unitData) {
         html += `<strong>Fact Bank:</strong> Alliance Systems, Schlieffen Plan, 'Blank Cheque', Naval Race, Assassination in Sarajevo.`;
         html += `</div></div>`;
       } else if (assessment.type === 'essay') {
+        // Description already rendered below the title, so we can omit it here or just show a label
         html += `<div style="background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px;">`;
-        html += `<p style="font-size: 1.1rem; color: #334155; line-height: 1.6;"><strong>Task:</strong> ${assessment.description}</p>`;
+        html += `<p style="font-size: 1.1rem; color: #334155; line-height: 1.6;"><em>Use the scaffolding below to help structure your essay response.</em></p>`;
         html += `</div>`;
         
         // Scaffolding for Essay

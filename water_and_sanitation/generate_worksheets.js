@@ -126,7 +126,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
   if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
   if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
   
-  html += `<h2 style="margin-bottom: 20px;">${lesson.title}</h2>`;
+  html += `<h2 style="margin-bottom: 20px;">Lesson ${lessonIndex + 1}: ${lesson.title}</h2>`;
 
   // Primary Source at the top
   if (lesson.primary_source) {
@@ -294,6 +294,50 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
     html += `</div>`;
   }
 
+  if (lesson.assessments && lesson.assessments.length > 0) {
+    lesson.assessments.forEach(assessment => {
+      html += `<div style="page-break-before: always;">`;
+      html += `<h2>GCSE Source Analysis</h2>`;
+      html += `<p style="font-weight: bold; font-size: 13pt;">${assessment.question}</p>`;
+      
+      let source = assessment.source;
+      if (source) {
+        html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; text-align: center;">`;
+        if (source.type === 'visual') {
+          let srcImage = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../water_and_sanitation/${source.src}`;
+          html += `<img src="${srcImage}" style="max-width: 100%; max-height: 250px;">`;
+        } else if (source.type === 'written') {
+          html += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${source.text}</blockquote>`;
+        }
+        html += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px; margin-bottom: 0;">${source.title}</p>`;
+        html += `</div>`;
+      }
+
+      html += `<h3 style="margin-top: 0;">Source Evaluation Triangle</h3>`;
+      html += `<p style="font-size: 10.5pt; margin-bottom: 15px;">Use the table below to scaffold your answer. Consider the Source's Content, Provenance, and your own Contextual Knowledge.</p>`;
+      html += `
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; page-break-inside: avoid;">
+          <tr>
+            <th style="border: 2px solid #000; padding: 8px; width: 33%;">Content (What it shows/says)</th>
+            <th style="border: 2px solid #000; padding: 8px; width: 33%;">Provenance (Nature, Origin, Purpose)</th>
+            <th style="border: 2px solid #000; padding: 8px; width: 33%;">Contextual Knowledge</th>
+          </tr>
+          <tr>
+            <td style="border: 2px solid #000; padding: 8px; height: 120px;"></td>
+            <td style="border: 2px solid #000; padding: 8px;"></td>
+            <td style="border: 2px solid #000; padding: 8px;"></td>
+          </tr>
+        </table>
+      `;
+
+      html += `<h3 style="margin-top: 0;">Final Written Evaluation</h3>`;
+      for(let i=0; i<15; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
+      html += `</div>`;
+    });
+  }
+
   }
 
   // Inject Discreet Grading Footer for the Lesson
@@ -358,6 +402,20 @@ if (unitData.assessments && unitData.assessments.length > 0) {
       for(let i=0; i<15; i++) {
         html += `<div class="task-lines-large"></div>`;
       }
+    } else if (assessment.type === 'source_utility') {
+      html += `<div style="display: flex; gap: 20px; margin-bottom: 20px;">`;
+      assessment.sources.forEach(source => {
+        html += `<div style="flex: 1; border: 1px solid #333; padding: 15px; background: #fafafa;">`;
+        html += `<strong style="font-size: 13pt;">${source.id}</strong>`;
+        html += `<p style="font-size: 11pt; font-style: italic; margin-top: 5px; margin-bottom: 15px;">${source.provenance}</p>`;
+        html += `<p style="font-size: 11pt; line-height: 1.5;">${source.text}</p>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+      html += `<p style="font-style: italic; color: #555;">Use the writing lines below to answer the 8-mark question. Remember to analyze the content, provenance, and apply your contextual knowledge.</p>`;
+      for(let i=0; i<16; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
     }
 
     // Inject Discreet Grading Footer for the Assessment
@@ -382,37 +440,40 @@ if (unitData.assessments && unitData.assessments.length > 0) {
 
 
 // Append Quiz Pack
+let quizPackSectionHtml = '';
 if (unitData.quizPack && unitData.quizPack.length > 0) {
-  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
-  html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
+  quizPackSectionHtml += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
+  quizPackSectionHtml += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
   
-  html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
+  quizPackSectionHtml += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
   // Format into two columns roughly
-  html += `<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">`;
+  quizPackSectionHtml += `<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">`;
   unitData.quizPack.forEach((item, idx) => {
-    html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
-    html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;
-    html += `<div class="task-lines"></div>`;
-    html += `</div>`;
+    quizPackSectionHtml += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
+    quizPackSectionHtml += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;
+    quizPackSectionHtml += `<div class="task-lines"></div>`;
+    quizPackSectionHtml += `</div>`;
   });
-  html += `</div>`;
-  html += `</div>`;
+  quizPackSectionHtml += `</div>`;
+  quizPackSectionHtml += `</div>`;
 
   // Answer Bank
-  html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 20pt; text-align: center;">Quiz Pack Answer Bank</h2>`;
-  html += `<div style="border: 2px solid #1a237e; padding: 20px; background: #f8f9fa; border-radius: 8px;">`;
+  quizPackSectionHtml += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 20pt; text-align: center;">Quiz Pack Answer Bank</h2>`;
+  quizPackSectionHtml += `<div style="border: 2px solid #1a237e; padding: 20px; background: #f8f9fa; border-radius: 8px;">`;
   
   // Extract and scramble answers alphabetically
   let answers = unitData.quizPack.map(item => item.a).sort((a, b) => a.localeCompare(b));
   
-  html += `<p style="text-align: center; font-size: 11pt; line-height: 1.8;">`;
+  quizPackSectionHtml += `<p style="text-align: center; font-size: 11pt; line-height: 1.8;">`;
   answers.forEach((ans, idx) => {
-    html += `<strong>${ans}</strong>`;
-    if (idx < answers.length - 1) html += ` &nbsp;&bull;&nbsp; `;
+    quizPackSectionHtml += `<strong>${ans}</strong>`;
+    if (idx < answers.length - 1) quizPackSectionHtml += ` &nbsp;&bull;&nbsp; `;
   });
-  html += `</p>`;
-  html += `</div>`;
+  quizPackSectionHtml += `</p>`;
+  quizPackSectionHtml += `</div>`;
+  
+  html += quizPackSectionHtml;
 }
 
 html += `
@@ -452,3 +513,26 @@ html += `
 
 fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);
 console.log('Successfully generated workbook.html!');
+
+if (unitData.quizPack && unitData.quizPack.length > 0) {
+  let standaloneQuizHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>${unitData.title} - Printable Quiz Pack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 portrait; margin: 20mm; }
+    body { font-family: 'Outfit', sans-serif; font-size: 12pt; line-height: 1.6; color: #000; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 20pt; color: #1a237e; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+    .task-lines { border-bottom: 1px dashed #999; height: 25px; margin-top: 15px; margin-bottom: 20px; width: 100%; }
+  </style>
+</head>
+<body>
+`;
+  // For the standalone version, we don't want the first h2 to have page-break-before: always
+  standaloneQuizHtml += quizPackSectionHtml.replace('page-break-before: always;', '');
+  standaloneQuizHtml += `</body></html>`;
+  fs.writeFileSync(path.join(__dirname, 'quiz_pack.html'), standaloneQuizHtml);
+  console.log('Successfully generated quiz_pack.html!');
+}

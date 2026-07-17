@@ -874,14 +874,15 @@ export function initializeApp(unitData) {
       </div>
     `;
 
-    if (lesson.enquiry) {
+    let fallbackEnquiry = lesson.enquiry || lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
+    if (fallbackEnquiry) {
       html += `
         <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
           <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
             <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Enquiry Question
           </h3>
           <p style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
-            ${lesson.enquiry}
+            ${fallbackEnquiry}
           </p>
         </div>
       `;
@@ -1389,6 +1390,81 @@ export function initializeApp(unitData) {
       html += `</div></div>`;
     }
 
+    // PHASE: Extended Scholarship & Debate
+    if (lesson.extended || lesson.debate_prep) {
+      let extHtml = `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Extended Scholarship</div>
+            ${lesson.extended && (lesson.extended.model || lesson.extended.answer) ? `<button class="btn btn-secondary" onclick="toggleElement('extended-model-${lesson.id}')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
+          </div>
+      `;
+
+      if (lesson.debate_prep) {
+        const dp = lesson.debate_prep;
+        // Interleave the arguments deterministically for rendering, then sort randomly
+        const allArgs = [...dp.arguments_for.map(a=>({t:a, s:'for'})), ...dp.arguments_against.map(a=>({t:a, s:'against'}))].sort(() => Math.random() - 0.5);
+        const argsHtml = allArgs.map((arg, idx) => `<div class="debate-card" draggable="true" ondragstart="window.dragDebate(event)" id="debate-arg-${lesson.id}-${idx}" data-side="${arg.s}" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: grab;">${arg.t}</div>`).join('');
+
+        extHtml += `
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+            <h3 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-scale-balanced"></i> Debate Prep: ${dp.question}</h3>
+            <p style="color: #475569; font-size: 0.95rem;">Drag and drop the evidence cards below into the correct columns to prepare your arguments before writing your essay.</p>
+            
+            <div id="debate-bank-${lesson.id}" class="debate-dropzone" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #94a3b8; padding: 15px; border-radius: 8px; margin-bottom: 20px; min-height: 80px;">
+              ${argsHtml}
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <h4 style="text-align: center; color: #16a34a; margin-top: 0;">Agree</h4>
+                <div id="debate-for-${lesson.id}" class="debate-dropzone" data-target="for" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #86efac; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+              <div>
+                <h4 style="text-align: center; color: #dc2626; margin-top: 0;">Disagree</h4>
+                <div id="debate-against-${lesson.id}" class="debate-dropzone" data-target="against" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #fca5a5; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+              <button class="btn btn-primary" onclick="window.checkDebate('${lesson.id}')">Check Answers</button>
+              <div id="debate-feedback-${lesson.id}" style="margin-top: 10px; font-weight: bold;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (lesson.extended) {
+        if (lesson.extended.title) {
+          extHtml += `<h3 style="color: #0f172a;">${lesson.extended.title}</h3>`;
+        }
+        if (lesson.extended.paragraphs) {
+          lesson.extended.paragraphs.forEach(p => {
+             extHtml += `<p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">${p}</p>`;
+          });
+        }
+        
+        let hintsHtml = '';
+        if (lesson.extended.hints && lesson.extended.hints.length > 0) {
+           hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">${lesson.extended.hints.map(h => `<li>${h}</li>`).join('')}</ul></div>`;
+        }
+
+        extHtml += `
+          <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+              ${formatQuestion(lesson.extended.question)}
+            </div>
+            ${hintsHtml}
+            <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
+
+            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${lesson.extended.model || lesson.extended.answer}</div>` : ''}
+          </div>
+        `;
+      }
+
+      extHtml += `</div>`;
+      html += extHtml;
+    }
+
     // PHASE: Knowledge Check Quiz
     if (lesson.quiz && lesson.quiz.length > 0) {
       html += `
@@ -1591,8 +1667,12 @@ window.updateProgress = () => {
       });
     }
     
+    if (activeLesson.debate_prep) {
+       addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
+    }
+
     if (activeLesson.extended && activeLesson.extended.question) {
-       addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model || activeLesson.extended.answer || '');
+       addQuestionCard(activeLesson.extended.qNum || '-', activeLesson.extended.question, activeLesson.extended.model || activeLesson.extended.answer || '');
     }
     
     container.innerHTML = html;
@@ -1603,6 +1683,72 @@ window.toggleStarterById = function(id) {
   const starter = document.getElementById(id);
   if (starter) {
     starter.style.display = starter.style.display === 'block' ? 'none' : 'block';
+  }
+};
+
+window.dragDebate = function(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+};
+
+window.allowDrop = function(ev) {
+  ev.preventDefault();
+};
+
+window.dropDebate = function(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const el = document.getElementById(data);
+  let target = ev.target;
+  // If dropped on another card, append to the dropzone
+  while (target && !target.classList.contains('debate-dropzone')) {
+    target = target.parentElement;
+  }
+  if (target && el) {
+    target.appendChild(el);
+  }
+};
+
+window.checkDebate = function(lessonId) {
+  let correct = true;
+  let allSorted = true;
+  
+  const bank = document.getElementById(`debate-bank-${lessonId}`);
+  if (bank && bank.children.length > 0) allSorted = false;
+  
+  const forZone = document.getElementById(`debate-for-${lessonId}`);
+  if (forZone) {
+    Array.from(forZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'for') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+
+  const againstZone = document.getElementById(`debate-against-${lessonId}`);
+  if (againstZone) {
+    Array.from(againstZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'against') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+  
+  const feedback = document.getElementById(`debate-feedback-${lessonId}`);
+  if (!allSorted) {
+    feedback.style.color = '#d97706';
+    feedback.innerText = "Please sort all evidence cards first!";
+  } else if (!correct) {
+    feedback.style.color = '#dc2626';
+    feedback.innerText = "Some evidence is in the wrong column. Check the red cards and try again!";
+  } else {
+    feedback.style.color = '#16a34a';
+    feedback.innerText = "Excellent! All evidence sorted correctly. You are ready to write your essay!";
   }
 };
 window.toggleAnswerById = function(id) {

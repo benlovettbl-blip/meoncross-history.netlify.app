@@ -1,7793 +1,2107 @@
-// State Management
-const appState = {
-  currentTab: "timelineSection",
-  theme: localStorage.getItem("elizabethan_theme") || "light",
-  userXP: Number(localStorage.getItem("elizabethan_user_xp")) || 0,
-  timelineFilter: "all",
-  timelineSearchQuery: "",
-  timelineSortMode: "topic",
-  activeQuestionType: "describe", // 'describe' | 'explain' | 'essay'
-  activePracticePanel: "workspace", // 'workspace' | 'model' | 'rubric'
-  selectedIndexes: {
-    describe: 0,
-    explain: 0,
-    essay: 0
-  },
-  userDrafts: (() => {
-    const saved = localStorage.getItem("elizabethan_user_drafts");
-    return saved ? JSON.parse(saved) : {};
-  })(),
-  lessonsMastered: (() => {
-    const saved = localStorage.getItem("elizabethan_lessons_mastered");
-    return saved ? JSON.parse(saved) : {};
-  })(),
-  mockExam: null,
-  activePastPaper: null,
-  quiz: {
-    activeTopicIndex: -1, // -1 means setup screen, 0-11 represent topics
-    currentQuestionIndex: 0,
-    score: 0,
-    isFlipped: false,
-    themeIndex: 0,
-    activeQueue: [],
-    masteredCount: 0,
-    xp: 0,
-    streak: 0,
-    bestStreak: 0,
-    totalAttempts: 0,
-    verificationActive: false,
-    verificationOptions: [],
-    verificationAnswered: false,
-    verificationSelectedIndex: -1,
-    verificationCorrect: false,
-    masteryStates: (() => {
-      const saved = localStorage.getItem("elizabethan_mastery_states");
-      return saved ? JSON.parse(saved) : {};
-    })()
+import { renderRevisionZone } from './revision_zone.js';
+import { renderExamPracticeZone } from './exam_practice_zone.js';
+import { initKeyIndividualsTask } from './key_individuals.js';
+import { renderQuizZone } from './quiz_zone.js';
+import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
+
+export function getAssetUrl(path) {
+  if (!path) return path;
+  if (path.startsWith('http') || path.startsWith('/')) return path;
+  if (window.currentUnitId) {
+    return `/units/${window.currentUnitId}/${path}`;
   }
-};
-
-const examQuestionFacts = {
-  // Describe (Q1)
-  "ex-desc-1": "Privy Council had ~19 members; led by Secretary of State William Cecil; met almost daily.",
-  "ex-desc-2": "Elizabeth received a Humanist education; spoke Latin, Greek, Italian, and French; mastered court patronage.",
-  "ex-desc-3": "Mary I left a Crown debt of £300,000; £100,000 was owed to Antwerp Exchange at 14% interest.",
-  "ex-desc-4": "Act of Supremacy (1559) established Elizabeth as 'Supreme Governor'; required all clergy to swear an oath of supremacy.",
-  "ex-desc-5": "Church Courts judged moral crimes (slander, wills, marriage); priests required royal licensing to preach.",
-  "ex-desc-6": "Vestment Controversy (1566) led to the dismissal of 37 Puritan priests; Puritans viewed vestments as Catholic 'idols'.",
-  "ex-desc-7": "Pope instructed boycotted services in 1566; recusancy fine was 1 shilling per week (about a week's wages for a laborer).",
-  "ex-desc-8": "Margaret Tudor line; Mary, Queen of Scots was Elizabeth's second cousin; viewed as legitimate Catholic heir.",
-  "ex-desc-9": "Casket Letters presented at York Conference (1568-69); Elizabeth reached no verdict to keep Mary held without charge.",
-  "ex-desc-10": "Durham Cathedral captured in Nov 1569; mass celebrated; 4,600 rebels; 800 rebels executed afterwards.",
-  "ex-desc-11": "Walsingham used agents provocateurs, double agents, and code-breakers (Thomas Phelippes) to trap conspirators.",
-  "ex-desc-12": "Mary executed Feb 1587 at Fotheringhay Castle; enabled by 1585 Act for the Preservation of the Queen's Safety.",
-  "ex-desc-13": "Philip II signed Treaty of Joinville with French Catholic League in 1584, creating a joint anti-Protestant alliance.",
-  "ex-desc-14": "Elizabeth privately funded sailors like Francis Drake to plunder Spanish treasure ships, returning huge profits.",
-  "ex-desc-15": "Treaty of Nonsuch (1585) committed 7,400 English soldiers under Robert Dudley to fight the Spanish army.",
-  "ex-desc-16": "April 1587 raid destroyed ~30 Spanish ships and thousands of barrel staves; delayed the Spanish Armada by a full year.",
-  "ex-desc-17": "Armada consisted of 130 ships, 30,000 men; led by Duke of Medina Sidonia; Duke of Parma had 27,000 troops in Netherlands.",
-  "ex-desc-18": "Eight fireships launched at Calais (6 Aug 1588) to scatter crescent; Battle of Gravelines (8 Aug) won by fast race-built galleons.",
-  "ex-desc-19": "72 new fee-paying grammar schools opened; male literacy rose to 30%, female literacy remained at ~10%.",
-  "ex-desc-20": "The Globe and The Rose theatres opened in London suburbs to avoid civic bans; drew huge, socially mixed crowds.",
-  "ex-desc-21": "Fencing off common land for sheep farming reduced arable fields, causing rural unemployment and depopulation.",
-  "ex-desc-22": "Vagabonds Act (1572) ordered whipping and boring a hole in the ear for beggars; established national poor rate tax.",
-  "ex-desc-23": "Gerardus Mercator's 1569 Map; astrolabe and quadrant; English wool market in Antwerp collapsed forcing new trade routes.",
-  "ex-desc-24": "Francis Drake circumnavigated (1577-80); returned with £400,000 treasure; knighted on deck of Golden Hind in 1581.",
-  "ex-desc-25": "Walter Raleigh was granted a royal charter to colonise Virginia; organised expeditions and promoted colony to investors.",
-  "ex-desc-26": "Sir Walter Raleigh funded Roanoke; supply ship Tiger breached in 1585 storm; Chief Wingina killed in 1586; abandoned 1586.",
-
-  // Explain (Q2)
-  "ex-exp-1": "• Paragraph 1 (Stimulus 1): The immediate military threat from the 'Auld Alliance' (French troops stationed in Scotland).\n• Paragraph 2 (Stimulus 2): The £300,000 debt inherited from Mary I severely limited her ability to govern, raise armies, or defend borders.\n• Paragraph 3 (Own Knowledge): Her questionable legitimacy (Henry VIII's marriage to Anne Boleyn unrecognized by the Pope) or the patriarchal society's belief that a female monarch was too weak to rule.",
-  "ex-exp-2": "• Paragraph 1 (Stimulus 1): Puritans strongly objected to wearing elaborate Catholic-style vestments (robes), believing priests should wear plain clothing.\n• Paragraph 2 (Stimulus 2): The Act of Uniformity forced them to follow rules they believed lacked biblical purity, such as bowing or kneeling during services.\n• Paragraph 3 (Own Knowledge): The 'Crucifix Controversy' where Puritan bishops threatened to resign because they viewed crucifixes as sinful idols.",
-  "ex-exp-3": "• Paragraph 1 (Stimulus 1): Traditional northern Catholic nobles (Northumberland and Westmorland) felt sidelined and politically humiliated when Elizabeth gave local power to loyal southern Protestants like William Cecil.\n• Paragraph 2 (Stimulus 2): The North remained staunchly Catholic and deeply resented Elizabeth imposing Protestantism and appointing Protestant bishops.\n• Paragraph 3 (Own Knowledge): The sudden arrival of Mary, Queen of Scots in 1568, which provided the Earls with a legitimate, Tudor-bloodline Catholic heir to put on the throne.",
-  "ex-exp-4": "• Paragraph 1 (Stimulus 1): The Privy Council constantly pressured Elizabeth, eventually passing the 'Act for the Preservation of the Queen's Safety' to legally force Mary's death warrant.\n• Paragraph 2 (Stimulus 2): Mary's legitimate Tudor bloodline meant she was a constant, living threat around whom English Catholics rallied.\n• Paragraph 3 (Own Knowledge): The Babington Plot (1586) where Walsingham's spies intercepted coded letters proving Mary explicitly agreed to Elizabeth's assassination.",
-  "ex-exp-5": "• Paragraph 1 (Stimulus 1): Philip II actively supported Catholic treason in England, including Spanish ambassadors funding and helping coordinate the Ridolfi and Babington plots.\n• Paragraph 2 (Stimulus 2): Spain disrupted the vital English cloth trade in Antwerp, and Elizabeth retaliated by secretly funding Dutch Protestant rebels.\n• Paragraph 3 (Own Knowledge): The actions of Sir Francis Drake; his privateering in the New World and the theft of £400,000 of Spanish gold deeply humiliated and angered Philip II.",
-  "ex-exp-6": "• Paragraph 1 (Stimulus 1): Drake's 1587 raid on Cadiz ('singeing the King of Spain's beard') destroyed ~30 Spanish ships and thousands of barrel staves, causing Spanish food supplies to rot.\n• Paragraph 2 (Stimulus 2): The English launched fire ships into the Spanish fleet while anchored at Calais, breaking their defensive crescent formation and causing widespread panic.\n• Paragraph 3 (Own Knowledge): The catastrophic weather (the 'Protestant Wind' storms) that wrecked the surviving Spanish ships off the coasts of Scotland and Ireland.",
-  "ex-exp-7": "• Paragraph 1 (Stimulus 1): Humanist philosophy shifted the purpose of education away from just training priests, towards fulfilling human potential and creating a civilized society.\n• Paragraph 2 (Stimulus 2): The growing merchant class (the 'middling sort') desperately needed their sons to be literate and numerate to navigate complex business contracts.\n• Paragraph 3 (Own Knowledge): The Protestant religion actively encouraged basic literacy so that ordinary people could read the Bible in English for themselves.",
-  "ex-exp-8": "• Paragraph 1 (Stimulus 1): Wealthy landowners fenced off traditional common land (Enclosure), meaning the rural poor lost their ability to forage or graze animals to survive.\n• Paragraph 2 (Stimulus 2): The shift from growing crops to highly profitable sheep farming, which required far fewer workers and caused mass rural unemployment.\n• Paragraph 3 (Own Knowledge): Massive population growth (from 3 to 4.2 million) which drove wages down while simultaneously causing severe inflation and rising food prices.",
-  "ex-exp-9": "• Paragraph 1 (Stimulus 1): New technology like the astrolabe, quadrant, and the Mercator Map made highly dangerous open-ocean voyages much safer and more accurate.\n• Paragraph 2 (Stimulus 2): The collapse of the traditional cloth trade in Antwerp forced merchants to explore the Americas and Asia to find new markets to survive.\n• Paragraph 3 (Own Knowledge): The financial motivation of privateering; Drake’s 4700% profit proved that attacking the Spanish monopoly in the New World could make investors incredibly rich.",
-  "ex-exp-10": "• Paragraph 1 (Stimulus 1): Initial friendly relations with the Algonquians turned hostile due to English demands for food and the spread of deadly European diseases, leading to war.\n• Paragraph 2 (Stimulus 2): The breach of the ship 'The Tiger' ruined the colonists' vital seeds and perishable food, leaving them starving before winter even began.\n• Paragraph 3 (Own Knowledge): Poor planning; the expedition mostly consisted of soldiers and gentlemen seeking gold, not the skilled farmers needed to build a self-sustaining colony.",
-  "ex-exp-11": "• Paragraph 1 (Stimulus 1): Mary I had sold off Crown Lands to fund wars, reducing Elizabeth's regular income from rents.\n• Paragraph 2 (Stimulus 2): Henry VIII and Edward VI had debased the coinage, which caused massive inflation and meant Elizabeth's money was worth less.\n• Paragraph 3 (Own Knowledge): Inherited £300,000 Crown debt, including high-interest loans (14%) owed to the Antwerp Exchange.",
-  "ex-exp-12": "• Paragraph 1 (Stimulus 1): Deep religious divisions existed (staunch Catholics in the North vs radical Protestants returning from exile in Europe) threatening civil war.\n• Paragraph 2 (Stimulus 2): Desire to create a 'Middle Way' compromise (Acts of Supremacy and Uniformity) to bring peace and establish her royal authority.\n• Paragraph 3 (Own Knowledge): Threat of foreign Catholic powers; she needed to avoid an extreme settlement that would trigger an immediate invasion from Spain or France.",
-  "ex-exp-13": "• Paragraph 1 (Stimulus 1): 1570 Papal Bull excommunicated Elizabeth, effectively giving English Catholics religious permission to commit treason.\n• Paragraph 2 (Stimulus 2): 1571 Ridolfi Plot escalated the threat by showing that foreign armies (Alba's 10,000 Spanish troops) were actively planning to invade.\n• Paragraph 3 (Own Knowledge): The arrival of Mary, Queen of Scots in 1568 (legitimate Catholic figurehead) and secret Jesuit missionary priests turning the population against the Queen.",
-  "ex-exp-14": "• Paragraph 1 (Stimulus 1): Mary transitioned from a refugee to an active conspirator, culminating in the Babington Plot (1586) where she explicitly agreed to Elizabeth's assassination.\n• Paragraph 2 (Stimulus 2): Deteriorating relations with Spain meant Philip II was increasingly willing to fund and support plots to put Mary on the throne.\n• Paragraph 3 (Own Knowledge): The Papal Bull (1570) made Mary the only legitimate monarch in the eyes of strict Catholics, driving plots like Ridolfi (1571) and Throckmorton (1583).",
-  "ex-exp-15": "• Paragraph 1 (Stimulus 1): Elizabeth's signing of the Treaty of Nonsuch (1585) sending 7,400 English troops to the Netherlands was viewed by Spain as a direct act of war.\n• Paragraph 2 (Stimulus 2): Drake's privateering in the New World and his 1587 Cadiz raid ('singeing the King of Spain's beard') destroyed ~30 ships and cost Spain millions.\n• Paragraph 3 (Own Knowledge): Philip's religious duty as a devout Catholic to stamp out Protestantism, triggered finally by the execution of Mary, Queen of Scots in 1587.",
-  "ex-exp-16": "• Paragraph 1 (Stimulus 1): 1584 Treaty of Joinville allied Catholic France and Spain, leaving Protestant England dangerously isolated.\n• Paragraph 2 (Stimulus 2): The assassination of Dutch rebel leader William of Orange in 1584 meant the Dutch Revolt was about to collapse, freeing the Spanish army to attack England.\n• Paragraph 3 (Own Knowledge): Economic necessity to protect the vital English cloth trade routes that relied heavily on Dutch ports.",
-  "ex-exp-17": "• Paragraph 1 (Stimulus 1): Cheap entry fees (1 penny for 'groundlings' in the open pit) made it an affordable mass entertainment for the poor, while covered galleries appealed to the rich.\n• Paragraph 2 (Stimulus 2): Patronage of powerful nobles (e.g. Earl of Leicester funding Leicester's Men) protected actors from vagrancy laws and made the theatre respectable.\n• Paragraph 3 (Own Knowledge): The Protestant shift away from Catholic 'mystery plays' to exciting, secular, modern comedies and tragedies written by playwrights like Shakespeare.",
-  "ex-exp-18": "• Paragraph 1 (Stimulus 1): Fear of vagrants causing crime and social rebellion forced government action, introducing harsh deterrents like the Vagabonds Act (1572).\n• Paragraph 2 (Stimulus 2): The failure of voluntary local church charity forced the introduction of a compulsory national 'Poor Rate' tax to fund local poor relief.\n• Paragraph 3 (Own Knowledge): Changing attitudes recognizing the 'deserving poor' (unemployed through no fault of their own), leading to the 1576 Act providing raw materials for work.",
-  "ex-exp-19": "• Paragraph 1 (Stimulus 1): Financial motivation to plunder unprotected Spanish colonies on the Pacific coast, eventually returning with £400,000 in treasure for investors and the Queen.\n• Paragraph 2 (Stimulus 2): Drake's intense desire for revenge following the Spanish ambush of his cousin John Hawkins' fleet at San Juan de Ulúa (1568).\n• Paragraph 3 (Own Knowledge): Political motivation to challenge the Pope's decree that the Americas belonged to Spain, claiming California (Nova Albion) for Elizabeth in 1579.",
-  "ex-exp-20": "• Paragraph 1 (Stimulus 1): 16th-century patriarchal society viewed female rulers as too weak to govern or lead armies, placing pressure to marry which risked court rivalries.\n• Paragraph 2 (Stimulus 2): Immediate military threat from France; Calais was lost in 1558, and French troops were stationed in Scotland (the Auld Alliance) on the northern border.\n• Paragraph 3 (Own Knowledge): Questionable legitimacy due to Henry VIII's contested divorce, plus deep religious divisions left behind by Mary I.",
-
-  // Essay (Q3)
-  "ex-essay-1": "• Paragraph 1 (Introduction): State clear thesis immediately (e.g. Papacy provided permission, but Mary/Spain provided opportunity/force).\n• Paragraph 2 (Agree): 1570 Papal Bull excommunicated Elizabeth, commanding English Catholics to rebel and assassinate her.\n• Paragraph 3 (Disagree - Stimulus): Mary, Queen of Scots arrived in 1568, offering a legitimate Catholic figurehead to rally around.\n• Paragraph 4 (Disagree - Own Knowledge): Radical Jesuit missionary priests arriving from Europe actively preaching treason and turning Catholics against the Queen.\n• Paragraph 5 (Conclusion): Weigh the factors. Conclude whether Mary's presence or the Pope's commands were more critical to the increase in opposition.",
-  "ex-essay-2": "• Paragraph 1 (Introduction): State thesis on whether Cadiz was his main achievement or other voyages/battles were.\n• Paragraph 2 (Agree): Cadiz raid (1587) destroyed ~30 Spanish ships and critical barrel staves, delaying the Armada invasion by a full year.\n• Paragraph 3 (Disagree - Stimulus): Privateering and 1577-80 circumnavigation returned with £400,000 in treasure, enriching the crown.\n• Paragraph 4 (Disagree - Own Knowledge): Drake's crucial role in the Armada battles of 1588 (launching fireships at Calais, capturing Rosario ship).\n• Paragraph 5 (Conclusion): Evaluate Cadiz (tactical delay) vs. his global explorer/privateer achievements.",
-  "ex-essay-3": "• Paragraph 1 (Introduction): State clear thesis immediately. Decide if the bloodline claim or her active plots caused the most tension.\n• Paragraph 2 (Agree): Mary's Tudor bloodline directly threatened Elizabeth's security since Catholics viewed Elizabeth as illegitimate.\n• Paragraph 3 (Disagree - Stimulus): Active conspiracies (Mary explicitly approving Elizabeth's assassination in the 1586 Babington Plot letters).\n• Paragraph 4 (Disagree - Own Knowledge): Religious tension; Mary was a Catholic heir in a Protestant nation, backed by Spain and France.\n• Paragraph 5 (Conclusion): Conclude whether her claim was only dangerous because it was weaponized in plots to take the throne.",
-  "ex-essay-4": "• Paragraph 1 (Introduction): Decide if education changed significantly overall, or only for certain classes.\n• Paragraph 2 (Agree - Own Knowledge): Little change for the laboring poor and women; illiteracy remained extremely high (~70% males, 90% females).\n• Paragraph 3 (Disagree - Stimulus 1): Opening of 72 new fee-paying grammar schools for the 'middling sort' (merchants, yeomen).\n• Paragraph 4 (Disagree - Stimulus 2): Humanist education and Renaissance ideas shifting the purpose of schooling to secular leadership and classical study.\n• Paragraph 5 (Conclusion): Weigh major middle-class progress vs. zero change for the rural poor.",
-  "ex-essay-5": "• Paragraph 1 (Introduction): Compare the 1569 domestic rebellion with later foreign-backed assassination plots.\n• Paragraph 2 (Agree): Earl of Northumberland and Westmorland raised a private army of 4,600 men, captured Durham, and held the North.\n• Paragraph 3 (Disagree - Stimulus): Babington Plot (1586) was more significant; it targeted Elizabeth's life directly and forced Mary's execution.\n• Paragraph 4 (Disagree - Own Knowledge): Ridolfi (1571) or Throckmorton (1583) plots involved massive foreign invasion plans (10,000 Spanish troops).\n• Paragraph 5 (Conclusion): Compare domestic military uprising (Earls) with later plots combining treason with foreign superpowers.",
-  "ex-essay-6": "• Paragraph 1 (Introduction): State thesis (e.g. direct threat of invasion was more critical than Protestantism or cloth trade).\n• Paragraph 2 (Agree): Strategic threat; conquering the Netherlands would give the Spanish army a direct port to invade England.\n• Paragraph 3 (Disagree - Stimulus): Protestantism; pressure to defend fellow Dutch Protestants from the Spanish Catholic Inquisition.\n• Paragraph 4 (Disagree - Own Knowledge): Economics; protecting vital English trade routes (Antwerp cloth market) that English merchants relied on.\n• Paragraph 5 (Conclusion): Conclude if national military survival (anti-invasion) was more important than trade or religion.",
-  "ex-essay-7": "• Paragraph 1 (Introduction): Decide if technology was the main driver, or if economic crisis and wealth motivated them more.\n• Paragraph 2 (Agree): New navigational tools (astrolabe, quadrant, lateen sails, Mercator maps) made long voyages safer.\n• Paragraph 3 (Disagree - Stimulus): Global privateers like Drake; Drake's massive 4700% return on circumnavigation triggered intense greed.\n• Paragraph 4 (Disagree - Own Knowledge): Economic crisis; collapse of the Antwerp wool market forced merchants to find new trading routes.\n• Paragraph 5 (Conclusion): Technology provided the tools, but trade collapse and gold plunder provided the actual motivation.",
-  "ex-essay-8": "• Paragraph 1 (Introduction): Decide if poor laws transformed day-to-day lives, or if poverty remained unchanged.\n• Paragraph 2 (Agree): Vagrants were still treated brutally (whipped, ears bored) under the Vagabonds Act, showing continuity of harsh attitudes.\n• Paragraph 3 (Disagree - Stimulus): 1576 Act provided raw materials (wool, hemp) to JPs to let the unemployed work, showing a major policy shift.\n• Paragraph 4 (Disagree - Own Knowledge): 1572 Poor Rate tax established national state-funded relief, moving away from voluntary church alms.\n• Paragraph 5 (Conclusion): Policy changed significantly on paper, but actual starvation and poverty remained a daily reality.",
-  "ex-essay-9": "• Paragraph 1 (Introduction): State whether theatre was a shared class experience, or if classes preferred separate pastimes.\n• Paragraph 2 (Agree): Highly accessible; groundlings paid 1 penny to stand in the open pit, while covered galleries sat the wealthy.\n• Paragraph 3 (Disagree - Stimulus): Patronage; highest nobles (e.g. Earl of Leicester) sponsored troupes to perform privately at court.\n• Paragraph 4 (Disagree - Own Knowledge): Other pastimes; bear-baiting/cock-fighting were just as popular for all, while hunting/tennis were elite-only.\n• Paragraph 5 (Conclusion): Conclude if theatre was the only shared space, or if the class divide in leisure remained dominant.",
-  "ex-essay-10": "• Paragraph 1 (Introduction): State whether Mary's presence was the primary root of instability, or if the Papacy and Spain were.\n• Paragraph 2 (Agree): Mary's presence from 1568 provided the necessary legitimate Catholic heir for the Northern Earls, Ridolfi, and Babington plots.\n• Paragraph 3 (Disagree - Stimulus): 1570 Papal Bull was the main cause, as it formally excommunicated Elizabeth and commanded Catholics to rebel.\n• Paragraph 4 (Disagree - Own Knowledge): Philip II of Spain and his military force (Alba's army, Armada) were the actual forces threat.\n• Paragraph 5 (Conclusion): Conclude if Mary was the figurehead spark, but Spain and the Papacy provided the real fuel and threat."
-};
-
-const quizResultThemes = [
-  {
-    name: "Spy Network",
-    tiers: [
-      { trophy: "🕵️‍♂️⚠️", title: "Captured Plotter", desc: "Disaster! Walsingham's spies intercepted your letters. You are heading to the Tower of London." },
-      { trophy: "📜", title: "Clumsy Informant", desc: "You survived the interrogation, but your intelligence is weak. Walsingham does not trust you." },
-      { trophy: "🔑🔓", title: "Master Code-Breaker", desc: "Excellent work! Like Thomas Phelippes, you deciphered the Babington ciphers with ease." },
-      { trophy: "👑👁️", title: "The Queen's Spymaster", desc: "Brilliant! Like Sir Francis Walsingham himself, you hold the secrets of Europe in your hand." }
-    ]
-  },
-  {
-    name: "The Globe Theatre",
-    tiers: [
-      { trophy: "🎭⚠️", title: "The Whipped Vagabond", desc: "A poor performance! Under the 1572 Act, you are branded as an idle vagrant and punished." },
-      { trophy: "🎟️", title: "The Penniless Groundling", desc: "You watched the play from the crowded pit for a single penny, but learned very little." },
-      { trophy: "🏰✨", title: "The Wealthy Noble", desc: "Splendid! You enjoy the performance from the covered, covered galleries." },
-      { trophy: "👑🎭", title: "The Royal Patron", desc: "Masterful! Like Queen Elizabeth herself, your patronage secures the future of English theatre." }
-    ]
-  },
-  {
-    name: "The Royal Court",
-    tiers: [
-      { trophy: "⛪❌", title: "The Excommunicated Rebel", desc: "Treason! The 1570 Papal Bull has excommunicated you for direct defiance of the Crown." },
-      { trophy: "🏛️", title: "The Hesitant MP", desc: "You sit in the House of Commons, but fear challenging the Queen's Royal Prerogative." },
-      { trophy: "💼👑", title: "Trusted Privy Councillor", desc: "Superb! You advise the Queen daily alongside William Cecil on critical matters of state." },
-      { trophy: "👑🗡️", title: "The Supreme Governor", desc: "Absolute Rule! You command the Church of England and the Crown with absolute authority." }
-    ]
-  },
-  {
-    name: "The High Seas",
-    tiers: [
-      { trophy: "⛵⚠️", title: "Lost at Sea", desc: "A disaster. Like the first settlers at Roanoke, your transatlantic expedition has failed." },
-      { trophy: "⚓", title: "Ordinary Sailor", desc: "You survived the long voyage, but your share of the plundered Spanish silver is pitiful." },
-      { trophy: "⚔️💰", title: "Successful Privateer", desc: "A highly profitable raid! You have successfully plundered the Spanish Main." },
-      { trophy: "👑⚓", title: "Knighted on the Golden Hind!", desc: "A legendary voyage! Like Sir Francis Drake, you have been knighted by the Queen!" }
-    ]
-  },
-  {
-    name: "Mr Lovett's History Hub Guild",
-    tiers: [
-      { trophy: "📚✏️", title: "Apprentice Historian", desc: "Keep practicing! A little more study of the Elizabethan era will help you master this unit." },
-      { trophy: "🏰🛡️", title: "Court Chronicles Reader", desc: "Splendid job! You have built a solid foundation of key historical facts." },
-      { trophy: "👑📜", title: "Privy Councillor Advisor", desc: "Perfect! Excellent understanding of Elizabethan politics, religion, and society." },
-      { trophy: "🦅✨", title: "Elizabethan Scholar", desc: "Masterful! Your knowledge of early Elizabethan England is outstanding and GCSE-ready." }
-    ]
-  }
-];
-
-let sharedAudioCtx = null;
-function getAudioContext() {
-  if (!sharedAudioCtx) {
-    sharedAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  return sharedAudioCtx;
+  return path;
 }
 
-let currentWheelRotation = 0;
+export function initializeApp(unitData) {
+  window.currentUnitData = unitData;
+  const init = () => {
+  const sidebar = document.getElementById('sidebar');
+  const contentArea = document.getElementById('engine-workbook-container');
+  const btnDyslexia = document.getElementById('btn-dyslexia');
 
-// DOM Elements
-const themeToggleBtn = document.getElementById("themeToggleBtn");
-const navTabs = document.querySelectorAll(".nav-tab");
-const tabContents = document.querySelectorAll(".tab-content");
-const timelineList = document.getElementById("timelineList");
-const timelineSearchInput = document.getElementById("timelineSearch");
-const filterTags = document.querySelectorAll(".filter-tag");
-const examWorkspace = document.getElementById("examWorkspace");
-const quizAppContainer = document.getElementById("quizAppContainer");
+  // Inject Custom Styles for Layout & SEN (No Icons)
+  const style = document.createElement('style');
+  style.textContent = `
+    .phase-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .phase-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .narrative-chunk {
+      background: #f8fafc;
+      border-left: 4px solid #002855;
+      padding: 15px 20px;
+      margin-bottom: 18px;
+      border-radius: 0 6px 6px 0;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    .vocab-word {
+      position: relative;
+      border-bottom: 2px dashed #002855;
+      cursor: help;
+      color: #002855;
+      font-weight: 700;
+      background: #fef08a;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .vocab-word:hover::after {
+      content: attr(data-definition);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      width: 260px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      line-height: 1.4;
+      z-index: 10000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      white-space: normal;
+      text-align: center;
+    }
+    .scaffold-box {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    .starter-box { border-left: 4px solid #2563eb; }
+    .clue-box { border-left: 4px solid #d97706; }
+    .model-box { border-left: 4px solid #059669; }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .student-answer-input {
+      display: none;
+      width: 100%;
+      height: 140px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+    .laptop-mode-active .student-answer-input {
+      display: block;
+    }
+    .do-now-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .do-now-card .answer {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .do-now-card.revealed .answer {
+      display: block;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: #1a237e;
+      color: white;
+      border-color: #1a237e;
+    }
+    .btn-primary:hover {
+      background: #0d1659;
+    }
+    .btn-sm-icon {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .student-answer-input {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    .fab-copy {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .fab-copy:hover {
+      transform: scale(1.05);
+      background: #1e293b;
+    }
+    .laptop-mode-active .fab-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #334155;
+      border-color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #cbd5e1;
+      color: #0f172a;
+    }
+    .reading-active {
+      background: #ef4444 !important;
+      color: white !important;
+      border-color: #dc2626 !important;
+    }
+    .sidebar {
+      background: #0f172a !important;
+      border-right: none !important;
+      box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    }
+    .sidebar .fa-graduation-cap, .sidebar h2, .sidebar span, .sidebar .lesson-link {
+      color: #f1f5f9 !important;
+    }
+    .sidebar .lesson-link {
+      background: rgba(255,255,255,0.05) !important;
+      border: 1px solid transparent;
+    }
+    .sidebar .lesson-link:hover, .sidebar .lesson-link.active {
+      background: rgba(255,255,255,0.15) !important;
+      color: #ffffff !important;
+      border-color: rgba(255,255,255,0.2);
+    }
+    .sidebar-header {
+      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .source-card img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .flashcard-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .flashcard-wrapper {
+      background-color: transparent;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard-wrapper.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 2px solid #e2e8f0;
+    }
+    .flashcard-front {
+      background-color: #ffffff;
+      color: #0f172a;
+    }
+    .flashcard-front h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+    .flashcard-front p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .flashcard-back {
+      background-color: #f8fafc;
+      color: #334155;
+      transform: rotateY(180deg);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .teacher-note {
+      display: none;
+      background: #1e293b;
+      color: #f8fafc;
+      border-left: 4px solid #facc15;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+    .teacher-note h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #facc15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+    }
+    .teacher-mode-active .teacher-note {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    .para-number {
+      background: #e2e8f0;
+      color: #475569;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    @keyframes highlightPulse {
+      0% { background: #fef08a; transform: scale(1.02); }
+      50% { background: #fef08a; transform: scale(1.02); }
+      100% { background: #f8fafc; transform: scale(1); }
+    }
+    .highlight-flash {
+      animation: highlightPulse 2.5s ease-out;
+    }
+  `;
+  document.head.appendChild(style);
 
-// Initialize App
-function init() {
-  setupTheme();
-  setupNavigation();
-  setupTimeline();
-  setupExamPractice();
-  setupQuiz();
-  setupPeelLinker();
-  updateLessonSelectorUI();
-  rotateChimneyTaglines();
-  initChronologyGame();
-  setupXPWidget();
-  loadFlashcardDeck(1);
-  loadCausationWebChallenge("cw-1.1");
-  if (localStorage.getItem("elizabethan_pres_mode") === "true") {
-    document.documentElement.classList.add("presentation-mode");
-  }
-}
+  window.scrollToPara = function(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.remove('highlight-flash');
+      // Trigger reflow to restart animation
+      void el.offsetWidth;
+      el.classList.add('highlight-flash');
+      setTimeout(() => el.classList.remove('highlight-flash'), 2600);
+    }
+  };
 
-// 1. Theme Configuration
-function setupTheme() {
-  const savedTheme = appState.theme;
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  if (themeToggleBtn) {
-    themeToggleBtn.style.display = "flex";
-    themeToggleBtn.addEventListener("click", () => {
-      let nextTheme = "light";
-      if (appState.theme === "light") {
-        nextTheme = "dark";
-      } else if (appState.theme === "dark") {
-        nextTheme = "royal";
-      } else {
-        nextTheme = "light";
+  let unitEnquiryText = "";
+  const headerDivs = document.querySelectorAll('.header-title-container div div');
+  headerDivs.forEach(div => {
+    if (div.textContent.includes('Unit Enquiry:')) {
+      unitEnquiryText = div.textContent;
+      div.style.display = 'none';
+    }
+  });
+
+  // Set up Speech Synthesis
+  let synth = window.speechSynthesis;
+  let utterance = null;
+
+  // Copy to OneNote FAB
+  const fab = document.createElement('button');
+  fab.className = 'fab-copy';
+  fab.innerHTML = '<i class="fa-solid fa-copy"></i>';
+  fab.title = "Copy all answers to OneNote";
+  fab.onclick = () => {
+    let text = "History Lesson Answers\n\n";
+    document.querySelectorAll('.do-now-card').forEach(card => {
+      let qTextEl = card.querySelector('div[style*="font-weight: 700"]');
+      let textarea = card.querySelector('.student-answer-input');
+      if (qTextEl && textarea) {
+        let clone = qTextEl.cloneNode(true);
+        let span = clone.querySelector('span');
+        if (span) span.remove();
+        text += clone.textContent.trim() + "\n";
+        text += "Answer: " + textarea.value + "\n\n";
       }
-      document.documentElement.setAttribute("data-theme", nextTheme);
-      appState.theme = nextTheme;
-      localStorage.setItem("elizabethan_theme", nextTheme);
     });
-  }
-}
-
-function updateThemeIcon() {
-  // Theme toggle has standard icons.
-}
-
-// 2. Navigation Control
-function setupNavigation() {
-  navTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      navTabs.forEach(t => t.classList.remove("active"));
-      tabContents.forEach(c => c.classList.remove("active"));
-
-      tab.classList.add("active");
-      const targetId = tab.getAttribute("data-target");
-      document.getElementById(targetId).classList.add("active");
-      appState.currentTab = targetId;
-      
-      if (targetId === "causationWebSection" && currentCausationChallenge) {
-        setTimeout(() => {
-          clearCausationLines();
-          Object.keys(matchedCausationPairs).forEach(causeId => {
-            drawCausationLinkLine(causeId);
-          });
-        }, 50);
-      }
+    navigator.clipboard.writeText(text).then(() => {
+      alert('All answers copied to clipboard! Ready to paste into OneNote.');
+    }).catch(err => {
+      alert('Failed to copy to clipboard.');
     });
-  });
-}
+  };
+  document.body.appendChild(fab);
 
-// 3. Timeline Functionality
-function setupTimeline() {
-  renderTimeline();
-
-  // Search input change handler
-  timelineSearchInput.addEventListener("input", (e) => {
-    appState.timelineSearchQuery = e.target.value.toLowerCase().trim();
-    renderTimeline();
-  });
-
-  // Filter button handlers
-  filterTags.forEach(tag => {
-    tag.addEventListener("click", () => {
-      filterTags.forEach(t => t.classList.remove("active"));
-      tag.classList.add("active");
-      appState.timelineFilter = tag.getAttribute("data-filter");
-      renderTimeline();
-    });
-  });
-
-  // Expand/Collapse all buttons
-  const expandAllBtn = document.getElementById("expandAllBtn");
-  const collapseAllBtn = document.getElementById("collapseAllBtn");
-  if (expandAllBtn && collapseAllBtn) {
-    expandAllBtn.addEventListener("click", () => {
-      document.querySelectorAll(".event-item").forEach(item => {
-        item.classList.add("expanded");
-      });
-    });
-    collapseAllBtn.addEventListener("click", () => {
-      document.querySelectorAll(".event-item").forEach(item => {
-        item.classList.remove("expanded");
-      });
-    });
-  }
-}
-
-function getEventYear(evt) {
-  for (const dateStr of evt.dates) {
-    const match = dateStr.match(/\d{4}/);
-    if (match) return parseInt(match[0], 10);
-  }
-  if (evt.subtitle) {
-    const subMatch = evt.subtitle.match(/\d{4}/);
-    if (subMatch) return parseInt(subMatch[0], 10);
-  }
-  if (evt.text) {
-    const textMatch = evt.text.match(/\d{4}/);
-    if (textMatch) return parseInt(textMatch[0], 10);
-  }
-  return 1558;
-}
-
-window.setTimelineSortMode = function(mode) {
-  appState.timelineSortMode = mode;
-  
-  const topicBtn = document.getElementById("timelineSortTopicBtn");
-  const chronoBtn = document.getElementById("timelineSortChronoBtn");
-  
-  if (topicBtn) {
-    topicBtn.classList.toggle("active", mode === "topic");
-  }
-  if (chronoBtn) {
-    chronoBtn.classList.toggle("active", mode === "chrono");
-  }
-  
-  renderTimeline();
-};
-
-function renderTimeline() {
-  timelineList.innerHTML = "";
-
-  const query = appState.timelineSearchQuery;
-  const filter = appState.timelineFilter;
-
-  if (appState.timelineSortMode === "chrono") {
-    // Flatten all events
-    let allEvents = [];
-    timelineData.forEach(card => {
-      card.events.forEach(evt => {
-        allEvents.push({
-          ...evt,
-          parentSection: card.section,
-          parentTitle: card.title,
-          parentTopic: card.topic
-        });
-      });
-    });
-
-    // Filter events
-    const filteredEvents = allEvents.filter(event => {
-      const matchFilter = filter === "all" || event.tags.includes(filter);
-      
-      const textMatch = event.text.toLowerCase().includes(query) ||
-                        event.subtitle.toLowerCase().includes(query) ||
-                        event.names.some(name => name.toLowerCase().includes(query)) ||
-                        event.stats.some(stat => stat.toLowerCase().includes(query)) ||
-                        event.dates.some(date => date.toLowerCase().includes(query));
-
-      return matchFilter && textMatch;
-    });
-
-    if (filteredEvents.length === 0) {
-      timelineList.innerHTML = `<div style="text-align: center; padding: 3rem; color: var(--text-muted);">
-        <p>No specification points match your current search/filters.</p>
-      </div>`;
+  // Global Read Aloud logic (Per Paragraph)
+  window.readAloudText = function(btnElement) {
+    if (synth.speaking && btnElement.classList.contains('reading-active')) {
+      synth.cancel();
+      btnElement.classList.remove('reading-active');
+      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
       return;
     }
-
-    // Sort chronologically
-    filteredEvents.sort((a, b) => getEventYear(a) - getEventYear(b));
-
-    const cardEl = document.createElement("div");
-    cardEl.className = "kt-card";
-    cardEl.innerHTML = `
-      <div class="kt-header" style="background: linear-gradient(135deg, var(--primary), #4f46e5); color: #ffffff; padding: 1.25rem;">
-        <h3 class="kt-title" style="margin: 0; color: #ffffff; font-family: var(--font-title); font-size: 1.2rem; font-weight: 800;">📅 Chronological Timeline Flow</h3>
-        <span style="font-size: 0.78rem; opacity: 0.9; font-weight: 600;">Events sorted sequentially from 1558 to 1588</span>
-      </div>
-      <div class="events-list"></div>
-    `;
-
-    const eventsContainer = cardEl.querySelector(".events-list");
-
-    filteredEvents.forEach(evt => {
-      const eventItem = document.createElement("div");
-      eventItem.className = "event-item";
-      
-      eventItem.innerHTML = `
-        <div class="event-summary">
-          <div class="event-meta">
-            <span class="event-date-badge">${evt.dates.join(', ')}</span>
-            <span class="event-subtitle" style="font-weight: 600;">${evt.subtitle}</span>
-            <span class="kt-badge" style="font-size: 0.65rem; margin-left: 0.5rem; background: rgba(99,102,241,0.15); color: var(--primary); font-weight: 700; border: none; text-transform: uppercase;">${evt.parentSection}</span>
-          </div>
-          <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="event-details" style="padding: 1rem 1.25rem 1.25rem 1.25rem;">
-          <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; text-align: left;">
-            <span style="color: #5b7fff;">${parseMarkdownBold(evt.text)}</span>
-            <span style="color: #d1a15c; font-style: italic;"> Significance: ${evt.significance}</span>
-          </p>
-          ${evt.names && evt.names.length > 0 ? `
-            <div class="event-people-chips" style="margin-top: 0.75rem; display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center;">
-              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.2rem; margin-right: 0.25rem;"><i class="fa-solid fa-user-tag" style="font-size: 0.7rem;"></i> Figures:</span>
-              ${evt.names.map(name => `<span class="people-chip" onclick="event.stopPropagation(); window.showFigureModal('${name.replace(/'/g, "\\'")}')" style="font-size: 0.7rem; padding: 0.15rem 0.45rem; background: rgba(var(--primary-rgb), 0.08); border: 1px solid rgba(var(--primary-rgb), 0.15); border-radius: 12px; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">${name}</span>`).join('')}
-            </div>
-          ` : ''}
-          <div style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn" style="font-size: 0.72rem; padding: 0.3rem 0.6rem; display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); color: var(--primary);" onclick="event.stopPropagation(); window.navigateToLesson(getLessonNumFromSection('${evt.parentSection}'))">
-              📖 Go to Study Lesson (${evt.parentSection})
-            </button>
-            <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.3rem 0.6rem; display: inline-flex; align-items: center; gap: 0.3rem;" onclick="event.stopPropagation(); bridgeTimelineToQuiz('${evt.parentSection}')">
-              ⚡ Test Recall for ${evt.parentSection}
-            </button>
-          </div>
-        </div>
-      `;
-
-      eventItem.querySelector(".event-summary").addEventListener("click", () => {
-        eventItem.classList.toggle("expanded");
-      });
-
-      eventsContainer.appendChild(eventItem);
-    });
-
-    timelineList.appendChild(cardEl);
-    return;
-  }
-
-  // Otherwise, default to syallbus grouped view
-  const filteredData = timelineData.map(topicCard => {
-    const matchedEvents = topicCard.events.filter(event => {
-      const matchFilter = filter === "all" || event.tags.includes(filter);
-      
-      const textMatch = event.text.toLowerCase().includes(query) ||
-                        event.subtitle.toLowerCase().includes(query) ||
-                        event.names.some(name => name.toLowerCase().includes(query)) ||
-                        event.stats.some(stat => stat.toLowerCase().includes(query)) ||
-                        event.dates.some(date => date.toLowerCase().includes(query));
-
-      return matchFilter && textMatch;
-    });
-
-    if (matchedEvents.length > 0) {
-      return {
-        ...topicCard,
-        events: matchedEvents
-      };
-    }
-    return null;
-  }).filter(Boolean);
-
-  if (filteredData.length === 0) {
-    timelineList.innerHTML = `<div style="text-align: center; padding: 3rem; color: var(--text-muted);">
-      <p>No specification points match your current search/filters.</p>
-    </div>`;
-    return;
-  }
-
-  filteredData.forEach(card => {
-    const cardEl = document.createElement("div");
-    cardEl.className = "kt-card";
     
-    cardEl.innerHTML = `
-      <div class="kt-header">
-        <span class="kt-badge">${card.section}</span>
-        <h3 class="kt-title">${card.title}</h3>
-        <span class="kt-topic">${card.topic}</span>
-      </div>
-      <div class="events-list"></div>
-    `;
-
-    const eventsContainer = cardEl.querySelector(".events-list");
-
-    card.events.forEach(evt => {
-      const eventItem = document.createElement("div");
-      eventItem.className = "event-item";
-      
-      eventItem.innerHTML = `
-        <div class="event-summary">
-          <div class="event-meta">
-            <span class="event-date-badge">${evt.dates.join(', ')}</span>
-            <span class="event-subtitle">${evt.subtitle}</span>
-          </div>
-          <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="event-details" style="padding: 1rem 1.25rem 1.25rem 1.25rem;">
-          <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; text-align: left;">
-            <span style="color: #5b7fff;">${parseMarkdownBold(evt.text)}</span>
-            <span style="color: #d1a15c; font-style: italic;"> Significance: ${evt.significance}</span>
-          </p>
-          ${evt.names && evt.names.length > 0 ? `
-            <div class="event-people-chips" style="margin-top: 0.75rem; display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center;">
-              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.2rem; margin-right: 0.25rem;"><i class="fa-solid fa-user-tag" style="font-size: 0.7rem;"></i> Figures:</span>
-              ${evt.names.map(name => `<span class="people-chip" onclick="event.stopPropagation(); window.showFigureModal('${name.replace(/'/g, "\\'")}')" style="font-size: 0.7rem; padding: 0.15rem 0.45rem; background: rgba(var(--primary-rgb), 0.08); border: 1px solid rgba(var(--primary-rgb), 0.15); border-radius: 12px; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.2s;">${name}</span>`).join('')}
-            </div>
-          ` : ''}
-          <div style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn" style="font-size: 0.72rem; padding: 0.3rem 0.6rem; display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); color: var(--primary);" onclick="event.stopPropagation(); window.navigateToLesson(getLessonNumFromSection('${card.section}'))">
-              📖 Go to Study Lesson (${card.section})
-            </button>
-            <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.3rem 0.6rem; display: inline-flex; align-items: center; gap: 0.3rem;" onclick="event.stopPropagation(); bridgeTimelineToQuiz('${card.section}')">
-              ⚡ Test Recall for ${card.section}
-            </button>
-          </div>
-        </div>
-      `;
-
-      eventItem.querySelector(".event-summary").addEventListener("click", () => {
-        eventItem.classList.toggle("expanded");
-      });
-
-      eventsContainer.appendChild(eventItem);
+    synth.cancel();
+    document.querySelectorAll('.narrative-chunk button').forEach(b => {
+      b.classList.remove('reading-active');
+      b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
     });
 
-    timelineList.appendChild(cardEl);
-  });
-}
+    const textToRead = btnElement.closest('.narrative-chunk').querySelector('.narrative-text').textContent;
+    if (textToRead.trim() === "") return;
 
-function toggleFiguresDirectory() {
-  const content = document.getElementById("figuresDirectoryContent");
-  const icon = document.getElementById("directoryToggleIcon");
-  if (!content) return;
+    btnElement.classList.add('reading-active');
+    btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
+
+    utterance = new SpeechSynthesisUtterance(textToRead);
+    utterance.onend = () => {
+      btnElement.classList.remove('reading-active');
+      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    };
+    synth.speak(utterance);
+  };
+
   
-  if (content.style.display === "none" || !content.style.display) {
-    content.style.display = "block";
-    if (icon) icon.textContent = "Hide Directory [Collapse]";
-  } else {
-    content.style.display = "none";
-    if (icon) icon.textContent = "Show Directory [Expand]";
-  }
-}
 
-function filterTimelineByFigure(name) {
-  const searchInput = document.getElementById("timelineSearch");
-  if (searchInput) {
-    searchInput.value = name;
-    searchInput.dispatchEvent(new Event("input"));
-    
-    // Smooth scroll down to timeline list to show results
-    const list = document.getElementById("timelineList");
-    if (list) {
-      list.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
-}
-
-// Attach directory functions to window for onclick handlers
-window.toggleFiguresDirectory = toggleFiguresDirectory;
-window.filterTimelineByFigure = filterTimelineByFigure;
-
-const historicalFiguresInfo = {
-  "Elizabeth I": {
-    role: "Queen of England (1558–1603)",
-    category: "👑 The English Monarchy & Court",
-    desc: "Queen Elizabeth I ascended to the throne in November 1558 following the death of her Catholic sister, Mary I. Known as the 'Virgin Queen' because she chose to remain unmarried to avoid sharing English power with a foreign suitor. She established the Elizabethan Religious Settlement (the 'Middle Way') to find a compromise between Protestants and Catholics, and successfully defended England against the Revolt of the Northern Earls, multiple Catholic plots, and the Spanish Armada in 1588."
-  },
-  "Mary I": {
-    role: "Queen of England (1553–1558)",
-    category: "👑 The English Monarchy & Court",
-    desc: "Elizabeth's older half-sister and predecessor on the throne. As a devout Catholic, Mary I restored papal authority and carried out severe executions of Protestants (earning her the nickname 'Bloody Mary'). She left the country in a precarious financial state upon her death in 1558, saddling Elizabeth's new government with a massive £300,000 national debt and a military threat from French troops stationed on the Scottish border."
-  },
-  "Henry VIII": {
-    role: "King of England (1509–1547)",
-    category: "👑 The English Monarchy & Court",
-    desc: "Elizabeth's father, who initiated the English Reformation. His desire to divorce Catherine of Aragon to marry Anne Boleyn led him to break away from the Catholic Church and establish the Church of England. Devout Catholics never recognized his divorce, meaning they viewed Elizabeth (his daughter with Anne Boleyn) as illegitimate and argued she had no right to succeed to the throne."
-  },
-  "Anne Boleyn": {
-    role: "Queen of England (1533–1536)",
-    category: "👑 The English Monarchy & Court",
-    desc: "Elizabeth's mother and the second wife of King Henry VIII. Anne Boleyn was a key figure in the political and religious upheaval that marked the start of the English Reformation. She was executed in 1536 for treason, and her marriage to Henry was declared invalid by the English church, leading to long-term questions regarding Elizabeth's legitimacy among Catholic traditionalists."
-  },
-  "Catherine of Aragon": {
-    role: "Queen of England (1509–1533)",
-    category: "👑 The English Monarchy & Court",
-    desc: "Henry VIII's first wife and the mother of Mary I. Henry's decision to dissolve his marriage to Catherine of Aragon caused the break with the Roman Catholic Church. In Catholic eyes, Catherine remained Henry's only lawful wife until her death, rendering Henry's subsequent marriage to Anne Boleyn adulterous and Elizabeth illegitimate."
-  },
-  "William Cecil": {
-    role: "Secretary of State & Chief Advisor",
-    category: "👑 The English Monarchy & Court",
-    desc: "Elizabeth's most trusted advisor, appointed Secretary of State immediately upon her accession in 1558. Elevated to Lord Burghley in 1571. Cecil was a highly skilled Protestant administrator who guided the Queen through religious divisions, foreign threats, and economic stabilization, working closely with her to design the Religious Settlement and administer the country for over 40 years."
-  },
-  "Walsingham": {
-    role: "Secretary of State & Spymaster",
-    category: "👑 The English Monarchy & Court",
-    desc: "Sir Francis Walsingham served as Elizabeth's Secretary of State from 1573 and ran England's first highly sophisticated intelligence network. Through double-agents, code-breakers (such as Thomas Phelippes), and mail interception (such as hiding coded letters in beer barrels), he uncovered and dismantled the Ridolfi, Throckmorton, and Babington plots, securing the vital evidence required to execute Mary, Queen of Scots for treason in 1587."
-  },
-  "Robert Dudley": {
-    role: "Earl of Leicester & Commander",
-    category: "👑 The English Monarchy & Court",
-    desc: "Elizabeth's favourite courtier and a prominent Protestant noble. He served as a Privy Councillor and was heavily involved in military affairs. When sent to lead English forces in the Netherlands against Spain in 1585 under the Treaty of Nonsuch, Dudley accepted the title of Governor-General of the Low Countries without Elizabeth's permission, which furious Elizabeth viewed as a challenge to her royal authority."
-  },
-  "Mary, Queen of Scots": {
-    role: "Queen of Scotland (1542–1567)",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "Elizabeth's Catholic cousin who held a direct and highly legitimate claim to the English throne. After Scottish Protestant lords rebelled against her, she fled to England in 1568, where Elizabeth kept her under house arrest for 19 years. Due to her Catholic faith, Mary became the focal figurehead for multiple assassination plots against Elizabeth (Northern Earls, Ridolfi, Throckmorton, Babington). She was executed for treason in February 1587."
-  },
-  "Philip II": {
-    role: "King of Spain (1556–1598)",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The powerful Catholic King of Spain and formerly husband to Mary I. Philip II viewed himself as the global defender of the Catholic faith. He grew increasingly hostile to Elizabeth due to her Religious Settlement, Drake's privateering raids on Spanish gold, and English intervention in the Netherlands (Treaty of Nonsuch). Following the execution of Mary, Queen of Scots, Philip launched the Spanish Armada in 1588 in a failed attempt to invade England."
-  },
-  "Mary of Guise": {
-    role: "Regent of Scotland (1554–1560)",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The mother of Mary, Queen of Scots. A member of the powerful Catholic Guise family of France, she ruled Scotland as regent and stationed French troops near the English border. This posed a severe geographical military threat to Elizabeth immediately upon her accession in 1558 (the 'Auld Alliance' threat)."
-  },
-  "Francis II": {
-    role: "King of France (1559–1560)",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The heir (Dauphin) to the French throne who married Mary, Queen of Scots in 1558. He briefly ruled France as King Francis II until his sudden death in 1560. His marriage briefly united the French and Scottish crowns, creating a Catholic threat of French expansion that deeply worried Elizabeth's early administration."
-  },
-  "William of Orange": {
-    role: "Dutch Rebel Leader (1533–1584)",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The leader of the Protestant Dutch Revolt against Spanish rule in the Netherlands. Known as William the Silent. His fight was heavily supported by English Protestants who feared Spanish expansion. His assassination in 1584 by a Catholic fanatic deeply alarmed Elizabeth, forcing her to sign the Treaty of Nonsuch (1585) to commit English troops to protect the Dutch rebels."
-  },
-  "Alba": {
-    role: "The Duke of Alba",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The ruthless Spanish general sent by King Philip II in 1567 to crush the Dutch Protestant Revolt in the Netherlands. Alba established the brutal 'Council of Troubles' (nicknamed the 'Council of Blood') and stationed a massive Spanish army directly across the English Channel, causing severe panic in England and inspiring local Catholic plotters who hoped Alba would invade."
-  },
-  "Parma": {
-    role: "The Duke of Parma",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "Alexander Farnese, the Duke of Parma, was a highly successful Spanish military commander in the Netherlands. In 1588, Philip II's invasion plan for the Spanish Armada relied on Medina Sidonia securing the English Channel so that Parma's 30,000 highly trained Spanish troops in Flanders could be transported across to England on barges."
-  },
-  "Medina Sidonia": {
-    role: "Commander of the Spanish Armada",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "The Spanish nobleman appointed by Philip II to lead the Spanish Armada in 1588, despite having no naval background and suffering from severe sea-sickness. Although a capable administrator, his lack of naval experience and tactical hesitation contributed to the fleet's failure to join up with Parma's troops at Calais, leading to the Armada's eventual defeat."
-  },
-  "Duke of Guise": {
-    role: "French Catholic Nobleman",
-    category: "🌍 Rival Monarchs & Foreign Leaders",
-    desc: "Henry I, Duke of Guise, was a radical Catholic leader in France and a cousin to Mary, Queen of Scots. He plotted with Philip II and the Pope to launch a French invasion of England during the Throckmorton Plot in 1583. His aim was to assassinate Elizabeth, free Mary, and restore Catholicism, but Walsingham's spies uncovered the plot."
-  },
-  "Drake": {
-    role: "Sir Francis Drake (Explorer & Privateer)",
-    category: "🧭 Explorers, Privateers & Colonisers",
-    desc: "Famous English explorer, privateer, and navigator. He circumnavigated the globe between 1577 and 1580 in the *Golden Hind*, returning with £400,000 in Spanish gold (earning him a knighthood). He launched the daring 'Singeing of the King of Spain's Beard' raid on Cadiz in 1587, destroying ~30 Spanish ships and delaying the Armada by a year. He then served as vice-admiral during the battle against the Spanish Armada in 1588."
-  },
-  "Raleigh": {
-    role: "Sir Walter Raleigh (Courtier & Coloniser)",
-    category: "🧭 Explorers, Privateers & Colonisers",
-    desc: "A prominent Elizabethan courtier and explorer. In 1584, Elizabeth granted him a royal patent to explore and colonise the lands of North America, which he named 'Virginia' in her honour. Although Raleigh never personally sailed to the region, he successfully organised, funded, and promoted the Roanoke expeditions of 1585 and 1587, which ultimately failed catastrophically."
-  },
-  "Hawkins": {
-    role: "Sir John Hawkins (Privateer & Ship Designer)",
-    category: "🧭 Explorers, Privateers & Colonisers",
-    desc: "A leading English shipbuilder, privateer, and merchant who pioneered the highly profitable transatlantic slave trade. As Treasurer of the Navy, Hawkins completely redesigned the English fleet, constructing new, fast 'race-built' galleons with lower castles and long-range culverin cannons. This structural modernization was crucial to defeating the Spanish Armada in 1588."
-  },
-  "Grenville": {
-    role: "Sir Richard Grenville (Expedition Commander)",
-    category: "🧭 Explorers, Privateers & Colonisers",
-    desc: "The quick-tempered English naval commander who led the 1585 expedition to establish Walter Raleigh's first colony at Roanoke. When their flagship, the *Tiger*, ran aground and flooded, destroying all their seeds and grain, Grenville left the colonists under Ralph Lane and returned to England for supplies, leaving them starving and vulnerable to tribal conflicts."
-  },
-  "Harriot": {
-    role: "Thomas Harriot (Mathematician & Scientist)",
-    category: "🧭 Explorers, Privateers & Colonisers",
-    desc: "An outstanding English mathematician, astronomer, and cartographer who sailed on the 1585 Roanoke expedition. Harriot made detailed studies of the Algonquian language, mapped the geography of Virginia, and published reports on navigational methods, mapping, and map-making technologies, helping to advance Elizabethan maritime exploration."
-  },
-  "Ridolfi": {
-    role: "Roberto Ridolfi (Conspirator)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "An Italian banker based in London who masterminded the Ridolfi Plot in 1571. Operating on behalf of Pope Pius V, Ridolfi conspired to assassinate Elizabeth, launch a Spanish invasion under the Duke of Alba, and place Mary, Queen of Scots on the English throne married to the Duke of Norfolk. Walsingham's agents intercepted coded letters carried by Charles Baillie, exposing the plot."
-  },
-  "Throckmorton": {
-    role: "Francis Throckmorton (Conspirator)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "A young English Catholic who acted as the key intermediary in the Throckmorton Plot of 1583. He carried messages between Mary, Queen of Scots, the French Ambassador, and Spanish funders to organize a Catholic invasion led by the Duke of Guise. Walsingham's agents observed Throckmorton's visits to the French embassy, raided his house, and found a list of Catholic conspirators. He was tortured on the rack and executed."
-  },
-  "Babington": {
-    role: "Anthony Babington (Conspirator)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "The Catholic page who initiated the Babington Plot in 1586. He plotted to rescue Mary, Queen of Scots, and assassinate Elizabeth. Walsingham's intelligence agents used Gilbert Gifford to intercept coded letters hidden inside beer barrels sent to Mary. When Mary sent a coded reply explicitly giving her approval to assassinate the Queen, Walsingham pounced and arrested Babington and his co-conspirators."
-  },
-  "Norfolk": {
-    role: "The Duke of Norfolk (Thomas Howard)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "The wealthiest and most senior noble in England, and a cousin to Elizabeth. Because of his stature, Catholic plotters repeatedly planned to marry him to Mary, Queen of Scots to legitimize their claim to the throne. He was implicated in the Revolt of the Northern Earls (1569) and the Ridolfi Plot (1571), leading to his arrest and eventual execution for treason in 1572."
-  },
-  "Northumberland": {
-    role: "Earls of Northumberland & Westmorland",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "Thomas Percy (Earl of Northumberland) and Charles Neville (Earl of Westmorland) were Catholic northern nobles who led the failed Revolt of the Northern Earls in 1569. Angered by their loss of political power to Protestant 'new men' like Cecil and determined to restore Catholicism, they marched south, took Durham Cathedral, and celebrated Catholic Mass. Northumberland was captured and executed, while Westmorland escaped into exile."
-  },
-  "Darnley": {
-    role: "Lord Darnley (Henry Stuart)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "The second husband of Mary, Queen of Scots, and father of King James VI/I. Darnley was a weak and vain nobleman. In February 1567, he was mysteriously murdered when his house at Kirk o' Field in Edinburgh was blown up in a massive explosion. Mary's suspected involvement in his murder outraged Scottish Protestant lords, leading to her forced abdication and flight to England."
-  },
-  "Pius V": {
-    role: "Pope Pius V (Head of Catholic Church)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "The Pope who issued the famous Papal Bull *Regnans in Excelsis* in 1570. This decree officially excommunicated Elizabeth, declaring her a heretic and releasing all English Catholics from their oaths of loyalty to her. This forced Catholics to choose between their religion and their Queen, encouraging multiple subsequent plots and prompting Elizabeth's government to enact harsh recusancy laws."
-  },
-  "Campion": {
-    role: "Edmund Campion (Catholic Jesuit Priest)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "A famous English Catholic Jesuit priest. Campion smuggled himself into England in 1580 as part of a secret Catholic mission to sustain the faith of English recusants. He traveled in disguise, preaching to Catholic households. He was captured by Walsingham's agents in 1581, imprisoned in the Tower of London, tortured on the rack, and executed for treason."
-  },
-  "Wingina": {
-    role: "Chief Wingina (Algonquian Leader)",
-    category: "🗡️ Rebels, Plotters & Others",
-    desc: "The leader of the local Secotan branch of the Algonquian tribe on Roanoke Island. Initially, Wingina welcomed and supported Sir Walter Raleigh's starving colonists. However, as the colonists demanded food and resources during a famine, tensions mounted. Believing Wingina was planning an attack, Ralph Lane's men ambushed and killed Chief Wingina in June 1586, destroying the colony's relations with the natives."
-  }
-};
-
-// Decorate historical figures with authentic portrait paths (where they exist)
-const figureImageMapping = {
-  "Elizabeth I": "elizabeth_i.jpg",
-  "Mary I": "mary_i.jpg",
-  "Henry VIII": "henry_viii.jpg",
-  "Anne Boleyn": "anne_boleyn.jpg",
-  "Catherine of Aragon": "catherine_of_aragon.jpg",
-  "William Cecil": "william_cecil.jpg",
-  "Walsingham": "walsingham.jpg",
-  "Robert Dudley": "robert_dudley.jpg",
-  "Mary, Queen of Scots": "mary_qos.jpg",
-  "Philip II": "philip_ii.jpg",
-  "Mary of Guise": "mary_of_guise.jpg",
-  "Francis II": "francis_ii.jpg",
-  "William of Orange": "william_of_orange.jpg",
-  "Alba": "alba.jpg",
-  "Parma": "parma.png",
-  "Medina Sidonia": "medina_sidonia.jpg",
-  "Duke of Guise": "duke_of_guise.jpg",
-  "Drake": "drake.jpg",
-  "Raleigh": "raleigh.jpg",
-  "Hawkins": "hawkins.jpg",
-  "Grenville": "grenville.jpg",
-  "Harriot": "harriot.jpg",
-  "Babington": "babington.jpg",
-  "Norfolk": "norfolk.jpg",
-  "Northumberland": "northumberland.jpg",
-  "Darnley": "darnley.jpg",
-  "Pius V": "pius_v.jpg",
-  "Campion": "campion.jpg"
-};
-
-for (const key in figureImageMapping) {
-  if (historicalFiguresInfo[key]) {
-    historicalFiguresInfo[key].image = "assets/portraits/" + figureImageMapping[key];
-  }
-}
-
-function showFigureModal(name) {
-  let data = historicalFiguresInfo[name];
-  if (!data) {
-    const key = Object.keys(historicalFiguresInfo).find(
-      k => k.toLowerCase().includes(name.toLowerCase()) || name.toLowerCase().includes(k.toLowerCase())
-    );
-    if (key) {
-      name = key;
-      data = historicalFiguresInfo[key];
-    }
-  }
-  
-  if (!data) return;
-  
-  const modal = document.getElementById("figureDetailModal");
-  const nameEl = document.getElementById("figureModalName");
-  const badgeEl = document.getElementById("figureModalRoleBadge");
-  const bodyEl = document.getElementById("figureModalBody");
-  
-  if (nameEl) nameEl.textContent = name;
-  if (badgeEl) {
-    badgeEl.innerHTML = `
-      <span style="font-size: 0.7rem; padding: 0.2rem 0.5rem; background: rgba(var(--primary-rgb), 0.1); border-radius: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase;">${data.category}</span>
-      <span style="font-size: 0.72rem; font-weight: 600; color: var(--text-muted); margin-left: 0.5rem;">${data.role}</span>
-    `;
-  }
-  if (bodyEl) {
-    const hasImage = data.image ? true : false;
-    bodyEl.innerHTML = `
-      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: flex-start;">
-        ${hasImage ? `
-          <div style="flex: 0 0 120px; width: 120px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); background: var(--bg-surface-alt);">
-            <img src="${data.image}" alt="${name}" style="width: 100%; height: 160px; object-fit: cover; display: block;" onerror="this.parentNode.style.display='none'; document.getElementById('figureDetailModal').querySelector('.modal-content').style.maxWidth='480px';" />
-          </div>
-        ` : ''}
-        <div style="flex: 1; min-width: 220px;">
-          <p style="margin: 0; line-height: 1.6; font-size: 0.92rem; color: var(--text-main);">${data.desc}</p>
-        </div>
-      </div>
-      <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
-        <button class="btn" style="font-size: 0.78rem; padding: 0.4rem 0.8rem;" onclick="window.closeFigureModal()">Close</button>
-        <button class="btn btn-primary" style="font-size: 0.78rem; padding: 0.4rem 0.8rem; display: inline-flex; align-items: center; gap: 0.35rem;" onclick="window.filterTimelineByFigure('${name.replace(/'/g, "\\'")}'); window.closeFigureModal();">
-          <i class="fa-solid fa-filter"></i> Filter Timeline
-        </button>
-      </div>
-    `;
-  }
-  
-  if (modal) {
-    const modalContent = modal.querySelector(".modal-content");
-    if (modalContent) {
-      modalContent.style.maxWidth = data.image ? "560px" : "480px";
-    }
-    modal.style.display = "flex";
-  }
-}
-
-function closeFigureModal() {
-  const modal = document.getElementById("figureDetailModal");
-  if (modal) modal.style.display = "none";
-}
-
-function getLessonNumFromSection(section) {
-  if (!section) return 1;
-  const match = section.match(/KT\s*(\d+)\.(\d+)/i);
-  if (match) {
-    const kt = parseInt(match[1], 10);
-    const sub = parseInt(match[2], 10);
-    if (kt === 1) return sub; 
-    if (kt === 2) return 4 + sub; 
-    if (kt === 3) return 8 + sub; 
-  }
-  return 1;
-}
-
-function navigateToLesson(lessonNum) {
-  const tabButton = document.querySelector(`.nav-tab[data-target="lessonsSection"]`);
-  if (tabButton) {
-    tabButton.click();
-  }
-  if (typeof switchActiveLesson === 'function') {
-    switchActiveLesson(lessonNum);
-  }
-}
-
-// Bind to window for global access
-window.showFigureModal = showFigureModal;
-window.closeFigureModal = closeFigureModal;
-window.navigateToLesson = navigateToLesson;
-
-// Attach directory functions to window for onclick handlers
-window.toggleFiguresDirectory = toggleFiguresDirectory;
-window.filterTimelineByFigure = filterTimelineByFigure;
-
-function parseMarkdownBold(text) {
-  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-}
-
-// 4. Exam Practice Area Logic
-function setupExamPractice() {
-  const sidebarButtons = document.querySelectorAll(".exam-nav-btn");
-  sidebarButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      sidebarButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      appState.activeQuestionType = btn.getAttribute("data-qtype");
-      appState.activePracticePanel = "workspace"; // Reset panel to workspace on switch
-      renderExamWorkspace();
-    });
-  });
-
-  renderExamWorkspace();
-}
-
-function renderGradeComparison(question, qType) {
-  if (!question.modelAnswer) {
-    return `
-      <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
-        <p>Model answer details are being compiled for this question. In the meantime, use the <strong>💨 Send up a Smoke Signal</strong> button in the workspace tab for paragraph-by-paragraph scaffolding.</p>
-      </div>
-    `;
-  }
-
-  let grade5Text = "";
-  let grade9Text = "";
-  let grade5Annotations = [];
-  let grade9Annotations = [];
-
-  const renderText = (t) => parseMarkdownBold(t || "");
-
-  if (qType === "describe") {
-    const featureClean = (question.modelAnswer.feature || "").replace(/\b(15\d{2}|[A-Z][a-z]+(\s[A-Z][a-z]+)*)\b/g, "the church leaders").replace(/\s*;\s*$/, "");
-    grade5Text = `<p>One key feature was ${featureClean.toLowerCase()} This was a major change at the time.</p>`;
-    
-    grade9Text = `
-      <p style="margin-bottom: 0.5rem;">
-        <span class="hl-feature">${renderText(question.modelAnswer.feature)}</span>
-        <span class="hl-evidence">${renderText(question.modelAnswer.detail)}</span>
-      </p>
-    `;
-
-    grade5Annotations = [
-      "⚠️ <strong>Score: 1/2 Marks (Grade 4 to 6 Standard)</strong>",
-      "• 1 mark is gained for identifying a basic correct feature or fact.",
-      "• The second mark is missed because no additional related fact is provided."
-    ];
-
-    grade9Annotations = [
-      "🏆 <strong>Score: 2/2 Marks (Grade 9 Standard)</strong>",
-      "• 1 mark is gained for identifying the basic correct feature or fact.",
-      "• The second mark is gained for simply providing an additional related fact."
-    ];
-  } else {
-    if (question.modelAnswer.grade5) {
-      grade5Text = question.modelAnswer.grade5.split("\n\n").map(p => `<p style="margin-bottom: 1rem;">${renderText(p)}</p>`).join("");
+  // Toggle Dyslexia Mode (Preserve icon)
+  btnDyslexia.addEventListener('click', () => {
+    document.body.classList.toggle('sen-mode');
+    const isSen = document.body.classList.contains('sen-mode');
+    if (btnDyslexia.title === 'SEN / Dyslexia Mode' || btnDyslexia.title === 'Standard Mode') {
+      // It's an icon button with title
+      btnDyslexia.title = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+      btnDyslexia.style.background = isSen ? '#1e293b' : '';
+      btnDyslexia.style.color = isSen ? '#ffffff' : '';
     } else {
-      let paragraphs5 = [];
-      if (question.modelAnswer.intro) {
-        paragraphs5.push("I think there were several reasons for this. The first reason was the one in the question, but there were also other things like " + (question.prompts ? question.prompts.join(" and ") : "the main events") + ". In this essay I will explain why.");
-      }
-      
-      if (question.modelAnswer.paragraphs) {
-        question.modelAnswer.paragraphs.forEach((p) => {
-          let pointClean = p.point || "";
-          if (pointClean) {
-            // Lowercase the first letter so it doesn't match proper nouns regex
-            pointClean = pointClean.charAt(0).toLowerCase() + pointClean.slice(1);
-            // Replace proper nouns and dates with "the government"
-            pointClean = pointClean.replace(/\b(15\d{2}|[A-Z][a-z]+(\s[A-Z][a-z]+)*)\b/g, "the government");
-            // Clean up any double "the the government" that may result
-            pointClean = pointClean.replace(/\bthe the government\b/g, "the government");
-            // Capitalize the first letter again for the sentence start
-            pointClean = pointClean.charAt(0).toUpperCase() + pointClean.slice(1);
-          }
-          paragraphs5.push(`${pointClean} This was a big problem at the time and people in England were very worried about it. It caused a lot of problems for the Queen and meant she had to make changes. This shows it was a very important reason why it happened.`);
-        });
-      }
-
-      if (question.modelAnswer.conclusion) {
-        paragraphs5.push("In conclusion, I think that the reasons I have talked about were all very important, but the first one was probably the biggest cause because it had the most impact on people in the country.");
-      }
-
-      grade5Text = paragraphs5.map(p => `<p style="margin-bottom: 1rem;">${p}</p>`).join("");
+      // Legacy text button
+      btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
     }
-
-    let paragraphs9 = [];
-    if (question.modelAnswer.intro) {
-      paragraphs9.push(`<p style="margin-bottom:0.5rem; font-style: italic; color:var(--text-muted); font-size:0.85rem;">Introductory Paragraph:</p><p style="margin-bottom: 1rem; border-left: 2px solid var(--border-color); padding-left: 0.5rem;">${renderText(question.modelAnswer.intro)}</p>`);
-    }
-
-    if (question.modelAnswer.paragraphs) {
-      question.modelAnswer.paragraphs.forEach((p, idx) => {
-        paragraphs9.push(`
-          <p style="margin-bottom:0.35rem; font-style: italic; color:var(--text-muted); font-size:0.85rem;">Paragraph ${idx + 1}:</p>
-          <p style="margin-bottom: 1.25rem;">
-            <span class="hl-feature">${renderText(p.point)}</span>
-            <span class="hl-evidence">${renderText(p.evidence)}</span>
-            <span class="hl-explanation">${renderText(p.explanation)}</span>
-            <span class="hl-link">${renderText(p.link)}</span>
-          </p>
-        `);
-      });
-    }
-
-    if (question.modelAnswer.conclusion) {
-      paragraphs9.push(`<p style="margin-bottom:0.35rem; font-style: italic; color:var(--text-muted); font-size:0.85rem;">Concluding Paragraph:</p><p style="border-left: 2px solid var(--border-color); padding-left: 0.5rem;">${renderText(question.modelAnswer.conclusion)}</p>`);
-    }
-
-    grade9Text = paragraphs9.join("");
-
-    if (qType === "explain") {
-      grade5Annotations = [
-        "⚠️ <strong>Score: ~6-7 Marks (Grade 4 to 6 Standard)</strong>",
-        question.modelAnswer.grade5Commentary ? `✍️ <strong>Examiner Commentary:</strong> ${question.modelAnswer.grade5Commentary}` : "• Paragraphs focus on relevant factors but remain mostly descriptive.",
-        "• Lacks deeper analysis linking facts to consequences."
-      ];
-
-      grade9Annotations = [
-        "🏆 <strong>Score: 11-12 Marks (Grade 9 Standard)</strong>",
-        question.modelAnswer.grade9Commentary ? `✍️ <strong>Examiner Commentary:</strong> ${question.modelAnswer.grade9Commentary}` : "• Consistent, analytical focus directly addressing the 'Why' of the question (AO2).",
-        "• Highly detailed, accurate knowledge injected into every paragraph (AO1)."
-      ];
-    } else {
-      grade5Annotations = [
-        "⚠️ <strong>Score: ~7-8 Marks (Grade 4 to 6 Standard)</strong>",
-        question.modelAnswer.grade5Commentary ? `✍️ <strong>Examiner Commentary:</strong> ${question.modelAnswer.grade5Commentary}` : "• Simple essay structure present with a basic introduction and conclusion.",
-        "• Mostly descriptive writing that fails to cover both sides of the debate evenly."
-      ];
-
-      grade9Annotations = [
-        "🏆 <strong>Score: 15-16 Marks (Grade 9 Standard)</strong>",
-        question.modelAnswer.grade9Commentary ? `✍️ <strong>Examiner Commentary:</strong> ${question.modelAnswer.grade9Commentary}` : "• Sophisticated introduction setting up a clear thesis and criteria for evaluation.",
-        "• Balanced debate examining both sides (Agree/Disagree) with highly precise evidence (AO1)."
-      ];
-    }
-  }
-
-  return `
-    <div class="comparative-answers-grid">
-      <div class="compare-answer-box grade-5">
-        <div class="compare-badge">Grade 4 to 6 Standard</div>
-        <div class="compare-answer-text">${grade5Text}</div>
-        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${grade5Annotations.map(annot => `<div class="compare-annot-item">${annot}</div>`).join('')}
-        </div>
-      </div>
-      <div class="compare-answer-box grade-9">
-        <div class="compare-badge">Grade 9 Standard</div>
-        <div class="compare-answer-text">${grade9Text}</div>
-        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${grade9Annotations.map(annot => `<div class="compare-annot-item">${annot}</div>`).join('')}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function renderExamWorkspace() {
-  const qType = appState.activeQuestionType;
-  
-  if (qType === "wheel") {
-    // Generate Wheel SVG programmatically
-    const getWheelSVG = () => {
-      let paths = "";
-      const colors = ["#131b2e", "#e11d48", "#b45309", "#6366f1", "#1e293b", "#be123c", "#eab308", "#4f46e5", "#0b0f19", "#f43f5e", "#ca8a04", "#4338ca"];
-      const labels = ["KT 1.1", "KT 1.2", "KT 1.3", "KT 1.4", "KT 2.1", "KT 2.2", "KT 2.3", "KT 2.4", "KT 3.1", "KT 3.2", "KT 3.3", "KT 3.4"];
-      
-      for (let i = 0; i < 12; i++) {
-        const angle = 30;
-        const startAngle = i * angle - 90;
-        const endAngle = (i + 1) * angle - 90;
-        
-        const rad1 = (startAngle * Math.PI) / 180;
-        const rad2 = (endAngle * Math.PI) / 180;
-        
-        const x1 = 160 + 150 * Math.cos(rad1);
-        const y1 = 160 + 150 * Math.sin(rad1);
-        const x2 = 160 + 150 * Math.cos(rad2);
-        const y2 = 160 + 150 * Math.sin(rad2);
-        
-        paths += `<path d="M160,160 L${x1},${y1} A150,150 0 0,1 ${x2},${y2} Z" fill="${colors[i]}" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>`;
-        
-        const textAngle = startAngle + 15;
-        const textRad = (textAngle * Math.PI) / 180;
-        const tx = 160 + 95 * Math.cos(textRad);
-        const ty = 160 + 95 * Math.sin(textRad);
-        
-        paths += `<text x="${tx}" y="${ty}" fill="#ffffff" font-size="9" font-weight="bold" font-family="Outfit" text-anchor="middle" transform="rotate(${textAngle + 90}, ${tx}, ${ty})">${labels[i]}</text>`;
-      }
-      return `<svg class="wheel-svg" id="wheelSvg" viewBox="0 0 320 320">${paths}</svg>`;
-    };
-
-    examWorkspace.innerHTML = `
-      <div class="wheel-container">
-        <h3 style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; text-align: center;">🎡 Specification Roulette</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; max-width: 500px; margin-bottom: 0.5rem;">
-          Spin the wheel to choose a random sub-topic and exam-style question. Test your recall and scaffolded structure knowledge!
-        </p>
-        
-        <div class="wheel-wrapper">
-          <div class="wheel-pointer"></div>
-          ${getWheelSVG()}
-          <button class="wheel-center-btn" id="spinBtn" onclick="spinElizabethanWheel()">SPIN</button>
-        </div>
-        
-        <div class="wheel-question-card" id="wheelQuestionCard">
-          <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); font-weight: bold; margin-bottom: 0.25rem; letter-spacing: 0.05em;" id="wheelQTopic"></div>
-          <h4 style="font-family: var(--font-title); font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--primary);" id="wheelQType"></h4>
-          <p style="font-size: 0.95rem; line-height: 1.6; font-weight: 500; padding: 0.75rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-sm); white-space: pre-line;" id="wheelQText"></p>
-          <div class="wheel-tip-box" id="wheelQTip"></div>
-          <button class="btn btn-primary" style="margin-top: 1.25rem; width: 100%; justify-content: center; display: inline-flex;" id="attemptBtn">Attempt this Question</button>
-        </div>
-      </div>
-    `;
-    return;
-  }
-
-  if (qType === "mock") {
-    if (!appState.mockExam) {
-      examWorkspace.innerHTML = `
-        <div class="mock-exam-landing-card" style="text-align: center; padding: 3rem 2rem; max-width: 600px; margin: 2rem auto; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-          <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">📝</div>
-          <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.75rem; color: #10b981;">Pearson Edexcel GCSE History</h2>
-          <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-muted);">Paper 2, Booklet B4: Early Elizabethan England, 1558–88</h3>
-          <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 2rem; line-height: 1.6;">
-            Practice with curated mock exams designed to target key gaps in the specification without topic overlaps, or generate a custom 32-mark examination paper under the updated Edexcel 2025 format.
-          </p>
-          
-          <div style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center;">
-            <select id="mockPaperSelect" class="search-bar" style="max-width: 380px; padding: 0.5rem 0.75rem; font-family: var(--font-title); font-size: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-weight: 600; cursor: pointer; width: 100%;">
-              <option value="random">🎲 Randomly Generated Paper</option>
-              <option value="mock1">📝 Mock 1: The "High Probability" Paper</option>
-              <option value="mock2">📝 Mock 2: The "Moderate Probability" Paper</option>
-              <option value="mock3">📝 Mock 3: The "Mixed Threat" Paper</option>
-              <option value="mock4">📝 Mock 4: The "Least Likely" Paper</option>
-            </select>
-            <button class="btn btn-primary" onclick="startSelectedMockExam(document.getElementById('mockPaperSelect').value)" style="font-size: 1.1rem; padding: 0.75rem 1.5rem; margin: 0 auto; justify-content: center; width: 100%; max-width: 280px; display: inline-flex;">
-              📝 Take This Mock Exam
-            </button>
-          </div>
-        </div>
-      `;
-      return;
-    }
-
-    const { q1a, q1b, q2, q3, q4 } = appState.mockExam;
-
-    examWorkspace.innerHTML = `
-      <!-- STRICT SPECIFICATION CONSTRAINT: All question texts below are pulled directly from syllabus banks and cannot be edited -->
-      <div class="mock-exam-paper-container" style="max-width: 800px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-md); border: 2px solid var(--border-color); box-shadow: var(--shadow-lg); font-family: 'Inter', sans-serif;">
-        <!-- Exam Header -->
-        <div class="exam-paper-header" style="border-bottom: 3px double var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2rem; text-align: center;">
-          <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.25rem; letter-spacing: 0.02em; color: var(--text-main);">${appState.mockExam.isCurated ? appState.mockExam.title : 'Pearson Edexcel GCSE (9–1)'}</h2>
-          <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 700; color: var(--text-gold); margin-bottom: 0.5rem;">Booklet B4: Early Elizabethan England, 1558–88</h3>
-          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-main); padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600;">
-            <span style="color: var(--text-muted);">Paper Reference: 1HI0/2B (2025 Format)</span>
-            <span style="color: var(--accent-indigo);">Total Marks: 32</span>
-          </div>
-        </div>
-
-        <div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-bottom: 2rem; padding: 0.75rem; background: rgba(99, 102, 241, 0.05); border-left: 3px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; line-height: 1.5;">
-          <strong>Answer three questions:</strong> Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.
-        </div>
-
-        <!-- QUESTION 1(a) -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 1(a)</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">2 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${q1a.question}</p>
-          
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q1a.id}" onclick="toggleMockExamHint('${q1a.id}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              <button class="btn btn-secondary" id="modelAnswerBtn-${q1a.id}" onclick="toggleMockExamModelAnswer('${q1a.id}', 'describe')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>
-            </div>
-            <div id="hintBox-${q1a.id}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q1a.id] || q1a.clue || "").replace(/\n/g, "<br>")}
-            </div>
-            <div id="modelAnswerBox-${q1a.id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>
-          </div>
-        </div>
-
-        <!-- QUESTION 1(b) -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 1(b)</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">2 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${q1b.question}</p>
-          
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q1b.id}" onclick="toggleMockExamHint('${q1b.id}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              <button class="btn btn-secondary" id="modelAnswerBtn-${q1b.id}" onclick="toggleMockExamModelAnswer('${q1b.id}', 'describe')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>
-            </div>
-            <div id="hintBox-${q1b.id}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q1b.id] || q1b.clue || "").replace(/\n/g, "<br>")}
-            </div>
-            <div id="modelAnswerBox-${q1b.id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>
-          </div>
-        </div>
-
-        <!-- QUESTION 2 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 2</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">12 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${q2.question}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${q2.prompts ? q2.prompts.map(p => `<li>${p}</li>`).join('') : ''}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q2.id}" onclick="toggleMockExamHint('${q2.id}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              <button class="btn btn-secondary" id="modelAnswerBtn-${q2.id}" onclick="toggleMockExamModelAnswer('${q2.id}', 'explain')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>
-            </div>
-            <div id="hintBox-${q2.id}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q2.id] || "").replace(/\n/g, "<br>")}
-            </div>
-            <div id="modelAnswerBox-${q2.id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>
-          </div>
-        </div>
-
-        <!-- CHOICE DIVIDER -->
-        <div style="text-align: center; margin: 3rem 0; padding: 1.25rem; border: 2px dashed rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.03); border-radius: var(--radius-sm);">
-          <span style="font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">Answer EITHER Question 3 OR Question 4</span>
-          <span style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Indicate which question you are answering by marking a cross in the box.</span>
-        </div>
-
-        <!-- QUESTION 3 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 3</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">16 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${q3.question}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${q3.prompts ? q3.prompts.map(p => `<li>${p}</li>`).join('') : ''}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q3.id}" onclick="toggleMockExamHint('${q3.id}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              <button class="btn btn-secondary" id="modelAnswerBtn-${q3.id}" onclick="toggleMockExamModelAnswer('${q3.id}', 'essay')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>
-            </div>
-            <div id="hintBox-${q3.id}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q3.id] || "").replace(/\n/g, "<br>")}
-            </div>
-            <div id="modelAnswerBox-${q3.id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>
-          </div>
-        </div>
-
-        <!-- QUESTION 4 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 4</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">16 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${q4.question}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${q4.prompts ? q4.prompts.map(p => `<li>${p}</li>`).join('') : ''}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q4.id}" onclick="toggleMockExamHint('${q4.id}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              <button class="btn btn-secondary" id="modelAnswerBtn-${q4.id}" onclick="toggleMockExamModelAnswer('${q4.id}', 'essay')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>
-            </div>
-            <div id="hintBox-${q4.id}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q4.id] || "").replace(/\n/g, "<br>")}
-            </div>
-            <div id="modelAnswerBox-${q4.id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>
-          </div>
-        </div>
-
-        <!-- Footer Control -->
-        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <button class="btn" onclick="clearActiveMockExam()" style="font-size: 1rem; padding: 0.6rem 1.25rem; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main);">
-            🔙 Back to Selection
-          </button>
-          <button class="btn btn-primary" onclick="generateMockPaper()" style="font-size: 1rem; padding: 0.6rem 1.25rem;">
-            🔄 Generate Random Mock Paper
-          </button>
-        </div>
-      </div>
-    `;
-    return;
-  }
-
-  if (qType === "past-paper") {
-    if (!appState.activePastPaper) {
-      // Render landing/selection view
-      const paperOptions = officialPastPapers.map(p => `<option value="${p.series}">${p.series}</option>`).join('');
-      examWorkspace.innerHTML = `
-        <div class="past-paper-landing-card" style="text-align: center; padding: 3rem 2rem; max-width: 600px; margin: 2rem auto; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-          <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">📄</div>
-          <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--accent-indigo);">Official Edexcel Past Papers</h2>
-          <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-muted);">Early Elizabethan England, 1558–88</h3>
-          <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 2rem; line-height: 1.6;">
-            Practice with authentic questions, stimulus points, and topics sourced directly from official Edexcel GCSE History exams (2019–2025). Select a specific year below or take a random paper.
-          </p>
-          
-          <div style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; justify-content: center;">
-            <select id="pastPaperSelect" class="search-bar" style="max-width: 320px; padding: 0.5rem; font-family: var(--font-title); font-size: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-weight: 600;">
-              ${paperOptions}
-            </select>
-            <div style="display: flex; gap: 1rem; width: 100%; max-width: 450px; justify-content: center;">
-              <button class="btn btn-primary" onclick="generateHistoricalPaper(document.getElementById('pastPaperSelect').value)" style="font-size: 1rem; padding: 0.65rem 1.25rem; flex: 1; justify-content: center; display: inline-flex;">
-                📄 Take This Paper
-              </button>
-              <button class="btn" onclick="generateHistoricalPaper()" style="font-size: 1rem; padding: 0.65rem 1.25rem; flex: 1; justify-content: center; display: inline-flex; border: 1px solid var(--border-color);">
-                🎲 Random Paper
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
-      return;
-    }
-
-    const paper = appState.activePastPaper;
-    const q1aId = findQuestionId(paper.q1a.text);
-    const q1bId = findQuestionId(paper.q1b.text);
-    const q2Id = findQuestionId(paper.q2.text);
-    const q3Id = findQuestionId(paper.q3.text);
-    const q4Id = findQuestionId(paper.q4.text);
-
-    const formatPrompts = (qText) => {
-      const parts = qText.split('\nStimulus:');
-      if (parts.length > 1) {
-        return parts[1].split('/').map(p => `<li>${p.trim()}</li>`).join('');
-      }
-      return '';
-    };
-
-    const getCleanQuestionText = (qText) => {
-      return qText.split('\nStimulus:')[0].trim();
-    };
-
-    examWorkspace.innerHTML = `
-      <div class="mock-exam-paper-container" style="max-width: 800px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border-radius: var(--radius-md); border: 2px solid var(--border-color); box-shadow: var(--shadow-lg); font-family: 'Inter', sans-serif;">
-        <!-- Exam Header -->
-        <div class="exam-paper-header" style="border-bottom: 3px double var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2rem; text-align: center;">
-          <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.25rem; letter-spacing: 0.02em; color: var(--text-main);">🏆 OFFICIAL PAST PAPER: ${paper.series}</h2>
-          <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 700; color: var(--text-gold); margin-bottom: 0.5rem;">Booklet B4: Early Elizabethan England, 1558–88</h3>
-          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-main); padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600;">
-            <span style="color: var(--text-muted);">Pearson Edexcel GCSE (9–1)</span>
-            <span style="color: var(--accent-indigo);">Total Marks: 32</span>
-          </div>
-        </div>
-
-        <div style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); margin-bottom: 2rem; padding: 0.75rem; background: rgba(99, 102, 241, 0.05); border-left: 3px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; line-height: 1.5;">
-          <strong>Answer three questions:</strong> Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.
-        </div>
-
-        <!-- QUESTION 1(a) -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 1(a)</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">2 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${getCleanQuestionText(paper.q1a.text)}</p>
-          
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q1aId || 'pp-q1a'}" onclick="toggleMockExamHint('${q1aId || 'pp-q1a'}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              ${q1aId ? `<button class="btn btn-secondary" id="modelAnswerBtn-${q1aId}" onclick="toggleMockExamModelAnswer('${q1aId}', 'describe')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>` : ''}
-            </div>
-            <div id="hintBox-${q1aId || 'pp-q1a'}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q1aId] || "State a key feature and support with specific detail/evidence.").replace(/\n/g, "<br>")}
-            </div>
-            ${q1aId ? `<div id="modelAnswerBox-${q1aId}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>` : ''}
-          </div>
-        </div>
-
-        <!-- QUESTION 1(b) -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 1(b)</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">2 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${getCleanQuestionText(paper.q1b.text)}</p>
-          
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q1bId || 'pp-q1b'}" onclick="toggleMockExamHint('${q1bId || 'pp-q1b'}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              ${q1bId ? `<button class="btn btn-secondary" id="modelAnswerBtn-${q1bId}" onclick="toggleMockExamModelAnswer('${q1bId}', 'describe')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>` : ''}
-            </div>
-            <div id="hintBox-${q1bId || 'pp-q1b'}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q1bId] || "State a key feature and support with specific detail/evidence.").replace(/\n/g, "<br>")}
-            </div>
-            ${q1bId ? `<div id="modelAnswerBox-${q1bId}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>` : ''}
-          </div>
-        </div>
-
-        <!-- QUESTION 2 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 2</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">12 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${getCleanQuestionText(paper.q2.text)}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${formatPrompts(paper.q2.text)}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q2Id || 'pp-q2'}" onclick="toggleMockExamHint('${q2Id || 'pp-q2'}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              ${q2Id ? `<button class="btn btn-secondary" id="modelAnswerBtn-${q2Id}" onclick="toggleMockExamModelAnswer('${q2Id}', 'explain')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>` : ''}
-            </div>
-            <div id="hintBox-${q2Id || 'pp-q2'}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q2Id] || "PEEL structured points: write three paragraphs (two matching the prompts, one of your own knowledge).").replace(/\n/g, "<br>")}
-            </div>
-            ${q2Id ? `<div id="modelAnswerBox-${q2Id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>` : ''}
-          </div>
-        </div>
-
-        <!-- CHOICE DIVIDER -->
-        <div style="text-align: center; margin: 3rem 0; padding: 1.25rem; border: 2px dashed rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.03); border-radius: var(--radius-sm);">
-          <span style="font-family: var(--font-title); font-size: 1rem; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">Answer EITHER Question 3 OR Question 4</span>
-          <span style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Indicate which question you are answering by marking a cross in the box.</span>
-        </div>
-
-        <!-- QUESTION 3 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 3</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">16 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${getCleanQuestionText(paper.q3.text)}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${formatPrompts(paper.q3.text)}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q3Id || 'pp-q3'}" onclick="toggleMockExamHint('${q3Id || 'pp-q3'}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              ${q3Id ? `<button class="btn btn-secondary" id="modelAnswerBtn-${q3Id}" onclick="toggleMockExamModelAnswer('${q3Id}', 'essay')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>` : ''}
-            </div>
-            <div id="hintBox-${q3Id || 'pp-q3'}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q3Id] || "16-mark essay layout: Introduction, Agree paragraph, Disagree paragraph, Own Knowledge, and Conclusion.").replace(/\n/g, "<br>")}
-            </div>
-            ${q3Id ? `<div id="modelAnswerBox-${q3Id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>` : ''}
-          </div>
-        </div>
-
-        <!-- QUESTION 4 -->
-        <div class="mock-question-section" style="margin-bottom: 2.5rem; padding-bottom: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--primary);">Question 4</h4>
-            <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">16 Marks</span>
-          </div>
-          <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-main);">${getCleanQuestionText(paper.q4.text)}</p>
-          
-          <div style="background: var(--bg-main); padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 1rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem;">You may use the following in your answer:</span>
-            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-              ${formatPrompts(paper.q4.text)}
-            </ul>
-            <span style="font-size: 0.9rem; font-style: italic; color: var(--text-muted); display: block; margin-top: 0.5rem;">You must also use information of your own.</span>
-          </div>
-
-          <div style="margin-top: 0.75rem; margin-bottom: 1rem;">
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-              <button class="btn" id="hintBtn-${q4Id || 'pp-q4'}" onclick="toggleMockExamHint('${q4Id || 'pp-q4'}')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-              ${q4Id ? `<button class="btn btn-secondary" id="modelAnswerBtn-${q4Id}" onclick="toggleMockExamModelAnswer('${q4Id}', 'essay')" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);">📖 View Model Answer</button>` : ''}
-            </div>
-            <div id="hintBox-${q4Id || 'pp-q4'}" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0; margin-bottom: 0.5rem;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[q4Id] || "16-mark essay layout: Introduction, Agree paragraph, Disagree paragraph, Own Knowledge, and Conclusion.").replace(/\n/g, "<br>")}
-            </div>
-            ${q4Id ? `<div id="modelAnswerBox-${q4Id}" style="display: none; margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-main); background: rgba(16, 185, 129, 0.05); padding: 1rem; border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; line-height: 1.6;"></div>` : ''}
-          </div>
-        </div>
-
-        <!-- Footer Control -->
-        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-          <button class="btn btn-primary" onclick="clearActivePastPaper()" style="font-size: 1rem; padding: 0.6rem 1.25rem;">
-            🔄 Take a Different Past Paper
-          </button>
-        </div>
-      </div>
-    `;
-    return;
-  }
-
-  const list = examData[qType];
-  const selectedIdx = appState.selectedIndexes[qType] || 0;
-  const question = list[selectedIdx] || list[0];
-
-  if (!question) {
-    examWorkspace.innerHTML = `<p>No practice questions available for this type.</p>`;
-    return;
-  }
-
-  // Ensure draft memory is initialized for this unique question ID
-  if (!appState.userDrafts[question.id]) {
-    if (qType === "describe") {
-      appState.userDrafts[question.id] = { feature: "", detail: "" };
-    } else if (qType === "explain") {
-      appState.userDrafts[question.id] = { answer: "" };
-    } else if (qType === "essay") {
-      appState.userDrafts[question.id] = { answer: "" };
-    }
-  }
-
-  const currentDraft = appState.userDrafts[question.id];
-  if (qType === "essay" && (!currentDraft || currentDraft.answer === undefined)) {
-    appState.userDrafts[question.id] = { answer: "" };
-  }
-  const currentDraftClean = appState.userDrafts[question.id];
-
-  // Question Selector Dropdown HTML
-  let selectorHTML = `
-    <div class="scaffold-group">
-      <label for="questionSelector" style="font-weight: 700; color: var(--primary);">Choose a Practice Question (${list.length} available):</label>
-      <select id="questionSelector" class="text-input" style="font-family: var(--font-title); font-weight: 600; margin-bottom: 1.5rem; border-color: rgba(99, 102, 241, 0.4);">
-        ${list.map((q, idx) => `<option value="${idx}" ${idx === selectedIdx ? 'selected' : ''}>Q${idx + 1}: [${q.topic || 'Spec'}] ${q.question}</option>`).join('')}
-      </select>
-    </div>
-  `;
-
-  // Workspace sub-tabs (Your Answer, Model Answer, Rubric)
-  let workspaceTabHeaders = `
-    <div class="practice-tabs">
-      <button class="practice-tab ${appState.activePracticePanel === 'workspace' ? 'active' : ''}" data-panel="workspace">Your Answer</button>
-      <button class="practice-tab ${appState.activePracticePanel === 'model' ? 'active' : ''}" data-panel="model">Model Answer</button>
-      <button class="practice-tab ${appState.activePracticePanel === 'rubric' ? 'active' : ''}" data-panel="rubric">Self-Assessment</button>
-    </div>
-  `;
-
-  let workspaceContent = "";
-
-  if (qType === "describe") {
-    workspaceContent = `
-      <div class="workspace-panel ${appState.activePracticePanel === 'workspace' ? 'active' : ''}" id="panel-workspace">
-        <div class="exam-q-box">
-          <h4>${question.question}</h4>
-          <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">2 Marks</span>
-          <div style="margin-top: 0.75rem;">
-            <button class="btn" id="hintToggleBtn" onclick="toggleExamHint()" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-            <div id="examHintBox" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: normal; background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[question.id] || question.clue || "").replace(/\n/g, "<br>")}
-            </div>
-          </div>
-        </div>
-        <div class="scaffold-group">
-          <label>1. Feature Statement (1 Mark)</label>
-          <input type="text" class="text-input" id="desc-stmt" placeholder="State one feature clearly (e.g., 'One key feature of the Act was...')" value="${currentDraft.feature}">
-        </div>
-        <div class="scaffold-group">
-          <label>2. Supporting Detail / Evidence (1 Mark)</label>
-          <textarea class="text-area" id="desc-detail" placeholder="Provide supporting historical detail/stats...">${currentDraft.detail}</textarea>
-        </div>
-        <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
-          <button class="btn" onclick="window.copyToClipboard('', 'Feature: ' + document.getElementById('desc-stmt').value + '\nDetail: ' + document.getElementById('desc-detail').value)" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-            📋 Copy to Clipboard
-          </button>
-        </div>
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'model' ? 'active' : ''}" id="panel-model">
-        ${renderGradeComparison(question, qType)}
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'rubric' ? 'active' : ''}" id="panel-rubric">
-        <h4>Self-Assessment Rubric (2 Marks Total)</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Tick off items to self-assess your draft response:</p>
-        <div class="rubric-checklist">
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-desc-1">
-            <div class="rubric-item-text">
-              <h5>Feature Statement (1 Mark)</h5>
-              <p>Stated a valid, distinct historical feature directly answering the question.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Does this statement identify a specific, clear fact/concept (e.g. 'the Privy Council') rather than a broad generalization?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-desc-2">
-            <div class="rubric-item-text">
-              <h5>Supporting Detail / Evidence (1 Mark)</h5>
-              <p>Elaborated with accurate supporting historical detail (e.g. details, names, stats).</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Have you named at least one specific historical figure, statistic, or date (e.g. 'William Cecil' or '19 men')?
-              </div>
-            </div>
-          </label>
-        </div>
-        <div style="margin-top: 1.5rem; font-weight: bold; font-family: var(--font-title); font-size: 1.1rem;" id="rubricScoreDisplay">
-          Estimated Score: 0/2 Marks
-        </div>
-      </div>
-    `;
-  } else if (qType === "explain") {
-    workspaceContent = `
-      <div class="workspace-panel ${appState.activePracticePanel === 'workspace' ? 'active' : ''}" id="panel-workspace">
-        <div class="exam-q-box">
-          <h4>${question.question}</h4>
-          <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">12 Marks</span>
-          <div class="stimulus-container">
-            <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">Stimulus points:</span>
-            ${question.prompts.map(p => `<span class="stimulus-item">${p}</span>`).join('')}
-            <span class="stimulus-item" style="border-style: dashed; color: var(--text-gold);">+ Your own knowledge</span>
-          </div>
-          <div style="margin-top: 0.75rem;">
-            <button class="btn" id="hintToggleBtn" onclick="toggleExamHint()" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-            <div id="examHintBox" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: normal; background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[question.id] || "").replace(/\n/g, "<br>")}
-            </div>
-          </div>
-        </div>
-
-        <div class="explain-split-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 1.5rem; margin-top: 1rem;">
-          <!-- Left Column: Paragraph Structure Guidance -->
-          <div class="guidance-panel" style="background: rgba(99, 102, 241, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin: 0; font-weight: 800;">📝 Paragraph Guide</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin: 0;">For a <strong>12-Mark "Explain Why"</strong> question, structure your essay into <strong>3 PEEL paragraphs</strong>:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.8rem; line-height: 1.45;">
-              <div>
-                <strong style="color: var(--accent-crimson); display: block; font-family: var(--font-title); font-weight: 700;">📍 Point</strong>
-                <span style="color: var(--text-muted)">State a clear reason or factor directly answering the question.</span>
-              </div>
-              <div>
-                <strong style="color: var(--accent-gold); display: block; font-family: var(--font-title); font-weight: 700;">📖 Evidence</strong>
-                <span style="color: var(--text-muted)">Incorporate specific historical details (dates, names, statistics).</span>
-              </div>
-              <div>
-                <strong style="color: var(--primary); display: block; font-family: var(--font-title); font-weight: 700;">💡 Explanation</strong>
-                <span style="color: var(--text-muted)">Explain exactly <em>how</em> or <em>why</em> this factor caused the outcome.</span>
-              </div>
-              <div>
-                <strong style="color: var(--accent-green); display: block; font-family: var(--font-title); font-weight: 700;">🔗 Link</strong>
-                <span style="color: var(--text-muted)">Conclude the paragraph by tying the factor back to the main question.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Single Answer Input Area -->
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="explain-answer-input" style="font-weight: 700; font-family: var(--font-title); color: var(--text-main);">Your Answer Workspace:</label>
-            <textarea id="explain-answer-input" class="text-area" style="min-height: 380px; line-height: 1.6; font-family: var(--font-body); font-size: 0.95rem; padding: 1rem; border-radius: var(--radius-md); border-color: rgba(99, 102, 241, 0.3);" placeholder="Write your full 3-paragraph response here...">${currentDraft.answer || ""}</textarea>
-            <div style="margin-top: 0.5rem; display: flex; justify-content: flex-end;">
-              <button class="btn" onclick="window.copyToClipboard('explain-answer-input')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-                📋 Copy to Clipboard
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'model' ? 'active' : ''}" id="panel-model">
-        ${renderGradeComparison(question, qType)}
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'rubric' ? 'active' : ''}" id="panel-rubric">
-        <h4>Self-Assessment Rubric (12 Marks Total)</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Tick off items to self-assess your draft response:</p>
-        <div class="rubric-checklist">
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-exp-1">
-            <div class="rubric-item-text">
-              <h5>Structure (3 Paragraphs)</h5>
-              <p>Response is laid out into 3 distinct explanation sections.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Have you separated your answer into 3 clear blocks (either paragraphs or clearly demarcated sections)?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-exp-2">
-            <div class="rubric-item-text">
-              <h5>Stimulus &amp; Own Knowledge Integration</h5>
-              <p>Addressed the two provided bullet points and brought in a third separate point from own knowledge.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Did you include a third factor that is NOT one of the two stimulus points listed in the question?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-exp-3">
-            <div class="rubric-item-text">
-              <h5>AO1: Level 4 Accurate Knowledge Detail</h5>
-              <p>Injected specific names (e.g. Dudley, Cecil), dates (1559, 1569), or detailed stats.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Look at your text. Can you identify and highlight at least 3 distinct concrete facts (dates, numbers, or proper names)?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-exp-4">
-            <div class="rubric-item-text">
-              <h5>AO2: Analytical Focus ('So What?')</h5>
-              <p>Consistently explained why the factors directly led to the event (causation analysis rather than description).</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Does every paragraph explain exactly *why* this caused the outcome? (Have you used analytical connectives like *'this meant that'*, *'as a result'*, or *'consequently'*?)
-              </div>
-            </div>
-          </label>
-        </div>
-        <div style="margin-top: 1.5rem; font-weight: bold; font-family: var(--font-title); font-size: 1.1rem;" id="rubricScoreDisplay">
-          Estimated Level: Level 1 (1-3 Marks)
-        </div>
-      </div>
-    `;
-  } else if (qType === "essay") {
-    workspaceContent = `
-      <div class="workspace-panel ${appState.activePracticePanel === 'workspace' ? 'active' : ''}" id="panel-workspace">
-        <div class="exam-q-box">
-          <h4>${question.question}</h4>
-          <span style="font-size: 0.8rem; background: var(--primary); padding: 0.15rem 0.4rem; border-radius: 3px; font-weight: bold; color: white;">16 Marks</span>
-          <div class="stimulus-container">
-            <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">Stimulus points:</span>
-            ${question.prompts.map(p => `<span class="stimulus-item">${p}</span>`).join('')}
-            <span class="stimulus-item" style="border-style: dashed; color: var(--text-gold);">+ Your own knowledge</span>
-          </div>
-          <div style="margin-top: 0.75rem;">
-            <button class="btn" id="hintToggleBtn" onclick="toggleExamHint()" style="font-size: 0.75rem; padding: 0.35rem 0.7rem;">💨 Send up a Smoke Signal</button>
-            <div id="examHintBox" style="display: none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: normal; background: rgba(234, 179, 8, 0.05); padding: 0.5rem 0.75rem; border-left: 2px solid var(--text-gold); border-radius: 0 4px 4px 0;">
-              <strong>Key Factual Hints:</strong><br>${(examQuestionFacts[question.id] || "").replace(/\n/g, "<br>")}
-            </div>
-          </div>
-        </div>
-
-        <div class="explain-split-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 1.5rem; margin-top: 1rem;">
-          <!-- Left Column: Paragraph Structure Guidance -->
-          <div class="guidance-panel" style="background: rgba(99, 102, 241, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin: 0; font-weight: 800;">📝 Essay Guide</h4>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin: 0;">For a <strong>16-Mark "How Far Do You Agree"</strong> question, structure your essay into the following paragraphs:</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.8rem; line-height: 1.45;">
-              <div>
-                <strong style="color: var(--accent-indigo); display: block; font-family: var(--font-title); font-weight: 700;">1. Introduction</strong>
-                <span style="color: var(--text-muted)">State your thesis immediately and outline the key factors.</span>
-              </div>
-              <div>
-                <strong style="color: var(--accent-crimson); display: block; font-family: var(--font-title); font-weight: 700;">2. Agree Paragraph</strong>
-                <span style="color: var(--text-muted)">Write a PEEL paragraph supporting the factor in the statement.</span>
-              </div>
-              <div>
-                <strong style="color: var(--accent-gold); display: block; font-family: var(--font-title); font-weight: 700;">3. Disagree Paragraph</strong>
-                <span style="color: var(--text-muted)">Write a PEEL paragraph examining an alternative factor (stimulus 2).</span>
-              </div>
-              <div>
-                <strong style="color: var(--primary); display: block; font-family: var(--font-title); font-weight: 700;">4. Own Knowledge</strong>
-                <span style="color: var(--text-muted)">Write a PEEL paragraph introducing a third factor from your own knowledge.</span>
-              </div>
-              <div>
-                <strong style="color: var(--accent-green); display: block; font-family: var(--font-title); font-weight: 700;">5. Conclusion</strong>
-                <span style="color: var(--text-muted)">Provide a final judgment, clearly explaining which factor was most important and why.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Single Answer Input Area -->
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <label for="essay-answer-input" style="font-weight: 700; font-family: var(--font-title); color: var(--text-main);">Your Essay Workspace:</label>
-            <textarea id="essay-answer-input" class="text-area" style="min-height: 420px; line-height: 1.6; font-family: var(--font-body); font-size: 0.95rem; padding: 1rem; border-radius: var(--radius-md); border-color: rgba(99, 102, 241, 0.3);" placeholder="Write your full 5-paragraph response here (Introduction, Agree, Disagree, Own Knowledge, Conclusion)...">${currentDraftClean.answer || ""}</textarea>
-            <div style="margin-top: 0.5rem; display: flex; justify-content: flex-end;">
-              <button class="btn" onclick="window.copyToClipboard('essay-answer-input')" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-                📋 Copy to Clipboard
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'model' ? 'active' : ''}" id="panel-model">
-        ${renderGradeComparison(question, qType)}
-      </div>
-
-      <div class="workspace-panel ${appState.activePracticePanel === 'rubric' ? 'active' : ''}" id="panel-rubric">
-        <h4>Self-Assessment Rubric (16 Marks Total)</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Tick off items to self-assess your draft response:</p>
-        <div class="rubric-checklist">
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-ess-1">
-            <div class="rubric-item-text">
-              <h5>Covers Both Sides of the Argument</h5>
-              <p>Includes points that support the prompt factor (agree) and points showing counter-factors (disagree).</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Have you written one full paragraph agreeing with the prompt factor, and at least one other paragraph analyzing alternative factors?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-ess-2">
-            <div class="rubric-item-text">
-              <h5>Precise Historical Detail (AO1)</h5>
-              <p>Integrates names, dates, or specifications (e.g. Walter Raleigh, chief Wingina, the supply ship Tiger, 1585).</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Can you spot at least 4-5 precise historical details (e.g., specific treaties, battles, explorers, or acts)?
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-ess-3">
-            <div class="rubric-item-text">
-              <h5>Clear Explanations &amp; Linkages (AO2)</h5>
-              <p>Analysed how the factors directly caused the failure/success of the event.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Have you explicitly linked the end of each paragraph back to the overall judgment? (Avoid just summarizing; focus on relative importance.)
-              </div>
-            </div>
-          </label>
-          <label class="rubric-item">
-            <input type="checkbox" id="chk-ess-4">
-            <div class="rubric-item-text">
-              <h5>Reasoned Concluding Judgement</h5>
-              <p>Finished with a clear judgement weighing the factors and highlighting which factor is most crucial, going beyond simple summary.</p>
-              <div class="reflective-prompt" style="font-size: 0.78rem; font-style: italic; color: var(--text-gold); margin-top: 0.3rem; border-left: 2px solid var(--text-gold); padding-left: 0.4rem;">
-                🤔 Reflective Check: Does your conclusion make a clear choice on what was the *most* important factor, and explain *why* it outweighs the others?
-              </div>
-            </div>
-          </label>
-        </div>
-        <div style="margin-top: 1.5rem; font-weight: bold; font-family: var(--font-title); font-size: 1.1rem;" id="rubricScoreDisplay">
-          Estimated Level: Level 1 (1-4 Marks)
-        </div>
-      </div>
-    `;
-  }
-
-  // Inject the Selector, Tabs and Content
-  examWorkspace.innerHTML = `
-    ${selectorHTML}
-    ${workspaceTabHeaders}
-    ${workspaceContent}
-  `;
-
-  // Attach change listener to the dropdown question select element
-  const questionSelector = document.getElementById("questionSelector");
-  if (questionSelector) {
-    questionSelector.addEventListener("change", (e) => {
-      appState.selectedIndexes[qType] = parseInt(e.target.value);
-      renderExamWorkspace();
-    });
-  }
-
-  // Attach tab switching events inside workspace
-  const practiceTabs = examWorkspace.querySelectorAll(".practice-tab");
-  practiceTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      appState.activePracticePanel = tab.getAttribute("data-panel");
-      renderExamWorkspace();
-    });
   });
 
-  // Attach keypress event tracking to keep draft state
-  bindInputStateTracking(qType, question.id);
-
-  // If in rubric panel, attach scoring event tracking
-  if (appState.activePracticePanel === "rubric") {
-    bindRubricScoring(qType);
-  }
-
-  // Bind sub-accordions inside workspace if any exist
-  const accordions = examWorkspace.querySelectorAll(".event-summary");
-  accordions.forEach(acc => {
-    acc.addEventListener("click", () => {
-      const parent = acc.closest(".event-item");
-      parent.classList.toggle("expanded");
-    });
-  });
-}
-
-function saveUserDrafts() {
-  localStorage.setItem("elizabethan_user_drafts", JSON.stringify(appState.userDrafts));
-}
-
-function bindInputStateTracking(qType, questionId) {
-  const currentDraft = appState.userDrafts[questionId];
-  if (!currentDraft) return;
-
-  if (qType === "describe") {
-    const featureIn = document.getElementById("desc-stmt");
-    const detailIn = document.getElementById("desc-detail");
-    if (featureIn && detailIn) {
-      featureIn.addEventListener("input", (e) => {
-        currentDraft.feature = e.target.value;
-        saveUserDrafts();
-      });
-      detailIn.addEventListener("input", (e) => {
-        currentDraft.detail = e.target.value;
-        saveUserDrafts();
-      });
-    }
-  } else if (qType === "explain") {
-    const answerIn = document.getElementById("explain-answer-input");
-    if (answerIn) {
-      answerIn.addEventListener("input", (e) => {
-        currentDraft.answer = e.target.value;
-        saveUserDrafts();
-      });
-    }
-  } else if (qType === "essay") {
-    const answerIn = document.getElementById("essay-answer-input");
-    if (answerIn) {
-      answerIn.addEventListener("input", (e) => {
-        const question = examData.essay[appState.selectedIndexes.essay || 0] || examData.essay[0];
-        appState.userDrafts[question.id].answer = e.target.value;
-        saveUserDrafts();
-      });
-    }
-  }
-}
-
-function bindRubricScoring(qType) {
-  const display = document.getElementById("rubricScoreDisplay");
-  
-  if (qType === "describe") {
-    const chk1 = document.getElementById("chk-desc-1");
-    const chk2 = document.getElementById("chk-desc-2");
-
-    const updateDescribeScore = () => {
-      let score = 0;
-      if (chk1.checked) score++;
-      if (chk2.checked) score++;
-      display.textContent = `Estimated Score: ${score}/2 Marks`;
-    };
-
-    chk1.addEventListener("change", updateDescribeScore);
-    chk2.addEventListener("change", updateDescribeScore);
-  } else if (qType === "explain") {
-    const chk1 = document.getElementById("chk-exp-1");
-    const chk2 = document.getElementById("chk-exp-2");
-    const chk3 = document.getElementById("chk-exp-3");
-    const chk4 = document.getElementById("chk-exp-4");
-
-    const updateExplainScore = () => {
-      let count = 0;
-      if (chk1.checked) count++;
-      if (chk2.checked) count++;
-      if (chk3.checked) count++;
-      if (chk4.checked) count++;
-
-      let levelText = "";
-      if (count === 0) levelText = "Level 1 (0-3 Marks)";
-      else if (count === 1) levelText = "Level 2 (4-6 Marks)";
-      else if (count === 2 || count === 3) levelText = "Level 3 (7-9 Marks)";
-      else if (count === 4) levelText = "Level 4 (10-12 Marks) - Excellent!";
-
-      display.textContent = `Estimated Level: ${levelText}`;
-    };
-
-    chk1.addEventListener("change", updateExplainScore);
-    chk2.addEventListener("change", updateExplainScore);
-    chk3.addEventListener("change", updateExplainScore);
-    chk4.addEventListener("change", updateExplainScore);
-  } else if (qType === "essay") {
-    const chk1 = document.getElementById("chk-ess-1");
-    const chk2 = document.getElementById("chk-ess-2");
-    const chk3 = document.getElementById("chk-ess-3");
-    const chk4 = document.getElementById("chk-ess-4");
-
-    const updateEssayScore = () => {
-      let count = 0;
-      if (chk1.checked) count++;
-      if (chk2.checked) count++;
-      if (chk3.checked) count++;
-      if (chk4.checked) count++;
-
-      let levelText = "";
-      if (count === 0) levelText = "Level 1 (0-4 Marks)";
-      else if (count === 1) levelText = "Level 2 (5-8 Marks)";
-      else if (count === 2 || count === 3) levelText = "Level 3 (9-12 Marks)";
-      else if (count === 4) levelText = "Level 4 (13-16 Marks) - Grade 9 Standard!";
-
-      display.textContent = `Estimated Level: ${levelText}`;
-    };
-
-    chk1.addEventListener("change", updateEssayScore);
-    chk2.addEventListener("change", updateEssayScore);
-    chk3.addEventListener("change", updateEssayScore);
-    chk4.addEventListener("change", updateEssayScore);
-  }
-}
-
-// 5. Recall Quiz Engine
-function setupQuiz() {
-  renderQuiz();
-}
-
-function renderQuiz() {
-  if (!quizAppContainer) return;
-  
-  const qState = appState.quiz;
-  
-  if (qState.activeTopicIndex === -1) {
-    // Helper function to render a grouped Key Topic container
-    const renderTopicGroup = (title, startIndex, endIndex) => {
-      let groupData = quizData.slice(startIndex, endIndex + 1);
-      let itemsHTML = groupData.map((t, index) => {
-        const absoluteIndex = startIndex + index;
-        let mastered = 0;
-        t.questions.forEach((q, qIdx) => {
-          const key = `${absoluteIndex}_${qIdx}`;
-          if (qState.masteryStates[key] === 5) {
-            mastered++;
-          }
-        });
-        return `
-          <button class="exam-nav-btn" style="text-align: left; width: 100%; display: block; margin-bottom: 0.5rem;" onclick="startQuizTopic(${absoluteIndex})">
-            <h3 style="color: var(--text-gold); margin-bottom: 0.25rem; font-size: 0.85rem;">${t.section}</h3>
-            <p style="font-size: 0.82rem; line-height: 1.4; color: var(--text-main); font-weight: 500;">${t.topic}</p>
-            <span style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem; display: block;">
-              🏆 ${mastered} / ${t.questions.length} Mastered (Box 5)
-            </span>
-          </button>
-        `;
-      }).join('');
-      
-      return `
-        <div class="kt-group-container">
-          <h3 style="font-family: var(--font-title); font-size: 1.1rem; color: var(--primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem; text-align: left; font-weight: 800;">
-            ${title}
-          </h3>
-          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-            ${itemsHTML}
-          </div>
-        </div>
-      `;
-    };
-
-    let kt1HTML = renderTopicGroup("Key Topic 1: Queen, Government & Religion, 1558–69", 0, 3);
-    let kt2HTML = renderTopicGroup("Key Topic 2: Challenges to Elizabeth, 1569–88", 4, 7);
-    let kt3HTML = renderTopicGroup("Key Topic 3: Elizabethan Society & Exploration, 1558–88", 8, 11);
+  // Inject Laptop Mode & Teacher Mode Buttons
+  const headerActions = document.querySelector('.header-actions');
+  if (headerActions) {
+    const btnLaptop = document.createElement('button');
+    btnLaptop.className = 'btn btn-secondary';
+    btnLaptop.style.marginRight = '5px';
+    btnLaptop.style.padding = '6px 12px';
+    btnLaptop.title = 'Laptop Mode';
+    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i>';
     
-    quizAppContainer.innerHTML = `
-      <div class="quiz-setup-panel">
-        <div class="quiz-icon">✨</div>
-        <h2 style="font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-          Active Recall Flashcards
-          <span style="font-size: 0.7rem; background: rgba(234, 179, 8, 0.1); color: var(--text-gold); border: 1px solid rgba(234, 179, 8, 0.3); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700;">🛡️ Double-Check MCQ Active</span>
+    if (localStorage.getItem('laptopMode') === 'true') {
+      document.body.classList.add('laptop-mode-active');
+      btnLaptop.style.background = '#1e293b';
+      btnLaptop.style.color = '#ffffff';
+    }
+
+    btnLaptop.addEventListener('click', () => {
+      document.body.classList.toggle('laptop-mode-active');
+      const isActive = document.body.classList.contains('laptop-mode-active');
+      localStorage.setItem('laptopMode', isActive);
+      btnLaptop.style.background = isActive ? '#1e293b' : '';
+      btnLaptop.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnLaptop);
+
+    const btnTeacher = document.createElement('button');
+    btnTeacher.className = 'btn btn-secondary';
+    btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+    btnTeacher.addEventListener('click', () => {
+      document.body.classList.toggle('teacher-mode-active');
+      const isActive = document.body.classList.contains('teacher-mode-active');
+      btnTeacher.innerHTML = isActive ? '<i class="fa-solid fa-user-tie"></i> Teacher Mode: ON' : '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+      btnTeacher.style.background = isActive ? '#1e293b' : '';
+      btnTeacher.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnTeacher);
+
+    const btnCurriculum = document.createElement('button');
+    btnCurriculum.className = 'btn btn-secondary';
+    btnCurriculum.innerHTML = '<i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge (Teachers)';
+    btnCurriculum.addEventListener('click', () => {
+      openCurriculumModal();
+    });
+    headerActions.appendChild(btnCurriculum);
+
+    const btnWhiteboard = document.createElement('button');
+    btnWhiteboard.className = 'btn btn-secondary';
+    btnWhiteboard.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i> Task Whiteboard';
+    btnWhiteboard.addEventListener('click', () => {
+      openTaskWhiteboard();
+    });
+    headerActions.appendChild(btnWhiteboard);
+
+  }
+
+  function openCurriculumModal() {
+    let modal = document.getElementById('curriculum-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'curriculum-modal';
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
+      
+      const content = document.createElement('div');
+      content.style.cssText = 'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+      
+      content.innerHTML = `
+        <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
+        <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
+        <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+          <button id="close-curriculum" class="btn btn-primary">Save & Close</button>
+        </div>
+      `;
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+
+      const availableUnits = [
+        { id: 'norman_conquest', title: 'The Norman Conquest' },
+        { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
+        { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' }
+      ];
+
+      const container = content.querySelector('#unit-checkboxes');
+      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+
+      availableUnits.forEach(u => {
+        const label = document.createElement('label');
+        label.style.display = 'flex';
+        label.style.alignItems = 'center';
+        label.style.gap = '10px';
+        label.style.cursor = 'pointer';
+        label.style.fontSize = '1.1rem';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = u.id;
+        checkbox.style.width = '20px';
+        checkbox.style.height = '20px';
+        checkbox.checked = taught.includes(u.id);
+        checkbox.addEventListener('change', () => {
+          let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+          if (checkbox.checked) current.push(u.id);
+          else current = current.filter(id => id !== u.id);
+          localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
+        });
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(u.title));
+        container.appendChild(label);
+      });
+
+      content.querySelector('#close-curriculum').addEventListener('click', () => {
+        document.body.removeChild(modal);
+        // Refresh page to apply new Do Nows if we are currently looking at one
+        location.reload();
+      });
+    }
+  }
+
+  function renderHomepage() {
+    let lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
+    unitData.lessons.forEach((lesson, index) => {
+      lessonsHTML += `
+        <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+          <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Lesson ${index + 1}</h3>
+          <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${lesson.title}</p>
+        </div>
+      `;
+    });
+    lessonsHTML += '</div>';
+
+    let resourcesHTML = '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Resources</h2><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; text-align: left;">';
+    
+    // Helper for cards
+    const resourceCard = (id, icon, title, color) => `
+      <div class="homepage-resource-card" data-resource-id="${id}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid ${icon}" style="font-size: 1.5rem; color: ${color};"></i>
+        <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">${title}</h4>
+      </div>
+    `;
+
+    if (unitData.biographies) {
+      resourcesHTML += resourceCard('key-individuals', 'fa-users', 'Key Individuals', '#8b5cf6');
+    }
+    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
+      resourcesHTML += resourceCard('guided-reading', 'fa-book-open', 'Guided Reading', '#10b981');
+    }
+    resourcesHTML += resourceCard('revision-zone', 'fa-gamepad', 'Revision Zone', '#f59e0b');
+    resourcesHTML += resourceCard('exam-practice', 'fa-pen-to-square', 'Assessments', '#3b82f6');
+    
+    // Links (open in new tab)
+    resourcesHTML += resourceCard('quiz-zone', 'fa-file-pdf', 'Knowledge Quiz Zone', '#ef4444');
+
+    const wbHref = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
+    resourcesHTML += `
+      <a href="${wbHref}" target="_blank" style="text-decoration: none;">
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-book" style="font-size: 1.5rem; color: #64748b;"></i>
+          <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">Pupil Workbook</h4>
+        </div>
+      </a>
+    `;
+    
+    resourcesHTML += '</div>';
+
+    contentArea.innerHTML = `
+      <div style="text-align: center; padding-bottom: 50px;">
+        <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;">${unitData.title}</h1>
+        <h2 style="margin-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+          Unit Enquiry: <i>${unitData.enquiry || 'What can we learn from this period in history?'}</i>
         </h2>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-          Select a sub-topic from the three Key Topics below to start your active recall session.
-        </p>
-        <div class="quiz-setup-grid">
-          ${kt1HTML}
-          ${kt2HTML}
-          ${kt3HTML}
-        </div>
+        
+        ${Array.isArray(unitData.cover_image) ? `
+          <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
+            ${unitData.cover_image.map(img => `
+              <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; flex: 1; max-height: 400px; display: flex; align-items: center; justify-content: center; background: #0f172a;">
+                <img src="${getAssetUrl(img)}" alt="Unit Cover" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+              </div>
+            `).join('')}
+          </div>
+        ` : `
+          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: inline-block; margin-bottom: 5px;">
+            <img src="${getAssetUrl(unitData.cover_image || 'assets/cover.jpg')}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 500px;">
+          </div>
+        `}
+        
+        ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+        
+        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Lessons</h2>
+        ${lessonsHTML}
+        
+        ${resourcesHTML}
       </div>
     `;
-  } else {
-    const topicData = quizData[qState.activeTopicIndex];
-    
-    if (qState.activeQueue.length > 0) {
-      const qData = qState.activeQueue[0];
-      
-      quizAppContainer.innerHTML = `
-        <div class="quiz-container" style="max-width: 600px; margin: 0 auto;">
-          <div class="quiz-header" style="display: block; margin-bottom: 1rem;">
-            <!-- Progress Bar Info -->
-            ${(() => {
-              const boxCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-              topicData.questions.forEach((q, idx) => {
-                const key = `${qState.activeTopicIndex}_${idx}`;
-                const box = qState.masteryStates[key] || 1;
-                boxCounts[box]++;
-              });
-              
-              const totalCards = topicData.questions.length;
-              const strengthPercent = Math.round(
-                ((boxCounts[1] * 0 + boxCounts[2] * 25 + boxCounts[3] * 50 + boxCounts[4] * 75 + boxCounts[5] * 100) / (totalCards * 100)) * 100
-              );
-              
-              return `
-                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; margin-bottom: 0.4rem; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                  <span>Knowledge Strength: ${strengthPercent}%</span>
-                  <span>${qState.masteredCount} / ${totalCards} Mastered</span>
-                </div>
-                <!-- Progress Bar Fill -->
-                <div class="progress-bar-container" style="width: 100%; height: 10px; background: rgba(255,255,255,0.08); border-radius: 5px; margin-bottom: 0.75rem; overflow: hidden; border: 1px solid var(--border-color);">
-                  <div class="progress-bar-fill" style="width: ${strengthPercent}%; height: 100%; background: linear-gradient(90deg, var(--primary), #10b981); transition: width 0.3s ease;"></div>
-                </div>
-                
-                <!-- Leitner Box Distribution Stats Panel -->
-                <div style="display: flex; gap: 0.25rem; width: 100%; font-size: 0.68rem; margin-bottom: 1.25rem; font-weight: bold; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                  <span style="color: var(--text-muted);">Box 1 (New): ${boxCounts[1]}</span>
-                  <span style="color: var(--primary);">Box 2: ${boxCounts[2]}</span>
-                  <span style="color: var(--text-gold);">Box 3: ${boxCounts[3]}</span>
-                  <span style="color: #6366f1;">Box 4: ${boxCounts[4]}</span>
-                  <span style="color: #10b981;">🏆 Box 5: ${boxCounts[5]}</span>
-                </div>
-              `;
-            })()}
-            
-            <!-- Gamified Stats Row -->
-            <div class="quiz-status-row" style="display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
-              <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.25); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 700; font-family: var(--font-title); display: inline-flex; align-items: center; gap: 0.3rem;">🏆 Mastered: ${qState.masteredCount}/${topicData.questions.length}</span>
-              <span style="background: rgba(99, 102, 241, 0.1); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.25); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 700; font-family: var(--font-title); display: inline-flex; align-items: center; gap: 0.3rem;">✨ XP: ${qState.xp}</span>
-              <span style="background: rgba(234, 179, 8, 0.1); color: var(--text-gold); border: 1px solid rgba(234, 179, 8, 0.25); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 700; font-family: var(--font-title); display: inline-flex; align-items: center; gap: 0.3rem;">🔥 Streak: ${qState.streak} (Best: ${qState.bestStreak})</span>
-            </div>
-          </div>
-          
-          <h4 style="font-family: var(--font-title); font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-            ${topicData.topic}
-          </h4>
-          
-          <div class="flashcard-wrapper">
-            <div class="flashcard ${qState.isFlipped ? 'flipped' : ''}" onclick="flipLeitnerCard()">
-              <!-- Front of Flashcard -->
-              <div class="card-face card-front">
-                <div class="card-question">${qData.question}</div>
-                <button class="btn btn-primary" style="margin-top: 1rem; pointer-events: none;">Reveal Answer</button>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem;">💡 Click card to flip</p>
-              </div>
-              <!-- Back of Flashcard -->
-              <div class="card-face card-back" onclick="event.stopPropagation();">
-                <div class="card-question" style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1rem; width: 100%;">${qData.question}</div>
-                
-                ${qState.verificationActive ? `
-                  ${!qState.verificationAnswered ? `
-                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-gold); margin-bottom: 0.75rem; text-align: center; text-transform: uppercase; letter-spacing: 0.05em;">Double Check: Which statement is correct?</div>
-                    <div style="display: flex; flex-direction: column; width: 100%; text-align: left; margin-bottom: 0.5rem;">
-                      ${qState.verificationOptions.map((opt, index) => `
-                        <button class="verification-option-btn" onclick="submitVerificationAnswer(${index})">
-                          ${opt.text}
-                        </button>
-                      `).join('')}
-                    </div>
-                  ` : `
-                    <div style="font-size: 0.95rem; font-weight: 800; text-align: center; margin-bottom: 0.75rem; color: ${qState.verificationCorrect ? '#10b981' : 'var(--accent-crimson)'};">
-                      ${qState.verificationCorrect ? '✅ Correct! Answer Verified.' : '❌ Incorrect! Answer Not Verified.'}
-                    </div>
-                    <div style="display: flex; flex-direction: column; width: 100%; text-align: left; margin-bottom: 1rem;">
-                      ${qState.verificationOptions.map((opt, index) => {
-                        let extraClass = '';
-                        if (opt.isCorrect) {
-                          extraClass = 'correct';
-                        } else if (index === qState.verificationSelectedIndex) {
-                          extraClass = 'incorrect';
-                        }
-                        return `
-                          <button class="verification-option-btn ${extraClass}" disabled>
-                            ${opt.text}
-                          </button>
-                        `;
-                      }).join('')}
-                    </div>
-                    <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; margin-bottom: 0.25rem;">Detailed Answer:</div>
-                    <div class="card-answer" style="font-size: 0.9rem; margin-bottom: 1.25rem; border-left: 2px solid var(--border-color); padding-left: 0.5rem; color: var(--text-main); font-weight: 500;">
-                      ${qData.answer}
-                    </div>
-                    <div class="quiz-controls" style="justify-content: center;">
-                      <button class="btn btn-primary" onclick="advanceVerification()" style="min-width: 150px; justify-content: center;">
-                        Continue ➔
-                      </button>
-                    </div>
-                  `}
-                ` : `
-                  <div class="card-answer">${qData.answer}</div>
-                  
-                  <div class="quiz-controls">
-                    <button class="btn btn-danger" onclick="assessAnswer(false)">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                      💨 Needs Sweeping
-                    </button>
-                    <button class="btn btn-success" onclick="assessAnswer(true)">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                      🔥 Shovel into the Furnace
-                    </button>
-                  </div>
-                `}
-              </div>
-            </div>
-          </div>
 
-          <!-- Leitner box progress -->
-          <div class="leitner-progress" style="display: flex; justify-content: center; align-items: center; gap: 0.35rem; margin-top: 1rem; margin-bottom: 1rem; background: rgba(255,255,255,0.02); padding: 0.6rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); flex-wrap: wrap;">
-            <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-right: 0.4rem;">Leitner Box:</span>
-            ${[1, 2, 3, 4, 5].map(b => {
-              const isActive = b === qData.box;
-              const isMastered = b === 5;
-              let bg = "rgba(255, 255, 255, 0.05)";
-              let border = "1px solid var(--border-color)";
-              let color = "var(--text-muted)";
-              
-              if (isActive) {
-                bg = isMastered ? "rgba(16, 185, 129, 0.15)" : "rgba(99, 102, 241, 0.15)";
-                border = isMastered ? "1px solid #10b981" : "1px solid var(--primary)";
-                color = isMastered ? "#10b981" : "var(--primary)";
-              }
-              
-              return `<span style="background: ${bg}; border: ${border}; color: ${color}; font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: bold; transition: all 0.2s ease;">Box ${b}${isMastered ? ' 🏆' : ''}</span>`;
-            }).join('<span style="color: var(--border-color); font-size: 0.8rem;">➔</span>')}
-          </div>
-          
-          <!-- Dynamic Learning Connection Fact -->
-          ${(() => {
-            if (qData.fact) {
-              return `
-                <div class="quiz-extra-fact" style="margin-top: 1.5rem; padding: 1rem; background: rgba(99, 102, 241, 0.03); border-left: 4px solid var(--primary); border-radius: var(--radius-md); text-align: left; border: 1px solid var(--border-color); border-left-width: 4px; box-shadow: var(--shadow-lg);">
-                  <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); font-weight: bold; margin-bottom: 0.4rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
-                    <span>💡 Fact Box</span>
-                  </div>
-                  <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-main); margin-bottom: 0; font-weight: 500;">${qData.fact}</p>
-                </div>
-              `;
-            }
-            const activeTopicSection = topicData.section; // e.g. "KT 1.1"
-            const matchingTimelineCard = timelineData.find(card => card.section === activeTopicSection);
-            if (matchingTimelineCard && matchingTimelineCard.events.length > 0) {
-              // Rotate facts based on mastered count to keep it dynamic and fresh
-              const event = matchingTimelineCard.events[qState.masteredCount % matchingTimelineCard.events.length];
-              return `
-                <div class="quiz-extra-fact" style="margin-top: 1.5rem; padding: 1rem; background: rgba(99, 102, 241, 0.03); border-left: 4px solid var(--primary); border-radius: var(--radius-md); text-align: left; border: 1px solid var(--border-color); border-left-width: 4px; box-shadow: var(--shadow-lg);">
-                  <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); font-weight: bold; margin-bottom: 0.4rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
-                    <span>💡 Timeline Connection (${event.dates.join(', ')})</span>
-                  </div>
-                  <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-main); margin-bottom: 0.4rem;">${event.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
-                  <div style="font-size: 0.8rem; font-style: italic; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 0.4rem; margin-top: 0.4rem;">
-                    <strong>Historical Significance:</strong> ${event.significance}
-                  </div>
-                </div>
-              `;
-            }
-            return '';
-          })()}
-
-          <div style="text-align: right; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-            <button class="btn" style="font-size: 0.75rem; padding: 0.25rem 0.6rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; border: 1px solid rgba(99, 102, 241, 0.3);" onclick="bridgeQuizToTimeline('${topicData.section}')">
-              📖 View ${topicData.section} in Chronological Timeline
-            </button>
-          </div>
-          
-          <div style="text-align: center; margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-            <button class="btn" onclick="exitQuiz()" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Exit Quiz</button>
-            <button class="btn" onclick="resetTopicMastery(${qState.activeTopicIndex})" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border-color: rgba(239, 68, 68, 0.4); color: var(--accent-crimson);">🧹 Clear the Grate (Reset)</button>
-            <button class="btn btn-primary" onclick="skipToResults()" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">Skip to Results</button>
-          </div>
-        </div>
-      `;
-    } else {
-      // Quiz Complete - Render a clean, next-step panel
-      quizAppContainer.innerHTML = `
-        <div class="quiz-result-card" style="text-align: center; padding: 2rem; max-width: 500px; margin: 0 auto;">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
-          <h2 style="font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 0.5rem; color: #10b981;">Topic Completed!</h2>
-          <p class="result-text" style="font-weight: 600; margin-bottom: 1.5rem; color: var(--text-main);">
-            Successfully Mastered All ${topicData.questions.length} Recall Cards in ${topicData.section}!
-          </p>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 380px; margin: 0 auto; width: 100%;">
-            <button class="btn btn-primary" style="justify-content: center;" onclick="bridgeQuizToPractice('${topicData.section}')">
-              📝 Attempt Exam Practice for ${topicData.section}
-            </button>
-            <button class="btn" style="justify-content: center; border-color: var(--primary); color: var(--primary);" onclick="bridgeQuizToRoulette()">
-              🎡 Spin the Exam Roulette Wheel
-            </button>
-            <button class="btn" style="justify-content: center;" onclick="exitQuiz()">
-              🔙 Return to Sub-topics Lobby
-            </button>
-          </div>
-        </div>
-      `;
-    }
-  }
-}
-
-window.bridgeQuizToPractice = function(sectionCode) {
-  const tab = document.querySelector('.nav-tab[data-target="practiceSection"]');
-  if (tab) tab.click();
-  
-  appState.activeQuestionType = "describe";
-  const describeList = examData.describe;
-  const idx = describeList.findIndex(q => q.topic.includes(sectionCode));
-  if (idx !== -1) {
-    appState.selectedIndexes.describe = idx;
-  }
-  appState.activePracticePanel = "workspace";
-  renderExamWorkspace();
-};
-
-window.bridgeQuizToRoulette = function() {
-  const tab = document.querySelector('.nav-tab[data-target="practiceSection"]');
-  if (tab) tab.click();
-  appState.activeQuestionType = "wheel";
-  renderExamWorkspace();
-};
-
-// Global functions attached to window for click triggers
-window.startQuizTopic = function(topicIdx) {
-  const topicData = quizData[topicIdx];
-  const qState = appState.quiz;
-  qState.activeTopicIndex = topicIdx;
-  qState.currentQuestionIndex = 0;
-  qState.score = 0;
-  qState.isFlipped = false;
-  qState.verificationActive = false;
-  qState.verificationOptions = [];
-  qState.verificationAnswered = false;
-  qState.verificationSelectedIndex = -1;
-  qState.verificationCorrect = false;
-  
-  // Load card states with Leitner boxes (1 to 5)
-  let mastered = 0;
-  const queue = [];
-  topicData.questions.forEach((q, idx) => {
-    const key = `${topicIdx}_${idx}`;
-    const box = qState.masteryStates[key] || 1;
-    if (box === 5) {
-      mastered++;
-    } else {
-      queue.push({
-        ...q,
-        key: key,
-        box: box
+    // Add click listeners to cards
+    const cards = contentArea.querySelectorAll('.homepage-lesson-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
       });
-    }
-  });
-  
-  // If all cards are already mastered, automatically reset the topic to study again!
-  if (queue.length === 0) {
-    topicData.questions.forEach((q, idx) => {
-      const key = `${topicIdx}_${idx}`;
-      qState.masteryStates[key] = 1;
-      queue.push({
-        ...q,
-        key: key,
-        box: 1
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'none';
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      });
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.dataset.index);
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        // sidebar links: index 0 is Homepage, index 1 is Lesson 1
+        const sidebarLinks = document.querySelectorAll('.lesson-link');
+        if(sidebarLinks[idx + 1]) sidebarLinks[idx + 1].classList.add('active');
+        renderLesson(unitData.lessons[idx]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
-    localStorage.setItem("elizabethan_mastery_states", JSON.stringify(qState.masteryStates));
-    mastered = 0;
-  }
-  
-  qState.masteredCount = mastered;
-  qState.activeQueue = queue;
-  qState.xp = 0;
-  qState.streak = 0;
-  qState.bestStreak = 0;
-  qState.totalAttempts = 0;
-  renderQuiz();
-};
 
-window.flipLeitnerCard = function() {
-  if (appState.quiz.verificationActive) return;
-  appState.quiz.isFlipped = !appState.quiz.isFlipped;
-  renderQuiz();
-};
-
-window.assessAnswer = function(gotIt) {
-  const qState = appState.quiz;
-  
-  if (qState.activeQueue.length > 0) {
-    const currentCard = qState.activeQueue[0];
-    
-    if (gotIt) {
-      // Trigger verification MCQ double check
-      generateVerificationOptions(currentCard);
-      qState.verificationActive = true;
-      renderQuiz();
-    } else {
-      // Demote immediately on Needs Sweeping
-      qState.totalAttempts++;
-      qState.streak = 0;
-      const prevBox = currentCard.box || 1;
-      const nextBox = Math.max(prevBox - 1, 1);
-      qState.masteryStates[currentCard.key] = nextBox;
-      
-      const card = qState.activeQueue.shift();
-      card.box = nextBox;
-      qState.activeQueue.push(card);
-      
-      localStorage.setItem("elizabethan_mastery_states", JSON.stringify(qState.masteryStates));
-      qState.isFlipped = false;
-      setTimeout(() => {
-        renderQuiz();
-      }, 400);
-    }
-  }
-};
-
-window.generateSmartDistractors = function(correctText, pool, questionText) {
-  const correct = correctText.trim();
-  const lowerCorrect = correct.toLowerCase();
-
-  // Helper to check if string is Title Case
-  function isTitleCase(str) {
-    const words = str.split(/\s+/);
-    if (words.length === 0 || str === "") return false;
-    const lowerConjs = ["of", "the", "in", "and", "to", "for", "a", "an", "but", "or", "by", "from", "on", "with", "at", "de", "von"];
-    return words.every((word, idx) => {
-      if (word === "") return true;
-      const firstChar = word[0];
-      if (idx === 0) {
-        return firstChar === firstChar.toUpperCase() && /[a-zA-Z]/.test(firstChar);
-      }
-      if (lowerConjs.includes(word.toLowerCase())) return true;
-      return firstChar === firstChar.toUpperCase() && /[a-zA-Z]/.test(firstChar);
+    // Add click listeners to resource cards
+    const resourceCards = contentArea.querySelectorAll('.homepage-resource-card');
+    resourceCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'none';
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      });
+      card.addEventListener('click', () => {
+        const id = card.dataset.resourceId;
+        const findLink = (text) => Array.from(document.querySelectorAll('.lesson-link')).find(l => l.innerHTML.includes(text));
+        const resourceMap = {
+          'key-individuals': () => {
+            const kiLink = findLink("Key Individuals") || findLink("People");
+            if (kiLink) kiLink.click();
+          },
+          'guided-reading': () => {
+            const grLink = findLink("Guided Reading");
+            if (grLink) grLink.click();
+          },
+          'revision-zone': () => {
+            const revLink = findLink("Revision Zone");
+            if (revLink) revLink.click();
+          },
+          'exam-practice': () => {
+            const exLink = findLink("Assessments");
+            if (exLink) exLink.click();
+          },
+          'quiz-zone': () => {
+            const qzLink = document.getElementById('quiz-zone-link');
+            if (qzLink) qzLink.click();
+          }
+        };
+        if (resourceMap[id]) resourceMap[id]();
+      });
     });
   }
 
-  // Helper to count words
-  function getWordCount(str) {
-    return str.trim().split(/\s+/).filter(w => w.length > 0).length;
-  }
+  // Render Sidebar
+  function renderSidebar() {
+    const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
+    navContainer.innerHTML = '';
 
-  // 1. Year Match (4 digits)
-  const yearRegex = /^\d{4}$/;
-  if (yearRegex.test(correct)) {
-    const yearVal = parseInt(correct, 10);
-    let poolYears = pool
-      .filter(ans => yearRegex.test(ans))
-      .map(ans => parseInt(ans, 10))
-      .filter(y => y !== yearVal);
-    poolYears = Array.from(new Set(poolYears));
-    if (poolYears.length >= 3) {
-      poolYears.sort((a, b) => Math.abs(a - yearVal) - Math.abs(b - yearVal));
-      const topClosest = poolYears.slice(0, 8);
-      const chosen = topClosest.sort(() => Math.random() - 0.5).slice(0, 3);
-      return chosen.map(y => String(y));
-    } else {
-      const generated = new Set();
-      const offsets = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -10, 10, -15, 15];
-      const shuffledOffsets = offsets.sort(() => Math.random() - 0.5);
-      for (let offset of shuffledOffsets) {
-        const generatedYear = yearVal + offset;
-        if (generatedYear !== yearVal && generatedYear > 0) {
-          generated.add(String(generatedYear));
-          if (generated.size === 3) break;
-        }
-      }
-      while (generated.size < 3) {
-        generated.add(String(yearVal + Math.floor(Math.random() * 20) - 10));
-      }
-      return Array.from(generated);
-    }
-  }
+    // Unit Homepage Tab
+    const homeLink = document.createElement('a');
+    homeLink.className = 'lesson-link active';
+    homeLink.innerHTML = '<i class="fa-solid fa-home" style="margin-right: 8px;"></i> Unit Homepage';
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      homeLink.classList.add('active');
+      renderHomepage();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(homeLink);
 
-  // 2. Percentage Match (e.g. 58%)
-  const pctRegex = /^(\d+(?:\.\d+)?)\s*%$/;
-  if (pctRegex.test(correct)) {
-    const match = correct.match(pctRegex);
-    const val = parseFloat(match[1]);
-    let poolPcts = pool
-      .filter(ans => pctRegex.test(ans))
-      .map(ans => {
-        const m = ans.match(pctRegex);
-        return { original: ans, value: parseFloat(m[1]) };
-      })
-      .filter(item => item.value !== val);
-    
-    const seenVals = new Set();
-    const uniquePoolPcts = [];
-    for (let item of poolPcts) {
-      if (!seenVals.has(item.value)) {
-        seenVals.add(item.value);
-        uniquePoolPcts.push(item);
-      }
-    }
+    unitData.lessons.forEach((lesson, index) => {
+      const link = document.createElement('a');
+      link.className = 'lesson-link';
+      link.textContent = `L${index + 1}: ${lesson.title}`;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        renderLesson(lesson);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(link);
+    });
 
-    if (uniquePoolPcts.length >= 3) {
-      uniquePoolPcts.sort((a, b) => Math.abs(a.value - val) - Math.abs(b.value - val));
-      const topClosest = uniquePoolPcts.slice(0, 8);
-      const chosen = topClosest.sort(() => Math.random() - 0.5).slice(0, 3);
-      return chosen.map(item => item.original);
-    } else {
-      const generated = new Set();
-      const isInteger = !correct.includes('.');
-      const hasSpace = correct.includes(' ');
-      const pctChar = hasSpace ? ' %' : '%';
-      
-      const offsets = [-5, 5, -10, 10, -15, 15, -20, 20, -25, 25, -30, 30];
-      const shuffledOffsets = offsets.sort(() => Math.random() - 0.5);
-      for (let offset of shuffledOffsets) {
-        let generatedVal = val + offset;
-        if (generatedVal > 0 && generatedVal <= 100 && generatedVal !== val) {
-          const formatted = isInteger ? Math.round(generatedVal) : generatedVal.toFixed(1);
-          generated.add(formatted + pctChar);
-          if (generated.size === 3) break;
-        }
-      }
-      while (generated.size < 3) {
-        let generatedVal = Math.max(1, Math.min(100, Math.round(val + Math.random() * 30 - 15)));
-        if (generatedVal !== val) {
-          generated.add(generatedVal + pctChar);
-        }
-      }
-      return Array.from(generated);
-    }
-  }
-
-  // 3. Simple digits / numeric with optional comma / currency symbol (e.g. 58,000)
-  const numberRegex = /^[£$]?\d{1,3}(?:,\d{3})+(?:\s*[a-zA-Z]+)?$/;
-  const rawDigitsRegex = /^\d+$/;
-  
-  function cleanNumber(str) {
-    const match = str.replace(/[£$,]/g, '').match(/\d+(?:\.\d+)?/);
-    return match ? parseFloat(match[0]) : null;
-  }
-
-  const isRawDigits = rawDigitsRegex.test(correct);
-  const isFormattedNumber = numberRegex.test(correct);
-
-  if (isRawDigits || isFormattedNumber) {
-    const val = cleanNumber(correct);
-    if (val !== null && val !== 0) {
-      let poolNums = pool
-        .filter(ans => {
-          const v = cleanNumber(ans);
-          return v !== null && v !== val && (rawDigitsRegex.test(ans) || numberRegex.test(ans));
-        })
-        .map(ans => ({ original: ans, value: cleanNumber(ans) }));
-      
-      const seenVals = new Set();
-      const uniquePoolNums = [];
-      for (let item of poolNums) {
-        if (!seenVals.has(item.value)) {
-          seenVals.add(item.value);
-          uniquePoolNums.push(item);
-        }
-      }
-
-      if (uniquePoolNums.length >= 3) {
-        uniquePoolNums.sort((a, b) => Math.abs(a.value - val) - Math.abs(b.value - val));
-        const topClosest = uniquePoolNums.slice(0, 8);
-        const chosen = topClosest.sort(() => Math.random() - 0.5).slice(0, 3);
-        return chosen.map(item => item.original);
-      } else {
-        const generated = new Set();
-        const hasComma = correct.includes(',');
-        const prefix = correct.startsWith('$') ? '$' : (correct.startsWith('£') ? '£' : '');
-        const suffixMatch = correct.match(/\s*[a-zA-Z]+$/);
-        const suffix = suffixMatch ? suffixMatch[0] : '';
+    // Add Guided Reading Tab if available
+    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
+      const grLink = document.createElement('a');
+      grLink.className = 'lesson-link';
+      grLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Guided Reading';
+      grLink.href = '#';
+      grLink.style.marginTop = '15px';
+      grLink.style.borderTop = '1px solid #e2e8f0';
+      grLink.style.paddingTop = '15px';
+      grLink.onclick = async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        grLink.classList.add('active');
         
-        const multipliers = [0.5, 0.8, 1.2, 1.5, 0.7, 1.3, 0.9, 1.1, 2];
-        const shuffledMults = multipliers.sort(() => Math.random() - 0.5);
-        for (let mult of shuffledMults) {
-          let genVal = Math.round(val * mult);
-          if (genVal === val || genVal <= 0) continue;
-          
-          let formatted = String(genVal);
-          if (hasComma) {
-            formatted = genVal.toLocaleString('en-US');
-          }
-          generated.add(prefix + formatted + suffix);
-          if (generated.size === 3) break;
+        // Dynamically load the guided reading module to avoid cluttering core_app.js
+        const { initGuidedReadingTask } = await import('./guided_reading.js');
+        const contentArea = document.getElementById('engine-workbook-container');
+        contentArea.innerHTML = '';
+        
+        let currentLessonIndex = 0;
+        if (window.currentActiveLesson && unitData.lessons) {
+          currentLessonIndex = unitData.lessons.findIndex(l => l.title === window.currentActiveLesson.title);
         }
-        while (generated.size < 3) {
-          let genVal = Math.round(val * (0.5 + Math.random()));
-          if (genVal !== val && genVal > 0) {
-            let formatted = String(genVal);
-            if (hasComma) {
-              formatted = genVal.toLocaleString('en-US');
-            }
-            generated.add(prefix + formatted + suffix);
-          }
-        }
-        return Array.from(generated);
-      }
-    }
-  }
-
-  // 4. Month-Year Date
-  const monthYearRegex = /^(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}$/i;
-  if (monthYearRegex.test(correct)) {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let poolDates = pool.filter(ans => monthYearRegex.test(ans) && ans.toLowerCase() !== lowerCorrect);
-    poolDates = Array.from(new Set(poolDates));
-    if (poolDates.length >= 3) {
-      const shuffled = poolDates.sort(() => Math.random() - 0.5);
-      return shuffled.slice(0, 3);
-    } else {
-      const parts = correct.split(/\s+/);
-      const yearPart = parseInt(parts[1], 10);
-      const generated = new Set();
-      
-      const offsets = [-1, 1, -2, 2, 0];
-      const shuffledOffsets = offsets.sort(() => Math.random() - 0.5);
-      for (let offset of shuffledOffsets) {
-        const randomMonth = months[Math.floor(Math.random() * months.length)];
-        const genYear = yearPart + offset;
-        const formatted = randomMonth + " " + genYear;
-        if (formatted.toLowerCase() !== lowerCorrect) {
-          generated.add(formatted);
-          if (generated.size === 3) break;
-        }
-      }
-      while (generated.size < 3) {
-        const randomMonth = months[Math.floor(Math.random() * months.length)];
-        const genYear = yearPart + Math.floor(Math.random() * 5) - 2;
-        const formatted = randomMonth + " " + genYear;
-        if (formatted.toLowerCase() !== lowerCorrect) {
-          generated.add(formatted);
-        }
-      }
-      return Array.from(generated);
-    }
-  }
-
-  // 5. Acronym Match (2 to 6 capital letters / digits)
-  const acronymRegex = /^[A-Z0-9]{2,6}$/;
-  if (acronymRegex.test(correct)) {
-    let poolAcronyms = pool.filter(ans => acronymRegex.test(ans) && ans !== correct);
-    poolAcronyms = Array.from(new Set(poolAcronyms));
-    if (poolAcronyms.length >= 3) {
-      return poolAcronyms.sort(() => Math.random() - 0.5).slice(0, 3);
-    }
-  }
-
-  // 6. Proper Nouns / Title Case vs Lowercase / Scoring system
-  const isCorrectTitleCase = isTitleCase(correct);
-  const correctWordCount = getWordCount(correct);
-  const uniquePool = Array.from(new Set(pool.filter(ans => ans.toLowerCase() !== lowerCorrect)));
-  
-  const scoredPool = uniquePool.map(ans => {
-    let score = 0;
-    const wordCount = getWordCount(ans);
-    const isAnsTitleCase = isTitleCase(ans);
-    
-    if (isCorrectTitleCase === isAnsTitleCase) {
-      score += 8;
-    }
-    if (correctWordCount === wordCount) {
-      score += 10;
-    } else if (Math.abs(correctWordCount - wordCount) === 1) {
-      score += 5;
-    }
-    const lenDiff = Math.abs(correct.length - ans.length);
-    if (lenDiff <= 5) {
-      score += 4;
-    } else if (lenDiff <= 10) {
-      score += 2;
-    }
-
-    const personKeywords = ["who", "president", "leader", "general", "secretary", "advisor", "minister", "commander", "governor", "queen", "king", "earl", "duke"];
-    const qTextLower = (questionText || "").toLowerCase();
-    const hasPersonKeyword = personKeywords.some(kw => qTextLower.includes(kw));
-    
-    if (hasPersonKeyword && isCorrectTitleCase && isAnsTitleCase) {
-      if (wordCount === 2 || wordCount === 3) {
-        score += 5;
-      }
-    }
-    return { original: ans, score: score };
-  });
-
-  scoredPool.sort((a, b) => b.score - a.score);
-  const maxScore = scoredPool.length > 0 ? scoredPool[0].score : 0;
-  const highQualityCandidates = scoredPool.filter(item => item.score >= Math.max(maxScore - 6, 0));
-  
-  if (highQualityCandidates.length >= 3) {
-    const chosen = highQualityCandidates.sort(() => Math.random() - 0.5).slice(0, 3);
-    return chosen.map(item => item.original);
-  } else {
-    const top3 = scoredPool.slice(0, 3);
-    if (top3.length === 3) {
-      return top3.map(item => item.original);
-    } else {
-      const distractors = [];
-      const shuffledUnique = uniquePool.sort(() => Math.random() - 0.5);
-      for (let ans of shuffledUnique) {
-        distractors.push(ans);
-        if (distractors.length === 3) break;
-      }
-      let idx = 1;
-      while (distractors.length < 3) {
-        distractors.push("Alternative Option " + idx++);
-      }
-      return distractors;
-    }
-  }
-};
-
-window.generateVerificationOptions = function(currentCard) {
-  const qState = appState.quiz;
-  const correctText = currentCard.answer;
-  
-  let distractors = [];
-  if (currentCard.distractors && Array.isArray(currentCard.distractors) && currentCard.distractors.length === 3) {
-    distractors = currentCard.distractors;
-  } else {
-    // Gather all potential distractors from quizData
-    let allAnswers = [];
-    quizData.forEach(topic => {
-      topic.questions.forEach(q => {
-        if (q.answer && q.answer.trim() !== correctText.trim()) {
-          allAnswers.push(q.answer);
-        }
-      });
-    });
-    
-    // Keep unique answers
-    allAnswers = [...new Set(allAnswers)];
-    distractors = window.generateSmartDistractors(correctText, allAnswers, currentCard.question);
-  }
-  
-  // Assemble the 4 options
-  const options = [
-    { text: correctText, isCorrect: true },
-    ...distractors.map(text => ({ text: text, isCorrect: false }))
-  ];
-  
-  // Shuffle options array using Fisher-Yates
-  for (let i = options.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [options[i], options[j]] = [options[j], options[i]];
-  }
-  
-  qState.verificationOptions = options;
-  qState.verificationAnswered = false;
-  qState.verificationSelectedIndex = -1;
-  qState.verificationCorrect = false;
-};
-
-window.submitVerificationAnswer = function(optionIndex) {
-  const qState = appState.quiz;
-  if (qState.verificationAnswered) return;
-  
-  qState.verificationAnswered = true;
-  qState.verificationSelectedIndex = optionIndex;
-  
-  const selectedOption = qState.verificationOptions[optionIndex];
-  const isCorrect = selectedOption.isCorrect;
-  qState.verificationCorrect = isCorrect;
-  
-  if (typeof playChronologyFeedbackTone === 'function') {
-    playChronologyFeedbackTone(isCorrect);
-  }
-  
-  if (isCorrect) {
-    // Show green highlight for visual feedback
-    renderQuiz();
-    // Auto-advance after 600ms delay so user can hear/see result
-    setTimeout(() => {
-      advanceVerification();
-    }, 600);
-  } else {
-    // Wrong choice: render review panel with detailed answer and manual Continue button
-    renderQuiz();
-  }
-};
-
-window.advanceVerification = function() {
-  const qState = appState.quiz;
-  qState.totalAttempts++;
-  
-  if (qState.activeQueue.length > 0) {
-    const currentCard = qState.activeQueue[0];
-    const gotIt = qState.verificationCorrect;
-    
-    if (gotIt) {
-      qState.score++;
-      const nextBox = Math.min(currentCard.box + 1, 5);
-      qState.masteryStates[currentCard.key] = nextBox;
-      
-      qState.xp += 10 + Math.min(qState.streak, 5) * 2;
-      qState.streak++;
-      qState.bestStreak = Math.max(qState.bestStreak, qState.streak);
-      
-      if (nextBox === 5) {
-        qState.masteredCount++;
-        qState.xp += 20; // Mastery bonus
-        qState.activeQueue.shift(); // Remove mastered card
-      } else {
-        const card = qState.activeQueue.shift();
-        card.box = nextBox;
-        qState.activeQueue.push(card); // Move to the back
-      }
-    } else {
-      qState.streak = 0;
-      const prevBox = currentCard.box || 1;
-      const nextBox = Math.max(prevBox - 1, 1);
-      qState.masteryStates[currentCard.key] = nextBox;
-      
-      const card = qState.activeQueue.shift();
-      card.box = nextBox;
-      qState.activeQueue.push(card); // Move to the back
-    }
-    
-    localStorage.setItem("elizabethan_mastery_states", JSON.stringify(qState.masteryStates));
-  }
-  
-  // Clear states
-  qState.verificationActive = false;
-  qState.verificationOptions = [];
-  qState.verificationAnswered = false;
-  qState.verificationSelectedIndex = -1;
-  qState.verificationCorrect = false;
-  
-  qState.isFlipped = false;
-  
-  setTimeout(() => {
-    renderQuiz();
-  }, 400);
-};
-
-window.copyToClipboard = function(elementId, textOverride = null) {
-  let text = "";
-  if (textOverride !== null) {
-    text = textOverride;
-  } else {
-    const el = document.getElementById(elementId);
-    if (el) text = el.value;
-  }
-  
-  if (!text.trim()) {
-    alert("Nothing to copy yet!");
-    return;
-  }
-  
-  navigator.clipboard.writeText(text).then(() => {
-    // Attempt to locate a button with onclick reference or any button inside the workspace column
-    const btn = document.activeElement;
-    if (btn && btn.tagName === "BUTTON") {
-      const originalText = btn.innerHTML;
-      btn.innerHTML = "✅ Copied!";
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-      }, 2000);
-    } else {
-      alert("Answer copied to clipboard!");
-    }
-  }).catch(err => {
-    console.error("Could not copy text: ", err);
-    alert("Copy failed. Please manually select and copy.");
-  });
-};
-
-// Global bridging functions
-window.bridgeTimelineToQuiz = function(sectionCode) {
-  const quizTopicIdx = quizData.findIndex(t => t.section === sectionCode);
-  if (quizTopicIdx !== -1) {
-    // Switch active tab to quizSection
-    const tab = document.querySelector('.nav-tab[data-target="quizSection"]');
-    if (tab) tab.click();
-    // Start the quiz
-    startQuizTopic(quizTopicIdx);
-  }
-};
-
-window.bridgeQuizToTimeline = function(sectionCode) {
-  // Switch tab to timelineSection
-  const tab = document.querySelector('.nav-tab[data-target="timelineSection"]');
-  if (tab) tab.click();
-  
-  // Set timeline filter to all and search query to sectionCode
-  appState.timelineFilter = "all";
-  appState.timelineSearchQuery = sectionCode.toLowerCase();
-  
-  // Update filter active tags in DOM
-  const filterTags = document.querySelectorAll(".filter-tag");
-  filterTags.forEach(t => {
-    if (t.getAttribute("data-filter") === "all") {
-      t.classList.add("active");
-    } else {
-      t.classList.remove("active");
-    }
-  });
-  
-  const timelineSearchInput = document.getElementById("timelineSearch");
-  if (timelineSearchInput) {
-    timelineSearchInput.value = sectionCode;
-  }
-  
-  renderTimeline();
-  
-  // Scroll to the card containing the section code
-  setTimeout(() => {
-    const cards = document.querySelectorAll(".kt-card");
-    for (let card of cards) {
-      const badge = card.querySelector(".kt-badge");
-      if (badge && badge.textContent.trim() === sectionCode) {
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-        // Expand events list
-        card.querySelectorAll(".event-item").forEach(item => item.classList.add("expanded"));
-        break;
-      }
-    }
-  }, 100);
-};
-
-window.resetTopicMastery = function(topicIdx) {
-  const topicData = quizData[topicIdx];
-  const qState = appState.quiz;
-  topicData.questions.forEach((q, idx) => {
-    const key = `${topicIdx}_${idx}`;
-    qState.masteryStates[key] = 1;
-  });
-  localStorage.setItem("elizabethan_mastery_states", JSON.stringify(qState.masteryStates));
-  startQuizTopic(topicIdx);
-};
-
-window.exitQuiz = function() {
-  appState.quiz.activeTopicIndex = -1;
-  appState.quiz.currentQuestionIndex = 0;
-  appState.quiz.score = 0;
-  appState.quiz.isFlipped = false;
-  appState.quiz.activeQueue = [];
-  appState.quiz.masteredCount = 0;
-  appState.quiz.xp = 0;
-  appState.quiz.streak = 0;
-  appState.quiz.bestStreak = 0;
-  appState.quiz.totalAttempts = 0;
-  appState.quiz.verificationActive = false;
-  appState.quiz.verificationOptions = [];
-  appState.quiz.verificationAnswered = false;
-  appState.quiz.verificationSelectedIndex = -1;
-  appState.quiz.verificationCorrect = false;
-  renderQuiz();
-};
-
-window.skipToResults = function() {
-  const topicData = quizData[appState.quiz.activeTopicIndex];
-  if (topicData) {
-    appState.quiz.masteredCount = topicData.questions.length;
-    appState.quiz.activeQueue = [];
-    renderQuiz();
-  }
-};
-
-function findQuestionId(arg1, arg2) {
-  let qType = null;
-  let qText = "";
-  if (arg2 !== undefined) {
-    qType = arg1;
-    qText = arg2;
-  } else {
-    qText = arg1;
-  }
-
-  if (!qText) return "";
-
-  const clean = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, "");
-
-  let qTypeKey = null;
-  if (qType) {
-    if (qType.toLowerCase().includes("feature") || qType.toLowerCase().includes("describe")) qTypeKey = "describe";
-    else if (qType.toLowerCase().includes("explain")) qTypeKey = "explain";
-    else qTypeKey = "essay";
-  }
-
-  const searchInList = (list) => {
-    const target = clean(qText);
-    for (const q of list) {
-      if (clean(q.question) === target) return q.id;
-    }
-    const normalizedTarget = target
-      .replace(/twofeaturesof/g, "onefeatureof")
-      .replace(/threefeaturesof/g, "onefeatureof");
-    for (const q of list) {
-      const cleanQ = clean(q.question).replace(/twofeaturesof/g, "onefeatureof").replace(/threefeaturesof/g, "onefeatureof");
-      if (cleanQ.includes(normalizedTarget) || normalizedTarget.includes(cleanQ)) {
-        return q.id;
-      }
-    }
-    return null;
-  };
-
-  if (qTypeKey) {
-    const matchedId = searchInList(examData[qTypeKey]);
-    if (matchedId) return matchedId;
-  } else {
-    for (const key of ["describe", "explain", "essay"]) {
-      const matchedId = searchInList(examData[key]);
-      if (matchedId) return matchedId;
-    }
-  }
-
-  const manualMap = {
-    "describeonefeatureofearlyelizabethansociety": "ex-desc-22",
-    "describeonefeatureofexplorationintheyears155888": "ex-desc-25",
-    "explainwhytherewasanincreaseinpovertyinelizabethanengland155888stimulusenclosuresheepfarming": "ex-exp-8",
-    "theenglishdefeatedthespanisharmadabeacuseofsuperiorshipdesignandnavaltacticshowfardoyouagreeexplainyouranswerstimulusenglishcannonsweather": "ex-essay-6",
-    "elizabethsreligioussettlementwassuccessfullyestablishedintheyears155969howfardoyouagreeexplainyouranswerstimulusthemiddlewaycatholicrebels": "ex-essay-2",
-    "describeonefeatureofeducationinearlyelizabethanengland": "ex-desc-21",
-    "describeonefeatureofthepuritanchallengetothereligioussettlement": "ex-desc-6",
-    "explainwhythespanisharmadawasdefeatedstimulussirfrancisdraketheuseoffireships": "ex-exp-6",
-    "themostsignificantchallengetoelizabethisreligioussettlementintheyears155868camefromenglishcatholicshowfardoyouagreeexplainyouranswerstimulusrecusancyfinesthepuritancampaignagainstcrucifixes": "ex-essay-3",
-    "poorplanningwasthemainreasonwhythefirstcolonyinvirginiafailedhowfardoyouagreeexplainyouranswerstimulussirwalterraleighlackoffoodsupplies": "ex-essay-8",
-    "describeonefeatureofgovernmentinearlyelizabethanengland": "ex-desc-1"
-  };
-
-  const cleanTarget = clean(qText)
-    .replace(/twofeaturesof/g, "onefeatureof")
-    .replace(/threefeaturesof/g, "onefeatureof");
-
-  return manualMap[cleanTarget] || "";
-}
-
-window.spinElizabethanWheel = function() {
-  const wheelSvg = document.getElementById("wheelSvg");
-  const spinBtn = document.getElementById("spinBtn");
-  const card = document.getElementById("wheelQuestionCard");
-  
-  if (!wheelSvg || !spinBtn || spinBtn.disabled) return;
-  
-  // Disable button during spin
-  spinBtn.disabled = true;
-  spinBtn.style.opacity = "0.7";
-  spinBtn.textContent = "SPINNING";
-  card.classList.remove("visible");
-  
-  // Choose random topic (0 to 11)
-  const selectedTopicIdx = Math.floor(Math.random() * elizabethanWheelData.length);
-  // Choose random question within that topic (0 to 2)
-  const selectedQIdx = Math.floor(Math.random() * 3);
-  
-  const topicData = elizabethanWheelData[selectedTopicIdx];
-  const questionData = topicData.questions[selectedQIdx];
-  
-  // Spin calculations - Cumulative degrees clockwise spin
-  const sliceDeg = 30; // 360 / 12
-  const targetSliceAngle = 360 - (selectedTopicIdx * sliceDeg);
-  const currentNormalized = currentWheelRotation % 360;
-  let angleDiff = targetSliceAngle - currentNormalized;
-  if (angleDiff <= 0) {
-    angleDiff += 360;
-  }
-  const spinRotation = 2160 + angleDiff;
-  currentWheelRotation += spinRotation;
-  
-  // Apply rotation
-  wheelSvg.style.transform = `rotate(${currentWheelRotation}deg)`;
-  
-  // Play sound effect using Web Audio API (shared context to avoid pool saturation)
-  try {
-    const audioCtx = getAudioContext();
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    let count = 0;
-    const interval = setInterval(() => {
-      if (count > 30) {
-        clearInterval(interval);
-        return;
-      }
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(250 + (30 - count) * 12, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.04);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.04);
-      count++;
-    }, 100);
-  } catch (e) {
-    // Audio context unsupported
-  }
-  
-  setTimeout(() => {
-    // Re-enable button
-    spinBtn.disabled = false;
-    spinBtn.style.opacity = "1";
-    spinBtn.textContent = "SPIN";
-    
-    // Fill in question card
-    document.getElementById("wheelQTopic").textContent = topicData.topic;
-    document.getElementById("wheelQType").textContent = questionData.type;
-    document.getElementById("wheelQText").textContent = questionData.text;
-    
-    // Set tip based on type
-    const tipEl = document.getElementById("wheelQTip");
-    const qId = findQuestionId(questionData.type, questionData.text);
-    const facts = qId ? examQuestionFacts[qId] : null;
-    if (facts) {
-      tipEl.innerHTML = `<strong>💡 Key Factual Hints:</strong><br>${facts.replace(/\n/g, '<br>')}`;
-    } else {
-      if (questionData.type.includes("Feature")) {
-        tipEl.innerHTML = `<strong>💡 Exam Tip (4 Marks):</strong> Identify <strong>two</strong> valid features and support each with a specific historical detail.`;
-      } else if (questionData.type.includes("Explain")) {
-        tipEl.innerHTML = `<strong>💡 Exam Tip (12 Marks):</strong> Structure your essay into <strong>3 PEEL paragraphs</strong> using specific evidence.`;
-      } else {
-        tipEl.innerHTML = `<strong>💡 Exam Tip (16 Marks):</strong> Construct a balanced essay with arguments for and against, concluding with a judgment.`;
-      }
-    }
-    
-    // Bind attempt button click
-    const attemptBtn = document.getElementById("attemptBtn");
-    if (attemptBtn) {
-      attemptBtn.onclick = () => {
-        attemptWheelQuestion(questionData.type, topicData.topic, questionData.text);
+        
+        initGuidedReadingTask(contentArea, unitData.guided_reading, { currentLessonIndex });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       };
+      navContainer.appendChild(grLink);
     }
+
+    const revisionLink = document.createElement('a');
+    revisionLink.className = 'lesson-link';
+    revisionLink.innerHTML = '🎮 Revision Zone';
+    revisionLink.style.marginTop = '15px';
+    revisionLink.style.borderTop = '2px solid rgba(255,255,255,0.1)';
+    revisionLink.style.color = '#fde047';
+    revisionLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      revisionLink.classList.add('active');
+      const contentArea = document.getElementById('engine-workbook-container');
+      contentArea.innerHTML = ''; // clear
+      renderRevisionZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(revisionLink);
+
+    const examPracticeLink = document.createElement('a');
+    examPracticeLink.className = 'lesson-link';
+    examPracticeLink.innerHTML = '✍️ Assessments & Exam Practice';
+    examPracticeLink.style.marginTop = '15px';
+    examPracticeLink.style.color = '#60a5fa'; // Blue-400
+    examPracticeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      examPracticeLink.classList.add('active');
+      const contentArea = document.getElementById('engine-workbook-container');
+      contentArea.innerHTML = ''; // clear
+      renderExamPracticeZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(examPracticeLink);
+
+    const quizPackLink = document.createElement('a');
+    quizPackLink.id = 'quiz-zone-link';
+    quizPackLink.className = 'lesson-link';
+    quizPackLink.innerHTML = '📝 Knowledge Quiz Zone';
+    quizPackLink.style.marginTop = '15px';
+    quizPackLink.style.color = '#34d399'; // Emerald-400
+    quizPackLink.style.cursor = 'pointer';
+    quizPackLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      quizPackLink.classList.add('active');
+      const contentArea = document.getElementById('engine-workbook-container');
+      contentArea.innerHTML = '';
+      renderQuizZone(contentArea, unitData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(quizPackLink);
+    const isCmeNew = window.currentUnitId === 'cme_new';
     
-    // Show card
-    card.classList.add("visible");
-  }, 3500);
-};
+    if (isCmeNew) {
+      const wbHeader = document.createElement('div');
+      wbHeader.innerHTML = '<i class="fa-solid fa-book" style="margin-right: 5px;"></i> <strong>Printable Workbooks</strong>';
+      wbHeader.style.marginTop = '20px';
+      wbHeader.style.color = '#334155';
+      wbHeader.style.fontSize = '0.9rem';
+      wbHeader.style.paddingLeft = '5px';
+      wbHeader.style.textTransform = 'uppercase';
+      wbHeader.style.letterSpacing = '0.5px';
+      navContainer.appendChild(wbHeader);
 
-window.attemptWheelQuestion = function(qType, topicLabel, questionText) {
-  let qTypeKey = "";
-  if (qType.includes("Feature")) qTypeKey = "describe";
-  else if (qType.includes("Explain")) qTypeKey = "explain";
-  else qTypeKey = "essay";
-  
-  const examList = examData[qTypeKey];
-  let matchedIdx = 0;
-  
-  // Clean wheel text to find matching question in examData
-  const firstLine = questionText.split('\n')[0];
-  const cleanWheelText = firstLine.replace(/[‘’'":\?\.\-]/g, "")
-                                  .replace(/two features of/g, "one feature of")
-                                  .replace(/three features of/g, "one feature of")
-                                  .replace(/\s+/g, "")
-                                  .toLowerCase();
-  
-  for (let i = 0; i < examList.length; i++) {
-    const examText = examList[i].question.replace(/[‘’'":\?\.\-]/g, "").replace(/\s+/g, "").toLowerCase();
-    if (examText.includes(cleanWheelText) || cleanWheelText.includes(examText)) {
-      matchedIdx = i;
-      break;
-    }
-  }
-  
-  // Update state to load this question
-  appState.activeQuestionType = qTypeKey;
-  appState.selectedIndexes[qTypeKey] = matchedIdx;
-  appState.activePracticePanel = "workspace";
-  
-  // Update sidebar buttons active classes
-  const sidebarButtons = document.querySelectorAll(".exam-nav-btn");
-  sidebarButtons.forEach(btn => {
-    if (btn.getAttribute("data-qtype") === qTypeKey) {
-      sidebarButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
-  });
-  
-  // Render workspace panel
-  renderExamWorkspace();
-};
-
-window.toggleExamHint = function() {
-  const hintBox = document.getElementById("examHintBox");
-  const hintBtn = document.getElementById("hintToggleBtn");
-  if (hintBox && hintBtn) {
-    if (hintBox.style.display === "none") {
-      hintBox.style.display = "block";
-      hintBtn.innerHTML = "💨 Clear Smoke Signal";
-    } else {
-      hintBox.style.display = "none";
-      hintBtn.innerHTML = "💨 Send up a Smoke Signal";
-    }
-  }
-};
-
-const curatedMockPapers = {
-  "mock1": {
-    "title": "Mock Exam 1: The 'High Probability' Paper",
-    "q1a": "ex-desc-11",
-    "q1b": "ex-desc-5",
-    "q2": "ex-exp-12",
-    "q3": "ex-essay-4",
-    "q4": "ex-essay-19"
-  },
-  "mock2": {
-    "title": "Mock Exam 2: The 'Moderate Probability' Paper",
-    "q1a": "ex-desc-1",
-    "q1b": "ex-desc-16",
-    "q2": "ex-exp-5",
-    "q3": "ex-essay-20",
-    "q4": "ex-essay-11"
-  },
-  "mock3": {
-    "title": "Mock Exam 3: The 'Mixed Threat' Paper",
-    "q1a": "ex-desc-20",
-    "q1b": "ex-desc-10",
-    "q2": "ex-exp-4",
-    "q3": "ex-essay-3",
-    "q4": "ex-essay-12"
-  },
-  "mock4": {
-    "title": "Mock Exam 4: The 'Least Likely' Paper",
-    "q1a": "ex-desc-22",
-    "q1b": "ex-desc-17",
-    "q2": "ex-exp-6",
-    "q3": "ex-essay-7",
-    "q4": "ex-essay-8"
-  }
-};
-
-window.startSelectedMockExam = function(value) {
-  if (value === "random") {
-    generateMockPaper();
-  } else {
-    const paperDef = curatedMockPapers[value];
-    if (paperDef) {
-      const findQ = (list, id) => list.find(q => q.id === id);
-      const q1a = findQ(examData.describe, paperDef.q1a);
-      const q1b = findQ(examData.describe, paperDef.q1b);
-      const q2 = findQ(examData.explain, paperDef.q2);
-      const q3 = findQ(examData.essay, paperDef.q3);
-      const q4 = findQ(examData.essay, paperDef.q4);
-
-      if (q1a && q1b && q2 && q3 && q4) {
-        appState.mockExam = { q1a, q1b, q2, q3, q4, isCurated: true, title: paperDef.title };
-        renderExamWorkspace();
-      } else {
-        console.error("Failed to load curated paper questions", paperDef);
+      for (let ktNum = 1; ktNum <= 3; ktNum++) {
+        const ktLink = document.createElement('a');
+        ktLink.className = 'lesson-link';
+        ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Workbook KT${ktNum}`;
+        ktLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook_KT${ktNum}.html` : `workbook_KT${ktNum}.html`;
+        ktLink.target = '_blank';
+        ktLink.style.marginTop = '8px';
+        ktLink.style.border = '2px dashed #cbd5e1';
+        navContainer.appendChild(ktLink);
       }
-    }
-  }
-};
-
-window.clearActiveMockExam = function() {
-  appState.mockExam = null;
-  renderExamWorkspace();
-};
-
-window.generateMockPaper = function() {
-  const features = examData.describe;
-  const explains = examData.explain;
-  const essays = examData.essay;
-
-  const q1a = features[Math.floor(Math.random() * features.length)];
-  let q1b = features[Math.floor(Math.random() * features.length)];
-  while (q1b.id === q1a.id) {
-    q1b = features[Math.floor(Math.random() * features.length)];
-  }
-
-  const q2 = explains[Math.floor(Math.random() * explains.length)];
-
-  // Choose two different essay questions
-  let q3 = essays[Math.floor(Math.random() * essays.length)];
-  let q4 = essays[Math.floor(Math.random() * essays.length)];
-  while (q3.id === q4.id) {
-    q4 = essays[Math.floor(Math.random() * essays.length)];
-  }
-
-  appState.mockExam = { q1a, q1b, q2, q3, q4 };
-  renderExamWorkspace();
-};
-
-window.toggleMockExamHint = function(qId) {
-  const hintBox = document.getElementById(`hintBox-${qId}`);
-  const hintBtn = document.getElementById(`hintBtn-${qId}`);
-  if (hintBox && hintBtn) {
-    if (hintBox.style.display === "none") {
-      hintBox.style.display = "block";
-      hintBtn.innerHTML = "💨 Clear Smoke Signal";
     } else {
-      hintBox.style.display = "none";
-      hintBtn.innerHTML = "💨 Send up a Smoke Signal";
+      const workbookLink = document.createElement('a');
+      workbookLink.className = 'lesson-link';
+      workbookLink.textContent = 'Pupil Workbook';
+      workbookLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
+      workbookLink.target = '_blank';
+      workbookLink.style.marginTop = '15px';
+      workbookLink.style.border = '2px dashed #cbd5e1';
+      navContainer.appendChild(workbookLink);
     }
   }
-};
 
-window.toggleMockExamModelAnswer = function(id, qType) {
-  const box = document.getElementById("modelAnswerBox-" + id);
-  const btn = document.getElementById("modelAnswerBtn-" + id);
-  if (box && btn) {
-    const isHidden = box.style.display === "none";
-    if (isHidden) {
-      // Find question
-      const examList = examData[qType];
-      const q = examList.find(item => item.id === id);
-      if (q && q.modelAnswer) {
-        let html = "";
-        if (qType === "describe") {
-          html = `
-            <p style="font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">Grade 9 Model Answer (2 Marks):</p>
-            <p><span class="hl-feature" style="background: rgba(99, 102, 241, 0.15); padding: 0.15rem 0.3rem; border-radius: 3px; font-weight: 600;">${q.modelAnswer.feature}</span> <span class="hl-evidence" style="background: rgba(234, 179, 8, 0.15); padding: 0.15rem 0.3rem; border-radius: 3px; font-weight: 600;">${q.modelAnswer.detail}</span></p>
+  // Render Lesson Content
+  function renderLesson(lesson) {
+    lesson = sanitizeLessonData(lesson);
+    assignQuestionNumbers(lesson);
+    window.currentActiveLesson = lesson;
+    let html = `<div class="lesson-content">`;
+    
+    if (unitEnquiryText) {
+      html += `
+        <div style="background: linear-gradient(135deg, #1e3a8a, #312e81); color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-size: 1.15rem; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid #a5b4fc;">
+          <i class="fa-solid fa-lightbulb" style="color: #fde047; margin-right: 10px;"></i> ${unitEnquiryText}
+        </div>
+      `;
+    }
+
+    html += `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 15px; border-bottom: 1px solid #e2e8f0; background: #ffffff; border-radius: 8px;">
+        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary);">${lesson.title}</h4>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+        </div>
+      </div>
+      <div id="progress-container" style="background: #e2e8f0; height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden;">
+        <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
+      </div>
+    `;
+
+    let fallbackEnquiry = lesson.enquiry || lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
+    if (fallbackEnquiry) {
+      html += `
+        <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Enquiry Question
+          </h3>
+          <p style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+            ${fallbackEnquiry}
+          </p>
+        </div>
+      `;
+    }
+
+    if (lesson.learning_objectives) {
+      html += `
+        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
+          </h3>
+          <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
+            ${lesson.learning_objectives.overarching}
+          </p>
+          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+            ${lesson.learning_objectives.scaffolded.map(obj => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    if (lesson.teacher_notes) {
+      let notesHtml = '';
+      
+      // Handle the new comprehensive object structure
+      if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
+        const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
+        const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
+        const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: ${note.question ? '10px' : '0'};">${note.primer}</div>
+            ${note.question ? `
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"${note.question}"</div>
+            </div>` : ''}
+          </div>
+        `).join('');
+        notesHtml = primerText + sourceContext + objectivesHtml;
+      } 
+      // Fallback for array structure
+      else if (Array.isArray(lesson.teacher_notes)) {
+        notesHtml = lesson.teacher_notes.map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: ${note.question ? '10px' : '0'};">${note.primer}</div>
+            ${note.question ? `
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"${note.question}"</div>
+            </div>` : ''}
+          </div>
+        `).join('');
+      } 
+      // Fallback for simple string
+      else {
+        notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
+      }
+
+      html += `
+        <div class="teacher-note">
+          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+          ${notesHtml}
+        </div>
+      `;
+    }
+
+    // Process Narrative Glossary Highlight
+    let vocabDict = {};
+    if (lesson.vocab) {
+      lesson.vocab.forEach(v => {
+        vocabDict[v.term.toLowerCase()] = v.definition;
+      });
+    }
+
+    let seenTerms = new Set();
+    const highlightGlossary = (text) => {
+      if (Object.keys(vocabDict).length === 0) return text;
+      let processedText = text;
+      const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
+      for (const term of sortedTerms) {
+        const def = vocabDict[term];
+        if (!seenTerms.has(term)) {
+          // No 'g' flag, so it only replaces the first occurrence in this chunk
+          const regex = new RegExp(`\\b(${term})\\b`, 'i');
+          if (regex.test(processedText)) {
+            processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
+            seenTerms.add(term);
+          }
+        }
+      }
+      return processedText;
+    };
+
+    let phaseNum = 1;
+    let globalQuestionNum = 1;
+
+    // Helper to format questions
+    const formatQuestion = (qText) => {
+      let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+      return `Question ${globalQuestionNum++}: ${cleaned}`;
+    };
+
+    // PHASE: Visual Source & Hook
+    if (lesson.primary_source) {
+      let src = lesson.primary_source.src;
+      // If the path doesn't start with http or ../, we assume it's relative to the current unit
+      
+      html += `
+        <div class="phase-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: ${lesson.learning_objective || 'Visual Source & Hook'}</div>
+          </div>
+          <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+            <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
+            <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
+            ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
+            ${lesson.primary_source.question ? `
+              <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
+                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(lesson.primary_source.question)}</strong></p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    // PHASE: Retrieval Recall
+    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Chronological Timeline</div>
+          </div>
+          <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+      `;
+      lesson.do_now.events.forEach((ev, idx) => {
+        html += `
+          <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+            <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
+            <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+            <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+            ${ev.img ? `<img src="${getAssetUrl(ev.img)}" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid #e2e8f0;">` : ''}
+          </div>
+        `;
+      });
+      html += `</div></div>`;
+    } else if (lesson.do_now && lesson.do_now.items) {
+
+      try {
+        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+          lesson.do_now.items.forEach(item => {
+            if (item.question.includes('PAST TOPIC:')) {
+              const unit = taught[Math.floor(Math.random() * taught.length)];
+              const bank = window.KNOWLEDGE_BANK[unit];
+              if (bank && bank.length > 0) {
+                const randQ = bank[Math.floor(Math.random() * bank.length)];
+                item.question = 'PAST TOPIC: ' + randQ.question;
+                item.answer = randQ.answer;
+              }
+            }
+          });
+        }
+      } catch(e) { console.error(e); }
+
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Do Now Tasks</div>
+            <button class="btn btn-secondary" onclick="window.toggleAllAnswers(this)" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+      `;
+      lesson.do_now.items.forEach((item, index) => {
+        let qText = item.question;
+        let aText = item.answer;
+        if (window.currentUnitId) {
+          qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+          aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+        }
+        const cardId = `donow-${phaseNum}-${index}`;
+        html += `
+          <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
+            <div>${qText}</div>
+            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
+          </div>
+        `;
+      });
+      html += `</div></div>`;
+    }
+
+    
+    // PHASE: Vocabulary Unlock (Tier 3)
+    const hasVocab = lesson.vocab && lesson.vocab.length > 0;
+    if (hasVocab) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">Phase ${phaseNum++}: Vocabulary Unlock</div>
+          </div>
+          <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><i class="fa-solid fa-spell-check" style="color: #3b82f6;"></i> <strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+          
+          <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      lesson.vocab.forEach((v, idx) => {
+        html += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+      });
+      
+      html += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+      
+      let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
+      defs.sort(() => Math.random() - 0.5);
+      
+      defs.forEach(d => {
+        html += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+      });
+      
+      html += `
+            </div>
+          </div>
+          <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+            <i class="fa-solid fa-star"></i> Vocabulary Mastered!
+          </div>
+        </div>
+        <div id="locked-content">
+      `;
+    }
+
+    // PHASE: Core Information & Sources
+    if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+      let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">Phase ${phaseNum++}: ${enquiryTitle}</div>
+          </div>
+      `;
+      
+      lesson.narrative_blocks.forEach((block, index) => {
+        if (block.type === 'interactive_map') {
+          html += `
+            <div class="interactive-map-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+              <h3 style="margin-top: 0; color: #1e293b; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-map-location-dot"></i> Interactive Historical Map</h3>
+              <div class="map-img-wrapper" style="position: relative; height: 500px; width: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
           `;
-        } else {
-          // Explain or Essay
-          html = `
-            <p style="font-weight: 700; color: #10b981; margin-bottom: 0.75rem;">Grade 9 Model Plan:</p>
-            ${q.modelAnswer.intro ? `<p style="font-style: italic; margin-bottom: 1rem;"><strong>Intro:</strong> ${q.modelAnswer.intro}</p>` : ""}
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
+          
+          block.maps.forEach((m, idx) => {
+            html += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+          });
+          
+          html += `
+              </div>
+              <div id="map-caption-display" style="font-size: 1.1rem; font-style: italic; color: #334155; min-height: 3em; margin-bottom: 20px;">${block.maps[0].caption}</div>
+              <div class="map-controls" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
           `;
-          if (q.modelAnswer.paragraphs) {
-            q.modelAnswer.paragraphs.forEach((p, idx) => {
-              html += `
-                <div style="padding-bottom: 0.75rem; border-bottom: 1px dashed var(--border-color);">
-                  <strong style="color: var(--primary);">PEEL ${idx + 1}:</strong>
-                  <ul style="margin: 0.25rem 0 0 0; padding-left: 1.25rem; font-size: 0.85rem; line-height: 1.5;">
-                    <li><strong>Point:</strong> ${p.point}</li>
-                    <li><strong>Evidence:</strong> ${p.evidence}</li>
-                    <li><strong>Explanation:</strong> ${p.explanation}</li>
-                    <li><strong>Link:</strong> ${p.link}</li>
-                  </ul>
+          
+          block.maps.forEach((m, idx) => {
+            const activeClass = idx === 0 ? 'active-map-btn' : '';
+            html += `
+                <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" onclick="toggleMap(this)" style="border-radius: 30px; padding: 8px 16px; font-weight: bold;">
+                  ${m.year} ${m.label}
+                </button>
+            `;
+          });
+          
+          html += `
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        const bg = (index % 2 === 0) ? '#ffffff' : '#f0f9ff';
+        const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
+        let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
+        contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/' + window.currentUnitId + '/assets/');
+        let styledContent = contentStr;
+        if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
+           const firstLetter = contentStr.charAt(0);
+           const rest = contentStr.slice(1);
+           styledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #1e3a8a;">${firstLetter}</span>` + rest;
+        }
+        
+        let l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.level_4}</em>` : highlightGlossary(block.level_4);
+        let l4StyledContent = l4ContentStr;
+        if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
+           const firstLetter = l4ContentStr.charAt(0);
+           const rest = l4ContentStr.slice(1);
+           l4StyledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` + rest;
+        }
+
+        const simplifyBtn = '';
+
+        // Render Standard Narrative Chunk
+        html += `
+          <div class="standard-narrative-container">
+            <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">${index + 1}</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${styledContent}</div>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                ${simplifyBtn}
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Render Level 4 Narrative Chunk
+        if (block.level_4) {
+          html += `
+            <div class="level4-narrative-container" style="display: none;">
+              <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
+                <div style="display: flex; align-items: flex-start;">
+                  <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                  
                 </div>
-              `;
-            });
-          }
-          if (q.modelAnswer.conclusion) {
-            html += `<p style="font-style: italic; margin-top: 0.5rem;"><strong>Conclusion:</strong> ${q.modelAnswer.conclusion}</p>`;
-          }
+              </div>
+            </div>
+          `;
+        }
+        
+        // Render Embedded Tasks for this chunk!
+        if (block.tasks && block.tasks.length > 0) {
+          html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
+          block.tasks.forEach((task, tIdx) => {
+             const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
+             const ansId = `ans-emb-${index}-${tIdx}`;
+             const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
+             const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
+             html += `
+               <div style="margin-bottom: 10px;">
+                 <strong>${qPrefix}${task.text}</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 ${starterBtn}
+                 ${starterDiv}
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
+               </div>
+             `;
+          });
           html += `</div>`;
         }
-        box.innerHTML = html;
-      } else {
-        box.innerHTML = `<p style="font-style: italic; color: var(--text-muted);">Model answer is being compiled.</p>`;
+      });
+
+      if (lesson.sources && lesson.sources.length > 0) {
+        html += `<div class="sources-grid" style="margin-top: 20px;">`;
+        lesson.sources.forEach(source => {
+          html += `
+            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+              ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
+              ${source.src ? `<img src="${getAssetUrl(source.src)}" alt="Source Image">` : ''}
+              ${source.caption ? `<p class="source-caption" style="text-align: left; color: #475569;">${source.caption}</p>` : ''}
+              ${source.question ? `
+                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+        html += `</div>`;
       }
-      box.style.display = "block";
-      btn.textContent = "📖 Hide Model Answer";
-      btn.style.borderColor = "#10b981";
-      btn.style.color = "#10b981";
-    } else {
-      box.style.display = "none";
-      btn.textContent = "📖 View Model Answer";
-      btn.style.borderColor = "var(--border-color)";
-      btn.style.color = "var(--text-main)";
+      html += `</div>`;
     }
-  }
-};
-
-// findQuestionId is now defined as a unified function at line 1725
-
-window.generateHistoricalPaper = function(seriesName) {
-  let paper;
-  if (seriesName) {
-    paper = officialPastPapers.find(p => p.series === seriesName);
-  } else {
-    paper = officialPastPapers[Math.floor(Math.random() * officialPastPapers.length)];
-  }
-  
-  if (paper) {
-    appState.activePastPaper = paper;
-    renderExamWorkspace();
-  }
-};
-
-window.clearActivePastPaper = function() {
-  appState.activePastPaper = null;
-  renderExamWorkspace();
-};
-
-/* --- GCSE Core Mastery Lessons Handlers --- */
-window.toggleHardMode = function() {
-  const container = document.getElementById("lessonContainer");
-  const toggleBtn = document.getElementById("hardModeToggle");
-  if (container && toggleBtn) {
-    const isActive = container.classList.toggle("hard-mode-active");
-    toggleBtn.classList.toggle("active", isActive);
-    
-    const strongs = container.querySelectorAll("strong, b");
-    strongs.forEach(el => {
-      if (isActive) {
-        el.setAttribute("title", "Hover/click to reveal fact");
-      } else {
-        el.removeAttribute("title");
+    // PHASE: Application Tasks & Historian Debates
+    if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
+      let hasModels = false;
+      if (lesson.tasks) {
+        hasModels = lesson.tasks.some(t => !!t.model);
       }
-    });
-  }
-};
-
-let selectedPeelOrder = [];
-window.clickPeelBox = function(el) {
-  if (el.classList.contains("correct")) return;
-
-  const order = parseInt(el.getAttribute("data-order"));
-  const badge = el.querySelector(".peel-box-badge");
-  const container = el.parentNode;
-  const message = container.parentNode.querySelector("#peelMessage");
-  const expectedNext = selectedPeelOrder.length + 1;
-
-  if (order === expectedNext) {
-    selectedPeelOrder.push(order);
-    el.classList.add("correct");
-    if (badge) {
-      const labels = ["Point (1)", "Evidence (2)", "Explanation (3)", "Link (4)"];
-      badge.textContent = labels[order - 1];
-      badge.style.background = "#10b981";
-      badge.style.color = "white";
-      badge.style.borderColor = "#10b981";
-    }
-
-    // Update dynamic preview box
-    const resultDiv = container.parentNode.querySelector(".peel-result-paragraph");
-    if (resultDiv) {
-      const textEl = resultDiv.querySelector(".peel-result-paragraph-text");
-      if (textEl) {
-        const boxes = Array.from(container.querySelectorAll(".peel-box"));
-        const correctTexts = [];
-        for (let i = 1; i <= selectedPeelOrder.length; i++) {
-          const box = boxes.find(b => parseInt(b.getAttribute("data-order")) === i);
-          if (box) {
-            const textSpan = box.querySelector("span:not(.peel-box-badge)");
-            correctTexts.push(textSpan ? textSpan.innerHTML : box.innerText);
-          }
-        }
-        textEl.style.color = "var(--text-main)";
-        textEl.innerHTML = correctTexts.join(" ");
-      }
-    }
-
-    if (selectedPeelOrder.length === 4) {
-      if (resultDiv) {
-        resultDiv.classList.add("completed");
-      }
-      if (message) {
-        message.style.color = "#10b981";
-        message.textContent = "🎉 Excellent! You have built a perfect PEEL paragraph. You started with a clear Point (P), backed it up with Evidence (E), provided an Explanation (E) of its impact, and finished with a strong Link (L) beginning with 'Therefore' to answer the question directly!";
-      }
-    } else {
-      if (message) {
-        message.style.color = "var(--accent-indigo)";
-        message.textContent = `Correct! Now select paragraph item ${expectedNext + 1}...`;
-      }
-    }
-  } else {
-    selectedPeelOrder = [];
-    const boxes = container.querySelectorAll(".peel-box");
-    boxes.forEach(box => {
-      box.classList.remove("correct");
-      const bBadge = box.querySelector(".peel-box-badge");
-      if (bBadge) {
-        bBadge.textContent = "Click to select";
-        bBadge.style.background = "";
-        bBadge.style.color = "";
-        bBadge.style.borderColor = "";
-      }
-    });
-    // Reset dynamic preview box
-    const resultDiv = container.parentNode.querySelector(".peel-result-paragraph");
-    if (resultDiv) {
-      resultDiv.classList.remove("completed");
-      const textEl = resultDiv.querySelector(".peel-result-paragraph-text");
-      if (textEl) {
-        textEl.style.color = "var(--text-muted)";
-        textEl.innerHTML = "As you click the cards in the correct order, your paragraph will be built here...";
-      }
-    }
-    if (message) {
-      message.style.color = "var(--accent-crimson)";
-      message.textContent = "Incorrect order! The PEEL structure requires Point first, then Evidence, then Explanation, and finally the Link. Try again!";
-    }
-  }
-};
-
-window.toggleHistorianAnswer = function(el) {
-  el.classList.toggle("expanded");
-  const icon = el.querySelector(".historian-question i");
-  if (icon) {
-    icon.classList.toggle("fa-chevron-down", !el.classList.contains("expanded"));
-    icon.classList.toggle("fa-chevron-up", el.classList.contains("expanded"));
-  }
-};
-
-window.toggleSkillCard = function(el) {
-  el.classList.toggle("expanded");
-  const icon = el.querySelector(".skill-card-front i");
-  if (icon) {
-    icon.classList.toggle("fa-chevron-down", !el.classList.contains("expanded"));
-    icon.classList.toggle("fa-chevron-up", el.classList.contains("expanded"));
-  }
-};
-
-window.jumpToExamQuestion = function(qType, questionId) {
-  const list = examData[qType];
-  const matchedIdx = list.findIndex(q => q.id === questionId);
-  if (matchedIdx === -1) return;
-
-  appState.currentTab = "practiceSection";
-  appState.activeQuestionType = qType;
-  appState.selectedIndexes[qType] = matchedIdx;
-  appState.activePracticePanel = "workspace";
-
-  const navTabs = document.querySelectorAll(".nav-tab");
-  const tabContents = document.querySelectorAll(".tab-content");
-  navTabs.forEach(t => {
-    t.classList.toggle("active", t.getAttribute("data-target") === "practiceSection");
-  });
-  tabContents.forEach(c => {
-    c.classList.toggle("active", c.getAttribute("id") === "practiceSection");
-  });
-
-  const sidebarButtons = document.querySelectorAll(".exam-nav-btn");
-  sidebarButtons.forEach(btn => {
-    btn.classList.toggle("active", btn.getAttribute("data-qtype") === qType);
-  });
-
-  renderExamWorkspace();
-  
-  setTimeout(() => {
-    const selector = document.getElementById("questionSelector");
-    if (selector) selector.value = matchedIdx;
-  }, 50);
-};
-
-function updateLessonSelectorUI() {
-  for (let i = 1; i <= 12; i++) {
-    const btn = document.getElementById(`btnLesson${i}`);
-    if (btn) {
-      const isMastered = appState.lessonsMastered[`lesson_${i}`];
-      const icon = btn.querySelector("i");
-      if (icon) {
-        if (isMastered) {
-          icon.className = "fa-solid fa-circle-check";
-          icon.style.color = "#10b981";
-        } else {
-          icon.className = "fa-solid fa-book-open";
-          icon.style.color = "";
-        }
-      }
-    }
-  }
-}
-
-window.masterLesson = function(btn) {
-  const lessonKey = `lesson_${currentLessonNum}`;
-  appState.lessonsMastered[lessonKey] = true;
-  localStorage.setItem("elizabethan_lessons_mastered", JSON.stringify(appState.lessonsMastered));
-  
-  updateLessonSelectorUI();
-
-  btn.textContent = "✅ Mastered!";
-  btn.style.background = "#10b981";
-  btn.style.borderColor = "#10b981";
-  
-  // Smooth scroll back to the lesson selector bar so they can choose another lesson
-  setTimeout(() => {
-    const selectorBar = document.querySelector(".lesson-selector-bar");
-    if (selectorBar) {
-      selectorBar.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    
-    // Reset button style
-    btn.textContent = "✅ Mark as Mastered";
-    btn.style.background = "";
-    btn.style.borderColor = "";
-  }, 1000);
-};
-
-const peelChallenges = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why Elizabeth faced challenges to her rule in 1558 was her financial weakness..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The inherited Crown debt." },
-      { order: 2, text: "She inherited a massive debt of <strong>£300,000</strong> from her sister, <strong>Mary I</strong>." },
-      { order: 3, text: "This severely limited her ability to raise an army or fight foreign wars, leaving England vulnerable to invasion." },
-      { order: 4, text: "Therefore, financial weakness was a primary domestic challenge because it left the new queen unable to defend her realm." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why Elizabeth faced challenges to her rule in 1558 was the military threat from France..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The hostile military alliance on England's borders." },
-      { order: 2, text: "The Auld Alliance meant French troops were stationed in Scotland, and France had just captured Calais in 1558." },
-      { order: 3, text: "This forced Elizabeth to sign the Treaty of Cateau-Cambrésis in 1559, accepting the humiliating loss of Calais to avoid an invasion." },
-      { order: 4, text: "Therefore, the French military threat forced Elizabeth into diplomatic compromise to secure her borders." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why Elizabeth faced challenges to her rule in 1558 was doubts over her legitimacy..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Her status as an illegitimate female ruler in the eyes of many." },
-      { order: 2, text: "Henry VIII had legally declared her illegitimate in 1536, and many Catholics viewed Mary, Queen of Scots as the rightful heir." },
-      { order: 3, text: "This undermined her authority from the outset, encouraging Catholic plots to replace her and raising pressure on her to marry." },
-      { order: 4, text: "Therefore, legitimacy doubts remained a constant threat by continually providing a political justification for rebellion." }
-    ]
-  }
-];
-
-const peelChallengesLesson2 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why Elizabeth introduced a Religious Settlement in 1559 was to bring peace to a divided country..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was to establish a 'Middle Way' to bring peace to a deeply divided country." },
-      { order: 2, text: "After Mary I burned 300 Protestants, religious tension was extremely high between Catholics and returning radical Protestants (Marian Exiles)." },
-      { order: 3, text: "By compromising on features like vestments while demanding an English Bible, Elizabeth avoided a religious civil war." },
-      { order: 4, text: "Therefore, the Religious Settlement was designed to secure political stability by offering a compromise that both sides could tolerate." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why Elizabeth chose the title \'Supreme Governor\' was to satisfy religious factions..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Elizabeth chose the title 'Supreme Governor' to appease both moderate Catholics and strict Puritans." },
-      { order: 2, text: "The 1559 Act of Supremacy deliberately avoided the title 'Supreme Head', which her father Henry VIII had used." },
-      { order: 3, text: "This led to greater acceptance across society, as Catholics could believe the Pope was spiritual head, and Puritans could believe only Christ was the head." },
-      { order: 4, text: "Therefore, the careful choice of title defused opposition by allowing different religious groups to interpret her authority acceptably." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why the Church of England was important in early Elizabethan society was to maintain control..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The Church was a vital tool for government propaganda and maintaining social control." },
-      { order: 2, text: "Parish priests were required to read government-approved <strong>Homilies</strong> (sermons) and repeat prayers of obedience for the Queen in their services." },
-      { order: 3, text: "This resulted in the constant reinforcement of the social hierarchy and ensured the monarch's message reached every village." },
-      { order: 4, text: "Therefore, the Church served as a powerful instrument of royal control by continuously instilling loyalty in the population." }
-    ]
-  }
-];
-
-let currentPeelIndex = 0;
-let currentLessonNum = 1;
-
-const peelChallengesLesson3 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why the Puritans challenged Elizabeth’s religious settlement was opposition to clerical dress..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was their intense opposition to the rules regarding clerical dress." },
-      { order: 2, text: "The 1559 Act of Uniformity dictated that all priests had to wear special, elaborate Catholic-style <strong>vestments</strong> during services." },
-      { order: 3, text: "Because Puritans believed priests should be plain and simple, this rule <span class=\"analytical-link-highlight\">caused</span> outrage, leading to the 1566 Vestment Controversy where 37 priests were sacked." },
-      { order: 4, text: "Therefore, clerical dress became a symbol of compromise that Puritans rejected as an unacceptable compromise with Catholic superstition." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why the Catholic challenge was a serious threat to Elizabeth was Papal support..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The Catholic challenge was serious because it was actively encouraged by the Papacy." },
-      { order: 2, text: "In <strong>1566</strong>, the Pope issued an instruction forbidding Catholics from attending Protestant services, and in <strong>1570</strong> he issued a Papal Bull excommunicating her." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">led to</span> domestic Catholics shifting from quiet survival to active treason, as the Pope had legally commanded them to overthrow the Queen." },
-      { order: 4, text: "Therefore, Papal backing transformed the Catholic challenge into a highly dangerous national security threat." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"One reason why the Puritan threat was considered less dangerous than the Catholic threat was foreign support..."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The Puritan threat was limited because they lacked international military backing." },
-      { order: 2, text: "Unlike English Catholics who could rely on the massive wealth and armies of <strong>Spain</strong> and <strong>France</strong>, Puritans had no foreign superpowers to ally with." },
-      { order: 3, text: "This meant that while Puritans were a noisy political nuisance in Parliament, they could never <span class=\"analytical-link-highlight\">cause</span> a foreign invasion to overthrow Elizabeth like the Catholics could." },
-      { order: 4, text: "Therefore, the lack of foreign support ensured that Puritan opposition never posed a genuine existential threat to the Crown." }
-    ]
-  }
-];
-
-const peelChallengesLesson4 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Mary\'s arrival in England in 1568 was a problem for Elizabeth."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was that Mary possessed a highly legitimate claim to the English crown." },
-      { order: 2, text: "Mary was the granddaughter of <strong>Margaret Tudor</strong>, and strict English Catholics believed Elizabeth was illegitimate because they did not recognize Henry VIII's divorce." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">caused</span> the Catholic threat to suddenly become real, as English traitors now had a living, legitimate figurehead they could put on the throne." },
-      { order: 4, text: "Therefore, Mary's arrival created an immediate domestic threat by giving Catholics a viable alternative monarch." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Elizabeth decided to keep Mary in captivity rather than returning her."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was that all other diplomatic options posed a direct military threat to England." },
-      { order: 2, text: "If she sent her back to Scotland, her Protestant allies might be <span class=\"analytical-link-highlight\">provoked</span>, and if she let her go to France, she could raise a Catholic invasion force." },
-      { order: 3, text: "Therefore, keeping her under comfortable house arrest at places like <strong>Tutbury Castle</strong> was the only option that <span class=\"analytical-link-highlight\">prevented</span> Mary from actively raising armies against England." },
-      { order: 4, text: "Therefore, imprisonment was the only logical choice to prevent Mary from becoming an active military leader for Elizabeth's enemies." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the York Conference was held in 1568."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was to legally justify Elizabeth's decision to imprison an anointed queen." },
-      { order: 2, text: "The inquiry was officially set up to examine the <strong>'Casket Letters'</strong> and determine if Mary was guilty of murdering <strong>Lord Darnley</strong>." },
-      { order: 3, text: "By reaching a 'verdict of nothing', Elizabeth <span class=\"analytical-link-highlight\">created</span> the perfect political excuse: she couldn't release Mary because she wasn't innocent, but couldn't execute her because she wasn't proven guilty." },
-      { order: 4, text: "Therefore, the York Conference served to buy Elizabeth time and establish a legal pretext for keeping Mary detained." }
-    ]
-  }
-];
-
-const peelChallengesLesson5 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the Revolt of the Northern Earls took place in 1569."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One major reason was the Earls' loss of political power and influence at Court." },
-      { order: 2, text: "The Earls of <strong>Northumberland and Westmorland</strong> were furious that Elizabeth bypassed them and gave important northern government roles to Protestant 'new men' like <strong>William Cecil</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">led to</span> deep resentment and a desire to rebel, as the ancient nobility felt they were being intentionally stripped of their traditional political authority by the Queen." },
-      { order: 4, text: "Therefore, the rebellion was triggered by the northern nobility's exclusion from national government and local influence." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Catholic plots against Elizabeth failed."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The main reason for their failure was the highly effective spy network run by Sir Francis Walsingham." },
-      { order: 2, text: "Walsingham employed cipher experts like <strong>Thomas Phelippes</strong> who successfully intercepted and decoded the secret messages hidden in beer barrels during the <strong>1586 Babington Plot</strong>." },
-      { order: 3, text: "Because Walsingham could read the plotters' exact plans before they acted, this <span class=\"analytical-link-highlight\">resulted in</span> him being able to arrest the traitors and prevent foreign invasions from ever launching." },
-      { order: 4, text: "Therefore, intelligence gathering and codebreaking were the primary reasons Catholic conspiracies never succeeded." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Mary, Queen of Scots was executed in 1587."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Mary was executed because Elizabeth's government finally obtained undeniable proof of her treason." },
-      { order: 2, text: "During the <strong>Babington Plot (1586)</strong>, Mary wrote a coded letter explicitly agreeing to the assassination of Elizabeth, which was intercepted by Walsingham." },
-      { order: 3, text: "Because the <strong>1584 Act for the Preservation of the Queen's Safety</strong> demanded the death of anyone plotting against Elizabeth, this intercepted letter legally <span class=\"analytical-link-highlight\">forced</span> Elizabeth to sign the death warrant." },
-      { order: 4, text: "Therefore, the execution of Mary was the direct result of Walsingham securing concrete, written proof of her complicity in assassination." }
-    ]
-  }
-];
-
-const peelChallengesLesson6 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why commercial rivalry in the New World caused tension with Spain."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was that Spain's strict trade monopoly led to violent clashes with English merchants." },
-      { order: 2, text: "Because Spain outlawed foreign trade, English merchants like <strong>John Hawkins</strong> were treated as pirates, leading to the Spanish ambumbing and destroying his fleet at <strong>San Juan de Ulúa in 1568</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">caused</span> deep resentment in England and shifted English tactics towards aggressive privateering to seek revenge against Spanish shipping." },
-      { order: 4, text: "Therefore, Spanish protectionism and the attack at San Juan de Ulúa pushed England toward state-sanctioned piracy." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Drake\'s circumnavigation worsened relations."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "A major reason was the massive theft of Spanish wealth and Elizabeth's public approval of it." },
-      { order: 2, text: "Drake captured <strong>£400,000</strong> in stolen Spanish treasure, and upon his return in <strong>1581</strong>, Elizabeth knighted him on his ship, the <em>Golden Hind</em>." },
-      { order: 3, text: "This directly <span class=\"analytical-link-highlight\">provoked</span> Philip II, as Elizabeth was openly rewarding and celebrating a man Spain viewed as a common thief and pirate." },
-      { order: 4, text: "Therefore, Drake's knighthood convinced Philip II that Elizabeth actively supported piracy against the Spanish Empire." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why political and religious rivalry caused tension."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Tension increased because Philip II actively supported treason against Elizabeth." },
-      { order: 2, text: "As a strict Catholic, Philip allowed his ambassadors to fund and support plots to replace Elizabeth with Mary, Queen of Scots, such as the <strong>Ridolfi Plot (1571)</strong> and the <strong>Throckmorton Plot (1583)</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">led to</span> Elizabeth viewing Spain not just as a religious rival, but as an active, existential military threat to her life and throne." },
-      { order: 4, text: "Therefore, Spain's financial and political backing of Catholic plots made direct military conflict inevitable." }
-    ]
-  }
-];
-
-const peelChallengesLesson7 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Elizabeth signed the Treaty of Nonsuch in 1585."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason was the strategic fear that Spain was about to completely conquer the Netherlands." },
-      { order: 2, text: "Following the assassination of <strong>William of Orange</strong> in <strong>1584</strong>, the Dutch Protestant rebellion was collapsing." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">forced</span> Elizabeth to send <strong>7,400 troops</strong> because she knew if Spain secured the ports directly across the Channel, they would use them as a launchpad to invade England." },
-      { order: 4, text: "Therefore, the threat of a Spanish invasion launched from a conquered Netherlands forced Elizabeth into direct military intervention." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Robert Dudley angered Elizabeth in the Netherlands."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Dudley angered Elizabeth by politically overstepping his authority and acting like a king." },
-      { order: 2, text: "In <strong>1586</strong>, Dudley accepted the official title of <strong>'Governor-General of the Netherlands'</strong> from the Dutch rebels." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">caused</span> Elizabeth's fury because she only wanted to protect English trade, not legally replace Philip II, which unnecessarily <span class=\"analytical-link-highlight\">provoked</span> Spain into a total war." },
-      { order: 4, text: "Therefore, Dudley's unauthorized actions undermined Elizabeth's diplomatic strategy and escalated tensions with Spain." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Drake\'s raid on Cadiz was significant."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The raid was highly significant because it severely crippled Spanish invasion preparations." },
-      { order: 2, text: "In April <strong>1587</strong>, Drake destroyed around <strong>30 Spanish ships</strong> and thousands of crucial wooden <strong>barrel staves</strong> at the port of Cadiz." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">resulted in</span> the Armada being delayed by a whole year, while the loss of the barrels meant the Spanish soldiers' food rotted during their eventual voyage in 1588." },
-      { order: 4, text: "Therefore, the raid on Cadiz bought England critical time to prepare its defenses by disrupting the Armada's logistics." }
-    ]
-  }
-];
-
-const peelChallengesLesson8 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the Spanish Armada was defeated (Tactics)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason the Armada was defeated was the superior, devastating naval tactics used by the English." },
-      { order: 2, text: "On the night of <strong>7 August 1588</strong>, the English deliberately sent <strong>8 burning fireships</strong> into the anchored Spanish fleet at Calais." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">caused</span> mass panic, leading the Spanish to cut their anchors and scatter, which destroyed their defensive crescent formation and allowed the English to finally attack them at Gravelines." },
-      { order: 4, text: "Therefore, the use of fireships was the turning point that broke the Armada's defensive formation and exposed them to defeat." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the Spanish Armada was defeated (Ship Design)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "A major reason for the English victory was their superior ship design and weaponry." },
-      { order: 2, text: "<strong>John Hawkins</strong> had designed 'race-built' galleons that were much faster than the bulky Spanish ships, and armed them with long-range cannons called <strong>culverins</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">resulted in</span> the English being able to stay out of range of the Spanish grappling hooks while simultaneously inflicting massive structural damage to the Armada with constant cannon fire." },
-      { order: 4, text: "Therefore, superior English ship design enabled them to control the tactical range and destroy Spanish ships from afar." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Philip II launched the Armada in 1588."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Philip was provoked into launching the Armada by direct English military interference." },
-      { order: 2, text: "In <strong>1585</strong>, Elizabeth had signed the <strong>Treaty of Nonsuch</strong>, sending <strong>7,400 troops</strong> under the Earl of Leicester to fight against Spain in the Netherlands." },
-      { order: 3, text: "By directly funding a war against Spain's empire, Elizabeth officially ended the 'Cold War' and <span class=\"analytical-link-highlight\">forced</span> Philip to invade England to stop them helping the Dutch." },
-      { order: 4, text: "Therefore, the Treaty of Nonsuch was the decisive act that convinced Philip II that only an invasion of England could secure his empire." }
-    ]
-  }
-];
-
-const peelChallengesLesson9 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why education changed in early Elizabethan England."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One major reason for educational change was the rapid growth of trade and the economy." },
-      { order: 2, text: "The 'middling sort', such as merchants and yeomen, increasingly needed their sons to be literate and numerate so they could navigate complex business contracts and keep accounts." },
-      { order: 3, text: "This economic necessity <span class=\"analytical-link-highlight\">led to</span> a massive expansion in schooling for the middle classes, resulting in <strong>72 new Grammar Schools</strong> being founded to teach these vital skills." },
-      { order: 4, text: "Therefore, the rise of a commercial economy was the primary catalyst for the expansion of grammar school education." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the theatre was so popular for all classes."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The theatre was immensely popular because it was physically and financially accessible to everyone in society." },
-      { order: 2, text: "The poorest citizens could pay just <strong>1 penny</strong> to stand as 'groundlings' in the pit, while the wealthy could pay more to sit comfortably in the tiered galleries." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">caused</span> the purpose-built theatres like The Rose to become the ultimate social hub, as it was one of the only places the rigid class system mixed to enjoy the same entertainment." },
-      { order: 4, text: "Therefore, low ticket prices turned the theatre into a rare space where all social classes shared a common culture." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why sport and pastimes highlighted the class divide."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Leisure activities highlighted the divide because most sports were restricted by wealth and free time." },
-      { order: 2, text: "The nobility played exclusive, expensive sports like <strong>Real Tennis</strong> and <strong>hawking</strong>, whereas the laboring poor played violent, rule-free games of <strong>village football</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">resulted in</span> a society where the rich enjoyed highly refined, skilled hobbies, while the poor, who had little money or free time, engaged in chaotic and brutal village brawls." },
-      { order: 4, text: "Therefore, sports and pastimes reinforced the Elizabethan class hierarchy by reflecting differences in wealth and status." }
-    ]
-  }
-];
-
-const peelChallengesLesson10 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why there was an increase in poverty (Enclosure)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One major reason for increased poverty was the changing use of land through the system of enclosure." },
-      { order: 2, text: "Wealthy landowners increasingly fenced off traditional common land to shift from crop farming to highly profitable <strong>sheep farming</strong>." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">forced</span> ordinary rural workers off the land, leaving them unable to grow their own food or forage to survive, leading to mass rural unemployment and vagabondage." },
-      { order: 4, text: "Therefore, enclosure directly caused poverty by displacing agricultural workers in favor of less labor-intensive sheep farming." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why there was an increase in poverty (Population)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Poverty increased dramatically due to an unprecedented population boom that outpaced food production." },
-      { order: 2, text: "The population of England skyrocketed from roughly <strong>3 million to 4.2 million</strong> during Elizabeth's reign." },
-      { order: 3, text: "This massive growth <span class=\"analytical-link-highlight\">caused</span> wages to plummet while the demand for food drove prices up (inflation), resulting in widespread starvation for the lower classes." },
-      { order: 4, text: "Therefore, rapid population growth created severe economic pressure by depressing wages and raising food costs." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why policies towards the poor changed."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The government changed its policies to actively provide for the poor because they feared that mass starvation would lead to rebellion." },
-      { order: 2, text: "The <strong>1576 Poor Relief Act</strong> required local <strong>JPs</strong> to provide raw materials like wool and hemp so the unemployed had a way to earn a living in 'Houses of Correction'." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">resulted in</span> a significant shift from merely punishing the poor to the government taking national responsibility to keep them fed and pacified." },
-      { order: 4, text: "Therefore, the fear of social disorder led to the first national system of state-sponsored poor relief." }
-    ]
-  }
-];
-
-const peelChallengesLesson11 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why there was an increase in exploration (Technology)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One major reason for increased exploration was the development of superior ship design." },
-      { order: 2, text: "English shipbuilders developed the <strong>galleon</strong>, which was significantly faster and possessed a much larger cargo hold for supplies than older ships." },
-      { order: 3, text: "Because these larger ships were more stable and could carry heavy <strong>culverin cannons</strong>, this <span class=\"analytical-link-highlight\">allowed</span> sailors to safely undertake dangerous transatlantic voyages without fear of sinking or pirate attacks." },
-      { order: 4, text: "Therefore, advancements in ship design provided explorers with the safety and range needed to undertake long voyages." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why there was an increase in exploration (Trade)."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Exploration increased because English merchants were desperately seeking new markets for their goods." },
-      { order: 2, text: "Spanish interference during the Dutch Revolt severely disrupted the traditional English cloth trade through the vital European port of <strong>Antwerp</strong>." },
-      { order: 3, text: "This economic crisis <span class=\"analytical-link-highlight\">forced</span> merchants to fund new, risky expeditions to places like the Americas and Asia to find new trade partners and avoid financial ruin." },
-      { order: 4, text: "Therefore, the collapse of trade in Antwerp forced merchants to finance voyages to find new markets." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Drake\'s circumnavigation was significant."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "The circumnavigation was highly significant because it drastically worsened diplomatic relations with Spain." },
-      { order: 2, text: "Drake returned in <strong>1580</strong> with <strong>£400,000</strong> in stolen Spanish treasure, and Elizabeth controversially knighted him aboard the <em>Golden Hind</em>." },
-      { order: 3, text: "By publicly rewarding a man who had stolen Spanish wealth, Elizabeth deeply humiliated King Philip II, which <span class=\"analytical-link-highlight\">provoked</span> him further down the path towards war." },
-      { order: 4, text: "Therefore, Drake's achievement escalated hostilities by proving English state support for attacks on Spanish ships." }
-    ]
-  }
-];
-
-const peelChallengesLesson12 = [
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the English attempted to colonise Virginia."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "One reason for the attempted colonisation was to find new commercial markets for trade." },
-      { order: 2, text: "The Virginia territory was rich in resources that could not be grown in Europe, such as <strong>tobacco and sugar cane</strong>." },
-      { order: 3, text: "Because their main trading port at <strong>Antwerp</strong> had been disrupted by the Spanish, establishing a colony <span class=\"analytical-link-highlight\">created</span> a massive new opportunity to sell English cloth to native populations and bring back valuable goods." },
-      { order: 4, text: "Therefore, colonisation was attempted to secure raw materials and offset the loss of traditional European markets." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why Sir Walter Raleigh was significant to the Virginia project."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "Raleigh was highly significant because he provided the crucial organisation and funding required to make the expedition happen." },
-      { order: 2, text: "After receiving his royal patent in <strong>1584</strong>, Raleigh successfully raised vast amounts of money from investors and recruited expert sailors like <strong>Richard Grenville</strong> to lead the fleet." },
-      { order: 3, text: "This <span class=\"analytical-link-highlight\">led to</span> the voyage actually becoming a reality, because without his influence at court to persuade wealthy merchants to invest, the expensive ships and supplies could never have been purchased." },
-      { order: 4, text: "Therefore, Raleigh's financial planning and court connections were the primary drivers behind the Roanoke expedition." }
-    ]
-  },
-  {
-    question: 'Construct a PEEL paragraph for a causation essay statement: <em>"Explain why the first Virginia colony failed."</em>. Click the scrambled cards below in the correct order: <strong>Point ➔ Evidence ➔ Explanation ➔ Link</strong>.',
-    items: [
-      { order: 1, text: "A major reason for the failure of the colony was the disastrous loss of vital supplies." },
-      { order: 2, text: "As the fleet arrived at Roanoke Island in <strong>1585</strong>, the flagship, the <strong>Tiger</strong>, struck a sandbank and seawater flooded the hull." },
-      { order: 3, text: "This completely ruined their winter food and crop seeds, which <span class=\"analytical-link-highlight\">caused</span> the starving colonists to aggressively demand food from the local Native Americans, ultimately <span class=\"analytical-link-highlight\">provoking</span> a war." },
-      { order: 4, text: "Therefore, the loss of provisions doomed the settlement by forcing conflict with the local population to survive." }
-    ]
-  }
-];
-
-window.switchActiveLesson = function(lessonNum) {
-  currentLessonNum = lessonNum;
-  const container = document.getElementById("lessonContainer");
-  const template = document.getElementById(`lesson` + lessonNum + `Template`);
-  if (container && template) {
-    container.innerHTML = template.innerHTML;
-    
-    // Update active button state
-    const btn1 = document.getElementById("btnLesson1");
-    const btn2 = document.getElementById("btnLesson2");
-    const btn3 = document.getElementById("btnLesson3");
-    const btn4 = document.getElementById("btnLesson4");
-    const btn5 = document.getElementById("btnLesson5");
-    const btn6 = document.getElementById("btnLesson6");
-    const btn7 = document.getElementById("btnLesson7");
-    const btn8 = document.getElementById("btnLesson8");
-    const btn9 = document.getElementById("btnLesson9");
-    const btn10 = document.getElementById("btnLesson10");
-    const btn11 = document.getElementById("btnLesson11");
-    const btn12 = document.getElementById("btnLesson12");
-    if (btn1) btn1.classList.toggle("active", lessonNum === 1);
-    if (btn2) btn2.classList.toggle("active", lessonNum === 2);
-    if (btn3) btn3.classList.toggle("active", lessonNum === 3);
-    if (btn4) btn4.classList.toggle("active", lessonNum === 4);
-    if (btn5) btn5.classList.toggle("active", lessonNum === 5);
-    if (btn6) btn6.classList.toggle("active", lessonNum === 6);
-    if (btn7) btn7.classList.toggle("active", lessonNum === 7);
-    if (btn8) btn8.classList.toggle("active", lessonNum === 8);
-    if (btn9) btn9.classList.toggle("active", lessonNum === 9);
-    if (btn10) btn10.classList.toggle("active", lessonNum === 10);
-    if (btn11) btn11.classList.toggle("active", lessonNum === 11);
-    if (btn12) btn12.classList.toggle("active", lessonNum === 12);
-    
-    // Sync mobile select dropdown
-    const mobileSelect = document.getElementById("mobileLessonSelect");
-    if (mobileSelect) {
-      mobileSelect.value = lessonNum;
-    }
-    
-    // Reset Hard Mode
-    container.classList.remove("hard-mode-active");
-    const toggleBtn = document.getElementById("hardModeToggle");
-    if (toggleBtn) toggleBtn.classList.remove("active");
-    
-    // Reset PEEL
-    currentPeelIndex = 0;
-    renderPeelChallenge(0);
-    
-    // Initialize In-Lesson Chronology game
-    initActiveLessonGame(lessonNum);
-  }
-};
-
-window.loadNextPeelChallenge = function() {
-  const activeChallenges = currentLessonNum === 1 ? peelChallenges : (currentLessonNum === 2 ? peelChallengesLesson2 : (currentLessonNum === 3 ? peelChallengesLesson3 : (currentLessonNum === 4 ? peelChallengesLesson4 : (currentLessonNum === 5 ? peelChallengesLesson5 : (currentLessonNum === 6 ? peelChallengesLesson6 : (currentLessonNum === 7 ? peelChallengesLesson7 : (currentLessonNum === 8 ? peelChallengesLesson8 : (currentLessonNum === 9 ? peelChallengesLesson9 : (currentLessonNum === 10 ? peelChallengesLesson10 : (currentLessonNum === 11 ? peelChallengesLesson11 : peelChallengesLesson12))))))))));
-  currentPeelIndex = (currentPeelIndex + 1) % activeChallenges.length;
-  renderPeelChallenge(currentPeelIndex);
-};
-
-function renderPeelChallenge(index) {
-  selectedPeelOrder = [];
-  const activeChallenges = currentLessonNum === 1 ? peelChallenges : (currentLessonNum === 2 ? peelChallengesLesson2 : (currentLessonNum === 3 ? peelChallengesLesson3 : (currentLessonNum === 4 ? peelChallengesLesson4 : (currentLessonNum === 5 ? peelChallengesLesson5 : (currentLessonNum === 6 ? peelChallengesLesson6 : (currentLessonNum === 7 ? peelChallengesLesson7 : (currentLessonNum === 8 ? peelChallengesLesson8 : (currentLessonNum === 9 ? peelChallengesLesson9 : (currentLessonNum === 10 ? peelChallengesLesson10 : (currentLessonNum === 11 ? peelChallengesLesson11 : peelChallengesLesson12))))))))));
-  const challenge = activeChallenges[index];
-  
-  const activeLessonContainer = document.getElementById("lessonContainer");
-  const qText = activeLessonContainer ? activeLessonContainer.querySelector("#peelQuestionText") : null;
-  const msg = activeLessonContainer ? activeLessonContainer.querySelector("#peelMessage") : null;
-  const container = activeLessonContainer ? activeLessonContainer.querySelector("#peelLinker") : null;
-
-  if (qText) {
-    qText.innerHTML = challenge.question;
-  }
-  if (msg) {
-    msg.textContent = "";
-  }
-
-  // Clone and shuffle items
-  const items = [...challenge.items];
-  let shuffled;
-  do {
-    shuffled = items.sort(() => Math.random() - 0.5);
-  } while (shuffled[0].order === 1 && shuffled[1].order === 2); // Make sure it's not already in correct order
-
-  if (container) {
-    container.innerHTML = shuffled.map(item => `
-      <div class="peel-box" data-order="${item.order}" onclick="clickPeelBox(this)">
-        <span class="peel-box-badge" id="badge-${item.order}">Click to select</span>
-        <span>${item.text}</span>
-      </div>
-    `).join('');
-
-    // Ensure the result paragraph preview box exists right below the peelLinker container
-    let resultDiv = container.parentNode.querySelector(".peel-result-paragraph");
-    if (!resultDiv) {
-      resultDiv = document.createElement("div");
-      resultDiv.className = "peel-result-paragraph";
-      container.parentNode.insertBefore(resultDiv, container.nextSibling);
-    }
-    resultDiv.innerHTML = `
-      <div class="peel-result-paragraph-title">Paragraph Preview</div>
-      <div class="peel-result-paragraph-text" style="color: var(--text-muted);">As you click the cards in the correct order, your paragraph will be built here...</div>
-    `;
-    resultDiv.classList.remove("completed");
-  }
-}
-
-function setupPeelLinker() {
-  // Load Lesson 1 automatically on initial start
-  switchActiveLesson(1);
-}
-
-// Onboarding Controller
-let currentOnboardingSlide = 1;
-
-window.checkFirstTimeUser = function() {
-  const isFirstTime = localStorage.getItem('firstTimeUser') === null;
-  if (isFirstTime) {
-    const modal = document.getElementById('onboardingModal');
-    if (modal) modal.style.display = 'flex';
-  }
-};
-
-window.closeOnboarding = function() {
-  const modal = document.getElementById('onboardingModal');
-  if (modal) modal.style.display = 'none';
-  localStorage.setItem('firstTimeUser', 'false');
-};
-
-window.moveOnboardingSlide = function(direction) {
-  const slides = document.querySelectorAll('.onboarding-slide');
-  if (slides.length === 0) return;
-  
-  if (currentOnboardingSlide === slides.length && direction === 1) {
-    window.closeOnboarding();
-    return;
-  }
-  
-  slides[currentOnboardingSlide - 1].classList.remove('active');
-  currentOnboardingSlide += direction;
-  if (currentOnboardingSlide < 1) currentOnboardingSlide = 1;
-  if (currentOnboardingSlide > slides.length) currentOnboardingSlide = slides.length;
-  
-  slides[currentOnboardingSlide - 1].classList.add('active');
-  
-  const stepIndicator = document.querySelector('.step-indicator');
-  if (stepIndicator) {
-    stepIndicator.innerText = `Step ${currentOnboardingSlide} of ${slides.length}`;
-  }
-  
-  const prevBtn = document.querySelector('.prev-btn');
-  if (prevBtn) {
-    prevBtn.style.visibility = currentOnboardingSlide === 1 ? 'hidden' : 'visible';
-  }
-  
-  const nextBtn = document.querySelector('.next-btn');
-  if (nextBtn) {
-    if (currentOnboardingSlide === slides.length) {
-      nextBtn.innerText = 'Get Started';
-    } else {
-      nextBtn.innerText = 'Next';
-    }
-  }
-};
-
-window.showOnboarding = function() {
-  const modal = document.getElementById('onboardingModal');
-  if (!modal) return;
-  
-  const slides = document.querySelectorAll('.onboarding-slide');
-  if (slides.length === 0) return;
-  
-  // Reset active slide
-  slides.forEach((slide) => slide.classList.remove('active'));
-  currentOnboardingSlide = 1;
-  slides[0].classList.add('active');
-  
-  // Reset buttons and indicator
-  const stepIndicator = document.querySelector('.step-indicator');
-  if (stepIndicator) {
-    stepIndicator.innerText = `Step 1 of ${slides.length}`;
-  }
-  
-  const prevBtn = document.querySelector('.prev-btn');
-  if (prevBtn) {
-    prevBtn.style.visibility = 'hidden';
-  }
-  
-  const nextBtn = document.querySelector('.next-btn');
-  if (nextBtn) {
-    nextBtn.innerText = 'Next';
-  }
-  
-  modal.style.display = 'flex';
-};
-
-// Trigger initial load
-window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(window.checkFirstTimeUser, 1000);
-});
-
-function getTrophyForTopic(topicIdx) {
-  let themeIndex = 4; // Default to Mr Lovett's History Hub Guild
-  if ([0, 3].includes(topicIdx)) themeIndex = 0; // Spy Network
-  else if ([8].includes(topicIdx)) themeIndex = 1; // Globe Theatre
-  else if ([1, 2].includes(topicIdx)) themeIndex = 2; // Royal Court
-  else if ([10, 11].includes(topicIdx)) themeIndex = 3; // High Seas
-  
-  const theme = quizResultThemes[themeIndex];
-  const tierIdx = Math.floor(Math.random() * 3) + 1; // Pick random tier (1, 2, or 3)
-  return theme.tiers[tierIdx] || theme.tiers[0];
-}
-
-const historyAppQuotes = [
-  "Elizabethan Revision: Master the challenges of the Queen's accession in 1558.",
-  "Religious Settlement 1559: Why did Elizabeth choose the 'Middle Way' between Catholics and Protestants?",
-  "Threats Focus: Contrast the Revolt of the Northern Earls (1569) with the Ridolfi Plot (1571).",
-  "Foreign Policy: How did Drake's privateering and Spanish silver raids tension relations with Philip II?",
-  "Armada 1588: Remember the tactical significance of the fireships at Calais and the wind direction.",
-  "Social Change: Focus on the causes of rising poverty, including enclosure and population growth.",
-  "Privy Council: Sir William Cecil and Sir Francis Walsingham were crucial to maintaining Elizabeth's security.",
-  "Leitner Active Recall: Use the flashcard box regularly to transfer facts to long-term memory.",
-  "Exam Skills Focus: Practice analyzing 4-mark features, 12-mark explanations, and 16-mark judgment essays."
-];
-
-let chimneyQuoteTimeout = null;
-
-function rotateChimneyTaglines() {
-  const bar = document.getElementById("topMetaBar");
-  const el = document.getElementById("chimneyQuoteDisplay");
-  if (!bar || !el) return;
-  
-  // Fade in the entire bar immediately and make it interactive
-  bar.style.opacity = "1";
-  bar.style.pointerEvents = "auto";
-  el.style.opacity = "1";
-  
-  const randomIndex = Math.floor(Math.random() * historyAppQuotes.length);
-  el.innerText = `"${historyAppQuotes[randomIndex]}"`;
-  
-  if (chimneyQuoteTimeout) {
-    clearTimeout(chimneyQuoteTimeout);
-  }
-  
-  // Fade out the entire bar after 5 seconds
-  chimneyQuoteTimeout = setTimeout(() => {
-    bar.style.opacity = "0";
-    bar.style.pointerEvents = "none";
-  }, 5000);
-}
-
-// Add global listener to change quote on every click in the app
-document.addEventListener("click", () => {
-  rotateChimneyTaglines();
-});
-
-// ==========================================
-// TIME-TRAVELLER VAULT MINI-GAME HUB LOGIC
-// ==========================================
-
-const ttGameState = {
-  activeGameId: null,
-  cyoa: {
-    step: 1,
-    scores: {}
-  },
-  hotseat: {
-    history: []
-  },
-  vagrancy: {
-    positions: {} // cardId -> '1572', '1576', or 'pool'
-  },
-  roanoke: {
-    found: []
-  },
-  cipherRoom: {
-    unlocked: [false, false, false, false, false],
-    activeFileIndex: null,
-    showModelAnswer: false
-  },
-  armadaTactical: {
-    scenarioIndex: 0
-  },
-  tabooGenerator: {
-    deck: [],
-    currentIndex: 0,
-    score: 0,
-    passed: 0,
-    timeRemaining: 60,
-    timerInterval: null,
-    revealed: false
-  },
-  middleWay: {
-    currentTileIndex: 0,
-    answers: {} // tileIndex -> category
-  }
-};
-
-window.initChronologyGame = function() {
-  ttGameState.activeGameId = null;
-  ttGameState.cyoa = { step: 1, scores: {} };
-  ttGameState.hotseat = { history: [] };
-  ttGameState.vagrancy = { positions: {} };
-  ttGameState.roanoke = { found: [] };
-  ttGameState.cipherRoom = {
-    unlocked: [false, false, false, false, false],
-    activeFileIndex: null,
-    showModelAnswer: false
-  };
-  ttGameState.armadaTactical = { scenarioIndex: 0 };
-  ttGameState.tabooGenerator = {
-    deck: [],
-    currentIndex: 0,
-    score: 0,
-    passed: 0,
-    timeRemaining: 60,
-    timerInterval: null,
-    revealed: false
-  };
-  ttGameState.middleWay = {
-    currentTileIndex: 0,
-    answers: {}
-  };
-};
-
-// Main Game Loaders & UI Router
-window.loadTTGame = function(gameId) {
-  ttGameState.activeGameId = gameId;
-  const dashboard = document.getElementById("ttGameHubDashboard");
-  const activePanel = document.getElementById("ttActiveGamePanel");
-  const container = document.getElementById("ttActiveGameContainer");
-  
-  if (dashboard) dashboard.style.display = "none";
-  if (activePanel) activePanel.style.display = "block";
-  if (!container) return;
-  
-  container.innerHTML = "";
-  
-  // Render specific game
-  if (gameId === 'game_taboo') {
-    initTabooSetupScreen(container);
-  } else if (gameId === 'game_cipher_room') {
-    initCipherRoomGame(container);
-  } else if (gameId === 'game_armada_tactical') {
-    initArmadaTacticalGame(container);
-  } else if (gameId === 'game_taboo_generator') {
-    initTabooGeneratorGame(container);
-  } else if (gameId === 'game_middle_way') {
-    initMiddleWayGame(container);
-  } else if (gameId === 'cyoa_walsingham') {
-    ttGameState.cyoa.step = 1;
-    container.innerHTML = `
-      <div class="cyoa-scenario-card" id="cyoa_walsingham_card">
-        <h3>🕵️ Sir Francis Walsingham: The Spymaster's Choice</h3>
-        <p class="examiner-warning" style="background-color: rgba(79, 70, 229, 0.04); border-left-color: var(--primary); color: var(--text-main);">
-          <strong>Pedagogical Value:</strong> This scenario tests your understanding of Walsingham's spy network and the Babington Plot (1586), a crucial key topic in the Edexcel spec.
-        </p>
-        <div id="cyoaContent">
-          <p class="cyoa-intro">
-            It is July 1586. Your master codebreaker, Thomas Phelippes, has intercepted and deciphered a coded letter sent by Anthony Babington. The letter reveals a conspiracy to assassinate Queen Elizabeth and place Mary, Queen of Scots, on the throne. However, you do not yet have absolute proof of Mary's direct involvement.
-            <br><br>
-            Do you arrest Babington immediately, or do you allow the letters to keep flowing to trap Mary?
-          </p>
-          <div class="cyoa-options">
-            <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_walsingham', 'arrest_early')">
-              <strong>Option A: Arrest Babington immediately</strong>
-              <span>Ensure Elizabeth's immediate safety, but risk not having enough evidence to execute Mary.</span>
-            </button>
-            <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_walsingham', 'wait_for_proof')">
-              <strong>Option B: Wait and monitor the letters</strong>
-              <span>Allow the letters to reach Mary in the hope she replies and incriminates herself, but risk the Queen's safety.</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-  } else if (gameId === 'cyoa_elizabeth') {
-    ttGameState.cyoa.step = 1;
-    container.innerHTML = `
-      <div class="cyoa-scenario-card" id="cyoa_elizabeth_card">
-        <h3>👑 Queen Elizabeth I: The Monarch's Dilemma</h3>
-        <p class="examiner-warning" style="background-color: rgba(79, 70, 229, 0.04); border-left-color: var(--primary); color: var(--text-main);">
-          <strong>Pedagogical Value:</strong> This scenario tests your understanding of the Religious Settlement of 1559, compromising with moderate Catholics, and overcoming Catholic resistance in the House of Lords.
-        </p>
-        <div id="cyoaContent">
-          <p class="cyoa-intro">
-            It is 1559. You are Queen Elizabeth I. You need to pass your new religious settlement through Parliament to unify England after the turbulent Catholic reign of Mary I. The Protestant Commons passes the bill easily, but the House of Lords—filled with Catholic bishops appointed by Mary I—fiercely opposes it. They reject the clause naming you "Supreme Head of the Church of England" because they believe a woman cannot hold this title.
-            <br><br>
-            How will you handle this Catholic opposition?
-          </p>
-          <div class="cyoa-options">
-            <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_elizabeth', 'threaten_arrest')">
-              <strong>Option A: Insist on 'Supreme Head' and threaten arrest</strong>
-              <span>Demand obedience, maintain the title, and threaten Catholic bishops with immediate arrest for treason.</span>
-            </button>
-            <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_elizabeth', 'change_title')">
-              <strong>Option B: Change the title to 'Supreme Governor'</strong>
-              <span>Compromise by using the title 'Supreme Governor' to ease moderate Catholic concerns.</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-  } else if (gameId === 'hotseat_armada' || gameId === 'hotseat_puritan') {
-    const isArmada = gameId === 'hotseat_armada';
-    const avatar = isArmada ? "⛵" : "📖";
-    const name = isArmada ? "Diego de Mendoza" : "John Stubbs";
-    const title = isArmada ? "Armada Sailor (Shipwrecked in Ireland, 1588)" : "Puritan Dissenter & Writer (Westminster, 1579)";
-    const initialMsg = isArmada 
-      ? "¡Hola! I am Diego. I sailed on the San Martin. Now I am cold and wet, stranded on this dark Irish coast. Ask me of our grand design, and why our invasion failed."
-      : "God save the Queen! I am John Stubbs, a humble servant of Christ. Though my right hand was severed for speaking out, my voice remains whole. Ask me of the corruptions of the Church, or why I opposed the French marriage.";
-    
-    const suggestions = isArmada 
-      ? ["Why did the Armada fail?", "What happened at Gravelines?", "Tell me about the fireships.", "How were your supplies?"]
-      : ["Why oppose the French marriage?", "What is wrong with the Settlement?", "How did you lose your hand?", "What are prophesyings?"];
-    
-    const chipHtml = suggestions.map(s => `
-      <button class="suggestion-chip" onclick="clickSuggestionChip('${gameId}', '${s.replace(/'/g, "\\'")}')">${s}</button>
-    `).join('');
-    
-    container.innerHTML = `
-      <div class="hotseat-card">
-        <div class="hotseat-header">
-          <div class="hotseat-avatar">${avatar}</div>
-          <div class="hotseat-header-info">
-            <h4>${name}</h4>
-            <span>${title}</span>
-          </div>
-        </div>
-        <div class="hotseat-chat-feed" id="hotseatChatFeed">
-          <div class="chat-bubble character">
-            ${initialMsg}
-          </div>
-        </div>
-        <div class="hotseat-footer">
-          <div class="hotseat-suggestions">
-            ${chipHtml}
-          </div>
-          <div class="hotseat-input-container">
-            <input type="text" class="hotseat-input" id="hotseatInput" placeholder="Ask a question..." onkeydown="if(event.key === 'Enter') sendHotseatMessage('${gameId}')">
-            <button class="btn btn-primary" onclick="sendHotseatMessage('${gameId}')" style="border-radius: 20px; padding: 0.5rem 1.25rem;">Ask</button>
-          </div>
-        </div>
-      </div>
-    `;
-  } else if (gameId === 'challenge_vagrancy') {
-    ttGameState.vagrancy.positions = {};
-    
-    const unsortedHtml = vagrancyCardsData.map(c => `
-      <div class="knowledge-card vagrancy-card" id="vagrancy_card_${c.id}" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 0.75rem; justify-content: space-between; transition: all 0.2s ease;">
-        <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; color: var(--text-main);">${c.text}</p>
-        <div style="display: flex; gap: 0.5rem; justify-content: flex-end;" class="vagrancy-card-actions">
-          <button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${c.id}', '1572')" style="font-size: 0.75rem;">1572 Act</button>
-          <button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${c.id}', '1576')" style="font-size: 0.75rem;">1576 Act</button>
-        </div>
-      </div>
-    `).join('');
-    
-    container.innerHTML = `
-      <div class="vagrancy-container">
-        <h3>🧹 The Vagrancy Crisis: Legislation Categorizer</h3>
-        <p class="examiner-warning" style="background-color: rgba(79, 70, 229, 0.04); border-left-color: var(--primary); color: var(--text-main);">
-          <strong>Examiner Tip:</strong> Edexcel exams frequently test the distinction between early punitive measures (like the 1572 Act) and the later work-provision acts (like the 1576 Act). Sort these measures correctly!
-        </p>
-        
-        <div class="vagrancy-columns-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-          <div class="knowledge-card" style="border: 2px dashed var(--border-color); background: rgba(var(--primary-rgb), 0.02); min-height: 250px; padding: 1.25rem; border-radius: var(--radius-lg);">
-            <h4 style="color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">🧹 1572 Vagabonds Act</h4>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Early, harsher legislation mixing severe punishments with initial local taxation.</p>
-            <div id="vagrancy_1572_list" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
-          </div>
-          <div class="knowledge-card" style="border: 2px dashed var(--border-color); background: rgba(var(--primary-rgb), 0.02); min-height: 250px; padding: 1.25rem; border-radius: var(--radius-lg);">
-            <h4 style="color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">🏚️ 1576 Act for Relief of the Poor</h4>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Introduced work-provision initiatives to employ able-bodied paupers locally.</p>
-            <div id="vagrancy_1576_list" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
-          </div>
-        </div>
-        
-        <div style="margin-top: 2rem;">
-          <h4 style="margin-bottom: 0.5rem;">Unsorted Legislative Measures</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Sort all 8 cards into their correct categories:</p>
-          <div id="vagrancy_pool" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-            ${unsortedHtml}
-          </div>
-        </div>
-        
-        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-          <button class="btn btn-primary" onclick="checkVagrancySorting()" id="vagrancyCheckBtn">Verify Sorting</button>
-          <button class="btn btn-secondary" onclick="loadTTGame('challenge_vagrancy')">Reset Challenge</button>
-        </div>
-        <div class="game-feedback-box" id="vagrancyFeedback" style="display: none; margin-top: 1.5rem;"></div>
-      </div>
-    `;
-  } else if (gameId === 'challenge_roanoke') {
-    ttGameState.roanoke.found = [];
-    container.innerHTML = `
-      <div class="logbook-container">
-        <h3>🪵 The New World Logbook: Roanoke 1585 Anachronism Hunt</h3>
-        <p class="examiner-warning" style="background-color: rgba(79, 70, 229, 0.04); border-left-color: var(--primary); color: var(--text-main);">
-          <strong>Vault Challenge:</strong> Spot exactly 3 historical anomalies (events, inventions, or facts that belong to a later era) inside this sailor's journal entry from Raleigh's first Roanoke colony attempt in August 1585.
-        </p>
-        
-        <div class="logbook-anac-counter">
-          Anachronisms Found: <span class="count-badge" id="roanokeCount">0 / 3</span>
-        </div>
-        
-        <div class="logbook-card">
-          <div class="logbook-header">
-            ⚓ Logbook Entry: 12th August 1585 — Roanoke Settlement
-          </div>
-          <div class="logbook-content">
-            We have built our fort on Roanoke Island under Governor Lane. Our ships, including the 
-            <span class="logbook-click-phrase" id="decoy_tiger" onclick="clickLogbookPhrase(this, 'decoy_tiger')">Tiger</span>, 
-            lie anchored in the shallow sound. But yesterday, we spoke with a friendly chief who showed us his 
-            <span class="logbook-click-phrase" id="anac_map" onclick="clickLogbookPhrase(this, 'anac_map')">map of Virginia printed in 1612</span>. 
-            The native people here cultivate 
-            <span class="logbook-click-phrase" id="decoy_corn" onclick="clickLogbookPhrase(this, 'decoy_corn')">corn</span>, 
-            which is a marvel. However, food is scarce. I tried to trade my 
-            <span class="logbook-click-phrase" id="anac_bayonet" onclick="clickLogbookPhrase(this, 'anac_bayonet')">metallic bayonet</span> 
-            for some maize, but they grew suspicious of our intentions. To pass the long hours, we sat around the campfire and smoked 
-            <span class="logbook-click-phrase" id="anac_potatoes" onclick="clickLogbookPhrase(this, 'anac_potatoes')">potatoes in clay pipes</span>, 
-            which brought a strange warmth to our lungs. We pray that Ralph 
-            <span class="logbook-click-phrase" id="decoy_lane" onclick="clickLogbookPhrase(this, 'decoy_lane')">Lane</span> 
-            leads us well, for the winter approaches.
-          </div>
-        </div>
-        
-        <div class="logbook-anac-popup" id="roanokeFeedback" style="display: none;"></div>
-        
-        <div style="margin-top: 1.5rem;">
-          <button class="btn btn-secondary" onclick="loadTTGame('challenge_roanoke')">Reset Challenge</button>
-        </div>
-      </div>
-    `;
-  }
-};
-
-window.closeTTGame = function() {
-  const dashboard = document.getElementById("ttGameHubDashboard");
-  const activePanel = document.getElementById("ttActiveGamePanel");
-  if (dashboard) dashboard.style.display = "block";
-  if (activePanel) activePanel.style.display = "none";
-  ttGameState.activeGameId = null;
-  if (tabooGameState && tabooGameState.timerInterval) {
-    clearInterval(tabooGameState.timerInterval);
-    tabooGameState.timerInterval = null;
-  }
-};
-
-// CYOA Decision Matrix Handlers
-window.handleCYOAChoice = function(gameId, optionId) {
-  const cyoaContent = document.getElementById("cyoaContent");
-  if (!cyoaContent) return;
-  
-  if (gameId === 'cyoa_walsingham') {
-    if (optionId === 'arrest_early') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result defeat">
-          <div class="cyoa-score-badge">Score: 60%</div>
-          <h4>⚠️ Safe but Inconclusive (Historical Deviation)</h4>
-          <p>
-            By arresting Babington immediately, you successfully secure Elizabeth from any immediate assassination attempt. However, you lack ironclad evidence directly linking Mary, Queen of Scots, to the plot. 
-            <br><br>
-            At her trial, Mary passionately denies knowledge of the plot. Without Phelippes' deciphered letters showing her direct consent, Elizabeth refuses to sign her execution warrant. Mary remains alive in captivity, continuing to act as a dangerous figurehead for Catholic rebellion.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_walsingham')" style="margin-top: 1.5rem;">Try Again</button>
-      `;
-      playChronologyFeedbackTone(false);
-    } else if (optionId === 'wait_for_proof') {
-      ttGameState.cyoa.step = 2;
-      cyoaContent.innerHTML = `
-        <p class="cyoa-intro">
-          The letter is delivered. Your spies watch the beer barrels closely. A few days later, you intercept Mary's reply in her own hand. She consents to the 'dispatch' of the usurper Elizabeth. This is the smoking gun! 
-          <br><br>
-          But Babington is getting nervous; his contacts tell him his name is known. He plans to flee London. What do you do now?
-        </p>
-        <div class="cyoa-options">
-          <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_walsingham', 'arrest_now')">
-            <strong>Option A: Arrest Babington and the conspirators now</strong>
-            <span>Move immediately to arrest the plotters and present the evidence of Mary's treason.</span>
-          </button>
-          <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_walsingham', 'wait_longer')">
-            <strong>Option B: Wait to uncover the Spanish invasion ports</strong>
-            <span>Allow Babington to flee and trace him, hoping to uncover the exact ports where Spanish invasion forces will land.</span>
-          </button>
-        </div>
-      `;
-      playChronologyFeedbackTone(true);
-    } else if (optionId === 'arrest_now') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result victory">
-          <div class="cyoa-score-badge">Score: 100%</div>
-          <h4>🏆 Triumph for the Spymaster! (Historical Path)</h4>
-          <p>
-            Perfect timing! You arrest Babington and 13 other conspirators before they can flee. With Mary's signed letter, you present Parliament with undeniable proof of her treason. 
-            <br><br>
-            Mary, Queen of Scots is put on trial, found guilty of conspiracy, and executed in February 1587. This permanently removes the primary Catholic figurehead for domestic plots, securing Elizabeth's throne, though it infuriates King Philip II of Spain, hastening the launch of the Armada.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_walsingham')" style="margin-top: 1.5rem;">Replay Scenario</button>
-      `;
-      playChronologyFeedbackTone(true);
-    } else if (optionId === 'wait_longer') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result defeat">
-          <div class="cyoa-score-badge">Score: 40%</div>
-          <h4>❌ Disaster: Conspirators Escape</h4>
-          <p>
-            You wait too long. A double agent in your network tips off Babington. He and his key co-conspirators disguise themselves and flee to France. 
-            <br><br>
-            Although you have Mary's incriminating letter, the ringleaders have escaped and the conspiracy goes underground. You fail to uncover the invasion details, and Elizabeth is left in constant paranoia, surrounded by unresolved threats.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_walsingham')" style="margin-top: 1.5rem;">Try Again</button>
-      `;
-      playChronologyFeedbackTone(false);
-    }
-  } else if (gameId === 'cyoa_elizabeth') {
-    if (optionId === 'threaten_arrest') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result defeat">
-          <div class="cyoa-score-badge">Score: 30%</div>
-          <h4>❌ Catholic Revolt in the Lords (Historical Deviation)</h4>
-          <p>
-            Your aggressive threats backfire. The Catholic peers in the House of Lords unite against you, viewing your demands as tyrannical. Moderate peers who might have supported a compromise join the opposition. 
-            <br><br>
-            The entire bill is voted down. Your religious settlement collapses, leaving England without a legal church structure, and the country plunges into religious uncertainty and civil unrest.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_elizabeth')" style="margin-top: 1.5rem;">Try Again</button>
-      `;
-      playChronologyFeedbackTone(false);
-    } else if (optionId === 'change_title') {
-      ttGameState.cyoa.step = 2;
-      cyoaContent.innerHTML = `
-        <p class="cyoa-intro">
-          By choosing 'Supreme Governor', you appease moderate Catholics and peers who believe only Christ (or the Pope) can head the Church. However, the strict Catholic bishops still refuse to pass the Act of Uniformity, which mandates the new Protestant Book of Common Prayer. 
-          <br><br>
-          Parliament is about to adjourn for the Easter recess, and you still lack a majority in the House of Lords. What is your next move?
-        </p>
-        <div class="cyoa-options">
-          <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_elizabeth', 'arrest_bishops')">
-            <strong>Option A: Arrest the two most vocal Catholic bishops</strong>
-            <span>Arrest the Bishops of Winchester and Lincoln during the Easter recess for public disobedience.</span>
-          </button>
-          <button class="cyoa-option-btn" onclick="handleCYOAChoice('cyoa_elizabeth', 'allow_latin_mass')">
-            <strong>Option B: Allow private Latin mass for noble families</strong>
-            <span>Offer a major concession to the remaining bishops by permitting the Latin Mass to continue in private.</span>
-          </button>
-        </div>
-      `;
-      playChronologyFeedbackTone(true);
-    } else if (optionId === 'arrest_bishops') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result victory">
-          <div class="cyoa-score-badge">Score: 100%</div>
-          <h4>🏆 The Settlement is Passed! (Historical Path)</h4>
-          <p>
-            Masterful political maneuvering! By locking the two most outspoken bishops in the Tower of London during the Easter recess, you reduce the opposition's votes and leave them leaderless.
-            <br><br>
-            When Parliament reconvenes, the Act of Uniformity passes the Lords by a single vote (21 to 20)! You successfully establish the Protestant Middle Way, secure your supreme authority over the clergy, and avoid a civil war.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_elizabeth')" style="margin-top: 1.5rem;">Replay Scenario</button>
-      `;
-      playChronologyFeedbackTone(true);
-    } else if (optionId === 'allow_latin_mass') {
-      cyoaContent.innerHTML = `
-        <div class="cyoa-result defeat">
-          <div class="cyoa-score-badge">Score: 50%</div>
-          <h4>❌ A Fractured Settlement</h4>
-          <p>
-            Your compromise to allow the Latin Mass completely alienates your Protestant supporters in the House of Commons and the newly appointed clergy. 
-            <br><br>
-            It creates a split church system, leading to widespread confusion, local defiance, and a failure to enforce uniform Protestant worship. Both strict Protestants (Puritans) and Catholics reject this weak compromise, leaving the religious settlement dead in the water.
-          </p>
-        </div>
-        <button class="btn btn-secondary" onclick="loadTTGame('cyoa_elizabeth')" style="margin-top: 1.5rem;">Try Again</button>
-      `;
-      playChronologyFeedbackTone(false);
-    }
-  }
-};
-
-// First-Person Hotseat Dialogue Handlers
-window.clickSuggestionChip = function(gameId, text) {
-  const input = document.getElementById("hotseatInput");
-  if (input) {
-    input.value = text;
-    window.sendHotseatMessage(gameId);
-  }
-};
-
-window.sendHotseatMessage = function(gameId) {
-  const input = document.getElementById("hotseatInput");
-  if (!input) return;
-  
-  const text = input.value.trim();
-  if (!text) return;
-  input.value = "";
-  
-  const feed = document.getElementById("hotseatChatFeed");
-  if (!feed) return;
-  
-  // Append User message
-  const userBubble = document.createElement("div");
-  userBubble.className = "chat-bubble user";
-  userBubble.innerText = text;
-  feed.appendChild(userBubble);
-  feed.scrollTop = feed.scrollHeight;
-  
-  // Append Typing bubble
-  const typingBubble = document.createElement("div");
-  typingBubble.className = "chat-bubble character typing";
-  typingBubble.id = "typingBubble";
-  feed.appendChild(typingBubble);
-  feed.scrollTop = feed.scrollHeight;
-  
-  // Parse response
-  const textLower = text.toLowerCase();
-  let response = "";
-  
-  if (gameId === 'hotseat_armada') {
-    if (textLower.includes("fail") || textLower.includes("defeat") || textLower.includes("why")) {
-      response = "We failed because of Medina Sidonia's lack of naval experience, the terrible Atlantic storms, and the lack of a deep-water port to meet the Duke of Parma's army in the Netherlands.";
-    } else if (textLower.includes("gravelines") || textLower.includes("battle")) {
-      response = "At Gravelines, the English ships had superior speed and could fire their guns repeatedly. Our galleons were trapped, unable to board them. Many of our ships were badly damaged before we were blown north into the North Sea.";
-    } else if (textLower.includes("fireship") || textLower.includes("fire") || textLower.includes("calais")) {
-      response = "Ah, the hell-burners of Calais! When we saw those eight blazing ships drifting toward our anchored crescent at midnight, panic struck. We cut our anchors. It scattered our fleet, leaving us vulnerable at Gravelines.";
-    } else if (textLower.includes("supply") || textLower.includes("supplies") || textLower.includes("food") || textLower.includes("beer") || textLower.includes("cadiz") || textLower.includes("wood")) {
-      response = "Drake's raid on Cadiz in 1587 destroyed our seasoned wood for barrels! Our food rotted, our fresh water leaked, and our cannonballs were of poor quality and mismatched sizes. We were starving before we even reached the Channel.";
-    } else if (textLower.includes("ireland") || textLower.includes("storm") || textLower.includes("weather") || textLower.includes("gale")) {
-      response = "The storms were the real hand of God. Without anchors, we were blown around the Scottish coast and wrecked on the rocky shores of Ireland. Out of 130 ships, barely half returned to Spain.";
-    } else if (textLower.includes("queen") || textLower.includes("elizabeth")) {
-      response = "Your heretic Queen was lucky. She claims she blew with her winds, but it was our own poor planning and bad luck that defeated us.";
-    } else if (textLower.includes("philip")) {
-      response = "King Philip II is a pious man, but he did not understand the sea. He ordered us to sail without a safe port, expecting a miracle.";
-    } else {
-      response = "I am a simple sailor, señor. Ask me about the fire-ships of Calais, the Battle of Gravelines, our rotten supplies, or the storms that wrecked us on the Irish coast.";
-    }
-  } else if (gameId === 'hotseat_puritan') {
-    if (textLower.includes("marriage") || textLower.includes("alencon") || textLower.includes("french") || textLower.includes("oppose")) {
-      response = "I wrote my pamphlet 'The Gaping Gulf' to warn England! Marrying a French Catholic would bring foreign influence, threaten our Protestant nation, and lead us back to the tyranny of Rome!";
-    } else if (textLower.includes("settlement") || textLower.includes("church") || textLower.includes("bishops") || textLower.includes("change")) {
-      response = "We wish to purify the Church of England of all popish dregs! There is no scriptural authority for bishops, surplices, or kneeling. The Queen's settlement stops halfway; we must follow the pure word of God!";
-    } else if (textLower.includes("hand") || textLower.includes("punishment") || textLower.includes("cleaver") || textLower.includes("lost")) {
-      response = "Though the executioner's cleaver took my right hand at Westminster in 1579, I immediately took off my hat with my left hand and cried, 'God Save the Queen!' I love my sovereign, but she must be protected from evil Catholic advisors.";
-    } else if (textLower.includes("vestment") || textLower.includes("controversy") || textLower.includes("priest") || textLower.includes("parker")) {
-      response = "In 1566, Archbishop Parker insisted we wear the popish vestments (surplices). Thirty-seven godly priests chose suspension rather than wear the garments of the Antichrist! We must not compromise with Catholic superstition.";
-    } else if (textLower.includes("prophesying") || textLower.includes("grindal") || textLower.includes("preach")) {
-      response = "The prophesyings—our meetings to study scripture and train preachers—are vital for spreading the Gospel. Yet the Queen ordered Archbishop Grindal to suppress them, suspending him when he refused in 1577! She fears religious debate, but we only seek truth.";
-    } else if (textLower.includes("elizabeth") || textLower.includes("queen")) {
-      response = "She is our lawful prince and a comfort to the godly, but she clings to Catholic ornaments and structure to avoid upsetting foreign powers. She must be bolder in her faith!";
-    } else {
-      response = "Brother, ask me of my opposition to the French marriage, the vestments of the Antichrist, the suppression of prophesyings, or the day I lost my hand for speaking truth.";
-    }
-  }
-  
-  // Simulate character typing delay
-  setTimeout(() => {
-    const tb = document.getElementById("typingBubble");
-    if (tb) tb.remove();
-    
-    const charBubble = document.createElement("div");
-    charBubble.className = "chat-bubble character";
-    charBubble.innerText = response;
-    feed.appendChild(charBubble);
-    feed.scrollTop = feed.scrollHeight;
-    
-    // Play light tone
-    playChronologyFeedbackTone(true);
-  }, 1000);
-};
-
-// Vagrancy Crisis Sort Handlers
-const vagrancyCardsData = [
-  { id: "v1", text: "Vagrants over 14 are whipped and have a hole bored through their right ear on first offense.", category: "1572" },
-  { id: "v2", text: "Vagrants arrested for a second offense are imprisoned without bail.", category: "1572" },
-  { id: "v3", text: "Vagrants arrested a third time face the death penalty.", category: "1572" },
-  { id: "v4", text: "Established a national poor rate, forcing parishes to collect taxes for local impotent poor.", category: "1572" },
-  { id: "v5", text: "Ordered JPs to establish 'Houses of Correction' (Bridewells) to punish those refusing to work.", category: "1576" },
-  { id: "v6", text: "Ordered towns and parishes to provide raw work materials (wool, hemp, flax) to employ the able-bodied poor.", category: "1576" },
-  { id: "v7", text: "Allowed Justices of the Peace to build and run workhouses for the unemployed poor.", category: "1576" },
-  { id: "v8", text: "Mandated that the impotent poor who could not work be housed in local poorhouses.", category: "1576" }
-];
-
-window.moveVagrancyCard = function(cardId, destination) {
-  const card = document.getElementById("vagrancy_card_" + cardId);
-  if (!card) return;
-  
-  const actionsDiv = card.querySelector(".vagrancy-card-actions");
-  
-  if (destination === '1572') {
-    document.getElementById("vagrancy_1572_list").appendChild(card);
-    actionsDiv.innerHTML = `<button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${cardId}', 'pool')" style="font-size: 0.75rem;">↩️ Put Back</button>`;
-  } else if (destination === '1576') {
-    document.getElementById("vagrancy_1576_list").appendChild(card);
-    actionsDiv.innerHTML = `<button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${cardId}', 'pool')" style="font-size: 0.75rem;">↩️ Put Back</button>`;
-  } else {
-    document.getElementById("vagrancy_pool").appendChild(card);
-    actionsDiv.innerHTML = `
-      <button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${cardId}', '1572')" style="font-size: 0.75rem;">1572 Act</button>
-      <button class="btn btn-sm btn-secondary" onclick="moveVagrancyCard('${cardId}', '1576')" style="font-size: 0.75rem;">1576 Act</button>
-    `;
-  }
-  
-  // Reset correctness highlights on movement
-  card.style.borderColor = "var(--border-color)";
-  card.style.background = "var(--bg-card)";
-};
-
-window.checkVagrancySorting = function() {
-  const list1572 = document.getElementById("vagrancy_1572_list");
-  const list1576 = document.getElementById("vagrancy_1576_list");
-  const pool = document.getElementById("vagrancy_pool");
-  
-  const cards1572 = list1572.querySelectorAll(".vagrancy-card");
-  const cards1576 = list1576.querySelectorAll(".vagrancy-card");
-  const cardsUnsorted = pool.querySelectorAll(".vagrancy-card");
-  
-  if (cardsUnsorted.length > 0) {
-    showVagrancyFeedback("Please sort all legislative measures before checking!", "error");
-    return;
-  }
-  
-  let allCorrect = true;
-  
-  cards1572.forEach(card => {
-    const cardId = card.id.replace("vagrancy_card_", "");
-    const data = vagrancyCardsData.find(item => item.id === cardId);
-    if (data && data.category === "1572") {
-      card.style.borderColor = "var(--accent-green)";
-      card.style.background = "rgba(5, 150, 105, 0.04)";
-    } else {
-      card.style.borderColor = "var(--accent-crimson)";
-      card.style.background = "rgba(190, 18, 60, 0.04)";
-      allCorrect = false;
-    }
-  });
-  
-  cards1576.forEach(card => {
-    const cardId = card.id.replace("vagrancy_card_", "");
-    const data = vagrancyCardsData.find(item => item.id === cardId);
-    if (data && data.category === "1576") {
-      card.style.borderColor = "var(--accent-green)";
-      card.style.background = "rgba(5, 150, 105, 0.04)";
-    } else {
-      card.style.borderColor = "var(--accent-crimson)";
-      card.style.background = "rgba(190, 18, 60, 0.04)";
-      allCorrect = false;
-    }
-  });
-  
-  if (allCorrect) {
-    showVagrancyFeedback("🎉 Perfect! You have correctly distinguished between the punitive 1572 Act and the work-provision measures of the 1576 Act.", "success");
-    playChronologyFeedbackTone(true);
-  } else {
-    showVagrancyFeedback("❌ Some measures are in the wrong era! Check the highlighted red cards and try again.", "error");
-    playChronologyFeedbackTone(false);
-  }
-};
-
-function showVagrancyFeedback(message, type) {
-  const fb = document.getElementById("vagrancyFeedback");
-  if (!fb) return;
-  fb.innerText = message;
-  fb.style.display = "block";
-  fb.className = `game-feedback-box ${type}`;
-}
-
-// Roanoke Hunt Handlers
-window.clickLogbookPhrase = function(element, phraseId) {
-  if (element.classList.contains("correct") || element.classList.contains("incorrect")) {
-    return; // Already clicked
-  }
-  
-  const popup = document.getElementById("roanokeFeedback");
-  if (!popup) return;
-  
-  const correctAnachronisms = {
-    anac_map: "Correct! The famous map of Virginia was created by Captain John Smith and printed in 1612, long after the Roanoke colony of 1585 failed.",
-    anac_bayonet: "Correct! Bayonets (blades attached to musket barrels) were not invented until the mid-17th century in France. In 1585, soldiers used swords, pikes, or matchlock muskets.",
-    anac_potatoes: "Correct! While potatoes were introduced to Europe around this time, they were eaten as food. The leaf smoked in clay pipes was tobacco, which Walter Raleigh helped popularize in England."
-  };
-  
-  const incorrectDecoys = {
-    decoy_tiger: "Incorrect. The Tiger was indeed the actual flagship of the 1585 expedition, which grounded on a sandbank, ruining their winter food supplies.",
-    decoy_corn: "Incorrect. Native Americans had been cultivating maize (corn) for thousands of years, and it was a staple crop when English settlers arrived.",
-    decoy_lane: "Incorrect. Ralph Lane was the actual governor of the 1585 Roanoke colony, which was abandoned in 1586 when they sailed back with Drake."
-  };
-  
-  if (phraseId in correctAnachronisms) {
-    element.classList.add("correct");
-    popup.style.display = "block";
-    popup.className = "logbook-anac-popup correct";
-    popup.innerHTML = `<h5>🎯 Correct!</h5><p>${correctAnachronisms[phraseId]}</p>`;
-    
-    // Add to found array if not already present
-    if (!ttGameState.roanoke.found.includes(phraseId)) {
-      ttGameState.roanoke.found.push(phraseId);
-    }
-    
-    // Update counter
-    const count = ttGameState.roanoke.found.length;
-    document.getElementById("roanokeCount").innerText = `${count} / 3`;
-    
-    playChronologyFeedbackTone(true);
-    
-    if (count === 3) {
-      popup.innerHTML += `<div style="margin-top: 1rem; font-weight: bold; color: var(--accent-green);">🏆 Outstanding Hunt! You have found all 3 chronological anachronisms and mastered the details of Raleigh's 1585 Roanoke expedition!</div>`;
-    }
-  } else if (phraseId in incorrectDecoys) {
-    element.classList.add("incorrect");
-    popup.style.display = "block";
-    popup.className = "logbook-anac-popup incorrect";
-    popup.innerHTML = `<h5>❌ Historically Accurate</h5><p>${incorrectDecoys[phraseId]}</p>`;
-    
-    playChronologyFeedbackTone(false);
-  }
-};
-
-function playChronologyFeedbackTone(isSuccess) {
-  try {
-    const audioCtx = getAudioContext();
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    
-    if (isSuccess) {
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-      osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.25);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.25);
-    } else {
-      osc.type = "sawtooth";
-      osc.frequency.setValueAtTime(140, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.3);
-    }
-  } catch (e) {
-    console.log("Audio feedback error or blocked:", e);
-  }
-}
-
-// ==========================================
-// IN-LESSON TIME-TRAVELLER GAME LOGIC
-// ==========================================
-
-const lessonGameDataBanks = [
-  // KT 1.1
-  {
-    lessonNum: 1,
-    question: "Explain why Elizabeth faced problems upon her accession in 1558.",
-    valid: [
-      "Inherited a £300,000 debt from Mary I",
-      "The threat of the French and the Auld Alliance",
-      "Her gender and legitimacy were questioned"
-    ],
-    trash: [
-      "The Ridolfi Plot threatens her throne (1571)",
-      "The Spanish Armada sets sail (1588)",
-      "The Treaty of Nonsuch is signed (1585)",
-      "Mary, Queen of Scots arrives in England (1568)"
-    ]
-  },
-  // KT 1.2
-  {
-    lessonNum: 2,
-    question: "Explain why Elizabeth introduced a Religious Settlement in 1559.",
-    valid: [
-      "The Act of Supremacy makes her 'Supreme Governor'",
-      "The Act of Uniformity introduces the Book of Common Prayer",
-      "Deep religious divisions between Catholics and Protestants"
-    ],
-    trash: [
-      "The Pope officially excommunicates Elizabeth (1570)",
-      "Puritans challenge the settlement during the Vestment Controversy (1566)",
-      "The Throckmorton Plot is discovered (1583)",
-      "The Vagabonds Act is passed (1572)"
-    ]
-  },
-  // KT 1.3
-  {
-    lessonNum: 3,
-    question: "Explain why there was a challenge to the religious settlement in the years 1558–1568.",
-    valid: [
-      "The Vestment Controversy leads to 37 priests being sacked (1566)",
-      "The Crucifix Controversy",
-      "The Pope tells Catholics not to attend Anglican services (1566)"
-    ],
-    trash: [
-      "The Papal Bull excommunicates Elizabeth (1570)",
-      "The Revolt of the Northern Earls (1569)",
-      "The Jesuit priest Edmund Campion is executed (1581)",
-      "The Babington Plot is uncovered (1586)"
-    ]
-  },
-  // KT 1.4
-  {
-    lessonNum: 4,
-    question: "Explain why Mary, Queen of Scots was a threat in the years 1568–69.",
-    valid: [
-      "Mary flees to England and is held captive (1568)",
-      "She has a strong Catholic claim to the English throne",
-      "The York Conference fails to resolve her guilt (1568)"
-    ],
-    trash: [
-      "Mary is executed at Fotheringhay Castle (1587)",
-      "The Babington Plot is intercepted by Walsingham (1586)",
-      "The Ridolfi Plot plans to marry her to the Duke of Norfolk (1571)",
-      "The Treaty of Berwick is signed (1586)"
-    ]
-  },
-  // KT 2.1
-  {
-    lessonNum: 5,
-    question: "Explain why Catholic plots against Elizabeth failed in the years 1569–1587.",
-    valid: [
-      "Walsingham intercepts coded letters in the Babington Plot (1586)",
-      "Spies uncover the Duke of Alba's involvement in the Ridolfi Plot (1571)",
-      "The Throckmorton Plot is discovered (1583)"
-    ],
-    trash: [
-      "The Spanish Armada is defeated (1588)",
-      "Elizabeth introduces the Act of Supremacy (1559)",
-      "The Vestment Controversy begins (1566)",
-      "Elizabeth seizes the Genoese Loan (1568)"
-    ]
-  },
-  // KT 2.2
-  {
-    lessonNum: 6,
-    question: "Explain why Anglo-Spanish relations deteriorated in the years 1568–1585.",
-    valid: [
-      "Elizabeth seizes the Spanish 'Genoese Loan' ships (1568)",
-      "Drake steals £400,000 during his circumnavigation (1577-80)",
-      "Elizabeth knights Drake on the Golden Hind (1581)"
-    ],
-    trash: [
-      "Drake raids Cadiz and destroys barrel staves (1587)",
-      "The Spanish Armada launches from Lisbon (1588)",
-      "Mary, Queen of Scots is executed (1587)",
-      "The Religious Settlement is passed (1559)"
-    ]
-  },
-  // KT 2.3
-  {
-    lessonNum: 7,
-    question: "Explain why relations with Spain broke out into war in the years 1585–1588.",
-    valid: [
-      "Elizabeth signs the Treaty of Nonsuch to intervene in the Netherlands (1585)",
-      "Robert Dudley accepts the title of Governor-General (1586)",
-      "Drake attacks the Spanish fleet at Cadiz (1587)"
-    ],
-    trash: [
-      "John Hawkins is ambushed at San Juan de Ulúa (1568)",
-      "Drake returns from his circumnavigation (1580)",
-      "The Ridolfi Plot is discovered (1571)",
-      "The Pope excommunicates Elizabeth (1570)"
-    ]
-  },
-  // KT 2.4
-  {
-    lessonNum: 8,
-    question: "Explain why the Spanish Armada was defeated in 1588.",
-    valid: [
-      "English fireships scatter the Spanish at Calais",
-      "Faster English galleons fire long-range culverins at Gravelines",
-      "The 'Protestant Wind' wrecks Spanish ships off Scotland"
-    ],
-    trash: [
-      "Drake burns Spanish ships at Cadiz (1587)",
-      "The Treaty of Nonsuch is signed (1585)",
-      "The Babington Plot is uncovered (1586)",
-      "Walsingham establishes a spy network (1570s)"
-    ]
-  },
-  // KT 3.1
-  {
-    lessonNum: 9,
-    question: "Explain why education changed during the Early Elizabethan period.",
-    valid: [
-      "Humanist ideas encourage education to fulfill human potential",
-      "The growth of trade requires merchants' sons to be literate",
-      "72 new Grammar Schools are founded"
-    ],
-    trash: [
-      "The Poor Relief Act provides raw materials (1576)",
-      "The Spanish Armada requires increased taxes (1588)",
-      "The Vagabonds Act introduces whipping (1572)",
-      "The Treaty of Nonsuch is signed (1585)"
-    ]
-  },
-  // KT 3.2
-  {
-    lessonNum: 10,
-    question: "Explain why there was an increase in poverty in the years 1558–88.",
-    valid: [
-      "The population of England grows from 3M to 4.2M causing inflation",
-      "Landowners enclose fields to switch to sheep farming",
-      "Bad harvests in the 1570s cause food shortages"
-    ],
-    trash: [
-      "The Babington Plot is intercepted (1586)",
-      "Mary, Queen of Scots is executed (1587)",
-      "Drake raids Cadiz (1587)",
-      "The Act of Uniformity is passed (1559)"
-    ]
-  },
-  // KT 3.3
-  {
-    lessonNum: 11,
-    question: "Explain why there was an increase in exploration in the years 1558–88.",
-    valid: [
-      "Spanish interference disrupts the traditional Antwerp cloth trade",
-      "Navigational instruments like the astrolabe improve",
-      "The new galleon ships are faster and more stable"
-    ],
-    trash: [
-      "English colonists abandon Roanoke Island (1586)",
-      "Raleigh receives his royal patent (1584)",
-      "The Revolt of the Northern Earls fails (1569)",
-      "The Vagabonds Act is passed (1572)"
-    ]
-  },
-  // KT 3.4
-  {
-    lessonNum: 12,
-    question: "Explain why the attempted colonisation of Virginia failed in 1585-86.",
-    valid: [
-      "The flagship 'Tiger' strikes a sandbank, ruining food supplies (1585)",
-      "The English colonists provoke war with Chief Wingina",
-      "Raleigh recruits too many soldiers and not enough farmers"
-    ],
-    trash: [
-      "Drake completes his circumnavigation (1580)",
-      "The Spanish Armada sets sail (1588)",
-      "Drake raids the port of Cadiz (1587)",
-      "John Hawkins begins the slave trade (1560s)"
-    ]
-  }
-];
-
-let currentActiveLessonGame = {
-  lessonNum: 1,
-  selectedTile: null,
-  facts: []
-};
-
-let draggedLessonTileId = null;
-
-window.initActiveLessonGame = function(lessonNum) {
-  currentActiveLessonGame.lessonNum = lessonNum;
-  currentActiveLessonGame.selectedTile = null;
-  
-  const container = document.getElementById("lessonContainer");
-  if (!container) return;
-  
-  const topicData = lessonGameDataBanks[lessonNum - 1];
-  if (!topicData) return;
-  
-  // Set Question Text
-  const questionEl = container.querySelector(".lesson-game-question");
-  if (questionEl) {
-    questionEl.innerText = topicData.question;
-  }
-  
-  // Clear pools & feedback
-  const poolEl = container.querySelector(".lesson-facts-pool");
-  const keepZone = container.querySelector(".lesson-keep-zone");
-  const trashZone = container.querySelector(".lesson-trash-zone");
-  const feedbackEl = container.querySelector(".lesson-game-feedback");
-  
-  if (poolEl) poolEl.innerHTML = "";
-  if (keepZone) keepZone.innerHTML = "";
-  if (trashZone) trashZone.innerHTML = "";
-  if (feedbackEl) {
-    feedbackEl.style.display = "none";
-    feedbackEl.className = "game-feedback-box lesson-game-feedback";
-    feedbackEl.innerText = "";
-  }
-  
-  // Select 3 Valid facts randomly
-  const selectedValid = [...topicData.valid]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3)
-    .map((text, idx) => ({ id: `lg-v-${idx}`, text, type: "keep" }));
-    
-  // Select 3 Trash facts randomly
-  const selectedTrash = [...topicData.trash]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3)
-    .map((text, idx) => ({ id: `lg-t-${idx}`, text, type: "trash" }));
-    
-  // Combine and Shuffle
-  const allFacts = [...selectedValid, ...selectedTrash]
-    .sort(() => Math.random() - 0.5);
-    
-  currentActiveLessonGame.facts = allFacts;
-  
-  // Render tiles in Pool
-  allFacts.forEach(fact => {
-    const tile = createLessonFactTile(fact);
-    if (poolEl) poolEl.appendChild(tile);
-  });
-  
-  // Dynamic click-to-drop listeners on Keep/Trash columns
-  const keepCol = container.querySelector(".lesson-keep-column");
-  const trashCol = container.querySelector(".lesson-trash-column");
-  
-  if (keepCol) {
-    keepCol.addEventListener("click", (e) => {
-      if (e.target.closest(".fact-tile")) return;
-      if (currentActiveLessonGame.selectedTile) {
-        moveLessonTileToZone(currentActiveLessonGame.selectedTile, "keep");
-      }
-    });
-    
-    keepCol.addEventListener("dragenter", (e) => { e.preventDefault(); keepCol.classList.add("drag-over"); });
-    keepCol.addEventListener("dragover", (e) => { e.preventDefault(); });
-    keepCol.addEventListener("dragleave", () => { keepCol.classList.remove("drag-over"); });
-    keepCol.addEventListener("drop", (e) => { keepCol.classList.remove("drag-over"); });
-  }
-  
-  if (trashCol) {
-    trashCol.addEventListener("click", (e) => {
-      if (e.target.closest(".fact-tile")) return;
-      if (currentActiveLessonGame.selectedTile) {
-        moveLessonTileToZone(currentActiveLessonGame.selectedTile, "trash");
-      }
-    });
-    
-    trashCol.addEventListener("dragenter", (e) => { e.preventDefault(); trashCol.classList.add("drag-over"); });
-    trashCol.addEventListener("dragover", (e) => { e.preventDefault(); });
-    trashCol.addEventListener("dragleave", () => { trashCol.classList.remove("drag-over"); });
-    trashCol.addEventListener("drop", (e) => { trashCol.classList.remove("drag-over"); });
-  }
-  
-  const poolZone = container.querySelector(".pool-zone");
-  if (poolZone) {
-    poolZone.addEventListener("dragenter", (e) => { e.preventDefault(); poolZone.classList.add("drag-over"); });
-    poolZone.addEventListener("dragover", (e) => { e.preventDefault(); });
-    poolZone.addEventListener("dragleave", () => { poolZone.classList.remove("drag-over"); });
-    poolZone.addEventListener("drop", (e) => { poolZone.classList.remove("drag-over"); });
-  }
-};
-
-function createLessonFactTile(fact) {
-  const tile = document.createElement("div");
-  tile.className = "fact-tile";
-  tile.id = fact.id;
-  tile.setAttribute("draggable", "true");
-  tile.setAttribute("data-type", fact.type);
-  
-  const textSpan = document.createElement("span");
-  textSpan.className = "tile-text";
-  textSpan.innerText = fact.text;
-  tile.appendChild(textSpan);
-  
-  // Drag events
-  tile.addEventListener("dragstart", handleLessonTileDragStart);
-  tile.addEventListener("dragend", handleLessonTileDragEnd);
-  
-  // Tap events
-  tile.addEventListener("click", handleLessonTileClick);
-  
-  // Mobile Quick actions
-  const actionsDiv = document.createElement("div");
-  actionsDiv.className = "tile-actions";
-  
-  const keepBtn = document.createElement("button");
-  keepBtn.className = "tile-btn keep-btn";
-  keepBtn.innerHTML = "✅ Keep";
-  keepBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    moveLessonTileToZone(tile, "keep");
-  });
-  actionsDiv.appendChild(keepBtn);
-  
-  const trashBtn = document.createElement("button");
-  trashBtn.className = "tile-btn trash-btn";
-  trashBtn.innerHTML = "🗑️ Trash";
-  trashBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    moveLessonTileToZone(tile, "trash");
-  });
-  actionsDiv.appendChild(trashBtn);
-  
-  const returnBtn = document.createElement("button");
-  returnBtn.className = "tile-btn return-btn";
-  returnBtn.innerHTML = "↩️ Put Back";
-  returnBtn.style.display = "none";
-  returnBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    moveLessonTileToZone(tile, "pool");
-  });
-  actionsDiv.appendChild(returnBtn);
-  
-  tile.appendChild(actionsDiv);
-  return tile;
-}
-
-function handleLessonTileDragStart(e) {
-  draggedLessonTileId = this.id;
-  this.classList.add("dragging");
-  e.dataTransfer.setData("text/plain", this.id);
-  e.dataTransfer.effectAllowed = "move";
-}
-
-function handleLessonTileDragEnd(e) {
-  this.classList.remove("dragging");
-  draggedLessonTileId = null;
-}
-
-function handleLessonTileClick(e) {
-  if (e.target.closest(".tile-btn")) return;
-  
-  const parentZone = this.parentElement;
-  if (parentZone && !parentZone.classList.contains("lesson-facts-pool")) {
-    moveLessonTileToZone(this, "pool");
-    return;
-  }
-  
-  if (currentActiveLessonGame.selectedTile === this) {
-    this.classList.remove("selected");
-    currentActiveLessonGame.selectedTile = null;
-  } else {
-    if (currentActiveLessonGame.selectedTile) {
-      currentActiveLessonGame.selectedTile.classList.remove("selected");
-    }
-    currentActiveLessonGame.selectedTile = this;
-    this.classList.add("selected");
-  }
-}
-
-function moveLessonTileToZone(tile, zoneName) {
-  tile.classList.remove("selected");
-  if (currentActiveLessonGame.selectedTile === tile) {
-    currentActiveLessonGame.selectedTile = null;
-  }
-  
-  tile.classList.remove("correct", "incorrect");
-  
-  const container = document.getElementById("lessonContainer");
-  if (!container) return;
-  
-  const keepDropZone = container.querySelector(".lesson-keep-zone");
-  const trashDropZone = container.querySelector(".lesson-trash-zone");
-  const factsPool = container.querySelector(".lesson-facts-pool");
-  
-  const keepBtn = tile.querySelector(".keep-btn");
-  const trashBtn = tile.querySelector(".trash-btn");
-  const returnBtn = tile.querySelector(".return-btn");
-  
-  if (zoneName === "keep" && keepDropZone) {
-    keepDropZone.appendChild(tile);
-    if (keepBtn) keepBtn.style.display = "none";
-    if (trashBtn) trashBtn.style.display = "none";
-    if (returnBtn) returnBtn.style.display = "inline-flex";
-  } else if (zoneName === "trash" && trashDropZone) {
-    trashDropZone.appendChild(tile);
-    if (keepBtn) keepBtn.style.display = "none";
-    if (trashBtn) trashBtn.style.display = "none";
-    if (returnBtn) returnBtn.style.display = "inline-flex";
-  } else if (zoneName === "pool" && factsPool) {
-    factsPool.appendChild(tile);
-    if (keepBtn) keepBtn.style.display = "inline-flex";
-    if (trashBtn) trashBtn.style.display = "inline-flex";
-    if (returnBtn) returnBtn.style.display = "none";
-  }
-}
-
-// Override global handleTileDrop to be context-aware
-window.handleTileDrop = function(e, zoneName) {
-  e.preventDefault();
-  const tileId = e.dataTransfer.getData("text/plain") || draggedTileId || draggedLessonTileId;
-  if (!tileId) return;
-  
-  const tile = document.getElementById(tileId);
-  if (tile) {
-    if (tile.parentElement.classList.contains("lesson-facts-pool") || 
-        tile.parentElement.classList.contains("lesson-keep-zone") || 
-        tile.parentElement.classList.contains("lesson-trash-zone")) {
-      moveLessonTileToZone(tile, zoneName);
-    } else {
-      moveTileToZone(tile, zoneName);
-    }
-  }
-};
-
-window.checkActiveLessonGameAnswers = function() {
-  const container = document.getElementById("lessonContainer");
-  if (!container) return;
-  
-  const keepZone = container.querySelector(".lesson-keep-zone");
-  const trashZone = container.querySelector(".lesson-trash-zone");
-  const poolZone = container.querySelector(".lesson-facts-pool");
-  
-  const keepTiles = keepZone ? Array.from(keepZone.querySelectorAll(".fact-tile")) : [];
-  const trashTiles = trashZone ? Array.from(trashZone.querySelectorAll(".fact-tile")) : [];
-  const poolTiles = poolZone ? Array.from(poolZone.querySelectorAll(".fact-tile")) : [];
-  
-  if (poolTiles.length > 0) {
-    showLessonGameFeedback("Please sort all 6 historical facts before checking!", "error");
-    return;
-  }
-  
-  let allCorrect = true;
-  
-  keepTiles.forEach(tile => {
-    const isKeepType = tile.getAttribute("data-type") === "keep";
-    tile.classList.remove("correct", "incorrect");
-    if (isKeepType) {
-      tile.classList.add("correct");
-    } else {
-      tile.classList.add("incorrect");
-      allCorrect = false;
-    }
-  });
-  
-  trashTiles.forEach(tile => {
-    const isTrashType = tile.getAttribute("data-type") === "trash";
-    tile.classList.remove("correct", "incorrect");
-    if (isTrashType) {
-      tile.classList.add("correct");
-    } else {
-      tile.classList.add("incorrect");
-      allCorrect = false;
-    }
-  });
-  
-  if (allCorrect) {
-    showLessonGameFeedback("🎉 Outstanding! You successfully blocked the Time-Travellers and saved the timeline!", "success");
-    playChronologyFeedbackTone(true);
-  } else {
-    showLessonGameFeedback("❌ Distortions detected! Check the red highlighted incorrect tiles and try again.", "error");
-    playChronologyFeedbackTone(false);
-  }
-};
-
-window.resetActiveLessonGame = function() {
-  initActiveLessonGame(currentActiveLessonGame.lessonNum);
-};
-
-function showLessonGameFeedback(message, type) {
-  const container = document.getElementById("lessonContainer");
-  if (!container) return;
-  const feedbackEl = container.querySelector(".lesson-game-feedback");
-  if (!feedbackEl) return;
-  feedbackEl.innerText = message;
-  feedbackEl.style.display = "block";
-  feedbackEl.className = `game-feedback-box lesson-game-feedback ${type}`;
-}
-
-// --- APP UPGRADE: CORE LOGIC, XP WIDGET, AUDIO SYNTHESIS & PRINT STUDY SHEET ---
-
-const TUDOR_TITLES = [
-  { level: 1, minXP: 0, title: "Humble Vagabond" },
-  { level: 2, minXP: 100, title: "Dame School Scholar" },
-  { level: 3, minXP: 300, title: "Grammar School Graduate" },
-  { level: 4, minXP: 600, title: "Wealthy Merchant" },
-  { level: 5, minXP: 1000, title: "Walsingham's Secret Agent" },
-  { level: 6, minXP: 1500, title: "Trusted Privy Councillor" },
-  { level: 7, minXP: 2100, title: "Knight of the Golden Hind" },
-  { level: 8, minXP: 2800, title: "Lord Chancellor" },
-  { level: 9, minXP: 3600, title: "Supreme Governor of Revision" }
-];
-
-function getUserLevelAndTitle(xp) {
-  let currentLevel = 1;
-  let currentTitle = TUDOR_TITLES[0].title;
-  let nextLevelXP = TUDOR_TITLES[1].minXP;
-  
-  for (let i = 0; i < TUDOR_TITLES.length; i++) {
-    if (xp >= TUDOR_TITLES[i].minXP) {
-      currentLevel = TUDOR_TITLES[i].level;
-      currentTitle = TUDOR_TITLES[i].title;
-      nextLevelXP = TUDOR_TITLES[i+1] ? TUDOR_TITLES[i+1].minXP : null;
-    } else {
-      break;
-    }
-  }
-  return { level: currentLevel, title: currentTitle, nextLevelXP };
-}
-
-window.setupXPWidget = function() {
-  const xp = appState.userXP;
-  const { level, title, nextLevelXP } = getUserLevelAndTitle(xp);
-  
-  const titleEl = document.getElementById("tudorTitle");
-  const progressEl = document.getElementById("xpProgressBarInner");
-  const textEl = document.getElementById("xpText");
-  const badgeContainer = document.getElementById("xpBadgeContainer");
-  
-  if (titleEl) titleEl.innerText = `Lvl ${level}: ${title}`;
-  if (textEl) textEl.innerText = `${xp} XP`;
-  
-  if (progressEl) {
-    if (nextLevelXP === null) {
-      progressEl.style.width = "100%";
-    } else {
-      const currentTitleObj = TUDOR_TITLES.find(t => t.level === level);
-      const minXP = currentTitleObj ? currentTitleObj.minXP : 0;
-      const range = nextLevelXP - minXP;
-      const progress = range > 0 ? ((xp - minXP) / range) * 100 : 100;
-      progressEl.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-    }
-  }
-  
-  if (badgeContainer && !badgeContainer.onclick) {
-    badgeContainer.onclick = function() {
-      window.openScoreboardModal();
-    };
-  }
-};
-
-// --- Tudor Leaderboard & High Scoreboard Controller ---
-let tudorLeaderboard = [];
-try {
-  const stored = localStorage.getItem("gcse_tudor_scores");
-  if (stored) {
-    tudorLeaderboard = JSON.parse(stored);
-  }
-} catch (e) {
-  console.error("Error loading scores", e);
-}
-
-if (!tudorLeaderboard || tudorLeaderboard.length === 0) {
-  tudorLeaderboard = [
-    { initials: "WALS", year: "Staff", title: "Walsingham's Secret Agent", xp: 1200 },
-    { initials: "WCEC", year: "Staff", title: "Trusted Privy Councillor", xp: 1800 },
-    { initials: "ELZ", year: "Staff", title: "Supreme Governor of Revision", xp: 4000 },
-    { initials: "FDRA", year: "Year 11", title: "Knight of the Golden Hind", xp: 2500 },
-    { initials: "WRAL", year: "Year 10", title: "Knight of the Golden Hind", xp: 2200 },
-    { initials: "RDUD", year: "Year 11", title: "Trusted Privy Councillor", xp: 1600 },
-    { initials: "MCUR", year: "Year 8", title: "Dame School Scholar", xp: 250 },
-    { initials: "HVAG", year: "Year 7", title: "Humble Vagabond", xp: 50 }
-  ];
-  localStorage.setItem("gcse_tudor_scores", JSON.stringify(tudorLeaderboard));
-}
-
-// 3-letter profanity filter list
-const restrictedInitials = [
-  "FUC", "FUK", "FUX", "ASS", "DIC", "DIK", "COK", "COX", "CUM", "SEX", "TIT", 
-  "GAY", "POO", "PEE", "WTF", "PIS", "BUM", "CNT", "KKK", "FAG", "NIG", "HEL", 
-  "DIE", "BAD", "LSD", "PCP", "WOP", "KIK", "JAP", "JEW", "CON", "SOD"
-];
-
-window.openScoreboardModal = function() {
-  const modal = document.getElementById("scoreboardModal");
-  if (!modal) return;
-  
-  const currentXP = appState.userXP;
-  const currentXPEl = document.getElementById("scoreboardCurrentXP");
-  if (currentXPEl) {
-    currentXPEl.textContent = currentXP;
-  }
-  
-  const initialsInput = document.getElementById("sbInitials");
-  if (initialsInput) {
-    initialsInput.value = "";
-    initialsInput.disabled = false;
-  }
-  
-  const submitBtn = document.querySelector("#scoreboardFormContainer button");
-  if (submitBtn) {
-    submitBtn.style.display = "inline-flex";
-  }
-  
-  const errorEl = document.getElementById("sbErrorDisplay");
-  if (errorEl) {
-    errorEl.style.display = "none";
-    errorEl.textContent = "";
-  }
-  
-  window.renderScoreboardTable();
-  modal.style.display = "flex";
-};
-
-window.closeScoreboardModal = function() {
-  const modal = document.getElementById("scoreboardModal");
-  if (modal) {
-    modal.style.display = "none";
-  }
-};
-
-window.renderScoreboardTable = function() {
-  const tableBody = document.getElementById("scoreboardTableBody");
-  if (!tableBody) return;
-  
-  tudorLeaderboard.sort((a, b) => b.xp - a.xp);
-  
-  tableBody.innerHTML = "";
-  tudorLeaderboard.forEach((entry, index) => {
-    const row = document.createElement("tr");
-    row.style.borderBottom = "1px solid var(--border-color)";
-    row.style.background = index % 2 === 0 ? "rgba(var(--primary-rgb), 0.02)" : "transparent";
-    
-    let rankBadge = `${index + 1}`;
-    if (index === 0) rankBadge = "👑 1st";
-    else if (index === 1) rankBadge = "🥈 2nd";
-    else if (index === 2) rankBadge = "🥉 3rd";
-    
-    row.innerHTML = `
-      <td style="padding: 0.5rem 0.75rem; font-weight: 700; color: ${index < 3 ? 'var(--primary)' : 'var(--text-main)'};">${rankBadge}</td>
-      <td style="padding: 0.5rem 0.75rem; font-family: var(--font-title); font-weight: 800; text-transform: uppercase; color: var(--text-main);">${entry.initials}</td>
-      <td style="padding: 0.5rem 0.75rem; color: var(--text-muted); font-weight: 600; white-space: nowrap;">${entry.year}</td>
-      <td style="padding: 0.5rem 0.75rem; color: var(--text-muted);">${entry.title}</td>
-      <td style="padding: 0.5rem 0.75rem; text-align: right; font-weight: 700; color: var(--primary); white-space: nowrap;">${entry.xp.toLocaleString()} XP</td>
-    `;
-    tableBody.appendChild(row);
-  });
-};
-
-window.submitScoreboardEntry = function() {
-  const initialsInput = document.getElementById("sbInitials");
-  const yearSelect = document.getElementById("sbYearGroup");
-  const errorEl = document.getElementById("sbErrorDisplay");
-  
-  if (!initialsInput || !yearSelect || !errorEl) return;
-  
-  const initials = initialsInput.value.toUpperCase().trim();
-  const yearGroup = yearSelect.value;
-  const currentXP = appState.userXP;
-  
-  if (!/^[A-Z]{3}$/.test(initials)) {
-    errorEl.textContent = "Halt! You must enter exactly 3 letters for your initials.";
-    errorEl.style.display = "block";
-    errorEl.style.color = "#ef4444";
-    return;
-  }
-  
-  if (restrictedInitials.includes(initials)) {
-    errorEl.innerHTML = `⚠️ <strong>Halt, Vagabond!</strong> Such vulgar language is unfit for the Royal Court of Her Majesty Queen Elizabeth! Enter clean initials.`;
-    errorEl.style.display = "block";
-    errorEl.style.color = "#ef4444";
-    
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(false);
-    }
-    return;
-  }
-  
-  const levelInfo = getUserLevelAndTitle(currentXP);
-  const entry = {
-    initials: initials,
-    year: yearGroup,
-    title: levelInfo.title,
-    xp: currentXP
-  };
-  
-  tudorLeaderboard.push(entry);
-  tudorLeaderboard.sort((a, b) => b.xp - a.xp);
-  
-  if (tudorLeaderboard.length > 8) {
-    tudorLeaderboard = tudorLeaderboard.slice(0, 8);
-  }
-  
-  localStorage.setItem("gcse_tudor_scores", JSON.stringify(tudorLeaderboard));
-  
-  errorEl.style.color = "var(--primary)";
-  errorEl.innerHTML = `🎉 <strong>Praise be!</strong> Your score of ${currentXP} XP has been recorded in the Tudor Annals!`;
-  errorEl.style.display = "block";
-  
-  initialsInput.disabled = true;
-  const submitBtn = document.querySelector("#scoreboardFormContainer button");
-  if (submitBtn) {
-    submitBtn.style.display = "none";
-  }
-  
-  window.renderScoreboardTable();
-  
-  if (typeof playChronologyFeedbackTone === 'function') {
-    playChronologyFeedbackTone(true);
-  }
-};
-
-window.gainXP = function(amount) {
-  const oldXP = appState.userXP;
-  const newXP = oldXP + amount;
-  appState.userXP = newXP;
-  localStorage.setItem("elizabethan_user_xp", newXP);
-  
-  const oldLevelInfo = getUserLevelAndTitle(oldXP);
-  const newLevelInfo = getUserLevelAndTitle(newXP);
-  
-  window.setupXPWidget();
-  
-  if (newLevelInfo.level > oldLevelInfo.level) {
-    showLevelUpOverlay(newLevelInfo.level, newLevelInfo.title);
-    playLevelUpTone();
-  }
-};
-
-function showLevelUpOverlay(newLevel, title) {
-  const overlay = document.createElement("div");
-  overlay.className = "level-up-overlay";
-  overlay.id = "levelUpOverlay";
-  
-  overlay.innerHTML = `
-    <div class="level-up-card">
-      <h2>👑 LEVEL UP!</h2>
-      <h3>Level ${newLevel}: ${title}</h3>
-      <p>Your historical knowledge has elevated your status in the Elizabethan Court. You have climbed the Great Chain of Being!</p>
-      <button class="btn btn-primary" onclick="document.getElementById('levelUpOverlay').remove()" style="background: var(--accent-gold); color: #000; font-weight: bold; padding: 0.75rem 2rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; border: none;">
-        Claim My Title
-      </button>
-    </div>
-  `;
-  
-  document.body.appendChild(overlay);
-}
-
-function playLevelUpTone() {
-  try {
-    const audioCtx = getAudioContext();
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    
-    osc.type = "triangle";
-    osc.frequency.setValueAtTime(261.63, audioCtx.currentTime); // C4
-    osc.frequency.setValueAtTime(329.63, audioCtx.currentTime + 0.1); // E4
-    osc.frequency.setValueAtTime(392.00, audioCtx.currentTime + 0.2); // G4
-    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime + 0.3); // C5
-    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.45); // E5
-    osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.6); // G5
-    osc.frequency.setValueAtTime(1046.50, audioCtx.currentTime + 0.75); // C6
-    
-    gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
-    
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    
-    osc.start();
-    osc.stop(audioCtx.currentTime + 1.2);
-  } catch (e) {
-    console.error("Failed to play level-up tone:", e);
-  }
-}
-
-// --- 3D FLASHCARD CONTROLLER ---
-
-let flashcardDeck = [];
-let currentFlashcardIndex = 0;
-
-window.loadFlashcardDeck = function(topicId) {
-  const topicIndex = topicId - 1;
-  const topicData = quizData[topicIndex];
-  if (!topicData) return;
-  
-  flashcardDeck = topicData.questions;
-  currentFlashcardIndex = 0;
-  
-  const selector = document.getElementById("flashcardTopicSelector");
-  if (selector) {
-    selector.value = topicId;
-  }
-  
-  showFlashcard();
-};
-
-function showFlashcard() {
-  const inner = document.getElementById("flashcardInner");
-  if (inner) {
-    inner.classList.remove("flipped");
-  }
-  
-  const card = flashcardDeck[currentFlashcardIndex];
-  if (!card) return;
-  
-  const cardFrontTopic = document.getElementById("cardFrontTopic");
-  const cardFrontQuestion = document.getElementById("cardFrontQuestion");
-  const cardBackAnswer = document.getElementById("cardBackAnswer");
-  const cardBackFact = document.getElementById("cardBackFact");
-  const progress = document.getElementById("flashcardProgress");
-  
-  const topicSelector = document.getElementById("flashcardTopicSelector");
-  const topicText = topicSelector ? topicSelector.options[topicSelector.selectedIndex].text.split(":")[0] : "Fact";
-  
-  if (cardFrontTopic) cardFrontTopic.innerText = topicText;
-  if (cardFrontQuestion) cardFrontQuestion.innerText = card.question;
-  if (cardBackAnswer) cardBackAnswer.innerText = card.answer;
-  if (cardBackFact) cardBackFact.innerText = card.fact || "";
-  if (progress) progress.innerText = `${currentFlashcardIndex + 1} / ${flashcardDeck.length}`;
-}
-
-window.flipDeckCard = function() {
-  const inner = document.getElementById("flashcardInner");
-  if (inner) {
-    inner.classList.toggle("flipped");
-    window.gainXP(5);
-  }
-};
-
-window.prevFlashcard = function() {
-  if (flashcardDeck.length === 0) return;
-  currentFlashcardIndex = (currentFlashcardIndex - 1 + flashcardDeck.length) % flashcardDeck.length;
-  showFlashcard();
-};
-
-window.nextFlashcard = function() {
-  if (flashcardDeck.length === 0) return;
-  currentFlashcardIndex = (currentFlashcardIndex + 1) % flashcardDeck.length;
-  showFlashcard();
-};
-
-// --- BLURTING ACTIVE RECALL CONTROLLER ---
-
-let recognition = null;
-window.isRecordingSpeech = false;
-
-window.toggleBlurtingSpeech = function() {
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-    alert("Speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.");
-    return;
-  }
-
-  const micBtn = document.getElementById("blurtingMicBtn");
-  if (!micBtn) return;
-  const micIcon = micBtn.querySelector(".mic-icon");
-  const micText = micBtn.querySelector(".mic-text");
-  const textarea = document.getElementById("blurtingInput");
-
-  if (!recognition) {
-    recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.interimResults = false;
-    recognition.lang = 'en-GB';
-
-    recognition.onstart = function() {
-      window.isRecordingSpeech = true;
-      micBtn.classList.add("recording");
-      if (micIcon) micIcon.textContent = "🛑";
-      if (micText) micText.textContent = "Stop Mic";
-      if (typeof playSoundEffect === 'function') {
-        playSoundEffect(600, 0.1, 'sine');
-      }
-    };
-
-    recognition.onresult = function(event) {
-      let finalTranscript = "";
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-          finalTranscript += event.results[i][0].transcript + " ";
-        }
+      if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
+        hasModels = true;
       }
       
-      if (finalTranscript.trim() && textarea) {
-        const space = textarea.value.length > 0 && !textarea.value.endsWith(" ") ? " " : "";
-        textarea.value += space + finalTranscript.trim();
-        window.updateBlurtingWordCount(textarea.value);
+      const revealBtn = hasModels ? `<button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>` : '';
+
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Written Application</div>
+            ${revealBtn}
+          </div>
+      `;
+
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        lesson.tasks.forEach((task, tIdx) => {
+          let qText = formatQuestion(task.text);
+          let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
+          let clueBtn = '';
+          if (clueParaMatch) {
+            qText = qText.replace(clueParaMatch[0], '').trim();
+            clueBtn = `<button class="btn btn-secondary btn-sm-icon" title="Find Evidence" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i></button>`;
+          }
+
+          html += `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${qText}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${clueBtn}
+                  ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${task.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('clue-${tIdx}')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+
+              ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
+              ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
+              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${task.model}</div>` : ''}
+            </div>
+          `;
+        });
       }
-    };
 
-    recognition.onerror = function(event) {
-      console.error("Speech recognition error:", event.error);
-      if (event.error === 'not-allowed') {
-        alert("Microphone permission was denied. Please allow microphone access in your browser settings.");
+      // Historians Corner
+      if (lesson.historians_corner) {
+        const hc = lesson.historians_corner;
+        html += `
+          <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+            <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${hc.text || (hc.author_context + "<br><br><i>" + hc.extract + "</i>")}</p>
+            ${hc.stretch_question ? `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
+              <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
+              <div style="font-size: 1.05rem; margin-bottom: 12px;">
+                ${hc.stretch_question}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${hc.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('hc-starter')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${hc.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('hc-clue')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('hc-model')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              
+
+              ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
+              ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
+              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${hc.stretch_model}</div>` : ''}
+            </div>` : ''}
+          </div>
+        `;
       }
-      stopRecognition();
-    };
 
-    recognition.onend = function() {
-      stopRecognition();
-    };
-  }
-
-  function stopRecognition() {
-    window.isRecordingSpeech = false;
-    micBtn.classList.remove("recording");
-    if (micIcon) micIcon.textContent = "🎙️";
-    if (micText) micText.textContent = "Start Speech";
-    if (recognition) {
-      try {
-        recognition.stop();
-      } catch(e) {}
+      html += `</div>`;
     }
+
+    // PHASE: Think, Pair, Share
+    if (lesson.pair_share) {
+      const ps = lesson.pair_share;
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase ${phaseNum++}: Think, Pair, Share</div>
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
+            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // PHASE: Consolidation & Flashcards
+    if (lesson.flashcards && lesson.flashcards.length > 0) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div class="phase-title">Phase ${phaseNum++}: Consolidation & Recall</div>
+          <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
+          <div class="flashcard-deck">
+      `;
+      lesson.flashcards.forEach(fc => {
+        html += `
+          <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+              <div class="flashcard-face flashcard-front">
+                <h4>${fc.term}</h4>
+                <p>Tap to reveal</p>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                ${fc.definition}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div></div>`;
+    }
+
+    // PHASE: Extended Scholarship & Debate
+    if (lesson.extended || lesson.debate_prep) {
+      let extHtml = `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Extended Scholarship</div>
+            ${lesson.extended && (lesson.extended.model || lesson.extended.answer) ? `<button class="btn btn-secondary" onclick="toggleElement('extended-model-${lesson.id}')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
+          </div>
+      `;
+
+      if (lesson.debate_prep) {
+        const dp = lesson.debate_prep;
+        // Interleave the arguments deterministically for rendering, then sort randomly
+        const allArgs = [...dp.arguments_for.map(a=>({t:a, s:'for'})), ...dp.arguments_against.map(a=>({t:a, s:'against'}))].sort(() => Math.random() - 0.5);
+        const argsHtml = allArgs.map((arg, idx) => `<div class="debate-card" draggable="true" ondragstart="window.dragDebate(event)" id="debate-arg-${lesson.id}-${idx}" data-side="${arg.s}" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: grab;">${arg.t}</div>`).join('');
+
+        extHtml += `
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+            <h3 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-scale-balanced"></i> Debate Prep: ${dp.question}</h3>
+            <p style="color: #475569; font-size: 0.95rem;">Drag and drop the evidence cards below into the correct columns to prepare your arguments before writing your essay.</p>
+            
+            <div id="debate-bank-${lesson.id}" class="debate-dropzone" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #94a3b8; padding: 15px; border-radius: 8px; margin-bottom: 20px; min-height: 80px;">
+              ${argsHtml}
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <h4 style="text-align: center; color: #16a34a; margin-top: 0;">Agree</h4>
+                <div id="debate-for-${lesson.id}" class="debate-dropzone" data-target="for" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #86efac; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+              <div>
+                <h4 style="text-align: center; color: #dc2626; margin-top: 0;">Disagree</h4>
+                <div id="debate-against-${lesson.id}" class="debate-dropzone" data-target="against" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #fca5a5; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+              <button class="btn btn-primary" onclick="window.checkDebate('${lesson.id}')">Check Answers</button>
+              <div id="debate-feedback-${lesson.id}" style="margin-top: 10px; font-weight: bold;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (lesson.extended) {
+        if (lesson.extended.title) {
+          extHtml += `<h3 style="color: #0f172a;">${lesson.extended.title}</h3>`;
+        }
+        if (lesson.extended.paragraphs) {
+          lesson.extended.paragraphs.forEach(p => {
+             extHtml += `<p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">${p}</p>`;
+          });
+        }
+        
+        let hintsHtml = '';
+        if (lesson.extended.hints && lesson.extended.hints.length > 0) {
+           hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">${lesson.extended.hints.map(h => `<li>${h}</li>`).join('')}</ul></div>`;
+        }
+
+        extHtml += `
+          <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+              ${formatQuestion(lesson.extended.question)}
+            </div>
+            ${hintsHtml}
+            <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
+
+            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${lesson.extended.model || lesson.extended.answer}</div>` : ''}
+          </div>
+        `;
+      }
+
+      extHtml += `</div>`;
+      html += extHtml;
+    }
+
+    // PHASE: Knowledge Check Quiz
+    if (lesson.quiz && lesson.quiz.length > 0) {
+      html += `
+        <div class="phase-card" id="phase-${phaseNum}">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Knowledge Check</div>
+            <button class="btn btn-primary no-print" onclick="window.startQuiz('${lesson.id}')" style="font-size: 1.1rem; padding: 10px 20px; border-radius: 8px;">
+              <i class="fa-solid fa-clipboard-check"></i> Start Quiz
+            </button>
+          </div>
+          <p style="color: #475569; font-size: 1.05rem; margin-bottom: 0;">Test your knowledge of this lesson with a quick multiple-choice quiz.</p>
+        </div>
+      `;
+    }
+
+    html += `</div>`;
+    
+    if (hasVocab) {
+      html += `</div>`; // End locked-content
+    }
+
+    html += `
+      <div style="text-align: center; margin-top: 40px; margin-bottom: 40px; padding: 30px; border-top: 2px dashed #cbd5e1; color: #64748b;">
+        <h3 style="margin-bottom: 10px; color: #334155;"><i class="fa-solid fa-flag-checkered"></i> Lesson Complete</h3>
+        <p style="margin: 0;">You have reached the end of the core narrative phases for this lesson.</p>
+      </div>
+    `;
+    contentArea.innerHTML = html;
+    window.vocabMatchesFound = 0;
+    setTimeout(() => {
+      if (window.mermaid) {
+        try {
+          mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        } catch (e) {
+          console.error("Mermaid render error:", e);
+        }
+      }
+    }, 100); // reset for new lesson
+
   }
 
-  if (window.isRecordingSpeech) {
-    stopRecognition();
+  // Toggling elements helper
+  window.toggleElement = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  };
+
+
+  // Matching Game Logic
+  let selectedTermIdx = null;
+  let selectedTermEl = null;
+  window.vocabMatchesFound = 0;
+
+  document.addEventListener('click', (e) => {
+    const termBtn = e.target.closest('.match-term-btn');
+    const defBtn = e.target.closest('.match-def-btn');
+
+    if (termBtn && !termBtn.disabled) {
+      document.querySelectorAll('.match-term-btn').forEach(b => {
+        if (!b.disabled) b.style.borderColor = '#cbd5e1';
+      });
+      termBtn.style.borderColor = '#3b82f6';
+      selectedTermIdx = termBtn.dataset.idx;
+      selectedTermEl = termBtn;
+    }
+
+    if (defBtn && !defBtn.disabled && selectedTermIdx !== null) {
+      if (defBtn.dataset.idx === selectedTermIdx) {
+        // Match found!
+        defBtn.style.background = '#10b981';
+        defBtn.style.color = '#fff';
+        defBtn.style.borderColor = '#059669';
+        defBtn.disabled = true;
+
+        selectedTermEl.style.background = '#10b981';
+        selectedTermEl.style.color = '#fff';
+        selectedTermEl.style.borderColor = '#059669';
+        selectedTermEl.disabled = true;
+
+        selectedTermIdx = null;
+        selectedTermEl = null;
+        window.vocabMatchesFound++;
+
+        const totalTerms = document.querySelectorAll('.match-term-btn').length;
+        if (window.vocabMatchesFound >= totalTerms) {
+           const successMsg = document.getElementById('unlock-success');
+           if (successMsg) successMsg.style.display = 'block';
+           
+           const lockedSec = document.getElementById('locked-content');
+           if (lockedSec) {
+             lockedSec.style.opacity = '1';
+             lockedSec.style.pointerEvents = 'auto';
+             lockedSec.style.filter = 'none';
+           }
+        }
+      } else {
+        // Wrong match
+        defBtn.style.borderColor = '#ef4444';
+        setTimeout(() => {
+          if (!defBtn.disabled) defBtn.style.borderColor = '#cbd5e1';
+        }, 500);
+      }
+    }
+  });
+
+  // Initialize
+  if (unitData.lessons.length > 0) {
+    renderSidebar();
+    
+    // Initial Render - load homepage
+    renderHomepage();
   } else {
-    try {
-      recognition.start();
-    } catch(e) {
-      console.error(e);
+    contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
+  }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+window.updateProgress = () => {
+  const inputs = document.querySelectorAll('.student-answer-input');
+  let filled = 0;
+  inputs.forEach(input => {
+    if (input.value.trim().length > 0) filled++;
+  });
+  const bar = document.getElementById('progress-bar');
+  if (bar) {
+    if (inputs.length === 0) bar.style.width = '100%';
+    else bar.style.width = `${(filled / inputs.length) * 100}%`;
+  }
+};
+}
+
+
+  function assignQuestionNumbers(lesson) {
+    let q = 1;
+    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
+    if (lesson.do_now) {
+      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
+      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
+    }
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => {
+        if (block.tasks) block.tasks.forEach(task => task.qNum = q++);
+      });
+    }
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
+  }
+
+  function openTaskWhiteboard() {
+    const modal = document.getElementById('task-whiteboard-modal');
+    if (!modal) return;
+    
+    const container = document.getElementById('whiteboard-questions-container');
+    container.innerHTML = '';
+    
+    const activeLesson = window.currentActiveLesson || unitData.lessons[0];
+    
+    assignQuestionNumbers(activeLesson);
+    
+    let html = '';
+    
+    const addQuestionCard = (qNum, questionText, answerText) => {
+      const finalAnswer = answerText || "Model answer to be discussed in class.";
+      html += `
+        <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
+          <div style="font-weight: bold;">Q${qNum}. ${questionText}</div>
+          <div class="wb-answer">${finalAnswer}</div>
+        </div>
+      `;
+    };
+
+    if (activeLesson.primary_source && activeLesson.primary_source.question) {
+      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
+    }
+    
+    if (activeLesson.do_now) {
+      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
+        addQuestionCard(activeLesson.do_now.qNum, activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
+      } else if (activeLesson.do_now.type === "questions") {
+        activeLesson.do_now.items.forEach(item => {
+           addQuestionCard(item.qNum, item.question, item.answer || '');
+        });
+      }
+    }
+    
+    if (activeLesson.narrative_blocks) {
+      activeLesson.narrative_blocks.forEach(block => {
+        if (block.tasks) {
+          block.tasks.forEach(task => {
+            addQuestionCard(task.qNum, task.text, task.model || '');
+          });
+        }
+      });
+    }
+    
+    if (activeLesson.debate_prep) {
+       addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
+    }
+
+    if (activeLesson.extended && activeLesson.extended.question) {
+       addQuestionCard(activeLesson.extended.qNum || '-', activeLesson.extended.question, activeLesson.extended.model || activeLesson.extended.answer || '');
+    }
+    
+    container.innerHTML = html;
+    modal.classList.add('visible');
+  }
+  
+window.toggleStarterById = function(id) {
+  const starter = document.getElementById(id);
+  if (starter) {
+    starter.style.display = starter.style.display === 'block' ? 'none' : 'block';
+  }
+};
+
+window.dragDebate = function(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+};
+
+window.allowDrop = function(ev) {
+  ev.preventDefault();
+};
+
+window.dropDebate = function(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const el = document.getElementById(data);
+  let target = ev.target;
+  // If dropped on another card, append to the dropzone
+  while (target && !target.classList.contains('debate-dropzone')) {
+    target = target.parentElement;
+  }
+  if (target && el) {
+    target.appendChild(el);
+  }
+};
+
+window.checkDebate = function(lessonId) {
+  let correct = true;
+  let allSorted = true;
+  
+  const bank = document.getElementById(`debate-bank-${lessonId}`);
+  if (bank && bank.children.length > 0) allSorted = false;
+  
+  const forZone = document.getElementById(`debate-for-${lessonId}`);
+  if (forZone) {
+    Array.from(forZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'for') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+
+  const againstZone = document.getElementById(`debate-against-${lessonId}`);
+  if (againstZone) {
+    Array.from(againstZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'against') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+  
+  const feedback = document.getElementById(`debate-feedback-${lessonId}`);
+  if (!allSorted) {
+    feedback.style.color = '#d97706';
+    feedback.innerText = "Please sort all evidence cards first!";
+  } else if (!correct) {
+    feedback.style.color = '#dc2626';
+    feedback.innerText = "Some evidence is in the wrong column. Check the red cards and try again!";
+  } else {
+    feedback.style.color = '#16a34a';
+    feedback.innerText = "Excellent! All evidence sorted correctly. You are ready to write your essay!";
+  }
+};
+window.toggleAnswerById = function(id) {
+  const ans = document.getElementById(id);
+  if (ans) {
+    if (ans.classList.contains('revealed')) {
+      ans.classList.remove('revealed');
+      ans.style.display = 'none';
+    } else {
+      ans.classList.add('revealed');
+      ans.style.display = 'block';
     }
   }
 };
 
-window.updateBlurtingWordCount = function(val) {
-  const countEl = document.getElementById("blurtingWordCount");
-  if (!countEl) return;
-  const words = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
-  countEl.innerText = `${words} Word${words === 1 ? "" : "s"}`;
+window.toggleAllAnswers = function(btn) {
+  const container = btn.closest('.phase-card') || btn.closest('.do-now-box');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
 };
 
-window.clearBlurtingText = function() {
-  const input = document.getElementById("blurtingInput");
-  if (input) {
-    input.value = "";
-    window.updateBlurtingWordCount("");
-  }
-  const report = document.getElementById("blurtingReport");
-  if (report) {
-    report.style.display = "none";
-    report.innerHTML = "";
-  }
-  if (window.isRecordingSpeech) {
-    window.toggleBlurtingSpeech();
+window.toggleAllWhiteboardAnswers = function() {
+  const container = document.getElementById('taskWhiteboardContent');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+};
+
+window.toggleMap = function(btn) {
+  const container = btn.closest('.interactive-map-container');
+  // Update buttons
+  container.querySelectorAll('.map-toggle-btn').forEach(b => {
+    b.classList.remove('active-map-btn');
+    b.style.backgroundColor = '';
+    b.style.color = '';
+  });
+  btn.classList.add('active-map-btn');
+  btn.style.backgroundColor = '#1a237e';
+  btn.style.color = 'white';
+  
+  // Update images
+  const targetId = btn.getAttribute('data-map-id');
+  container.querySelectorAll('img[id^="map-img-"]').forEach(img => {
+    img.style.opacity = '0';
+  });
+  container.querySelector('#map-img-' + targetId).style.opacity = '1';
+  
+  // Update caption
+  container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
+};
+
+// --- Debate Modal Global Functions ---
+window.currentDebateIndex = 0;
+
+window.injectDebateModalIfNeeded = function() {
+  if (document.getElementById('debateModal')) return;
+  const html = `
+  <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeDebateModal()">
+    <div class="modal-content" style="background: white; border: 3px solid var(--accent-red); border-radius: 12px; padding: 30px; max-width: 700px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button onclick="window.closeDebateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <i class="fa-solid fa-scale-balanced" style="font-size: 32pt; color: var(--accent-red);"></i>
+        <h2 style="font-family: var(--font-heading); font-size: 22pt; margin: 10px 0 0 0; color: var(--navy); text-transform: uppercase;">Classroom Oracy</h2>
+        <h3 style="font-family: var(--font-title); font-size: 14pt; margin: 5px 0 0 0; color: #555;" id="debateTopicSubtitle">Structured Debate Prompt</h3>
+      </div>
+      <div id="debateModalContent" style="font-size: 14pt; line-height: 1.5; text-align: center; background: #faf9f6; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+        <!-- Content dynamically populated -->
+      </div>
+      <div id="debateSentenceStarterContainer" style="display: none; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin-bottom: 20px; border-radius: 4px; text-align: left;">
+        <strong style="color: #d97706; font-size: 11pt; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-lightbulb"></i> Sentence Starter</strong>
+        <span id="debateSentenceStarterText" style="font-size: 12pt; color: #451a03; font-style: italic;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn btn-secondary" onclick="window.cycleDebatePrompt(-1)"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button id="btn-show-starter" class="btn" style="background: transparent; border: 2px dashed #cbd5e1; color: #64748b; border-radius: 6px; padding: 8px 15px; font-size: 11pt; cursor: pointer; transition: all 0.2s;" onclick="window.toggleDebateStarter()">Show Hint</button>
+        <button class="btn btn-primary" onclick="window.cycleDebatePrompt(1)">Next Prompt <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.openDebateModal = function() {
+  window.injectDebateModalIfNeeded();
+  const modal = document.getElementById('debateModal');
+  modal.style.display = 'flex';
+  // Trigger reflow
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  window.renderDebatePrompt();
+};
+
+window.closeDebateModal = function() {
+  const modal = document.getElementById('debateModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
   }
 };
 
-window.submitBlurtingRecall = function() {
-  const topicSelect = document.getElementById("blurtingTopicSelect");
-  const inputEl = document.getElementById("blurtingInput");
-  const reportEl = document.getElementById("blurtingReport");
-  
-  if (!topicSelect || !inputEl || !reportEl) return;
-  
-  const lessonId = Number(topicSelect.value);
-  const text = inputEl.value.trim().toLowerCase();
-  
-  if (text === "") {
-    alert("Please write down some memories before analyzing!");
+window.renderDebatePrompt = function() {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts || window.currentUnitData.debatePrompts.length === 0) {
+    document.getElementById('debateTopicSubtitle').innerText = "No prompts available";
+    document.getElementById('debateModalContent').innerHTML = "No debate prompts found for this unit.";
+    document.getElementById('btn-show-starter').style.display = 'none';
     return;
   }
+  const prompts = window.currentUnitData.debatePrompts;
+  const promptData = prompts[window.currentDebateIndex];
+  document.getElementById('debateTopicSubtitle').innerText = promptData.title;
+  document.getElementById('debateModalContent').innerHTML = promptData.prompt;
   
-  const data = blurtingData.find(d => d.lessonId === lessonId);
+  const starterContainer = document.getElementById('debateSentenceStarterContainer');
+  const starterBtn = document.getElementById('btn-show-starter');
+  
+  // Hide starter by default when changing prompts
+  if (starterContainer) starterContainer.style.display = 'none';
+  
+  if (promptData.sentence_starter && starterBtn) {
+    starterBtn.style.display = 'inline-block';
+    starterBtn.innerText = 'Show Hint';
+    document.getElementById('debateSentenceStarterText').innerText = promptData.sentence_starter;
+  } else if (starterBtn) {
+    starterBtn.style.display = 'none';
+  }
+};
+
+window.toggleDebateStarter = function() {
+  const container = document.getElementById('debateSentenceStarterContainer');
+  const btn = document.getElementById('btn-show-starter');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    btn.innerText = 'Hide Hint';
+  } else {
+    container.style.display = 'none';
+    btn.innerText = 'Show Hint';
+  }
+};
+
+window.cycleDebatePrompt = function(direction) {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
+  const prompts = window.currentUnitData.debatePrompts;
+  window.currentDebateIndex += direction;
+  if (window.currentDebateIndex < 0) window.currentDebateIndex = prompts.length - 1;
+  if (window.currentDebateIndex >= prompts.length) window.currentDebateIndex = 0;
+  window.renderDebatePrompt();
+};
+
+// --- Milestone Modal Global Functions ---
+window.injectMilestoneModalIfNeeded = function() {
+  if (document.getElementById('milestoneModal')) return;
+  const html = `
+  <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeMilestoneModal()">
+    <div class="modal-content" style="background: var(--navy); border: 2.5px solid var(--gold); border-radius: 12px; padding: 25px; max-width: 500px; width: 90%; color: #ffffff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeMilestoneModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #ffffff; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalMilestoneContent">
+        <!-- Content dynamically populated via showMilestoneModal -->
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.showMilestoneModal = function(id) {
+  window.injectMilestoneModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.milestones) return;
+  const data = window.currentUnitData.milestones[id];
   if (!data) return;
   
-  let recalledCount = 0;
-  const factsResults = data.facts.map(factObj => {
-    const matched = factObj.keywords.some(kw => text.includes(kw.toLowerCase()));
-    if (matched) recalledCount++;
-    return {
-      fact: factObj.fact,
-      keywords: factObj.keywords,
-      matched: matched
-    };
-  });
-  
-  const totalFacts = data.facts.length;
-  const percentage = Math.round((recalledCount / totalFacts) * 100);
-  
-  const xpGained = recalledCount * 15 + (percentage === 100 ? 50 : 0);
-  window.gainXP(xpGained);
-  playChronologyFeedbackTone(recalledCount > 0);
-  
-  let reportHTML = `
-    <div style="margin-top: 2rem; background: var(--bg-surface); border: 2px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-lg); animation: fadeIn 0.4s ease-out;">
-      <h3 style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        📊 Active Recall Report: ${percentage}%
-      </h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-        You recalled <strong>${recalledCount} out of ${totalFacts}</strong> core specification facts for this topic. 
-        Earned <strong>+${xpGained} XP</strong>!
-      </p>
-      
-      <div class="progress-bar-container" style="background: var(--bg-main); height: 10px; border-radius: 5px; margin-bottom: 1.5rem; overflow: hidden;">
-        <div class="progress-bar-fill" style="width: ${percentage}%; background: var(--primary); height: 100%; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+  const contentBox = document.getElementById('modalMilestoneContent');
+  if (contentBox) {
+    contentBox.innerHTML = `
+      <div style="font-size: 11pt; font-weight: bold; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Milestone ${id}: ${data.year}</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 1.5px solid var(--gold); padding-bottom: 5px; color: #ffffff;">${data.title}</h3>
+      <img src="${getAssetUrl(data.img)}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
+      <p style="font-size: 10.5pt; line-height: 1.5; color: #e2e8f0; margin-bottom: 15px; text-align: justify;">${data.desc}</p>
+      <div style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
+        <strong style="display: block; font-size: 9pt; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;"><i class="fa-solid fa-circle-question"></i> Retrieval Challenge</strong>
+        <span style="font-size: 9.5pt; line-height: 1.4; color: #f8fafc;">${data.trivia}</span>
       </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-        ${factsResults.map(res => `
-          <div style="display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem; border-radius: var(--radius-sm); background: ${res.matched ? 'rgba(5, 150, 105, 0.05)' : 'rgba(239, 68, 68, 0.05)'}; border: 1px solid ${res.matched ? 'rgba(5, 150, 105, 0.2)' : 'rgba(239, 68, 68, 0.2)'};">
-            <span style="font-size: 1.1rem; color: ${res.matched ? 'var(--accent-green)' : 'var(--accent-crimson)'}; line-height: 1;">
-              ${res.matched ? '✅' : '❌'}
-            </span>
-            <div>
-              <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem;">${res.fact}</p>
-              <p style="font-size: 0.75rem; color: var(--text-muted);">
-                Keywords searched: ${res.keywords.map(k => `<code>${k}</code>`).join(', ')}
-              </p>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-      
-      <div style="margin-top: 1.5rem; text-align: center;">
-        <button class="btn btn-primary" onclick="window.clearBlurtingText()" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">Try Again / Study Next</button>
-      </div>
-    </div>
-  `;
-  
-  reportEl.innerHTML = reportHTML;
-  reportEl.style.display = "block";
-  reportEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-};
-
-// --- CAUSATION WEB CHALLENGE CONTROLLER ---
-
-let currentCausationChallenge = null;
-let matchedCausationPairs = {};
-let selectedCauseId = null;
-
-window.loadCausationWebChallenge = function(cwId) {
-  const challenge = causationWebData.find(c => c.id === cwId);
-  if (!challenge) return;
-  
-  currentCausationChallenge = challenge;
-  matchedCausationPairs = {};
-  selectedCauseId = null;
-  
-  const selectEl = document.getElementById("causationTopicSelect");
-  if (selectEl) {
-    selectEl.value = cwId;
+    `;
   }
   
-  const qText = document.getElementById("causationQuestionText");
-  if (qText) {
-    qText.innerText = challenge.question;
-  }
-  
-  window.clearCausationLines();
-  renderCausationNodes();
-  
-  const hintBox = document.getElementById("causationHintBox");
-  if (hintBox) {
-    hintBox.innerHTML = "Select a node on the left to start connecting!";
-    hintBox.className = "causation-hint-box";
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    // Trigger reflow
+    void modal.offsetWidth;
+    modal.style.opacity = '1';
+    modal.querySelector('.modal-content').style.transform = 'scale(1)';
   }
 };
 
-function renderCausationNodes() {
-  const causesCol = document.getElementById("causationCausesColumn");
-  const explCol = document.getElementById("causationExplanationsColumn");
-  
-  if (!causesCol || !explCol) return;
-  
-  causesCol.innerHTML = currentCausationChallenge.causes.map(cause => `
-    <div class="causation-node cause-node" id="node-cause-${cause.id}" onclick="window.selectCauseNode('${cause.id}')">
-      <strong style="color: var(--primary); display: block; margin-bottom: 0.25rem;">${cause.label}</strong>
-      <p style="margin: 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">${cause.desc}</p>
-    </div>
-  `).join('');
-  
-  const shuffledExpl = [...currentCausationChallenge.explanations].sort(() => Math.random() - 0.5);
-  
-  explCol.innerHTML = shuffledExpl.map(expl => `
-    <div class="causation-node explanation-node" id="node-expl-${expl.causeId}" onclick="window.selectExplanationNode('${expl.causeId}')">
-      <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.25rem;">${expl.linkText}</strong>
-      <p style="margin: 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">${expl.text}</p>
-    </div>
-  `).join('');
-}
-
-window.selectCauseNode = function(causeId) {
-  if (matchedCausationPairs[causeId]) return;
-  
-  selectedCauseId = causeId;
-  
-  const causesCol = document.getElementById("causationCausesColumn");
-  if (causesCol) {
-    causesCol.querySelectorAll(".cause-node").forEach(node => {
-      node.classList.remove("selected");
-    });
-  }
-  
-  const activeNode = document.getElementById(`node-cause-${causeId}`);
-  if (activeNode) {
-    activeNode.classList.add("selected");
-  }
-  
-  const cause = currentCausationChallenge.causes.find(c => c.id === causeId);
-  const hintBox = document.getElementById("causationHintBox");
-  if (hintBox && cause) {
-    hintBox.innerHTML = `👉 Connecting Cause: <strong>"${cause.label}"</strong>. Select its corresponding consequence on the right.`;
-    hintBox.className = "causation-hint-box selected";
-  }
-};
-
-window.selectExplanationNode = function(causeId) {
-  if (!selectedCauseId) {
-    const hintBox = document.getElementById("causationHintBox");
-    if (hintBox) {
-      hintBox.innerHTML = "⚠️ Please select a Cause on the left first!";
-      hintBox.className = "causation-hint-box error";
-    }
-    return;
-  }
-  
-  const hintBox = document.getElementById("causationHintBox");
-  
-  if (causeId === selectedCauseId) {
-    matchedCausationPairs[selectedCauseId] = true;
-    
-    const causeNode = document.getElementById(`node-cause-${selectedCauseId}`);
-    const explNode = document.getElementById(`node-expl-${selectedCauseId}`);
-    
-    if (causeNode) {
-      causeNode.classList.remove("selected");
-      causeNode.classList.add("matched");
-    }
-    if (explNode) {
-      explNode.classList.add("matched");
-    }
-    
-    window.drawCausationLinkLine(selectedCauseId);
-    selectedCauseId = null;
-    
-    window.gainXP(20);
-    playChronologyFeedbackTone(true);
-    
-    const matchedCount = Object.keys(matchedCausationPairs).length;
-    const totalCount = currentCausationChallenge.causes.length;
-    
-    if (matchedCount === totalCount) {
-      if (hintBox) {
-        hintBox.innerHTML = "🏆 <strong>Outstanding!</strong> You've mapped the full causation web. <strong>+50 XP Bonus</strong>!";
-        hintBox.className = "causation-hint-box success animate-pop";
-      }
-      window.gainXP(50);
-      playLevelUpTone();
-    } else {
-      if (hintBox) {
-        hintBox.innerHTML = "✅ Correct connection! Connect the remaining nodes.";
-        hintBox.className = "causation-hint-box success";
-      }
-    }
-  } else {
-    const activeCauseNode = document.getElementById(`node-cause-${selectedCauseId}`);
-    if (activeCauseNode) {
-      activeCauseNode.classList.remove("selected");
-    }
-    
-    const expl = currentCausationChallenge.explanations.find(e => e.causeId === causeId);
-    if (hintBox && expl) {
-      hintBox.innerHTML = `❌ Incorrect link! The consequence <strong>"${expl.linkText}"</strong> doesn't match the selected cause. Try again.`;
-      hintBox.className = "causation-hint-box error";
-    }
-    
-    selectedCauseId = null;
-    playChronologyFeedbackTone(false);
-  }
-};
-
-window.clearCausationLines = function() {
-  const svg = document.getElementById("causationSvgOverlay");
-  if (svg) svg.innerHTML = "";
-};
-
-window.drawCausationLinkLine = function(causeId) {
-  const svg = document.getElementById("causationSvgOverlay");
-  const causeEl = document.getElementById(`node-cause-${causeId}`);
-  const explEl = document.getElementById(`node-expl-${causeId}`);
-  
-  if (!svg || !causeEl || !explEl) return;
-  
-  const svgRect = svg.getBoundingClientRect();
-  const causeRect = causeEl.getBoundingClientRect();
-  const explRect = explEl.getBoundingClientRect();
-  
-  const x1 = causeRect.right - svgRect.left;
-  const y1 = (causeRect.top + causeRect.bottom) / 2 - svgRect.top;
-  
-  const x2 = explRect.left - svgRect.left;
-  const y2 = (explRect.top + explRect.bottom) / 2 - svgRect.top;
-  
-  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  const cp1x = x1 + (x2 - x1) * 0.4;
-  const cp1y = y1;
-  const cp2x = x1 + (x2 - x1) * 0.6;
-  const cp2y = y2;
-  
-  path.setAttribute("d", `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`);
-  path.setAttribute("stroke", "var(--accent-green, #10b981)");
-  path.setAttribute("stroke-width", "3");
-  path.setAttribute("fill", "none");
-  path.setAttribute("id", `line-${causeId}`);
-  path.setAttribute("class", "causation-link-line");
-  
-  svg.appendChild(path);
-};
-
-window.addEventListener("resize", () => {
-  if (appState.currentTab === "causationWebSection" && currentCausationChallenge) {
-    window.clearCausationLines();
-    Object.keys(matchedCausationPairs).forEach(causeId => {
-      window.drawCausationLinkLine(causeId);
-    });
-  }
-});
-
-// --- PRESENTATION MODE & PRINT EXPORTS ---
-
-window.togglePresentationMode = function() {
-  const isPres = document.documentElement.classList.toggle("presentation-mode");
-  localStorage.setItem("elizabethan_pres_mode", isPres);
-  
-  if (isPres) {
-    alert("Entered Presentation Mode. Clean layout optimized for classroom displays and projectors.");
-  } else {
-    alert("Exited Presentation Mode. Standard revision features restored.");
-  }
-  
-  if (appState.currentTab === "causationWebSection" && currentCausationChallenge) {
+window.closeMilestoneModal = function() {
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
     setTimeout(() => {
-      window.clearCausationLines();
-      Object.keys(matchedCausationPairs).forEach(causeId => {
-        window.drawCausationLinkLine(causeId);
-      });
-    }, 150);
+      modal.style.display = 'none';
+    }, 300);
   }
 };
 
-window.generatePrintableStudySheet = function() {
-  const printWindow = window.open("", "_blank");
-  if (!printWindow) {
-    alert("Please allow popups to open the printable study sheet!");
-    return;
-  }
-  
-  let lessonsHtml = "";
-  quizData.forEach((topic) => {
-    lessonsHtml += `
-      <div class="topic-section">
-        <h3>Key Topic ${topic.section}: ${topic.topic}</h3>
-        <ul>
-          ${topic.questions.slice(0, 3).map(q => `
-            <li>
-              <strong>${q.question}</strong><br>
-              <span class="answer">${q.answer}</span><br>
-              <span class="fact"><em>Key Fact:</em> ${q.fact || ""}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-    `;
-  });
-  
-  let timelineHtml = "";
-  let allEvents = [];
-  timelineData.forEach(card => {
-    card.events.forEach(evt => {
-      allEvents.push({
-        ...evt,
-        parentSection: card.section
-      });
-    });
-  });
+// --- Quiz Modal Global Functions ---
+window.currentQuizData = [];
+window.currentQuizIndex = 0;
+window.currentQuizLessonId = null;
 
-  const getEventYear = (evt) => {
-    if (!evt.dates || evt.dates.length === 0) return 9999;
-    const match = evt.dates[0].match(/\d{4}/);
-    return match ? parseInt(match[0], 10) : 9999;
-  };
-
-  allEvents.sort((a, b) => getEventYear(a) - getEventYear(b));
-
-  allEvents.forEach(evt => {
-    const cleanText = (evt.text || "").replace(/\*\*/g, "");
-    timelineHtml += `
-      <div class="timeline-row">
-        <span class="date">${evt.dates.join(', ')}</span>
-        <span class="event"><strong>[${evt.parentSection}] ${evt.subtitle}</strong> - ${cleanText}</span>
-      </div>
-    `;
-  });
-
-  printWindow.document.write(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>GCSE Elizabethan England Revision Study Sheet</title>
-      <style>
-        body {
-          font-family: 'Outfit', 'Segoe UI', Arial, sans-serif;
-          color: #1e293b;
-          padding: 2rem;
-          line-height: 1.5;
-        }
-        h1, h2, h3 {
-          color: #be123c;
-          font-family: 'Outfit', sans-serif;
-        }
-        h1 {
-          border-bottom: 3px solid #be123c;
-          padding-bottom: 0.5rem;
-          margin-bottom: 2rem;
-          text-align: center;
-        }
-        h2 {
-          border-bottom: 2px solid #e2e8f0;
-          padding-bottom: 0.25rem;
-          margin-top: 2rem;
-        }
-        .topic-section {
-          margin-bottom: 1.5rem;
-          page-break-inside: avoid;
-        }
-        .topic-section h3 {
-          margin-bottom: 0.5rem;
-          color: #0f172a;
-        }
-        ul {
-          padding-left: 1.25rem;
-          margin: 0;
-        }
-        li {
-          margin-bottom: 1rem;
-        }
-        .answer {
-          color: #334155;
-          font-size: 0.95rem;
-        }
-        .fact {
-          font-size: 0.85rem;
-          color: #ca8a04;
-          display: block;
-          margin-top: 0.25rem;
-        }
-        .timeline-row {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 0.5rem;
-          border-bottom: 1px dashed #e2e8f0;
-          padding-bottom: 0.5rem;
-          page-break-inside: avoid;
-        }
-        .date {
-          font-weight: bold;
-          color: #be123c;
-          min-width: 80px;
-        }
-        .event {
-          color: #334155;
-        }
-        @media print {
-          body {
-            padding: 0;
-          }
-          button {
-            display: none;
-          }
-        }
-      </style>
-    </head>
-    <body>
-      <div style="text-align: right; margin-bottom: 1rem;">
-        <button onclick="window.print()" style="background: #be123c; color: white; border: none; padding: 0.5rem 1rem; font-weight: bold; cursor: pointer; border-radius: 4px;">Print Study Sheet</button>
-      </div>
-      <h1>GCSE History Revision Study Sheet<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">Early Elizabethan England 1558-1588</span></h1>
+window.injectQuizModalIfNeeded = function() {
+  if (document.getElementById('quizModal')) return;
+  const html = `
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
+    <div class="modal-content" style="background: #ffffff; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #64748b; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
       
-      <h2>🔑 Specification Summary Questions</h2>
-      ${lessonsHtml}
-      
-      <div style="page-break-before: always;"></div>
-      
-      <h2>📅 Key Historical Timeline</h2>
-      <div style="margin-top: 1rem;">
-        ${timelineHtml}
-      </div>
-      
-      <h2>📝 Exam Formulas</h2>
-      <div style="background: #f8fafc; border-left: 4px solid #be123c; padding: 1rem; margin-top: 1rem;">
-        <p><strong>Question 1 (Describe):</strong> State Feature -> Detail (2 Marks)</p>
-        <p><strong>Question 2 (Explain Why):</strong> 3x PEEL paragraphs (Point, Evidence, Explanation, Link). Focus on analysis, not description. Must include third own-knowledge factor. (12 Marks)</p>
-        <p><strong>Question 3/4 (Essay):</strong> Intro (Thesis) -> Agree (PEEL) -> Disagree (PEEL) -> Own Knowledge (PEEL) -> Conclusion (Sustained Judgment). (16 Marks)</p>
-      </div>
-    </body>
-    </html>
-  `);
-  printWindow.document.close();
-};
-
-// ==========================================
-// TABOO REVISION GAME DATASET & CONTROLLER
-// ==========================================
-
-const tabooCardsData = [
-  // Key Topic 1
-  { target: "THE PRIVY COUNCIL", topic: 1, words: ["Nineteen", "Advise", "Men", "Government", "Meetings"] },
-  { target: "THE GREAT CHAIN OF BEING", topic: 1, words: ["Hierarchy", "Status", "Society", "Bottom", "Order"] },
-  { target: "PARLIAMENT", topic: 1, words: ["Taxes", "Money", "Commons", "Lords", "Pass"] },
-  { target: "ACT OF SUPREMACY", topic: 1, words: ["Governor", "Head", "Church", "Oath", "1559"] },
-  { target: "THE MIDDLE WAY", topic: 1, words: ["Compromise", "Settlement", "Catholic", "Protestant", "Religion"] },
-  { target: "PURITANS", topic: 1, words: ["Radical", "Strict", "Protestant", "Crucifix", "Vestments"] },
-  { target: "RECUSANTS", topic: 1, words: ["Fine", "Shilling", "Catholic", "Attend", "Church"] },
-  { target: "MARY, QUEEN OF SCOTS", topic: 1, words: ["Cousin", "Claim", "Executed", "Catholic", "Fled"] },
-  { target: "THE CASKET LETTERS", topic: 1, words: ["Murder", "Darnley", "Bothwell", "Evidence", "Love"] },
-  
-  // Key Topic 2
-  { target: "REVOLT OF THE NORTHERN EARLS", topic: 2, words: ["Northumberland", "Westmorland", "1569", "Mass", "Durham"] },
-  { target: "SIR FRANCIS WALSINGHAM", topic: 2, words: ["Spy", "Master", "Catch", "Codes", "Ciphers"] },
-  { target: "BABINGTON PLOT", topic: 2, words: ["1586", "Letters", "Mary", "Execution", "Assassinate"] },
-  { target: "SIR FRANCIS DRAKE", topic: 2, words: ["Circumnavigate", "Privateer", "Golden Hind", "£400,000", "Spanish"] },
-  { target: "TREATY OF NONSUCH", topic: 2, words: ["1585", "Netherlands", "Dudley", "Army", "War"] },
-  { target: "RAID ON CADIZ", topic: 2, words: ["Singeing", "Beard", "Ships", "Barrels", "Delay"] },
-  { target: "SPANISH ARMADA", topic: 2, words: ["1588", "Philip", "Fleet", "Invasion", "130"] },
-  { target: "FIRESHIPS", topic: 2, words: ["Burn", "Calais", "Panic", "Scatter", "Crescent"] },
-  { target: "DUKE OF MEDINA SIDONIA", topic: 2, words: ["Commander", "Leader", "Seasick", "Experience", "Armada"] },
-  
-  // Key Topic 3
-  { target: "GRAMMAR SCHOOL", topic: 3, words: ["Boys", "Fee", "Latin", "Greek", "Education"] },
-  { target: "HUMANISM", topic: 3, words: ["Philosophy", "Potential", "Education", "Movement", "Learning"] },
-  { target: "BEAR-BAITING", topic: 3, words: ["Dogs", "Animal", "Cruel", "Sport", "Arena"] },
-  { target: "VAGABONDS", topic: 3, words: ["Beggar", "Homeless", "Poor", "Punish", "Whip"] },
-  { target: "ENCLOSURE", topic: 3, words: ["Fence", "Sheep", "Land", "Common", "Farming"] },
-  { target: "HOUSE OF CORRECTION", topic: 3, words: ["Prison", "Idle", "Work", "Poor", "Punish"] },
-  { target: "ASTROLABE", topic: 3, words: ["Navigation", "Stars", "Position", "Ocean", "Instrument"] },
-  { target: "GALLEON", topic: 3, words: ["Ship", "Faster", "Sail", "Cannon", "Race-built"] },
-  { target: "SIR WALTER RALEIGH", topic: 3, words: ["Virginia", "Colony", "Organise", "Queen", "Favourite"] },
-  { target: "ROANOKE", topic: 3, words: ["Island", "Colony", "Croatoan", "Lost", "Native"] },
-  { target: "THE TIGER", topic: 3, words: ["Ship", "Food", "Ruined", "Seawater", "Seeds"] }
-];
-
-const tabooGameState = {
-  mode: 'team', // 'team' or 'solo'
-  topicFilter: 'all', // 'all', 1, 2, 3
-  timerLength: 60, // 30, 60, 90, 0 (no timer)
-  timeRemaining: 60,
-  timerInterval: null,
-  deck: [],
-  currentIndex: 0,
-  score: 0,
-  passed: 0,
-  results: [], // Array of { target, outcome: 'correct' | 'passed' }
-  revealed: false, // Used in solo mode to toggle answer
-  
-  // Multi-team details
-  numTeams: 2, // Default to 2 teams
-  currentTeamIndex: 0,
-  teams: [] // Array of { name: 'Team A', score: 0, results: [] }
-};
-
-window.selectTabooMode = function(mode) {
-  tabooGameState.mode = mode;
-  const btnTeam = document.getElementById("tabooModeTeam");
-  const btnSolo = document.getElementById("tabooModeSolo");
-  if (btnTeam) btnTeam.classList.toggle("active", mode === 'team');
-  if (btnSolo) btnSolo.classList.toggle("active", mode === 'solo');
-  
-  const teamConfigSection = document.getElementById("tabooTeamConfigSection");
-  if (teamConfigSection) {
-    teamConfigSection.style.display = mode === 'team' ? 'block' : 'none';
-  }
-};
-
-window.selectTabooTopic = function(topic) {
-  tabooGameState.topicFilter = topic;
-  const btnAll = document.getElementById("tabooTopicAll");
-  const btn1 = document.getElementById("tabooTopic1");
-  const btn2 = document.getElementById("tabooTopic2");
-  const btn3 = document.getElementById("tabooTopic3");
-  if (btnAll) btnAll.classList.toggle("active", topic === 'all');
-  if (btn1) btn1.classList.toggle("active", topic === 1);
-  if (btn2) btn2.classList.toggle("active", topic === 2);
-  if (btn3) btn3.classList.toggle("active", topic === 3);
-};
-
-window.selectTabooTimer = function(seconds) {
-  tabooGameState.timerLength = seconds;
-  const btn30 = document.getElementById("tabooTimer30");
-  const btn60 = document.getElementById("tabooTimer60");
-  const btn90 = document.getElementById("tabooTimer90");
-  const btnNone = document.getElementById("tabooTimerNone");
-  if (btn30) btn30.classList.toggle("active", seconds === 30);
-  if (btn60) btn60.classList.toggle("active", seconds === 60);
-  if (btn90) btn90.classList.toggle("active", seconds === 90);
-  if (btnNone) btnNone.classList.toggle("active", seconds === 0);
-};
-
-window.changeTabooNumTeams = function(num) {
-  tabooGameState.numTeams = num;
-  for (let i = 2; i <= 4; i++) {
-    const btn = document.getElementById("tabooNumTeams" + i);
-    if (btn) btn.classList.toggle("active", i === num);
-  }
-  renderTeamNameInputs();
-};
-
-function renderTeamNameInputs() {
-  const container = document.getElementById("tabooTeamNamesContainer");
-  if (!container) return;
-  
-  let html = "";
-  for (let i = 0; i < tabooGameState.numTeams; i++) {
-    const defaultName = `Team ${String.fromCharCode(65 + i)}`;
-    html += `
-      <div class="taboo-team-input-row" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <label style="font-size: 0.85rem; font-weight: 700; width: 60px;">Team ${i + 1}:</label>
-        <input type="text" class="taboo-team-input" id="tabooTeamInput${i}" value="${defaultName}" placeholder="${defaultName}" style="flex: 1; padding: 0.4rem; font-size: 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-surface); color: var(--text-main);">
-      </div>
-    `;
-  }
-  container.innerHTML = html;
-}
-
-window.initTabooSetupScreen = function(container) {
-  tabooGameState.mode = 'team';
-  tabooGameState.topicFilter = 'all';
-  tabooGameState.timerLength = 60;
-  tabooGameState.numTeams = 2;
-  
-  if (tabooGameState.timerInterval) {
-    clearInterval(tabooGameState.timerInterval);
-    tabooGameState.timerInterval = null;
-  }
-  
-  container.innerHTML = `
-    <div class="taboo-setup-container" style="max-width: 580px; margin: 0 auto; text-align: center; padding: 1.5rem 0.5rem;">
-      <h3 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 800;">🃏 Taboo Revision Game</h3>
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-        Get your partner or team to guess the Target Word without using the 5 forbidden Taboo Words!
-      </p>
-      
-      <div class="taboo-option-group" style="margin-bottom: 1.25rem; text-align: left;">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Game Mode</label>
-        <div class="taboo-option-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-          <button class="btn active" id="tabooModeTeam" onclick="selectTabooMode('team')">Partner / Team Play</button>
-          <button class="btn" id="tabooModeSolo" onclick="selectTabooMode('solo')">Solo Study Mode</button>
+      <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+        <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
+        <div>
+          <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check</h2>
+          <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / 4</span></p>
         </div>
       </div>
       
-      <div id="tabooTeamConfigSection" class="taboo-team-setup-box" style="margin-bottom: 1.25rem; text-align: left; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: rgba(255,255,255,0.01);">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Select Number of Teams</label>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
-          <button class="btn active" id="tabooNumTeams2" onclick="changeTabooNumTeams(2)">2 Teams</button>
-          <button class="btn" id="tabooNumTeams3" onclick="changeTabooNumTeams(3)">3 Teams</button>
-          <button class="btn" id="tabooNumTeams4" onclick="changeTabooNumTeams(4)">4 Teams</button>
-        </div>
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Team Names</label>
-        <div id="tabooTeamNamesContainer"></div>
+      <div id="quiz-question-container">
+        <!-- Populated dynamically -->
       </div>
       
-      <div class="taboo-option-group" style="margin-bottom: 1.25rem; text-align: left;">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Select Topic Filter</label>
-        <div class="taboo-option-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-bottom: 0.5rem;">
-          <button class="btn active" id="tabooTopicAll" onclick="selectTabooTopic('all')">All Key Topics</button>
-          <button class="btn" id="tabooTopic1" onclick="selectTabooTopic(1)">Key Topic 1: Queen & Gov</button>
-        </div>
-        <div class="taboo-option-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
-          <button class="btn" id="tabooTopic2" onclick="selectTabooTopic(2)">Key Topic 2: Challenges</button>
-          <button class="btn" id="tabooTopic3" onclick="selectTabooTopic(3)">Key Topic 3: Society/Expl</button>
-        </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+        <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
+        <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
       </div>
-      
-      <div class="taboo-option-group" style="margin-bottom: 1.5rem; text-align: left;">
-        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Timer Limit (Seconds)</label>
-        <div class="taboo-option-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
-          <button class="btn" id="tabooTimer30" onclick="selectTabooTimer(30)">30s</button>
-          <button class="btn active" id="tabooTimer60" onclick="selectTabooTimer(60)">60s</button>
-          <button class="btn" id="tabooTimer90" onclick="selectTabooTimer(90)">90s</button>
-          <button class="btn" id="tabooTimerNone" onclick="selectTabooTimer(0)">None</button>
-        </div>
-      </div>
-      
-      <button class="btn btn-primary" onclick="startTabooGame()" style="width: 100%; padding: 0.75rem 1.5rem; font-family: var(--font-title); font-size: 1.1rem; font-weight: 800;">
-        ⚔️ Start Taboo Game
-      </button>
     </div>
-  `;
-  renderTeamNameInputs();
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
 };
 
-window.startTabooGame = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
+window.startQuiz = function(lessonId) {
+  window.injectQuizModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.lessons) return;
+  const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
+  if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
   
-  // 1. Gather team names if team mode
-  if (tabooGameState.mode === 'team') {
-    tabooGameState.teams = [];
-    for (let i = 0; i < tabooGameState.numTeams; i++) {
-      const input = document.getElementById(`tabooTeamInput${i}`);
-      const name = (input && input.value.trim()) ? input.value.trim() : `Team ${String.fromCharCode(65 + i)}`;
-      tabooGameState.teams.push({
-        name: name,
-        score: 0,
-        results: []
-      });
-    }
-    tabooGameState.currentTeamIndex = 0;
-  }
+  window.currentQuizData = lesson.quiz;
+  window.currentQuizIndex = 0;
+  window.currentQuizLessonId = lessonId;
   
-  // 2. Build and shuffle filtered deck
-  let filtered = tabooCardsData;
-  if (tabooGameState.topicFilter !== 'all') {
-    filtered = tabooCardsData.filter(c => c.topic === tabooGameState.topicFilter);
-  }
+  window.renderQuizQuestion();
   
-  if (filtered.length === 0) {
-    alert("No cards found for the selected topic filter.");
-    return;
-  }
-  
-  // Shuffle cards
-  const deck = [...filtered];
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
-  }
-  
-  tabooGameState.deck = deck;
-  tabooGameState.currentIndex = 0;
-  tabooGameState.score = 0;
-  tabooGameState.passed = 0;
-  tabooGameState.results = [];
-  
-  if (tabooGameState.mode === 'team') {
-    // Show transition screen for first team
-    renderTabooTeamTransition();
-  } else {
-    // Start immediately for solo
-    renderTabooCard();
-  }
+  const modal = document.getElementById('quizModal');
+  modal.style.display = 'flex';
+  void modal.offsetWidth; // Trigger reflow
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
 };
 
-window.renderTabooTeamTransition = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
+window.renderQuizQuestion = function() {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
   
-  if (tabooGameState.timerInterval) {
-    clearInterval(tabooGameState.timerInterval);
-    tabooGameState.timerInterval = null;
-  }
-  
-  const currentTeam = tabooGameState.teams[tabooGameState.currentTeamIndex];
-  
-  container.innerHTML = `
-    <div class="taboo-transition-card" style="max-width: 500px; margin: 2rem auto; text-align: center; padding: 2rem; border: 1px solid var(--border-color); border-radius: var(--radius-lg); background: rgba(255,255,255,0.02); box-shadow: var(--shadow-xl);">
-      <div style="font-size: 3.5rem; margin-bottom: 1rem;">📢</div>
-      <h3 style="font-family: var(--font-title); font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 800;">Get Ready!</h3>
-      <h2 style="font-family: var(--font-title); font-size: 2rem; color: var(--text-gold); margin-bottom: 1.5rem; font-weight: 900;">${currentTeam.name}</h2>
-      
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.5;">
-        Pass the device to **${currentTeam.name}**. 
-        <br>When you are ready to start your turn and the timer, click the button below.
-      </p>
-      
-      <button class="btn btn-primary" onclick="startTeamTurn()" style="width: 100%; padding: 0.75rem 1.5rem; font-family: var(--font-title); font-size: 1.1rem; font-weight: 800;">
-        🏁 Start Turn
-      </button>
-    </div>
-  `;
-};
-
-window.startTeamTurn = function() {
-  // Setup timer remaining for this turn
-  tabooGameState.timeRemaining = tabooGameState.timerLength;
-  
-  // Render gameplay
-  renderTabooCard();
-  
-  // Start timer if time limit > 0
-  if (tabooGameState.timerLength > 0) {
-    tabooGameState.timerInterval = setInterval(() => {
-      tabooGameState.timeRemaining--;
-      const timeDisplay = document.getElementById("tabooTimerVal");
-      if (timeDisplay) {
-        timeDisplay.innerText = tabooGameState.timeRemaining + "s";
-        if (tabooGameState.timeRemaining <= 10) {
-          timeDisplay.classList.add("warning");
-        }
-      }
-      
-      if (tabooGameState.timeRemaining <= 0) {
-        clearInterval(tabooGameState.timerInterval);
-        tabooGameState.timerInterval = null;
-        // Buzz sound
-        if (typeof playChronologyFeedbackTone === 'function') {
-          playChronologyFeedbackTone(false);
-        }
-        // Rotate turns
-        rotateTeamTurn();
-      }
-    }, 1000);
-  }
-};
-
-window.rotateTeamTurn = function() {
-  // Move to next team
-  tabooGameState.currentTeamIndex++;
-  
-  if (tabooGameState.currentTeamIndex < tabooGameState.numTeams) {
-    // Show transition for next team
-    renderTabooTeamTransition();
-  } else {
-    // Game completed for all teams
-    endTabooGame();
-  }
-};
-
-function renderTabooCard() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  if (tabooGameState.currentIndex >= tabooGameState.deck.length) {
-    if (tabooGameState.mode === 'team') {
-      rotateTeamTurn();
-    } else {
-      endTabooGame();
-    }
-    return;
-  }
-  
-  const card = tabooGameState.deck[tabooGameState.currentIndex];
-  
-  let timerHtml = "";
-  if (tabooGameState.timerLength > 0) {
-    timerHtml = `
-      <div class="taboo-timer-display" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Time Left:</span>
-        <span class="taboo-timer-time" id="tabooTimerVal" style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--primary);">${tabooGameState.timeRemaining}s</span>
-      </div>
-    `;
-  } else {
-    timerHtml = `
-      <div class="taboo-timer-display">
-        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Unlimited Time Mode</span>
-      </div>
-    `;
-  }
-  
-  let headerTitleHtml = "";
-  let scoreHtml = "";
-  if (tabooGameState.mode === 'team') {
-    const currentTeam = tabooGameState.teams[tabooGameState.currentTeamIndex];
-    headerTitleHtml = `<h4 style="font-family: var(--font-title); font-weight: 800; color: var(--text-gold); margin-top: 0; margin-bottom: 0.25rem;">Active Turn: ${currentTeam.name}</h4>`;
-    scoreHtml = `
-      <div class="taboo-score-display" style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Correct</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: #10b981;">${tabooGameState.score}</span>
-        </div>
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Skipped</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--accent-crimson);">${tabooGameState.passed}</span>
-        </div>
-      </div>
-    `;
-  } else {
-    headerTitleHtml = `<h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin-top: 0; margin-bottom: 0.25rem;">Solo Study Mode</h4>`;
-    scoreHtml = `
-      <div class="taboo-score-display" style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Correct</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: #10b981;">${tabooGameState.score}</span>
-        </div>
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Passed</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--accent-crimson);">${tabooGameState.passed}</span>
-        </div>
-      </div>
-    `;
-  }
-  
-  // Card Display
-  const ktClass = `kt${card.topic}`;
-  let cardBodyHtml = "";
-  
-  if (tabooGameState.mode === 'solo' && !tabooGameState.revealed) {
-    cardBodyHtml = `
-      <div class="taboo-card-display ${ktClass}" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid rgba(234, 179, 8, 0.2); border-radius: var(--radius-lg); background: var(--bg-surface); padding: 2rem; position: relative;">
-        <span class="taboo-topic-tag">Key Topic ${card.topic}</span>
-        <button class="btn btn-primary" onclick="revealTabooSoloCard()" style="font-family: var(--font-title); font-weight: 800;">👁️ Reveal Target Word</button>
-      </div>
-      <div class="taboo-controls-panel" style="display: flex; gap: 0.5rem; margin-top: 1.5rem; justify-content: center;">
-        <button class="btn btn-secondary" onclick="closeTTGame()">Exit Game</button>
-      </div>
-    `;
-  } else {
-    const listItems = card.words.map(w => `
-      <li class="taboo-word-item" style="padding: 0.5rem 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fa-solid fa-ban" style="color: var(--accent-crimson); font-size: 0.8rem;"></i> ${w}
-      </li>
-    `).join('');
-    
-    let actionButtons = "";
-    if (tabooGameState.mode === 'team') {
-      actionButtons = `
-        <button class="btn btn-success" onclick="tabooAddPoint(true)" style="flex: 1; font-family: var(--font-title); font-weight: 800;">✅ Got it!</button>
-        <button class="btn btn-danger" onclick="tabooAddPoint(false)" style="flex: 1; font-family: var(--font-title); font-weight: 800;">🚫 Taboo / Pass</button>
-      `;
-    } else {
-      actionButtons = `
-        <button class="btn btn-success" onclick="tabooAddPoint(true)" style="flex: 1; font-family: var(--font-title); font-weight: 800;">✅ I Recalled It</button>
-        <button class="btn btn-danger" onclick="tabooAddPoint(false)" style="flex: 1; font-family: var(--font-title); font-weight: 800;">🚫 Forgot / Pass</button>
-      `;
-    }
-    
-    let finishTurnBtn = "";
-    if (tabooGameState.mode === 'team' && tabooGameState.timerLength === 0) {
-      finishTurnBtn = `
-        <button class="btn btn-secondary" onclick="rotateTeamTurn()" style="width: 100%; font-family: var(--font-title); font-weight: 800; border-color: var(--primary); color: var(--primary);">
-          🏁 Finish Turn (Next Team)
-        </button>
-      `;
-    }
-    
-    cardBodyHtml = `
-      <div class="taboo-card-display ${ktClass}" style="border: 1px solid rgba(234, 179, 8, 0.2); border-radius: var(--radius-lg); background: var(--bg-surface); padding: 1.5rem; text-align: center; position: relative;">
-        <span class="taboo-topic-tag">Key Topic ${card.topic}</span>
-        <h2 class="taboo-target-word" style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 900; color: var(--text-gold); margin-top: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">${card.target}</h2>
-        
-        <div class="taboo-words-label" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Forbidden Taboo Words:</div>
-        <ul class="taboo-words-list" style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 1.5rem;">
-          ${listItems}
-        </ul>
-      </div>
-      
-      <div class="taboo-controls-panel" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
-        <div style="display: flex; gap: 0.5rem;">
-          ${actionButtons}
-        </div>
-        ${finishTurnBtn}
-        <button class="btn btn-secondary" onclick="closeTTGame()">Exit Game</button>
-      </div>
-    `;
-  }
-  
-  container.innerHTML = `
-    <div class="taboo-gameplay-layout" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
-        ${headerTitleHtml}
-        ${timerHtml}
-      </div>
-      
-      ${cardBodyHtml}
-      ${scoreHtml}
-    </div>
-  `;
-}
-
-window.revealTabooSoloCard = function() {
-  tabooGameState.revealed = true;
-  renderTabooCard();
-};
-
-window.tabooAddPoint = function(success) {
-  const currentCard = tabooGameState.deck[tabooGameState.currentIndex];
-  
-  if (typeof playChronologyFeedbackTone === 'function') {
-    playChronologyFeedbackTone(success);
-  }
-  
-  const outcome = success ? 'correct' : 'passed';
-  if (success) {
-    tabooGameState.score++;
-  } else {
-    tabooGameState.passed++;
-  }
-  
-  const resultItem = {
-    target: currentCard.target,
-    outcome: outcome
-  };
-  tabooGameState.results.push(resultItem);
-  
-  if (tabooGameState.mode === 'team') {
-    const currentTeam = tabooGameState.teams[tabooGameState.currentTeamIndex];
-    currentTeam.score = tabooGameState.score;
-    currentTeam.results.push(resultItem);
-  }
-  
-  tabooGameState.currentIndex++;
-  tabooGameState.revealed = false;
-  
-  renderTabooCard();
-};
-
-window.endTabooGame = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  if (tabooGameState.timerInterval) {
-    clearInterval(tabooGameState.timerInterval);
-    tabooGameState.timerInterval = null;
-  }
-  
-  if (tabooGameState.mode === 'team') {
-    const sortedTeams = [...tabooGameState.teams].map((t, idx) => ({ ...t, originalIndex: idx }))
-      .sort((a, b) => b.score - a.score);
-    
-    let leaderboardHtml = "";
-    sortedTeams.forEach((t, index) => {
-      const isWinner = index === 0;
-      let rankText = `${index + 1}`;
-      if (index === 0) rankText = "1st";
-      else if (index === 1) rankText = "2nd";
-      else if (index === 2) rankText = "3rd";
-      else rankText = `${index + 1}th`;
-      
-      const summaryList = t.results.map(r => `
-        <span class="taboo-summary-badge ${r.outcome}">${r.target} (${r.outcome})</span>
-      `).join(' ');
-      
-      leaderboardHtml += `
-        <div class="taboo-summary-card" style="margin-bottom: 1.25rem; text-align: left; padding: 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: rgba(255,255,255,0.01);">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
-            <h4 style="font-family: var(--font-title); font-weight: 800; font-size: 1.15rem; color: ${isWinner ? 'var(--text-gold)' : 'var(--text-main)'}; margin: 0; display: flex; align-items: center; gap: 0.4rem;">
-              <span>${isWinner ? '👑' : '👥'} ${t.name}</span>
-              <span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 0.1rem 0.4rem; border-radius: 4px;">Rank: ${rankText}</span>
-            </h4>
-            <span style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--primary);">${t.score} pts</span>
-          </div>
-          
-          <div style="font-size: 0.8rem; line-height: 1.5; color: var(--text-muted);">
-            <strong>Rounds log:</strong> ${t.results.length > 0 ? summaryList : 'None guessed/skipped.'}
-          </div>
-        </div>
-      `;
-    });
-    
-    container.innerHTML = `
-      <div class="taboo-podium-container" style="max-width: 520px; margin: 0 auto; text-align: center; padding: 1rem 0.5rem;">
-        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏆</div>
-        <h3 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 800;">Final Leaderboard</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Congratulations to all teams!</p>
-        
-        ${leaderboardHtml}
-        
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
-          <button class="btn btn-secondary" onclick="loadTTGame('game_taboo')" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700;">
-            🔄 Play Again
-          </button>
-          <button class="btn btn-primary" onclick="closeTTGame()" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700;">
-            🚪 Exit to Vault
-          </button>
-        </div>
-      </div>
-    `;
-    
-    if (typeof playLevelUpTone === 'function') {
-      playLevelUpTone();
-    }
-  } else {
-    const summaryItems = tabooGameState.results.map(r => `
-      <li class="taboo-summary-item ${r.outcome}" style="padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-        <span style="font-weight: 600; color: var(--text-main);">${r.target}</span>
-        <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: ${r.outcome === 'correct' ? '#10b981' : 'var(--accent-crimson)'};">${r.outcome}</span>
-      </li>
-    `).join('');
-    
-    const summaryListHtml = tabooGameState.results.length > 0
-      ? `<ul class="taboo-summary-list" style="list-style: none; padding: 0; border: 1px solid var(--border-color); border-radius: var(--radius-md); max-height: 200px; overflow-y: auto; background: rgba(255,255,255,0.01);">${summaryItems}</ul>`
-      : `<p style="font-style: italic; color: var(--text-muted); margin: 1rem 0;">No words were played.</p>`;
-      
-    container.innerHTML = `
-      <div class="taboo-summary-card" style="max-width: 500px; margin: 0 auto; text-align: center; padding: 2rem; border: 1px solid var(--border-color); border-radius: var(--radius-lg); background: rgba(255,255,255,0.02); box-shadow: var(--shadow-xl);">
-        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏁</div>
-        <h3 style="font-family: var(--font-title); font-size: 1.5rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 800;">Solo Round Finished</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Review your active recall performance below.</p>
-        
-        <div class="taboo-score-display" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
-          <div class="taboo-score-col" style="text-align: center;">
-            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Correct</span>
-            <span class="taboo-score-num" style="font-size: 2.2rem; color: #10b981; font-weight: 800; font-family: var(--font-title);">${tabooGameState.score}</span>
-          </div>
-          <div class="taboo-score-col" style="text-align: center;">
-            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Skipped</span>
-            <span class="taboo-score-num" style="font-size: 2.2rem; color: var(--accent-crimson); font-weight: 800; font-family: var(--font-title);">${tabooGameState.passed}</span>
-          </div>
-        </div>
-        
-        <h4 style="text-align: left; font-family: var(--font-title); font-size: 0.9rem; font-weight: 700; margin-top: 1rem; color: var(--text-gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Guessed Terms Summary:</h4>
-        ${summaryListHtml}
-        
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
-          <button class="btn btn-secondary" onclick="loadTTGame('game_taboo')" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700;">
-            🔄 Play Again
-          </button>
-          <button class="btn btn-primary" onclick="closeTTGame()" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700;">
-            🚪 Exit to Vault
-          </button>
-        </div>
-      </div>
-    `;
-    
-    if (typeof playLevelUpTone === 'function') {
-      playLevelUpTone();
-    }
-  }
-};
-
-// ==========================================
-// WALSINGHAM'S CIPHER ROOM GAME
-// ==========================================
-
-const cipherRoomData = [
-  {
-    id: 1,
-    year: "1569",
-    scrambled: "Hduov ri Qruwkxpehuodqg dqg Zhvwpruodqg",
-    answer: "Earls of Northumberland and Westmorland",
-    reveals: "The Revolt of the Northern Earls",
-    details: "Catholic northern Earls rebelled in 1569 to depose Elizabeth and restore Catholicism, marching south and taking Durham Cathedral."
-  },
-  {
-    id: 2,
-    year: "1570",
-    scrambled: "Sruh Slxv y lvvxhv d Sdsdo Exoo",
-    answer: "Pope Pius V issues a Papal Bull",
-    reveals: "The Excommunication of Elizabeth",
-    details: "Pope Pius V excommunicated Elizabeth in 1570, releasing English Catholics from loyalty to her and actively encouraging plots."
-  },
-  {
-    id: 3,
-    year: "1571",
-    scrambled: "Wkh Lwdoldq edqnhu sodqv wr lqyroyh wkh Gxnh ri Doed",
-    answer: "The Italian banker plans to involve the Duke of Alba",
-    reveals: "The Ridolfi Plot",
-    details: "Roberto Ridolfi plotted with the Pope and King Philip II of Spain to launch a Spanish invasion under the Duke of Alba and place Mary QoS on the throne."
-  },
-  {
-    id: 4,
-    year: "1583",
-    scrambled: "Iuhqfk Gxnh ri Jxlvh ixqghg eb wkh Sruh",
-    answer: "French Duke of Guise funded by the Pope",
-    reveals: "The Throckmorton Plot",
-    details: "Francis Throckmorton acted as a messenger to organize a French invasion led by the Duke of Guise, funded by Spain and the Pope, to free Mary QoS."
-  },
-  {
-    id: 5,
-    year: "1586",
-    scrambled: "Ohwwhuv klgghq lq ehhu eduuhov",
-    answer: "Letters hidden in beer barrels",
-    reveals: "The Babington Plot",
-    details: "Anthony Babington sent coded letters to Mary QoS hidden inside beer barrels. Spymaster Walsingham intercepted and decoded them, gaining absolute proof of Mary's treason."
-  }
-];
-
-window.initCipherRoomGame = function(container) {
-  ttGameState.cipherRoom = {
-    unlocked: [false, false, false, false, false],
-    activeFileIndex: null,
-    showModelAnswer: false
-  };
-  renderCipherRoom();
-};
-
-window.renderCipherRoom = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  const state = ttGameState.cipherRoom;
-  const allUnlocked = state.unlocked.every(val => val === true);
-  
-  let filesHtml = "";
-  cipherRoomData.forEach((file, index) => {
-    const isUnlocked = state.unlocked[index];
-    filesHtml += `
-      <button class="btn ${isUnlocked ? 'btn-success' : 'btn-secondary'}" onclick="selectCipherFile(${index})" style="padding: 0.75rem 1rem; font-family: var(--font-title); font-weight: 700; width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: ${isUnlocked ? 'rgba(16, 185, 129, 0.08)' : 'var(--bg-surface)'};">
-        <span>📂 Case File ${file.id} (${file.year})</span>
-        <span>${isUnlocked ? '✅ Unlocked' : '🔒 Locked'}</span>
+  let optionsHtml = '';
+  qData.options.forEach((opt, idx) => {
+    optionsHtml += `
+      <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+        <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
+        ${opt}
       </button>
     `;
   });
-
-  let activeFileHtml = "";
-  if (state.activeFileIndex !== null) {
-    const file = cipherRoomData[state.activeFileIndex];
-    const isUnlocked = state.unlocked[state.activeFileIndex];
-    
-    if (isUnlocked) {
-      activeFileHtml = `
-        <div class="knowledge-card" style="border: 2px solid #10b981; background: rgba(16, 185, 129, 0.04); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; text-align: left;">
-          <h4 style="color: #10b981; margin-top: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.25rem;">🔓 Case File ${file.id} Decoded!</h4>
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Scrambled Code:</div>
-          <p style="font-family: monospace; background: var(--bg-main); padding: 0.5rem; border-radius: 4px; font-size: 0.9rem; margin-top: 0; color: var(--text-muted); border: 1px solid var(--border-color);">${file.scrambled}</p>
-          
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: #10b981; font-weight: 700; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Plaintext:</div>
-          <p style="font-size: 1.05rem; font-weight: 700; margin-top: 0; color: var(--text-main);">${file.answer}</p>
-          
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem; letter-spacing: 0.05em; border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">Reveals: ${file.reveals}</div>
-          <p style="font-size: 0.9rem; margin-top: 0.25rem; line-height: 1.5; color: var(--text-muted);">${file.details}</p>
-        </div>
-      `;
-    } else {
-      activeFileHtml = `
-        <div class="knowledge-card" style="border: 1px solid var(--border-color); background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; text-align: left;">
-          <h4 style="margin-top: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.25rem; color: var(--primary);">🔒 Decrypting Case File ${file.id} (${file.year})</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-            Walsingham's spies intercepted this coded letter. Use the Caesar Cipher tool below to decrypt it!
-          </p>
-          
-          <div style="background: rgba(var(--primary-rgb), 0.03); border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem; text-align: center;">
-            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-gold); font-weight: 700; display: block; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Caesar Cipher Decryption Key</span>
-            <span style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 900; color: var(--primary);">Shift: -3 Letters (D ➔ A, E ➔ B)</span>
-          </div>
-
-          <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Scrambled Code:</div>
-          <p style="font-family: monospace; background: var(--bg-main); padding: 0.75rem; border-radius: 4px; font-size: 0.95rem; margin-top: 0; color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; letter-spacing: 0.05em;">${file.scrambled}</p>
-          
-          <div class="scaffold-group" style="margin-top: 1.25rem;">
-            <label for="cipherInput" style="font-weight: 700; font-size: 0.85rem; color: var(--text-main); display: block; margin-bottom: 0.5rem;">Enter Decoded Plaintext:</label>
-            <input type="text" id="cipherInput" class="text-input" placeholder="Type the decoded English letters here..." style="font-size: 0.95rem; font-weight: 600;" onkeydown="if(event.key === 'Enter') checkCipherAnswer()">
-          </div>
-          
-          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-            <button class="btn btn-primary" onclick="checkCipherAnswer()" style="flex: 1; padding: 0.6rem; font-family: var(--font-title); font-weight: 700;">Submit Decrypt</button>
-            <button class="btn btn-secondary" onclick="revealCipherCheat()" style="font-size: 0.8rem;">Show Decoded Cheat (For Testing)</button>
-          </div>
-          <div id="cipherFeedback" class="game-feedback-box" style="display: none; margin-top: 1rem;"></div>
-        </div>
-      `;
-    }
-  }
-
-  let finalExamHtml = "";
-  if (allUnlocked) {
-    finalExamHtml = `
-      <div class="knowledge-card" style="border: 2px solid var(--text-gold); background: rgba(234, 179, 8, 0.03); padding: 1.75rem; border-radius: var(--radius-lg); margin-top: 2rem; text-align: left;">
-        <h3 style="color: var(--text-gold); margin-top: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.35rem; display: flex; align-items: center; gap: 0.5rem;">
-          🏆 Spymaster Certified! Exam Finisher
-        </h3>
-        <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-main); margin-bottom: 1.25rem;">
-          Splendid! You have successfully deciphered all case files and exposed the Catholic plots. Let's finish with an Edexcel 4-mark exam task:
-        </p>
-        
-        <div style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
-          <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Exam Question (Describe 2 Features):</span>
-          <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--text-main); line-height: 1.4;">"Describe two features of Walsingham's use of spies."</h4>
-        </div>
-        
-        <div class="scaffold-group">
-          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">Your Practice Workspace:</label>
-          <textarea class="text-area" placeholder="Write down two distinct features and supporting details..." style="min-height: 120px; font-size: 0.9rem; line-height: 1.5;"></textarea>
-        </div>
-        
-        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
-          <button class="btn btn-primary" onclick="toggleCipherModelAnswer()" style="width: 100%; padding: 0.65rem; font-family: var(--font-title); font-weight: 700;">
-            ${state.showModelAnswer ? 'Hide Model Answer' : 'Reveal Model Answer'}
-          </button>
-          
-          ${state.showModelAnswer ? `
-            <div style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; animation: fadeIn 0.3s ease-out;">
-              <h5 style="margin-top: 0; margin-bottom: 0.5rem; color: #10b981; font-weight: 700;">Suggested Model Answer (Score: 4/4 Marks)</h5>
-              <ul style="padding-left: 1.25rem; margin: 0; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
-                <li style="margin-bottom: 0.5rem;">
-                  <strong>Feature 1:</strong> Intercepted and decoded secret letters using ciphers (1 mark), famously catching Mary Queen of Scots in the Babington Plot (1 mark).
-                </li>
-                <li>
-                  <strong>Feature 2:</strong> Employed double agents in foreign Catholic courts (1 mark) to feed back intelligence regarding Spanish invasion plans (1 mark).
-                </li>
-              </ul>
-            </div>
-          ` : ''}
-        </div>
-      </div>
-    `;
-  }
-
-  container.innerHTML = `
-    <div class="cipher-room-game" style="max-width: 680px; margin: 0 auto; text-align: center;">
-      <h3 style="font-family: var(--font-title); font-size: 1.7rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 800;">🕵️‍♂️ Walsingham’s Cipher Room</h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
-        You are Walsingham's codebreaker. Choose a locked Case File, apply the **-3 Caesar shift (Shift: +3 back)** to decode the scrambled text, and enter the plaintext to unlock the record.
-      </p>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem; margin-bottom: 1rem;">
-        ${filesHtml}
-      </div>
-      
-      ${activeFileHtml}
-      ${finalExamHtml}
-      
-      <button class="btn" onclick="closeTTGame()" style="margin-top: 2rem; width: 100%; border: 1px solid var(--border-color);">
-        🚪 Exit to Vault Dashboard
-      </button>
-    </div>
+  
+  document.getElementById('quiz-question-container').innerHTML = `
+    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question}</h3>
+    ${optionsHtml}
   `;
+  
+  document.getElementById('quiz-feedback').innerHTML = '';
+  document.getElementById('quiz-next-btn').style.display = 'none';
 };
 
-window.selectCipherFile = function(index) {
-  ttGameState.cipherRoom.activeFileIndex = index;
-  renderCipherRoom();
-  setTimeout(() => {
-    const input = document.getElementById("cipherInput");
-    if (input) input.focus();
-  }, 100);
-};
-
-window.checkCipherAnswer = function() {
-  const input = document.getElementById("cipherInput");
-  const fb = document.getElementById("cipherFeedback");
-  if (!input || !fb) return;
+window.checkQuizAnswer = function(btnEl, selectedIdx) {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  const isCorrect = (selectedIdx === qData.answer);
   
-  const userText = input.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-  const activeIdx = ttGameState.cipherRoom.activeFileIndex;
-  const file = cipherRoomData[activeIdx];
-  const correctText = file.answer.toLowerCase().replace(/[^a-z0-9]/g, '');
-  
-  if (userText === correctText) {
-    ttGameState.cipherRoom.unlocked[activeIdx] = true;
-    fb.style.display = "block";
-    fb.className = "game-feedback-box success";
-    fb.innerText = `🎉 Perfect Decryption! Unlocking case details...`;
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(true);
+  // Disable all buttons
+  const allBtns = document.getElementById('quiz-question-container').querySelectorAll('.quiz-option-btn');
+  allBtns.forEach(btn => {
+    btn.disabled = true;
+    btn.style.cursor = 'default';
+    if (parseInt(btn.dataset.idx) === qData.answer) {
+      btn.style.borderColor = '#22c55e';
+      btn.style.background = '#f0fdf4';
+      btn.style.color = '#15803d';
+      btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
     }
-    
+  });
+  
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if (isCorrect) {
+    feedbackEl.innerHTML = '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+  } else {
+    btnEl.style.borderColor = '#ef4444';
+    btnEl.style.background = '#fef2f2';
+    btnEl.style.color = '#b91c1c';
+    btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
+    feedbackEl.innerHTML = '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+  }
+  
+  if (window.currentQuizIndex < window.currentQuizData.length - 1) {
+    document.getElementById('quiz-next-btn').innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
+  } else {
+    document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = window.closeQuizModal;
+  }
+};
+
+window.nextQuizQuestion = function() {
+  window.currentQuizIndex++;
+  window.renderQuizQuestion();
+};
+
+window.closeQuizModal = function() {
+  const modal = document.getElementById('quizModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
     setTimeout(() => {
-      renderCipherRoom();
-    }, 1200);
-  } else {
-    fb.style.display = "block";
-    fb.className = "game-feedback-box error";
-    fb.innerText = `❌ Decryption incorrect! The letters do not form readable English words under a -3 Caesar shift. Try again!`;
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(false);
-    }
+      modal.style.display = 'none';
+    }, 300);
   }
 };
-
-window.revealCipherCheat = function() {
-  const input = document.getElementById("cipherInput");
-  if (input) {
-    const file = cipherRoomData[ttGameState.cipherRoom.activeFileIndex];
-    input.value = file.answer;
-    input.focus();
-  }
-};
-
-window.toggleCipherModelAnswer = function() {
-  ttGameState.cipherRoom.showModelAnswer = !ttGameState.cipherRoom.showModelAnswer;
-  renderCipherRoom();
-};
-
-// ==========================================
-// THE ARMADA TACTICAL MAP GAME
-// ==========================================
-
-const armadaScenarios = [
-  {
-    step: 1,
-    title: "Scenario 1: Sighting (July 1588)",
-    text: "The Armada is spotted off Cornwall sailing in a strict defensive crescent formation. What are your orders?",
-    options: [
-      {
-        id: "A",
-        label: "Option A: Attack immediately head-on.",
-        correct: false,
-        feedback: "Defeat! The crescent formation is too strong and protects their weaker supply ships. Your ships are destroyed."
-      },
-      {
-        id: "B",
-        label: "Option B: Light the warning beacons and shadow them up the Channel.",
-        correct: true,
-        feedback: "Success! You preserve your fleet while waiting for a better opportunity."
-      }
-    ]
-  },
-  {
-    step: 2,
-    title: "Scenario 2: The Duke of Parma",
-    text: "The Spanish anchor at Calais, but the Duke of Parma's army in the Netherlands is delayed. Why?",
-    options: [
-      {
-        id: "A",
-        label: "Option A: They don't have any deep-water ports for large ships.",
-        correct: true,
-        feedback: "Success! Parma's troops are stuck using small, slow barges that take days to load."
-      },
-      {
-        id: "B",
-        label: "Option B: Parma's army was defeated by the French.",
-        correct: false,
-        feedback: "Defeat! Parma's army was undefeated and waiting, but logistics failed them."
-      }
-    ]
-  },
-  {
-    step: 3,
-    title: "Scenario 3: Calais",
-    text: "The Spanish are anchored vulnerably at Calais. How do we break their formation?",
-    options: [
-      {
-        id: "A",
-        label: "Option A: Board their ships.",
-        correct: false,
-        feedback: "Defeat! Spanish galleons are filled with 20,000 soldiers trained for hand-to-hand combat."
-      },
-      {
-        id: "B",
-        label: "Option B: Send in the fireships!",
-        correct: true,
-        feedback: "Success! The burning ships cause panic, breaking the crescent formation and scattering the fleet."
-      }
-    ]
-  },
-  {
-    step: 4,
-    title: "Scenario 4: Battle of Gravelines",
-    text: "The Spanish formation is broken. How do we attack?",
-    options: [
-      {
-        id: "A",
-        label: "Option A: Keep our distance and fire long-range culverins.",
-        correct: true,
-        feedback: "Success! Your faster, manoeuvrable galleons easily out-gun the Spanish without getting close enough to be boarded."
-      },
-      {
-        id: "B",
-        label: "Option B: Ram them and sink them.",
-        correct: false,
-        feedback: "Defeat! English ships are too light to survive ramming heavy Spanish vessels."
-      }
-    ]
-  },
-  {
-    step: 5,
-    title: "Scenario 5: The Retreat",
-    text: "The Spanish are fleeing north. Do we chase them all the way?",
-    options: [
-      {
-        id: "A",
-        label: "Option A: Chase them to Spain.",
-        correct: false,
-        feedback: "Defeat! You run out of ammunition and food, and your sailors die of disease."
-      },
-      {
-        id: "B",
-        label: "Option B: Let the 'Protestant Wind' do the rest.",
-        correct: true,
-        feedback: "Victory! Gale-force winds force the Spanish around Scotland and Ireland, wrecking dozens of ships."
-      }
-    ]
-  }
-];
-
-window.initArmadaTacticalGame = function(container) {
-  ttGameState.armadaTactical = {
-    scenarioIndex: 0,
-    defeatMode: false,
-    defeatFeedback: "",
-    successMode: false,
-    successFeedback: ""
-  };
-  renderArmadaTacticalGame();
-};
-
-window.renderArmadaTacticalGame = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  const state = ttGameState.armadaTactical;
-  
-  if (state.defeatMode) {
-    container.innerHTML = `
-      <div class="cyoa-result defeat" style="max-width: 550px; margin: 2rem auto; text-align: center; padding: 2.5rem 1.5rem; background: rgba(190, 18, 60, 0.12); border-left: none; border: 2px solid var(--accent-crimson); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
-        <div style="font-size: 4rem; margin-bottom: 1rem;">💀</div>
-        <h2 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--accent-crimson); margin-top: 0; margin-bottom: 1rem;">Defeat!</h2>
-        <p style="font-size: 1rem; line-height: 1.6; color: var(--text-main); margin-bottom: 2rem;">
-          ${state.defeatFeedback}
-        </p>
-        <button class="btn btn-secondary" onclick="restartArmadaGame()" style="padding: 0.75rem 1.5rem; font-family: var(--font-title); font-weight: 700; width: 100%; max-width: 250px;">
-          🔄 Try Again (Restart Fleet)
-        </button>
-      </div>
-    `;
-    return;
-  }
-  
-  if (state.scenarioIndex >= armadaScenarios.length) {
-    container.innerHTML = `
-      <div class="cyoa-result victory" style="max-width: 580px; margin: 2rem auto; text-align: center; padding: 2.5rem 1.5rem; background: rgba(16, 185, 129, 0.1); border-left: none; border: 2px solid #10b981; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
-        <div style="font-size: 4.5rem; margin-bottom: 1rem;">🏆</div>
-        <h2 style="font-family: var(--font-title); font-size: 1.9rem; font-weight: 900; color: #10b981; margin-top: 0; margin-bottom: 0.75rem;">Victory!</h2>
-        <h3 style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 600; color: var(--text-gold); margin-bottom: 1.25rem;">The Spanish Armada Defeated (1588)</h3>
-        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-main); margin-bottom: 2rem;">
-          Incredible! Through brilliant naval choices, strategic patience, and a touch of weather, you have routed the mighty Spanish Armada. This victory secures Elizabeth's reign, elevates England's naval status, and seals Protestantism as the national faith.
-        </p>
-        <button class="btn btn-primary" onclick="closeTTGame()" style="padding: 0.75rem 1.5rem; font-family: var(--font-title); font-weight: 700; width: 100%; max-width: 250px;">
-          🚪 Exit to Vault Dashboard
-        </button>
-      </div>
-    `;
-    return;
-  }
-
-  const scenario = armadaScenarios[state.scenarioIndex];
-  
-  let contentHtml = "";
-  if (state.successMode) {
-    contentHtml = `
-      <div class="cyoa-result victory" style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 1.5rem; text-align: left;">
-        <h4 style="color: #10b981; font-weight: 700; margin-top: 0; margin-bottom: 0.5rem;">🎉 Success!</h4>
-        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-main);">${state.successFeedback}</p>
-      </div>
-      
-      <button class="btn btn-primary" onclick="advanceArmadaScenario()" style="width: 100%; padding: 0.75rem 1.5rem; font-family: var(--font-title); font-weight: 800;">
-        Continue to Next Scenario ➔
-      </button>
-    `;
-  } else {
-    contentHtml = `
-      <p style="font-size: 1.05rem; line-height: 1.65; color: var(--text-main); margin-top: 0; margin-bottom: 1.75rem; text-align: left;">
-        ${scenario.text}
-      </p>
-      
-      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-        <button class="btn" onclick="chooseArmadaOption('A')" style="text-align: left; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; background: var(--bg-surface); color: var(--text-main); line-height: 1.5; display: block; width: 100%;">
-          ${scenario.options[0].label}
-        </button>
-        <button class="btn" onclick="chooseArmadaOption('B')" style="text-align: left; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; background: var(--bg-surface); color: var(--text-main); line-height: 1.5; display: block; width: 100%;">
-          ${scenario.options[1].label}
-        </button>
-      </div>
-    `;
-  }
-
-  container.innerHTML = `
-    <div class="armada-tactical-game" style="max-width: 600px; margin: 0 auto; text-align: center;">
-      <h3 style="font-family: var(--font-title); font-size: 1.7rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 800;">🚢 The Armada Tactical Map</h3>
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.05em;">Scenario ${scenario.step} of 5</div>
-      
-      <div class="cyoa-scenario-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: var(--radius-lg); background: var(--bg-card); box-shadow: var(--shadow-lg);">
-        ${contentHtml}
-      </div>
-      
-      <button class="btn" onclick="closeTTGame()" style="margin-top: 2rem; width: 100%; border: 1px solid var(--border-color);">
-        🚪 Exit to Vault Dashboard
-      </button>
-    </div>
-  `;
-};
-
-window.chooseArmadaOption = function(optionId) {
-  const state = ttGameState.armadaTactical;
-  const scenario = armadaScenarios[state.scenarioIndex];
-  const option = scenario.options.find(opt => opt.id === optionId);
-  
-  if (option.correct) {
-    state.successMode = true;
-    state.successFeedback = option.feedback;
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(true);
-    }
-  } else {
-    state.defeatMode = true;
-    state.defeatFeedback = option.feedback;
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(false);
-    }
-  }
-  
-  renderArmadaTacticalGame();
-};
-
-window.advanceArmadaScenario = function() {
-  const state = ttGameState.armadaTactical;
-  state.scenarioIndex++;
-  state.successMode = false;
-  state.successFeedback = "";
-  renderArmadaTacticalGame();
-};
-
-window.restartArmadaGame = function() {
-  initArmadaTacticalGame();
-};
-
-// ==========================================
-// DESCRIBE TWO FEATURES TABOO GENERATOR
-// ==========================================
-
-const tabooGeneratorCards = [
-  {
-    id: 1,
-    target: "Grammar Schools",
-    forbidden: ["Boys", "Latin", "Fee"],
-    valid: "Designed for merchants' sons (1). Focused on Humanist ideas and classical literature (1)"
-  },
-  {
-    id: 2,
-    target: "The Globe Theatre",
-    forbidden: ["Play", "Actors", "Stage"],
-    valid: "Accessible to all social classes (1). The poorest 'groundlings' paid 1 penny to stand in the pit (1)"
-  },
-  {
-    id: 3,
-    target: "1576 Poor Relief Act",
-    forbidden: ["Poor", "Act", "1576"],
-    valid: "Aimed at helping the 'deserving poor' find work (1). Provided raw materials like wool for the unemployed to make goods (1)"
-  },
-  {
-    id: 4,
-    target: "Act of Supremacy",
-    forbidden: ["Elizabeth", "Church", "Religion"],
-    valid: "Made Elizabeth the 'Supreme Governor' (1). Forced all clergy to swear an oath of loyalty to her (1)"
-  },
-  {
-    id: 5,
-    target: "Drake's Circumnavigation",
-    forbidden: ["Sail", "World", "Golden Hind"],
-    valid: "He stole £400,000 from Spanish treasure ships (1). He was knighted by Elizabeth on his return in 1580 (1)"
-  },
-  {
-    id: 6,
-    target: "Vagabonds Act (1572)",
-    forbidden: ["Poor", "Punish", "Whip"],
-    valid: "Stated that vagrants would have a hole drilled through their ear (1). Introduced a national poor rate to help the deserving poor (1)"
-  },
-  {
-    id: 7,
-    target: "The 'Tiger' (Virginia)",
-    forbidden: ["Ship", "Sandbank", "Food"],
-    valid: "It was the flagship of the 1585 Virginia expedition (1). It struck a sandbank and ruined vital winter seed supplies (1)"
-  },
-  {
-    id: 8,
-    target: "The Treaty of Nonsuch",
-    forbidden: ["Spain", "Army", "Netherlands"],
-    valid: "Signed in 1585 to help the Dutch Protestant rebels (1). Elizabeth committed to sending 7,000 English troops (1)"
-  }
-];
-
-window.initTabooGeneratorGame = function(container) {
-  const deck = [...tabooGeneratorCards];
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
-  }
-  
-  if (ttGameState.tabooGenerator.timerInterval) {
-    clearInterval(ttGameState.tabooGenerator.timerInterval);
-  }
-  
-  ttGameState.tabooGenerator = {
-    deck: deck,
-    currentIndex: 0,
-    score: 0,
-    passed: 0,
-    timeRemaining: 60,
-    timerInterval: null,
-    revealed: false
-  };
-  
-  startTabooGeneratorTimer();
-  renderTabooGeneratorCard();
-};
-
-function startTabooGeneratorTimer() {
-  const state = ttGameState.tabooGenerator;
-  
-  state.timerInterval = setInterval(() => {
-    state.timeRemaining--;
-    const timerVal = document.getElementById("tabooGenTimerVal");
-    if (timerVal) {
-      timerVal.innerText = state.timeRemaining + "s";
-      if (state.timeRemaining <= 10) {
-        timerVal.style.color = "var(--accent-crimson)";
-        timerVal.classList.add("warning");
-      }
-    }
-    
-    if (state.timeRemaining <= 0) {
-      clearInterval(state.timerInterval);
-      state.timerInterval = null;
-      if (typeof playChronologyFeedbackTone === 'function') {
-        playChronologyFeedbackTone(false);
-      }
-      endTabooGeneratorGame();
-    }
-  }, 1000);
-}
-
-window.renderTabooGeneratorCard = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  const state = ttGameState.tabooGenerator;
-  
-  if (state.currentIndex >= state.deck.length) {
-    endTabooGeneratorGame();
-    return;
-  }
-  
-  const card = state.deck[state.currentIndex];
-  
-  const listItems = card.forbidden.map(w => `
-    <span class="taboo-word-item" style="padding: 0.5rem 1rem; background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-sm); font-size: 0.95rem; color: var(--accent-crimson); font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;">
-      🚫 ${w}
-    </span>
-  `).join('');
-  
-  let validFeaturesHtml = "";
-  if (state.revealed) {
-    validFeaturesHtml = `
-      <div style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; text-align: left; animation: fadeIn 0.3s ease-out;">
-        <span style="font-size: 0.72rem; text-transform: uppercase; color: #10b981; font-weight: 700; display: block; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Valid Exam Features (Score: 2/2 Marks):</span>
-        <p style="font-size: 0.92rem; line-height: 1.5; color: var(--text-main); margin: 0; font-weight: 500;">
-          ${card.valid}
-        </p>
-      </div>
-    `;
-  } else {
-    validFeaturesHtml = `
-      <button class="btn btn-secondary" onclick="revealTabooGenFeatures()" style="margin-top: 1.5rem; width: 100%; border-color: rgba(99, 102, 241, 0.4); color: var(--accent-indigo);">
-        👁️ Reveal Valid Features (Check Exam Technique)
-      </button>
-    `;
-  }
-
-  container.innerHTML = `
-    <div class="taboo-gameplay-layout" style="max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; text-align: center;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
-        <h4 style="font-family: var(--font-title); font-weight: 800; color: var(--primary); margin: 0;">Card ${state.currentIndex + 1} of ${state.deck.length}</h4>
-        <div class="taboo-timer-display" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-          <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Timer:</span>
-          <span class="taboo-timer-time" id="tabooGenTimerVal" style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--primary);">${state.timeRemaining}s</span>
-        </div>
-      </div>
-      
-      <div class="taboo-card-display" style="border: 2px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-lg); background: var(--bg-surface); padding: 2rem; position: relative; box-shadow: var(--shadow-lg);">
-        <span class="taboo-topic-tag" style="background: rgba(99, 102, 241, 0.08); color: var(--accent-indigo); font-weight: bold; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.72rem; position: absolute; top: 1rem; left: 1rem;">EXAM TECHNIQUE TABOO</span>
-        <h2 class="taboo-target-word" style="font-family: var(--font-title); font-size: 2.1rem; font-weight: 900; color: var(--text-gold); margin-top: 1.5rem; margin-bottom: 1.25rem; text-transform: uppercase;">${card.target}</h2>
-        
-        <div class="taboo-words-label" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.05em;">Forbidden Taboo Words:</div>
-        <div class="taboo-words-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;">
-          ${listItems}
-        </div>
-        
-        ${validFeaturesHtml}
-      </div>
-      
-      <div class="taboo-controls-panel" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-        <div style="display: flex; gap: 0.5rem;">
-          <button class="btn btn-success" onclick="tabooGenNext(true)" style="flex: 1; font-family: var(--font-title); font-weight: 800; padding: 0.65rem;">✅ Got it!</button>
-          <button class="btn btn-danger" onclick="tabooGenNext(false)" style="flex: 1; font-family: var(--font-title); font-weight: 800; padding: 0.65rem;">🚫 Skip / Pass</button>
-        </div>
-        <button class="btn btn-secondary" onclick="closeTabooGenGame()" style="margin-top: 0.5rem;">Exit Game</button>
-      </div>
-      
-      <div class="taboo-score-display" style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Guessed</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: #10b981;">${state.score}</span>
-        </div>
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Skipped</span>
-          <span style="font-family: var(--font-title); font-size: 1.5rem; font-weight: 800; color: var(--accent-crimson);">${state.passed}</span>
-        </div>
-      </div>
-    </div>
-  `;
-};
-
-window.revealTabooGenFeatures = function() {
-  ttGameState.tabooGenerator.revealed = true;
-  renderTabooGeneratorCard();
-};
-
-window.tabooGenNext = function(guessed) {
-  const state = ttGameState.tabooGenerator;
-  
-  if (guessed) state.score++;
-  else state.passed++;
-  
-  state.currentIndex++;
-  state.revealed = false;
-  
-  if (typeof playChronologyFeedbackTone === 'function') {
-    playChronologyFeedbackTone(guessed);
-  }
-  
-  renderTabooGeneratorCard();
-};
-
-window.endTabooGeneratorGame = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  const state = ttGameState.tabooGenerator;
-  
-  if (state.timerInterval) {
-    clearInterval(state.timerInterval);
-    state.timerInterval = null;
-  }
-  
-  let summaryHtml = "";
-  state.deck.forEach((card, index) => {
-    const wasPlayed = index < state.currentIndex;
-    summaryHtml += `
-      <div class="taboo-summary-card" style="margin-bottom: 1rem; text-align: left; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: rgba(255,255,255,0.01);">
-        <h5 style="margin: 0; font-family: var(--font-title); font-weight: 800; font-size: 1.05rem; color: var(--text-gold); text-transform: uppercase;">${card.target}</h5>
-        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
-          <strong>Forbidden:</strong> ${card.forbidden.join(', ')}
-        </div>
-        <div style="font-size: 0.85rem; color: var(--text-main); margin-top: 0.5rem; border-top: 1px dashed var(--border-color); padding-top: 0.4rem; font-weight: 500;">
-          💡 <strong>Exam Features:</strong> ${card.valid}
-        </div>
-      </div>
-    `;
-  });
-
-  container.innerHTML = `
-    <div class="taboo-summary-container" style="max-width: 520px; margin: 0 auto; text-align: center; padding: 1rem 0.5rem;">
-      <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">🏁</div>
-      <h3 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 800;">Round Finished!</h3>
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Verify your recall features against the official exam structures.</p>
-      
-      <div class="taboo-score-display" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Correct</span>
-          <span style="font-size: 2.2rem; color: #10b981; font-weight: 800; font-family: var(--font-title);">${state.score}</span>
-        </div>
-        <div class="taboo-score-col" style="text-align: center;">
-          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; font-weight: 700; text-transform: uppercase;">Skipped</span>
-          <span style="font-size: 2.2rem; color: var(--accent-crimson); font-weight: 800; font-family: var(--font-title);">${state.passed}</span>
-        </div>
-      </div>
-      
-      <h4 style="text-align: left; font-family: var(--font-title); font-size: 0.95rem; font-weight: 800; margin-top: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Card Summary &amp; Key Features:</h4>
-      ${summaryHtml}
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-        <button class="btn btn-secondary" onclick="loadTTGame('game_taboo_generator')" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700; flex: 1;">
-          🔄 Play Again
-        </button>
-        <button class="btn btn-primary" onclick="closeTTGame()" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700; flex: 1;">
-          🚪 Exit to Vault
-        </button>
-      </div>
-    </div>
-  `;
-  
-  if (typeof playLevelUpTone === 'function') {
-    playLevelUpTone();
-  }
-};
-
-window.closeTabooGenGame = function() {
-  if (ttGameState.tabooGenerator.timerInterval) {
-    clearInterval(ttGameState.tabooGenerator.timerInterval);
-    ttGameState.tabooGenerator.timerInterval = null;
-  }
-  closeTTGame();
-};
-
-// ==========================================
-// THE MIDDLE WAY TIGHTROPE GAME
-// ==========================================
-
-const middleWayTiles = [
-  {
-    id: 1,
-    text: "The Book of Common Prayer was written in English, not Latin.",
-    target: "Puritans",
-    explanation: "Protestants and Puritans wanted ordinary people to read and hear God's word in their own language."
-  },
-  {
-    id: 2,
-    text: "Priests were ordered to wear highly decorated vestments (robes).",
-    target: "Catholics",
-    explanation: "Catholics loved traditional priestly decorations. Puritans strongly opposed this, leading to 37 priests being sacked in 1566."
-  },
-  {
-    id: 3,
-    text: "Elizabeth chose the title 'Supreme Governor' instead of 'Supreme Head'.",
-    target: "Catholics",
-    explanation: "Appeased Catholics who believed only the Pope could lead the Church, while satisfying secular Protestants."
-  },
-  {
-    id: 4,
-    text: "Churches were allowed to keep their stained glass windows and crucifixes.",
-    target: "Catholics",
-    explanation: "Crucifixes and windows were vital Catholic visual elements. Puritans considered crucifixes sinful idols."
-  },
-  {
-    id: 5,
-    text: "Clergy were officially allowed to get married.",
-    target: "Puritans",
-    explanation: "Protestants/Puritans rejected clerical celibacy, allowing priests to marry. Catholics firmly believed priests must remain celibate."
-  },
-  {
-    id: 6,
-    text: "The wording of the Communion service was left deliberately vague.",
-    target: "Catholics",
-    explanation: "The ambiguous wording allowed Catholics to believe transubstantiation (bread/wine becoming Christ) occurred, while Protestants saw it as symbolic."
-  },
-  {
-    id: 7,
-    text: "The Royal Injunctions ordered that 'fake' miracles and relics be banned.",
-    target: "Puritans",
-    explanation: "Puritans viewed Catholic relics, shrines, and pilgrimages as corrupt superstitions."
-  },
-  {
-    id: 8,
-    text: "Recusants who refused to attend Church were only fined 1 shilling.",
-    target: "Catholics",
-    explanation: "Elizabeth kept the fine low so wealthy Catholics could afford to pay it without being ruined, avoiding driving them to rebellion."
-  }
-];
-
-window.initMiddleWayGame = function(container) {
-  ttGameState.middleWay = {
-    currentTileIndex: 0,
-    answers: {},
-    errorFeedback: ""
-  };
-  renderMiddleWayGame();
-};
-
-window.renderMiddleWayGame = function() {
-  const container = document.getElementById("ttActiveGameContainer");
-  if (!container) return;
-  
-  const state = ttGameState.middleWay;
-  const isFinished = state.currentTileIndex >= middleWayTiles.length;
-  
-  let puritansHtml = "";
-  let catholicsHtml = "";
-  
-  for (let key in state.answers) {
-    const tile = middleWayTiles[key];
-    const category = state.answers[key];
-    const tileHtml = `
-      <div style="padding: 0.6rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8rem; background: var(--bg-main); color: var(--text-main); line-height: 1.4; margin-bottom: 0.4rem; border-left: 3px solid ${category === 'Puritans' ? 'var(--accent-indigo)' : 'var(--text-gold)'};">
-        ${tile.text}
-      </div>
-    `;
-    if (category === 'Puritans') {
-      puritansHtml += tileHtml;
-    } else {
-      catholicsHtml += tileHtml;
-    }
-  }
-
-  if (puritansHtml === "") puritansHtml = `<div style="color: var(--text-muted); font-size: 0.8rem; font-style: italic; text-align: center; padding: 1rem 0;">Empty scale</div>`;
-  if (catholicsHtml === "") catholicsHtml = `<div style="color: var(--text-muted); font-size: 0.8rem; font-style: italic; text-align: center; padding: 1rem 0;">Empty scale</div>`;
-
-  let middleHtml = "";
-  if (isFinished) {
-    middleHtml = `
-      <div class="cyoa-result victory" style="grid-column: span 2; border: 2px solid var(--text-gold); background: rgba(234, 179, 8, 0.04); border-left: none; border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; box-shadow: var(--shadow-lg);">
-        <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">⚖️</div>
-        <h4 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: var(--text-gold); margin-top: 0; margin-bottom: 0.75rem;">Religious Settlement Balanced!</h4>
-        <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-main); margin-bottom: 1.5rem;">
-          Splendidly done! You sorted all 8 policies correctly. Elizabeth's compromise 'Middle Way' of 1559 successfully balanced Catholic visuals with Protestant doctrine, avoiding civil unrest and establishing stability for the first decade of her reign.
-        </p>
-        <button class="btn btn-primary" onclick="closeTTGame()" style="padding: 0.6rem 1.25rem; font-family: var(--font-title); font-weight: 700; width: 100%; max-width: 250px; margin: 0 auto; display: block;">
-          🚪 Exit to Vault Dashboard
-        </button>
-      </div>
-    `;
-  } else {
-    const currentTile = middleWayTiles[state.currentTileIndex];
-    middleHtml = `
-      <div class="knowledge-card" style="grid-column: span 2; border: 1px solid var(--border-color); background: var(--bg-surface-alt); padding: 1.5rem; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-md);">
-        <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-gold); text-transform: uppercase; display: block; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Current Religious Policy (${state.currentTileIndex + 1} of ${middleWayTiles.length})</span>
-        <h4 style="font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.65;">
-          "${currentTile.text}"
-        </h4>
-        
-        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; justify-content: center; flex-wrap: wrap;">
-          <button class="btn btn-primary" onclick="sortMiddleWayTile('Puritans')" style="font-family: var(--font-title); font-weight: 700; background: var(--accent-indigo); border-color: var(--accent-indigo); padding: 0.6rem 1.25rem;">
-            👈 Appeases Puritans
-          </button>
-          <button class="btn" onclick="sortMiddleWayTile('Catholics')" style="font-family: var(--font-title); font-weight: 700; background: var(--text-gold); border-color: var(--text-gold); color: #0b0f19; padding: 0.6rem 1.25rem;">
-            Appeases Catholics 👉
-          </button>
-        </div>
-        
-        ${state.errorFeedback ? `
-          <div class="game-feedback-box error" style="margin-top: 1.25rem; text-align: left;">
-            ${state.errorFeedback}
-          </div>
-        ` : ''}
-      </div>
-    `;
-  }
-
-  container.innerHTML = `
-    <div class="middle-way-game" style="max-width: 680px; margin: 0 auto; text-align: center;">
-      <h3 style="font-family: var(--font-title); font-size: 1.7rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 800;">⚖️ The "Middle Way" Tightrope</h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
-        Balance the scale! Sort each policy of Elizabeth's 1559 Religious Settlement to the group it was designed to satisfy.
-      </p>
-      
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
-        <div class="knowledge-card" style="border: 2px solid var(--accent-indigo); background: rgba(99, 102, 241, 0.02); padding: 1.25rem; border-radius: var(--radius-lg); min-height: 200px; text-align: left;">
-          <h4 style="color: var(--accent-indigo); font-family: var(--font-title); font-weight: 800; font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
-            ⛪ Appeases Puritans
-          </h4>
-          <div id="scale_puritans_list">
-            ${puritansHtml}
-          </div>
-        </div>
-        
-        <div class="knowledge-card" style="border: 2px solid var(--text-gold); background: rgba(234, 179, 8, 0.02); padding: 1.25rem; border-radius: var(--radius-lg); min-height: 200px; text-align: left;">
-          <h4 style="color: var(--text-gold); font-family: var(--font-title); font-weight: 800; font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 0; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
-            ⚜️ Appeases Catholics
-          </h4>
-          <div id="scale_catholics_list">
-            ${catholicsHtml}
-          </div>
-        </div>
-        
-        ${middleHtml}
-      </div>
-      
-      <button class="btn" onclick="closeTTGame()" style="margin-top: 1rem; width: 100%; border: 1px solid var(--border-color);">
-        🚪 Exit to Vault Dashboard
-      </button>
-    </div>
-  `;
-};
-
-window.sortMiddleWayTile = function(category) {
-  const state = ttGameState.middleWay;
-  const currentTile = middleWayTiles[state.currentTileIndex];
-  
-  if (currentTile.target === category) {
-    state.answers[state.currentTileIndex] = category;
-    state.currentTileIndex++;
-    state.errorFeedback = "";
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(true);
-    }
-  } else {
-    state.errorFeedback = `❌ <strong>Incorrect!</strong> This policy does not belong there. 
-      <br><em>Clue:</em> ${currentTile.explanation}`;
-    if (typeof playChronologyFeedbackTone === 'function') {
-      playChronologyFeedbackTone(false);
-    }
-  }
-  
-  renderMiddleWayGame();
-};
-

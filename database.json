@@ -7885,7 +7885,7 @@
       "lessons": [
         {
           "id": "lesson_1",
-          "title": "Lesson 1: Prehistoric and Roman Sanitation",
+          "title": "How much progress did the Romans make in public health?",
           "primary_source": {
             "src": "assets/roman_latrine.jpg",
             "title": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
@@ -8097,7 +8097,7 @@
         },
         {
           "id": "lesson_2",
-          "title": "Lesson 2: Medieval Sanitation and The Church",
+          "title": "Why did public health decline during the Middle Ages?",
           "primary_source": {
             "src": "assets/canterbury_waterworks.jpg",
             "title": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
@@ -8319,7 +8319,7 @@
         },
         {
           "id": "lesson_3",
-          "title": "Lesson 3: Early Modern Filth and Cesspits",
+          "title": "To what extent did towns become filthier during the Early Modern period?",
           "primary_source": {
             "src": "assets/harington_toilet.jpg",
             "title": "Source A: Sir John Harington's flushing toilet design (1596)",
@@ -8528,7 +8528,7 @@
         },
         {
           "id": "lesson_4",
-          "title": "Lesson 4: The Industrial Revolution and Cholera",
+          "title": "How did the Industrial Revolution lead to a public health crisis?",
           "primary_source": {
             "src": "assets/snow_cholera_map.jpg",
             "title": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
@@ -8723,7 +8723,7 @@
         },
         {
           "id": "lesson_5",
-          "title": "Lesson 5: The Great Stink and Modern Sewers",
+          "title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
           "primary_source": {
             "src": "assets/bazalgette_sewer.jpg",
             "title": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
@@ -9394,7 +9394,8 @@
           "bio": "Constructed the New River in 1613 to bring fresh drinking water to London."
         }
       ],
-      "cover_image": "assets/was_industrial_street.png"
+      "cover_image": "assets/was_industrial_street.png",
+      "enquiry": "Why did it take so long to clean up Britain?"
     },
     "biographies": [
       {
