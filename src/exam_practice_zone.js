@@ -476,16 +476,30 @@ export function renderExamPracticeZone(container, unitData) {
         
         // Scaffolding for Source Utility
         html += `<div style="margin-top: 20px;">`;
+        let isSingle = assessment.sources && assessment.sources.length === 1;
+        let s1 = assessment.sources && assessment.sources[0] ? assessment.sources[0].id : 'Source B';
+        let s2 = assessment.sources && assessment.sources[1] ? assessment.sources[1].id : 'Source C';
+        let marks = isSingle ? '4' : '8';
+        
         html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-su-${aIdx}').style.display = document.getElementById('scaffold-su-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
         html += `<div id="scaffold-su-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
-        html += `<strong>Structure Strip (8 Marks):</strong><br>`;
+        html += `<strong>Structure Strip (${marks} Marks):</strong><br>`;
         html += `<ul style="margin-top: 10px; padding-left: 20px;">`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (Source B):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
-        html += `<li><strong>Paragraph 2 (Source C):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
+        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (${s1}):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
+        if (assessment.sources && assessment.sources[0] && assessment.sources[0].provenance_clue) {
+            html += `<li style="margin-bottom: 10px; list-style-type: none; padding-left: 10px; border-left: 3px solid #f472b6; color: #9d174d; font-size: 0.95rem;"><em>Hint: ${assessment.sources[0].provenance_clue}</em></li>`;
+        }
+
+        if (!isSingle) {
+          html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (${s2}):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
+          if (assessment.sources && assessment.sources[1] && assessment.sources[1].provenance_clue) {
+              html += `<li style="margin-bottom: 10px; list-style-type: none; padding-left: 10px; border-left: 3px solid #f472b6; color: #9d174d; font-size: 0.95rem;"><em>Hint: ${assessment.sources[1].provenance_clue}</em></li>`;
+          }
+        }
         html += `</ul>`;
         html += `<strong style="display: block; margin-top: 15px;">Sentence Starters:</strong>`;
         html += `<ul style="margin-top: 5px; list-style-type: none; padding-left: 0;">`;
-        html += `<li style="margin-bottom: 5px;"><em>"Source B is useful for an enquiry into... because it shows..."</em></li>`;
+        html += `<li style="margin-bottom: 5px;"><em>"${s1} is useful for an enquiry into... because it shows..."</em></li>`;
         html += `<li style="margin-bottom: 5px;"><em>"I know from my own knowledge that this is accurate because..."</em></li>`;
         html += `<li><em>"However, the source has limitations because it was written by..."</em></li>`;
         html += `</ul></div></div>`;

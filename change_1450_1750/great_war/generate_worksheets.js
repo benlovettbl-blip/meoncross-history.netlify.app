@@ -210,6 +210,53 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
     });
   }
 
+  // Render Vocabulary Task
+  if (lesson.vocab && lesson.vocab.length > 0) {
+    let vocabStyle = lessonIndex % 3;
+    html += `<div class="task-box" style="margin-bottom: 20px;">`;
+    html += `<h3 style="margin-top: 0;">Vocabulary Check</h3>`;
+    
+    if (vocabStyle === 0) {
+      // Contextual Cloze
+      html += `<p style="font-weight: bold;">Style: Contextual Cloze</p>`;
+      html += `<p style="font-style: italic;">Fill in the blanks using the vocabulary words below.</p>`;
+      let words = lesson.vocab.map(v => v.term).join(' &nbsp;|&nbsp; ');
+      html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; text-align: center; font-weight: bold;">${words}</div>`;
+      if (lesson.vocab_cloze_text) {
+         let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
+         html += `<p style="line-height: 2; font-size: 11pt;">${cloze}</p>`;
+      } else {
+         html += `<p>_________________________________________________________</p>`;
+         html += `<p>_________________________________________________________</p>`;
+      }
+    } else if (vocabStyle === 1) {
+      // Vocabulary Mapping
+      html += `<p style="font-weight: bold;">Style: Vocabulary Mapping</p>`;
+      html += `<p style="font-style: italic;">Write a historically accurate sentence connecting two terms from the glossary box below.</p>`;
+      let words = lesson.vocab.map(v => v.term).join(' &nbsp;|&nbsp; ');
+      html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; text-align: center; font-weight: bold;">${words}</div>`;
+      html += `<strong>Your Sentence:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div>`;
+    } else if (vocabStyle === 2) {
+      // Mini-Frayer Model
+      html += `<p style="font-weight: bold;">Style: Mini-Frayer Model</p>`;
+      let focusWord = lesson.vocab[0].term;
+      html += `<p style="font-style: italic;">Complete the Frayer Model for the term: <strong>${focusWord}</strong></p>`;
+      html += `
+        <table style="width: 100%; border-collapse: collapse; text-align: center;">
+          <tr>
+            <td style="border: 2px solid #333; width: 50%; height: 100px; vertical-align: top; padding: 5px;"><strong>Definition</strong></td>
+            <td style="border: 2px solid #333; width: 50%; height: 100px; vertical-align: top; padding: 5px;"><strong>Historical Example</strong></td>
+          </tr>
+          <tr>
+            <td style="border: 2px solid #333; width: 50%; height: 100px; vertical-align: top; padding: 5px;"><strong>Non-Example / Sketch</strong></td>
+            <td style="border: 2px solid #333; width: 50%; height: 100px; vertical-align: top; padding: 5px;"><strong>Your own sentence</strong></td>
+          </tr>
+        </table>
+      `;
+    }
+    html += `</div>`;
+  }
+
   // Render Narrative Blocks & Tasks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block, bIdx) => {
@@ -489,5 +536,6 @@ html += `
 
 </html>`;
 
+html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);
 console.log('Successfully generated workbook.html!');

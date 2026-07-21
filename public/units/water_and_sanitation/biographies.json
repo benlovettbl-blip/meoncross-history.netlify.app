@@ -28,5 +28,23 @@
     "role": "Chemist & Microbiologist",
     "bio": "A French chemist whose groundbreaking experiments in 1861 proved the Germ Theory of Disease. By demonstrating that microorganisms cause decay and illness, he finally discredited the miasma theory and revolutionized modern public health and sanitation.",
     "image": "assets/louis_pasteur.jpg"
+  },
+  {
+    "name": "King Henry VIII",
+    "role": "King of England (1509-1547)",
+    "bio": "Despite presiding over a period where urban sanitation remained incredibly poor, Henry VIII established a strong royal navy. The loss of his flagship, the Mary Rose, near Southsea Castle provides vital historical evidence of Tudor life, showcasing the harsh conditions and diseases that sailors faced.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/After_Hans_Holbein_the_Younger_-_Portrait_of_Henry_VIII_-_Google_Art_Project.jpg/500px-After_Hans_Holbein_the_Younger_-_Portrait_of_Henry_VIII_-_Google_Art_Project.jpg"
+  },
+  {
+    "name": "Robert Rawlinson",
+    "role": "Sanitary Engineer",
+    "bio": "A leading Victorian sanitary engineer and public health inspector. His devastating 1850 sanitary report on the horrific conditions in Portsmouth, written just after the 1849 cholera epidemic, played a pivotal role in exposing the fatal consequences of poor urban drainage and forcing local authorities to improve public health.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Robert_Rawlinson_%28cropped%29.jpg/500px-Robert_Rawlinson_%28cropped%29.jpg"
+  },
+  {
+    "name": "Simon Schama",
+    "role": "Modern Historian",
+    "bio": "Sir Simon Schama is a leading contemporary British historian and author. He argues that Roman public health was driven as much by their desire to project 'Roman identity' and civilization as it was by a genuine desire to stop disease.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Simon_Schama_FT_Business_Book_of_the_Year_2013.jpg/500px-Simon_Schama_FT_Business_Book_of_the_Year_2013.jpg"
   }
 ]

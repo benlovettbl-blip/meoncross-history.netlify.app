@@ -100,10 +100,21 @@ export function renderQuizZone(container, unitData) {
         let score = 0;
         
         // Shuffle options for all questions in this set ahead of time to avoid reshuffling on re-render
-        const sessionQuestions = questionsSet.map(q => ({
-            ...q,
-            shuffledOptions: shuffleArray(q.options || [q.a, "Random Option 1", "Random Option 2", "Random Option 3"])
-        }));
+        // Provide dynamic plausible wrong options if they aren't provided
+        const allAnswers = questionsSet.map(q => q.a);
+        const sessionQuestions = questionsSet.map(q => {
+            let options = q.options;
+            if (!options) {
+                const wrongAnswers = allAnswers.filter(a => a !== q.a).sort(() => 0.5 - Math.random()).slice(0, 3);
+                // Fallback in case there aren't enough unique answers
+                while (wrongAnswers.length < 3) wrongAnswers.push("Incorrect Option");
+                options = [q.a, ...wrongAnswers];
+            }
+            return {
+                ...q,
+                shuffledOptions: shuffleArray(options)
+            };
+        });
 
         function renderQuestion() {
             if (currentIndex >= sessionQuestions.length) {

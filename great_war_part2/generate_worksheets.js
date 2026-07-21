@@ -71,7 +71,7 @@ unitData.lessons.forEach(lesson => {
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../great_war/${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `..${lesson.primary_source.src}`;
     html += `
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
@@ -79,6 +79,7 @@ unitData.lessons.forEach(lesson => {
         <div class="source-container">
           <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
+        ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
       </div>
     `;
   }
@@ -142,7 +143,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
-        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../great_war/${source.src}`;
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `..${source.src}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -156,7 +157,7 @@ unitData.lessons.forEach(lesson => {
     // Append draw tasks right after the sources block
     if (drawTasks.length > 0) {
       drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
+        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text || task.question}</div>`;
       });
     }
   }
@@ -192,12 +193,7 @@ unitData.lessons.forEach(lesson => {
   }
 
   // GCSE Cross-Source Analysis
-  if (lesson.gcse_task) {
-    html += `<div style="page-break-before: always;">`;
-    html += `<h2>GCSE Cross-Source Analysis</h2>`;
-    html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
-    
-    let srcA = lesson.gcse_task.sources[0].src.startsWith('../') ? lesson.gcse_task.sources[0].src : `../great_war/${lesson.gcse_task.sources[0].src}`;
+  if (lesson.gcse_task && lesson.gcse_task.sources && lesson.gcse_task.sources[0] && lesson.gcse_task.sources[0].src) { let srcA = lesson.gcse_task.sources[0].src.startsWith('../') ? lesson.gcse_task.sources[0].src : `..${lesson.gcse_task.sources[0].src}`;
     html += `
       <div style="display: flex; gap: 20px; margin-bottom: 20px;">
         <div style="flex: 1; border: 1px solid #ccc; padding: 10px; text-align: center;">
@@ -316,5 +312,6 @@ html += `
 
 </html>`;
 
+html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);
 console.log('Successfully generated workbook.html!');

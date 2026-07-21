@@ -503,7 +503,7 @@ const tradingCardsData = [
     "unlockedAtXP": 0,
     "emoji": "🛖",
     "color": "linear-gradient(135deg, #15803d 0%, #166534 100%)",
-    "image": "assets/card_iron_age_britons.png",
+    "image": "/assets/temp_water_backup_card_iron_age_britons.png",
     "stats": { "hygiene": 60, "engineering": 35, "legacy": 40, "democracy": 95 }
   },
   {
@@ -515,7 +515,7 @@ const tradingCardsData = [
     "unlockedAtXP": 100,
     "emoji": "🏛️",
     "color": "linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)",
-    "image": "assets/card_roman_engineers.png",
+    "image": "/assets/temp_water_backup_card_roman_engineers.png",
     "stats": { "hygiene": 90, "engineering": 95, "legacy": 85, "democracy": 75 }
   },
   {

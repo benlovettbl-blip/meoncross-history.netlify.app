@@ -1,7 +1,17 @@
 export const unitData = {
     "title": "Conflict in the Middle East, 1945–1995",
-    "cover_image": "assets/kt1_cover.png",
+    "cover_image": "/assets/cme_new_kt1_cover.png",
     "cover_caption": "Conflict in the Middle East",
+    "groupings": [
+        { "prefix": "KT1", "name": "Key Topic 1: The Birth of Israel", "color": "#1e3a8a", "bg": "#eff6ff", "border": "#3b82f6", "icon": "fa-star-of-david" },
+        { "prefix": "KT2", "name": "Key Topic 2: Escalating Conflict", "color": "#7f1d1d", "bg": "#fef2f2", "border": "#ef4444", "icon": "fa-fighter-jet" },
+        { "prefix": "KT3", "name": "Key Topic 3: Attempts at Peace", "color": "#064e3b", "bg": "#ecfdf5", "border": "#10b981", "icon": "fa-dove" }
+    ],
+    "printable_workbooks": [
+        { "title": "Workbook KT1", "url": "workbook_KT1.html" },
+        { "title": "Workbook KT2", "url": "workbook_KT2.html" },
+        { "title": "Workbook KT3", "url": "workbook_KT3.html" }
+    ],
     "lessons": [
         {
             "id": "lesson_1",
@@ -9,12 +19,12 @@ export const unitData = {
             "sources": [
                 {
                     "title": "Reference Map: UN Partition Plan (Resolution 181)",
-                    "src": "assets/palestine_1947_map.png",
+                    "src": "/assets/cme_new_palestine_1947_map.png",
                     "caption": "Map of the UN Partition Plan of 1947 allocating 55% to the Jewish State and 45% to the Arab State."
                 },
                 {
                     "title": "Reference Image: The SS Exodus (1947)",
-                    "src": "assets/exodus_ship.jpg",
+                    "src": "/assets/cme_new_exodus_ship.jpg",
                     "caption": "Jewish Holocaust survivors aboard the SS Exodus, intercepted by the British Navy and turned away from Palestine, sparking global outrage."
                 }
             ],
@@ -64,7 +74,7 @@ export const unitData = {
             },
             "primary_source": {
                 "title": "Source A: The Ruins of the King David Hotel, 1946",
-                "src": "assets/king_david_ruins.png",
+                "src": "/assets/cme_new_king_david_ruins.png",
                 "caption": "The southern wing of the King David Hotel in Jerusalem following the Irgun bomb attack on 22 July 1946.",
                 "question": "Enquiry: What impact did the King David Hotel bombing have on the British Mandate?",
                 "tasks": [
@@ -237,21 +247,21 @@ export const unitData = {
                             "id": "map-1947",
                             "year": "1947",
                             "label": "UN Partition Plan",
-                            "src": "assets/palestine_1947_map.png",
+                            "src": "/assets/cme_new_palestine_1947_map.png",
                             "caption": "Under UN Resolution 181, Palestine is split. The Jewish state receives 55% of the land. Jerusalem is an international zone."
                         },
                         {
                             "id": "map-1949",
                             "year": "1949",
                             "label": "Armistice Borders",
-                            "src": "assets/palestine_1949_map.png",
+                            "src": "/assets/cme_new_palestine_1949_map.png",
                             "caption": "Following Israel's victory in the 1948 war, they expand their territory from 55% to 79%. The West Bank is held by Jordan, and Gaza by Egypt."
                         },
                         {
                             "id": "map-1967",
                             "year": "1967",
                             "label": "Post-Six Day War",
-                            "src": "assets/palestine_1967_map.png",
+                            "src": "/assets/cme_new_palestine_1967_map.png",
                             "caption": "In 1967, Israel launches a pre-emptive strike and captures the Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights."
                         }
                     ]
@@ -848,7 +858,7 @@ export const unitData = {
             "sources": [
                 {
                     "title": "Reference Image: Gamal Abdel Nasser",
-                    "src": "assets/nasser_suez.png",
+                    "src": "/assets/cme_new_nasser_suez.png",
                     "caption": "Egyptian President Gamal Abdel Nasser, who nationalized the Suez Canal in 1956."
                 }
             ],
@@ -1967,12 +1977,12 @@ export const unitData = {
             "sources": [
                 {
                     "title": "Reference Image: The Yom Kippur War (1973)",
-                    "src": "assets/yom_kippur_crossing.png",
+                    "src": "/assets/cme_new_yom_kippur_crossing.png",
                     "caption": "Egyptian forces launching Operation Badr, successfully crossing the Suez Canal and breaching the Bar Lev Line on 6 October 1973."
                 },
                 {
                     "title": "Reference Image: The Camp David Accords (1978)",
-                    "src": "assets/camp_david_accords.png",
+                    "src": "/assets/cme_new_camp_david_accords.png",
                     "caption": "Egyptian President Anwar Sadat, US President Jimmy Carter, and Israeli Prime Minister Menachem Begin shaking hands after agreeing to the Camp David framework."
                 }
             ],
@@ -2251,7 +2261,7 @@ export const unitData = {
             "sources": [
                 {
                     "title": "Reference Image: The First Intifada (1987)",
-                    "src": "assets/first_intifada.png",
+                    "src": "/assets/cme_new_first_intifada.png",
                     "caption": "A Palestinian youth throwing a stone at an Israeli tank during the First Intifada, highlighting the asymmetric nature of the conflict."
                 }
             ],

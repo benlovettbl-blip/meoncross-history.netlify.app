@@ -65,10 +65,6 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
     }
   }
 
-  // Rewrite asset paths
-  content = content.replace(/src="assets\//g, `src="units/${unitId}/assets/`);
-  content = content.replace(/url\(['"]?assets\//g, `url('units/${unitId}/assets/`);
-
   // Generate output files
   try {
     const unitTargetDir = path.join(targetBaseDir, unitId);
@@ -97,12 +93,6 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
   
     // Write content.html
     fs.writeFileSync(path.join(unitTargetDir, 'content.html'), content.trim());
-  
-    // Copy assets if they exist
-    const sourceAssets = path.join(sourceDir, 'assets');
-    if (fs.existsSync(sourceAssets)) {
-      fs.cpSync(sourceAssets, path.join(unitTargetDir, 'assets'), { recursive: true });
-    }
   
     // Copy styles
     const sourceStyles = path.join(sourceDir, 'styles.css');

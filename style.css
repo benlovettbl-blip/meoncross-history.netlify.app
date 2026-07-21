@@ -1152,3 +1152,87 @@ body.large-text { font-size: 1.15rem; } body.large-text h1 { font-size: 2rem; } 
       }
     }
   
+
+.so-what-box { background: #fef3c7; border-left: 4px solid #f59e0b; color: #92400e; padding: 12px 16px; margin-top: 15px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+/* --- Key Individuals Tooltip Styles --- */
+.person-link {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary);
+    border-bottom: 2px dashed var(--primary);
+    position: relative;
+    transition: all 0.2s ease;
+    padding: 0 2px;
+}
+
+.person-link:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--accent-blue);
+    border-bottom-style: solid;
+}
+
+#person-tooltip-modal {
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    width: 320px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+#person-tooltip-modal.visible {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.2s ease-out;
+}
+
+#person-tooltip-img-container {
+    width: 100%;
+    height: 180px;
+    background: rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-glass);
+    overflow: hidden;
+}
+
+#person-tooltip-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#person-tooltip-info {
+    padding: 15px;
+}
+
+#person-tooltip-name {
+    margin: 0 0 5px 0;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+#person-tooltip-role {
+    margin: 0 0 10px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#person-tooltip-bio {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}

@@ -16,6 +16,7 @@ if (!unitId) {
   }).then(unitPayload => {
     const db = {};
     db[unitId] = unitPayload;
+    window.db = db;
     
     const unitData = db[unitId].data || {};
   
@@ -67,7 +68,8 @@ if (!unitId) {
       }
 
       // 3. Key Individuals Tab
-      if (db[unitId].biographies) {
+      const keyIndividualsData = (db[unitId].data && db[unitId].data.key_individuals) || db[unitId].biographies;
+      if (keyIndividualsData) {
         const kiLink = document.createElement('a');
         kiLink.className = 'lesson-link';
         kiLink.innerHTML = '<i class="fa-solid fa-users" style="margin-right: 8px;"></i> Key Individuals';
@@ -78,7 +80,7 @@ if (!unitId) {
           kiLink.classList.add('active');
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
-          initKeyIndividualsTask(contentArea, db[unitId].biographies);
+          initKeyIndividualsTask(contentArea, keyIndividualsData);
         };
         sidebarNav.appendChild(kiLink);
       }

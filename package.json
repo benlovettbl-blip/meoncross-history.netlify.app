@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "sync": "node build_database.cjs && node extract_units.js"
+    "sync": "node build_database.cjs && node extract_units.js",
+    "create-unit": "node scripts/create_unit.js",
+    "test:content": "node scripts/test_content.mjs"
   },
   "keywords": [
     "education",
@@ -17,6 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@azure/msal-browser": "^3.28.1",
+    "acorn": "^8.17.0",
+    "astring": "^1.9.0",
     "jsdom": "^29.1.1",
     "pdf-lib": "^1.17.1",
     "pdf-parse": "^2.4.5",

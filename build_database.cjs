@@ -56,9 +56,18 @@ async function buildDatabase() {
   if (!fs.existsSync('public')) {
     fs.mkdirSync('public');
   }
+  if (!fs.existsSync('public/data')) {
+    fs.mkdirSync('public/data');
+  }
   
+  for (const unit of units) {
+      if (db[unit]) {
+          fs.writeFileSync(path.join('public', 'data', `${unit}.json`), JSON.stringify(db[unit], null, 2), 'utf8');
+      }
+  }
+
   fs.writeFileSync(path.join('public', 'database.json'), JSON.stringify(db, null, 2), 'utf8');
-  console.log('Successfully built master database.json with ' + Object.keys(db).length + ' units.');
+  console.log('Successfully built master database.json and individual unit files with ' + Object.keys(db).length + ' units.');
 }
 
 buildDatabase();

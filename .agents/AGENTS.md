@@ -23,9 +23,6 @@ Before running destructive commands (like `git reset --hard` or `git clean`) or 
 1. Stop and ask the user for explicit permission to overwrite their files.
 2. If approved, automatically create a timestamped backup copy of the target file in a `temp_backups` folder before executing the overwrite.
 
-## Unit Synchronization
-The `great_war` (Great War causes) unit is the template and gold standard for all Key Stage 3 units. Any changes made to the design, layout, features, and accessibility of one unit (especially `great_war`) must be consistently applied to all other Key Stage 3 units.
-
 
 ## Copyright Checks
 Whenever generating new features or content (especially visual sources or text), you MUST always double-check for copyright issues. Ensure visual sources are copyright-free or explicitly note if they require licensing. Notify the user before adding potentially copyrighted material, as the software is intended for commercial sale.
@@ -58,3 +55,16 @@ Whenever generating or modifying the `generate_worksheets.js` Node script for pr
 
 ## Automated Database Sync
 Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, or add a new unit, you MUST automatically run `npm run sync` before finishing your task. You must do this proactively so the user never has to remember to run the database build setup themselves.
+
+## "How Useful" Scaffolding (Provenance Clues)
+Whenever you create or modify a "How useful" source assessment question, you MUST provide scaffolding clues for provenance. Students find provenance very difficult, so the scaffolding box must include specific hints (e.g., using a `provenance_clue` property) that prompt them to consider the author, audience, and motive of the source.
+
+## Key Individuals Tracking
+Whenever ANY historical individual (including historians, historical figures, or authors mentioned by name in sources) is added to or mentioned in a unit's curriculum data (`data.js` or elsewhere), they MUST also be added to the unit's `key_individuals` page/array. Proactively add their name, role, a brief bio, and an image reference to ensure the individuals page remains comprehensive.
+
+## Wikimedia Image Thumbnails
+Whenever you need to add an image from Wikimedia Commons for a historical figure or source, ALWAYS use the Wikimedia API to fetch the embeddable 500px thumbnail URL (e.g. `https://en.wikipedia.org/w/api.php?action=query&titles=X&prop=pageimages&format=json&pithumbsize=500`) instead of guessing the raw `.jpg` file path, as raw paths often lead to 404 errors due to Wikimedia's hotlinking restrictions.
+
+
+## Edexcel GCSE Exam Specification: Feature Questions
+Whenever generating or evaluating Edexcel GCSE History exam questions, remember that the 'features' question format has changed. Instead of a single 4-mark question asking to 'Describe two features of...', it is now structured as two separate 2-mark questions: 'Describe one feature of...' which appears twice. Ensure all exam practice forms, UI templates, and generated assessments reflect this.

@@ -2,7 +2,7 @@
   "data": {
     "title": "The Great War: Causes & Outbreak",
     "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
-    "cover_image": "assets/Naval-race-1909.jpg",
+    "cover_image": "/assets/great_war_Naval-race-1909.jpg",
     "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
     "lessons": [
       {
@@ -11,7 +11,7 @@
         "sources": [
           {
             "title": "Map A: Alsace-Lorraine Border Region (1871)",
-            "src": "assets/alsace_lorraine_simple_map.svg",
+            "src": "/assets/great_war_alsace_lorraine_simple_map.svg",
             "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
           }
         ],
@@ -34,12 +34,6 @@
           }
         ],
         "extended": {
-          "title": "Bismarck vs. Wilhelm: A Clash of Strategy",
-          "paragraphs": [
-            "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power\"specifically Russia\"which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
-            "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
-            "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
-          ],
           "question": "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
           "model": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
         },
@@ -50,38 +44,38 @@
               "year": "1871",
               "title": "The Unification of Germany",
               "detail": "The Franco-Prussian War",
-              "img": "assets/was_germany_unification.png"
+              "img": "/assets/great_war_was_germany_unification.png"
             },
             {
               "year": "1897",
               "title": "Imperial Rivalries",
               "detail": "The Place in the Sun speech",
-              "img": "assets/was_greedy_boy.png"
+              "img": "/assets/great_war_was_greedy_boy.png"
             },
             {
               "year": "1906",
               "title": "The Naval Arms Race",
               "detail": "The Launch of HMS Dreadnought",
-              "img": "assets/was_dreadnought_blueprint.png"
+              "img": "/assets/great_war_was_dreadnought_blueprint.png"
             },
             {
               "year": "1907",
               "title": "Encirclement & Alliances",
               "detail": "The Triple Entente System",
-              "img": "assets/was_military_matrix.png"
+              "img": "/assets/great_war_was_military_matrix.png"
             },
             {
               "year": "June 1914",
               "title": "The Spark in Sarajevo",
               "detail": "The Assassination of the Archduke",
-              "img": "assets/was_boiling_point.png"
+              "img": "/assets/great_war_was_boiling_point.png"
             }
           ],
           "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
         },
         "primary_source": {
           "title": "Source A: Anton von Werner, 'The Proclamation of the German Empire at Versailles', painted in 1885.",
-          "src": "assets/was_germany_unification.png",
+          "src": "/assets/great_war_was_germany_unification.png",
           "caption": "<strong>What is this source showing?</strong> This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
           "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
           "tasks": [
@@ -177,6 +171,9 @@
         "vocab_cloze_text": "In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].",
         "narrative_blocks": [
           {
+            "text": "**Bismarck vs. Wilhelm: A Clash of Strategy**\n\nFollowing the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power\"specifically Russia\"which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.\n\nHowever, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
+          },
+          {
             "text": "There was no country called Germany until 1871. Instead, central Europe was a fragmented collection of independent small states loosely joined only by language and local customs. The most powerful, heavily militaristic state among them was the northern kingdom of Prussia. Desiring to unite these states, Prussia's brilliant, ruthless Chancellor Otto von Bismarck first grouped the northern states into the <strong>North German Confederation</strong>. To complete his dream of a single, mighty empire, Bismarck desperately needed the independent southern German states to unite with the north. He realized that nothing would unite these separate states faster than a shared national enemy.",
             "level_4": "There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.",
             "tasks": [
@@ -252,7 +249,7 @@
           },
           {
             "title": "Map B: The Global Imperial Lanes",
-            "src": "assets/map_lesson2_b.png",
+            "src": "/assets/great_war_map_lesson2_b.png",
             "caption": ""
           }
         ],
@@ -275,11 +272,6 @@
           }
         ],
         "extended": {
-          "title": "The Gamble of Weltpolitik",
-          "paragraphs": [
-            "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.",
-            "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership."
-          ],
           "question": "Explain why Kaiser Wilhelm's strategy of testing the Entente Cordiale during the Moroccan Crises was a massive strategic failure for Germany.",
           "model": "Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany."
         },
@@ -330,7 +322,7 @@
         },
         "primary_source": {
           "title": "Source A: John Tenniel, 'The Greedy Boy', a British political cartoon published in Punch Magazine, 1885.",
-          "src": "assets/was_greedy_boy.png",
+          "src": "/assets/great_war_was_greedy_boy.png",
           "caption": "<strong>What is this source showing?</strong> This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
           "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
           "tasks": [
@@ -386,7 +378,7 @@
           "sources": [
             {
               "type": "visual",
-              "src": "assets/was_greedy_boy.png",
+              "src": "/assets/great_war_was_greedy_boy.png",
               "title": "Source A: A British political cartoon from 1897 showing Kaiser Wilhelm II."
             },
             {
@@ -430,6 +422,9 @@
         },
         "vocab_cloze_text": "In the late 19th century, European powers engaged in a [Scramble for Africa]. This fierce [Imperialism] was driven by a desire for raw materials and global prestige. Every major power wanted to build a vast overseas [Empire] by taking control of another [Colony].",
         "narrative_blocks": [
+          {
+            "text": "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership."
+          },
           {
             "text": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Colonies had become vital status symbols of industrial wealth and global importance. Each territory provided cheap raw materials to feed the factories of the ruling nation, while simultaneously serving as locked-down markets to purchase the home country's manufactured goods. This race had been formalized at the <strong>1884 Berlin Conference</strong>, where European leaders partitioned Africa among themselves without consulting any Africans. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
             "level_4": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
@@ -496,7 +491,7 @@
         "sources": [
           {
             "title": "Map A: The North Sea & Naval Chokepoints",
-            "src": "assets/map_lesson3.png",
+            "src": "/assets/great_war_map_lesson3.png",
             "caption": ""
           }
         ],
@@ -519,11 +514,6 @@
           }
         ],
         "extended": {
-          "title": "The Naval Race: A Self-Fulfilling Prophecy?",
-          "paragraphs": [
-            "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
-            "Germany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
-          ],
           "question": "How did the invention of the HMS Dreadnought ironically endanger British naval supremacy despite being a British invention?",
           "model": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
         },
@@ -574,7 +564,7 @@
         },
         "primary_source": {
           "title": "Source A: Official technical blueprint showing the design and armament of HMS Dreadnought, published in 1906.",
-          "src": "assets/was_dreadnought_blueprint.png",
+          "src": "/assets/great_war_was_dreadnought_blueprint.png",
           "caption": "<strong>What is this source showing?</strong> This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
           "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
           "tasks": [
@@ -620,7 +610,7 @@
           "sources": [
             {
               "type": "visual",
-              "src": "assets/was_dreadnought_blueprint.png",
+              "src": "/assets/great_war_was_dreadnought_blueprint.png",
               "title": "Source A: Official technical blueprint of HMS Dreadnought, 1906."
             },
             {
@@ -664,6 +654,9 @@
         },
         "vocab_cloze_text": "Britain's traditional [Naval Supremacy] was challenged when Germany began a rapid naval buildup. This sparked a fierce [Arms Race] between the two nations. Britain relied on the [Two-Power Standard] to maintain a massive fleet, but the invention of the heavily-armed [Dreadnought] battleship reset the competition.",
         "narrative_blocks": [
+          {
+            "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
+          },
           {
             "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
             "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
@@ -742,12 +735,12 @@
         "sources": [
           {
             "title": "Diagram A: The Alliance System (1914)",
-            "src": "assets/alliance_system.svg",
+            "src": "/assets/great_war_alliance_system.svg",
             "caption": "The complex web of treaties that dragged Europe into a global war."
           },
           {
             "title": "Map A: European Military Alliance Blocs (1914)",
-            "src": "assets/map_lesson4.png",
+            "src": "/assets/great_war_map_lesson4.png",
             "caption": "",
             "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
           }
@@ -771,11 +764,6 @@
           }
         ],
         "extended": {
-          "title": "The Powder Keg: Nationalism vs. Empire",
-          "paragraphs": [
-            "This 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
-            "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
-          ],
           "question": "Was the 'Blank Check' a reckless mistake by the Kaiser, or a calculated move by the German military to trigger a necessary war? Use historical reasoning to justify your stance.",
           "model": "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late."
         },
@@ -826,7 +814,7 @@
         },
         "primary_source": {
           "title": "Source A: 'The Chain of Friendship', an American cartoon published in the Brooklyn Eagle, July 1914.",
-          "src": "assets/was_military_matrix.png",
+          "src": "/assets/great_war_was_military_matrix.png",
           "caption": "<strong>What is this source showing?</strong> This cartoon shows how the complex web of alliances dragged all the European powers into war. Serbia is threatened by Austria, who is threatened by Russia, who is threatened by Germany, and so on.",
           "question": "Enquiry: Study the intertwined hands and figures in this map. What does it suggest about how a local conflict might spread?",
           "tasks": [
@@ -877,7 +865,7 @@
           "sources": [
             {
               "type": "visual",
-              "src": "assets/balkans_1914_simple_map.png",
+              "src": "/assets/great_war_balkans_1914_simple_map.png",
               "title": "Source A: Map of the Balkans showing the expansion of Serbia after 1913."
             },
             {
@@ -921,6 +909,9 @@
         },
         "vocab_cloze_text": "Bismarck feared a two-front war and created the [Reinsurance Treaty] to keep Russia friendly. However, after his dismissal, Germany faced a nightmare scenario: [Encirclement] by hostile powers. Europe split into two armed camps: the [Triple Entente] (Britain, France, Russia) and the [Triple Alliance] (Germany, Austria-Hungary, Italy).",
         "narrative_blocks": [
+          {
+            "text": "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
+          },
           {
             "text": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding military alliances. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.",
             "level_4": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps."
@@ -988,17 +979,17 @@
         "sources": [
           {
             "title": "Diagram A: The July Crisis Domino Effect",
-            "src": "assets/july_crisis.svg",
+            "src": "/assets/great_war_july_crisis.svg",
             "caption": "How a single assassination in the Balkans escalated into a world war within a month."
           },
           {
             "title": "Map A: The Balkan Peninsula (1914)",
-            "src": "assets/balkans_1914_simple_map.png",
+            "src": "/assets/great_war_balkans_1914_simple_map.png",
             "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914."
           },
           {
             "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
-            "src": "assets/map_sarajevo_route.jpg",
+            "src": "/assets/great_war_map_sarajevo_route.jpg",
             "caption": ""
           }
         ],
@@ -1020,10 +1011,6 @@
             "definition": "The action of a country or its government preparing and organizing troops for active service."
           }
         ],
-        "extended": {
-          "title": "The July Crisis: Inevitable or Preventable?",
-          "paragraphs": []
-        },
         "do_now": {
           "type": "questions",
           "items": [
@@ -1071,7 +1058,7 @@
         },
         "primary_source": {
           "title": "Source A: Leonard Raven-Hill, 'The Boiling Point', a British political cartoon published in Punch Magazine, 1912.",
-          "src": "assets/was_boiling_point.png",
+          "src": "/assets/great_war_was_boiling_point.png",
           "caption": "<strong>What is this source showing?</strong> This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
           "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
           "tasks": [
@@ -1122,7 +1109,7 @@
           "sources": [
             {
               "type": "visual",
-              "src": "assets/was_boiling_point.png",
+              "src": "/assets/great_war_was_boiling_point.png",
               "title": "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912."
             },
             {
@@ -1166,6 +1153,9 @@
         },
         "vocab_cloze_text": "The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war.",
         "narrative_blocks": [
+          {
+            "text": "**The July Crisis: Inevitable or Preventable?**\n\n"
+          },
           {
             "text": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
             "level_4": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism."
@@ -1887,21 +1877,21 @@
         "id": "wilhelm",
         "name": "Kaiser Wilhelm II",
         "role": "Emperor of Germany",
-        "image": "assets/card_wilhelm.png",
+        "image": "/assets/great_war_card_wilhelm.png",
         "bio": "The impulsive and militaristic ruler of Germany whose aggressive 'Weltpolitik' foreign policy alienated Britain, France, and Russia, setting the stage for the Great War."
       },
       {
         "id": "princip",
         "name": "Gavrilo Princip",
         "role": "Serbian Nationalist",
-        "image": "assets/card_princip.png",
+        "image": "/assets/great_war_card_princip.png",
         "bio": "A member of the Black Hand secret society who assassinated Archduke Franz Ferdinand in Sarajevo, providing the spark that ignited the July Crisis and World War I."
       },
       {
         "id": "nicholas",
         "name": "Tsar Nicholas II",
         "role": "Emperor of Russia",
-        "image": "assets/card_nicholas.png",
+        "image": "/assets/great_war_card_nicholas.png",
         "bio": "The autocratic ruler of Russia who mobilized his vast army to defend Serbia against Austria-Hungary, triggering Germany's mobilization and the activation of the Schlieffen Plan."
       }
     ],
@@ -1910,10 +1900,10 @@
         "lesson_index": 0,
         "book_title": "The Sleepwalkers: How Europe Went to War in 1914",
         "author": "Christopher Clark",
-        "cover_image": "assets/clark_cover.png",
+        "cover_image": "/assets/great_war_clark_cover.png",
         "author_context": "Christopher Clark is an acclaimed Australian historian. In 'The Sleepwalkers' (2012), he argues that the outbreak of World War I was not a premeditated crime by one single nation, but a tragic, complex failure of diplomacy where European leaders 'sleepwalked' into disaster without fully understanding the consequences.",
         "extract": "The protagonists of 1914 were sleepwalkers, watchful but unseeing, haunted by dreams, yet blind to the reality of the horror they were about to bring into the world. For decades, the narrative of the Great War's outbreak has often focused on a single villain, usually pointing the finger of blame squarely at the German Empire. However, to truly understand the catastrophe, one must look at the entire continent of Europe—a continent caught in a rigid and paranoid web of its own making.\n\nIn the years leading up to 1914, Europe was dominated by a complex system of alliances. Originally designed as defensive measures to ensure peace through mutual protection, these agreements slowly morphed into dangerous tripwires. The Triple Entente, linking Britain, France, and Russia, stood in tense opposition to the Triple Alliance of Germany, Austria-Hungary, and Italy. Instead of feeling secure, the great powers felt entirely encircled and deeply suspicious of one another. The Franco-Prussian War of 1870 had left a bitter legacy; France was obsessed with regaining the lost territories of Alsace and Lorraine, while a newly unified Germany was determined to assert its dominance on the world stage.\n\nAmidst this atmosphere of mutual distrust, the military establishments across Europe grew vastly in size and influence. An unprecedented arms race took hold, most notably the fierce naval rivalry between Britain and Germany. Every nation began drafting intricate, inflexible mobilization plans. The most famous of these, the German Schlieffen Plan, dictated that in the event of war with Russia, Germany must rapidly strike and defeat France first to avoid a two-front war. Such plans meant that once the order to mobilize was given, the military timetables would take control, leaving politicians and diplomats entirely powerless to stop the descent into violence.\n\nThe spark that ignited this powder keg occurred in the volatile Balkan peninsula. The Austro-Hungarian Empire, a sprawling and multi-ethnic state, was terrified by the rise of Serbian nationalism on its southern border. When Archduke Franz Ferdinand was assassinated in Sarajevo on June 28, 1914, by a Bosnian Serb nationalist, the authorities in Vienna saw a perfect pretext to crush Serbia once and for all. They were emboldened by the infamous 'Blank Cheque' from their ally Germany, which promised unconditional support.\n\nYet, even after the assassination, a general European war was not inevitable. The ensuing July Crisis was a masterclass in diplomatic blundering, miscalculation, and brinkmanship. Leaders sent ambiguous messages, ambassadors failed to communicate their governments' true intentions, and monarchs desperately exchanged telegrams trying to preserve the peace while simultaneously signing mobilization orders. They were all playing a high-stakes game of bluff, assuming the other side would eventually back down.\n\nWhen Russia chose to mobilize its massive army in defense of its Slavic ally, Serbia, the fatal clockwork mechanism of the alliance system was triggered. Germany, bound by the rigid logic of the Schlieffen Plan, declared war on Russia and immediately invaded neutral Belgium to strike at France. This violation of Belgian neutrality finally brought the British Empire into the fray. \n\nIn the end, the outbreak of the First World War was not a premeditated crime planned in a single capital, but a tragic, collective failure. The statesmen of Europe were men who prided themselves on their rationality and diplomatic skill. Yet, gripped by fear, bound by rigid alliances, and overwhelmed by the speed of events, they sleepwalked past every opportunity to halt the crisis. They plunged their nations into a conflict of unprecedented scale and industrial slaughter, a war that would sweep away empires, redraw the map of the world, and cast a long, dark shadow over the rest of the twentieth century.",
-        "audio_file": "assets/reading_gw_l0.mp3",
+        "audio_file": "/assets/great_war_reading_gw_l0.mp3",
         "questions": [
           "What metaphor does the author use in the opening paragraph to describe the European leaders of 1914?",
           "According to the text, why did defensive alliances like the Triple Entente and Triple Alliance actually make the great powers feel less secure?",
@@ -1926,10 +1916,10 @@
         "lesson_index": 1,
         "book_title": "Heart of Darkness",
         "author": "Joseph Conrad",
-        "cover_image": "assets/conrad_cover.png",
+        "cover_image": "/assets/great_war_conrad_cover.png",
         "author_context": "Joseph Conrad was a Polish-British author who worked as a sailor for many years. His 1899 novella 'Heart of Darkness' was based on his own horrifying experiences captaining a steamboat on the Congo River. It is a searing critique of the brutality, greed, and moral corruption of European imperialism in Africa.",
         "extract": "The conquest of the earth, which mostly means the taking it away from those who have a different complexion or slightly flatter noses than ourselves, is not a pretty thing when you look into it too much. What redeems it is the idea only. An idea at the back of it; not a sentimental pretence but an idea; and an unselfish belief in the idea—something you can set up, and bow down before, and offer a sacrifice to...\n\nI left in a French steamer, and she called in every blamed port they have out there, for, as far as I could see, the sole purpose of landing soldiers and custom-house officers. I watched the coast. Watching a coast as it slips by the ship is like thinking about an enigma. There it is before you—smiling, frowning, inviting, grand, mean, insipid, or savage, and always mute with an air of whispering, 'Come and find out.' This one was almost featureless, as if still in the making, with an aspect of monotonous grimness. The edge of a colossal jungle, so dark-green as to be almost black, fringed with white surf, ran straight, like a ruled line, far, far away along a blue sea whose glitter was blurred by a creeping mist. The sun was fierce, the land seemed to glisten and drip with steam.\n\nNow and then a boat from the shore gave one a momentary contact with reality. It was paddled by black fellows. You could see from afar the white of their eyeballs glistening. They shouted, sang; their bodies streamed with perspiration; they had faces like grotesque masks—these chaps; but they had bone, muscle, a wild vitality, an intense energy of movement, that was as natural and true as the surf along their coast. They wanted no excuse for being there. They were a great comfort to look at. \n\nFor a time I would feel I belonged still to a world of straightforward facts; but the feeling would not last long. Something would turn up to scare it away. Once, I remember, we came upon a man-of-war anchored off the coast. There wasn't even a shed there, and she was shelling the bush. It appears the French had one of their wars going on thereabouts. Her ensign dropped limp like a rag; the muzzles of the long six-inch guns stuck out all over the low hull; the greasy, slimy swell swung her up lazily and let her down, swaying her thin masts. In the empty immensity of earth, sky, and water, there she was, incomprehensible, firing into a continent. Pop, would go one of the six-inch guns; a small flame would dart and vanish, a little white smoke would disappear, a tiny projectile would give a feeble screech—and nothing happened. Nothing could happen. There was a touch of insanity in the proceeding, a sense of lugubrious drollery in the sight; and it was not dissipated by somebody on board assuring me earnestly there was a camp of natives—he called them enemies!—hidden out of sight somewhere.\n\nWe gave her her letters (I heard the men in that lonely ship were dying of fever at the rate of three a day) and went on. We called at some more places with farcical names, where the merry dance of death and trade goes on in a still and earthy atmosphere as of an overheated catacomb; all along the formless coast bordered by dangerous surf, as if Nature herself had tried to ward off intruders; in and out of rivers, streams of death in life, whose banks were rotting into mud, whose waters, thickened into slime, invaded the contorted mangroves, that seemed to writhe at us in the extremity of an impotent despair.",
-        "audio_file": "assets/reading_gw_l1.mp3",
+        "audio_file": "/assets/great_war_reading_gw_l1.mp3",
         "questions": [
           "According to Conrad, what does the 'conquest of the earth' really involve?",
           "How does the author describe the true motivations of the imperialists?",
@@ -1942,10 +1932,10 @@
         "lesson_index": 2,
         "book_title": "The Riddle of the Sands",
         "author": "Erskine Childers",
-        "cover_image": "assets/childers_cover.png",
+        "cover_image": "/assets/great_war_childers_cover.png",
         "author_context": "Erskine Childers was a British author and sailor. Published in 1903, 'The Riddle of the Sands' is considered the first modern spy novel. It fueled British paranoia about a surprise German naval invasion, perfectly capturing the intense public anxiety surrounding the Anglo-German naval arms race.",
         "extract": "It was a glorious, breezy morning, and the waters of the Frisian coast danced and sparkled in the brilliant sunshine. We had brought the 'Dulcibella' through the tricky channels behind the islands, navigating the intricate maze of sandbanks that guarded the German shore. To the casual observer, we were merely a pair of eccentric English yachtsmen indulging in a late summer cruise among the desolate, mud-strewn estuaries of the North Sea. But beneath the facade of our holiday, a dark and terrifying suspicion had taken root in our minds—a suspicion that had driven us into these treacherous, shifting waters.\n\nAs we dropped anchor in a narrow, desolate gut behind the island of Memmert, Davies stood by the mast, sweeping the horizon with his binoculars. The coastline here was a bleak, monotonous stretch of flat sand and grey water, seemingly devoid of human life. Yet, it was precisely this desolate emptiness that made it so perfect for a secret of such colossal magnitude. For weeks, we had been piecing together a puzzle made of innocuous clues: a tugboat operating where it had no business being, a mysterious salvage operation that recovered nothing, and the relentless, almost obsessive secrecy of a certain Herr Dollmann, an Englishman turned traitor in the service of the Kaiser.\n\n'Look there,' Davies said quietly, handing me the glasses and pointing towards the mainland. 'Just past the spit of sand. Do you see it?'\n\nI squinted through the lenses. At first, there was nothing but the grey blur of the tidal flats. Then, as my eyes adjusted, I saw them. Not fishing boats, not merchantmen, but long, low shapes moving with mechanical precision through a dredged channel that did not exist on any of our Admiralty charts. They were lighters—massive, flat-bottomed barges designed for carrying troops and heavy equipment. There were dozens of them, moored in a hidden basin, sheltered from the open sea and completely invisible from the standard shipping lanes.\n\nThe blood ran cold in my veins as the pieces of the terrible puzzle finally snapped into place. This was no innocent coastal defense project. The German Empire, cramped within its landlocked borders and burning with imperial ambition, was not merely building a High Seas Fleet to challenge our dreadnoughts in open battle. They were preparing something far more insidious, something that struck directly at the heart of our island security.\n\nBehind the barrier of these Frisian islands, protected by the shifting sands and the treacherous tides, a vast, secret invasion force was being assembled. These hidden channels, newly deepened by relentless dredging, were designed to allow a flotilla of troop-carrying barges to slip out into the North Sea under the cover of darkness or a thick sea fog. They would bypass the mighty guns of the Royal Navy and strike a sudden, paralyzing blow on the unprotected eastern shores of England. \n\nWe were sitting in the very nerve center of a meticulously organized naval conspiracy. The Kaiser's Germany was preparing to leap the moat. We alone held the secret, and our tiny, fragile yacht was the only thing standing between the oblivious British public and a sudden, catastrophic war. The riddle of the sands had been solved, but the true terror of what it meant for the future of our nation was only just beginning.",
-        "audio_file": "assets/reading_gw_l2.mp3",
+        "audio_file": "/assets/great_war_reading_gw_l2.mp3",
         "questions": [
           "What secret threat did the narrator believe they had discovered?",
           "According to the extract, why was the German Empire building its fleet?",
@@ -1958,10 +1948,10 @@
         "lesson_index": 3,
         "book_title": "The Guns of August",
         "author": "Barbara W. Tuchman",
-        "cover_image": "assets/tuchman_cover.png",
+        "cover_image": "/assets/great_war_tuchman_cover.png",
         "author_context": "Barbara W. Tuchman was an American historian who won the Pulitzer Prize for 'The Guns of August' (1962). The book masterfully details the political calculations, military plans, and sheer arrogance of the Great Powers in the fateful month of August 1914 as the alliance system dragged them all into war.",
         "extract": "The nations of Europe in the summer of 1914 were bound together by a series of treaties that were ostensibly designed for mutual defense. The theory behind these grand alliances was deterrence: if every major power was allied with another, the cost of aggression would be too high, and peace would be preserved. However, in reality, these treaties functioned not as safety nets, but as highly sensitive tripwires. The continent had become a rigid, inflexible machine, where a single spark could ignite the entire mechanism and drag millions into an unavoidable conflict. \n\nWhen the Archduke Franz Ferdinand was assassinated in the dusty streets of Sarajevo, the first of these tripwires was snapped. Austria-Hungary, determined to crush the irritating threat of Serbian nationalism, looked to its powerful ally, Germany, for support. The German Kaiser issued the infamous 'blank cheque,' a promise of unconditional backing that emboldened the Austrians to issue an ultimatum they knew Serbia could never fully accept. The localized crisis in the Balkans immediately began to pull the great powers into its gravitational vortex. \n\nRussia, presenting itself as the traditional protector of the Slavic people, felt compelled to stand by Serbia. But Russia’s vast size was its greatest weakness; its army was massive but agonizingly slow to gather. To have any hope of fighting effectively, the Russian Tsar had to order mobilization immediately, long before diplomacy had run its course. Once the Tsar gave the order, the fatal clockwork of the alliance system took over. \n\nMobilization in 1914 was not merely the calling up of reserves; it was an irrevocable step toward war. It meant the requisitioning of thousands of trains, the locking down of national borders, and the execution of highly detailed, down-to-the-minute railway timetables. For Germany, Russian mobilization triggered a terrifying strategic nightmare. Wedged between a hostile Russia to the east and a vengeful France to the west, the German military had devised the Schlieffen Plan. This plan dictated that Germany must immediately attack and defeat France in a lightning campaign of six weeks before the lumbering Russian army could reach the German borders. \n\nTherefore, when Russia mobilized, Germany could not wait. The German high command, terrified of fighting a two-front war, informed the civilian government that military necessity must now dictate political action. They declared war on Russia, but, bound by the rigid logic of the Schlieffen Plan, their armies immediately marched in the opposite direction—invading neutral Belgium to strike at France. \n\nThis violation of Belgian neutrality was the final tripwire. It outraged British public opinion and compelled the British Empire, tied to France and Russia by the Triple Entente, to declare war on Germany. In a matter of days, the entire continent had been plunged into disaster. The diplomats and politicians, who had spent the month of July sending frantic telegrams and attempting to bluff their way to victory, suddenly found themselves entirely powerless. The moment the mobilization orders were signed, control was handed over to the generals and their railway timetables. The statesmen of Europe had built a machine of alliances they believed would keep the peace, but once the gears started turning, it proved to be a machine of industrial slaughter that none of them could stop.",
-        "audio_file": "assets/reading_gw_l3.mp3",
+        "audio_file": "/assets/great_war_reading_gw_l3.mp3",
         "questions": [
           "Why does the author describe the defensive alliances as 'tripwires'?",
           "What metaphor is used to describe the outbreak of the war?",
@@ -1974,10 +1964,10 @@
         "lesson_index": 4,
         "book_title": "All Quiet on the Western Front",
         "author": "Erich Maria Remarque",
-        "cover_image": "assets/all_quiet_cover.png",
+        "cover_image": "/assets/great_war_all_quiet_cover.png",
         "author_context": "Erich Maria Remarque was a German veteran of World War I. His 1929 novel 'All Quiet on the Western Front' became a defining anti-war masterpiece, detailing the extreme physical and mental trauma of the trenches, and the profound disillusionment of a generation. It was so powerful that it was later banned and burned by the Nazi regime.",
         "extract": "We were eighteen years old, and we had only just begun to love life and the world; and we had to shoot it to pieces. Before the war, our lives were filled with the ordinary concerns of youth—school, parents, hobbies, and the vague, distant promises of the future. But all of that was swept away in a sudden, overwhelming tide of national fervor. The older generation, the men who sat comfortably in their armchairs and read the newspapers, told us it was our glorious duty to defend the Fatherland. They spoke of the Fatherland as if it were a beautiful, fragile thing that required our immediate sacrifice, and we, in our naive enthusiasm, believed them.\n\nThe most persuasive of these voices belonged to our schoolmaster, Kantorek. He was a small, stern man who used to glare at us through his spectacles, pacing in front of the chalkboard. During drill-time, Kantorek gave us long, impassioned lectures about the honor of wearing the uniform and the sacred duty of the German soldier. He spoke of heroism and glory with such conviction that the whole of our class went, under his shepherding, straight to the District Commandant and volunteered. I can see him now, his voice trembling with emotion as he asked, 'Won't you join up, Comrades?' \n\nWe were all at once terribly earnest. We marched out of the school gates feeling like men, ready to shoulder the destiny of the empire. No one had the vaguest idea what we were actually in for. The word 'war' was an abstract concept to us, a glorious adventure gleaned from history books and patriotic poetry. We pictured cavalry charges, gleaming medals, and a swift, victorious return home before the leaves fell from the trees. Kantorek called us the 'Iron Youth,' a phrase that made us stand a little taller and puff out our chests, completely unaware of the grim irony it would soon hold. \n\nIt was only when we reached the training camps, and later the muddy, rat-infested trenches of the Western Front, that the glittering facade of duty and glory was violently stripped away. The first bombardment showed us our mistake, and under it the world as they had taught it to us broke in pieces. We realized that the authority of our teachers and parents, the people who were supposed to guide us into the world, was a lie. They had sent us out into a storm of steel with high-sounding words, but they had no conception of the reality of modern, industrial slaughter. \n\nOut here in the mud, nobody cared about the 'Fatherland' or the grand political arguments of the Kaiser. We fought simply to survive, driven by instinct and a desperate loyalty to the men standing next to us in the trench. We had become a wasteland. The older men might have wives, children, and occupations to return to, a solid foundation built before the war. But for us, the young men of eighteen, the war was our only education. We were a generation of men who, even though they may have escaped shells, were destroyed by the war.",
-        "audio_file": "assets/reading_gw_l4.mp3",
+        "audio_file": "/assets/great_war_reading_gw_l4.mp3",
         "questions": [
           "Who was Kantorek, and what did he persuade the entire class to do?",
           "How did the adults, like teachers, use the idea of 'duty' or 'comradeship' to pressure young men?",
@@ -2047,12 +2037,14 @@
           {
             "id": "Source B",
             "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
-            "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919."
+            "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
+            "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
           },
           {
             "id": "Source C",
             "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
-            "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919."
+            "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
+            "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
           }
         ]
       },
