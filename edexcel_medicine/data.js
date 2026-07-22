@@ -802,7 +802,7 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/De_Humani_Corporis_Fabrica_(1543)_-_Secunda_musculorum_tabula.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tertia_musculorum_tabula_%2837053621276%29.jpg/500px-Tertia_musculorum_tabula_%2837053621276%29.jpg",
           "title": "Vesalius' 'Muscle Men'",
           "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
           "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
@@ -1373,9 +1373,9 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Pasteur_Experiment.svg/500px-Louis_Pasteur_Experiment.svg.png",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Swan-necked_flask_used_by_Pasteur._Wellcome_M0012521.jpg/500px-Swan-necked_flask_used_by_Pasteur._Wellcome_M0012521.jpg",
           "title": "Pasteur's Swan-Neck Flask",
-          "caption": "The original diagram of Pasteur's famous experiment that disproved spontaneous generation.",
+          "caption": "A photograph of an original swan-necked flask used by Louis Pasteur in his experiments to disprove spontaneous generation.",
           "think_wonder": "Why didn't the liquid in the curved flask rot? What invisible thing is being kept out?"
         },
         {
@@ -2346,15 +2346,15 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexander_Fleming_in_his_laboratory_at_St_Mary's_Hospital,_London._Wellcome_L0006041.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Professor_Alexander_Fleming_at_work_in_his_laboratory_at_St_Mary%27s_Hospital%2C_London%2C_during_the_Second_World_War._D17801.jpg/500px-Professor_Alexander_Fleming_at_work_in_his_laboratory_at_St_Mary%27s_Hospital%2C_London%2C_during_the_Second_World_War._D17801.jpg",
           "title": "Fleming's Original Petri Dish",
-          "caption": "A photograph of the moldy staphylococcus plate from 1928.",
+          "caption": "Professor Alexander Fleming at work in his laboratory at St Mary's Hospital, London.",
           "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Penicillin_advertisement_-_Thanks_to_Penicillin_he_will_come_home_Wellcome_L0044569.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/PENICILLIN..._SAVES_SOLDIERS_LIVES%5E_EVERY_MINUTE_SAVED_IN_BUILDING_THIS_PLANT_MEANS_A_LIFE_SAVED_ON_THE_FIGHTING..._-_NARA_-_515170.jpg/500px-PENICILLIN..._SAVES_SOLDIERS_LIVES%5E_EVERY_MINUTE_SAVED_IN_BUILDING_THIS_PLANT_MEANS_A_LIFE_SAVED_ON_THE_FIGHTING..._-_NARA_-_515170.jpg",
           "title": "WWII Penicillin Propaganda",
-          "caption": "A propaganda poster urging the mass production of Penicillin.",
+          "caption": "A World War II propaganda poster urging the mass production of Penicillin.",
           "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
         }
       ]
@@ -2541,9 +2541,9 @@ export default {
           "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Health_warning_on_Canadian_cigarette_package.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/4/49/Cigarette_packet_warning_signs.jpg",
           "title": "Modern Anti-Smoking Warning",
-          "caption": "A modern graphic anti-smoking warning label on a cigarette pack.",
+          "caption": "A graphic anti-smoking warning label on a cigarette pack.",
           "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
         }
       ]
