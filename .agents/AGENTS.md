@@ -68,3 +68,6 @@ Whenever you need to add an image from Wikimedia Commons for a historical figure
 
 ## Edexcel GCSE Exam Specification: Feature Questions
 Whenever generating or evaluating Edexcel GCSE History exam questions, remember that the 'features' question format has changed. Instead of a single 4-mark question asking to 'Describe two features of...', it is now structured as two separate 2-mark questions: 'Describe one feature of...' which appears twice. Ensure all exam practice forms, UI templates, and generated assessments reflect this.
+
+### Fallback for Hotlink-Protected Images
+If a Wikimedia Commons URL works via the API (or curl) but returns a 403 Forbidden broken image icon in the browser (due to Wikimedia's hotlinking protection on high-traffic images), you MUST completely bypass hotlinking. Download the 500px thumbnail image directly into the `public/images/` directory using a Node script or curl, and update the JSON curriculum data to reference the local file path (e.g., `/images/vesalius.jpg`). This guarantees the image will always load flawlessly in the web app.
