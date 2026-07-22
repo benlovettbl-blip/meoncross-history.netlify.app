@@ -235,13 +235,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/P._26_%27The_Zodiac_Man%27_a_diagram_of_a_human_body_and_astrological_symbols_with_instructions_explaining_the_importance_of_astrology_from_a_medical_perspective.jpg/500px-thumbnail.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Homo_signorum-1580.png/500px-Homo_signorum-1580.png",
           "title": "The 'Zodiac Man' (Homo Signorum)",
           "caption": "A 14th-century detailed drawing showing how different astrological star signs govern different body parts.",
           "think_wonder": "Why are the signs of the zodiac drawn over specific body parts? How do you think a medieval physician used this chart to decide when to treat a patient?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Konstantinderafrikaner.jpg/500px-Konstantinderafrikaner.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg/500px-Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg",
           "title": "Medieval Urine Chart",
           "caption": "A circular chart showing 20 different shades and consistencies of urine.",
           "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?"
@@ -422,13 +422,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/9/90/BloodlettingPhoto_%28cropped%29.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Calendar%2C_January%2C_Two_bloodlettings%2C_inbetween_Aquarius%27%27_-_Psalter_of_Eleanor_of_Aquitaine_%28ca._1185%29_-_KB_76_F_13%2C_folium_002r.jpg/500px-Calendar%2C_January%2C_Two_bloodlettings%2C_inbetween_Aquarius%27%27_-_Psalter_of_Eleanor_of_Aquitaine_%28ca._1185%29_-_KB_76_F_13%2C_folium_002r.jpg",
           "title": "Medieval Bloodletting",
           "caption": "A graphic manuscript illumination showing a surgeon slicing a patient's arm to drain blood into a bowl.",
           "think_wonder": "What is being done to this patient's arm? Why might bleeding someone out intentionally be considered a 'cure'?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/P1080168_Paris_IV_h%C3%B4tel-Dieu_rwk.jpg/500px-P1080168_Paris_IV_h%C3%B4tel-Dieu_rwk.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Hospital_ward_in_the_Hotel_Dieu%2C_Paris._Woodcut%2C_c._1500_Wellcome_L0006764.jpg/500px-Hospital_ward_in_the_Hotel_Dieu%2C_Paris._Woodcut%2C_c._1500_Wellcome_L0006764.jpg",
           "title": "The Hotel-Dieu Hospital",
           "caption": "An illumination showing nuns caring for patients in a large, religious hospital ward.",
           "think_wonder": "Notice who is providing the care. Why are there no trained doctors visible? What does this tell us about the purpose of a medieval hospital?"
@@ -607,13 +607,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/1346-1353_spread_of_the_Black_Death_in_Europe_map.svg/500px-1346-1353_spread_of_the_Black_Death_in_Europe_map.svg.png",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/3/30/Michael_Wolgemut_and_Wilhelm_Pleydenwurff._Dance_of_Death_from_the_Nuremberg_Chronicle.jpg",
           "title": "The Tournai Mass Burial (1349)",
           "caption": "An illumination showing citizens stacking dozens of wooden coffins into deep trenches.",
           "think_wonder": "What does the sheer number of coffins suggest about the scale of the disaster? Why have normal burial practices collapsed?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Guardia_Sanframondi_%2831500390952%29.jpg/500px-Guardia_Sanframondi_%2831500390952%29.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flagellants.jpg/500px-Flagellants.jpg",
           "title": "Flagellants Whipping Themselves",
           "caption": "An illustration of a procession of flagellants whipping their own backs in public.",
           "think_wonder": "Why are these people intentionally hurting themselves? What do they believe this will achieve in the eyes of God?"
@@ -802,13 +802,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Vesalius_Fabrica_fronticepiece.jpg/500px-Vesalius_Fabrica_fronticepiece.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vesalius_-_De_Humani_Corporis_Fabrica_-_1543_-_Muscle_man_back.jpg/500px-Vesalius_-_De_Humani_Corporis_Fabrica_-_1543_-_Muscle_man_back.jpg",
           "title": "Vesalius' 'Muscle Men'",
           "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
           "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Francesco_Melzi_-_Portrait_of_Leonardo.png/500px-Francesco_Melzi_-_Portrait_of_Leonardo.png",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg/500px-Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg",
           "title": "Da Vinci Anatomical Sketch",
           "caption": "A detailed sketch of the human skull and spine by Leonardo da Vinci.",
           "think_wonder": "Why would an artist need to understand the human skeleton in such intricate detail? How does this cross the line between art and medicine?"
@@ -988,13 +988,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/WPA_quack_poster.jpg/500px-WPA_quack_poster.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/%28Venice%29_The_Quack_Doctor_by_Matteo_Ghidoni_dei_Pitocchi_-_Museo_Querini_Stampalia.jpg/500px-%28Venice%29_The_Quack_Doctor_by_Matteo_Ghidoni_dei_Pitocchi_-_Museo_Querini_Stampalia.jpg",
           "title": "A Quack Doctor",
           "caption": "A contemporary painting of an eccentric 'quack' performing to a crowd to sell bottled remedies.",
           "think_wonder": "Why are people buying medicine from a performer instead of a trained physician? How safe do you think these 'cure-all' potions really were?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/In_Effigiam_Nicholai_Culpeper_Equitis_by_Richard_Gaywood.jpg/500px-In_Effigiam_Nicholai_Culpeper_Equitis_by_Richard_Gaywood.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Culpeper%27s_English_physician_and_complete_herbal_BHL3588298.jpg/500px-Culpeper%27s_English_physician_and_complete_herbal_BHL3588298.jpg",
           "title": "Printed Herbal Book",
           "caption": "The title page of Nicholas Culpeper's famous printed book of herbal remedies.",
           "think_wonder": "How would mass-producing cheap books about herbal remedies change the way ordinary people treated illnesses?"
@@ -1181,13 +1181,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/9/91/William_Harvey%27s_experiments_on_the_valves_in_the_veins_Wellcome_L0002162.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/William_Harvey%2C_De_Motu_Cordis-_valves_in_veins_%2811291149393%29.jpg/500px-William_Harvey%2C_De_Motu_Cordis-_valves_in_veins_%2811291149393%29.jpg",
           "title": "Harvey’s Diagram of Vein Valves",
           "caption": "A sketch of a human arm with a tourniquet, showing fingers pressing on the veins.",
           "think_wonder": "What is the hand doing to the vein? What does this simple experiment prove about the direction that blood flows?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Bill_of_Mortality_1665.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bill_of_Mortality.jpg/500px-Bill_of_Mortality.jpg",
           "title": "London Bill of Mortality (1665)",
           "caption": "A printed broadsheet grimly listing the thousands of people who died from the plague in a single week.",
           "think_wonder": "What do these terrifying numbers tell us about the impact of the Great Plague? Why are city officials tracking the deaths so carefully?"
@@ -1373,13 +1373,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Louis_Pasteur_experiment_swan_neck_flask.png",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Louis_Pasteur_Experiment.svg/500px-Louis_Pasteur_Experiment.svg.png",
           "title": "Pasteur's Swan-Neck Flask",
           "caption": "The original diagram of Pasteur's famous experiment that disproved spontaneous generation.",
           "think_wonder": "Why didn't the liquid in the curved flask rot? What invisible thing is being kept out?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Robert_Koch_in_his_laboratory.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Robert_Koch_in_his_laboratory.jpg/500px-Robert_Koch_in_his_laboratory.jpg",
           "title": "Robert Koch at the Microscope",
           "caption": "A photograph of Robert Koch in his laboratory looking through a microscope.",
           "think_wonder": "What is he looking for? How did this technology change medicine forever?"
@@ -1580,13 +1580,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Nightingale-mortality.jpg/500px-Nightingale-mortality.jpg",
           "title": "Florence Nightingale’s 'Rose Diagram'",
           "caption": "Her revolutionary statistical coxcomb chart showing deaths in the Crimean War.",
           "think_wonder": "Look closely at the blue areas vs the red areas. Why did Nightingale invent a visual diagram instead of just handing the government a boring list of numbers?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/0/03/Early_surgery_with_ether_anesthesia.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Southworth_%26_Hawes_-_First_etherized_operation_%28re-enactment%29.jpg/500px-Southworth_%26_Hawes_-_First_etherized_operation_%28re-enactment%29.jpg",
           "title": "Early Chloroform Surgery",
           "caption": "A photograph of a Victorian operating theatre with a patient completely unconscious under a cloth mask.",
           "think_wonder": "Notice how calm the patient is. How did the invention of this invisible gas completely revolutionize the speed and success of surgery?"
@@ -1773,13 +1773,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/7/7f/The_cow_pock.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/The_cow_pock.jpg/500px-The_cow_pock.jpg",
           "title": "The Cow-Pock Cartoon",
           "caption": "James Gillray’s famous cartoon showing cows literally bursting out of people's arms after taking Jenner's vaccine.",
           "think_wonder": "What were people terrified would happen if they took Jenner's new vaccine? Why was there such fierce, hysterical opposition to his idea?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/500px-Snow-cholera-map-1.jpg",
           "title": "John Snow's Ghost Map",
           "caption": "The original map of Soho showing black bars clustered around the Broad Street pump.",
           "think_wonder": "Why are all the black bars (representing deaths) clustered around that specific street corner? What does this visual map prove about how cholera spreads?"
@@ -1958,13 +1958,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/0/02/Photo_51_x-ray_diffraction_image.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Photo_51_x-ray_diffraction_image.jpg/500px-Photo_51_x-ray_diffraction_image.jpg",
           "title": "Photograph 51 (1952)",
           "caption": "Rosalind Franklin's blurry X-ray diffraction image of DNA.",
           "think_wonder": "What on earth is this an image of? How did this blurry 'X' unlock the ultimate secrets of human genetics?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bacteriophage_electron_microscope.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/T4_Bacteriophage.gif/500px-T4_Bacteriophage.gif",
           "title": "Electron Microscope Virus",
           "caption": "An electron microscope image of a virus, magnified thousands of times.",
           "think_wonder": "This object is thousands of times smaller than a bacterium. How did discovering it change our approach to disease?"
@@ -2162,13 +2162,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aneurin_Bevan_NHS.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Nhs_first_day.jpg/500px-Nhs_first_day.jpg",
           "title": "Aneurin Bevan and the NHS",
           "caption": "A photograph of the Health Minister chatting with a young patient in 1948.",
           "think_wonder": "Why is this moment historically significant for ordinary British people? What financial nightmare did the NHS finally eliminate?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/4/41/Early_radiotherapy_machine.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/X-ray_therapy%2C_c.1910_-_National_Museum_of_American_History_-_DSC06227.JPG/500px-X-ray_therapy%2C_c.1910_-_National_Museum_of_American_History_-_DSC06227.JPG",
           "title": "Early Radiotherapy",
           "caption": "An early photograph of a massive radiotherapy machine being used on a patient.",
           "think_wonder": "How does high-tech machinery change the role of the doctor and the experience of the patient?"
@@ -2346,13 +2346,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Alexander_Fleming_penicillin_petri_dish.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Penicillium_mold_on_agar_Wellcome_L0061205.jpg/500px-Penicillium_mold_on_agar_Wellcome_L0061205.jpg",
           "title": "Fleming's Original Petri Dish",
           "caption": "A photograph of the moldy staphylococcus plate from 1928.",
           "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/3/36/Thanks_to_Penicillin...He_Will_Come_Home.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thanks_to_Penicillin_-_He_Will_Come_Home%2C_1944.jpg/500px-Thanks_to_Penicillin_-_He_Will_Come_Home%2C_1944.jpg",
           "title": "WWII Penicillin Propaganda",
           "caption": "A propaganda poster urging the mass production of Penicillin.",
           "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
@@ -2535,13 +2535,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Vintage_cigarette_advertisement_doctor.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Camel_Cigarettes_Ad_-_More_Doctors_Smoke_Camels.jpg/500px-Camel_Cigarettes_Ad_-_More_Doctors_Smoke_Camels.jpg",
           "title": "Vintage Cigarette Advertisement",
           "caption": "A 1950s poster featuring a smiling physician endorsing cigarettes.",
           "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Graphic_smoking_warning_label.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cigarette_warning_label_Canada.jpg/500px-Cigarette_warning_label_Canada.jpg",
           "title": "Modern Anti-Smoking Warning",
           "caption": "A modern graphic anti-smoking warning label on a cigarette pack.",
           "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
@@ -2779,13 +2779,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/1/14/Passchendaele_mud_trenches.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Flooded_communication_trench_%284688581846%29.jpg/500px-Flooded_communication_trench_%284688581846%29.jpg",
           "title": "Flooded Trenches",
           "caption": "A photograph of soldiers thigh-deep in liquid mud on the Western Front.",
           "think_wonder": "What medical conditions would thrive in this horrific environment? How hard would it be to safely treat an open wound here?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/3/39/WW1_trench_aerial_map.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/WW1_Aerial_photograph_-_Wartburg_Trench_near_the_Canal_du_Nord.JPG/500px-WW1_Aerial_photograph_-_Wartburg_Trench_near_the_Canal_du_Nord.JPG",
           "title": "Aerial Trench Map",
           "caption": "An aerial map showing the complicated zigzag pattern of the trench system.",
           "think_wonder": "Look at the zigzag lines. How difficult would it be to quickly carry a stretcher through these narrow, winding corridors?"
@@ -3024,13 +3024,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Trench_foot_WW1.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/FootInspectionWW1.jpg/500px-FootInspectionWW1.jpg",
           "title": "Trench Foot",
           "caption": "A stark medical photograph of rotting feet suffering from Trench Foot.",
           "think_wonder": "What caused this horrific condition? How could the British Army possibly try to prevent it in permanently flooded trenches?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/8/87/WW1_gas_mask_soldiers.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/British_soldiers_with_gas_masks%2C_First_World_War.jpg/500px-British_soldiers_with_gas_masks%2C_First_World_War.jpg",
           "title": "Early Gas Masks",
           "caption": "Soldiers wearing early, primitive gas masks in the trenches.",
           "think_wonder": "Why are they wearing these? How did the invention of poison gas change the nature of warfare and military medicine?"
@@ -3270,13 +3270,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/d/da/WW1_shrapnel_X-ray.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/X-ray_of_shrapnel_in_the_arm_of_a_soldier%2C_WWI_Wellcome_L0014768.jpg/500px-X-ray_of_shrapnel_in_the_arm_of_a_soldier%2C_WWI_Wellcome_L0014768.jpg",
           "title": "Shrapnel X-Ray",
           "caption": "An early X-ray showing jagged metal fragments embedded deep in bone.",
           "think_wonder": "Why are artillery shells so much more destructive than regular bullets? How difficult would it be for a surgeon to find and remove these fragments without this machine?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/7/75/Shell_shock_soldier_WW1.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/2/20/ShellShockSymptomPostWar.gif",
           "title": "Shell Shock",
           "caption": "A photograph of a soldier suffering from shell shock, displaying the 'thousand-yard stare'.",
           "think_wonder": "What are the invisible wounds of war? How did doctors try to treat a psychological condition they couldn't physically see?"
@@ -3521,13 +3521,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Stretcher_bearers_WW1_mud.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stretcher_bearers_in_the_mud%2C_Passchendaele%2C_August_1917.jpg/500px-Stretcher_bearers_in_the_mud%2C_Passchendaele%2C_August_1917.jpg",
           "title": "Stretcher Bearers in Mud",
           "caption": "A photograph of four exhausted men struggling to carry a single casualty through deep sludge.",
           "think_wonder": "Why does it take four men to carry one casualty? What dangers did these brave stretcher-bearers face while trying to save lives?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/9/91/WW1_horse_drawn_ambulance.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/A_horse-drawn_ambulance_wagon_on_the_Western_Front._Q32228.jpg/500px-A_horse-drawn_ambulance_wagon_on_the_Western_Front._Q32228.jpg",
           "title": "Horse-Drawn Ambulance",
           "caption": "An image of a horse-drawn ambulance transporting wounded soldiers.",
           "think_wonder": "Why were horse-drawn ambulances eventually replaced by motorized ones? What were their main limitations?"
@@ -3763,13 +3763,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Thomas_splint_WW1.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/A_Thomas_splint_in_use_on_a_wounded_soldier%2C_France._Wellcome_L0014769.jpg/500px-A_Thomas_splint_in_use_on_a_wounded_soldier%2C_France._Wellcome_L0014769.jpg",
           "title": "The Thomas Splint",
           "caption": "A photograph of the simple metal frame holding a soldier's shattered leg rigid.",
           "think_wonder": "How does this simple metal frame stop a fractured femur bone from piercing the skin and bleeding a soldier to death?"
         },
         {
-          "source": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Harold_Gillies_plastic_surgery_WW1.jpg",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Walter_Yeo_before_and_after_surgery.jpg/500px-Walter_Yeo_before_and_after_surgery.jpg",
           "title": "Harold Gillies' Plastic Surgery",
           "caption": "A photograph of early, pioneering plastic surgery on a disfigured soldier.",
           "think_wonder": "How did the horrific facial injuries caused by modern shrapnel lead to the desperate invention of plastic surgery?"
