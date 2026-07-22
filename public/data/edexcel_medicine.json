@@ -233,7 +233,21 @@
             "Explain how supernatural and religious factors influenced beliefs about the cause of illness.",
             "Analyse the rational, natural theories of disease used in medieval England."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/en/0/01/Phlebotomy-Zodiac_man.jpg",
+            "title": "The 'Zodiac Man' (Homo Signorum)",
+            "caption": "A 14th-century detailed drawing showing how different astrological star signs govern different body parts.",
+            "think_wonder": "Why are the signs of the zodiac drawn over specific body parts? How do you think a medieval physician used this chart to decide when to treat a patient?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Fasciculus_medicinae%3B_urine_chart_Wellcome_L0026330.jpg",
+            "title": "Medieval Urine Chart",
+            "caption": "A circular chart showing 20 different shades and consistencies of urine.",
+            "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?"
+          }
+        ]
       },
       {
         "id": "lesson_1_2",
@@ -406,7 +420,21 @@
             "Explain the connection between medieval beliefs about disease and their approaches to treatment and prevention.",
             "Evaluate the roles, training, and accessibility of different medical healers in medieval society."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/d/df/Lectures_on_materia_medica_and_therapeutics_-_delivered_in_the_College_of_Physicians_and_Surgeons_of_the_University_of_the_State_of_New_York_%28IA_lecturesonmateri00beck%29.pdf",
+            "title": "Medieval Bloodletting",
+            "caption": "A graphic manuscript illumination showing a surgeon slicing a patient's arm to drain blood into a bowl.",
+            "think_wonder": "What is being done to this patient's arm? Why might bleeding someone out intentionally be considered a 'cure'?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Salle_basse_Hotel-Dieu_Provins.JPG",
+            "title": "The Hotel-Dieu Hospital",
+            "caption": "An illumination showing nuns caring for patients in a large, religious hospital ward.",
+            "think_wonder": "Notice who is providing the care. Why are there no trained doctors visible? What does this tell us about the purpose of a medieval hospital?"
+          }
+        ]
       },
       {
         "id": "lesson_1_3",
@@ -577,7 +605,21 @@
             "Explain the religious and supernatural responses to the Black Death.",
             "Analyse the rational and governmental methods used to prevent and treat the plague."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/e/e5/The_Belgians_at_home_%28IA_belgiansathome00holl%29.pdf",
+            "title": "The Tournai Mass Burial (1349)",
+            "caption": "An illumination showing citizens stacking dozens of wooden coffins into deep trenches.",
+            "think_wonder": "What does the sheer number of coffins suggest about the scale of the disaster? Why have normal burial practices collapsed?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/3/38/European_History.pdf",
+            "title": "Flagellants Whipping Themselves",
+            "caption": "An illustration of a procession of flagellants whipping their own backs in public.",
+            "think_wonder": "Why are these people intentionally hurting themselves? What do they believe this will achieve in the eyes of God?"
+          }
+        ]
       },
       {
         "id": "lesson_2_1",
@@ -758,7 +800,21 @@
             "Explain how Thomas Sydenham's scientific approach to observation changed the diagnosis of disease.",
             "Assess the role of the printing press and the Royal Society in communicating and spreading scientific ideas."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Vesalius_muscles_back.jpg",
+            "title": "Vesalius' 'Muscle Men'",
+            "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
+            "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/1/13/The_romance_of_Leonardo_da_Vinci_%28IA_romanceofleonard00mererich%29.pdf",
+            "title": "Da Vinci Anatomical Sketch",
+            "caption": "A detailed sketch of the human skull and spine by Leonardo da Vinci.",
+            "think_wonder": "Why would an artist need to understand the human skeleton in such intricate detail? How does this cross the line between art and medicine?"
+          }
+        ]
       },
       {
         "id": "lesson_2_2",
@@ -930,7 +986,21 @@
             "Analyze the continuities and changes in Renaissance treatments and preventions, including the impact of exploration and alchemy.",
             "Explain how institutional changes, specifically the Dissolution of the Monasteries, altered hospital care in England."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Marriage_A-la-Mode_3%2C_The_Inspection_-_William_Hogarth.jpg",
+            "title": "A Quack Doctor",
+            "caption": "A contemporary painting of an eccentric 'quack' performing to a crowd to sell bottled remedies.",
+            "think_wonder": "Why are people buying medicine from a performer instead of a trained physician? How safe do you think these 'cure-all' potions really were?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/75/Culpeper%27s_English_physician_%3B_and_complete_herbal_%28IA_b22007908%29.pdf",
+            "title": "Printed Herbal Book",
+            "caption": "The title page of Nicholas Culpeper's famous printed book of herbal remedies.",
+            "think_wonder": "How would mass-producing cheap books about herbal remedies change the way ordinary people treated illnesses?"
+          }
+        ]
       },
       {
         "id": "lesson_2_3",
@@ -1109,7 +1179,21 @@
             "Explain the significance of William Harvey's discovery and the reasons for its limited short-term impact.",
             "Compare the government and public responses to the 1665 Great Plague with the 1348 Black Death."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/9/91/William_Harvey%27s_experiments_on_the_valves_in_the_veins_Wellcome_L0002162.jpg",
+            "title": "Harvey’s Diagram of Vein Valves",
+            "caption": "A sketch of a human arm with a tourniquet, showing fingers pressing on the veins.",
+            "think_wonder": "What is the hand doing to the vein? What does this simple experiment prove about the direction that blood flows?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Bill_of_Mortality_1665.jpg",
+            "title": "London Bill of Mortality (1665)",
+            "caption": "A printed broadsheet grimly listing the thousands of people who died from the plague in a single week.",
+            "think_wonder": "What do these terrifying numbers tell us about the impact of the Great Plague? Why are city officials tracking the deaths so carefully?"
+          }
+        ]
       },
       {
         "id": "lesson_3_1",
@@ -1287,7 +1371,21 @@
             "Explain the difference between Spontaneous Generation and Germ Theory.",
             "Analyze the significance of Robert Koch's scientific methodology in microbiology."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Louis_Pasteur_experiment_swan_neck_flask.png",
+            "title": "Pasteur's Swan-Neck Flask",
+            "caption": "The original diagram of Pasteur's famous experiment that disproved spontaneous generation.",
+            "think_wonder": "Why didn't the liquid in the curved flask rot? What invisible thing is being kept out?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Robert_Koch_in_his_laboratory.jpg",
+            "title": "Robert Koch at the Microscope",
+            "caption": "A photograph of Robert Koch in his laboratory looking through a microscope.",
+            "think_wonder": "What is he looking for? How did this technology change medicine forever?"
+          }
+        ]
       },
       {
         "id": "lesson_3_2",
@@ -1480,7 +1578,21 @@
             "Analyse how the breakthroughs of anaesthetics and antiseptics solved the critical surgical problems of pain and infection.",
             "Evaluate the role of government intervention in disease prevention through the 1875 Public Health Act."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg",
+            "title": "Florence Nightingale’s 'Rose Diagram'",
+            "caption": "Her revolutionary statistical coxcomb chart showing deaths in the Crimean War.",
+            "think_wonder": "Look closely at the blue areas vs the red areas. Why did Nightingale invent a visual diagram instead of just handing the government a boring list of numbers?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/0/03/Early_surgery_with_ether_anesthesia.jpg",
+            "title": "Early Chloroform Surgery",
+            "caption": "A photograph of a Victorian operating theatre with a patient completely unconscious under a cloth mask.",
+            "think_wonder": "Notice how calm the patient is. How did the invention of this invisible gas completely revolutionize the speed and success of surgery?"
+          }
+        ]
       },
       {
         "id": "lesson_3_3",
@@ -1659,7 +1771,21 @@
             "Explain the significance and limitations of Edward Jenner's development of the smallpox vaccine.",
             "Analyze how John Snow investigated the 1854 cholera epidemic and assess the significance of his findings."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/7f/The_cow_pock.jpg",
+            "title": "The Cow-Pock Cartoon",
+            "caption": "James Gillray’s famous cartoon showing cows literally bursting out of people's arms after taking Jenner's vaccine.",
+            "think_wonder": "What were people terrified would happen if they took Jenner's new vaccine? Why was there such fierce, hysterical opposition to his idea?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg",
+            "title": "John Snow's Ghost Map",
+            "caption": "The original map of Soho showing black bars clustered around the Broad Street pump.",
+            "think_wonder": "Why are all the black bars (representing deaths) clustered around that specific street corner? What does this visual map prove about how cholera spreads?"
+          }
+        ]
       },
       {
         "id": "lesson_4_1",
@@ -1830,7 +1956,21 @@
             "Explain how the discovery of DNA and the Human Genome Project transformed the understanding of genetic and hereditary illnesses.",
             "Analyze the influence of lifestyle choices on modern health and the impact of technology on medical diagnosis."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/0/02/Photo_51_x-ray_diffraction_image.jpg",
+            "title": "Photograph 51 (1952)",
+            "caption": "Rosalind Franklin's blurry X-ray diffraction image of DNA.",
+            "think_wonder": "What on earth is this an image of? How did this blurry 'X' unlock the ultimate secrets of human genetics?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bacteriophage_electron_microscope.jpg",
+            "title": "Electron Microscope Virus",
+            "caption": "An electron microscope image of a virus, magnified thousands of times.",
+            "think_wonder": "This object is thousands of times smaller than a bacterium. How did discovering it change our approach to disease?"
+          }
+        ]
       },
       {
         "id": "lesson_4_2",
@@ -2020,7 +2160,21 @@
             "Explain how scientific and technological developments led to the creation of magic bullets and antibiotics.",
             "Analyze the impact of the National Health Service (NHS) on the provision of and access to medical care."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aneurin_Bevan_NHS.jpg",
+            "title": "Aneurin Bevan and the NHS",
+            "caption": "A photograph of the Health Minister chatting with a young patient in 1948.",
+            "think_wonder": "Why is this moment historically significant for ordinary British people? What financial nightmare did the NHS finally eliminate?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/4/41/Early_radiotherapy_machine.jpg",
+            "title": "Early Radiotherapy",
+            "caption": "An early photograph of a massive radiotherapy machine being used on a patient.",
+            "think_wonder": "How does high-tech machinery change the role of the doctor and the experience of the patient?"
+          }
+        ]
       },
       {
         "id": "lesson_4_3",
@@ -2190,7 +2344,21 @@
             "Contrast the roles of Alexander Fleming with those of Howard Florey and Ernst Chain in the penicillin breakthrough.",
             "Analyze how the factors of government intervention, science and technology, and war collaborated to enable the mass production of penicillin."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Alexander_Fleming_penicillin_petri_dish.jpg",
+            "title": "Fleming's Original Petri Dish",
+            "caption": "A photograph of the moldy staphylococcus plate from 1928.",
+            "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/3/36/Thanks_to_Penicillin...He_Will_Come_Home.jpg",
+            "title": "WWII Penicillin Propaganda",
+            "caption": "A propaganda poster urging the mass production of Penicillin.",
+            "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
+          }
+        ]
       },
       {
         "id": "lesson_4_4",
@@ -2365,7 +2533,21 @@
             "Explain how modern science and technology have transformed the diagnosis and treatment of lung cancer since c1900.",
             "Analyze the effectiveness and changing focus of government legislation to prevent smoking-related lung cancer."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Vintage_cigarette_advertisement_doctor.jpg",
+            "title": "Vintage Cigarette Advertisement",
+            "caption": "A 1950s poster featuring a smiling physician endorsing cigarettes.",
+            "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Graphic_smoking_warning_label.jpg",
+            "title": "Modern Anti-Smoking Warning",
+            "caption": "A modern graphic anti-smoking warning label on a cigarette pack.",
+            "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
+          }
+        ]
       },
       {
         "id": "lesson_5_1",
@@ -2595,7 +2777,21 @@
           "scaffolded": [
             "Explain the state of surgical asepsis, radiology, and transfusion science on the eve of World War I."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/1/14/Passchendaele_mud_trenches.jpg",
+            "title": "Flooded Trenches",
+            "caption": "A photograph of soldiers thigh-deep in liquid mud on the Western Front.",
+            "think_wonder": "What medical conditions would thrive in this horrific environment? How hard would it be to safely treat an open wound here?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/3/39/WW1_trench_aerial_map.jpg",
+            "title": "Aerial Trench Map",
+            "caption": "An aerial map showing the complicated zigzag pattern of the trench system.",
+            "think_wonder": "Look at the zigzag lines. How difficult would it be to quickly carry a stretcher through these narrow, winding corridors?"
+          }
+        ]
       },
       {
         "id": "lesson_5_2",
@@ -2826,7 +3022,21 @@
             "Explain the causes, symptoms, and preventive strategies developed to combat trench foot and trench fever.",
             "Analyze the impact of weaponry on injuries, specifically focusing on shrapnel, head injuries, and gas gangrene from soil."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Trench_foot_WW1.jpg",
+            "title": "Trench Foot",
+            "caption": "A stark medical photograph of rotting feet suffering from Trench Foot.",
+            "think_wonder": "What caused this horrific condition? How could the British Army possibly try to prevent it in permanently flooded trenches?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/8/87/WW1_gas_mask_soldiers.jpg",
+            "title": "Early Gas Masks",
+            "caption": "Soldiers wearing early, primitive gas masks in the trenches.",
+            "think_wonder": "Why are they wearing these? How did the invention of poison gas change the nature of warfare and military medicine?"
+          }
+        ]
       },
       {
         "id": "lesson_5_3",
@@ -3058,7 +3268,21 @@
             "Explain the connection between artillery weaponry, shrapnel, and the introduction of the steel Brodie helmet in 1915.",
             "Analyse how the muddy, manured environment of Flanders led to severe wound infections like gas gangrene and tetanus."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/d/da/WW1_shrapnel_X-ray.jpg",
+            "title": "Shrapnel X-Ray",
+            "caption": "An early X-ray showing jagged metal fragments embedded deep in bone.",
+            "think_wonder": "Why are artillery shells so much more destructive than regular bullets? How difficult would it be for a surgeon to find and remove these fragments without this machine?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/7/75/Shell_shock_soldier_WW1.jpg",
+            "title": "Shell Shock",
+            "caption": "A photograph of a soldier suffering from shell shock, displaying the 'thousand-yard stare'.",
+            "think_wonder": "What are the invisible wounds of war? How did doctors try to treat a psychological condition they couldn't physically see?"
+          }
+        ]
       },
       {
         "id": "lesson_5_4",
@@ -3295,7 +3519,21 @@
             "Explain the four main stages of the Western Front chain of evacuation and the mode of transport between them.",
             "Evaluate the roles, significance, and contributions of the RAMC and FANY on the Western Front."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Stretcher_bearers_WW1_mud.jpg",
+            "title": "Stretcher Bearers in Mud",
+            "caption": "A photograph of four exhausted men struggling to carry a single casualty through deep sludge.",
+            "think_wonder": "Why does it take four men to carry one casualty? What dangers did these brave stretcher-bearers face while trying to save lives?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/9/91/WW1_horse_drawn_ambulance.jpg",
+            "title": "Horse-Drawn Ambulance",
+            "caption": "An image of a horse-drawn ambulance transporting wounded soldiers.",
+            "think_wonder": "Why were horse-drawn ambulances eventually replaced by motorized ones? What were their main limitations?"
+          }
+        ]
       },
       {
         "id": "lesson_5_5",
@@ -3523,7 +3761,21 @@
             "Explain how the Thomas splint and mobile X-ray units solved critical evacuation and surgical challenges.",
             "Analyze the development of blood transfusion and the significance of the first blood bank at the Battle of Cambrai."
           ]
-        }
+        },
+        "starters": [
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Thomas_splint_WW1.jpg",
+            "title": "The Thomas Splint",
+            "caption": "A photograph of the simple metal frame holding a soldier's shattered leg rigid.",
+            "think_wonder": "How does this simple metal frame stop a fractured femur bone from piercing the skin and bleeding a soldier to death?"
+          },
+          {
+            "source": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Harold_Gillies_plastic_surgery_WW1.jpg",
+            "title": "Harold Gillies' Plastic Surgery",
+            "caption": "A photograph of early, pioneering plastic surgery on a disfigured soldier.",
+            "think_wonder": "How did the horrific facial injuries caused by modern shrapnel lead to the desperate invention of plastic surgery?"
+          }
+        ]
       }
     ],
     "specification": [
