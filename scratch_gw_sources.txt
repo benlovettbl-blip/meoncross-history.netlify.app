@@ -1,0 +1,40 @@
+
+====================
+LESSON lesson_1
+Q: undefined
+undefined: “We must never forget the humiliation of 1871. The German Empire was proclaimed in our own Palace of Versailles, tearing away the bleeding wounds of Alsace and Lorraine. They have stolen our iron and our factories, and forced us to pay a crushing ransom of 5 billion francs. Every French child must grow up with one single thought: to rebuild our army and take back what was stolen from the motherland.”
+Prov: undefined
+undefined: “France will never forgive us for taking Alsace-Lorraine. The peace we have forced upon them has left a bitter resentment that will not fade. We must accept that a French war of revenge is a certainty in the future. Therefore, our entire diplomatic focus must be to ensure she never finds an ally to help her take it back. As long as France remains diplomatically isolated, particularly from Russia, Germany will remain secure.”
+Prov: undefined
+
+====================
+LESSON lesson_2
+Q: undefined
+undefined: undefined
+Prov: undefined
+undefined: “We do not want to put anyone in the shade, but we too demand our place in the sun.”
+Prov: undefined
+
+====================
+LESSON lesson_3
+Q: undefined
+undefined: undefined
+Prov: undefined
+undefined: “We want eight, and we won't wait!”
+Prov: undefined
+
+====================
+LESSON lesson_4
+Q: undefined
+undefined: undefined
+Prov: undefined
+undefined: “Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”
+Prov: undefined
+
+====================
+LESSON lesson_5
+Q: undefined
+undefined: undefined
+Prov: undefined
+undefined: “You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”
+Prov: undefined

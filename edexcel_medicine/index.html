@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>The Great War v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Touchscreen Drag and Drop Polyfill -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mobile-drag-drop@2.3.0/default.css">
+  <script src="https://cdn.jsdelivr.net/npm/mobile-drag-drop@2.3.0/index.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      MobileDragDrop.polyfill({
+        dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+      });
+      window.addEventListener('touchmove', function() {}, {passive: false});
+    });
+  </script>
+
+</head>
+<body>
+  <div class="app-container" style="display: flex; height: 100vh; overflow: hidden; width: 100vw;">
+    <aside class="sidebar" id="sidebar" style="width: 280px; background: white; border-right: 1px solid var(--border-glass); display: flex; flex-direction: column; flex-shrink: 0; z-index: 100;">
+      <div class="sidebar-logo" style="padding: 1.5rem 1rem; border-bottom: 1px solid var(--border-glass); cursor: pointer; margin-bottom: 0;" onclick="window.location.href='/'" title="Back to History Hub">
+        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+        <div>
+          <h2 style="margin: 0;">Mr Lovett's History Hub</h2>
+          <span>History Portal</span>
+        </div>
+      </div>
+      <div id="sidebar-nav-container" style="flex-grow: 1; overflow-y: auto; padding: 1.5rem 1rem;">
+        <!-- Lesson links injected here -->
+      </div>
+    </aside>
+
+    <main class="main-wrapper" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #f8f9fa;">
+      <header class="main-header" style="background: #1a237e; color: white; border-bottom: 1px solid var(--border-glass); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 10; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div class="header-title-container" style="display: flex; align-items: center; gap: 1rem;">
+          
+          <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">The Great War: Causes & Outbreak</h1>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
+          <button id="btn-fullscreen" class="btn btn-secondary" style="margin-right: 5px; padding: 6px 12px;" onclick="if (!document.fullscreenElement) { const el = document.querySelector('.main-wrapper') || document.documentElement; el.requestFullscreen(); } else { document.exitFullscreen(); }" title="Full Screen"><i class="fa-solid fa-expand"></i></button>
+          
+          <button id="btn-text-size" class="btn btn-secondary" style="margin-right: 5px; padding: 6px 12px;" onclick="document.body.classList.toggle('large-text')" title="A+ / A-"><i class="fa-solid fa-text-height"></i></button>
+          <button id="btn-dyslexia" class="btn btn-secondary" style="padding: 6px 12px;" title="SEN / Dyslexia Mode"><i class="fa-solid fa-glasses"></i></button>
+        </div>
+      </header>
+
+      <div class="content-area" id="content-area" style="flex: 1; overflow-y: auto; padding: 2rem 4rem;">
+        <!-- Narrative and tasks injected here -->
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+  <!-- Interactive Milestone Modal (Screen Only) -->
+  <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000;" onclick="if(event.target === this) closeMilestoneModal()">
+    <div class="modal-content" style="background: var(--navy); border: 2.5px solid var(--gold); border-radius: 12px; padding: 25px; max-width: 500px; width: 90%; color: #ffffff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      <button class="modal-close-btn" onclick="closeMilestoneModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #ffffff; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalMilestoneContent">
+        <!-- Content dynamically populated via showMilestoneModal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Pages display dynamically using tabs in app.js -->
+
+  
+  <!-- Classroom Oracy / Debate Modal -->
+  <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000;" onclick="if(event.target === this) closeDebateModal()">
+    <div class="modal-content" style="background: white; border: 3px solid var(--accent-red); border-radius: 12px; padding: 30px; max-width: 700px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
+      <button onclick="closeDebateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <i class="fa-solid fa-scale-balanced" style="font-size: 32pt; color: var(--accent-red);"></i>
+        <h2 style="font-family: var(--font-heading); font-size: 22pt; margin: 10px 0 0 0; color: var(--navy); text-transform: uppercase;">Classroom Oracy</h2>
+        <h3 style="font-family: var(--font-title); font-size: 14pt; margin: 5px 0 0 0; color: #555;" id="debateTopicSubtitle">Structured Debate Prompt</h3>
+      </div>
+      <div id="debateModalContent" style="font-size: 14pt; line-height: 1.5; text-align: center; background: #faf9f6; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+        <!-- Content dynamically populated -->
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <button class="btn btn-secondary" onclick="cycleDebatePrompt(-1)"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button class="btn btn-primary" onclick="cycleDebatePrompt(1)">Next Prompt <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const debatePrompts = [
+      {
+        title: "Lesson 1: The Bismarck Problem",
+        prompt: "<strong>Roleplay:</strong> You are a French politician in 1872. Defend your decision to hold a grudge against Germany over the loss of Alsace-Lorraine. Should revenge be a primary goal of your nation's foreign policy?"
+      },
+      {
+        title: "Lesson 2: The Sun and the Shadow",
+        prompt: "<strong>Debate:</strong> 'Imperialism was the primary cause of WW1.' Do you agree? Use evidence of the Moroccan crises and the scramble for Africa to support your view."
+      },
+      {
+        title: "Lesson 3: The Dreadnought Dilemma",
+        prompt: "<strong>Roleplay:</strong> You are British First Lord of the Admiralty Winston Churchill. Explain to the public why the Two-Power Standard is essential for Britain's survival, even if it bankrupts the country."
+      },
+      {
+        title: "Lesson 4: The Schlieffen Gamble",
+        prompt: "<strong>Debate:</strong> Was the Schlieffen Plan an aggressive act of war, or a necessary defensive strategy for a country surrounded by enemies? Pick a side."
+      },
+      {
+        title: "Lesson 5: The July Crisis",
+        prompt: "<strong>Roleplay:</strong> You are Tsar Nicholas II of Russia. Will you mobilize your army to protect Serbia, knowing it will trigger a war with Germany? Justify your decision to your advisors."
+      }
+    ];
+    let currentDebateIndex = 0;
+
+    function openDebateModal() {
+      document.getElementById('debateModal').style.display = 'flex';
+      renderDebatePrompt();
+    }
+
+    function closeDebateModal() {
+      document.getElementById('debateModal').style.display = 'none';
+    }
+
+    function renderDebatePrompt() {
+      const promptData = debatePrompts[currentDebateIndex];
+      document.getElementById('debateTopicSubtitle').innerText = promptData.title;
+      document.getElementById('debateModalContent').innerHTML = promptData.prompt;
+    }
+
+    function cycleDebatePrompt(direction) {
+      currentDebateIndex += direction;
+      if (currentDebateIndex < 0) currentDebateIndex = debatePrompts.length - 1;
+      if (currentDebateIndex >= debatePrompts.length) currentDebateIndex = 0;
+      renderDebatePrompt();
+    }
+  </script>
+
+</body>
+</html>

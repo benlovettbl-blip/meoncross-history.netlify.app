@@ -1,0 +1,22 @@
+MODEL 1: Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.
+MODEL 2: Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.
+MODEL 3: They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.
+MODEL 4: It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.
+MODEL 5: They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.
+MODEL 6: Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.
+MODEL 7: Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.
+MODEL 8: Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.
+MODEL 9: It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.
+MODEL 10: He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.
+MODEL 11: It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.
+MODEL 12: It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.
+MODEL 13: They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.
+MODEL 14: It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.
+MODEL 15: They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.
+MODEL 16: They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.
+MODEL 17: It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.
+MODEL 18: It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.
+MODEL 19: The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.
+MODEL 20: It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.
+MODEL 21: It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.
+MODEL 22: It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.

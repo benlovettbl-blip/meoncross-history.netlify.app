@@ -1,0 +1,292 @@
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 15px; border-bottom: 1px solid #e2e8f0; background: #ffffff; border-radius: 8px;">
+        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary);">KT2.1: Did the Renaissance change beliefs about the causes of illness?</h4>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+        </div>
+      </div>
+      <div id="progress-container" style="background: #e2e8f0; height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden;">
+        <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
+      </div>
+    
+        <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Enquiry Question
+          </h3>
+          <p style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
+            KT2.1: Did the Renaissance change beliefs about the causes of illness?
+          </p>
+        </div>
+      
+        <div class="teacher-note">
+          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+          <div style="font-size: 1.05rem; margin-bottom: 20px;">The overarching pedagogical goal of this lesson is to guide students in analyzing the complex relationship between change and continuity in explanations of the cause of disease during the Renaissance (c1500–c1700). Students must grasp that while scientific knowledge of anatomy and physiology progressed significantly, beliefs about what actually made people sick experienced very slow, gradual change, particularly among the general public.</div><div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br>A vital primary source for this lesson is Thomas Sydenham's 1676 book Observationes Medicae, which became a standard medical textbook. In the introduction, Sydenham argues that physicians must reduce all diseases to 'definite and certain species' with the same exactitude botanists use to classify plants, rather than assuming illness is purely personal to an individual's humoural balance. This represents the birth of modern disease classification, yet during epidemics like the Great Plague of 1665, Sydenham himself still believed that miasma (bad air) was a major cause of infection and that traditional remedies were necessary. **If Renaissance doctors possessed advanced scientific technologies like printing and microscopes, why did they continue to rely on the medieval explanation of miasma to explain the Great Plague of 1665?**</div>
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> Explain how Thomas Sydenham's scientific approach to observation changed the diagnosis of disease.</div>
+            <div style="font-size: 0.95rem; margin-bottom: 10px;">Direct students to analyze Sydenham's refusal to rely on medical books and his insistence on observing all patient symptoms to classify illnesses into distinct species, similar to botanists classifying plants. Contrast his approach with the medieval method of treating symptoms individually as separate humoural imbalances.</div>
+            
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"How did Sydenham's belief that diseases were like plants or animals challenge the traditional Theory of the Four Humours?"</div>
+            </div>
+          </div>
+        
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> Assess the role of the printing press and the Royal Society in communicating and spreading scientific ideas.</div>
+            <div style="font-size: 0.95rem; margin-bottom: 10px;">Examine how the invention of the printing press in c1440 took book copying out of the hands of the Church and prevented the censorship of ideas challenging Galen. Detail the role of the Royal Society (founded 1660) in promoting experiment-based science and sharing discoveries internationally via their journal, Philosophical Transactions.</div>
+            
+            <div style="background: rgba(56, 189, 248, 0.1); border-left: 3px solid #38bdf8; padding: 10px; border-radius: 0 4px 4px 0;">
+              <div style="color: #38bdf8; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Hinge Question</div>
+              <div style="color: #e0f2fe; font-size: 0.95rem; font-style: italic;">"In what ways did the Royal Society's scientific journal, Philosophical Transactions, help to spread medical knowledge across Europe?"</div>
+            </div>
+          </div>
+        
+        </div>
+      
+        <div class="phase-card" id="phase-1">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase 1: Do Now Tasks</div>
+            <button class="btn btn-secondary" onclick="window.toggleAllAnswers(this)" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+      
+          <div class="do-now-card" id="do-now-card-0" onclick="window.toggleAnswerById('donow-2-0')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 1</div>
+            <div>In what year did the Black Death arrive in England?</div>
+            <div class="answer" id="donow-2-0" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">1348.</div>
+          </div>
+        
+          <div class="do-now-card" id="do-now-card-1" onclick="window.toggleAnswerById('donow-2-1')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 2</div>
+            <div>What did medieval people believe caused the Black Death?</div>
+            <div class="answer" id="donow-2-1" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">A punishment from God, an unusual alignment of planets, or miasma (bad air).</div>
+          </div>
+        
+          <div class="do-now-card" id="do-now-card-2" onclick="window.toggleAnswerById('donow-2-2')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 3</div>
+            <div>State one method used to try to prevent the Black Death.</div>
+            <div class="answer" id="donow-2-2" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">Carrying sweet-smelling herbs, lighting fires, or running away.</div>
+          </div>
+        
+          <div class="do-now-card" id="do-now-card-3" onclick="window.toggleAnswerById('donow-2-3')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 4</div>
+            <div>Why did the Black Death cause such a high death toll?</div>
+            <div class="answer" id="donow-2-3" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">People did not understand germs or how the disease was actually transmitted (fleas on rats), so their prevention methods were entirely ineffective.</div>
+          </div>
+        
+          <div class="do-now-card" id="do-now-card-4" onclick="window.toggleAnswerById('donow-2-4')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 5</div>
+            <div>To what extent did the Black Death change medical ideas?</div>
+            <div class="answer" id="donow-2-4" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">It caused very little immediate change; the sheer scale of the disaster reinforced reliance on religion and existing theories, as physicians had no better explanations.</div>
+          </div>
+        
+          <div class="do-now-card" id="do-now-card-5" onclick="window.toggleAnswerById('donow-2-5')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task 6</div>
+            <div>Recall: Who was Claudius Galen and what was their key contribution to medicine?</div>
+            <div class="answer" id="donow-2-5" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">Claudius Galen was a Ancient Roman Physician. Developed the Theory of Opposites based on the Four Humours. His anatomical writings, though often based on animal dissection and highly flawed, were promoted by the Catholic Church and formed the absolute basis of medical training for over 1,000 years.</div>
+          </div>
+        </div></div>
+        <div class="phase-card" id="phase-2">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">Phase 2: Vocabulary Unlock</div>
+          </div>
+          <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><i class="fa-solid fa-spell-check" style="color: #3b82f6;"></i> <strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+          
+          <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+      <button class="btn btn-secondary match-term-btn" data-idx="0" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">Humanism</button><button class="btn btn-secondary match-term-btn" data-idx="1" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">Nullius in Verba</button><button class="btn btn-secondary match-term-btn" data-idx="2" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">Animalcules</button></div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;"><button class="btn btn-secondary match-def-btn" data-idx="1" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">The Latin motto of the Royal Society, meaning 'Take nobody's word for it', which encapsulated the Renaissance shift toward establishing scientific truth through experimentation and empirical evidence rather than traditional authority.</button><button class="btn btn-secondary match-def-btn" data-idx="0" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">A Renaissance intellectual movement characterized by a love of learning, a renewed interest in classical scholars, and the belief that human beings could use observation and reason to discover the truth for themselves rather than relying solely on religious authority or tradition.</button><button class="btn btn-secondary match-def-btn" data-idx="2" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">The term used by Antony van Leeuwenhoek in 1683 to describe the tiny, microscopic living organisms (bacteria) he observed under his improved microscope, which marked the first recorded observation of bacteria but was not yet linked to causing disease.</button>
+            </div>
+          </div>
+          <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+            <i class="fa-solid fa-star"></i> Vocabulary Mastered!
+          </div>
+        </div>
+        <div id="locked-content">
+      
+            <div class="phase-card" style="background: #fdf4ff; border-left: 4px solid #c026d3;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f5d0fe; margin-bottom: 20px; padding-bottom: 10px;">
+                    <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #86198f;">Phase 3: Key Figures in this Lesson</div>
+                </div>
+                <div class="key-individuals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+        
+                <div class="ki-card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #f5d0fe; display: flex; flex-direction: column;">
+                    <div class="ki-img-wrapper" style="height: 200px; background: #fdf4ff; display: flex; align-items: center; justify-content: center; padding: 10px; border-bottom: 1px solid #f5d0fe;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg" alt="Hippocrates" style="max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 4px;">
+                    </div>
+                    <div class="ki-content" style="padding: 15px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <h3 style="margin: 0 0 5px 0; color: #7e22ce; font-size: 1.25rem;">Hippocrates</h3>
+                        <div style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #a21caf; margin-bottom: 15px; font-weight: bold;">Ancient Greek Physician</div>
+                        
+                    </div>
+                </div>
+            
+                <div class="ki-card" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #f5d0fe; display: flex; flex-direction: column;">
+                    <div class="ki-img-wrapper" style="height: 200px; background: #fdf4ff; display: flex; align-items: center; justify-content: center; padding: 10px; border-bottom: 1px solid #f5d0fe;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Thomas_Sydenham_by_Mary_Beale.jpg/500px-Thomas_Sydenham_by_Mary_Beale.jpg" alt="Thomas Sydenham" style="max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 4px;">
+                    </div>
+                    <div class="ki-content" style="padding: 15px; display: flex; flex-direction: column; flex-grow: 1;">
+                        <h3 style="margin: 0 0 5px 0; color: #7e22ce; font-size: 1.25rem;">Thomas Sydenham</h3>
+                        <div style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #a21caf; margin-bottom: 15px; font-weight: bold;">The "English Hippocrates"</div>
+                        
+                    </div>
+                </div>
+            
+                </div>
+            </div>
+        
+        <div class="phase-card" id="phase-4">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">Phase 4: KT2.1: Did the Renaissance change beliefs about the causes of illness?</div>
+          </div>
+      
+          <div class="standard-narrative-container">
+            <div id="para-1" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: #ffffff; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">1</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;"><strong>Continuity and Change in Explanations</strong>
+
+The Theory of the Four Humours was gradually discredited by physicians as new anatomical discoveries proved Galen wrong, but the general public still widely believed it.
+
+The belief that God sent disease declined as the Catholic Church lost power and society became more secular, though people still turned to religion in terror during major epidemics like the Great Plague of 1665.
+
+Miasma (bad air) remained a highly popular rational explanation for disease, especially in growing, dirty cities. Because the actual scientific cause of disease (germs) had not yet been discovered, everyday medical treatment experienced very little change, even though the old theories were finally being questioned.</div>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                
+              </div>
+            </div>
+          </div>
+        <div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">
+               <div style="margin-bottom: 10px;">
+                 <strong>Q7. Identify one invention that helped spread new ideas during the Renaissance.</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('ans-emb-0-0')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 
+                 
+                 <div class="answer" id="ans-emb-0-0" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">The printing press, invented in 1440.</div>
+               </div>
+             </div>
+          <div class="standard-narrative-container">
+            <div id="para-2" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: #f0f9ff; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">2</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;"><strong><span class="person-link" data-img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Thomas_Sydenham_by_Mary_Beale.jpg/500px-Thomas_Sydenham_by_Mary_Beale.jpg" data-audio="null" data-role="The &quot;English Hippocrates&quot;" data-bio="A highly influential English physician of the 17th century. He strongly advocated for the direct observation of patient symptoms and classifying diseases (like measles and scarlet fever) into distinct groups, moving away from the Theory of the Four Humours." style="cursor: pointer; font-weight: bold; color: #7e22ce; border-bottom: 2px dashed #7e22ce;">Thomas Sydenham</span> and the Scientific Approach</strong>
+
+Thomas Sydenham, nicknamed the 'English <span class="person-link" data-img="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg" data-audio="null" data-role="Ancient Greek Physician" data-bio="Known as the &quot;Father of Medicine&quot;. He created the Theory of the Four Humours, established the Hippocratic Oath, and pioneered clinical observation (observing patient symptoms rather than consulting astrology)." style="cursor: pointer; font-weight: bold; color: #7e22ce; border-bottom: 2px dashed #7e22ce;">Hippocrates</span>', was a highly respected doctor in London during the 1660s and 1670s.
+
+He refused to blindly rely on the ancient books of Galen. Instead, he focused on making detailed, direct observations of a patient's symptoms and keeping accurate records.
+
+In 1676, he published Observationes Medicae, arguing that diseases were like plants and animals that could be classified into different species (for example, he proved that measles and scarlet fever were separate diseases). Sydenham’s work was a major turning point because it shifted medical diagnosis away from a patient's personal 'humours' and toward identifying and treating specific, external diseases.</div>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                
+              </div>
+            </div>
+          </div>
+        <div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">
+               <div style="margin-bottom: 10px;">
+                 <strong>Q8. Describe what Vesalius discovered about Galen.</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('ans-emb-1-0')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 
+                 
+                 <div class="answer" id="ans-emb-1-0" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">Vesalius proved that Galen had made over 300 anatomical mistakes because Galen had only dissected animals, not humans.</div>
+               </div>
+             </div>
+          <div class="standard-narrative-container">
+            <div id="para-3" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: #ffffff; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">3</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;"><strong>The Influence of the Printing Press</strong>
+
+Invented by Johannes Gutenberg in c.1440, the printing press allowed books to be mass-produced quickly, accurately, and cheaply.
+
+Crucially, it took book production out of the hands of the monks and the Church, meaning religious authorities could no longer censor ideas they disapproved of. The printing press revolutionized medicine because it allowed ground-breaking, anti-Galen discoveries (like the anatomical drawings of Vesalius) to spread rapidly across Europe before traditional authorities could stop them.</div>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                
+              </div>
+            </div>
+          </div>
+        <div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">
+               <div style="margin-bottom: 10px;">
+                 <strong>Q9. Explain the purpose of the Royal Society.</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('ans-emb-2-0')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 
+                 
+                 <div class="answer" id="ans-emb-2-0" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">Founded in 1660, the Royal Society promoted scientific experiments and allowed scientists to share new discoveries across Europe through their journal, Philosophical Transactions.</div>
+               </div>
+             </div>
+          <div class="standard-narrative-container">
+            <div id="para-4" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: #f0f9ff; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <div class="para-number">4</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;"><strong>The Royal Society</strong>
+
+The Royal Society was founded in London in 1660 to discuss new scientific ideas and carry out experiments.
+
+Its motto was <span class="vocab-word" data-definition="The Latin motto of the Royal Society, meaning 'Take nobody's word for it', which encapsulated the Renaissance shift toward establishing scientific truth through experimentation and empirical evidence rather than traditional authority.">Nullius in verba</span> ("Take nobody's word for it"), actively encouraging scientists to challenge ancient traditions and demand proof.
+
+In 1662, it received a Royal Charter from King Charles II, giving the group immense credibility.
+
+In 1665, it began publishing the world's first scientific journal, Philosophical Transactions, which shared new discoveries like Antony van Leeuwenhoek's observation of '<span class="vocab-word" data-definition="The term used by Antony van Leeuwenhoek in 1683 to describe the tiny, microscopic living organisms (bacteria) he observed under his improved microscope, which marked the first recorded observation of bacteria but was not yet linked to causing disease.">animalcules</span>' (bacteria). The Royal Society was essential for medical progress because it provided a formal, highly respected platform for scientists across Europe to share, debate, and verify each other's medical breakthroughs.</div>
+              <div style="display: flex; align-items: flex-start;">
+                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                
+              </div>
+            </div>
+          </div>
+        <div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">
+               <div style="margin-bottom: 10px;">
+                 <strong>Q10. Evaluate the extent to which the Renaissance changed beliefs about the causes of illness.</strong>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('ans-emb-3-0')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 
+                 
+                 <div class="answer" id="ans-emb-3-0" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">While the Renaissance revolutionized anatomy through Vesalius, it completely failed to change beliefs about the causes of illness. Without microscopes, bacteria couldn't be seen, so people still believed in miasma and the Four Humours.</div>
+               </div>
+             </div></div>
+        <div class="phase-card" id="phase-5">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase 5: Written Application</div>
+            
+          </div>
+      
+          <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+            <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">The Debate over the Pace of Change in Renaissance Medicine</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">Historians often debate the extent to which the Renaissance c1500–c1700 represented a genuine breakthrough or a period of stagnation in the understanding of disease causes. Traditional historians emphasize a 'Scientific Revolution,' pointing to the works of Vesalius, Harvey, and Leeuwenhoek as a rapid and complete dismantling of medieval Galenism. However, revisionist historians argue that this period was actually characterized by overwhelming continuity for the average patient. They argue that while elite physicians in organizations like the Royal Society debated new ideas, daily treatments (such as bleeding and purging to balance the humours) remained completely unchanged. Because there was no scientific proof that Leeuwenhoek's 'animalcules' actually caused disease, everyday medical practice clung tightly to the Theory of the Four Humours and miasma for centuries after the Renaissance.</p>
+            
+          </div>
+        </div>
+        <div class="phase-card" id="phase-6">
+          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase 6: Think, Pair, Share</div>
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
+            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">In the period c1500–c1700, was the work of individual physicians like Thomas Sydenham more important in challenging traditional medical beliefs than institutional developments like the founding of the Royal Society?</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">Jot down your choice and one piece of evidence from the sources (e.g., Sydenham's Observationes Medicae classifying diseases like scarlet fever vs. the Royal Society publishing Leeuwenhoek's discoveries in Philosophical Transactions).</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">Take turns explaining your choice, highlighting whether individual clinical observations or institutional sharing had a greater impact on undermining ancient medical authorities.</p>
+              </div>
+              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                <p style="margin: 0; font-size: 0.95rem; color: #475569;">Be ready to report your partner's best point, focusing on how they evaluated the relative significance of individuals versus institutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="phase-card" id="phase-7">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase 7: Extended Scholarship</div>
+            <button class="btn btn-secondary" onclick="toggleElement('extended-model-lesson_2_1')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>
+          </div>
+      <h3 style="color: #0f172a;">The Medical Renaissance Begins</h3><p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">During the Renaissance, there was a revival of learning and a new desire to question old ideas. The invention of the printing press in 1440 meant that books could be copied quickly and cheaply, reducing the Church's control over information. At the same time, the Royal Society was founded in 1660 to promote scientific experiments and share new discoveries across Europe.</p><p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">One of the biggest changes was in anatomy. Andreas Vesalius began dissecting human bodies himself and proved that Galen had made over 300 mistakes (because Galen had only dissected animals). Vesalius published his highly accurate anatomy book, 'The Fabric of the Human Body', in 1543. However, despite these breakthroughs in anatomy, people still didn't know what caused disease, and the theory of the Four Humours remained widely believed.</p>
+          <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+              Question 1: To what extent did the Renaissance change beliefs about the causes of illness?
+            </div>
+            
+            <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
+
+            <div id="extended-model-lesson_2_1" class="scaffold-box model-box" style="display:none; margin-top: 15px;">The Renaissance did not significantly change beliefs about the causes of illness. Although there was a scientific revolution, with the printing press spreading new ideas and Vesalius proving Galen's anatomical mistakes, this new knowledge did not explain disease. Because microscopes were not yet powerful enough to see bacteria, doctors could not prove what made people sick. Therefore, most ordinary people and doctors continued to believe in miasma and the Four Humours to explain illness.</div>
+          </div>
+        </div></div>

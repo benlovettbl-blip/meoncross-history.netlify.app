@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+      .person-card {
+        perspective: 1000px;
+        background: transparent;
+        cursor: pointer;
+        width: 300px;
+        height: 400px;
+      }
+      .card-inner {
+        display: grid;
+        transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transform-style: preserve-3d;
+        height: 100%;
+      }
+      .person-card.flipped .card-inner {
+        transform: rotateY(180deg);
+      }
+      .person-card:hover:not(.flipped) .card-inner {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      }
+      .card-front, .card-back {
+        grid-area: 1 / 1;
+        backface-visibility: hidden;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid red;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-front {
+        background: blue;
+      }
+      .card-back {
+        background: green;
+        transform: rotateY(180deg);
+        padding: 20px;
+        overflow-y: auto;
+      }
+</style>
+</head>
+<body>
+  <div class="person-card" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-front">Front</div>
+      <div class="card-back">Back</div>
+    </div>
+  </div>
+</body>
+</html>

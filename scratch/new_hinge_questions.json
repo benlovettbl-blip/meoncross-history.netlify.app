@@ -1,0 +1,392 @@
+[
+  {
+    "lesson_id": "lesson_1_1",
+    "objective_index": 0,
+    "text": "Why did the medieval Catholic Church strongly promote the belief that disease was sent by God?",
+    "options": [
+      "To encourage medical students to perform human dissections inside churches",
+      "To explain illness as a test of faith or a punishment for sin, reinforcing the need for prayer and repentance",
+      "To argue that the positioning of the planets was more powerful than God's will",
+      "To prove that traditional herbal remedies were sinful and should be completely banned"
+    ],
+    "correct_index": 1,
+    "explanation": "The medieval Church taught that God sent disease as a test of faith or punishment for sins. This encouraged people to seek spiritual treatments like prayer and pilgrimage, reinforcing the Church's authority while they still permitted basic herbal care."
+  },
+  {
+    "lesson_id": "lesson_1_1",
+    "objective_index": 1,
+    "text": "Which of the following best explains how a medieval physician would use the Theory of the Four Humours to explain a patient's fever?",
+    "options": [
+      "The patient had inhaled bad air (miasma) which directly created bacteria inside their lungs",
+      "The patient had an excess of blood, which is a hot and wet humour, causing their body to overheat",
+      "The patient's phlegm had become too cold and dry, causing the heart to overwork",
+      "The patient had committed a sin, which physically blocked the natural flow of yellow bile"
+    ],
+    "correct_index": 1,
+    "explanation": "The Theory of the Four Humours was a rational, natural theory of disease. Fevers were associated with an excess of blood (which was hot and wet), meaning physicians would prescribe bloodletting to restore the body's natural balance."
+  },
+  {
+    "lesson_id": "lesson_1_2",
+    "objective_index": 0,
+    "text": "A medieval patient is diagnosed with an excess of phlegm (cold and wet). Based on the Theory of Opposites, which treatment would a physician prescribe?",
+    "options": [
+      "Eating cool, wet foods like cucumber to soothe the stomach",
+      "Eating hot, dry foods like hot peppers and keeping warm",
+      "Praying to Saint Jude and going on a pilgrimage to a holy shrine",
+      "Undergoing extensive bloodletting to drain the phlegm from the veins"
+    ],
+    "correct_index": 1,
+    "explanation": "Galen's Theory of Opposites argued that an imbalance of a humour should be treated with its opposite qualities. Phlegm is cold and wet, so the physician would prescribe hot and dry foods or environments to counteract the imbalance."
+  },
+  {
+    "lesson_id": "lesson_1_2",
+    "objective_index": 1,
+    "text": "Which of the following statements accurately contrasts the roles and accessibility of physicians and barber-surgeons in medieval England?",
+    "options": [
+      "Physicians were cheap and accessible to all because they trained at universities, while barber-surgeons were rare and expensive specialists",
+      "Barber-surgeons were university-trained academics who performed internal surgeries, while physicians were untrained community healers",
+      "Physicians were expensive, university-trained academics who diagnosed patients using urine and star charts but rarely performed surgery, while barber-surgeons were cheaper, practically trained, and performed basic physical procedures",
+      "Both healers had identical university training, but physicians only treated women while barber-surgeons only treated men"
+    ],
+    "correct_index": 2,
+    "explanation": "Physicians studied classical texts at university for 7-10 years and were rare and expensive, meaning only the wealthy saw them. Barber-surgeons were practically trained through apprenticeships, were cheaper and highly accessible, and performed manual treatments like bloodletting and tooth pulling."
+  },
+  {
+    "lesson_id": "lesson_1_3",
+    "objective_index": 0,
+    "text": "Why did groups of flagellants whip themselves during the Black Death outbreak of 1348?",
+    "options": [
+      "To physically drive out the bad air (miasma) that had settled inside their skin",
+      "To show God they were truly sorry for their sins, hoping He would withdraw the plague as a punishment",
+      "To demonstrate to local town councils that they were free from infection",
+      "To follow the medical instructions written in the Regimen Sanitatis to balance their humours"
+    ],
+    "correct_index": 1,
+    "explanation": "Flagellants believed the Black Death was God's punishment for human sins. By publicly whipping themselves to show extreme penance, they hoped to win God's forgiveness and end the epidemic."
+  },
+  {
+    "lesson_id": "lesson_1_3",
+    "objective_index": 1,
+    "text": "Which of the following best describes a rational or administrative action taken by a local government in England to halt the spread of the Black Death in 1348?",
+    "options": [
+      "The King's government collected a national tax to build large quarantine hospitals (pest houses) in every major town",
+      "Some local mayors tried to clean the streets and stop visitors from entering infected areas, but they had very little power to enforce these rules",
+      "Parliament passed a compulsory law forcing all citizens to kill their domestic cats and dogs",
+      "Medical universities organized teams of searchers to test the drinking water at local wells"
+    ],
+    "correct_index": 1,
+    "explanation": "During the Black Death of 1348, the central government maintained a strict 'laissez-faire' attitude. Some local town mayors took initiatives like clearing rubbish or turning away visitors, but they lacked the administrative power and resources to enforce them effectively."
+  },
+  {
+    "lesson_id": "lesson_2_1",
+    "objective_index": 0,
+    "text": "How did Thomas Sydenham's diagnostic method differ from the traditional medieval approach to diagnosing patients?",
+    "options": [
+      "Sydenham used powerful microscopes to identify the specific bacteria causing a patient's symptoms",
+      "Sydenham argued that each disease was a separate species with its own specific symptoms, so doctors should closely observe the patient as a whole rather than focusing on individual humoural imbalances",
+      "Sydenham diagnosed patients purely by consulting planetary charts and checking the color of their urine",
+      "Sydenham believed that all diseases were identical, so he prescribed the exact same chemical mercury treatment to every patient"
+    ],
+    "correct_index": 1,
+    "explanation": "Thomas Sydenham, the 'English Hippocrates,' revolutionized diagnosis by treating diseases as distinct, independent species. He argued that doctors should closely observe the patient's symptoms to identify the specific disease, rather than viewing symptoms as unique results of individual humoural imbalances."
+  },
+  {
+    "lesson_id": "lesson_2_1",
+    "objective_index": 1,
+    "text": "How did the printing press primarily accelerate progress in medical knowledge during the Renaissance?",
+    "options": [
+      "It allowed the Catholic Church to instantly censor and ban all books that criticized ancient writers like Galen",
+      "It enabled standard, identical copies of medical books, such as Vesalius's highly detailed anatomical drawings, to be mass-produced cheaply and distributed across Europe",
+      "It automated the translation of Arabic texts into English so that surgeons no longer needed to learn Latin",
+      "It was used by the government to print compulsory health guidelines for the general public"
+    ],
+    "correct_index": 1,
+    "explanation": "Before the printing press (c.1440), books had to be copied by hand, which was slow, expensive, and introduced many errors. The printing press allowed identical copies of new scientific discoveries (like Vesalius's anatomy) to be shared rapidly across Europe, undermining the Church's control over medical texts."
+  },
+  {
+    "lesson_id": "lesson_2_2",
+    "objective_index": 0,
+    "text": "Which of the following represents a key change in Renaissance treatments that resulted from exploration and early chemistry (alchemy)?",
+    "options": [
+      "The complete rejection of bloodletting in favor of using Jenner's smallpox vaccination",
+      "The introduction of new chemical remedies (iatrochemistry) like mercury, alongside New World herbs like Cinchona bark to treat malaria",
+      "The widespread use of penicillin and magic bullets to cure syphilis in pest houses",
+      "The decision to stop using herbs and rely entirely on prayers to the Royal Society"
+    ],
+    "correct_index": 1,
+    "explanation": "The Renaissance saw the introduction of iatrochemistry (using chemical or mineral remedies like mercury, promoted by Paracelsus) and the importation of new medical ingredients from exploration of the Americas, such as Cinchona bark (which treated malaria) and sarsaparilla."
+  },
+  {
+    "lesson_id": "lesson_2_2",
+    "objective_index": 1,
+    "text": "How did King Henry VIII's Dissolution of the Monasteries in the 1530s affect hospital care in England?",
+    "options": [
+      "It improved hospital care because the government built hundreds of modern, free state-funded NHS hospitals",
+      "It led to the immediate closure of most medieval hospitals because they were run by religious orders, leaving very few secular 'charity hospitals' to care for the sick",
+      "It forced physicians to take over hospitals and turn them into highly sterile, antiseptic surgical centers",
+      "It had no impact because the Church retained full ownership of all hospitals and monasteries until the twentieth century"
+    ],
+    "correct_index": 1,
+    "explanation": "Because almost all medieval hospitals were run by Catholic monks and nuns, Henry VIII's closure of the monasteries in the 1530s resulted in the immediate shutdown of hospital care across England. Secular charities eventually opened a small number of hospitals in London, but care remained extremely limited."
+  },
+  {
+    "lesson_id": "lesson_3_1",
+    "objective_index": 0,
+    "text": "Which statement correctly contrasts the theory of Spontaneous Generation with Louis Pasteur's Germ Theory (1861)?",
+    "options": [
+      "Spontaneous Generation claimed that germs caused disease which then created decay, while Germ Theory argued that decay created germs",
+      "Spontaneous Generation claimed that rotting matter naturally created microbes, while Germ Theory proved that living microbes in the air caused decay and illness",
+      "Spontaneous Generation was a scientific theory proved by Robert Koch, while Germ Theory was an unscientific belief promoted by the medieval Church",
+      "Spontaneous Generation claimed that genetic DNA mutations caused cancer, while Germ Theory claimed that bad air (miasma) caused infections"
+    ],
+    "correct_index": 1,
+    "explanation": "Spontaneous Generation was the unscientific belief that rotting matter naturally generated microorganisms. Pasteur's Germ Theory proved that microbes existed in the air and were the active cause—not the result—of decomposition and disease."
+  },
+  {
+    "lesson_id": "lesson_3_1",
+    "objective_index": 1,
+    "text": "Why was Robert Koch's scientific methodology in microbiology so significant in the history of medicine?",
+    "options": [
+      "He invented the very first microscope, allowing scientists to see microbes for the first time",
+      "He established a strict scientific checklist—such as staining transparent bacteria and growing them in pure cultures on agar jelly—to prove which specific microbe caused which specific disease",
+      "He discovered that injecting cowpox into humans successfully prevented smallpox",
+      "He proved that cholera was carried in drinking water by mapping the fatalities around the Broad Street pump"
+    ],
+    "correct_index": 1,
+    "explanation": "While Pasteur theorized that germs caused disease, Robert Koch developed the systematic laboratory methods required to prove it. By staining bacteria and growing them in pure cultures on agar jelly, he isolated the specific pathogens responsible for deadly diseases like tuberculosis (1882) and cholera (1883)."
+  },
+  {
+    "lesson_id": "lesson_4_1",
+    "objective_index": 0,
+    "text": "How did the 1953 discovery of the double-helix structure of DNA by Watson and Crick transform the understanding of illness?",
+    "options": [
+      "It proved that all modern diseases are caused by external environmental pollutants in water systems.",
+      "It allowed scientists to understand that diseases can be hereditary, caused by internal chemical code mutations passed down through families.",
+      "It enabled doctors in the 1950s to immediately cure genetic disorders like cystic fibrosis using gene splicing.",
+      "It showed that microbes in the air could mutate based on a patient's moral behavior."
+    ],
+    "correct_index": 1,
+    "explanation": "The discovery of DNA's structure shifted the medical paradigm by proving that illnesses could be caused by internal, inherited genetic instructions rather than just external pathogens, laying the foundation for modern genomic medicine. Immediate gene therapy cures were not possible in the 1950s and are still in development today."
+  },
+  {
+    "lesson_id": "lesson_4_1",
+    "objective_index": 1,
+    "text": "Which of the following best explains the impact of twentieth-century diagnostic technology on the accuracy of medical treatment?",
+    "options": [
+      "High-tech tools like blood tests, CT scans, and monitors allowed doctors to identify specific internal illnesses and chemical changes accurately without relying on subjective symptom reviews or invasive exploratory surgery.",
+      "Advanced technologies allowed doctors to diagnose and cure lung cancer instantly using only chest X-rays.",
+      "New monitors proved that a patient's diet and lifestyle choices had no physical effect on their internal organs.",
+      "Modern computers automated diagnosis, allowing patients to treat all infectious diseases at home without consulting a GP."
+    ],
+    "correct_index": 0,
+    "explanation": "Twentieth-century diagnostic technology revolutionized medicine by replacing subjective guesswork and dangerous exploratory surgeries with objective, precise evidence—such as blood panels and 3D imaging—allowing for highly targeted treatments. It did not make diseases instantly curable or make lifestyle factors irrelevant."
+  },
+  {
+    "lesson_id": "lesson_4_2",
+    "objective_index": 0,
+    "text": "Which of the following best describes the key distinction in how the first 'magic bullet' (Salvarsan 606) and the antibiotic penicillin were developed?",
+    "options": [
+      "Salvarsan 606 was a synthetic chemical compound discovered through systematic laboratory testing of arsenic compounds to target syphilis, while penicillin was a naturally occurring microbial substance developed to treat a wide range of bacterial infections.",
+      "Salvarsan 606 was discovered by accident on a petri dish, whereas penicillin was synthetically designed by Paul Ehrlich using chemical dyes.",
+      "Salvarsan 606 was a mass-produced chemical vaccine, while penicillin was an antiseptic spray used exclusively in operating theaters.",
+      "Salvarsan 606 was developed by the British NHS in 1948, whereas penicillin was developed in Germany during the nineteenth century."
+    ],
+    "correct_index": 0,
+    "explanation": "Salvarsan 606 was the first synthetic chemical 'magic bullet' (designed to target a specific pathogen), developed by Ehrlich's team in 1909. Penicillin, discovered by Fleming in 1928 and developed in the 1940s, is a natural antibiotic compound produced by a living organism (mould)."
+  },
+  {
+    "lesson_id": "lesson_4_2",
+    "objective_index": 1,
+    "text": "How did the launch of the National Health Service (NHS) in 1948 impact public access to medical care in Britain?",
+    "options": [
+      "It nationalized British hospitals and provided free healthcare funded through taxation, ensuring medical care was distributed based on clinical need rather than a patient's ability to pay.",
+      "It made hospital care completely free but kept GP visits and child vaccinations fully private and expensive.",
+      "It required all citizens to buy compulsory private medical insurance through their employers to see a doctor.",
+      "It restricted free medical treatments only to infectious diseases while making chronic illnesses private."
+    ],
+    "correct_index": 0,
+    "explanation": "The NHS removed the prohibitive financial barriers that had historically prevented the working class from seeking healthcare by providing universal, free medical care at the point of delivery, paid for by national taxation."
+  },
+  {
+    "lesson_id": "lesson_4_3",
+    "objective_index": 0,
+    "text": "Which statement correctly contrasts the role of Alexander Fleming with the roles of Howard Florey and Ernst Chain in the penicillin breakthrough?",
+    "options": [
+      "Fleming discovered the mould's antibacterial effect by accident in 1928 but abandoned it as unstable, while Florey and Chain's research team successfully extracted, purified, and tested it as a stable clinical drug.",
+      "Fleming successfully mass-produced penicillin in deep-fermentation tanks, while Florey and Chain only discovered the mould's properties in 1938.",
+      "Fleming was a chemist who synthesized penicillin from coal tar, while Florey and Chain were pathologists who tested it on animal DNA.",
+      "Fleming patented the drug to fund hospital wards, while Florey and Chain made the drug optional in military clinics."
+    ],
+    "correct_index": 0,
+    "explanation": "Fleming made the initial accidental discovery of penicillin's antibacterial properties in 1928 but could not purify it. Florey and Chain led the Oxford research team that solved the chemical and purification challenges, proving its life-saving value on mice (1940) and human patients (1941)."
+  },
+  {
+    "lesson_id": "lesson_4_3",
+    "objective_index": 1,
+    "text": "How did war, government action, and technology collaborate to enable the mass production of penicillin in the 1940s?",
+    "options": [
+      "The US government provided massive grants to American chemical companies to develop industrial deep-fermentation tanks, spurred by the urgent military need to treat infected wounds on a large scale for D-Day.",
+      "British medical charities built cottage hospitals in the US to harvest mould manually from wild plants during the Blitz.",
+      "Wartime scientists used the newly invented electron microscope to artificially engineer a chemical vaccine that replaced the mould.",
+      "The US government seized all pharmaceutical patents to make penicillin a state-run monopoly after the war."
+    ],
+    "correct_index": 0,
+    "explanation": "The mass production of penicillin was achieved through a massive collaboration: the pressure of World War II made infection control a military priority, prompting the US government to fund industrial deep-fermentation technology to produce millions of doses in chemical factories by 1944."
+  },
+  {
+    "lesson_id": "lesson_4_4",
+    "objective_index": 0,
+    "text": "How have modern diagnostic technologies transformed the management of lung cancer since the early twentieth century?",
+    "options": [
+      "Traditional chest X-rays have been completely replaced by genetic profiling, which identifies tumors before any cells have grown.",
+      "Advanced technologies like CT scans provide detailed 3D lung images to spot tiny tumors early, and bronchoscopy allows direct cell collection, replacing subjective symptom evaluations.",
+      "Modern ultrasound scans have completely replaced the need for tissue biopsies or chemical dyes.",
+      "Modern technology allows lung cancer to be diagnosed non-invasively through simple blood sugar monitors."
+    ],
+    "correct_index": 1,
+    "explanation": "Early lung cancer diagnosis was highly inaccurate because X-rays missed small tumors or mistook them for other diseases. Modern CT scans and bronchoscopy allow doctors to identify and biopsy microscopic cancer cells early, dramatically improving treatment success."
+  },
+  {
+    "lesson_id": "lesson_4_4",
+    "objective_index": 1,
+    "text": "How has the focus of British government legislation on smoking-related lung cancer shifted since the mid-twentieth century?",
+    "options": [
+      "From a 'laissez-faire' attitude to compulsory 'nanny state' interventions, progressively restricting personal freedom through public smoking bans, tobacco tax increases, and age limits.",
+      "From banning all tobacco imports in 1950 to providing free e-cigarettes to all NHS patients today.",
+      "From focusing entirely on clean air laws to completely banning the sale of matches and lighters in urban centers.",
+      "From compulsory lifestyle advertising in schools to letting local councils decide whether to ban smoking inside hospitals."
+    ],
+    "correct_index": 0,
+    "explanation": "The government abandoned its traditional laissez-faire approach after the 1950 study linking smoking to lung cancer, gradually introducing restrictive laws like the 2007 indoor smoking ban to actively force behavioral change and prevent chronic disease."
+  },
+  {
+    "lesson_id": "lesson_5_1",
+    "objective_index": 0,
+    "text": "What was a major scientific limitation of blood transfusion practice on the eve of the First World War (c.1914)?",
+    "options": [
+      "Doctors did not know that blood groups existed, meaning most transfusions failed due to mismatching.",
+      "Transfusions had to be performed directly from a living donor to the recipient because there was no practical way to store blood without it clotting.",
+      "Surgical asepsis was completely unknown, meaning transfusions always introduced fatal bacterial infections.",
+      "The government banned blood transfusions due to religious opposition to animal-to-human blood transfers."
+    ],
+    "correct_index": 1,
+    "explanation": "Although Karl Landsteiner discovered blood groups in 1901, blood could not be stored because it clotted instantly. Transfusions in 1914 required both the donor and recipient to be physically connected in the same room, which was impractical for battlefield casualties."
+  },
+  {
+    "lesson_id": "lesson_5_2",
+    "objective_index": 0,
+    "text": "What was the biological cause of trench fever on the Western Front, and how did the medical services prevent it?",
+    "options": [
+      "Standing in cold, waterlogged mud; prevented by rubbing legs with whale oil and wearing dry socks.",
+      "Lice living in the seams of dirty uniforms; prevented by establishing mobile delousing stations and steam-sterilising clothing.",
+      "Flea bites from rats nesting in the mud; prevented by laying down raised wooden duckboards.",
+      "Inhaling toxic chlorine gas; prevented by wearing cotton pads soaked in urine."
+    ],
+    "correct_index": 1,
+    "explanation": "Trench fever was a debilitating illness caused by lice that infested the seams of soldiers' woollen uniforms. The primary prevention strategy was the systematic removal of lice through steam-disinfecting uniforms and setting up bathing facilities behind the lines."
+  },
+  {
+    "lesson_id": "lesson_5_2",
+    "objective_index": 1,
+    "text": "Why did shrapnel wounds on the Western Front lead to exceptionally high rates of rapid, life-threatening gas gangrene infections?",
+    "options": [
+      "Shrapnel shells were packed with active biological pathogens and chemical poisons by German factories.",
+      "The blast drove jagged metal fragments along with contaminated muddy clothing deep into muscle tissue, exposing wounds to anaerobic soil bacteria from heavily manured farmlands.",
+      "Shrapnel caused blood to clot instantly in the veins, preventing white blood cells from reaching the head area.",
+      "Surgical dressing stations lacked any basic antiseptic dressings, leaving shrapnel wounds completely exposed."
+    ],
+    "correct_index": 1,
+    "explanation": "The Western Front was fought on old, heavily manured farmlands saturated with anaerobic bacteria spores. Shrapnel was highly jagged and dragged muddy uniform fabric deep into internal wounds, creating a perfect oxygen-free environment for gangrene to thrive."
+  },
+  {
+    "lesson_id": "lesson_5_3",
+    "objective_index": 0,
+    "text": "Why did the British Army introduce the steel Brodie helmet in late 1915, and what was its medical impact?",
+    "options": [
+      "To filter toxic chlorine and mustard gas during artillery shellings, reducing the need for chemical respirators.",
+      "To protect soldiers' heads from flying shrapnel and debris caused by overhead artillery explosions, dramatically reducing fatal head injuries.",
+      "To prevent soldiers from getting trench fever caused by lice nesting in their hair.",
+      "To completely eliminate rifle bullet wounds in the frontline trenches."
+    ],
+    "correct_index": 1,
+    "explanation": "In 1914 and early 1915, soldiers wore soft cloth caps, leaving them highly vulnerable to head injuries from falling shrapnel. The Brodie helmet kept the head shielded from shrapnel and debris, reducing fatal head trauma by an estimated 80%."
+  },
+  {
+    "lesson_id": "lesson_5_3",
+    "objective_index": 1,
+    "text": "How did the agricultural history of the Flanders region contribute directly to the medical crisis of wound infections on the Western Front?",
+    "options": [
+      "Centuries of intensive farming and manure fertilization had saturated the soil with anaerobic bacteria, which instantly infected wounds when mud or dirty clothing entered them.",
+      "The soil was exceptionally dry and sandy, causing severe dust storms that irritated soldiers' lungs.",
+      "Flanders was an alpine, rocky terrain where thin air restricted the blood's ability to carry oxygen.",
+      "The clay soil naturally generated toxic sulfur fumes that caused chemical burns on contact."
+    ],
+    "correct_index": 0,
+    "explanation": "The heavily manured, fertile clay soil of Flanders was thick with gas gangrene and tetanus spores. Any wound contaminated with this soil or mud would rapidly develop severe, necrotising infections that could kill a soldier in days without prompt surgical treatment."
+  },
+  {
+    "lesson_id": "lesson_5_4",
+    "objective_index": 0,
+    "text": "A soldier has suffered a severe shell wound with a shattered thigh bone and requires immediate, life-saving surgery. At which stage of the evacuation chain would this first occur?",
+    "options": [
+      "Regimental Aid Post (RAP), because it was located just 200 meters from the frontline.",
+      "Advanced Dressing Station (ADS), transported via horse-drawn ambulance.",
+      "Casualty Clearing Station (CCS), because it was located several miles back, equipped with surgical theaters and wards, and located near rail links.",
+      "Base Hospital, because it was the only stage that possessed trained medical personnel and clean beds."
+    ],
+    "correct_index": 2,
+    "explanation": "The Casualty Clearing Station (CCS) was the most critical link in the chain of evacuation because it was the first station equipped for major surgery, located 7-10 miles back from the frontline to treat infections and perform life-saving amputations before gangrene set in."
+  },
+  {
+    "lesson_id": "lesson_5_4",
+    "objective_index": 1,
+    "text": "Which of the following best describes the role and significance of the First Aid Nursing Yeomanry (FANY) on the Western Front?",
+    "options": [
+      "They were university-trained female physicians who performed major surgeries at Base Hospitals.",
+      "They drove motor ambulances, operated mobile soup kitchens, and provided emergency first aid, bringing vital logistical support and speed to the evacuation route.",
+      "They operated frontline trench catapults and served as armed stretcher-bearers in No Man's Land.",
+      "They were government inspectors directly responsible for enforcing delousing standards in the trenches."
+    ],
+    "correct_index": 1,
+    "explanation": "The FANY was the first women's voluntary organization to provide direct assistance on the Western Front. By driving motor ambulances from 1916, they freed up men for other duties and drastically improved the speed of transporting casualties."
+  },
+  {
+    "lesson_id": "lesson_5_5",
+    "objective_index": 0,
+    "text": "Why did the introduction of the Thomas Splint on the Western Front in 1916 dramatically drop the death rate from femur (thigh bone) fractures from 80% to under 20%?",
+    "options": [
+      "It kept the leg rigid and in traction, preventing the broken bone fragments from moving and tearing arteries, which successfully stopped fatal internal bleeding and shock.",
+      "It was made of sterilized wood that chemically destroyed gas gangrene inside deep thigh wounds.",
+      "It allowed the soldier to walk back to the Casualty Clearing Station on their own without needing stretcher-bearers.",
+      "It had an integrated electric heater that kept the patient's body temperature stable during the winter."
+    ],
+    "correct_index": 0,
+    "explanation": "Femur fractures were highly lethal because the powerful thigh muscles would pull the bone shards, causing them to slice internal blood vessels. The Thomas Splint pulled the leg rigid under tension, preventing internal movement and stopping fatal bleeding and shock."
+  },
+  {
+    "lesson_id": "lesson_5_5",
+    "objective_index": 1,
+    "text": "Which chemical and storage breakthroughs directly enabled Oswald Hope Robertson to establish the first 'blood bank' before the Battle of Cambrai in 1917?",
+    "options": [
+      "The use of sodium citrate to stop clotting, combined with citrate glucose to preserve red blood cells, allowing blood to be safely stored in refrigerators for days before casualties arrived.",
+      "The use of carbolic acid to sterilize raw blood, allowing doctors to collect and store blood from deceased soldiers.",
+      "The use of chloroform to keep donors asleep while blood was extracted and kept in airtight wooden barrels.",
+      "The development of artificial saline blood plasma, which eliminated the need for human donors entirely."
+    ],
+    "correct_index": 0,
+    "explanation": "Adding sodium citrate prevented blood from clotting, and citrate glucose preserved the cells, allowing blood to be stored in a refrigerator (for up to 21 days) rather than requiring direct donor-to-recipient transfusions, paving the way for the Battle of Cambrai blood bank."
+  },
+  {
+    "lesson_id": "lesson_5_5",
+    "objective_index": 2,
+    "text": "What was the significance of Harold Gillies' work during the First World War, and how did he achieve it?",
+    "options": [
+      "He invented the mobile X-ray van to diagnose shrapnel injuries close to the frontline trenches.",
+      "He pioneered advanced facial reconstruction (plastic surgery) at a specialist hospital in Kent, designing complex skin graft operations to restore the faces of severely disfigured soldiers.",
+      "He designed the steam autoclave to sterilize all surgical instruments used in brain surgery.",
+      "He developed the Carrel-Dakin system of continuous chemical wound flushing to treat deep gangrene infections."
+    ],
+    "correct_index": 1,
+    "explanation": "Harold Gillies was an ENT surgeon who became interested in facial reconstruction due to the devastating facial wounds caused by shrapnel and gunfire. He established a specialist hospital in Sidcup, Kent, and devised pioneering operations (like tube pedicles) to reconstruct features."
+  }
+]

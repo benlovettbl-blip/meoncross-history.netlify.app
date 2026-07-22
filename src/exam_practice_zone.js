@@ -149,6 +149,7 @@ export function renderExamPracticeZone(container, unitData) {
 
         <h2 id="epz-q-text" style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #0f172a; margin-top: 0; line-height: 1.3; font-weight: 700;"></h2>
         <div id="epz-q-stimulus" style="font-size: 1.2rem; color: #475569; margin-top: 20px; font-style: italic; background: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px; border-left: 4px solid #cbd5e1;"></div>
+        <div id="epz-q-provenance" style="display: none; margin-top: 15px; padding: 15px; background: #fef08a; border-left: 5px solid #ca8a04; color: #854d0e; font-size: 1.1rem; border-radius: 8px;"><i class="fa-solid fa-lightbulb"></i> <strong>Scaffolding:</strong> <span id="epz-q-provenance-text"></span></div>
 
         <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
           <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
@@ -180,6 +181,8 @@ export function renderExamPracticeZone(container, unitData) {
   const qMeta = document.getElementById('epz-q-meta');
   const qText = document.getElementById('epz-q-text');
   const qStimulus = document.getElementById('epz-q-stimulus');
+  const qProv = document.getElementById('epz-q-provenance');
+  const qProvText = document.getElementById('epz-q-provenance-text');
   
   const timerDisplay = document.getElementById('epz-timer-display');
   const timerToggle = document.getElementById('epz-timer-toggle');
@@ -352,12 +355,20 @@ export function renderExamPracticeZone(container, unitData) {
     qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${typeFriendly}`;
     qText.textContent = currentQuestion.text;
     
-    // Stimulus points for narrative
     if (currentQuestion.hint) {
       const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
       qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
+      qStimulus.style.display = 'block';
     } else {
       qStimulus.innerHTML = '';
+      qStimulus.style.display = 'none';
+    }
+
+    if (currentQuestion.provenance_clue) {
+      qProvText.textContent = currentQuestion.provenance_clue;
+      qProv.style.display = 'block';
+    } else {
+      qProv.style.display = 'none';
     }
 
     if (currentQuestion.structure_strip) {

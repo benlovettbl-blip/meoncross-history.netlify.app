@@ -1,0 +1,103 @@
+# Task: Generate Interactive Hinge Questions
+
+You are an expert history teacher. I need you to generate a multiple-choice diagnostic "Hinge Question" for each of the learning objectives listed below. 
+
+## Requirements for EACH question:
+1. **The Question:** A clear, concise question that tests the core concept of the objective.
+2. **Options:** Provide exactly 4 options (A, B, C, D).
+3. **Distractors:** One option must be correct. The other three MUST be highly plausible "distractors" based on common student misconceptions.
+4. **Explanation:** A brief 1-2 sentence explanation of why the correct answer is right and why the distractors are wrong.
+
+Please format your response strictly as a JSON array of objects. Do not wrap it in markdown code blocks, just raw JSON. Each object should follow this EXACT schema:
+[
+  {
+    "lesson_id": "the_lesson_id_provided",
+    "objective_index": 0,
+    "text": "The question text here?",
+    "options": [
+      "Option A text",
+      "Option B text",
+      "Option C text",
+      "Option D text"
+    ],
+    "correct_index": 1, 
+    "explanation": "The explanation here."
+  }
+]
+
+## The Objectives:
+
+### Lesson ID: lesson_1_1
+Lesson Title: KT1.1: What did Medieval people believe caused illness?
+- Objective Index 0: Explain how supernatural and religious factors influenced beliefs about the cause of illness.
+- Objective Index 1: Analyse the rational, natural theories of disease used in medieval England.
+
+### Lesson ID: lesson_1_2
+Lesson Title: KT1.2: How did Medieval people try to prevent and treat disease?
+- Objective Index 0: Explain the connection between medieval beliefs about disease and their approaches to treatment and prevention.
+- Objective Index 1: Evaluate the roles, training, and accessibility of different medical healers in medieval society.
+
+### Lesson ID: lesson_1_3
+Lesson Title: KT1.3: How did people respond to the Black Death?
+- Objective Index 0: Explain the religious and supernatural responses to the Black Death.
+- Objective Index 1: Analyse the rational and governmental methods used to prevent and treat the plague.
+
+### Lesson ID: lesson_2_1
+Lesson Title: KT2.1: Did the Renaissance change beliefs about the causes of illness?
+- Objective Index 0: Explain how Thomas Sydenham's scientific approach to observation changed the diagnosis of disease.
+- Objective Index 1: Assess the role of the printing press and the Royal Society in communicating and spreading scientific ideas.
+
+### Lesson ID: lesson_2_2
+Lesson Title: KT2.2: Did treatments improve during the Renaissance?
+- Objective Index 0: Analyze the continuities and changes in Renaissance treatments and preventions, including the impact of exploration and alchemy.
+- Objective Index 1: Explain how institutional changes, specifically the Dissolution of the Monasteries, altered hospital care in England.
+
+### Lesson ID: lesson_3_1
+Lesson Title: KT3.1: What breakthrough discoveries changed our understanding of disease causes?
+- Objective Index 0: Explain the difference between Spontaneous Generation and Germ Theory.
+- Objective Index 1: Analyze the significance of Robert Koch's scientific methodology in microbiology.
+
+### Lesson ID: lesson_4_1
+Lesson Title: KT4.1: How have modern discoveries changed our understanding of illness?
+- Objective Index 0: Explain how the discovery of DNA and the Human Genome Project transformed the understanding of genetic and hereditary illnesses.
+- Objective Index 1: Analyze the influence of lifestyle choices on modern health and the impact of technology on medical diagnosis.
+
+### Lesson ID: lesson_4_2
+Lesson Title: KT4.2: How have prevention and treatment advanced in the modern era?
+- Objective Index 0: Explain how scientific and technological developments led to the creation of magic bullets and antibiotics.
+- Objective Index 1: Analyze the impact of the National Health Service (NHS) on the provision of and access to medical care.
+
+### Lesson ID: lesson_4_3
+Lesson Title: KT4.3: How was Penicillin discovered and mass-produced?
+- Objective Index 0: Contrast the roles of Alexander Fleming with those of Howard Florey and Ernst Chain in the penicillin breakthrough.
+- Objective Index 1: Analyze how the factors of government intervention, science and technology, and war collaborated to enable the mass production of penicillin.
+
+### Lesson ID: lesson_4_4
+Lesson Title: KT4.4: How has the government tackled the modern epidemic of Lung Cancer?
+- Objective Index 0: Explain how modern science and technology have transformed the diagnosis and treatment of lung cancer since c1900.
+- Objective Index 1: Analyze the effectiveness and changing focus of government legislation to prevent smoking-related lung cancer.
+
+### Lesson ID: lesson_5_1
+Lesson Title: KT5.1: What was the historical and medical context of the Western Front?
+- Objective Index 0: Explain the state of surgical asepsis, radiology, and transfusion science on the eve of World War I.
+
+### Lesson ID: lesson_5_2
+Lesson Title: KT5.2: How did the trench environment create new medical challenges?
+- Objective Index 0: Explain the causes, symptoms, and preventive strategies developed to combat trench foot and trench fever.
+- Objective Index 1: Analyze the impact of weaponry on injuries, specifically focusing on shrapnel, head injuries, and gas gangrene from soil.
+
+### Lesson ID: lesson_5_3
+Lesson Title: KT5.3: What new illnesses and wounds did soldiers face?
+- Objective Index 0: Explain the connection between artillery weaponry, shrapnel, and the introduction of the steel Brodie helmet in 1915.
+- Objective Index 1: Analyse how the muddy, manured environment of Flanders led to severe wound infections like gas gangrene and tetanus.
+
+### Lesson ID: lesson_5_4
+Lesson Title: KT5.4: How did the RAMC and FANY operate the chain of evacuation?
+- Objective Index 0: Explain the four main stages of the Western Front chain of evacuation and the mode of transport between them.
+- Objective Index 1: Evaluate the roles, significance, and contributions of the RAMC and FANY on the Western Front.
+
+### Lesson ID: lesson_5_5
+Lesson Title: KT5.5: What incredible medical advances were forged on the Western Front?
+- Objective Index 0: Explain how the Thomas splint and mobile X-ray units solved critical evacuation and surgical challenges.
+- Objective Index 1: Analyze the development of blood transfusion and the significance of the first blood bank at the Battle of Cambrai.
+

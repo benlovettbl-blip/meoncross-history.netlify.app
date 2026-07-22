@@ -3,6 +3,7 @@ import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
+import { sectionAGuide, sectionBGuide } from './exam_guide_content.js';
 
 export function getAssetUrl(path) {
   if (!path) return path;
@@ -863,6 +864,43 @@ export function initializeApp(unitData) {
     });
   }
 
+  function renderExamGuide() {
+    contentArea.innerHTML = '';
+    const container = document.createElement('div');
+    container.className = 'dashboard-container';
+    
+    let contentHtml = '';
+    if (unitData.title && unitData.title.toLowerCase().includes('medicine')) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);">
+          <div>
+            <h1 class="welcome-title">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle">The Pearson Edexcel GCSE (9-1) History Paper 1</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${sectionAGuide}
+          ${sectionBGuide}
+        </div>
+      `;
+    } else {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);">
+          <div>
+            <h1 class="welcome-title">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle">Revision strategies for this unit</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          <p>No specific exam guidance is available for this unit yet.</p>
+        </div>
+      `;
+    }
+    
+    container.innerHTML = contentHtml;
+    contentArea.appendChild(container);
+  }
+
   // Render Sidebar
   function renderSidebar() {
     const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
@@ -880,6 +918,19 @@ export function initializeApp(unitData) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     navContainer.appendChild(homeLink);
+
+    // Exam Masterclass Guide Tab
+    const guideLink = document.createElement('a');
+    guideLink.className = 'lesson-link';
+    guideLink.innerHTML = '<i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Exam Masterclass Guide';
+    guideLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      guideLink.classList.add('active');
+      renderExamGuide();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(guideLink);
 
     unitData.lessons.forEach((lesson, index) => {
       const link = document.createElement('a');
@@ -1052,12 +1103,13 @@ export function initializeApp(unitData) {
     }
   }
 
+  
   // Render Lesson Content
   function renderLesson(lesson) {
     const formatBold = (text) => text ? text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
     lesson = sanitizeLessonData(JSON.parse(JSON.stringify(lesson)));
     
-    // Extract exam tasks from Phase 4 so they are not rendered inline
+    // Extract exam tasks from tasks array so they are not rendered inline
     let extractedExamTasks = [];
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
@@ -1076,6 +1128,8 @@ export function initializeApp(unitData) {
 
     assignQuestionNumbers(lesson);
     window.currentActiveLesson = lesson;
+    
+    // Tabs container logic
     let html = `<div class="lesson-content">`;
     
     if (unitEnquiryText) {
@@ -1098,6 +1152,187 @@ export function initializeApp(unitData) {
         <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
       </div>
     `;
+
+    // -----------------------------------------------------
+    // TABS NAVIGATION UI
+    // -----------------------------------------------------
+    html += `
+      
+    `;
+
+    let globalQuestionNum = 1;
+    const formatQuestion = (qText) => {
+      if (!qText) return '';
+      let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+      return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
+    };
+
+    let vocabDict = {};
+    if (lesson.vocab) {
+      lesson.vocab.forEach(v => {
+        vocabDict[v.term.toLowerCase()] = v.definition;
+      });
+    }
+
+    let seenTerms = new Set();
+    const highlightGlossary = (text) => {
+      if (Object.keys(vocabDict).length === 0) return text;
+      let processedText = text;
+      const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
+      for (const term of sortedTerms) {
+        const def = vocabDict[term];
+        if (!seenTerms.has(term)) {
+          const regex = new RegExp(`\\b(${term})\\b`, 'i');
+          if (regex.test(processedText)) {
+            processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
+            seenTerms.add(term);
+          }
+        }
+      }
+      return processedText;
+    };
+
+
+    // ==========================================
+    // TAB 1: PREPARATION
+    // ==========================================
+    html += ``;
+    
+    if (lesson.primary_source) {
+      let src = lesson.primary_source.src;
+      html += `
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">${lesson.learning_objective || 'Visual Source & Hook'}</div>
+          </div>
+          <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+            <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
+            <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
+            ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
+            ${lesson.primary_source.question ? `
+              <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
+                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(lesson.primary_source.question)}</strong></p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      html += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+              <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
+              <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+            </summary>
+            <div style="padding: 20px;">
+              <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+      `;
+      lesson.do_now.events.forEach((ev, idx) => {
+        html += `
+          <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+            <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
+            <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+            <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+            ${ev.img ? `<img src="${getAssetUrl(ev.img)}" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid #e2e8f0;">` : ''}
+          </div>
+        `;
+      });
+      html += `</div></div></details>`;
+    } else if (lesson.do_now && lesson.do_now.items) {
+      try {
+        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+          lesson.do_now.items.forEach(item => {
+            if (item.question.includes('PAST TOPIC:')) {
+              const unit = taught[Math.floor(Math.random() * taught.length)];
+              const bank = window.KNOWLEDGE_BANK[unit];
+              if (bank && bank.length > 0) {
+                const randQ = bank[Math.floor(Math.random() * bank.length)];
+                item.question = 'PAST TOPIC: ' + randQ.question;
+                item.answer = randQ.answer;
+              }
+            }
+          });
+        }
+      } catch(e) { console.error(e); }
+
+      html += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+              <span><i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 10px;"></i> Do Now Tasks</span>
+              <div>
+                <button class="btn btn-secondary" onclick="event.preventDefault(); window.toggleAllAnswers(this.closest('details'))" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+              </div>
+            </summary>
+            <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+      `;
+      lesson.do_now.items.forEach((item, index) => {
+        let qText = item.question;
+        let aText = item.answer;
+        if (window.currentUnitId) {
+          qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+          aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
+        }
+        const cardId = `donow-card-${index}`;
+        html += `
+          <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
+            <div>${qText}</div>
+            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
+          </div>
+        `;
+      });
+      html += `</div></details>`;
+    }
+
+    const hasVocab = lesson.vocab && lesson.vocab.length > 0;
+    if (hasVocab) {
+      html += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #b45309; font-weight: bold; font-size: 1.05rem; background: #fffbeb; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+              <span><i class="fa-solid fa-spell-check" style="color: #b45309; margin-right: 10px;"></i> Key Vocabulary</span>
+              <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+            </summary>
+            <div style="padding: 20px;">
+              <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+              <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      lesson.vocab.forEach((v, idx) => {
+        html += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+      });
+      
+      html += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+      
+      let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
+      defs.sort(() => Math.random() - 0.5);
+      
+      defs.forEach(d => {
+        html += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+      });
+      
+      html += `
+                </div>
+              </div>
+              <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-star"></i> Vocabulary Mastered!
+              </div>
+            </div>
+          </details>
+      `;
+    }
+
+    
+
+    // ==========================================
+    // TAB 2: THE HISTORY
+    // ==========================================
+    html += ``;
 
     let fallbackEnquiry = lesson.enquiry || lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
     if (fallbackEnquiry) {
@@ -1131,8 +1366,6 @@ export function initializeApp(unitData) {
 
     if (lesson.teacher_notes) {
       let notesHtml = '';
-      
-      // Handle the new comprehensive object structure
       if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
         const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
         const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
@@ -1143,18 +1376,14 @@ export function initializeApp(unitData) {
           </div>
         `).join('');
         notesHtml = primerText + sourceContext + objectivesHtml;
-      } 
-      // Fallback for array structure
-      else if (Array.isArray(lesson.teacher_notes)) {
+      } else if (Array.isArray(lesson.teacher_notes)) {
         notesHtml = lesson.teacher_notes.map(note => `
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
             <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
             <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
           </div>
         `).join('');
-      } 
-      // Fallback for simple string
-      else {
+      } else {
         notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
       }
 
@@ -1166,180 +1395,12 @@ export function initializeApp(unitData) {
       `;
     }
 
-    // Process Narrative Glossary Highlight
-    let vocabDict = {};
-    if (lesson.vocab) {
-      lesson.vocab.forEach(v => {
-        vocabDict[v.term.toLowerCase()] = v.definition;
-      });
-    }
-
-    let seenTerms = new Set();
-    const highlightGlossary = (text) => {
-      if (Object.keys(vocabDict).length === 0) return text;
-      let processedText = text;
-      const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
-      for (const term of sortedTerms) {
-        const def = vocabDict[term];
-        if (!seenTerms.has(term)) {
-          // No 'g' flag, so it only replaces the first occurrence in this chunk
-          const regex = new RegExp(`\\b(${term})\\b`, 'i');
-          if (regex.test(processedText)) {
-            processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
-            seenTerms.add(term);
-          }
-        }
-      }
-      return processedText;
-    };
-
-    let phaseNum = 1;
-    let globalQuestionNum = 1;
-
-    // Helper to format questions
-    const formatQuestion = (qText) => {
-      if (!qText) return '';
-      let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
-      return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
-    };
-
-    // PHASE: Visual Source & Hook
-    if (lesson.primary_source) {
-      let src = lesson.primary_source.src;
-      // If the path doesn't start with http or ../, we assume it's relative to the current unit
-      
-      html += `
-        <div class="phase-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: ${lesson.learning_objective || 'Visual Source & Hook'}</div>
-          </div>
-          <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-            <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
-            <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
-            ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
-            ${lesson.primary_source.question ? `
-              <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
-                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(lesson.primary_source.question)}</strong></p>
-              </div>
-            ` : ''}
-          </div>
-        </div>
-      `;
-    }
-
-    // PHASE: Retrieval Recall
-    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
-      html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Chronological Timeline</div>
-          </div>
-          <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
-          <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
-      `;
-      lesson.do_now.events.forEach((ev, idx) => {
-        html += `
-          <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
-            <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
-            <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
-            <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
-            ${ev.img ? `<img src="${getAssetUrl(ev.img)}" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid #e2e8f0;">` : ''}
-          </div>
-        `;
-      });
-      html += `</div></div>`;
-    } else if (lesson.do_now && lesson.do_now.items) {
-
-      try {
-        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
-        if (taught.length > 0 && window.KNOWLEDGE_BANK) {
-          lesson.do_now.items.forEach(item => {
-            if (item.question.includes('PAST TOPIC:')) {
-              const unit = taught[Math.floor(Math.random() * taught.length)];
-              const bank = window.KNOWLEDGE_BANK[unit];
-              if (bank && bank.length > 0) {
-                const randQ = bank[Math.floor(Math.random() * bank.length)];
-                item.question = 'PAST TOPIC: ' + randQ.question;
-                item.answer = randQ.answer;
-              }
-            }
-          });
-        }
-      } catch(e) { console.error(e); }
-
-      html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Do Now Tasks</div>
-            <button class="btn btn-secondary" onclick="window.toggleAllAnswers(this)" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-      `;
-      lesson.do_now.items.forEach((item, index) => {
-        let qText = item.question;
-        let aText = item.answer;
-        if (window.currentUnitId) {
-          qText = qText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
-          aText = aText.replace(/src=['"]assets\//g, `src="/${window.currentUnitId}/assets/`);
-        }
-        const cardId = `donow-${phaseNum}-${index}`;
-        html += `
-          <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
-            <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
-            <div>${qText}</div>
-            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
-          </div>
-        `;
-      });
-      html += `</div></div>`;
-    }
-
-    
-    // PHASE: Vocabulary Unlock (Tier 3)
-    const hasVocab = lesson.vocab && lesson.vocab.length > 0;
-    if (hasVocab) {
-      html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">Phase ${phaseNum++}: Vocabulary Unlock</div>
-          </div>
-          <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><i class="fa-solid fa-spell-check" style="color: #3b82f6;"></i> <strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
-          
-          <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
-      `;
-      
-      lesson.vocab.forEach((v, idx) => {
-        html += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
-      });
-      
-      html += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
-      
-      let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
-      defs.sort(() => Math.random() - 0.5);
-      
-      defs.forEach(d => {
-        html += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
-      });
-      
-      html += `
-            </div>
-          </div>
-          <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
-            <i class="fa-solid fa-star"></i> Vocabulary Mastered!
-          </div>
-        </div>
-        <div id="locked-content">
-      `;
-    }
-
-    // PHASE: Core Information & Sources
     if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
       let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
       html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">Phase ${phaseNum++}: ${enquiryTitle}</div>
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">${enquiryTitle}</div>
           </div>
       `;
       
@@ -1386,12 +1447,12 @@ export function initializeApp(unitData) {
           if (window.db && window.db[window.currentUnitId]) {
             const unitDb = window.db[window.currentUnitId];
             person = unitDb.data?.key_individuals?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
-            if (!person) {
-              person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
-            }
+            if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
           }
           if (person) {
-             const cardHtml = generateKeyIndividualEmbedHTML(person);
+             
+             // But actually this code runs on client, we can just call generateKeyIndividualEmbedHTML
+             const cardHtml = window.generateKeyIndividualEmbedHTML ? window.generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
              html += `
                <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                  <button onclick="const content = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if(content.style.display==='none'){content.style.display='block'; icon.classList.replace('fa-chevron-down','fa-chevron-up');}else{content.style.display='none'; icon.classList.replace('fa-chevron-up','fa-chevron-down');}" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
@@ -1434,7 +1495,6 @@ export function initializeApp(unitData) {
           simplifyBtn = `<button class="btn btn-secondary no-print" onclick="window.toggleSimplify(this)" data-original="${encodeURIComponent(styledContent)}" data-simplified="${encodeURIComponent(l4StyledContent)}" style="padding: 6px 10px; flex-shrink: 0; margin-left: 5px; color: #047857;" title="Simplify Text"><i class="fa-solid fa-child-reaching"></i></button>`;
         }
 
-        // Render Standard Narrative Chunk
         html += `
           <div class="standard-narrative-container">
             <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
@@ -1448,7 +1508,6 @@ export function initializeApp(unitData) {
           </div>
         `;
 
-        // Render Level 4 Narrative Chunk
         if (block.level_4) {
           html += `
             <div class="level4-narrative-container" style="display: none;">
@@ -1457,14 +1516,12 @@ export function initializeApp(unitData) {
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
                 <div style="display: flex; align-items: flex-start;">
                   <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
-                  
                 </div>
               </div>
             </div>
           `;
         }
         
-        // Render Interactive Hinge Question if present
         if (block.hinge_question) {
           const hingeId = `hinge-${index}`;
           html += `
@@ -1505,7 +1562,6 @@ export function initializeApp(unitData) {
           `;
         }
         
-        // Render Embedded Tasks for this chunk!
         if (block.tasks && block.tasks.length > 0) {
           html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
           block.tasks.forEach((task, tIdx) => {
@@ -1547,7 +1603,14 @@ export function initializeApp(unitData) {
       }
       html += `</div>`;
     }
-    // PHASE: Application Tasks & Historian Debates
+    
+    
+
+    // ==========================================
+    // TAB 3: APPLICATION
+    // ==========================================
+    html += ``;
+
     if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
       let hasModels = false;
       if (lesson.tasks) {
@@ -1560,16 +1623,16 @@ export function initializeApp(unitData) {
       const revealBtn = hasModels ? `<button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>` : '';
 
       html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Written Application</div>
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            
             ${revealBtn}
           </div>
       `;
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         lesson.tasks.forEach((task, tIdx) => {
-          let qText = formatQuestion(task.text);
+          let qText = formatQuestion(task.text || task.question);
           let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
           let clueBtn = '';
           if (clueParaMatch) {
@@ -1598,7 +1661,6 @@ export function initializeApp(unitData) {
         });
       }
 
-      // Historians Corner
       if (lesson.historians_corner) {
         const hc = lesson.historians_corner;
         html += `
@@ -1616,8 +1678,6 @@ export function initializeApp(unitData) {
                   ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('hc-model')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                 </span>
               </div>
-              
-
               ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
               ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
               ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${hc.stretch_model}</div>` : ''}
@@ -1625,43 +1685,42 @@ export function initializeApp(unitData) {
           </div>
         `;
       }
-
       html += `</div>`;
     }
 
-    // PHASE: Think, Pair, Share
     if (lesson.pair_share) {
       const ps = lesson.pair_share;
       html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div class="phase-title" style="color: #059669; border-bottom-color: #34d399;">Phase ${phaseNum++}: Think, Pair, Share</div>
-          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 20px;">
-            <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
-              </div>
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
-              </div>
-              <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
-                <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #059669; font-weight: bold; font-size: 1.05rem; background: #ecfdf5; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #a7f3d0;">
+              <span><i class="fa-solid fa-users" style="color: #059669; margin-right: 10px;"></i> Think, Pair, Share</span>
+              <i class="fa-solid fa-chevron-down" style="color: #059669;"></i>
+            </summary>
+            <div style="padding: 20px; background: #ecfdf5;">
+              <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </details>
       `;
     }
 
-    // PHASE: Consolidation & Flashcards
     if (lesson.flashcards && lesson.flashcards.length > 0) {
       html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div class="phase-title">Phase ${phaseNum++}: Consolidation & Recall</div>
+        <div class="phase-card">
+          <div class="phase-title">Consolidation & Recall</div>
           <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
           <div class="flashcard-deck">
       `;
@@ -1683,19 +1742,17 @@ export function initializeApp(unitData) {
       html += `</div></div>`;
     }
 
-    // PHASE: Extended Scholarship & Debate
     if (lesson.extended || lesson.debate_prep) {
       let extHtml = `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Extended Scholarship</div>
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Extended Scholarship</div>
             ${lesson.extended && (lesson.extended.model || lesson.extended.answer) ? `<button class="btn btn-secondary" onclick="toggleElement('extended-model-${lesson.id}')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
           </div>
       `;
 
       if (lesson.debate_prep) {
         const dp = lesson.debate_prep;
-        // Interleave the arguments deterministically for rendering, then sort randomly
         const allArgs = [...dp.arguments_for.map(a=>({t:a, s:'for'})), ...dp.arguments_against.map(a=>({t:a, s:'against'}))].sort(() => Math.random() - 0.5);
         const argsHtml = allArgs.map((arg, idx) => `<div class="debate-card" draggable="true" ondragstart="window.dragDebate(event)" id="debate-arg-${lesson.id}-${idx}" data-side="${arg.s}" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: grab;">${arg.t}</div>`).join('');
 
@@ -1736,30 +1793,68 @@ export function initializeApp(unitData) {
           });
         }
       }
-
       extHtml += `</div>`;
-      // Only render Phase 6 if there is debate_prep or extended paragraphs
+      
       if (lesson.debate_prep || (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title))) {
          html += extHtml;
       }
     }
 
-    // PHASE: GCSE Exam Practice
     if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
       let gcseHtml = `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> Phase ${phaseNum++}: GCSE Exam Practice</div>
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> GCSE Exam Practice</div>
             <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
           </div>
       `;
 
-      // 1. Render 16-mark extended question first (if exists)
       if (lesson.extended && lesson.extended.question) {
         let hintsHtml = '';
         if (lesson.extended.hints && lesson.extended.hints.length > 0) {
            hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">${lesson.extended.hints.map(h => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
         }
+
+        let sourceHtml = '';
+        if (lesson.extended.source_a || lesson.extended.source_b) {
+          sourceHtml = `<div style="display: flex; gap: 20px; margin: 15px 0;">`;
+          if (lesson.extended.source_a) {
+             const prov = typeof lesson.extended.source_a === 'string' ? '' : lesson.extended.source_a.provenance;
+             const content = typeof lesson.extended.source_a === 'string' ? lesson.extended.source_a : lesson.extended.source_a.content;
+             sourceHtml += `
+               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                 <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
+                 ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                 <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                   ${content.replace(/\n/g, '<br>')}
+                 </div>
+               </div>`;
+          }
+          if (lesson.extended.source_b) {
+             const prov = typeof lesson.extended.source_b === 'string' ? '' : lesson.extended.source_b.provenance;
+             const content = typeof lesson.extended.source_b === 'string' ? lesson.extended.source_b : lesson.extended.source_b.content;
+             sourceHtml += `
+               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                 <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
+                 ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                 <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                   ${content.replace(/\n/g, '<br>')}
+                 </div>
+               </div>`;
+          }
+          sourceHtml += `</div>`;
+          if (lesson.extended.provenance_clue) {
+            sourceHtml += `<details style="margin-top: 15px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden;">
+              <summary style="padding: 12px; cursor: pointer; color: #166534; font-weight: bold; list-style: none;">
+                <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Click to Reveal Provenance Scaffolding Clues
+              </summary>
+              <div style="padding: 0 12px 12px 12px; color: #15803d; border-top: 1px solid #bbf7d0; margin-top: 5px; padding-top: 12px;">
+                ${lesson.extended.provenance_clue}
+              </div>
+            </details>`;
+          }
+        }
+
         gcseHtml += `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
@@ -1768,27 +1863,26 @@ export function initializeApp(unitData) {
                 ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('extended-model-${lesson.id}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
             </div>
+            ${sourceHtml}
             ${hintsHtml}
             <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
-
             ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${lesson.extended.model || lesson.extended.answer}</div>` : ''}
           </div>
         `;
       }
 
-      // 2. Render standard GCSE tasks
       if (lesson.gcse_task) {
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach((task, tIdx) => {
             gcseHtml += `
               <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
                 <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                  ${formatQuestion(task.text)}
+                  ${formatQuestion(task.text || task.question)}
                   <span style="display: inline-flex; vertical-align: middle;">
                     ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('gcse-model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                   </span>
                 </div>
-                <textarea class="student-answer-input" style="min-height: ${task.text.includes("12 marks") || task.text.includes("16 marks") ? "200px" : "100px"};" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+                <textarea class="student-answer-input" style="min-height: ${(task.text || task.question || "").includes("12 marks") || (task.text || task.question || "").includes("16 marks") ? "200px" : "100px"};" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
                 ${task.model ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${task.model}</div>` : ''}
               </div>
             `;
@@ -1815,7 +1909,6 @@ export function initializeApp(unitData) {
         }
       }
 
-      // 3. Render Extracted Exam Tasks
       if (extractedExamTasks.length > 0) {
         extractedExamTasks.forEach((task, tIdx) => {
           gcseHtml += `
@@ -1832,18 +1925,15 @@ export function initializeApp(unitData) {
           `;
         });
       }
-
       gcseHtml += `</div>`;
       html += gcseHtml;
     }
 
-
-    // PHASE: Knowledge Check Quiz
     if (lesson.quiz && lesson.quiz.length > 0) {
       html += `
-        <div class="phase-card" id="phase-${phaseNum}">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Phase ${phaseNum++}: Knowledge Check</div>
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Knowledge Check Quiz</div>
             <button class="btn btn-primary no-print" onclick="window.startQuiz('${lesson.id}')" style="font-size: 1.1rem; padding: 10px 20px; border-radius: 8px;">
               <i class="fa-solid fa-clipboard-check"></i> Start Quiz
             </button>
@@ -1853,18 +1943,10 @@ export function initializeApp(unitData) {
       `;
     }
 
-    html += `</div>`;
     
-    if (hasVocab) {
-      html += `</div>`; // End locked-content
-    }
+    
+    html += `</div>`; // End lesson-content wrapper
 
-    html += `
-      <div style="text-align: center; margin-top: 40px; margin-bottom: 40px; padding: 30px; border-top: 2px dashed #cbd5e1; color: #64748b;">
-        <h3 style="margin-bottom: 10px; color: #334155;"><i class="fa-solid fa-flag-checkered"></i> Lesson Complete</h3>
-        <p style="margin: 0;">You have reached the end of the core narrative phases for this lesson.</p>
-      </div>
-    `;
     contentArea.innerHTML = html;
     window.vocabMatchesFound = 0;
     setTimeout(() => {
@@ -1875,11 +1957,32 @@ export function initializeApp(unitData) {
           console.error("Mermaid render error:", e);
         }
       }
-    }, 100); // reset for new lesson
-
+    }, 100); 
   }
+  
+  window.switchTab = (tabId) => {
+    // Hide all tab content
+    document.querySelectorAll('.tab-content').forEach(el => {
+      el.style.display = 'none';
+    });
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    // Show requested tab
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+      activeTab.style.display = 'block';
+    }
+    // Set clicked button to active (we can find it via the onclick string)
+    const btn = document.querySelector(`button[onclick*="${tabId}"]`);
+    if (btn) {
+      btn.classList.add('active');
+    }
+  };
 
   // Toggling elements helper
+
   window.toggleElement = (id) => {
     const el = document.getElementById(id);
     if (el) {

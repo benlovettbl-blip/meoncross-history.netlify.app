@@ -1236,3 +1236,17 @@ body.large-text { font-size: 1.15rem; } body.large-text h1 { font-size: 2rem; } 
     font-size: 0.9rem;
     line-height: 1.4;
 }
+
+.vocab-word { position: relative; cursor: help; border-bottom: 2px dotted #3b82f6; color: #1e3a8a; font-weight: 600; transition: color 0.3s ease; }
+.vocab-word:hover { color: #2563eb; }
+.vocab-word::after { content: attr(data-definition); position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%) translateY(10px); width: max-content; max-width: 250px; padding: 8px 12px; background: #1e293b; color: white; font-size: 0.85rem; font-weight: 400; border-radius: 6px; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 50; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); pointer-events: none; }
+.vocab-word::before { content: ''; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%) translateY(10px); border: 6px solid transparent; border-top-color: #1e293b; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 50; pointer-events: none; }
+.vocab-word:hover::after, .vocab-word:hover::before { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+.active-timeline-dot {
+  box-shadow: 0 0 12px 4px #60a5fa !important;
+  transform: scale(1.4) !important;
+  background: #facc15 !important;
+  border-color: #eab308 !important;
+}
+  

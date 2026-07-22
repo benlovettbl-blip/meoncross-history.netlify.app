@@ -1,0 +1,18 @@
+KT1.1 Medieval c1250–c1500: Causes of Illness
+KT1.2 Medieval c1250–c1500: Prevention & Treatment
+KT1.3 Medieval c1250–c1500: The Black Death
+KT2.1 Renaissance c1500–c1700: Causes of Illness
+KT2.2 Renaissance c1500–c1700: Prevention & Treatment
+KT2.3 Renaissance c1500–c1700: Harvey & The Great Plague
+KT3.1 18th & 19th Century c1700–c1900: Causes of Illness
+KT3.2 18th & 19th Century c1700–c1900: Prevention & Treatment
+KT3.3 18th & 19th Century c1700–c1900: Jenner & Cholera
+KT4.1 Modern c1900–present: Causes of Illness
+KT4.2 Modern c1900–present: Prevention & Treatment
+KT4.3 Modern c1900–present: Penicillin
+KT4.4 Modern c1900–present: Lung Cancer
+KT5.1 Western Front 1914–1918: Historical Context
+KT5.2 Western Front 1914–1918: The Trench Environment
+KT5.3 Western Front 1914–1918: Illnesses & Wounds
+KT5.4 Western Front 1914–1918: RAMC & Nurses
+KT5.5 Western Front 1914–1918: Medical Advances

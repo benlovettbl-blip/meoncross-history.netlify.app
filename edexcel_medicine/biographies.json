@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Hippocrates",
+    "role": "Ancient Greek Physician",
+    "bio": "Known as the \"Father of Medicine\". He created the Theory of the Four Humours, established the Hippocratic Oath, and pioneered clinical observation (observing patient symptoms rather than consulting astrology).",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg"
+  },
+  {
+    "name": "Claudius Galen",
+    "role": "Ancient Roman Physician",
+    "bio": "Developed the Theory of Opposites based on the Four Humours. His anatomical writings, though often based on animal dissection and highly flawed, were promoted by the Catholic Church and formed the absolute basis of medical training for over 1,000 years.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Galenus.jpg"
+  },
+  {
+    "name": "Roger Bacon",
+    "role": "13th-Century Scientist",
+    "bio": "An English philosopher and Franciscan friar who emphasized the study of nature through empirical observation. He was imprisoned by Church leaders for suggesting that doctors should conduct their own independent experiments.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Roger-bacon-statue.jpg/500px-Roger-bacon-statue.jpg"
+  },
+  {
+    "name": "Andreas Vesalius",
+    "role": "Pioneering Anatomist",
+    "bio": "A Renaissance physician who published \"On the Fabric of the Human Body\" (1543). By performing his own human dissections, he proved over 300 errors in Galen's work (e.g., proving the human jaw bone is one piece, not two).",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Man_dressed_in_Black_by_Calcar_%28Hermitage%29.jpg/500px-Man_dressed_in_Black_by_Calcar_%28Hermitage%29.jpg"
+  },
+  {
+    "name": "William Harvey",
+    "role": "Royal Physician",
+    "bio": "An English physician who discovered the full circulation of blood in the human body. By dissecting cold-blooded animals and experimenting with ligatures, he proved the heart acts as a pump, disproving Galen's theory that blood was constantly manufactured in the liver.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/William_Harvey_2.jpg/500px-William_Harvey_2.jpg"
+  },
+  {
+    "name": "Thomas Sydenham",
+    "role": "The \"English Hippocrates\"",
+    "bio": "A highly influential English physician of the 17th century. He strongly advocated for the direct observation of patient symptoms and classifying diseases (like measles and scarlet fever) into distinct groups, moving away from the Theory of the Four Humours.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Thomas_Sydenham_by_Mary_Beale.jpg/500px-Thomas_Sydenham_by_Mary_Beale.jpg"
+  },
+  {
+    "name": "Edward Jenner",
+    "role": "Pioneer of Vaccination",
+    "bio": "An English country doctor who discovered the first successful vaccine in 1796. After observing that milkmaids who caught cowpox never caught smallpox, he deliberately infected a boy with cowpox to successfully immunize him against the deadly smallpox virus.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edward_Jenner.jpg/500px-Edward_Jenner.jpg"
+  },
+  {
+    "name": "Edwin Chadwick",
+    "role": "Public Health Reformer",
+    "bio": "A social reformer who published his famous \"Report on the Sanitary Conditions of the Labouring Population\" in 1842. His work proved the link between extreme poverty, filth, and disease, leading to the first Public Health Act of 1848.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sir_Edwin_Chadwick2.jpg/500px-Sir_Edwin_Chadwick2.jpg"
+  },
+  {
+    "name": "John Snow",
+    "role": "Surgeon and Epidemiologist",
+    "bio": "A pioneering British surgeon who proved that cholera was a waterborne disease. During the 1854 Soho outbreak, he mapped out the deaths and traced the source to a contaminated public water pump on Broad Street, famously removing its handle to stop the epidemic.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/500px-John_Snow.jpg"
+  },
+  {
+    "name": "Florence Nightingale",
+    "role": "Founder of Modern Nursing",
+    "bio": "A legendary nurse who drastically reduced death rates at the Scutari hospital during the Crimean War (1854) by implementing strict hygiene and sanitation standards. She later published \"Notes on Nursing\" and established professional training for nurses.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg/500px-Florence_Nightingale_%28H_Hering_NPG_x82368%29.jpg"
+  },
+  {
+    "name": "James Simpson",
+    "role": "Pioneer of Anesthetics",
+    "bio": "A Scottish obstetrician who discovered the anesthetic properties of chloroform in 1847. He famously experimented on himself and his friends to find a deeper, more effective pain relief than ether, revolutionizing surgery.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Simpson_James_Young_signature_picture.jpg"
+  },
+  {
+    "name": "Louis Pasteur",
+    "role": "French Chemist",
+    "bio": "Published the revolutionary Germ Theory in 1861, proving that microscopic organisms (bacteria) in the air cause decay and disease. This finally disproved the ancient theories of spontaneous generation and miasma, changing medicine forever.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Louis_Pasteur%2C_foto_av_Paul_Nadar%2C_Crisco_edit.jpg/500px-Louis_Pasteur%2C_foto_av_Paul_Nadar%2C_Crisco_edit.jpg"
+  },
+  {
+    "name": "Joseph Lister",
+    "role": "Pioneer of Antiseptic Surgery",
+    "bio": "A British surgeon who applied Pasteur's Germ Theory to surgery in 1865. By spraying carbolic acid directly onto wounds and surgical instruments, he destroyed the bacteria causing infection, drastically reducing surgical mortality rates.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Joseph_Lister_1902.jpg/500px-Joseph_Lister_1902.jpg"
+  },
+  {
+    "name": "Robert Koch",
+    "role": "Father of Bacteriology",
+    "bio": "A German scientist who built upon Pasteur's work by successfully identifying the specific bacteria that caused individual diseases, such as Anthrax (1876), Tuberculosis (1882), and Cholera (1883). He pioneered using chemical dyes to stain microbes for observation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/RobertKoch_cropped.jpg/500px-RobertKoch_cropped.jpg"
+  },
+  {
+    "name": "Wilhelm Roentgen",
+    "role": "German Physicist",
+    "bio": "Accidentally discovered X-rays in 1895 while experimenting with a cathode ray tube. His discovery allowed doctors to see inside the human body without cutting it open, revolutionizing diagnostics and the treatment of bone fractures.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wilhelm_Conrad_R%C3%B6ntgen_%281888-1900%29%2C_88374_p.jpg/500px-Wilhelm_Conrad_R%C3%B6ntgen_%281888-1900%29%2C_88374_p.jpg"
+  },
+  {
+    "name": "Marie Curie",
+    "role": "Physicist and Chemist",
+    "bio": "A pioneering scientist who discovered radium and polonium. During WWI, she equipped the French army with 20 mobile X-ray units (known as \"Petites Curies\") so that wounded soldiers could be diagnosed directly on the frontline.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/500px-Marie_Curie_c._1920s.jpg"
+  },
+  {
+    "name": "Karl Landsteiner",
+    "role": "Biologist and Physician",
+    "bio": "Discovered the existence of different human blood groups (A, B, O) in 1901. This breakthrough explained why some blood transfusions were fatal while others succeeded, making donor matching possible and paving the way for safe transfusions.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Karl_Landsteiner_nobel.jpg"
+  },
+  {
+    "name": "Paul Ehrlich",
+    "role": "German Physician",
+    "bio": "A former student of Robert Koch who theorized the existence of \"magic bullets\" — chemical compounds that could target and destroy specific disease microbes inside the body without harming the rest of the patient. He co-discovered Salvarsan 606.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Paul_Ehrlich_1915.jpg/500px-Paul_Ehrlich_1915.jpg"
+  },
+  {
+    "name": "Sahachiro Hata",
+    "role": "Japanese Bacteriologist",
+    "bio": "A brilliant researcher who worked with Paul Ehrlich. In 1909, while meticulously re-testing hundreds of failed chemical compounds, Hata discovered that the 606th compound (Salvarsan 606) successfully cured the deadly disease syphilis, creating the world's first magic bullet.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Sahachiro_Hata.jpg"
+  },
+  {
+    "name": "Gerhard Domagk",
+    "role": "German Pathologist",
+    "bio": "Discovered the second magic bullet in 1932. He found that a red chemical dye called Prontosil effectively cured blood poisoning (streptococcus) in mice. He later bravely used it to successfully cure his own daughter's severe infection, proving its efficacy in humans.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Gerhard_Domagk_nobel.jpg"
+  },
+  {
+    "name": "Alexander Fleming",
+    "role": "Scottish Bacteriologist",
+    "bio": "Accidentally discovered Penicillin in 1928 after returning from a holiday to find that a mysterious mould (Penicillium notatum) had grown in a neglected petri dish and killed the surrounding staphylococcus bacteria.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/500px-Synthetic_Production_of_Penicillin_TR1468.jpg"
+  },
+  {
+    "name": "Howard Florey",
+    "role": "Australian Pharmacologist",
+    "bio": "Co-leader of the Oxford University research team that successfully developed Penicillin into a usable medical drug during WWII. Florey travelled to the USA in 1941 to secure the massive funding and industrial resources needed to mass-produce the antibiotic.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Sir_Howard_Florey.jpg/500px-Sir_Howard_Florey.jpg"
+  },
+  {
+    "name": "Ernst Chain",
+    "role": "Biochemist",
+    "bio": "A brilliant German-Jewish refugee who worked alongside Howard Florey at Oxford. Chain successfully discovered the complex chemical method required to extract and purify Penicillin from the mould so it could be safely tested on mice and humans.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Ernst_Boris_Chain_1945.jpg"
+  },
+  {
+    "name": "James Watson",
+    "role": "Molecular Biologist",
+    "bio": "Working together at Cambridge University, they successfully published the double-helix structure of DNA in 1953. Their monumental breakthrough finally allowed scientists to understand how genetic traits and hereditary diseases are passed down from parents to children.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/James_D._Watson_LCCN2007680359.jpg/500px-James_D._Watson_LCCN2007680359.jpg"
+  },
+  {
+    "name": "Francis Crick",
+    "role": "Molecular Biologist",
+    "bio": "Working together at Cambridge University, they successfully published the double-helix structure of DNA in 1953. Their monumental breakthrough finally allowed scientists to understand how genetic traits and hereditary diseases are passed down from parents to children.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Francis_Crick_crop.jpg/500px-Francis_Crick_crop.jpg"
+  },
+  {
+    "name": "Rosalind Franklin",
+    "role": "X-ray Crystallographer",
+    "bio": "A brilliant scientist whose exceptionally clear X-ray photographs of DNA (specifically \"Photograph 51\") provided the crucial, undeniable evidence of the double-helix shape. Her work was shared with Watson and Crick without her explicit permission.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Rosalind_Franklin_%28retouched%29.jpg"
+  },
+  {
+    "name": "Hugh Owen Thomas",
+    "role": "Orthopaedic Surgeon",
+    "bio": "Invented the Thomas Splint in the late 19th century. During WWI, his invention was widely adopted to immobilize shattered femurs on the Western Front, stopping the broken bone from causing fatal internal bleeding and raising survival rates from 20% to over 80%.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Portrait_of_Hugh_Owen_Thomas_%284671476%29.jpg/500px-Portrait_of_Hugh_Owen_Thomas_%284671476%29.jpg"
+  },
+  {
+    "name": "Harold Gillies",
+    "role": "Pioneer of Plastic Surgery",
+    "bio": "A New Zealand surgeon operating in Britain during WWI. He developed revolutionary plastic surgery techniques (such as the \"tube pedicle\") to rebuild and reconstruct the horrific facial injuries suffered by soldiers caused by shrapnel and machine-gun fire.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/500px-No_image_available.svg.png"
+  }
+]
