@@ -517,6 +517,38 @@ periodLessons.forEach((lesson, lessonIndex) => {
         html += `<div class="task-lines-large"></div>`;
       }
     }
+
+    if (lesson.exam_practice && lesson.exam_practice.length > 0) {
+      lesson.exam_practice.forEach(ep => {
+        if (ep.stimulus && ep.stimulus.length > 0) {
+          html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 20px; page-break-inside: avoid;">`;
+          ep.stimulus.forEach((stimText, i) => {
+            html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+              <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${String.fromCharCode(65+i)}</strong>
+              <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                ${stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, '').replace(/\n/g, '<br>')}
+              </div>
+            </div>`;
+          });
+          html += `</div>`;
+        }
+
+        html += `<div style="margin-top: 15px;"><strong>Q${ep.qNum || ''}. ${formatBold(ep.question)}</strong></div>`;
+        
+        if (ep.type === '4-mark' && ep.question.toLowerCase().includes('follow up')) {
+          html += `<table style="width: 100%; border-collapse: collapse; margin-top: 15px; page-break-inside: avoid;">
+            <tr><td style="border: 2px solid #333; padding: 15px; width: 40%; font-weight: bold; color: #444;">Detail in Source A that I would follow up:</td><td style="border: 2px solid #333; padding: 15px;"></td></tr>
+            <tr><td style="border: 2px solid #333; padding: 15px; font-weight: bold; color: #444;">Question I would ask:</td><td style="border: 2px solid #333; padding: 15px;"></td></tr>
+            <tr><td style="border: 2px solid #333; padding: 15px; font-weight: bold; color: #444;">What type of source I could use:</td><td style="border: 2px solid #333; padding: 15px;"></td></tr>
+            <tr><td style="border: 2px solid #333; padding: 15px; font-weight: bold; color: #444;">How this might help answer my question:</td><td style="border: 2px solid #333; padding: 15px;"></td></tr>
+          </table><br>`;
+        } else {
+          let dummyText = `${ep.marks || 4} marks`;
+          renderLines(dummyText);
+          html += `<br>`;
+        }
+      });
+    }
     
     html += `</div>`;
   }
