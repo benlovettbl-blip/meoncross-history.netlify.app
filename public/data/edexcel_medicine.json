@@ -803,7 +803,7 @@
         },
         "starters": [
           {
-            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tertia_musculorum_tabula_%2837053621276%29.jpg/500px-Tertia_musculorum_tabula_%2837053621276%29.jpg",
+            "source": "/images/vesalius_muscle_men.jpg",
             "title": "Vesalius' 'Muscle Men'",
             "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
             "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
@@ -2347,13 +2347,13 @@
         },
         "starters": [
           {
-            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Professor_Alexander_Fleming_at_work_in_his_laboratory_at_St_Mary%27s_Hospital%2C_London%2C_during_the_Second_World_War._D17801.jpg/500px-Professor_Alexander_Fleming_at_work_in_his_laboratory_at_St_Mary%27s_Hospital%2C_London%2C_during_the_Second_World_War._D17801.jpg",
+            "source": "/images/fleming_petri_dish.jpg",
             "title": "Fleming's Original Petri Dish",
             "caption": "Professor Alexander Fleming at work in his laboratory at St Mary's Hospital, London.",
             "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
           },
           {
-            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/PENICILLIN..._SAVES_SOLDIERS_LIVES%5E_EVERY_MINUTE_SAVED_IN_BUILDING_THIS_PLANT_MEANS_A_LIFE_SAVED_ON_THE_FIGHTING..._-_NARA_-_515170.jpg/500px-PENICILLIN..._SAVES_SOLDIERS_LIVES%5E_EVERY_MINUTE_SAVED_IN_BUILDING_THIS_PLANT_MEANS_A_LIFE_SAVED_ON_THE_FIGHTING..._-_NARA_-_515170.jpg",
+            "source": "/images/penicillin_propaganda.jpg",
             "title": "WWII Penicillin Propaganda",
             "caption": "A World War II propaganda poster urging the mass production of Penicillin.",
             "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
@@ -2542,9 +2542,9 @@
             "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
           },
           {
-            "source": "https://upload.wikimedia.org/wikipedia/commons/4/49/Cigarette_packet_warning_signs.jpg",
+            "source": "/images/cigarette_warning.jpg",
             "title": "Modern Anti-Smoking Warning",
-            "caption": "A graphic anti-smoking warning label on a cigarette pack.",
+            "caption": "A modern English anti-smoking warning label on a cigarette pack.",
             "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
           }
         ]
