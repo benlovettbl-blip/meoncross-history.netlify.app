@@ -428,7 +428,7 @@ export default {
           "think_wonder": "What is being done to this patient's arm? Why might bleeding someone out intentionally be considered a 'cure'?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Hospital%20ward%20in%20the%20Hotel%20Dieu%2C%20Paris.%20Woodcut%2C%20c.%201500%20Wellcome%20L0006764.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/The_H%C3%B4tel_Dieu%2C_Paris%3B_interior_showing_patients_being_nurse_Wellcome_V0014307.jpg/500px-The_H%C3%B4tel_Dieu%2C_Paris%3B_interior_showing_patients_being_nurse_Wellcome_V0014307.jpg",
           "title": "The Hotel-Dieu Hospital",
           "caption": "An illumination showing nuns caring for patients in a large, religious hospital ward.",
           "think_wonder": "Notice who is providing the care. Why are there no trained doctors visible? What does this tell us about the purpose of a medieval hospital?"
@@ -607,13 +607,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Wolgemut%20and%20Wilhelm%20Pleydenwurff.%20Dance%20of%20Death%20from%20the%20Nuremberg%20Chronicle.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Burying_Plague_Victims_of_Tournai.jpg",
           "title": "The Tournai Mass Burial (1349)",
           "caption": "An illumination showing citizens stacking dozens of wooden coffins into deep trenches.",
           "think_wonder": "What does the sheer number of coffins suggest about the scale of the disaster? Why have normal burial practices collapsed?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Flagellants.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/The_flagellants_at_Doornik_in_1349.jpg/500px-The_flagellants_at_Doornik_in_1349.jpg",
           "title": "Flagellants Whipping Themselves",
           "caption": "An illustration of a procession of flagellants whipping their own backs in public.",
           "think_wonder": "Why are these people intentionally hurting themselves? What do they believe this will achieve in the eyes of God?"
@@ -802,7 +802,7 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Vesalius%20-%20De%20Humani%20Corporis%20Fabrica%20-%201543%20-%20Muscle%20man%20back.jpg?width=500",
+          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/De_Humani_Corporis_Fabrica_(1543)_-_Secunda_musculorum_tabula.jpg?width=500",
           "title": "Vesalius' 'Muscle Men'",
           "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
           "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
@@ -1379,7 +1379,7 @@ export default {
           "think_wonder": "Why didn't the liquid in the curved flask rot? What invisible thing is being kept out?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Robert%20Koch%20in%20his%20laboratory.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Robert_Koch_in_seine_Laboratorium.jpg/500px-Robert_Koch_in_seine_Laboratorium.jpg",
           "title": "Robert Koch at the Microscope",
           "caption": "A photograph of Robert Koch in his laboratory looking through a microscope.",
           "think_wonder": "What is he looking for? How did this technology change medicine forever?"
@@ -2162,13 +2162,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Nhs%20first%20day.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Anenurin_Bevan%2C_Minister_of_Health%2C_on_the_first_day_of_the_National_Health_Service%2C_5_July_1948_at_Park_Hospital%2C_Davyhulme%2C_near_Manchester_%2814465908720%29.jpg/500px-Anenurin_Bevan%2C_Minister_of_Health%2C_on_the_first_day_of_the_National_Health_Service%2C_5_July_1948_at_Park_Hospital%2C_Davyhulme%2C_near_Manchester_%2814465908720%29.jpg",
           "title": "Aneurin Bevan and the NHS",
           "caption": "A photograph of the Health Minister chatting with a young patient in 1948.",
           "think_wonder": "Why is this moment historically significant for ordinary British people? What financial nightmare did the NHS finally eliminate?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/X-ray%20therapy%2C%20c.1910%20-%20National%20Museum%20of%20American%20History%20-%20DSC06227.JPG?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Radium_radiotherapy_machine_1951.jpg/500px-Radium_radiotherapy_machine_1951.jpg",
           "title": "Early Radiotherapy",
           "caption": "An early photograph of a massive radiotherapy machine being used on a patient.",
           "think_wonder": "How does high-tech machinery change the role of the doctor and the experience of the patient?"
@@ -2346,13 +2346,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Penicillium%20mold%20on%20agar%20Wellcome%20L0061205.jpg?width=500",
+          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexander_Fleming_in_his_laboratory_at_St_Mary's_Hospital,_London._Wellcome_L0006041.jpg?width=500",
           "title": "Fleming's Original Petri Dish",
           "caption": "A photograph of the moldy staphylococcus plate from 1928.",
           "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Thanks%20to%20Penicillin%20-%20He%20Will%20Come%20Home%2C%201944.jpg?width=500",
+          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Penicillin_advertisement_-_Thanks_to_Penicillin_he_will_come_home_Wellcome_L0044569.jpg?width=500",
           "title": "WWII Penicillin Propaganda",
           "caption": "A propaganda poster urging the mass production of Penicillin.",
           "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
@@ -2535,13 +2535,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Camel%20Cigarettes%20Ad%20-%20More%20Doctors%20Smoke%20Camels.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Lewes_%2C_vintage_cigarette_advertisement_-_geograph.org.uk_-_7707655.jpg/500px-Lewes_%2C_vintage_cigarette_advertisement_-_geograph.org.uk_-_7707655.jpg",
           "title": "Vintage Cigarette Advertisement",
           "caption": "A 1950s poster featuring a smiling physician endorsing cigarettes.",
           "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Cigarette%20warning%20label%20Canada.jpg?width=500",
+          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Health_warning_on_Canadian_cigarette_package.jpg?width=500",
           "title": "Modern Anti-Smoking Warning",
           "caption": "A modern graphic anti-smoking warning label on a cigarette pack.",
           "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
@@ -3030,7 +3030,7 @@ export default {
           "think_wonder": "What caused this horrific condition? How could the British Army possibly try to prevent it in permanently flooded trenches?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/British%20soldiers%20with%20gas%20masks%2C%20First%20World%20War.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Belgian_Troops_with_Early_Gas_Masks.jpg/500px-Belgian_Troops_with_Early_Gas_Masks.jpg",
           "title": "Early Gas Masks",
           "caption": "Soldiers wearing early, primitive gas masks in the trenches.",
           "think_wonder": "Why are they wearing these? How did the invention of poison gas change the nature of warfare and military medicine?"
@@ -3270,7 +3270,7 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/X-ray%20of%20shrapnel%20in%20the%20arm%20of%20a%20soldier%2C%20WWI%20Wellcome%20L0014768.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/X-ray_of_a_knee_joint%2C_showing_shrapnel_Wellcome_V0030078.jpg/500px-X-ray_of_a_knee_joint%2C_showing_shrapnel_Wellcome_V0030078.jpg",
           "title": "Shrapnel X-Ray",
           "caption": "An early X-ray showing jagged metal fragments embedded deep in bone.",
           "think_wonder": "Why are artillery shells so much more destructive than regular bullets? How difficult would it be for a surgeon to find and remove these fragments without this machine?"
@@ -3521,13 +3521,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Stretcher%20bearers%20in%20the%20mud%2C%20Passchendaele%2C%20August%201917.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Stretcher_bearers_Passchendaele_August_1917.jpg/500px-Stretcher_bearers_Passchendaele_August_1917.jpg",
           "title": "Stretcher Bearers in Mud",
           "caption": "A photograph of four exhausted men struggling to carry a single casualty through deep sludge.",
           "think_wonder": "Why does it take four men to carry one casualty? What dangers did these brave stretcher-bearers face while trying to save lives?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20horse-drawn%20ambulance%20wagon%20on%20the%20Western%20Front.%20Q32228.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Horse_Drawn_Ambulance_-_geograph.org.uk_-_4089505.jpg/500px-Horse_Drawn_Ambulance_-_geograph.org.uk_-_4089505.jpg",
           "title": "Horse-Drawn Ambulance",
           "caption": "An image of a horse-drawn ambulance transporting wounded soldiers.",
           "think_wonder": "Why were horse-drawn ambulances eventually replaced by motorized ones? What were their main limitations?"
@@ -3763,13 +3763,13 @@ export default {
       },
       "starters": [
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Thomas%20splint%20in%20use%20on%20a%20wounded%20soldier%2C%20France.%20Wellcome%20L0014769.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Thomas-type_leg_splint%2C_Europe%2C_1901-1920_Wellcome_L0057928.jpg/500px-Thomas-type_leg_splint%2C_Europe%2C_1901-1920_Wellcome_L0057928.jpg",
           "title": "The Thomas Splint",
           "caption": "A photograph of the simple metal frame holding a soldier's shattered leg rigid.",
           "think_wonder": "How does this simple metal frame stop a fractured femur bone from piercing the skin and bleeding a soldier to death?"
         },
         {
-          "source": "https://commons.wikimedia.org/wiki/Special:FilePath/Walter%20Yeo%20before%20and%20after%20surgery.jpg?width=500",
+          "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Work_of_Major_Harold_Gillies_in_the_Field_of_Plastic_Surgery_During_the_First_World_War_-_IWM_HU_110801.jpg/500px-The_Work_of_Major_Harold_Gillies_in_the_Field_of_Plastic_Surgery_During_the_First_World_War_-_IWM_HU_110801.jpg",
           "title": "Harold Gillies' Plastic Surgery",
           "caption": "A photograph of early, pioneering plastic surgery on a disfigured soldier.",
           "think_wonder": "How did the horrific facial injuries caused by modern shrapnel lead to the desperate invention of plastic surgery?"
