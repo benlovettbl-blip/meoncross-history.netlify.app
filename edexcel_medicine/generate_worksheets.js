@@ -87,6 +87,11 @@ periods.forEach(period => {
     if (l.gcse_task && l.gcse_task.tasks) {
         l.gcse_task.tasks.forEach(t => addExamRow(t.text));
     }
+    if (l.exam_practice) {
+        l.exam_practice.forEach(ep => {
+            addExamRow(ep.question + (ep.marks ? ` (${ep.marks} marks)` : ''));
+        });
+    }
   });
 
   if (unitData.assessments) {
@@ -409,7 +414,12 @@ periodLessons.forEach((lesson, lessonIndex) => {
                 html += `<div class="task-lines-large"></div>`;
             }
         } else if (text.includes("8 marks")) {
-            for(let i=0; i<14; i++) { // ~half page
+            for(let i=0; i<19; i++) { // ~1/3 more space
+
+                html += `<div class="task-lines-large"></div>`;
+            }
+        } else if (text.includes("2 marks")) {
+            for(let i=0; i<3; i++) {
                 html += `<div class="task-lines-large"></div>`;
             }
         } else if (text.includes("4 marks") || text.includes("Explain one way")) {
@@ -533,7 +543,9 @@ periodLessons.forEach((lesson, lessonIndex) => {
           html += `</div>`;
         }
 
-        html += `<div style="margin-top: 15px;"><strong>Q${ep.qNum || ''}. ${formatBold(ep.question)}</strong></div>`;
+        let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
+        if (ep.question.includes('marks)')) marksStr = '';
+        html += `<div style="margin-top: 15px;"><strong>Q${ep.qNum || ''}. ${formatBold(ep.question)}${marksStr}</strong></div>`;
         
         if (ep.type === '4-mark' && ep.question.toLowerCase().includes('follow up')) {
           html += `<table style="width: 100%; border-collapse: collapse; margin-top: 15px; page-break-inside: avoid;">
