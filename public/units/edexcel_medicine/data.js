@@ -1,4 +1,7 @@
+import { mock_exams } from "./mock_exams.js";
+
 export default {
+  mock_exams: mock_exams,
   "title": "Edexcel Medicine Through Time with Western Front",
   "enquiry": "How has medicine changed from c1250 to the modern day?",
   "cover_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/500px-John_Snow.jpg",

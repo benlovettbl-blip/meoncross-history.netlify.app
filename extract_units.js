@@ -105,7 +105,7 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
     const filesToCopy = ['quiz_pack.html', 'answer_key.html', 'biographies.json', 'flashcards.html'];
     const allFiles = fs.readdirSync(sourceDir);
     allFiles.forEach(f => {
-      if (f.startsWith('workbook') && f.endsWith('.html')) {
+      if ((f.startsWith('workbook') || f.startsWith('mock_')) && f.endsWith('.html')) {
         filesToCopy.push(f);
       }
     });

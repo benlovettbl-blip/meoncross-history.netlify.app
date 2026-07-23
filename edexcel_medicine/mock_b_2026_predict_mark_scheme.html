@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicted Mock Paper B</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 20mm;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .cover-box {
+      border: 3px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .input-box {
+      border: 1px solid #000;
+      height: 40px;
+      margin-top: 5px;
+    }
+    .exam-header {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    h1 { font-size: 24px; margin: 0 0 10px 0; }
+    h2 { font-size: 20px; margin: 0 0 10px 0; }
+    h3 { font-size: 16px; margin: 0 0 10px 0; }
+    
+    .instructions { margin-top: 30px; font-size: 14px; line-height: 1.5; }
+    .instructions ul { padding-left: 20px; }
+    .instructions li { margin-bottom: 5px; }
+
+    /* Question Styles */
+    .section-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 30px 0;
+      text-transform: uppercase;
+    }
+    .question-block {
+      margin-bottom: 30px;
+    }
+    .question-text {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+    }
+    .question-num {
+      width: 40px;
+      flex-shrink: 0;
+    }
+    .marks {
+      text-align: right;
+      font-weight: normal;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    /* Dotted Lines */
+    .dotted-line {
+      border-bottom: 1px dotted #999;
+      height: 32px;
+      width: 100%;
+    }
+    
+    /* Follow up table */
+    .follow-up-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .follow-up-table td {
+      border: 1px solid #000;
+      padding: 10px;
+      height: 120px;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    /* Sources Booklet */
+    .sources-booklet {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .source-block {
+      margin-bottom: 25px;
+    }
+    .source-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .source-content {
+      font-family: 'Times New Roman', serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: 10px;
+      border-left: 3px solid #ccc;
+    }
+    
+    /* Model Answer Box */
+    .model-answer {
+      background: #f8fafc;
+      border-left: 4px solid #10b981;
+      padding: 20px;
+      margin-top: 15px;
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #0f172a;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+    .model-answer-title {
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      color: #059669;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="page">
+    <div style="text-align: center; margin-bottom: 10px; font-weight: bold;">
+      Please check the examination details below before entering your candidate information
+    </div>
+    
+    <div class="cover-box">
+      <div class="candidate-info">
+        <div style="flex: 2;">
+          <div>Candidate surname</div>
+          <div class="input-box" style="border-radius: 5px;"></div>
+        </div>
+        <div style="flex: 1;">
+          <div>Other names</div>
+          <div class="input-box" style="border-radius: 5px;"></div>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <div style="flex: 1;">
+          <div>Centre Number</div>
+          <div style="display:flex; gap: 5px; margin-top:5px;">
+            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div>Candidate Number</div>
+          <div style="display:flex; gap: 5px; margin-top:5px;">
+            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-header">
+      <h1>Pearson Edexcel GCSE (9–1)</h1>
+      <div style="border: 1px solid #000; padding: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold;">
+        Mock Examination <span style="color:#059669;">(TEACHER MARK SCHEME & EXEMPLARS)</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px;">
+        <div>Morning (Time: 1 hour 20 minutes)</div>
+        <div style="background: #333; color: white; padding: 5px 15px; font-weight: bold; border-radius: 5px;">Paper reference: 1HI0/11</div>
+      </div>
+      <h2>History</h2>
+      <h3>PAPER 1: Thematic study and historic environment</h3>
+      <h3>Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches</h3>
+    </div>
+
+    <div style="border: 2px solid #000; border-radius: 10px; padding: 15px; margin-top: 15px; display: flex; justify-content: space-between;">
+      <div>
+        <strong>You must have:</strong><br>
+        Sources Booklet (enclosed)
+      </div>
+      <div style="border: 1px solid #000; padding: 10px; text-align: center; width: 80px; height: 60px;">
+        Total<br>Marks
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Use <strong>black</strong> ink or ball-point pen.</li>
+        <li><strong>Fill in the boxes</strong> at the top of this page with your name, centre number and candidate number.</li>
+        <li>There are two sections in this question paper. Answer all parts of Questions 1 and 2 from Section A. From Section B, answer Questions 3 and 4 and then <strong>EITHER</strong> Question 5 <strong>OR</strong> Question 6.</li>
+        <li>Answer the questions in the spaces provided – <em>there may be more space than you need.</em></li>
+      </ul>
+
+      <h3>Information</h3>
+      <ul>
+        <li>The total mark for this paper is 52.</li>
+        <li>The marks for <strong>each</strong> question are shown in brackets – <em>use this as a guide as to how much time to spend on each question.</em></li>
+        <li>The marks available for spelling, punctuation, grammar and use of specialist terminology are clearly indicated.</li>
+      </ul>
+
+      <h3>Advice</h3>
+      <ul>
+        <li>Read each question carefully before you start to answer it.</li>
+        <li>Check your answers if you have time at the end.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page" ><div class="section-header">SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches</div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">1 (a)</div>
+    <div>Describe one feature of the mechanics or medical significance of the Thomas splint on the Western Front.</div>
+  </div><div class="marks">(2)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">1 (b)</div>
+    <div>Describe one feature of the design, structure, or defensive layout of a communication trench.</div>
+  </div><div class="marks">(2)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">2 (a)</div>
+    <div>Study Sources A and B in the Sources Booklet.
+
+How useful are Sources A and B for an enquiry into the prevention and surgical management of deep wound infections on the Western Front?
+
+Explain your answer, using Sources A and B and your knowledge of the historical context.</div>
+  </div><div class="marks">(8)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+          <div class="question-num">2 (b)</div>
+          <div>Study Source B.
+
+How could you follow up Source B to find out more about the prevention of deep wound infections on the Western Front?
+
+In your answer, you must give the question you would ask and the type of source you could use.
+
+Complete the table below.</div>
+        </div>
+        <div class="marks">(4)</div>
+        <table class="follow-up-table">
+          <tr><td>Detail in Source B that I would follow up:</td></tr>
+          <tr><td>Question I would ask:</td></tr>
+          <tr><td>What type of source I could use:</td></tr>
+          <tr><td>How this might help answer my question:</td></tr>
+        </table>
+        <div class="marks" style="font-weight:bold; margin-top:10px;">(Total for Question 2 = 12 marks)</div>
+      </div></div>
+  <div class="page" style="page-break-before: always;"><div class="section-header">SECTION B: Medicine in Britain, c1250–present</div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">3</div>
+    <div>Explain one way in which care in hospitals in the Medieval period (c1250–c1500) was different from care in hospitals in the Industrial period (c1700–c1900).</div>
+  </div><div class="marks">(4)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">4</div>
+    <div>Explain why medical treatments and daily bedside care remained largely stagnant during the Renaissance period (c1500–c1700), despite new scientific and anatomical discoveries.</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>William Harvey's circulation of the blood</li><li>The continuing influence of the Theory of the Four Humours</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(12)</div>
+        
+          <div class="model-answer">
+            <div class="model-answer-title"><i class="fa-solid fa-star"></i> Model Answer (Grade 9)</div>
+            The primary reason why Renaissance medical treatments remained stagnant was that the era’s groundbreaking anatomical and physiological discoveries had no direct, practical application for curing sick patients at the bedside. This clinical gap is perfectly illustrated by William Harvey’s discovery of the circulation of the blood, published in De Motu Cordis (1628). Harvey utilized rigorous experimentation and dissection to prove that the heart acted as a muscular pump circulating blood in a one-way system, disproving Galen’s classical theory that the liver constantly manufactured new blood from food. However, while Harvey’s work permanently corrected human physiology, it could not cure illnesses. Renaissance doctors lacked the microscopic technology to see bacteria, understand the causes of infection, or safely perform blood transfusions. Consequently, a physician in 1640 might fully accept Harvey’s circulation theory, yet possess no new therapeutic tools to treat a patient, ensuring absolute continuity in bedside treatments.
+
+Because scientific progress failed to provide new clinical cures, both professional physicians and the general public clung to the familiar Theory of the Four Humours as the only logical explanation for disease. Sickness continued to be diagnosed as an excess or deficiency of blood, phlegm, yellow bile, and black bile. Consequently, physicians continued to prescribe traditional humoural therapies like bleeding, purging, and the Theory of Opposites to restore internal fluid balance. The strength of this continuity was demonstrated in 1685 when royal doctors treated King Charles II. Despite living in the age of the Scientific Revolution, the King’s physicians subjected him to extensive bleeding, blistering, and purging—treatments directly inherited from Galen and Hippocrates. Because humoural theory remained the only dominant conceptual framework for pathology, treatments remained completely frozen.
+
+Furthermore, the stagnation of daily care was reinforced by the deep conservatism of licensing bodies and the decentralized, non-scientific nature of community healthcare, which provides a distinct third factor beyond the stimulus points. The Royal College of Physicians, which regulated medical practice in London, was highly conservative and frequently persecuted free-thinkers who attempted to abandon classical therapies. At the same time, the vast majority of the population could not afford university-trained physicians and relied on traditional community healers. Ordinary citizens bought cheap herbal remedies from local apothecaries, underwent bloodletting by barber-surgeons, or were treated at home by female family members using recipes passed down through generations. Because these community practitioners operated within an oral, traditional culture completely separated from the academic discoveries of Vesalius or Harvey, daily bedside care remained untouched by scientific progress, maintaining absolute continuity for the sick.
+          </div>
+        
+      </div><div class="question-block" style="page-break-before: always;">
+        <div style="font-weight: bold; margin-bottom: 20px;">Answer EITHER Question 5 OR Question 6.
+Spelling, punctuation, grammar and use of specialist terminology will be assessed in this question.</div>
+        <div style="font-weight: bold; margin-bottom: 20px;">EITHER</div>
+        <div class="question-text">
+    <div class="question-num">5</div>
+    <div>‘The main reason why medical care and treatment was ineffective during the Medieval period (c1250–c1500) was because medical knowledge was based on Galen’s ideas.’
+How far do you agree? Explain your answer.</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>The Theory of Opposites</li><li>Charity hospitals</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(16)</div>
+        <div style="font-weight: bold; margin: 20px 0;">OR</div>
+        <div class="question-text">
+    <div class="question-num">6</div>
+    <div>‘The creation of the National Health Service (NHS) in 1948 was the most significant development in care and treatment in the period c1900–present.’
+How far do you agree? Explain your answer.</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>High-tech surgery in hospitals</li><li>Magic bullets and chemical cures</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(16)</div>
+        <div class="marks">(Total for spelling, punctuation, grammar and use of specialist terminology = 4 marks)</div>
+        <div class="marks" style="font-weight:bold;">(Total for Question = 20 marks)</div>
+        
+        <div style="margin-top: 30px; border: 1px solid #000; padding: 15px;">
+           <strong>Indicate which question you are answering by marking a cross in the box [X].</strong><br><br>
+           Chosen question number: &nbsp;&nbsp;&nbsp; Question 5 [ ] &nbsp;&nbsp;&nbsp; Question 6 [ ]
+        </div>
+        
+          <div class="model-answer"><div class="model-answer-title"><i class="fa-solid fa-star"></i> Question 5 Model Answer (Grade 9)</div>To a moderate extent, I agree that the reliance on Claudius Galen’s unscientific ideas was a major factor in the ineffectiveness of medieval medical care and treatment. Because Galen's physiology was accepted as absolute truth, medieval treatments were logically designed to target incorrect internal causes, often resulting in harmful practices like bloodletting. However, Galen’s authority was merely a symptom of a larger, structural root cause: the Roman Catholic Church's absolute monopoly over education and university curricula, which actively prohibited scientific human dissection. Furthermore, the total absence of microscopic diagnostic technology made it physically impossible to identify the true, biological causes of disease, leaving medieval healers with no option but to rely on humoural and supernatural explanations.
+
+On the one hand, medical treatment was highly ineffective because physicians based their clinical therapies on Galen's unscientific models, particularly the Theory of Opposites. Galen had expanded Hippocrates’ Theory of the Four Humours by teaching that good health required blood, phlegm, yellow bile, and black bile to be in perfect balance. Under the Theory of Opposites, Galen taught that an excess of one humour should be treated with its opposite quality—such as treating a cold, wet winter fever (phlegm) with hot pepper or dry wine. Because Galen was prohibited from dissecting human bodies by Roman law, he relied on animal dissections (pigs and apes), leading him to make major errors, such as claiming the human lower jaw consists of two bones. However, medieval physicians accepted his texts as infallible. Consequently, when treating patients, they focused on extracting supposed humoural excesses through extensive bloodletting and purging. Rather than curing infections, draining blood from critically ill or elderly patients severely weakened their immune systems and often directly caused death, proving that Galenic theory made medieval medicine actively dangerous.
+
+On the other hand, the primary reason why these unscientific ideas remained completely unchallenged was because the medieval Catholic Church used its immense institutional power to freeze medical progress. The Church controlled all universities, libraries, and the copying of medical manuscripts by monastic scribes. Because Galen’s anatomical writings argued that the human body was so incredibly complex and purposeful that it must have been designed by a single 'Creator,' his ideas aligned perfectly with Christian creation theology. Consequently, the Church declared Galen's texts infallible and banned human dissection for scientific research, believing that the physical body had to be buried whole to allow the soul to go to heaven. In rare academic demonstrations, the body of an executed criminal was dissected by an untrained assistant while the university professor sat far away, reading Galen’s words aloud strictly to prove the book was correct. If an anatomical detail on the table contradicted the text, the professor would claim the body itself was deformed rather than questioning Galen. This religious monopoly completely blocked any progress.
+
+Furthermore, medieval medical care was heavily limited by the spiritual, non-clinical function of hospitals, combined with a total lack of diagnostic technology. Run by monks and nuns, the 1,100 charity hospitals in England by 1500 did not aim to provide medical cures. Instead, their primary focus was on spiritual care and hospitality—providing the poor, travelers, and the elderly with shelter, clean sheets, and hot meals while preparing their souls for the afterlife. Patients suffering from highly infectious diseases (such as leprosy or the plague) or terminal illnesses were strictly excluded to prevent the spread of infection. Additionally, in an era before the invention of powerful microscopes, it was physically impossible to see microscopic bacteria or prove that pathogens caused infections. This lack of technology left medieval people with no alternative but to rely on other unscientific, non-Galenic ideas, such as believing that God sent the Black Death in 1348 as a punishment for sin or that bad air (miasma) corrupted the body's humours.
+
+In conclusion, I disagree only to a moderate extent that Galen was the main cause of ineffective medical care. While it is true that humoural treatments like the Theory of Opposites were clinically harmful and biologically useless, Galen's ideas did not survive on their own merit. The true root cause of medical stagnation was the institutional authority of the Church, which used its control over libraries and education to ban human dissection and prosecute free-thinkers. Without the intellectual freedom to experiment, and lacking the microscope technology required to discover microbes, medieval medicine was structurally doomed to remain ineffective.</div>
+          
+        
+      </div></div>
+  
+  <div class="page" style="page-break-before: always;">
+    <div class="exam-header" style="text-align: center; margin-bottom: 30px;">
+      <h1>Sources Booklet</h1>
+      <div style="font-size: 16px;">Do not return this Booklet with the question paper.</div>
+    </div>
+    <div class="sources-booklet">
+      <h3>Sources for use with Section A.</h3>
+      <div class="source-block">
+          <div class="source-title">Source A: A private diary entry from an RAMC surgeon at a Casualty Clearing Station (CCS) near the Somme, August 1916.</div>
+          <div class="source-content">
+            
+            Gas gangrene is claiming too many of our men with deep shrapnel wounds. Today we fully implemented the Carrel-Dakin method of chemical wound irrigation. By inserting rubber tubes directly into the deep tissue, we can flush the wound continuously with a sterilized salt solution. It is labor-intensive and requires the solution to be mixed fresh, but the reduction in severe infections and subsequent amputations is already noticeable.
+          </div>
+        </div><div class="source-block">
+          <div class="source-title">Source B: An official British Army medical directive issued to RAMC units in late 1915.</div>
+          <div class="source-content">
+            
+            URGENT: PREVENTATIVE MEASURES FOR TETANUS.
+
+It is strictly ordered that all stretcher bearers and medical personnel at Regimental Aid Posts must ensure the immediate administration of anti-tetanus serum to any casualty presenting with shrapnel or gunshot wounds. The high concentration of manure in the French soil has led to unacceptable mortality rates from tetanus infection. Immediate injection is mandatory before evacuation down the line.
+          </div>
+        </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>

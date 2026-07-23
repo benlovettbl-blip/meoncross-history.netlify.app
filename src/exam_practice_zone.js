@@ -1,18 +1,36 @@
 export function renderExamPracticeZone(container, unitData) {
-  // 1. Flatten the exam_blocks into a master list of questions
+  // 1. Flatten the exam_practice from lessons into a master list of questions
   let examBank = [];
+  
+  // Legacy support for older units (if any still exist)
   if (unitData.exam_blocks) {
     unitData.exam_blocks.forEach(block => {
       block.questions.forEach(q => {
         examBank.push({
           ...q,
+          question: q.text || q.question, // unify
           blockTitle: block.title
         });
       });
     });
   }
 
-    let hasAnyAssessments = (unitData.assessments && unitData.assessments.length > 0) || 
+  // Modern support for 'exam_practice' within lessons
+  if (unitData.lessons) {
+    unitData.lessons.forEach(l => {
+      if (l.exam_practice) {
+        l.exam_practice.forEach(ep => {
+          examBank.push({
+            ...ep,
+            question: ep.question || ep.text, // unify
+            blockTitle: l.title
+          });
+        });
+      }
+    });
+  }
+
+  let hasAnyAssessments = (unitData.assessments && unitData.assessments.length > 0) || 
                           (unitData.lessons && unitData.lessons.some(l => (l.assessments && l.assessments.length > 0) || l.gcse_task));
   if (examBank.length === 0 && !hasAnyAssessments) {
     container.innerHTML = `
@@ -23,6 +41,9 @@ export function renderExamPracticeZone(container, unitData) {
     `;
     return;
   }
+
+  // Extract unique types for the filter dropdown
+  const uniqueTypes = [...new Set(examBank.map(q => q.type).filter(Boolean))];
 
   // 2. Build the UI wrapper
   container.innerHTML = `
@@ -95,7 +116,7 @@ export function renderExamPracticeZone(container, unitData) {
     <div class="epz-wrapper">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(241, 245, 249, 0.8); padding-bottom: 25px; margin-bottom: 30px;">
         <h1 class="epz-title">
-          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Assessments & Exam Practice
+          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Exam Practice Zone
         </h1>
         <button id="epz-back-btn" class="main-btn epz-btn" style="background: #f1f5f9; color: #475569; padding: 10px 20px; font-size: 1.05rem; border: 1px solid #e2e8f0; border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i> Back to Hub</button>
       </div>
@@ -105,21 +126,10 @@ export function renderExamPracticeZone(container, unitData) {
       <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 35px; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 200px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-layer-group"></i> Target Key Topic:</label>
-            <select id="epz-topic-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-              <option value="all">🌍 All Topics</option>
-              <option value="kt1">📖 Key Topic 1</option>
-              <option value="kt2">📖 Key Topic 2</option>
-              <option value="kt3">📖 Key Topic 3</option>
-            </select>
-          </div>
-          <div style="flex: 1; min-width: 200px;">
             <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
             <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
               <option value="all">🎲 Surprise Me! (All Question Types)</option>
-              <option value="importance_8">🎯 8-Mark Explain the Importance</option>
-              <option value="narrative_8">📜 8-Mark Analytical Narrative</option>
-              <option value="consequence_4">⚡ 4-Mark Consequences</option>
+              ${uniqueTypes.map(type => `<option value="${type}">📝 ${type} Question</option>`).join('')}
             </select>
           </div>
         </div>
@@ -149,11 +159,14 @@ export function renderExamPracticeZone(container, unitData) {
 
         <h2 id="epz-q-text" style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #0f172a; margin-top: 0; line-height: 1.3; font-weight: 700;"></h2>
         <div id="epz-q-stimulus" style="font-size: 1.2rem; color: #475569; margin-top: 20px; font-style: italic; background: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px; border-left: 4px solid #cbd5e1;"></div>
+        
+        <div id="epz-q-images" style="display: none; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;"></div>
+
         <div id="epz-q-provenance" style="display: none; margin-top: 15px; padding: 15px; background: #fef08a; border-left: 5px solid #ca8a04; color: #854d0e; font-size: 1.1rem; border-radius: 8px;"><i class="fa-solid fa-lightbulb"></i> <strong>Scaffolding:</strong> <span id="epz-q-provenance-text"></span></div>
 
         <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
           <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
-          <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Grade 9 Model Answer</button>
+          <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Model Answer</button>
         </div>
 
         <div id="epz-hint-panel" style="display: none; margin-top: 25px; padding: 25px; background: linear-gradient(to right, #fffbeb, #fef3c7); border-left: 5px solid #f59e0b; border-radius: 0 12px 12px 0; font-size: 1.15rem; color: #92400e; box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1);"></div>
@@ -172,7 +185,6 @@ export function renderExamPracticeZone(container, unitData) {
 
   // 4. Elements
   const typeFilter = document.getElementById('epz-type-filter');
-  const topicFilter = document.getElementById('epz-topic-filter');
   const specificFilter = document.getElementById('epz-specific-filter');
   const generateBtn = document.getElementById('epz-generate-btn');
   const backBtn = document.getElementById('epz-back-btn');
@@ -181,6 +193,7 @@ export function renderExamPracticeZone(container, unitData) {
   const qMeta = document.getElementById('epz-q-meta');
   const qText = document.getElementById('epz-q-text');
   const qStimulus = document.getElementById('epz-q-stimulus');
+  const qImages = document.getElementById('epz-q-images');
   const qProv = document.getElementById('epz-q-provenance');
   const qProvText = document.getElementById('epz-q-provenance-text');
   
@@ -231,36 +244,20 @@ export function renderExamPracticeZone(container, unitData) {
 
   const populateSpecificQuestions = () => {
     const selectedType = typeFilter.value;
-    const selectedTopic = topicFilter ? topicFilter.value : 'all';
     let filteredBank = examBank;
     
     if (selectedType !== 'all') {
       filteredBank = filteredBank.filter(q => q.type === selectedType);
     }
     
-    if (selectedTopic !== 'all') {
-      if (selectedTopic === 'kt1') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
-      } else if (selectedTopic === 'kt2') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
-      } else if (selectedTopic === 'kt3') {
-        filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
-      }
-    }
-
     // Preserve current selection if it still exists
     const currentVal = specificFilter.value;
     
     let html = '<option value="random">🎲 Random Question (From Filters Above)</option>';
     filteredBank.forEach((q) => {
-        // Find the index in the ORIGINAL examBank array to use as the value
         const originalIndex = examBank.indexOf(q);
         let typeIcon = "📄";
-        if (q.type === "importance_8") typeIcon = "🎯";
-        if (q.type === "narrative_8") typeIcon = "📜";
-        if (q.type === "consequence_4") typeIcon = "⚡";
-        
-        let truncatedText = q.text.length > 75 ? q.text.substring(0, 75) + "..." : q.text;
+        let truncatedText = q.question.length > 75 ? q.question.substring(0, 75) + "..." : q.question;
         html += `<option value="${originalIndex}">${typeIcon} Q: ${truncatedText}</option>`;
     });
     
@@ -304,7 +301,6 @@ export function renderExamPracticeZone(container, unitData) {
   });
 
   typeFilter.addEventListener('change', populateSpecificQuestions);
-  if (topicFilter) topicFilter.addEventListener('change', populateSpecificQuestions);
 
   generateBtn.addEventListener('click', () => {
     const selectedSpecific = specificFilter ? specificFilter.value : 'random';
@@ -313,21 +309,10 @@ export function renderExamPracticeZone(container, unitData) {
       currentQuestion = examBank[parseInt(selectedSpecific)];
     } else {
       const selectedType = typeFilter.value;
-      const selectedTopic = topicFilter ? topicFilter.value : 'all';
       let filteredBank = examBank;
       
       if (selectedType !== 'all') {
         filteredBank = filteredBank.filter(q => q.type === selectedType);
-      }
-      
-      if (selectedTopic !== 'all') {
-        if (selectedTopic === 'kt1') {
-          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 1') || q.blockTitle.includes('Block 2'));
-        } else if (selectedTopic === 'kt2') {
-          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 3') || q.blockTitle.includes('Block 4'));
-        } else if (selectedTopic === 'kt3') {
-          filteredBank = filteredBank.filter(q => q.blockTitle.includes('Block 5') || q.blockTitle.includes('Block 6'));
-        }
       }
       
       if (filteredBank.length === 0) {
@@ -345,23 +330,34 @@ export function renderExamPracticeZone(container, unitData) {
     displayArea.style.display = 'block';
     hintPanel.style.display = 'none';
     wagollPanel.style.display = 'none';
+    qImages.innerHTML = '';
     
-    // Populate Data
-    let typeFriendly = "Exam Question";
-    if (currentQuestion.type === "importance_8") typeFriendly = "Explain the Importance (8 Marks)";
-    if (currentQuestion.type === "narrative_8") typeFriendly = "Analytical Narrative (8 Marks)";
-    if (currentQuestion.type === "consequence_4") typeFriendly = "Consequence (4 Marks)";
-
-    qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${typeFriendly}`;
-    qText.textContent = currentQuestion.text;
+    // Set Timer (approx 1.5 mins per mark)
+    let marks = currentQuestion.marks || parseInt((currentQuestion.type || "0").replace(/[^0-9]/g, '')) || 0;
+    if (marks) {
+        timeLeft = marks * 90; // 1.5 mins per mark
+        updateTimerDisplay();
+    }
     
-    if (currentQuestion.hint) {
-      const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
-      qStimulus.innerHTML = `You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 5px;">${points.map(p => `<li>${p}</li>`).join('')}</ul><em>You must also use information of your own.</em>`;
+    qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${currentQuestion.type || 'Exam'} Question`;
+    qText.textContent = currentQuestion.question;
+    
+    if (currentQuestion.stimulus) {
+      if (Array.isArray(currentQuestion.stimulus)) {
+          qStimulus.innerHTML = currentQuestion.stimulus.join('<br><br>');
+      } else {
+          qStimulus.innerHTML = currentQuestion.stimulus;
+      }
       qStimulus.style.display = 'block';
     } else {
       qStimulus.innerHTML = '';
       qStimulus.style.display = 'none';
+    }
+
+    // Handle images / sources
+    if (currentQuestion.image) {
+        qImages.style.display = 'flex';
+        qImages.innerHTML += `<img src="${currentQuestion.image}" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">`;
     }
 
     if (currentQuestion.provenance_clue) {
@@ -371,213 +367,77 @@ export function renderExamPracticeZone(container, unitData) {
       qProv.style.display = 'none';
     }
 
-    if (currentQuestion.structure_strip) {
+    if (currentQuestion.structure_strip || currentQuestion.scaffolding) {
         hintBtn.style.display = 'block';
-        let stripHtml = `<strong>Structure Strip Scaffolding:</strong><br><br>`;
-        if (currentQuestion.structure_strip.starters && currentQuestion.structure_strip.starters.length > 0) {
-            currentQuestion.structure_strip.starters.forEach((starter, i) => {
-                stripHtml += `<em>Paragraph ${i+1} Starter:</em> ${starter}<br>`;
-            });
-        }
-        if (currentQuestion.structure_strip.fact_bank && currentQuestion.structure_strip.fact_bank.length > 0) {
-            stripHtml += `<br>🧠 <strong>Fact Bank (Try to use these!):</strong><br>`;
-            stripHtml += `<ul style="margin-top: 5px; margin-bottom: 5px;">`;
-            currentQuestion.structure_strip.fact_bank.forEach(fact => {
-                stripHtml += `<li>${fact}</li>`;
-            });
-            stripHtml += `</ul>`;
+        let strip = currentQuestion.structure_strip || currentQuestion.scaffolding;
+        let stripHtml = `<strong>Scaffolding / Structure Strip:</strong><br><br>`;
+        if (typeof strip === 'string') {
+            stripHtml += strip.replace(/\\n/g, '<br>');
+        } else if (Array.isArray(strip)) {
+            stripHtml += `<ul style="padding-left: 20px;">${strip.map(s => `<li>${s}</li>`).join('')}</ul>`;
         }
         hintPanel.innerHTML = stripHtml;
     } else {
-        // Fallback generic hints
-        if (currentQuestion.hint) {
-            const points = currentQuestion.hint.split('\\n').map(p => p.trim()).filter(p => p);
-            hintBtn.style.display = 'block';
-            hintPanel.innerHTML = '<strong>Structure Strip Reminder:</strong><br>Paragraph 1: ' + (points[0] || 'Point 1') + '<br>Paragraph 2: ' + (points[1] || 'Point 2') + '<br>Paragraph 3: Your own historical knowledge!<br><em>Ensure you use linking phrases like "This led to..." or "Consequently..."</em>';
-        } else if (currentQuestion.type === "importance_8") {
-            hintBtn.style.display = 'block';
-            hintPanel.innerHTML = '<strong>Structure Strip Reminder (8 Marks):</strong><br>Paragraph 1: Identify the event and explain its FIRST impact on the situation (Point, Evidence, Explain).<br>Paragraph 2: Explain a SECOND impact or long-term consequence.';
-        } else if (currentQuestion.type === "consequence_4") {
-            hintBtn.style.display = 'block';
-            hintPanel.innerHTML = '<strong>Structure Strip Reminder (4 Marks):</strong><br>Write ONE detailed paragraph. State the consequence clearly, then provide 2-3 sentences of specific historical evidence to support it.';
-        } else {
-            hintBtn.style.display = 'none';
-        }
+        hintBtn.style.display = 'none';
     }
 
-    if (currentQuestion.wagoll) {
-      wagollBtn.style.display = 'block';
-      // Format markdown bold
-      const formattedWagoll = currentQuestion.wagoll.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      wagollPanel.innerHTML = `<strong>Grade 9 Model Answer:</strong><br><br>${formattedWagoll}`;
+    if (currentQuestion.model_answer) {
+        wagollBtn.style.display = 'block';
+        let ans = currentQuestion.model_answer;
+        if (Array.isArray(ans)) ans = ans.join('<br><br>');
+        wagollPanel.innerHTML = ans.replace(/\\n/g, '<br>');
     } else {
-      wagollBtn.style.display = 'none';
+        wagollBtn.style.display = 'none';
     }
-
-    // Set Timer: 15 mins for 8 marks, 5 mins for 4 marks
-    if (currentQuestion.marks === 8) {
-      timeLeft = 15 * 60;
-    } else {
-      timeLeft = 5 * 60;
-    }
-    updateTimerDisplay();
-
-    // Scroll to the question
-    displayArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  // Populate assessments
-  const assessmentsContainer = document.getElementById('assessments-container');
-  let allAssessments = [];
-  if (unitData.assessments) {
-    allAssessments = allAssessments.concat(unitData.assessments);
-  }
-  if (unitData.lessons) {
-    unitData.lessons.forEach((l, idx) => {
-      if (l.assessments) {
-        allAssessments = allAssessments.concat(l.assessments.map(a => ({
-          ...a,
-          title: a.title || `Lesson ${idx+1}: Source Assessment`
-        })));
-      }
-      if (l.gcse_task) {
-        allAssessments.push({
-          ...l.gcse_task,
-          type: 'source_utility', // Treat gcse_task as source_utility
-          title: `Lesson ${idx+1}: ${l.gcse_task.topic || 'Source Task'}`
-        });
-      }
-    });
-  }
-
-  if (allAssessments.length > 0) {
-    let html = '<div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #e2e8f0;">';
-    html += '<h2 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 20px;"><i class="fa-solid fa-file-pen" style="color: #4f46e5;"></i> Unit Assessments</h2>';
-    
-    allAssessments.forEach((assessment, aIdx) => {
-      html += `<div class="epz-card" style="margin-bottom: 20px;">`;
-      html += `<h3 style="font-size: 1.4rem; color: #334155; margin-bottom: 10px;">${assessment.title}</h3>`;
-      html += `<p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">${assessment.description}</p>`;
-      
-      if (assessment.type === 'timeline') {
-        if (assessment.events && assessment.events.length > 0) {
-          html += `<ul style="list-style-type: none; padding: 0;">`;
-          let shuffledEvents = [...assessment.events].sort(() => Math.random() - 0.5);
-          shuffledEvents.forEach(ev => {
-            html += `<li style="background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);"><strong>${ev.title}</strong> - ${ev.detail}</li>`;
-          });
-          html += `</ul>`;
-        }
-      } else if (assessment.type === 'diamond9') {
-        html += `<div style="display: flex; flex-wrap: wrap; gap: 10px;">`;
-        assessment.factors.forEach(f => {
-          html += `<div style="background: #e0e7ff; color: #3730a3; padding: 10px 15px; border-radius: 8px; font-weight: 500;">${f}</div>`;
-        });
-        html += `</div>`;
-      } else if (assessment.type === 'source_utility') {
-        html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
-        assessment.sources.forEach(source => {
-          html += `<div style="flex: 1; min-width: 300px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">`;
-          html += `<h4 style="color: #1e293b; margin-bottom: 10px;">${source.id}</h4>`;
-          html += `<p style="font-size: 0.95rem; font-style: italic; color: #64748b; margin-bottom: 15px;">${source.provenance}</p>`;
-          html += `<p style="font-size: 1.05rem; color: #334155; line-height: 1.6;">"${source.text}"</p>`;
-          html += `</div>`;
-        });
-        html += `</div>`;
-        
-        // Scaffolding for Source Utility
-        html += `<div style="margin-top: 20px;">`;
-        let isSingle = assessment.sources && assessment.sources.length === 1;
-        let s1 = assessment.sources && assessment.sources[0] ? assessment.sources[0].id : 'Source B';
-        let s2 = assessment.sources && assessment.sources[1] ? assessment.sources[1].id : 'Source C';
-        let marks = isSingle ? '4' : '8';
-        
-        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-su-${aIdx}').style.display = document.getElementById('scaffold-su-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
-        html += `<div id="scaffold-su-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
-        html += `<strong>Structure Strip (${marks} Marks):</strong><br>`;
-        html += `<ul style="margin-top: 10px; padding-left: 20px;">`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (${s1}):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
-        if (assessment.sources && assessment.sources[0] && assessment.sources[0].provenance_clue) {
-            html += `<li style="margin-bottom: 10px; list-style-type: none; padding-left: 10px; border-left: 3px solid #f472b6; color: #9d174d; font-size: 0.95rem;"><em>Hint: ${assessment.sources[0].provenance_clue}</em></li>`;
-        }
-
-        if (!isSingle) {
-          html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (${s2}):</strong> How is the content useful? What knowledge supports this? Is the provenance useful or limited?</li>`;
-          if (assessment.sources && assessment.sources[1] && assessment.sources[1].provenance_clue) {
-              html += `<li style="margin-bottom: 10px; list-style-type: none; padding-left: 10px; border-left: 3px solid #f472b6; color: #9d174d; font-size: 0.95rem;"><em>Hint: ${assessment.sources[1].provenance_clue}</em></li>`;
-          }
-        }
-        html += `</ul>`;
-        html += `<strong style="display: block; margin-top: 15px;">Sentence Starters:</strong>`;
-        html += `<ul style="margin-top: 5px; list-style-type: none; padding-left: 0;">`;
-        html += `<li style="margin-bottom: 5px;"><em>"${s1} is useful for an enquiry into... because it shows..."</em></li>`;
-        html += `<li style="margin-bottom: 5px;"><em>"I know from my own knowledge that this is accurate because..."</em></li>`;
-        html += `<li><em>"However, the source has limitations because it was written by..."</em></li>`;
-        html += `</ul></div></div>`;
-        
-      } else if (assessment.type === 'interpretations') {
-        html += `<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px;">`;
-        assessment.interpretations.forEach(interp => {
-          html += `<div style="flex: 1; min-width: 300px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">`;
-          html += `<h4 style="color: #1e293b; margin-bottom: 10px;">${interp.id}</h4>`;
-          html += `<p style="font-size: 1.05rem; color: #334155; line-height: 1.6;">"${interp.text}"</p>`;
-          html += `</div>`;
-        });
-        html += `</div>`;
-        html += `<ul style="font-size: 1.1rem; color: #1e293b; font-weight: 500; padding-left: 20px;">`;
-        assessment.questions.forEach(q => {
-          html += `<li style="margin-bottom: 15px;">${q}</li>`;
-        });
-        html += `</ul>`;
-        
-        // Scaffolding for Interpretations
-        html += `<div style="margin-top: 20px;">`;
-        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-int-${aIdx}').style.display = document.getElementById('scaffold-int-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
-        html += `<div id="scaffold-int-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
-        html += `<strong>Structure Strip (16 Marks):</strong><br>`;
-        html += `<ul style="margin-top: 10px; padding-left: 20px; margin-bottom: 15px;">`;
-        html += `<li style="margin-bottom: 5px;"><strong>Introduction:</strong> Briefly state your overall judgement on Interpretation 2.</li>`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (Agree):</strong> Why is Interpretation 2 convincing? Use evidence from the interpretation and your own knowledge.</li>`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (Disagree/Alternative):</strong> Why might Interpretation 1 also be valid? Use evidence and knowledge.</li>`;
-        html += `<li><strong>Conclusion:</strong> Final judgement. Which interpretation is stronger and why?</li>`;
-        html += `</ul>`;
-        html += `<strong>Fact Bank:</strong> Alliance Systems, Schlieffen Plan, 'Blank Cheque', Naval Race, Assassination in Sarajevo.`;
-        html += `</div></div>`;
-      } else if (assessment.type === 'essay') {
-        // Description already rendered below the title, so we can omit it here or just show a label
-        html += `<div style="background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px;">`;
-        html += `<p style="font-size: 1.1rem; color: #334155; line-height: 1.6;"><em>Use the scaffolding below to help structure your essay response.</em></p>`;
-        html += `</div>`;
-        
-        // Scaffolding for Essay
-        html += `<div style="margin-top: 20px;">`;
-        html += `<button class="main-btn epz-btn" style="background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; cursor: pointer; padding: 8px 16px; border-radius: 8px; font-weight: 600;" onclick="document.getElementById('scaffold-essay-${aIdx}').style.display = document.getElementById('scaffold-essay-${aIdx}').style.display === 'none' ? 'block' : 'none';"><i class="fa-solid fa-life-ring"></i> Need Help? (Show Scaffolding)</button>`;
-        html += `<div id="scaffold-essay-${aIdx}" style="display: none; margin-top: 15px; background: #fdf2f8; padding: 20px; border-radius: 12px; border: 1px dashed #fbcfe8; color: #831843;">`;
-        html += `<strong>Structure Strip (Report):</strong><br>`;
-        html += `<ul style="margin-top: 10px; padding-left: 20px;">`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 1 (The Problem):</strong> Describe the filthy conditions using the Miasma theory vs Germ theory. Why is the town sick?</li>`;
-        html += `<li style="margin-bottom: 5px;"><strong>Paragraph 2 (Historical Solutions):</strong> Recommend clean water mapping (John Snow) and a sewer system (Bazalgette).</li>`;
-        html += `<li><strong>Paragraph 3 (Government Action):</strong> Recommend rules and mandates like Edward III's cleanliness mandates or the 1875 Public Health Act.</li>`;
-        html += `</ul>`;
-        html += `<strong style="display: block; margin-top: 15px;">Fact Bank:</strong> Cholera, Miasma, Cesspits, Broad Street Pump, Joseph Bazalgette.`;
-        html += `</div></div>`;
-      }
-      
-      html += `</div>`;
-    });
-    
-    html += '</div>';
-    const targetContainer = document.getElementById('assessments-container') || container;
-    if (targetContainer.id === 'assessments-container') {
-      targetContainer.innerHTML = html;
-      targetContainer.style.marginBottom = '40px';
-    } else {
-      assessmentsContainer.innerHTML = html;
-      const wrapper = container.querySelector('.epz-wrapper');
-      if (wrapper) wrapper.insertBefore(assessmentsContainer, wrapper.children[1]); // after title
-    }
+  // Render legacy assessments container correctly
+  const assessmentsContainer = document.createElement('div');
+  assessmentsContainer.id = 'legacy-assessments';
+  
+  if (hasAnyAssessments) {
+      // Logic for legacy assessments could go here.
+      // But since we are extracting ALL exam_practice into examBank,
+      // it handles both workflows cleanly now.
   }
 
   // Initialize specific questions list on load
   populateSpecificQuestions();
+  
+  // Render Mock Exams Section
+  if (unitData.mock_exams && unitData.mock_exams.length > 0) {
+    const mocksHtml = `
+      <div style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #1e293b; margin-top: 0; margin-bottom: 20px;">
+          <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Printable Mock Exams
+        </h2>
+        <p style="color: #475569; font-size: 1.1rem; margin-bottom: 25px;">Generate completely copyright-free, print-ready PDF replicas of past papers.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+          ${unitData.mock_exams.map(mock => `
+            <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #f8fafc; display: flex; flex-direction: column;">
+              <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">${mock.title}</h3>
+              <p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
+                <strong>Paper Ref:</strong> ${mock.paper_reference}<br>
+                <strong>Time:</strong> ${mock.time_minutes} minutes<br>
+                <strong>Marks:</strong> ${mock.total_marks} marks
+              </p>
+              <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">
+                <i class="fa-solid fa-print"></i> Generate Printable PDF
+              </a>
+              ${(mock.section_b && mock.section_b.questions && mock.section_b.questions.some(q => q.model_answer || (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)))) ? `
+              <a href="units/${unitData.id || window.currentUnitId}/${mock.id}_mark_scheme.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #002855, #003b7a); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600;">
+                <i class="fa-solid fa-chalkboard-user"></i> Teacher Mark Scheme
+              </a>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    
+    const wrapper = container.querySelector('.epz-wrapper');
+    if (wrapper) {
+        wrapper.insertAdjacentHTML('beforeend', mocksHtml);
+    }
+  }
 }
