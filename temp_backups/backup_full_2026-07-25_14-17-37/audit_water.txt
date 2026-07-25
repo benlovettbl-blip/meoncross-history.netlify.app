@@ -1,0 +1,131 @@
+
+========== AUDITING water_and_sanitation ==========
+
+--- Lesson 1: Lesson 1: Prehistoric and Roman Sanitati... ---
+[DO NOW] Type: questions
+  - Q: PAST TOPIC: What is a primary source?
+  - Q: PAST TOPIC: What is a secondary source?
+  - Q: PAST TOPIC: What does 'chronological order' mean?
+  - Q: PAST TOPIC: What century is the year 1854 in?
+  - Q: PAST TOPIC: What is the difference between BC and AD (or BCE and CE)?
+[PRIMARY SOURCE] assets/roman_latrine.jpg
+  - Caption: <strong>What is this source showing?</strong> This is a well-preserved example of a Roman communal l
+  - Question: Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?
+  - Task: Highlight the key technological features.
+  - Model Answer: Student responses should closely analyze the visual details of the source and connect them to the br
+[NARRATIVE BLOCK 1] Text: "It is easy to assume that people in the past did not care about cleanliness, but..."
+  - Task: Q1: Explain the significance of iron age settlements & cesspits in the development of sanitation.
+[NARRATIVE BLOCK 2] Text: "This simple way of life was completely transformed in AD 43 when the Roman Empir..."
+  - Task: Q2: Explain the significance of roman conduits & water supply in the development of sanitation.
+[NARRATIVE BLOCK 3] Text: "In Roman Britain, this water supplied grand public bathhouses, such as the famou..."
+  - Task: Q3: Explain the significance of bathhouses and latrines in the development of sanitation.
+[NARRATIVE BLOCK 4] Text: "When the Romans finally left Britain around AD 410, much of this advanced engine..."
+  - Task: Q4: Explain the significance of the roman withdrawal in the development of sanitation.
+
+--- Lesson 2: Lesson 2: Medieval Sanitation and The Ch... ---
+[DO NOW] Type: questions
+  - Q: Recall from last lesson: What was the main feature of Iron Age Settlements & Cesspits?
+  - Q: Recall from last lesson: How did Roman Conduits & Water Supply impact society?
+  - Q: Recall from last lesson: Identify one major problem with The Roman Withdrawal.
+  - Q: Recall from last lesson: Why were Iron Age cesspits safe?
+  - Q: Recall from last lesson: How did the Romans move water?
+  - Q: Recall from last lesson: What were Roman latrines?
+  - Q: Recall from last lesson: What happened to sanitation when the Romans left?
+  - Q: Recall from last lesson: Did Iron Age people pollute their water?
+  - Q: Recall from last lesson: Why was flowing water important to Romans?
+  - Q: Recall from last lesson: What is a conduit?
+[PRIMARY SOURCE] assets/canterbury_waterworks.jpg
+  - Caption: <strong>What is this source showing?</strong> This extraordinary map, drawn around 1165, shows the c
+  - Question: Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?
+  - Task: Highlight the key technological features.
+  - Model Answer: Student responses should closely analyze the visual details of the source and connect them to the br
+[NARRATIVE BLOCK 1] Text: "In rural villages, such as Wharram Percy in Yorkshire, ordinary peasants lived s..."
+  - Task: Q1: Explain the significance of peasant cesspits (wharram percy) in the development of sanitation.
+[NARRATIVE BLOCK 2] Text: "In stark contrast to the rustic simplicity of peasant villages, medieval monaste..."
+  - Task: Q2: Explain the significance of monastic luxury (canterbury priory) in the development of sanitation.
+[NARRATIVE BLOCK 3] Text: "The most severe and lethal sanitation crises of the era occurred in the rapidly ..."
+  - Task: Q3: Explain the significance of urban filtration crisis in the development of sanitation.
+[NARRATIVE BLOCK 4] Text: "To prevent these rapidly expanding towns from literally drowning in their own fi..."
+  - Task: Q4: Explain the significance of gongfermers and night-work in the development of sanitation.
+[NARRATIVE BLOCK 5] Text: "The situation in major cities became so desperate that even the monarchy was for..."
+  - Task: Q5: Explain the significance of edward iii's cleanliness mandate in the development of sanitation.
+
+--- Lesson 3: Lesson 3: Early Modern Filth and Cesspit... ---
+[DO NOW] Type: questions
+  - Q: Recall from last lesson: What was the main feature of Peasant Cesspits?
+  - Q: Recall from last lesson: How did Monastic luxury (Canterbury Priory) impact society?
+  - Q: Recall from last lesson: Identify one major problem with Gongfermers and night-work.
+  - Q: Recall from previous lessons: What was a Gongfermer?
+  - Q: Recall from previous lessons: Why did medieval monks build water systems?
+  - Q: Recall from previous lessons: What did Edward III order in 1357?
+  - Q: Recall from previous lessons: Why were medieval towns dangerous for health?
+  - Q: Recall from previous lessons: How did the Romans keep forts clean?
+  - Q: Recall from previous lessons: How did water sellers make money?
+  - Q: Recall from previous lessons: What is Miasma?
+[PRIMARY SOURCE] assets/harington_toilet.jpg
+  - Caption: <strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harin
+  - Question: Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?
+  - Task: Highlight the key technological features.
+  - Model Answer: Student responses should closely analyze the visual details of the source and connect them to the br
+[NARRATIVE BLOCK 1] Text: "The conceptual leap toward modern sanitation arrived during the Tudor period whe..."
+  - Task: Q1: Explain the significance of sir john harington's flushing toilet in the development of sanitation.
+[NARRATIVE BLOCK 2] Text: "However, monumental strides were being made in supplying the capital with fresh ..."
+  - Task: Q2: Explain the significance of samuel pepys' diary (privy leak) in the development of sanitation.
+[NARRATIVE BLOCK 3] Text: "Despite the influx of fresh water, dealing with human waste remained a horrifyin..."
+  - Task: Q3: Explain the significance of the new river (1613) in the development of sanitation.
+[NARRATIVE BLOCK 4] Text: "By the year 1700, London's population had exploded to over 600,000, making it th..."
+  - Task: Q4: Explain the significance of early modern water sellers in the development of sanitation.
+
+--- Lesson 4: Lesson 4: The Industrial Revolution and ... ---
+[DO NOW] Type: questions
+  - Q: Recall from last lesson: What was the main feature of Sir John Harington's flushing toilet?
+  - Q: Recall from last lesson: How did Samuel Pepys' diary entry impact our understanding of sanitation?
+  - Q: Recall from last lesson: Identify one major problem with Miasma theory.
+  - Q: Recall from previous lessons: Who invented the first flushing toilet in 1596?
+  - Q: Recall from previous lessons: Why didn't Harington's toilet solve the crisis?
+  - Q: Recall from previous lessons: What was the main source of water in Tudor towns?
+  - Q: Recall from previous lessons: What happens when a cesspit overflows?
+  - Q: Recall from previous lessons: Why was the Thames increasingly polluted?
+  - Q: Recall from previous lessons: How did medieval monks differ from peasants?
+  - Q: Recall from previous lessons: What was the main danger of urban crowding?
+[PRIMARY SOURCE] assets/snow_cholera_map.jpg
+  - Caption: <strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during th
+  - Question: Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?
+  - Task: Highlight the key technological features.
+  - Model Answer: Student responses should closely analyze the visual details of the source and connect them to the br
+[NARRATIVE BLOCK 1] Text: "Between 1750 and 1850, the Industrial Revolution triggered an unprecedented demo..."
+  - Task: Q1: Explain the significance of population surge and urbanization in the development of sanitation.
+[NARRATIVE BLOCK 2] Text: "To maximize their profits from this desperate influx of workers, opportunistic l..."
+  - Task: Q2: Explain the significance of back-to-backs and shared pumps in the development of sanitation.
+[NARRATIVE BLOCK 3] Text: "This catastrophic lack of sanitation created the perfect breeding ground for dis..."
+  - Task: Q3: Explain the significance of cholera epidemics (1831–1866) in the development of sanitation.
+[NARRATIVE BLOCK 4] Text: "In response to the mounting death toll and public outcry, a dedicated civil serv..."
+  - Task: Q4: Explain the significance of edwin chadwick's report (1842) in the development of sanitation.
+
+--- Lesson 5: Lesson 5: The Great Stink and Modern Sew... ---
+[DO NOW] Type: questions
+  - Q: Recall from last lesson: What was the main feature of Population Surge and Urbanization?
+  - Q: Recall from last lesson: How did Shared Pumps and Back-to-Backs impact society?
+  - Q: Recall from last lesson: Identify one major problem with Chadwick's Sanitation Report.
+  - Q: Recall from previous lessons: What disease terrorized Victorian Britain?
+  - Q: Recall from previous lessons: What was the 'laissez-faire' attitude?
+  - Q: Recall from previous lessons: What did John Snow prove in 1854?
+  - Q: Recall from previous lessons: What was the Broad Street pump?
+  - Q: Recall from previous lessons: Why did the government ignore Snow?
+  - Q: Recall from previous lessons: When was the first flushing toilet invented?
+  - Q: Recall from previous lessons: What did Roman conduits do?
+[PRIMARY SOURCE] assets/bazalgette_sewer.jpg
+  - Caption: <strong>What is this source showing?</strong> This photograph captures the colossal engineering effo
+  - Question: Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?
+  - Task: Highlight the key technological features.
+  - Model Answer: Student responses should closely analyze the visual details of the source and connect them to the br
+[NARRATIVE BLOCK 1] Text: "For decades, the medical establishment stubbornly clung to the 'Miasma Theory,' ..."
+  - Task: Q1: Explain the significance of john snow's broad street map in the development of sanitation.
+[NARRATIVE BLOCK 2] Text: "Despite John Snow's brilliant statistical proof, the government remained paralyz..."
+  - Task: Q2: Explain the significance of the great stink of london in the development of sanitation.
+[NARRATIVE BLOCK 3] Text: "Tasked with this monumental challenge, the visionary Chief Engineer of the Metro..."
+  - Task: Q3: Explain the significance of bazalgette's sewer system in the development of sanitation.
+[NARRATIVE BLOCK 4] Text: "While British engineers were building massive physical barriers against disease,..."
+  - Task: Q4: Explain the significance of pasteur's germ theory in the development of sanitation.
+[NARRATIVE BLOCK 5] Text: "Armed with the irrefutable scientific truth of Germ Theory and the undeniable su..."
+  - Task: Q5: Explain the significance of public health act of 1875 in the development of sanitation.
