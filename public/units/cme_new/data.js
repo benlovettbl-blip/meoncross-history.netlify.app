@@ -1,21 +1,60 @@
 export const unitData = {
     "title": "Conflict in the Middle East, 1945–1995",
     "workbooks": [
-        { id: 'KT1', title: 'KT1' },
-        { id: 'KT2', title: 'KT2' },
-        { id: 'KT3', title: 'KT3' }
+        {
+            "id": "KT1",
+            "title": "KT1"
+        },
+        {
+            "id": "KT2",
+            "title": "KT2"
+        },
+        {
+            "id": "KT3",
+            "title": "KT3"
+        }
     ],
     "cover_image": "/assets/cme_new_kt1_cover.png",
     "cover_caption": "Conflict in the Middle East",
     "groupings": [
-        { "prefix": "KT1", "name": "Key Topic 1: The Birth of Israel", "color": "#1e3a8a", "bg": "#eff6ff", "border": "#3b82f6", "icon": "fa-star-of-david" },
-        { "prefix": "KT2", "name": "Key Topic 2: Escalating Conflict", "color": "#7f1d1d", "bg": "#fef2f2", "border": "#ef4444", "icon": "fa-fighter-jet" },
-        { "prefix": "KT3", "name": "Key Topic 3: Attempts at Peace", "color": "#064e3b", "bg": "#ecfdf5", "border": "#10b981", "icon": "fa-dove" }
+        {
+            "prefix": "KT1",
+            "name": "Key Topic 1: The Birth of Israel",
+            "color": "#1e3a8a",
+            "bg": "#eff6ff",
+            "border": "#3b82f6",
+            "icon": "fa-star-of-david"
+        },
+        {
+            "prefix": "KT2",
+            "name": "Key Topic 2: Escalating Conflict",
+            "color": "#7f1d1d",
+            "bg": "#fef2f2",
+            "border": "#ef4444",
+            "icon": "fa-fighter-jet"
+        },
+        {
+            "prefix": "KT3",
+            "name": "Key Topic 3: Attempts at Peace",
+            "color": "#064e3b",
+            "bg": "#ecfdf5",
+            "border": "#10b981",
+            "icon": "fa-dove"
+        }
     ],
     "printable_workbooks": [
-        { "title": "Workbook KT1", "url": "workbook_KT1.html" },
-        { "title": "Workbook KT2", "url": "workbook_KT2.html" },
-        { "title": "Workbook KT3", "url": "workbook_KT3.html" }
+        {
+            "title": "Workbook KT1",
+            "url": "workbook_KT1.html"
+        },
+        {
+            "title": "Workbook KT2",
+            "url": "workbook_KT2.html"
+        },
+        {
+            "title": "Workbook KT3",
+            "url": "workbook_KT3.html"
+        }
     ],
     "lessons": [
         {
@@ -128,20 +167,12 @@ export const unitData = {
                 "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
             },
             "gcse_task": {
-                "sources": [
+                "tasks": [
                     {
-                        "type": "written",
-                        "text": "“We must use terror, assassination, intimidation, land confiscation, and the cutting of all social services to rid the Galilee of its Arab population.”",
-                        "title": "Source A: A quote often attributed to a Zionist commander, reflecting the offensive view of Plan D."
-                    },
-                    {
-                        "type": "written",
-                        "text": "“The objective of this plan is the control of the area of the Jewish State and the defense of its borders... against the enemy.”",
-                        "title": "Source B: An extract from the official text of Plan Dalet, March 1948."
+                        "text": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
+                        "model": "The road to Israeli statehood began in the immediate aftermath of the Second World War, as the horrors of the Holocaust intensified Zionist demands for a sovereign Jewish homeland. This led to a severe post-war crisis as Britain’s Labour government imposed a strict monthly cap of 1,500 Jewish immigrants. As a direct result of these restrictions, Zionist paramilitary groups united to launch the Jewish Insurgency (1945–47). The culmination of this violent campaign occurred on 22 July 1946, when the Irgun bombed the British military headquarters at the King David Hotel. This devastating attack shattered British political resolve and forced the Attlee government to hand the Palestine problem to the United Nations in February 1947.\n\nConsequently, the United Nations intervened by drafting the Partition Plan under UN Resolution 181, which was passed on 29 November 1947. The Arab League vehemently rejected the allocation of 55% of the land to the Jewish minority, which immediately triggered a violent civil war. During this chaotic transition, Jewish forces implemented Plan D to secure their borders, leading to the controversial Deir Yassin massacre in April 1948. The panic caused by this event prompted over 250,000 Arabs to flee their homes, creating a massive power vacuum. This sequence of events finally culminated on 14 May 1948, when the British Mandate officially expired, enabling David Ben-Gurion to formally declare the birth of the State of Israel."
                     }
-                ],
-                "topic": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
-                "model": "The road to Israeli statehood began in the immediate aftermath of the Second World War, as the horrors of the Holocaust intensified Zionist demands for a sovereign Jewish homeland. This led to a severe post-war crisis as Britain’s Labour government imposed a strict monthly cap of 1,500 Jewish immigrants. As a direct result of these restrictions, Zionist paramilitary groups united to launch the Jewish Insurgency (1945–47). The culmination of this violent campaign occurred on 22 July 1946, when the Irgun bombed the British military headquarters at the King David Hotel. This devastating attack shattered British political resolve and forced the Attlee government to hand the Palestine problem to the United Nations in February 1947.\n\nConsequently, the United Nations intervened by drafting the Partition Plan under UN Resolution 181, which was passed on 29 November 1947. The Arab League vehemently rejected the allocation of 55% of the land to the Jewish minority, which immediately triggered a violent civil war. During this chaotic transition, Jewish forces implemented Plan D to secure their borders, leading to the controversial Deir Yassin massacre in April 1948. The panic caused by this event prompted over 250,000 Arabs to flee their homes, creating a massive power vacuum. This sequence of events finally culminated on 14 May 1948, when the British Mandate officially expired, enabling David Ben-Gurion to formally declare the birth of the State of Israel."
+                ]
             },
             "learning_objective": "To understand how the British Mandate collapsed and the State of Israel was created.",
             "learning_objectives": {

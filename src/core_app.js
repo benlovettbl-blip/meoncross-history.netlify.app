@@ -447,6 +447,24 @@ export function initializeApp(unitData) {
   };
   document.body.appendChild(fab);
 
+  // Global Simplify logic
+  window.toggleSimplify = function(btnElement) {
+    const textContainer = btnElement.closest('.narrative-chunk').querySelector('.chunk-text');
+    if (!textContainer) return;
+    
+    if (btnElement.classList.contains('simplified-active')) {
+      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-original'));
+      btnElement.classList.remove('simplified-active');
+      btnElement.style.background = '';
+      btnElement.style.color = '#047857';
+    } else {
+      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-simplified'));
+      btnElement.classList.add('simplified-active');
+      btnElement.style.background = '#d1fae5';
+      btnElement.style.color = '#065f46';
+    }
+  };
+
   // Global Read Aloud logic (Per Paragraph)
   window.readAloudText = function(btnElement) {
     if (synth.speaking && btnElement.classList.contains('reading-active')) {
@@ -1828,7 +1846,7 @@ export function initializeApp(unitData) {
     if (lesson.quiz && lesson.quiz.length > 0) {
       html += `
         <div class="phase-card">
-          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Knowledge Check Quiz</div>
             <button class="btn btn-primary no-print" onclick="window.startQuiz('${lesson.id}')" style="font-size: 1.1rem; padding: 10px 20px; border-radius: 8px;">
               <i class="fa-solid fa-clipboard-check"></i> Start Quiz
