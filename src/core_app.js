@@ -1802,7 +1802,16 @@ export function initializeApp(unitData) {
             `;
           });
         } else if (lesson.gcse_task.sources) {
-           gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
+           let topicText = lesson.gcse_task.topic || '';
+           let isNarrative = topicText.toLowerCase().includes("write a narrative account");
+           
+           if (isNarrative) {
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${topicText}</p>`;
+               gcseHtml += `<p style="font-size: 1rem; color: #475569; margin-bottom: 10px;"><em>Read the historical sources below before writing your narrative account:</em></p>`;
+           } else {
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+           }
+           
            gcseHtml += `<div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">`;
            lesson.gcse_task.sources.forEach(srcObj => {
              gcseHtml += `<div style="flex: 1; min-width: 300px; background: white; border: 1px solid #cbd5e1; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">`;
@@ -1815,7 +1824,10 @@ export function initializeApp(unitData) {
              gcseHtml += `</div>`;
            });
            gcseHtml += `</div>`;
-           gcseHtml += `<textarea class="student-answer-input" style="min-height: 200px;" placeholder="Type your 8-mark utility evaluation here..." oninput="window.updateProgress()"></textarea>`;
+           
+           let placeholder = isNarrative ? "Write your 8-mark narrative account here..." : "Type your 8-mark utility evaluation here...";
+           gcseHtml += `<textarea class="student-answer-input" style="min-height: 200px;" placeholder="${placeholder}" oninput="window.updateProgress()"></textarea>`;
+           
            if (lesson.gcse_task.model) {
               gcseHtml += `<div style="margin-top: 15px;"><button class="btn btn-secondary" onclick="toggleElement('gcse-model-src')"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button></div>`;
               gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.gcse_task.model)}</div>`;

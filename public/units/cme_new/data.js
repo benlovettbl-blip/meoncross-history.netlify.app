@@ -167,12 +167,20 @@ export const unitData = {
                 "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
             },
             "gcse_task": {
-                "tasks": [
+                "sources": [
                     {
-                        "text": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
-                        "model": "The road to Israeli statehood began in the immediate aftermath of the Second World War, as the horrors of the Holocaust intensified Zionist demands for a sovereign Jewish homeland. This led to a severe post-war crisis as Britain’s Labour government imposed a strict monthly cap of 1,500 Jewish immigrants. As a direct result of these restrictions, Zionist paramilitary groups united to launch the Jewish Insurgency (1945–47). The culmination of this violent campaign occurred on 22 July 1946, when the Irgun bombed the British military headquarters at the King David Hotel. This devastating attack shattered British political resolve and forced the Attlee government to hand the Palestine problem to the United Nations in February 1947.\n\nConsequently, the United Nations intervened by drafting the Partition Plan under UN Resolution 181, which was passed on 29 November 1947. The Arab League vehemently rejected the allocation of 55% of the land to the Jewish minority, which immediately triggered a violent civil war. During this chaotic transition, Jewish forces implemented Plan D to secure their borders, leading to the controversial Deir Yassin massacre in April 1948. The panic caused by this event prompted over 250,000 Arabs to flee their homes, creating a massive power vacuum. This sequence of events finally culminated on 14 May 1948, when the British Mandate officially expired, enabling David Ben-Gurion to formally declare the birth of the State of Israel."
+                        "type": "written",
+                        "text": "“We must use terror, assassination, intimidation, land confiscation, and the cutting of all social services to rid the Galilee of its Arab population.”",
+                        "title": "Source A: A quote often attributed to a Zionist commander, reflecting the offensive view of Plan D."
+                    },
+                    {
+                        "type": "written",
+                        "text": "“The objective of this plan is the control of the area of the Jewish State and the defense of its borders... against the enemy.”",
+                        "title": "Source B: An extract from the official text of Plan Dalet, March 1948."
                     }
-                ]
+                ],
+                "topic": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
+                "model": "The road to Israeli statehood began in the immediate aftermath of the Second World War, as the horrors of the Holocaust intensified Zionist demands for a sovereign Jewish homeland. This led to a severe post-war crisis as Britain’s Labour government imposed a strict monthly cap of 1,500 Jewish immigrants. As a direct result of these restrictions, Zionist paramilitary groups united to launch the Jewish Insurgency (1945–47). The culmination of this violent campaign occurred on 22 July 1946, when the Irgun bombed the British military headquarters at the King David Hotel. This devastating attack shattered British political resolve and forced the Attlee government to hand the Palestine problem to the United Nations in February 1947.\n\nConsequently, the United Nations intervened by drafting the Partition Plan under UN Resolution 181, which was passed on 29 November 1947. The Arab League vehemently rejected the allocation of 55% of the land to the Jewish minority, which immediately triggered a violent civil war. During this chaotic transition, Jewish forces implemented Plan D to secure their borders, leading to the controversial Deir Yassin massacre in April 1948. The panic caused by this event prompted over 250,000 Arabs to flee their homes, creating a massive power vacuum. This sequence of events finally culminated on 14 May 1948, when the British Mandate officially expired, enabling David Ben-Gurion to formally declare the birth of the State of Israel."
             },
             "learning_objective": "To understand how the British Mandate collapsed and the State of Israel was created.",
             "learning_objectives": {
@@ -4161,5 +4169,121 @@ export const unitData = {
             "prompt": "<strong>Debate:</strong> Were the 1993 Oslo Accords a genuine step toward peace, or a fundamentally flawed agreement doomed to fail from the start?",
             "sentence_starter": "The Oslo Accords were a genuine step toward peace because for the first time..."
         }
-    ]
+    ],
+    "notebookLM": {
+        "revision_data": [
+            {
+                "title": "The British Withdrawal and the Creation of Israel (1945–1948)",
+                "bullet_points": [
+                    "The British Mandate, formalized in 1923, faced a conflicting 'dual obligation' to establish a Jewish national home while protecting Arab civil and political rights.",
+                    "Zionist insurgent groups (Haganah, Irgun, Lehi) used violence to force British withdrawal and bypass immigration limits.",
+                    "On 22 July 1946, the Irgun bombed the British administrative headquarters at the King David Hotel, causing 91 deaths and pushing Britain to refer Palestine to the UN.",
+                    "UN Resolution 181 (November 1947) proposed partitioning Palestine into a Jewish state (55% of land) and an Arab state (45% of land), with Jerusalem under international control.",
+                    "Zionist leaders accepted the UN Partition Plan as a path to statehood, while Arab leaders completely rejected it as an unjust seizure of Arab-majority land.",
+                    "The British Mandate expired on 14 May 1948; David Ben-Gurion declared the creation of the State of Israel.",
+                    "On 15 May 1948, forces from five Arab nations (Egypt, Syria, Jordan, Lebanon, Iraq) invaded, sparking the first Arab-Israeli War."
+                ]
+            },
+            {
+                "title": "The Aftermath of the 1948–49 War and State Consolidation (1949–1954)",
+                "bullet_points": [
+                    "The 1949 Armistice Agreements established the 'Green Line' borders, expanding Israel's territory to 79% of Palestine (24% more than the UN Partition Plan).",
+                    "Transjordan took control of and annexed the West Bank and East Jerusalem, while Egypt occupied the Gaza Strip.",
+                    "Over 700,000 Palestinians fled or were expelled from their homes, creating a massive refugee crisis known as al-Nakba (the Catastrophe).",
+                    "The UN established the United Nations Relief and Works Agency (UNRWA) in December 1949 to provide temporary camps and humanitarian aid to displaced Palestinians.",
+                    "In May 1948, Prime Minister David Ben-Gurion created the unified Israeli Defence Forces (IDF), merging and dissolving pre-state paramilitary groups like the Haganah and Irgun.",
+                    "The Knesset passed the Law of Return in July 1950, granting any Jewish person worldwide the right to immigrate to Israel and receive automatic citizenship.",
+                    "Israel consolidated its economy and infrastructure through massive financial aid from the United States and reparations agreements with West Germany."
+                ]
+            },
+            {
+                "title": "Suez Crisis and Rise of Nasser (1955–1963)",
+                "bullet_points": [
+                    "Colonel Gamal Abdel Nasser became President of Egypt in 1954, championing Pan-Arab nationalism and taking a hard stance against Israel.",
+                    "In February 1955, the IDF launched a massive raid on Egyptian Army Headquarters in Gaza, killing 38 Egyptian soldiers and prompting Nasser to seek Soviet arms.",
+                    "Nasser signed the Czech Arms Deal in September 1955 to buy advanced Soviet aircraft and tanks, which severely alarmed Israel, Britain, and the USA.",
+                    "In response to the US and UK withdrawing financial funding for the Aswan High Dam, Nasser nationalised the Suez Canal on 26 July 1956.",
+                    "In October 1956, Britain, France, and Israel signed the secret Protocol of Sèvres, planning a coordinated invasion of Egypt.",
+                    "On 29 October 1956, Israel invaded the Sinai Peninsula, and British and French troops subsequently landed at Port Said to seize the canal.",
+                    "Massive economic and diplomatic pressure from the USA (President Eisenhower) and the USSR forced a tripartite withdrawal, leaving Nasser as a Pan-Arab hero.",
+                    "The UN deployed its first Emergency Force (UNEF) in 1957 as a border buffer zone, halting Gaza-based Fedayeen raids and reopening the Straits of Tiran to Israeli shipping."
+                ]
+            },
+            {
+                "title": "The Outbreak of the Six Day War (1964–1967)",
+                "bullet_points": [
+                    "The Arab League held the Cairo Conference in January 1964, resulting in the creation of the Palestine Liberation Organisation (PLO) and Fatah, led by Yasser Arafat.",
+                    "Border skirmishes escalated over the Headwater Diversion Plan, as Arab states attempted to divert River Jordan tributaries to starve Israel of water.",
+                    "In November 1966, an Israeli reprisal raid on the West Bank village of Samu killed 15 Jordanian soldiers, triggering violent anti-government protests in Jordan.",
+                    "On 7 April 1967, border clashes between Israel and Syria led to an aerial dogfight in which the Israeli air force shot down six Syrian MiG-21 fighters over Damascus.",
+                    "On 13 May 1967, the USSR provided Egypt with a false intelligence report claiming Israel was massing ten brigades on the Syrian border for an imminent invasion.",
+                    "To support Syria, Nasser mobilized Egypt's army into the Sinai, demanded the withdrawal of UNEF peacekeepers, and closed the Straits of Tiran to Israeli shipping.",
+                    "On 30 May 1967, Nasser signed a mutual defense pact with Jordan, placing the Jordanian army under Egyptian command and effectively surrounding Israel."
+                ]
+            },
+            {
+                "title": "The Six Day War and its Aftermath (1967–1972)",
+                "bullet_points": [
+                    "Believing an invasion was imminent, Israel launched a pre-emptive strike on 5 June 1967 (Operation Focus), destroying 90% of the Egyptian air force on the runways.",
+                    "Within six days, the IDF won a decisive victory, capturing the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.",
+                    "The war displaced over 300,000 more Palestinians and brought over a million Palestinians in the West Bank and Gaza under Israeli military occupation.",
+                    "In November 1967, the UN Security Council passed Resolution 242, establishing the 'land for peace' formula, which was rejected or stalled by translation discrepancies.",
+                    "In August 1967, Arab League leaders met at the Khartoum Summit and issued the 'Three Nos': no peace with Israel, no recognition of Israel, and no negotiations with Israel.",
+                    "Palestinian groups shifted to international terrorism; the PFLP executed the Dawson's Field plane hijackings in September 1970, blowing up three commercial aircraft.",
+                    "The Dawson's Field crisis prompted King Hussein to launch the bloody 'Black September' civil war, which crushed and expelled PLO militias from Jordan to Lebanon.",
+                    "In September 1972, the Black September splinter group murdered 11 Israeli athletes at the Munich Olympics, provoking Israel's global 'Operation Wrath of God' retaliations."
+                ]
+            },
+            {
+                "title": "The Yom Kippur War and the Oil Weapon (1973)",
+                "bullet_points": [
+                    "Anwar Sadat succeeded Nasser as President of Egypt in 1970, aiming to break the diplomatic stalemate ('no peace, no war') and reclaim the lost Sinai Peninsula.",
+                    "On 6 October 1973, on the Jewish holy day of Yom Kippur, Egypt and Syria launched a coordinated surprise attack, overrunning the Bar Lev Line and Golan Heights.",
+                    "Israel suffered severe initial casualties and lost substantial armor and aircraft before mobilizing its military reserves.",
+                    "Superpowers intervened heavily: the USA provided Israel with a vital military airlift (Operation Nickel Grass), while the USSR supplied Egypt and Syria with advanced weaponry.",
+                    "The IDF successfully counter-attacked, crossing the Suez Canal to encircle Egypt's Third Army, which prompted Soviet threats of direct intervention.",
+                    "Arab members of OPEC deployed the 'oil weapon,' placing a total embargo on Western nations supporting Israel, which quadrupled crude prices and triggered a global energy crisis.",
+                    "The USA and USSR co-sponsored UN Resolution 338, enforcing a ceasefire on 25 October 1973, leaving both sides in a costly stalemate."
+                ]
+            },
+            {
+                "title": "Diplomatic Negotiations and Peace with Egypt (1973–1979)",
+                "bullet_points": [
+                    "The OPEC oil crisis forced the United States to actively intervene as a mediator to prevent future oil embargos and limit Soviet regional influence.",
+                    "US Secretary of State Henry Kissinger initiated 'shuttle diplomacy' (1974–75), brokering disengagement agreements that pushed back Israeli troops and reopened the Suez Canal in June 1975.",
+                    "In November 1977, Anwar Sadat made a historic visit to Jerusalem to address the Israeli Knesset, breaking the Arab taboo by offering recognition in exchange for Sinai.",
+                    "In September 1978, US President Jimmy Carter hosted Sadat and Israeli Prime Minister Menachem Begin for thirteen days of secret negotiations at Camp David.",
+                    "The Camp David Accords established a framework for an Egyptian-Israeli peace treaty and vague guidelines for Palestinian self-rule in the occupied territories.",
+                    "On 26 March 1979, Sadat and Begin signed the formal Treaty of Washington, making Egypt the first Arab nation to officially recognize the State of Israel.",
+                    "As a consequence of the treaty, Egypt regained the Sinai Peninsula, but was expelled from the Arab League, and Sadat was assassinated by Islamic extremists in 1981."
+                ]
+            },
+            {
+                "title": "The PLO, Lebanon, and the First Intifada (1970–1993)",
+                "bullet_points": [
+                    "Following their expulsion from Jordan in 1970, the PLO established its central headquarters and armed bases in Beirut and southern Lebanon ('Fatahland').",
+                    "In March 1978, Fatah militants launched the Coastal Road Massacre, killing 37 Israeli civilians and prompting Israel's limited invasion of southern Lebanon (Operation Litani).",
+                    "On 6 June 1982, following the attempted assassination of Ambassador Shlomo Argov, Israel launched 'Operation Peace for Galilee,' a full-scale invasion of Lebanon.",
+                    "Israeli forces besieged West Beirut for two months, eventually forcing Yasser Arafat and 14,000 PLO fighters to evacuate by sea to Tunis, Tunisia.",
+                    "In September 1982, Lebanese Christian Phalangist militias entered the Sabra and Shatila refugee camps and massacred hundreds of unarmed Palestinian civilians.",
+                    "The First Palestinian Intifada erupted spontaneously in the Gaza Strip on 8 December 1987, characterized by mass strikes, boycotts, and youth throwing stones at the IDF.",
+                    "Defense Minister Yitzhak Rabin ordered a harsh military 'Iron Fist' policy to crush the uprising, which drew widespread international condemnation.",
+                    "The Intifada saw the rise of the radical Islamic group Hamas, which challenged the secular leadership of the PLO."
+                ]
+            },
+            {
+                "title": "The Oslo Accords and the Peace Process (1988–1995)",
+                "bullet_points": [
+                    "In December 1988, Yasser Arafat addressed the UN in Geneva, officially renouncing terrorism, accepting UN Resolutions 242 and 338, and recognizing Israel.",
+                    "The collapse of the Soviet Union in December 1991 deprived the PLO of its primary financial and military backing, severely weakening its negotiating position.",
+                    "During the 1991 Gulf War, Arafat publicly supported Saddam Hussein's invasion of Kuwait, resulting in the PLO's diplomatic isolation and loss of funding from Gulf states.",
+                    "The election of Yitzhak Rabin's moderate Labor government in 1992 opened a window of opportunity, leading to secret back-channel negotiations in Oslo, Norway.",
+                    "The Oslo I Accords (September 1993) established formal mutual recognition between Israel and the PLO, and created the Palestinian National Authority (PNA).",
+                    "Under Oslo I, the IDF began a phased military withdrawal from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to the PNA under Arafat.",
+                    "The Oslo II Accord (September 1995) divided the West Bank into Areas A (PNA control), B (PNA civil, joint security), and C (complete Israeli civil and military control).",
+                    "The peace process faced violent opposition from Hamas suicide bombings and right-wing Israeli settlers, culminating in the assassination of Rabin by Yigal Amir on 4 November 1995."
+                ]
+            }
+        ]
+    }
 };
