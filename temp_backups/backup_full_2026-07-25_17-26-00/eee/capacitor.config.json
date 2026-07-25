@@ -1,0 +1,11 @@
+{
+  "appId": "com.edexcel.elizabethanrevision",
+  "appName": "Elizabethan Revision",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "iosScheme": "https",
+    "androidScheme": "https",
+    "hostname": "localhost"
+  }
+}

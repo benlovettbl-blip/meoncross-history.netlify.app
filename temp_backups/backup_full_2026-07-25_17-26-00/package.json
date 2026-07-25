@@ -1,0 +1,33 @@
+{
+  "name": "history-mega-app",
+  "version": "1.0.0",
+  "description": "Mr Lovett's History Hub Mega App (KS3 & GCSE)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "sync": "node build_database.cjs && node extract_units.js && node scripts/generate_all_quiz_packs.js",
+    "create-unit": "node scripts/create_unit.js",
+    "test:content": "node scripts/test_content.mjs"
+  },
+  "keywords": [
+    "education",
+    "history",
+    "sso"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/msal-browser": "^3.28.1",
+    "acorn": "^8.17.0",
+    "astring": "^1.9.0",
+    "jsdom": "^29.1.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.3.0",
+    "vite": "^8.0.14"
+  }
+}

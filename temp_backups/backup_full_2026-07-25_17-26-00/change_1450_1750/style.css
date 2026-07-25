@@ -1,0 +1,196 @@
+/* Base Web App Layout */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  font-family: 'Outfit', sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #1a237e;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+  width: 250px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+}
+
+.lesson-link {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: #f1f3f5;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.lesson-link:hover, .lesson-link.active {
+  background: #e8eaf6;
+  color: #1a237e;
+  transform: translateX(4px);
+}
+
+.content-area {
+  flex: 1;
+  padding: 2rem 4rem;
+  background: white;
+}
+
+/* Narrative Content */
+.lesson-content h2 {
+  font-family: 'Playfair Display', serif;
+  color: #1a237e;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e8eaf6;
+  padding-bottom: 1rem;
+}
+
+.narrative-block {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.source-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.source-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.source-caption {
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Tasks */
+.tasks-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+}
+
+.task-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  font-weight: 500;
+  color: #1a237e;
+  border-left: 4px solid #1a237e;
+}
+
+.extended-reading {
+  background: #fff8e1;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+  border-left: 4px solid #ffb300;
+}
+
+.extended-reading h3 {
+  color: #f57f17;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================
+   SEN / Dyslexia Mode 
+   ========================================= */
+body.sen-mode {
+  background-color: #fdf5e6; /* Soft cream, reduces glare */
+  font-family: 'Comic Sans MS', 'OpenDyslexic', sans-serif !important;
+}
+
+body.sen-mode .content-area,
+body.sen-mode .sidebar,
+body.sen-mode .source-card,
+body.sen-mode .task-item {
+  background-color: #fdf5e6;
+  border-color: #e6d5b8;
+}
+
+body.sen-mode .narrative-block {
+  font-size: 1.3rem; /* Larger font */
+  line-height: 2.2; /* Extra line spacing */
+  letter-spacing: 0.5px;
+  color: #111; /* Higher contrast */
+}
+
+body.sen-mode h2, 
+body.sen-mode h3 {
+  font-family: 'Comic Sans MS', 'OpenDyslexic', sans-serif !important;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.3);
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "lessonId": "lesson_1_2",
+    "index": 1,
+    "title": "The Hotel-Dieu Hospital"
+  },
+  {
+    "lessonId": "lesson_1_3",
+    "index": 0,
+    "title": "The Tournai Mass Burial (1349)"
+  },
+  {
+    "lessonId": "lesson_1_3",
+    "index": 1,
+    "title": "Flagellants Whipping Themselves"
+  },
+  {
+    "lessonId": "lesson_2_1",
+    "index": 0,
+    "title": "Vesalius' 'Muscle Men'"
+  },
+  {
+    "lessonId": "lesson_3_1",
+    "index": 1,
+    "title": "Robert Koch at the Microscope"
+  },
+  {
+    "lessonId": "lesson_4_2",
+    "index": 0,
+    "title": "Aneurin Bevan and the NHS"
+  },
+  {
+    "lessonId": "lesson_4_2",
+    "index": 1,
+    "title": "Early Radiotherapy"
+  },
+  {
+    "lessonId": "lesson_4_3",
+    "index": 0,
+    "title": "Fleming's Original Petri Dish"
+  },
+  {
+    "lessonId": "lesson_4_3",
+    "index": 1,
+    "title": "WWII Penicillin Propaganda"
+  },
+  {
+    "lessonId": "lesson_4_4",
+    "index": 0,
+    "title": "Vintage Cigarette Advertisement"
+  },
+  {
+    "lessonId": "lesson_4_4",
+    "index": 1,
+    "title": "Modern Anti-Smoking Warning"
+  },
+  {
+    "lessonId": "lesson_5_2",
+    "index": 1,
+    "title": "Early Gas Masks"
+  },
+  {
+    "lessonId": "lesson_5_3",
+    "index": 0,
+    "title": "Shrapnel X-Ray"
+  },
+  {
+    "lessonId": "lesson_5_4",
+    "index": 0,
+    "title": "Stretcher Bearers in Mud"
+  },
+  {
+    "lessonId": "lesson_5_4",
+    "index": 1,
+    "title": "Horse-Drawn Ambulance"
+  },
+  {
+    "lessonId": "lesson_5_5",
+    "index": 0,
+    "title": "The Thomas Splint"
+  },
+  {
+    "lessonId": "lesson_5_5",
+    "index": 1,
+    "title": "Harold Gillies' Plastic Surgery"
+  }
+]
