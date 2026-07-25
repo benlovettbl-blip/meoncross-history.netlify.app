@@ -751,7 +751,7 @@ export async function renderLessonsView() {
   container.innerHTML = `
     <div class="card" style="animation: fadeInUp 0.3s ease-out;">
       <h3 style="margin-bottom: 8px;"><i class="fa-solid fa-book-open text-primary"></i> ${data.title} - Study Guide</h3>
-      <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and examiner tips for each lesson before testing yourself.</p>
+      <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
       
       <div class="modules-grid">
         ${data.subtopics.map((sub, idx) => {

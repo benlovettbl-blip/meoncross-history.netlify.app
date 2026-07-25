@@ -51,7 +51,7 @@
     "name": "John Snow",
     "role": "Surgeon and Epidemiologist",
     "bio": "A pioneering British surgeon who proved that cholera was a waterborne disease. During the 1854 Soho outbreak, he mapped out the deaths and traced the source to a contaminated public water pump on Broad Street, famously removing its handle to stop the epidemic.",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/John_Snow.jpg/500px-John_Snow.jpg"
+    "image_url": "assets/john_snow.jpg"
   },
   {
     "name": "Florence Nightingale",

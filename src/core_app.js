@@ -1,4 +1,3 @@
-import { renderRevisionZone } from './revision_zone.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
@@ -16,6 +15,21 @@ export function getAssetUrl(path) {
 
 export function initializeApp(unitData) {
   window.currentUnitData = unitData;
+  
+  // Listen for custom events from dynamically loaded modules (like the Thematic Matrix)
+  window.addEventListener('renderLessonEvent', (e) => {
+    const lesson = e.detail;
+    renderLesson(lesson);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Try to update sidebar active state
+    document.querySelectorAll('.lesson-link').forEach(l => {
+      l.classList.remove('active');
+      if (l.textContent.includes(lesson.title)) {
+        l.classList.add('active');
+      }
+    });
+  });
+
   const init = () => {
   const sidebar = document.getElementById('sidebar');
   const contentArea = document.getElementById('content-area');
@@ -601,13 +615,13 @@ export function initializeApp(unitData) {
     let lessonsHTML = `
       <style>
         .premium-banner {
-          position: relative; overflow: hidden; border-radius: 16px; padding: 50px 40px; margin-top: 50px; margin-bottom: 30px; 
-          box-shadow: 0 15px 35px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: flex-start; gap: 12px; 
+          position: relative; overflow: hidden; border-radius: 12px; padding: 25px 30px; margin-top: 30px; margin-bottom: 20px; 
+          box-shadow: 0 10px 25px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; 
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: default;
         }
         .premium-banner:hover {
-          transform: scale(1.02) translateY(-5px);
-          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+          transform: scale(1.01) translateY(-3px);
+          box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
         }
         .premium-banner-bg {
           position: absolute; top: -5%; left: -5%; width: 110%; height: 110%; 
@@ -615,7 +629,7 @@ export function initializeApp(unitData) {
           z-index: 1; filter: brightness(0.9); transition: transform 0.8s ease;
         }
         .premium-banner:hover .premium-banner-bg {
-          transform: scale(1.05);
+          transform: scale(1.03);
         }
         .premium-banner-overlay-1 {
           position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -630,14 +644,14 @@ export function initializeApp(unitData) {
           filter: blur(40px); z-index: 3; opacity: 0.6; border-radius: 50%;
         }
         .premium-banner-content {
-          position: relative; z-index: 4; padding-left: 24px;
+          position: relative; z-index: 4; padding-left: 20px;
         }
         .premium-banner-title {
-          margin: 0; color: #ffffff; font-size: 2.8rem; font-weight: 700; 
+          margin: 0; color: #ffffff; font-size: 2rem; font-weight: 700; 
           font-family: 'Playfair Display', serif; text-shadow: 0px 4px 12px rgba(0,0,0,0.8); letter-spacing: -0.5px;
         }
         .premium-banner-enquiry {
-          margin: 12px 0 0 0; color: #f8fafc; font-size: 1.25rem; font-style: italic; 
+          margin: 8px 0 0 0; color: #f8fafc; font-size: 1.05rem; font-style: italic; 
           max-width: 800px; font-weight: 300; text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
         }
       </style>
@@ -664,20 +678,29 @@ export function initializeApp(unitData) {
             </div>
           </div>
         `;
-        lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; text-align: left;">';
+        lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
         
         let foundAny = false;
         unitData.lessons.forEach((lesson, index) => {
           if (lesson.id && lesson.id.startsWith(p.prefix)) {
             foundAny = true;
             lessonsHTML += `
-              <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-                <h3 style="margin-top: 0; color: #1a237e; font-size: 1.15rem; margin-bottom: 10px; font-family: 'Outfit', sans-serif;">Lesson ${index + 1}</h3>
-                <p style="margin: 0; color: #475569; font-weight: 500; font-size: 1rem; line-height: 1.4;">${lesson.title.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}</p>
+              <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+                <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">Lesson ${index + 1}</h3>
+                <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}</p>
               </div>
             `;
           }
         });
+        
+        // ADD WORKBOOK FOR THIS PERIOD
+        lessonsHTML += `
+          <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${p.border}; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/${window.currentUnitId}/workbook_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+             <i class="fa-solid fa-book-open" style="font-size: 1.2rem; color: ${p.border}; margin-bottom: 6px;"></i>
+             <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">Workbook: ${p.title}</h3>
+          </div>
+        `;
+
         if (!foundAny) {
            lessonsHTML += `<p style="color: #64748b; font-style: italic; margin-left: 10px;">No lessons found for this period.</p>`;
         }
@@ -696,80 +719,7 @@ export function initializeApp(unitData) {
       lessonsHTML += '</div>';
     }
 
-    let resourcesHTML = '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Resources</h2><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; text-align: left;">';
-    
-    // Helper for cards
-    const resourceCard = (id, icon, title, color) => `
-      <div class="homepage-resource-card" data-resource-id="${id}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid ${icon}" style="font-size: 1.5rem; color: ${color};"></i>
-        <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">${title}</h4>
-      </div>
-    `;
 
-    if (unitData.biographies) {
-      resourcesHTML += resourceCard('key-individuals', 'fa-users', 'Key Individuals', '#8b5cf6');
-    }
-    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
-      resourcesHTML += resourceCard('guided-reading', 'fa-book-open', 'Guided Reading', '#10b981');
-    }
-    resourcesHTML += resourceCard('revision-zone', 'fa-gamepad', 'Revision Zone', '#f59e0b');
-    resourcesHTML += resourceCard('exam-practice', 'fa-pen-to-square', 'Assessments', '#3b82f6');
-    
-    // Links (open in new tab)
-    resourcesHTML += resourceCard('quiz-zone', 'fa-file-pdf', 'Knowledge Quiz Zone', '#ef4444');
-
-    const cheatHref = window.currentUnitId ? `/${window.currentUnitId}/cheat_sheet.html` : 'cheat_sheet.html';
-    resourcesHTML += `
-      <a href="${cheatHref}" target="_blank" style="text-decoration: none;">
-        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-file-invoice" style="font-size: 1.5rem; color: #1e3a8a;"></i>
-          <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">Revision Cheat Sheet</h4>
-        </div>
-      </a>
-    `;
-
-    if (window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'cme_new') {
-      const wbHref = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
-      resourcesHTML += `
-        <a href="${wbHref}" target="_blank" style="text-decoration: none;">
-          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-book" style="font-size: 1.5rem; color: #64748b;"></i>
-            <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">Pupil Workbook</h4>
-          </div>
-        </a>
-      `;
-    } else if (window.currentUnitId === 'edexcel_medicine') {
-      const pWorkbooks = [
-        { id: 'medieval', title: 'Medieval' },
-        { id: 'renaissance', title: 'Renaissance' },
-        { id: '18th_19th', title: '18th & 19th C' },
-        { id: 'modern', title: 'Modern' },
-        { id: 'western_front', title: 'Western Front' }
-      ];
-      pWorkbooks.forEach(p => {
-        resourcesHTML += `
-          <a href="/${window.currentUnitId}/workbook_${p.id}.html" target="_blank" style="text-decoration: none;">
-            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
-              <i class="fa-solid fa-book-open" style="font-size: 1.5rem; color: #0284c7;"></i>
-              <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">${p.title} Workbook</h4>
-            </div>
-          </a>
-        `;
-      });
-    } else if (window.currentUnitId === 'cme_new') {
-      for (let ktNum = 1; ktNum <= 3; ktNum++) {
-        resourcesHTML += `
-          <a href="/${window.currentUnitId}/workbook_KT${ktNum}.html" target="_blank" style="text-decoration: none;">
-            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 10px;">
-              <i class="fa-solid fa-book-open" style="font-size: 1.5rem; color: #0284c7;"></i>
-              <h4 style="margin: 0; color: #1e293b; font-size: 1rem;">KT${ktNum} Workbook</h4>
-            </div>
-          </a>
-        `;
-      }
-    }
-    
-    resourcesHTML += '</div>';
 
     contentArea.innerHTML = `
       <div style="text-align: center; padding-bottom: 50px;">
@@ -786,18 +736,18 @@ export function initializeApp(unitData) {
               </div>
             `).join('')}
           </div>
-        ` : `
+        ` : (unitData.cover_image ? `
           <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: inline-block; margin-bottom: 5px;">
-            <img src="${getAssetUrl(unitData.cover_image || 'assets/cover.jpg')}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 500px;">
+            <img src="${getAssetUrl(unitData.cover_image)}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 500px;">
           </div>
-        `}
+        ` : '')}
         
         ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
         
         <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Lessons</h2>
         ${lessonsHTML}
         
-        ${resourcesHTML}
+
       </div>
     `;
 
@@ -815,51 +765,8 @@ export function initializeApp(unitData) {
       card.addEventListener('click', () => {
         const idx = parseInt(card.dataset.index);
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-        // sidebar links: index 0 is Homepage, index 1 is Lesson 1
-        const sidebarLinks = document.querySelectorAll('.lesson-link');
-        if(sidebarLinks[idx + 1]) sidebarLinks[idx + 1].classList.add('active');
         renderLesson(unitData.lessons[idx]);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Add click listeners to resource cards
-    const resourceCards = contentArea.querySelectorAll('.homepage-resource-card');
-    resourceCards.forEach(card => {
-      card.addEventListener('mouseover', () => {
-        card.style.transform = 'translateY(-3px)';
-        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
-      });
-      card.addEventListener('mouseout', () => {
-        card.style.transform = 'none';
-        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
-      });
-      card.addEventListener('click', () => {
-        const id = card.dataset.resourceId;
-        const findLink = (text) => Array.from(document.querySelectorAll('.lesson-link')).find(l => l.innerHTML.includes(text));
-        const resourceMap = {
-          'key-individuals': () => {
-            const kiLink = findLink("Key Individuals") || findLink("People");
-            if (kiLink) kiLink.click();
-          },
-          'guided-reading': () => {
-            const grLink = findLink("Guided Reading");
-            if (grLink) grLink.click();
-          },
-          'revision-zone': () => {
-            const revLink = findLink("Revision Zone");
-            if (revLink) revLink.click();
-          },
-          'exam-practice': () => {
-            const exLink = findLink("Assessments");
-            if (exLink) exLink.click();
-          },
-          'quiz-zone': () => {
-            const qzLink = document.getElementById('quiz-zone-link');
-            if (qzLink) qzLink.click();
-          }
-        };
-        if (resourceMap[id]) resourceMap[id]();
       });
     });
   }
@@ -872,10 +779,10 @@ export function initializeApp(unitData) {
     let contentHtml = '';
     if (unitData.title && unitData.title.toLowerCase().includes('medicine')) {
       contentHtml = `
-        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);">
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
           <div>
-            <h1 class="welcome-title">Exam Masterclass Guide</h1>
-            <p class="welcome-subtitle">The Pearson Edexcel GCSE (9-1) History Paper 1</p>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #e2e8f0; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 1</p>
           </div>
         </div>
         <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
@@ -885,10 +792,10 @@ export function initializeApp(unitData) {
       `;
     } else {
       contentHtml = `
-        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);">
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
           <div>
-            <h1 class="welcome-title">Exam Masterclass Guide</h1>
-            <p class="welcome-subtitle">Revision strategies for this unit</p>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #e2e8f0; font-size: 1.15rem; margin: 0;">Revision strategies for this unit</p>
           </div>
         </div>
         <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
@@ -919,6 +826,25 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(homeLink);
 
+    // Exam Specification Tab
+    if (unitData.specification_file) {
+      const specLink = document.createElement('a');
+      specLink.className = 'lesson-link';
+      specLink.innerHTML = '<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Exam Specification';
+      specLink.href = '#';
+      specLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        specLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        import('/src/spec_viewer.js').then(module => {
+          module.initSpecViewer(contentArea, unitData.specification_file);
+        });
+      };
+      navContainer.appendChild(specLink);
+    }
+
     // Exam Masterclass Guide Tab
     const guideLink = document.createElement('a');
     guideLink.className = 'lesson-link';
@@ -932,19 +858,30 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(guideLink);
 
-    unitData.lessons.forEach((lesson, index) => {
-      const link = document.createElement('a');
-      link.className = 'lesson-link';
-      link.textContent = `L${index + 1}: ${lesson.title}`;
-      link.addEventListener('click', (e) => {
+    // Thematic Matrix Tab (Change & Continuity) - Only for Medicine
+    if (window.currentUnitId === 'edexcel_medicine') {
+      const thematicLink = document.createElement('a');
+      thematicLink.className = 'lesson-link';
+      thematicLink.innerHTML = '<i class="fa-solid fa-timeline" style="margin-right: 8px;"></i> Thematic Matrix (Change & Continuity)';
+      thematicLink.style.background = 'rgba(56, 189, 248, 0.1)';
+      thematicLink.style.borderLeft = '3px solid #38bdf8';
+      thematicLink.addEventListener('click', async (e) => {
         e.preventDefault();
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        renderLesson(lesson);
+        thematicLink.classList.add('active');
+        
+        const { renderThematicMatrix } = await import('./thematic_matrix.js');
+        const contentArea = document.getElementById('content-area');
+        renderThematicMatrix(contentArea, unitData);
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-      navContainer.appendChild(link);
-    });
+      navContainer.appendChild(thematicLink);
+    }
+
+
+
+
 
     // Add Guided Reading Tab if available
     if (unitData.guided_reading && unitData.guided_reading.length > 0) {
@@ -976,23 +913,6 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    const revisionLink = document.createElement('a');
-    revisionLink.className = 'lesson-link';
-    revisionLink.innerHTML = '🎮 Revision Zone';
-    revisionLink.style.marginTop = '15px';
-    revisionLink.style.borderTop = '2px solid rgba(255,255,255,0.1)';
-    revisionLink.style.color = '#fde047';
-    revisionLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-      revisionLink.classList.add('active');
-      const contentArea = document.getElementById('content-area');
-      contentArea.innerHTML = ''; // clear
-      renderRevisionZone(contentArea, unitData);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    navContainer.appendChild(revisionLink);
-
     const examPracticeLink = document.createElement('a');
     examPracticeLink.className = 'lesson-link';
     examPracticeLink.innerHTML = '✍️ Assessments & Exam Practice';
@@ -1012,7 +932,7 @@ export function initializeApp(unitData) {
     const quizPackLink = document.createElement('a');
     quizPackLink.id = 'quiz-zone-link';
     quizPackLink.className = 'lesson-link';
-    quizPackLink.innerHTML = '📝 Knowledge Quiz Zone';
+    quizPackLink.innerHTML = '<i class="fa-solid fa-layer-group"></i> Interactive Revision Hub';
     quizPackLink.style.marginTop = '15px';
     quizPackLink.style.color = '#34d399'; // Emerald-400
     quizPackLink.style.cursor = 'pointer';
@@ -1026,8 +946,7 @@ export function initializeApp(unitData) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     navContainer.appendChild(quizPackLink);
-    const isCmeNew = window.currentUnitId === 'cme_new';
-    const isMedicine = window.currentUnitId === 'edexcel_medicine';
+
     
     const cheatSheetLink = document.createElement('a');
     cheatSheetLink.className = 'lesson-link';
@@ -1040,73 +959,18 @@ export function initializeApp(unitData) {
     cheatSheetLink.style.color = '#1e3a8a';
     navContainer.appendChild(cheatSheetLink);
 
-    if (isCmeNew) {
-      const wbHeader = document.createElement('div');
-      wbHeader.innerHTML = '<i class="fa-solid fa-book" style="margin-right: 5px;"></i> <strong>Printable Workbooks</strong>';
-      wbHeader.style.marginTop = '20px';
-      wbHeader.style.color = '#334155';
-      wbHeader.style.fontSize = '0.9rem';
-      wbHeader.style.paddingLeft = '5px';
-      wbHeader.style.textTransform = 'uppercase';
-      wbHeader.style.letterSpacing = '0.5px';
-      navContainer.appendChild(wbHeader);
 
-      for (let ktNum = 1; ktNum <= 3; ktNum++) {
-        const ktLink = document.createElement('a');
-        ktLink.className = 'lesson-link';
-        ktLink.innerHTML = `<i class="fa-solid fa-book-open"></i> Workbook KT${ktNum}`;
-        ktLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook_KT${ktNum}.html` : `workbook_KT${ktNum}.html`;
-        ktLink.target = '_blank';
-        ktLink.style.marginTop = '8px';
-        ktLink.style.border = '2px dashed #cbd5e1';
-        navContainer.appendChild(ktLink);
-      }
-    } else if (isMedicine) {
-      const wbHeader = document.createElement('div');
-      wbHeader.innerHTML = '<i class="fa-solid fa-book" style="margin-right: 5px;"></i> <strong>Printable Workbooks</strong>';
-      wbHeader.style.marginTop = '20px';
-      wbHeader.style.color = '#334155';
-      wbHeader.style.fontSize = '0.9rem';
-      wbHeader.style.paddingLeft = '5px';
-      wbHeader.style.textTransform = 'uppercase';
-      wbHeader.style.letterSpacing = '0.5px';
-      navContainer.appendChild(wbHeader);
-
-      const periods = [
-        { id: 'medieval', title: 'Medieval (c1250-c1500)' },
-        { id: 'renaissance', title: 'Renaissance (c1500-c1700)' },
-        { id: '18th_19th', title: '18th & 19th C (c1700-c1900)' },
-        { id: 'modern', title: 'Modern (c1900-present)' },
-        { id: 'western_front', title: 'Western Front' }
-      ];
-
-      periods.forEach(p => {
-        const pLink = document.createElement('a');
-        pLink.className = 'lesson-link';
-        pLink.innerHTML = `<i class="fa-solid fa-book-open"></i> ${p.title}`;
-        pLink.href = `/${window.currentUnitId}/workbook_${p.id}.html`;
-        pLink.target = '_blank';
-        pLink.style.marginTop = '8px';
-        pLink.style.border = '2px dashed #cbd5e1';
-        pLink.style.fontSize = '0.85rem';
-        navContainer.appendChild(pLink);
-      });
-    } else {
-      const workbookLink = document.createElement('a');
-      workbookLink.className = 'lesson-link';
-      workbookLink.textContent = 'Pupil Workbook';
-      workbookLink.href = window.currentUnitId ? `/${window.currentUnitId}/workbook.html` : 'workbook.html';
-      workbookLink.target = '_blank';
-      workbookLink.style.marginTop = '15px';
-      workbookLink.style.border = '2px dashed #cbd5e1';
-      navContainer.appendChild(workbookLink);
-    }
   }
 
   
+  // Global markdown formatter for inline text
+  window.formatBold = function(text) {
+    return text ? text.replace(/\\n|\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
+  };
+  
   // Render Lesson Content
   function renderLesson(lesson) {
-    const formatBold = (text) => text ? text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
+    const formatBold = window.formatBold;
     lesson = sanitizeLessonData(JSON.parse(JSON.stringify(lesson)));
     
     // Extract exam tasks from tasks array so they are not rendered inline
@@ -1405,6 +1269,7 @@ export function initializeApp(unitData) {
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
             <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
             <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
           </div>
         `).join('');
         notesHtml = primerText + sourceContext + objectivesHtml;
@@ -1413,6 +1278,7 @@ export function initializeApp(unitData) {
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
             <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
             <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
           </div>
         `).join('');
       } else {
@@ -1482,9 +1348,7 @@ export function initializeApp(unitData) {
             if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
           }
           if (person) {
-             
-             // But actually this code runs on client, we can just call generateKeyIndividualEmbedHTML
-             const cardHtml = window.generateKeyIndividualEmbedHTML ? window.generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
+             const cardHtml = generateKeyIndividualEmbedHTML ? generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
              html += `
                <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                  <button onclick="const content = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if(content.style.display==='none'){content.style.display='block'; icon.classList.replace('fa-chevron-down','fa-chevron-up');}else{content.style.display='none'; icon.classList.replace('fa-chevron-up','fa-chevron-down');}" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
@@ -1687,7 +1551,7 @@ export function initializeApp(unitData) {
 
               ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
               ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
-              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${task.model}</div>` : ''}
+              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model)}</div>` : ''}
             </div>
           `;
         });
@@ -1712,7 +1576,7 @@ export function initializeApp(unitData) {
               </div>
               ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
               ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
-              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${hc.stretch_model}</div>` : ''}
+              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${formatBold(hc.stretch_model)}</div>` : ''}
             </div>` : ''}
           </div>
         `;
@@ -1898,7 +1762,7 @@ export function initializeApp(unitData) {
             ${sourceHtml}
             ${hintsHtml}
             <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
-            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${lesson.extended.model || lesson.extended.answer}</div>` : ''}
+            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.extended.model || lesson.extended.answer)}</div>` : ''}
           </div>
         `;
       }
@@ -1915,7 +1779,7 @@ export function initializeApp(unitData) {
                   </span>
                 </div>
                 <textarea class="student-answer-input" style="min-height: ${(task.text || task.question || "").includes("12 marks") || (task.text || task.question || "").includes("16 marks") ? "200px" : "100px"};" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-                ${task.model ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${task.model}</div>` : ''}
+                ${task.model ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(task.model)}</div>` : ''}
               </div>
             `;
           });
@@ -1936,7 +1800,7 @@ export function initializeApp(unitData) {
            gcseHtml += `<textarea class="student-answer-input" style="min-height: 200px;" placeholder="Type your 8-mark utility evaluation here..." oninput="window.updateProgress()"></textarea>`;
            if (lesson.gcse_task.model) {
               gcseHtml += `<div style="margin-top: 15px;"><button class="btn btn-secondary" onclick="toggleElement('gcse-model-src')"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button></div>`;
-              gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${lesson.gcse_task.model}</div>`;
+              gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.gcse_task.model)}</div>`;
            }
         }
       }
@@ -1952,7 +1816,7 @@ export function initializeApp(unitData) {
                 </span>
               </div>
               <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-              ${task.model ? `<div id="extracted-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${task.model}</div>` : ''}
+              ${task.model ? `<div id="extracted-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(task.model)}</div>` : ''}
             </div>
           `;
         });
@@ -2142,7 +2006,7 @@ window.updateProgress = () => {
     let html = '';
     
     const addQuestionCard = (qNum, questionText, answerText) => {
-      const finalAnswer = answerText || "Model answer to be discussed in class.";
+      const finalAnswer = window.formatBold(answerText) || "Model answer to be discussed in class.";
       html += `
         <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
           <div style="font-weight: bold;">Q${qNum}. ${questionText}</div>

@@ -354,14 +354,11 @@ module.exports = function getNewRenderLesson() {
             if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
           }
           if (person) {
-             const { generateKeyIndividualEmbedHTML } = require('./key_individuals.js');
-             // Workaround: we can't easily require this in client side string if it's imported at top.
-             // But actually this code runs on client, we can just call generateKeyIndividualEmbedHTML
-             const cardHtml = window.generateKeyIndividualEmbedHTML ? window.generateKeyIndividualEmbedHTML(person) : \`<div>\${person.name}</div>\`;
-             html += \`
+             const cardHtml = generateKeyIndividualEmbedHTML ? generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
+             html += `
                <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                  <button onclick="const content = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if(content.style.display==='none'){content.style.display='block'; icon.classList.replace('fa-chevron-down','fa-chevron-up');}else{content.style.display='none'; icon.classList.replace('fa-chevron-up','fa-chevron-down');}" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
-                   <span><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: #3b82f6;"></i> Key Individual: \${person.name}</span>
+                   <span><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: #3b82f6;"></i> Key Individual: ${person.name}</span>
                    <i class="fa-solid fa-chevron-down chevron-icon"></i>
                  </button>
                  <div style="display: none; padding: 25px; background: #ffffff;">

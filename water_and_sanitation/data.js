@@ -1987,7 +1987,7 @@ export const unitData = {
       "id": "snow",
       "name": "John Snow",
       "role": "Physician",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg",
+      "image": "assets/john_snow.jpg",
       "bio": "Proved that cholera was waterborne by mapping the 1854 Broad Street outbreak and removing the pump handle."
     },
     {

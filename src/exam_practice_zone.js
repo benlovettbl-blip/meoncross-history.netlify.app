@@ -385,7 +385,7 @@ export function renderExamPracticeZone(container, unitData) {
         wagollBtn.style.display = 'block';
         let ans = currentQuestion.model_answer;
         if (Array.isArray(ans)) ans = ans.join('<br><br>');
-        wagollPanel.innerHTML = ans.replace(/\\n/g, '<br>');
+        wagollPanel.innerHTML = ans.replace(/\\n|\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     } else {
         wagollBtn.style.display = 'none';
     }

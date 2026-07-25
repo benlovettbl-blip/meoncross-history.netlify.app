@@ -130,7 +130,7 @@ unitData.lessons.forEach(lesson => {
       if (para.startsWith('"')) {
         html += `<div style="font-weight: bold; margin: 15px 0; font-size: 13pt;">${para.replace(/"/g, '')}</div>`;
       } else {
-        html += `<p class="narrative-block" id="para-${pCounter}">${para}</p>`; pCounter++;
+        html += `<p class="narrative-block" id="para-${pCounter}">${formatBold(para)}</p>`; pCounter++;
       }
     });
   }
@@ -177,7 +177,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.extended && lesson.extended.paragraphs) {
     html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
     lesson.extended.paragraphs.forEach(para => {
-      html += `<p class="narrative-block" style="font-size: 11pt; color: #444;">${para}</p>`;
+      html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${para}</p>`;
     });
     if (lesson.extended.question) {
       html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
@@ -188,7 +188,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.historians_corner) {
     html += `<div class="task-box" style="page-break-inside: avoid; background: #fff; border: 2px dashed #666;">`;
     html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-    html += `<p style="font-size: 11pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+    html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
     html += `</div>`;
   }
 
@@ -201,7 +201,7 @@ unitData.lessons.forEach(lesson => {
           <p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${lesson.gcse_task.sources[0].title}</p>
         </div>
         <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
-          <blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
+          <blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
           <p style="font-size: 10pt; font-weight: bold; margin: 0;">${lesson.gcse_task.sources[1].title}</p>
         </div>
       </div>
@@ -246,7 +246,7 @@ unitData.lessons.forEach(lesson => {
 // Append Quiz Pack
 if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
-  html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
+  html += `<p style="font-size: 12pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
   
   html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
@@ -254,7 +254,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
   unitData.quizPack.forEach((item, idx) => {
     html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
-    html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;
+    html += `<div style="font-weight: 500; font-size: 12pt;">${idx + 1}. ${item.q}</div>`;
     html += `<div class="task-lines"></div>`;
     html += `</div>`;
   });
@@ -268,7 +268,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   // Extract and scramble answers alphabetically
   let answers = unitData.quizPack.map(item => item.a).sort((a, b) => a.localeCompare(b));
   
-  html += `<p style="text-align: center; font-size: 11pt; line-height: 1.8;">`;
+  html += `<p style="text-align: center; font-size: 12pt; line-height: 1.8;">`;
   answers.forEach((ans, idx) => {
     html += `<strong>${ans}</strong>`;
     if (idx < answers.length - 1) html += ` &nbsp;&bull;&nbsp; `;

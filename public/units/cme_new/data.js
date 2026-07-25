@@ -1,5 +1,10 @@
 export const unitData = {
     "title": "Conflict in the Middle East, 1945–1995",
+    "workbooks": [
+        { id: 'KT1', title: 'KT1' },
+        { id: 'KT2', title: 'KT2' },
+        { id: 'KT3', title: 'KT3' }
+    ],
     "cover_image": "/assets/cme_new_kt1_cover.png",
     "cover_caption": "Conflict in the Middle East",
     "groupings": [
@@ -53,7 +58,7 @@ export const unitData = {
                     "GCSE examiners award top marks to students who can analyze how multiple, interrelated factors combined to produce the war's final outcome. Israel's victory was not a miracle, but rather the result of distinct military, political, and structural advantages.",
                     "The Arab coalition was plagued by deep political rivalries and conflicting territorial ambitions. For example, King Abdullah of Transjordan was primarily interested in annexing the West Bank for his own kingdom, rather than destroying Israel. Although facing a combined Arab population of 41 million, the 650,000 Jews of Israel mobilized their entire society. At the war's start, Israel's combat forces stood at 35,000 (already larger than the active invasion force). By December 1948, the IDF grew to a highly coordinated force of 108,000 troops, vastly outnumbering the fragmented Arab armies."
                 ],
-                "question": "Evaluate why Israel was able to win the 1948-49 Arab-Israeli War despite being surrounded by five invading Arab nations.",
+                "question": "Evaluate why Israel was able to win the 1948-49 Arab-Israeli War despite being surrounded by five invading Arab nations (16 marks).",
                 "model": "Israel won due to superior organization, unified leadership, and critical material support. While the Arab states were deeply divided by political rivalries and failed to commit their full military strength, Israel mobilized its entire society, creating a unified IDF command. The crucial one-month UN truce allowed Israel to import modern Czech weapons, overturning the initial military imbalance and allowing a highly motivated force to outnumber and defeat the fragmented Arab coalition."
             },
             "do_now": {
@@ -208,7 +213,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (P4)",
+                            "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (4 marks) (P4)",
                             "model": "The deadliest act was the bombing of the King David Hotel in Jerusalem by the Irgun. The hotel's southern wing was targeted because it housed the central administrative headquarters of the British Mandate and the military command of the British Army."
                         }
                     ]
@@ -288,7 +293,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (P8)",
+                            "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (4 marks) (P8)",
                             "model": "Israel used the one-month truce to unify its forces into a single national army (the IDF) and illegally import modern military hardware from Czechoslovakia, completely neutralizing the Arabs' initial material superiority."
                         }
                     ]
@@ -299,7 +304,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (P9)",
+                            "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (4 marks) (P9)",
                             "model": "Traditional Israeli historians argued that Palestinians fled voluntarily on the orders of Arab leaders. However, Palestinian historians and 'New Historians' have demonstrated that the vast majority were systematically driven out through deliberate military expulsions and the terror of massacres like Deir Yassin, resulting in the Nakba."
                         }
                     ]
@@ -403,11 +408,11 @@ export const unitData = {
                         "answer": "Egypt, Syria, Jordan (Transjordan), Lebanon, and Iraq."
                     },
                     {
-                        "question": "Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor.",
+                        "question": "Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor (4 marks).",
                         "answer": "Israel used the 30-day truce to unify its forces under the IDF and import massive quantities of modern weaponry from Czechoslovakia, neutralizing the Arabs' initial material superiority."
                     },
                     {
-                        "question": "Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight.",
+                        "question": "Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight (4 marks).",
                         "answer": "The massacre of over 100 Arab villagers was sensationalized by Arab radio, which backfired and triggered widespread panic among Arab civilians, causing hundreds of thousands to flee."
                     },
                     {
@@ -514,7 +519,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the demographic impact of the 1950 Law of Return on the new State of Israel. (P6)",
+                            "text": "Explain the demographic impact of the 1950 Law of Return on the new State of Israel. (4 marks) (P6)",
                             "model": "The Law of Return granted any Jew automatic citizenship, triggering an immense demographic boom that doubled Israel's population in a few years and supplied the IDF with a constant stream of military manpower."
                         }
                     ]
@@ -541,7 +546,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe two ways that Egypt attempted to strangle Israel economically and militarily in the early 1950s. (P9)",
+                            "text": "Describe two ways that Egypt attempted to strangle Israel economically and militarily in the early 1950s. (4 marks) (P9)",
                             "model": "First, Egypt closed the Suez Canal to Israeli ships and confiscated cargo. Second, Egypt established a military blockade at the Straits of Tiran and used the Gaza Strip as a launchpad for Fedayeen guerrilla raids into Israel."
                         }
                     ]
@@ -655,7 +660,7 @@ export const unitData = {
                         "answer": "Israel denied it to preserve a Jewish demographic majority. Arab host states kept refugees in camps to maintain moral pressure on Israel."
                     },
                     {
-                        "question": "Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950.",
+                        "question": "Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950 (4 marks).",
                         "answer": "1. Granted every Jew automatic citizenship, doubling the population. 2. Provided massive labor and military conscripts to defend vulnerable borders."
                     },
                     {
@@ -663,7 +668,7 @@ export const unitData = {
                         "answer": "A $100 million grant in 1949 and a further $200 million by 1960."
                     },
                     {
-                        "question": "Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice.",
+                        "question": "Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice (4 marks).",
                         "answer": "1. Closed the Suez Canal to Israeli vessels. 2. Blockaded the Straits of Tiran to choke trade through Eilat."
                     },
                     {
@@ -801,7 +806,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain how Britain and France planned to use an Israeli invasion of the Sinai as a pretext to retake the Suez Canal. (P10)",
+                            "text": "Explain how Britain and France planned to use an Israeli invasion of the Sinai as a pretext to retake the Suez Canal. (4 marks) (P10)",
                             "model": "Once Israel launched a pre-emptive strike toward the canal, Britain and France would issue an ultimatum for both sides to pull back. When Egypt inevitably refused, Britain and France would invade to 'protect' international shipping."
                         }
                     ]
@@ -887,7 +892,7 @@ export const unitData = {
                         "answer": "The Protocol of Sèvres."
                     },
                     {
-                        "question": "Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956.",
+                        "question": "Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956 (4 marks).",
                         "answer": "Nasser nationalised the canal to use its £35 million annual toll revenues to directly fund his pride project, the Aswan High Dam, after the USA and Great Britain abruptly withdrew their joint offer of financial loans."
                     },
                     {
@@ -1069,7 +1074,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the success of Operation Focus launched by the Israeli air force on 5 June 1967. (P13)",
+                            "text": "Describe the success of Operation Focus launched by the Israeli air force on 5 June 1967. (4 marks) (P13)",
                             "model": "Operation Focus was a highly successful pre-emptive strike where Israeli jets flew low over the Mediterranean to evade radar and destroyed 309 of Egypt's combat aircraft on the tarmac within three hours."
                         }
                     ]
@@ -1187,7 +1192,7 @@ export const unitData = {
                         "answer": "Yasser Arafat. He became the Chairman of the Palestine Liberation Organisation (PLO)."
                     },
                     {
-                        "question": "Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions.",
+                        "question": "Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions (4 marks).",
                         "answer": "Israel completed its National Water Carrier to divert water from the Sea of Galilee. In response, Arab states drafted the Headwater Diversion Plan to divert the Dan and Banias rivers. This led to cross-border skirmishes where Israeli tanks and artillery fired on Syrian workers to destroy their heavy machinery."
                     },
                     {
@@ -1313,7 +1318,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the strategic significance of the captured territories for Israel's military security. (P7)",
+                            "text": "Explain the strategic significance of the captured territories for Israel's military security. (4 marks) (P7)",
                             "model": "The territories acted as vast physical buffers: the Sinai kept Egyptian artillery away, the West Bank created a defensible border along the River Jordan, and the Golan Heights prevented Syria from shelling Galilee farming villages."
                         }
                     ]
@@ -1388,7 +1393,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the events and consequences of the 1972 Munich Olympic Games terrorist attack. (P17)",
+                            "text": "Describe the events and consequences of the 1972 Munich Olympic Games terrorist attack. (4 marks) (P17)",
                             "model": "Black September terrorists took 11 Israeli athletes hostage, demanding the release of Palestinian prisoners. During a botched German rescue attempt, all hostages and 5 terrorists were killed on live television, drawing severe global condemnation."
                         }
                     ]
@@ -1483,7 +1488,7 @@ export const unitData = {
                         "answer": "The Popular Front for the Liberation of Palestine (PFLP)."
                     },
                     {
-                        "question": "Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation.",
+                        "question": "Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation (4 marks).",
                         "answer": "The English text called for a withdrawal from 'territories occupied,' allowing Israel to retain some land for secure borders. The French translation demanded a withdrawal from 'the territories' (all of them), which Arab states demanded."
                     },
                     {
@@ -1499,7 +1504,7 @@ export const unitData = {
                         "answer": "Lebanon."
                     },
                     {
-                        "question": "Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded.",
+                        "question": "Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded (4 marks).",
                         "answer": "The 'Black September' group took nine Israeli athletes hostage (killing two immediately), resulting in the deaths of all 11 during a failed rescue attempt. In response, Prime Minister Meir launched 'Operation Wrath of God' to assassinate the planners globally."
                     },
                     {
@@ -1678,7 +1683,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the superpower proxy conflict that emerged during the Yom Kippur War. (P16)",
+                            "text": "Describe the superpower proxy conflict that emerged during the Yom Kippur War. (4 marks) (P16)",
                             "model": "US President Richard Nixon authorized Operation Nickel Grass, a massive airlift of advanced weapons to Israel. Simultaneously, the Soviet Union launched a massive arms resupply to Egypt and Syria, turning the conflict into a Cold War proxy war."
                         }
                     ]
@@ -1811,7 +1816,7 @@ export const unitData = {
                         "answer": "He was frustrated by Soviet reluctance to supply offensive weaponry and calculated that expelling them would please the United States, hoping Washington would then pressure Israel into returning the Sinai Peninsula."
                     },
                     {
-                        "question": "Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War.",
+                        "question": "Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War (4 marks).",
                         "answer": "It replaced Israel’s heavy initial losses of tanks, jets, and ammunition. This vital logistical support allowed the IDF to stabilize their defense lines, launch a counter-offensive, and encircle Egypt's Third Army."
                     },
                     {
@@ -1819,7 +1824,7 @@ export const unitData = {
                         "answer": "Egypt blocked the Suez Canal to all Israel-bound cargo and established a naval blockade at the Straits of Tiran to choke off Israeli trade through its southern port of Eilat."
                     },
                     {
-                        "question": "Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973.",
+                        "question": "Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973 (4 marks).",
                         "answer": "OPEC placed a total oil embargo on the US and Western nations. This caused a severe global energy crisis (fuel shortages) and quadrupled the price of oil from $3 to $12 a barrel, triggering massive inflation."
                     },
                     {
@@ -2032,7 +2037,7 @@ export const unitData = {
                         "answer": "June 1975 (specifically 5 June 1975)."
                     },
                     {
-                        "question": "Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy.",
+                        "question": "Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy (4 marks).",
                         "answer": "The Arab OPEC oil embargo caused severe inflation and fuel shortages in the West. This economic shock forced the US to actively stabilize the region to secure its energy supply and limit growing Soviet influence."
                     },
                     {
@@ -2040,7 +2045,7 @@ export const unitData = {
                         "answer": "Menachem Begin."
                     },
                     {
-                        "question": "Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo.",
+                        "question": "Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo (4 marks).",
                         "answer": "By traveling directly to Jerusalem and addressing the Israeli Knesset, Sadat broke the Arab League's 'Three Nos'. He offered Israel full diplomatic recognition and permanent peace in exchange for a complete withdrawal from occupied territories."
                     },
                     {
@@ -2056,7 +2061,7 @@ export const unitData = {
                         "answer": "The Arab world viewed Sadat as a traitor who abandoned the Palestinian cause. The Arab League expelled Egypt, suspended all economic aid, and relocated its headquarters to Tunis."
                     },
                     {
-                        "question": "Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements.",
+                        "question": "Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements (4 marks).",
                         "answer": "Sadat was assassinated in 1981 by radical Islamic militants in the Egyptian military. Begin faced intense condemnation from Likud hardliners and Gush Emunim settlers for dismantling Jewish settlements in Sinai."
                     },
                     {
@@ -2203,7 +2208,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the events and consequences of the Sabra and Shatila massacre in September 1982. (P12)",
+                            "text": "Describe the events and consequences of the Sabra and Shatila massacre in September 1982. (4 marks) (P12)",
                             "model": "Israeli forces allowed Lebanese Christian Phalangist militias into the refugee camps, who slaughtered between 800 and 3,500 unarmed civilians. The atrocities triggered furious global condemnation, forcing Ariel Sharon to resign after the Kahan Commission found him indirectly responsible."
                         }
                     ]
@@ -2318,7 +2323,7 @@ export const unitData = {
                         "answer": "'Fatahland' was the name given to southern Lebanon, where the PLO established a 'state-within-a-state.' From here, guerrillas launched Katyusha rockets into northern Israel."
                     },
                     {
-                        "question": "Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon.",
+                        "question": "Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon (4 marks).",
                         "answer": "The immediate trigger was the attempted assassination of Shlomo Argov, the Israeli ambassador to Great Britain, by the extremist Abu Nidal Organization."
                     },
                     {
@@ -2334,7 +2339,7 @@ export const unitData = {
                         "answer": "An Israeli military transport vehicle collided with a civilian car in Gaza, killing four Palestinian workers, sparking spontaneous demonstrations."
                     },
                     {
-                        "question": "Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally.",
+                        "question": "Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally (4 marks).",
                         "answer": "It relied on civil disobedience and street violence (throwing stones). Rabin's 'Iron Fist' policy backfired because TV news broadcasted soldiers using heavy force against children, shifting global sympathy."
                     },
                     {
@@ -2523,7 +2528,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain why the Oslo Accords were considered 'fundamentally ambiguous' and structurally flawed. (P17)",
+                            "text": "Explain why the Oslo Accords were considered 'fundamentally ambiguous' and structurally flawed. (12 marks) (P17)",
                             "model": "The Accords intentionally delayed resolving the most difficult 'permanent status' issues, such as final borders, Jerusalem, refugees, and settlements. This created a dangerous vacuum of uncertainty and extreme distrust among hardliners on both sides, who felt their core demands were being ignored or betrayed."
                         }
                     ]

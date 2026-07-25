@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const dataContent = fs.readFileSync(path.join(__dirname, '../edexcel_medicine/data.js'), 'utf8');
-const startIndex = dataContent.indexOf('{');
+const startIndex = dataContent.indexOf('export default {') !== -1 ? dataContent.indexOf('export default {') + 15 : (dataContent.indexOf('export const unitData = {') !== -1 ? dataContent.indexOf('export const unitData = {') + 24 : dataContent.indexOf('{', dataContent.indexOf('import') !== -1 ? dataContent.indexOf('\n') : 0));
 const endIndex = dataContent.lastIndexOf('}');
 const jsonStr = dataContent.substring(startIndex, endIndex + 1);
-const unitData = eval('(' + jsonStr + ')');
+const unitData = eval('(function(){ const mock_exams=[]; return ' + jsonStr + ';})()');
 
 const dataParserSrc = fs.readFileSync(path.join(__dirname, '../src/data_parser.js'), 'utf8');
 const dataParserCode = dataParserSrc.replace(/export /g, '');
@@ -14,6 +14,11 @@ eval(dataParserCode);
 const examGuideSrc = fs.readFileSync(path.join(__dirname, '../src/exam_guide_content.js'), 'utf8');
 const examGuideCode = examGuideSrc.replace(/export const /g, 'global.');
 eval(examGuideCode);
+
+const formatText = (text) => {
+  if (!text) return '';
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+};
 
 unitData.lessons.forEach(lesson => {
   sanitizeLessonData(lesson);
@@ -36,21 +41,21 @@ const htmlHead = `<!DOCTYPE html>
   <title>${unitData.title} - Printable Workbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
   <style>
-    @page { size: A4 portrait; margin: 20mm; }
-    body { font-family: 'Outfit', sans-serif; font-size: 12pt; line-height: 1.6; color: #000; }
+    @page { size: A4 portrait; margin: 12mm; }
+    body { font-family: 'Outfit', sans-serif; font-size: 12pt; line-height: 1.35; color: #000; }
     h1 { font-family: 'Playfair Display', serif; font-size: 32pt; text-align: center; margin-top: 100px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 20pt; color: #1a237e; border-bottom: 2px solid #ccc; padding-bottom: 5px; page-break-before: always; page-break-after: avoid; }
-    h3 { font-size: 14pt; color: #333; margin-top: 20px; page-break-after: avoid; }
-    .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; }
-    .task-box { border: 2px solid #333; padding: 15px; margin-top: 20px; background: #fafafa; page-break-inside: avoid; }
-    .task-lines { border-bottom: 1px solid #ccc; height: 30px; margin-top: 10px; }
-    .task-lines-large { border-bottom: 1px solid #ccc; height: 45px; margin-top: 10px; }
-    .source-container { text-align: center; margin: 20px 0; }
-    .source-container img { max-width: 100%; max-height: 350px; border: 1px solid #000; }
-    .source-caption { font-size: 10pt; font-style: italic; margin-top: 5px; }
-    .do-now-box { border: 2px solid #1a237e; padding: 15px; margin-bottom: 30px; background: #f8f9fa; page-break-inside: avoid; }
-    .do-now-q { margin-top: 15px; font-weight: 500; font-size: 11pt; }
-    .draw-task { background: #e8eaf6; padding: 10px; margin-top: 10px; font-weight: bold; text-align: center; border-radius: 5px; border: 1px solid #1a237e; page-break-inside: avoid; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 18pt; color: #1a237e; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 40px; page-break-after: avoid; }
+    h3 { font-size: 14pt; color: #333; margin-top: 15px; page-break-after: avoid; }
+    .narrative-block { margin-bottom: 12pt; text-align: justify; orphans: 3; widows: 3; }
+    .task-box { border: 2px solid #333; padding: 12px; margin-top: 15px; margin-bottom: 15px; background: #fafafa; page-break-inside: avoid; width: 92%; margin-left: auto; margin-right: auto; border-radius: 6px; box-shadow: 2px 2px 6px rgba(0,0,0,0.05); }
+    .task-lines { border-bottom: 1px solid #ccc; height: 24px; margin-top: 8px; }
+    .task-lines-large { border-bottom: 1px solid #ccc; height: 32px; margin-top: 8px; }
+    .source-container { text-align: center; margin: 15px auto; width: 92%; }
+    .source-container img { max-width: 100%; max-height: 250px; border: 1px solid #000; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+    .source-caption { font-size: 10pt; font-style: italic; margin-top: 5px; color: #555; }
+    .do-now-box { border: 2px solid #1a237e; padding: 12px; margin-top: 15px; margin-bottom: 25px; background: #f8f9fa; page-break-inside: avoid; width: 92%; margin-left: auto; margin-right: auto; border-radius: 6px; box-shadow: 2px 2px 8px rgba(0,0,0,0.05); }
+    .do-now-q { margin-top: 10px; font-weight: 500; font-size: 12pt; }
+    .draw-task { background: #e8eaf6; padding: 10px; margin-top: 10px; font-weight: bold; text-align: center; border-radius: 5px; border: 1px solid #1a237e; page-break-inside: avoid; width: 90%; margin-left: auto; margin-right: auto; }
     .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: avoid; }
     .grading-boxes { display: flex; justify-content: space-between; }
     .grade-box { display: flex; align-items: center; gap: 5px; }
@@ -103,37 +108,21 @@ periods.forEach(period => {
   html += `
   <h3 style="text-align: center; color: #555; margin-top: 0; margin-bottom: 10px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">Edexcel GCSE History Paper 1: Medicine Through Time with the Western Front</h3>
   <div style="width: 100%; height: 220px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #1a237e;">
-    <img src="../public/assets/banners/${period.image}" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);">
+    <img src="../../assets/banners/${period.image}" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
       <h1 style="margin: 0 !important; font-size: 36pt; color: white; padding: 0;">${periodTitle}</h1>
       <p style="font-size:16pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif;">Student Workbook</p>
     </div>
   </div>
   
-  <div style="display: flex; gap: 30px; margin: 25px 5% 0 5%; width: 90%; align-items: center;">
-    
-    <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
-      <div style="display: flex; gap: 10px;">
-      <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Name: </div>
-        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Class: </div>
-      </div>
-    </div>
-
-    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      ${Array.isArray(period.cover_image || unitData.cover_image) ? 
-        `<div style="display: flex; gap: 10px; justify-content: center; align-items: center; height: 230px;">
-          ${(period.cover_image || unitData.cover_image).map(img => `<img src="${img}" style="max-height: 100%; max-width: 32%; object-fit: contain; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="${periodTitle}">`).join('')}
-        </div>`
-        : 
-        `<img src="${period.cover_image || unitData.cover_image || ''}" style="max-width: 100%; max-height: 230px; border: 3px solid #1a237e; border-radius: 4px; box-shadow: 4px 4px 8px rgba(0,0,0,0.2);" alt="${periodTitle}">`
-      }
-      ${(period.cover_caption || unitData.cover_caption) ? `<p style="margin-top: 10px; font-style: italic; font-size: 10pt; color: #555; text-align: center;">${period.cover_caption || unitData.cover_caption}</p>` : ''}
-    </div>
-
+  <div style="display: flex; flex-direction: column; align-items: center; margin: 40px auto 0 auto; width: 60%; gap: 20px;">
+    <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
+    <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
   </div>
 
-  <!-- Bottom Section: Tracker Table -->
-  <div style="margin: 25px 5% 0 5%; width: 90%;">
+  <!-- Tracker Table on its own page -->
+  <h2 style="margin-bottom: 25px; font-size: 24pt; text-align: center; border-bottom: none; page-break-before: always;">Progress & Assessment Tracker</h2>
+  <div style="margin: 0 5%; width: 90%;">
     <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
       <thead>
         <tr style="background: #1a237e; color: white;">
@@ -171,16 +160,16 @@ periodLessons.forEach((lesson, lessonIndex) => {
   if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
   if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
   
-  html += `<h2 style="margin-bottom: 20px;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</h2>`;
+  html += `<h2 style="margin-bottom: 20px;">${formatText(lesson.title)}</h2>`;
 
   if (lesson.hook_text) {
-    html += `<p style="font-size: 11pt; font-style: italic; background: #eef2ff; padding: 15px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">${lesson.hook_text}</p>`;
+    html += `<p style="font-size: 12pt; font-style: italic; background: #eef2ff; padding: 15px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">${lesson.hook_text}</p>`;
   }
 
   if (lesson.fun_facts && lesson.fun_facts.length > 0) {
     html += `<div style="background: #fffbeb; border: 1px solid #fcd34d; padding: 15px; margin-bottom: 20px; border-radius: 4px;">`;
     html += `<h4 style="margin: 0 0 5px 0; color: #b45309; font-size: 12pt;">Did you know?</h4>`;
-    html += `<ul style="margin: 0; padding-left: 20px; font-size: 10.5pt; color: #92400e;">`;
+    html += `<ul style="margin: 0; padding-left: 20px; font-size: 12pt; color: #92400e;">`;
     lesson.fun_facts.forEach(fact => {
       html += `<li style="margin-bottom: 5px;">${fact}</li>`;
     });
@@ -189,7 +178,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `..${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../..${lesson.primary_source.src.startsWith('/') ? lesson.primary_source.src : '/' + lesson.primary_source.src}`;
     html += `
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
@@ -207,7 +196,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       html += `<div class="do-now-box">
                  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
                    <h3 style="margin: 0;">Chronological Domino Flowchart</h3>
-                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 12pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
                  </div>
                  <p style="font-style: italic; color: #555; margin-top: 0;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">`;
@@ -238,7 +227,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       html += `<div class="do-now-box">
                  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
                    <h3 style="margin: 0;">Do Now Activity</h3>
-                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 12pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
                  </div>`;
       lesson.do_now.items.forEach((item, index) => {
         html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question}</div>`;
@@ -278,7 +267,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; text-align: center; font-weight: bold;">${words}</div>`;
       if (lesson.vocab_cloze_text) {
          let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
-         html += `<p style="line-height: 2; font-size: 11pt;">${cloze}</p>`;
+         html += `<p style="line-height: 2; font-size: 12pt;">${cloze}</p>`;
       } else {
          html += `<p>_________________________________________________________</p>`;
          html += `<p>_________________________________________________________</p>`;
@@ -330,13 +319,13 @@ periodLessons.forEach((lesson, lessonIndex) => {
          if (person) {
             return `</p><div style="border: 2px solid #3b82f6; padding: 15px; margin: 15px 0; background: #eff6ff; border-radius: 6px; page-break-inside: avoid;">
                       <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 12pt;">Key Individual: ${person.name}</h4>
-                      <p style="margin: 0; font-size: 11pt;">${person.bio || person.significance || ''}</p>
+                      <p style="margin: 0; font-size: 12pt;">${person.bio || person.significance || ''}</p>
                     </div><p class="narrative-block">`;
          }
          return `<strong>Key Individual: ${name}</strong>`;
       });
       
-      html += `<p class="narrative-block" id="para-${bIdx+1}">${textToRender}</p>`;
+      html += `<p class="narrative-block" id="para-${bIdx+1}">${formatText(textToRender)}</p>`;
       
       if (block.hinge_question) {
         html += `<div class="task-box" style="background: #f8fafc; border: 2px dashed #94a3b8;">`;
@@ -364,20 +353,20 @@ periodLessons.forEach((lesson, lessonIndex) => {
     });
   }
 
-  const formatBold = (text) => text ? text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
+  
 
   // Extended Scholarship
   if (lesson.extended && lesson.extended.paragraphs) {
     html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
     lesson.extended.paragraphs.forEach(para => {
-      html += `<p class="narrative-block" style="font-size: 11pt; color: #444;">${formatBold(para)}</p>`;
+      html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
     });
   }
 
   // Narrative
   if (lesson.narrative) {
     lesson.narrative.forEach((block, idx) => {
-      html += `<p class="narrative-block"><strong style="color:#000;">${idx + 1}.</strong> ${formatBold(block.text)}</p>`;
+      html += `<p class="narrative-block"><strong style="color:#000;">${idx + 1}.</strong> ${formatText(block.text)}</p>`;
     });
   }
 
@@ -385,8 +374,8 @@ periodLessons.forEach((lesson, lessonIndex) => {
   if (lesson.pair_share) {
     html += `<div class="task-box" style="background: #f0fdfa; border: 2px solid #0d9488; page-break-inside: avoid;">`;
     html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
-    html += `<p style="font-weight: bold; font-size: 11pt; margin-bottom: 5px;">Prompt: ${lesson.pair_share.prompt}</p>`;
-    if (lesson.pair_share.think) html += `<p style="font-size: 10.5pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+    html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Prompt: ${lesson.pair_share.prompt}</p>`;
+    if (lesson.pair_share.think) html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
     html += `<div style="margin-top: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div></div>`;
     html += `</div>`;
   }
@@ -395,7 +384,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
   if (lesson.historians_corner) {
     html += `<div class="task-box" style="page-break-inside: avoid; background: #fff; border: 2px dashed #666;">`;
     html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-    html += `<p style="font-size: 11pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+    html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
     html += `</div>`;
   }
 
@@ -462,10 +451,10 @@ periodLessons.forEach((lesson, lessonIndex) => {
         }
 
         if (lesson.extended.provenance_clue) {
-             html += `<div style="margin-top: 15px; margin-bottom: 15px; padding: 12px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; page-break-inside: avoid;"><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatBold(lesson.extended.provenance_clue)}</p></div>`;
+             html += `<div style="margin-top: 15px; margin-bottom: 15px; padding: 12px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; page-break-inside: avoid;"><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
         }
 
-        html += `<div style="margin-top: 15px;"><strong>Q${lesson.extended.qNum}. ${formatBold(lesson.extended.question)}</strong></div>`;
+        html += `<div style="margin-top: 15px;"><strong>Q${lesson.extended.qNum}. ${formatText(lesson.extended.question)}</strong></div>`;
         renderLines(lesson.extended.question);
         html += `<br>`;
     }
@@ -489,7 +478,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
           let imgSrc = srcObj.src.startsWith('../') ? srcObj.src : `..${srcObj.src}`;
           sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
         } else {
-          sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
+          sourceHTML += `<blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
         }
         sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;
         sourceHTML += '</div>';
@@ -530,22 +519,45 @@ periodLessons.forEach((lesson, lessonIndex) => {
 
     if (lesson.exam_practice && lesson.exam_practice.length > 0) {
       lesson.exam_practice.forEach(ep => {
-        if (ep.stimulus && ep.stimulus.length > 0) {
-          html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 20px; page-break-inside: avoid;">`;
-          ep.stimulus.forEach((stimText, i) => {
-            html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-              <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${String.fromCharCode(65+i)}</strong>
-              <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
-                ${stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, '').replace(/\n/g, '<br>')}
-              </div>
-            </div>`;
-          });
-          html += `</div>`;
-        }
-
         let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
         if (ep.question.includes('marks)')) marksStr = '';
-        html += `<div style="margin-top: 15px;"><strong>Q${ep.qNum || ''}. ${formatBold(ep.question)}${marksStr}</strong></div>`;
+        let questionHtml = `<div style="margin-top: 15px; margin-bottom: 10px;"><strong>Q${ep.qNum || ''}. ${formatText(ep.question)}${marksStr}</strong></div>`;
+
+        if (ep.stimulus && ep.stimulus.length > 0) {
+          let isSources = ep.question.toLowerCase().includes('useful') || 
+                          ep.question.toLowerCase().includes('follow up') ||
+                          ep.stimulus.some(s => s.includes('Source A') || s.includes('Source B'));
+
+          if (isSources) {
+            // Edexcel format: Print Sources BEFORE the question
+            html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 20px; page-break-inside: avoid;">`;
+            ep.stimulus.forEach((stimText, i) => {
+              html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${String.fromCharCode(65+i)}</strong>
+                <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                  ${formatText(stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, '').replace(/\n/g, '<br>'))}
+                </div>
+              </div>`;
+            });
+            html += `</div>`;
+            html += questionHtml; // Add question AFTER sources
+          } else {
+            // Edexcel format: Print Question BEFORE the stimulus bullet points
+            html += questionHtml;
+            html += `<div style="margin-top: 5px; margin-bottom: 20px; padding: 15px; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; page-break-inside: avoid; font-size: 0.95rem;">
+              <p style="margin-top: 0; margin-bottom: 8px; font-weight: bold;">You may use the following in your answer:</p>
+              <ul style="margin-top: 0; margin-bottom: 8px; padding-left: 25px;">`;
+            ep.stimulus.forEach(stimText => {
+              html += `<li style="margin-bottom: 4px;">${formatText(stimText)}</li>`;
+            });
+            html += `</ul>
+              <p style="margin-top: 0; margin-bottom: 0; font-weight: bold;">You must also use information of your own.</p>
+            </div>`;
+          }
+        } else {
+          // No stimulus, just print the question
+          html += questionHtml;
+        }
         
         if (ep.type === '4-mark' && ep.question.toLowerCase().includes('follow up')) {
           html += `<table style="width: 100%; border-collapse: collapse; margin-top: 15px; page-break-inside: avoid;">
@@ -583,6 +595,30 @@ periodLessons.forEach((lesson, lessonIndex) => {
   `;
 
 });
+
+  // Inject Factors Overview at the end of the workbook
+  html += `
+  <div style="page-break-before: always; padding: 20px;">
+    <h2 style="text-align: center; font-size: 24pt; margin-bottom: 30px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
+    <p style="text-align: center; font-size: 12pt; margin-bottom: 30px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
+    <table style="width: 100%; border-collapse: collapse; border: 2px solid #1a237e;">
+      <thead>
+        <tr style="background: #1a237e; color: white;">
+          <th style="padding: 15px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
+          <th style="padding: 15px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+        <tr><td style="padding: 15px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding: 15px; border: 1px solid #ccc; height: 110px;"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  `;
 
 html += `</body></html>`;
 fs.writeFileSync(path.join(__dirname, `workbook_${periodName}.html`), html);

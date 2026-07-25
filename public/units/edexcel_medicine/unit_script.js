@@ -717,6 +717,25 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(homeLink);
 
+    // Exam Specification Tab
+    if (unitData.specification_file) {
+      const specLink = document.createElement('a');
+      specLink.className = 'lesson-link';
+      specLink.innerHTML = '<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Exam Specification';
+      specLink.href = '#';
+      specLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        specLink.classList.add('active');
+        const contentArea = document.getElementById('engine-workbook-container');
+        contentArea.innerHTML = '';
+        import('/src/spec_viewer.js').then(module => {
+          module.initSpecViewer(contentArea, unitData.specification_file);
+        });
+      };
+      navContainer.appendChild(specLink);
+    }
+
     unitData.lessons.forEach((lesson, index) => {
       const link = document.createElement('a');
       link.className = 'lesson-link';
@@ -730,6 +749,8 @@ export function initializeApp(unitData) {
       });
       navContainer.appendChild(link);
     });
+
+
 
     // Add Guided Reading Tab if available
     if (unitData.guided_reading && unitData.guided_reading.length > 0) {

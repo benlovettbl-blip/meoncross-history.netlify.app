@@ -1,4 +1,5 @@
 export const unitData = {
+    "specification_file": "/data/edexcel_medicine_spec.json",
     "lessons": [
         {
             "title": "Lesson 1: Why were young men so desperat...",

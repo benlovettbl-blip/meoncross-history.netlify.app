@@ -33,7 +33,7 @@ let html = `<!DOCTYPE html>
     .source-container img { max-width: 100%; max-height: 350px; border: 1px solid #000; }
     .source-caption { font-size: 10pt; font-style: italic; margin-top: 5px; }
     .do-now-box { border: 2px solid #1a237e; padding: 15px; margin-bottom: 30px; background: #f8f9fa; page-break-inside: avoid; }
-    .do-now-q { margin-top: 15px; font-weight: 500; font-size: 11pt; }
+    .do-now-q { margin-top: 15px; font-weight: 500; font-size: 12pt; }
     .draw-task { background: #e8eaf6; padding: 10px; margin-top: 10px; font-weight: bold; text-align: center; border-radius: 5px; border: 1px solid #1a237e; page-break-inside: avoid; }
     .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: avoid; }
     .grading-boxes { display: flex; justify-content: space-between; }
@@ -91,12 +91,12 @@ let html = `<!DOCTYPE html>
     
     <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
       <div style="display: flex; gap: 10px;">
-        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Name: </div>
-        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 11pt;">Class: </div>
+        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 12pt;">Name: </div>
+        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 3px; font-weight: 500; font-size: 12pt;">Class: </div>
       </div>
       
       <div style="border: 2px solid #1a237e; background: #f8f9fa; padding: 12px; border-radius: 6px; font-size: 9.5pt;">
-        <h3 style="margin-top: 0; margin-bottom: 10px; color: #1a237e; text-align: center; font-size: 11pt;">Assessment Levels Guide</h3>
+        <h3 style="margin-top: 0; margin-bottom: 10px; color: #1a237e; text-align: center; font-size: 12pt;">Assessment Levels Guide</h3>
         <ul style="margin: 0; padding-left: 15px; color: #333; line-height: 1.4;">
           <li style="margin-bottom: 4px;"><strong>Emerging (1-2):</strong> Basic understanding of key events.</li>
           <li style="margin-bottom: 4px;"><strong>Emerging+ (3):</strong> Describes events with some historical details.</li>
@@ -181,7 +181,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
       html += `<div class="do-now-box">
                  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
                    <h3 style="margin: 0;">Chronological Domino Flowchart</h3>
-                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 12pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
                  </div>
                  <p style="font-style: italic; color: #555; margin-top: 0;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">`;
@@ -212,7 +212,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
       html += `<div class="do-now-box">
                  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
                    <h3 style="margin: 0;">Do Now Activity</h3>
-                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 11pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
+                   <div style="border: 2px solid #333; padding: 5px 15px; font-weight: bold; font-size: 12pt; border-radius: 4px; background: #fff;">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
                  </div>`;
       lesson.do_now.items.forEach((item, index) => {
         html += `<div class="do-now-q"><strong>${index + 1}.</strong> ${item.question}</div>`;
@@ -252,7 +252,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
       html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; text-align: center; font-weight: bold;">${words}</div>`;
       if (lesson.vocab_cloze_text) {
          let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
-         html += `<p style="line-height: 2; font-size: 11pt;">${cloze}</p>`;
+         html += `<p style="line-height: 2; font-size: 12pt;">${cloze}</p>`;
       } else {
          html += `<p>_________________________________________________________</p>`;
          html += `<p>_________________________________________________________</p>`;
@@ -323,7 +323,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
 if (unitData.assessments && unitData.assessments.length > 0) {
   unitData.assessments.forEach((assessment, idx) => {
     html += `<h2 style="margin-bottom: 20px; page-break-before: always;">${assessment.title}</h2>`;
-    html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> ${assessment.description}</p>`;
+    html += `<p style="font-size: 12pt; margin-bottom: 20px;"><strong>Instructions:</strong> ${assessment.description}</p>`;
     
     if (assessment.type === 'timeline') {
       html += `<div style="height: 600px; border: 2px dashed #999; border-radius: 8px; position: relative; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; background: #fafafa;">`;
@@ -362,8 +362,8 @@ if (unitData.assessments && unitData.assessments.length > 0) {
       assessment.sources.forEach(source => {
         html += `<div style="flex: 1; border: 1px solid #333; padding: 15px; background: #fafafa;">`;
         html += `<strong style="font-size: 13pt;">${source.id}</strong>`;
-        html += `<p style="font-size: 11pt; font-style: italic; margin-top: 5px; margin-bottom: 15px;">${source.provenance}</p>`;
-        html += `<p style="font-size: 11pt; line-height: 1.5;">${source.text}</p>`;
+        html += `<p style="font-size: 12pt; font-style: italic; margin-top: 5px; margin-bottom: 15px;">${source.provenance}</p>`;
+        html += `<p style="font-size: 12pt; line-height: 1.5;">${source.text}</p>`;
         html += `</div>`;
       });
       html += `</div>`;
@@ -376,7 +376,7 @@ if (unitData.assessments && unitData.assessments.length > 0) {
       assessment.interpretations.forEach(interp => {
         html += `<div style="flex: 1; border: 1px solid #333; padding: 15px; background: #fafafa;">`;
         html += `<strong style="font-size: 13pt;">${interp.id}</strong>`;
-        html += `<p style="font-size: 11pt; line-height: 1.5; margin-top: 10px;">${interp.text}</p>`;
+        html += `<p style="font-size: 12pt; line-height: 1.5; margin-top: 10px;">${interp.text}</p>`;
         html += `</div>`;
       });
       html += `</div>`;

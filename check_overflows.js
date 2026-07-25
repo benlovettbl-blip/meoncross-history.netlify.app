@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 120000 });
   const page = await browser.newPage();
   
   // Set viewport to simulate a wide desktop

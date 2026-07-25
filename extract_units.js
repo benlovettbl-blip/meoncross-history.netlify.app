@@ -157,9 +157,8 @@ const allDirs = fs.readdirSync(__dirname, { withFileTypes: true })
 
 allDirs.forEach(dirName => {
   const indexPath = path.join(__dirname, dirName, 'index.html');
-  const appJsPath = path.join(__dirname, dirName, 'app.js');
-  // Only extract KS3-style units which have both index.html and app.js
-  if (fs.existsSync(indexPath) && fs.existsSync(appJsPath)) {
+  // Extract units if they have an index.html (they might use local app.js or core_app.js)
+  if (fs.existsSync(indexPath)) {
     extractUnit(dirName, path.join(__dirname, dirName), publicUnitsDir);
   }
 });

@@ -1,4 +1,5 @@
 export const unitData = {
+  "specification_file": "/data/edexcel_medicine_spec.json",
   "title": "The Great War: Causes & Outbreak",
   "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
   "cover_image": "/assets/great_war_Naval-race-1909.jpg",
