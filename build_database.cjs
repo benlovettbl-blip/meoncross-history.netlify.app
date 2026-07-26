@@ -8,15 +8,23 @@ async function buildDatabase() {
   const getDirs = src => fs.readdirSync(src, {withFileTypes: true}).filter(d => d.isDirectory() && !d.name.startsWith('.')).map(d => d.name);
   const units = getDirs('./').filter(d => fs.existsSync(path.join(d, 'data.js')));
   
+  const cmeNewPath = path.join('public', 'units', 'cme_new');
+  if (fs.existsSync(path.join(cmeNewPath, 'data.js'))) {
+    if (!units.includes(cmeNewPath)) {
+      units.push(cmeNewPath);
+    }
+  }
+  
   for (const unit of units) {
-    db[unit] = {};
+    const unitKey = path.basename(unit);
+    db[unitKey] = {};
     
     // 1. Data.js
     try {
       // Use absolute path for import to avoid resolution issues
       const modPath = 'file://' + path.resolve(unit, 'data.js').replace(/\\/g, '/');
       const mod = await import(modPath);
-      db[unit].data = mod.unitData || mod.gwData || mod.default;
+      db[unitKey].data = mod.unitData || mod.gwData || mod.default;
     } catch (err) {
       console.error(`Error loading data.js for ${unit}:`, err.message);
     }
@@ -25,7 +33,7 @@ async function buildDatabase() {
     const bioPath = path.join(unit, 'biographies.json');
     if (fs.existsSync(bioPath)) {
       try {
-        db[unit].biographies = JSON.parse(fs.readFileSync(bioPath, 'utf8'));
+        db[unitKey].biographies = JSON.parse(fs.readFileSync(bioPath, 'utf8'));
       } catch (err) {
         console.error(`Error parsing biographies for ${unit}:`, err.message);
       }
@@ -35,7 +43,7 @@ async function buildDatabase() {
     const quizPath = path.join(unit, 'quiz.json');
     if (fs.existsSync(quizPath)) {
       try {
-        db[unit].quiz = JSON.parse(fs.readFileSync(quizPath, 'utf8'));
+        db[unitKey].quiz = JSON.parse(fs.readFileSync(quizPath, 'utf8'));
       } catch (err) {
         console.error(`Error parsing quiz for ${unit}:`, err.message);
       }
@@ -45,7 +53,7 @@ async function buildDatabase() {
     const termPath = path.join(unit, 'terminology.json');
     if (fs.existsSync(termPath)) {
       try {
-        db[unit].terminology = JSON.parse(fs.readFileSync(termPath, 'utf8'));
+        db[unitKey].terminology = JSON.parse(fs.readFileSync(termPath, 'utf8'));
       } catch (err) {
         console.error(`Error parsing terminology for ${unit}:`, err.message);
       }
@@ -61,8 +69,9 @@ async function buildDatabase() {
   }
   
   for (const unit of units) {
-      if (db[unit]) {
-          fs.writeFileSync(path.join('public', 'data', `${unit}.json`), JSON.stringify(db[unit], null, 2), 'utf8');
+      const unitKey = path.basename(unit);
+      if (db[unitKey]) {
+          fs.writeFileSync(path.join('public', 'data', `${unitKey}.json`), JSON.stringify(db[unitKey], null, 2), 'utf8');
       }
   }
 

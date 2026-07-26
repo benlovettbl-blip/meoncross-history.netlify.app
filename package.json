@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "sync": "node build_database.cjs && node extract_units.js && node scripts/generate_all_quiz_packs.js",
+    "sync": "node build_database.cjs && node extract_units.js && node scripts/generate_all_quiz_packs.js && node generate_workbooks.js",
     "create-unit": "node scripts/create_unit.js",
-    "test:content": "node scripts/test_content.mjs"
+    "test:content": "node scripts/test_content.mjs",
+    "export:pdf": "node export_pdfs.js"
   },
   "keywords": [
     "education",

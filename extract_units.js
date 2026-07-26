@@ -116,30 +116,7 @@ function extractUnit(unitId, sourceDir, targetBaseDir) {
       }
     });
   
-    // Copy app.js -> unit_script.js and patch DOMContentLoaded
-    const sourceJs = path.join(sourceDir, 'app.js');
-    if (fs.existsSync(sourceJs)) {
-      let jsContent = fs.readFileSync(sourceJs, 'utf8');
-      // Patch initialization logic
-      jsContent = jsContent.replace(/document\.addEventListener\(['"]DOMContentLoaded['"], \(\) => \{/g, 'window.initUnit = function() {');
-      jsContent = jsContent.replace(/window\.addEventListener\(['"]DOMContentLoaded['"], async \(\) => \{/g, 'window.initUnit = async function() {');
-      
-      // Also patch water_and_sanitation's inner tab logic that relies on `.nav-tab` clicks since AppEngine manages nav-tabs now!
-      jsContent = jsContent.replace(/#workbookTabs \.tb-tab/g, '#engine-tabs-container .tb-tab');
-      jsContent = jsContent.replace(/\.was-main-nav/g, '#engine-tabs-container');
-      
-      // Patch the target container for the new gamified architecture
-      jsContent = jsContent.replace(/document\.getElementById\(['"]content-area['"]\)/g, "document.getElementById('engine-workbook-container')");
-      
-      // Fix the closing brace for the new app.js structure
-      jsContent = jsContent.replace(/window\.renderDashboard\(\);\s*\n\}\);/, "window.renderDashboard();\n};");
-      
-      // Legacy backwards compatibility
-      jsContent = jsContent.replace(/selectTab\('cover'\);\s*\n\}\);/, "selectTab('cover');\n};");
-      jsContent = jsContent.replace(/if \(lessonsTab\) lessonsTab\.click\(\);\s*\n\}\);/, "if (lessonsTab) lessonsTab.click();\n};");
-      
-      fs.writeFileSync(path.join(unitTargetDir, 'unit_script.js'), jsContent);
-    }
+
   } catch (err) {
     console.error(err);
   }

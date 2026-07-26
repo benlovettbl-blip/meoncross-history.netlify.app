@@ -52,28 +52,12 @@ export default class AppEngine {
       styleLink.href = `/units/${this.unitId}/styles.css`;
       document.head.appendChild(styleLink);
 
-      // Load specific unit scripts
-      this.loadUnitScripts();
-
     } catch (err) {
       console.error(err);
       document.getElementById('engine-unit-title').innerText = "Failed to load unit.";
       document.getElementById('engine-workbook-container').innerHTML = `<p style="color:red; text-align:center;">${err.message}</p>`;
     }
   }
-
-  loadUnitScripts() {
-     const script = document.createElement('script');
-     script.src = `/units/${this.unitId}/unit_script.js`;
-     script.type = 'module';
-     script.onload = () => {
-        if (typeof window.initUnit === 'function') {
-           window.initUnit(this);
-        }
-     };
-     document.body.appendChild(script);
-  }
-}
 
 // Bootstrap
 window.engine = new AppEngine();

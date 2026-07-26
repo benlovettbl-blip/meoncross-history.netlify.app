@@ -68,3 +68,15 @@ export function sanitizeLessonData(lesson) {
   
   return lesson;
 }
+
+/**
+ * Resolves an asset path to the correct relative depth.
+ * depth = 2 by default because workbooks are in public/units/<unit_id>/ 
+ * so it needs to go up 2 levels (../../) to reach the root public directory.
+ */
+export function resolveAssetPath(src, depth = 2) {
+  if (!src) return '';
+  if (src.startsWith('http')) return src;
+  const prefix = '../'.repeat(depth);
+  return `${prefix}${src.startsWith('/') ? src.substring(1) : src}`;
+}

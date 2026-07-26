@@ -1,21 +1,24 @@
+import { mock_exams } from "./mock_exams.js";
 export const unitData = {
+    "mock_exams": mock_exams,
     "title": "Conflict in the Middle East, 1945–1995",
     "workbooks": [
         {
             "id": "KT1",
-            "title": "KT1"
+            "title": "KT1",
+            "image": "/assets/cme_new_kt1_cover.png"
         },
         {
             "id": "KT2",
-            "title": "KT2"
+            "title": "KT2",
+            "image": "/assets/cme_new_yom_kippur_crossing.png"
         },
         {
             "id": "KT3",
-            "title": "KT3"
+            "title": "KT3",
+            "image": "/assets/cme_new_camp_david_accords.png"
         }
     ],
-    "cover_image": "/assets/cme_new_kt1_cover.png",
-    "cover_caption": "Conflict in the Middle East",
     "groupings": [
         {
             "prefix": "KT1",
@@ -63,7 +66,7 @@ export const unitData = {
             "sources": [
                 {
                     "title": "Reference Map: UN Partition Plan (Resolution 181)",
-                    "src": "/assets/cme_new_palestine_1947_map.png",
+                    "src": "/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png",
                     "caption": "Map of the UN Partition Plan of 1947 allocating 55% to the Jewish State and 45% to the Arab State."
                 },
                 {
@@ -94,7 +97,7 @@ export const unitData = {
             "do_now": {
                 "items": [
                     {
-                        "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
+                        "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"/units/cme_new/assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
                         "answer": "Arthur Balfour. He promised British support for a 'national home' for the Jewish people in Palestine."
                     },
                     {
@@ -148,16 +151,6 @@ export const unitData = {
                 }
             ],
             "pair_share": {
-                "prompt": "Read the conflicting historical interpretations of 'Plan Dalet (Plan D)'. Do you think it was a defensive military strategy or an offensive campaign of ethnic cleansing?",
-                "think": "Jot down your choice and one piece of evidence to support it.",
-                "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
-                "share": "Be ready to report your partner's best point to the class."
-            },
-            "historians_corner": {
-                "title": "The Debate over Plan Dalet",
-                "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
-            },
-            "gcse_task": {
                 "sources": [
                     {
                         "type": "written",
@@ -170,6 +163,16 @@ export const unitData = {
                         "title": "Source B: An extract from the official text of Plan Dalet, March 1948."
                     }
                 ],
+                "prompt": "Read the conflicting historical interpretations of 'Plan Dalet (Plan D)'. Do you think it was a defensive military strategy or an offensive campaign of ethnic cleansing?",
+                "think": "Jot down your choice and one piece of evidence to support it.",
+                "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
+                "share": "Be ready to report your partner's best point to the class."
+            },
+            "historians_corner": {
+                "title": "The Debate over Plan Dalet",
+                "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+            },
+            "gcse_task": {
                 "topic": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
                 "model": "The narrative began in the immediate aftermath of the Second World War in 1945, when the British Mandate administration faced a highly organized, violent insurgency from Zionist paramilitary groups (including the Haganah, Irgun, and Lehi) who demanded the immediate establishment of a Jewish state and the removal of British restrictions on Holocaust survivors migrating to Palestine. This campaign of violence reached a critical turning point on 22 July 1946 when the Irgun bombed the British military and administrative headquarters at the King David Hotel in Jerusalem, killing 91 people. Proving that the Mandate was becoming too costly and politically difficult to police, this attack was soon followed by further propaganda blows, such as the British turning back 4,500 refugees on the SS Exodus in July 1947. Consequently, this unsustainable security and economic strain forced the British government to conclude in February 1947 that the Mandate was unworkable, leading them to hand the entire problem over to the newly formed United Nations.\n\nThis referral directly led to the UN proposing a diplomatic solution through the United Nations Special Committee on Palestine (UNSCOP), which formulated UN Resolution 181 (the Partition Plan). Passed on 29 November 1947, the resolution recommended dividing Palestine into separate, independent Jewish and Arab states, allocating 55% of the land to the Jewish state while designating Jerusalem as an international zone under UN control. While the Jewish Agency officially accepted the plan as a vital source of international legitimacy, the Arab Higher Committee and the Arab League completely rejected it as an unjust seizure of Arab-majority land. As a direct consequence of this diplomatic deadlock, a brutal civil war broke out in December 1947 as both sides scrambled to consolidate military control over territories ahead of the impending British withdrawal.\n\nDuring this civil war phase, Jewish forces went on the offensive to secure their borders, implementing \"Plan D\" to seize strategic British bases and expel Palestinian Arab populations, which was accelerated by violent flashpoints like the Deir Yassin massacre in April 1948. This escalating cycle of violence paved the way for the final creation of the state as the British officially terminated their Mandate on 14 May 1948. This departure left a power vacuum that resulted in David Ben-Gurion immediately proclaiming the establishment of the State of Israel at 4:00 p.m. in Tel Aviv. While the USA and USSR immediately recognized the new nation, the declaration of statehood ultimately culminated in a major regional war as the regular armies of five neighboring Arab states invaded Israel the very next day on 15 May 1948."
             },
@@ -243,7 +246,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (4 marks) (P4)",
+                            "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (P4)",
                             "model": "The deadliest act was the bombing of the King David Hotel in Jerusalem by the Irgun. The hotel's southern wing was targeted because it housed the central administrative headquarters of the British Mandate and the military command of the British Army."
                         }
                     ]
@@ -282,7 +285,7 @@ export const unitData = {
                             "id": "map-1947",
                             "year": "1947",
                             "label": "UN Partition Plan",
-                            "src": "/assets/cme_new_palestine_1947_map.png",
+                            "src": "/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947.svg",
                             "caption": "Under UN Resolution 181, Palestine is split. The Jewish state receives 55% of the land. Jerusalem is an international zone."
                         },
                         {
@@ -323,7 +326,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (4 marks) (P8)",
+                            "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (P8)",
                             "model": "Israel used the one-month truce to unify its forces into a single national army (the IDF) and illegally import modern military hardware from Czechoslovakia, completely neutralizing the Arabs' initial material superiority."
                         }
                     ]
@@ -334,7 +337,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (4 marks) (P9)",
+                            "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (P9)",
                             "model": "Traditional Israeli historians argued that Palestinians fled voluntarily on the orders of Arab leaders. However, Palestinian historians and 'New Historians' have demonstrated that the vast majority were systematically driven out through deliberate military expulsions and the terror of massacres like Deir Yassin, resulting in the Nakba."
                         }
                     ]
@@ -383,7 +386,33 @@ export const unitData = {
                 }
             ],
             "draw_tasks": [],
-            "enquiry": "Why did the British Mandate end and how was the State of Israel created?"
+            "enquiry": "Why did the British Mandate end and how was the State of Israel created?",
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of conflicting interests and demands of Arabs and Jews for the British Mandate. 1945-48.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of the bombing of the King David Hotel (1946) for the ending of the British Mandate in 1947.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the conflicting interests and demands of Arabs and Jews in the British Mandate 1945-47.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of growing Jewish insurgency during the British Mandate 1946-1947.",
+                    "marks": 4
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of 1946-48 that led to the creation of Israel.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of the Arab-Israeli war from 1948 to 1949.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_2",
@@ -438,11 +467,11 @@ export const unitData = {
                         "answer": "Egypt, Syria, Jordan (Transjordan), Lebanon, and Iraq."
                     },
                     {
-                        "question": "Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor (4 marks).",
+                        "question": "Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor.",
                         "answer": "Israel used the 30-day truce to unify its forces under the IDF and import massive quantities of modern weaponry from Czechoslovakia, neutralizing the Arabs' initial material superiority."
                     },
                     {
-                        "question": "Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight (4 marks).",
+                        "question": "Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight.",
                         "answer": "The massacre of over 100 Arab villagers was sensationalized by Arab radio, which backfired and triggered widespread panic among Arab civilians, causing hundreds of thousands to flee."
                     },
                     {
@@ -549,7 +578,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the demographic impact of the 1950 Law of Return on the new State of Israel. (4 marks) (P6)",
+                            "text": "Explain the demographic impact of the 1950 Law of Return on the new State of Israel. (P6)",
                             "model": "The Law of Return granted any Jew automatic citizenship, triggering an immense demographic boom that doubled Israel's population in a few years and supplied the IDF with a constant stream of military manpower."
                         }
                     ]
@@ -576,7 +605,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe two ways that Egypt attempted to strangle Israel economically and militarily in the early 1950s. (4 marks) (P9)",
+                            "text": "Describe two ways that Egypt attempted to strangle Israel economically and militarily in the early 1950s. (P9)",
                             "model": "First, Egypt closed the Suez Canal to Israeli ships and confiscated cargo. Second, Egypt established a military blockade at the Straits of Tiran and used the Gaza Strip as a launchpad for Fedayeen guerrilla raids into Israel."
                         }
                     ]
@@ -638,7 +667,29 @@ export const unitData = {
                     "Analyze how Israel consolidated its new state and countered Egyptian hostility."
                 ]
             },
-            "enquiry": "What were the immediate geopolitical and human consequences of the 1948-49 War?"
+            "enquiry": "What were the immediate geopolitical and human consequences of the 1948-49 War?",
+            "exam_practice": [
+                {
+                    "question": "Explain one consequence of the 1948-49 Arab-Israeli War.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the Arab-Israeli conflict of 1948 for relations between Palestinians and Israelis.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the growth of Israel 1949-1954.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of US aid to Israel for the consolidation of the new state in the years 1949–54.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of Israel's early relations with Egypt for the stability of the region in the years 1949–54.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_3",
@@ -690,7 +741,7 @@ export const unitData = {
                         "answer": "Israel denied it to preserve a Jewish demographic majority. Arab host states kept refugees in camps to maintain moral pressure on Israel."
                     },
                     {
-                        "question": "Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950 (4 marks).",
+                        "question": "Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950.",
                         "answer": "1. Granted every Jew automatic citizenship, doubling the population. 2. Provided massive labor and military conscripts to defend vulnerable borders."
                     },
                     {
@@ -698,7 +749,7 @@ export const unitData = {
                         "answer": "A $100 million grant in 1949 and a further $200 million by 1960."
                     },
                     {
-                        "question": "Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice (4 marks).",
+                        "question": "Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice.",
                         "answer": "1. Closed the Suez Canal to Israeli vessels. 2. Blockaded the Straits of Tiran to choke trade through Eilat."
                     },
                     {
@@ -761,8 +812,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
-                    "level_4": "<img src=\"assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
+                    "text": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
                     "tasks": []
                 },
                 {
@@ -788,8 +839,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"gaza_raid\">",
-                    "level_4": "<img src=\"assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"gaza_raid\">",
+                    "text": "<img src=\"/units/cme_new/assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"gaza_raid\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/gaza_raid.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"gaza_raid\">",
                     "tasks": []
                 },
                 {
@@ -826,8 +877,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sevres_protocol\">",
-                    "level_4": "<img src=\"assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sevres_protocol\">",
+                    "text": "<img src=\"/units/cme_new/assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sevres_protocol\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/sevres_protocol.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sevres_protocol\">",
                     "tasks": []
                 },
                 {
@@ -836,7 +887,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain how Britain and France planned to use an Israeli invasion of the Sinai as a pretext to retake the Suez Canal. (4 marks) (P10)",
+                            "text": "Explain how Britain and France planned to use an Israeli invasion of the Sinai as a pretext to retake the Suez Canal. (P10)",
                             "model": "Once Israel launched a pre-emptive strike toward the canal, Britain and France would issue an ultimatum for both sides to pull back. When Egypt inevitably refused, Britain and France would invade to 'protect' international shipping."
                         }
                     ]
@@ -863,8 +914,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
-                    "level_4": "<img src=\"assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
+                    "text": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
                     "tasks": []
                 },
                 {
@@ -907,9 +958,35 @@ export const unitData = {
             },
             "enquiry": "Why did the Suez Crisis of 1956 fundamentally shift the balance of power in the Middle East?",
             "gcse_task": {
-                "topic": "Explain two consequences of the Suez Crisis (1956) for the Middle East. (8 marks)",
-                "model": "One consequence of the Suez Crisis was the dramatic increase in President Nasser's prestige and his leadership of the Arab world, which fueled the rapid growth of Pan-Arab nationalism. Although Egypt suffered a severe military defeat during the Anglo-French and Israeli invasion, Nasser was widely perceived as an Arab hero for successfully standing up to Western imperialist domination. Consequently, this political victory directly resulted in Syria requesting a political union with Egypt, leading to the formation of the United Arab Republic (UAR) in February 1958 with Nasser welcomed as its supreme president.\n\nAnother consequence was a significant, long-term improvement in Israel's southern border security and maritime trade. Prior to 1956, Israel faced constant cross-border Fedayeen guerrilla raids launched from Egyptian-controlled Gaza, alongside a naval blockade of the Straits of Tiran that choked off trade to the southern port of Eilat. As a direct result of the Suez Crisis, although Israel was forced by US pressure to withdraw from the Sinai Peninsula by 1957, the United Nations Emergency Force (UNEF) was deployed along the border as a peacekeeping buffer zone. This UNEF buffer successfully halted Fedayeen raids for a decade, while the lifting of the blockade allowed Israel to safely develop its economy and agricultural settlements using the reopened Gulf of Aqaba."
-            }
+                "topic": "Explain one consequence of the Suez Crisis (1956) for the Middle East. (4 marks)",
+                "model": "One consequence of the Suez Crisis was the dramatic increase in President Nasser's prestige and his leadership of the Arab world, which fueled the rapid growth of Pan-Arab nationalism. Although Egypt suffered a severe military defeat during the Anglo-French and Israeli invasion, Nasser was widely perceived as an Arab hero for successfully standing up to Western imperialist domination. Consequently, this political victory directly resulted in Syria requesting a political union with Egypt, leading to the formation of the United Arab Republic (UAR) in February 1958 with Nasser welcomed as its supreme president."
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of Israeli attacks on Gaza, 1955, for relations between Egypt and Israel.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of Israeli attacks on Gaza in 1955.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain one consequence of the Suez Canal Crisis (1956).",
+                    "marks": 4
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of the Suez Canal Crisis (1956).",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the formation of the United Arab Republic, UAR, in 1958.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the formation of the United Arab Republic, UAR, in 1958 for regional tension in the Middle East.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_4",
@@ -926,7 +1003,7 @@ export const unitData = {
                         "answer": "The Protocol of Sèvres."
                     },
                     {
-                        "question": "Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956 (4 marks).",
+                        "question": "Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956.",
                         "answer": "Nasser nationalised the canal to use its £35 million annual toll revenues to directly fund his pride project, the Aswan High Dam, after the USA and Great Britain abruptly withdrew their joint offer of financial loans."
                     },
                     {
@@ -1023,8 +1100,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
-                    "level_4": "<img src=\"assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
+                    "text": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
                     "tasks": []
                 },
                 {
@@ -1055,8 +1132,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"syria_fatah\">",
-                    "level_4": "<img src=\"assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"syria_fatah\">",
+                    "text": "<img src=\"/units/cme_new/assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"syria_fatah\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/syria_fatah.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"syria_fatah\">",
                     "tasks": []
                 },
                 {
@@ -1108,7 +1185,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the success of Operation Focus launched by the Israeli air force on 5 June 1967. (4 marks) (P13)",
+                            "text": "Describe the success of Operation Focus launched by the Israeli air force on 5 June 1967. (P13)",
                             "model": "Operation Focus was a highly successful pre-emptive strike where Israeli jets flew low over the Mediterranean to evade radar and destroyed 309 of Egypt's combat aircraft on the tarmac within three hours."
                         }
                     ]
@@ -1119,8 +1196,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
-                    "level_4": "<img src=\"assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
+                    "text": "<img src=\"/units/cme_new/assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
                     "tasks": []
                 },
                 {
@@ -1193,7 +1270,37 @@ export const unitData = {
             "gcse_task": {
                 "topic": "Write a narrative account analysing the key events of the Six Day War (1967). (8 marks)",
                 "model": "The war was initiated on 5 June 1967 when Israel, reacting to intense regional escalations including Egypt's mobilization of troops into the Sinai and the blockade of the Straits of Tiran, launched a surprise pre-emptive attack known as Operation Focus. This opening phase of the war was highly successful because it destroyed 90% of the Egyptian air force on the runways (accounting for 309 of Egypt's 340 aircraft) and neutralized the air forces of Syria and Jordan within the first six hours. By establishing absolute control of the air space on the first day, Israel cleared the way for its ground divisions to launch rapid land operations without the threat of Arab aerial bombardment.\n\nAs a direct result of this air superiority, Israeli ground forces swept across the Sinai Peninsula to the Suez Canal and captured the Gaza Strip from Egypt by 7 June. When Jordan entered the war, the IDF quickly opened a second front in the east. Consequently, this escalatory move directly led to the rapid capture of East Jerusalem and the West Bank from Jordan by 8 June, prompting Jordan to accept a UN ceasefire.\n\nWith the southern and eastern fronts secure, the IDF turned its full military focus to the north. Subsequently, this concentration of force resulted in a final, decisive assault on the Syrian front to capture the Golan Heights by 10 June. This sequence of developments culminated on 10 June 1967 when a final ceasefire was accepted by all Arab states, leaving Israel in control of captured territories three times its original size and displacing hundreds of thousands of new Palestinian refugees."
-            }
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of the Cairo Conference (1964) for the Arab states in the years 1964-73.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of Syria's support for Fatah 1964-67.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain one consequence of the Israeli raid on Samu, 1966, for developments in the Middle East.",
+                    "marks": 4
+                },
+                {
+                    "question": "Write a narrative account analysing the rising tension in the Middle East in the years 1964-67 which led to the Six Day War.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of disputes over the River Jordan waters.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of disputes over the River Jordan waters for border tension between Israel and Syria.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of the Six Day War 1967.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_5",
@@ -1226,11 +1333,11 @@ export const unitData = {
                         "answer": "The Palestine Liberation Organisation (PLO) was established. Its primary objective was to unite various Palestinian resistance groups under a single political umbrella to reclaim the lost homeland."
                     },
                     {
-                        "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"assets/card_arafat.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this leader, and what organisation did he take over in 1969?</span></div>",
+                        "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"/units/cme_new/assets/card_arafat.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this leader, and what organisation did he take over in 1969?</span></div>",
                         "answer": "Yasser Arafat. He became the Chairman of the Palestine Liberation Organisation (PLO)."
                     },
                     {
-                        "question": "Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions (4 marks).",
+                        "question": "Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions.",
                         "answer": "Israel completed its National Water Carrier to divert water from the Sea of Galilee. In response, Arab states drafted the Headwater Diversion Plan to divert the Dan and Banias rivers. This led to cross-border skirmishes where Israeli tanks and artillery fired on Syrian workers to destroy their heavy machinery."
                     },
                     {
@@ -1314,8 +1421,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
-                    "level_4": "<img src=\"assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
+                    "text": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
                     "tasks": []
                 },
                 {
@@ -1346,8 +1453,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
-                    "level_4": "<img src=\"assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
+                    "text": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
                     "tasks": []
                 },
                 {
@@ -1356,7 +1463,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Explain the strategic significance of the captured territories for Israel's military security. (4 marks) (P7)",
+                            "text": "Explain the strategic significance of the captured territories for Israel's military security. (P7)",
                             "model": "The territories acted as vast physical buffers: the Sinai kept Egyptian artillery away, the West Bank created a defensible border along the River Jordan, and the Golan Heights prevented Syria from shelling Galilee farming villages."
                         }
                     ]
@@ -1378,8 +1485,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/arab_armies.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arab_armies\">",
-                    "level_4": "<img src=\"assets/arab_armies.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arab_armies\">",
+                    "text": "<img src=\"/units/cme_new/assets/arab_armies.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arab_armies\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/arab_armies.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arab_armies\">",
                     "tasks": []
                 },
                 {
@@ -1405,8 +1512,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"./assets/black_september.svg\" style=\"width: 100%; max-width: 600px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
-                    "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"./assets/black_september.svg\" style=\"width: 100%; max-width: 600px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+                    "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 600px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+                    "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 600px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
                     "tasks": []
                 },
                 {
@@ -1431,7 +1538,7 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the events and consequences of the 1972 Munich Olympic Games terrorist attack. (4 marks) (P17)",
+                            "text": "Describe the events and consequences of the 1972 Munich Olympic Games terrorist attack. (P17)",
                             "model": "Black September terrorists took 11 Israeli athletes hostage, demanding the release of Palestinian prisoners. During a botched German rescue attempt, all hostages and 5 terrorists were killed on live television, drawing severe global condemnation."
                         }
                     ]
@@ -1491,9 +1598,43 @@ export const unitData = {
             },
             "enquiry": "How did Israel's dramatic victory in 1967 permanently alter the Middle East conflict?",
             "gcse_task": {
-                "topic": "Explain two consequences of the Six Day War (1967). (8 marks)",
-                "model": "One consequence of the war was Israel's military occupation and consolidation of control over the newly captured territories. Israel took control of the Sinai, Gaza, West Bank, Golan Heights, and East Jerusalem, bringing over a million Palestinians under direct Israeli military law. Consequently, this territorial expansion directly led to a major humanitarian crisis as 300,000 more Palestinians were displaced into refugee camps, and it prompted the start of the controversial Israeli settlement policy in the West Bank and Gaza.\n\nAnother consequence of the war was the entrenchment of Arab diplomatic hostility and the creation of a long-term political deadlock. In August 1967, Arab League leaders met at the Khartoum Summit and issued the \"Three Nos\": no peace with Israel, no recognition of Israel, and no negotiations with Israel. As a direct result of this uncompromising stance, the Arab states completely rejected the UN Security Council's Resolution 242 \"land for peace\" formula, which prevented any direct peace negotiations and locked the region into an escalatory \"War of Attrition\" over the Suez Canal."
-            }
+                "topic": "Explain one consequence of the Six Day War (1967). (4 marks)",
+                "model": "One consequence of the war was Israel's military occupation and consolidation of control over the newly captured territories. Israel took control of the Sinai, Gaza, West Bank, Golan Heights, and East Jerusalem, bringing over a million Palestinians under direct Israeli military law. Consequently, this territorial expansion directly led to a major humanitarian crisis as 300,000 more Palestinians were displaced into refugee camps, and it prompted the start of the controversial Israeli settlement policy in the West Bank and Gaza."
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain one consequence of the 1967 Six Day War.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the occupied territories for Israelis and Palestinians after 1967.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of Israel's consolidation of control of the occupied territories for relations between Israel and the Palestinians in the years 1967–73.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of the occupied territories for relations between Israel and the Arab world after the Six Day War, 1967.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of the use of Terrorism by Palestinians in the 1970's for the Palestinian issue.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the expulsion of the PLO from Jordan in 1970.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain one consequence of the PFLP airplane hijacks of 1970.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the expulsion of the PLO from Jordan, 1970, for PLO activities in Lebanon.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_6",
@@ -1530,7 +1671,7 @@ export const unitData = {
                         "answer": "The Popular Front for the Liberation of Palestine (PFLP)."
                     },
                     {
-                        "question": "Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation (4 marks).",
+                        "question": "Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation.",
                         "answer": "The English text called for a withdrawal from 'territories occupied,' allowing Israel to retain some land for secure borders. The French translation demanded a withdrawal from 'the territories' (all of them), which Arab states demanded."
                     },
                     {
@@ -1546,7 +1687,7 @@ export const unitData = {
                         "answer": "Lebanon."
                     },
                     {
-                        "question": "Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded (4 marks).",
+                        "question": "Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded.",
                         "answer": "The 'Black September' group took nine Israeli athletes hostage (killing two immediately), resulting in the deaths of all 11 during a failed rescue attempt. In response, Prime Minister Meir launched 'Operation Wrath of God' to assassinate the planners globally."
                     },
                     {
@@ -1614,8 +1755,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cold_war_escalation\">",
-                    "level_4": "<img src=\"assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cold_war_escalation\">",
+                    "text": "<img src=\"/units/cme_new/assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cold_war_escalation\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/cold_war_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cold_war_escalation\">",
                     "tasks": []
                 },
                 {
@@ -1646,8 +1787,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
-                    "level_4": "<img src=\"assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
+                    "text": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
                     "tasks": []
                 },
                 {
@@ -1678,8 +1819,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
-                    "level_4": "<img src=\"assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
+                    "text": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
                     "tasks": []
                 },
                 {
@@ -1699,8 +1840,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"surprise_attack\">",
-                    "level_4": "<img src=\"assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"surprise_attack\">",
+                    "text": "<img src=\"/units/cme_new/assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"surprise_attack\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/surprise_attack.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"surprise_attack\">",
                     "tasks": []
                 },
                 {
@@ -1725,14 +1866,14 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the superpower proxy conflict that emerged during the Yom Kippur War. (4 marks) (P16)",
+                            "text": "Describe the superpower proxy conflict that emerged during the Yom Kippur War. (P16)",
                             "model": "US President Richard Nixon authorized Operation Nickel Grass, a massive airlift of advanced weapons to Israel. Simultaneously, the Soviet Union launched a massive arms resupply to Egypt and Syria, turning the conflict into a Cold War proxy war."
                         }
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
-                    "level_4": "<img src=\"assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
+                    "text": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
                     "tasks": []
                 },
                 {
@@ -1808,7 +1949,33 @@ export const unitData = {
             "gcse_task": {
                 "topic": "Write a narrative account analysing the key events of the Yom Kippur War (1973). (8 marks)",
                 "model": "The conflict was initiated on 6 October 1973 when Egypt and Syria launched a highly coordinated, two-front surprise attack on Israeli positions in Sinai and the Golan Heights. Sadat deliberately chose to strike on Yom Kippur—the holiest day in Judaism—because the country was at a complete standstill, which severely slowed down the mobilization of Israeli military reserves. This tactical surprise was highly successful in its opening phase, as Egyptian forces crossed the Suez Canal to overrun the Bar Lev Line, while Syrian tanks advanced deep into the Golan Heights, inflicting heavy initial casualties on Israel.\n\nThis military crisis directly triggered mass superpower intervention, as both the USA and the Soviet Union scrambled to assist their regional allies to prevent a total collapse. The USA authorized Operation Nickel Grass, a vital military airlift that successfully rearmed the IDF, while the USSR supplied Egypt and Syria with advanced arms like SAM-3 anti-aircraft missiles. Armed with fresh US supplies, the IDF launched a powerful counter-offensive, repelling the Syrians on the Golan Heights and crossing the Suez Canal to encircle the Egyptian Third Army.\n\nThis dramatic turn of events prompted the Arab oil-producing states of OPEC to deploy the \"oil weapon\". They placed a total oil embargo on the United States and other Western supporters of Israel, which quadrupled crude prices and triggered a severe global energy crisis. Fearing a global economic collapse and a direct military confrontation with the Soviet Union, who threatened to intervene to protect Egypt, the superpowers co-sponsored UN Resolution 338. Ultimately, this international pressure culminated on 25 October 1973 when a final ceasefire was enforced, leaving both sides in a costly stalemate."
-            }
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of superpower (USA/USSR) involvement in the conflict in the Middle East 1967-73.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of Egypt's relationship with Israel 1968-73.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the ongoing dispute over the Suez Canal 1967-73.",
+                    "marks": 4
+                },
+                {
+                    "question": "Write a narrative account analysing relations between Egypt and other states in the years 1967–73.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of the 1973 Yom Kippur War.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the 1973 Yom Kippur War.",
+                    "marks": 4
+                }
+            ]
         },
         {
             "id": "lesson_7",
@@ -1862,7 +2029,7 @@ export const unitData = {
                         "answer": "He was frustrated by Soviet reluctance to supply offensive weaponry and calculated that expelling them would please the United States, hoping Washington would then pressure Israel into returning the Sinai Peninsula."
                     },
                     {
-                        "question": "Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War (4 marks).",
+                        "question": "Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War.",
                         "answer": "It replaced Israel’s heavy initial losses of tanks, jets, and ammunition. This vital logistical support allowed the IDF to stabilize their defense lines, launch a counter-offensive, and encircle Egypt's Third Army."
                     },
                     {
@@ -1870,7 +2037,7 @@ export const unitData = {
                         "answer": "Egypt blocked the Suez Canal to all Israel-bound cargo and established a naval blockade at the Straits of Tiran to choke off Israeli trade through its southern port of Eilat."
                     },
                     {
-                        "question": "Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973 (4 marks).",
+                        "question": "Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973.",
                         "answer": "OPEC placed a total oil embargo on the US and Western nations. This caused a severe global energy crisis (fuel shortages) and quadrupled the price of oil from $3 to $12 a barrel, triggering massive inflation."
                     },
                     {
@@ -1934,8 +2101,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cognitive_impact\">",
-                    "level_4": "<img src=\"assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cognitive_impact\">",
+                    "text": "<img src=\"/units/cme_new/assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cognitive_impact\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/cognitive_impact.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cognitive_impact\">",
                     "tasks": []
                 },
                 {
@@ -1950,8 +2117,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
-                    "level_4": "<img src=\"assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
+                    "text": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
                     "tasks": []
                 },
                 {
@@ -1971,8 +2138,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_faces\">",
-                    "level_4": "<img src=\"assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_faces\">",
+                    "text": "<img src=\"/units/cme_new/assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_faces\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_faces\">",
                     "tasks": []
                 },
                 {
@@ -1987,8 +2154,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/camp_david.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"camp_david\">",
-                    "level_4": "<img src=\"assets/camp_david.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"camp_david\">",
+                    "text": "<img src=\"/units/cme_new/assets/camp_david.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"camp_david\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/camp_david.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"camp_david\">",
                     "tasks": []
                 },
                 {
@@ -2003,8 +2170,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sinai_returned\">",
-                    "level_4": "<img src=\"assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sinai_returned\">",
+                    "text": "<img src=\"/units/cme_new/assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sinai_returned\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/sinai_returned.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sinai_returned\">",
                     "tasks": []
                 },
                 {
@@ -2047,9 +2214,43 @@ export const unitData = {
             },
             "enquiry": "How did historic enemies Egypt and Israel finally achieve a lasting peace treaty?",
             "gcse_task": {
-                "topic": "Explain two consequences of the Camp David Accords (1978). (8 marks)",
-                "model": "One consequence of the Accords was the signing of the formal Treaty of Washington on 26 March 1979. Brokered by US President Jimmy Carter, this treaty formally ended thirty years of war by having Egypt recognize Israel's right to exist in peace in exchange for Israel returning the Sinai Peninsula in stages. Consequently, this historic agreement meant that Israel successfully neutralized the largest Arab military power, allowing the IDF to secure its southern border and concentrate its strategic focus on the northern threat in Lebanon.\n\nAnother consequence was the complete diplomatic isolation and expulsion of Egypt from the Arab League. The rest of the Arab world viewed Anwar Sadat as a traitor who had broken Arab ranks and betrayed the Palestinian cause. As a direct result of this outrage, Arab states cut off all relations with Egypt, expelled it from the Arab League, and relocated the League's central headquarters from Cairo to Tunis, Tunisia. This widespread hostility ultimately culminated in Sadat’s assassination by a group of Islamic extremists in the army during a 1981 military parade."
-            }
+                "topic": "Explain one consequence of the Camp David Accords (1978). (4 marks)",
+                "model": "One consequence of the Accords was the signing of the formal Treaty of Washington on 26 March 1979. Brokered by US President Jimmy Carter, this treaty formally ended thirty years of war by having Egypt recognize Israel's right to exist in peace in exchange for Israel returning the Sinai Peninsula in stages. Consequently, this historic agreement meant that Israel successfully neutralized the largest Arab military power, allowing the IDF to secure its southern border and concentrate its strategic focus on the northern threat in Lebanon."
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of Kissinger's 'shuttle diplomacy' for relations between Israel and Egypt.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of 1974-1979 that led to peace between Egypt and Israel.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing key developments in diplomatic negotiations in the years 1973–79.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the reopening of the Suez Canal, 1975.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of Sadat's visit to Israel, 1977, for diplomatic negotiations.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the Camp David Agreements (1978-79).",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of US President Carter and Camp David, 1978, for the peace process in the Middle East.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of the Treaty of Washington (1978-79) for peace in the Middle East.",
+                    "marks": 8
+                }
+            ]
         },
         {
             "id": "lesson_8",
@@ -2087,7 +2288,7 @@ export const unitData = {
                         "answer": "June 1975 (specifically 5 June 1975)."
                     },
                     {
-                        "question": "Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy (4 marks).",
+                        "question": "Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy.",
                         "answer": "The Arab OPEC oil embargo caused severe inflation and fuel shortages in the West. This economic shock forced the US to actively stabilize the region to secure its energy supply and limit growing Soviet influence."
                     },
                     {
@@ -2095,7 +2296,7 @@ export const unitData = {
                         "answer": "Menachem Begin."
                     },
                     {
-                        "question": "Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo (4 marks).",
+                        "question": "Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo.",
                         "answer": "By traveling directly to Jerusalem and addressing the Israeli Knesset, Sadat broke the Arab League's 'Three Nos'. He offered Israel full diplomatic recognition and permanent peace in exchange for a complete withdrawal from occupied territories."
                     },
                     {
@@ -2111,7 +2312,7 @@ export const unitData = {
                         "answer": "The Arab world viewed Sadat as a traitor who abandoned the Palestinian cause. The Arab League expelled Egypt, suspended all economic aid, and relocated its headquarters to Tunis."
                     },
                     {
-                        "question": "Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements (4 marks).",
+                        "question": "Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements.",
                         "answer": "Sadat was assassinated in 1981 by radical Islamic militants in the Egyptian military. Begin faced intense condemnation from Likud hardliners and Gush Emunim settlers for dismantling Jewish settlements in Sinai."
                     },
                     {
@@ -2179,8 +2380,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
-                    "level_4": "<img src=\"assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
+                    "text": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
                     "tasks": []
                 },
                 {
@@ -2195,8 +2396,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/fatahland.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"fatahland\">",
-                    "level_4": "<img src=\"assets/fatahland.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"fatahland\">",
+                    "text": "<img src=\"/units/cme_new/assets/fatahland.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"fatahland\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/fatahland.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"fatahland\">",
                     "tasks": []
                 },
                 {
@@ -2211,8 +2412,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/coastal_road.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"coastal_road\">",
-                    "level_4": "<img src=\"assets/coastal_road.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"coastal_road\">",
+                    "text": "<img src=\"/units/cme_new/assets/coastal_road.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"coastal_road\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/coastal_road.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"coastal_road\">",
                     "tasks": []
                 },
                 {
@@ -2227,8 +2428,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"lebanese_invasion\">",
-                    "level_4": "<img src=\"assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"lebanese_invasion\">",
+                    "text": "<img src=\"/units/cme_new/assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"lebanese_invasion\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"lebanese_invasion\">",
                     "tasks": []
                 },
                 {
@@ -2248,8 +2449,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sabra_shatila\">",
-                    "level_4": "<img src=\"assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sabra_shatila\">",
+                    "text": "<img src=\"/units/cme_new/assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sabra_shatila\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/sabra_shatila.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sabra_shatila\">",
                     "tasks": []
                 },
                 {
@@ -2258,14 +2459,14 @@ export const unitData = {
                     "tasks": [
                         {
                             "type": "written",
-                            "text": "Describe the events and consequences of the Sabra and Shatila massacre in September 1982. (4 marks) (P12)",
+                            "text": "Describe the events and consequences of the Sabra and Shatila massacre in September 1982. (P12)",
                             "model": "Israeli forces allowed Lebanese Christian Phalangist militias into the refugee camps, who slaughtered between 800 and 3,500 unarmed civilians. The atrocities triggered furious global condemnation, forcing Ariel Sharon to resign after the Kahan Commission found him indirectly responsible."
                         }
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
-                    "level_4": "<img src=\"assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
+                    "text": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
                     "tasks": []
                 },
                 {
@@ -2280,8 +2481,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"intifada_escalation\">",
-                    "level_4": "<img src=\"assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"intifada_escalation\">",
+                    "text": "<img src=\"/units/cme_new/assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"intifada_escalation\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/intifada_escalation.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"intifada_escalation\">",
                     "tasks": []
                 },
                 {
@@ -2332,7 +2533,33 @@ export const unitData = {
             "gcse_task": {
                 "topic": "Write a narrative account analysing the key events of the First Intifada (1987–1993). (8 marks)",
                 "model": "The uprising began spontaneously in the Gaza Strip on 8 December 1987 when an Israeli military truck collided with a Palestinian lorry near the Jabalya refugee camp, killing four workers. Rumors spread that the crash was deliberate, and the victims' funerals immediately transformed into massive demonstrations protesting military occupation and settlement expansion. This popular anger quickly led to the rapid spread of civil disobedience across the occupied territories, with local popular committees organizing mass strikes, commercial boycotts of Israeli goods, and tax revolts.\n\nThe nature of this grassroots rebellion was characterized by Palestinian youths throwing stones and petrol bombs at heavily armored IDF tanks and soldiers. In response to this unrest, Israeli Defense Minister Yitzhak Rabin ordered a severe \"Iron Fist\" policy, utilizing tear gas, rubber bullets, live ammunition, and mass arrests to disperse the crowds. This harsh response directly resulted in international television cameras capturing the violence, which caused a dramatic shift in global public opinion and intense international condemnation of Israel's tactics.\n\nAs the Intifada persisted, the secular PLO leadership in Tunis faced a direct challenge to its authority from the rise of more radical local Islamist groups, most notably Hamas. Consequently, to reclaim the political spotlight and prevent being completely sidelined, Yasser Arafat decided to alter PLO tactics. This tactical shift culminated in Arafat's historic December 1988 speech to the UN in Geneva, where he officially renounced terrorism, accepted UN Resolutions 242 and 338, and recognized Israel's right to exist. This diplomatic moderate track broke the PLO's international isolation, eventually enabling the secret Norway negotiations that resulted in the 1993 Oslo Accords and ended the Intifada."
-            }
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of Yasser Arafat's speech to the UN, 1974, for the international recognition of the Palestinian cause.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of PLO activity in Lebanon for Israel.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of Israel's escalating conflict with the PLO in Lebanon 1978-1982.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the 1982 Israeli invasion of Lebanon.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the First Intifada (1987-93) for the Palestinians and Israel.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the Palestinian Intifada (1987–93).",
+                    "marks": 4
+                }
+            ]
         },
         {
             "id": "lesson_9",
@@ -2377,7 +2604,7 @@ export const unitData = {
                         "answer": "'Fatahland' was the name given to southern Lebanon, where the PLO established a 'state-within-a-state.' From here, guerrillas launched Katyusha rockets into northern Israel."
                     },
                     {
-                        "question": "Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon (4 marks).",
+                        "question": "Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon.",
                         "answer": "The immediate trigger was the attempted assassination of Shlomo Argov, the Israeli ambassador to Great Britain, by the extremist Abu Nidal Organization."
                     },
                     {
@@ -2393,7 +2620,7 @@ export const unitData = {
                         "answer": "An Israeli military transport vehicle collided with a civilian car in Gaza, killing four Palestinian workers, sparking spontaneous demonstrations."
                     },
                     {
-                        "question": "Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally (4 marks).",
+                        "question": "Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally.",
                         "answer": "It relied on civil disobedience and street violence (throwing stones). Rabin's 'Iron Fist' policy backfired because TV news broadcasted soldiers using heavy force against children, shifting global sympathy."
                     },
                     {
@@ -2461,8 +2688,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
-                    "level_4": "<img src=\"assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
+                    "text": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
                     "tasks": []
                 },
                 {
@@ -2482,8 +2709,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"soviet_collapse\">",
-                    "level_4": "<img src=\"assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"soviet_collapse\">",
+                    "text": "<img src=\"/units/cme_new/assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"soviet_collapse\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/soviet_collapse.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"soviet_collapse\">",
                     "tasks": []
                 },
                 {
@@ -2498,8 +2725,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_saddam\">",
-                    "level_4": "<img src=\"assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_saddam\">",
+                    "text": "<img src=\"/units/cme_new/assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_saddam\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_saddam\">",
                     "tasks": []
                 },
                 {
@@ -2514,8 +2741,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/labour_govt.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"labour_govt\">",
-                    "level_4": "<img src=\"assets/labour_govt.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"labour_govt\">",
+                    "text": "<img src=\"/units/cme_new/assets/labour_govt.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"labour_govt\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/labour_govt.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"labour_govt\">",
                     "tasks": []
                 },
                 {
@@ -2530,8 +2757,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
-                    "level_4": "<img src=\"assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
+                    "text": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
                     "tasks": []
                 },
                 {
@@ -2540,8 +2767,8 @@ export const unitData = {
                     "tasks": []
                 },
                 {
-                    "text": "<img src=\"assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
-                    "level_4": "<img src=\"assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
+                    "text": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
                     "tasks": []
                 },
                 {
@@ -2556,8 +2783,8 @@ export const unitData = {
                     ]
                 },
                 {
-                    "text": "<img src=\"assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
-                    "level_4": "<img src=\"assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
+                    "text": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
+                    "level_4": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
                     "tasks": []
                 },
                 {
@@ -2643,7 +2870,57 @@ export const unitData = {
             "gcse_task": {
                 "topic": "Explain the importance of the Oslo I Accord (1993) for the Middle East peace process. (8 marks)",
                 "model": "The Oslo I Accord of 1993 was of historic importance for the Middle East peace process because it shattered forty-five years of mutual denial by establishing formal, bilateral recognition between the State of Israel and the PLO. Through secret, back-channel negotiations in Norway, Yasser Arafat officially renounced the use of terrorism and recognized Israel's right to exist, while Yitzhak Rabin formally recognized the PLO as the sole legitimate representative of the Palestinian people. This mutual breakthrough was highly important because it paved the way for the creation of the Palestinian National Authority (PNA) in 1994, which was granted civil and security jurisdiction over the Gaza Strip and the West Bank town of Jericho, giving Palestinians their first instance of limited self-rule.\n\nFurthermore, the Oslo I Accord was highly important because it established a transitional framework and timeline for phased Israeli military withdrawals, directly shaping the geography of subsequent peace agreements. The accord set up a five-year transitional period during which more complex \"final status\" issues—such as the status of Jerusalem, borders, and refugees—were postponed to secure immediate progress. This phased approach directly resulted in the signing of the Oslo II Accord in September 1995, which divided the West Bank into Areas A, B, and C to manage the gradual transfer of authority. Although it failed to deliver a permanent settlement, the Oslo framework remained the indispensable blueprint for all subsequent Israeli-Palestinian negotiations throughout the 1990s."
-            }
+            },
+            "exam_practice": [
+                {
+                    "question": "Explain the importance of Yasser Arafat's renunciation of terrorism in 1988 for the peace process.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of the first Gulf War and end of the Cold War (1991) for the conflict in the Middle east.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the Gulf War (1991) for the Arab-Israeli conflict.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain one consequence of US involvement in the Gulf War, 1991, for the PLO.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of US involvement in the Gulf War, 1991, for the diplomatic strategy of the PLO.",
+                    "marks": 8
+                },
+                {
+                    "question": "Write a narrative account analysing the key events of the peace process between Israel and the Palestinians, 1991-1995.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the 1993 Oslo Peace Accords.",
+                    "marks": 4
+                },
+                {
+                    "question": "Explain the importance of the Oslo Accords for the conflict in the Middle East.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain the importance of Oslo II, 1995, for the Middle East peace process.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of the setting up of the Palestinian National Authority.",
+                    "marks": 4
+                },
+                {
+                    "question": "Write a narrative account analysing attempts at a solution in the years 1988–95.",
+                    "marks": 8
+                },
+                {
+                    "question": "Explain one consequence of Oslo II, 1995.",
+                    "marks": 4
+                }
+            ]
         }
     ],
     "exam_blocks": [

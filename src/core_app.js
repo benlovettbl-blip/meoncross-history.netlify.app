@@ -2,7 +2,7 @@ import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
-import { sectionAGuide, sectionBGuide } from './exam_guide_content.js';
+import { sectionAGuide, sectionBGuide, middleEastGuide } from './exam_guide_content.js';
 
 export function getAssetUrl(path) {
   if (!path) return path;
@@ -674,19 +674,28 @@ export function initializeApp(unitData) {
         }
       </style>
     `;
-    if (window.currentUnitId === 'edexcel_medicine') {
-      const periods = [
-        { id: 'medieval', title: 'Medieval (c1250-c1500)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'medieval_pano_1784551792993.png', enquiry: 'How much did medicine really change in Medieval England?' },
-        { id: 'renaissance', title: 'Renaissance (c1500-c1700)', prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #064e3b, #059669)', border: '#059669', image: 'renaissance_pano_1784551804068.png', enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?' },
-        { id: '18th_19th', title: '18th & 19th C (c1700-c1900)', prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #475569, #d97706)', border: '#d97706', image: 'industrial_pano_1784551813599.png', enquiry: 'How did the Industrial Revolution transform the understanding and prevention of disease?' },
-        { id: 'modern', title: 'Modern (c1900-present)', prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)', border: '#0284c7', image: 'modern_pano_1784551822373.png', enquiry: 'How did technology and government intervention revolutionize 20th-century medicine?' },
-        { id: 'western_front', title: 'Western Front', prefix: 'lesson_5_', gradient: 'linear-gradient(135deg, #422006, #65a30d)', border: '#65a30d', image: 'western_front_pano_1784551831887.png', enquiry: 'How did the horrific conditions of trench warfare drive rapid medical innovation?' }
-      ];
+    if (window.currentUnitId === 'edexcel_medicine' || window.currentUnitId === 'cme_new') {
+      let periods = [];
+      if (window.currentUnitId === 'edexcel_medicine') {
+        periods = [
+          { id: 'medieval', title: 'Medieval (c1250-c1500)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/banners/medieval_pano_1784551792993.png', enquiry: 'How much did medicine really change in Medieval England?' },
+          { id: 'renaissance', title: 'Renaissance (c1500-c1700)', prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #064e3b, #059669)', border: '#059669', image: 'assets/banners/renaissance_pano_1784551804068.png', enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?' },
+          { id: '18th_19th', title: '18th & 19th C (c1700-c1900)', prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #475569, #d97706)', border: '#d97706', image: 'assets/banners/industrial_pano_1784551813599.png', enquiry: 'How did the Industrial Revolution transform the understanding and prevention of disease?' },
+          { id: 'modern', title: 'Modern (c1900-present)', prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)', border: '#0284c7', image: 'assets/banners/modern_pano_1784551822373.png', enquiry: 'How did technology and government intervention revolutionize 20th-century medicine?' },
+          { id: 'western_front', title: 'Western Front', prefix: 'lesson_5_', gradient: 'linear-gradient(135deg, #422006, #65a30d)', border: '#65a30d', image: 'assets/banners/western_front_pano_1784551831887.png', enquiry: 'How did the horrific conditions of trench warfare drive rapid medical innovation?' }
+        ];
+      } else if (window.currentUnitId === 'cme_new') {
+        periods = [
+          { id: 'KT1', title: 'Key Topic 1: The Birth of Israel', prefix: 'KT1', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/cme_new_kt1_cover.png', enquiry: 'How and why was the state of Israel established?' },
+          { id: 'KT2', title: 'Key Topic 2: Escalating Conflict', prefix: 'KT2', gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)', border: '#ef4444', image: 'assets/cme_new_yom_kippur_crossing.png', enquiry: 'What drove the major conflicts in the Middle East from 1967-1973?' },
+          { id: 'KT3', title: 'Key Topic 3: Attempts at Peace', prefix: 'KT3', gradient: 'linear-gradient(135deg, #064e3b, #10b981)', border: '#10b981', image: 'assets/cme_new_camp_david_accords.png', enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?', bgPos: 'center 20%' }
+        ];
+      }
       
       periods.forEach(p => {
         lessonsHTML += `
           <div class="premium-banner">
-            <div class="premium-banner-bg" style="background-image: url('assets/banners/${p.image}');"></div>
+            <div class="premium-banner-bg" style="background-image: url('${p.image}'); background-position: ${p.bgPos || 'center'};"></div>
             <div class="premium-banner-overlay-1"></div>
             <div class="premium-banner-overlay-2" style="background: ${p.gradient};"></div>
             <div class="premium-banner-glow" style="background: radial-gradient(circle, ${p.border} 0%, transparent 70%);"></div>
@@ -700,7 +709,7 @@ export function initializeApp(unitData) {
         
         let foundAny = false;
         unitData.lessons.forEach((lesson, index) => {
-          if (lesson.id && lesson.id.startsWith(p.prefix)) {
+          if ((lesson.id && lesson.id.startsWith(p.prefix)) || (lesson.title && lesson.title.startsWith(p.prefix))) {
             foundAny = true;
             lessonsHTML += `
               <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
@@ -713,7 +722,7 @@ export function initializeApp(unitData) {
         
         // ADD WORKBOOK FOR THIS PERIOD
         lessonsHTML += `
-          <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${p.border}; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/${window.currentUnitId}/workbook_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${p.border}; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/units/${window.currentUnitId}/workbook_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
              <i class="fa-solid fa-book-open" style="font-size: 1.2rem; color: ${p.border}; margin-bottom: 6px;"></i>
              <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">Workbook: ${p.title}</h3>
           </div>
@@ -735,6 +744,21 @@ export function initializeApp(unitData) {
         `;
       });
       lessonsHTML += '</div>';
+      
+      if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0) {
+        lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Printable Workbooks</h2>';
+        lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+        unitData.printable_workbooks.forEach(wb => {
+          const wbUrl = window.currentUnitId ? `/units/${window.currentUnitId}/${wb.url}` : wb.url;
+          lessonsHTML += `
+            <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed #3b82f6; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${wbUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+               <i class="fa-solid fa-book-open" style="font-size: 1.5rem; color: #3b82f6; margin-bottom: 10px;"></i>
+               <h3 style="margin: 0; color: #334155; font-size: 1.1rem;">${wb.title}</h3>
+            </div>
+          `;
+        });
+        lessonsHTML += '</div>';
+      }
     }
 
 
@@ -755,8 +779,8 @@ export function initializeApp(unitData) {
             `).join('')}
           </div>
         ` : (unitData.cover_image ? `
-          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: inline-block; margin-bottom: 5px;">
-            <img src="${getAssetUrl(unitData.cover_image)}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 500px;">
+          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: block; margin: 0 auto 5px auto; max-width: 33%;">
+            <img src="${getAssetUrl(unitData.cover_image)}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 400px; margin: 0 auto;">
           </div>
         ` : '')}
         
@@ -806,6 +830,18 @@ export function initializeApp(unitData) {
         <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
           ${sectionAGuide}
           ${sectionBGuide}
+        </div>
+      `;
+    } else if (unitData.title && unitData.title.toLowerCase().includes('middle east')) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #fecaca; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 2</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${middleEastGuide}
         </div>
       `;
     } else {
@@ -2073,9 +2109,7 @@ window.updateProgress = () => {
        addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
     }
 
-    if (activeLesson.extended && activeLesson.extended.question) {
-       addQuestionCard(activeLesson.extended.qNum || '-', activeLesson.extended.question, activeLesson.extended.model || activeLesson.extended.answer || '');
-    }
+
     
     container.innerHTML = html;
     modal.classList.add('visible');

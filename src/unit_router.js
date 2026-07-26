@@ -46,6 +46,7 @@ if (!unitId) {
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
           initTimelineTask(contentArea, unitData.timeline);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(tlLink);
       }
@@ -63,6 +64,7 @@ if (!unitId) {
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
           initTerminologyTask(contentArea, unitData.terminology);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(termLink);
       }
@@ -81,6 +83,7 @@ if (!unitId) {
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
           initKeyIndividualsTask(contentArea, keyIndividualsData);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(kiLink);
       }
