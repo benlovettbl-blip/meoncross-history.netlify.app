@@ -1,388 +1,7 @@
 {
   "data": {
     "specification_file": "/data/edexcel_medicine_spec.json",
-    "mock_exams": [
-      {
-        "id": "mock_2025_clone",
-        "title": "Paper 1: Mock Exam (Adapted 2025)",
-        "paper_reference": "1HI0/11",
-        "total_marks": 52,
-        "time_minutes": 80,
-        "section_a": {
-          "title": "SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-          "questions": [
-            {
-              "num": "1 (a)",
-              "text": "Describe one way in which the nature of combat on the Western Front caused severe casualties.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "1 (b)",
-              "text": "Identify and describe one key aspect of how blood transfusions were utilized during the First World War.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "2 (a)",
-              "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an historian studying the immense challenges of treating casualties on the Western Front?\n\nExplain your answer, using Sources A and B and your own contextual knowledge.",
-              "marks": 8,
-              "lines": 24,
-              "sources": [
-                {
-                  "id": "Source A",
-                  "provenance": "From the journal of Reverend Arthur Davies, July 1916. He was serving as an army chaplain at a Casualty Clearing Station near the Somme. He is describing the opening days of the offensive.",
-                  "content": "1 July 1916\nThe casualties have started to arrive. Throughout the day, the injured and dying are brought in continuously. The volume of patients is overwhelming; every bed is occupied, and men are fortunate just to find a spot on the bare ground. Many will pass away before surgery is possible. We have already admitted 1,500 casualties, and the stream has not stopped.\n\n3 July 1916\nAnother thousand severely injured men arrive daily. The wards, tents, and wooden huts are packed to the limit with suffering soldiers."
-                },
-                {
-                  "id": "Source B",
-                  "provenance": "From a letter written by Edith Smith, a VAD nurse, to her sister in December 1917. She was stationed at a base hospital near the French coast.",
-                  "content": "Our morning duties (changing the linens, washing patients, recording temperatures, and dispensing medication) begin at 3.30 am! The freezing temperatures are unbearable. Icicles hang thick over the ward windows. I have to work while wearing an extra knitted sweater and my heavy overcoat. Even the kettles, rubber hot water bottles, and washing sponges have frozen solid. The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded. If any water splashes onto the floor, it instantly turns into a sheet of ice."
-                }
-              ]
-            },
-            {
-              "num": "2 (b)",
-              "text": "Study Source B.\n\nHow could you follow up Source B to discover more about the severe conditions faced by medical staff treating the wounded?\n\nIn your answer, you must state the question you would ask and identify a specific type of historical source you could consult.\n\nComplete the table below.",
-              "marks": 4,
-              "type": "follow_up"
-            }
-          ]
-        },
-        "section_b": {
-          "title": "SECTION B: Medicine in Britain, c1250–present",
-          "questions": [
-            {
-              "num": "3",
-              "text": "Explain one significant similarity between the societal reaction to the Great Plague (1665) and the Cholera outbreaks in London (1854).",
-              "marks": 4,
-              "lines": 12
-            },
-            {
-              "num": "4",
-              "text": "Explain how the publication of the Germ Theory by Louis Pasteur in 1861 transformed medical practices up to the modern day.",
-              "marks": 12,
-              "lines": 32,
-              "bullet_points": [
-                "Robert Koch's discoveries in bacteriology",
-                "The development of aseptic surgery"
-              ]
-            },
-            {
-              "type": "either_or",
-              "instruction": "Answer EITHER Question 5 OR Question 6.\nSpelling, punctuation, grammar and use of specialist terminology will be assessed in this question.",
-              "spag_marks": 4,
-              "q5": {
-                "num": "5",
-                "text": "'The Theory of the Four Humours was the most significant foundation of medical knowledge between c1250 and c1700.'\nHow far do you agree with this statement? Explain your reasoning.",
-                "marks": 16,
-                "bullet_points": [
-                  "The enduring influence of Galen",
-                  "Traditional herbal remedies"
-                ]
-              },
-              "q6": {
-                "num": "6",
-                "text": "'Government intervention was the main reason for improvements in hospital care from c1800 to the present.'\nHow far do you agree with this statement? Explain your reasoning.",
-                "marks": 16,
-                "bullet_points": [
-                  "The establishment of the National Health Service in 1948",
-                  "Florence Nightingale's impact on nursing standards"
-                ]
-              },
-              "lines": 40
-            }
-          ]
-        }
-      },
-      {
-        "id": "mock_a_2026_predict",
-        "title": "Predicted Mock Paper A",
-        "paper_reference": "1HI0/11",
-        "total_marks": 52,
-        "time_minutes": 80,
-        "section_a": {
-          "title": "SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-          "questions": [
-            {
-              "num": "1 (a)",
-              "text": "Describe one feature of the clinical use and diagnostic limitations of mobile X-ray units near the frontline.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "1 (b)",
-              "text": "Describe one feature of trench fever, including its symptoms, cause, or prevention.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "2 (a)",
-              "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the physical trauma and preventative treatments associated with German poison gas attacks?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
-              "marks": 8,
-              "lines": 24,
-              "sources": [
-                {
-                  "id": "Source A",
-                  "provenance": "A clinical extract from an RAMC medical officer logbook at an Advanced Dressing Station (ADS) near Ypres, May 1915.",
-                  "content": "The men were brought in stumbling, clutching their throats and gasping violently for air. Their eyes were severely inflamed and streaming with tears. We immediately began washing out the blinded eyes of the chlorine gas casualties using simple bicarbonate of soda solutions. It provides some relief, but the respiratory damage is profound. Many will not survive the night."
-                },
-                {
-                  "id": "Source B",
-                  "provenance": "A photograph showing Belgian troops wearing early gas masks.",
-                  "image": "/images/mock_exams/gas_masks.jpg",
-                  "content": "The photograph shows a group of Belgian soldiers standing outdoors, wearing early protective flannel gas hoods pulled over their heads to protect against chlorine gas attacks."
-                }
-              ]
-            },
-            {
-              "num": "2 (b)",
-              "text": "Study Source B.\n\nHow could you follow up Source B to find out more about the preventative treatments associated with German poison gas attacks?\n\nIn your answer, you must give the question you would ask and the type of source you could use.\n\nComplete the table below.",
-              "marks": 4,
-              "type": "follow_up"
-            }
-          ]
-        },
-        "section_b": {
-          "title": "SECTION B: Medicine in Britain, c1250–present",
-          "questions": [
-            {
-              "num": "3",
-              "text": "Explain one way in which ideas about the cause of illness in the Medieval period (c1250–c1500) were similar to ideas about the cause of illness in the Renaissance period (c1500–c1700).",
-              "marks": 4,
-              "lines": 12
-            },
-            {
-              "num": "4",
-              "text": "Explain why there was rapid progress in the development and mass production of penicillin in the years c1938–c1945.",
-              "marks": 12,
-              "lines": 32,
-              "bullet_points": [
-                "Howard Florey and Ernst Chain",
-                "US Government funding and the Second World War"
-              ],
-              "model_answer": "The primary scientific driver behind the rapid progress of penicillin was the systematic biochemical work of Howard Florey and Ernst Chain at Oxford University, who succeeded in turning Alexander Fleming’s 1928 accidental laboratory observation into a purified, stable, and highly effective drug. While Fleming had discovered that the Penicillium notatum mould killed staphylococci bacteria, he lacked the chemical expertise to isolate the active substance and abandoned it as a minor local antiseptic. In 1938, Florey and Chain revived the research, and by 1940, Chain successfully purified the active compound. Consequently, they demonstrated penicillin’s curative power on infected mice, followed by successful trials on human patients, such as police officer Albert Alexander in 1941. This clinical proof demonstrated that penicillin was non-toxic and could destroy bacterial pathogens inside the bloodstream, establishing the scientific foundation necessary to justify transition to mass production.\n\nThis scientific breakthrough was scaled up globally because of unprecedented US Government funding and direct state intervention under the urgent pressures of the Second World War. When Florey travelled to the USA in July 1941 to seek manufacturing aid, British chemical companies were fully occupied with munitions production. Recognizing the immense military value of an infection-killing antibiotic for treating battlefield casualties and preventing fatal gas gangrene, the US government bypassed traditional market constraints and poured millions of dollars in federal grants into pharmaceutical firms. Consequently, this state-funded mobilization allowed American factories to purchase expensive industrial infrastructure, including giant deep-fermentation tanks. This massive financial and logistical intervention led directly to a manufacturing revolution, allowing the supply of penicillin to scale up from virtually zero to over 2.3 million life-saving doses in time to treat Allied forces on D-Day in June 1944.\n\nFurthermore, progress was accelerated by international scientific collaboration and advances in agricultural technology, which provided a distinct third factor beyond the initial stimulus points. To maximize production yields, researchers at a government-backed laboratory in Peoria, Illinois, systematically searched for more productive strains of the Penicillium mould, discovering a highly potent, high-yield strain on a cantaloupe melon in 1943. By combining this new strain with the deep-fermentation technology, scientists multiplied the production rate of pure penicillin millions of times over. This meant that bacterial infections, which had previously been the leading cause of death following minor cuts or surgeries, became completely curable on a mass scale, permanently transforming modern global healthcare and establishing penicillin as the world’s first mass-produced antibiotic."
-            },
-            {
-              "type": "either_or",
-              "instruction": "Answer EITHER Question 5 OR Question 6.\nSpelling, punctuation, grammar and use of specialist terminology will be assessed in this question.",
-              "spag_marks": 4,
-              "lines": 40,
-              "q5": {
-                "num": "5",
-                "text": "‘Edward Jenner’s discovery of the smallpox vaccination was the most significant turning point in the prevention of disease in the period c1700–c1900.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "Inoculation",
-                  "The 1875 Public Health Act"
-                ],
-                "model_answer": "To a moderate extent, I agree that Edward Jenner’s development of the smallpox vaccine in 1796 represents a monumental turning point in the prevention of disease. By utilizing empirical observation to prove that cowpox infection conferred immunity against smallpox, Jenner created the world's first secure, scientific immunisation technique. However, while his discovery was intellectually revolutionary, its practical significance was heavily limited in the short term by public conservatism and medical opposition. Ultimately, the transition to truly effective, nationwide disease prevention was only achieved when the British government abandoned its traditional laissez-faire policy and passed compulsory public health legislation, most notably the 1875 Public Health Act, which systematically tackled urban filth.\n\nOn the one hand, Jenner’s 1796 smallpox vaccine was a major turning point because it provided a safe, scientific alternative to the dangerous practice of inoculation. Inoculation, which had been introduced to Britain from Turkey in the early eighteenth century, involved deliberately scratching live smallpox pus into a healthy person's skin. While this often conferred mild immunity, it was highly dangerous: it frequently caused full-blown, fatal infections and actively turned inoculated individuals into contagious vectors, sparking new epidemics. By vaccinating young James Phipps with benign cowpox and subsequently proving he was immune to smallpox, Jenner demonstrated that prevention did not require risking the patient’s life. Consequently, Jenner’s work provided a safe, reliable, and reproducible medical tool that eventually enabled the World Health Organization to eradicate smallpox globally, representing a profound milestone in immunology.\n\nHowever, the immediate preventative significance of Jenner's discovery was heavily undermined by deep-seated public conservatism, medical self-interest, and the absence of a scientific framework to explain how vaccines worked. Because Jenner published his findings in 1798 without being able to explain *why* cowpox prevented smallpox—as Germ Theory was not published until 1861—many doctors and citizens regarded vaccination with extreme suspicion. Anti-vaccination campaigns published satirical cartoons of people turning into cows, and the Royal Society refused to publish his research, forcing him to print it privately. Furthermore, inoculation was a highly lucrative business for professional doctors, who actively lobbied against the free adoption of Jenner's vaccine to protect their profits. As a result of this resistance, smallpox remained a major urban killer for decades after Jenner’s breakthrough, demonstrating that a scientific discovery alone is insufficient to prevent disease without administrative force.\n\nFurthermore, the primary driver of rapid, nationwide disease prevention during the nineteenth century was not medical discovery, but the British government’s complete abandonment of its laissez-faire administrative policy. Spurred by John Snow's 1854 proof that cholera was water-borne and Bazalgette's massive London sewer construction, Parliament passed the landmark 1875 Public Health Act. Unlike previous optional acts, the 1875 Act made sanitation compulsory. Local councils nationwide were legally forced to provide clean, filtered water, build modern underground drainage, clear rubbish, and employ medical officers. Consequently, by systematically removing the filthy, contaminated water and organic waste that caused water-borne epidemics, the government dramatically reduced the national mortality rates of diseases like cholera and typhoid. This administrative intervention saved far more lives than Jenner’s vaccine did in the nineteenth century, proving that state power was the true engine of prevention.\n\nIn conclusion, while Jenner’s vaccine was a brilliant theoretical breakthrough that laid the foundation for modern immunology, it was only a partial turning point c1700–c1900. Without the scientific validation of Louis Pasteur’s Germ Theory (1861) and, crucially, the administrative enforcement of the compulsory 1853 Vaccination Act, Jenner's work remained underutilized. The most significant turning point in disease prevention during this era was the compulsory 1875 Public Health Act. By utilizing state power to enforce urban sanitation, the government actively addressed the environmental causes of epidemics, demonstrating that administrative intervention was far more effective at protecting public health than isolated scientific breakthroughs."
-              },
-              "q6": {
-                "num": "6",
-                "text": "‘The discovery of the structure of DNA was the most significant breakthrough in understanding the causes of illness in the period c1900–present.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "James Watson and Francis Crick",
-                  "Lifestyle factors (e.g., smoking and lung cancer)"
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": "mock_b_2026_predict",
-        "title": "Predicted Mock Paper B",
-        "paper_reference": "1HI0/11",
-        "total_marks": 52,
-        "time_minutes": 80,
-        "section_a": {
-          "title": "SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-          "questions": [
-            {
-              "num": "1 (a)",
-              "text": "Describe one feature of the mechanics or medical significance of the Thomas splint on the Western Front.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "1 (b)",
-              "text": "Describe one feature of the design, structure, or defensive layout of a communication trench.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "2 (a)",
-              "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the prevention and surgical management of deep wound infections on the Western Front?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
-              "marks": 8,
-              "lines": 24,
-              "sources": [
-                {
-                  "id": "Source A",
-                  "provenance": "A private diary entry from an RAMC surgeon at a Casualty Clearing Station (CCS) near the Somme, August 1916.",
-                  "content": "Gas gangrene is claiming too many of our men with deep shrapnel wounds. Today we fully implemented the Carrel-Dakin method of chemical wound irrigation. By inserting rubber tubes directly into the deep tissue, we can flush the wound continuously with a sterilized salt solution. It is labor-intensive and requires the solution to be mixed fresh, but the reduction in severe infections and subsequent amputations is already noticeable."
-                },
-                {
-                  "id": "Source B",
-                  "provenance": "An official British Army medical directive issued to RAMC units in late 1915.",
-                  "content": "URGENT: PREVENTATIVE MEASURES FOR TETANUS.\n\nIt is strictly ordered that all stretcher bearers and medical personnel at Regimental Aid Posts must ensure the immediate administration of anti-tetanus serum to any casualty presenting with shrapnel or gunshot wounds. The high concentration of manure in the French soil has led to unacceptable mortality rates from tetanus infection. Immediate injection is mandatory before evacuation down the line."
-                }
-              ]
-            },
-            {
-              "num": "2 (b)",
-              "text": "Study Source B.\n\nHow could you follow up Source B to find out more about the prevention of deep wound infections on the Western Front?\n\nIn your answer, you must give the question you would ask and the type of source you could use.\n\nComplete the table below.",
-              "marks": 4,
-              "type": "follow_up"
-            }
-          ]
-        },
-        "section_b": {
-          "title": "SECTION B: Medicine in Britain, c1250–present",
-          "questions": [
-            {
-              "num": "3",
-              "text": "Explain one way in which care in hospitals in the Medieval period (c1250–c1500) was different from care in hospitals in the Industrial period (c1700–c1900).",
-              "marks": 4,
-              "lines": 12
-            },
-            {
-              "num": "4",
-              "text": "Explain why medical treatments and daily bedside care remained largely stagnant during the Renaissance period (c1500–c1700), despite new scientific and anatomical discoveries.",
-              "marks": 12,
-              "lines": 32,
-              "bullet_points": [
-                "William Harvey's circulation of the blood",
-                "The continuing influence of the Theory of the Four Humours"
-              ],
-              "model_answer": "The primary reason why Renaissance medical treatments remained stagnant was that the era’s groundbreaking anatomical and physiological discoveries had no direct, practical application for curing sick patients at the bedside. This clinical gap is perfectly illustrated by William Harvey’s discovery of the circulation of the blood, published in De Motu Cordis (1628). Harvey utilized rigorous experimentation and dissection to prove that the heart acted as a muscular pump circulating blood in a one-way system, disproving Galen’s classical theory that the liver constantly manufactured new blood from food. However, while Harvey’s work permanently corrected human physiology, it could not cure illnesses. Renaissance doctors lacked the microscopic technology to see bacteria, understand the causes of infection, or safely perform blood transfusions. Consequently, a physician in 1640 might fully accept Harvey’s circulation theory, yet possess no new therapeutic tools to treat a patient, ensuring absolute continuity in bedside treatments.\n\nBecause scientific progress failed to provide new clinical cures, both professional physicians and the general public clung to the familiar Theory of the Four Humours as the only logical explanation for disease. Sickness continued to be diagnosed as an excess or deficiency of blood, phlegm, yellow bile, and black bile. Consequently, physicians continued to prescribe traditional humoural therapies like bleeding, purging, and the Theory of Opposites to restore internal fluid balance. The strength of this continuity was demonstrated in 1685 when royal doctors treated King Charles II. Despite living in the age of the Scientific Revolution, the King’s physicians subjected him to extensive bleeding, blistering, and purging—treatments directly inherited from Galen and Hippocrates. Because humoural theory remained the only dominant conceptual framework for pathology, treatments remained completely frozen.\n\nFurthermore, the stagnation of daily care was reinforced by the deep conservatism of licensing bodies and the decentralized, non-scientific nature of community healthcare, which provides a distinct third factor beyond the stimulus points. The Royal College of Physicians, which regulated medical practice in London, was highly conservative and frequently persecuted free-thinkers who attempted to abandon classical therapies. At the same time, the vast majority of the population could not afford university-trained physicians and relied on traditional community healers. Ordinary citizens bought cheap herbal remedies from local apothecaries, underwent bloodletting by barber-surgeons, or were treated at home by female family members using recipes passed down through generations. Because these community practitioners operated within an oral, traditional culture completely separated from the academic discoveries of Vesalius or Harvey, daily bedside care remained untouched by scientific progress, maintaining absolute continuity for the sick."
-            },
-            {
-              "type": "either_or",
-              "instruction": "Answer EITHER Question 5 OR Question 6.\nSpelling, punctuation, grammar and use of specialist terminology will be assessed in this question.",
-              "spag_marks": 4,
-              "lines": 40,
-              "q5": {
-                "num": "5",
-                "text": "‘The main reason why medical care and treatment was ineffective during the Medieval period (c1250–c1500) was because medical knowledge was based on Galen’s ideas.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "The Theory of Opposites",
-                  "Charity hospitals"
-                ],
-                "model_answer": "To a moderate extent, I agree that the reliance on Claudius Galen’s unscientific ideas was a major factor in the ineffectiveness of medieval medical care and treatment. Because Galen's physiology was accepted as absolute truth, medieval treatments were logically designed to target incorrect internal causes, often resulting in harmful practices like bloodletting. However, Galen’s authority was merely a symptom of a larger, structural root cause: the Roman Catholic Church's absolute monopoly over education and university curricula, which actively prohibited scientific human dissection. Furthermore, the total absence of microscopic diagnostic technology made it physically impossible to identify the true, biological causes of disease, leaving medieval healers with no option but to rely on humoural and supernatural explanations.\n\nOn the one hand, medical treatment was highly ineffective because physicians based their clinical therapies on Galen's unscientific models, particularly the Theory of Opposites. Galen had expanded Hippocrates’ Theory of the Four Humours by teaching that good health required blood, phlegm, yellow bile, and black bile to be in perfect balance. Under the Theory of Opposites, Galen taught that an excess of one humour should be treated with its opposite quality—such as treating a cold, wet winter fever (phlegm) with hot pepper or dry wine. Because Galen was prohibited from dissecting human bodies by Roman law, he relied on animal dissections (pigs and apes), leading him to make major errors, such as claiming the human lower jaw consists of two bones. However, medieval physicians accepted his texts as infallible. Consequently, when treating patients, they focused on extracting supposed humoural excesses through extensive bloodletting and purging. Rather than curing infections, draining blood from critically ill or elderly patients severely weakened their immune systems and often directly caused death, proving that Galenic theory made medieval medicine actively dangerous.\n\nOn the other hand, the primary reason why these unscientific ideas remained completely unchallenged was because the medieval Catholic Church used its immense institutional power to freeze medical progress. The Church controlled all universities, libraries, and the copying of medical manuscripts by monastic scribes. Because Galen’s anatomical writings argued that the human body was so incredibly complex and purposeful that it must have been designed by a single 'Creator,' his ideas aligned perfectly with Christian creation theology. Consequently, the Church declared Galen's texts infallible and banned human dissection for scientific research, believing that the physical body had to be buried whole to allow the soul to go to heaven. In rare academic demonstrations, the body of an executed criminal was dissected by an untrained assistant while the university professor sat far away, reading Galen’s words aloud strictly to prove the book was correct. If an anatomical detail on the table contradicted the text, the professor would claim the body itself was deformed rather than questioning Galen. This religious monopoly completely blocked any progress.\n\nFurthermore, medieval medical care was heavily limited by the spiritual, non-clinical function of hospitals, combined with a total lack of diagnostic technology. Run by monks and nuns, the 1,100 charity hospitals in England by 1500 did not aim to provide medical cures. Instead, their primary focus was on spiritual care and hospitality—providing the poor, travelers, and the elderly with shelter, clean sheets, and hot meals while preparing their souls for the afterlife. Patients suffering from highly infectious diseases (such as leprosy or the plague) or terminal illnesses were strictly excluded to prevent the spread of infection. Additionally, in an era before the invention of powerful microscopes, it was physically impossible to see microscopic bacteria or prove that pathogens caused infections. This lack of technology left medieval people with no alternative but to rely on other unscientific, non-Galenic ideas, such as believing that God sent the Black Death in 1348 as a punishment for sin or that bad air (miasma) corrupted the body's humours.\n\nIn conclusion, I disagree only to a moderate extent that Galen was the main cause of ineffective medical care. While it is true that humoural treatments like the Theory of Opposites were clinically harmful and biologically useless, Galen's ideas did not survive on their own merit. The true root cause of medical stagnation was the institutional authority of the Church, which used its control over libraries and education to ban human dissection and prosecute free-thinkers. Without the intellectual freedom to experiment, and lacking the microscope technology required to discover microbes, medieval medicine was structurally doomed to remain ineffective."
-              },
-              "q6": {
-                "num": "6",
-                "text": "‘The creation of the National Health Service (NHS) in 1948 was the most significant development in care and treatment in the period c1900–present.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "High-tech surgery in hospitals",
-                  "Magic bullets and chemical cures"
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "id": "mock_c_2026_predict",
-        "title": "Predicted Mock Paper C",
-        "paper_reference": "1HI0/11",
-        "total_marks": 52,
-        "time_minutes": 80,
-        "section_a": {
-          "title": "SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-          "questions": [
-            {
-              "num": "1 (a)",
-              "text": "Describe one feature of the work and medical duties of volunteer nurses like the First Aid Nursing Yeomanry (FANY) on the Western Front.",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "1 (b)",
-              "text": "Describe one feature of the medical facilities and rapid emergency treatment provided at a Regimental Aid Post (RAP).",
-              "marks": 2,
-              "lines": 5
-            },
-            {
-              "num": "2 (a)",
-              "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the development of techniques for blood transfusion and frontline storage?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
-              "marks": 8,
-              "lines": 24,
-              "sources": [
-                {
-                  "id": "Source A",
-                  "provenance": "A clinical report from Captain Oswald Hope Robertson describing the establishment of the first \"blood depot\" during the Battle of Cambrai in 1917.",
-                  "content": "To prepare for the anticipated casualties, we successfully established a forward blood depot. I collected 22 units of type O blood in advance. By adding sodium citrate, we prevented the blood from clotting, allowing it to be stored in sterilized glass jars for up to four weeks. During the offensive, we successfully transfused 20 severely wounded Canadian soldiers who were suffering from extreme shock."
-                },
-                {
-                  "id": "Source B",
-                  "provenance": "A photograph showing stretcher bearers operating near the front line at Passchendaele in August 1917.",
-                  "image": "/images/mock_exams/stretcher_bearers.jpg",
-                  "content": "The source is a photograph showing stretcher bearers carrying a wounded soldier on a stretcher through the thick mud of Passchendaele, heading towards a Regimental Aid Post or Casualty Clearing Station."
-                }
-              ]
-            },
-            {
-              "num": "2 (b)",
-              "text": "Study Source B.\n\nHow could you follow up Source B to find out more about the techniques for frontline blood storage?\n\nIn your answer, you must give the question you would ask and the type of source you could use.\n\nComplete the table below.",
-              "marks": 4,
-              "type": "follow_up"
-            }
-          ]
-        },
-        "section_b": {
-          "title": "SECTION B: Medicine in Britain, c1250–present",
-          "questions": [
-            {
-              "num": "3",
-              "text": "Explain one way in which the methods used to prevent the spread of the Great Plague in London (1665) were similar to the methods used to prevent the spread of the Black Death (1348).",
-              "marks": 4,
-              "lines": 12
-            },
-            {
-              "num": "4",
-              "text": "Explain why there was rapid progress in public health and the prevention of disease in the modern era (c1900–present).",
-              "marks": 12,
-              "lines": 32,
-              "bullet_points": [
-                "Government lifestyle campaigns",
-                "Mass vaccination programs"
-              ],
-              "model_answer": "A key factor driving rapid progress in modern disease prevention was the British government’s complete abandonment of its traditional 'laissez-faire' policy in favor of active, state-funded compulsory vaccination campaigns. In the mid-twentieth century, the government recognized that it had an institutional duty to safeguard the physical health of its citizens, a shift that was heavily accelerated by the creation of the National Health Service (NHS) in 1948. This state-directed approach first succeeded on a national scale in 1942 when the government launched the first-ever free national immunisation campaign against diphtheria, which successfully reduced child mortality from the disease from 3,000 cases a year to virtually zero. The success of this administrative model enabled the state to systematically introduce subsequent national programs against polio (1956), tetanus (1961), measles (1968), and the MMR vaccine (1988), effectively eradicating highly infectious epidemics that had plagued Britain for centuries.\n\nConcurrently, the state utilized its legislative power to prevent disease by launching national lifestyle campaigns and environmental regulations to combat chronic, non-communicable illnesses. Throughout the twentieth century, epidemiological research proved how personal choices regarding tobacco, diet, and exercise caused major killer diseases like lung cancer and heart disease. Consequently, the government abandoned optional, local public health measures and used its legal authority to force behavioral changes on a national scale. Following the catastrophic Great Smog of London in 1952, which killed thousands of vulnerable citizens, the government passed the landmark Clean Air Acts of 1956 and 1968 to legally ban coal smoke and regulate urban air quality. Furthermore, the state implemented heavy taxes on tobacco, mandated plain packaging, and passed the compulsory 2007 ban on smoking in enclosed public workplaces to prevent lung cancer, demonstrating a highly active and successful legislative approach to public health.\n\nFurthermore, this rapid progress was accelerated by groundbreaking scientific discoveries in biochemistry and virology, which provides a distinct third factor beyond the stimulus points. Throughout the twentieth century, the development of electron microscopes and advanced cell cultures allowed scientists to study viral structures and manufacture highly stable vaccines in industrial laboratories. This led directly to the creation of the Salk polio vaccine in 1955 and the MMR vaccine in 1988, giving the government the exact clinical tools required to immunize millions of children. Today, this scientific progress continues with the development of the HPV vaccine to actively prevent cervical cancer. As a result of this integration of state-funded delivery systems and advanced biotechnology, the focus of modern medicine permanently shifted from expensive hospital cures to proactive, mass disease prevention."
-            },
-            {
-              "type": "either_or",
-              "instruction": "Answer EITHER Question 5 OR Question 6.\nSpelling, punctuation, grammar and use of specialist terminology will be assessed in this question.",
-              "spag_marks": 4,
-              "lines": 40,
-              "q5": {
-                "num": "5",
-                "text": "‘In the years c1250–c1500, the university-trained physician was the most important person providing care and treatment.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "Academic medical training",
-                  "Traditional herbal remedies"
-                ],
-                "model_answer": "To a very large extent, I disagree with the statement that the university-trained physician was the most important person providing healthcare in medieval England (c1250–c1500). While physicians held the highest professional and social status in medieval society, their practical impact was severely restricted to the wealthy elite. For the vast majority of the population, the actual burden of daily care and biological treatment was carried out by female family members in the home using traditional herbal remedies, supplemented by practically trained community healers like apothecaries and barber-surgeons.\n\nOn the one hand, for the wealthy elite and royalty, the university-trained physician was regarded as the most important and prestigious medical figure. The significance of the physician lay in their extensive academic medical training, which lasted between seven and ten years at secular universities like Montpellier or Oxford. This training was entirely book-based, requiring students to read and memorize Latin translations of ancient Greek and Roman texts by Hippocrates and Galen, rather than gaining hands-on clinical experience. When diagnosing patients, physicians rarely touched them; instead, they checked planetary alignments using an astrological Almanac and examined the color, thickness, and smell of urine to identify internal humoural imbalances. They would then write a diagnostic brief directing lower-status manual practitioners to perform treatments. While their high fees made them inaccessible to 95% of medieval society, they were highly important in establishing a professional, 'rational' (natural) framework of medicine that moved away from purely supernatural explanations.\n\nOn the other hand, for the overwhelming majority of ordinary medieval people, the most important providers of healthcare were female family members using traditional herbal remedies in the home. Because university-trained physicians were exceptionally rare and expensive, the home was the true center of medieval medicine. Women, such as mothers and wives, possessed a vast, practical knowledge of local plants, herbs, and home recipes passed down through generations. They prepared mixtures containing active natural ingredients—like garlic, onions, honey, and wine—which were highly effective. Modern scientific analysis of medieval recipes, such as those found in the Bald's Leechbook, has proven that these herbal remedies possessed genuine antibacterial properties that actively destroyed pathogens and promoted wound healing. Consequently, for the average peasant, these women were far more important than physicians because they provided both accessible daily 'care' (comfort and nutrition) and biologically active 'treatment'.\n\nFurthermore, other practically trained, affordable healers played a far more significant role in the daily treatment of the sick than university physicians. Ordinary citizens who required physical procedures directly consulted barber-surgeons and apothecaries. Apothecaries mixed and sold herbal medicines, spices, and simple chemical compounds. Because they did not attend university, they were cheap and highly accessible. For physical treatments, peasants relied on barber-surgeons. Barber-surgeons were trained through practical apprenticeships rather than books, using sharp tools to perform haircuts alongside minor surgical procedures like lancing boils, pulling teeth, and carrying out bloodletting (phlebotomy) to rebalance the humours. Additionally, the Church operated around 1,100 charity hospitals in England by 1500. Run by monks and nuns, these hospitals did not provide medical cures, but they were highly important centers of spiritual care, shelter, and hot meals for the poor, elderly, and travelers.\n\nIn conclusion, I disagree with the statement because it confuses professional prestige with practical utility. The university-trained physician possessed prestigious medical training and held a monopoly over academic knowledge, but their clinical usefulness was almost non-existent due to their reliance on flawed classical texts and their high cost. The true backbone of medieval healthcare was decentralized and grassroots. For the general population, local apothecaries, barber-surgeons, and, above all, women in the home preparing herbal remedies were the most important providers of care and treatment, as they offer the only accessible, affordable, and biologically effective medicine of the Middle Ages."
-              },
-              "q6": {
-                "num": "6",
-                "text": "‘The publication of Louis Pasteur's Germ Theory was the biggest turning point in understanding the causes of disease in the period c1800–present.’\nHow far do you agree? Explain your answer.",
-                "marks": 16,
-                "bullet_points": [
-                  "Germ Theory, 1861",
-                  "James Watson and Francis Crick mapping DNA"
-                ]
-              }
-            }
-          ]
-        }
-      }
-    ],
+    "mock_exams": {},
     "title": "Edexcel Medicine Through Time with Western Front",
     "enquiry": "How has medicine changed from c1250 to the modern day?",
     "workbooks": [
@@ -694,6 +313,58 @@
             "caption": "A circular chart showing 20 different shades and consistencies of urine.",
             "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "According to the Theory of the Four Humours, what caused disease?",
+            "options": [
+              "Microscopic organisms entering the bloodstream",
+              "An imbalance of blood, phlegm, yellow bile, and black bile",
+              "Evil spirits possessing the body during sleep",
+              "Exposure to cold weather and damp conditions"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was 'Miasma' in medieval medical theory?",
+            "options": [
+              "Bad air filled with harmful smells that caused disease",
+              "A type of herbal remedy brought back from the Crusades",
+              "A surgical instrument used for bloodletting",
+              "The astrological alignment of planets causing plague"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Why did the Church heavily support the ideas of Galen?",
+            "options": [
+              "Galen was a prominent Pope in the 2nd Century",
+              "Galen's theory that the body was perfectly designed fit with Christian beliefs about God the Creator",
+              "Galen was the first physician to discover that prayer cured leprosy",
+              "Galen had explicitly proven that God sent disease as a punishment"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did Astrology influence medieval diagnosis?",
+            "options": [
+              "Physicians used star charts to determine when to harvest medicinal herbs and perform surgery",
+              "Astrologers were the only people legally allowed to prescribe medicine",
+              "It was believed that staring at a lunar eclipse would cause instant blindness and leprosy",
+              "Astrology completely replaced the Theory of the Four Humours by the 14th century"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What did the Church teach about the cause of illness?",
+            "options": [
+              "It was caused entirely by witches cursing the crops",
+              "It was a punishment from God for sin, or a test of faith",
+              "It was caused by eating meat on Fridays",
+              "It was completely random and impossible to explain"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -928,6 +599,48 @@
             "caption": "An illumination showing nuns caring for patients in a large, religious hospital ward.",
             "think_wonder": "Notice who is providing the care. Why are there no trained doctors visible? What does this tell us about the purpose of a medieval hospital?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What was the purpose of bleeding or purging a patient?",
+            "options": [
+              "To punish them for their sins against the Church",
+              "To remove excess humours and restore balance to the body",
+              "To surgically remove a tumor",
+              "To intentionally induce a coma so the body could heal"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Who would an ordinary peasant most likely visit for medical treatment?",
+            "options": [
+              "A university-trained physician",
+              "The King",
+              "An apothecary or a local wise woman",
+              "A highly trained barber-surgeon"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What role did hospitals play in Medieval England?",
+            "options": [
+              "They were advanced centers for complex surgical procedures",
+              "They were run by the Church primarily to offer hospitality, rest, and prayer, not medical treatment",
+              "They were the main training grounds for apothecaries",
+              "They were strict quarantine zones where no visitors were allowed"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was the Regimen Sanitatis?",
+            "options": [
+              "A strict religious order that banned all medical treatment",
+              "A set of instructions on how to maintain good health through diet, exercise, and hygiene",
+              "A surgical manual written by Hippocrates",
+              "The official oath taken by all medieval doctors"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -1153,6 +866,48 @@
             "title": "Flagellants Whipping Themselves",
             "caption": "An illustration of a procession of flagellants whipping their own backs in public.",
             "think_wonder": "Why are these people intentionally hurting themselves? What do they believe this will achieve in the eyes of God?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "When did the Black Death first arrive in England?",
+            "options": [
+              "1066",
+              "1348",
+              "1665",
+              "1415"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What did the flagellants do to try and stop the Black Death?",
+            "options": [
+              "They burned barrels of tar in the streets to clear the miasma",
+              "They whipped themselves in public to show God they were sorry for their sins",
+              "They slaughtered all the cats and dogs in London",
+              "They locked themselves inside their homes and painted a red cross on the door"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did local governments attempt to control the spread of the plague?",
+            "options": [
+              "By ordering the mass production of antibiotics",
+              "By passing quarantine laws and ordering the cleaning of streets",
+              "By executing anyone who coughed in public",
+              "By closing down all the churches permanently"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why did people carry sweet-smelling herbs or posies during the Black Death?",
+            "options": [
+              "To ward off evil spirits",
+              "To purify the air and protect themselves from miasma",
+              "As a symbol that they had survived the disease",
+              "To feed to the rats to poison them"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -1396,6 +1151,48 @@
             "caption": "A detailed sketch of the human skull and spine by Leonardo da Vinci.",
             "think_wonder": "Why would an artist need to understand the human skeleton in such intricate detail? How does this cross the line between art and medicine?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "How did the Royal Society contribute to medical knowledge?",
+            "options": [
+              "It strictly enforced Galen's teachings across England",
+              "It provided a platform for scientists to share, discuss, and publish new discoveries (like 'Philosophical Transactions')",
+              "It was a hospital that specialized in treating the King's friends",
+              "It legally banned the use of astrology in medicine"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was Thomas Sydenham's key contribution to medicine?",
+            "options": [
+              "He discovered the circulation of blood",
+              "He proved that germs caused disease",
+              "He emphasized observing patient symptoms and classifying diseases (like scarlet fever), rather than relying on the Four Humours",
+              "He invented the first microscope"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What new invention helped spread medical knowledge rapidly during the Renaissance?",
+            "options": [
+              "The telegraph",
+              "The printing press",
+              "The stethoscope",
+              "The hypodermic needle"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why did the Theory of the Four Humours begin to decline in the Renaissance?",
+            "options": [
+              "Because the Church officially declared it heretical",
+              "Because new anatomical discoveries proved it was physically impossible",
+              "Physicians began to realize that treatments based on it (like bleeding) didn't actually cure people",
+              "Because a massive shortage of leeches made it impossible to practice"
+            ],
+            "answer": 2
+          }
         ]
       },
       {
@@ -1622,6 +1419,58 @@
             "title": "Printed Herbal Book",
             "caption": "The title page of Nicholas Culpeper's famous printed book of herbal remedies.",
             "think_wonder": "How would mass-producing cheap books about herbal remedies change the way ordinary people treated illnesses?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Who was Andreas Vesalius and what did he do?",
+            "options": [
+              "A surgeon who proved that bleeding was harmful",
+              "An anatomist who dissected human bodies and proved Galen had made over 300 mistakes in his anatomical descriptions",
+              "An apothecary who discovered the medicinal properties of cinchona bark",
+              "The King's personal physician who invented the first vaccine"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What famous book did Vesalius publish in 1543?",
+            "options": [
+              "On the Motion of the Heart and Blood",
+              "The Fabric of the Human Body",
+              "Micrographia",
+              "The Canon of Medicine"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was 'transference' in Renaissance medicine?",
+            "options": [
+              "Moving a patient to a different climate to heal",
+              "The belief that an illness could be transferred to an object or animal (e.g., rubbing a wart on an onion)",
+              "Transferring blood from a healthy person to a sick person",
+              "Passing a medical license from father to son"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did the dissolution of the monasteries by Henry VIII affect healthcare?",
+            "options": [
+              "It caused a massive boom in the building of modern hospitals",
+              "Most medieval hospitals were closed down, leading to a shortage of care for the sick and elderly",
+              "It had no effect, as monasteries did not practice medicine",
+              "It forced all monks to become trained physicians"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What new ingredients were added to apothecaries' remedies during the Renaissance?",
+            "options": [
+              "Penicillin and aspirin",
+              "New herbs and minerals brought back from the New World (e.g., sarsaparilla, cinchona bark)",
+              "Radioactive isotopes for treating cancer",
+              "Synthetic chemicals created in laboratories"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -1863,6 +1712,48 @@
             "caption": "A printed broadsheet grimly listing the thousands of people who died from the plague in a single week.",
             "think_wonder": "What do these terrifying numbers tell us about the impact of the Great Plague? Why are city officials tracking the deaths so carefully?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What did William Harvey discover?",
+            "options": [
+              "That germs cause disease",
+              "That the heart acts as a pump, circulating blood in a one-way system around the body",
+              "That there are two different types of blood flowing in opposite directions",
+              "That blood is created in the liver and consumed by the body"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why was Harvey's discovery highly controversial?",
+            "options": [
+              "It directly contradicted Galen's teachings, which physicians had trusted for 1,500 years",
+              "He refused to publish his findings in English",
+              "He claimed that God did not exist",
+              "He tested his theories exclusively on human patients without permission"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "When did the Great Plague strike London?",
+            "options": [
+              "1348",
+              "1665",
+              "1854",
+              "1918"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was a new method used by the government to control the Great Plague?",
+            "options": [
+              "They forcibly vaccinated the entire population of London",
+              "They locked infected victims in their houses for 40 days and painted a red cross on the door",
+              "They dropped chemicals from hot air balloons to kill the miasma",
+              "They ordered everyone to evacuate to Scotland immediately"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -2099,6 +1990,38 @@
             "title": "Robert Koch at the Microscope",
             "caption": "A photograph of Robert Koch in his laboratory looking through a microscope.",
             "think_wonder": "What is he looking for? How did this technology change medicine forever?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Who published the Germ Theory in 1861?",
+            "options": [
+              "Robert Koch",
+              "Louis Pasteur",
+              "Edward Jenner",
+              "John Snow"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What did Germ Theory prove?",
+            "options": [
+              "That miasma was the true cause of disease, but germs made the smell worse",
+              "That microbes in the air cause decay and disease, disproving Spontaneous Generation",
+              "That germs were spontaneously generated by rotting matter",
+              "That all diseases were genetically inherited"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did Robert Koch build upon Pasteur's Germ Theory?",
+            "options": [
+              "He proved that Germ Theory only applied to liquids like milk, not humans",
+              "He developed a method for identifying the specific microbes that caused individual diseases (e.g., Anthrax, Tuberculosis)",
+              "He invented the first antibiotic to kill the germs Pasteur found",
+              "He was the first person to see a germ using a microscope"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -2354,6 +2277,48 @@
             "caption": "A photograph of a Victorian operating theatre with a patient completely unconscious under a cloth mask.",
             "think_wonder": "Notice how calm the patient is. How did the invention of this invisible gas completely revolutionize the speed and success of surgery?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "Who was Florence Nightingale?",
+            "options": [
+              "The first female surgeon in Britain",
+              "A nurse who dramatically reduced mortality rates in the Crimean War by enforcing strict hygiene and sanitation",
+              "The inventor of the hypodermic needle",
+              "A politician who passed the Public Health Act"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was James Simpson's major discovery in 1847?",
+            "options": [
+              "Carbolic acid as an antiseptic",
+              "Chloroform as an effective anesthetic",
+              "Nitrous oxide (laughing gas)",
+              "Penicillin"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did Joseph Lister revolutionize surgery in 1865?",
+            "options": [
+              "He discovered blood groups, allowing for safe transfusions",
+              "He used carbolic acid spray to kill germs in the operating theatre, creating antiseptic surgery",
+              "He invented surgical gloves",
+              "He was the first surgeon to successfully remove a brain tumor"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why was there initially strong opposition to anesthetics?",
+            "options": [
+              "They were extremely expensive and only the rich could afford them",
+              "Some doctors believed pain was necessary for healing, and religious groups argued pain was God's will (especially in childbirth)",
+              "They caused immediate fatal heart attacks in 90% of patients",
+              "The government banned them as illegal narcotics"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -2588,6 +2553,48 @@
             "caption": "The original map of Soho showing black bars clustered around the Broad Street pump.",
             "think_wonder": "Why are all the black bars (representing deaths) clustered around that specific street corner? What does this visual map prove about how cholera spreads?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What did Edward Jenner discover in 1796?",
+            "options": [
+              "The Germ Theory of disease",
+              "A vaccine for smallpox using the cowpox virus",
+              "The cholera microbe",
+              "The first anesthetic"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why was Jenner's discovery initially criticized?",
+            "options": [
+              "He couldn't explain scientifically HOW it worked because Germ Theory hadn't been discovered yet",
+              "It was proven to cause severe brain damage",
+              "The vaccine cost far too much to mass-produce",
+              "The government claimed he stole the idea from Louis Pasteur"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What did John Snow discover during the 1854 Broad Street cholera epidemic?",
+            "options": [
+              "Cholera was caused by a miasma rising from the River Thames",
+              "Cholera was a waterborne disease transmitted by a contaminated water pump",
+              "Cholera was spread by flea-infested rats",
+              "Cholera could be cured by drinking carbolic acid"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did John Snow prove his theory about cholera?",
+            "options": [
+              "He isolated the cholera microbe under a microscope",
+              "He mapped out the deaths in Soho and removed the handle from the Broad Street pump, which stopped the outbreak",
+              "He infected himself with cholera and cured it with a vaccine",
+              "He successfully sued the government for ignoring the Public Health Act"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -2813,6 +2820,58 @@
             "title": "Electron Microscope Virus",
             "caption": "An electron microscope image of a virus, magnified thousands of times.",
             "think_wonder": "This object is thousands of times smaller than a bacterium. How did discovering it change our approach to disease?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Who discovered the structure of DNA in 1953?",
+            "options": [
+              "Watson and Crick (with help from Franklin and Wilkins)",
+              "Landsteiner and Fleming",
+              "Pasteur and Koch",
+              "Florey and Chain"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "How did the discovery of DNA change medicine?",
+            "options": [
+              "It allowed doctors to finally cure the common cold",
+              "It helped scientists understand genetic diseases and eventually led to treatments like gene therapy",
+              "It proved that lifestyle factors (like smoking) do not cause disease",
+              "It made all traditional antibiotics obsolete"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What lifestyle factor was definitively linked to lung cancer in the 1950s?",
+            "options": [
+              "Eating too much sugar",
+              "Smoking tobacco",
+              "Drinking polluted water",
+              "Lack of exercise"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What technology allowed Rosalind Franklin to photograph DNA?",
+            "options": [
+              "Electron microscopes",
+              "X-ray crystallography",
+              "MRI scanners",
+              "Ultrasound"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was the Human Genome Project?",
+            "options": [
+              "A secret government project to create super-soldiers",
+              "An international effort to map out all the genes in human DNA, completed in 2003",
+              "A charity designed to provide free DNA testing to the public",
+              "The original code-name for the cloning of Dolly the Sheep"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -3059,6 +3118,48 @@
             "caption": "An early photograph of a massive radiotherapy machine being used on a patient.",
             "think_wonder": "How does high-tech machinery change the role of the doctor and the experience of the patient?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What major government initiative was launched in 1948 to provide free healthcare for all?",
+            "options": [
+              "The Public Health Act",
+              "The National Health Service (NHS)",
+              "The Beveridge Report",
+              "The Medical Research Council"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Who was the Minister of Health responsible for creating the NHS?",
+            "options": [
+              "Winston Churchill",
+              "Aneurin Bevan",
+              "Clement Attlee",
+              "William Beveridge"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What is a 'magic bullet' in the context of 20th-century medicine?",
+            "options": [
+              "A chemical cure that attacks specific disease-causing microbes in the body without harming the rest of the body",
+              "A highly effective painkiller developed during WW1",
+              "A surgical tool used to remove shrapnel",
+              "A slang term for the first vaccines"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Who discovered the first 'magic bullet', Salvarsan 606, in 1909 to treat Syphilis?",
+            "options": [
+              "Alexander Fleming",
+              "Paul Ehrlich",
+              "Gerhard Domagk",
+              "Karl Landsteiner"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -3290,6 +3391,48 @@
             "caption": "A World War II propaganda poster urging the mass production of Penicillin.",
             "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "Who accidentally discovered Penicillin in 1928?",
+            "options": [
+              "Howard Florey",
+              "Ernst Chain",
+              "Alexander Fleming",
+              "Paul Ehrlich"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What prevented Fleming from developing Penicillin into a usable drug?",
+            "options": [
+              "He thought it was poisonous to humans",
+              "He lacked the funding and chemical expertise to purify it",
+              "The British government banned his research",
+              "He died shortly after discovering it"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Who successfully purified and tested Penicillin on humans in the early 1940s?",
+            "options": [
+              "Watson and Crick",
+              "Florey and Chain",
+              "Pasteur and Koch",
+              "Simpson and Lister"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What major global event provided the funding and urgency to mass-produce Penicillin?",
+            "options": [
+              "World War I",
+              "The Great Depression",
+              "World War II",
+              "The Cold War"
+            ],
+            "answer": 2
+          }
         ]
       },
       {
@@ -3519,6 +3662,48 @@
             "title": "Modern Anti-Smoking Warning",
             "caption": "A modern English anti-smoking warning label on a cigarette pack.",
             "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Why is lung cancer so difficult to treat?",
+            "options": [
+              "It is completely immune to chemotherapy",
+              "It is usually diagnosed at a very late stage because early symptoms are often ignored",
+              "It is highly contagious",
+              "There are absolutely no surgical options available"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What action did the UK government take in 2007 regarding smoking?",
+            "options": [
+              "They made all tobacco products illegal",
+              "They banned smoking in all enclosed public workspaces",
+              "They raised the legal smoking age to 21",
+              "They forced tobacco companies to pay for the NHS"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How are modern doctors able to diagnose lung cancer more effectively than in the past?",
+            "options": [
+              "By using the four humours chart",
+              "By using advanced imaging techniques like CT scans and PET-CT scans",
+              "By relying solely on x-rays, which catch every single tumor instantly",
+              "By checking the patient's blood pressure daily"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What is one modern treatment option for lung cancer besides surgery?",
+            "options": [
+              "Bloodletting",
+              "Radiotherapy",
+              "Amputation",
+              "Herbal purges"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -3810,6 +3995,48 @@
             "title": "Aerial Trench Map",
             "caption": "An aerial map showing the complicated zigzag pattern of the trench system.",
             "think_wonder": "Look at the zigzag lines. How difficult would it be to quickly carry a stretcher through these narrow, winding corridors?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Which of these was a major battle on the Western Front resulting in catastrophic casualties?",
+            "options": [
+              "The Battle of Waterloo",
+              "The Battle of the Somme",
+              "The Battle of Trafalgar",
+              "The Battle of Hastings"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was the 'salient' at Ypres?",
+            "options": [
+              "A highly advanced underground hospital",
+              "A bulge in the frontline surrounded by the enemy on three sides, making it incredibly dangerous",
+              "A new type of artillery shell",
+              "The headquarters of the RAMC"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What made the terrain of the Western Front so difficult for medical evacuation?",
+            "options": [
+              "It was entirely mountainous and freezing cold",
+              "It was completely covered in thick jungle",
+              "It was often a sea of deep mud, craters, and destroyed roads due to heavy artillery bombardment",
+              "The entire area was highly radioactive"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What system of transport was heavily relied upon behind the front lines to move wounded soldiers efficiently?",
+            "options": [
+              "Helicopters",
+              "Hospital trains and canal barges",
+              "Commercial airplanes",
+              "Submarines"
+            ],
+            "answer": 1
           }
         ]
       },
@@ -4103,6 +4330,48 @@
             "caption": "Soldiers wearing early, primitive gas masks in the trenches.",
             "think_wonder": "Why are they wearing these? How did the invention of poison gas change the nature of warfare and military medicine?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What caused Trench Foot?",
+            "options": [
+              "A bacterial infection transmitted by rats",
+              "Standing for hours in cold, waterlogged trenches without changing boots or socks",
+              "Shrapnel wounds to the toes",
+              "Wearing boots that were tightly laced to cut off circulation purposely"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was Trench Fever and how was it spread?",
+            "options": [
+              "A flu-like illness spread by lice living in the seams of uniforms",
+              "A severe stomach bug caused by drinking contaminated water",
+              "A psychological breakdown caused by artillery fire",
+              "A lung infection caused by poison gas"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What was 'Shell Shock'?",
+            "options": [
+              "A physical injury caused by the concussive wave of an explosion",
+              "A psychological trauma causing symptoms like tremors, nightmares, and paralysis (now known as PTSD)",
+              "A cowardly refusal to fight, which was always punished by execution",
+              "An infection caused by dirty shrapnel"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "How did the army attempt to prevent Trench Foot?",
+            "options": [
+              "By amputating the toes of soldiers before they went to the front",
+              "By issuing orders to rub whale oil on feet and enforcing daily sock changes",
+              "By providing everyone with fully waterproof rubber diving suits",
+              "By completely draining all water from the Western Front"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -4395,6 +4664,48 @@
             "title": "Shell Shock",
             "caption": "A photograph of a soldier suffering from shell shock, displaying the 'thousand-yard stare'.",
             "think_wonder": "What are the invisible wounds of war? How did doctors try to treat a psychological condition they couldn't physically see?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "Why were wounds from shrapnel and high-explosive shells so prone to infection?",
+            "options": [
+              "Because the shells were deliberately coated in biological weapons",
+              "Because the explosions drove dirty uniform fabric and heavily manured farmland soil deep into the body",
+              "Because the metal used by the Germans was highly toxic",
+              "Because field hospitals refused to clean wounds to save time"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What was the most feared consequence of a deeply infected mud wound?",
+            "options": [
+              "Trench fever",
+              "Gas Gangrene",
+              "Polio",
+              "Smallpox"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Which weapon caused terrifying, burning blisters and temporary blindness?",
+            "options": [
+              "Machine guns",
+              "Mustard Gas",
+              "Shrapnel shells",
+              "Bayonets"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "What piece of equipment was introduced to reduce the number of fatal head wounds?",
+            "options": [
+              "The Brodie Helmet",
+              "The gas mask",
+              "The Kevlar vest",
+              "The chainmail hood"
+            ],
+            "answer": 0
           }
         ]
       },
@@ -4694,6 +5005,48 @@
             "caption": "An image of a horse-drawn ambulance transporting wounded soldiers.",
             "think_wonder": "Why were horse-drawn ambulances eventually replaced by motorized ones? What were their main limitations?"
           }
+        ],
+        "quiz": [
+          {
+            "question": "What was the first step in the Chain of Evacuation?",
+            "options": [
+              "The Casualty Clearing Station (CCS)",
+              "The Base Hospital",
+              "The Regimental Aid Post (RAP)",
+              "The Advanced Dressing Station (ADS)"
+            ],
+            "answer": 2
+          },
+          {
+            "question": "What was the primary role of the FANY (First Aid Nursing Yeomanry)?",
+            "options": [
+              "To perform complex brain surgery at Base Hospitals",
+              "To drive motorized ambulances, often in dangerous conditions, to transport the wounded",
+              "To fight on the front lines alongside infantry",
+              "To manufacture medical supplies back in Britain"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "At which stage of the evacuation chain were emergency amputations and major triage operations usually carried out to stop gangrene?",
+            "options": [
+              "The Regimental Aid Post (RAP)",
+              "The Casualty Clearing Station (CCS)",
+              "The Base Hospital",
+              "The Stretcher Bearers in No Man's Land"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Why did Base Hospitals eventually become less important for emergency surgery?",
+            "options": [
+              "Because the war moved too quickly for them to keep up",
+              "Because gangrene developed so quickly that men had to be operated on earlier at the CCS",
+              "Because they were constantly bombed by airplanes",
+              "Because they ran out of anesthetic"
+            ],
+            "answer": 1
+          }
         ]
       },
       {
@@ -4973,6 +5326,48 @@
             "title": "Harold Gillies' Plastic Surgery",
             "caption": "A photograph of early, pioneering plastic surgery on a disfigured soldier.",
             "think_wonder": "How did the horrific facial injuries caused by modern shrapnel lead to the desperate invention of plastic surgery?"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What technique was developed to treat severe flesh wounds and prevent gas gangrene?",
+            "options": [
+              "The Carrel-Dakin method (using sterilized salt solution to flush the wound)",
+              "The immediate use of Penicillin injections",
+              "Amputating the limb immediately regardless of the injury size",
+              "Sealing the wound entirely with hot wax"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What major problem with blood transfusions was solved during WW1?",
+            "options": [
+              "Blood could not be stored because it clotted; sodium citrate was added so it could be kept in blood banks (e.g. for the Battle of Cambrai)",
+              "Doctors didn't know about blood groups, which caused fatal reactions",
+              "There was no rubber tubing available to perform the transfusions",
+              "Patients refused to accept blood for religious reasons"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "How was x-ray technology adapted for use on the Western Front?",
+            "options": [
+              "It wasn't; x-rays were considered too dangerous and fragile",
+              "Marie Curie developed mobile x-ray units fitted into ambulances to locate shrapnel closer to the front",
+              "Massive x-ray machines were built permanently into the trench walls",
+              "X-rays were used offensively to blind enemy soldiers"
+            ],
+            "answer": 1
+          },
+          {
+            "question": "Who was Harold Gillies?",
+            "options": [
+              "The inventor of the Thomas Splint",
+              "A surgeon who pioneered plastic surgery to rebuild the severe facial injuries caused by shrapnel",
+              "The doctor who discovered blood groups",
+              "The general in charge of the RAMC"
+            ],
+            "answer": 1
           }
         ]
       }

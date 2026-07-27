@@ -170,7 +170,149 @@ export const unitData = {
                     }
                 ]
             },
-            "enquiry": "Why was the historical context of Why were young men so desperat... so significant?"
+            "enquiry": "Why was the historical context of Why were young men so desperat... so significant?",
+            "quiz": [
+                {
+                    "q": "What was the nickname given to the British army of volunteers in 1914?",
+                    "a": "Pals Battalions",
+                    "options": [
+                        "Pals Battalions",
+                        "Conscript Army",
+                        "Kitchener's Army",
+                        "The Old Contemptibles"
+                    ]
+                },
+                {
+                    "q": "Who was the British Secretary of State for War who appeared on the famous recruitment poster?",
+                    "a": "Lord Kitchener",
+                    "options": [
+                        "Lord Kitchener",
+                        "Winston Churchill",
+                        "Douglas Haig",
+                        "David Lloyd George"
+                    ]
+                },
+                {
+                    "q": "What motivated many young men to sign up early in the war?",
+                    "a": "Fear of missing out and patriotism",
+                    "options": [
+                        "Fear of missing out and patriotism",
+                        "High pay and pensions",
+                        "They were forced by conscription",
+                        "A desire to see the trenches"
+                    ]
+                },
+                {
+                    "q": "When did Britain finally introduce conscription because volunteer numbers fell?",
+                    "a": "1916",
+                    "options": [
+                        "1916",
+                        "1914",
+                        "1915",
+                        "1918"
+                    ]
+                },
+                {
+                    "q": "What term describes the social pressure applied to men not in uniform, often involving handing them a white feather?",
+                    "a": "White Feather Campaign",
+                    "options": [
+                        "White Feather Campaign",
+                        "Coward's Mark",
+                        "Conscientious Objection",
+                        "Shaming Movement"
+                    ]
+                },
+                {
+                    "q": "How many men volunteered in the first weekend of the war?",
+                    "a": "Thousands",
+                    "options": [
+                        "Thousands",
+                        "Millions",
+                        "Hundreds",
+                        "Dozens"
+                    ]
+                },
+                {
+                    "q": "What was the BEF in 1914?",
+                    "a": "The British Expeditionary Force, a small professional army",
+                    "options": [
+                        "The British Expeditionary Force, a small professional army",
+                        "The British Elite Fleet",
+                        "The Big European Front",
+                        "The Belgian Eastern Force"
+                    ]
+                },
+                {
+                    "q": "What did most people in Britain believe about the war in August 1914?",
+                    "a": "It would be 'over by Christmas'",
+                    "options": [
+                        "It would be 'over by Christmas'",
+                        "It would last for a decade",
+                        "It would destroy the empire",
+                        "They would lose immediately"
+                    ]
+                },
+                {
+                    "q": "What powerful emotion was used on recruitment posters to shame men into joining?",
+                    "a": "Guilt and cowardice",
+                    "options": [
+                        "Guilt and cowardice",
+                        "Greed",
+                        "Anger",
+                        "Happiness"
+                    ]
+                },
+                {
+                    "q": "Who were the 'Bantams'?",
+                    "a": "Special battalions for men who were shorter than the standard height requirement",
+                    "options": [
+                        "Special battalions for men who were shorter than the standard height requirement",
+                        "Elite snipers",
+                        "Young boys who lied about their age",
+                        "Cavalry troops"
+                    ]
+                },
+                {
+                    "q": "How did the government use peer pressure to encourage enlistment?",
+                    "a": "By forming 'Pals Battalions' so men could fight alongside their friends and colleagues",
+                    "options": [
+                        "By forming 'Pals Battalions' so men could fight alongside their friends and colleagues",
+                        "By paying them more",
+                        "By threatening to shoot them",
+                        "By forcing their wives to work"
+                    ]
+                },
+                {
+                    "q": "What happened to recruitment numbers by late 1915?",
+                    "a": "They dropped significantly as the reality of trench warfare became known",
+                    "options": [
+                        "They dropped significantly as the reality of trench warfare became known",
+                        "They increased massively",
+                        "They stayed exactly the same",
+                        "Everyone in Britain had joined"
+                    ]
+                },
+                {
+                    "q": "What was the Military Service Act of 1916?",
+                    "a": "The law that introduced conscription, forcing men to fight",
+                    "options": [
+                        "The law that introduced conscription, forcing men to fight",
+                        "A law banning women from fighting",
+                        "A law reducing the size of the army",
+                        "A law ending the war"
+                    ]
+                },
+                {
+                    "q": "What was a common reason men gave for joining the army in 1914, apart from patriotism?",
+                    "a": "To escape boring jobs and seek adventure",
+                    "options": [
+                        "To escape boring jobs and seek adventure",
+                        "To learn how to speak French",
+                        "To become politicians",
+                        "Because they hated Germany"
+                    ]
+                }
+            ]
         },
         {
             "title": "Lesson 2: Did British generals make the ...",
@@ -211,7 +353,209 @@ export const unitData = {
                     }
                 ]
             },
-            "enquiry": "Why was the historical context of Did British generals make the ... so significant?"
+            "enquiry": "Why was the historical context of Did British generals make the ... so significant?",
+            "quiz": [
+                {
+                    "q": "Who was the British Commander-in-Chief during the Battle of the Somme?",
+                    "a": "General Douglas Haig",
+                    "options": [
+                        "General Douglas Haig",
+                        "Lord Kitchener",
+                        "General John French",
+                        "Winston Churchill"
+                    ]
+                },
+                {
+                    "q": "On what date did the Battle of the Somme begin?",
+                    "a": "1 July 1916",
+                    "options": [
+                        "1 July 1916",
+                        "11 November 1918",
+                        "4 August 1914",
+                        "21 March 1918"
+                    ]
+                },
+                {
+                    "q": "How many British casualties occurred on the first day of the Somme?",
+                    "a": "57,000",
+                    "options": [
+                        "57,000",
+                        "20,000",
+                        "1 million",
+                        "100,000"
+                    ]
+                },
+                {
+                    "q": "What preliminary tactic completely failed to destroy the German barbed wire and trenches at the Somme?",
+                    "a": "A seven-day artillery bombardment",
+                    "options": [
+                        "A seven-day artillery bombardment",
+                        "A gas attack",
+                        "A tank assault",
+                        "A cavalry charge"
+                    ]
+                },
+                {
+                    "q": "What new weapon was used for the first time during the Battle of the Somme in September 1916?",
+                    "a": "The Tank",
+                    "options": [
+                        "The Tank",
+                        "Poison Gas",
+                        "Flamethrowers",
+                        "Airplanes"
+                    ]
+                },
+                {
+                    "q": "Why did Haig launch the Somme offensive?",
+                    "a": "To relieve pressure on the French at Verdun",
+                    "options": [
+                        "To relieve pressure on the French at Verdun",
+                        "To capture Berlin",
+                        "To test new weapons",
+                        "Because the Kaiser challenged him"
+                    ]
+                },
+                {
+                    "q": "What controversial nickname was later given to Haig by some historians?",
+                    "a": "The Butcher of the Somme",
+                    "options": [
+                        "The Butcher of the Somme",
+                        "The Architect of Victory",
+                        "The Iron General",
+                        "The Mad Commander"
+                    ]
+                },
+                {
+                    "q": "What formation were the British soldiers ordered to walk in across No Man's Land?",
+                    "a": "A slow, straight line",
+                    "options": [
+                        "A slow, straight line",
+                        "A rapid sprint",
+                        "A zig-zag pattern",
+                        "Leapfrogging sections"
+                    ]
+                },
+                {
+                    "q": "What happened to the German soldiers during the artillery bombardment?",
+                    "a": "They sheltered in deep concrete dugouts",
+                    "options": [
+                        "They sheltered in deep concrete dugouts",
+                        "They were completely wiped out",
+                        "They retreated to the second line",
+                        "They surrendered"
+                    ]
+                },
+                {
+                    "q": "By the end of the battle in November 1916, roughly how far had the British advanced?",
+                    "a": "7 miles",
+                    "options": [
+                        "7 miles",
+                        "50 miles",
+                        "0 miles",
+                        "They reached the German border"
+                    ]
+                },
+                {
+                    "q": "What percentage of the artillery shells fired were 'duds' (failed to explode)?",
+                    "a": "About 30%",
+                    "options": [
+                        "About 30%",
+                        "Almost 100%",
+                        "None",
+                        "5%"
+                    ]
+                },
+                {
+                    "q": "Who were the 'Pals Battalions' that suffered heavily at the Somme?",
+                    "a": "Friends from the same towns who joined together",
+                    "options": [
+                        "Friends from the same towns who joined together",
+                        "Professional soldiers from India",
+                        "Veterans of the Boer War",
+                        "Conscripted criminals"
+                    ]
+                },
+                {
+                    "q": "What tactic was used by the British to 'soften up' the German trenches before the Somme attack?",
+                    "a": "A massive 7-day artillery bombardment",
+                    "options": [
+                        "A massive 7-day artillery bombardment",
+                        "Poison gas",
+                        "A stealthy night raid",
+                        "A tank assault"
+                    ]
+                },
+                {
+                    "q": "Why did the artillery bombardment fail?",
+                    "a": "It failed to cut the barbed wire and the German dugouts were too deep",
+                    "options": [
+                        "It failed to cut the barbed wire and the German dugouts were too deep",
+                        "They ran out of shells on day two",
+                        "The guns exploded",
+                        "The Germans retreated before it started"
+                    ]
+                },
+                {
+                    "q": "What order were the British infantry given when going over the top on July 1st?",
+                    "a": "To walk slowly in straight lines",
+                    "options": [
+                        "To walk slowly in straight lines",
+                        "To sprint across No Man's Land",
+                        "To crawl on their stomachs",
+                        "To ride on horseback"
+                    ]
+                },
+                {
+                    "q": "What happened when the British artillery barrage stopped to allow the infantry to advance?",
+                    "a": "The Germans rushed up from their dugouts and manned their machine guns",
+                    "options": [
+                        "The Germans rushed up from their dugouts and manned their machine guns",
+                        "The Germans surrendered",
+                        "The Germans counter-attacked",
+                        "The British stopped advancing"
+                    ]
+                },
+                {
+                    "q": "What devastating effect did the Battle of the Somme have back home in Britain?",
+                    "a": "Pals Battalions were wiped out, devastating entire local communities simultaneously",
+                    "options": [
+                        "Pals Battalions were wiped out, devastating entire local communities simultaneously",
+                        "The government collapsed instantly",
+                        "Food rationing was immediately introduced",
+                        "Everyone stopped volunteering"
+                    ]
+                },
+                {
+                    "q": "Why do some historians defend General Haig?",
+                    "a": "He was fighting a new type of industrial war and eventually led the army to victory in 1918",
+                    "options": [
+                        "He was fighting a new type of industrial war and eventually led the army to victory in 1918",
+                        "He fought on the front lines with a sword",
+                        "He never lost a single battle",
+                        "He invented the tank"
+                    ]
+                },
+                {
+                    "q": "What was the 'creeping barrage' tactic that was developed later?",
+                    "a": "Artillery firing just ahead of the advancing infantry to provide cover",
+                    "options": [
+                        "Artillery firing just ahead of the advancing infantry to provide cover",
+                        "A slow gas attack",
+                        "Tanks moving slowly",
+                        "Cavalry advancing in waves"
+                    ]
+                },
+                {
+                    "q": "By the end of the Battle of the Somme, what was the total number of British casualties?",
+                    "a": "Over 400,000",
+                    "options": [
+                        "Over 400,000",
+                        "57,000",
+                        "1 million",
+                        "50,000"
+                    ]
+                }
+            ]
         },
         {
             "title": "Lesson 3: Was the Great War truly a glob...",
@@ -252,7 +596,209 @@ export const unitData = {
                     }
                 ]
             },
-            "enquiry": "Why was the historical context of Was the Great War truly a glob... so significant?"
+            "enquiry": "Why was the historical context of Was the Great War truly a glob... so significant?",
+            "quiz": [
+                {
+                    "q": "Which empire contributed over 1 million soldiers to the British war effort?",
+                    "a": "The Indian Empire",
+                    "options": [
+                        "The Indian Empire",
+                        "The Canadian Empire",
+                        "The Australian Empire",
+                        "The African Empire"
+                    ]
+                },
+                {
+                    "q": "What does ANZAC stand for?",
+                    "a": "Australian and New Zealand Army Corps",
+                    "options": [
+                        "Australian and New Zealand Army Corps",
+                        "Allied Naval Zone And Command",
+                        "American and New Zealand Army Corps",
+                        "African National Zulu Army Corps"
+                    ]
+                },
+                {
+                    "q": "In which disastrous 1915 campaign did the ANZACs suffer heavy casualties?",
+                    "a": "Gallipoli",
+                    "options": [
+                        "Gallipoli",
+                        "The Somme",
+                        "Passchendaele",
+                        "Verdun"
+                    ]
+                },
+                {
+                    "q": "Who was the First Lord of the Admiralty that championed the Gallipoli campaign?",
+                    "a": "Winston Churchill",
+                    "options": [
+                        "Winston Churchill",
+                        "Douglas Haig",
+                        "Lord Kitchener",
+                        "David Lloyd George"
+                    ]
+                },
+                {
+                    "q": "Which country joined the Allied powers in 1917, shifting the balance of the war?",
+                    "a": "The United States",
+                    "options": [
+                        "The United States",
+                        "Italy",
+                        "Japan",
+                        "Russia"
+                    ]
+                },
+                {
+                    "q": "Which side did the Ottoman Empire fight on?",
+                    "a": "Central Powers",
+                    "options": [
+                        "Central Powers",
+                        "Allied Powers",
+                        "They were neutral",
+                        "With Russia"
+                    ]
+                },
+                {
+                    "q": "Why did the British want to capture Gallipoli?",
+                    "a": "To open a sea route to supply Russia",
+                    "options": [
+                        "To open a sea route to supply Russia",
+                        "To capture oil reserves",
+                        "To force Germany to surrender",
+                        "To protect the Suez Canal"
+                    ]
+                },
+                {
+                    "q": "What role did the Chinese Labour Corps play?",
+                    "a": "They dug trenches and unloaded supplies",
+                    "options": [
+                        "They dug trenches and unloaded supplies",
+                        "They fought as frontline infantry",
+                        "They commanded artillery",
+                        "They were medical staff"
+                    ]
+                },
+                {
+                    "q": "Which African campaign lasted for the entire duration of the war?",
+                    "a": "The East African Campaign",
+                    "options": [
+                        "The East African Campaign",
+                        "The North African Campaign",
+                        "The Boer War",
+                        "The Zulu War"
+                    ]
+                },
+                {
+                    "q": "What event caused Russia to withdraw from the war in 1917?",
+                    "a": "The Russian Revolution",
+                    "options": [
+                        "The Russian Revolution",
+                        "A German invasion of Moscow",
+                        "A peace treaty with Britain",
+                        "A lack of soldiers"
+                    ]
+                },
+                {
+                    "q": "Why did the USA enter the war?",
+                    "a": "Unrestricted submarine warfare and the Zimmermann Telegram",
+                    "options": [
+                        "Unrestricted submarine warfare and the Zimmermann Telegram",
+                        "The bombing of Pearl Harbor",
+                        "A desire to claim European colonies",
+                        "The assassination of Franz Ferdinand"
+                    ]
+                },
+                {
+                    "q": "What is 'Unrestricted Submarine Warfare'?",
+                    "a": "Sinking any ship without warning",
+                    "options": [
+                        "Sinking any ship without warning",
+                        "Attacking submarines with depth charges",
+                        "Mining neutral harbors",
+                        "Only attacking military vessels"
+                    ]
+                },
+                {
+                    "q": "Which campaign in 1915 was designed to knock the Ottoman Empire out of the war?",
+                    "a": "The Gallipoli Campaign",
+                    "options": [
+                        "The Gallipoli Campaign",
+                        "The Somme",
+                        "The Battle of Jutland",
+                        "The Arab Revolt"
+                    ]
+                },
+                {
+                    "q": "What was the geographic significance of the Dardanelles Strait?",
+                    "a": "It connected the Mediterranean to the Black Sea, which could supply Russia",
+                    "options": [
+                        "It connected the Mediterranean to the Black Sea, which could supply Russia",
+                        "It was the only way into Germany",
+                        "It held massive oil reserves",
+                        "It was the home of the Ottoman Emperor"
+                    ]
+                },
+                {
+                    "q": "Who suffered heavy casualties at Gallipoli, forging a sense of national identity?",
+                    "a": "The ANZACs (Australians and New Zealanders)",
+                    "options": [
+                        "The ANZACs (Australians and New Zealanders)",
+                        "The Americans",
+                        "The Canadians",
+                        "The South Africans"
+                    ]
+                },
+                {
+                    "q": "Why did the Gallipoli campaign ultimately fail?",
+                    "a": "Poor planning, underestimating the Turkish defenders, and difficult terrain",
+                    "options": [
+                        "Poor planning, underestimating the Turkish defenders, and difficult terrain",
+                        "A sudden snowstorm froze the troops",
+                        "The Navy refused to help",
+                        "They ran out of ammunition on day one"
+                    ]
+                },
+                {
+                    "q": "What global event in 1917 finally brought the United States into the war?",
+                    "a": "The Zimmermann Telegram and unrestricted submarine warfare",
+                    "options": [
+                        "The Zimmermann Telegram and unrestricted submarine warfare",
+                        "The sinking of the Lusitania alone",
+                        "The invasion of France",
+                        "The Russian Revolution"
+                    ]
+                },
+                {
+                    "q": "What did the Zimmermann Telegram propose?",
+                    "a": "A German alliance with Mexico against the USA",
+                    "options": [
+                        "A German alliance with Mexico against the USA",
+                        "A German alliance with Canada",
+                        "A peace treaty with Britain",
+                        "The surrender of the Ottoman Empire"
+                    ]
+                },
+                {
+                    "q": "What vital role did the British Indian Army play?",
+                    "a": "Over a million served, fighting in Europe, the Middle East, and Africa",
+                    "options": [
+                        "Over a million served, fighting in Europe, the Middle East, and Africa",
+                        "They only fought against Japan",
+                        "They refused to fight in Europe",
+                        "They guarded the British coastline"
+                    ]
+                },
+                {
+                    "q": "How did the entry of the USA change the course of the war?",
+                    "a": "It provided fresh troops, vast resources, and shattered German morale",
+                    "options": [
+                        "It provided fresh troops, vast resources, and shattered German morale",
+                        "It introduced nuclear weapons",
+                        "It immediately caused the Kaiser to resign",
+                        "It had no real impact"
+                    ]
+                }
+            ]
         },
         {
             "title": "Lesson 4: How did a war fought miles awa...",
@@ -293,7 +839,209 @@ export const unitData = {
                     }
                 ]
             },
-            "enquiry": "Why was the historical context of How did a war fought miles awa... so significant?"
+            "enquiry": "Why was the historical context of How did a war fought miles awa... so significant?",
+            "quiz": [
+                {
+                    "q": "What law gave the British government sweeping powers over civilian life in 1914?",
+                    "a": "Defence of the Realm Act (DORA)",
+                    "options": [
+                        "Defence of the Realm Act (DORA)",
+                        "Conscription Act",
+                        "Emergency Powers Act",
+                        "Civilian War Act"
+                    ]
+                },
+                {
+                    "q": "What was a major role women took on during the war?",
+                    "a": "Working in munitions factories",
+                    "options": [
+                        "Working in munitions factories",
+                        "Fighting on the front line",
+                        "Commanding naval ships",
+                        "Serving as politicians"
+                    ]
+                },
+                {
+                    "q": "What nickname was given to women who worked with TNT because it turned their skin yellow?",
+                    "a": "Canaries",
+                    "options": [
+                        "Canaries",
+                        "Tommies",
+                        "Munitionettes",
+                        "Yellow Girls"
+                    ]
+                },
+                {
+                    "q": "When did the British government introduce rationing to prevent starvation?",
+                    "a": "1918",
+                    "options": [
+                        "1918",
+                        "1914",
+                        "1916",
+                        "1920"
+                    ]
+                },
+                {
+                    "q": "What German weapon was used to bomb British cities like London for the first time?",
+                    "a": "Zeppelins",
+                    "options": [
+                        "Zeppelins",
+                        "V2 Rockets",
+                        "U-Boats",
+                        "Tanks"
+                    ]
+                },
+                {
+                    "q": "How did DORA attempt to stop workers from taking time off with hangovers?",
+                    "a": "Pub opening hours were restricted and beer watered down",
+                    "options": [
+                        "Pub opening hours were restricted and beer watered down",
+                        "Alcohol was completely banned",
+                        "Workers were given free rum",
+                        "Pubs were closed entirely"
+                    ]
+                },
+                {
+                    "q": "What was the 'Women's Land Army'?",
+                    "a": "Women working on farms to produce food",
+                    "options": [
+                        "Women working on farms to produce food",
+                        "Women defending the coastline",
+                        "Women joining the infantry",
+                        "Women working in factories"
+                    ]
+                },
+                {
+                    "q": "What did the government use to control public opinion and encourage recruitment?",
+                    "a": "Propaganda and censorship",
+                    "options": [
+                        "Propaganda and censorship",
+                        "Free elections",
+                        "Financial bribes",
+                        "Threats of execution"
+                    ]
+                },
+                {
+                    "q": "What happened to conscientious objectors who refused to fight?",
+                    "a": "They were often imprisoned and treated harshly",
+                    "options": [
+                        "They were often imprisoned and treated harshly",
+                        "They were allowed to stay home freely",
+                        "They were deported to Germany",
+                        "They were given medals for bravery"
+                    ]
+                },
+                {
+                    "q": "What did the Representation of the People Act 1918 achieve?",
+                    "a": "It gave the vote to some women over 30 and all men over 21",
+                    "options": [
+                        "It gave the vote to some women over 30 and all men over 21",
+                        "It gave all women the vote",
+                        "It banned women from voting",
+                        "It lowered the voting age to 18"
+                    ]
+                },
+                {
+                    "q": "How did the war affect trade unions?",
+                    "a": "Their membership and power grew significantly",
+                    "options": [
+                        "Their membership and power grew significantly",
+                        "They were completely banned",
+                        "They lost all their members",
+                        "They went on strike for the whole war"
+                    ]
+                },
+                {
+                    "q": "What was one of the most hated aspects of DORA?",
+                    "a": "Censorship of letters from soldiers",
+                    "options": [
+                        "Censorship of letters from soldiers",
+                        "Forced conscription",
+                        "The banning of football",
+                        "The creation of the NHS"
+                    ]
+                },
+                {
+                    "q": "What does 'Total War' mean?",
+                    "a": "A war where the entire society and economy is mobilized for the war effort",
+                    "options": [
+                        "A war where the entire society and economy is mobilized for the war effort",
+                        "A war where no prisoners are taken",
+                        "A war fought only by civilians",
+                        "A war that covers the entire globe"
+                    ]
+                },
+                {
+                    "q": "What happened to the employment of women during the war?",
+                    "a": "Over a million women took up jobs previously done by men",
+                    "options": [
+                        "Over a million women took up jobs previously done by men",
+                        "Women were banned from working",
+                        "Women only worked as nurses",
+                        "Nothing changed"
+                    ]
+                },
+                {
+                    "q": "Why did the government introduce DORA (Defence of the Realm Act)?",
+                    "a": "To give themselves emergency powers to control everyday life and secure the war effort",
+                    "options": [
+                        "To give themselves emergency powers to control everyday life and secure the war effort",
+                        "To ban the monarchy",
+                        "To stop women from voting",
+                        "To force the Irish to fight"
+                    ]
+                },
+                {
+                    "q": "What was the 'Shell Crisis' of 1915?",
+                    "a": "A severe shortage of artillery shells on the front line",
+                    "options": [
+                        "A severe shortage of artillery shells on the front line",
+                        "A disease spread by snails in the trenches",
+                        "A shortage of eggs for soldiers",
+                        "A mutiny by factory workers"
+                    ]
+                },
+                {
+                    "q": "How did the government solve the Shell Crisis?",
+                    "a": "David Lloyd George was made Minister of Munitions and reorganised industry",
+                    "options": [
+                        "David Lloyd George was made Minister of Munitions and reorganised industry",
+                        "They bought all their shells from America",
+                        "They surrendered",
+                        "They forced captured Germans to make them"
+                    ]
+                },
+                {
+                    "q": "What impact did the war have on the British class system?",
+                    "a": "It blurred class boundaries as rich and poor fought and died together",
+                    "options": [
+                        "It blurred class boundaries as rich and poor fought and died together",
+                        "It made the rich richer and poor poorer",
+                        "It completely abolished the upper class",
+                        "It had no effect at all"
+                    ]
+                },
+                {
+                    "q": "What were 'U-boats' and why were they a massive threat to Britain?",
+                    "a": "German submarines that sank merchant ships, attempting to starve Britain",
+                    "options": [
+                        "German submarines that sank merchant ships, attempting to starve Britain",
+                        "German airships that bombed cities",
+                        "Underwater mines",
+                        "Special forces units"
+                    ]
+                },
+                {
+                    "q": "How did the British public react to the first Zeppelin bombings?",
+                    "a": "With terror, anger, and anti-German riots",
+                    "options": [
+                        "With terror, anger, and anti-German riots",
+                        "They ignored them",
+                        "They thought they were friendly planes",
+                        "They immediately demanded a surrender"
+                    ]
+                }
+            ]
         },
         {
             "title": "Lesson 5: Did the Treaty of Versailles s...",
@@ -334,7 +1082,209 @@ export const unitData = {
                     }
                 ]
             },
-            "enquiry": "Why was the historical context of Did the Treaty of Versailles s... so significant?"
+            "enquiry": "Why was the historical context of Did the Treaty of Versailles s... so significant?",
+            "quiz": [
+                {
+                    "q": "Who were the 'Big Three' leaders at the Paris Peace Conference?",
+                    "a": "Clemenceau, Lloyd George, Wilson",
+                    "options": [
+                        "Clemenceau, Lloyd George, Wilson",
+                        "Churchill, Roosevelt, Stalin",
+                        "Bismarck, Wilhelm, Nicholas",
+                        "Haig, Foch, Pershing"
+                    ]
+                },
+                {
+                    "q": "Which leader wanted the harshest punishment for Germany?",
+                    "a": "Georges Clemenceau (France)",
+                    "options": [
+                        "Georges Clemenceau (France)",
+                        "Woodrow Wilson (USA)",
+                        "David Lloyd George (Britain)",
+                        "Vittorio Orlando (Italy)"
+                    ]
+                },
+                {
+                    "q": "What was Woodrow Wilson's idealistic plan for peace called?",
+                    "a": "The Fourteen Points",
+                    "options": [
+                        "The Fourteen Points",
+                        "The Treaty of Versailles",
+                        "The League of Nations Charter",
+                        "The New Deal"
+                    ]
+                },
+                {
+                    "q": "What was Article 231 of the Treaty of Versailles?",
+                    "a": "The War Guilt Clause, blaming Germany for starting the war",
+                    "options": [
+                        "The War Guilt Clause, blaming Germany for starting the war",
+                        "The clause setting reparations at £6.6 billion",
+                        "The clause demilitarising the Rhineland",
+                        "The clause creating the League of Nations"
+                    ]
+                },
+                {
+                    "q": "How much was Germany forced to pay in reparations (agreed in 1921)?",
+                    "a": "£6.6 billion",
+                    "options": [
+                        "£6.6 billion",
+                        "100 million francs",
+                        "1 billion dollars",
+                        "They paid nothing"
+                    ]
+                },
+                {
+                    "q": "What was the limit placed on the size of the German army?",
+                    "a": "100,000 men",
+                    "options": [
+                        "100,000 men",
+                        "1 million men",
+                        "0 men (disbanded entirely)",
+                        "500,000 men"
+                    ]
+                },
+                {
+                    "q": "What international peacekeeping organisation was created by the Treaty?",
+                    "a": "The League of Nations",
+                    "options": [
+                        "The League of Nations",
+                        "The United Nations",
+                        "NATO",
+                        "The European Union"
+                    ]
+                },
+                {
+                    "q": "Which country refused to join the League of Nations, weakening it from the start?",
+                    "a": "The United States",
+                    "options": [
+                        "The United States",
+                        "Britain",
+                        "France",
+                        "Germany"
+                    ]
+                },
+                {
+                    "q": "What happened to Germany's overseas colonies?",
+                    "a": "They were given to Britain and France as 'mandates'",
+                    "options": [
+                        "They were given to Britain and France as 'mandates'",
+                        "They were made independent",
+                        "They were given to the USA",
+                        "Germany kept them"
+                    ]
+                },
+                {
+                    "q": "What area of Germany was demilitarised (no German soldiers allowed)?",
+                    "a": "The Rhineland",
+                    "options": [
+                        "The Rhineland",
+                        "Bavaria",
+                        "Prussia",
+                        "Alsace-Lorraine"
+                    ]
+                },
+                {
+                    "q": "How did the German public react to the Treaty of Versailles?",
+                    "a": "They called it a 'Diktat' (dictated peace) and felt betrayed",
+                    "options": [
+                        "They called it a 'Diktat' (dictated peace) and felt betrayed",
+                        "They accepted it was fair",
+                        "They rejoiced that the war was over",
+                        "They ignored it"
+                    ]
+                },
+                {
+                    "q": "What does 'Diktat' mean?",
+                    "a": "A dictated peace forced upon the defeated",
+                    "options": [
+                        "A dictated peace forced upon the defeated",
+                        "A fair negotiation",
+                        "A military surrender",
+                        "A massive financial fine"
+                    ]
+                },
+                {
+                    "q": "Where was the Paris Peace Conference held?",
+                    "a": "The Palace of Versailles",
+                    "options": [
+                        "The Palace of Versailles",
+                        "The Eiffel Tower",
+                        "The Louvre",
+                        "The Reichstag"
+                    ]
+                },
+                {
+                    "q": "What was Georges Clemenceau's primary aim at the conference?",
+                    "a": "To crush Germany so it could never invade France again",
+                    "options": [
+                        "To crush Germany so it could never invade France again",
+                        "To form an alliance with Germany",
+                        "To forgive and forget",
+                        "To take over the British Empire"
+                    ]
+                },
+                {
+                    "q": "What was David Lloyd George's primary aim?",
+                    "a": "To punish Germany but leave it strong enough to trade with Britain",
+                    "options": [
+                        "To punish Germany but leave it strong enough to trade with Britain",
+                        "To completely destroy Germany",
+                        "To give Germany its empire back",
+                        "To execute the Kaiser"
+                    ]
+                },
+                {
+                    "q": "What was Woodrow Wilson's primary aim?",
+                    "a": "To create a lasting peace based on his 'Fourteen Points'",
+                    "options": [
+                        "To create a lasting peace based on his 'Fourteen Points'",
+                        "To take revenge on Germany",
+                        "To gain European territory for the USA",
+                        "To destroy the British navy"
+                    ]
+                },
+                {
+                    "q": "What territory was returned to France by the treaty?",
+                    "a": "Alsace-Lorraine",
+                    "options": [
+                        "Alsace-Lorraine",
+                        "The Rhineland",
+                        "The Saar",
+                        "Normandy"
+                    ]
+                },
+                {
+                    "q": "What military restrictions were placed on Germany?",
+                    "a": "An army of 100,000, no air force, and only 6 battleships",
+                    "options": [
+                        "An army of 100,000, no air force, and only 6 battleships",
+                        "A total ban on all military",
+                        "They could only have submarines",
+                        "They were limited to 1 million men"
+                    ]
+                },
+                {
+                    "q": "What was the 'War Guilt Clause' (Article 231)?",
+                    "a": "It forced Germany to accept 100% of the blame for starting the war",
+                    "options": [
+                        "It forced Germany to accept 100% of the blame for starting the war",
+                        "It blamed Austria-Hungary for the war",
+                        "It forgave everyone",
+                        "It blamed the assassination on Russia"
+                    ]
+                },
+                {
+                    "q": "Why did the German representatives sign the treaty?",
+                    "a": "They had no choice; if they refused, the Allies would invade Germany",
+                    "options": [
+                        "They had no choice; if they refused, the Allies would invade Germany",
+                        "They thought it was a fair deal",
+                        "They were bribed",
+                        "They were tricked into signing it"
+                    ]
+                }
+            ]
         }
     ],
     "staticPages": []

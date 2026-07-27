@@ -237,6 +237,208 @@
             "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
             "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
           }
+        ],
+        "quiz": [
+          {
+            "q": "Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?",
+            "a": "Otto von Bismarck",
+            "options": [
+              "Otto von Bismarck",
+              "Kaiser Wilhelm II",
+              "Count von Schlieffen",
+              "Napoleon III"
+            ]
+          },
+          {
+            "q": "Which telegram did Bismarck edit to provoke France into war?",
+            "a": "Ems Telegram",
+            "options": [
+              "Ems Telegram",
+              "Zimmermann Telegram",
+              "Blank Cheque",
+              "Versailles Dispatch"
+            ]
+          },
+          {
+            "q": "In what year did the Franco-Prussian War break out?",
+            "a": "1870",
+            "options": [
+              "1870",
+              "1871",
+              "1890",
+              "1914"
+            ]
+          },
+          {
+            "q": "Which two provinces were taken from France in the peace settlement?",
+            "a": "Alsace and Lorraine",
+            "options": [
+              "Alsace and Lorraine",
+              "Ruhr and Saar",
+              "Normandy and Brittany",
+              "Rhineland and Bavaria"
+            ]
+          },
+          {
+            "q": "Where was the German Empire proclaimed in 1871, humiliating the French?",
+            "a": "Palace of Versailles",
+            "options": [
+              "Palace of Versailles",
+              "Reichstag Building",
+              "Notre Dame",
+              "Berlin Palace"
+            ]
+          },
+          {
+            "q": "What was the size of the war indemnity France was forced to pay?",
+            "a": "5 billion francs",
+            "options": [
+              "5 billion francs",
+              "1 billion marks",
+              "6.6 billion pounds",
+              "132 billion gold marks"
+            ]
+          },
+          {
+            "q": "Who became the new German Emperor in 1888 and dismissed Bismarck?",
+            "a": "Kaiser Wilhelm II",
+            "options": [
+              "Kaiser Wilhelm II",
+              "Kaiser Wilhelm I",
+              "Franz Joseph",
+              "Tsar Nicholas II"
+            ]
+          },
+          {
+            "q": "What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?",
+            "a": "Reinsurance Treaty",
+            "options": [
+              "Reinsurance Treaty",
+              "Treaty of London",
+              "Dual Alliance",
+              "Treaty of Frankfurt"
+            ]
+          },
+          {
+            "q": "Which country allied with Russia in 1894 after Bismarck's dismissal?",
+            "a": "France",
+            "options": [
+              "France",
+              "Britain",
+              "Austria-Hungary",
+              "Italy"
+            ]
+          },
+          {
+            "q": "What was Germany's greatest fear that drove its military planning?",
+            "a": "A two-front war",
+            "options": [
+              "A two-front war",
+              "A naval blockade",
+              "An Italian invasion",
+              "A socialist revolution"
+            ]
+          },
+          {
+            "q": "What was the name of the German military plan created to defeat France quickly?",
+            "a": "Schlieffen Plan",
+            "options": [
+              "Schlieffen Plan",
+              "Plan XVII",
+              "Bismarck Plan",
+              "Moltke Offensive"
+            ]
+          },
+          {
+            "q": "Which French leader was captured at the Battle of Sedan?",
+            "a": "Napoleon III",
+            "options": [
+              "Napoleon III",
+              "Georges Clemenceau",
+              "Louis XVI",
+              "Charles de Gaulle"
+            ]
+          },
+          {
+            "q": "What was the primary goal of Bismarck in defeating France?",
+            "a": "To unify the southern German states with the north",
+            "options": [
+              "To unify the southern German states with the north",
+              "To steal French gold",
+              "To crown himself Emperor",
+              "To conquer Paris permanently"
+            ]
+          },
+          {
+            "q": "Which French territory was annexed by Germany, creating lasting resentment?",
+            "a": "Alsace-Lorraine",
+            "options": [
+              "Alsace-Lorraine",
+              "Normandy",
+              "Burgundy",
+              "The Rhineland"
+            ]
+          },
+          {
+            "q": "Who was the Prussian King that was crowned German Emperor?",
+            "a": "Wilhelm I",
+            "options": [
+              "Wilhelm I",
+              "Wilhelm II",
+              "Frederick the Great",
+              "Bismarck"
+            ]
+          },
+          {
+            "q": "What event did Bismarck use to trick France into declaring war?",
+            "a": "Editing the Ems Telegram",
+            "options": [
+              "Editing the Ems Telegram",
+              "Assassinating a French minister",
+              "Invading a border town",
+              "Sinking a French ship"
+            ]
+          },
+          {
+            "q": "What happened to Napoleon III at the Battle of Sedan?",
+            "a": "He was captured along with his army",
+            "options": [
+              "He was captured along with his army",
+              "He was killed in combat",
+              "He successfully escaped to Britain",
+              "He defeated the Prussians"
+            ]
+          },
+          {
+            "q": "What treaty formally ended the Franco-Prussian War?",
+            "a": "Treaty of Frankfurt",
+            "options": [
+              "Treaty of Frankfurt",
+              "Treaty of Versailles",
+              "Treaty of Paris",
+              "Treaty of Berlin"
+            ]
+          },
+          {
+            "q": "Why did Bismarck fear a French alliance with Russia?",
+            "a": "It would force Germany into a two-front war",
+            "options": [
+              "It would force Germany into a two-front war",
+              "Russia had a stronger navy",
+              "France would buy Russian weapons",
+              "It would stop German trade"
+            ]
+          },
+          {
+            "q": "Where exactly was the new German Empire proclaimed?",
+            "a": "The Hall of Mirrors at Versailles",
+            "options": [
+              "The Hall of Mirrors at Versailles",
+              "The Louvre",
+              "The Reichstag in Berlin",
+              "Notre Dame Cathedral"
+            ]
+          }
         ]
       },
       {
@@ -484,6 +686,118 @@
             "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
             "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>"
           }
+        ],
+        "quiz": [
+          {
+            "q": "What term describes the rapid colonization of Africa by European powers in the late 19th century?",
+            "a": "The Scramble for Africa",
+            "options": [
+              "The Scramble for Africa",
+              "The Great Game",
+              "Manifest Destiny",
+              "The African Partition"
+            ]
+          },
+          {
+            "q": "Which German leader famously stated that Germany wanted its 'place in the sun'?",
+            "a": "Kaiser Wilhelm II",
+            "options": [
+              "Kaiser Wilhelm II",
+              "Otto von Bismarck",
+              "Adolf Hitler",
+              "Paul von Hindenburg"
+            ]
+          },
+          {
+            "q": "In which year did the First Moroccan Crisis occur?",
+            "a": "1905",
+            "options": [
+              "1905",
+              "1911",
+              "1898",
+              "1914"
+            ]
+          },
+          {
+            "q": "What was the purpose of the 1884 Berlin Conference?",
+            "a": "To regulate European colonization and trade in Africa",
+            "options": [
+              "To regulate European colonization and trade in Africa",
+              "To form a military alliance against Britain",
+              "To ban slavery worldwide",
+              "To divide Asia among European powers"
+            ]
+          },
+          {
+            "q": "Which European power controlled the largest empire in Africa by 1914?",
+            "a": "Britain",
+            "options": [
+              "Britain",
+              "France",
+              "Germany",
+              "Belgium"
+            ]
+          },
+          {
+            "q": "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
+            "a": "He wanted Germany to have a global empire like Britain and France",
+            "options": [
+              "He wanted Germany to have a global empire like Britain and France",
+              "He wanted a holiday home in Africa",
+              "He wanted to conquer South America",
+              "He wanted to control the Mediterranean Sea"
+            ]
+          },
+          {
+            "q": "What happened during the First Moroccan Crisis (1905)?",
+            "a": "The Kaiser visited Tangier and declared support for Moroccan independence",
+            "options": [
+              "The Kaiser visited Tangier and declared support for Moroccan independence",
+              "Germany invaded Morocco",
+              "France surrendered Morocco to Britain",
+              "The local sultan defeated the French army"
+            ]
+          },
+          {
+            "q": "What was the main result of the Algeciras Conference (1906)?",
+            "a": "Germany was humiliated and France was given control of Moroccan police",
+            "options": [
+              "Germany was humiliated and France was given control of Moroccan police",
+              "Germany gained full control of Morocco",
+              "Morocco became fully independent",
+              "Britain took over Morocco"
+            ]
+          },
+          {
+            "q": "What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?",
+            "a": "Germany sent the gunboat Panther to the port of Agadir",
+            "options": [
+              "Germany sent the gunboat Panther to the port of Agadir",
+              "France declared war on Germany",
+              "Britain blockaded the Moroccan coast",
+              "Moroccans attacked German tourists"
+            ]
+          },
+          {
+            "q": "How did the Agadir Crisis end?",
+            "a": "Germany backed down after being given a small strip of the Congo",
+            "options": [
+              "Germany backed down after being given a small strip of the Congo",
+              "Germany successfully conquered Morocco",
+              "Britain declared war on Germany",
+              "France was forced to leave Africa"
+            ]
+          },
+          {
+            "q": "What effect did the Moroccan Crises have on Anglo-French relations?",
+            "a": "It pushed Britain and France closer together in a strong alliance",
+            "options": [
+              "It pushed Britain and France closer together in a strong alliance",
+              "It caused a war between them",
+              "It made Britain ally with Germany instead",
+              "It led to Britain abandoning its empire"
+            ]
+          }
         ]
       },
       {
@@ -726,6 +1040,118 @@
                 "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo. (P4 & P8)",
                 "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
               }
+            ]
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What revolutionary British battleship was launched in 1906?",
+            "a": "HMS Dreadnought",
+            "options": [
+              "HMS Dreadnought",
+              "HMS Victory",
+              "HMS Belfast",
+              "HMS Invincible"
+            ]
+          },
+          {
+            "q": "Which German Admiral was in charge of expanding the German Navy?",
+            "a": "Admiral von Tirpitz",
+            "options": [
+              "Admiral von Tirpitz",
+              "Admiral Scheer",
+              "Admiral Hipper",
+              "Kaiser Wilhelm II"
+            ]
+          },
+          {
+            "q": "What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?",
+            "a": "Two-Power Standard",
+            "options": [
+              "Two-Power Standard",
+              "Splendid Isolation",
+              "Naval Supremacy Act",
+              "Dreadnought Rule"
+            ]
+          },
+          {
+            "q": "Why was the HMS Dreadnought completely revolutionary?",
+            "a": "It was faster, heavier armored, and had all 'big-guns'",
+            "options": [
+              "It was faster, heavier armored, and had all 'big-guns'",
+              "It was the first submarine",
+              "It could launch airplanes",
+              "It was completely invisible to radar"
+            ]
+          },
+          {
+            "q": "What was the consequence of the Dreadnought's launch?",
+            "a": "It made all older battleships instantly obsolete, resetting the naval race",
+            "options": [
+              "It made all older battleships instantly obsolete, resetting the naval race",
+              "Germany immediately surrendered",
+              "Britain stopped building ships",
+              "France allied with Germany"
+            ]
+          },
+          {
+            "q": "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
+            "a": "Building a navy large enough that Britain wouldn't risk fighting it",
+            "options": [
+              "Building a navy large enough that Britain wouldn't risk fighting it",
+              "Attacking Britain immediately",
+              "Building only submarines",
+              "Refusing to build any ships to avoid angering Britain"
+            ]
+          },
+          {
+            "q": "What slogan did the British public chant in 1909 to demand more ships?",
+            "a": "'We want eight and we won't wait!'",
+            "options": [
+              "'We want eight and we won't wait!'",
+              "'Rule Britannia!'",
+              "'Sink the Kaiser!'",
+              "'More dreadnoughts now!'"
+            ]
+          },
+          {
+            "q": "Why did Britain feel so threatened by the German naval expansion?",
+            "a": "Britain is an island and relied entirely on its navy for survival and trade",
+            "options": [
+              "Britain is an island and relied entirely on its navy for survival and trade",
+              "They were worried Germany would steal their ships",
+              "They wanted to attack Germany",
+              "They had no army at all"
+            ]
+          },
+          {
+            "q": "What laws were passed in Germany to fund their massive naval buildup?",
+            "a": "The Naval Laws of 1898 and 1900",
+            "options": [
+              "The Naval Laws of 1898 and 1900",
+              "The Shipyard Acts",
+              "The Tirpitz Decrees",
+              "The Imperial Fleet Bills"
+            ]
+          },
+          {
+            "q": "By 1914, who had won the naval race?",
+            "a": "Britain, with 29 dreadnoughts to Germany's 17",
+            "options": [
+              "Britain, with 29 dreadnoughts to Germany's 17",
+              "Germany, with 30 dreadnoughts to Britain's 10",
+              "They had exactly the same number",
+              "France overtook both of them"
+            ]
+          },
+          {
+            "q": "How did the naval race affect British foreign policy?",
+            "a": "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+            "options": [
+              "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+              "It made them ally with Germany",
+              "It caused them to declare war on America",
+              "It made them give up their empire"
             ]
           }
         ]
@@ -971,6 +1397,118 @@
           {
             "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
             "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Which three countries formed the Triple Entente in 1907?",
+            "a": "Britain, France, Russia",
+            "options": [
+              "Britain, France, Russia",
+              "Germany, Austria-Hungary, Italy",
+              "Britain, France, Italy",
+              "Germany, Russia, Austria-Hungary"
+            ]
+          },
+          {
+            "q": "Which country left the Triple Alliance and joined the Entente in 1915?",
+            "a": "Italy",
+            "options": [
+              "Italy",
+              "Ottoman Empire",
+              "Bulgaria",
+              "Romania"
+            ]
+          },
+          {
+            "q": "What was Britain's traditional foreign policy before forming alliances?",
+            "a": "Splendid Isolation",
+            "options": [
+              "Splendid Isolation",
+              "Weltpolitik",
+              "Appeasement",
+              "Continental Commitment"
+            ]
+          },
+          {
+            "q": "Which three countries made up the Triple Alliance of 1882?",
+            "a": "Germany, Austria-Hungary, Italy",
+            "options": [
+              "Germany, Austria-Hungary, Italy",
+              "Germany, Russia, Austria-Hungary",
+              "Britain, France, Russia",
+              "Germany, Ottoman Empire, Italy"
+            ]
+          },
+          {
+            "q": "Which three countries formed the Triple Entente by 1907?",
+            "a": "Britain, France, Russia",
+            "options": [
+              "Britain, France, Russia",
+              "Germany, Austria-Hungary, Italy",
+              "Britain, USA, France",
+              "France, Russia, Italy"
+            ]
+          },
+          {
+            "q": "What was a major flaw of the alliance system?",
+            "a": "A small dispute between two nations could drag all major powers into war",
+            "options": [
+              "A small dispute between two nations could drag all major powers into war",
+              "It prevented any trade between the blocs",
+              "It made the armies too small",
+              "It forced countries to disarm"
+            ]
+          },
+          {
+            "q": "Why did Russia ally with France in 1894?",
+            "a": "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
+            "options": [
+              "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
+              "Because they shared the same religion",
+              "Because France promised them African colonies",
+              "Because Britain attacked them"
+            ]
+          },
+          {
+            "q": "What was the 'Entente Cordiale' signed in 1904?",
+            "a": "A friendly agreement between Britain and France, settling colonial disputes",
+            "options": [
+              "A friendly agreement between Britain and France, settling colonial disputes",
+              "A military alliance between Germany and Russia",
+              "A peace treaty ending a war",
+              "An agreement to build dreadnoughts together"
+            ]
+          },
+          {
+            "q": "Why did Britain finally decide to form alliances?",
+            "a": "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+            "options": [
+              "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+              "They wanted to conquer Europe",
+              "They were invaded by France",
+              "They needed money from Russia"
+            ]
+          },
+          {
+            "q": "What does 'Weltpolitik' mean?",
+            "a": "World policy (Germany's desire for a global empire)",
+            "options": [
+              "World policy (Germany's desire for a global empire)",
+              "Naval supremacy",
+              "Splendid isolation",
+              "Peaceful co-existence"
+            ]
+          },
+          {
+            "q": "Which nation in the Triple Alliance was seen as the 'weak link'?",
+            "a": "Italy",
+            "options": [
+              "Italy",
+              "Germany",
+              "Austria-Hungary",
+              "Britain"
+            ]
           }
         ]
       },
@@ -1235,6 +1773,118 @@
           {
             "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
             "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Who assassinated Archduke Franz Ferdinand?",
+            "a": "Gavrilo Princip",
+            "options": [
+              "Gavrilo Princip",
+              "Nedeljko Cabrinovic",
+              "Dragutin Dimitrijevic",
+              "Leon Trotsky"
+            ]
+          },
+          {
+            "q": "What was the name of the Serbian nationalist group responsible for the assassination?",
+            "a": "The Black Hand",
+            "options": [
+              "The Black Hand",
+              "The White Rose",
+              "The Red Guards",
+              "Young Bosnia"
+            ]
+          },
+          {
+            "q": "On what exact date was the Archduke assassinated?",
+            "a": "28 June 1914",
+            "options": [
+              "28 June 1914",
+              "28 July 1914",
+              "11 November 1918",
+              "4 August 1914"
+            ]
+          },
+          {
+            "q": "Which empire had annexed Bosnia in 1908, angering Serbian nationalists?",
+            "a": "Austria-Hungary",
+            "options": [
+              "Austria-Hungary",
+              "The Ottoman Empire",
+              "Russia",
+              "Germany"
+            ]
+          },
+          {
+            "q": "Who was the heir to the Austro-Hungarian throne that visited Sarajevo?",
+            "a": "Archduke Franz Ferdinand",
+            "options": [
+              "Archduke Franz Ferdinand",
+              "Emperor Franz Joseph",
+              "Kaiser Wilhelm II",
+              "Tsar Nicholas II"
+            ]
+          },
+          {
+            "q": "What terrorist group supplied the assassins with weapons?",
+            "a": "The Black Hand",
+            "options": [
+              "The Black Hand",
+              "Young Bosnia",
+              "The Red Army",
+              "The Serbian Guard"
+            ]
+          },
+          {
+            "q": "What was the first, failed assassination attempt on the Archduke that morning?",
+            "a": "A bomb was thrown at his car but bounced off",
+            "options": [
+              "A bomb was thrown at his car but bounced off",
+              "He was shot at but missed",
+              "His driver was poisoned",
+              "A bridge was blown up"
+            ]
+          },
+          {
+            "q": "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
+            "a": "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+            "options": [
+              "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+              "Princip had planned the exact route",
+              "The Archduke went in to buy a sandwich",
+              "The police ordered the car to stop there"
+            ]
+          },
+          {
+            "q": "What was the 'Blank Cheque'?",
+            "a": "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+            "options": [
+              "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+              "A bribe paid to the assassins",
+              "A peace offer from Russia",
+              "The money used to buy the guns"
+            ]
+          },
+          {
+            "q": "What happened on July 23, 1914?",
+            "a": "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+            "options": [
+              "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+              "Germany invaded Belgium",
+              "Russia declared war",
+              "Britain joined the war"
+            ]
+          },
+          {
+            "q": "Why did Britain declare war on Germany on August 4, 1914?",
+            "a": "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+            "options": [
+              "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+              "Because of the assassination in Sarajevo",
+              "Because France surrendered",
+              "Because Germany sank a British ship"
+            ]
           }
         ]
       }

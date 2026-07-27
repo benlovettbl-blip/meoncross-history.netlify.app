@@ -745,6 +745,22 @@ export function initializeApp(unitData) {
       });
       lessonsHTML += '</div>';
       
+
+      if (unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0) {
+        lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Mock Exams</h2>';
+        lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+        unitData.mock_exams.forEach(mock => {
+          const mockUrl = window.currentUnitId ? `/units/${window.currentUnitId}/${mock.url}` : mock.url;
+          lessonsHTML += `
+            <div class="homepage-lesson-card" style="background: #fdf2f8; border: 2px dashed #db2777; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${mockUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fdf2f8'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+              <i class="fa-solid fa-file-signature fa-2x" style="color: #db2777; margin-bottom: 10px;"></i>
+              <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">${mock.title}</h3>
+            </div>
+          `;
+        });
+        lessonsHTML += '</div>';
+      }
+
       if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0) {
         lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Printable Workbooks</h2>';
         lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
@@ -1043,6 +1059,10 @@ export function initializeApp(unitData) {
       extractedExamTasks.push(...eTasks);
       lesson.tasks = lesson.tasks.filter(t => !(t.text || t.question || '').includes('marks)'));
     }
+    
+    if (lesson.exam_practice && Array.isArray(lesson.exam_practice)) {
+      extractedExamTasks.push(...lesson.exam_practice);
+    }
 
     assignQuestionNumbers(lesson);
     window.currentActiveLesson = lesson;
@@ -1059,8 +1079,8 @@ export function initializeApp(unitData) {
     }
 
     html += `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 15px; border-bottom: 1px solid #e2e8f0; background: #ffffff; border-radius: 8px;">
-        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary);">${lesson.title}</h4>
+      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+        <h4 style="margin: 0; font-size: 1.25rem; color: var(--primary); font-weight: 700;">${lesson.title}</h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
           <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
           <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
@@ -1892,15 +1912,28 @@ export function initializeApp(unitData) {
     }
 
     if (lesson.quiz && lesson.quiz.length > 0) {
+      window.currentQuizData = lesson.quiz;
+      window.currentQuizIndex = 0;
+      window.currentQuizLessonId = lesson.id;
+      
       html += `
-        <div class="phase-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Knowledge Check Quiz</div>
-            <button class="btn btn-primary no-print" onclick="window.startQuiz('${lesson.id}')" style="font-size: 1.1rem; padding: 10px 20px; border-radius: 8px;">
-              <i class="fa-solid fa-clipboard-check"></i> Start Quiz
-            </button>
+        <div class="phase-card no-print" id="inline-quiz-container" style="padding: 30px;">
+          <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+            <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
+            <div>
+              <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check Quiz</h2>
+              <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / ${lesson.quiz.length}</span></p>
+            </div>
           </div>
-          <p style="color: #475569; font-size: 1.05rem; margin-bottom: 0;">Test your knowledge of this lesson with a quick multiple-choice quiz.</p>
+          
+          <div id="quiz-question-container">
+            <!-- Populated dynamically -->
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
+            <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
       `;
     }
@@ -1910,6 +1943,10 @@ export function initializeApp(unitData) {
     html += `</div>`; // End lesson-content wrapper
 
     contentArea.innerHTML = html;
+    
+    if (lesson.quiz && lesson.quiz.length > 0) {
+      window.renderQuizQuestion();
+    }
     window.vocabMatchesFound = 0;
     setTimeout(() => {
       if (window.mermaid) {
@@ -2522,7 +2559,11 @@ window.checkQuizAnswer = function(btnEl, selectedIdx) {
   } else {
     document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
     document.getElementById('quiz-next-btn').style.display = 'block';
-    document.getElementById('quiz-next-btn').onclick = window.closeQuizModal;
+    document.getElementById('quiz-next-btn').onclick = function() {
+       document.getElementById('quiz-question-container').innerHTML = '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
+       document.getElementById('quiz-feedback').innerHTML = '';
+       document.getElementById('quiz-next-btn').style.display = 'none';
+    };
   }
 };
 
