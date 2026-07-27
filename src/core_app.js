@@ -16,11 +16,19 @@ export function getAssetUrl(path) {
 export function initializeApp(unitData) {
   window.currentUnitData = unitData;
   
+  const init = () => {
   // Listen for custom events from dynamically loaded modules (like the Thematic Matrix)
   window.addEventListener('renderLessonEvent', (e) => {
     const lesson = e.detail;
     renderLesson(lesson);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      const ca = document.getElementById('content-area');
+      if (ca) {
+        ca.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
     // Try to update sidebar active state
     document.querySelectorAll('.lesson-link').forEach(l => {
       l.classList.remove('active');
@@ -30,7 +38,6 @@ export function initializeApp(unitData) {
     });
   });
 
-  const init = () => {
   const sidebar = document.getElementById('sidebar');
   const contentArea = document.getElementById('content-area');
   const btnDyslexia = document.getElementById('btn-dyslexia');
@@ -1079,11 +1086,11 @@ export function initializeApp(unitData) {
     }
 
     html += `
-      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-        <h4 style="margin: 0; font-size: 1.25rem; color: var(--primary); font-weight: 700;">${lesson.title}</h4>
+      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 0; background: transparent;">
+        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600;">${lesson.title}</h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
-          <button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
-          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+          <button class="btn btn-primary" style="padding: 4px 10px; font-size: 0.85rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
+          <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.85rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
         </div>
       </div>
       <div id="progress-container" style="background: #e2e8f0; height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden;">

@@ -212,22 +212,7 @@
           }
         ],
         "pair_share": {
-          "sources": [
-            {
-              "type": "written",
-              "text": "“We must use terror, assassination, intimidation, land confiscation, and the cutting of all social services to rid the Galilee of its Arab population.”",
-              "title": "Source A: A quote often attributed to a Zionist commander, reflecting the offensive view of Plan D."
-            },
-            {
-              "type": "written",
-              "text": "“The objective of this plan is the control of the area of the Jewish State and the defense of its borders... against the enemy.”",
-              "title": "Source B: An extract from the official text of Plan Dalet, March 1948."
-            }
-          ],
-          "prompt": "Read the conflicting historical interpretations of 'Plan Dalet (Plan D)'. Do you think it was a defensive military strategy or an offensive campaign of ethnic cleansing?",
-          "think": "Jot down your choice and one piece of evidence to support it.",
-          "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
-          "share": "Be ready to report your partner's best point to the class."
+          "prompt": "If you were the British government in 1945, exhausted by WWII and facing attacks from Jewish paramilitaries, what would you have done with the Mandate?"
         },
         "historians_corner": {
           "title": "The Debate over Plan Dalet",
@@ -533,6 +518,12 @@
             "question": "Write a narrative account analysing the key events of the Arab-Israeli war from 1948 to 1949.",
             "marks": 8
           }
+        ],
+        "hook_text": "In 1945, the world was reeling from the horrors of the Holocaust, creating immense international pressure for a Jewish homeland. Yet, for the Arab population of Palestine, this meant the terrifying prospect of losing their ancestral land. The British, exhausted and bankrupt from World War Two, were caught in the middle of an impossible situation.",
+        "fun_facts": [
+          "1917: The Balfour Declaration originally promised British support for a national home for the Jewish people.",
+          "100,000: The number of Jewish Holocaust survivors US President Truman demanded Britain immediately allow into Palestine.",
+          "1947: The year Britain gave up and handed the Palestine problem to the newly created United Nations."
         ]
       },
       {
@@ -927,7 +918,16 @@
               ]
             }
           }
-        ]
+        ],
+        "hook_text": "The moment Israel declared independence on 14 May 1948, five Arab armies invaded. What followed was a desperate fight for survival for the Israelis, and a catastrophic loss of land for the Palestinians—an event they remember as the 'Nakba' (Catastrophe). The map of the Middle East was forever redrawn.",
+        "fun_facts": [
+          "700,000: The approximate number of Palestinian Arabs who fled or were expelled from their homes during the war.",
+          "78%: The amount of Mandatory Palestine that Israel controlled by the end of the war, far more than the UN Partition Plan.",
+          "1949: Armistice agreements were signed, but no Arab state officially recognised Israel's right to exist."
+        ],
+        "pair_share": {
+          "prompt": "Why do you think the well-equipped Arab armies were defeated by the newly formed Israeli Defense Forces?"
+        }
       },
       {
         "id": "lesson_3",
@@ -1366,7 +1366,16 @@
             "question": "Explain the importance of the formation of the United Arab Republic, UAR, in 1958 for regional tension in the Middle East.",
             "marks": 8
           }
-        ]
+        ],
+        "hook_text": "By the 1950s, the Cold War had arrived in the Middle East. Egypt's charismatic new leader, Gamal Abdel Nasser, emerged as a hero of Arab nationalism, willing to stand up to the old European empires and Israel. When he nationalised the Suez Canal, it triggered a global crisis that almost sparked World War Three.",
+        "fun_facts": [
+          "1956: Nasser nationalised the Suez Canal, taking it back from British and French control.",
+          "Protocol of Sèvres: A secret agreement where Israel, Britain, and France planned to invade Egypt together.",
+          "Superpower Intervention: The US and Soviet Union forced Britain, France, and Israel to withdraw, humiliating the old empires."
+        ],
+        "pair_share": {
+          "prompt": "Why was the Suez Canal so important to Britain and France that they were willing to go to war over it?"
+        }
       },
       {
         "id": "lesson_4",
@@ -1797,7 +1806,16 @@
               ]
             }
           }
-        ]
+        ],
+        "hook_text": "In June 1967, tensions reached a boiling point. Arab armies massed on Israel's borders, and fiery rhetoric promised Israel's destruction. But in a stunning, pre-emptive strike, Israel destroyed the entire Egyptian air force on the ground. In just six days, the geopolitical landscape of the region was completely transformed.",
+        "fun_facts": [
+          "Pre-emptive Strike: Israel launched Operation Focus, destroying over 300 Egyptian aircraft in a few hours.",
+          "Golan Heights: Israel captured this strategic high ground from Syria, heavily fortifying its northern border.",
+          "Sinai Peninsula: Israel conquered the vast Sinai desert, creating a huge buffer zone between themselves and Egypt."
+        ],
+        "pair_share": {
+          "prompt": "Was Israel justified in launching a pre-emptive strike against Egypt? Discuss both perspectives."
+        }
       },
       {
         "id": "lesson_5",
@@ -2248,7 +2266,16 @@
               ]
             }
           }
-        ]
+        ],
+        "hook_text": "The Six Day War left Israel holding territories completely inhabited by Palestinians: the West Bank, Gaza Strip, and East Jerusalem. While Israelis celebrated the reunification of Jerusalem, the UN passed Resolution 242 demanding they withdraw. The ongoing occupation of these lands remains the core of the conflict today.",
+        "fun_facts": [
+          "Resolution 242: The famous UN resolution stating 'land for peace', demanding Israeli withdrawal from occupied territories.",
+          "The PLO: Following the Arab defeat, the Palestinian Liberation Organisation emerged as an independent military force.",
+          "East Jerusalem: Israel unilaterally annexed the eastern half of the holy city, a move not recognised internationally."
+        ],
+        "pair_share": {
+          "prompt": "Why did the spectacular Israeli victory in 1967 actually make a long-term peace agreement more difficult?"
+        }
       },
       {
         "id": "lesson_6",
@@ -2696,7 +2723,16 @@
               ]
             }
           }
-        ]
+        ],
+        "hook_text": "Determined to avenge the humiliation of 1967 and regain the Sinai Peninsula, Egypt's Anwar Sadat launched a surprise attack on Israel during Yom Kippur, the holiest day in the Jewish calendar. The initial Arab success shattered Israel's feeling of invincibility and forced them back to the negotiating table.",
+        "fun_facts": [
+          "Yom Kippur: October 6, 1973, when Egyptian and Syrian forces launched their coordinated surprise attack.",
+          "The Bar Lev Line: The supposedly impenetrable Israeli sand defenses along the Suez Canal, which Egypt breached in hours using water cannons.",
+          "Oil Embargo: Arab oil-producing states stopped selling oil to countries supporting Israel, causing a global economic crisis."
+        ],
+        "pair_share": {
+          "prompt": "How did the Yom Kippur War change the psychological balance of power between Israel and the Arab states?"
+        }
       },
       {
         "id": "lesson_7",
@@ -3108,7 +3144,16 @@
             "question": "Explain the importance of the Treaty of Washington (1978-79) for peace in the Middle East.",
             "marks": 8
           }
-        ]
+        ],
+        "hook_text": "In an unprecedented move that stunned the world, Egyptian President Anwar Sadat traveled to Jerusalem in 1977, offering peace. This bold step shattered the Arab taboo of refusing to talk to Israel and paved the way for the historic Camp David Accords, fundamentally altering the Middle East peace process.",
+        "fun_facts": [
+          "Camp David Accords (1978): Brokered by US President Jimmy Carter, leading to the first peace treaty between Israel and an Arab nation.",
+          "Sinai Return: Israel agreed to return the entire Sinai Peninsula to Egypt in exchange for full diplomatic recognition.",
+          "Assassination: Sadat was viewed as a traitor by many Arabs and was assassinated by Islamic extremists in 1981."
+        ],
+        "pair_share": {
+          "prompt": "Was Anwar Sadat a courageous visionary or a traitor to the Arab cause? Justify your view."
+        }
       },
       {
         "id": "lesson_8",
@@ -3559,7 +3604,16 @@
             "question": "Explain one consequence of the Palestinian Intifada (1987–93).",
             "marks": 4
           }
-        ]
+        ],
+        "hook_text": "While Egypt and Israel made peace, the Palestinians felt abandoned. Operating out of Lebanon, the PLO launched relentless attacks against Israel, leading to the devastating 1982 Israeli invasion of Lebanon. By 1987, Palestinian frustration inside the occupied territories exploded into a spontaneous, grassroots uprising known as the First Intifada.",
+        "fun_facts": [
+          "Lebanon War (1982): Israel invaded Lebanon to destroy the PLO, resulting in thousands of civilian casualties.",
+          "Intifada (1987): Meaning 'shaking off', this was a massive Palestinian uprising in the West Bank and Gaza involving strikes and stone-throwing.",
+          "Hamas: Formed during the Intifada, this militant Islamic group emerged as a rival to the secular PLO."
+        ],
+        "pair_share": {
+          "prompt": "Why was the First Intifada more damaging to Israel's international reputation than their previous wars with Arab armies?"
+        }
       },
       {
         "id": "lesson_9",
@@ -4027,7 +4081,16 @@
               ]
             }
           }
-        ]
+        ],
+        "hook_text": "The sheer exhaustion of the Intifada forced both sides to the negotiating table in secret. In 1993, the world watched in awe as PLO Chairman Yasser Arafat and Israeli Prime Minister Yitzhak Rabin shook hands on the White House lawn, signing the Oslo Accords. It seemed peace was finally possible, but extremists on both sides were determined to destroy it.",
+        "fun_facts": [
+          "Oslo Accords (1993): Created the Palestinian Authority with limited self-rule in parts of the West Bank and Gaza.",
+          "Mutual Recognition: The PLO finally recognised Israel's right to exist, and Israel recognised the PLO as the representative of the Palestinians.",
+          "Assassination of Rabin (1995): A right-wing Israeli extremist assassinated Yitzhak Rabin, severely derailing the peace process."
+        ],
+        "pair_share": {
+          "prompt": "Looking at the assassination of Rabin, why are peace agreements sometimes more dangerous for leaders than declaring war?"
+        }
       }
     ],
     "exam_blocks": [
@@ -5051,33 +5114,50 @@
         "events": [
           {
             "id": 1,
-            "text": "The rise of modern Zionism in Europe under Theodor Herzl."
+            "text": "The rise of modern Zionism in Europe under Theodor Herzl.",
+            "date": "1897",
+            "image": "/units/cme_new/assets/theodor_herzl.jpg",
+            "image_caption": "Theodor Herzl",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 2,
-            "text": "The outbreak of the First World War leads to the collapse of the Ottoman Empire."
+            "text": "The outbreak of the First World War leads to the collapse of the Ottoman Empire.",
+            "date": "1914–1918",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 3,
-            "text": "The British government issues the Balfour Declaration pledging support for a Jewish national home."
+            "text": "The British government issues the Balfour Declaration pledging support for a Jewish national home.",
+            "date": "1917",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 4,
-            "text": "The League of Nations grants Britain the Mandate for Palestine."
+            "text": "The League of Nations grants Britain the Mandate for Palestine.",
+            "date": "1920",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 5,
-            "text": "Increasing Jewish immigration causes friction, culminating in the Arab Revolt."
+            "text": "Increasing Jewish immigration causes friction, culminating in the Arab Revolt.",
+            "date": "1936–1939",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 6,
-            "text": "The British issue the White Paper, heavily restricting Jewish immigration to appease Arab allies."
+            "text": "The British issue the White Paper, heavily restricting Jewish immigration to appease Arab allies.",
+            "date": "1939",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 7,
-            "text": "The Holocaust creates immense international sympathy and pressure for a Jewish refuge."
+            "text": "The Holocaust creates immense international sympathy and pressure for a Jewish refuge.",
+            "date": "1939–1945",
+            "key_topic": "KT1: Conflict to 1949"
           }
-        ]
+        ],
+        "lesson_banner_id": "lesson_1"
       },
       {
         "id": "lesson2",
@@ -5085,35 +5165,55 @@
         "events": [
           {
             "id": 1,
-            "text": "The end of WWII leaves hundreds of thousands of Jewish Holocaust survivors in Displaced Persons camps."
+            "text": "The end of WWII leaves hundreds of thousands of Jewish Holocaust survivors in Displaced Persons camps.",
+            "date": "1947",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 2,
-            "text": "Jewish paramilitary groups launch an insurgency against British rule, bombing the King David Hotel."
+            "text": "Jewish paramilitary groups launch an insurgency against British rule, bombing the King David Hotel.",
+            "date": "Nov 1947",
+            "image": "/assets/cme_new_king_david_ruins.png",
+            "image_caption": "Historical Source",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 3,
-            "text": "An exhausted British government hands the Palestine problem over to the newly formed United Nations."
+            "text": "An exhausted British government hands the Palestine problem over to the newly formed United Nations.",
+            "date": "1947–1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 4,
-            "text": "The UN passes Resolution 181, proposing the partition of Palestine into separate Jewish and Arab states."
+            "text": "The UN passes Resolution 181, proposing the partition of Palestine into separate Jewish and Arab states.",
+            "date": "May 1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 5,
-            "text": "The Jewish Agency accepts the partition plan, while the Arab Higher Committee rejects it."
+            "text": "The Jewish Agency accepts the partition plan, while the Arab Higher Committee rejects it.",
+            "date": "1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 6,
-            "text": "Civil war breaks out between Jewish and Arab militias in Palestine."
+            "text": "Civil war breaks out between Jewish and Arab militias in Palestine.",
+            "date": "1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 7,
-            "text": "Britain officially terminates the Mandate and withdraws its troops."
+            "text": "Britain officially terminates the Mandate and withdraws its troops.",
+            "date": "May 1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 8,
-            "text": "David Ben-Gurion proclaims the establishment of the State of Israel."
+            "text": "David Ben-Gurion proclaims the establishment of the State of Israel.",
+            "image": "/units/cme_new/assets/cme_david_ben_gurion__d597_087_.jpg",
+            "image_caption": "David Ben-Gurion",
+            "key_topic": "KT1: Conflict to 1949",
+            "date": "May 1948"
           }
         ]
       },
@@ -5123,31 +5223,104 @@
         "events": [
           {
             "id": 1,
-            "text": "Surrounding Arab nations invade Israel immediately after its declaration of independence."
+            "text": "Surrounding Arab nations invade Israel immediately after its declaration of independence.",
+            "date": "1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 2,
-            "text": "The initial Arab offensive is uncoordinated, but they secure the West Bank, Gaza, and parts of Jerusalem."
+            "text": "The initial Arab offensive is uncoordinated, but they secure the West Bank, Gaza, and parts of Jerusalem.",
+            "date": "1948–1949",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 3,
-            "text": "The UN brokers a crucial truce, allowing Israel to organize and rearm via Czechoslovakia."
+            "text": "The UN brokers a crucial truce, allowing Israel to organize and rearm via Czechoslovakia.",
+            "date": "1948",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 4,
-            "text": "The newly unified Israel Defence Forces launch a devastating counter-offensive."
+            "text": "The newly unified Israel Defence Forces launch a devastating counter-offensive.",
+            "date": "1949",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 5,
-            "text": "Israel secures 78% of Mandatory Palestine, far more than the UN Partition Plan awarded."
+            "text": "Israel secures 78% of Mandatory Palestine, far more than the UN Partition Plan awarded.",
+            "date": "1949",
+            "image": "/units/cme_new/assets/palestine_1949_map.png",
+            "image_caption": "Israel's Borders 1949-1967",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 6,
-            "text": "Over 700,000 Palestinian Arabs flee or are expelled from their homes in the Nakba."
+            "text": "Over 700,000 Palestinian Arabs flee or are expelled from their homes in the Nakba.",
+            "date": "1948",
+            "image": "/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp",
+            "image_caption": "Historical Source",
+            "key_topic": "KT1: Conflict to 1949"
           },
           {
             "id": 7,
-            "text": "Armistice agreements are signed, ending the fighting but without formal peace treaties."
+            "text": "Armistice agreements are signed, ending the fighting but without formal peace treaties.",
+            "date": "1949",
+            "key_topic": "KT1: Conflict to 1949"
+          }
+        ],
+        "lesson_banner_id": "lesson_2"
+      },
+      {
+        "id": "war1948",
+        "title": "Deep Dive: The 1948 Arab-Israeli War",
+        "events": [
+          {
+            "id": 1,
+            "text": "The British mandate ends, and Israel declares independence.",
+            "date": "May 1948",
+            "key_topic": "KT1: Conflict to 1949"
+          },
+          {
+            "id": 2,
+            "text": "Armies from Egypt, Syria, Jordan, and Iraq invade the new state.",
+            "date": "May 1948",
+            "image": "/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg",
+            "image_caption": "Historical Source",
+            "key_topic": "KT1: Conflict to 1949"
+          },
+          {
+            "id": 3,
+            "text": "The UN brokers a four-week ceasefire.",
+            "date": "June 1948",
+            "key_topic": "KT1: Conflict to 1949"
+          },
+          {
+            "id": 4,
+            "text": "Israel utilizes the ceasefire to reorganize the IDF and smuggle in Czechoslovakian arms.",
+            "date": "July 1948",
+            "key_topic": "KT1: Conflict to 1949"
+          },
+          {
+            "id": 5,
+            "text": "The reinforced IDF launches successful counter-offensives, routing Egyptian and Syrian forces.",
+            "date": "July 1948",
+            "key_topic": "KT1: Conflict to 1949"
+          },
+          {
+            "id": 6,
+            "text": "Armistice agreements are signed and Israel gains 78% of Mandatory Palestine.",
+            "date": "1949",
+            "key_topic": "KT1: Conflict to 1949",
+            "image": "/units/cme_new/assets/palestine_1949_map.png",
+            "image_caption": "Israel's Borders 1949-1967"
+          },
+          {
+            "id": 7,
+            "text": "The Palestinian Nakba occurs, with over 700,000 refugees fleeing to neighboring Arab states.",
+            "date": "1948",
+            "image": "/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp",
+            "image_caption": "Historical Source",
+            "key_topic": "KT1: Conflict to 1949"
           }
         ]
       },
@@ -5157,31 +5330,96 @@
         "events": [
           {
             "id": 1,
-            "text": "Nasser comes to power in Egypt promoting Pan-Arabism and defying the West."
+            "text": "Nasser comes to power in Egypt promoting Pan-Arabism and defying the West.",
+            "date": "1954",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 2,
-            "text": "Egypt signs the Czech Arms Deal, securing massive Soviet-bloc weaponry."
+            "text": "Egypt signs the Czech Arms Deal, securing massive Soviet-bloc weaponry.",
+            "date": "1955",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 3,
-            "text": "The USA and Britain withdraw funding for the Aswan High Dam project."
+            "text": "The USA and Britain withdraw funding for the Aswan High Dam project.",
+            "date": "July 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 4,
-            "text": "Nasser nationalises the Suez Canal to fund the dam."
+            "text": "Nasser nationalises the Suez Canal to fund the dam.",
+            "date": "July 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 5,
-            "text": "Britain, France, and Israel sign the secret Protocol of Sèvres to overthrow Nasser and regain the canal."
+            "text": "Britain, France, and Israel sign the secret Protocol of Sèvres to overthrow Nasser and regain the canal.",
+            "date": "Oct 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 6,
-            "text": "Israel invades the Sinai Peninsula, giving Britain and France a pretext to intervene as peacekeepers."
+            "text": "Israel invades the Sinai Peninsula, giving Britain and France a pretext to intervene as peacekeepers.",
+            "date": "Oct 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 7,
-            "text": "Global outrage and intense US financial pressure force Britain, France, and Israel to humiliatingly withdraw."
+            "text": "Global outrage and intense US financial pressure force Britain, France, and Israel to humiliatingly withdraw.",
+            "date": "Nov 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          }
+        ],
+        "lesson_banner_id": "lesson_3"
+      },
+      {
+        "id": "war1956",
+        "title": "Deep Dive: The 1956 Suez Crisis",
+        "events": [
+          {
+            "id": 1,
+            "text": "Nasser nationalises the Suez Canal Company, infuriating Britain and France.",
+            "date": "July 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 2,
+            "text": "Britain, France, and Israel finalize the secret Protocol of Sèvres.",
+            "date": "Oct 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 3,
+            "text": "Israeli paratroopers drop into the Sinai Peninsula and advance rapidly toward the canal.",
+            "date": "Oct 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 4,
+            "text": "Britain and France issue a pre-arranged ultimatum demanding both sides withdraw from the canal.",
+            "date": "Oct 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 5,
+            "text": "When Nasser refuses, Anglo-French forces bomb Egyptian airfields.",
+            "date": "Oct 1956",
+            "image": "/units/cme_new/assets/cme_port_said_from_air.jpg",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 6,
+            "text": "The UN, backed strongly by the USA and USSR, demands an immediate ceasefire.",
+            "date": "Nov 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 7,
+            "text": "Britain and France suffer a humiliating political defeat, while Israel secures a UN buffer force in Sinai.",
+            "date": "Nov 1956",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           }
         ]
       },
@@ -5191,31 +5429,100 @@
         "events": [
           {
             "id": 1,
-            "text": "The Palestine Liberation Organisation is founded with the goal of destroying Israel."
+            "text": "The Palestine Liberation Organisation is founded with the goal of destroying Israel.",
+            "date": "1964",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 2,
-            "text": "Fatah begins launching guerrilla attacks against Israel from Syria and Jordan."
+            "text": "Fatah begins launching guerrilla attacks against Israel from Syria and Jordan.",
+            "date": "1965",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 3,
-            "text": "Israel retaliates strongly with a massive raid on the Jordanian village of Samu."
+            "text": "Israel retaliates strongly with a massive raid on the Jordanian village of Samu.",
+            "date": "1966",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 4,
-            "text": "The Soviet Union feeds Egypt false intelligence that Israel is massing troops on the Syrian border."
+            "text": "The Soviet Union feeds Egypt false intelligence that Israel is massing troops on the Syrian border.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 5,
-            "text": "Nasser expels UN peacekeepers from Sinai and moves Egyptian troops to the Israeli border."
+            "text": "Nasser expels UN peacekeepers from Sinai and moves Egyptian troops to the Israeli border.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 6,
-            "text": "Nasser blockades the Straits of Tiran to Israeli shipping."
+            "text": "Nasser blockades the Straits of Tiran to Israeli shipping.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 7,
-            "text": "Fearing an imminent multi-front invasion, Israel forms a national unity government and prepares for war."
+            "text": "Fearing an imminent multi-front invasion, Israel forms a national unity government and prepares for war.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          }
+        ],
+        "lesson_banner_id": "lesson_4"
+      },
+      {
+        "id": "war1967",
+        "title": "Deep Dive: The 1967 Six Day War",
+        "events": [
+          {
+            "id": 1,
+            "text": "Acting on false Soviet intelligence, Nasser expels UN peacekeepers and remilitarizes the Sinai.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 2,
+            "text": "Nasser closes the Straits of Tiran, cutting off Israel's southern port of Eilat.",
+            "date": "May 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 3,
+            "text": "Israel launches Operation Focus, a devastating preemptive airstrike that destroys the Egyptian air force on the ground.",
+            "date": "June 1967",
+            "image": "/units/cme_new/assets/idf_fighter_planes.jpg",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 4,
+            "text": "Israeli armored columns sweep across the Sinai Peninsula, reaching the Suez Canal.",
+            "date": "June 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 5,
+            "text": "Following Jordanian shelling, the IDF captures East Jerusalem and the West Bank.",
+            "date": "June 1967",
+            "image": "/units/cme_new/assets/western_wall_1967.jpg",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 6,
+            "text": "In fierce fighting, the IDF scales and captures the heavily fortified Golan Heights from Syria.",
+            "date": "June 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 7,
+            "text": "Israel quadruples its territory in just six days, radically changing the strategic map of the Middle East.",
+            "date": "June 1967",
+            "image": "/units/cme_new/assets/palestine_1967_map.png",
+            "image_caption": "Israeli Territory after the 1967 War",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           }
         ]
       },
@@ -5225,33 +5532,105 @@
         "events": [
           {
             "id": 1,
-            "text": "Following the overwhelming victory in the Six Day War, Israel occupies the Sinai, Golan Heights, West Bank, and Gaza."
+            "text": "Following the overwhelming victory in the Six Day War, Israel occupies the Sinai, Golan Heights, West Bank, and Gaza.",
+            "date": "June 1967",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)",
+            "image": "/units/cme_new/assets/palestine_1967_map.png",
+            "image_caption": "Israeli Territory after the 1967 War"
           },
           {
             "id": 2,
-            "text": "The UN passes Resolution 242, calling for land for peace, but the Arab League rejects it."
+            "text": "The UN passes Resolution 242, calling for land for peace, but the Arab League rejects it.",
+            "date": "Nov 1967",
+            "image": "/units/cme_new/assets/un242.svg",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 3,
-            "text": "Nasser launches the War of Attrition to grind down Israeli forces stationed along the Suez Canal."
+            "text": "Nasser launches the War of Attrition to grind down Israeli forces stationed along the Suez Canal.",
+            "date": "1969–1970",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 4,
-            "text": "Sadat succeeds Nasser and decides that a limited war is necessary to force Israel to negotiate."
+            "text": "Sadat succeeds Nasser and decides that a limited war is necessary to force Israel to negotiate.",
+            "date": "1970",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 5,
-            "text": "Sadat expels thousands of Soviet military advisors from Egypt to signal his independence to the USA."
+            "text": "Sadat expels thousands of Soviet military advisors from Egypt to signal his independence to the USA.",
+            "date": "1972",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 6,
-            "text": "Egypt and Syria launch a massive surprise attack on the Jewish holiday of Yom Kippur."
+            "text": "Egypt and Syria launch a massive surprise attack on the Jewish holiday of Yom Kippur.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 7,
-            "text": "Despite heavy early losses, the IDF repels the attack, prompting superpowers to intervene."
+            "text": "Despite heavy early losses, the IDF repels the attack, prompting superpowers to intervene.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           }
-        ]
+        ],
+        "lesson_banner_id": "lesson_5"
+      },
+      {
+        "id": "war1973",
+        "title": "Deep Dive: The 1973 Yom Kippur War",
+        "events": [
+          {
+            "id": 1,
+            "text": "Egypt and Syria launch a coordinated surprise attack on the holiest day in the Jewish calendar.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 2,
+            "text": "Egyptian forces successfully cross the Suez Canal using water cannons to breach the Bar Lev Line.",
+            "date": "Oct 1973",
+            "image": "/units/cme_new/assets/yom_kippur_crossing.png",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 3,
+            "text": "Syrian tanks overwhelm Israeli defenses on the Golan Heights, causing panic in Israel.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 4,
+            "text": "Both the USA and USSR launch massive emergency airlifts to resupply their respective allies.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 5,
+            "text": "Israeli forces under General Ariel Sharon cross the Suez Canal, encircling the Egyptian Third Army.",
+            "date": "Oct 1973",
+            "image": "/units/cme_new/assets/ariel_sharon.webp",
+            "image_caption": "Ariel Sharon",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 6,
+            "text": "A UN ceasefire halts the fighting as Israeli forces advance toward Cairo and Damascus.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          },
+          {
+            "id": 7,
+            "text": "A military victory for Israel but a psychological triumph for the Arabs, opening the door for future peace talks.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
+          }
+        ],
+        "lesson_banner_id": "lesson_6"
       },
       {
         "id": "lesson7",
@@ -5259,33 +5638,56 @@
         "events": [
           {
             "id": 1,
-            "text": "The Yom Kippur War ends in a stalemate, shattering Israel's aura of invincibility and restoring Arab pride."
+            "text": "The Yom Kippur War ends in a stalemate, shattering Israel's aura of invincibility and restoring Arab pride.",
+            "date": "Oct 1973",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 2,
-            "text": "The Oil Embargo causes a global economic crisis, forcing the US to urgently seek peace in the Middle East."
+            "text": "The Oil Embargo causes a global economic crisis, forcing the US to urgently seek peace in the Middle East.",
+            "date": "1973–1974",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 3,
-            "text": "US Secretary of State Henry Kissinger conducts shuttle diplomacy, brokering disengagement agreements."
+            "text": "US Secretary of State Henry Kissinger conducts shuttle diplomacy, brokering disengagement agreements.",
+            "date": "1974",
+            "image": "/units/cme_new/assets/henry_kissinger.jpg",
+            "image_caption": "Henry Kissinger",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 4,
-            "text": "Sadat makes a historic, unprecedented visit to Jerusalem to address the Israeli Knesset."
+            "text": "Sadat makes a historic, unprecedented visit to Jerusalem to address the Israeli Knesset.",
+            "date": "1977",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 5,
-            "text": "US President Jimmy Carter invites Sadat and Israeli Prime Minister Begin to Camp David."
+            "text": "US President Jimmy Carter invites Sadat and Israeli Prime Minister Begin to Camp David.",
+            "date": "1978",
+            "image": "/units/cme_new/assets/jimmy_carter.jpg",
+            "image_caption": "Jimmy Carter",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 6,
-            "text": "After thirteen days of intense negotiations, the Camp David Accords are agreed upon."
+            "text": "After thirteen days of intense negotiations, the Camp David Accords are agreed upon.",
+            "date": "1978",
+            "image": "/units/cme_new/assets/camp_david_accords.png",
+            "image_caption": "Historical Source",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
           },
           {
             "id": 7,
-            "text": "The historic Egypt-Israel Peace Treaty is signed, the first between Israel and an Arab state."
+            "text": "The historic Egypt-Israel Peace Treaty is signed, the first between Israel and an Arab state.",
+            "date": "1979",
+            "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)",
+            "image": "/units/cme_new/assets/camp_david_accords.png",
+            "image_caption": "Camp David Accords"
           }
-        ]
+        ],
+        "lesson_banner_id": "lesson_7"
       },
       {
         "id": "lesson8",
@@ -5293,31 +5695,98 @@
         "events": [
           {
             "id": 1,
-            "text": "The PLO is recognized by the UN as the sole legitimate representative of the Palestinian people."
+            "text": "The PLO is recognized by the UN as the sole legitimate representative of the Palestinian people.",
+            "date": "1974",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 2,
-            "text": "Following expulsion from Jordan, the PLO relocates its headquarters to southern Lebanon."
+            "text": "Following expulsion from Jordan, the PLO relocates its headquarters to southern Lebanon.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 3,
-            "text": "Israel invades Lebanon to destroy the PLO state-within-a-state and end rocket attacks."
+            "text": "Israel invades Lebanon to destroy the PLO state-within-a-state and end rocket attacks.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 4,
-            "text": "The PLO leadership is forced into exile in Tunis, severely weakening their direct military threat."
+            "text": "The PLO leadership is forced into exile in Tunis, severely weakening their direct military threat.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 5,
-            "text": "A spontaneous grassroots uprising known as the First Intifada erupts in Gaza and the West Bank."
+            "text": "A spontaneous grassroots uprising known as the First Intifada erupts in Gaza and the West Bank.",
+            "date": "1987",
+            "image": "/units/cme_new/assets/first_intifada.png",
+            "image_caption": "Historical Source",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 6,
-            "text": "Images of Palestinian youths throwing stones at Israeli tanks damage Israel's international reputation."
+            "text": "Images of Palestinian youths throwing stones at Israeli tanks damage Israel's international reputation.",
+            "date": "1987",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 7,
-            "text": "The Intifada forces the PLO to publicly recognize Israel's right to exist, opening the door for diplomacy."
+            "text": "The Intifada forces the PLO to publicly recognize Israel's right to exist, opening the door for diplomacy.",
+            "date": "1988",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          }
+        ],
+        "lesson_banner_id": "lesson_8"
+      },
+      {
+        "id": "war1982",
+        "title": "Deep Dive: The 1982 Invasion of Lebanon",
+        "events": [
+          {
+            "id": 1,
+            "text": "The PLO operates a state-within-a-state in southern Lebanon, launching rocket attacks into northern Israel.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 2,
+            "text": "After an assassination attempt on the Israeli ambassador in London, Israel invades Lebanon.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 3,
+            "text": "The IDF advances far beyond their initial 40km goal, pushing all the way to the capital, Beirut.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 4,
+            "text": "Israel lays siege to Beirut, subjecting the city to heavy bombardment to flush out the PLO.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 5,
+            "text": "A US-brokered deal allows Yasser Arafat and the PLO to be evacuated to Tunisia.",
+            "date": "1982",
+            "image": "/units/cme_new/assets/yasser_arafat.jpg",
+            "image_caption": "Yasser Arafat",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 6,
+            "text": "The Sabra and Shatila massacre occurs, sparking massive anti-war protests within Israel.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
+          },
+          {
+            "id": 7,
+            "text": "The PLO is fractured and exiled, but Israel becomes bogged down in a costly occupation of southern Lebanon.",
+            "date": "1982",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           }
         ]
       },
@@ -5327,203 +5796,52 @@
         "events": [
           {
             "id": 1,
-            "text": "The end of the Cold War and the Gulf War fundamentally change the geopolitical landscape of the Middle East."
+            "text": "The end of the Cold War and the Gulf War fundamentally change the geopolitical landscape of the Middle East.",
+            "date": "1991",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 2,
-            "text": "The USA hosts the Madrid Conference, bringing Israeli and Arab delegations together for the first time."
+            "text": "The USA hosts the Madrid Conference, bringing Israeli and Arab delegations together for the first time.",
+            "date": "1991",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 3,
-            "text": "Secret back-channel negotiations begin between Israel and the PLO in Norway."
+            "text": "Secret back-channel negotiations begin between Israel and the PLO in Norway.",
+            "date": "1992",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 4,
-            "text": "The historic Oslo I Accord is signed on the White House lawn, marked by the Rabin-Arafat handshake."
+            "text": "The historic Oslo I Accord is signed on the White House lawn, marked by the Rabin-Arafat handshake.",
+            "date": "1993",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 5,
-            "text": "The Palestinian Authority is created, granting limited self-rule in Gaza and Jericho."
+            "text": "The Palestinian Authority is created, granting limited self-rule in Gaza and Jericho.",
+            "date": "1994",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)",
+            "image": "/units/cme_new/assets/oslo_cover.png",
+            "image_caption": "The Oslo Accords"
           },
           {
             "id": 6,
-            "text": "The Israel-Jordan Peace Treaty is signed, normalizing relations."
+            "text": "The Israel-Jordan Peace Treaty is signed, normalizing relations.",
+            "date": "1994",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           },
           {
             "id": 7,
-            "text": "Tragically, Israeli Prime Minister Yitzhak Rabin is assassinated by a Jewish extremist, derailing the peace process."
+            "text": "Tragically, Israeli Prime Minister Yitzhak Rabin is assassinated by a Jewish extremist, derailing the peace process.",
+            "date": "1995",
+            "image": "/units/cme_new/assets/yitzhak_rabin.jpg",
+            "image_caption": "Yitzhak Rabin",
+            "key_topic": "KT3: The Palestinian Issue (1974–1995)"
           }
-        ]
-      },
-      {
-        "id": "war1948",
-        "title": "Deep Dive: The 1948 Arab-Israeli War",
-        "events": [
-          {
-            "id": 1,
-            "text": "The British mandate ends, and Israel declares independence."
-          },
-          {
-            "id": 2,
-            "text": "Armies from Egypt, Syria, Jordan, and Iraq invade the new state."
-          },
-          {
-            "id": 3,
-            "text": "The UN brokers a four-week ceasefire."
-          },
-          {
-            "id": 4,
-            "text": "Israel utilizes the ceasefire to reorganize the IDF and smuggle in Czechoslovakian arms."
-          },
-          {
-            "id": 5,
-            "text": "The reinforced IDF launches successful counter-offensives, routing Egyptian and Syrian forces."
-          },
-          {
-            "id": 6,
-            "text": "Armistice agreements are signed and Israel gains 78% of Mandatory Palestine."
-          },
-          {
-            "id": 7,
-            "text": "The Palestinian Nakba occurs, with over 700,000 refugees fleeing to neighboring Arab states."
-          }
-        ]
-      },
-      {
-        "id": "war1956",
-        "title": "Deep Dive: The 1956 Suez Crisis",
-        "events": [
-          {
-            "id": 1,
-            "text": "Nasser nationalises the Suez Canal Company, infuriating Britain and France."
-          },
-          {
-            "id": 2,
-            "text": "Britain, France, and Israel finalize the secret Protocol of Sèvres."
-          },
-          {
-            "id": 3,
-            "text": "Israeli paratroopers drop into the Sinai Peninsula and advance rapidly toward the canal."
-          },
-          {
-            "id": 4,
-            "text": "Britain and France issue a pre-arranged ultimatum demanding both sides withdraw from the canal."
-          },
-          {
-            "id": 5,
-            "text": "When Nasser refuses, Anglo-French forces bomb Egyptian airfields."
-          },
-          {
-            "id": 6,
-            "text": "The UN, backed strongly by the USA and USSR, demands an immediate ceasefire."
-          },
-          {
-            "id": 7,
-            "text": "Britain and France suffer a humiliating political defeat, while Israel secures a UN buffer force in Sinai."
-          }
-        ]
-      },
-      {
-        "id": "war1967",
-        "title": "Deep Dive: The 1967 Six Day War",
-        "events": [
-          {
-            "id": 1,
-            "text": "Acting on false Soviet intelligence, Nasser expels UN peacekeepers and remilitarizes the Sinai."
-          },
-          {
-            "id": 2,
-            "text": "Nasser closes the Straits of Tiran, cutting off Israel's southern port of Eilat."
-          },
-          {
-            "id": 3,
-            "text": "Israel launches Operation Focus, a devastating preemptive airstrike that destroys the Egyptian air force on the ground."
-          },
-          {
-            "id": 4,
-            "text": "Israeli armored columns sweep across the Sinai Peninsula, reaching the Suez Canal."
-          },
-          {
-            "id": 5,
-            "text": "Following Jordanian shelling, the IDF captures East Jerusalem and the West Bank."
-          },
-          {
-            "id": 6,
-            "text": "In fierce fighting, the IDF scales and captures the heavily fortified Golan Heights from Syria."
-          },
-          {
-            "id": 7,
-            "text": "Israel quadruples its territory in just six days, radically changing the strategic map of the Middle East."
-          }
-        ]
-      },
-      {
-        "id": "war1973",
-        "title": "Deep Dive: The 1973 Yom Kippur War",
-        "events": [
-          {
-            "id": 1,
-            "text": "Egypt and Syria launch a coordinated surprise attack on the holiest day in the Jewish calendar."
-          },
-          {
-            "id": 2,
-            "text": "Egyptian forces successfully cross the Suez Canal using water cannons to breach the Bar Lev Line."
-          },
-          {
-            "id": 3,
-            "text": "Syrian tanks overwhelm Israeli defenses on the Golan Heights, causing panic in Israel."
-          },
-          {
-            "id": 4,
-            "text": "Both the USA and USSR launch massive emergency airlifts to resupply their respective allies."
-          },
-          {
-            "id": 5,
-            "text": "Israeli forces under General Ariel Sharon cross the Suez Canal, encircling the Egyptian Third Army."
-          },
-          {
-            "id": 6,
-            "text": "A UN ceasefire halts the fighting as Israeli forces advance toward Cairo and Damascus."
-          },
-          {
-            "id": 7,
-            "text": "A military victory for Israel but a psychological triumph for the Arabs, opening the door for future peace talks."
-          }
-        ]
-      },
-      {
-        "id": "war1982",
-        "title": "Deep Dive: The 1982 Invasion of Lebanon",
-        "events": [
-          {
-            "id": 1,
-            "text": "The PLO operates a state-within-a-state in southern Lebanon, launching rocket attacks into northern Israel."
-          },
-          {
-            "id": 2,
-            "text": "After an assassination attempt on the Israeli ambassador in London, Israel invades Lebanon."
-          },
-          {
-            "id": 3,
-            "text": "The IDF advances far beyond their initial 40km goal, pushing all the way to the capital, Beirut."
-          },
-          {
-            "id": 4,
-            "text": "Israel lays siege to Beirut, subjecting the city to heavy bombardment to flush out the PLO."
-          },
-          {
-            "id": 5,
-            "text": "A US-brokered deal allows Yasser Arafat and the PLO to be evacuated to Tunisia."
-          },
-          {
-            "id": 6,
-            "text": "The Sabra and Shatila massacre occurs, sparking massive anti-war protests within Israel."
-          },
-          {
-            "id": 7,
-            "text": "The PLO is fractured and exiled, but Israel becomes bogged down in a costly occupation of southern Lebanon."
-          }
-        ]
+        ],
+        "lesson_banner_id": "lesson_9"
       }
     ],
     "debatePrompts": [
@@ -5688,7 +6006,235 @@
           ]
         }
       ]
-    }
+    },
+    "key_individuals": [
+      {
+        "name": "Yitzhak Rabin",
+        "role": "Prime Minister of Israel",
+        "lifespan": "1922 – 1995",
+        "achievements": [
+          "Chief of Staff of the IDF during the 1967 Six-Day War.",
+          "Signed the historic 1993 Oslo Accords with Yasser Arafat.",
+          "Awarded the Nobel Peace Prize in 1994."
+        ],
+        "significance": "He transitioned from a military hardliner to a statesman willing to negotiate land for peace, opening the first real path to a two-state solution before his tragic assassination.",
+        "image": "/units/cme_new/assets/yitzhak_rabin.jpg"
+      },
+      {
+        "name": "Yasser Arafat",
+        "role": "Chairman of the Palestine Liberation Organization (PLO)",
+        "lifespan": "1929 – 2004",
+        "achievements": [
+          "Founded Fatah and led the PLO for decades.",
+          "Recognized Israel's right to exist in 1988, shifting the PLO's diplomatic stance.",
+          "Signed the 1993 Oslo Accords and became the first President of the Palestinian Authority."
+        ],
+        "significance": "He was the globally recognized face of the Palestinian nationalist movement, leading the shift from armed struggle to diplomatic negotiations in the 1990s.",
+        "image": "/units/cme_new/assets/yasser_arafat.jpg"
+      },
+      {
+        "name": "Bill Clinton",
+        "role": "President of the United States",
+        "lifespan": "1946 – Present",
+        "achievements": [
+          "Brokered and hosted the signing of the 1993 Oslo Accords.",
+          "Hosted the 2000 Camp David Summit in an attempt to reach a final status agreement."
+        ],
+        "significance": "He was the primary international mediator during the most optimistic phase of the peace process, investing massive American diplomatic capital in resolving the conflict.",
+        "image": "/units/cme_new/assets/bill_clinton.jpg"
+      },
+      {
+        "name": "Anwar Sadat",
+        "role": "President of Egypt",
+        "lifespan": "1918 – 1981",
+        "achievements": [
+          "Led Egypt during the 1973 Yom Kippur War.",
+          "Became the first Arab leader to officially visit Israel (1977).",
+          "Signed the 1978 Camp David Accords, securing peace with Israel."
+        ],
+        "significance": "His bold decision to break the Arab consensus and negotiate a bilateral peace treaty with Israel fundamentally shifted the military balance in the Middle East.",
+        "image": "/units/cme_new/assets/anwar_sadat.jpg"
+      },
+      {
+        "name": "Menachem Begin",
+        "role": "Prime Minister of Israel",
+        "lifespan": "1913 – 1992",
+        "achievements": [
+          "Former leader of the Irgun paramilitary group.",
+          "Signed the 1978 Camp David Accords with Egypt.",
+          "Authorized the 1982 invasion of Lebanon."
+        ],
+        "significance": "As a right-wing leader, his willingness to return the Sinai Peninsula to Egypt proved that 'land for peace' could work, though his Lebanon policies were highly controversial.",
+        "image": "/units/cme_new/assets/menachem_begin.jpeg"
+      },
+      {
+        "name": "Jimmy Carter",
+        "role": "President of the United States",
+        "lifespan": "1924 – Present",
+        "achievements": [
+          "Brokered the 1978 Camp David Accords.",
+          "Championed human rights as a core pillar of US foreign policy."
+        ],
+        "significance": "His relentless personal mediation at Camp David forced Sadat and Begin to compromise, resulting in the most durable peace treaty in the modern Middle East.",
+        "image": "/units/cme_new/assets/jimmy_carter.jpg"
+      },
+      {
+        "name": "Ariel Sharon",
+        "role": "Minister of Defence / Prime Minister of Israel",
+        "lifespan": "1928 – 2014",
+        "achievements": [
+          "Masterminded the 1982 invasion of Lebanon.",
+          "Led Israel during the Second Intifada.",
+          "Engineered the unilateral disengagement from Gaza in 2005."
+        ],
+        "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy.",
+        "image": "/units/cme_new/assets/ariel_sharon.webp"
+      },
+      {
+        "name": "Gamal Abdel Nasser",
+        "role": "President of Egypt",
+        "lifespan": "1918 – 1970",
+        "achievements": [
+          "Nationalized the Suez Canal in 1956.",
+          "Championed Pan-Arab nationalism and formed the United Arab Republic.",
+          "Led Egypt during the Suez Crisis and the Six-Day War."
+        ],
+        "significance": "He became a symbol of Arab dignity and resistance against Western imperialism, fundamentally reshaping the political landscape of the Middle East.",
+        "image": "/units/cme_new/assets/card_nasser.png"
+      },
+      {
+        "name": "David Ben-Gurion",
+        "role": "Founding Father and 1st Prime Minister of Israel",
+        "lifespan": "1886 – 1973",
+        "achievements": [
+          "Proclaimed the establishment of the State of Israel in 1948.",
+          "Led Israel during the 1948 Arab-Israeli War.",
+          "Oversaw the absorption of millions of Jewish immigrants."
+        ],
+        "significance": "As the primary founder of the State of Israel, he established its core national institutions and military, shaping the nation's early identity and survival.",
+        "image": "/units/cme_new/assets/cme_david_ben_gurion__d597_087_.jpg"
+      },
+      {
+        "name": "Golda Meir",
+        "role": "4th Prime Minister of Israel",
+        "lifespan": "1898 – 1978",
+        "achievements": [
+          "Served as Prime Minister during the 1973 Yom Kippur War.",
+          "Helped secure crucial military resupply from the United States during the war.",
+          "Was one of the signers of the Israeli Declaration of Independence."
+        ],
+        "significance": "Often described as the 'Iron Lady' of Israeli politics, she navigated Israel through one of its most perilous conflicts, though she faced heavy criticism for the lack of preparedness in 1973.",
+        "image": "/units/cme_new/assets/card_golda.png"
+      },
+      {
+        "name": "King Hussein",
+        "role": "King of Jordan",
+        "lifespan": "1935 – 1999",
+        "achievements": [
+          "Ruled Jordan through numerous regional wars and internal crises.",
+          "Expelled the PLO from Jordan during 'Black September' in 1970.",
+          "Signed the historic Israel-Jordan Peace Treaty in 1994."
+        ],
+        "significance": "He successfully balanced complex regional dynamics to ensure the survival of the Hashemite Kingdom, eventually becoming a moderate voice for peace in the region.",
+        "image": "/units/cme_new/assets/card_hussein.png"
+      },
+      {
+        "name": "Moshe Dayan",
+        "role": "Israeli Military Leader and Politician",
+        "lifespan": "1915 – 1981",
+        "achievements": [
+          "Chief of Staff of the IDF during the 1956 Sinai Campaign.",
+          "Defense Minister during the decisive 1967 Six-Day War.",
+          "Helped negotiate the Camp David Accords."
+        ],
+        "significance": "With his iconic eye patch, he became the global symbol of Israeli military prowess, playing a decisive role in Israel's most defining wars and later peace efforts.",
+        "image": "/units/cme_new/assets/card_dayan.png"
+      },
+      {
+        "name": "Henry Kissinger",
+        "role": "US Secretary of State",
+        "lifespan": "1923 – 2023",
+        "achievements": [
+          "Orchestrated 'Shuttle Diplomacy' following the 1973 Yom Kippur War.",
+          "Negotiated the disengagement agreements between Israel, Egypt, and Syria.",
+          "Paved the way for the eventual Camp David Accords."
+        ],
+        "significance": "His intense diplomatic efforts established the United States as the primary mediator in the Arab-Israeli conflict, marginalizing Soviet influence in the region.",
+        "image": "/units/cme_new/assets/henry_kissinger.jpg"
+      },
+      {
+        "name": "Yitzhak Shamir",
+        "role": "7th Prime Minister of Israel",
+        "lifespan": "1915 – 2012",
+        "achievements": [
+          "Served as Prime Minister during the First Intifada.",
+          "Implemented a harsh 'Iron Fist' policy against Palestinian protests.",
+          "Participated in the 1991 Madrid Peace Conference."
+        ],
+        "significance": "A staunch hardliner, his uncompromising stance on territorial concessions and harsh response to the Intifada polarized Israeli politics but eventually led to US pressure for negotiations.",
+        "image": "/units/cme_new/assets/card_shamir.png"
+      },
+      {
+        "name": "Arthur Balfour",
+        "role": "British Foreign Secretary",
+        "lifespan": "1848 – 1930",
+        "achievements": [
+          "Authored the 1917 Balfour Declaration.",
+          "Served as Prime Minister of the United Kingdom.",
+          "Played a key role in shaping British imperial policy in the Middle East."
+        ],
+        "significance": "His declaration expressed official British support for a 'national home for the Jewish people' in Palestine, laying the diplomatic foundation for the creation of Israel.",
+        "image": "/units/cme_new/assets/card_balfour.png"
+      },
+      {
+        "name": "Anthony Eden",
+        "role": "British Prime Minister",
+        "lifespan": "1897 – 1977",
+        "achievements": [
+          "Served as Foreign Secretary during World War II.",
+          "Authorized the ill-fated Suez intervention in 1956.",
+          "Was a central figure in British foreign policy for decades."
+        ],
+        "significance": "His decision to conspire with France and Israel to attack Egypt during the Suez Crisis ended in political disaster, marking the definitive end of Britain's imperial dominance in the Middle East.",
+        "image": "/units/cme_new/assets/eden_cover.png"
+      },
+      {
+        "name": "Harry Truman",
+        "role": "33rd US President",
+        "lifespan": "1884 – 1972",
+        "achievements": [
+          "Made the US the first nation to officially recognize the State of Israel in 1948.",
+          "Supported the admission of Jewish refugees into Palestine after WWII.",
+          "Initiated early US diplomatic involvement in the Middle East conflict."
+        ],
+        "significance": "His swift de facto recognition of Israel just 11 minutes after its founding established a lasting, albeit complicated, alliance between the United States and the Jewish state.",
+        "image": "/units/cme_new/assets/card_truman.png"
+      },
+      {
+        "name": "Theodor Herzl",
+        "role": "Founder of Modern Political Zionism",
+        "lifespan": "1860 – 1904",
+        "achievements": [
+          "Authored 'Der Judenstaat' (The Jewish State) in 1896.",
+          "Convened the First Zionist Congress in Basel in 1897.",
+          "Established the World Zionist Organization."
+        ],
+        "significance": "Often referred to as the 'Spiritual Father of the Jewish State', he transformed Zionism from a cultural movement into an organized international political force aiming to establish a Jewish homeland.",
+        "image": "/units/cme_new/assets/theodor_herzl.jpg"
+      },
+      {
+        "name": "Benjamin Netanyahu",
+        "role": "Prime Minister of Israel",
+        "lifespan": "1949 – Present",
+        "achievements": [
+          "Longest-serving Prime Minister in Israel's history.",
+          "Signed the Wye River Memorandum in 1998.",
+          "Oversaw massive economic liberalization and normalization agreements with Arab states."
+        ],
+        "significance": "A dominant figure in modern Israeli politics, he frequently opposed the Oslo Accords framework and fundamentally shifted Israeli policy away from the 'land for peace' paradigm.",
+        "image": "/units/cme_new/assets/benjamin_netanyahu.jpg"
+      }
+    ]
   },
   "biographies": [
     {

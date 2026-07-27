@@ -57,7 +57,26 @@ for (const unitId of units) {
                 l.do_now.items.forEach(item => {
                     quizPack.push({
                         q: item.question,
-                        a: item.answer
+                        a: item.answer,
+                        options: item.options || [item.answer, "Option B", "Option C", "Option D"]
+                    });
+                });
+            }
+            if (l.flashcards && Array.isArray(l.flashcards)) {
+                l.flashcards.forEach(fc => {
+                    quizPack.push({
+                        q: "Define: " + fc.term,
+                        a: fc.definition,
+                        options: [fc.definition, "A different historical term", "An incorrect definition", "None of the above"]
+                    });
+                });
+            }
+            if (l.fun_facts && Array.isArray(l.fun_facts)) {
+                l.fun_facts.forEach(ff => {
+                    quizPack.push({
+                        q: "True or False: " + ff,
+                        a: "True",
+                        options: ["True", "False"]
                     });
                 });
             }

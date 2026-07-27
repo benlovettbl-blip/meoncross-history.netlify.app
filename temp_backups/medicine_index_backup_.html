@@ -93,14 +93,31 @@
   </div>
 
   <script>
+    const debatePrompts = [
+      {
+        title: "Lesson 1: The Bismarck Problem",
+        prompt: "<strong>Roleplay:</strong> You are a French politician in 1872. Defend your decision to hold a grudge against Germany over the loss of Alsace-Lorraine. Should revenge be a primary goal of your nation's foreign policy?"
+      },
+      {
+        title: "Lesson 2: The Sun and the Shadow",
+        prompt: "<strong>Debate:</strong> 'Imperialism was the primary cause of WW1.' Do you agree? Use evidence of the Moroccan crises and the scramble for Africa to support your view."
+      },
+      {
+        title: "Lesson 3: The Dreadnought Dilemma",
+        prompt: "<strong>Roleplay:</strong> You are British First Lord of the Admiralty Winston Churchill. Explain to the public why the Two-Power Standard is essential for Britain's survival, even if it bankrupts the country."
+      },
+      {
+        title: "Lesson 4: The Schlieffen Gamble",
+        prompt: "<strong>Debate:</strong> Was the Schlieffen Plan an aggressive act of war, or a necessary defensive strategy for a country surrounded by enemies? Pick a side."
+      },
+      {
+        title: "Lesson 5: The July Crisis",
+        prompt: "<strong>Roleplay:</strong> You are Tsar Nicholas II of Russia. Will you mobilize your army to protect Serbia, knowing it will trigger a war with Germany? Justify your decision to your advisors."
+      }
+    ];
     let currentDebateIndex = 0;
 
-    function getDebatePrompts() {
-      return window.currentUnitData?.debatePrompts || [];
-    }
-
     function openDebateModal() {
-      if (getDebatePrompts().length === 0) return;
       document.getElementById('debateModal').style.display = 'flex';
       renderDebatePrompt();
     }
@@ -110,20 +127,15 @@
     }
 
     function renderDebatePrompt() {
-      const prompts = getDebatePrompts();
-      if (prompts.length === 0) return;
-      const promptData = prompts[currentDebateIndex];
-      if (!promptData) return;
+      const promptData = debatePrompts[currentDebateIndex];
       document.getElementById('debateTopicSubtitle').innerText = promptData.title;
       document.getElementById('debateModalContent').innerHTML = promptData.prompt;
     }
 
     function cycleDebatePrompt(direction) {
-      const prompts = getDebatePrompts();
-      if (prompts.length === 0) return;
       currentDebateIndex += direction;
-      if (currentDebateIndex < 0) currentDebateIndex = prompts.length - 1;
-      if (currentDebateIndex >= prompts.length) currentDebateIndex = 0;
+      if (currentDebateIndex < 0) currentDebateIndex = debatePrompts.length - 1;
+      if (currentDebateIndex >= debatePrompts.length) currentDebateIndex = 0;
       renderDebatePrompt();
     }
   </script>

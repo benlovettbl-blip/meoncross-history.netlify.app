@@ -33,9 +33,20 @@ allDirs.forEach(unitId => {
   if (!fs.existsSync(dataPath)) return;
 
   const dataContent = fs.readFileSync(dataPath, 'utf8');
-  const startIndex = dataContent.indexOf('export default {') !== -1 ? dataContent.indexOf('export default {') + 15 : (dataContent.indexOf('export const unitData = {') !== -1 ? dataContent.indexOf('export const unitData = {') + 24 : dataContent.indexOf('{', dataContent.indexOf('import') !== -1 ? dataContent.indexOf('\n') : 0));
+  let startIndex = dataContent.indexOf('export default {') !== -1 ? dataContent.indexOf('export default {') + 15 : -1;
+  if (startIndex === -1) {
+    startIndex = dataContent.indexOf('export const unitData = {') !== -1 ? dataContent.indexOf('export const unitData = {') + 24 : -1;
+  }
+  if (startIndex === -1) {
+    startIndex = dataContent.indexOf('export const gwData = {') !== -1 ? dataContent.indexOf('export const gwData = {') + 22 : -1;
+  }
+  
+  if (startIndex === -1) {
+    console.log(`Skipping workbook generation for ${unitId} (unsupported data format).`);
+    return;
+  }
   const endIndex = dataContent.lastIndexOf('}');
-  if (startIndex === -1 || endIndex === -1) return;
+  if (endIndex === -1) return;
   
   const jsonStr = dataContent.substring(startIndex, endIndex + 1);
   let unitData;

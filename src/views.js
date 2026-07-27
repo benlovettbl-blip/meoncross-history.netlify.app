@@ -142,7 +142,7 @@ export function renderDashboard() {
         
         ${isUnlocked ? `
           <div class="module-actions" style="margin-top: 14px;">
-            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' || unit.id === 'great_war_part2' || unit.id === 'great_war_v2' || unit.id === 'norman_conquest' || unit.id === 'change_1450_1750' ? `
+            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' || unit.id === 'great_war_part2' || unit.id === 'great_war_v2' || unit.id === 'norman_conquest' || unit.id === 'change_1450_1750' || unit.id === 'cme_new' || unit.id === 'edexcel_medicine' || unit.id === 'eee' ? `
               <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
                 <i class="fa-solid fa-circle-play"></i> Launch Study App
               </button>

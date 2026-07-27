@@ -1,5 +1,5 @@
 import { initializeApp } from './core_app.js';
-import { initTimelineTask } from './timeline_task.js';
+import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
 
@@ -33,11 +33,11 @@ if (!unitId) {
   setTimeout(() => {
     const sidebarNav = document.getElementById('sidebar-nav-container');
     if (sidebarNav) {
-      // 1. Domino Flowcharts Tab
+      // 1. Timeline Tab
       if (unitData.timeline) {
         const tlLink = document.createElement('a');
         tlLink.className = 'lesson-link';
-        tlLink.innerHTML = '<i class="fa-solid fa-hourglass-half" style="margin-right: 8px;"></i> Domino Flowcharts';
+        tlLink.innerHTML = '<i class="fa-solid fa-timeline" style="margin-right: 8px;"></i> Timeline';
         tlLink.href = '#';
         tlLink.onclick = (e) => {
           e.preventDefault();
@@ -45,8 +45,8 @@ if (!unitId) {
           tlLink.classList.add('active');
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
-          initTimelineTask(contentArea, unitData.timeline);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          renderVerticalTimeline(contentArea, unitData.timeline, unitData);
+          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(tlLink);
       }
@@ -64,7 +64,7 @@ if (!unitId) {
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
           initTerminologyTask(contentArea, unitData.terminology);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(termLink);
       }
@@ -83,7 +83,7 @@ if (!unitId) {
           const contentArea = document.getElementById('content-area');
           contentArea.innerHTML = '';
           initKeyIndividualsTask(contentArea, keyIndividualsData);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(kiLink);
       }
