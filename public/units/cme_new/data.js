@@ -1,8 +1,18 @@
 export const unitData = {
+  "title": "Paper 2: Conflict in the Middle East, 1945-1995",
+  "enquiry_question": "Why has peace proved so difficult to achieve in the Middle East?",
+  "homepage_background": "/images/israeli_troops_wall.jpg",
+  "enquiry": "Why has peace proved so elusive in the Middle East?",
+  "category": "Edexcel GCSE",
+  "yearGroup": "GCSE",
+  "desc": "Paper 2",
+  "icon": "fa-dove",
+  "color": "#0ea5e9",
+  "bg": "rgba(14, 165, 233, 0.1)",
   "mock_exams": [
     {
       "id": "cme_mock_a",
-      "title": "Predicted Mock Paper A",
+      "title": "Edexcel GCSE: Conflict in the Middle East, 1945-1995",
       "url": "cme_mock_a.html"
     },
     {
@@ -26,7 +36,6 @@ export const unitData = {
       "url": "cme_mock_e.html"
     }
   ],
-  "title": "Conflict in the Middle East, 1945–1995",
   "workbooks": [
     {
       "id": "KT1",
@@ -85,6 +94,87 @@ export const unitData = {
     }
   ],
   "lessons": [
+    {
+      "id": "lesson_0",
+      "title": "KT1: Geography of the Middle East",
+      "teacher_notes": {
+        "primer": "Before diving into the historical narrative of the Middle East conflict, students must establish a foundational understanding of the region's geography. The complexities of borders, waterways, and contested territories (like the Sinai and Golan Heights) are critical for comprehending the stakes of the wars they will study.",
+        "objectives": [
+          {
+            "objective": "Identify the key countries and capital cities involved in the Arab-Israeli conflict.",
+            "primer": "Have students use atlases or the provided interactive map to label Egypt, Syria, Jordan, Lebanon, and Israel on a blank map.",
+            "question": "Which two capital cities are geographically closest to Israel's northern borders?"
+          },
+          {
+            "objective": "Locate strategic chokepoints and contested regions.",
+            "primer": "Guide students to shade the Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights, and highlight the Suez Canal and Straits of Tiran.",
+            "question": "Why would control of the Straits of Tiran be vital to Israel's economy?"
+          },
+          {
+            "objective": "Locate and label the Occupied Territories (West Bank, Gaza Strip, Golan Heights, Sinai Peninsula).",
+            "primer": "Guide students to shade the specific territories captured by Israel during the 1967 Six Day War, as these form the crux of the subsequent narrative.",
+            "question": "Why would the capture of the Golan Heights from Syria be seen as strategically vital for Israel?"
+          }
+        ]
+      },
+      "extended": {
+        "title": "Map Task: The Geopolitical Landscape",
+        "paragraphs": [
+          "Understanding the geography of the Middle East is the essential first step to understanding its history. The borders of the modern Middle East were largely drawn by Britain and France following the collapse of the Ottoman Empire at the end of the First World War. These artificially imposed borders laid the groundwork for decades of instability.",
+          "At the heart of the conflict are several highly contested regions: the Gaza Strip, the West Bank, the Golan Heights, and the Sinai Peninsula. Additionally, control over strategic waterways—like the Suez Canal, the Straits of Tiran, and the River Jordan—has repeatedly triggered military escalation."
+        ],
+        "question": "Using the blank map provided in your workbook (or the interactive map here), label the following: \n- Countries: Israel, Egypt, Syria, Jordan, Lebanon, Iraq, Iran\n- Capitals: Jerusalem, Tel Aviv, Cairo, Damascus, Amman, Beirut\n- Waterways: Suez Canal, Straits of Tiran, Gulf of Aqaba, Red Sea, River Jordan, Mediterranean Sea\n- Contested Zones (shade these): Sinai Peninsula, Golan Heights, Gaza Strip, West Bank",
+        "hints": [
+          "Look carefully at the coastal outlines to locate the Mediterranean and Red Seas.",
+          "Remember that the Sinai Peninsula connects Africa to Asia."
+        ],
+        "source_a": {
+          "title": "Map of the Middle East",
+          "provenance": "Reference Map",
+          "content": "/images/middle_east_map.png"
+        },
+        "source_b": {
+          "title": "Map of the Middle East (Answer Key)",
+          "provenance": "Teacher Reference",
+          "content": "/images/middle_east_map_answers.png"
+        }
+      },
+      "vocabulary": [
+        {
+          "term": "Chokepoint",
+          "def": "A strategic narrow route, such as a strait or canal, which could be blocked to stop the flow of shipping."
+        },
+        {
+          "term": "Contested Territory",
+          "def": "Land that is claimed by more than one country or group."
+        },
+        {
+          "term": "Mandate",
+          "def": "An authorization granted by the League of Nations to a member nation to govern a former German or Turkish colony."
+        }
+      ],
+      "hide_phase_titles": true,
+      "secondary_map": {
+        "title": "Map Task: Israel and the Occupied Territories",
+        "question": "Using the blank map provided, shade and label the following critical regions and territories that became the focal point of the conflict post-1967:\n- Israel (pre-1967 borders)\n- The West Bank\n- The Gaza Strip\n- The Golan Heights\n- The Sinai Peninsula",
+        "hints": [
+          "The West Bank is nestled between Israel and Jordan.",
+          "The Sinai Peninsula is the large triangular landmass between Egypt and Israel.",
+          "The Golan Heights border Syria to the northeast."
+        ],
+        "source_a": {
+          "title": "Zoomed Map (Blank)",
+          "provenance": "Student Copy",
+          "content": "/images/israel_zoomed_map.png"
+        },
+        "source_b": {
+          "title": "Zoomed Map (Answer Key)",
+          "provenance": "Teacher Reference",
+          "content": "/images/israel_zoomed_map_answers.png"
+        },
+        "provenance_clue": "Focus on the precise borders. After the 1967 war, Israel captured the West Bank from Jordan, the Gaza Strip and Sinai Peninsula from Egypt, and the Golan Heights from Syria."
+      }
+    },
     {
       "id": "lesson_1",
       "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
@@ -1151,8 +1241,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
-          "level_4": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
+          "text": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
+          "level_4": "<img src=\"/units/cme_new/assets/nasser_aims.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"nasser_aims\">",
           "tasks": []
         },
         {
@@ -1253,8 +1343,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
-          "level_4": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
+          "text": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
+          "level_4": "<img src=\"/units/cme_new/assets/suez_consequences.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"suez_consequences\">",
           "tasks": []
         },
         {
@@ -1298,7 +1388,7 @@ export const unitData = {
         },
         {
           "title": "The Suez Crisis (1956)",
-          "src": "/units/cme_new/assets/cme_port_said_from_air.jpg",
+          "src": "/assets/cme_suez_crisis.jpg",
           "caption": "Port Said during the Suez Crisis, when Britain, France, and Israel launched a coordinated attack on Egypt.",
           "teacher_notes": {
             "primer": "Highlight the military intervention and subsequent political humiliation of Britain and France.",
@@ -1488,8 +1578,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
-          "level_4": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
+          "text": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
+          "level_4": "<img src=\"/units/cme_new/assets/cairo_conference.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"cairo_conference\">",
           "tasks": []
         },
         {
@@ -1777,7 +1867,7 @@ export const unitData = {
         },
         {
           "title": "Israeli Paratroopers at the Western Wall",
-          "src": "/units/cme_new/assets/western_wall_1967.jpg",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paratroopers_at_Western_Wall.jpg/500px-Paratroopers_at_Western_Wall.jpg",
           "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
           "teacher_notes": {
             "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -1792,7 +1882,7 @@ export const unitData = {
         },
         {
           "title": "Operation Focus",
-          "src": "/units/cme_new/assets/idf_fighter_planes.jpg",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Fouga_Magister_IAF_in_flight.jpg/500px-Fouga_Magister_IAF_in_flight.jpg",
           "caption": "Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.",
           "teacher_notes": {
             "primer": "Explain the preemptive strike that essentially won the war in its first few hours.",
@@ -1935,8 +2025,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
-          "level_4": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
+          "text": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
+          "level_4": "<img src=\"/units/cme_new/assets/un242.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"un242\">",
           "tasks": []
         },
         {
@@ -1967,8 +2057,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
-          "level_4": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
+          "text": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
+          "level_4": "<img src=\"/units/cme_new/assets/buffer_zones.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"buffer_zones\">",
           "tasks": []
         },
         {
@@ -2238,6 +2328,7 @@ export const unitData = {
         {
           "title": "UN Resolution 242",
           "src": "/units/cme_new/assets/un242.svg",
+          "custom_style": "max-height: 150px; width: auto; object-fit: contain;",
           "caption": "UN Resolution 242, which established the 'Land for Peace' formula for resolving the Arab-Israeli conflict.",
           "teacher_notes": {
             "primer": "Highlight the deliberate ambiguity of the resolution's wording (withdrawal from 'territories' vs 'the territories').",
@@ -2253,6 +2344,7 @@ export const unitData = {
         {
           "title": "Yasser Arafat and the PLO",
           "src": "/units/cme_new/assets/yasser_arafat.jpg",
+          "custom_style": "max-height: 150px; width: auto; object-fit: contain;",
           "caption": "Yasser Arafat, leader of the PLO, addressing the UN General Assembly with an olive branch and a gun.",
           "teacher_notes": {
             "primer": "Discuss the PLO's shift towards seeking international legitimacy alongside armed struggle.",
@@ -2427,8 +2519,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
-          "level_4": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
+          "text": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
+          "level_4": "<img src=\"/units/cme_new/assets/sadat_diplomatic.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_diplomatic\">",
           "tasks": []
         },
         {
@@ -2459,8 +2551,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
-          "level_4": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
+          "text": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
+          "level_4": "<img src=\"/units/cme_new/assets/settlement_policy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"settlement_policy\">",
           "tasks": []
         },
         {
@@ -2512,8 +2604,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
-          "level_4": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
+          "text": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
+          "level_4": "<img src=\"/units/cme_new/assets/superpower_faceoff.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"superpower_faceoff\">",
           "tasks": []
         },
         {
@@ -2975,8 +3067,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
-          "level_4": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
+          "text": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
+          "level_4": "<img src=\"/units/cme_new/assets/shuttle_diplomacy.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"shuttle_diplomacy\">",
           "tasks": []
         },
         {
@@ -3384,8 +3476,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
-          "level_4": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
+          "text": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
+          "level_4": "<img src=\"/units/cme_new/assets/arafat_1974.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1974\">",
           "tasks": []
         },
         {
@@ -3469,8 +3561,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
-          "level_4": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
+          "text": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
+          "level_4": "<img src=\"/units/cme_new/assets/longterm_lebanon.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"longterm_lebanon\">",
           "tasks": []
         },
         {
@@ -3741,8 +3833,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
-          "level_4": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
+          "text": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
+          "level_4": "<img src=\"/units/cme_new/assets/arafat_1988.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_1988\">",
           "tasks": []
         },
         {
@@ -3810,8 +3902,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
-          "level_4": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
+          "text": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
+          "level_4": "<img src=\"/units/cme_new/assets/israel_jordan.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"israel_jordan\">",
           "tasks": []
         },
         {
@@ -3820,8 +3912,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
-          "level_4": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
+          "text": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
+          "level_4": "<img src=\"/units/cme_new/assets/oslo2.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"oslo2\">",
           "tasks": []
         },
         {
@@ -3836,8 +3928,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
-          "level_4": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
+          "text": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
+          "level_4": "<img src=\"/units/cme_new/assets/deadlock.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"deadlock\">",
           "tasks": []
         },
         {
@@ -5165,39 +5257,39 @@ export const unitData = {
         {
           "id": 1,
           "text": "The end of WWII leaves hundreds of thousands of Jewish Holocaust survivors in Displaced Persons camps.",
-          "date": "1947",
+          "date": "1945",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
           "id": 2,
           "text": "Jewish paramilitary groups launch an insurgency against British rule, bombing the King David Hotel.",
-          "date": "Nov 1947",
-          "image": "/assets/cme_new_king_david_ruins.png",
+          "date": "July 1946",
+          "image": "/units/cme_new/assets/king_david_ruins.png",
           "image_caption": "Historical Source",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
           "id": 3,
           "text": "An exhausted British government hands the Palestine problem over to the newly formed United Nations.",
-          "date": "1947–1948",
+          "date": "Feb 1947",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
           "id": 4,
           "text": "The UN passes Resolution 181, proposing the partition of Palestine into separate Jewish and Arab states.",
-          "date": "May 1948",
+          "date": "Nov 1947",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
           "id": 5,
           "text": "The Jewish Agency accepts the partition plan, while the Arab Higher Committee rejects it.",
-          "date": "1948",
+          "date": "Nov 1947",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
           "id": 6,
           "text": "Civil war breaks out between Jewish and Arab militias in Palestine.",
-          "date": "1948",
+          "date": "Dec 1947 – May 1948",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
@@ -5235,21 +5327,7 @@ export const unitData = {
         {
           "id": 3,
           "text": "The UN brokers a crucial truce, allowing Israel to organize and rearm via Czechoslovakia.",
-          "date": "1948",
-          "key_topic": "KT1: Conflict to 1949"
-        },
-        {
-          "id": 4,
-          "text": "The newly unified Israel Defence Forces launch a devastating counter-offensive.",
-          "date": "1949",
-          "key_topic": "KT1: Conflict to 1949"
-        },
-        {
-          "id": 5,
-          "text": "Israel secures 78% of Mandatory Palestine, far more than the UN Partition Plan awarded.",
-          "date": "1949",
-          "image": "/units/cme_new/assets/palestine_1949_map.png",
-          "image_caption": "Israel's Borders 1949-1967",
+          "date": "June 1948",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
@@ -5258,6 +5336,20 @@ export const unitData = {
           "date": "1948",
           "image": "/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp",
           "image_caption": "Historical Source",
+          "key_topic": "KT1: Conflict to 1949"
+        },
+        {
+          "id": 4,
+          "text": "The newly unified Israel Defence Forces launch a devastating counter-offensive.",
+          "date": "July–Oct 1948",
+          "key_topic": "KT1: Conflict to 1949"
+        },
+        {
+          "id": 5,
+          "text": "Israel secures 78% of Mandatory Palestine, far more than the UN Partition Plan awarded.",
+          "date": "1949",
+          "image": "/units/cme_new/assets/palestine_1949_map.png",
+          "image_caption": "Israel's Borders 1949-1967",
           "key_topic": "KT1: Conflict to 1949"
         },
         {
@@ -5404,7 +5496,7 @@ export const unitData = {
           "id": 5,
           "text": "When Nasser refuses, Anglo-French forces bomb Egyptian airfields.",
           "date": "Oct 1956",
-          "image": "/units/cme_new/assets/cme_port_said_from_air.jpg",
+          "image": "/assets/cme_suez_crisis.jpg",
           "image_caption": "Historical Source",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },
@@ -5542,6 +5634,7 @@ export const unitData = {
           "text": "The UN passes Resolution 242, calling for land for peace, but the Arab League rejects it.",
           "date": "Nov 1967",
           "image": "/units/cme_new/assets/un242.svg",
+          "custom_style": "max-height: 150px; width: auto; object-fit: contain;",
           "image_caption": "Historical Source",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },
@@ -5822,7 +5915,7 @@ export const unitData = {
           "text": "The Palestinian Authority is created, granting limited self-rule in Gaza and Jericho.",
           "date": "1994",
           "key_topic": "KT3: The Palestinian Issue (1974–1995)",
-          "image": "/units/cme_new/assets/oslo_cover.png",
+          "image": "/assets/cme_new_yitzhak_rabin.jpg",
           "image_caption": "The Oslo Accords"
         },
         {
@@ -5850,7 +5943,7 @@ export const unitData = {
       "sentence_starter": "I agree that Britain's dual obligation was the primary reason because..."
     },
     {
-      "title": "KT1.2: The Aftermath of the 1948ÔÇô49 War",
+      "title": "KT1.2: The Aftermath of the 1948–49 War",
       "prompt": "<strong>Roleplay:</strong> You are an Israeli leader in 1950. Defend the Law of Return despite the ongoing tension, while addressing the Palestinian refugee crisis.",
       "sentence_starter": "While I understand the plight of the Palestinian refugees, the Law of Return is essential for Israel because..."
     },

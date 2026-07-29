@@ -8,8 +8,8 @@ const puppeteer = require('puppeteer');
   await page.setViewport({ width: 1600, height: 1200 });
   
 const unitId = process.argv[2] || 'water_and_sanitation';
-  console.log(`Navigating to http://localhost:3001/unit.html?id=${unitId}...`);
-  await page.goto(`http://localhost:3001/unit.html?id=${unitId}`, { waitUntil: 'domcontentloaded' });
+  console.log(`Navigating to http://localhost:3003/unit.html?id=${unitId}...`);
+  await page.goto(`http://localhost:3003/unit.html?id=${unitId}`, { waitUntil: 'domcontentloaded' });
   
   // Wait for React/scripts to render
   await new Promise(r => setTimeout(r, 2000));

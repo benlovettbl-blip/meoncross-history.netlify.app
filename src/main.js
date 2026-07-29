@@ -9,13 +9,22 @@ import { bindEvents } from './layout.js';
 import { switchView } from './navigation.js';
 import { state } from './state.js';
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
   // Bind global helper routing
   window.switchView = switchView;
   window.state = state;
 
   initAuth();
   initData();
+  
+  try {
+    const res = await fetch('/database.json');
+    window.db = await res.json();
+  } catch (err) {
+    console.error('Failed to load database.json:', err);
+    window.db = {};
+  }
+
   bindEvents();
 
   // Set default theme styling active button state

@@ -2,7 +2,7 @@
  * Layout and Event Binding Controller for Mr Lovett's History Hub Mega App
  */
 
-import { UNITS } from './views.js';
+import { getUnits } from './views.js';
 import { state } from './state.js';
 import { switchView } from './navigation.js';
 
@@ -55,7 +55,27 @@ export function bindEvents() {
   const sidebarUnitsContainer = document.getElementById('sidebar-unit-links');
   if (sidebarUnitsContainer) {
     sidebarUnitsContainer.innerHTML = '';
-    UNITS.forEach(unit => {
+    
+    const units = getUnits();
+    const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
+    const ks3Units = units.filter(u => u.title.includes('KS3:')).sort((a, b) => {
+      let idxA = ks3Order.indexOf(a.id);
+      let idxB = ks3Order.indexOf(b.id);
+      if (idxA === -1) idxA = 999;
+      if (idxB === -1) idxB = 999;
+      return idxA - idxB;
+    });
+    
+    const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany'];
+    const ks4Units = units.filter(u => !u.title.includes('KS3:')).sort((a, b) => {
+      let idxA = ks4Order.indexOf(a.id);
+      let idxB = ks4Order.indexOf(b.id);
+      if (idxA === -1) idxA = 999;
+      if (idxB === -1) idxB = 999;
+      return idxA - idxB;
+    });
+
+    const renderLink = (unit) => {
       const link = document.createElement('div');
       link.className = 'nav-item';
       link.style.cursor = 'pointer';
@@ -67,7 +87,6 @@ export function bindEvents() {
       link.style.margin = '0 8px 4px 8px';
       link.style.color = 'rgba(255,255,255,0.85)';
       
-      // Setup hover effect matching nav-item
       link.addEventListener('mouseenter', () => {
         link.style.background = 'rgba(255,255,255,0.1)';
         link.style.color = '#fff';
@@ -77,12 +96,27 @@ export function bindEvents() {
         link.style.color = 'rgba(255,255,255,0.85)';
       });
 
-      const prefix = unit.category === 'Key Stage 3' && !unit.title.startsWith('KS3:') ? 'KS3: ' : '';
-      link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${prefix}${unit.title}</span>`;
+      link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title}</span>`;
       link.addEventListener('click', () => {
         if (window.launchSubApp) window.launchSubApp(unit.id);
       });
       sidebarUnitsContainer.appendChild(link);
-    });
+    };
+
+    if (ks3Units.length > 0) {
+      const ks3Header = document.createElement('div');
+      ks3Header.innerHTML = '<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600;">Key Stage 3</span>';
+      ks3Header.style.margin = '10px 16px 8px';
+      sidebarUnitsContainer.appendChild(ks3Header);
+      ks3Units.forEach(renderLink);
+    }
+    
+    if (ks4Units.length > 0) {
+      const ks4Header = document.createElement('div');
+      ks4Header.innerHTML = '<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600;">Key Stage 4</span>';
+      ks4Header.style.margin = '15px 16px 8px';
+      sidebarUnitsContainer.appendChild(ks4Header);
+      ks4Units.forEach(renderLink);
+    }
   }
 }

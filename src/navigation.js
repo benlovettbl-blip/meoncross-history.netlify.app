@@ -19,6 +19,18 @@ export async function switchView(viewName, param = null) {
     }
   }
 
+  // Manage Header Right (Stats vs Logo)
+  const headerRight = document.querySelector('.header-right');
+  if (headerRight) {
+    if (viewName !== 'dashboard') {
+      headerRight.innerHTML = `<span class="school-tag"><i class="fa-solid fa-award"></i> Mr Lovett's History Hub</span>`;
+      headerRight.style.flex = '';
+      headerRight.style.display = '';
+      headerRight.style.justifyContent = '';
+      headerRight.style.alignItems = '';
+    }
+  }
+
   // Manage Breadcrumbs
   const breadcrumbs = document.getElementById('header-breadcrumbs');
   if (breadcrumbs) {

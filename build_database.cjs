@@ -4,17 +4,13 @@ const path = require('path');
 async function buildDatabase() {
   const db = {};
   
-  // Get all unit directories
-  const getDirs = src => fs.readdirSync(src, {withFileTypes: true}).filter(d => d.isDirectory() && !d.name.startsWith('.')).map(d => d.name);
-  const units = getDirs('./').filter(d => fs.existsSync(path.join(d, 'data.js')));
+  const unitsDir = path.join('public', 'units');
+  const getDirs = src => fs.readdirSync(src, {withFileTypes: true}).filter(d => d.isDirectory() && !d.name.startsWith('.')).map(d => path.join(src, d.name));
+  let units = getDirs(unitsDir).filter(d => fs.existsSync(path.join(d, 'data.js')));
   
-  const cmeNewPath = path.join('public', 'units', 'cme_new');
-  if (fs.existsSync(path.join(cmeNewPath, 'data.js'))) {
-    if (!units.includes(cmeNewPath)) {
-      units.push(cmeNewPath);
-    }
-  }
-  
+  // Ignore change_1450_1750 for now as requested
+  units = units.filter(d => !d.includes('change_1450_1750'));
+
   for (const unit of units) {
     const unitKey = path.basename(unit);
     db[unitKey] = {};
@@ -22,8 +18,8 @@ async function buildDatabase() {
     // 1. Data.js
     try {
       // Use absolute path for import to avoid resolution issues
-      const modPath = 'file://' + path.resolve(unit, 'data.js').replace(/\\/g, '/');
-      const mod = await import(modPath);
+      const fileUrl = 'file:///' + path.join(process.cwd(), unit, 'data.js').replace(/\\/g, '/') + '?t=' + Date.now();
+      const mod = await import(fileUrl);
       db[unitKey].data = mod.unitData || mod.gwData || mod.default;
     } catch (err) {
       console.error(`Error loading data.js for ${unit}:`, err.message);
@@ -70,8 +66,10 @@ async function buildDatabase() {
   
   for (const unit of units) {
       const unitKey = path.basename(unit);
-      if (db[unitKey]) {
+      if (db[unitKey] && db[unitKey].data && db[unitKey].data.title) {
           fs.writeFileSync(path.join('public', 'data', `${unitKey}.json`), JSON.stringify(db[unitKey], null, 2), 'utf8');
+      } else {
+          delete db[unitKey];
       }
   }
 

@@ -45,7 +45,64 @@ export function renderExamPracticeZone(container, unitData) {
   // Extract unique types for the filter dropdown
   const uniqueTypes = [...new Set(examBank.map(q => q.type).filter(Boolean))];
 
-  // 2. Build the UI wrapper
+  const isKS3 = unitData.title && unitData.title.includes('KS3');
+
+  if (isKS3) {
+    // For KS3 units, we just list the assessments
+    let assessmentsHtml = `
+      <style>
+        @keyframes slideUpFade {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      </style>
+      <div class="epz-wrapper" style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; position: relative;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1e3a8a; margin-top: 0; margin-bottom: 30px;"><i class="fa-solid fa-pen-nib" style="color: #3b82f6;"></i> Unit Assessments</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+    `;
+    
+    let ks3Assessments = [];
+    if (unitData.assessments && Array.isArray(unitData.assessments)) {
+       ks3Assessments.push(...unitData.assessments.map(a => ({...a, lessonTitle: 'End of Unit Assessment'})));
+    }
+    if (unitData.lessons) {
+      unitData.lessons.forEach(l => {
+        if (l.assessments) {
+           l.assessments.forEach(a => ks3Assessments.push({...a, lessonTitle: l.title}));
+        } else if (l.gcse_task) {
+           ks3Assessments.push({...l.gcse_task, lessonTitle: l.title});
+        }
+      });
+    }
+    
+    if (ks3Assessments.length === 0) {
+      assessmentsHtml += `<p style="color: #64748b; font-size: 1.1rem;">No assessments found for this unit.</p>`;
+    } else {
+      ks3Assessments.forEach(ass => {
+        let taskContent = ass.question || ass.text || ass.description || 'Assessment Task';
+        if (ass.type === 'timeline' && ass.events) {
+           taskContent += `<ul style="margin-top: 15px; font-size: 1.1rem; color: #475569;">` + ass.events.map(e => `<li><strong>${e.title}</strong>: ${e.detail}</li>`).join('') + `</ul>`;
+        }
+        assessmentsHtml += `
+          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #3b82f6;">
+            <div style="font-size: 0.9rem; font-weight: 700; color: #6366f1; text-transform: uppercase; margin-bottom: 10px;">${ass.lessonTitle}</div>
+            <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem; margin-bottom: 15px;">${ass.title && ass.lessonTitle !== 'End of Unit Assessment' ? ass.title + '<br>' : ''}${taskContent}</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              ${ass.hint ? `<button class="main-btn" onclick="alert('${ass.hint.replace(/'/g, "\\'")}')" style="background: #fef3c7; color: #d97706; border: 1px solid #fde68a; padding: 8px 16px; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Hint</button>` : ''}
+              ${ass.model_answer ? `<button class="main-btn" onclick="const a = this.nextElementSibling; a.style.display = a.style.display === 'none' ? 'block' : 'none';" style="background: #d1fae5; color: #059669; border: 1px solid #a7f3d0; padding: 8px 16px; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Model</button>
+              <div style="display: none; width: 100%; margin-top: 15px; padding: 15px; background: #f0fdf4; border-left: 4px solid #10b981; color: #064e3b; border-radius: 0 8px 8px 0; white-space: pre-wrap;">${Array.isArray(ass.model_answer) ? ass.model_answer.join('\\n\\n') : ass.model_answer}</div>` : ''}
+            </div>
+          </div>
+        `;
+      });
+    }
+    
+    assessmentsHtml += `</div></div>`;
+    container.innerHTML = assessmentsHtml;
+    return;
+  }
+  
+  // 2. Build the UI wrapper for KS4
   container.innerHTML = `
     <style>
       @keyframes slideUpFade {
@@ -65,12 +122,6 @@ export function renderExamPracticeZone(container, unitData) {
         animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         position: relative;
         overflow: hidden;
-      }
-      .epz-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; height: 6px;
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
       }
       .epz-title {
         font-family: 'Playfair Display', serif;
@@ -99,44 +150,53 @@ export function renderExamPracticeZone(container, unitData) {
       .epz-select {
         transition: all 0.3s ease;
       }
+      .epz-select:hover {
+        border-color: #94a3b8 !important;
+      }
       .epz-select:focus {
         outline: none;
-        border-color: #8b5cf6 !important;
-        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
       }
       .epz-card {
-        background: rgba(248, 250, 252, 0.9);
-        border: 1px solid rgba(226, 232, 240, 0.8);
+        background: white;
         border-radius: 16px;
-        padding: 35px;
-        box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 4px 6px rgba(0,0,0,0.02);
-        animation: slideUpFade 0.5s ease forwards;
+        padding: 30px;
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .epz-card::after {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; width: 100px; height: 100px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
       }
     </style>
+    
     <div class="epz-wrapper">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(241, 245, 249, 0.8); padding-bottom: 25px; margin-bottom: 30px;">
-        <h1 class="epz-title">
-          <i class="fa-solid fa-graduation-cap" style="-webkit-text-fill-color: #4f46e5;"></i> Exam Practice Zone
-        </h1>
-        <button id="epz-back-btn" class="main-btn epz-btn" style="background: #f1f5f9; color: #475569; padding: 10px 20px; font-size: 1.05rem; border: 1px solid #e2e8f0; border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i> Back to Hub</button>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; gap: 20px; flex-wrap: wrap;">
+        <div>
+          <h1 class="epz-title"><i class="fa-solid fa-pen-nib" style="color: #3b82f6;"></i> Exam Practice Zone</h1>
+          <p style="color: #64748b; font-size: 1.15rem; margin-top: 10px;">Select a question type or a specific past paper question to master.</p>
+        </div>
+        <button id="epz-back-btn" class="main-btn epz-btn" style="display: none; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; padding: 10px 20px; border-radius: 10px; font-weight: 600;"><i class="fa-solid fa-arrow-left"></i> Change Question</button>
       </div>
 
-      <div id="assessments-container"></div>
-      
-      <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 35px; background: #f8fafc; padding: 25px; border-radius: 14px; border: 1px solid #e2e8f0;">
-        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 200px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-filter"></i> Target Question Type:</label>
+      <div id="epz-controls">
+        <div style="display: flex; flex-direction: column; gap: 20px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Target Question Type</label>
             <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-              <option value="all">🎲 Surprise Me! (All Question Types)</option>
-              ${uniqueTypes.map(type => `<option value="${type}">📝 ${type} Question</option>`).join('')}
+              <option value="all">📚 All Question Types</option>
+              ${uniqueTypes.map(t => `<option value="${t}">${t.charAt(0).toUpperCase() + t.slice(1)} (e.g. 4-mark, 12-mark, etc.)</option>`).join('')}
             </select>
           </div>
-        </div>
-        
-        <div style="display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 250px;">
-            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: #334155; font-size: 1.1rem;"><i class="fa-solid fa-bullseye"></i> Target Specific Question:</label>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Or Select Specific Question</label>
             <select id="epz-specific-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
               <option value="random">🎲 Random Question (From Filters Above)</option>
             </select>

@@ -1,0 +1,103 @@
+{
+  "id": "lesson_1_1",
+  "title": "KT1.1: What did Medieval people believe caused illness?",
+  "enquiry_question": "KT1.1: What did Medieval people believe caused illness?",
+  "hook_text": "During the medieval period, life was difficult, and sudden illness was terrifying. Without microscopes or an understanding of germs, people desperately sought ways to make sense of sickness. The explanations they relied on—ranging from God’s wrath to the alignment of the stars and the imbalance of bodily fluids—shaped every aspect of medical treatment for centuries. Understanding these beliefs is the key to understanding all of medieval medicine.",
+  "teacher_notes": {
+    "primer": "In this lesson on KT1.1 KT1.1, students will explore the key events and individuals that shaped medical history during this period.",
+    "objectives": [
+      {
+        "objective": "To understand the core concepts and historical significance of KT1.1 KT1.1.",
+        "primer": "Guide the students through the narrative paragraphs and emphasize the 'So What?' statements.",
+        "question": "How did this specific development change medical understanding at the time?"
+      }
+    ]
+  },
+  "do_now": {
+    "type": "questions",
+    "title": "Recall & Retrieval",
+    "instructions": "Answer these questions in full sentences.",
+    "items": [
+      {
+        "question": "What does the term 'public health' refer to?",
+        "answer": "Public health refers to the health of the population as a whole, especially as monitored and regulated by the state or government."
+      },
+      {
+        "question": "Name one ancient civilization that influenced later medical ideas.",
+        "answer": "The Ancient Greeks or Ancient Romans."
+      },
+      {
+        "question": "Why was the Catholic Church so powerful in the Middle Ages?",
+        "answer": "The Church was the central authority in Medieval Europe, controlling education, the copying of books, and holding immense spiritual and political power."
+      },
+      {
+        "question": "Explain how religion might both help and hinder medical progress.",
+        "answer": "Religion could help by encouraging the care of the sick (e.g. hospitals), but hinder progress by relying on supernatural explanations rather than scientific investigation."
+      },
+      {
+        "question": "To what extent were ancient ideas like those of Hippocrates still influential in c1250?",
+        "answer": "Ancient ideas were incredibly influential; theories like the Four Humours remained the foundation of medical education and diagnosis."
+      }
+    ]
+  },
+  "fun_facts": [
+    "5th Century BCE: The era when the Ancient Greek doctor Hippocrates first developed the foundational Theory of the Four Humours.",
+    "4: The exact number of bodily fluids (blood, phlegm, yellow bile, black bile) that medieval doctors believed dictated human health and disease.",
+    "1345: The year an unusual planetary alignment occurred, which medieval astrologers and physicians blamed for causing the devastating Black Death shortly after."
+  ],
+  "guided_reading": [],
+  "narrative_blocks": [
+    {
+      "text": "<h3>Supernatural and Religious Explanations</h3>\nThe Catholic Church dominated medieval society and controlled all formal medical education and the copying of books.\n\nThe Church taught that illness was a punishment from God for committing sins, or a test of a person's faith. For example, the Bible used leprosy as an illustration of divine punishment, leading sufferers to be banished from their towns.\n\nAstrology was also highly influential; physicians used star charts to check the alignment of the planets, believing that negative alignments caused disease. For example, an unusual alignment of Mars, Jupiter, and Saturn in 1345 was widely blamed for causing the Black Death.\n\n<div class=\"so-what-box\"><strong>So What? Because people believed God or the stars controlled illness, there was very little motivation to search for other scientific or physical causes, which severely held back medical progress.</strong></div>"
+    },
+    {
+      "text": "<h3>Rational Explanations: The Four Humours and Miasma</h3>\nThe Theory of the Four Humours was created by the Ancient Greek physician Hippocrates in the 5th century BCE.\n\nIt stated that the body was made of four liquids: blood, phlegm, yellow bile, and black bile. Physicians believed illness occurred naturally when these humours became unbalanced.\n\nMiasma was another highly popular rational theory; people believed that breathing in 'bad air' filled with foul-smelling fumes from rotting matter or swamps corrupted the body's humours and caused disease.\n\n<div class=\"so-what-box\"><strong>So What? The Theory of the Four Humours was incredibly significant because it provided a complete, logical system that physicians used to diagnose and treat almost every physical and mental illness in medieval England.</strong></div>"
+    },
+    {
+      "text": "<h3>The Continuing Influence of Galen</h3>\nGalen, an Ancient Roman physician, developed Hippocrates' ideas further by creating the Theory of Opposites (for example, treating an excess of 'cold' phlegm with 'hot' peppers).\n\nThe Church fiercely promoted Galen's ideas because he wrote that the body was perfectly designed with a specific purpose, which perfectly fit the Christian belief in a single Creator.\n\nBecause the Church controlled the universities, Galen's texts became the absolute foundation of medical training. Discovering new ideas through human dissection was strictly discouraged because the Church taught the body needed to be buried whole.\n\n<div class=\"so-what-box\"><strong>So What? Galen's absolute authority meant that his sometimes incorrect anatomical ideas went unchallenged for over a thousand years, making it almost impossible for new medical discoveries to be made during the Middle Ages.</strong></div>"
+    }
+  ],
+  "exam_practice": [
+    {
+      "type": "12-mark",
+      "question": "Explain why there was so little change in ideas about the cause of disease in the years c1250–c1500.",
+      "marks": 12,
+      "model_answer": "<p><strong>Point:</strong> One key reason for the lack of change was the overwhelming power and influence of the Catholic Church.</p><p><strong>Evidence:</strong> The Church controlled education, including the training of physicians at universities, and the copying of medical texts in monasteries. They actively promoted the ideas of Galen.</p><p><strong>Explanation:</strong> Because Galen argued that the body was perfectly designed, this fit perfectly with the Christian belief in a single Creator. The Church made Galen's texts the absolute authority. Since challenging Galen was seen as challenging the Church itself, and dissecting human bodies to find new knowledge was strictly forbidden, physicians were unable to discover new ideas about the causes of disease.</p><p><strong>Link:</strong> Therefore, the religious control over education ensured that ancient, incorrect ideas remained unchallenged, preventing any progress in understanding disease.</p>"
+    }
+  ],
+  "ai_revision_pack": {
+    "images": [
+      "/assets/infographics/KT1.1 Medieval c1250–c1500 Causes of Illness/Medieval Causes of Illness Chart.png"
+    ],
+    "videos": [],
+    "documents": []
+  },
+  "extended": {
+    "title": "The Dominance of the Church",
+    "paragraphs": [
+      "In the Medieval period, the Catholic Church controlled almost all education, libraries, and universities. Monks were the only people who copied books by hand, meaning the Church decided what people read and what was taught. The Church strongly supported the ideas of Galen because he believed the body had a 'creator', which fit perfectly with Christian teachings.",
+      "Because the Church had such immense power, challenging Galen's ideas was seen as challenging the Church itself. Anyone who dared to question the Four Humours or suggest new theories about disease was likely to be punished or even accused of heresy. Furthermore, the Church taught that disease was a punishment from God for sins, meaning many people believed the only way to get better was through prayer and repentance, rather than seeking medical cures."
+    ],
+    "question": "Explain why the Catholic Church was the biggest obstacle to medical progress in the Middle Ages.",
+    "starter": "The Catholic Church hindered medical progress primarily because it controlled...",
+    "model": "The Catholic Church was the biggest obstacle to medical progress because it controlled all education and book publishing. The Church strongly supported Galen's theories because his idea of a 'creator' aligned with Christian teachings. This meant that questioning Galen was seen as questioning God, which discouraged any new research or dissection. Furthermore, the Church taught that disease was a punishment for sin, meaning people focused on prayer and repentance rather than searching for scientific cures."
+  },
+  "comprehension_questions": [
+    {
+      "q": "Identify one reason why the Church promoted Galen's ideas.",
+      "m": "Because his idea that the body was perfectly designed fit with the Christian belief in a single Creator."
+    },
+    {
+      "q": "Describe the Theory of the Four Humours.",
+      "m": "It was a theory that the body was made of four liquids (blood, phlegm, yellow bile, black bile) and illness occurred when these were unbalanced."
+    },
+    {
+      "q": "Explain how astrology was used in medieval medicine.",
+      "m": "Physicians used star charts to check the alignment of planets. They believed negative alignments could cause disease, such as the 1345 alignment being blamed for the Black Death."
+    },
+    {
+      "q": "Evaluate the significance of the Church in holding back medical progress in the Middle Ages.",
+      "m": "The Church was highly significant in holding back progress because it controlled education and the copying of texts. By enforcing Galen's ideas as absolute truth and discouraging human dissection, the Church prevented any new medical discoveries."
+    }
+  ]
+}

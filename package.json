@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "sync": "node build_database.cjs && node extract_units.js && node scripts/generate_all_quiz_packs.js && node generate_workbooks.js",
+    "sync": "node scripts/ai_heal_headings.js && node extract_units.js && node build_database.cjs && node scripts/generate_all_quiz_packs.js && node generate_workbooks.js",
+    "build-unit": "node scripts/build_unit.js",
     "create-unit": "node scripts/create_unit.js",
     "test:content": "node scripts/test_content.mjs",
     "export:pdf": "node export_pdfs.js"

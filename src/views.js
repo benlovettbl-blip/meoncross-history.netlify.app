@@ -7,16 +7,13 @@ import { state } from './state.js';
 import { getProfile, setMockUser } from './auth.js';
 import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from './storage.js';
 
-// Unit Definitions & Target Year Groups
-export const UNITS = [
-  { id: 'water_and_sanitation', title: 'Water and Sanitation Through Time', category: 'Key Stage 3', yearGroup: 'Year 7', desc: 'Exploring sanitation development from prehistoric roundhouses to Roman conduits.' },
-  { id: 'change_1450_1750', title: 'Change from 1450-1750', category: 'Key Stage 3', yearGroup: 'Year 8', desc: 'Exploring the Renaissance, Reformation, Civil War, and Scientific Revolution.' },
-  { id: 'great_war', title: 'The Great War: Causes & Outbreak', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'New format: Accessible interactive digital app with built-in scaffolds and printable workbooks.' },
-  { id: 'great_war_part2', title: 'The Great War: Experience & Aftermath (Part 2)', category: 'Key Stage 3', yearGroup: 'Year 9', desc: 'Enquiry into trench warfare, the global impact, and the flawed peace of the Treaty of Versailles.' },
-  { id: 'gcse_middle_east_1945_1995_new', title: 'GCSE: Conflict in the Middle East', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'The brand new accessible interactive digital app format.' },
-  { id: 'gcse_elizabethan_england', title: 'GCSE: Early Elizabethan England (1558-1588)', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Queen, government, religion, challenges at home/abroad, and Elizabethan society.' },
-  { id: 'edexcel_medicine', title: 'Edexcel GCSE: Medicine Through Time', category: 'Edexcel GCSE', yearGroup: 'GCSE', desc: 'Medicine Through Time with the British Sector of the Western Front.' }
-];
+export function getUnits() {
+  if (!window.db) return [];
+  return Object.keys(window.db).map(k => ({
+    id: k,
+    ...window.db[k].data
+  }));
+}
 
 export function renderDashboard() {
   const container = document.getElementById('main-content');
@@ -37,38 +34,161 @@ export function renderDashboard() {
     });
   }
 
-  let html = `
-    <!-- Onboarding Banner -->
-    <div class="dashboard-hero">
-      <div class="hero-text">
-        <h2>Welcome back, ${profile ? profile.name : 'Student'}!</h2>
-        <p>Current Year Group assignment: <strong>${profile ? profile.yearGroup : 'None'}</strong></p>
+  // Inject compact stats into header
+  const headerRight = document.querySelector('.header-right');
+  if (headerRight) {
+    headerRight.style.flex = '1';
+    headerRight.style.display = 'flex';
+    headerRight.style.justifyContent = 'space-between';
+    headerRight.style.alignItems = 'center';
+    
+    headerRight.innerHTML = `
+      <div style="font-size: 1.35rem; font-family: 'Playfair Display', serif; font-weight: 800; color: #1e3a8a; display: flex; align-items: center; gap: 12px; margin-left: 20px;">
+        <i class="fa-solid fa-graduation-cap" style="color: #3b82f6;"></i>
+        Mr Lovett's History Hub
       </div>
-      <div class="hero-actions">
-        <button class="btn btn-primary" onclick="window.switchView('profile')">
-          <i class="fa-solid fa-user-gear"></i> Manage Profile
-        </button>
+      <div style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; flex-wrap: wrap; justify-content: flex-end;">
+        <span style="font-weight: 600; color: #334155; margin-right: 5px;">Welcome back, ${profile ? profile.name : 'Student'}</span>
+        <span style="background: #fef3c7; color: #d97706; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #fde68a;"><i class="fa-solid fa-fire"></i> ${state.dailyXp} XP</span>
+        <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bbf7d0;"><i class="fa-solid fa-graduation-cap"></i> ${masteredCount} Mastered</span>
+        <span style="background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bae6fd;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
       </div>
-    </div>
+    `;
+  }
 
-    <!-- Quick Stats Grid -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-title">Daily XP</span>
-        <span class="stat-val"><i class="fa-solid fa-fire text-primary"></i> ${state.dailyXp}</span>
+  let html = `
+  `;
+
+  const units = getUnits();
+  const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
+  const ks3Units = units.filter(u => u.title.includes('KS3:')).sort((a, b) => {
+    let idxA = ks3Order.indexOf(a.id);
+    let idxB = ks3Order.indexOf(b.id);
+    if (idxA === -1) idxA = 999;
+    if (idxB === -1) idxB = 999;
+    return idxA - idxB;
+  });
+  const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany'];
+  const ks4Units = units.filter(u => !u.title.includes('KS3:')).sort((a, b) => {
+    let idxA = ks4Order.indexOf(a.id);
+    let idxB = ks4Order.indexOf(b.id);
+    if (idxA === -1) idxA = 999;
+    if (idxB === -1) idxB = 999;
+    return idxA - idxB;
+  });
+
+  const renderUnitCard = (unit, index) => {
+    const isUnlocked = true; // Unlocked all topics for developer/admin preview
+    const icon = unit.icon || 'fa-book-open';
+    const color = unit.color || 'var(--primary)';
+    const bg = unit.bg || 'var(--border-glass)';
+    const title = unit.title || unit.id;
+    const desc = unit.desc || unit.enquiry || 'Historical enquiry.';
+    const category = unit.category || 'History';
+    const yearGroup = unit.yearGroup || 'All';
+    const imageUrl = unit.homepage_background || unit.cover_image || '';
+    
+    let displayTitle = title;
+    let displayDesc = unit.enquiry_question || desc;
+    
+    if (title.includes('KS3:') || unit.enquiry_question) {
+      displayTitle = unit.enquiry_question || desc;
+      displayDesc = title;
+    }
+    
+    const bgPos = unit.id === 'edexcel_medicine' ? 'center 10%' : 'center';
+    
+    html += `
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s">
+        ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
+        <div style="position: relative; z-index: 2; padding: 0;">
+          <div class="module-header" style="margin-bottom: 8px;">
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="flex-grow: 1; min-width: 0;">
+              <h4 style="margin: 0 0 4px 0; font-size: 1.1rem; font-weight: 700; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">${displayTitle}</h4>
+              <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: 0.9;">${displayDesc}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
+          <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
+            <i class="fa-solid fa-circle-play"></i> Launch Study App
+          </button>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-title">Mastery Level</span>
-        <span class="stat-val"><i class="fa-solid fa-graduation-cap text-success"></i> ${masteredCount}</span>
+    `;
+  };
+
+  if (ks3Units.length > 0) {
+    html += `
+      <h3 class="section-title" style="margin-top: 2rem;">Key Stage 3</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    ks3Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (ks4Units.length > 0) {
+    html += `
+      <h3 class="section-title">Key Stage 4</h3>
+      <div class="modules-grid">
+    `;
+    ks4Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+export function renderProfileView() {
+  const container = document.getElementById('main-content');
+  const profile = getProfile();
+
+  const totalQuestions = state.allQuestions ? state.allQuestions.length : 0;
+  const boxes = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  
+  if (state.mastery) {
+    Object.values(state.mastery).forEach(entry => {
+      const b = entry.leitnerBox || 1;
+      if (boxes[b] !== undefined) boxes[b]++;
+    });
+  }
+
+  container.innerHTML = `
+    <div class="card max-w-md mx-auto" style="margin-bottom: 2rem;">
+      <h3><i class="fa-solid fa-user-circle"></i> Microsoft SSO Student Profile</h3>
+      <p class="text-muted">Simulated tenant environment: <strong>history-app.local</strong></p>
+      
+      <div class="profile-details">
+        <div class="form-group">
+          <label>Microsoft Account Email</label>
+          <input type="text" class="form-control" value="${profile ? profile.username : ''}" disabled />
+        </div>
+        <div class="form-group">
+          <label>Display Name</label>
+          <input type="text" class="form-control" value="${profile ? profile.name : ''}" disabled />
+        </div>
+        <div class="form-group">
+          <label>Assigned Year Group unit authorization</label>
+          <select id="profile-year-group" class="form-control" onchange="window.updateProfileYearGroup(this.value)">
+            <option value="Year 7" ${profile && profile.yearGroup === 'Year 7' ? 'selected' : ''}>Year 7 (Norman Conquest)</option>
+            <option value="Year 8" ${profile && profile.yearGroup === 'Year 8' ? 'selected' : ''}>Year 8 (Changes 1450-1750)</option>
+            <option value="Year 9" ${profile && profile.yearGroup === 'Year 9' ? 'selected' : ''}>Year 9 (Great War)</option>
+            <option value="GCSE" ${profile && profile.yearGroup === 'GCSE' ? 'selected' : ''}>GCSE (USA 1954-1975)</option>
+            <option value="Admin" ${profile && profile.yearGroup === 'Admin' ? 'selected' : ''}>Admin (Unlock All Modules)</option>
+          </select>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-title">Secured Questions</span>
-        <span class="stat-val"><i class="fa-solid fa-shield-halved text-info"></i> ${securedCount}</span>
+      
+      <div style="margin-top: 24px;">
+        <button class="btn btn-secondary w-full" onclick="window.switchView('dashboard')">Save and Return</button>
       </div>
     </div>
 
     <!-- Leitner Box spaced repetition distribution -->
-    <div class="card leitner-card">
+    <div class="card leitner-card max-w-md mx-auto">
       <h3><i class="fa-solid fa-brain"></i> Memory Spaced Repetition Distribution</h3>
       <div class="leitner-distribution">
         <div class="leitner-bar-wrapper">
@@ -96,113 +216,6 @@ export function renderDashboard() {
           <div class="bar-container"><div class="bar-fill bg-success" style="width: ${totalQuestions ? (boxes[5]/totalQuestions)*100 : 0}%"></div></div>
           <span class="bar-count">${boxes[5]}</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Historical Content Modules -->
-    <h3 class="section-title">Historical Study Enquiries</h3>
-    <div class="modules-grid">
-  `;
-
-  const UNIT_ICONS = {
-    water_and_sanitation: { icon: 'fa-faucet-drip', color: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
-    norman_conquest: { icon: 'fa-shield-halved', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)' },
-    change_1450_1750: { icon: 'fa-flask', color: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
-    great_war: { icon: 'fa-helmet-safety', color: '#b45309', bg: 'rgba(180, 83, 9, 0.1)' },
-    great_war_part2: { icon: 'fa-globe', color: '#0369a1', bg: 'rgba(3, 105, 161, 0.1)' },
-    great_war_v2: { icon: 'fa-star', color: '#eab308', bg: 'rgba(234, 179, 8, 0.1)' },
-    gcse_usa_1954_1975: { icon: 'fa-monument', color: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
-    gcse_middle_east_1945_1995: { icon: 'fa-dove', color: '#0d9488', bg: 'rgba(13, 148, 136, 0.1)' },
-    gcse_middle_east_1945_1995_new: { icon: 'fa-star', color: '#0ea5e9', bg: 'rgba(14, 165, 233, 0.1)' },
-    gcse_elizabethan_england: { icon: 'fa-crown', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' },
-    edexcel_medicine: { icon: 'fa-staff-snake', color: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' }
-  };
-
-  UNITS.forEach(unit => {
-    const isUnlocked = true; // Unlocked all topics for developer/admin preview
-    const iconData = UNIT_ICONS[unit.id] || { icon: 'fa-book-open', color: 'var(--primary)', bg: 'var(--border-glass)' };
-    
-    html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}">
-        <div>
-          <div class="module-header" style="margin-bottom: 12px;">
-            <span class="category-badge">${unit.category}</span>
-            <span class="year-badge">${unit.yearGroup}</span>
-          </div>
-          <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <div style="font-size: 1.3rem; color: ${iconData.color}; background: ${iconData.bg}; padding: 10px; border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.05);">
-              <i class="fa-solid ${iconData.icon}"></i>
-            </div>
-            <div style="flex-grow: 1; min-width: 0;">
-              <h4 style="margin: 0 0 6px 0; font-size: 1.1rem; font-weight: 700; line-height: 1.3;">${unit.title}</h4>
-              <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${unit.desc}</p>
-            </div>
-          </div>
-        </div>
-        
-        ${isUnlocked ? `
-          <div class="module-actions" style="margin-top: 14px;">
-            ${unit.id.startsWith('gcse_') || unit.id === 'water_and_sanitation' || unit.id === 'great_war' || unit.id === 'great_war_part2' || unit.id === 'great_war_v2' || unit.id === 'norman_conquest' || unit.id === 'change_1450_1750' || unit.id === 'cme_new' || unit.id === 'edexcel_medicine' || unit.id === 'eee' ? `
-              <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
-                <i class="fa-solid fa-circle-play"></i> Launch Study App
-              </button>
-            ` : `
-              <button class="btn btn-sm btn-primary" onclick="window.switchView('interactive', '${unit.id}')">
-                <i class="fa-solid fa-gamepad"></i> Interactive Study
-              </button>
-              <button class="btn btn-sm btn-secondary" onclick="window.switchView('timeline', '${unit.id}')">
-                <i class="fa-solid fa-timeline"></i> Timeline
-              </button>
-              <button class="btn btn-sm btn-outline" onclick="window.switchView('booklet', '${unit.id}')">
-                <i class="fa-solid fa-print"></i> PDF/A4 Booklet
-              </button>
-            `}
-          </div>
-        ` : `
-          <div class="locked-indicator">
-            <i class="fa-solid fa-lock"></i> Locked (Target: ${unit.yearGroup})
-          </div>
-        `}
-      </div>
-    `;
-  });
-
-  html += `</div>`;
-  container.innerHTML = html;
-}
-
-export function renderProfileView() {
-  const container = document.getElementById('main-content');
-  const profile = getProfile();
-
-  container.innerHTML = `
-    <div class="card max-w-md mx-auto">
-      <h3><i class="fa-solid fa-user-circle"></i> Microsoft SSO Student Profile</h3>
-      <p class="text-muted">Simulated tenant environment: <strong>history-app.local</strong></p>
-      
-      <div class="profile-details">
-        <div class="form-group">
-          <label>Microsoft Account Email</label>
-          <input type="text" class="form-control" value="${profile ? profile.username : ''}" disabled />
-        </div>
-        <div class="form-group">
-          <label>Display Name</label>
-          <input type="text" class="form-control" value="${profile ? profile.name : ''}" disabled />
-        </div>
-        <div class="form-group">
-          <label>Assigned Year Group unit authorization</label>
-          <select id="profile-year-group" class="form-control" onchange="window.updateProfileYearGroup(this.value)">
-            <option value="Year 7" ${profile && profile.yearGroup === 'Year 7' ? 'selected' : ''}>Year 7 (Norman Conquest)</option>
-            <option value="Year 8" ${profile && profile.yearGroup === 'Year 8' ? 'selected' : ''}>Year 8 (Changes 1450-1750)</option>
-            <option value="Year 9" ${profile && profile.yearGroup === 'Year 9' ? 'selected' : ''}>Year 9 (Great War)</option>
-            <option value="GCSE" ${profile && profile.yearGroup === 'GCSE' ? 'selected' : ''}>GCSE (USA 1954-1975)</option>
-            <option value="Admin" ${profile && profile.yearGroup === 'Admin' ? 'selected' : ''}>Admin (Unlock All Modules)</option>
-          </select>
-        </div>
-      </div>
-      
-      <div style="margin-top: 24px;">
-        <button class="btn btn-secondary w-full" onclick="window.switchView('dashboard')">Save and Return</button>
       </div>
     </div>
   `;

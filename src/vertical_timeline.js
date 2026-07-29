@@ -41,7 +41,8 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             border-radius: 4px;
         }
         .timeline-group-title {
-            position: relative;
+            position: sticky;
+            top: -1px;
             margin: 30px 0 20px 0;
             padding: 10px 20px;
             background: var(--primary);
@@ -50,7 +51,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             font-size: 1.25rem;
             font-weight: bold;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            z-index: 2;
+            z-index: 100;
         }
         .timeline-event {
             position: relative;
@@ -170,7 +171,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             const lessonObj = (targetLessonId && unitData && unitData.lessons) ? unitData.lessons.find(l => l.id === targetLessonId) : null;
             if (lessonObj) {
                 html += `
-                <div class="timeline-lesson-banner" style="background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc; z-index: 2; position: relative;">
+                <div class="timeline-lesson-banner" style="position: sticky; top: -1px; z-index: 100; background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc;">
                     <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title || group.title}</div>
                     <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" onclick="window.openTimelineLesson('${lessonObj.id}')"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                 </div>
@@ -205,7 +206,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
                 const lessonObj = unitData.lessons.find(l => l.id === evt.lesson_banner_id);
                 if (lessonObj) {
                     html += `
-                    <div class="timeline-lesson-banner" style="background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc; z-index: 2; position: relative;">
+                    <div class="timeline-lesson-banner" style="position: sticky; top: -1px; background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc; z-index: 100;">
                         <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title}</div>
                         <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" onclick="window.openTimelineLesson('${lessonObj.id}')"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                     </div>

@@ -46,23 +46,24 @@ export function initializeApp(unitData) {
   const style = document.createElement('style');
   style.textContent = `
     .phase-card {
-      background: #ffffff;
-      border: 1.5px solid #e2e8f0;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
       padding: 24px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     }
     .phase-title {
-      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
       font-weight: 700;
       color: #0f172a;
       margin-top: 0;
       margin-bottom: 20px;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid rgba(0,0,0,0.05);
       padding-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
     .narrative-chunk {
       background: #f8fafc;
@@ -158,11 +159,13 @@ export function initializeApp(unitData) {
       display: block;
     }
     .do-now-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 15px;
-      margin-bottom: 15px;
+      background: rgba(248, 250, 252, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     .do-now-card .answer {
       display: none;
@@ -788,9 +791,9 @@ export function initializeApp(unitData) {
 
     contentArea.innerHTML = `
       <div style="text-align: center; padding-bottom: 50px;">
-        <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;">${unitData.title}</h1>
-        <h2 style="margin-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
-          Unit Enquiry: <i>${unitData.enquiry || 'What can we learn from this period in history?'}</i>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+        <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+          ${unitData.title}
         </h2>
         
         ${Array.isArray(unitData.cover_image) ? `
@@ -907,7 +910,8 @@ export function initializeApp(unitData) {
     if (unitData.specification_file) {
       const specLink = document.createElement('a');
       specLink.className = 'lesson-link';
-      specLink.innerHTML = '<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Exam Specification';
+      const specTitle = (unitData.title && unitData.title.includes('KS3')) ? 'Curriculum Overview' : 'Exam Specification';
+      specLink.innerHTML = `<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> ${specTitle}`;
       specLink.href = '#';
       specLink.onclick = (e) => {
         e.preventDefault();
@@ -922,18 +926,20 @@ export function initializeApp(unitData) {
       navContainer.appendChild(specLink);
     }
 
-    // Exam Masterclass Guide Tab
-    const guideLink = document.createElement('a');
-    guideLink.className = 'lesson-link';
-    guideLink.innerHTML = '<i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Exam Masterclass Guide';
-    guideLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-      guideLink.classList.add('active');
-      renderExamGuide();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    navContainer.appendChild(guideLink);
+    // Exam Masterclass Guide Tab - ONLY for KS4 units
+    if (!unitData.title || !unitData.title.includes('KS3')) {
+      const guideLink = document.createElement('a');
+      guideLink.className = 'lesson-link';
+      guideLink.innerHTML = '<i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Exam Masterclass Guide';
+      guideLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        guideLink.classList.add('active');
+        renderExamGuide();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(guideLink);
+    }
 
     // Thematic Matrix Tab (Change & Continuity) - Only for Medicine
     if (window.currentUnitId === 'edexcel_medicine') {
@@ -992,7 +998,7 @@ export function initializeApp(unitData) {
 
     const examPracticeLink = document.createElement('a');
     examPracticeLink.className = 'lesson-link';
-    examPracticeLink.innerHTML = '✍️ Assessments & Exam Practice';
+    examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
     examPracticeLink.style.marginTop = '15px';
     examPracticeLink.style.color = '#60a5fa'; // Blue-400
     examPracticeLink.addEventListener('click', (e) => {
@@ -1025,16 +1031,18 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    const cheatSheetLink = document.createElement('a');
-    cheatSheetLink.className = 'lesson-link';
-    cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
-    cheatSheetLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/cheat_sheet.html` : 'cheat_sheet.html';
-    cheatSheetLink.target = '_blank';
-    cheatSheetLink.style.marginTop = '15px';
-    cheatSheetLink.style.border = '2px dashed #cbd5e1';
-    cheatSheetLink.style.background = '#eff6ff';
-    cheatSheetLink.style.color = '#1e3a8a';
-    navContainer.appendChild(cheatSheetLink);
+    if (window.currentUnitId !== 'water_and_sanitation') {
+      const cheatSheetLink = document.createElement('a');
+      cheatSheetLink.className = 'lesson-link';
+      cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
+      cheatSheetLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/cheat_sheet.html` : 'cheat_sheet.html';
+      cheatSheetLink.target = '_blank';
+      cheatSheetLink.style.marginTop = '15px';
+      cheatSheetLink.style.border = '2px dashed #cbd5e1';
+      cheatSheetLink.style.background = '#eff6ff';
+      cheatSheetLink.style.color = '#1e3a8a';
+      navContainer.appendChild(cheatSheetLink);
+    }
 
 
   }
@@ -1075,25 +1083,44 @@ export function initializeApp(unitData) {
     window.currentActiveLesson = lesson;
     
     // Tabs container logic
+    const heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+    const lessonNumberText = (lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}` : 'Lesson';
+    
     let html = `<div class="lesson-content">`;
     
+    // Sticky Header (Now at the very top so it sticks directly under the blue banner)
+    html += `
+      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 15px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); border-radius: 0 0 8px 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
+          ${(lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}: ` : ''}${lesson.title}
+        </h4>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: rgba(255,255,255,0.8); color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: rgba(226, 232, 240, 0.8); border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+        </div>
+      </div>
+    `;
+    
+    // Full-Bleed Hero Image
+    html += `
+      <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') center/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
+          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonNumberText}</span>
+          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 2.5rem; margin: 0.5rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">${lesson.title}</h2>
+        </div>
+      </div>
+    `;
+
     if (unitEnquiryText) {
       html += `
-        <div style="background: linear-gradient(135deg, #1e3a8a, #312e81); color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-size: 1.15rem; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid #a5b4fc;">
-          <i class="fa-solid fa-lightbulb" style="color: #fde047; margin-right: 10px;"></i> ${unitEnquiryText}
+        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #1e3a8a; padding: 15px 20px; border-radius: 12px; margin-bottom: 2rem; text-align: center; font-size: 1.15rem; font-family: 'Playfair Display', serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.5);">
+          <i class="fa-solid fa-lightbulb" style="color: #d97706; margin-right: 10px;"></i> ${unitEnquiryText}
         </div>
       `;
     }
-
     html += `
-      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 0; background: transparent;">
-        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600;">${lesson.title}</h4>
-        <div style="display: flex; gap: 8px; flex-shrink: 0;">
-          <button class="btn btn-primary" style="padding: 4px 10px; font-size: 0.85rem; background: var(--accent-red); border-color: var(--accent-red);" onclick="openDebateModal()"><i class="fa-solid fa-comments"></i> Class Debate</button>
-          <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.85rem;" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
-        </div>
-      </div>
-      <div id="progress-container" style="background: #e2e8f0; height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden;">
+      <div id="progress-container" style="background: rgba(226,232,240,0.5); height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden; backdrop-filter: blur(5px);">
         <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
       </div>
     `;
@@ -1138,6 +1165,39 @@ export function initializeApp(unitData) {
     };
 
 
+    if (lesson.teacher_notes) {
+      let notesHtml = '';
+      if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
+        const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
+        const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
+        const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+          </div>
+        `).join('');
+        notesHtml = primerText + sourceContext + objectivesHtml;
+      } else if (Array.isArray(lesson.teacher_notes)) {
+        notesHtml = lesson.teacher_notes.map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+          </div>
+        `).join('');
+      } else {
+        notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
+      }
+
+      html += `
+        <div class="teacher-note">
+          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+          ${notesHtml}
+        </div>
+      `;
+    }
+
     // ==========================================
     // TAB 1: PREPARATION
     // ==========================================
@@ -1147,9 +1207,6 @@ export function initializeApp(unitData) {
       let src = lesson.primary_source.src;
       html += `
         <div class="phase-card">
-          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">${lesson.learning_objective || 'Visual Source & Hook'}</div>
-          </div>
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
             <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
             <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
@@ -1213,7 +1270,7 @@ export function initializeApp(unitData) {
             <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
             <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
             <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
-            ${ev.img ? `<img src="${getAssetUrl(ev.img)}" style="width: 100%; border-radius: 4px; margin-top: 10px; border: 1px solid #e2e8f0;">` : ''}
+            ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
           </div>
         `;
       });
@@ -1341,44 +1398,13 @@ export function initializeApp(unitData) {
       `;
     }
 
-    if (lesson.teacher_notes) {
-      let notesHtml = '';
-      if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
-        const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
-        const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
-        const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
-          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
-            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
-          </div>
-        `).join('');
-        notesHtml = primerText + sourceContext + objectivesHtml;
-      } else if (Array.isArray(lesson.teacher_notes)) {
-        notesHtml = lesson.teacher_notes.map(note => `
-          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
-            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
-          </div>
-        `).join('');
-      } else {
-        notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
-      }
 
-      html += `
-        <div class="teacher-note">
-          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
-          ${notesHtml}
-        </div>
-      `;
-    }
 
     if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
       let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
       html += `
         <div class="phase-card">
-          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">${enquiryTitle}</div>
           </div>
       `;
@@ -1472,11 +1498,16 @@ export function initializeApp(unitData) {
           simplifyBtn = `<button class="btn btn-secondary no-print" onclick="window.toggleSimplify(this)" data-original="${encodeURIComponent(styledContent)}" data-simplified="${encodeURIComponent(l4StyledContent)}" style="padding: 6px 10px; flex-shrink: 0; margin-left: 5px; color: #047857;" title="Simplify Text"><i class="fa-solid fa-child-reaching"></i></button>`;
         }
 
+        let themeHeadingHtml = '';
+        if (block.theme_heading) {
+          themeHeadingHtml = `<h4 style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
+        }
+
         html += `
           <div class="standard-narrative-container">
             <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
               <div class="para-number">${index + 1}</div>
-              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${styledContent}</div>
+              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
               <div style="display: flex; align-items: flex-start;">
                 <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
                 ${simplifyBtn}
@@ -1781,7 +1812,7 @@ export function initializeApp(unitData) {
       let gcseHtml = `
         <div class="phase-card">
           <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> GCSE Exam Practice</div>
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> ${window.unitData && window.unitData.title && window.unitData.title.includes('KS3') ? 'Assessment Practice' : 'Assessment Practice'}</div>
             <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
           </div>
       `;

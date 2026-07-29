@@ -1,8 +1,15 @@
 export const unitData = {
-    "specification_file": "/data/edexcel_medicine_spec.json",
+    "specification_file": "/data/great_war_overview.json",
+    "printable_workbooks": [
+
+      { "title": "Unit Workbook", "url": "workbook.html" }
+
+    ],
+
     "lessons": [
         {
             "title": "Lesson 1: Why were young men so desperat...",
+    "homepage_background": "/images/bg_great_war_part2.jpg",
             "narrative": [
                 "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?",
                 "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",

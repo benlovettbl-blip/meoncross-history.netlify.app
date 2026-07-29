@@ -391,7 +391,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
   let hasExamTask = lesson.gcse_task || (lesson.extended && lesson.extended.question);
   if (hasExamTask) {
     html += `<div style="page-break-before: always;">`;
-    html += `<h2 style="margin-top: 0;">GCSE Exam Practice</h2>`;
+    html += `<h2 style="margin-top: 0;">Assessment Practice</h2>`;
 
     const renderLines = (text) => {
         if (text.includes("16 marks")) {

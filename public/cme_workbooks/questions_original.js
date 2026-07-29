@@ -210,11 +210,11 @@ const QUIZ_DATA = [
       {
         "id": "subtopic_1_2",
         "embedVideo": "https://youtu.be/fXk_n_ww6GU",
-        "title": "Topic 1.2: Aftermath of the 1948ÔÇô49 war",
+        "title": "Topic 1.2: Aftermath of the 1948–49 war",
         "standard": [
           {
             "id": "q_1_2_s1",
-            "question": "Which Arab country annexed the West Bank and East Jerusalem following the 1948ÔÇô49 war?",
+            "question": "Which Arab country annexed the West Bank and East Jerusalem following the 1948–49 war?",
             "answer": "Jordan",
             "explanation": "King Abdullah formally annexed the territory in 1950 and granted Jordanian citizenship to its Palestinian residents, a move that angered other Arab nations.",
             "year": 1950,
@@ -1820,7 +1820,7 @@ const EXAM_SKILLS_DATA = {
     "question": "Explain the importance of UN Resolution 181 for the creation of Israel.",
     "clue1": "Think about the international legal recognition it gave to the Zionist cause.",
     "clue2": "Think about how the Arab rejection of it triggered the 1948 civil war.",
-    "answer": "<strong>Point 1:</strong> UN Resolution 181 was important because it provided international legal backing for a Jewish state. By voting to partition Palestine and allocate 55% of the land to the Jews, the international community officially endorsed the Zionist dream, giving David Ben-Gurion the legitimacy to declare the State of Israel in May 1948.<br><br><strong>Point 2:</strong> It was also important because it directly triggered the 1948ÔÇô49 Arab-Israeli War. Because the Arab states and Palestinian leadership completely rejected the partition plan as unfair, violence immediately broke out, forcing the Jewish forces to rapidly organise and conquer their designated territory to ensure the new state survived."
+    "answer": "<strong>Point 1:</strong> UN Resolution 181 was important because it provided international legal backing for a Jewish state. By voting to partition Palestine and allocate 55% of the land to the Jews, the international community officially endorsed the Zionist dream, giving David Ben-Gurion the legitimacy to declare the State of Israel in May 1948.<br><br><strong>Point 2:</strong> It was also important because it directly triggered the 1948–49 Arab-Israeli War. Because the Arab states and Palestinian leadership completely rejected the partition plan as unfair, violence immediately broke out, forcing the Jewish forces to rapidly organise and conquer their designated territory to ensure the new state survived."
   },
   "1.2a": {
     "topicCode": "1.2",
@@ -1910,7 +1910,7 @@ const EXAM_SKILLS_DATA = {
     "answer": "<strong>Point 1:</strong> Kissinger's shuttle diplomacy was important because it succeeded in separating hostile armies after the 1973 Yom Kippur War. By flying between Tel Aviv, Cairo, and Damascus, Kissinger brokered disengagement treaties (like Sinai I and Sinai II), reducing the risk of a new war.<br><br><strong>Point 2:</strong> It was also important because it brought Egypt into the American diplomatic orbit, bypassing the Soviets. This process reopened the Suez Canal in 1975 and established the trust and diplomatic channels that directly laid the groundwork for the 1978 Camp David Accords."
   },
   "p_2022_q3_a": {
-    "question": "Explain the importance of territorial changes in the aftermath of the 1948ÔÇô49 war for Palestinians.",
+    "question": "Explain the importance of territorial changes in the aftermath of the 1948–49 war for Palestinians.",
     "clue1": "Detail how Israel expanded beyond the UN partition borders, leaving no land for a Palestinian state.",
     "clue2": "Detail how Jordan annexed the West Bank and Egypt took Gaza, creating 700,000 stateless refugees.",
     "answer": "<strong>Point 1:</strong> The territorial changes were important because they completely prevented the creation of an independent Palestinian state. Israel captured 78% of former PalestineÔÇöwell beyond the 55% proposed by UN Resolution 181ÔÇöleaving no continuous territory under Palestinian control.<br><br><strong>Point 2:</strong> They were also important because they led to the fragmentation and displacement of the population. Jordan annexed the West Bank and East Jerusalem, Egypt occupied Gaza, and over 700,000 Palestinians became stateless refugees, scattered in camps across neighboring countries under UNRWA care."
@@ -2273,7 +2273,7 @@ const NARRATIVE_SKILLS_DATA = {
       1,
       2
     ],
-    "model": "<strong>Paragraph 1: Post-War Influx and the Law of Return (1949ÔÇô50)</strong><br>In the immediate aftermath of the 1948ÔÇô49 war, the newly established state of Israel faced the urgent task of defending and consolidating its borders. Under the armistice agreements of 1949, Israel captured 78% of former Palestine. <strong>However, these new borders</strong> were long, poorly defined, and surrounded by hostile Arab nations, which <strong>triggered</strong> frequent cross-border infiltrations, prompting Israel to pass the Law of Return in 1950 giving any Jew the right to immigrate.<br><br><strong>Paragraph 2: Economic Strain and Austerity (1950ÔÇô52)</strong><br><strong>Subsequently</strong>, the arrival of hundreds of thousands of new citizens placed an overwhelming strain on the country's weak economy. To manage this population influx, the government was <strong>forced</strong> to implement a strict austerity regime (Tzena), rationing food and fuel. <strong>To house the families</strong>, Israel constructed temporary tent camps and began the rapid development of new towns in rural areas.<br><br><strong>Paragraph 3: Financial Aid and Consolidation (1952ÔÇô54)</strong><br><strong>Finally</strong>, the economic crisis was slowly stabilized through massive financial injections from the West. The USA provided critical loans, and in 1952, Israel signed a highly controversial Reparations Agreement with West Germany. <strong>This influx of capital enabled</strong> the government to replace the temporary camps with permanent housing, build industrial infrastructure, and modernize the IDF, <strong>ensuring</strong> Israel's long-term survival."
+    "model": "<strong>Paragraph 1: Post-War Influx and the Law of Return (1949ÔÇô50)</strong><br>In the immediate aftermath of the 1948–49 war, the newly established state of Israel faced the urgent task of defending and consolidating its borders. Under the armistice agreements of 1949, Israel captured 78% of former Palestine. <strong>However, these new borders</strong> were long, poorly defined, and surrounded by hostile Arab nations, which <strong>triggered</strong> frequent cross-border infiltrations, prompting Israel to pass the Law of Return in 1950 giving any Jew the right to immigrate.<br><br><strong>Paragraph 2: Economic Strain and Austerity (1950ÔÇô52)</strong><br><strong>Subsequently</strong>, the arrival of hundreds of thousands of new citizens placed an overwhelming strain on the country's weak economy. To manage this population influx, the government was <strong>forced</strong> to implement a strict austerity regime (Tzena), rationing food and fuel. <strong>To house the families</strong>, Israel constructed temporary tent camps and began the rapid development of new towns in rural areas.<br><br><strong>Paragraph 3: Financial Aid and Consolidation (1952ÔÇô54)</strong><br><strong>Finally</strong>, the economic crisis was slowly stabilized through massive financial injections from the West. The USA provided critical loans, and in 1952, Israel signed a highly controversial Reparations Agreement with West Germany. <strong>This influx of capital enabled</strong> the government to replace the temporary camps with permanent housing, build industrial infrastructure, and modernize the IDF, <strong>ensuring</strong> Israel's long-term survival."
   },
   "pn5": {
     "keywords": [
@@ -2417,7 +2417,7 @@ const PAST_PAPERS_DATA = [
           "id": "2020_q3_a",
           "title": "The importance of UN Resolution 181 for the creation of Israel.",
           "clue": "Explain how the partition plan gave the Zionist movement international legitimacy, but provoked immediate civil war because Arab states entirely rejected it.",
-          "model": "<strong>Point 1:</strong> UN Resolution 181 was important because it provided international legal backing for a Jewish state. By voting to partition Palestine and allocate 55% of the land to the Jews, the international community officially endorsed the Zionist dream, giving David Ben-Gurion the legitimacy to declare the State of Israel in May 1948.<br><br><strong>Point 2:</strong> It was also important because it directly triggered the 1948ÔÇô49 Arab-Israeli War. Because the Arab states and Palestinian leadership completely rejected the partition plan as unfair, violence immediately broke out, forcing the Jewish forces to rapidly organise and conquer their designated territory to ensure the new state survived."
+          "model": "<strong>Point 1:</strong> UN Resolution 181 was important because it provided international legal backing for a Jewish state. By voting to partition Palestine and allocate 55% of the land to the Jews, the international community officially endorsed the Zionist dream, giving David Ben-Gurion the legitimacy to declare the State of Israel in May 1948.<br><br><strong>Point 2:</strong> It was also important because it directly triggered the 1948–49 Arab-Israeli War. Because the Arab states and Palestinian leadership completely rejected the partition plan as unfair, violence immediately broke out, forcing the Jewish forces to rapidly organise and conquer their designated territory to ensure the new state survived."
         },
         {
           "id": "2020_q3_b",
@@ -2460,7 +2460,7 @@ const PAST_PAPERS_DATA = [
       "choices": [
         {
           "id": "2022_q3_a",
-          "title": "The importance of territorial changes in the aftermath of the 1948ÔÇô49 war for Palestinians.",
+          "title": "The importance of territorial changes in the aftermath of the 1948–49 war for Palestinians.",
           "clue": "Detail how Israel expanded beyond the UN partition borders, leaving no land for an independent Palestinian state and creating 700,000 stateless refugees.",
           "model": "<strong>Point 1:</strong> The territorial changes were important because they completely prevented the creation of an independent Palestinian state. Israel captured 78% of former PalestineÔÇöwell beyond the 55% proposed by UN Resolution 181ÔÇöleaving no continuous territory under Palestinian control.<br><br><strong>Point 2:</strong> They were also important because they led to the fragmentation and displacement of the population. Jordan annexed the West Bank and East Jerusalem, Egypt occupied Gaza, and over 700,000 Palestinians became stateless refugees, scattered in camps across neighboring countries under UNRWA care."
         },
@@ -2497,7 +2497,7 @@ const PAST_PAPERS_DATA = [
         "Israeli Defence Forces (IDF)"
       ],
       "clue": "Start with the territorial gains from the 1948 war. Explain how this resulted in long, hostile borders, meaning Israel had to rapidly consolidate its military (the IDF) and pass the Law of Return to rapidly increase its population for defence.",
-      "model": "<strong>Paragraph 1: Border Insecurity and the IDF's Creation (1949ÔÇô50)</strong><br>In the immediate aftermath of the 1948ÔÇô49 war, the newly established state of Israel faced the urgent task of defending and consolidating its borders. Under the armistice agreements of 1949, Israel captured 78% of the former Mandate territory, which was significantly more than the UN partition plan. <strong>However, these new borders</strong> were long, poorly defined, and surrounded by hostile Arab nations, which <strong>triggered</strong> frequent cross-border infiltrations. In response, David Ben-Gurion created the Israeli Defence Forces (IDF) to unify all paramilitary groups under a single national command to secure the borders.<br><br><strong>Paragraph 2: Mass Immigration, the Law of Return, and Austerity (1950ÔÇô52)</strong><br><strong>Subsequently</strong>, the arrival of hundreds of thousands of new citizens placed an overwhelming strain on the country's weak economy. To manage this population influx, the government passed the Law of Return in 1950, granting any Jew worldwide the right to settle and receive citizenship, which doubled the population. <strong>To survive the economic strain</strong>, Israel was <strong>forced</strong> to implement a strict austerity regime (Tzena), rationing food and fuel, and housing families in temporary tent camps.<br><br><strong>Paragraph 3: Financial Consolidation and Stability (1952ÔÇô54)</strong><br><strong>Finally</strong>, the economic crisis was slowly stabilized through massive financial injections from the West. The USA provided critical loans, and in 1952, Israel signed a highly controversial Reparations Agreement with West Germany. <strong>This influx of capital enabled</strong> the government to replace the temporary camps with permanent housing, build industrial infrastructure, and modernize the IDF, <strong>ensuring</strong> Israel's long-term survival."
+      "model": "<strong>Paragraph 1: Border Insecurity and the IDF's Creation (1949ÔÇô50)</strong><br>In the immediate aftermath of the 1948–49 war, the newly established state of Israel faced the urgent task of defending and consolidating its borders. Under the armistice agreements of 1949, Israel captured 78% of the former Mandate territory, which was significantly more than the UN partition plan. <strong>However, these new borders</strong> were long, poorly defined, and surrounded by hostile Arab nations, which <strong>triggered</strong> frequent cross-border infiltrations. In response, David Ben-Gurion created the Israeli Defence Forces (IDF) to unify all paramilitary groups under a single national command to secure the borders.<br><br><strong>Paragraph 2: Mass Immigration, the Law of Return, and Austerity (1950ÔÇô52)</strong><br><strong>Subsequently</strong>, the arrival of hundreds of thousands of new citizens placed an overwhelming strain on the country's weak economy. To manage this population influx, the government passed the Law of Return in 1950, granting any Jew worldwide the right to settle and receive citizenship, which doubled the population. <strong>To survive the economic strain</strong>, Israel was <strong>forced</strong> to implement a strict austerity regime (Tzena), rationing food and fuel, and housing families in temporary tent camps.<br><br><strong>Paragraph 3: Financial Consolidation and Stability (1952ÔÇô54)</strong><br><strong>Finally</strong>, the economic crisis was slowly stabilized through massive financial injections from the West. The USA provided critical loans, and in 1952, Israel signed a highly controversial Reparations Agreement with West Germany. <strong>This influx of capital enabled</strong> the government to replace the temporary camps with permanent housing, build industrial infrastructure, and modernize the IDF, <strong>ensuring</strong> Israel's long-term survival."
     },
     "q3": {
       "type": "importance_choice",
@@ -2585,7 +2585,7 @@ const PAST_PAPERS_DATA = [
         },
         {
           "id": "2025_q1_b",
-          "title": "Q1(b): Explain one consequence of territorial changes following the 1948ÔÇô49 Arab-Israeli war. (4 marks)",
+          "title": "Q1(b): Explain one consequence of territorial changes following the 1948–49 Arab-Israeli war. (4 marks)",
           "clue": "Think about how the new borders meant no Palestinian state was created, leading to 700,000 stateless refugees.",
           "model": "One consequence was the mass displacement of over 700,000 Palestinian Arabs (the Nakba), who fled their homes and became stateless refugees in neighbouring countries like Jordan and Lebanon. Additionally, Israel expanded its territory by capturing 78% of historic Palestine, while Jordan annexed the West Bank and Egypt took control of Gaza, leaving the Palestinians without a homeland."
         }
@@ -2637,7 +2637,7 @@ const PAST_PAPERS_DATA = [
       "subQuestions": [
         {
           "id": "mock_paper_1_q1_a",
-          "title": "Q1(a): Explain one consequence of US aid to Israel following the 1948ÔÇô49 war. (4 marks)",
+          "title": "Q1(a): Explain one consequence of US aid to Israel following the 1948–49 war. (4 marks)",
           "clue": "Think about the solidification of Israel's military dominance (the IDF) and how this deterred immediate conventional invasions by Arab states, though it also deepened Arab hostility.",
           "model": "One consequence was the solidification of Israel's long-term military dominance in the region. The financial and military assistance from the United States enabled Israel to build a highly modern, professional army (the IDF) and absorb hundreds of thousands of immigrants. This military superiority deterred immediate large-scale conventional invasions by Arab states, though it also deepened Arab hostility as they viewed Israel as a US imperialist outpost."
         },
@@ -2723,7 +2723,7 @@ const PAST_PAPERS_DATA = [
       "choices": [
         {
           "id": "mock_paper_2_q3_a",
-          "title": "The importance of the refugee status of Palestinian Arabs for the aftermath of the 1948ÔÇô49 war.",
+          "title": "The importance of the refugee status of Palestinian Arabs for the aftermath of the 1948–49 war.",
           "clue": "Explain how the permanent displacement of 700,000 Palestinians created an enduring humanitarian crisis in neighboring states and catalyzed the rise of independent guerrilla resistance.",
           "model": "<strong>Point 1:</strong> The refugee status of over 700,000 Palestinians was important because it created a permanent humanitarian and political crisis in neighboring Arab states. Fleeing into Gaza, the West Bank, Jordan, and Lebanon, they were housed in squalid, temporary camps under UNRWA care, serving as a constant source of regional instability and anti-Israel sentiment.<br><br><strong>Point 2:</strong> It was also important because it hardened Palestinian national identity and opposition to Israel. Denied the right of return by Israel and left stateless, the refugees formed the core of the Palestinian resistance movement, leading directly to the creation of independent guerrilla groups like Fatah to fight for liberation."
         },
@@ -2839,7 +2839,7 @@ const PAST_PAPERS_DATA = [
       "choices": [
         {
           "id": "mock_paper_4_q3_a",
-          "title": "The importance of the creation of the Israeli Defence Forces and the Law of Return for the aftermath of the 1948ÔÇô49 war.",
+          "title": "The importance of the creation of the Israeli Defence Forces and the Law of Return for the aftermath of the 1948–49 war.",
           "clue": "Explain how the IDF consolidated militias under a single command to secure the borders, and how the Law of Return doubled the population for economic and military defense.",
           "model": "<strong>Point 1:</strong> The creation of the IDF in 1948 was important because it consolidated separate Jewish militias (like Haganah and Irgun) under a single national command. This prevented internal political divisions and professionalized the army, ensuring Israel's military survival during the war.<br><br><strong>Point 2:</strong> The Law of Return (1950) was important because it sparked massive demographic expansion by giving any Jew in the world the right to gain Israeli citizenship. This influx of immigrants provided the essential manpower needed to rebuild the economy and populate border areas to defend the state."
         },

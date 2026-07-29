@@ -13,7 +13,8 @@ export default defineConfig({
     }
   },
   server: {
-    port: 3001,
+    port: 3003,
+    host: true,
     open: true,
     watch: {
       ignored: ['**/public/assets/infographics/**']

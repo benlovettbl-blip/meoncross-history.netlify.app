@@ -1,10 +1,41 @@
 {
   "data": {
+    "title": "Paper 1: Medicine Through Time with the Western Front",
+    "enquiry_question": "From humours to DNA: What drove the biggest breakthroughs in medical history?",
+    "debatePrompts": [
+      {
+        "title": "Medieval Medicine: Faith vs Reason",
+        "prompt": "<strong>Roleplay:</strong> You are a physician in 1348. The Black Death has reached your town. The Mayor wants to know if he should ban foreigners or pay for extra church services. What is your advice and how do you justify it using the ideas of the time?"
+      },
+      {
+        "title": "The Renaissance: Challenging the Ancients",
+        "prompt": "<strong>Debate:</strong> 'Vesalius’s work on anatomy was brilliant, but completely useless for saving lives.' Do you agree? Argue your case using evidence of how surgery actually worked in the 1500s."
+      },
+      {
+        "title": "Industrial Revolution: The Germ Theory",
+        "prompt": "<strong>Roleplay:</strong> You are Louis Pasteur in 1861. A skeptical doctor tells you that disease causes germs to spontaneously generate. How do you explain your swan-neck flask experiment to prove him wrong?"
+      },
+      {
+        "title": "Industrial Public Health",
+        "prompt": "<strong>Debate:</strong> Did John Snow’s work on the Broad Street pump actually change government attitudes to public health, or was it the 'Great Stink' of 1858 that finally forced action? Pick a side."
+      },
+      {
+        "title": "Modern Medicine: The Penicillin Story",
+        "prompt": "<strong>Roleplay:</strong> You are Howard Florey asking the US government for funding in 1941 to mass-produce Penicillin. You need to convince them that this mold is worth millions of dollars of investment during a world war. Give your pitch."
+      },
+      {
+        "title": "The Western Front",
+        "prompt": "<strong>Debate:</strong> 'War is the ultimate catalyst for medical progress.' Using evidence from the trench systems and casualty clearing stations of WW1, argue for or against this statement."
+      }
+    ],
+    "homepage_background": "/images/vesalius_muscle_men.jpg",
+    "category": "Edexcel GCSE",
+    "desc": "Paper 1",
     "specification_file": "/data/edexcel_medicine_spec.json",
     "mock_exams": [
       {
         "id": "mock_2025_clone",
-        "title": "Paper 1: Mock Exam (Adapted 2025)",
+        "title": "Edexcel GCSE: Medicine Through Time with the Western Front",
         "paper_reference": "1HI0/11",
         "total_marks": 52,
         "time_minutes": 80,
@@ -383,7 +414,6 @@
         }
       }
     ],
-    "title": "Edexcel Medicine Through Time with Western Front",
     "enquiry": "How has medicine changed from c1250 to the modern day?",
     "workbooks": [
       {
@@ -591,7 +621,8 @@
               ],
               "correct_index": 1,
               "explanation": "Galen was a Roman pagan, but his 'Design Theory' (that every part of the body had a purpose) perfectly matched the Christian belief that God created humanity."
-            }
+            },
+            "theme_heading": "Hippocrates:"
           },
           {
             "text": "**The Continuing Influence of Galen**\n\nGalen, an Ancient Roman physician, developed Hippocrates' ideas further by creating the Theory of Opposites (for example, treating an excess of 'cold' phlegm with 'hot' peppers).\n\nThe Church fiercely promoted Galen's ideas because he wrote that the body was perfectly designed with a specific purpose, which perfectly fit the Christian belief in a single Creator.\n\nBecause the Church controlled the universities, Galen's texts became the absolute foundation of medical training. Medical students relied on a core textbook called the Articella, which included translations of Galen and Hippocrates, alongside the work of the 9th-century Persian doctor Hunayn ibn-Is'haq. Training also heavily emphasized the logical works of the Greek philosopher Aristotle and the Persian physician Avicenna. In medieval universities, 'book learning' and being widely read was considered a far greater sign of a physician's intelligence than actual hands-on clinical experience treating patients. Discovering new ideas through human dissection was strictly discouraged because the Church taught the body needed to be buried whole. When rare dissections of executed criminals did occur, the university physician sat high up in a chair far away from the body, simply reading Galen's texts aloud while an untrained barber-surgeon did the actual cutting. If any internal organ on the table physically contradicted Galen's descriptions, the physician would explain it away by claiming the criminal's body was imperfect or deformed, leaving Galen's authority completely unchallenged. Galen's absolute authority meant that his sometimes incorrect anatomical ideas went unchallenged for over a thousand years, making it almost impossible for new medical discoveries to be made during the Middle Ages.",
@@ -609,7 +640,8 @@
             ]
           },
           {
-            "text": "[Key Individual: Claudius Galen]"
+            "text": "[Key Individual: Claudius Galen]",
+            "theme_heading": "Galen: Medical Pioneer"
           },
           {
             "text": "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part."
@@ -1444,7 +1476,8 @@
             "text": "**The Medical Renaissance Begins**\n\nDuring the Renaissance, there was a revival of learning and a new desire to question old ideas. The invention of the printing press in 1440 meant that books could be copied quickly and cheaply, reducing the Church's control over information. At the same time, the Royal Society was founded in 1660 to promote scientific experiments and share new discoveries across Europe.\n\nOne of the biggest changes was in anatomy. Andreas Vesalius began dissecting human bodies himself and proved that Galen had made over 300 mistakes (because Galen had only dissected animals). Vesalius published his highly accurate anatomy book, 'The Fabric of the Human Body', in 1543. However, despite these breakthroughs in anatomy, people still didn't know what caused disease, and the theory of the Four Humours remained widely believed."
           },
           {
-            "text": "[Key Individual: Andreas Vesalius]"
+            "text": "[Key Individual: Andreas Vesalius]",
+            "theme_heading": "Vesali"
           },
           {
             "text": "**Continuity and Change in Explanations**\n\nThe Theory of the Four Humours was gradually discredited by physicians as new anatomical discoveries proved Galen wrong, but the general public still widely believed it.\n\nThe belief that God sent disease declined as the Catholic Church lost power and society became more secular, though people still turned to religion in terror during major epidemics like the Great Plague of 1665.\n\nMiasma (bad air) remained a highly popular rational explanation for disease, especially in growing, dirty cities. Because the actual scientific cause of disease (germs) had not yet been discovered, everyday medical treatment experienced very little change, even though the old theories were finally being questioned.",
@@ -1478,7 +1511,8 @@
             }
           },
           {
-            "text": "[Key Individual: Thomas Sydenham]"
+            "text": "[Key Individual: Thomas Sydenham]",
+            "theme_heading": "Thomas Sydenham: Pioneer"
           },
           {
             "text": "**The Influence of the Printing Press**\n\nInvented by Johannes Gutenberg in c.1440, the printing press allowed books to be mass-produced quickly, accurately, and cheaply.\n\nCrucially, it took book production out of the hands of the monks and the Church, meaning religious authorities could no longer censor ideas they disapproved of. The printing press revolutionized medicine because it allowed ground-breaking, anti-Galen discoveries (like the anatomical drawings of Vesalius) to spread rapidly across Europe before traditional authorities could stop them.",
@@ -2043,7 +2077,8 @@
             "text": "**William Harvey and the Great Plague**\n\nIn 1628, William Harvey made one of the most important discoveries in medical history: he proved that blood circulates around the body, pumped by the heart. He completely destroyed Galen's theory that blood was constantly being made in the liver and burned up by the muscles. Harvey proved this by dissecting cold-blooded animals and experimenting on human veins.\n\nHowever, in 1665, the Great Plague struck London, proving that while anatomical knowledge had improved, prevention of disease had not. People still blamed miasma and the planets, though local governments did take stronger action this time. The Mayor of London ordered victims to be locked in their houses with a red cross painted on the door, and banned public gatherings. Yet, just like in 1348, the true cause (fleas on rats) remained unknown."
           },
           {
-            "text": "[Key Individual: William Harvey]"
+            "text": "[Key Individual: William Harvey]",
+            "theme_heading": "Harvey's"
           },
           {
             "text": "**William Harvey and the Circulation of the Blood**\n\nWilliam Harvey was an English doctor who studied at the famous medical university in Padua, Italy, before eventually becoming the personal royal physician to King Charles I.\n\nIn 1628, he published his groundbreaking book, An Anatomical Account of the Motion of the Heart and Blood in Animals.\n\nBy using mechanical pump calculations and dissecting cold-blooded animals (whose slower heartbeats allowed him to observe muscle movement), he proved that blood circulates around the body in a one-way system, and that the heart acts as a muscular pump.\n\nHe proved that the ancient Roman physician Galen was wrong when he claimed that blood was constantly manufactured in the liver and absorbed as fuel by the body. Harvey’s work was a massive scientific breakthrough because it proved that traditional ancient texts were flawed and laid the vital foundations for modern physiology and future developments in surgery and blood transfusions.",
@@ -2341,10 +2376,12 @@
             "text": "**The Germ Theory**\n\nFor centuries, people believed in 'Spontaneous Generation'—the idea that rotting matter naturally created maggots and microbes. In 1861, a French chemist named Louis Pasteur published his brilliant 'Germ Theory'. By conducting experiments with swan-necked flasks, he proved that microbes in the air were causing decay, completely destroying the theory of spontaneous generation.\n\nA German doctor, Robert Koch, then took Pasteur's work a massive step further. Koch discovered how to stain and grow bacteria in a petri dish, and successfully identified the specific microbes that caused tuberculosis (1882) and cholera (1883). Koch's work was revolutionary because it proved that specific diseases were caused by specific microbes, earning him the title of the 'Father of Bacteriology'."
           },
           {
-            "text": "[Key Individual: Louis Pasteur]"
+            "text": "[Key Individual: Louis Pasteur]",
+            "theme_heading": "Louis Pasteur:"
           },
           {
-            "text": "[Key Individual: Robert Koch]"
+            "text": "[Key Individual: Robert Koch]",
+            "theme_heading": "Koch's Medical Breakthroughs"
           },
           {
             "text": "**Continuity and Change: Spontaneous Generation and Miasma**\n\nBy 1700, the Theory of the Four Humours had been entirely discarded by scientists, but miasma (bad air) remained the most popular explanation for disease, especially in the smelly new industrial slums.\n\nWith the improvement of microscopes, scientists could finally see tiny microbes present on decaying matter.\n\nThis led to the theory of Spontaneous Generation—the incorrect belief that rotting matter naturally created these microbes, rather than the microbes causing the rotting.\n\nIn Britain, powerful doctors like Dr Henry Bastian actively promoted Spontaneous Generation until the 1870s, refusing to believe germs caused human disease. Because doctors incorrectly believed microbes were the result of decay rather than the cause of it, they did not see the need to kill them or protect patients from them, severely delaying medical progress.",
@@ -2393,7 +2430,8 @@
             ]
           },
           {
-            "text": "[Key Individual: John Snow]"
+            "text": "[Key Individual: John Snow]",
+            "theme_heading": "John Snow's"
           }
         ],
         "exam_practice": [
@@ -2635,10 +2673,12 @@
             "text": "**Surgery in the Industrial Era**\n\nIn the early 1800s, surgery was horrific. Surgeons had to work incredibly fast because there was no pain relief, and patients often died from shock. Furthermore, operating theatres were filthy, meaning patients who survived the pain almost always died from post-operative infections like gangrene.\n\nThis changed drastically with two major discoveries. In 1847, James Simpson discovered Chloroform, providing the first effective anaesthetic that completely knocked patients out. Then, in 1865, Joseph Lister read Pasteur's Germ Theory and realized that microbes were causing surgical infections. He began using Carbolic Acid spray to kill germs in the operating theatre (antiseptic surgery), which caused death rates to plummet from 46% to just 15%."
           },
           {
-            "text": "[Key Individual: James Simpson]"
+            "text": "[Key Individual: James Simpson]",
+            "theme_heading": "Meet James Simpson"
           },
           {
-            "text": "[Key Individual: Joseph Lister]"
+            "text": "[Key Individual: Joseph Lister]",
+            "theme_heading": "Joseph Lister's Legacy"
           },
           {
             "text": "**Improvements in Hospital Care: Florence Nightingale**\n\nDuring the Crimean War (1853–56), Florence Nightingale transformed the dreadful conditions in military hospitals by enforcing strict cleanliness, ventilation, and good food.\n\nShe famously used statistical diagrams, such as her 'Cause of Mortality in the Army in the East', to successfully persuade the government that a desperate change was needed in medical care.\n\nFollowing her return from the war, Nightingale's massive popularity allowed her to have a major impact on civilian healthcare in two ways: establishing formal, professional training for nurses, and completely redesigning hospital layouts using the 'Pavilion Style' (which featured long wards, high ceilings, large windows for ventilation, and separate wings to isolate infections). Nightingale's relentless focus on hygiene and training transformed nursing into a respected profession, drastically reducing hospital death rates. (Common Misconception: Students often confuse 'cause' and 'treatment'. You must strictly categorize Nightingale and Lister under 'treatments and care', reserving Germ Theory for the 'causes of illness'.)",
@@ -2662,7 +2702,8 @@
             }
           },
           {
-            "text": "[Key Individual: Florence Nightingale]"
+            "text": "[Key Individual: Florence Nightingale]",
+            "theme_heading": "Nightingale"
           },
           {
             "text": "**The Impact of Anaesthetics and Antiseptics on Surgery**\n\nBefore the 1840s, surgery was agonising and incredibly dangerous. (Outside information: In 1847, James Simpson discovered chloroform, a highly effective anaesthetic that completely knocked patients out, solving the problem of surgical pain.)\n\nHowever, pain-free surgery initially led to the 'Black Period' of surgery (1847–1870). Because patients were unconscious, surgeons attempted deeper, more complex internal operations. Since they did not yet know about germs, they operated in filthy clothes with unwashed hands and unsterilized instruments, carrying deadly pathogens deep into open wounds, which caused death rates to temporarily skyrocket.\n\nBuilding entirely on Louis Pasteur's Germ Theory (1861), the British surgeon Joseph Lister developed the first effective antiseptic by spraying carbolic acid onto wounds and surgical instruments.\n\nThis breakthrough caused the surgical survival rate to skyrocket; the death rate plummeted from 46% (pre-antiseptic, 1864–1866) down to just 15% (post-antiseptic, 1867–1870). The combination of anaesthetics and antiseptics completely revolutionized surgery, turning it from a terrifying, last-resort gamble into a safe, routine method of curing deep internal injuries.",
@@ -2685,7 +2726,8 @@
             ]
           },
           {
-            "text": "[Key Individual: Edward Jenner]"
+            "text": "[Key Individual: Edward Jenner]",
+            "theme_heading": "Jenner's Vaccine Breakthrough"
           },
           {
             "text": "**The Public Health Acts (1848 and 1875)**\n\nThe rapid growth of industrial factories forced workers into overcrowded slums with shared outdoor toilets, filthy streets, and no clean water, creating a perfect environment for epidemic diseases like cholera (which killed 53,293 people in the 1848-49 outbreak alone).\n\nInitially, the government's response was a laissez-faire failure. The 1848 Public Health Act only created a national Board of Health and made local improvements optional; most local councils simply refused to spend money on cleaning up their filthy towns.\n\nFollowing the undeniable scientific proof provided by John Snow (mapping cholera to a water pump in 1854) and Pasteur's Germ Theory (1861), the government was finally forced to take permanent action.\n\nThe 1875 Public Health Act was a massive turning point; it made it legally compulsory for all local councils to provide piped clean water, manage sewage disposal, maintain street lighting, and appoint a Medical Officer of Health. The 1875 Act marked the definitive end of government non-interference in public health, proving that the state finally accepted responsibility for keeping the poorest members of society safe from preventable diseases.",
@@ -3228,10 +3270,12 @@
             "text": "**DNA and Modern Genetics**\n\nBy 1900, doctors knew that microbes caused infectious diseases, but they still couldn't explain hereditary diseases like Haemophilia. In 1953, James Watson and Francis Crick, using X-ray photographs taken by Rosalind Franklin, discovered the double-helix structure of DNA. This was a monumental breakthrough because it proved how genetic information was passed from parents to children.\n\nIn 1990, scientists launched the Human Genome Project, an international effort to map every single gene in the human body. By 2000, they had successfully mapped the entire genome. This incredible achievement allowed scientists to identify the specific genes responsible for diseases like breast cancer and cystic fibrosis, opening the door to genetic screening and personalized medicine."
           },
           {
-            "text": "[Key Individual: James Watson & Francis Crick]"
+            "text": "[Key Individual: James Watson & Francis Crick]",
+            "theme_heading": "Watson and Crick: DNA Pioneers"
           },
           {
-            "text": "[Key Individual: Rosalind Franklin]"
+            "text": "[Key Individual: Rosalind Franklin]",
+            "theme_heading": "Meet Rosalind Franklin"
           },
           {
             "text": "**The Discovery of DNA and Genetics**\n\nIn 1953, scientists James Watson and Francis Crick famously discovered the double-helix structure of DNA at Cambridge University.\n\nTheir discovery built heavily upon the vital X-ray crystallography image (Photo 51) taken by Rosalind Franklin and Maurice Wilkins in 1951, which provided the exact physical dimensions they needed.\n\nThis breakthrough finally proved how characteristics and hereditary diseases (illnesses caused by genetic factors) are passed from parents to children.\n\nIn 1990, the Human Genome Project was launched to decode and map the exact purpose of every single gene in the human body, a massive global effort completing its first draft in 2000. Discovering DNA was a monumental breakthrough because it finally allowed scientists to identify the specific genes that cause hereditary conditions (like cystic fibrosis and Down's syndrome), leading to modern genetic testing and preventative treatments.",
@@ -3528,13 +3572,16 @@
             "text": "**High-Tech Diagnostics and Magic Bullets**\n\nIn the 20th century, diagnosing illness shifted from observing external symptoms to looking inside the body. Marie Curie's work with radiation led to the widespread use of X-rays, while modern technology introduced Ultrasound, MRI, and CT scans. Doctors no longer had to cut a patient open to see what was wrong.\n\nTreatment also evolved rapidly. In 1909, Paul Ehrlich discovered Salvarsan 606, the first 'Magic Bullet'—a chemical compound that targeted and killed the specific bacteria causing syphilis without harming the rest of the body. Later, in 1932, Gerhard Domagk discovered the second magic bullet, Prontosil, which cured blood poisoning. These synthetic chemicals marked the beginning of modern pharmaceutical treatments."
           },
           {
-            "text": "[Key Individual: Marie Curie]"
+            "text": "[Key Individual: Marie Curie]",
+            "theme_heading": "Marie Curie's Legacy"
           },
           {
-            "text": "[Key Individual: Paul Ehrlich]"
+            "text": "[Key Individual: Paul Ehrlich]",
+            "theme_heading": "Ehrlich's"
           },
           {
-            "text": "[Key Individual: Gerhard Domagk]"
+            "text": "[Key Individual: Gerhard Domagk]",
+            "theme_heading": "Gerhard Domagk'"
           },
           {
             "text": "**Advances in Medicines: Magic Bullets and Antibiotics**\n\nIn 1909, Paul Ehrlich's team discovered Salvarsan 606, the first 'magic bullet'. It was a highly toxic, arsenic-based chemical compound that specifically targeted and destroyed the syphilis microbe inside the body without killing the rest of the patient's cells (Common Misconception: never call Salvarsan an antibiotic!).\n\nIn 1932, Gerhard Domagk discovered a second magic bullet, Prontosil, which cured some types of blood poisoning. Scientists realised the active ingredient was sulphonamide, paving the way for targeted chemotherapy and cures for pneumonia and scarlet fever.\n\nThe first true antibiotic (created using microorganisms rather than chemicals) was penicillin, discovered by Alexander Fleming in 1928 and developed into a mass-produced drug by Florey and Chain in the 1940s. The development of magic bullets and antibiotics revolutionised medicine because, for the first time, doctors possessed targeted drugs that actively hunted down and killed deadly bacteria inside the human body.",
@@ -3558,10 +3605,12 @@
             }
           },
           {
-            "text": "[Key Individual: Alexander Fleming]"
+            "text": "[Key Individual: Alexander Fleming]",
+            "theme_heading": "Fleming's Penicillin"
           },
           {
-            "text": "[Key Individual: Howard Florey & Ernst Chain]"
+            "text": "[Key Individual: Howard Florey & Ernst Chain]",
+            "theme_heading": "Penicillin's Key Developers"
           },
           {
             "text": "**Improved Access to Care: The Impact of the NHS**\n\nBefore the 20th century, seeing a doctor was too expensive for the poorest members of society. In 1942, the Beveridge Report called for a system that looked after people \"from the cradle to the grave\".\n\nIn 1948, Minister of Health Aneurin Bevan launched the National Health Service (NHS). It provided free healthcare at the point of delivery, paid for by national taxes.\n\nThe NHS brought hospitals, GPs (General Practitioners), dentists, and maternity care under one massive national organisation, eventually leading to a massive increase in the nation's life expectancy. The NHS fundamentally transformed British society because it ensured that every single citizen finally had equal access to vital medical diagnosis and treatment, entirely removing the fear that getting sick would bankrupt a family.",
@@ -4458,7 +4507,8 @@
             ]
           },
           {
-            "text": "[Key Individual: Wilhelm Roentgen]"
+            "text": "[Key Individual: Wilhelm Roentgen]",
+            "theme_heading": "Wilhelm Roentgen Introduced"
           },
           {
             "text": "**Blood Transfusions and Storage Problems**\n\nJames Blundell carried out the first human-to-human blood transfusions in 1818 to save women suffering from blood loss during childbirth. However, early transfusions were highly dangerous because blood types were not understood, often resulting in rejection and death.\n\nIn 1901, the Austrian doctor Karl Landsteiner revolutionised the process by discovering three blood groups (A, B, and O), with a fourth (AB) found a year later. In 1907, blood group O was identified as the universal blood group.\n\nDespite this, a massive problem remained: blood coagulated (clotted) as soon as it left the body, meaning it could not be stored. Because blood could not be stored in a bank, transfusions had to be carried out with the donor and the patient connected directly to each other by a tube in the exact same room. This made dealing with mass casualties on a battlefield virtually impossible.",
@@ -4487,7 +4537,8 @@
             }
           },
           {
-            "text": "[Key Individual: Karl Landsteiner]"
+            "text": "[Key Individual: Karl Landsteiner]",
+            "theme_heading": "Discovering Blood Types"
           }
         ],
         "exam_practice": [
@@ -5785,7 +5836,8 @@
             "text": "**Medical Advances on the Western Front**\n\nThe sheer volume of casualties on the Western Front forced doctors to innovate rapidly. One of the greatest breakthroughs was the Thomas Splint, a metal frame designed by Hugh Owen Thomas. Before 1915, 80% of soldiers with broken femurs died from shock or bleeding. The Thomas Splint kept the leg perfectly still during transport, increasing the survival rate to an incredible 82%.\n\nAnother major advance was in blood transfusions. At the start of the war, transfusions had to be done arm-to-arm. However, in 1915, Richard Lewisohn discovered that adding sodium citrate to blood stopped it from clotting, allowing it to be stored on ice. This led to the creation of the first blood banks at the Battle of Cambrai in 1917, allowing surgeons to treat shock and perform complex surgeries."
           },
           {
-            "text": "[Key Individual: Hugh Owen Thomas]"
+            "text": "[Key Individual: Hugh Owen Thomas]",
+            "theme_heading": "Hugh Owen Thomas"
           },
           {
             "text": "**New Techniques in the Treatment of Wounds and Infection**\n\nBecause traditional aseptic surgery was impossible in dirty casualty stations and carbolic acid simply did not kill gas gangrene bacteria effectively, radical new solutions had to be found.\n\nDebridement (Wound Excision): Surgeons began aggressively cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene. This had to be done incredibly quickly before the wound was stitched up to stop the infection from spreading into healthy flesh.\n\nThe Carrel-Dakin method: If debridement wasn't enough, surgeons used a system where tubes pumped a chemical sterilised salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria. The method was effective but highly difficult, as the solution only stayed fresh for six hours and had to be made as it was needed.\n\nAmputation: If antiseptics or wound excision failed to stop the spread of infection, the limb was amputated to save the man's life. By 1918, over 240,000 men had lost limbs. Because infection spread so rapidly in the heavily manured soil of the Western Front, surgeons were forced to abandon slow peacetime methods and instead pioneer radical, invasive techniques to physically flush out or cut away deadly bacteria before it killed the patient.",
@@ -5839,7 +5891,8 @@
             ]
           },
           {
-            "text": "[Key Individual: Oswald Hope Robertson]"
+            "text": "[Key Individual: Oswald Hope Robertson]",
+            "theme_heading": "Oswald Hope"
           }
         ],
         "exam_practice": [
