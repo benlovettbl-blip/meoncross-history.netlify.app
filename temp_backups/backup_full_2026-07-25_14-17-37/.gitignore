@@ -1,7 +1,0 @@
-node_modules/
-dist/
-.netlify/
-*.log
-.gemini/
-.env*
-src/data/elizabethan_old/
