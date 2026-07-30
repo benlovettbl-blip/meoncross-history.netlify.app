@@ -2,13 +2,131 @@ import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
-import { sectionAGuide, sectionBGuide, middleEastGuide } from './exam_guide_content.js';
+import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide } from './exam_guide_content.js';
+
+window.examTimers = {};
+
+window.toggleExamTimer = function(cardId, defaultMinutes) {
+  const container = document.getElementById('timer-container-' + cardId);
+  if (container.style.display === 'none') {
+    container.style.display = 'flex';
+    if (!window.examTimers[cardId]) {
+      window.examTimers[cardId] = {
+        totalSeconds: defaultMinutes * 60,
+        remainingSeconds: defaultMinutes * 60,
+        interval: null,
+        isRunning: false
+      };
+      updateTimerDisplay(cardId);
+    }
+  } else {
+    container.style.display = 'none';
+  }
+};
+
+window.adjustExamTimer = function(cardId, minutesChange) {
+  const timer = window.examTimers[cardId];
+  if (!timer || timer.isRunning) return;
+  
+  const newSeconds = timer.totalSeconds + (minutesChange * 60);
+  if (newSeconds >= 60) {
+    timer.totalSeconds = newSeconds;
+    timer.remainingSeconds = newSeconds;
+    updateTimerDisplay(cardId);
+  }
+};
+
+window.startExamTimer = function(cardId) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  const btn = document.getElementById('timer-start-btn-' + cardId);
+  
+  if (timer.isRunning) {
+    // Pause
+    clearInterval(timer.interval);
+    timer.isRunning = false;
+    btn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+    btn.style.background = '#f59e0b';
+    btn.onmouseout = function() { this.style.background='#f59e0b' };
+    btn.onmouseover = function() { this.style.background='#d97706' };
+  } else {
+    // Start
+    timer.isRunning = true;
+    btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+    btn.style.background = '#f59e0b';
+    btn.onmouseout = function() { this.style.background='#f59e0b' };
+    btn.onmouseover = function() { this.style.background='#d97706' };
+    
+    timer.interval = setInterval(() => {
+      if (timer.remainingSeconds > 0) {
+        timer.remainingSeconds--;
+        updateTimerDisplay(cardId);
+      } else {
+        clearInterval(timer.interval);
+        timer.isRunning = false;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Time Up!';
+        btn.style.background = '#ef4444';
+        btn.onmouseout = function() { this.style.background='#ef4444' };
+        btn.onmouseover = function() { this.style.background='#dc2626' };
+      }
+    }, 1000);
+  }
+};
+
+window.resetExamTimer = function(cardId, defaultMinutes) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  clearInterval(timer.interval);
+  timer.remainingSeconds = timer.totalSeconds;
+  timer.isRunning = false;
+  
+  const btn = document.getElementById('timer-start-btn-' + cardId);
+  btn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+  btn.style.background = '#10b981';
+  btn.onmouseout = function() { this.style.background='#10b981' };
+  btn.onmouseover = function() { this.style.background='#059669' };
+  
+  updateTimerDisplay(cardId);
+};
+
+function updateTimerDisplay(cardId) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  const m = Math.floor(timer.remainingSeconds / 60);
+  const s = timer.remainingSeconds % 60;
+  
+  const display = document.getElementById('timer-display-' + cardId);
+  if (display) {
+    display.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    if (timer.remainingSeconds <= 60 && timer.remainingSeconds > 0) {
+      display.style.color = '#dc2626';
+    } else {
+      display.style.color = '#1e3a8a';
+    }
+  }
+  
+  const progress = document.getElementById('timer-progress-' + cardId);
+  if (progress) {
+    const percentage = (timer.remainingSeconds / timer.totalSeconds) * 100;
+    progress.style.width = percentage + '%';
+    if (percentage < 20) {
+      progress.style.background = '#ef4444';
+    } else if (percentage < 50) {
+      progress.style.background = '#f59e0b';
+    } else {
+      progress.style.background = '#3b82f6';
+    }
+  }
+}
 
 export function getAssetUrl(path) {
   if (!path) return path;
   if (path.startsWith('http') || path.startsWith('/')) return path;
   if (window.currentUnitId) {
-    return `/units/${window.currentUnitId}/${path}`;
+    return `/${window.currentUnitId}/${path}`;
   }
   return path;
 }
@@ -639,6 +757,14 @@ export function initializeApp(unitData) {
     }
   }
 
+  window.renderDashboard = function() {
+    document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+    const homeLink = document.querySelector('.lesson-link');
+    if (homeLink) homeLink.classList.add('active');
+    renderHomepage();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   function renderHomepage() {
     let lessonsHTML = `
       <style>
@@ -684,7 +810,7 @@ export function initializeApp(unitData) {
         }
       </style>
     `;
-    if (window.currentUnitId === 'edexcel_medicine' || window.currentUnitId === 'cme_new') {
+    if (window.currentUnitId === 'edexcel_medicine' || window.currentUnitId === 'cme_new' || window.currentUnitId === 'weimar_nazi_germany' || window.currentUnitId === 'eee') {
       let periods = [];
       if (window.currentUnitId === 'edexcel_medicine') {
         periods = [
@@ -699,6 +825,19 @@ export function initializeApp(unitData) {
           { id: 'KT1', title: 'Key Topic 1: The Birth of Israel', prefix: 'KT1', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/cme_new_kt1_cover.png', enquiry: 'How and why was the state of Israel established?' },
           { id: 'KT2', title: 'Key Topic 2: Escalating Conflict', prefix: 'KT2', gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)', border: '#ef4444', image: 'assets/cme_new_yom_kippur_crossing.png', enquiry: 'What drove the major conflicts in the Middle East from 1967-1973?' },
           { id: 'KT3', title: 'Key Topic 3: Attempts at Peace', prefix: 'KT3', gradient: 'linear-gradient(135deg, #064e3b, #10b981)', border: '#10b981', image: 'assets/cme_new_camp_david_accords.png', enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?', bgPos: 'center 20%' }
+        ];
+      } else if (window.currentUnitId === 'weimar_nazi_germany' || (window.currentUnitData && window.currentUnitData.title && window.currentUnitData.title.includes('Weimar'))) {
+        periods = [
+          { id: 'KT1', title: 'Key Topic 1: The Weimar Republic (1918-29)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/banners/kt1_weimar_banner.png', enquiry: 'To what extent did the Weimar Republic recover from its early crises?' },
+          { id: 'KT2', title: "Key Topic 2: Hitler's Rise to Power, 1919-33", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/banners/kt2_weimar_banner.png', enquiry: 'How did a tiny obscure political group transform?' },
+          { id: 'KT3', title: "Key Topic 3: Nazi Control and Dictatorship", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'assets/banners/kt3_weimar_banner.png', enquiry: 'From chains to absolute control' },
+          { id: 'KT4', title: "Key Topic 4: Life in Nazi Germany, 1933-39", prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)', border: '#65a30d', image: 'assets/banners/kt4_weimar_banner.png', enquiry: 'Did life improve under the Nazis?' }
+        ];
+      } else if (window.currentUnitId === 'eee' || (window.currentUnitData && window.currentUnitData.title && window.currentUnitData.title.includes('Elizabeth'))) {
+        periods = [
+          { id: 'KT1', title: 'Key Topic 1: Queen, government and religion, 1558-69', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/placeholder_cover.jpg', enquiry: 'From religious division to the Armada: How did Elizabeth secure her throne?' },
+          { id: 'KT2', title: "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/placeholder_cover.jpg', enquiry: 'Why did plots and foreign threats push Elizabeth towards war?' },
+          { id: 'KT3', title: "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'assets/placeholder_cover.jpg', enquiry: 'What was life like during the Elizabethan Golden Age?' }
         ];
       }
       
@@ -722,9 +861,9 @@ export function initializeApp(unitData) {
           if ((lesson.id && lesson.id.startsWith(p.prefix)) || (lesson.title && lesson.title.startsWith(p.prefix))) {
             foundAny = true;
             lessonsHTML += `
-              <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+              <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onclick="window.renderLessonByIndex(${index})" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
                 <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">Lesson ${index + 1}</h3>
-                <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}</p>
+                <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
               </div>
             `;
           }
@@ -737,6 +876,14 @@ export function initializeApp(unitData) {
              <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">Workbook: ${p.title}</h3>
           </div>
         `;
+        
+        // ADD MASTERY PACK FOR THIS PERIOD
+        lessonsHTML += `
+          <div class="homepage-lesson-card" style="background: #fff0f2; border: 2px dashed #d32f2f; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/units/${window.currentUnitId}/mastery_pack_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fff0f2'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+             <i class="fa-solid fa-shield-halved" style="font-size: 1.2rem; color: #d32f2f; margin-bottom: 6px;"></i>
+             <h3 style="margin: 0; color: #d32f2f; font-size: 0.9rem;">Mastery Pack: ${p.title}</h3>
+          </div>
+        `;
 
         if (!foundAny) {
            lessonsHTML += `<p style="color: #64748b; font-style: italic; margin-left: 10px;">No lessons found for this period.</p>`;
@@ -746,12 +893,12 @@ export function initializeApp(unitData) {
     } else {
       lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
       unitData.lessons.forEach((lesson, index) => {
-        lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Lesson ${index + 1}</h3>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${lesson.title}</p>
-          </div>
-        `;
+          lessonsHTML += `
+            <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${index})">
+              <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Lesson ${index + 1}</h3>
+              <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${lesson.title}</p>
+            </div>
+          `;
       });
       lessonsHTML += '</div>';
       
@@ -812,7 +959,7 @@ export function initializeApp(unitData) {
         
         ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
         
-        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Unit Lessons</h2>
+        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>
         ${lessonsHTML}
         
 
@@ -831,6 +978,7 @@ export function initializeApp(unitData) {
         card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
       });
       card.addEventListener('click', () => {
+        if (!card.hasAttribute('data-index')) return;
         const idx = parseInt(card.dataset.index);
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         renderLesson(unitData.lessons[idx]);
@@ -870,6 +1018,18 @@ export function initializeApp(unitData) {
           ${middleEastGuide}
         </div>
       `;
+    } else if (unitData.title && (unitData.title.toLowerCase().includes('weimar') || unitData.title.toLowerCase().includes('germany'))) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #334155 0%, #0f172a 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #cbd5e1; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 3</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${weimarGuide}
+        </div>
+      `;
     } else {
       contentHtml = `
         <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
@@ -906,13 +1066,15 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(homeLink);
 
+
+
     // Exam Specification Tab
     if (unitData.specification_file) {
       const specLink = document.createElement('a');
       specLink.className = 'lesson-link';
       const specTitle = (unitData.title && unitData.title.includes('KS3')) ? 'Curriculum Overview' : 'Exam Specification';
       specLink.innerHTML = `<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> ${specTitle}`;
-      specLink.href = '#';
+      specLink.href = unitData.specification_file;
       specLink.onclick = (e) => {
         e.preventDefault();
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
@@ -1038,9 +1200,11 @@ export function initializeApp(unitData) {
       cheatSheetLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/cheat_sheet.html` : 'cheat_sheet.html';
       cheatSheetLink.target = '_blank';
       cheatSheetLink.style.marginTop = '15px';
-      cheatSheetLink.style.border = '2px dashed #cbd5e1';
-      cheatSheetLink.style.background = '#eff6ff';
-      cheatSheetLink.style.color = '#1e3a8a';
+      
+
+
+
+      
       navContainer.appendChild(cheatSheetLink);
     }
 
@@ -1048,16 +1212,53 @@ export function initializeApp(unitData) {
   }
 
   
-  // Global markdown formatter for inline text
+  // Global markdown formatter for inline text and bullet points
   window.formatBold = function(text) {
-    return text ? text.replace(/\\n|\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') : '';
+    if (!text) return '';
+    let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    parsed = parsed.replace(/\\n/g, '\n');
+    
+    // Handle lists
+    if (parsed.match(/(^|\n)[\*\-]\s/)) {
+      parsed = parsed.replace(/(^|\n)[\*\-]\s+(.*)/g, '$1<li>$2</li>');
+      parsed = parsed.replace(/(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g, '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>');
+    }
+    
+    parsed = parsed.replace(/\n/g, '<br>');
+    // Clean up <br> around lists
+    parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
+    
+    return parsed;
   };
   
   // Render Lesson Content
-  function renderLesson(lesson) {
-    const formatBold = window.formatBold;
-    lesson = sanitizeLessonData(JSON.parse(JSON.stringify(lesson)));
+    window.renderLessonByIndex = function(index) {
+      if (unitData && unitData.lessons && unitData.lessons[index]) {
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        // Try to activate the corresponding sidebar link
+        const links = document.querySelectorAll('.lesson-link');
+        if (links.length > index + 1) { // +1 because the first link is Unit Homepage
+            links[index + 1].classList.add('active');
+        }
+        renderLesson(unitData.lessons[index]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    function renderLesson(lesson) {
+      const formatBold = window.formatBold;
+    lesson = JSON.parse(JSON.stringify(lesson));
     
+    // Normalize do_now format
+    if (Array.isArray(lesson.do_now)) {
+      lesson.do_now = {
+        type: "questions",
+        items: lesson.do_now.map(t => ({ question: t.q || t.question, answer: t.a || t.answer }))
+      };
+    } else if (lesson.do_now && lesson.do_now.type === "questions" && lesson.do_now.tasks) {
+      lesson.do_now.items = lesson.do_now.tasks.map(t => ({ question: t.q || t.question, answer: t.a || t.answer }));
+    }
+
     // Extract exam tasks from tasks array so they are not rendered inline
     let extractedExamTasks = [];
     if (lesson.narrative_blocks) {
@@ -1086,17 +1287,20 @@ export function initializeApp(unitData) {
     const heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
     const lessonNumberText = (lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}` : 'Lesson';
     
+    const contentArea = document.getElementById('content-area');
+    if (contentArea) contentArea.style.paddingTop = '0'; // Fix gap
+    
     let html = `<div class="lesson-content">`;
     
-    // Sticky Header (Now at the very top so it sticks directly under the blue banner)
+    // Sticky Header (No visible background, but opaque to hide scrolling text)
     html += `
-      <div style="position: sticky; top: -1px; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; padding: 10px 15px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); border-radius: 0 0 8px 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
-          ${(lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}: ` : ''}${lesson.title}
+          ${(lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}: ` : ''}${lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question || lesson.title}
         </h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
-          <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: rgba(255,255,255,0.8); color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
-          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: rgba(226, 232, 240, 0.8); border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+          <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
         </div>
       </div>
     `;
@@ -1112,6 +1316,7 @@ export function initializeApp(unitData) {
       </div>
     `;
 
+    const unitEnquiryText = window.currentUnitData?.enquiry_question || window.currentUnitData?.enquiry || '';
     if (unitEnquiryText) {
       html += `
         <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #1e3a8a; padding: 15px 20px; border-radius: 12px; margin-bottom: 2rem; text-align: center; font-size: 1.15rem; font-family: 'Playfair Display', serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.5);">
@@ -1476,7 +1681,7 @@ export function initializeApp(unitData) {
         const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
         let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
         contentStr = formatBold(contentStr);
-        contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/' + window.currentUnitId + '/assets/');
+        contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/units/' + window.currentUnitId + '/assets/');
         let styledContent = contentStr;
         if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
            const firstLetter = contentStr.charAt(0);
@@ -1950,8 +2155,16 @@ export function initializeApp(unitData) {
     }
 
     if (lesson.quiz && lesson.quiz.length > 0) {
-      window.currentQuizData = lesson.quiz;
-      window.currentQuizIndex = 0;
+      window.currentQuizData = lesson.quiz.map(q => {
+      if (!q.options && q.distractors && q.distractors.length > 0) {
+        let opts = [q.answer || q.a, ...q.distractors];
+        opts = opts.sort(() => Math.random() - 0.5);
+        const correctIdx = opts.indexOf(q.answer || q.a);
+        return { ...q, options: opts, answer: correctIdx };
+      }
+      return q;
+    });
+    window.currentQuizIndex = 0;
       window.currentQuizLessonId = lesson.id;
       
       html += `
@@ -1975,8 +2188,26 @@ export function initializeApp(unitData) {
         </div>
       `;
     }
-
     
+    // Previous / Next Lesson Navigation Buttons
+    const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
+    if (currentIndex !== -1) {
+      html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;
+      
+      if (currentIndex > 0) {
+        html += `<button class="btn btn-secondary" onclick="window.renderLessonByIndex(${currentIndex - 1})"><i class="fa-solid fa-arrow-left"></i> Previous Lesson</button>`;
+      } else {
+        html += `<div></div>`;
+      }
+      
+      if (currentIndex < unitData.lessons.length - 1) {
+        html += `<button class="btn btn-primary" onclick="window.renderLessonByIndex(${currentIndex + 1})">Next Lesson <i class="fa-solid fa-arrow-right"></i></button>`;
+      } else {
+        html += `<div></div>`;
+      }
+      
+      html += `</div>`;
+    }
     
     html += `</div>`; // End lesson-content wrapper
 
@@ -2526,7 +2757,15 @@ window.startQuiz = function(lessonId) {
   const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
   if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
   
-  window.currentQuizData = lesson.quiz;
+  window.currentQuizData = lesson.quiz.map(q => {
+    if (!q.options && q.distractors && q.distractors.length > 0) {
+      let opts = [q.answer || q.a, ...q.distractors];
+      opts = opts.sort(() => Math.random() - 0.5);
+      const correctIdx = opts.indexOf(q.answer || q.a);
+      return { ...q, options: opts, answer: correctIdx };
+    }
+    return q;
+  });
   window.currentQuizIndex = 0;
   window.currentQuizLessonId = lessonId;
   
@@ -2544,22 +2783,45 @@ window.renderQuizQuestion = function() {
   document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
   
   let optionsHtml = '';
-  qData.options.forEach((opt, idx) => {
-    optionsHtml += `
-      <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
-        <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
-        ${opt}
-      </button>
+  if (qData.options) {
+    qData.options.forEach((opt, idx) => {
+      optionsHtml += `
+        <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+          <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
+          ${opt}
+        </button>
+      `;
+    });
+  } else {
+    optionsHtml = `
+      <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 15px;">
+         <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'; document.getElementById('quiz-next-btn').style.display='block';">Reveal Answer</button>
+         <div style="display: none; font-size: 1.15rem; color: #059669; font-weight: bold; padding: 10px;">${qData.a || qData.answer || ''}</div>
+      </div>
     `;
-  });
+  }
   
   document.getElementById('quiz-question-container').innerHTML = `
-    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question}</h3>
+    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question || qData.q}</h3>
     ${optionsHtml}
   `;
   
   document.getElementById('quiz-feedback').innerHTML = '';
-  document.getElementById('quiz-next-btn').style.display = 'none';
+  
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if (!qData.options) {
+    nextBtn.style.display = 'none'; // Will be revealed when answer is shown
+  } else {
+    nextBtn.style.display = 'none';
+  }
+  
+  if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
+    nextBtn.innerHTML = 'Finish <i class="fa-solid fa-check"></i>';
+    nextBtn.onclick = window.closeQuizModal;
+  } else {
+    nextBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    nextBtn.onclick = window.nextQuizQuestion;
+  }
 };
 
 window.checkQuizAnswer = function(btnEl, selectedIdx) {

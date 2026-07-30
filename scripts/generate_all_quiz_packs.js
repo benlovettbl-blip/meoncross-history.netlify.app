@@ -53,13 +53,16 @@ for (const unitId of units) {
                         options: q.options
                     });
                 });
-            } else if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
+            }
+            if (l.do_now && l.do_now.items) {
                 l.do_now.items.forEach(item => {
-                    quizPack.push({
-                        q: item.question,
-                        a: item.answer,
-                        options: item.options || [item.answer, "Option B", "Option C", "Option D"]
-                    });
+                    if (item.question && item.answer) {
+                        quizPack.push({
+                            q: item.question,
+                            a: item.answer,
+                            options: item.options || [item.answer, "Option B", "Option C", "Option D"]
+                        });
+                    }
                 });
             }
             if (l.flashcards && Array.isArray(l.flashcards)) {

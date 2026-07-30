@@ -17,6 +17,8 @@ export function getUnits() {
 
 export function renderDashboard() {
   const container = document.getElementById('main-content');
+  const contentArea = document.getElementById('content-area');
+  if (contentArea) contentArea.style.paddingTop = '2rem'; // Restore gap for dashboard
   const profile = getProfile();
   
   // Calculate general stats
@@ -61,15 +63,15 @@ export function renderDashboard() {
 
   const units = getUnits();
   const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
-  const ks3Units = units.filter(u => u.title.includes('KS3:')).sort((a, b) => {
+  const ks3Units = units.filter(u => (u.title || '').includes('KS3:')).sort((a, b) => {
     let idxA = ks3Order.indexOf(a.id);
     let idxB = ks3Order.indexOf(b.id);
     if (idxA === -1) idxA = 999;
     if (idxB === -1) idxB = 999;
     return idxA - idxB;
   });
-  const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany'];
-  const ks4Units = units.filter(u => !u.title.includes('KS3:')).sort((a, b) => {
+  const ks4Order = ['edexcel_medicine', 'cme_new', 'eee', 'weimar_nazi_germany'];
+  const ks4Units = units.filter(u => !(u.title || '').includes('KS3:')).sort((a, b) => {
     let idxA = ks4Order.indexOf(a.id);
     let idxB = ks4Order.indexOf(b.id);
     if (idxA === -1) idxA = 999;
@@ -588,26 +590,24 @@ export async function renderDecisionsView() {
 
 export async function renderTabooView() {
   const container = document.getElementById('main-content');
-  const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
+  const unitId = window.currentUnitId || state.selectedUnitId || 'cme_new';
   
   let tabooCards = [];
-  if (unitId === 'gcse_middle_east_1945_1995') {
-    const mod = await import('./data/cme/taboo_data');
-    tabooCards = mod.TABOO_CARDS;
-  } else if (unitId === 'gcse_usa_1954_1975') {
+  if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
+    // Both USA and CME are currently pulling from the same taboo_data file for now based on the old code
     const mod = await import('./taboo_data.js');
     Object.keys(mod.TABOO_CARDS).forEach(cat => {
       mod.TABOO_CARDS[cat].forEach(card => {
         tabooCards.push({
-          id: `taboo_usa_${card.target.replace(/\s+/g, '_')}`,
+          id: `taboo_${unitId}_${card.target.replace(/\s+/g, '_')}`,
           topic: cat,
           target: card.target.toUpperCase(),
           taboo: card.taboo,
-          hint: `Recall this key ${cat} from the GCSE USA History course.`
+          hint: `Recall this key ${cat} from the course.`
         });
       });
     });
-  } else if (unitId === 'gcse_elizabethan_england') {
+  } else if (unitId === 'eee' || unitId === 'gcse_elizabethan_england') {
     const mod = await import('./data/elizabethan/data.js');
     const timelineData = mod.timelineData;
     let cardCount = 1;

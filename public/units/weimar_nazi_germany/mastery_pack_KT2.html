@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Pack: Key Topic 2: Hitler's Rise to Power, 1919-33</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .cover h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 4rem;
+            color: var(--brand-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #ddd;
+            margin-top: 0;
+            margin-bottom: 60px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            border-top: 2px solid var(--brand-red);
+            padding-top: 20px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            border-bottom: 4px solid var(--brand-red);
+            padding-bottom: 10px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-red);
+            margin-top: 30px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 15px; height: 15px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1px solid #888;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto;
+            border: 2px dashed var(--brand-red);
+            padding: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .debrief h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 30px;
+            flex-shrink: 0;
+        }
+        .answer-text {
+            font-weight: 600;
+        }
+
+        /* Tracker Page */
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 10%; }
+        .col-date { width: 15%; }
+        .col-score { width: 15%; }
+        .col-sig { width: 30%; }
+        .col-target { width: 30%; }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1 style="font-size: 3rem; line-height: 1.2;">THE PAPER 3: WEIMAR AND NAZI GERMANY, 1918-39 DOSSIER:<br>KEY TOPIC 2: HITLER'S RISE TO POWER, 1919-33</h1>
+            <h2>36 Crucial Questions. Complete Knowledge Mastery.</h2>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #bbb;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT2.1: The Early Development of the Nazi Party, 1919–1922</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">Who was the original founder of the German Workers' Party (DAP) in 1919?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">Why did Adolf Hitler originally attend a DAP meeting in September 1919?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">What unique talent did Hitler use to captivate audiences and rise to leadership?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">In what year did Hitler and Drexler write the 25-Point Programme?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">Name one 'Nationalist' policy from the 25-Point Programme.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">Name one 'Socialist' policy from the 25-Point Programme.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">According to the anti-Semitic points in the Programme, who were the only people allowed to be German citizens?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">What did Hitler officially rename the DAP to?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">In what year did Hitler force Drexler out and become the absolute leader of the Nazi Party?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">Who was appointed as the Nazi Party's first full-time administrator to organise their new Munich headquarters?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">What was the name of the official Nazi newspaper purchased in December 1920?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">Name the famous First World War fighter pilot who joined the early Nazi Party, giving it credibility.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">What ancient symbol did Hitler adopt and redesign to act as the party's logo?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">What does the abbreviation 'SA' stand for?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">What was the common nickname for the SA, based on their uniforms?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">Who was the ex-army captain placed in command of the SA?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">What were the two main roles of the SA?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">Why did Hitler form his own personal bodyguard, the Stosstrupp (Shock Troop), out of the SA?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">By the end of 1922, roughly how many members did the Nazi Party have?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">Which specific German region and city was the early Nazi Party entirely based in?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT2.1: The Early Development of the Nazi Party, 1919–1922</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">What was the 'stab-in-the-back' myth (Dolchstoßlegende), and who was blamed for it?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">What is a 'Putsch'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">Who were the Freikorps, and what political ideology did they fiercely oppose?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about the terms of the Treaty of Versailles and why German nationalists hated it.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">What was the name of the elite, highly trusted unit selected from the SA to act as Hitler's personal bodyguard in 1923?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">What does the German word 'Putsch' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">Who was the Chancellor of Germany in late 1923 who called off passive resistance in the Ruhr?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about how hyperinflation created 'winners' and 'losers' in German society.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">What was Gustav Stresemann's famous quote warning about the fragility of the German economy during the 'Golden Age'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">What was the central message of the Führerprinzip (Leadership Principle)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">How many seats did the Nazi Party win in the 1928 Reichstag elections, proving they were an electoral failure before the Depression?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about how Hitler completely reorganised the Nazi Party after he was released from Landsberg Prison.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">How many votes did Hitler win in the 1932 Presidential election against Hindenburg?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">What is meant by the historical term 'negative cohesion'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">Who was the Weimar Chancellor from 1930–1932 known bitterly as the 'Hunger Chancellor'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about how the SA helped the Nazis gain middle-class votes during the Great Depression.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+            <h1>THE VAULT</h1>
+            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+        <div class="answer-list"><h3>KT2.1: The Early Development of the Nazi Party, 1919–1922</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text">The myth that the German army was not defeated in battle but betrayed by politicians on the home front; the 'November Criminals' (socialists, democrats, and Jews) were blamed.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text">A violent attempt to overthrow a government.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text">Right-wing, nationalist ex-soldiers who violently opposed Communism.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text">It imposed massive reparations, limited the army to 100,000 men, stripped Germany of its empire, and included the humiliating War Guilt Clause (Article 231).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text">The Stosstrupp (Shock Troop).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">26.</div>
+                    <div class="answer-text">A violent attempt to overthrow a government or seize political power.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">27.</div>
+                    <div class="answer-text">Gustav Stresemann.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">28.</div>
+                    <div class="answer-text">Winners included those with debts (which became worthless) and businessmen who took out loans to buy businesses. Losers included anyone with savings, fixed incomes, or pensions, as their money became completely worthless.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">29.</div>
+                    <div class="answer-text">He warned that Germany was 'dancing on a volcano' because its recovery was entirely reliant on short-term American loans.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">30.</div>
+                    <div class="answer-text">The belief that Germany needed a single, strong, undisputed leader (Führer) with absolute power, rather than weak democratic debate.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">31.</div>
+                    <div class="answer-text">Only 12 seats.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">32.</div>
+                    <div class="answer-text">He created national headquarters, divided Germany into regions run by Gauleiters, set up the SS as his personal bodyguard, and created the Hitler Youth to target the young.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">33.</div>
+                    <div class="answer-text">13.4 million votes.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">34.</div>
+                    <div class="answer-text">Supporting a party because you share the same fears/hatreds (e.g. fear of communism), not necessarily the same beliefs.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">35.</div>
+                    <div class="answer-text">Heinrich Brüning.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">36.</div>
+                    <div class="answer-text">The SA deliberately fought the communists in the streets, but then marched in disciplined uniforms, making the Nazis look like the only party organised enough to restore order and crush communism, which the middle classes feared.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 36 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/36)</th>
+                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        </div>
+    </div>
+
+</body>
+</html>
+        

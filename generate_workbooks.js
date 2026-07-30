@@ -69,7 +69,10 @@ allDirs.forEach(unitId => {
       name: wb.id,
       title: wb.title,
       image: wb.image,
-      filter: l => l.title.startsWith(wb.id)
+      filter: l => {
+        let prefix = wb.prefix || wb.id;
+        return l.title.startsWith(prefix) || (l.id && l.id.startsWith(prefix));
+      }
     }));
   } else {
     // Generate one comprehensive workbook for the unit

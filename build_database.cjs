@@ -66,10 +66,25 @@ async function buildDatabase() {
   
   for (const unit of units) {
       const unitKey = path.basename(unit);
-      if (db[unitKey] && db[unitKey].data && db[unitKey].data.title) {
-          fs.writeFileSync(path.join('public', 'data', `${unitKey}.json`), JSON.stringify(db[unitKey], null, 2), 'utf8');
-      } else {
-          delete db[unitKey];
+      if (db[unitKey]) {
+          if (!db[unitKey].data) db[unitKey].data = {};
+          if (unitKey === 'eee' && !db[unitKey].data.title) {
+              db[unitKey].data.title = "Early Elizabethan England, 1558-88";
+              db[unitKey].data.desc = "Explore the challenges of Elizabeth's reign, the religious settlement, Mary Queen of Scots, and the Spanish Armada.";
+              db[unitKey].data.yearGroup = "Year 10";
+              db[unitKey].data.icon = "fa-crown";
+          }
+          if (unitKey === 'great_war_part2' && !db[unitKey].data.title) {
+              db[unitKey].data.title = "KS3: The Great War - Part 2";
+              db[unitKey].data.desc = "The conclusion of the First World War, the home front, and the legacy of the conflict.";
+              db[unitKey].data.yearGroup = "Year 9";
+              db[unitKey].data.icon = "fa-dove";
+          }
+          if (db[unitKey].data.title) {
+              fs.writeFileSync(path.join('public', 'data', `${unitKey}.json`), JSON.stringify(db[unitKey], null, 2), 'utf8');
+          } else {
+              delete db[unitKey];
+          }
       }
   }
 

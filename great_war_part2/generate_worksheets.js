@@ -71,7 +71,7 @@ unitData.lessons.forEach(lesson => {
 
   // Primary Source at the top
   if (lesson.primary_source) {
-    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `..${lesson.primary_source.src}`;
+    let src = lesson.primary_source.src.startsWith('../') || lesson.primary_source.src.startsWith('http') ? lesson.primary_source.src : `../great_war/${lesson.primary_source.src}`;
     html += `
       <div class="source-container" style="page-break-inside: avoid; margin-bottom: 30px;">
         ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
@@ -79,7 +79,6 @@ unitData.lessons.forEach(lesson => {
         <div class="source-container">
           <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-        ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
       </div>
     `;
   }
@@ -130,7 +129,7 @@ unitData.lessons.forEach(lesson => {
       if (para.startsWith('"')) {
         html += `<div style="font-weight: bold; margin: 15px 0; font-size: 13pt;">${para.replace(/"/g, '')}</div>`;
       } else {
-        html += `<p class="narrative-block" id="para-${pCounter}">${formatBold(para)}</p>`; pCounter++;
+        html += `<p class="narrative-block" id="para-${pCounter}">${para}</p>`; pCounter++;
       }
     });
   }
@@ -143,7 +142,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
       if(source.src) {
-        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `..${source.src}`;
+        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `../great_war/${source.src}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -157,7 +156,7 @@ unitData.lessons.forEach(lesson => {
     // Append draw tasks right after the sources block
     if (drawTasks.length > 0) {
       drawTasks.forEach(task => {
-        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text || task.question}</div>`;
+        html += `<div class="draw-task"><i class="fa-solid fa-pencil"></i> Source Task: ${task.text}</div>`;
       });
     }
   }
@@ -177,7 +176,7 @@ unitData.lessons.forEach(lesson => {
   if (lesson.extended && lesson.extended.paragraphs) {
     html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
     lesson.extended.paragraphs.forEach(para => {
-      html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${para}</p>`;
+      html += `<p class="narrative-block" style="font-size: 11pt; color: #444;">${para}</p>`;
     });
     if (lesson.extended.question) {
       html += `<div style="margin-top: 20px;"><strong>Q${lesson.extended.qNum}. ${lesson.extended.question.replace(/\s*\(Ext P\d+(-\d+)?\)/gi, '')}</strong></div>`;
@@ -188,12 +187,17 @@ unitData.lessons.forEach(lesson => {
   if (lesson.historians_corner) {
     html += `<div class="task-box" style="page-break-inside: avoid; background: #fff; border: 2px dashed #666;">`;
     html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-    html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+    html += `<p style="font-size: 11pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
     html += `</div>`;
   }
 
   // GCSE Cross-Source Analysis
-  if (lesson.gcse_task && lesson.gcse_task.sources && lesson.gcse_task.sources[0] && lesson.gcse_task.sources[0].src) { let srcA = lesson.gcse_task.sources[0].src.startsWith('../') ? lesson.gcse_task.sources[0].src : `..${lesson.gcse_task.sources[0].src}`;
+  if (lesson.gcse_task) {
+    html += `<div style="page-break-before: always;">`;
+    html += `<h2>GCSE Cross-Source Analysis</h2>`;
+    html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
+    
+    let srcA = lesson.gcse_task.sources[0].src.startsWith('../') ? lesson.gcse_task.sources[0].src : `../great_war/${lesson.gcse_task.sources[0].src}`;
     html += `
       <div style="display: flex; gap: 20px; margin-bottom: 20px;">
         <div style="flex: 1; border: 1px solid #ccc; padding: 10px; text-align: center;">
@@ -201,7 +205,7 @@ unitData.lessons.forEach(lesson => {
           <p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${lesson.gcse_task.sources[0].title}</p>
         </div>
         <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
-          <blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
+          <blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${lesson.gcse_task.sources[1].text}</blockquote>
           <p style="font-size: 10pt; font-weight: bold; margin: 0;">${lesson.gcse_task.sources[1].title}</p>
         </div>
       </div>
@@ -246,7 +250,7 @@ unitData.lessons.forEach(lesson => {
 // Append Quiz Pack
 if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<h2 style="margin-bottom: 20px; page-break-before: always; font-size: 24pt;">End of Unit Quiz Pack</h2>`;
-  html += `<p style="font-size: 12pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
+  html += `<p style="font-size: 11pt; margin-bottom: 20px;"><strong>Instructions:</strong> Answer the 50 quick-fire recall questions below. If you get stuck, the scrambled answers are provided in the Answer Bank on the final page.</p>`;
   
   html += `<div style="display: flex; flex-wrap: wrap; gap: 20px;">`;
   
@@ -254,7 +258,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   html += `<div style="width: 100%; column-count: 2; column-gap: 40px;">`;
   unitData.quizPack.forEach((item, idx) => {
     html += `<div style="margin-bottom: 12px; break-inside: avoid;">`;
-    html += `<div style="font-weight: 500; font-size: 12pt;">${idx + 1}. ${item.q}</div>`;
+    html += `<div style="font-weight: 500; font-size: 10.5pt;">${idx + 1}. ${item.q}</div>`;
     html += `<div class="task-lines"></div>`;
     html += `</div>`;
   });
@@ -268,7 +272,7 @@ if (unitData.quizPack && unitData.quizPack.length > 0) {
   // Extract and scramble answers alphabetically
   let answers = unitData.quizPack.map(item => item.a).sort((a, b) => a.localeCompare(b));
   
-  html += `<p style="text-align: center; font-size: 12pt; line-height: 1.8;">`;
+  html += `<p style="text-align: center; font-size: 11pt; line-height: 1.8;">`;
   answers.forEach((ans, idx) => {
     html += `<strong>${ans}</strong>`;
     if (idx < answers.length - 1) html += ` &nbsp;&bull;&nbsp; `;
@@ -312,6 +316,5 @@ html += `
 
 </html>`;
 
-html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 fs.writeFileSync(path.join(__dirname, 'workbook.html'), html);
 console.log('Successfully generated workbook.html!');

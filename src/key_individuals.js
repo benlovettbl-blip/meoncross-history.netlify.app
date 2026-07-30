@@ -8,7 +8,7 @@ export function generateKeyIndividualEmbedHTML(person) {
     const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
     imgSrcHtml = `
       <div style="margin-top: 25px; display: flex; justify-content: center; align-items: flex-start;">
-        <img src="${imgSrc}" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" onerror="this.parentElement.style.display='none'">
+        <img src="${imgSrc}" loading="lazy" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" onerror="this.parentElement.style.display='none'">
       </div>
     `;
   }
@@ -75,7 +75,7 @@ export function generateKeyIndividualCardHTML(person) {
     const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
     frontImgHtml = `
       <div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
-        <img src="${imgSrc}" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.parentElement.style.display='none'">
+        <img src="${imgSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.parentElement.style.display='none'">
       </div>
     `;
   }
@@ -147,27 +147,6 @@ export function generateKeyIndividualCardHTML(person) {
 export function initKeyIndividualsTask(container, keyIndividualsData) {
   if (!keyIndividualsData || keyIndividualsData.length === 0) return;
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'key-individuals-wrapper fade-in';
-  wrapper.style.padding = '20px';
-  wrapper.style.maxWidth = '1200px';
-  wrapper.style.margin = '0 auto';
-
-  const header = document.createElement('div');
-  header.style.textAlign = 'center';
-  header.style.marginBottom = '40px';
-  header.innerHTML = `
-    <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">Key Individuals</h1>
-    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped these events.</p>
-  `;
-  wrapper.appendChild(header);
-
-  const grid = document.createElement('div');
-  grid.style.display = 'grid';
-  grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
-  grid.style.gap = '25px';
-  grid.style.alignItems = 'stretch';
-
   // Pre-inject the flip-card styles into the document
   let style = document.getElementById('flip-card-styles');
   if (!style) {
@@ -227,14 +206,168 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
       transform: rotateY(0deg);
       -webkit-transform: rotateY(0deg);
     }
+
+    /* Premium Banner Styles */
+    .premium-banner {
+      position: relative; overflow: hidden; border-radius: 12px; padding: 25px 30px; margin-top: 30px; margin-bottom: 20px; 
+      box-shadow: 0 10px 25px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; 
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: default;
+    }
+    .premium-banner:hover {
+      transform: scale(1.01) translateY(-3px);
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+    }
+    .premium-banner-bg {
+      position: absolute; top: -5%; left: -5%; width: 110%; height: 110%; 
+      background-position: center; background-size: cover; 
+      z-index: 1; filter: brightness(0.9); transition: transform 0.8s ease;
+    }
+    .premium-banner:hover .premium-banner-bg {
+      transform: scale(1.03);
+    }
+    .premium-banner-overlay-1 {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%); z-index: 2;
+    }
+    .premium-banner-overlay-2 {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      opacity: 0.45; mix-blend-mode: multiply; z-index: 3;
+    }
+    .premium-banner-glow {
+      position: absolute; bottom: -50px; right: -50px; width: 300px; height: 300px; 
+      filter: blur(40px); z-index: 3; opacity: 0.6; border-radius: 50%;
+    }
+    .premium-banner-content {
+      position: relative; z-index: 4; padding-left: 20px;
+    }
+    .premium-banner-title {
+      margin: 0; color: #ffffff; font-size: 2rem; font-weight: 700; 
+      font-family: 'Playfair Display', serif; text-shadow: 0px 4px 12px rgba(0,0,0,0.8); letter-spacing: -0.5px;
+    }
+    .premium-banner-enquiry {
+      margin: 8px 0 0 0; color: #f8fafc; font-size: 1.05rem; font-style: italic; 
+      max-width: 800px; font-weight: 300; text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+    }
   `;
 
-  let gridHtml = '';
-  keyIndividualsData.forEach(person => {
-    gridHtml += generateKeyIndividualCardHTML(person);
-  });
-  grid.innerHTML = gridHtml;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'key-individuals-wrapper fade-in';
+  wrapper.style.padding = '20px';
+  wrapper.style.maxWidth = '1200px';
+  wrapper.style.margin = '0 auto';
 
-  wrapper.appendChild(grid);
+  const header = document.createElement('div');
+  header.style.textAlign = 'center';
+  header.style.marginBottom = '40px';
+  header.innerHTML = `
+    <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">Key Individuals</h1>
+    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped these events.</p>
+  `;
+  wrapper.appendChild(header);
+
+  let grouped = false;
+  if (keyIndividualsData.length > 0 && keyIndividualsData[0].group) {
+    grouped = true;
+  }
+
+  const bannerMap = {
+    'Key Topic 1': {
+      title: 'Key Topic 1: The Weimar Republic (1918-29)',
+      image: 'assets/banners/kt1_weimar_banner.png',
+      gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
+      border: '#3b82f6',
+      enquiry: 'To what extent did the Weimar Republic recover from its early crises?'
+    },
+    'Key Topic 2': {
+      title: "Key Topic 2: Hitler's Rise to Power, 1919-33",
+      image: 'assets/banners/kt2_weimar_banner.png',
+      gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
+      border: '#dc2626',
+      enquiry: 'How did a tiny obscure political group transform?'
+    },
+    'Key Topic 3': {
+      title: "Key Topic 3: Nazi Control and Dictatorship",
+      image: 'assets/banners/kt3_weimar_banner.png',
+      gradient: 'linear-gradient(135deg, #4b5563, #1f2937)',
+      border: '#1f2937',
+      enquiry: 'From chains to absolute control'
+    },
+    'Key Topic 4': {
+      title: "Key Topic 4: Life in Nazi Germany, 1933-39",
+      image: 'assets/banners/kt4_weimar_banner.png',
+      gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)',
+      border: '#65a30d',
+      enquiry: 'Did life improve under the Nazis?'
+    }
+  };
+
+  if (grouped) {
+    let currentGroup = '';
+    let htmlContent = '';
+    let isFirstGroup = true;
+
+    keyIndividualsData.forEach(person => {
+      if (person.group !== currentGroup) {
+        if (!isFirstGroup) {
+          htmlContent += '</div>'; // Close previous grid
+        }
+        isFirstGroup = false;
+        currentGroup = person.group;
+        
+        // Add Banner
+        const bannerData = bannerMap[currentGroup];
+        if (bannerData) {
+          const bannerUrl = typeof getAssetUrl === 'function' ? getAssetUrl('/' + bannerData.image) : '/' + bannerData.image;
+          htmlContent += `
+            <div style="margin-top: 40px; margin-bottom: 25px;">
+              <div class="premium-banner" style="position: relative; margin: 0; min-height: 140px;">
+                <div class="premium-banner-bg" style="background-image: url('${bannerUrl}'); background-position: center;"></div>
+                <div class="premium-banner-overlay-1"></div>
+                <div class="premium-banner-overlay-2" style="background: ${bannerData.gradient};"></div>
+                <div class="premium-banner-glow" style="background: radial-gradient(circle, ${bannerData.border} 0%, transparent 70%);"></div>
+                <div class="premium-banner-content" style="border-left: 6px solid ${bannerData.border};">
+                  <h3 class="premium-banner-title">${bannerData.title}</h3>
+                  <p class="premium-banner-enquiry">${bannerData.enquiry}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          // Fallback text header
+          htmlContent += `
+            <h2 style="margin-top: 40px; margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px;">
+              ${currentGroup}
+            </h2>
+          `;
+        }
+
+        // Create new grid for this group
+        htmlContent += `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; align-items: stretch;">`;
+      }
+      
+      htmlContent += generateKeyIndividualCardHTML(person);
+    });
+
+    if (!isFirstGroup) {
+      htmlContent += '</div>'; // Close final grid
+    }
+
+    wrapper.insertAdjacentHTML('beforeend', htmlContent);
+
+  } else {
+    // Legacy non-grouped logic
+    const grid = document.createElement('div');
+    grid.style.display = 'grid';
+    grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+    grid.style.gap = '25px';
+    grid.style.alignItems = 'stretch';
+    
+    let gridHtml = '';
+    keyIndividualsData.forEach(person => {
+      gridHtml += generateKeyIndividualCardHTML(person);
+    });
+    grid.innerHTML = gridHtml;
+    wrapper.appendChild(grid);
+  }
   container.appendChild(wrapper);
 }

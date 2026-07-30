@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Pack: Key Topic 3: Nazi Control and Dictatorship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .cover h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 4rem;
+            color: var(--brand-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #ddd;
+            margin-top: 0;
+            margin-bottom: 60px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            border-top: 2px solid var(--brand-red);
+            padding-top: 20px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            border-bottom: 4px solid var(--brand-red);
+            padding-bottom: 10px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-red);
+            margin-top: 30px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 15px; height: 15px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1px solid #888;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto;
+            border: 2px dashed var(--brand-red);
+            padding: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .debrief h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 30px;
+            flex-shrink: 0;
+        }
+        .answer-text {
+            font-weight: 600;
+        }
+
+        /* Tracker Page */
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 10%; }
+        .col-date { width: 15%; }
+        .col-score { width: 15%; }
+        .col-sig { width: 30%; }
+        .col-target { width: 30%; }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1 style="font-size: 3rem; line-height: 1.2;">THE PAPER 3: WEIMAR AND NAZI GERMANY, 1918-39 DOSSIER:<br>KEY TOPIC 3: NAZI CONTROL AND DICTATORSHIP</h1>
+            <h2>76 Crucial Questions. Complete Knowledge Mastery.</h2>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #bbb;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">On what exact date did Paul von Hindenburg appoint Adolf Hitler as Chancellor of Germany?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">What is meant by the historical term 'backstairs intrigue'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">How many Nazis were actually allowed in Hitler's very first Cabinet in January 1933?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about why Franz von Papen believed he could control Hitler in 1933.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">Who was the leader of the SS, who eventually took control of all police forces in Germany?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">What does the abbreviation 'SD' stand for?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">What was the RSHA, created in 1939 under Reinhard Heydrich?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">What was the specific job of the SD?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">Because the Gestapo was actually quite small, who did they rely on for 80% of their information?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">What is the German term for 'Protective Custody', which allowed the Gestapo to arrest people without trial?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">What was the name of the compulsory organisation that all German judges were forced to join?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">What was the name of the new court set up in 1934 to hear cases of treason without a jury?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">Name the first concentration camp, opened in Germany in 1933.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">In the years 1933–39, which specific groups of people made up the vast majority of concentration camp inmates?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">In what month and year did Hitler sign the Concordat with the Catholic Church?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">Under the Concordat, what did the Pope agree to do?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">Who was placed in charge of the newly created Ministry of Church Affairs in 1935?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">Give one example of how Hitler broke the Concordat.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">What was the title of the angry letter the Pope had smuggled into Germany and read out in 1937?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">What was the name of the official, Nazified Protestant church set up by the government?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>Key Topic 3.2: The Police State and Religion, 1933–1939</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">Who was appointed as the 'Reich Bishop' to lead the Nazified Protestant church?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">What did members of the Reich Church proudly call themselves?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">What was the name of the illegal, breakaway Protestant church set up in opposition to the Nazis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">Name one of the key leaders of the Confessional Church who opposed the Nazis.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">What was the name of the law passed in March 1933 that effectively allowed Hitler to rule Germany as a dictator for four years?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">What is meant by the historical term Gleichschaltung?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">On what exact date did Hitler launch the Night of the Long Knives?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about why Hitler felt he had to murder Ernst Röhm.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">Who was appointed as the Minister of Public Enlightenment and Propaganda in 1933?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">What was the 'Editor's Law' of 1933?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">What was the name of the Nazi publishing house that bought up 82% of all German newspapers by 1939?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">What happened in Berlin and other university towns in May 1933?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">What was the German name for the cheap, mass-produced 'People's Receiver' radio?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">Why were the Nazi radios deliberately designed with short range?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">How did the Nazis ensure people listened to Hitler's speeches even if they weren't at home?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">In which city did the Nazis hold their massive, carefully choreographed annual rallies?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">37</td>
+                    <td class="col-question">Who was the architect who designed the 'Cathedral of Light' for the Nuremberg Rallies?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">38</td>
+                    <td class="col-question">What was the name of the famous female film director who made 'Triumph of the Will'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">39</td>
+                    <td class="col-question">Why were 80% of Nazi films actually comedies or dramas rather than blatant propaganda?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">40</td>
+                    <td class="col-question">In what year did Berlin host the Olympic Games?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">41</td>
+                    <td class="col-question">Give one example of how the Nazis hid their true nature during the Olympics.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">42</td>
+                    <td class="col-question">Who was the African-American athlete who won four gold medals at the 1936 Olympics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">43</td>
+                    <td class="col-question">How many gold medals did Germany win at the 1936 Olympics, allowing Goebbels to claim it was a domestic triumph?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">44</td>
+                    <td class="col-question">What organisation did all artists, writers, and musicians have to join to get work?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">45</td>
+                    <td class="col-question">What was the Nazi term for modern, abstract art that they completely banned?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">46</td>
+                    <td class="col-question">What was the purpose of the 1937 'Degenerate Art Exhibition' in Munich?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">47</td>
+                    <td class="col-question">Why did Hitler and Albert Speer build their architecture on such a massive scale?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">48</td>
+                    <td class="col-question">Which genre of music did the Nazis ban because they racistly viewed it as 'black music'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">49</td>
+                    <td class="col-question">What was the name of the government department set up in 1935 to weaken the power of Christianity?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">50</td>
+                    <td class="col-question">What is meant by the German term Schutzhaft (Protective Custody)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">51</td>
+                    <td class="col-question">Who was the brutal judge placed in charge of the People's Court?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">52</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about the difference between the SS, the SD, and the Gestapo.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">53</td>
+                    <td class="col-question">What is the term for low-level, non-violent opposition, such as telling an anti-Nazi joke or working slowly?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">54</td>
+                    <td class="col-question">Roughly how many Germans were sent to concentration camps for political offenses between 1933 and 1939?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">55</td>
+                    <td class="col-question">What was the name of the secret intelligence reports smuggled out of Germany by the exiled SPD?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">56</td>
+                    <td class="col-question">Since trade unions were banned, give two subtle ways industrial workers resisted the Nazis in factories.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">57</td>
+                    <td class="col-question">Who was the German carpenter who planted a time bomb in a Munich beer hall in November 1939?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">58</td>
+                    <td class="col-question">Why did Georg Elser's assassination attempt fail?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">59</td>
+                    <td class="col-question">Which top German Army General resigned in 1938 in protest of Hitler's aggressive foreign policy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">60</td>
+                    <td class="col-question">Who was the religious martyr murdered in 1939, known as the 'Preacher of Buchenwald'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">61</td>
+                    <td class="col-question">In what year did membership of the Hitler Youth become legally compulsory?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">62</td>
+                    <td class="col-question">Why did some teenagers begin to hate the Hitler Youth by the late 1930s?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">63</td>
+                    <td class="col-question">What was the name of the working-class youth opposition group that emerged in cities like Cologne and Essen?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">64</td>
+                    <td class="col-question">Name one of the specific local gangs that made up the Edelweiss Pirates.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">65</td>
+                    <td class="col-question">What symbol did the Edelweiss Pirates wear on their lapels to identify each other?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">66</td>
+                    <td class="col-question">Give two ways the Edelweiss Pirates rebelled against the Nazis.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">67</td>
+                    <td class="col-question">What was the name of the middle-class youth opposition group found in cities like Berlin and Hamburg?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">68</td>
+                    <td class="col-question">How did the social class of the Swing Youth differ from the Edelweiss Pirates?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">69</td>
+                    <td class="col-question">What banned genre of music did the Swing Youth illegally listen to?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">70</td>
+                    <td class="col-question">Why did the Nazis hate Jazz music?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">71</td>
+                    <td class="col-question">How did the girls in the Swing Youth rebel against the Nazi ideal of German womanhood?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">72</td>
+                    <td class="col-question">Before 1939, how did the Gestapo usually punish Edelweiss Pirates who were caught?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">73</td>
+                    <td class="col-question">What was the name of the Nazi publishing house that bought up 82% of all German newspapers by 1939?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">74</td>
+                    <td class="col-question">What is meant by the Nazi term Entartete Kunst?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">75</td>
+                    <td class="col-question">How many gold medals did Germany win at the 1936 Berlin Olympics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">76</td>
+                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about how Joseph Goebbels used radio to brainwash the German public.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+            <h1>THE VAULT</h1>
+            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+        <div class="answer-list"><h3>Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text">30 January 1933.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text">The secret plotting and political deal-making between elite politicians (like Papen, Schleicher, and Hindenburg) that brought Hitler to power, rather than a democratic election victory.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text">Only three (including Hitler).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text">Papen believed he could 'tame' Hitler by offering him the Chancellorship but surrounding him with conservative ministers, famously claiming 'we will push him into a corner until he squeaks'.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text">Heinrich Himmler</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text">Sicherheitsdienst / Security Service</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text">The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text">Intelligence gathering / spying on opponents and keeping index cards on them</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text">Ordinary citizens / informers denouncing their neighbours</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text">Schutzhaft</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text">The National Socialist League for the Maintenance of the Law</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text">The People's Court</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text">Dachau</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text">Political prisoners / Communists / Trade Unionists</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text">July 1933</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text">Keep the Catholic Church out of German politics</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text">Hanns Kerrl</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text">He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text">'Mit brennender Sorge' / With Burning Concern</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text">The Reich Church</div>
+                </div>
+                </div><div class="answer-list"><h3>Key Topic 3.2: The Police State and Religion, 1933–1939</h3>
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text">Ludwig Müller</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text">'German Christians'</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text">The Confessional Church</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text">Martin Niemöller or Dietrich Bonhoeffer</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text">The Enabling Act.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">26.</div>
+                    <div class="answer-text">The process of Nazification by which Hitler brought all aspects of German society and government under Nazi control.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">27.</div>
+                    <div class="answer-text">30 June 1934.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">28.</div>
+                    <div class="answer-text">Röhm led the SA which had 3 million members; he wanted a 'second revolution' to redistribute wealth; he wanted the SA to replace the regular army, which alienated the powerful army generals Hitler needed.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">29.</div>
+                    <div class="answer-text">Joseph Goebbels</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">30.</div>
+                    <div class="answer-text">A law making newspaper editors personally responsible for anything printed in their papers</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">31.</div>
+                    <div class="answer-text">The Eher Verlag</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">32.</div>
+                    <div class="answer-text">Massive book burnings of works by Jewish and communist authors</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">33.</div>
+                    <div class="answer-text">Volksempfänger</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">34.</div>
+                    <div class="answer-text">So Germans could not pick up foreign broadcasts like the BBC</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">35.</div>
+                    <div class="answer-text">They put loudspeakers in streets and sounded sirens in factories to stop work</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">36.</div>
+                    <div class="answer-text">Nuremberg</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">37.</div>
+                    <div class="answer-text">Albert Speer</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">38.</div>
+                    <div class="answer-text">Leni Riefenstahl</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">39.</div>
+                    <div class="answer-text">Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">40.</div>
+                    <div class="answer-text">1936</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</h3>
+                <div class="answer-item">
+                    <div class="answer-num">41.</div>
+                    <div class="answer-text">They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">42.</div>
+                    <div class="answer-text">Jesse Owens</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">43.</div>
+                    <div class="answer-text">33 gold medals</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">44.</div>
+                    <div class="answer-text">The Reich Chamber of Culture</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">45.</div>
+                    <div class="answer-text">Degenerate Art / Entartete Kunst</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">46.</div>
+                    <div class="answer-text">To deliberately display banned modern art so the German public could mock and laugh at it</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">47.</div>
+                    <div class="answer-text">To make the individual feel small and the Nazi State feel eternal and powerful</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">48.</div>
+                    <div class="answer-text">Jazz</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">49.</div>
+                    <div class="answer-text">The Ministry of Church Affairs.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">50.</div>
+                    <div class="answer-text">A Nazi legal loophole allowing the Gestapo to imprison anyone indefinitely without trial.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">51.</div>
+                    <div class="answer-text">Roland Freisler.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">52.</div>
+                    <div class="answer-text">The SS were the main paramilitary bodyguards who ran the police and camps; the SD were the intelligence wing who kept index cards; the Gestapo were the non-uniformed secret police who arrested people.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">53.</div>
+                    <div class="answer-text">Passive Resistance</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">54.</div>
+                    <div class="answer-text">1.3 million</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">55.</div>
+                    <div class="answer-text">The Sopade reports</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">56.</div>
+                    <div class="answer-text">Sabotaging machinery / absenteeism / working deliberately slowly</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">57.</div>
+                    <div class="answer-text">Georg Elser</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">58.</div>
+                    <div class="answer-text">Hitler finished his speech early and left the building 13 minutes before the bomb went off</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">59.</div>
+                    <div class="answer-text">General Ludwig Beck</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">60.</div>
+                    <div class="answer-text">Pastor Paul Schneider</div>
+                </div>
+                </div><div class="answer-list"><h3>Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</h3>
+                <div class="answer-item">
+                    <div class="answer-num">61.</div>
+                    <div class="answer-text">1936</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">62.</div>
+                    <div class="answer-text">It became too strict, militaristic, and focused on boring military drills</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">63.</div>
+                    <div class="answer-text">The Edelweiss Pirates</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">64.</div>
+                    <div class="answer-text">The Navajos / The Roving Dudes / The Kittelbach Pirates</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">65.</div>
+                    <div class="answer-text">The white edelweiss flower</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">66.</div>
+                    <div class="answer-text">They went on hikes / wore checked shirts / beat up Hitler Youth members</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">67.</div>
+                    <div class="answer-text">The Swing Youth</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">68.</div>
+                    <div class="answer-text">The Swing Youth were middle/upper class; the Pirates were working class</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">69.</div>
+                    <div class="answer-text">American Jazz and Swing</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">70.</div>
+                    <div class="answer-text">Because of its African-American origins, they viewed it as racially inferior / 'black music'</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">71.</div>
+                    <div class="answer-text">They wore makeup and fashionable clothes, rather than the natural 'peasant' look</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">72.</div>
+                    <div class="answer-text">They arrested them, shaved their heads, and beat them, but rarely killed them</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">73.</div>
+                    <div class="answer-text">The Eher Verlag.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">74.</div>
+                    <div class="answer-text">Degenerate Art—modern, abstract art that the Nazis banned for being 'un-German'.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">75.</div>
+                    <div class="answer-text">33 gold medals.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">76.</div>
+                    <div class="answer-text">He subsidised the mass production of the Volksempfänger so 70% of homes owned one; they had short ranges to block foreign broadcasts; loudspeakers were put in streets and factory sirens stopped work for Hitler's speeches.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 76 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/76)</th>
+                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        </div>
+    </div>
+
+</body>
+</html>
+        
