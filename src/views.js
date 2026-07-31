@@ -101,7 +101,7 @@ export function renderDashboard() {
     const bgPos = unit.id === 'edexcel_medicine' ? 'center 10%' : 'center';
     
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s">
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer;" onclick="if(${isUnlocked}) { window.launchSubApp('${unit.id}'); } else { window.launchSubApp('${unit.id}'); }">
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0;">
           <div class="module-header" style="margin-bottom: 8px;">

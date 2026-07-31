@@ -30,7 +30,7 @@ if (!unitId) {
   initializeApp(unitData);
 
   // Add custom tabs for this unit if data exists
-  setTimeout(() => {
+  {
     const sidebarNav = document.getElementById('sidebar-nav-container');
     if (sidebarNav) {
       // 1. Timeline Tab
@@ -90,7 +90,7 @@ if (!unitId) {
 
 
     }
-  }, 500);
+  }
 
   }).catch(err => {
     console.error('Error loading unit:', err);

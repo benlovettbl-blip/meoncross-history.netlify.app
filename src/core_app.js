@@ -2,7 +2,7 @@ import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
-import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide } from './exam_guide_content.js';
+import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide , elizabethGuide} from './exam_guide_content.js';
 
 window.examTimers = {};
 
@@ -1028,6 +1028,18 @@ export function initializeApp(unitData) {
         </div>
         <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
           ${weimarGuide}
+        </div>
+      `;
+    } else if (unitData.title && (unitData.title.toLowerCase().includes('elizabeth') || unitData.title.toLowerCase().includes('armada'))) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #ddd6fe; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 2</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${elizabethGuide}
         </div>
       `;
     } else {

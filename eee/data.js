@@ -1419,19 +1419,19 @@ export const unitData = {
                 {
                     "question": "Which Protestant Bishop of Durham did the Northern Earls strongly resent?",
                     "options": [
-                        "The Bond of Association",
-                        "A list of Catholic sympathisers / proof of the \"enemy within\"",
+                        "Edmund Grindal",
                         "James Pilkington",
-                        "1587"
+                        "Matthew Parker",
+                        "John Whitgift"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "Which two Catholic nobles led the Revolt of the Northern Earls in 1569?",
                     "options": [
-                        "A list of Catholic sympathisers / proof of the \"enemy within\"",
-                        "Sir Francis Walsingham",
-                        "Thomas Phelippes",
+                        "The Duke of Norfolk and Earl of Arundel",
+                        "The Earl of Leicester and Earl of Essex",
+                        "The Earl of Southampton and Earl of Sussex",
                         "The Earl of Northumberland and the Earl of Westmorland"
                     ],
                     "answer": 3
@@ -1439,119 +1439,119 @@ export const unitData = {
                 {
                     "question": "What major religious building did the Northern Earls capture to celebrate a Catholic Mass?",
                     "options": [
+                        "York Minster",
+                        "Westminster Abbey",
                         "Durham Cathedral",
-                        "William Cecil, Robert Dudley, or John Forster",
-                        "450",
-                        "A list of Catholic sympathisers / proof of the \"enemy within\""
+                        "Canterbury Cathedral"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Roughly how many rebels did Elizabeth execute after the Northern Earls' revolt?",
                     "options": [
-                        "The Duke of Alba",
-                        "The Earl of Northumberland and the Earl of Westmorland",
-                        "Being formally excluded from the Catholic Church and unable to receive sacraments",
-                        "450"
+                        "150",
+                        "800",
+                        "450",
+                        "1,200"
                     ],
-                    "answer": 3
+                    "answer": 2
                 },
                 {
                     "question": "What was the theological meaning of the 1570 Papal excommunication?",
                     "options": [
-                        "Sir Francis Walsingham",
-                        "James Pilkington",
+                        "Being ordered to travel to Rome for a trial",
+                        "Being stripped of all royal titles by the Catholic Church",
                         "Being formally excluded from the Catholic Church and unable to receive sacraments",
-                        "The Duke of Alba"
+                        "Being forced to pay a massive fine to the Pope"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "What strict law was passed in 1581 regarding Catholic conversions?",
                     "options": [
-                        "The Throckmorton Plot",
-                        "450",
-                        "James Pilkington",
-                        "It became high treason to convert anyone to Catholicism"
+                        "It became high treason to convert anyone to Catholicism",
+                        "It was completely legal as long as it was done in private",
+                        "It became a minor offence punishable by a fine",
+                        "Converting to Catholicism resulted in immediate deportation"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
                     "question": "Who was the Italian banker that orchestrated a plot in 1571?",
                     "options": [
-                        "Durham Cathedral",
-                        "The Babington Plot",
                         "Roberto Ridolfi",
-                        "Mendoza"
+                        "William Parry",
+                        "Anthony Babington",
+                        "Francis Throckmorton"
                     ],
-                    "answer": 2
+                    "answer": 0
                 },
                 {
                     "question": "Which foreign commander was supposed to lead 10,000 Spanish troops during the Ridolfi Plot?",
                     "options": [
-                        "Sir Francis Walsingham",
+                        "The Duke of Parma",
                         "The Duke of Alba",
-                        "William Cecil, Robert Dudley, or John Forster",
-                        "The Babington Plot"
+                        "Don John of Austria",
+                        "The Duke of Medina Sidonia"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "Which high-ranking English nobleman was executed in 1572 for his involvement in the Ridolfi Plot?",
                     "options": [
-                        "Durham Cathedral",
-                        "Being formally excluded from the Catholic Church and unable to receive sacraments",
-                        "It became high treason to convert anyone to Catholicism",
-                        "The Duke of Norfolk"
+                        "The Duke of Norfolk",
+                        "The Duke of Suffolk",
+                        "The Earl of Essex",
+                        "The Earl of Northumberland"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
                     "question": "Which plot in 1583 involved the French Duke of Guise invading England with Spanish money?",
                     "options": [
-                        "Thomas Phelippes",
-                        "The Earl of Northumberland and the Earl of Westmorland",
-                        "Sir Francis Walsingham",
-                        "The Throckmorton Plot"
+                        "The Babington Plot",
+                        "The Parry Plot",
+                        "The Throckmorton Plot",
+                        "The Ridolfi Plot"
                     ],
-                    "answer": 3
+                    "answer": 2
                 },
                 {
                     "question": "What document was created after the Throckmorton Plot stating Mary would be killed if Elizabeth was assassinated?",
                     "options": [
-                        "The Earl of Northumberland and the Earl of Westmorland",
-                        "The Babington Plot",
-                        "Agents provocateurs",
-                        "The Bond of Association"
+                        "The Bond of Association",
+                        "The Treason Act",
+                        "The Act of Supremacy",
+                        "The Act of Uniformity"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
                     "question": "Who was Elizabeth's Secretary of State and Spymaster?",
                     "options": [
                         "Sir Francis Walsingham",
-                        "Mendoza",
-                        "A list of Catholic sympathisers / proof of the \"enemy within\"",
-                        "The Babington Plot"
+                        "Robert Dudley",
+                        "Christopher Hatton",
+                        "William Cecil"
                     ],
                     "answer": 0
                 },
                 {
                     "question": "What term is used for spies, like Gilbert Gifford, who secretly encourage others to commit treason?",
                     "options": [
+                        "Pursuivants",
+                        "Double agents",
                         "Agents provocateurs",
-                        "The Babington Plot",
-                        "1587",
-                        "The Throckmorton Plot"
+                        "Informants"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Who was the expert cryptographer that deciphered Mary's letters for Walsingham?",
                     "options": [
-                        "It became high treason to convert anyone to Catholicism",
-                        "The Duke of Alba",
-                        "The Act for the Preservation of the Queen’s Safety",
+                        "John Dee",
+                        "Francis Bacon",
+                        "Thomas Cromwell",
                         "Thomas Phelippes"
                     ],
                     "answer": 3
@@ -1559,29 +1559,29 @@ export const unitData = {
                 {
                     "question": "Which 1586 plot provided the final, irrefutable written proof of Mary's guilt?",
                     "options": [
-                        "The Earl of Northumberland and the Earl of Westmorland",
-                        "The Duke of Norfolk",
-                        "James Pilkington",
-                        "The Babington Plot"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "What specific Act of Parliament was used to try and convict Mary, Queen of Scots?",
-                    "options": [
-                        "The Act for the Preservation of the Queen’s Safety",
-                        "William Cecil, Robert Dudley, or John Forster",
-                        "A list of Catholic sympathisers / proof of the \"enemy within\"",
-                        "The Throckmorton Plot"
+                        "The Babington Plot",
+                        "The Throckmorton Plot",
+                        "The Ridolfi Plot",
+                        "The Northern Rebellion"
                     ],
                     "answer": 0
                 },
                 {
+                    "question": "What specific Act of Parliament was used to try and convict Mary, Queen of Scots?",
+                    "options": [
+                        "The Act of Supremacy",
+                        "The Treason Act of 1571",
+                        "The Act for the Preservation of the Queen’s Safety",
+                        "The Act of Attainder"
+                    ],
+                    "answer": 2
+                },
+                {
                     "question": "In what year was Mary, Queen of Scots executed?",
                     "options": [
-                        "The Throckmorton Plot",
-                        "The Duke of Alba",
-                        "Thomas Phelippes",
+                        "1585",
+                        "1588",
+                        "1586",
                         "1587"
                     ],
                     "answer": 3
@@ -1589,32 +1589,32 @@ export const unitData = {
                 {
                     "question": "Name two \"new men\" at court whose rise to power angered the old northern nobility.",
                     "options": [
-                        "The Throckmorton Plot",
                         "William Cecil, Robert Dudley, or John Forster",
-                        "Agents provocateurs",
-                        "Being formally excluded from the Catholic Church and unable to receive sacraments"
+                        "Charles Neville and Thomas Percy",
+                        "The Duke of Norfolk and Earl of Northumberland",
+                        "The Earl of Westmorland and Earl of Sussex"
                     ],
-                    "answer": 1
+                    "answer": 0
                 },
                 {
                     "question": "What did Walsingham find in Francis Throckmorton's house that caused immense panic?",
                     "options": [
-                        "Thomas Phelippes",
-                        "The Bond of Association",
+                        "A stash of Spanish gold",
                         "A list of Catholic sympathisers / proof of the \"enemy within\"",
-                        "Sir Francis Walsingham"
+                        "A map of English coastal defences",
+                        "A collection of illegal Catholic Bibles"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "Which Spanish Ambassador was expelled following the discovery of the Throckmorton Plot?",
                     "options": [
+                        "De Spes",
                         "Mendoza",
-                        "A list of Catholic sympathisers / proof of the \"enemy within\"",
-                        "Roberto Ridolfi",
-                        "Durham Cathedral"
+                        "Gondomar",
+                        "De Quadra"
                     ],
-                    "answer": 0
+                    "answer": 1
                 }
             ]
         },
@@ -1815,12 +1815,12 @@ export const unitData = {
                 {
                     "question": "What famous phrase was used to describe Drake's raid on Cadiz?",
                     "options": [
+                        "\"Breaking the Spanish shield\"",
                         "\"Singeing the King of Spain's beard\"",
-                        "\"The Protestant Wind\"",
-                        "\"The Golden Hind\"",
-                        "\"The Invincible Raid\""
+                        "\"Burning the Spanish purse\"",
+                        "\"Clipping the King of Spain's wings\""
                     ],
-                    "answer": 0
+                    "answer": 1
                 },
                 {
                     "question": "In what year did the Spanish Armada set sail?",
@@ -2030,79 +2030,79 @@ export const unitData = {
                 {
                     "question": "Under which previous monarch were England and Spain actually allies?",
                     "options": [
+                        "Henry VII",
+                        "Henry VIII",
                         "Mary Tudor",
-                        "Seasoned wooden barrel staves",
-                        "Ostend",
-                        "The Genoese Loan"
+                        "Edward VI"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "What did Elizabeth seize from Italian ships sheltering in English ports in 1568?",
                     "options": [
-                        "\"Singeing the King of Spain's beard\"",
-                        "The Genoese Loan",
-                        "Ostend",
-                        "30 ships"
+                        "The French Fleet",
+                        "The Papal Treasury",
+                        "The Spanish Armada",
+                        "The Genoese Loan"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "How much Spanish gold and silver did Francis Drake capture between 1577 and 1580?",
                     "options": [
-                        "It bought England vital time to prepare their navy and coastal defences",
+                        "£800,000",
+                        "£100,000",
                         "£400,000",
-                        "April 1587",
-                        "7,400 troops"
+                        "£1,000,000"
                     ],
-                    "answer": 1
+                    "answer": 2
                 },
                 {
                     "question": "Which Dutch Protestant rebel leader was assassinated in 1584?",
                     "options": [
+                        "Count Egmont",
+                        "The Duke of Parma",
                         "William of Orange",
-                        "The Genoese Loan",
-                        "The Treaty of Joinville",
-                        "Seasoned wooden barrel staves"
+                        "Don John of Austria"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Which 1584 treaty allied Catholic France and Spain together?",
                     "options": [
-                        "\"Singeing the King of Spain's beard\"",
-                        "The Genoese Loan",
+                        "The Treaty of Cateau-Cambrésis",
                         "The Treaty of Joinville",
-                        "William of Orange"
+                        "The Treaty of Nonsuch",
+                        "The Treaty of Troyes"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "What 1585 agreement saw Elizabeth officially pledge military support to the Dutch rebels?",
                     "options": [
+                        "The Treaty of Westminster",
+                        "The Treaty of Joinville",
                         "The Treaty of Nonsuch",
-                        "William of Orange",
-                        "By roughly one year",
-                        "Seasoned wooden barrel staves"
-                    ],
-                    "answer": 0
-                },
-                {
-                    "question": "How many soldiers did Elizabeth agree to send to the Netherlands in 1585?",
-                    "options": [
-                        "The Genoese Loan",
-                        "William of Orange",
-                        "7,400 troops",
-                        "\"Singeing the King of Spain's beard\""
+                        "The Treaty of Richmond"
                     ],
                     "answer": 2
                 },
                 {
+                    "question": "How many soldiers did Elizabeth agree to send to the Netherlands in 1585?",
+                    "options": [
+                        "7,400 troops",
+                        "25,000 troops",
+                        "2,000 troops",
+                        "15,000 troops"
+                    ],
+                    "answer": 0
+                },
+                {
                     "question": "Which English commander was sent to lead the troops in the Netherlands?",
                     "options": [
-                        "William of Orange",
-                        "Governor General",
-                        "The Treaty of Nonsuch",
+                        "Sir Walter Raleigh",
+                        "Sir Francis Drake",
+                        "The Duke of Norfolk",
                         "Robert Dudley, Earl of Leicester"
                     ],
                     "answer": 3
@@ -2110,19 +2110,19 @@ export const unitData = {
                 {
                     "question": "What title did Robert Dudley accept in the Netherlands that infuriated Elizabeth?",
                     "options": [
-                        "7,400 troops",
-                        "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later",
+                        "Supreme Commander",
                         "Governor General",
-                        "30 ships"
+                        "Lord Protector",
+                        "King of the Netherlands"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "Name one of the English officers who defected to the Spanish side, damaging Dutch trust.",
                     "options": [
-                        "7,400 troops",
-                        "William of Orange",
-                        "\"Singeing the King of Spain's beard\"",
+                        "Sir Francis Drake",
+                        "Sir John Hawkins",
+                        "Robert Dudley",
                         "William Stanley or Rowland York"
                     ],
                     "answer": 3
@@ -2130,82 +2130,82 @@ export const unitData = {
                 {
                     "question": "What deep-water port did Dudley successfully prevent the Spanish from capturing?",
                     "options": [
-                        "April 1587",
-                        "By roughly one year",
-                        "William Stanley or Rowland York",
-                        "Ostend"
+                        "Rotterdam",
+                        "Calais",
+                        "Ostend",
+                        "Antwerp"
                     ],
-                    "answer": 3
+                    "answer": 2
                 },
                 {
                     "question": "Why was the defense of Ostend so important for England's future?",
                     "options": [
-                        "Ostend",
+                        "It was the only port that traded in English cloth",
                         "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later",
-                        "By roughly one year",
-                        "William Stanley or Rowland York"
+                        "It gave English ships a place to hide during storms",
+                        "It was where Mary Queen of Scots was planning to land"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "In what month and year did Francis Drake launch his preemptive raid on Cadiz?",
                     "options": [
-                        "By roughly one year",
                         "April 1587",
-                        "Seasoned wooden barrel staves",
-                        "\"Singeing the King of Spain's beard\""
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "What famous phrase was used to describe Drake's raid on Cadiz?",
-                    "options": [
-                        "\"Singeing the King of Spain's beard\"",
-                        "William Stanley or Rowland York",
-                        "Robert Dudley, Earl of Leicester",
-                        "The Treaty of Nonsuch"
+                        "October 1587",
+                        "July 1588",
+                        "January 1586"
                     ],
                     "answer": 0
                 },
                 {
-                    "question": "Roughly how many Spanish ships did Drake destroy in Cadiz harbour?",
+                    "question": "What famous phrase was used to describe Drake's raid on Cadiz?",
                     "options": [
-                        "7,400 troops",
-                        "William Stanley or Rowland York",
-                        "30 ships",
-                        "The Genoese Loan"
+                        "\"Clipping the King of Spain's wings\"",
+                        "\"Breaking the Spanish shield\"",
+                        "\"Burning the Spanish purse\"",
+                        "\"Singeing the King of Spain's beard\""
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
-                    "question": "What crucial supply item did Drake destroy at Cadiz that later caused Spanish food to rot?",
+                    "question": "Roughly how many Spanish ships did Drake destroy in Cadiz harbour?",
                     "options": [
-                        "7,400 troops",
-                        "Seasoned wooden barrel staves",
-                        "£400,000",
-                        "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later"
+                        "10 ships",
+                        "30 ships",
+                        "60 ships",
+                        "130 ships"
                     ],
                     "answer": 1
                 },
                 {
+                    "question": "What crucial supply item did Drake destroy at Cadiz that later caused Spanish food to rot?",
+                    "options": [
+                        "Gunpowder reserves",
+                        "Ship anchors",
+                        "Seasoned wooden barrel staves",
+                        "Canvas sails"
+                    ],
+                    "answer": 2
+                },
+                {
                     "question": "How long did Drake's raid on Cadiz delay the launch of the Spanish Armada?",
                     "options": [
-                        "William of Orange",
+                        "By five years",
                         "By roughly one year",
-                        "30 ships",
-                        "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later"
+                        "By three years",
+                        "By one month"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "Why was this delay so significant for Elizabeth's government?",
                     "options": [
-                        "The Genoese Loan",
+                        "It meant the Spanish went bankrupt",
+                        "It gave them time to build a new alliance with France",
                         "It bought England vital time to prepare their navy and coastal defences",
-                        "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later",
-                        "April 1587"
+                        "It allowed them to assassinate King Philip II"
                     ],
-                    "answer": 1
+                    "answer": 2
                 }
             ]
         },
@@ -2307,9 +2307,9 @@ export const unitData = {
                 {
                     "question": "Who had Elizabeth rejected a marriage proposal from in 1559?",
                     "options": [
-                        "They were mounted on smaller gun carriages, allowing them space to recoil and reload",
-                        "Northwards, around Scotland and Ireland",
-                        "130",
+                        "The King of France",
+                        "The Duke of Anjou",
+                        "King Eric of Sweden",
                         "King Philip II of Spain"
                     ],
                     "answer": 3
@@ -2317,192 +2317,192 @@ export const unitData = {
                 {
                     "question": "Which Pope gave his blessing to the Armada, turning it into a Catholic crusade?",
                     "options": [
-                        "No, the war continued for another 15 years and Philip built more armadas",
-                        "Eight",
-                        "Calais",
-                        "Pope Sixtus V"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "How much money did the Pope promise Philip if the Armada was successful?",
-                    "options": [
-                        "Tilbury",
-                        "A crescent formation",
-                        "Dutch flyboats",
-                        "One million gold ducats"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "What 1584 treaty between France and Spain isolated England and pushed Philip closer to war?",
-                    "options": [
-                        "130",
-                        "The Duke of Medina Sidonia",
-                        "They were mounted on smaller gun carriages, allowing them space to recoil and reload",
-                        "The Treaty of Joinville"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "The execution of which monarch in 1587 gave Philip II his final political motivation to invade?",
-                    "options": [
-                        "King Philip II of Spain",
-                        "Eight",
-                        "Dutch flyboats",
-                        "Mary, Queen of Scots"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "What was the name of the inexperienced commander chosen by Philip to lead the Armada?",
-                    "options": [
-                        "The Duke of Medina Sidonia",
-                        "Tilbury",
-                        "Eight",
-                        "They were mounted on smaller gun carriages, allowing them space to recoil and reload"
+                        "Pope Sixtus V",
+                        "Pope Paul IV",
+                        "Pope Gregory XIII",
+                        "Pope Pius V"
                     ],
                     "answer": 0
                 },
                 {
+                    "question": "How much money did the Pope promise Philip if the Armada was successful?",
+                    "options": [
+                        "One million gold ducats",
+                        "100,000 gold ducats",
+                        "500,000 gold ducats",
+                        "5 million gold ducats"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What 1584 treaty between France and Spain isolated England and pushed Philip closer to war?",
+                    "options": [
+                        "The Treaty of Cateau-Cambrésis",
+                        "The Treaty of Joinville",
+                        "The Treaty of Blois",
+                        "The Treaty of Nonsuch"
+                    ],
+                    "answer": 1
+                },
+                {
+                    "question": "The execution of which monarch in 1587 gave Philip II his final political motivation to invade?",
+                    "options": [
+                        "Mary, Queen of Scots",
+                        "King Henry III of France",
+                        "William of Orange",
+                        "Lord Darnley"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What was the name of the inexperienced commander chosen by Philip to lead the Armada?",
+                    "options": [
+                        "The Duke of Parma",
+                        "The Marquis of Santa Cruz",
+                        "Don John of Austria",
+                        "The Duke of Medina Sidonia"
+                    ],
+                    "answer": 3
+                },
+                {
                     "question": "How many ships made up the Spanish Armada?",
                     "options": [
-                        "Fireships",
-                        "Pope Sixtus V",
+                        "60",
                         "130",
-                        "The \"Protestant Wind\""
+                        "400",
+                        "250"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "What highly effective, defensive shape did the Spanish fleet sail in?",
                     "options": [
-                        "The Duke of Parma",
-                        "One million gold ducats",
                         "A crescent formation",
-                        "The \"Protestant Wind\""
+                        "A diamond formation",
+                        "A straight line",
+                        "A V-shape formation"
                     ],
-                    "answer": 2
+                    "answer": 0
                 },
                 {
                     "question": "Who commanded the Spanish land army waiting in the Netherlands?",
                     "options": [
-                        "No, the war continued for another 15 years and Philip built more armadas",
-                        "The Treaty of Joinville",
+                        "The Duke of Medina Sidonia",
+                        "Don John of Austria",
                         "The Duke of Parma",
-                        "The \"Protestant Wind\""
+                        "The Duke of Alba"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "What type of small rebel ships blockaded the Spanish army in the shallow coastal waters?",
                     "options": [
-                        "The Treaty of Joinville",
-                        "Fireships",
-                        "Tilbury",
-                        "Dutch flyboats"
+                        "Dutch flyboats",
+                        "Spanish galleys",
+                        "French frigates",
+                        "English galleons"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
                     "question": "At which port did the Armada mistakenly drop anchor to wait for the land army?",
                     "options": [
-                        "Calais",
-                        "The Duke of Medina Sidonia",
-                        "The Duke of Parma",
-                        "Tilbury"
+                        "Ostend",
+                        "Rotterdam",
+                        "Antwerp",
+                        "Calais"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "What devastating tactic did the English use at midnight to break the Spanish formation?",
                     "options": [
+                        "Exploding underwater mines",
+                        "Sneak boarding parties",
                         "Fireships",
-                        "They were mounted on smaller gun carriages, allowing them space to recoil and reload",
-                        "The Armada Portrait",
-                        "Pope Sixtus V"
+                        "Firing grappling hooks"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "How many fireships did the English send into the Spanish fleet?",
                     "options": [
-                        "Dutch flyboats",
+                        "Fifteen",
                         "Eight",
-                        "They were mounted on smaller gun carriages, allowing them space to recoil and reload",
-                        "Mary, Queen of Scots"
+                        "Three",
+                        "Twenty"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "What was the name of the major naval battle that took place the day after the fireships were used?",
                     "options": [
-                        "King Philip II of Spain",
-                        "Fireships",
-                        "Calais",
-                        "The Battle of Gravelines"
+                        "The Battle of Cadiz",
+                        "The Battle of Gravelines",
+                        "The Battle of Lepanto",
+                        "The Battle of Trafalgar"
                     ],
-                    "answer": 3
+                    "answer": 1
                 },
                 {
                     "question": "Why were English cannons able to fire more quickly than the Spanish during this battle?",
                     "options": [
+                        "The Spanish ran out of gunpowder completely",
                         "They were mounted on smaller gun carriages, allowing them space to recoil and reload",
-                        "King Philip II of Spain",
-                        "The Armada Portrait",
-                        "Eight"
+                        "They used pre-packaged gunpowder cartridges",
+                        "They had twice as many men loading each cannon"
                     ],
-                    "answer": 0
+                    "answer": 1
                 },
                 {
                     "question": "Which way was the Armada forced to sail to escape the English fleet?",
                     "options": [
                         "Northwards, around Scotland and Ireland",
-                        "130",
-                        "Eight",
-                        "The \"Protestant Wind\""
+                        "South, back through the English Channel",
+                        "West, across the Atlantic Ocean",
+                        "East, towards the Netherlands"
                     ],
                     "answer": 0
                 },
                 {
                     "question": "What nickname did the English give to the storms that destroyed the fleeing Spanish ships?",
                     "options": [
+                        "The \"Spanish Curse\"",
                         "The \"Protestant Wind\"",
-                        "A crescent formation",
-                        "Northwards, around Scotland and Ireland",
-                        "Pope Sixtus V"
+                        "The \"Divine Storm\"",
+                        "The \"Elizabethan Gale\""
                     ],
-                    "answer": 0
+                    "answer": 1
                 },
                 {
                     "question": "Where did Elizabeth deliver her famous speech to her troops (\"I have the heart and stomach of a king\")?",
                     "options": [
-                        "Tilbury",
-                        "Fireships",
-                        "Mary, Queen of Scots",
-                        "The Duke of Parma"
+                        "Plymouth",
+                        "Richmond Palace",
+                        "London",
+                        "Tilbury"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "What famous piece of propaganda was painted to celebrate the victory?",
                     "options": [
-                        "The Armada Portrait",
-                        "Tilbury",
-                        "The Duke of Medina Sidonia",
-                        "The Duke of Parma"
+                        "The Rainbow Portrait",
+                        "The Coronation Portrait",
+                        "The Ditchley Portrait",
+                        "The Armada Portrait"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "Did the defeat of the Armada in 1588 mean the end of the war with Spain?",
                     "options": [
-                        "Mary, Queen of Scots",
-                        "A crescent formation",
+                        "Yes, a peace treaty was signed the following year",
                         "No, the war continued for another 15 years and Philip built more armadas",
-                        "The Armada Portrait"
+                        "No, but Spain never attacked England again",
+                        "Yes, King Philip surrendered immediately"
                     ],
-                    "answer": 2
+                    "answer": 1
                 }
             ]
         },
@@ -2603,109 +2603,109 @@ export const unitData = {
                 {
                     "question": "What intellectual movement acted as a catalyst for educational reform in Elizabethan England?",
                     "options": [
-                        "Christopher Marlowe",
                         "Humanism",
-                        "Roger Ascham",
-                        "The printing press"
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "Which prominent Humanist scholar was Queen Elizabeth's personal tutor?",
-                    "options": [
-                        "She loved it and frequently ordered private exhibitions",
-                        "Christopher Marlowe",
-                        "Roger Ascham",
-                        "A Grammar School"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "What invention significantly helped increase literacy by making books cheaper?",
-                    "options": [
-                        "Latin",
-                        "The printing press",
-                        "Mob football",
-                        "Humanism"
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "What type of local school provided basic education for young boys and some girls?",
-                    "options": [
-                        "A Petty School / Dame School",
-                        "Mob football",
-                        "A Grammar School",
-                        "30% of men, 10% of women"
+                        "The Enlightenment",
+                        "Scholasticism",
+                        "Romanticism"
                     ],
                     "answer": 0
                 },
                 {
-                    "question": "What wooden object covered in a transparent layer was used to teach children the alphabet?",
+                    "question": "Which prominent Humanist scholar was Queen Elizabeth's personal tutor?",
                     "options": [
-                        "Groundlings",
-                        "A Petty School / Dame School",
-                        "A hornbook",
-                        "A Grammar School"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "What type of school did the sons of the gentry and merchants attend from age seven?",
-                    "options": [
-                        "Christopher Marlowe",
-                        "The Lord Chamberlain's Men / The Earl of Leicester's Men",
-                        "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
-                        "A Grammar School"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "Which language dominated the curriculum of the Elizabethan Grammar school?",
-                    "options": [
-                        "A Petty School / Dame School",
-                        "Religious mystery plays",
                         "Roger Ascham",
-                        "Latin"
+                        "Thomas More",
+                        "John Dee",
+                        "Francis Bacon"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
-                    "question": "Roughly what percentage of men, and what percentage of women, were literate by 1603?",
+                    "question": "What invention significantly helped increase literacy by making books cheaper?",
                     "options": [
-                        "Religious mystery plays",
-                        "30% of men, 10% of women",
-                        "Roger Ascham",
-                        "A hornbook"
+                        "The printing press",
+                        "The quill pen",
+                        "The telegraph",
+                        "The spinning jenny"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What type of local school provided basic education for young boys and some girls?",
+                    "options": [
+                        "A Grammar School",
+                        "A Petty School / Dame School",
+                        "A Public School",
+                        "A University"
                     ],
                     "answer": 1
                 },
                 {
-                    "question": "Name one exclusive sport played only by the nobility.",
+                    "question": "What wooden object covered in a transparent layer was used to teach children the alphabet?",
                     "options": [
-                        "A hornbook",
-                        "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
-                        "The printing press",
-                        "Real tennis / Hawking / Fencing / Hunting on horseback"
+                        "A parchment scroll",
+                        "A wax tablet",
+                        "A slate",
+                        "A hornbook"
                     ],
                     "answer": 3
                 },
                 {
+                    "question": "What type of school did the sons of the gentry and merchants attend from age seven?",
+                    "options": [
+                        "A Dame School",
+                        "A Grammar School",
+                        "A Chantry School",
+                        "A Petty School"
+                    ],
+                    "answer": 1
+                },
+                {
+                    "question": "Which language dominated the curriculum of the Elizabethan Grammar school?",
+                    "options": [
+                        "Latin",
+                        "English",
+                        "French",
+                        "Greek"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Roughly what percentage of men, and what percentage of women, were literate by 1603?",
+                    "options": [
+                        "70% of men, 50% of women",
+                        "10% of men, 2% of women",
+                        "50% of men, 25% of women",
+                        "30% of men, 10% of women"
+                    ],
+                    "answer": 3
+                },
+                {
+                    "question": "Name one exclusive sport played only by the nobility.",
+                    "options": [
+                        "Mob football",
+                        "Real tennis / Hawking / Fencing / Hunting on horseback",
+                        "Archery",
+                        "Bear-baiting"
+                    ],
+                    "answer": 1
+                },
+                {
                     "question": "What violently aggressive sport was played by the lower classes between neighbouring villages?",
                     "options": [
-                        "Roger Ascham",
-                        "The Puritans",
                         "Mob football",
-                        "The Lord Chamberlain's Men / The Earl of Leicester's Men"
+                        "Real tennis",
+                        "Fencing",
+                        "Jousting"
                     ],
-                    "answer": 2
+                    "answer": 0
                 },
                 {
                     "question": "Give two examples of 'cruel sports' popular in Elizabethan England.",
                     "options": [
-                        "Religious mystery plays",
-                        "The Puritans",
-                        "She loved it and frequently ordered private exhibitions",
+                        "Wrestling and boxing",
+                        "Jousting and archery",
+                        "Fox hunting and falconry",
                         "Bear-baiting and Bull-baiting"
                     ],
                     "answer": 3
@@ -2713,92 +2713,92 @@ export const unitData = {
                 {
                     "question": "What was the Queen's personal attitude towards bear-baiting?",
                     "options": [
-                        "A hornbook",
-                        "Christopher Marlowe",
+                        "She thought it was a sin and refused to watch it",
                         "She loved it and frequently ordered private exhibitions",
-                        "1576"
+                        "She banned it across the country",
+                        "She only allowed the lower classes to watch it"
                     ],
-                    "answer": 2
+                    "answer": 1
                 },
                 {
                     "question": "What type of plays did Elizabeth ban in the 1570s to avoid religious conflict?",
                     "options": [
-                        "The Lord Chamberlain's Men / The Earl of Leicester's Men",
-                        "Christopher Marlowe",
-                        "Humanism",
-                        "Religious mystery plays"
+                        "Historical plays",
+                        "Religious mystery plays",
+                        "Comedies",
+                        "Tragedies"
                     ],
-                    "answer": 3
+                    "answer": 1
                 },
                 {
                     "question": "Name one famous pioneering Elizabethan playwright other than Shakespeare.",
                     "options": [
-                        "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
-                        "Humanism",
-                        "Christopher Marlowe",
-                        "The Puritans"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "In what year was the first purpose-built theatre (The Theatre) constructed?",
-                    "options": [
-                        "She loved it and frequently ordered private exhibitions",
-                        "A Grammar School",
-                        "30% of men, 10% of women",
-                        "1576"
+                        "John Milton",
+                        "Geoffrey Chaucer",
+                        "Charles Dickens",
+                        "Christopher Marlowe"
                     ],
                     "answer": 3
                 },
                 {
-                    "question": "What was the nickname given to the poorest theatre-goers who stood in the open-air pit?",
+                    "question": "In what year was the first purpose-built theatre (The Theatre) constructed?",
                     "options": [
-                        "The Puritans",
-                        "Groundlings",
-                        "The Vagabonds Act",
-                        "Humanism"
+                        "1599",
+                        "1576",
+                        "1588",
+                        "1558"
                     ],
                     "answer": 1
+                },
+                {
+                    "question": "What was the nickname given to the poorest theatre-goers who stood in the open-air pit?",
+                    "options": [
+                        "Vagabonds",
+                        "Commoners",
+                        "Groundlings",
+                        "Peasants"
+                    ],
+                    "answer": 2
                 },
                 {
                     "question": "Which religious group furiously opposed the theatre, believing it was the work of the devil?",
                     "options": [
-                        "Bear-baiting and Bull-baiting",
-                        "The Puritans",
-                        "Mob football",
-                        "A Petty School / Dame School"
+                        "The Humanists",
+                        "The Catholics",
+                        "The Anglicans",
+                        "The Puritans"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "What 1572 law meant actors could be whipped if they didn't have a noble license?",
                     "options": [
+                        "The Treason Act",
+                        "The Act of Uniformity",
                         "The Vagabonds Act",
-                        "1576",
-                        "The Lord Chamberlain's Men / The Earl of Leicester's Men",
-                        "Christopher Marlowe"
+                        "The Poor Relief Act"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Name one famous acting company sponsored by powerful nobility to protect them from the law.",
                     "options": [
+                        "The King's Men",
+                        "The Queen's Players",
                         "The Lord Chamberlain's Men / The Earl of Leicester's Men",
-                        "Religious mystery plays",
-                        "30% of men, 10% of women",
-                        "A hornbook"
+                        "The Globe Actors"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Why did the location of the theatres (outside the City walls) exacerbate opposition from authorities?",
                     "options": [
-                        "The Puritans",
-                        "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
-                        "30% of men, 10% of women",
-                        "Christopher Marlowe"
+                        "They were funded by Spanish spies",
+                        "They blocked the main trade routes into London",
+                        "They were built on sacred church land",
+                        "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague"
                     ],
-                    "answer": 1
+                    "answer": 3
                 }
             ]
         },
@@ -2917,39 +2917,39 @@ export const unitData = {
                 {
                     "question": "What happened to the population of England between 1551 and 1601?",
                     "options": [
-                        "A vagabond or vagrant",
-                        "It grew rapidly from roughly 3 million to over 4 million",
-                        "A beggar who faked epileptic fits using soap to get sympathy money",
-                        "Antwerp"
+                        "It fell drastically due to the Plague",
+                        "It decreased as people migrated to America",
+                        "It remained completely stable",
+                        "It grew rapidly from roughly 3 million to over 4 million"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "What economic problem was caused by demand for food outstripping supply?",
                     "options": [
-                        "Houses of Correction",
+                        "Economic recession",
+                        "A total collapse of the banking system",
                         "Rapid inflation (prices rising much faster than wages)",
-                        "The Impotent Poor",
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored"
+                        "Deflation"
                     ],
-                    "answer": 1
+                    "answer": 2
                 },
                 {
                     "question": "What agricultural practice involved landlords fencing off common fields?",
                     "options": [
                         "Enclosure",
-                        "Justices of the Peace / JPs",
-                        "A vagabond or vagrant",
-                        "That some able-bodied people wanted to work but simply couldn't find employment"
+                        "Strip farming",
+                        "Crop rotation",
+                        "Subsistence farming"
                     ],
                     "answer": 0
                 },
                 {
                     "question": "Why did landlords prefer breeding sheep over traditional crop farming?",
                     "options": [
-                        "Being whipped and having a hole burned through the right ear",
-                        "Houses of Correction",
-                        "That some able-bodied people wanted to work but simply couldn't find employment",
+                        "Sheep were easier to protect from wolves",
+                        "Crop farming had been banned by the government",
+                        "The King ordered them to provide wool for uniforms",
                         "The European wool trade was more lucrative and it required fewer workers to pay"
                     ],
                     "answer": 3
@@ -2957,79 +2957,79 @@ export const unitData = {
                 {
                     "question": "What happened to unemployed rural workers after they were evicted due to enclosure?",
                     "options": [
-                        "A beggar who faked epileptic fits using soap to get sympathy money",
-                        "Antwerp",
-                        "Raw materials, like wool and hemp, to work with and sell",
-                        "They migrated to towns and cities looking for work, becoming vagrants/vagabonds"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "Which major European port city placed a trade embargo on English cloth, causing mass unemployment?",
-                    "options": [
-                        "Antwerp",
-                        "A beggar who faked epileptic fits using soap to get sympathy money",
-                        "The Able-bodied Poor",
-                        "Thomas Harman"
+                        "They migrated to towns and cities looking for work, becoming vagrants/vagabonds",
+                        "They were hired by local monasteries",
+                        "They were immediately drafted into the army",
+                        "They were given a free house by the government"
                     ],
                     "answer": 0
                 },
                 {
+                    "question": "Which major European port city placed a trade embargo on English cloth, causing mass unemployment?",
+                    "options": [
+                        "Paris",
+                        "Amsterdam",
+                        "Calais",
+                        "Antwerp"
+                    ],
+                    "answer": 3
+                },
+                {
                     "question": "What term was used to describe the 'deserving' poor (the sick, elderly, and orphans)?",
                     "options": [
-                        "A vagabond or vagrant",
                         "The Impotent Poor",
-                        "Raw materials, like wool and hemp, to work with and sell",
-                        "Houses of Correction"
+                        "The Vulnerable Poor",
+                        "The Able-bodied Poor",
+                        "The Idle Poor"
                     ],
-                    "answer": 1
+                    "answer": 0
                 },
                 {
                     "question": "What term was used to describe the 'undeserving' poor who were physically capable of working?",
                     "options": [
-                        "Enclosure",
+                        "The Sturdy Beggars",
+                        "The Worthy Poor",
                         "The Able-bodied Poor",
-                        "The European wool trade was more lucrative and it required fewer workers to pay",
                         "The Impotent Poor"
                     ],
-                    "answer": 1
+                    "answer": 2
                 },
                 {
                     "question": "What was the name given to a homeless, unemployed person who wandered from town to town?",
                     "options": [
-                        "The Able-bodied Poor",
-                        "A vagabond or vagrant",
-                        "The national Poor Rate",
-                        "Being whipped and having a hole burned through the right ear"
+                        "A peasant",
+                        "A nomad",
+                        "A pilgrim",
+                        "A vagabond or vagrant"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "Give two reasons why the authorities were terrified of vagabonds.",
                     "options": [
-                        "Thomas Harman",
-                        "A beggar who faked epileptic fits using soap to get sympathy money",
+                        "They refused to pay taxes and hunted the King's deer",
+                        "They worshipped Catholic saints and refused to attend church",
                         "They believed they spread disease, committed crimes, and could start a rebellion",
-                        "Justices of the Peace / JPs"
+                        "They were French spies"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "Who wrote a famous pamphlet warning the public about the tricks used by vagabonds?",
                     "options": [
-                        "Being whipped and having a hole burned through the right ear",
-                        "The European wool trade was more lucrative and it required fewer workers to pay",
-                        "Thomas Harman",
-                        "A vagabond or vagrant"
+                        "Francis Bacon",
+                        "William Shakespeare",
+                        "John Foxe",
+                        "Thomas Harman"
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
                     "question": "What was a 'Counterfeit Crank'?",
                     "options": [
-                        "Enclosure",
-                        "Raw materials, like wool and hemp, to work with and sell",
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored",
+                        "A vagabond who forged official government licenses",
+                        "A beggar who faked being deaf to steal money",
+                        "A criminal who printed fake money",
                         "A beggar who faked epileptic fits using soap to get sympathy money"
                     ],
                     "answer": 3
@@ -3037,29 +3037,29 @@ export const unitData = {
                 {
                     "question": "What physical punishment was dictated by the 1572 Vagabonds Act for a first-time offence?",
                     "options": [
-                        "Being whipped and having a hole burned through the right ear",
-                        "It grew rapidly from roughly 3 million to over 4 million",
-                        "Rapid inflation (prices rising much faster than wages)",
-                        "Justices of the Peace / JPs"
+                        "Being hanged",
+                        "Being placed in the stocks for 3 days",
+                        "Being sent to a House of Correction",
+                        "Being whipped and having a hole burned through the right ear"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "Under the 1572 Act, what was the punishment for being caught as a vagabond a third time?",
                     "options": [
-                        "Enclosure",
-                        "A vagabond or vagrant",
-                        "Execution",
-                        "Thomas Harman"
+                        "Life imprisonment",
+                        "Deportation to America",
+                        "Having a hand cut off",
+                        "Execution"
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
                     "question": "What highly significant financial system did the 1572 Act introduce to help the impotent poor?",
                     "options": [
-                        "Enclosure",
-                        "It grew rapidly from roughly 3 million to over 4 million",
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored",
+                        "The Wealth Tax",
+                        "The Royal Subsidy",
+                        "The Church Tithe",
                         "The national Poor Rate"
                     ],
                     "answer": 3
@@ -3067,52 +3067,52 @@ export const unitData = {
                 {
                     "question": "Who was responsible for collecting the Poor Rate in local areas?",
                     "options": [
-                        "The Able-bodied Poor",
-                        "Justices of the Peace / JPs",
-                        "The European wool trade was more lucrative and it required fewer workers to pay",
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored"
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "What major economic reality did the 1576 Poor Relief Act finally recognise?",
-                    "options": [
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored",
-                        "Execution",
-                        "Raw materials, like wool and hemp, to work with and sell",
-                        "That some able-bodied people wanted to work but simply couldn't find employment"
+                        "The Mayor",
+                        "The Sheriff",
+                        "The Parish Priest",
+                        "Justices of the Peace / JPs"
                     ],
                     "answer": 3
                 },
                 {
+                    "question": "What major economic reality did the 1576 Poor Relief Act finally recognise?",
+                    "options": [
+                        "That inflation was caused by Spanish silver",
+                        "That landlords were exploiting the poor",
+                        "That some able-bodied people wanted to work but simply couldn't find employment",
+                        "That charity from the Church was completely useless"
+                    ],
+                    "answer": 2
+                },
+                {
                     "question": "What did the 1576 Act order JPs to provide for the genuinely unemployed?",
                     "options": [
-                        "A vagabond or vagrant",
                         "Raw materials, like wool and hemp, to work with and sell",
-                        "The national Poor Rate",
-                        "Enclosure"
+                        "A free education for their children",
+                        "Free housing",
+                        "Money for food and clothing"
                     ],
-                    "answer": 1
+                    "answer": 0
                 },
                 {
                     "question": "What institutions were created under the 1576 Act to punish those who refused to work?",
                     "options": [
-                        "The Able-bodied Poor",
+                        "Monasteries",
                         "Houses of Correction",
-                        "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored",
-                        "Being whipped and having a hole burned through the right ear"
+                        "Debtors' Gaols",
+                        "Prisons"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "Why did the government ultimately transition from brutal punishment to national poor relief?",
                     "options": [
-                        "Enclosure",
-                        "Houses of Correction",
                         "They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored",
-                        "The national Poor Rate"
+                        "The Queen was deeply sympathetic to the poor",
+                        "The Pope threatened to excommunicate them if they didn't",
+                        "They had a massive budget surplus to spend"
                     ],
-                    "answer": 2
+                    "answer": 0
                 }
             ]
         },
@@ -3227,79 +3227,79 @@ export const unitData = {
                 {
                     "question": "What traditional English trade market collapsed, prompting the search for new global markets?",
                     "options": [
-                        "1587",
-                        "The Golden Hind",
+                        "The Spanish wine trade",
+                        "The French spice market",
                         "The Antwerp cloth market",
-                        "1577–1580"
+                        "The Baltic timber market"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "Name an essential navigational instrument that used the stars to determine latitude.",
                     "options": [
-                        "Sir Walter Raleigh",
-                        "All English ships were requisitioned to fight the Spanish Armada",
-                        "Privateer",
-                        "The Astrolabe / Quadrant"
+                        "The compass",
+                        "The Astrolabe / Quadrant",
+                        "The lodestone",
+                        "The telescope"
                     ],
-                    "answer": 3
+                    "answer": 1
                 },
                 {
                     "question": "What type of new, highly manoeuvrable warship was developed by the English?",
                     "options": [
-                        "The Galleon",
-                        "Privateer",
-                        "The Tiger",
-                        "Nova Albion"
+                        "The Frigate",
+                        "The Caravel",
+                        "The Carrack",
+                        "The Galleon"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "What term describes a sailor officially licensed by the Queen to attack Spanish ships?",
                     "options": [
-                        "£400,000",
-                        "Roanoke Island",
+                        "A buccaneer",
+                        "A mercenary",
                         "Privateer",
-                        "Chief Wingina"
+                        "A pirate"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "Between which years did Francis Drake circumnavigate the globe?",
                     "options": [
-                        "The Tiger",
+                        "1585–1588",
                         "1577–1580",
-                        "The 'Lost Colony'",
-                        "John White"
+                        "1590–1593",
+                        "1568–1571"
                     ],
                     "answer": 1
                 },
                 {
                     "question": "What area of North America (modern-day California) did Drake claim for Elizabeth?",
                     "options": [
-                        "£400,000",
-                        "Nova Albion",
-                        "Roanoke Island",
-                        "The Tiger"
+                        "Virginia",
+                        "New England",
+                        "Roanoke",
+                        "Nova Albion"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "Roughly how much Spanish treasure did Drake bring back to England?",
                     "options": [
                         "£400,000",
-                        "The Golden Hind",
-                        "The Astrolabe / Quadrant",
-                        "The Galleon"
+                        "£100,000",
+                        "£1,000,000",
+                        "£50,000"
                     ],
                     "answer": 0
                 },
                 {
                     "question": "On which ship was Francis Drake knighted by Queen Elizabeth?",
                     "options": [
-                        "John White",
-                        "The 'Lost Colony'",
-                        "Ralph Lane (or Richard Grenville)",
+                        "The Tiger",
+                        "The Revenge",
+                        "The Mary Rose",
                         "The Golden Hind"
                     ],
                     "answer": 3
@@ -3307,40 +3307,40 @@ export const unitData = {
                 {
                     "question": "Which English nobleman was given a royal charter in 1584 to colonise North America?",
                     "options": [
-                        "Nova Albion",
-                        "£400,000",
-                        "Sir Walter Raleigh",
-                        "The 'Lost Colony'"
+                        "John Hawkins",
+                        "Francis Drake",
+                        "Martin Frobisher",
+                        "Sir Walter Raleigh"
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
                     "question": "What name was given to the new territory in honour of Elizabeth?",
                     "options": [
-                        "The 'Lost Colony'",
                         "Virginia",
-                        "Chief Wingina",
-                        "The Antwerp cloth market"
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "On which specific island off the coast of North America did the colonists land?",
-                    "options": [
-                        "Roanoke Island",
-                        "Virginia",
-                        "Nova Albion",
-                        "£400,000"
+                        "Georgia",
+                        "Carolina",
+                        "Maryland"
                     ],
                     "answer": 0
                 },
                 {
+                    "question": "On which specific island off the coast of North America did the colonists land?",
+                    "options": [
+                        "Newfoundland",
+                        "Roanoke Island",
+                        "Jamestown Island",
+                        "Manhattan Island"
+                    ],
+                    "answer": 1
+                },
+                {
                     "question": "What was the name of the flagship that hit a sandbank, ruining the colony's food and seeds?",
                     "options": [
-                        "Three years",
+                        "The Mayflower",
                         "The Tiger",
-                        "The Antwerp cloth market",
-                        "Virginia"
+                        "The Revenge",
+                        "The Golden Hind"
                     ],
                     "answer": 1
                 },
@@ -3348,78 +3348,78 @@ export const unitData = {
                     "question": "Name one of the aggressive military leaders of the 1585 expedition who caused conflict.",
                     "options": [
                         "Ralph Lane (or Richard Grenville)",
-                        "John White",
-                        "Virginia",
-                        "Nova Albion"
+                        "Walter Raleigh",
+                        "Francis Drake",
+                        "John White"
                     ],
                     "answer": 0
                 },
                 {
                     "question": "Which Native American Chief turned against the English and attacked the colony?",
                     "options": [
-                        "English demands for food, aggressive behaviour, and the spread of deadly European diseases",
-                        "The Astrolabe / Quadrant",
-                        "The Golden Hind",
-                        "Chief Wingina"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "Why did Native Americans turn against the English settlers?",
-                    "options": [
-                        "1577–1580",
-                        "Nova Albion",
-                        "English demands for food, aggressive behaviour, and the spread of deadly European diseases",
-                        "The Tiger"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "In what year was the second attempt to establish a colony (which included women and children) launched?",
-                    "options": [
+                        "Chief Sitting Bull",
                         "Chief Wingina",
-                        "The Antwerp cloth market",
-                        "1587",
-                        "The Golden Hind"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "Who was the leader of the 1587 expedition who returned to England for supplies?",
-                    "options": [
-                        "The 'Lost Colony'",
-                        "The Tiger",
-                        "1587",
-                        "John White"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "Why couldn't supply ships return to Virginia in 1588?",
-                    "options": [
-                        "Roanoke Island",
-                        "All English ships were requisitioned to fight the Spanish Armada",
-                        "The 'Lost Colony'",
-                        "1587"
+                        "Chief Manteo",
+                        "Chief Powhatan"
                     ],
                     "answer": 1
                 },
                 {
-                    "question": "How long were the 1587 colonists left without any supplies or communication?",
+                    "question": "Why did Native Americans turn against the English settlers?",
                     "options": [
-                        "Three years",
-                        "1577–1580",
-                        "£400,000",
-                        "The Antwerp cloth market"
+                        "The English refused to trade with them",
+                        "The English tried to force them into slavery",
+                        "They discovered the English were allied with the Spanish",
+                        "English demands for food, aggressive behaviour, and the spread of deadly European diseases"
+                    ],
+                    "answer": 3
+                },
+                {
+                    "question": "In what year was the second attempt to establish a colony (which included women and children) launched?",
+                    "options": [
+                        "1584",
+                        "1587",
+                        "1590",
+                        "1585"
+                    ],
+                    "answer": 1
+                },
+                {
+                    "question": "Who was the leader of the 1587 expedition who returned to England for supplies?",
+                    "options": [
+                        "Thomas Harriot",
+                        "Ralph Lane",
+                        "John White",
+                        "Walter Raleigh"
+                    ],
+                    "answer": 2
+                },
+                {
+                    "question": "Why couldn't supply ships return to Virginia in 1588?",
+                    "options": [
+                        "All English ships were requisitioned to fight the Spanish Armada",
+                        "They were destroyed by a massive storm",
+                        "The Spanish navy blockaded the English Channel",
+                        "The Queen refused to pay for them"
                     ],
                     "answer": 0
                 },
                 {
+                    "question": "How long were the 1587 colonists left without any supplies or communication?",
+                    "options": [
+                        "Five years",
+                        "Ten years",
+                        "One year",
+                        "Three years"
+                    ],
+                    "answer": 3
+                },
+                {
                     "question": "What is the famous nickname given to the 1587 settlement that vanished without a trace?",
                     "options": [
-                        "1577–1580",
-                        "The Antwerp cloth market",
-                        "The Astrolabe / Quadrant",
+                        "The Ghost Colony",
+                        "The Starving Time",
+                        "The Doomed Colony",
                         "The 'Lost Colony'"
                     ],
                     "answer": 3
@@ -3530,202 +3530,202 @@ export const unitData = {
                 {
                     "question": "In what year did Queen Elizabeth grant Walter Raleigh a Royal Charter?",
                     "options": [
+                        "1585",
+                        "1588",
                         "1584",
-                        "The Antwerp cloth market",
-                        "Because of the violence and murders committed by Ralph Lane's men in 1585",
-                        "They were mostly soldiers and gentlemen with no farming skills"
+                        "1577"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "What traditional European English trade market had collapsed, encouraging New World expansion?",
                     "options": [
-                        "Virginia",
-                        "It included families, women, and children with farming skills",
-                        "The Antwerp cloth market",
-                        "European diseases to which they had no immunity"
+                        "The French wine market",
+                        "The Baltic grain market",
+                        "The Spanish wool trade",
+                        "The Antwerp cloth market"
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
                     "question": "What name was given to the new territory in North America in honour of Elizabeth?",
                     "options": [
-                        "Manteo and Wanchese",
-                        "1584",
+                        "Maryland",
                         "Virginia",
-                        "Elizabeth banned all ships from leaving England to fight the Spanish Armada"
-                    ],
-                    "answer": 2
-                },
-                {
-                    "question": "Did Walter Raleigh personally lead the expeditions to North America?",
-                    "options": [
-                        "No, Elizabeth refused to let him leave court",
-                        "Virginia",
-                        "Because of the violence and murders committed by Ralph Lane's men in 1585",
-                        "Elizabeth banned all ships from leaving England to fight the Spanish Armada"
-                    ],
-                    "answer": 0
-                },
-                {
-                    "question": "Name the two Native Americans brought to England in 1584 to help with translation.",
-                    "options": [
-                        "No, Elizabeth refused to let him leave court",
-                        "Manteo and Wanchese",
-                        "Because of the violence and murders committed by Ralph Lane's men in 1585",
-                        "Virginia"
+                        "New England",
+                        "Carolina"
                     ],
                     "answer": 1
                 },
                 {
+                    "question": "Did Walter Raleigh personally lead the expeditions to North America?",
+                    "options": [
+                        "Yes, but only the 1585 expedition",
+                        "No, Elizabeth refused to let him leave court",
+                        "Yes, he led both expeditions",
+                        "No, he died before they set sail"
+                    ],
+                    "answer": 1
+                },
+                {
+                    "question": "Name the two Native Americans brought to England in 1584 to help with translation.",
+                    "options": [
+                        "Wingina and Hiawatha",
+                        "Squanto and Samoset",
+                        "Manteo and Wanchese",
+                        "Powhatan and Pocahontas"
+                    ],
+                    "answer": 2
+                },
+                {
                     "question": "Strategically, what did the English hope to use a colony in Virginia for?",
                     "options": [
-                        "As a hidden base for privateers to attack Spanish treasure ships",
-                        "Three years / until 1590",
-                        "Ralph Lane",
-                        "Thomas Harriot"
+                        "To convert the Native Americans to Catholicism",
+                        "To deport English criminals",
+                        "To mine massive amounts of gold",
+                        "As a hidden base for privateers to attack Spanish treasure ships"
                     ],
-                    "answer": 0
+                    "answer": 3
                 },
                 {
                     "question": "On which specific island was the colony established?",
                     "options": [
+                        "Bermuda",
+                        "Hatteras Island",
                         "Roanoke Island",
-                        "It included families, women, and children with farming skills",
-                        "They were mostly soldiers and gentlemen with no farming skills",
-                        "The Tiger"
+                        "Jamestown Island"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Who was the aggressive military governor of the 1585 expedition?",
                     "options": [
-                        "Manteo and Wanchese",
-                        "Elizabeth banned all ships from leaving England to fight the Spanish Armada",
-                        "Ralph Lane",
-                        "Francis Drake"
+                        "John White",
+                        "Richard Grenville",
+                        "Walter Raleigh",
+                        "Ralph Lane"
                     ],
-                    "answer": 2
+                    "answer": 3
                 },
                 {
                     "question": "Who was the brilliant mathematician and mapmaker on the 1585 expedition?",
                     "options": [
-                        "Chief Wingina",
-                        "Three years / until 1590",
-                        "Francis Drake",
-                        "Thomas Harriot"
+                        "William Cecil",
+                        "Thomas Harriot",
+                        "John Dee",
+                        "Francis Bacon"
                     ],
-                    "answer": 3
+                    "answer": 1
                 },
                 {
                     "question": "What was the name of the flagship that hit a sandbank, ruining the food and seeds?",
                     "options": [
-                        "They were mostly soldiers and gentlemen with no farming skills",
-                        "1584",
                         "The Tiger",
-                        "Manteo and Wanchese"
+                        "The Revenge",
+                        "The Mary Rose",
+                        "The Golden Hind"
                     ],
-                    "answer": 2
+                    "answer": 0
                 },
                 {
                     "question": "Why were the 1585 colonists poorly suited to building a settlement?",
                     "options": [
+                        "They were convicts sent as punishment",
+                        "They were mostly elderly scholars",
                         "They were mostly soldiers and gentlemen with no farming skills",
-                        "As a hidden base for privateers to attack Spanish treasure ships",
-                        "Virginia",
-                        "CROATOAN"
+                        "They were entirely wealthy noblemen"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Which Native American Chief turned against the English and was killed by Ralph Lane?",
                     "options": [
+                        "Chief Manteo",
+                        "Chief Powhatan",
                         "Chief Wingina",
-                        "Roanoke Island",
-                        "Three years / until 1590",
-                        "It included families, women, and children with farming skills"
+                        "Chief Wanchese"
                     ],
-                    "answer": 0
+                    "answer": 2
                 },
                 {
                     "question": "Apart from violence, what unwittingly killed many Native Americans?",
                     "options": [
-                        "Thomas Harriot",
-                        "Francis Drake",
-                        "1584",
-                        "European diseases to which they had no immunity"
+                        "European diseases to which they had no immunity",
+                        "Poisonous plants they were forced to eat",
+                        "Starvation caused by failed crops",
+                        "Attacks by wild animals"
                     ],
-                    "answer": 3
+                    "answer": 0
                 },
                 {
                     "question": "Who rescued the surviving 1585 colonists and took them back to England?",
                     "options": [
-                        "Thomas Harriot",
-                        "CROATOAN",
+                        "Walter Raleigh",
+                        "John Hawkins",
                         "Francis Drake",
-                        "European diseases to which they had no immunity"
+                        "Martin Frobisher"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "How did the demographics of the 1587 expedition differ from the 1585 expedition?",
                     "options": [
-                        "Roanoke Island",
-                        "Manteo and Wanchese",
+                        "It included Spanish mercenaries",
+                        "It only included professional soldiers",
                         "It included families, women, and children with farming skills",
-                        "No, Elizabeth refused to let him leave court"
+                        "It included thousands of prisoners"
                     ],
                     "answer": 2
                 },
                 {
                     "question": "Who was the leader of the 1587 expedition?",
                     "options": [
-                        "Three years / until 1590",
-                        "John White",
-                        "It included families, women, and children with farming skills",
-                        "CROATOAN"
+                        "Ralph Lane",
+                        "Walter Raleigh",
+                        "Thomas Harriot",
+                        "John White"
                     ],
-                    "answer": 1
+                    "answer": 3
                 },
                 {
                     "question": "Why were the Native Americans immediately hostile to the 1587 colonists?",
                     "options": [
-                        "CROATOAN",
+                        "The colonists stole their holy relics",
+                        "The colonists allied with their enemies",
                         "Because of the violence and murders committed by Ralph Lane's men in 1585",
-                        "Francis Drake",
-                        "Manteo and Wanchese"
-                    ],
-                    "answer": 1
-                },
-                {
-                    "question": "Why was John White unable to return to Virginia with supplies in 1588?",
-                    "options": [
-                        "It included families, women, and children with farming skills",
-                        "Because of the violence and murders committed by Ralph Lane's men in 1585",
-                        "Three years / until 1590",
-                        "Elizabeth banned all ships from leaving England to fight the Spanish Armada"
-                    ],
-                    "answer": 3
-                },
-                {
-                    "question": "How long was John White stranded in England?",
-                    "options": [
-                        "As a hidden base for privateers to attack Spanish treasure ships",
-                        "Roanoke Island",
-                        "Three years / until 1590",
-                        "CROATOAN"
+                        "The colonists refused to trade any weapons with them"
                     ],
                     "answer": 2
                 },
                 {
+                    "question": "Why was John White unable to return to Virginia with supplies in 1588?",
+                    "options": [
+                        "Elizabeth banned all ships from leaving England to fight the Spanish Armada",
+                        "His ship sank on the way",
+                        "He was arrested for treason",
+                        "He ran out of money to buy supplies"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "How long was John White stranded in England?",
+                    "options": [
+                        "Three years / until 1590",
+                        "One year",
+                        "Two years",
+                        "Five years"
+                    ],
+                    "answer": 0
+                },
+                {
                     "question": "What single word was found carved into a post when White finally returned?",
                     "options": [
-                        "No, Elizabeth refused to let him leave court",
-                        "Ralph Lane",
-                        "Three years / until 1590",
-                        "CROATOAN"
+                        "CROATOAN",
+                        "ROANOKE",
+                        "DANGER",
+                        "VIRGINIA"
                     ],
-                    "answer": 3
+                    "answer": 0
                 }
             ]
         }
@@ -4047,4 +4047,194 @@ export const unitData = {
             "image": "/assets/placeholder_cover.jpg"
         }
     ]
+
+,
+  "key_individuals": [
+  {
+    "name": "King Henry VIII",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "King of England (1509–1547); Elizabeth's father whose marital changes created her legitimacy crisis.",
+    "image": "/images/king_henry_viii.jpg"
+  },
+  {
+    "name": "Queen Mary I (Mary Tudor)",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Queen of England (1553–1558); Elizabeth’s older Catholic sister and predecessor.",
+    "image": "/images/queen_mary_i_mary_tudor.jpg"
+  },
+  {
+    "name": "Queen Elizabeth I",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Queen of England (1558–1603); Supreme Governor of the Church of England.",
+    "image": "/images/queen_elizabeth_i.jpg"
+  },
+  {
+    "name": "King Philip II of Spain",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Sovereign ruler of the global Spanish Empire; Elizabeth's chief Catholic rival.",
+    "image": "/images/king_philip_ii_of_spain.jpg"
+  },
+  {
+    "name": "Francis II",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "King of France; briefly King-consort of Scotland through his marriage to Mary, Queen of Scots.",
+    "image": "/images/francis_ii.jpg"
+  },
+  {
+    "name": "Mary, Queen of Scots (Mary Stuart)",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Sovereign Queen of Scotland; Elizabeth's cousin and claimant to the English throne.",
+    "image": "/images/mary_queen_of_scots_mary_stuart.jpg"
+  },
+  {
+    "name": "The Duke of Norfolk (Thomas Howard)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "The highest-ranking nobleman in England; executed in 1572 for plotting to marry Mary, Queen of Scots.",
+    "image": "/images/the_duke_of_norfolk_thomas_howard.jpg"
+  },
+  {
+    "name": "The Duke of Alba",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "High-ranking Spanish nobleman and military commander sent by Philip II to crush the Dutch Revolt.",
+    "image": "/images/the_duke_of_alba.jpg"
+  },
+  {
+    "name": "The Duke of Parma",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Spanish nobleman and governor of the Netherlands; commander of the invasion force the Armada was sent to transport.",
+    "image": "/images/the_duke_of_parma.png"
+  },
+  {
+    "name": "The Duke of Medina Sidonia",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Spanish nobleman appointed to command the Spanish Armada.",
+    "image": "/images/the_duke_of_medina_sidonia.jpg"
+  },
+  {
+    "name": "The Duke of Guise",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Powerful French Catholic noble who conspired to launch a French invasion of England.",
+    "image": "/images/the_duke_of_guise.jpg"
+  },
+  {
+    "name": "Robert Dudley (Earl of Leicester)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Elizabeth's favorite courtier and leading Privy Councillor; later Governor-General of the Low Countries.",
+    "image": "/images/robert_dudley_earl_of_leicester.jpg"
+  },
+  {
+    "name": "The Earl of Northumberland (Thomas Percy)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Catholic noble who co-led the failed Revolt of the Northern Earls.",
+    "image": "/images/the_earl_of_northumberland_thomas_percy.jpg"
+  },
+  {
+    "name": "The Earl of Westmorland (Charles Neville)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Catholic noble who co-led the Revolt of the Northern Earls.",
+    "image": "/images/the_earl_of_westmorland_charles_neville.jpg"
+  },
+  {
+    "name": "Lord Darnley (Henry Stuart)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Nobleman of royal blood; second husband of Mary, Queen of Scots.",
+    "image": "/images/lord_darnley_henry_stuart.jpg"
+  },
+  {
+    "name": "Lady Jane Grey",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Briefly named Protestant Queen in 1553; cousin of Elizabeth.",
+    "image": "/images/lady_jane_grey.jpg"
+  },
+  {
+    "name": "Sir William Cecil (Lord Burghley)",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Elizabeth’s first Secretary of State and most trusted advisor.",
+    "image": "/images/sir_william_cecil_lord_burghley.jpg"
+  },
+  {
+    "name": "Sir Francis Walsingham",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Elizabeth's Secretary of State and Spymaster.",
+    "image": "/images/sir_francis_walsingham.jpg"
+  },
+  {
+    "name": "Sir Walter Raleigh",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Courtier, explorer, and knight given the royal patent to colonize Virginia.",
+    "image": "/images/sir_walter_raleigh.jpg"
+  },
+  {
+    "name": "Sir Francis Drake",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Privateer, navigator, and naval commander; knighted in 1580.",
+    "image": "/images/sir_francis_drake.jpg"
+  },
+  {
+    "name": "Sir John Hawkins",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Merchant, privateer, and treasurer of the Royal Navy.",
+    "image": "/images/sir_john_hawkins.JPG"
+  },
+  {
+    "name": "Sir Richard Grenville",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Naval commander of the 1585 expedition to Roanoke.",
+    "image": "/images/sir_richard_grenville.jpg"
+  },
+  {
+    "name": "Anthony Babington",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "A wealthy Catholic gentleman who led the Babington Plot.",
+    "image": "/images/anthony_babington.jpg"
+  },
+  {
+    "name": "Francis Throckmorton",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "A Catholic gentleman who acted as a key intermediary in the Throckmorton Plot.",
+    "image": "/images/francis_throckmorton.jpg"
+  },
+  {
+    "name": "James Pilkington",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "The Protestant Bishop of Durham appointed by Elizabeth.",
+    "image": ""
+  },
+  {
+    "name": "Thomas Harriot",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Brilliant mathematician, navigator, and scholar who recorded the Roanoke voyage.",
+    "image": "/images/thomas_harriot.jpg"
+  },
+  {
+    "name": "Thomas Phelippes",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Walsingham’s chief cryptographer and codebreaker.",
+    "image": ""
+  },
+  {
+    "name": "Gilbert Gifford",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "A Catholic priest who acted as Walsingham’s agent provocateur during the Babington Plot.",
+    "image": ""
+  },
+  {
+    "name": "Edmund Campion",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Highly educated Jesuit missionary priest executed for treason.",
+    "image": ""
+  },
+  {
+    "name": "Roberto Ridolfi",
+    "group": "⚖️ Tier 5: The \"Middling Sort\" (Wealthy Merchants & Bankers)",
+    "bio": "An Italian banker based in London who used his financial networks to organize the Ridolfi Plot in 1571.",
+    "image": ""
+  },
+  {
+    "name": "Chief Wingina",
+    "group": "🌍 Sovereign Status: Indigenous Leadership",
+    "bio": "The ruler (mandoac) of the local Algonquian tribe at Roanoke. While he did not fit into the European feudal hierarchy, he occupied the supreme position of political and military leadership within his own sovereign nation.",
+    "image": "/images/chief_wingina.jpg"
+  }
+]
 };
