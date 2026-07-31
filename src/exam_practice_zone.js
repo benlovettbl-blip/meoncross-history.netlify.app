@@ -486,7 +486,7 @@ export function renderExamPracticeZone(container, unitData) {
               <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">
                 <i class="fa-solid fa-print"></i> Generate Printable PDF
               </a>
-              ${(mock.section_b && mock.section_b.questions && mock.section_b.questions.some(q => q.model_answer || (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)))) ? `
+              ${((mock.section_b && mock.section_b.questions && mock.section_b.questions.some(q => q.model_answer || (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)))) || (mock.questions && mock.questions.some(q => q.model_answer || (q.type === 'essay_choice' && q.options?.some(opt => opt.model_answer))))) ? `
               <a href="units/${unitData.id || window.currentUnitId}/${mock.id}_mark_scheme.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #002855, #003b7a); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600;">
                 <i class="fa-solid fa-chalkboard-user"></i> Teacher Mark Scheme
               </a>

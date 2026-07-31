@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { mock_exams } from './eee/mock_exams.js';
 
-const htmlTemplate = (mock) => {
+const htmlTemplate = (mock, isMarkScheme = false) => {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -386,7 +386,7 @@ const htmlTemplate = (mock) => {
     </div>
   </div>
 
-  ` + generateQuestions(mock) + `
+  ` + generateQuestions(mock, isMarkScheme) + `
 
   <!-- End of booklet -->
   <div class="page">
@@ -407,7 +407,7 @@ const htmlTemplate = (mock) => {
 </html>`;
 }
 
-function generateQuestions(mock) {
+function generateQuestions(mock, isMarkScheme = false) {
   let html = '';
   
   // Page 2: Q1(a) and Q1(b)
@@ -425,8 +425,12 @@ function generateQuestions(mock) {
   html += '  </div>';
   html += '</div>';
   
-  for(let i=0; i<q1a.lines; i++) {
-    html += '<div class="dotted-line"></div>';
+  if (isMarkScheme && q1a.model_answer) {
+    html += `<div style="color: #0369a1; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px; line-height: 1.6; white-space: pre-wrap; margin-top: 15px; margin-bottom: 30px; padding: 10px; background-color: #f0f9ff; border-radius: 8px;"><strong>Teacher Mark Scheme Model Answer:</strong><br>${q1a.model_answer}</div>`;
+  } else {
+    for(let i=0; i<q1a.lines; i++) {
+      html += '<div class="dotted-line"></div>';
+    }
   }
 
   html += '<div style="height:30px;"></div>';
@@ -442,8 +446,12 @@ function generateQuestions(mock) {
   html += '  </div>';
   html += '</div>';
 
-  for(let i=0; i<q1b.lines; i++) {
-    html += '<div class="dotted-line"></div>';
+  if (isMarkScheme && q1b.model_answer) {
+    html += `<div style="color: #0369a1; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px; line-height: 1.6; white-space: pre-wrap; margin-top: 15px; margin-bottom: 30px; padding: 10px; background-color: #f0f9ff; border-radius: 8px;"><strong>Teacher Mark Scheme Model Answer:</strong><br>${q1b.model_answer}</div>`;
+  } else {
+    for(let i=0; i<q1b.lines; i++) {
+      html += '<div class="dotted-line"></div>';
+    }
   }
 
   html += '<div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div>';
@@ -470,23 +478,29 @@ function generateQuestions(mock) {
   html += '  </div>';
   html += '</div>';
   
-  for(let i=0; i<15; i++) {
-    html += '<div class="dotted-line"></div>';
-  }
-  html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
+  if (isMarkScheme && q2.model_answer) {
+    html += `<div style="color: #0369a1; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px; line-height: 1.6; white-space: pre-wrap; margin-top: 15px; margin-bottom: 30px; padding: 10px; background-color: #f0f9ff; border-radius: 8px;"><strong>Teacher Mark Scheme Model Answer:</strong><br>${q2.model_answer}</div>`;
+    html += '<div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div>';
+    html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
+  } else {
+    for(let i=0; i<15; i++) {
+      html += '<div class="dotted-line"></div>';
+    }
+    html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
 
-  html += '<div class="page"><div class="page-inner">';
-  for(let i=0; i<28; i++) {
-    html += '<div class="dotted-line"></div>';
-  }
-  html += '</div><div class="footer"><div></div><div></div></div></div>';
+    html += '<div class="page"><div class="page-inner">';
+    for(let i=0; i<28; i++) {
+      html += '<div class="dotted-line"></div>';
+    }
+    html += '</div><div class="footer"><div></div><div></div></div></div>';
 
-  html += '<div class="page"><div class="page-inner">';
-  for(let i=0; i<25; i++) {
-    html += '<div class="dotted-line"></div>';
+    html += '<div class="page"><div class="page-inner">';
+    for(let i=0; i<25; i++) {
+      html += '<div class="dotted-line"></div>';
+    }
+    html += '<div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div>';
+    html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
   }
-  html += '<div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div>';
-  html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
 
   // Page 6: Question 3 & 4 Choice
   const q34 = mock.questions[3];
@@ -551,24 +565,34 @@ function generateQuestions(mock) {
   html += '</div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div>';
 
 
-  // Page 8, 9, 10
-  for (let p=1; p<=3; p++) {
-    html += '<div class="page"><div class="page-inner">';
-    let linesToDraw = (p === 3) ? 25 : 28;
-    for(let i=0; i<linesToDraw; i++) {
-      html += '<div class="dotted-line"></div>';
+  if (isMarkScheme) {
+    if (q3.model_answer) {
+        html += `<div class="page"><div class="page-inner"><div style="color: #0369a1; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px; line-height: 1.6; white-space: pre-wrap; margin-top: 15px; margin-bottom: 30px; padding: 10px; background-color: #f0f9ff; border-radius: 8px;"><strong>Teacher Mark Scheme (Question 3):</strong><br>${q3.model_answer}</div></div></div>`;
     }
-    if (p === 3) {
-      html += '<div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div>';
+    if (q4.model_answer) {
+        html += `<div class="page"><div class="page-inner"><div style="color: #0369a1; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 16px; line-height: 1.6; white-space: pre-wrap; margin-top: 15px; margin-bottom: 30px; padding: 10px; background-color: #f0f9ff; border-radius: 8px;"><strong>Teacher Mark Scheme (Question 4):</strong><br>${q4.model_answer}</div></div></div>`;
     }
-    let showTurnOver = (p < 3);
-    html += '</div><div class="footer"><div></div>';
-    if (showTurnOver) {
-      html += '<div class="turn-over">Turn over &#9654;</div>';
-    } else {
-      html += '<div></div>';
+    html += `<div class="page"><div class="page-inner"><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div></div>`;
+  } else {
+    // Page 8, 9, 10
+    for (let p=1; p<=3; p++) {
+      html += '<div class="page"><div class="page-inner">';
+      let linesToDraw = (p === 3) ? 25 : 28;
+      for(let i=0; i<linesToDraw; i++) {
+        html += '<div class="dotted-line"></div>';
+      }
+      if (p === 3) {
+        html += '<div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div>';
+      }
+      let showTurnOver = (p < 3);
+      html += '</div><div class="footer"><div></div>';
+      if (showTurnOver) {
+        html += '<div class="turn-over">Turn over &#9654;</div>';
+      } else {
+        html += '<div></div>';
+      }
+      html += '</div></div>';
     }
-    html += '</div></div>';
   }
 
   return html;
@@ -579,7 +603,10 @@ if (!fs.existsSync('public/units/eee')) {
 }
 
 mock_exams.forEach(mock => {
-  const output = htmlTemplate(mock);
+  const output = htmlTemplate(mock, false);
   fs.writeFileSync('./public/units/eee/' + mock.id + '.html', output);
-  console.log('Generated ' + mock.id + '.html');
+  
+  const msOutput = htmlTemplate(mock, true);
+  fs.writeFileSync('./public/units/eee/' + mock.id + '_mark_scheme.html', msOutput);
+  console.log('Generated ' + mock.id + '.html and _mark_scheme.html');
 });
