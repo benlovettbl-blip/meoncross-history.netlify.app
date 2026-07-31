@@ -1,7 +1,7 @@
 export const mock_exams = [
   {
     "id": "eee_mock_2026",
-    "title": "Predicted Mock Paper A (2026)",
+    "title": "Mock Paper A (2026 exam edited)",
     "paper_reference": "1HI0/B4 (Paper 2)",
     "total_marks": 32,
     "time_minutes": 50,
@@ -62,7 +62,7 @@ export const mock_exams = [
   },
   {
     "id": "eee_mock_b",
-    "title": "Predicted Mock Paper B",
+    "title": "Mock Paper B",
     "paper_reference": "1HI0/B4 (Paper 2)",
     "total_marks": 32,
     "time_minutes": 50,
@@ -123,7 +123,7 @@ export const mock_exams = [
   },
   {
     "id": "eee_mock_c",
-    "title": "Predicted Mock Paper C",
+    "title": "Mock Paper C",
     "paper_reference": "1HI0/B4 (Paper 2)",
     "total_marks": 32,
     "time_minutes": 50,
@@ -184,7 +184,7 @@ export const mock_exams = [
   },
   {
     "id": "eee_mock_d",
-    "title": "Predicted Mock Paper D",
+    "title": "Mock Paper D",
     "paper_reference": "1HI0/B4 (Paper 2)",
     "total_marks": 32,
     "time_minutes": 50,

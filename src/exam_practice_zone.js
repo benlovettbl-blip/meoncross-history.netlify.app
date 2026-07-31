@@ -478,11 +478,11 @@ export function renderExamPracticeZone(container, unitData) {
           ${unitData.mock_exams.map(mock => `
             <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #f8fafc; display: flex; flex-direction: column;">
               <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">${mock.title}</h3>
-              <p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
-                <strong>Paper Ref:</strong> ${mock.paper_reference}<br>
-                <strong>Time:</strong> ${mock.time_minutes} minutes<br>
-                <strong>Marks:</strong> ${mock.total_marks} marks
-              </p>
+              ${(mock.paper_reference || mock.time_minutes) ? `<p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
+                ${mock.paper_reference ? `<strong>Paper Ref:</strong> ${mock.paper_reference}<br>` : ''}
+                ${mock.time_minutes ? `<strong>Time:</strong> ${mock.time_minutes} minutes<br>` : ''}
+                ${mock.total_marks ? `<strong>Marks:</strong> ${mock.total_marks} marks` : ''}
+              </p>` : '<div style="flex-grow: 1;"></div>'}
               <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">
                 <i class="fa-solid fa-print"></i> Generate Printable PDF
               </a>
