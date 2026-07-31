@@ -422,11 +422,33 @@ export const unitData = {
                     "answer": 2
                 }
             ],
-            "exam_practice": {
-                "question": "Describe one feature of Elizabeth’s financial problems in 1558. (2 marks)\nDescribe one feature of Elizabeth’s financial problems in 1558. (2 marks)",
-                "hint": "Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-                "model_answer": "**Feature 1:**\nOne feature of Elizabeth's financial problems was the immense debt she inherited from previous monarchs. (1)\nWhen she ascended the throne in 1558, the Crown was £300,000 in debt, with £100,000 owed to foreign moneylenders at the Antwerp Exchange at a crippling 14% interest rate. (1)\n\n**Feature 2:**\nAnother feature was her significantly reduced regular income. (1)\nHer sister Mary I had sold off vast amounts of Crown lands to pay for wars with France, which meant Elizabeth's annual rental income was severely depleted, leaving her with an annual revenue of only £286,667, which was less than her debt. (1)"
-            }
+            "exam_practice": [
+                {
+                    "question": "\"Economic difficulties were the most significant challenge Elizabeth faced upon her accession in 1558.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- The royal debt\n- Elizabeth's claim to the throne\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "\"Elizabeth's government was completely dependent on the Privy Council.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- William Cecil\n- Parliament\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the role of the Justices of the Peace (JPs). (2 marks)\nDescribe one feature of the role of the Justices of the Peace (JPs). (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of Elizabethan England in 1558: society and government. (2 marks)\nDescribe one feature of Elizabethan England in 1558: society and government. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One feature of society was its rigid, hierarchical structure known as the \"Great Chain of Being\". At the top was the monarch, followed by the nobility and gentry, while the vast majority at the bottom were landless labourers, with everyone expected to accept their fixed place in God's ordered universe."
+                },
+                {
+                    "question": "Explain why Elizabeth faced challenges at home and from abroad upon her accession in 1558. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- financial weaknesses\n- the French threat\n\nYou must also use information of your own.",
+                    "model_answer": "Upon her accession in 1558, Elizabeth faced immediate **financial weaknesses** that severely threatened her survival. Her predecessor, Mary I, had left the crown deeply in debt, with a deficit of approximately £300,000. This was a crippling weakness because, in the 16th century, a monarch had to \"live of their own\" and pay for all administration and defence. This financial crisis meant Elizabeth could not afford to raise an army to defend her borders or pay off the high-interest loans (often 14%) owed to foreign bankers. Her lack of money made her look weak and encouraged both domestic rebels and foreign rivals to believe she could easily be overthrown, as she lacked the funds to defend her crown.\n\nSecondly, the **French threat** from abroad was a major challenge for the young queen. France was a powerful Catholic nation and England’s traditional enemy. Since Mary I’s reign, England had been involved in a disastrous war alongside Spain against France, which had resulted in the humiliating loss of Calais, England’s last foothold in Europe. Furthermore, France had secured a strong presence in Scotland through the 'Auld Alliance'. French troops were stationed on the northern border under Mary of Guise (mother of Mary, Queen of Scots). Elizabeth faced the terrifying prospect of a two-pronged Catholic invasion from France and Scotland, designed to depose her and replace her with Mary Stuart.\n\nFinally, Elizabeth’s challenge at home was compounded by the intense **problem of her legitimacy and gender**. Many English Catholics did not believe Elizabeth was the rightful queen. They did not recognise Henry VIII’s divorce from his first wife, Catherine of Aragon, meaning they viewed Henry’s marriage to Elizabeth’s mother, Anne Boleyn, as illegal and Elizabeth as illegitimate. Additionally, 16th-century society was highly patriarchal; female rulers were viewed as weak and unnatural, incapable of leading armies into battle. This prejudice created political instability, as her Privy Council immediately pressured her to marry to secure the succession, while her gender encouraged Catholic plotters to conspire against her from the very start of her reign."
+                }
+            ]
         },
         {
             "id": "lesson_1_2",
@@ -738,11 +760,23 @@ export const unitData = {
                     "answer": 0
                 }
             ],
-            "exam_practice": {
-                "question": "Describe two features of the role of the Church of England in Early Elizabethan society. (4 marks)",
-                "hint": "Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-                "model_answer": "**Feature 1:**\nOne feature of the Church of England was that it promoted loyalty to the Queen. (1)\nFor example, priests did this by repeating prayers of obedience and thanks for her reign in their weekly services. (1)\n\n**Feature 2:**\nAnother feature is that the Church ran its own legal system, known as Church courts. (1)\nThese courts dealt with moral issues and legal matters relating to marriage, sexual offences, slander, wills, and inheritance. (1)"
-            }
+            "exam_practice": [
+                {
+                    "question": "\"The religious settlement of 1559 successfully solved the problem of religion in England.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Catholic recusancy\n- Puritan opposition\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the role of the Church of England in early Elizabethan society. (2 marks)\nDescribe one feature of the role of the Church of England in early Elizabethan society. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One key feature was the enforcement of Elizabeth's religious laws and social control. For example, churchwardens and bishops conducted official \"visitations\" to inspect parishes, ensuring that all clergy took the oath of loyalty to the Queen and that the Protestant Book of Common Prayer was being strictly used."
+                },
+                {
+                    "question": "Explain why Elizabeth's religious settlement was introduced in 1559. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- religious divisions\n- the French threat\n\nYou must also use information of your own.",
+                    "model_answer": "Elizabeth introduced her religious settlement in 1559 primarily to heal the intense **religious divisions** that had fractured England. Following the reigns of Edward VI, who established a strict Protestant church, and Mary I, who violently restored Catholicism by burning almost 300 Protestants, England was deeply split. The north remained heavily Catholic, while London and the south-east were increasingly Protestant. Elizabeth recognised that a failure to find a compromise would likely spark a religious civil war. Consequently, she designed her \"Middle Way\" to pacify both sides: she kept traditional Catholic elements, such as highly decorated vestments and crucifixes to appease the Catholics, while introducing a Protestant Book of Common Prayer in English to satisfy Protestants. This compromise was essential to secure domestic peace.\n\nSecondly, Elizabeth was forced to introduce the religious settlement due to the immediate geopolitical **French threat**. At her accession in 1558, England was at war with France, and the French had strong influence in Scotland through the 'Auld Alliance'. Mary, Queen of Scots—a devout Catholic with a strong claim to the English throne—was married to the heir to the French throne. If Elizabeth had established a radical, aggressive Protestant church immediately, she risked provoking a joint invasion from Catholic France and Scotland. By establishing a compromise settlement and designating herself \"Supreme Governor\" rather than \"Supreme Head\" of the Church (appeasing the Pope and Catholic monarchs by not claiming spiritual headship), Elizabeth minimised the threat of foreign intervention while England was financially weak and militarily vulnerable.\n\nFinally, the settlement was introduced to firmly establish **Elizabeth’s personal royal authority** and reclaim control from Rome, a factor she achieved through her own political calculations. Under Mary I, the Pope’s authority over the English Church had been restored. Elizabeth needed to reclaim the crown’s power over religious matters and secure the loyalty of the clergy. The Act of Supremacy (1559) forced all public officials and clergy to swear an oath of loyalty to Elizabeth. This was a vital political tool because the Church of England was a massive engine of state power: priests delivered the Queen’s messages to the illiterate population every Sunday, ensuring social control and maintaining the 'Great Chain of Being'. The settlement was therefore introduced as much for political survival as it was for religious peace."
+                }
+            ]
         },
         {
             "id": "lesson_1_3",
@@ -1049,11 +1083,13 @@ export const unitData = {
                     "answer": 0
                 }
             ],
-            "exam_practice": {
-                "question": "Explain one consequence of the Papal Bull of excommunication in 1570. (4 marks)",
-                "hint": "Remember the new Edexcel specification asks this as a single 4-mark consequence question. Identify a consequence (e.g. changing Catholic behaviour) and fully explain how the excommunication caused it.",
-                "model_answer": "One consequence of the Papal Bull in 1570 was that it weaponised English Catholics against Elizabeth. (1) By officially excommunicating Elizabeth and declaring her a 'false queen', the Pope instructed Catholics that they were absolved of any loyalty to the Crown. (1) This meant that for devout Catholics, religious disobedience was now transformed into outright treason, making them a severe domestic threat. (1) Furthermore, it provided religious justification for foreign superpowers like Spain and France to actively sponsor plots to overthrow her. (1)"
-            }
+            "exam_practice": [
+                {
+                    "question": "‘The nature and extent of the Catholic challenge was a greater threat to Elizabeth's religious settlement than the Puritan challenge in the years 1559–69.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the role of the nobility\n- the nature and extent of the Puritan challenge\n\nYou must also use information of your own.",
+                    "model_answer": "Elizabeth’s 1559 Religious Settlement faced challenges from both religious extremes. While **the nature and extent of the Puritan challenge** was highly vocal and disrupted the Church from within, the **Catholic challenge** was a far greater threat because it had the backing of the powerful northern **nobility** and foreign Catholic superpowers, making it a genuine threat to Elizabeth's survival.\n\nOn the one hand, the Catholic challenge posed an existential military and political threat, heavily supported by **the role of the nobility**. Many English nobles, particularly in the north, were devout Catholics who refused to accept the Protestant settlement. These Catholic nobles were highly dangerous because they commanded the feudal loyalty of thousands of tenants. This erupted into open rebellion in 1569 with the Revolt of the Northern Earls, where Catholic nobles marched south, captured Durham, and held Catholic Mass. Furthermore, the Catholic challenge was backed by foreign powers: the Pope excommunicated Elizabeth in 1570, while Spain’s King Philip II actively supported conspiracies to assassinate her, making the Catholic challenge a matter of national security and physical survival.\n\nOn the other hand, **the nature and extent of the Puritan challenge** was a persistent internal problem for the Church of England. Puritans were extreme Protestants who argued that Elizabeth’s settlement had not gone far enough, viewing Catholic elements like surplices (clerical robes) and crucifixes as sinful idols. This led to the Vestment Controversy in 1566, where the Archbishop of Canterbury ordered all priests to wear specific vestments; 37 London priests refused and were sacked. While this challenge was highly embarrassing and showed a lack of control, the Puritans never plotted to assassinate Elizabeth or overthrow her, because they knew that the alternative (a Catholic monarch like Mary, Queen of Scots) would be far worse for them.\n\nFurthermore, the Catholic threat was magnified by the passive resistance of **recusancy** among the wider population. Many wealthy Catholics became \"recusants,\" choosing to pay the 1-shilling fine for not attending Protestant services on Sundays. While Elizabeth deliberately kept this fine low to avoid creating Catholic martyrs, it showed that a large portion of her subjects rejected her spiritual authority as \"Supreme Governor\" of the Church. Additionally, from 1568 onwards, Catholic seminary priests began arriving in England from Douai in Flanders to secretly perform Catholic sacraments and keep the faith alive, creating a underground Catholic resistance that the government could not easily stamp out.\n\nIn conclusion, I strongly agree with the statement. The Puritan challenge was an ideological nuisance that disrupted the unity of the clergy, but it was never a threat to Elizabeth’s life or the stability of her crown. In contrast, the Catholic challenge, backed by the regional power of the northern **nobility**, the spiritual authority of the Papacy, and the military power of Spain, led to open rebellions and numerous assassination plots, making it a far greater threat to the Elizabethan state."
+                }
+            ]
         },
         {
             "id": "lesson_1_4",
@@ -1360,11 +1396,7 @@ export const unitData = {
                     "answer": 0
                 }
             ],
-            "exam_practice": {
-                "question": "Explain why Mary, Queen of Scots posed a significant threat to Elizabeth when she arrived in England in 1568. (12 marks)",
-                "hint": "Provide three distinct paragraphs. (1) Her strong claim to the throne and Catholic support. (2) The risk of a foreign invasion if she was released. (3) The domestic threat of rebellion if she was kept in England.",
-                "model_answer": "One reason Mary posed a significant threat was her flawless royal pedigree and strong claim to the throne. As the great-granddaughter of Henry VII, she was Elizabeth's direct heir. However, many English Catholics believed she was the rightful Queen already, because they viewed Elizabeth as illegitimate due to Henry VIII's divorce. This made Mary a ready-made, legitimate Catholic alternative to Elizabeth.\n\nAnother reason was the risk of foreign intervention. If Elizabeth allowed Mary to leave England and travel to Catholic superpowers like France (where she had been Queen) or Spain, Mary could easily persuade them to raise a foreign army. They could then launch an invasion of England to depose Elizabeth and install Mary, destroying Protestantism in England.\n\nFinally, keeping Mary imprisoned in England was equally threatening. By remaining on English soil, Mary became a living, breathing focal point for disgruntled English Catholics. Her presence actively encouraged domestic rebellion and treasonous plots aimed at assassinating Elizabeth and replacing her with Mary, which became a reality just one year later with the 1569 Revolt of the Northern Earls."
-            }
+            "exam_practice": []
         },
         {
             "id": "lesson_2_1",
@@ -1454,9 +1486,49 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why Mary, Queen of Scots was executed in 1587.",
-                    "examiner_tip": "For a 12-mark question, you need three distinct paragraphs, each focusing on a different reason. Do not just tell the story of her death. Start each paragraph with a clear reason (e.g., \"One reason Mary was executed was her direct involvement in the Babington Plot...\"). Support this with specific facts (the intercepted letters, Walsingham's code-breakers), and crucially, finish the paragraph by linking *how* this specific fact gave Elizabeth no choice but to sign the death warrant under the Act for the Preservation of the Queen's Safety. Good alternative paragraphs could focus on the culmination of previous plots (Ridolfi/Throckmorton) and the looming context of the Spanish threat."
+                    "question": "Explain why the Northern Earls' Rebellion (1569-70) posed a significant danger to Elizabeth I. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Mary, Queen of Scots\n- Anglo-Spanish relations\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the Ridolfi Plot (1571). (2 marks)\nDescribe one feature of the Ridolfi Plot (1571). (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the Throckmorton Plot (1583). (2 marks)\nDescribe one feature of the Throckmorton Plot (1583). (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "\"The Northern Earls' Rebellion (1569) was a serious threat to Elizabeth.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Mary, Queen of Scots\n- Lack of foreign support\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Explain why the Babington Plot (1586) led to the execution of Mary, Queen of Scots. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Walsingham's spies\n- The Act for the Preservation of the Queen's Safety\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of Walsingham and the use of spies. (2 marks)\nDescribe one feature of Walsingham and the use of spies. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One feature was the interception and decoding of secret correspondence. Walsingham employed a specialist codebreaker named Thomas Phelippes to decipher letters sent by conspirators, which allowed the spy network to catch Mary, Queen of Scots, sending coded letters inside beer barrels to Anthony Babington in 1586."
+                },
+                {
+                    "question": "‘Walsingham and the use of spies was the main reason for the significance of Mary Queen of Scots’ execution in 1587.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the Babington Plot\n- the Catholic challenge\n\nYou must also use information of your own.",
+                    "model_answer": "**Sir Francis Walsingham's** intelligence network was undoubtedly a highly significant factor in bringing about the execution of Mary, Queen of Scots, but it was not the sole reason. While Walsingham provided the concrete legal proof of treason needed to justify executing an anointed monarch, the execution was ultimately caused by Mary's continuous, existential threat to Elizabeth’s throne, which was driven by her strong dynastic claim and the broader international Catholic threat.\n\nOn the one hand, Walsingham’s espionage was the immediate trigger for the execution because it successfully exposed **the Babington Plot** of 1586. Mary had been kept under house arrest in England for 18 years, during which Elizabeth had repeatedly refused to execute her due to her belief in the Divine Right of Kings. However, Walsingham used a double agent, Gilbert Gifford, to set up a secure letter-routing system using beer barrels. This was a trap; every letter sent between Anthony Babington and Mary Stuart was intercepted, copied, and decoded by Walsingham's cryptographer, Thomas Phelippes. When Mary wrote a letter explicitly approving the assassination of Elizabeth, Walsingham had the irrefutable evidence he needed. This letter provided the legal justification that forced Elizabeth's Privy Council to demand Mary's trial and subsequent execution in February 1587.\n\nOn the other hand, the wider **Catholic challenge** was a more fundamental, long-term cause of Mary's execution. As long as Mary lived, she was a constant figurehead for Catholic rebellion. Since the Pope had excommunicated Elizabeth in 1570, English Catholics were released from their allegiance to her, making any plot to replace Elizabeth with Mary a holy duty. Mary was directly involved in, or the inspiration for, the Revolt of the Northern Earls (1569), the Ridolfi Plot (1571), and the Throckmorton Plot (1583). The northern nobility, led by the Earls of Northumberland and Westmorland, rose in rebellion specifically to restore Catholicism and put Mary on the throne. It was this relentless, existential danger to the Protestant state—not just the spies' discovery of the letters—that convinced Elizabeth’s ministers that \"as long as there is life in her, there is hope in them.\"\n\nFurthermore, the execution was driven by the changing political attitudes of Elizabeth’s **Privy Council and Parliament**, who actively worked to force Elizabeth's hand. Following the Throckmorton Plot and the assassination of the Dutch Protestant leader William of Orange in 1584, Elizabeth’s advisors were terrified that she would be murdered next, leaving England to descend into Catholic chaos. To counter this, they drafted the Bond of Association (1584), which stated that if Elizabeth were assassinated, anyone who benefited from her death (i.e., Mary) would be executed. Parliament repeatedly petitioned Elizabeth to sign Mary’s death warrant, viewing her continued survival as a betrayal of her Protestant subjects. When the Babington Plot confirmed Mary’s treason, the Privy Council immediately pushed the death warrant through, even sending it to be carried out behind Elizabeth’s back once she had signed it.\n\nIn conclusion, I partially agree with the statement. Walsingham's use of spies was the decisive *catalyst* for the execution because his decryption of the Babington correspondence provided the absolute legal proof required to overcome Elizabeth's dynastic hesitation. However, the *primary* reason Mary was executed was her status as a permanent, living Catholic claimant. Had Mary not possessed a legitimate claim to the Tudor crown and the backing of Catholic Europe, the plots would not have had any chance of success, and her execution would not have been politically necessary."
+                },
+                {
+                    "question": "‘Mary, Queen of Scots: her claim to the English throne was the main cause of the Revolt of the Northern Earls, 1569–70.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- religious divisions\n- the role of the nobility\n\nYou must also use information of your own.",
+                    "model_answer": "The Revolt of the Northern Earls in 1569 was the first major domestic rebellion Elizabeth faced. While **Mary, Queen of Scots and her claim to the English throne** provided the vital Catholic alternative that made the rebellion possible, the revolt was actually caused by a combination of deep-rooted **religious divisions** and the northern nobility's anger at losing their traditional political power to Elizabeth's southern Protestant ministers.\n\nOn the one hand, Mary Stuart’s presence in England and her claim to the throne were central to the rebellion. When Mary fled Scotland and arrived in England in 1568, she became a natural focal point for Catholic hopes. The northern rebels, led by Thomas Percy (Earl of Northumberland) and Charles Neville (Earl of Westmorland), hatched a plan to marry Mary to Thomas Howard, the Duke of Norfolk (the premier Protestant noble in England). They believed that marrying Mary to Norfolk would secure her succession to the English throne, depose Elizabeth, and restore Catholicism. Mary’s royal blood and legitimate Tudor lineage provided the essential mechanism through which the northern earls hoped to legitimise their treasonous actions.\n\nOn the other hand, **religious divisions** were a more powerful motivator for the ordinary rebels who joined the uprising. The north of England had remained stubbornly Catholic despite Elizabeth’s 1559 Religious Settlement. Many northern Catholics resented Elizabeth’s Protestant laws and the removal of traditional Catholic practices. When the earls raised their standard in rebellion, their first public act was to march into Durham Cathedral, tear down the Protestant communion table, and hold a traditional Catholic Latin Mass. For the 4,600 ordinary soldiers who joined the rebel army, the revolt was a holy crusade to defend the Catholic faith against what they viewed as a heretical Protestant government in London.\n\nFurthermore, the revolt was heavily fueled by the grievances of **the northern nobility** regarding their loss of political power. Historically, the northern earls had ruled their lands like semi-independent monarchs, controlling local government and border defence. However, Elizabeth was determined to centralise her power. She systematically ignored the traditional Catholic nobility, appointing her own loyal, southern Protestant lords (such as James Pilkington as Bishop of Durham) to run northern affairs. Northumberland had been stripped of his lucrative role as Warden of the Middle Marches and lost custody of a valuable copper mine on his land. The rebellion was, therefore, a desperate attempt by the traditional nobility to reclaim their feudal rights and political influence from Elizabeth's upstart southern advisors, such as William Cecil.\n\nIn conclusion, I partially agree with the statement. Mary, Queen of Scots' claim to the throne was the indispensable *catalyst* for the rebellion because she represented the only viable Catholic successor to Elizabeth. However, the *primary* causes of the revolt were religious and political: the deep-rooted Catholic faith of the northern population, combined with the northern nobility's fury at being stripped of their traditional regional power by a centralising Protestant government. Without these deeper regional grievances, the earls would never have taken the immense risk of rising in rebellion."
+                },
+                {
+                    "question": "Explain why Mary, Queen of Scots, was executed in 1587. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- the Babington Plot\n- the Privy Council\n\nYou must also use information of your own.",
+                    "model_answer": "Mary, Queen of Scots was executed in 1587 primarily because of her direct involvement in **the Babington Plot** of 1586. For years, Elizabeth had resisted executing her cousin, but the Babington Plot provided the irrefutable evidence needed. Sir Francis Walsingham’s spy network intercepted coded letters sent between Mary and Anthony Babington. When Mary's letters were decoded, they revealed that she had explicitly approved of the plan to assassinate Elizabeth. This concrete evidence of treason meant that Mary could no longer be protected by her royal status, making her execution politically and legally necessary.\n\nSecondly, the relentless pressure from **the Privy Council** and Parliament played a massive role in her execution. Elizabeth’s ministers, led by William Cecil and Walsingham, had viewed Mary as an unacceptable danger to the Protestant state for almost two decades. Following the Throckmorton Plot (1583), the Privy Council had passed the Bond of Association, which legally bound them to execute anyone who would benefit from Elizabeth's murder. After the Babington Plot, the Council held a trial that found Mary guilty of treason. They continuously pressured Elizabeth to sign the death warrant, arguing that as long as Mary lived, Elizabeth’s life would always be in danger. When Elizabeth finally signed the warrant but hesitated to send it, the Privy Council met in secret and dispatched it without her permission to ensure the execution went ahead.\n\nFinally, the execution was caused by the broader, long-term **threat of a Spanish invasion**. By 1587, England and Spain were in an undeclared war in the Netherlands, and Philip II was actively preparing his Spanish Armada to invade England. The Privy Council knew that if the Spanish invaded while Mary was still alive in England, she would act as a powerful rallying point for English Catholic rebels, who would rise up to support the Spanish army. Executing Mary Stuart was a strategic military decision to destroy the Catholic alternative before the Armada arrived, leaving the Spanish with no legitimate Catholic monarch to put on the throne."
                 }
             ],
             "quiz": [
@@ -1977,11 +2049,18 @@ export const unitData = {
                     "answer": 0
                 }
             ],
-            "exam_practice": {
-                "question": "Explain why the Spanish Armada was defeated in 1588. (12 marks)",
-                "hint": "To score Level 4 (10-12 marks), you must explain how different factors interacted. Don't just list what happened. For example, explain how the Spanish mistake of anchoring at Calais directly allowed the English tactic of using fireships to be so devastating. Your third paragraph could then focus on the weather, explaining that while tactics won the Battle of Gravelines, it was the 'Protestant Wind' and the storms around Scotland and Ireland that actually destroyed the majority of the Spanish ships.",
-                "model_answer": "One reason the Armada was defeated was superior English tactics and ship design. The English fleet, using newly redesigned galleons, were faster and more manoeuvrable than the Spanish ships. The decisive tactical moment came when the Spanish anchored at Calais. The English launched eight fireships at midnight. This caused the Spanish captains to panic, cut their anchors, and scatter, breaking their indestructible crescent formation and making them vulnerable to English cannons at the Battle of Gravelines.\n\nHowever, English tactics were only successful because they exploited major Spanish mistakes. King Philip appointed the inexperienced Duke of Medina Sidonia to lead the fleet. Furthermore, Spanish planning relied on perfect communication, which failed. When the Armada arrived at Calais, the Duke of Parma's army was not ready to board. This fatal delay forced the Spanish fleet to anchor, turning them into sitting ducks for the English fireships.\n\nUltimately, the weather was the final, devastating factor. While English tactics won the Battle of Gravelines, it was the wind that forced the fleeing Spanish fleet northwards into dangerous waters. Without anchors (which they had cut at Calais), the Armada was unable to shelter. Fierce storms around the rocky coasts of Scotland and Ireland—celebrated by the English as the 'Protestant Wind'—smashed dozens of Spanish ships to pieces, transforming a military defeat into a catastrophic disaster."
-            }
+            "exam_practice": [
+                {
+                    "question": "Explain why relations between England and Spain declined in the years 1568-1585. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Religious differences\n- Francis Drake's attacks on Spanish treasure\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "\"The threat from Catholics at home was more serious than the threat from Spain in the years 1569-1588.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Jesuit priests\n- The Netherlands\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                }
+            ]
         },
         {
             "id": "lesson_2_3",
@@ -2065,9 +2144,14 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why relations between England and Spain became worse in the years 1569–88.",
-                    "examiner_tip": "To achieve Level 4, you must explain how the different causes interacted with each other. For example, explain how early commercial provocations like the **Genoese Loan (1568)** and **Drake's £400,000 theft**  built tension, acting as a *catalyst for* Philip's involvement in Catholic plots. When discussing the Netherlands, be specific: mention how Dudley accepting the title of 'Governor General' angered Philip II. Your third paragraph can focus on Drake's actions in Cadiz; explain how the 1587 raid not only humiliated Philip II but actively destroyed Spanish resources, making open war completely inevitable."
+                    "question": "Describe one feature of Drake and the raid on Cadiz: ‘Singeing the King of Spain’s beard’. (2 marks)\nDescribe one feature of Drake and the raid on Cadiz: ‘Singeing the King of Spain’s beard’. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One feature was the devastating destruction of Spanish naval shipping and supplies. Drake sailed directly into Cadiz harbour in 1587 and destroyed approximately 30 Spanish ships and thousands of seasoned wooden barrel staves, which successfully delayed the launch of the Spanish Armada by a full year."
+                },
+                {
+                    "question": "‘The actions of Robert Dudley were the main reason for deteriorating relations with Spain in the years 1585–88.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- English direct involvement in the Netherlands\n- commercial rivalry\n\nYou must also use information of your own.",
+                    "model_answer": "The outbreak of war between England and Spain in 1585 was the culmination of years of growing hostility. While **the actions of Robert Dudley** in the Netherlands deeply insulted King Philip II and worsened the diplomatic crisis, the primary cause of the war was the geopolitical reality of **English direct involvement in the Netherlands**, which was driven by religious solidarity and a long-standing **commercial rivalry** across the Atlantic.\n\nOn the one hand, Robert Dudley’s actions in the Netherlands significantly escalated tensions between 1585 and 1588. When Elizabeth sent Dudley (the Earl of Leicester) to the Netherlands in command of English troops, she instructed him to act cautiously and only defend the Dutch Protestant rebels. However, Dudley ignored her orders. In January 1586, he accepted the title of \"Governor-General of the Low Countries\" from the Dutch rebels. This was a catastrophic diplomatic blunder because it implied that Elizabeth was claiming sovereignty over territory that belonged to King Philip II. It infuriated Philip, convinced him that Elizabeth aimed to steal his empire, and made him commit fully to launching the Spanish Armada to overthrow her.\n\nOn the other hand, the deeper cause of the conflict was **English direct involvement in the Netherlands** through the signing of the Treaty of Nonsuch in 1585. Elizabeth had spent decades trying to avoid war with Spain, but when the Dutch Protestant rebel leader, William of Orange, was assassinated in 1584, the Dutch rebellion was on the verge of collapsing. If Spain crushed the Dutch, Philip II would control the entire English Channel coastline, providing Spain with a perfect launching pad for an invasion of England. Elizabeth was forced to sign the Treaty of Nonsuch, committing 7,000 English troops to actively fight the Spanish army under the Duke of Parma. This direct military intervention was essentially an open declaration of war, making the Armada conflict inevitable regardless of Dudley's subsequent mistakes.\n\nFurthermore, **commercial rivalry** in the New World had been poisoning Anglo-Spanish relations for decades. Under Spanish law, English merchants were forbidden from trading with Spain’s wealthy colonies in the Americas. English privateers, most notably Sir Francis Drake and Sir John Hawkins, systematically ignored this ban. Drake spent the 1570s and 1580s raiding Spanish treasure ships and colonies, famously stealing £400,000 of Spanish silver during his circumnavigation. Instead of punishing Drake, Elizabeth knighted him on the deck of the *Golden Hind* in 1580. This state-sponsored piracy humiliated Philip II and hit Spain financially, causing Philip to conclude that he could only protect his treasure fleets by conquering England.\n\nFinally, **religious rivalry** acted as the underlying ideological foundation of the conflict. Philip II viewed himself as the global leader of the Counter-Reformation, dedicated to wiping out Protestantism across Europe. He viewed Elizabeth as a heretic who had illegally deposed Catholic authority. Philip had spent years supporting Catholic plots to assassinate Elizabeth (such as the Throckmorton Plot in 1583) and had signed the Treaty of Joinville with France in 1584 to create an anti-Protestant alliance. This religious crusade meant that Philip viewed war with England not just as a political dispute, but as a religious duty.\n\nIn conclusion, I disagree with the statement. Robert Dudley's actions were a significant diplomatic embarrassment that accelerated the timeline of the Spanish invasion. However, the *true* cause of the outbreak of war was Elizabeth's decision to sign the Treaty of Nonsuch and commit to **direct military involvement in the Netherlands**. This strategic decision, combined with decades of bitter **commercial rivalry** and state-sponsored piracy by Drake, made a military showdown with Spain entirely unavoidable."
                 }
             ],
             "quiz": [
@@ -2342,9 +2426,14 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain the consequences of the English victory over the Spanish Armada in 1588.",
-                    "examiner_tip": "When a question asks for *consequences*, do not waste time explaining *why* the Armada was defeated (e.g., fireships, weather). Instead, focus entirely on the aftermath. Paragraph 1 could focus on the **religious consequences** (it gave Protestants immense confidence, striking medals that claimed God's favour). Paragraph 2 could focus on **political/propaganda consequences** (the Tilbury speech, the Armada portrait, cementing Elizabeth's legendary status). Paragraph 3 could focus on the **geopolitical consequences** (it broke the myth of Spanish invincibility, boosted English maritime confidence for trade, and though the war continued, England survived as an independent power). Ensure every paragraph ends with a strong link back to the question using phrases like *\"This exacerbated the situation by...\"* or *\"This was intrinsically linked to...\"*."
+                    "question": "\"Spanish strategic errors were the primary cause of England's triumph over the Armada.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- The command of the Duke of Medina Sidonia\n- The deployment of fireships\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "\"English naval tactics were the main reason for the defeat of the Spanish Armada.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Fireships\n- The Duke of Medina Sidonia\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
                 }
             ],
             "quiz": [
@@ -2638,9 +2727,24 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why the theatre became highly popular in Elizabethan England.",
-                    "examiner_tip": "To secure top marks, ensure you explain the *intersection* of causes rather than just listing facts.\n\n* **Paragraph 1 (Affordability/Design):** Explain how purpose-built theatres (like The Globe) were designed to accommodate all classes, making it affordable for groundlings (1 penny) while still appealing to the nobility.\n* **Paragraph 2 (Secular Plays):** Explain how the ban on religious mystery plays acted as a catalyst for exciting new secular genres (comedies/tragedies) by writers like Marlowe and Shakespeare, which were vastly more entertaining.\n* **Paragraph 3 (Royal Support):** Explain how the backing of Queen Elizabeth and powerful nobles (e.g., funding companies like the Lord Chamberlain's Men to bypass the 1572 Vagabonds Act) protected the theatres from furious Puritans, allowing them to thrive."
+                    "question": "Describe one feature of Elizabethan grammar schools. (2 marks)\nDescribe one feature of Elizabethan grammar schools. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of Elizabethan pastimes for the rich. (2 marks)\nDescribe one feature of Elizabethan pastimes for the rich. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the theatre in early Elizabethan England. (2 marks)\nDescribe one feature of the theatre in early Elizabethan England. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One key feature was that theatres were highly accessible to all social classes. The poorest \"groundlings\" could stand in the open pit for just one penny, while the wealthy sat in covered, elevated galleries."
+                },
+                {
+                    "question": "‘The development of the theatre was the most significant change to leisure in early Elizabethan England.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the groundlings\n- sport, pastimes and the theatre\n\nYou must also use information of your own.",
+                    "model_answer": "Leisure in Elizabethan England experienced significant transformations during Elizabeth's reign. While the **development of the theatre** was a highly visible cultural shift that changed how different social classes interacted, it was not the only significant change; the persistent popularity of violent **spectator sports** and the rigid class divide in physical **pastimes** remained highly influential aspects of daily life.\n\nOn the one hand, the development of the theatre was a revolutionary change to leisure. Prior to Elizabeth's reign, acting was performed by travelling troupes, but the 1572 Vagabonds Act forced actors to seek noble patronage to avoid arrest. This led to the creation of permanent, purpose-built theatres outside London, such as the Globe and the Rose. Theatre became a unique social phenomenon because it was highly inclusive; the poorest **groundlings** stood in the open pit for just a penny, while the wealthy sat in the covered galleries. This made the theatre a vibrant space for social mixing and a powerful tool for political propaganda, as plays could reinforce themes of loyalty to the Queen, making it a highly significant cultural change.\n\nOn the other hand, traditional **sport and pastimes** remained the dominant form of leisure for the majority of the population and saw little structural change. Sports were strictly divided along class lines. The nobility enjoyed highly expensive, private activities such as Real Tennis, hawking, and fencing, which were used to display their wealth and physical prowess. In contrast, the lower classes played football—a highly violent game with few rules that often resulted in serious injury or death—and wrestled. These activities did not experience a \"golden age\" of development like the theatre; instead, they remained local, traditional, and unchanged throughout the period, serving as a point of social continuity.\n\nFurthermore, **spectator sports** such as bear-baiting and cock-fighting remained incredibly popular across all social classes. Large purpose-built arenas were constructed in London to hold these events, and even Queen Elizabeth herself was a keen spectator. These blood sports were a major part of the leisure industry, drawing huge crowds who placed large bets on the outcomes. The popularity of bear-baiting was so great that it actively rivalled the theatre, with theatres sometimes being closed on certain days to encourage people to attend the baiting arenas instead. This shows that for many Elizabethans, violent animal sports remained a more popular and significant form of entertainment than secular drama.\n\nIn conclusion, I partially agree with the statement. The development of the theatre was the most *revolutionary* change to leisure because it created a brand-new, commercial, and highly democratic cultural industry that had never existed before in England. However, it did not completely replace traditional leisure. For the vast majority of Elizabethans outside of London, traditional **sport and pastimes** and violent spectator sports like bear-baiting remained the primary, unchanging methods of entertainment, proving that the theatre's impact, while culturally massive, was largely concentrated in urban centres."
                 }
             ],
             "quiz": [
@@ -2913,9 +3017,19 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why poverty increased in Elizabethan England.",
-                    "examiner_tip": "To achieve Level 4, you must explain the *interaction* between the different causes of poverty rather than just listing them. \n\n**Paragraph 1 (Population & Inflation):** Explain how the population growing from 3m to 4m acted as a *catalyst for* inflation (demand outstripping supply), meaning wages could no longer cover the rising cost of bread. \n\n**Paragraph 2 (Enclosure):** Explain how the shift from arable farming to sheep farming meant fewer workers were needed, leading to evictions. Link this back to Paragraph 1 by stating this *exacerbated* the food shortages, as less land was being used to grow crops.\n\n**Paragraph 3 (Decline in Cloth Trade):** Explain how the collapse of the Antwerp wool market led to sudden mass unemployment in towns, which combined with the arrival of desperate rural migrants to create an unmanageable crisis. Ensure each paragraph ends with a strong link back to the question."
+                    "question": "Describe one characteristic of poverty in early Elizabethan England. (2 marks)\nDescribe one characteristic of poverty in early Elizabethan England. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the poor rate in Elizabethan England. (2 marks)\nDescribe one feature of the poor rate in Elizabethan England. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Describe one feature of the 1572 Vagabonds Act. (2 marks)\nDescribe one feature of the 1572 Vagabonds Act. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "One feature was the introduction of severe physical punishments for vagrancy. Under the Act, any individual caught begging without a licence was to be whipped and had a hole burned through their right ear with a hot iron."
                 }
             ],
             "do_now": {
@@ -3223,9 +3337,14 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why the English attempt to colonise Virginia in 1585–87 failed.",
-                    "examiner_tip": "To achieve Level 4, ensure you explain the *interaction* between the different causes of failure.\n\n**Paragraph 1 (Supplies & Planning):** Explain how the physical damage to the ship *The Tiger* ruined their food/seeds. Use analytical language: this *acted as a catalyst for* conflict, as it forced the settlers to demand food from the locals.\n\n**Paragraph 2 (Native American Resistance & Leadership):** Explain how the aggressive leadership of Ralph Lane and the spread of English disease *exacerbated* the situation. This led directly to Chief Wingina attacking the settlement, making it untenable.\n\n**Paragraph 3 (The Spanish Armada):** Explain how the failure was *intrinsically linked* to events back home. Because every ship was needed to fight the 1588 Armada, the 1587 settlers were entirely abandoned and left without a resupply ship for three years."
+                    "question": "\"The voyages of exploration in Elizabeth's reign were primarily motivated by a desire for wealth.\"\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Trade routes\n- Rivalry with Spain\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "Explain why Drake's circumnavigation of the globe (1577-1580) was significant. (12 marks)",
+                    "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Spanish treasure\n- Nova Albion\n\nYou must also use information of your own.",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
                 }
             ],
             "do_now": {
@@ -3526,9 +3645,14 @@ export const unitData = {
             ],
             "exam_practice": [
                 {
-                    "type": "12_marks",
-                    "question": "Explain why the English attempt to colonise Virginia in 1585–87 failed.",
-                    "examiner_tip": "To achieve Level 4, ensure you explain the *interaction* between the different causes of failure.\n\n**Paragraph 1 (Supplies & Planning):** Explain how the physical damage to the ship *The Tiger* ruined their food/seeds, and how a lack of farming skills *exacerbated* the crisis, forcing them to rely on Algonquian fish weirs.\n\n**Paragraph 2 (Native American Resistance & Leadership):** Explain how Ralph Lane's aggressive military tactics and the spread of English disease acted as a *catalyst for* conflict, leading to the murder of Chief Wingina and making the 1585 colony untenable.\n\n**Paragraph 3 (The Spanish Armada):** Focus on the 1587 colony. Explain how the failure was *intrinsically linked* to the war with Spain; because all ships were requisitioned to fight the 1588 Armada, John White could not return with rescue supplies for three years, leading to the 'Lost Colony'."
+                    "question": "Describe one characteristic of the English attempts to colonise Virginia. (2 marks)\nDescribe one characteristic of the English attempts to colonise Virginia. (2 marks)",
+                    "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
+                    "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+                },
+                {
+                    "question": "‘The drive to expand trade was the main reason for the attempted colonisation of Virginia.’\nHow far do you agree? Explain your answer. (16 marks)",
+                    "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- new technology\n- the significance of Raleigh\n\nYou must also use information of your own.",
+                    "model_answer": "The attempted colonisation of Virginia in 1585 was driven by a complex mixture of economic, strategic, and political factors. While the **drive to expand trade** and break Spain’s commercial monopoly was a major economic motive, the strategic desire to establish a military outpost to attack Spain, combined with the personal ambition and organisation of **Sir Walter Raleigh**, were more critical in transforming these plans into an actual expedition.\n\nOn the one hand, the drive to expand trade was a highly significant cause of the colonisation attempt. Historically, England’s economy relied heavily on exporting woollen cloth to Europe through the port of Antwerp. However, when Spain crushed the Dutch Revolt, Antwerp was closed to English merchants, causing a major economic crisis. English merchants desperately needed to find new markets and raw materials. Virginia was believed to be rich in valuable resources, including timber, fur, and tobacco. By colonising North America, England hoped to establish self-sufficiency, import luxury goods directly without paying high Spanish taxes, and find new consumer markets for English wool, thereby reviving the nation's wealth.\n\nOn the other hand, the strategic, military motivation of creating a naval base against Spain was arguably more pressing. By 1585, England and Spain were on the brink of war. Elizabeth and her advisors knew that England could not match Spain's massive army, so they aimed to weaken Spain financially by attacking its silver-carrying treasure fleets sailing from the Americas. Virginia was located in a perfect strategic position: far enough north to be safe from Spanish bases in Florida, but close enough to the Caribbean to allow English privateers, such as Sir Francis Drake, to raid Spanish ships and then retreat safely to a secure English port to unload their stolen riches.\n\nFurthermore, the colonisation attempt would never have occurred without **the significance of Raleigh**. Raleigh was a wealthy courtier who was granted a royal patent by Queen Elizabeth in 1584 to explore and colonise \"heathen lands\". Raleigh acted as the essential organiser: he raised the vast sums of money needed by promoting the colony to investors, oversaw the building and outfitting of the ships, and carefully selected the colonists, including the mathematician Thomas Harriot to navigate and map the territory. Although Elizabeth refused to let Raleigh sail himself because she could not risk losing her favourite courtier, his political influence and financial backing were the engines behind the entire enterprise.\n\nFinally, the colonisation attempt was made possible by **new technology**. During Elizabeth's reign, ship design had progressed significantly: the development of the \"galleon\" provided English sailors with larger, faster, and more stable ships capable of surviving the treacherous Atlantic crossing while carrying heavy cannons and extensive supplies. This was supported by navigational advancements, including the widespread use of the magnetic compass, the astrolabe, and the quadrant, which allowed navigators to accurately calculate their latitude at sea. Without these technical breakthroughs, Raleigh's plans would have remained a physical impossibility.\n\nIn conclusion, I partially agree with the statement. The drive to expand trade provided the initial economic justification for the expedition, particularly after the collapse of the Antwerp cloth trade. However, the strategic need to establish a military naval base to disrupt Spanish shipping as war loomed was the primary geopolitical motivator. Raleigh's unique ability to secure investment and royal support was the practical mechanism that turned this strategic dream into reality."
                 }
             ],
             "do_now": {
@@ -3776,509 +3900,190 @@ export const unitData = {
     ],
     "key_individuals": [
         {
-            "id": "lord_darnley",
-            "name": "Lord Darnley",
-            "role": "Second Husband to Mary, Queen of Scots",
-            "bio": "A powerful Scottish nobleman whose disastrous and unhappy marriage to Mary ended when he was assassinated in a mysterious explosion in 1567.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "King Henry VIII",
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "King of England (1509–1547); Elizabeth's father whose marital changes created her legitimacy crisis.",
+            "image": "/images/king_henry_viii.jpg"
         },
         {
-            "id": "earl_bothwell",
-            "name": "James Hepburn",
-            "role": "4th Earl of Bothwell",
-            "bio": "The prime suspect in the murder of Lord Darnley. Shockingly, Mary, Queen of Scots married him shortly after Darnley's death, triggering the massive Scottish rebellion that forced her to abdicate.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Queen Mary I (Mary Tudor)",
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "Queen of England (1553–1558); Elizabeth’s older Catholic sister and predecessor.",
+            "image": "/images/queen_mary_i_mary_tudor.jpg"
         },
         {
-            "id": "john_foxe",
-            "name": "John Foxe",
-            "role": "Puritan Clergyman & Author",
-            "bio": "A highly vocal Puritan who opposed Catholic elements remaining in Elizabeth's 'Middle Way'. He is famous for writing 'Foxe's Book of Martyrs', which heavily influenced English Protestant identity.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "thomas_cartwright",
-            "name": "Thomas Cartwright",
-            "role": "Puritan Academic & Preacher",
-            "bio": "A leading radical Puritan who argued passionately for a Presbyterian system of church government without bishops, posing a direct intellectual challenge to Elizabeth's authority over the Church.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "thomas_percy",
-            "name": "Thomas Percy",
-            "role": "7th Earl of Northumberland",
-            "bio": "A powerful, traditional Catholic noble in northern England. He was one of the key leaders of the 1569 Revolt of the Northern Earls, which attempted to depose Elizabeth and restore Catholicism.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "elizabeth_tudor",
             "name": "Queen Elizabeth I",
-            "role": "Queen of England (1558–1603)",
-            "bio": "Elizabeth was the daughter of Henry VIII and Anne Boleyn. Inheriting a divided and bankrupt nation at age 21, she ruled as a 'Queen Regnant'. Known as the Virgin Queen, she refused to marry to maintain her absolute political authority, steering England through severe religious tensions and the Spanish Armada to forge a Golden Age.",
-            "image": "/assets/portraits/elizabeth_i.jpg"
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "Queen of England (1558–1603); Supreme Governor of the Church of England.",
+            "image": "/images/queen_elizabeth_i.jpg"
         },
         {
-            "id": "william_cecil",
-            "name": "William Cecil",
-            "role": "Secretary of State",
-            "bio": "Elizabeth's most trusted adviser and Secretary of State. Cecil served her for 40 years, playing a crucial role in shaping domestic policy, managing Parliament, and steering the religious settlement. He was highly intelligent and fiercely loyal to the Crown.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "King Philip II of Spain",
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "Sovereign ruler of the global Spanish Empire; Elizabeth's chief Catholic rival.",
+            "image": "/images/king_philip_ii_of_spain.jpg"
         },
         {
-            "id": "mary_i",
-            "name": "Mary I (Mary Tudor)",
-            "role": "Queen of England (1553–1558)",
-            "bio": "Elizabeth's older half-sister and predecessor. A devout Catholic, she attempted to reverse the English Reformation, burning over 300 Protestants at the stake. She left Elizabeth with a £300,000 debt and an unpopular war with France.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Francis II",
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "King of France; briefly King-consort of Scotland through his marriage to Mary, Queen of Scots.",
+            "image": "/images/francis_ii.jpg"
         },
         {
-            "id": "mary_queen_of_scots",
-            "name": "Mary, Queen of Scots",
-            "role": "Queen of Scotland",
-            "bio": "Elizabeth's Catholic cousin. She had a strong genealogical claim to the English throne. Many English Catholics viewed her as the legitimate queen instead of Elizabeth. Her presence in England later became the focus of numerous plots to assassinate Elizabeth.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Mary, Queen of Scots (Mary Stuart)",
+            "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+            "bio": "Sovereign Queen of Scotland; Elizabeth's cousin and claimant to the English throne.",
+            "image": "/images/mary_queen_of_scots_mary_stuart.jpg"
         },
         {
-            "id": "henry_viii",
-            "name": "Henry VIII",
-            "role": "King of England (1509–1547)",
-            "bio": "Elizabeth's father. His desire to divorce Catherine of Aragon and marry Anne Boleyn led to the English Reformation. His execution of Anne Boleyn cast a long shadow over Elizabeth's legitimacy in the eyes of Catholic Europe.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Duke of Norfolk (Thomas Howard)",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "The highest-ranking nobleman in England; executed in 1572 for plotting to marry Mary, Queen of Scots.",
+            "image": "/images/the_duke_of_norfolk_thomas_howard.jpg"
         },
         {
-            "id": "anne_boleyn",
-            "name": "Anne Boleyn",
-            "role": "Queen Consort of England",
-            "bio": "Elizabeth's mother and Henry VIII's second wife. She was executed for treason and adultery when Elizabeth was just two and a half years old. Catholics refused to recognise her marriage to Henry, branding Elizabeth illegitimate.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Duke of Alba",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "High-ranking Spanish nobleman and military commander sent by Philip II to crush the Dutch Revolt.",
+            "image": "/images/the_duke_of_alba.jpg"
         },
         {
-            "id": "catherine_of_aragon",
-            "name": "Catherine of Aragon",
-            "role": "Queen Consort of England",
-            "bio": "Henry VIII's first wife and mother of Mary I. The Pope's refusal to annul her marriage to Henry caused the Break with Rome. Devout Catholics continued to view Catherine as Henry's only true wife.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Duke of Parma",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Spanish nobleman and governor of the Netherlands; commander of the invasion force the Armada was sent to transport.",
+            "image": "/images/the_duke_of_parma.png"
         },
         {
-            "id": "mary_of_guise",
-            "name": "Mary of Guise",
-            "role": "Queen Regent of Scotland",
-            "bio": "A French noblewoman and mother to Mary, Queen of Scots. She ruled Scotland as regent, heavily relying on French troops and reinforcing the 'Auld Alliance', which placed a Catholic military threat directly on England's northern border.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Duke of Medina Sidonia",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Spanish nobleman appointed to command the Spanish Armada.",
+            "image": "/images/the_duke_of_medina_sidonia.jpg"
         },
         {
-            "id": "pope_pius_v",
-            "name": "Pope Pius V",
-            "role": "Head of the Catholic Church",
-            "bio": "The Pope who explicitly commanded English Catholics not to attend Protestant services in 1566 and subsequently excommunicated Elizabeth I in 1570, completely changing the nature of the Catholic threat from civil disobedience to treason.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Duke of Guise",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Powerful French Catholic noble who conspired to launch a French invasion of England.",
+            "image": "/images/the_duke_of_guise.jpg"
         },
         {
-            "id": "philip_ii",
-            "name": "King Philip II",
-            "role": "King of Spain",
-            "bio": "A devout Catholic monarch who saw it as his holy duty to destroy Protestantism across Europe. He backed numerous plots against Elizabeth and eventually launched the Spanish Armada to conquer England.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Robert Dudley (Earl of Leicester)",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Elizabeth's favorite courtier and leading Privy Councillor; later Governor-General of the Low Countries.",
+            "image": "/images/robert_dudley_earl_of_leicester.jpg"
         },
         {
-            "id": "francis_drake",
-            "name": "Sir Francis Drake",
-            "role": "English Privateer & Naval Commander",
-            "bio": "A famous privateer who raided Spanish treasure ships during his circumnavigation of the globe. He famously delayed the Spanish Armada by raiding Cadiz in 1587 and played a key role in the Armada's defeat.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Earl of Northumberland (Thomas Percy)",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Catholic noble who co-led the failed Revolt of the Northern Earls.",
+            "image": "/images/the_earl_of_northumberland_thomas_percy.jpg"
         },
         {
-            "id": "john_hawkins",
-            "name": "John Hawkins",
-            "role": "Naval Commander & Shipbuilder",
-            "bio": "An English naval commander who redesigned the English fleet, creating the fast and highly manoeuvrable galleons that outgunned the Spanish Armada.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "The Earl of Westmorland (Charles Neville)",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Catholic noble who co-led the Revolt of the Northern Earls.",
+            "image": "/images/the_earl_of_westmorland_charles_neville.jpg"
         },
         {
-            "id": "duke_of_alba",
-            "name": "Duke of Alba",
-            "role": "Spanish General",
-            "bio": "A brutal Spanish general sent by Philip II to crush the Protestant rebellion in the Netherlands, directly threatening English security.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Lord Darnley (Henry Stuart)",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Nobleman of royal blood; second husband of Mary, Queen of Scots.",
+            "image": "/images/lord_darnley_henry_stuart.jpg"
         },
         {
-            "id": "robert_dudley_leicester",
-            "name": "Robert Dudley",
-            "role": "Earl of Leicester",
-            "bio": "One of Elizabeth's favourite courtiers and a key military commander. He led the 7,400 English troops sent to the Netherlands under the Treaty of Nonsuch to fight the Spanish.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Lady Jane Grey",
+            "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+            "bio": "Briefly named Protestant Queen in 1553; cousin of Elizabeth.",
+            "image": "/images/lady_jane_grey.jpg"
         },
         {
-            "id": "medina_sidonia",
-            "name": "Duke of Medina Sidonia",
-            "role": "Commander of the Spanish Armada",
-            "bio": "An inexperienced Spanish nobleman appointed by Philip II to lead the Armada. His lack of naval experience contributed to the fatal Spanish mistakes during the campaign.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Sir William Cecil (Lord Burghley)",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Elizabeth’s first Secretary of State and most trusted advisor.",
+            "image": "/images/sir_william_cecil_lord_burghley.jpg"
         },
         {
-            "id": "duke_of_parma",
-            "name": "Duke of Parma",
-            "role": "Commander of the Spanish Army in the Netherlands",
-            "bio": "The commander of the massive Spanish army in the Netherlands that was supposed to join the Armada and invade England. A fatal breakdown in communication meant his army wasn't ready to board the ships at Calais.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Sir Francis Walsingham",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Elizabeth's Secretary of State and Spymaster.",
+            "image": "/images/sir_francis_walsingham.jpg"
         },
         {
-            "id": "william_of_orange",
-            "name": "William of Orange",
-            "role": "Leader of the Dutch Protestant Rebellion",
-            "bio": "The leader of the Protestant rebellion in the Netherlands against Spanish rule. His assassination in 1584 caused Elizabeth to fear an imminent Spanish victory, directly leading to the Treaty of Nonsuch.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "howard_of_effingham",
-            "name": "Lord Howard of Effingham",
-            "role": "Lord High Admiral of the English Fleet",
-            "bio": "The highly capable commander of the English fleet during the Spanish Armada in 1588. He successfully led the defense of England, working alongside experienced commanders like Francis Drake and John Hawkins.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "roger_ascham",
-            "name": "Roger Ascham",
-            "role": "Humanist Scholar & Tutor",
-            "bio": "A prominent English humanist and scholar who served as Queen Elizabeth's personal tutor. His ideas heavily influenced educational reform during her reign.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "christopher_marlowe",
-            "name": "Christopher Marlowe",
-            "role": "Playwright & Poet",
-            "bio": "A pioneering Elizabethan playwright who greatly influenced William Shakespeare. His exciting secular tragedies were a major part of the theatre explosion.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "william_shakespeare",
-            "name": "William Shakespeare",
-            "role": "Playwright & Poet",
-            "bio": "The most famous Elizabethan playwright, known for his comedies, tragedies, and histories. His work flourished under the patronage of the nobility during the Golden Age of the Theatre.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "charles_neville",
-            "name": "Charles Neville",
-            "role": "6th Earl of Westmorland",
-            "bio": "A Catholic noble from the north of England who, alongside Thomas Percy, led the disastrous 1569 Revolt of the Northern Earls against Elizabeth.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "roberto_ridolfi",
-            "name": "Roberto Ridolfi",
-            "role": "Italian Banker and Papal Spy",
-            "bio": "The chief architect of the 1571 Ridolfi Plot, which aimed to assassinate Elizabeth and replace her with Mary, Queen of Scots, backed by Spanish troops.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "francis_throckmorton",
-            "name": "Francis Throckmorton",
-            "role": "English Catholic Conspirator",
-            "bio": "A key figure in the 1583 Throckmorton Plot. He acted as the go-between for Mary, Queen of Scots, and the Spanish Ambassador. He was tortured and executed in 1584.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "anthony_babington",
-            "name": "Anthony Babington",
-            "role": "English Catholic Conspirator",
-            "bio": "The leader of the 1586 Babington Plot. His coded letters to Mary, Queen of Scots were intercepted by Walsingham's spies, directly leading to Mary's execution.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "james_pilkington",
-            "name": "James Pilkington",
-            "role": "Bishop of Durham",
-            "bio": "A radical Protestant appointed by Elizabeth as Bishop of Durham. His strict religious reforms deeply angered traditional northern Catholics, contributing to the 1569 Revolt.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "thomas_phelippes",
-            "name": "Thomas Phelippes",
-            "role": "Expert Code-breaker and Cryptographer",
-            "bio": "Employed by Sir Francis Walsingham, Phelippes was a master at deciphering intercepted messages. He successfully cracked the cipher used in the Babington Plot.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "gilbert_gifford",
-            "name": "Gilbert Gifford",
-            "role": "Agent Provocateur",
-            "bio": "A spy who worked for Walsingham. He infiltrated Catholic circles and acted as a double agent, actively encouraging plotters to communicate with Mary, Queen of Scots so they could be caught.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "bernardino_de_mendoza",
-            "name": "Bernardino de Mendoza",
-            "role": "Spanish Ambassador",
-            "bio": "The Spanish ambassador to England who was deeply involved in Catholic plots against Elizabeth, including the Throckmorton Plot. He was expelled from England in 1584.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "william_stanley",
-            "name": "William Stanley",
-            "role": "English Commander",
-            "bio": "An English officer serving under Robert Dudley in the Netherlands who shockingly defected to the Spanish side, heavily damaging the Dutch rebels' trust in their English allies.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "rowland_york",
-            "name": "Rowland York",
-            "role": "English Officer",
-            "bio": "An English officer who, alongside William Stanley, defected to the Spanish while commanding troops in the Netherlands, severely undermining Dudley's campaign.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "pope_sixtus_v",
-            "name": "Pope Sixtus V",
-            "role": "Head of the Catholic Church",
-            "bio": "The Pope who turned the 1588 Spanish Armada into a holy crusade by blessing the invasion and promising Philip II a million gold ducats upon a successful landing.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "duke_of_medina_sidonia",
-            "name": "Duke of Medina Sidonia",
-            "role": "Commander of the Armada",
-            "bio": "A wealthy Spanish nobleman reluctantly chosen by Philip II to lead the 1588 Armada. Despite his bravery, he lacked naval experience and suffered from severe seasickness.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "thomas_harman",
-            "name": "Thomas Harman",
-            "role": "Author and Magistrate",
-            "bio": "An Elizabethan magistrate who wrote a famous, sensationalist pamphlet in 1567 titled 'A Caveat for Common Cursitors'. He warned the public about the deceptive tricks used by vagabonds, fuelling a national moral panic.",
-            "image": "/assets/placeholder_cover.jpg"
-        },
-        {
-            "id": "walter_raleigh",
             "name": "Sir Walter Raleigh",
-            "role": "Explorer and Courtier",
-            "bio": "An ambitious Elizabethan courtier who was granted a royal charter in 1584 to establish a North American colony to rival Spain. He funded and organised the disastrous Roanoke expeditions.",
-            "image": "/assets/placeholder_cover.jpg"
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Courtier, explorer, and knight given the royal patent to colonize Virginia.",
+            "image": "/images/sir_walter_raleigh.jpg"
         },
         {
-            "id": "chief_wingina",
-            "name": "Chief Wingina",
-            "role": "Algonquian Leader",
-            "bio": "A local Native American chief near Roanoke Island who initially traded with the English. However, driven by English aggression and disease, he turned against them and launched an attack on the colony.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Sir Francis Drake",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Privateer, navigator, and naval commander; knighted in 1580.",
+            "image": "/images/sir_francis_drake.jpg"
         },
         {
-            "id": "ralph_lane",
-            "name": "Ralph Lane",
-            "role": "Colony Governor (1585)",
-            "bio": "An aggressive, militaristic leader of the 1585 Roanoke expedition. His hostility toward the local Algonquian tribes and demands for food destroyed early diplomacy and bred resentment.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Sir John Hawkins",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Merchant, privateer, and treasurer of the Royal Navy.",
+            "image": "/images/sir_john_hawkins.JPG"
         },
         {
-            "id": "john_white",
-            "name": "John White",
-            "role": "Colony Governor (1587) and Artist",
-            "bio": "The leader of the 1587 Roanoke expedition who returned to England for supplies. Trapped by the Armada crisis, he could not return for three years and eventually found the colony had vanished.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Sir Richard Grenville",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "Naval commander of the 1585 expedition to Roanoke.",
+            "image": "/images/sir_richard_grenville.jpg"
         },
         {
-            "id": "thomas_harriot",
+            "name": "Anthony Babington",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "A wealthy Catholic gentleman who led the Babington Plot.",
+            "image": "/images/anthony_babington.jpg"
+        },
+        {
+            "name": "Francis Throckmorton",
+            "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+            "bio": "A Catholic gentleman who acted as a key intermediary in the Throckmorton Plot.",
+            "image": "/images/francis_throckmorton.jpg"
+        },
+        {
+            "name": "James Pilkington",
+            "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+            "bio": "The Protestant Bishop of Durham appointed by Elizabeth.",
+            "image": ""
+        },
+        {
             "name": "Thomas Harriot",
-            "role": "Mathematician and Scientist",
-            "bio": "A brilliant mathematician and scientist who accompanied the 1585 Roanoke expedition. He was responsible for mapping the new territory and studying the local resources.",
-            "image": "/assets/placeholder_cover.jpg"
+            "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+            "bio": "Brilliant mathematician, navigator, and scholar who recorded the Roanoke voyage.",
+            "image": "/images/thomas_harriot.jpg"
         },
         {
-            "id": "manteo_wanchese",
-            "name": "Manteo and Wanchese",
-            "role": "Algonquian Emissaries",
-            "bio": "Two Native Americans brought back to England in 1584 by Raleigh's explorers. They helped the English learn the Algonquian language and provided vital intelligence about Roanoke.",
-            "image": "/assets/placeholder_cover.jpg"
+            "name": "Thomas Phelippes",
+            "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+            "bio": "Walsingham’s chief cryptographer and codebreaker.",
+            "image": ""
+        },
+        {
+            "name": "Gilbert Gifford",
+            "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+            "bio": "A Catholic priest who acted as Walsingham’s agent provocateur during the Babington Plot.",
+            "image": ""
+        },
+        {
+            "name": "Edmund Campion",
+            "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+            "bio": "Highly educated Jesuit missionary priest executed for treason.",
+            "image": ""
+        },
+        {
+            "name": "Roberto Ridolfi",
+            "group": "⚖️ Tier 5: The \"Middling Sort\" (Wealthy Merchants & Bankers)",
+            "bio": "An Italian banker based in London who used his financial networks to organize the Ridolfi Plot in 1571.",
+            "image": ""
+        },
+        {
+            "name": "Chief Wingina",
+            "group": "🌍 Sovereign Status: Indigenous Leadership",
+            "bio": "The ruler (mandoac) of the local Algonquian tribe at Roanoke. While he did not fit into the European feudal hierarchy, he occupied the supreme position of political and military leadership within his own sovereign nation.",
+            "image": "/images/chief_wingina.jpg"
         }
     ]
-
-,
-  "key_individuals": [
-  {
-    "name": "King Henry VIII",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "King of England (1509–1547); Elizabeth's father whose marital changes created her legitimacy crisis.",
-    "image": "/images/king_henry_viii.jpg"
-  },
-  {
-    "name": "Queen Mary I (Mary Tudor)",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "Queen of England (1553–1558); Elizabeth’s older Catholic sister and predecessor.",
-    "image": "/images/queen_mary_i_mary_tudor.jpg"
-  },
-  {
-    "name": "Queen Elizabeth I",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "Queen of England (1558–1603); Supreme Governor of the Church of England.",
-    "image": "/images/queen_elizabeth_i.jpg"
-  },
-  {
-    "name": "King Philip II of Spain",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "Sovereign ruler of the global Spanish Empire; Elizabeth's chief Catholic rival.",
-    "image": "/images/king_philip_ii_of_spain.jpg"
-  },
-  {
-    "name": "Francis II",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "King of France; briefly King-consort of Scotland through his marriage to Mary, Queen of Scots.",
-    "image": "/images/francis_ii.jpg"
-  },
-  {
-    "name": "Mary, Queen of Scots (Mary Stuart)",
-    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
-    "bio": "Sovereign Queen of Scotland; Elizabeth's cousin and claimant to the English throne.",
-    "image": "/images/mary_queen_of_scots_mary_stuart.jpg"
-  },
-  {
-    "name": "The Duke of Norfolk (Thomas Howard)",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "The highest-ranking nobleman in England; executed in 1572 for plotting to marry Mary, Queen of Scots.",
-    "image": "/images/the_duke_of_norfolk_thomas_howard.jpg"
-  },
-  {
-    "name": "The Duke of Alba",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "High-ranking Spanish nobleman and military commander sent by Philip II to crush the Dutch Revolt.",
-    "image": "/images/the_duke_of_alba.jpg"
-  },
-  {
-    "name": "The Duke of Parma",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Spanish nobleman and governor of the Netherlands; commander of the invasion force the Armada was sent to transport.",
-    "image": "/images/the_duke_of_parma.png"
-  },
-  {
-    "name": "The Duke of Medina Sidonia",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Spanish nobleman appointed to command the Spanish Armada.",
-    "image": "/images/the_duke_of_medina_sidonia.jpg"
-  },
-  {
-    "name": "The Duke of Guise",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Powerful French Catholic noble who conspired to launch a French invasion of England.",
-    "image": "/images/the_duke_of_guise.jpg"
-  },
-  {
-    "name": "Robert Dudley (Earl of Leicester)",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Elizabeth's favorite courtier and leading Privy Councillor; later Governor-General of the Low Countries.",
-    "image": "/images/robert_dudley_earl_of_leicester.jpg"
-  },
-  {
-    "name": "The Earl of Northumberland (Thomas Percy)",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Catholic noble who co-led the failed Revolt of the Northern Earls.",
-    "image": "/images/the_earl_of_northumberland_thomas_percy.jpg"
-  },
-  {
-    "name": "The Earl of Westmorland (Charles Neville)",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Catholic noble who co-led the Revolt of the Northern Earls.",
-    "image": "/images/the_earl_of_westmorland_charles_neville.jpg"
-  },
-  {
-    "name": "Lord Darnley (Henry Stuart)",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Nobleman of royal blood; second husband of Mary, Queen of Scots.",
-    "image": "/images/lord_darnley_henry_stuart.jpg"
-  },
-  {
-    "name": "Lady Jane Grey",
-    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
-    "bio": "Briefly named Protestant Queen in 1553; cousin of Elizabeth.",
-    "image": "/images/lady_jane_grey.jpg"
-  },
-  {
-    "name": "Sir William Cecil (Lord Burghley)",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Elizabeth’s first Secretary of State and most trusted advisor.",
-    "image": "/images/sir_william_cecil_lord_burghley.jpg"
-  },
-  {
-    "name": "Sir Francis Walsingham",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Elizabeth's Secretary of State and Spymaster.",
-    "image": "/images/sir_francis_walsingham.jpg"
-  },
-  {
-    "name": "Sir Walter Raleigh",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Courtier, explorer, and knight given the royal patent to colonize Virginia.",
-    "image": "/images/sir_walter_raleigh.jpg"
-  },
-  {
-    "name": "Sir Francis Drake",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Privateer, navigator, and naval commander; knighted in 1580.",
-    "image": "/images/sir_francis_drake.jpg"
-  },
-  {
-    "name": "Sir John Hawkins",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Merchant, privateer, and treasurer of the Royal Navy.",
-    "image": "/images/sir_john_hawkins.JPG"
-  },
-  {
-    "name": "Sir Richard Grenville",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "Naval commander of the 1585 expedition to Roanoke.",
-    "image": "/images/sir_richard_grenville.jpg"
-  },
-  {
-    "name": "Anthony Babington",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "A wealthy Catholic gentleman who led the Babington Plot.",
-    "image": "/images/anthony_babington.jpg"
-  },
-  {
-    "name": "Francis Throckmorton",
-    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
-    "bio": "A Catholic gentleman who acted as a key intermediary in the Throckmorton Plot.",
-    "image": "/images/francis_throckmorton.jpg"
-  },
-  {
-    "name": "James Pilkington",
-    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
-    "bio": "The Protestant Bishop of Durham appointed by Elizabeth.",
-    "image": ""
-  },
-  {
-    "name": "Thomas Harriot",
-    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
-    "bio": "Brilliant mathematician, navigator, and scholar who recorded the Roanoke voyage.",
-    "image": "/images/thomas_harriot.jpg"
-  },
-  {
-    "name": "Thomas Phelippes",
-    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
-    "bio": "Walsingham’s chief cryptographer and codebreaker.",
-    "image": ""
-  },
-  {
-    "name": "Gilbert Gifford",
-    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
-    "bio": "A Catholic priest who acted as Walsingham’s agent provocateur during the Babington Plot.",
-    "image": ""
-  },
-  {
-    "name": "Edmund Campion",
-    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
-    "bio": "Highly educated Jesuit missionary priest executed for treason.",
-    "image": ""
-  },
-  {
-    "name": "Roberto Ridolfi",
-    "group": "⚖️ Tier 5: The \"Middling Sort\" (Wealthy Merchants & Bankers)",
-    "bio": "An Italian banker based in London who used his financial networks to organize the Ridolfi Plot in 1571.",
-    "image": ""
-  },
-  {
-    "name": "Chief Wingina",
-    "group": "🌍 Sovereign Status: Indigenous Leadership",
-    "bio": "The ruler (mandoac) of the local Algonquian tribe at Roanoke. While he did not fit into the European feudal hierarchy, he occupied the supreme position of political and military leadership within his own sovereign nation.",
-    "image": "/images/chief_wingina.jpg"
-  }
-]
 };
