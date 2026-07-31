@@ -19,7 +19,8 @@ export function renderExamPracticeZone(container, unitData) {
   if (unitData.lessons) {
     unitData.lessons.forEach(l => {
       if (l.exam_practice) {
-        l.exam_practice.forEach(ep => {
+        let practices = Array.isArray(l.exam_practice) ? l.exam_practice : [l.exam_practice];
+        practices.forEach(ep => {
           examBank.push({
             ...ep,
             question: ep.question || ep.text, // unify
