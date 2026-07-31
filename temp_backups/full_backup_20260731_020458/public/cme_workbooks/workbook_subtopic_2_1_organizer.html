@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>GCSE History Lesson Resource - Workbook</title>
+  <style>
+    @page {
+      size: 21cm 29.7cm; /* A4 */
+      margin: 1.0cm;
+      mso-page-orientation: portrait;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 9.5pt;
+      color: #1f2937;
+      line-height: 1.4;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .print-page, .print-page-last {
+      clear: both;
+      box-sizing: border-box;
+      position: relative;
+      background: #ffffff;
+    }
+    .print-page {
+      page-break-after: always;
+    }
+    .print-page-last {
+      page-break-after: avoid;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1f2937 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.4 !important;
+      }
+      .print-page, .print-page-last {
+        width: 100% !important;
+        min-height: 27.2cm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+    }
+    .main-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      border-bottom: 2px solid #111827;
+      padding-bottom: 3px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #111827;
+    }
+    .sub-title {
+      font-size: 8.5pt;
+      font-weight: bold;
+      color: #111827;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .dotted-writing-line {
+      border-bottom: 1px dashed #9ca3af;
+      height: 28px;
+      margin-bottom: 4px;
+    }
+    .footer-note {
+      font-size: 7pt;
+      color: #6b7280;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 2px;
+      margin-top: 15px;
+      clear: both;
+    }
+    @media screen {
+      .footer-note {
+        position: absolute;
+        bottom: 1.0cm;
+        left: 1.0cm;
+        right: 1.0cm;
+        margin-top: 0;
+      }
+    }
+    @media print {
+      .footer-note {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+      }
+    }
+    /* Cornell grid styles */
+    .print-cornell-grid {
+      display: table;
+      width: 100%;
+      border: 1.5px solid #111827;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .print-cornell-row {
+      display: table-row;
+    }
+    .print-cornell-cues {
+      display: table-cell;
+      width: 30%;
+      border-right: 1.5px solid #111827;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      font-size: 8pt;
+      font-weight: bold;
+      background: #f9fafb;
+    }
+    .print-cornell-notes {
+      display: table-cell;
+      width: 70%;
+      border-bottom: 1.5px solid #111827;
+      padding: 10px;
+      vertical-align: top;
+      background: #ffffff;
+    }
+    .print-cornell-summary-row {
+      display: table-row;
+    }
+    .print-cornell-summary-cell {
+      display: table-cell;
+      colspan: 2;
+      padding: 10px;
+      vertical-align: top;
+      background: #f9fafb;
+      font-size: 8.5pt;
+    }
+    /* Flowchart styles */
+    .flowchart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .flowchart-box {
+      border: 1.5px solid #111827;
+      padding: 8px;
+      width: 22%;
+      vertical-align: top;
+      background: #ffffff;
+      font-size: 8pt;
+    }
+    .flowchart-arrow {
+      text-align: center;
+      font-size: 14pt;
+      font-weight: bold;
+      width: 4%;
+      vertical-align: middle;
+      color: #4b5563;
+    }
+    /* Vocabulary Match-up styles */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .vocab-th {
+      font-weight: bold;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      background-color: #f3f4f6;
+      border: 1px solid #9ca3af;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .vocab-td {
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      font-size: 7.5pt;
+      vertical-align: middle;
+    }
+    /* Exam Rubric styles */
+    .rubric-box {
+      border: 1px solid #111827;
+      background: #f9fafb;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 8pt;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        background: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+
+      <div class="print-page-last">
+        <h2 class="main-title">Graphic Organizer: The Six Day War (1967)</h2>
+        
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 12px; font-family: Arial, sans-serif;">
+      <tr>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 50%;"><strong>Student Name:</strong> ___________________________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Date:</strong> __________________</td>
+        <td style="border: 1px solid #9ca3af; padding: 5px 8px; font-size: 8.5pt; width: 25%;"><strong>Class:</strong> __________________</td>
+      </tr>
+    </table>
+  
+        <div style="border: 1px solid #111827; padding: 10px; margin-bottom: 10px; font-size: 8.5pt; background: #f9fafb;">
+          <strong>Task 1: Causal Flowchart.</strong> In the boxes below, record the key causes, actions, and consequences for each turning point, tracing the chronology of the Mandate's collapse.
+        </div>
+
+        <table class="flowchart-table">
+          <tr>
+            
+        <td class="flowchart-box">
+          <div style="font-weight: bold; font-size: 8.5pt; text-transform: uppercase; border-bottom: 1px solid #111827; margin-bottom: 6px; padding-bottom: 2px;">
+            1. Border Tensions (1964-67)
+          </div>
+          <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+        </td>
+      <td class="flowchart-arrow">➔</td>
+        <td class="flowchart-box">
+          <div style="font-weight: bold; font-size: 8.5pt; text-transform: uppercase; border-bottom: 1px solid #111827; margin-bottom: 6px; padding-bottom: 2px;">
+            2. May Mobilization
+          </div>
+          <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+        </td>
+      <td class="flowchart-arrow">➔</td>
+        <td class="flowchart-box">
+          <div style="font-weight: bold; font-size: 8.5pt; text-transform: uppercase; border-bottom: 1px solid #111827; margin-bottom: 6px; padding-bottom: 2px;">
+            3. Operation Focus
+          </div>
+          <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+        </td>
+      <td class="flowchart-arrow">➔</td>
+        <td class="flowchart-box">
+          <div style="font-weight: bold; font-size: 8.5pt; text-transform: uppercase; border-bottom: 1px solid #111827; margin-bottom: 6px; padding-bottom: 2px;">
+            4. Occupied Territories
+          </div>
+          <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+        </td>
+      
+          </tr>
+        </table>
+
+        <div class="section-title">Task 2: Key Vocabulary Match-Up</div>
+        <table class="vocab-table">
+          <thead>
+            <tr>
+              <th class="vocab-th" style="width: 25%;">Historical Term</th>
+              <th class="vocab-th" style="width: 15%; text-align: center;">Your Match</th>
+              <th class="vocab-th" style="width: 60%;">Definition / Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+      <tr>
+        <td class="vocab-td"><strong>1. PLO</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">A. 1966 Israeli military reprisal raid in the West Bank that escalated Jordanian tensions.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>2. Samu Raid</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">B. Palestine Liberation Organization, founded in 1964 to coordinate national resistance.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>3. MiG fighters</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">C. Soviet-built jets flown by Syria; six were shot down by Israeli fighters in April 1967.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>4. Straits of Tiran</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">D. Waterway closed by Nasser in May 1967, closing off Israel's southern port of Eilat.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>5. Operation Focus</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">E. Israel's preemptive air strikes which destroyed the Egyptian air force on the ground.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>6. Golan Heights</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">F. Strategic mountainous border region captured by Israel from Syria.</td>
+      </tr>
+    
+      <tr>
+        <td class="vocab-td"><strong>7. UNEF</strong></td>
+        <td class="vocab-td" style="text-align: center; font-weight: bold; color: #16a34a;"></td>
+        <td class="vocab-td">G. UN peacekeeping force expelled by Nasser from the Sinai Peninsula prior to the war.</td>
+      </tr>
+    
+          </tbody>
+        </table>
+
+        <div class="footer-note">GCSE History Workbook &bull; Graphic Organizer &bull; Page 1 of 1</div>
+      </div>
+    
+</body>
+</html>
+  

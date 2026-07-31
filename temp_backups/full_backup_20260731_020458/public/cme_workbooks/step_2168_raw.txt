@@ -1,0 +1,1 @@
+I will edit `src/games.js` to append the simulator database and state engine functions, including binding them to `window` so that inline click handlers function properly.

@@ -9,7 +9,7 @@ When the user asks to build, add, or create a new unit:
 2. Duplicate the "great_war" folder and rename it to the new unit's ID.
 3. Help the user insert their new content into the new "index.html".
 4. Automatically update the "tabMappings" in the new unit's "app.js" to match the new page structure.
-5. Automatically run "node extract_units.js" to compile the app.
+5. Automatically run "node extract_units.js <new_unit_id>" to compile the new unit.
 6. Automatically use "node check_overflows.js" (pointed to the new unit) to ensure there are zero layout bugs before finishing.
 
 ## Curriculum & Pedagogical Validation
@@ -53,9 +53,11 @@ This prevents pupil fatigue and ensures diverse cognitive engagement.
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, if a lesson contains a `do_now.type === "timeline"`, you MUST render it as a 'Domino Flowchart'. The script must print the events inside randomly scattered/shuffled CSS boxes on the page. The instructions must tell the student to 'draw arrows connecting the events in the correct chronological and causal order'.
 
 
-## Automated Database Sync
-Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, or add a new unit, you MUST automatically run `npm run sync` before finishing your task. You must do this proactively so the user never has to remember to run the database build setup themselves.
-
+## Automated Database Sync (Safe Unit Mode)
+Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the following safe sync commands for the specific unit:
+1. `node extract_units.js <unit_id>`
+2. `node build_database.cjs`
+Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run these safe unit-targeted commands proactively so the user never has to remember or type the phrases themselves.
 ## "How Useful" Scaffolding (Provenance Clues)
 Whenever you create or modify a "How useful" source assessment question **specifically for the Medicine Through Time (Paper 1) unit**, you MUST provide scaffolding clues for provenance. Students find provenance very difficult, so the scaffolding box must include specific hints (e.g., using a `provenance_clue` property) that prompt them to consider the author, audience, and motive of the source. Do not apply this rule to other units unless explicitly asked.
 
@@ -74,3 +76,12 @@ If a Wikimedia Commons URL works via the API (or curl) but returns a 403 Forbidd
 
 ## Edexcel GCSE Exam Specification: Consequence Questions
 Whenever generating or evaluating Edexcel GCSE History exam questions, remember that the 'consequences' question format has changed. There is no longer an 8-mark question asking to 'Explain two consequences of...'. It is now a single 4-mark question asking to 'Explain one consequence of...'. Ensure all exam practice forms, UI templates, and generated assessments reflect this updated 4-mark format.
+
+## Auto-Git Checkpoint
+Before running any automated extraction scripts, rebuilding the database, or making large structural refactors to curriculum files, you MUST automatically run `git add .` and `git commit -m "Auto-backup checkpoint before <task>"` if the workspace is clean and has untracked or modified files. This ensures a robust version history that can be instantly restored if anything breaks.
+
+## Data Syntax Validator
+Before running `node extract_units.js` or `node build_database.cjs`, you MUST quickly validate the syntax of any `data.js` or `data.json` files you just modified to ensure they do not contain trailing commas, missing brackets, or JavaScript syntax errors that could crash the extraction process.
+
+## Strict Containment
+Unless the user explicitly asks you to work globally or sync all units, you are STRICTLY FORBIDDEN from viewing, opening, or modifying files in any unit folders other than the specific unit the user is currently focused on. This completely isolates your workflow and guarantees you cannot accidentally alter other units.

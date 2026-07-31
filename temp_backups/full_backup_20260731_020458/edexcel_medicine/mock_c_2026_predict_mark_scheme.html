@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicted Mock Paper C</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 20mm;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .cover-box {
+      border: 3px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .input-box {
+      border: 1px solid #000;
+      height: 40px;
+      margin-top: 5px;
+    }
+    .exam-header {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    h1 { font-size: 24px; margin: 0 0 10px 0; }
+    h2 { font-size: 20px; margin: 0 0 10px 0; }
+    h3 { font-size: 16px; margin: 0 0 10px 0; }
+    
+    .instructions { margin-top: 30px; font-size: 14px; line-height: 1.5; }
+    .instructions ul { padding-left: 20px; }
+    .instructions li { margin-bottom: 5px; }
+
+    /* Question Styles */
+    .section-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 30px 0;
+      text-transform: uppercase;
+    }
+    .question-block {
+      margin-bottom: 30px;
+    }
+    .question-text {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+    }
+    .question-num {
+      width: 40px;
+      flex-shrink: 0;
+    }
+    .marks {
+      text-align: right;
+      font-weight: normal;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    /* Dotted Lines */
+    .dotted-line {
+      border-bottom: 1px dotted #999;
+      height: 32px;
+      width: 100%;
+    }
+    
+    /* Follow up table */
+    .follow-up-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .follow-up-table td {
+      border: 1px solid #000;
+      padding: 10px;
+      height: 120px;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    /* Sources Booklet */
+    .sources-booklet {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .source-block {
+      margin-bottom: 25px;
+    }
+    .source-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .source-content {
+      font-family: 'Times New Roman', serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: 10px;
+      border-left: 3px solid #ccc;
+    }
+    
+    /* Model Answer Box */
+    .model-answer {
+      background: #f8fafc;
+      border-left: 4px solid #10b981;
+      padding: 20px;
+      margin-top: 15px;
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #0f172a;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+    .model-answer-title {
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      color: #059669;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="page">
+    <div style="text-align: center; margin-bottom: 10px; font-weight: bold;">
+      Please check the examination details below before entering your candidate information
+    </div>
+    
+    <div class="cover-box">
+      <div class="candidate-info">
+        <div style="flex: 2;">
+          <div>Candidate surname</div>
+          <div class="input-box" style="border-radius: 5px;"></div>
+        </div>
+        <div style="flex: 1;">
+          <div>Other names</div>
+          <div class="input-box" style="border-radius: 5px;"></div>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <div style="flex: 1;">
+          <div>Centre Number</div>
+          <div style="display:flex; gap: 5px; margin-top:5px;">
+            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div>Candidate Number</div>
+          <div style="display:flex; gap: 5px; margin-top:5px;">
+            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-header">
+      <h1>Pearson Edexcel GCSE (9–1)</h1>
+      <div style="border: 1px solid #000; padding: 10px; margin-bottom: 15px; font-size: 20px; font-weight: bold;">
+        Mock Examination <span style="color:#059669;">(TEACHER MARK SCHEME & EXEMPLARS)</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px;">
+        <div>Morning (Time: 1 hour 20 minutes)</div>
+        <div style="background: #333; color: white; padding: 5px 15px; font-weight: bold; border-radius: 5px;">Paper reference: 1HI0/11</div>
+      </div>
+      <h2>History</h2>
+      <h3>PAPER 1: Thematic study and historic environment</h3>
+      <h3>Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches</h3>
+    </div>
+
+    <div style="border: 2px solid #000; border-radius: 10px; padding: 15px; margin-top: 15px; display: flex; justify-content: space-between;">
+      <div>
+        <strong>You must have:</strong><br>
+        Sources Booklet (enclosed)
+      </div>
+      <div style="border: 1px solid #000; padding: 10px; text-align: center; width: 80px; height: 60px;">
+        Total<br>Marks
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Use <strong>black</strong> ink or ball-point pen.</li>
+        <li><strong>Fill in the boxes</strong> at the top of this page with your name, centre number and candidate number.</li>
+        <li>There are two sections in this question paper. Answer all parts of Questions 1 and 2 from Section A. From Section B, answer Questions 3 and 4 and then <strong>EITHER</strong> Question 5 <strong>OR</strong> Question 6.</li>
+        <li>Answer the questions in the spaces provided – <em>there may be more space than you need.</em></li>
+      </ul>
+
+      <h3>Information</h3>
+      <ul>
+        <li>The total mark for this paper is 52.</li>
+        <li>The marks for <strong>each</strong> question are shown in brackets – <em>use this as a guide as to how much time to spend on each question.</em></li>
+        <li>The marks available for spelling, punctuation, grammar and use of specialist terminology are clearly indicated.</li>
+      </ul>
+
+      <h3>Advice</h3>
+      <ul>
+        <li>Read each question carefully before you start to answer it.</li>
+        <li>Check your answers if you have time at the end.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page" ><div class="section-header">SECTION A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches</div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">1 (a)</div>
+    <div>Describe one feature of the work and medical duties of volunteer nurses like the First Aid Nursing Yeomanry (FANY) on the Western Front.</div>
+  </div><div class="marks">(2)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">1 (b)</div>
+    <div>Describe one feature of the medical facilities and rapid emergency treatment provided at a Regimental Aid Post (RAP).</div>
+  </div><div class="marks">(2)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">2 (a)</div>
+    <div>Study Sources A and B in the Sources Booklet.
+
+How useful are Sources A and B for an enquiry into the development of techniques for blood transfusion and frontline storage?
+
+Explain your answer, using Sources A and B and your knowledge of the historical context.</div>
+  </div><div class="marks">(8)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+          <div class="question-num">2 (b)</div>
+          <div>Study Source B.
+
+How could you follow up Source B to find out more about the techniques for frontline blood storage?
+
+In your answer, you must give the question you would ask and the type of source you could use.
+
+Complete the table below.</div>
+        </div>
+        <div class="marks">(4)</div>
+        <table class="follow-up-table">
+          <tr><td>Detail in Source B that I would follow up:</td></tr>
+          <tr><td>Question I would ask:</td></tr>
+          <tr><td>What type of source I could use:</td></tr>
+          <tr><td>How this might help answer my question:</td></tr>
+        </table>
+        <div class="marks" style="font-weight:bold; margin-top:10px;">(Total for Question 2 = 12 marks)</div>
+      </div></div>
+  <div class="page" style="page-break-before: always;"><div class="section-header">SECTION B: Medicine in Britain, c1250–present</div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">3</div>
+    <div>Explain one way in which the methods used to prevent the spread of the Great Plague in London (1665) were similar to the methods used to prevent the spread of the Black Death (1348).</div>
+  </div><div class="marks">(4)</div>
+        <div style="margin-top: 10px;"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div>
+      </div><div class="question-block" style="page-break-inside: avoid;">
+        <div class="question-text">
+    <div class="question-num">4</div>
+    <div>Explain why there was rapid progress in public health and the prevention of disease in the modern era (c1900–present).</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>Government lifestyle campaigns</li><li>Mass vaccination programs</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(12)</div>
+        
+          <div class="model-answer">
+            <div class="model-answer-title"><i class="fa-solid fa-star"></i> Model Answer (Grade 9)</div>
+            A key factor driving rapid progress in modern disease prevention was the British government’s complete abandonment of its traditional 'laissez-faire' policy in favor of active, state-funded compulsory vaccination campaigns. In the mid-twentieth century, the government recognized that it had an institutional duty to safeguard the physical health of its citizens, a shift that was heavily accelerated by the creation of the National Health Service (NHS) in 1948. This state-directed approach first succeeded on a national scale in 1942 when the government launched the first-ever free national immunisation campaign against diphtheria, which successfully reduced child mortality from the disease from 3,000 cases a year to virtually zero. The success of this administrative model enabled the state to systematically introduce subsequent national programs against polio (1956), tetanus (1961), measles (1968), and the MMR vaccine (1988), effectively eradicating highly infectious epidemics that had plagued Britain for centuries.
+
+Concurrently, the state utilized its legislative power to prevent disease by launching national lifestyle campaigns and environmental regulations to combat chronic, non-communicable illnesses. Throughout the twentieth century, epidemiological research proved how personal choices regarding tobacco, diet, and exercise caused major killer diseases like lung cancer and heart disease. Consequently, the government abandoned optional, local public health measures and used its legal authority to force behavioral changes on a national scale. Following the catastrophic Great Smog of London in 1952, which killed thousands of vulnerable citizens, the government passed the landmark Clean Air Acts of 1956 and 1968 to legally ban coal smoke and regulate urban air quality. Furthermore, the state implemented heavy taxes on tobacco, mandated plain packaging, and passed the compulsory 2007 ban on smoking in enclosed public workplaces to prevent lung cancer, demonstrating a highly active and successful legislative approach to public health.
+
+Furthermore, this rapid progress was accelerated by groundbreaking scientific discoveries in biochemistry and virology, which provides a distinct third factor beyond the stimulus points. Throughout the twentieth century, the development of electron microscopes and advanced cell cultures allowed scientists to study viral structures and manufacture highly stable vaccines in industrial laboratories. This led directly to the creation of the Salk polio vaccine in 1955 and the MMR vaccine in 1988, giving the government the exact clinical tools required to immunize millions of children. Today, this scientific progress continues with the development of the HPV vaccine to actively prevent cervical cancer. As a result of this integration of state-funded delivery systems and advanced biotechnology, the focus of modern medicine permanently shifted from expensive hospital cures to proactive, mass disease prevention.
+          </div>
+        
+      </div><div class="question-block" style="page-break-before: always;">
+        <div style="font-weight: bold; margin-bottom: 20px;">Answer EITHER Question 5 OR Question 6.
+Spelling, punctuation, grammar and use of specialist terminology will be assessed in this question.</div>
+        <div style="font-weight: bold; margin-bottom: 20px;">EITHER</div>
+        <div class="question-text">
+    <div class="question-num">5</div>
+    <div>‘In the years c1250–c1500, the university-trained physician was the most important person providing care and treatment.’
+How far do you agree? Explain your answer.</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>Academic medical training</li><li>Traditional herbal remedies</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(16)</div>
+        <div style="font-weight: bold; margin: 20px 0;">OR</div>
+        <div class="question-text">
+    <div class="question-num">6</div>
+    <div>‘The publication of Louis Pasteur's Germ Theory was the biggest turning point in understanding the causes of disease in the period c1800–present.’
+How far do you agree? Explain your answer.</div>
+  </div><div style="margin-left: 40px; margin-bottom: 10px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+      You <strong>may</strong> use the following in your answer:
+      <ul style="margin-top: 10px; margin-bottom: 10px; padding-left: 20px;">
+        <li>Germ Theory, 1861</li><li>James Watson and Francis Crick mapping DNA</li>
+      </ul>
+      You <strong>must</strong> also use information of your own.
+    </div><div class="marks">(16)</div>
+        <div class="marks">(Total for spelling, punctuation, grammar and use of specialist terminology = 4 marks)</div>
+        <div class="marks" style="font-weight:bold;">(Total for Question = 20 marks)</div>
+        
+        <div style="margin-top: 30px; border: 1px solid #000; padding: 15px;">
+           <strong>Indicate which question you are answering by marking a cross in the box [X].</strong><br><br>
+           Chosen question number: &nbsp;&nbsp;&nbsp; Question 5 [ ] &nbsp;&nbsp;&nbsp; Question 6 [ ]
+        </div>
+        
+          <div class="model-answer"><div class="model-answer-title"><i class="fa-solid fa-star"></i> Question 5 Model Answer (Grade 9)</div>To a very large extent, I disagree with the statement that the university-trained physician was the most important person providing healthcare in medieval England (c1250–c1500). While physicians held the highest professional and social status in medieval society, their practical impact was severely restricted to the wealthy elite. For the vast majority of the population, the actual burden of daily care and biological treatment was carried out by female family members in the home using traditional herbal remedies, supplemented by practically trained community healers like apothecaries and barber-surgeons.
+
+On the one hand, for the wealthy elite and royalty, the university-trained physician was regarded as the most important and prestigious medical figure. The significance of the physician lay in their extensive academic medical training, which lasted between seven and ten years at secular universities like Montpellier or Oxford. This training was entirely book-based, requiring students to read and memorize Latin translations of ancient Greek and Roman texts by Hippocrates and Galen, rather than gaining hands-on clinical experience. When diagnosing patients, physicians rarely touched them; instead, they checked planetary alignments using an astrological Almanac and examined the color, thickness, and smell of urine to identify internal humoural imbalances. They would then write a diagnostic brief directing lower-status manual practitioners to perform treatments. While their high fees made them inaccessible to 95% of medieval society, they were highly important in establishing a professional, 'rational' (natural) framework of medicine that moved away from purely supernatural explanations.
+
+On the other hand, for the overwhelming majority of ordinary medieval people, the most important providers of healthcare were female family members using traditional herbal remedies in the home. Because university-trained physicians were exceptionally rare and expensive, the home was the true center of medieval medicine. Women, such as mothers and wives, possessed a vast, practical knowledge of local plants, herbs, and home recipes passed down through generations. They prepared mixtures containing active natural ingredients—like garlic, onions, honey, and wine—which were highly effective. Modern scientific analysis of medieval recipes, such as those found in the Bald's Leechbook, has proven that these herbal remedies possessed genuine antibacterial properties that actively destroyed pathogens and promoted wound healing. Consequently, for the average peasant, these women were far more important than physicians because they provided both accessible daily 'care' (comfort and nutrition) and biologically active 'treatment'.
+
+Furthermore, other practically trained, affordable healers played a far more significant role in the daily treatment of the sick than university physicians. Ordinary citizens who required physical procedures directly consulted barber-surgeons and apothecaries. Apothecaries mixed and sold herbal medicines, spices, and simple chemical compounds. Because they did not attend university, they were cheap and highly accessible. For physical treatments, peasants relied on barber-surgeons. Barber-surgeons were trained through practical apprenticeships rather than books, using sharp tools to perform haircuts alongside minor surgical procedures like lancing boils, pulling teeth, and carrying out bloodletting (phlebotomy) to rebalance the humours. Additionally, the Church operated around 1,100 charity hospitals in England by 1500. Run by monks and nuns, these hospitals did not provide medical cures, but they were highly important centers of spiritual care, shelter, and hot meals for the poor, elderly, and travelers.
+
+In conclusion, I disagree with the statement because it confuses professional prestige with practical utility. The university-trained physician possessed prestigious medical training and held a monopoly over academic knowledge, but their clinical usefulness was almost non-existent due to their reliance on flawed classical texts and their high cost. The true backbone of medieval healthcare was decentralized and grassroots. For the general population, local apothecaries, barber-surgeons, and, above all, women in the home preparing herbal remedies were the most important providers of care and treatment, as they offer the only accessible, affordable, and biologically effective medicine of the Middle Ages.</div>
+          
+        
+      </div></div>
+  
+  <div class="page" style="page-break-before: always;">
+    <div class="exam-header" style="text-align: center; margin-bottom: 30px;">
+      <h1>Sources Booklet</h1>
+      <div style="font-size: 16px;">Do not return this Booklet with the question paper.</div>
+    </div>
+    <div class="sources-booklet">
+      <h3>Sources for use with Section A.</h3>
+      <div class="source-block">
+          <div class="source-title">Source A: A clinical report from Captain Oswald Hope Robertson describing the establishment of the first "blood depot" during the Battle of Cambrai in 1917.</div>
+          <div class="source-content">
+            
+            To prepare for the anticipated casualties, we successfully established a forward blood depot. I collected 22 units of type O blood in advance. By adding sodium citrate, we prevented the blood from clotting, allowing it to be stored in sterilized glass jars for up to four weeks. During the offensive, we successfully transfused 20 severely wounded Canadian soldiers who were suffering from extreme shock.
+          </div>
+        </div><div class="source-block">
+          <div class="source-title">Source B: A photograph showing stretcher bearers operating near the front line at Passchendaele in August 1917.</div>
+          <div class="source-content">
+            <img src="/images/mock_exams/stretcher_bearers.jpg" style="max-width: 100%; max-height: 350px; display: block; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;" alt="Visual Source" />
+            The source is a photograph showing stretcher bearers carrying a wounded soldier on a stretcher through the thick mud of Passchendaele, heading towards a Regimental Aid Post or Casualty Clearing Station.
+          </div>
+        </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>

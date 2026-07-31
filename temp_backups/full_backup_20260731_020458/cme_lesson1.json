@@ -1,0 +1,337 @@
+{
+  "id": "lesson_1",
+  "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
+  "sources": [
+    {
+      "title": "Reference Map: UN Partition Plan (Resolution 181)",
+      "src": "/assets/cme_new_palestine_1947_map.png",
+      "caption": "Map of the UN Partition Plan of 1947 allocating 55% to the Jewish State and 45% to the Arab State."
+    },
+    {
+      "title": "Reference Image: The SS Exodus (1947)",
+      "src": "/assets/cme_new_exodus_ship.jpg",
+      "caption": "Jewish Holocaust survivors aboard the SS Exodus, intercepted by the British Navy and turned away from Palestine, sparking global outrage."
+    }
+  ],
+  "vocab": [
+    {
+      "term": "Mandate",
+      "definition": "An authorization granted by the League of Nations to govern a territory until it was deemed ready for independence."
+    },
+    {
+      "term": "Zionism",
+      "definition": "A nationalist movement that emerged in the 19th century supporting the creation of a Jewish homeland in the territory defined as the Land of Israel."
+    },
+    {
+      "term": "Irgun",
+      "definition": "A right-wing Zionist paramilitary organization that used militant tactics against British forces and Arab populations."
+    },
+    {
+      "term": "Nakba",
+      "definition": "Meaning 'The Catastrophe' in Arabic, referring to the permanent displacement and dispossession of over 700,000 Palestinians during the 1948 war."
+    }
+  ],
+  "vocab_cloze_text": "Following World War II, Britain struggled to control its League of Nations [Mandate] in Palestine. The horrors of the Holocaust increased international sympathy for [Zionism], leading to demands for a Jewish state. As tensions rose, militant groups like the [Irgun] launched violent attacks against the British, such as the bombing of the King David Hotel. Ultimately, the 1948 war resulted in the creation of Israel but also led to the [Nakba], where hundreds of thousands of Palestinians were displaced.",
+  "extended": {
+    "title": "The Decisive Factor in Israel's Victory",
+    "paragraphs": [
+      "GCSE examiners award top marks to students who can analyze how multiple, interrelated factors combined to produce the war's final outcome. Israel's victory was not a miracle, but rather the result of distinct military, political, and structural advantages.",
+      "The Arab coalition was plagued by deep political rivalries and conflicting territorial ambitions. For example, King Abdullah of Transjordan was primarily interested in annexing the West Bank for his own kingdom, rather than destroying Israel. Although facing a combined Arab population of 41 million, the 650,000 Jews of Israel mobilized their entire society. At the war's start, Israel's combat forces stood at 35,000 (already larger than the active invasion force). By December 1948, the IDF grew to a highly coordinated force of 108,000 troops, vastly outnumbering the fragmented Arab armies."
+    ],
+    "question": "Evaluate why Israel was able to win the 1948-49 Arab-Israeli War despite being surrounded by five invading Arab nations.",
+    "model": "Israel won due to superior organization, unified leadership, and critical material support. While the Arab states were deeply divided by political rivalries and failed to commit their full military strength, Israel mobilized its entire society, creating a unified IDF command. The crucial one-month UN truce allowed Israel to import modern Czech weapons, overturning the initial military imbalance and allowing a highly motivated force to outnumber and defeat the fragmented Arab coalition."
+  },
+  "do_now": {
+    "items": [
+      {
+        "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
+        "answer": "Arthur Balfour. He promised British support for a 'national home' for the Jewish people in Palestine."
+      },
+      {
+        "question": "How many Jewish people were systematically murdered during the Holocaust (1939-1945)?",
+        "answer": "6 million."
+      },
+      {
+        "question": "At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?",
+        "answer": "They were stuck in European Displaced Persons (DP) camps, seeking a new home."
+      }
+    ]
+  },
+  "primary_source": {
+    "title": "Source A: The Ruins of the King David Hotel, 1946",
+    "src": "/assets/cme_new_king_david_ruins.png",
+    "caption": "The southern wing of the King David Hotel in Jerusalem following the Irgun bomb attack on 22 July 1946.",
+    "question": "Enquiry: What impact did the King David Hotel bombing have on the British Mandate?",
+    "tasks": [
+      {
+        "type": "draw",
+        "text": "Task 1: Circle the area of the building that housed the British military and administrative headquarters.",
+        "model": "The student should circle the destroyed southern wing."
+      }
+    ],
+    "teacher_note": "Ensure students understand this was a turning point. The sheer destruction and loss of life broke British resolve to maintain the Mandate."
+  },
+  "flashcards": [
+    {
+      "term": "Dual Obligation",
+      "definition": "Britain's impossible mandate duty to build a Jewish homeland while protecting the existing Arab majority."
+    },
+    {
+      "term": "Jewish Insurgency",
+      "definition": "A violent 1945-47 campaign by Zionist militias against British infrastructure to force them out of Palestine."
+    },
+    {
+      "term": "King David Hotel",
+      "definition": "British headquarters bombed by the Irgun in 1946, killing 91 people."
+    },
+    {
+      "term": "UN Resolution 181",
+      "definition": "The 1947 UN Partition Plan that split Palestine into 55% Jewish and 45% Arab land."
+    },
+    {
+      "term": "Plan Dalet (Plan D)",
+      "definition": "Haganah military strategy in 1948 to secure borders, resulting in mass displacement of Arab villagers."
+    },
+    {
+      "term": "Deir Yassin",
+      "definition": "An Arab village massacred by Irgun/Lehi fighters in April 1948, triggering mass Arab panic and flight."
+    }
+  ],
+  "pair_share": {
+    "prompt": "Read the conflicting historical interpretations of 'Plan Dalet (Plan D)'. Do you think it was a defensive military strategy or an offensive campaign of ethnic cleansing?",
+    "think": "Jot down your choice and one piece of evidence to support it.",
+    "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
+    "share": "Be ready to report your partner's best point to the class."
+  },
+  "historians_corner": {
+    "title": "The Debate over Plan Dalet",
+    "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+  },
+  "gcse_task": {
+    "sources": [
+      {
+        "type": "written",
+        "text": "“We must use terror, assassination, intimidation, land confiscation, and the cutting of all social services to rid the Galilee of its Arab population.”",
+        "title": "Source A: A quote often attributed to a Zionist commander, reflecting the offensive view of Plan D."
+      },
+      {
+        "type": "written",
+        "text": "“The objective of this plan is the control of the area of the Jewish State and the defense of its borders... against the enemy.”",
+        "title": "Source B: An extract from the official text of Plan Dalet, March 1948."
+      }
+    ],
+    "topic": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",
+    "model": "The road to Israeli statehood began in the immediate aftermath of the Second World War, as the horrors of the Holocaust intensified Zionist demands for a sovereign Jewish homeland. This led to a severe post-war crisis as Britain’s Labour government imposed a strict monthly cap of 1,500 Jewish immigrants. As a direct result of these restrictions, Zionist paramilitary groups united to launch the Jewish Insurgency (1945–47). The culmination of this violent campaign occurred on 22 July 1946, when the Irgun bombed the British military headquarters at the King David Hotel. This devastating attack shattered British political resolve and forced the Attlee government to hand the Palestine problem to the United Nations in February 1947.\n\nConsequently, the United Nations intervened by drafting the Partition Plan under UN Resolution 181, which was passed on 29 November 1947. The Arab League vehemently rejected the allocation of 55% of the land to the Jewish minority, which immediately triggered a violent civil war. During this chaotic transition, Jewish forces implemented Plan D to secure their borders, leading to the controversial Deir Yassin massacre in April 1948. The panic caused by this event prompted over 250,000 Arabs to flee their homes, creating a massive power vacuum. This sequence of events finally culminated on 14 May 1948, when the British Mandate officially expired, enabling David Ben-Gurion to formally declare the birth of the State of Israel."
+  },
+  "learning_objective": "To understand how the British Mandate collapsed and the State of Israel was created.",
+  "learning_objectives": {
+    "overarching": "To evaluate the causes and consequences of the 1948 Arab-Israeli War.",
+    "scaffolded": [
+      "Explain why the British handed Palestine to the UN.",
+      "Describe the UN Partition Plan and its immediate consequences.",
+      "Analyze the reasons for Israel's military victory."
+    ]
+  },
+  "teacher_notes": {
+    "primer": "This lesson establishes the foundational chronology for the entire unit. It tracks the shift from British colonial rule to Jewish statehood. Emphasize the cause-and-effect narrative: British immigration limits -> Jewish Insurgency -> British withdrawal -> UN Partition -> Civil War -> Declaration of Israel -> Arab Invasion. The GCSE Task provides a perfect 8-mark model for this exact chronological chain.",
+    "objectives": [
+      {
+        "objective": "Explain why the British handed Palestine to the UN.",
+        "primer": "Direct students to the section on the Jewish Insurgency and the King David Hotel bombing. Emphasize that the British public were war-weary and broke after WWII.",
+        "question": "What event on 22 July 1946 was the 'final straw' for British morale?"
+      },
+      {
+        "objective": "Describe the UN Partition Plan and its immediate consequences.",
+        "primer": "Highlight the disproportionate land split (55% to 33% of the population). Use the map to show why this would lead to immediate civil war upon British withdrawal.",
+        "question": "Why did the Arab League immediately reject UN Resolution 181?"
+      },
+      {
+        "objective": "Analyze the reasons for Israel's military victory.",
+        "primer": "Use the 'Deep Historical Analysis' section to break down the factors. The key takeaway is that Israeli victory was due to organization (IDF), foreign arms (Czech deal), and Arab disunity.",
+        "question": "How did the 30-day UN truce actually give Israel the decisive advantage?"
+      }
+    ],
+    "source_context": "The sources in this lesson are highly emotive. The King David Hotel bombing (Source A) illustrates the extreme tactics used by militant Zionist groups (Irgun) against British rule, highlighting the chaotic breakdown of the Mandate. Meanwhile, the SS Exodus image (Source 2) is a powerful piece of historical optics—the plight of Holocaust survivors being turned away by the British generated immense global sympathy for the Zionist cause and heavily influenced the UN Partition Plan. **Hinge Question:** How do these two sources demonstrate the competing pressures faced by the British in Palestine?"
+  },
+  "narrative_blocks": [
+    {
+      "text": "Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. Under the terms of the Mandate, Britain was bound by a \"dual obligation\": on one hand, to establish a \"national home\" for the Jewish people (in line with the 1917 Balfour Declaration), and on the other, to safeguard the civil and religious rights of the existing Arab majority. As the full horrors of the Holocaust were revealed to the world, the international pressure for Jewish statehood became immense. In 1945, Zionist leaders gathered at a conference in London to demand the immediate creation of a Jewish state in Palestine, hoping that Britain would facilitate the resettlement of hundreds of thousands of Holocaust survivors currently languishing in European Displaced Persons (DP) camps.",
+      "level_4": "Following the end of the Second World War in 1945, Great Britain found itself trapped in an increasingly untenable position within its League of Nations Mandate of Palestine. In 1945, Zionist leaders gathered at a conference in London to demand the immediate creation of a Jewish state in Palestine, hoping that Britain would facilitate the resettlement of hundreds of thousands of Holocaust survivors currently languishing in European Displaced Persons (DP) camps.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "What was the 'dual obligation' that Britain faced under the League of Nations Mandate of Palestine? (P1)",
+          "model": "Britain was bound by a 'dual obligation': to establish a 'national home' for the Jewish people, and on the other hand, to safeguard the civil and religious rights of the existing Arab majority."
+        }
+      ]
+    },
+    {
+      "text": "However, the Arab population—who formed the clear majority of Palestine's inhabitants—vehemently opposed this prospect. They resented not being granted independence at the end of the First World War and were furious that they had never been consulted regarding the mass resettlement of another population on their ancestral lands, which they had inhabited for over 1,500 years. Britain's newly elected Labour government, led by Prime Minister Clement Attlee and Foreign Secretary Ernest Bevin, immediately faced a crisis. Bevin set a strict immigration quota of just 1,500 Jewish immigrants per month. He did this for two primary reasons: 1. He calculated that allowing a massive influx of Jewish refugees would trigger an uncontrollable civil war between Arabs and Jews. 2. Britain was economically dependent on maintaining close, friendly relations with oil-rich Arab states across the Middle East. These states strongly opposed Zionist ambitions and would not tolerate unrestricted Jewish immigration.",
+      "level_4": "However, the Arab population—who formed the clear majority of Palestine's inhabitants—vehemently opposed this prospect. These states strongly opposed Zionist ambitions and would not tolerate unrestricted Jewish immigration.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "Identify two reasons why Foreign Secretary Ernest Bevin set a strict immigration quota of 1,500 Jewish immigrants per month. (P2)",
+          "model": "First, Bevin calculated that allowing a massive influx of Jewish refugees would trigger an uncontrollable civil war. Second, Britain was economically dependent on maintaining close relations with oil-rich Arab states that opposed unrestricted Jewish immigration."
+        }
+      ]
+    },
+    {
+      "text": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. In October 1945, the moderate militia (the Haganah) joined forces with extreme paramilitary splinter groups—the Irgun (led by Menachem Begin) and the Lehi (also known as the Stern Gang). Together, they launched a coordinated, violent campaign known as the Jewish Insurgency to force a British withdrawal. While the moderate Haganah focused primarily on organizing illegal immigration (such as bringing Holocaust survivors on ships like the SS Exodus), the Irgun and Lehi targeted British military infrastructure. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
+      "level_4": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "What was the 'Jewish Insurgency' and which three Zionist groups united to launch it? (P3)",
+          "model": "The Jewish Insurgency was a coordinated, violent campaign against British rule in Palestine. It was led by the moderate Haganah, working alongside the extreme paramilitary splinter groups: the Irgun and the Lehi."
+        }
+      ]
+    },
+    {
+      "text": "Over the next two years, the insurgency intensified. Paramilitary groups bombed bridges, sabotaged oil pipelines, raided military airfields, destroyed radio stations, and assassinated British personnel. In 1946 alone, 73 British troops were killed. To destroy British military morale, Begin’s Irgun engaged in psychological warfare; when two Irgun members were sentenced to caning in December 1946, Begin ordered the kidnapping and public whipping of four British soldiers in retaliation. The single deadliest act of the insurgency occurred on 22 July 1946, when the Irgun bombed the King David Hotel in Jerusalem. The hotel's southern wing housed the central administrative headquarters of the British Mandate and the military command of the British Army in Palestine. Under the cover of midday deliveries, Irgun fighters disguised as Arab workers rolled milk churns packed with TNT into the basement kitchen of the southern wing.",
+      "level_4": "Over the next two years, the insurgency intensified. Under the cover of midday deliveries, Irgun fighters disguised as Arab workers rolled milk churns packed with TNT into the basement kitchen of the southern wing.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "Describe the deadliest act of the insurgency on 22 July 1946 and explain its intended target. (P4)",
+          "model": "The deadliest act was the bombing of the King David Hotel in Jerusalem by the Irgun. The hotel's southern wing was targeted because it housed the central administrative headquarters of the British Mandate and the military command of the British Army."
+        }
+      ]
+    },
+    {
+      "text": "At 12:37 PM, a colossal explosion ripped through the building, causing the entire six-story southern wing to collapse into rubble. The attack killed 91 people—including 41 Arabs, 28 British officials, 17 Jews, and several other nationalities. The vast majority of the victims were innocent civilians. The sheer scale of the carnage shocked the British public and drew fierce international condemnation, driving a permanent wedge between the moderate Haganah (who condemned the attack) and the militant Irgun. By early 1947, Britain was buckling under the financial and human cost of policing the Mandate, requiring over 100,000 troops to maintain a fragile grip on order. The boiling point of British public tolerance was reached in July 1947 during the 'Sergeants Affair'. In retaliation for the British execution of three Irgun militants, the Irgun kidnapped two young British intelligence sergeants. Despite desperate pleas from their families and a massive manhunt, the Irgun hanged both men and suspended their booby-trapped bodies in an olive grove.",
+      "level_4": "At 12:37 PM, a colossal explosion ripped through the building, causing the entire six-story southern wing to collapse into rubble. Despite desperate pleas from their families and a massive manhunt, the Irgun hanged both men and suspended their booby-trapped bodies in an olive grove.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "How did the British public react to the 'Sergeants Affair', and what was the political result? (P5)",
+          "model": "The public reaction was explosive, with anti-Semitic riots erupting in British cities and a war-weary public demanding withdrawal. This forced the British government to admit Palestine was ungovernable and hand the problem to the United Nations."
+        }
+      ]
+    },
+    {
+      "text": "The public reaction in Britain was explosive. Angry anti-Semitic riots erupted in major British cities. Faced with a war-weary public demanding that the government 'bring the boys home,' Prime Minister Attlee and Foreign Secretary Bevin admitted that Palestine had become ungovernable. Unable to find a compromise that satisfied both Jewish and Arab demands, Britain formally referred the entire problem to the newly created United Nations (UN) in February 1947. The United Nations Special Committee on Palestine (UNSCOP) concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone (corpus separatum) under UN control. On 29 November 1947, the UN General Assembly voted on Resolution 181. The US and Soviet Union both supported partition, hoping to expand their own influence.",
+      "level_4": "The public reaction in Britain was explosive. The US and Soviet Union both supported partition, hoping to expand their own influence.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "How did the United Nations Partition Plan (Resolution 181) divide the land of Palestine, and what was the reaction of the two communities? (P6)",
+          "model": "Resolution 181 allocated 55% of Palestine to the Jewish population and 45% to the Arab majority, with Jerusalem as an international zone. The Zionist leadership accepted the plan with joy, while Arab leaders vehemently rejected it and vowed to fight to prevent the partition of their homeland."
+        }
+      ]
+    },
+    {
+      "text": "The final vote was 33 in favor, 13 against, and 10 abstentions. Under Resolution 181, the Jewish population (which owned less than 10% of the land and made up only one-third of the population) was allocated 55% of Palestine, including the fertile coastal plains. The Arab majority was allocated just 45% of the land, much of it mountainous and fragmented. While the Zionist leadership accepted the plan with joy, Arab leaders and the Arab League rejected it, declaring that they would fight to prevent the partition of their homeland. The passage of Resolution 181 acted as the catalyst for immediate violence. In December 1947, Britain announced that it would formally terminate its Mandate and withdraw all forces on 15 May 1948. For the remaining five months, British troops stood aside and refused to intervene, leaving Palestine to slide into a bloody, chaotic civil war between Jewish and Arab communities.",
+      "level_4": "The final vote was 33 in favor, 13 against, and 10 abstentions. For the remaining five months, British troops stood aside and refused to intervene, leaving Palestine to slide into a bloody, chaotic civil war between Jewish and Arab communities.",
+      "tasks": []
+    },
+    {
+      "type": "interactive_map",
+      "maps": [
+        {
+          "id": "map-1947",
+          "year": "1947",
+          "label": "UN Partition Plan",
+          "src": "/assets/cme_new_palestine_1947_map.png",
+          "caption": "Under UN Resolution 181, Palestine is split. The Jewish state receives 55% of the land. Jerusalem is an international zone."
+        },
+        {
+          "id": "map-1949",
+          "year": "1949",
+          "label": "Armistice Borders",
+          "src": "/assets/cme_new_palestine_1949_map.png",
+          "caption": "Following Israel's victory in the 1948 war, they expand their territory from 55% to 79%. The West Bank is held by Jordan, and Gaza by Egypt."
+        },
+        {
+          "id": "map-1967",
+          "year": "1967",
+          "label": "Post-Six Day War",
+          "src": "/assets/cme_new_palestine_1967_map.png",
+          "caption": "In 1967, Israel launches a pre-emptive strike and captures the Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights."
+        }
+      ]
+    },
+    {
+      "text": "In March 1948, the leadership of the Haganah implemented Plan Dalet (Plan D). Many historians argue that Plan D was a defensive military strategy designed to secure the borders of the future Jewish state by taking control of all Arab towns. Other historians argue that Plan D was an offensive operation that intentionally cleared Arab populations from strategic areas, effectively paving the way for the systematic ethnic cleansing of Palestine. The most critical flashpoint of the civil war occurred on 9 April 1948, when approximately 100 fighters from the extremist Irgun and Lehi launched an assault on Deir Yassin, a quiet Arab village. The attack resulted in the brutal massacre of over 100 Arab villagers. Hoping to rally the Arab world to intervene, Arab radio stations broadcast sensationalized, graphic accounts of the atrocities at Deir Yassin. However, this triggered widespread, uncontrollable panic among the Arab population. Believing that they would face the same brutal fate if they stayed, over 250,000 Palestinian Arabs abandoned their homes and fled in terror.",
+      "level_4": "In March 1948, the leadership of the Haganah implemented Plan Dalet (Plan D). Believing that they would face the same brutal fate if they stayed, over 250,000 Palestinian Arabs abandoned their homes and fled in terror.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "What was the impact of the Deir Yassin massacre on the Palestinian Arab population in April 1948? (P7)",
+          "model": "The brutal massacre of over 100 Arab villagers triggered widespread, uncontrollable panic. Believing they would face the same fate, over 250,000 Palestinian Arabs abandoned their homes and fled in terror."
+        }
+      ]
+    },
+    {
+      "text": "On 14 May 1948, the last British troops departed Palestine. That afternoon, David Ben-Gurion stood in Tel Aviv and officially declared the birth of the sovereign State of Israel. The very next day, on 15 May 1948, five sovereign Arab nations—Egypt, Syria, Jordan, Lebanon, and Iraq—committed their armies to a coordinated invasion of the newly declared state, launching the first official Arab-Israeli War. At the outset, the survival of Israel hung in the balance. Jewish forces were heavily outnumbered, short of heavy weaponry, and faced a multi-front assault. By June, both sides were exhausted, and on 11 June 1948, the United Nations intervened, brokering a crucial one-month truce managed by UN mediator Count Folke Bernadotte.",
+      "level_4": "On 14 May 1948, the last British troops departed Palestine. By June, both sides were exhausted, and on 11 June 1948, the United Nations intervened, brokering a crucial one-month truce managed by UN mediator Count Folke Bernadotte.",
+      "tasks": []
+    },
+    {
+      "text": "Israel used this one-month breathing space with exceptional efficiency. Prime Minister David Ben-Gurion dissolved the independent paramilitary groups and unified them into a single, professional national army: the Israeli Defence Forces (IDF). In direct violation of the UN weapons embargo, Israel used massive financial donations to purchase modern military hardware from Soviet-controlled Czechoslovakia, completely neutralizing the Arabs' initial material superiority. When the truce expired on 9 July 1948, the newly equipped IDF immediately went on the offensive, catching the Arab forces completely by surprise. In October 1948, Israel breached the second truce to launch its final offensives. Exhausted and politically divided, the Arab states signed separate Armistice Agreements with Israel between February and July 1949.",
+      "level_4": "Israel used this one-month breathing space with exceptional efficiency. Exhausted and politically divided, the Arab states signed separate Armistice Agreements with Israel between February and July 1949.",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "Describe the tactical advantage Israel gained during the first UN truce in June 1948. (P8)",
+          "model": "Israel used the one-month truce to unify its forces into a single national army (the IDF) and illegally import modern military hardware from Czechoslovakia, completely neutralizing the Arabs' initial material superiority."
+        }
+      ]
+    },
+    {
+      "text": "The armistice borders of 1949, known as the 'Green Line,' fundamentally redrew the political map. Instead of the 55% allocated under the UN Partition Plan, Israel's victory secured control of 79% of mandate Palestine. An independent Palestinian Arab state ceased to exist. Over 700,000 Palestinians were permanently displaced from their homes, becoming refugees in neighboring states. The historical narrative of this displacement remains deeply contested. Traditional Israeli historiography argued that Palestinians left voluntarily under the orders of Arab leaders who promised they could return after the Jews were defeated. Conversely, Palestinian historians, and later Israeli 'New Historians' utilizing declassified IDF archives, demonstrated that the vast majority were driven out by a combination of deliberate military expulsion (such as Plan Dalet), psychological warfare, and the terror induced by massacres like Deir Yassin. For the Palestinian people, the loss of their homeland and the subsequent refugee crisis is known as the Nakba ('The Catastrophe').",
+      "level_4": "The armistice borders of 1949 redrew the political map. Israel's victory secured control of 79% of mandate Palestine. Over 700,000 Palestinians were permanently displaced. The historical narrative of this displacement is contested between traditional Israeli views of voluntary flight and Palestinian historians demonstrating forced expulsion. For Palestinians, this is known as the Nakba ('The Catastrophe').",
+      "tasks": [
+        {
+          "type": "written",
+          "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (P9)",
+          "model": "Traditional Israeli historians argued that Palestinians fled voluntarily on the orders of Arab leaders. However, Palestinian historians and 'New Historians' have demonstrated that the vast majority were systematically driven out through deliberate military expulsions and the terror of massacres like Deir Yassin, resulting in the Nakba."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What was the 'dual obligation' placed on Britain under the League of Nations Mandate?",
+      "options": [
+        "To fight both Germany and the Ottoman Empire",
+        "To build a Jewish national home while protecting Arab civil rights",
+        "To provide equal military weapons to both Jews and Arabs",
+        "To divide Palestine equally into two identical states"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which tragic event on 22 July 1946 broke British morale and accelerated their withdrawal from Palestine?",
+      "options": [
+        "The Night of the Trains",
+        "The Deir Yassin massacre",
+        "The bombing of the King David Hotel",
+        "The sinking of the SS Exodus"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What did UN Resolution 181 (The Partition Plan) propose in November 1947?",
+      "options": [
+        "Splitting Palestine into 55% Jewish land and 45% Arab land",
+        "Giving the entire territory to the Jewish population",
+        "Creating a single democratic state for both Jews and Arabs",
+        "Giving 79% of the land to the Arab population"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "How did the 30-day UN truce in June 1948 give Israel a decisive advantage?",
+      "options": [
+        "It allowed them to surrender peacefully",
+        "It allowed them to evacuate civilians to Europe",
+        "It allowed the UN to send peacekeepers to defend them",
+        "It allowed them to unify the IDF and import modern weapons from Czechoslovakia"
+      ],
+      "answer": 3
+    }
+  ],
+  "draw_tasks": [],
+  "enquiry": "Why did the British Mandate end and how was the State of Israel created?"
+}

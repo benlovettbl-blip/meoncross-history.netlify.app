@@ -1,0 +1,122 @@
+export interface TabooCard {
+  id: string;
+  topic: string;
+  target: string;
+  taboo: string[];
+  hint: string;
+}
+
+export const TABOO_CARDS: TabooCard[] = [
+  {
+    id: 'taboo_1',
+    topic: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
+    target: 'KING DAVID HOTEL',
+    taboo: ['Bomb', 'Irgun', 'Jerusalem', '91', 'Headquarters'],
+    hint: 'Focus on July 1946, Menachem Begin, milk churns, and the shift in British morale.'
+  },
+  {
+    id: 'taboo_2',
+    topic: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
+    target: 'UN RESOLUTION 181',
+    taboo: ['Partition', '1947', 'Divide', 'State', 'Rejected'],
+    hint: "Focus on the international organisation involved, the percentages of land given, the status of Jerusalem, and the Arab League's reaction."
+  },
+  {
+    id: 'taboo_3',
+    topic: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
+    target: 'THE LAW OF RETURN',
+    taboo: ['1950', 'Immigrate', 'Citizen', 'Jew / Jewish', 'Population'],
+    hint: 'Focus on the Israeli government policy passed shortly after the 1948 war to build up its demographic strength and workforce.'
+  },
+  {
+    id: 'taboo_4',
+    topic: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
+    target: 'THE SUEZ CRISIS',
+    taboo: ['Canal', 'Nasser', '1956', 'Britain / France', 'Nationalise'],
+    hint: 'Focus on the withdrawal of funding for the Aswan High Dam, the secret Protocol of Sèvres, and the introduction of UNEF.'
+  },
+  {
+    id: 'taboo_5',
+    topic: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
+    target: 'FEDAYEEN',
+    taboo: ['Guerrilla', 'Raids', 'Border', 'Egypt / Jordan', 'Terrorist'],
+    hint: 'Use the Arabic translation "those who sacrifice themselves", refer to the 1950s infiltrations into Israel, and the IDF reprisal attacks.'
+  },
+  {
+    id: 'taboo_6',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'FATAH',
+    taboo: ['Arafat', 'PLO', 'Syria', 'Samu', 'Group'],
+    hint: 'Focus on the specific militant faction founded in 1959 that launched over 100 strikes between 1965 and 1967, leading to massive border tensions.'
+  },
+  {
+    id: 'taboo_7',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'THE SIX DAY WAR',
+    taboo: ['1967', 'Pre-emptive', 'Air-strike', 'Territory / Land', 'Egypt / Syria / Jordan'],
+    hint: "Focus on the consequences of Soviet misinformation, the closure of the Straits of Tiran, and the rapid expansion of Israel's borders by 350%."
+  },
+  {
+    id: 'taboo_8',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'UN RESOLUTION 242',
+    taboo: ['Land for Peace', 'Withdraw', 'Recognise', 'Refugee', 'Khartoum'],
+    hint: 'Focus on the diplomatic formula proposed after the 1967 conflict that the Arab states initially answered with the "Three Nos".'
+  },
+  {
+    id: 'taboo_9',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'BLACK SEPTEMBER',
+    taboo: ['Munich', 'Olympics', '1972', 'Athletes', 'Jordan / Expelled'],
+    hint: 'Focus on the extremist splinter faction formed after 1970, the hostage situation in Germany, and Israel\'s "Operation Wrath of God" retaliation.'
+  },
+  {
+    id: 'taboo_10',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'THE YOM KIPPUR WAR',
+    taboo: ['1973', 'Surprise', 'Holy', 'Bar Lev', 'Sadat'],
+    hint: 'Focus on the 6th of October, the use of Soviet SAM-3 missiles, the shattering of Israeli invincibility, and the resignation of Golda Meir.'
+  },
+  {
+    id: 'taboo_11',
+    topic: 'Key Topic 2: The Escalating Conflict (1964–73)',
+    target: 'THE OIL WEAPON',
+    taboo: ['OPEC', 'Embargo', 'Price', 'USA', 'Shortages'],
+    hint: 'Focus on the economic tactic used by Saudi Arabia and others in 1973 to punish Western nations, causing a global recession.'
+  },
+  {
+    id: 'taboo_12',
+    topic: 'Key Topic 3: Attempts at a Solution (1974–95)',
+    target: 'SHUTTLE DIPLOMACY',
+    taboo: ['Kissinger', 'Travel / Fly', 'USA', 'Negotiate', 'Face-to-face'],
+    hint: 'Focus on the method used between 1974 and 1975 to separate forces and reopen a vital Egyptian waterway without direct contact between enemies.'
+  },
+  {
+    id: 'taboo_13',
+    topic: 'Key Topic 3: Attempts at a Solution (1974–95)',
+    target: 'CAMP DAVID ACCORDS',
+    taboo: ['Carter', 'Sadat', 'Begin', '1978', 'Treaty'],
+    hint: 'Focus on the 13-day secret summit in the American presidential retreat that laid the groundwork for the return of the Sinai Peninsula.'
+  },
+  {
+    id: 'taboo_14',
+    topic: 'Key Topic 3: Attempts at a Solution (1974–95)',
+    target: 'SABRA AND SHATILA',
+    taboo: ['Massacre', 'Refugee', 'Phalange / Christian', 'Lebanon / Beirut', 'Sharon'],
+    hint: 'Focus on the tragic events of September 1982 following the assassination of Bashir Gemayel, which severely damaged Israel\'s international reputation.'
+  },
+  {
+    id: 'taboo_15',
+    topic: 'Key Topic 3: Attempts at a Solution (1974–95)',
+    target: 'THE FIRST INTIFADA',
+    taboo: ['Uprising', 'Stones', 'Iron Fist', '1987', 'Gaza / West Bank'],
+    hint: 'Focus on the Arabic word for "shaking off", the grassroots rebellion sparked by a traffic accident, and the resulting global sympathy for Palestinians.'
+  },
+  {
+    id: 'taboo_16',
+    topic: 'Key Topic 3: Attempts at a Solution (1974–95)',
+    target: 'THE OSLO ACCORDS',
+    taboo: ['1993', 'Rabin', 'Arafat', 'Handshake', 'PNA / Authority'],
+    hint: 'Focus on the secret talks held in Norway, the letters of mutual recognition, and the famous ceremony on the White House lawn with Bill Clinton.'
+  }
+];

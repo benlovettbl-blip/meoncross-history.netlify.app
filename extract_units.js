@@ -128,9 +128,20 @@ const publicUnitsDir = path.join(__dirname, 'public', 'units');
 
 // Automatically find all valid unit directories (must have index.html)
 const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
-const allDirs = fs.readdirSync(__dirname, { withFileTypes: true })
+let allDirs = fs.readdirSync(__dirname, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory() && !ignoredDirs.includes(dirent.name))
   .map(dirent => dirent.name);
+
+const targetUnit = process.argv[2];
+if (targetUnit) {
+  if (allDirs.includes(targetUnit)) {
+    console.log(`\n🎯 Targeting single unit: ${targetUnit}`);
+    allDirs = [targetUnit];
+  } else {
+    console.error(`\n❌ Error: Unit directory "${targetUnit}" not found.`);
+    process.exit(1);
+  }
+}
 
 allDirs.forEach(dirName => {
   const indexPath = path.join(__dirname, dirName, 'index.html');
