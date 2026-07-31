@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicted Mock Paper B</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 15mm;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .top-warning {
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    
+    .cover-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .candidate-info:last-child {
+      margin-bottom: 0;
+    }
+    .input-label {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .input-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      background: white;
+    }
+    .char-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      width: 25px;
+      display: inline-block;
+      background: white;
+      margin-right: 2px;
+    }
+    
+    .edexcel-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 15px 0 5px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .exam-header {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .exam-header-left {
+      flex: 3;
+    }
+    .exam-header-right {
+      flex: 1;
+      background: #555;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .date-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .time-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .subject-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .booklet-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .paper-ref-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .paper-ref-val {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .must-have-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .total-marks-box {
+      border: 3px solid #666;
+      border-radius: 10px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .instructions-section {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    .instructions-section h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+    .instructions-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .instructions-section li {
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 12px;
+    }
+    .turn-over {
+      font-weight: 700;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .pearson-logo {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: serif;
+    }
+
+    /* Inner Page Styles */
+    .page-inner {
+      flex: 1;
+      position: relative;
+    }
+
+    .inner-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .question-block {
+      margin-bottom: 10px;
+    }
+    .question-text {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+    }
+    .question-num {
+      width: 35px;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .marks {
+      text-align: right;
+      font-weight: 400;
+      font-size: 14px;
+      color: #444;
+      margin-top: 5px;
+    }
+
+    /* Dotted Lines for Handwriting */
+    .dotted-line {
+      border-bottom: 1.5px dotted #999;
+      height: 28px;
+      width: 100%;
+    }
+
+    .bullet-point-box {
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 15px 0 15px 35px;
+      width: 70%;
+      background: #fff;
+    }
+    .bullet-point-box ul {
+      margin: 5px 0 0 0;
+      padding-left: 20px;
+    }
+    
+    .indicate-choice {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .checkbox-inline {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      vertical-align: middle;
+      margin-left: 5px;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="page">
+    <div class="top-warning">
+      Please check the examination details below before entering your candidate information
+    </div>
+    
+    <div class="cover-box">
+      <div class="candidate-info">
+        <div style="flex: 2;">
+          <div class="input-label">Candidate surname</div>
+          <div class="input-box"></div>
+        </div>
+        <div style="flex: 1.5;">
+          <div class="input-label">Other names</div>
+          <div class="input-box"></div>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <div style="flex: 1;">
+          <div class="input-label">Centre Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div class="input-label">Candidate Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edexcel-title">Pearson Edexcel GCSE (9-1)</div>
+
+    <div class="exam-header">
+      <div class="exam-header-left">
+        <div class="date-text">Thursday 4 June 2026</div>
+        <div class="time-text">Morning (Time: 1 hour 50 minutes -<br>total time for <strong>both</strong> booklets)</div>
+        <div class="subject-title">History</div>
+        <div class="booklet-title">BOOKLET B4: Early Elizabethan England, 1558-88</div>
+      </div>
+      <div class="exam-header-right">
+        <div class="paper-ref-label">Paper<br>reference</div>
+        <div class="paper-ref-val">1HI0/B4 (Paper 2)</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <div class="must-have-box" style="flex: 1;">
+        <div>
+          <strong>You must have:</strong><br>
+          The corresponding booklet P.
+        </div>
+      </div>
+      <div class="total-marks-box">
+        Total Marks
+      </div>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Use <strong>black</strong> ink or ball-point pen.</li>
+        <li><strong>Fill in the boxes</strong> at the top of this page with your name,<br>centre number and candidate number.</li>
+        <li>There are two booklets in this question paper. <strong>This is booklet B.</strong></li>
+        <li>Answer questions 1(a), 1(b), 2 and <strong>either 3 or 4</strong> in this booklet.</li>
+        <li>Check you have the corresponding booklet P.</li>
+        <li>Answer the questions in the spaces provided<br><em>- there may be more space than you need.</em></li>
+      </ul>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Information</h3>
+      <ul>
+        <li>The total mark for this booklet is 32.</li>
+        <li>The total time for <strong>both</strong> booklets is 1 hour 50 minutes.</li>
+        <li>The marks for <strong>each</strong> question are shown in brackets<br><em>- use this as a guide as to how much time to spend on each question.</em></li>
+        <li><strong>Do not forget to complete booklet P.</strong></li>
+      </ul>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Advice</h3>
+      <ul>
+        <li>Read each question carefully before you start to answer it.</li>
+        <li>Try to divide your time equally between each booklet of the question paper.</li>
+        <li>Check your answers if you have time at the end.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>&copy;2026 Pearson Education Ltd.</div>
+      
+      <div style="display:flex; align-items:center; gap:20px;">
+        <span class="turn-over">Turn over &#9654;</span>
+        <span class="pearson-logo">Pearson</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page"><div class="page-inner"><div class="inner-header">Early Elizabethan England, 1558-88<br><br>Answer Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.</div><div class="question-block">  <div class="question-text">    <div class="question-num">1</div>    <div style="width: 100%;">      (a) Describe one feature of the Ridolfi Plot (1571).      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="height:30px;"></div><div class="question-block">  <div class="question-text">    <div class="question-num"></div>    <div style="width: 100%;">      (b) Describe one feature of the Throckmorton Plot (1583).      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="question-block">  <div class="question-text">    <div class="question-num">2</div>    <div style="width: 100%;">      Explain why relations between England and Spain declined in the years 1568-1585.      <span style="float: right; font-weight: 400; color: #444;">(12)</span>    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>Religious differences</li><li>Francis Drake's attacks on Spanish treasure</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div style="text-align:center; font-weight:bold; margin-bottom: 20px;">Answer EITHER Question 3 OR Question 4.</div><div style="font-weight:bold; margin-bottom:10px;">EITHER</div><div class="question-block">  <div class="question-text">    <div class="question-num">3</div>    <div style="width: 100%;">      "The Northern Earls' Rebellion (1569) was a serious threat to Elizabeth."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>Mary, Queen of Scots</li><li>Lack of foreign support</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 3 = 16 marks)</div><div style="font-weight:bold; margin:20px 0 10px 0;">OR</div><div class="question-block">  <div class="question-text">    <div class="question-num">4</div>    <div style="width: 100%;">      "The voyages of exploration in Elizabeth's reign were primarily motivated by a desire for wealth."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>Trade routes</li><li>Rivalry with Spain</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 4 = 16 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="indicate-choice">  Indicate which question you are answering by marking a cross in the box <span style="font-weight:900;">&#9746;</span>. If you change your mind, put a line through the box <span style="font-weight:900;">&#9746;</span> and then indicate your new question with a cross <span style="font-weight:900;">&#9746;</span>.<br><br>  Chosen question number:   <span style="margin-left: 10px;">Question 3</span> <div class="checkbox-inline"></div>  Question 4 <div class="checkbox-inline"></div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div><div class="footer"><div></div><div></div></div></div>
+
+  <!-- End of booklet -->
+  <div class="page">
+    <div class="page-inner" style="display:flex; justify-content:center; align-items:center;">
+       <div style="text-align:center; font-weight:bold; font-size: 16px;">
+           PLEASE ENSURE YOU ALSO COMPLETE BOOKLET P.
+       </div>
+    </div>
+  </div>
+  <div class="page">
+    <div class="page-inner" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+       <div style="text-align:center; font-weight:bold; font-size: 16px;">BLANK PAGE</div>
+       <div style="text-align:center; font-weight:bold; font-size: 16px; margin-top:20px;">DO NOT WRITE ON THIS PAGE</div>
+    </div>
+  </div>
+
+</body>
+</html>
