@@ -58,9 +58,14 @@
 
 </head>
 <body>
+  <div id="page-curtain" class="page-transition-curtain">
+    <i class="fa-solid fa-graduation-cap curtain-logo"></i>
+    <div class="curtain-text">Preparing Module...</div>
+  </div>
+
   <div class="app-container" style="display: flex; height: 100vh; overflow: hidden; width: 100vw;">
     <aside class="sidebar" id="sidebar" style="width: 280px; background: white; border-right: 1px solid var(--border-glass); display: flex; flex-direction: column; flex-shrink: 0; z-index: 100;">
-      <div class="sidebar-logo" style="padding: 1.5rem 1rem; border-bottom: 1px solid var(--border-glass); cursor: pointer; margin-bottom: 0;" onclick="window.location.href='/'" title="Back to History Hub">
+      <div class="sidebar-logo" style="padding: 1.5rem 1rem; border-bottom: 1px solid var(--border-glass); cursor: pointer; margin-bottom: 0;" onclick="window.navigateBack()" title="Back to History Hub">
         <i class="fa-solid fa-graduation-cap logo-icon"></i>
         <div>
           <h2 style="margin: 0;">Mr Lovett's History Hub</h2>

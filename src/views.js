@@ -230,21 +230,29 @@ window.updateProfileYearGroup = function(val) {
 };
 
 window.launchSubApp = function(subAppName) {
-  if (subAppName === 'gcse_middle_east_1945_1995') {
-    window.location.href = '/cme/';
-    return;
-  }
-  if (subAppName === 'gcse_usa_1954_1975') {
-    window.location.href = '/usa/';
-    return;
+  // Show the curtain
+  const curtain = document.getElementById('page-curtain');
+  if (curtain) {
+    curtain.classList.remove('hidden');
   }
 
-  let mappedName = subAppName;
-  if (subAppName === 'gcse_middle_east_1945_1995_new') mappedName = 'cme_new';
-  if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
-  if (subAppName === 'great_war_v2') mappedName = 'great_war';
-  
-  window.location.href = `/unit.html?id=${mappedName}`;
+  setTimeout(() => {
+    if (subAppName === 'gcse_middle_east_1945_1995') {
+      window.location.href = '/cme/';
+      return;
+    }
+    if (subAppName === 'gcse_usa_1954_1975') {
+      window.location.href = '/usa/';
+      return;
+    }
+
+    let mappedName = subAppName;
+    if (subAppName === 'gcse_middle_east_1945_1995_new') mappedName = 'cme_new';
+    if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
+    if (subAppName === 'great_war_v2') mappedName = 'great_war';
+    
+    window.location.href = `/unit.html?id=${mappedName}`;
+  }, 350);
 };
 
 export function renderInteractiveQuiz() {

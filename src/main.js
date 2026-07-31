@@ -36,4 +36,12 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Load main dashboard
   switchView('dashboard');
+  
+  // Hide the loading curtain smoothly
+  setTimeout(() => {
+    const curtain = document.getElementById('page-curtain');
+    if (curtain) {
+      curtain.classList.add('hidden');
+    }
+  }, 100);
 });

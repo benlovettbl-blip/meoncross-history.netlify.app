@@ -92,10 +92,26 @@ if (!unitId) {
     }
   }
 
+  // Remove the loading curtain
+  setTimeout(() => {
+    const curtain = document.getElementById('page-curtain');
+    if (curtain) {
+      curtain.classList.add('hidden');
+    }
+  }, 100);
+
   }).catch(err => {
     console.error('Error loading unit:', err);
     document.body.innerHTML = '<div style="padding: 40px; text-align: center;"><h1 style="color: #ef4444;">Unit Not Found</h1><p>Sorry, the data for this unit could not be loaded.</p><br><a href="/" style="padding: 10px 20px; background: #002855; color: white; text-decoration: none; border-radius: 6px;">Return to Dashboard</a></div>';
   });
 }
+
+window.navigateBack = function() {
+  const curtain = document.getElementById('page-curtain');
+  if (curtain) curtain.classList.remove('hidden');
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 350);
+};
 
 // force vite reload
