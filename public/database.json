@@ -16558,6 +16558,21 @@
           "id": "eee_mock_d",
           "title": "Predicted Mock Paper D",
           "url": "eee_mock_d.html"
+        },
+        {
+          "id": "eee_notebook_1",
+          "title": "NotebookLM Best Guess Paper 1",
+          "url": "eee_notebook_1.html"
+        },
+        {
+          "id": "eee_notebook_2",
+          "title": "NotebookLM Best Guess Paper 2",
+          "url": "eee_notebook_2.html"
+        },
+        {
+          "id": "eee_notebook_3",
+          "title": "NotebookLM Best Guess Paper 3",
+          "url": "eee_notebook_3.html"
         }
       ],
       "lessons": [
