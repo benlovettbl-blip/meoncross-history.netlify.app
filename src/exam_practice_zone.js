@@ -21,10 +21,27 @@ export function renderExamPracticeZone(container, unitData) {
       if (l.exam_practice) {
         let practices = Array.isArray(l.exam_practice) ? l.exam_practice : [l.exam_practice];
         practices.forEach(ep => {
+          let qText = ep.question || ep.text;
+          let type = ep.type;
+          if (!type) {
+              if (qText.includes("12 marks")) type = "12-mark";
+              else if (qText.includes("16 marks")) type = "16-mark";
+              else if (qText.includes("2 marks") || qText.includes("4 marks") || qText.includes("8 marks")) {
+                  let m = qText.match(/\((\d+) marks?\)/);
+                  type = m ? `${m[1]}-mark` : "4-mark";
+              } else {
+                  type = "Exam";
+              }
+          }
+          let blockTitle = l.title || "";
+          let ktPrefix = blockTitle.split(':')[0]; // e.g. "KT1.1"
+
           examBank.push({
             ...ep,
-            question: ep.question || ep.text, // unify
-            blockTitle: l.title
+            question: qText,
+            blockTitle: blockTitle,
+            ktPrefix: ktPrefix,
+            type: type
           });
         });
       }
@@ -176,6 +193,26 @@ export function renderExamPracticeZone(container, unitData) {
         top: 0; right: 0; width: 100px; height: 100px;
         background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
       }
+      .epz-pill {
+        padding: 8px 16px;
+        border-radius: 20px;
+        border: 2px solid #cbd5e1;
+        background: white;
+        color: #475569;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.95rem;
+      }
+      .epz-pill:hover {
+        border-color: #3b82f6;
+        color: #3b82f6;
+      }
+      .epz-pill.active {
+        background: #3b82f6;
+        color: white;
+        border-color: #3b82f6;
+      }
     </style>
     
     <div class="epz-wrapper">
@@ -191,10 +228,10 @@ export function renderExamPracticeZone(container, unitData) {
         <div style="display: flex; flex-direction: column; gap: 20px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0;">
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Target Question Type</label>
-            <select id="epz-type-filter" class="epz-select" style="width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #cbd5e1; font-size: 1.15rem; background: #ffffff; color: #1e293b; cursor: pointer;">
-              <option value="all">📚 All Question Types</option>
-              ${uniqueTypes.map(t => `<option value="${t}">${t.charAt(0).toUpperCase() + t.slice(1)} (e.g. 4-mark, 12-mark, etc.)</option>`).join('')}
-            </select>
+            <div id="epz-type-pills" style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="epz-pill active" data-type="all">📚 All Question Types</button>
+              ${uniqueTypes.map(t => `<button class="epz-pill" data-type="${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</button>`).join('')}
+            </div>
           </div>
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -246,7 +283,8 @@ export function renderExamPracticeZone(container, unitData) {
   let timerRunning = false;
 
   // 4. Elements
-  const typeFilter = document.getElementById('epz-type-filter');
+  let currentSelectedType = 'all';
+  const typePills = document.getElementById('epz-type-pills');
   const specificFilter = document.getElementById('epz-specific-filter');
   const generateBtn = document.getElementById('epz-generate-btn');
   const backBtn = document.getElementById('epz-back-btn');
@@ -305,7 +343,7 @@ export function renderExamPracticeZone(container, unitData) {
   };
 
   const populateSpecificQuestions = () => {
-    const selectedType = typeFilter.value;
+    const selectedType = currentSelectedType;
     let filteredBank = examBank;
     
     if (selectedType !== 'all') {
@@ -320,7 +358,8 @@ export function renderExamPracticeZone(container, unitData) {
         const originalIndex = examBank.indexOf(q);
         let typeIcon = "📄";
         let truncatedText = q.question.length > 75 ? q.question.substring(0, 75) + "..." : q.question;
-        html += `<option value="${originalIndex}">${typeIcon} Q: ${truncatedText}</option>`;
+        let prefix = q.ktPrefix ? `[${q.ktPrefix}] ` : '';
+        html += `<option value="${originalIndex}">${typeIcon} ${prefix}${truncatedText}</option>`;
     });
     
     specificFilter.innerHTML = html;
@@ -362,7 +401,18 @@ export function renderExamPracticeZone(container, unitData) {
     wagollPanel.style.display = wagollPanel.style.display === 'none' ? 'block' : 'none';
   });
 
-  typeFilter.addEventListener('change', populateSpecificQuestions);
+  if (typePills) {
+    typePills.addEventListener('click', (e) => {
+      if (e.target.classList.contains('epz-pill')) {
+        // Update active class
+        Array.from(typePills.children).forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        // Update state and refresh
+        currentSelectedType = e.target.getAttribute('data-type');
+        populateSpecificQuestions();
+      }
+    });
+  }
 
   generateBtn.addEventListener('click', () => {
     const selectedSpecific = specificFilter ? specificFilter.value : 'random';
@@ -370,7 +420,7 @@ export function renderExamPracticeZone(container, unitData) {
     if (selectedSpecific !== 'random') {
       currentQuestion = examBank[parseInt(selectedSpecific)];
     } else {
-      const selectedType = typeFilter.value;
+      const selectedType = currentSelectedType;
       let filteredBank = examBank;
       
       if (selectedType !== 'all') {
