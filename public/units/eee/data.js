@@ -43,6 +43,28 @@ export const unitData = {
         }
     ],
     "key_topics": [],
+    "mock_exams": [
+        {
+            "id": "eee_mock_2026",
+            "title": "Predicted Mock Paper A (2026)",
+            "url": "eee_mock_2026.html"
+        },
+        {
+            "id": "eee_mock_b",
+            "title": "Predicted Mock Paper B",
+            "url": "eee_mock_b.html"
+        },
+        {
+            "id": "eee_mock_c",
+            "title": "Predicted Mock Paper C",
+            "url": "eee_mock_c.html"
+        },
+        {
+            "id": "eee_mock_d",
+            "title": "Predicted Mock Paper D",
+            "url": "eee_mock_d.html"
+        }
+    ],
     "lessons": [
         {
             "id": "lesson_1_1",

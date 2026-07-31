@@ -42,7 +42,7 @@ export const unitData = {
             "prefix": "lesson_3_"
         }
     ],
-    "key_topics": [],,
+    "key_topics": [],
     "mock_exams": [
         {
             "id": "eee_mock_2026",
@@ -64,7 +64,7 @@ export const unitData = {
             "title": "Predicted Mock Paper D",
             "url": "eee_mock_d.html"
         }
-    ]
+    ],
     "lessons": [
         {
             "id": "lesson_1_1",
