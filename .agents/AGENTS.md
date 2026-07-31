@@ -85,3 +85,5 @@ Before running `node extract_units.js` or `node build_database.cjs`, you MUST qu
 
 ## Strict Containment
 Unless the user explicitly asks you to work globally or sync all units, you are STRICTLY FORBIDDEN from viewing, opening, or modifying files in any unit folders other than the specific unit the user is currently focused on. This completely isolates your workflow and guarantees you cannot accidentally alter other units.
+
+

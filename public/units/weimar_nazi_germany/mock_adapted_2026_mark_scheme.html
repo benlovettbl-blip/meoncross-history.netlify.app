@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Paper 4 (Adapted 2026) - Mark Scheme</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 15mm;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .top-warning {
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    
+    .cover-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .candidate-info:last-child {
+      margin-bottom: 0;
+    }
+    .input-label {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .input-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      background: white;
+    }
+    .char-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      width: 25px;
+      display: inline-block;
+      background: white;
+      margin-right: 2px;
+    }
+    
+    .edexcel-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 15px 0 5px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .exam-header {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .exam-header-left {
+      flex: 3;
+    }
+    .exam-header-right {
+      flex: 1;
+      background: #555;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .date-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .time-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .subject-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .booklet-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .paper-ref-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .paper-ref-val {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .must-have-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .total-marks-box {
+      border: 3px solid #666;
+      border-radius: 10px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .instructions-section {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    .instructions-section h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+    .instructions-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .instructions-section li {
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 12px;
+    }
+    .barcode {
+      font-family: 'Libre Barcode 39 Text', monospace;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+    .turn-over {
+      font-weight: 700;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .pearson-logo {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: serif;
+    }
+
+    /* Inner Page Styles */
+    .page-inner {
+      flex: 1;
+      position: relative;
+    }
+    
+    .margin-watermark {
+      position: absolute;
+      top: 0;
+      right: -15mm;
+      bottom: 0;
+      width: 40mm;
+      background: repeating-linear-gradient(
+        -45deg,
+        #f0f0f0,
+        #f0f0f0 2px,
+        #ffffff 2px,
+        #ffffff 4px
+      );
+      border-left: 2px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      overflow: hidden;
+    }
+    
+    .watermark-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: #666;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .inner-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .question-block {
+      margin-bottom: 20px;
+    }
+    .question-text {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+    }
+    .question-num {
+      width: 35px;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .marks {
+      text-align: right;
+      font-weight: 400;
+      font-size: 14px;
+      color: #444;
+      margin-top: 5px;
+    }
+
+    /* Dotted Lines for Handwriting */
+    .dotted-line {
+      border-bottom: 1.5px dotted #999;
+      height: 28px;
+      width: 100%;
+    }
+
+    .choice-box {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .checkbox-item:last-child {
+      margin-bottom: 0;
+    }
+    .checkbox-square {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      margin-right: 15px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .bullet-point-box {
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 15px 0 15px 35px;
+      width: 80%;
+      background: #fff;
+    }
+    .bullet-point-box ul {
+      margin: 5px 0 0 0;
+      padding-left: 20px;
+    }
+    
+    .indicate-choice {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 10px 0 20px 35px;
+    }
+
+    .source-box {
+      border: 2px solid #000;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      background: #fdfdfd;
+      border-radius: 8px;
+    }
+    .model-answer {
+      font-size: 14px;
+      color: #b91c1c;
+      font-weight: 600;
+      padding: 15px;
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      margin-bottom: 20px;
+    }
+  
+    .print-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 30px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background-color 0.2s;
+    }
+    .print-button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button no-print" onclick="window.print()">🖨️ Print to PDF</button>
+
+  
+  <div class="page">
+    <div class="edexcel-title">Mark Scheme (Results)</div>
+    <div class="subject-title">History</div>
+    <div class="booklet-title">Paper 3: Modern depth study</div>
+    <div class="booklet-title" style="font-size: 16px; margin-top: 10px;">Option 31: Weimar and Nazi Germany, 1918-39</div>
+    <h2 style="color: #b91c1c; text-align: center; margin-top: 40px;">Mock Paper 4 (Adapted 2026) - Teacher Copy</h2>
+  </div>
+  
+
+  <div class="page"><div class="page-inner"><div class="inner-header">SECTION A<br><br>Answer ALL questions in this section.</div>
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">1</div>
+          <div style="width: 100%;">
+            Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–39.
+            <span style="float: right; font-weight: 400; color: #444;">(4)</span>
+          </div>
+        </div>
+    <div class="model-answer">**(i) What I can infer:** I can infer that the Nazis dealt with opposition systematically and ruthlessly by targeting different groups one at a time.<br>*Details in the source that tell me this:* The source says "First they came for the communists... Then they came for the trade unionists... Then they came for the Jews".<br>**(ii) What I can infer:** I can infer that the Nazi terror apparatus was highly successful at silencing the wider public through fear.<br>*Details in the source that tell me this:* The author admits that they "did not speak out" at each stage, and ultimately "there was no one left to speak for me".</div></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner">
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">2</div>
+          <div style="width: 100%;">
+            Explain why there were changes in the position of women in German society in the years 1924–39.
+            <span style="float: right; font-weight: 400; color: #444;">(12)</span>
+          </div>
+        </div>
+    
+        <div class="bullet-point-box">
+          <em>You <strong>may</strong> use the following in your answer:</em>
+          <ul>
+            <li>Jobs for women in Weimar Germany</li><li>Nazi policies on family</li>
+          </ul>
+          <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>
+        </div>
+      <div class="model-answer">There were dramatic changes in the position of women in German society between 1924 and 1939, driven first by the progressive Weimar Constitution and later by the reactionary, ideologically driven policies of the Nazi Party.<br><br>During the Weimar "Golden Years" (1924-29), women experienced unprecedented freedom and social progress. The Weimar Constitution guaranteed women equal voting rights and equal pay in the professions. By 1933, there were 100,000 female teachers and 3,000 female doctors. Furthermore, a "New Woman" culture emerged in cities like Berlin, where young women embraced financial independence, cut their hair short, smoked in public, and enjoyed active social lives. This represented a massive shift away from traditional, restrictive pre-war gender roles.<br><br>However, when the Nazis took power in 1933, they aggressively reversed these changes because they viewed the "New Woman" as a threat to their demographic and militaristic goals. Driven by their ideology, the Nazis believed a woman's sole biological duty was to raise racially pure Aryan children to expand the Reich (Lebensraum). They immediately implemented the Law for the Encouragement of Marriage (1933), which gave loans of 1,000 marks to young couples, provided the woman gave up her job. Women were banned from professional careers, including medicine and the law, and were forced back into the domestic sphere under the slogan "Kinder, Kirche, Küche" (Children, Church, Cooking).<br><br>Finally, changes in women's positions were also driven by the Nazis' aggressive rearmament program in the late 1930s. As Germany prepared for war and male workers were conscripted into the army, a severe labor shortage emerged. Consequently, the Nazis were forced to reverse their own ideological policies. In 1937, the marriage loans were extended to women who continued to work, and by 1939, millions of women were actively recruited back into agriculture and heavy industry to support the war effort. Thus, the position of women fluctuated wildly based on the shifting political and economic priorities of the state.</div></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner">
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">3</div>
+          <div style="width: 100%;">
+            Explain why Adolf Hitler was appointed Chancellor in 1933.
+            <span style="float: right; font-weight: 400; color: #444;">(12)</span>
+          </div>
+        </div>
+    
+        <div class="bullet-point-box">
+          <em>You <strong>may</strong> use the following in your answer:</em>
+          <ul>
+            <li>President Hindenburg</li><li>Elections in 1932</li>
+          </ul>
+          <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>
+        </div>
+      <div class="model-answer">Hitler was appointed Chancellor in January 1933 due to a combination of his immense electoral popularity, the weakness of the Weimar Constitution, and the political miscalculations of conservative elites.<br><br>A significant underlying reason for his appointment was the electoral success of the Nazi Party following the Wall Street Crash. As the economic depression deepened and unemployment reached 6 million, millions of desperate voters abandoned moderate democratic parties in favor of extremist solutions. The Nazis ran a highly effective, modern propaganda campaign spearheaded by Joseph Goebbels, which promised "Work and Bread" and scapegoated Jews and Communists. As a result, in the July 1932 elections, the Nazi Party won 230 seats, making them the largest single party in the Reichstag. Hitler's massive popular mandate meant he could not be ignored in any parliamentary coalition.<br><br>However, Hitler did not have a majority and relied on the structural weaknesses of the Weimar Constitution to reach power. The system of Proportional Representation meant that no single party could form a stable government, leading to continuous political deadlock. President Hindenburg was forced to rule repeatedly using Article 48, which bypassed the Reichstag and ruled by emergency decree. This normalized authoritarian rule and severely weakened German democracy. Chancellors like Heinrich Brüning and Franz von Papen lacked Reichstag support and were deeply unpopular, creating a continuous crisis of governance that left the door open for a strongman leader.<br><br>Finally, the immediate trigger for Hitler’s appointment was the political intrigue and miscalculation by President Hindenburg and his conservative allies. Hindenburg despised Hitler, calling him a "vulgar little corporal," and initially refused to appoint him despite his electoral success. However, in January 1933, the current Chancellor, Kurt von Schleicher, lost Hindenburg's support. Franz von Papen, seeking to return to power and desiring revenge against Schleicher, convinced Hindenburg to appoint Hitler as Chancellor, with Papen as Vice-Chancellor. They arrogantly believed they could control Hitler and use his popular support to form a stable, conservative government, famously stating they would "push him into a corner until he squeaks." This fatal miscalculation handed Hitler the chancellorship legally on January 30, 1933.</div></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="inner-header">SECTION B<br><br>For use with Section B, Answer ALL questions.</div><div class="source-box">Source B: A 1923 photograph showing German citizens in Berlin using a cart to transport massive baskets of banknotes.<br><br><img src="/images/weimar_hyperinflation_cart.jpg" alt="Hyperinflation cart full of banknotes" style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: 15px 0;"><br><br>Source C: A public declaration by right-wing nationalist leader Adolf Hitler in a Munich beer hall in Nov 1923, announcing the overthrow of the Weimar 'November Criminals' and the establishment of a new nationalist government.<br><br>Interpretation 1: A historical summary emphasising that the 1923 crisis was primarily economic, driven by the French occupation of the Ruhr and the catastrophic hyperinflation that destroyed the currency and forced the government to pay welfare for striking workers.<br><br>Interpretation 2: A historical summary arguing that the defining issue of 1923 was political instability, culminating in the autumn when right-wing extremists, led by Hitler's SA, attempted an armed takeover of the government in Munich.</div><div class="model-answer">**3(a) Answer:**<br>Source B is highly useful for investigating the devastating economic impact of hyperinflation on ordinary Germans. The photograph shows citizens transporting massive baskets of paper money, which proves that the German currency had become virtually worthless, requiring wheelbarrows just to buy basic goods. Its provenance as a contemporary photograph from Berlin in 1923 makes it excellent evidence of the daily logistical nightmare faced by the population. Contextually, we know this was caused by the government endlessly printing money to fund passive resistance during the Ruhr crisis.<br><br>Source C is extremely useful for understanding the political threats facing Weimar in 1923. The speech demonstrates the violent hostility of right-wing nationalists who sought to overthrow the government by exploiting the chaos of hyperinflation. Its provenance as a public declaration by Hitler during the Munich Putsch in November 1923 makes it highly valuable, as it reveals the direct intent of extremist leaders to use armed force (the SA) to destroy the Republic and establish a nationalist dictatorship.<br><br>**3(b) Answer:**<br>The main difference is that Interpretation 1 focuses primarily on the economic problems of 1923, highlighting the French invasion of the Ruhr, the policy of passive resistance, and the resulting hyperinflation as the core crises. In contrast, Interpretation 2 focuses on the extreme political instability of 1923, emphasizing the threat posed by armed right-wing extremists and specifically highlighting Hitler's Munich Putsch as the defining crisis.<br><br>**3(c) Answer:**<br>The interpretations give different views because the historians have placed weight on different sources and aspects of the crisis. The author of Interpretation 1 has focused heavily on economic evidence similar to Source B (the photograph of worthless money) to highlight the financial collapse. The author of Interpretation 2 has focused on political evidence similar to Source C (Hitler's revolutionary speech) to emphasize the violent threat to the government's existence.<br><br>**3(d) Answer:**<br>Interpretation 2 argues that political instability, culminating in the Munich Putsch, was the defining problem of 1923. I agree with this to some extent. The threat of armed revolution was very real. In November 1923, Hitler and 600 SA stormtroopers seized a Munich beer hall, forcing Bavarian leaders to support a march on Berlin. As Source C shows, their explicit aim was to overthrow the 'November Criminals'. From my own knowledge, this was not an isolated incident; there were also left-wing communist uprisings in Saxony and Thuringia, proving that the Weimar government was fundamentally weak and constantly under siege from political extremists who despised democracy.<br><br>However, I disagree with Interpretation 2's narrow focus, because the political instability it highlights was actually directly caused by the economic catastrophe described in Interpretation 1. The hyperinflation crisis, triggered by the French invasion of the Ruhr, utterly destroyed the savings of the middle classes and caused widespread starvation. As Source B illustrates, the currency became so worthless that ordinary life broke down. It was this specific economic misery that drove desperate citizens toward extremist parties like the Nazis in the first place; Hitler launched the Munich Putsch specifically because he thought the government was weak enough to collapse under the weight of the hyperinflation crisis.<br><br>In conclusion, while Interpretation 2 is correct that political violence was a severe threat, Interpretation 1 is more accurate overall. The economic collapse of hyperinflation was the root cause of the crisis in 1923; the political instability of the Munich Putsch was merely a violent symptom of that deeper financial devastation.</div><div style="font-weight: bold; margin-bottom: 20px; margin-top: 20px;">Enquiry: The problems faced by the Weimar Republic in 1923<br><br>3(a) How useful are Sources B and C for an enquiry into the problems faced by the Weimar Republic in 1923? Explain your answer, using Sources B and C and your knowledge of the historical context. (8)<br>3(b) Study Interpretations 1 and 2. They give different views about the problems faced by the Weimar Republic in 1923. What is the main difference between these views? Explain your answer, using details from both interpretations. (4)<br>3(c) Suggest one reason why Interpretations 1 and 2 give different views about the problems faced by the Weimar Republic in 1923. You may use Sources B and C to help explain your answer. (4)<br>3(d) How far do you agree with Interpretation 2 about the problems faced by the Weimar Republic in 1923? Explain your answer, using both interpretations and your knowledge of the historical context. (16+4 SPaG)</div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div>
+
+</body>
+</html>
