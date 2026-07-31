@@ -32,7 +32,8 @@ export function renderExamPracticeZone(container, unitData) {
 
   let hasAnyAssessments = (unitData.assessments && unitData.assessments.length > 0) || 
                           (unitData.lessons && unitData.lessons.some(l => (l.assessments && l.assessments.length > 0) || l.gcse_task));
-  if (examBank.length === 0 && !hasAnyAssessments) {
+  let hasMockExams = (unitData.mock_exams && unitData.mock_exams.length > 0);
+  if (examBank.length === 0 && !hasAnyAssessments && !hasMockExams) {
     container.innerHTML = `
       <div style="text-align:center; padding: 40px; background: #fff; border-radius: 12px; color: #64748b; font-size: 1.2rem;">
         <i class="fa-solid fa-file-circle-xmark fa-3x" style="margin-bottom:20px; color:#cbd5e1;"></i>
@@ -180,12 +181,12 @@ export function renderExamPracticeZone(container, unitData) {
       <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; gap: 20px; flex-wrap: wrap;">
         <div>
           <h1 class="epz-title"><i class="fa-solid fa-pen-nib" style="color: #3b82f6;"></i> Exam Practice Zone</h1>
-          <p style="color: #64748b; font-size: 1.15rem; margin-top: 10px;">Select a question type or a specific past paper question to master.</p>
+          <p style="color: #64748b; font-size: 1.15rem; margin-top: 10px;">${examBank.length > 0 ? 'Select a question type or a specific past paper question to master.' : 'Download complete mock exams below.'}</p>
         </div>
         <button id="epz-back-btn" class="main-btn epz-btn" style="display: none; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; padding: 10px 20px; border-radius: 10px; font-weight: 600;"><i class="fa-solid fa-arrow-left"></i> Change Question</button>
       </div>
 
-      <div id="epz-controls">
+      <div id="epz-controls" ${examBank.length === 0 ? 'style="display:none;"' : ''}>
         <div style="display: flex; flex-direction: column; gap: 20px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0;">
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Target Question Type</label>
