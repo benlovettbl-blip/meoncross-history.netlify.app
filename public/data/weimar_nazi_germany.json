@@ -1167,10 +1167,10 @@
             },
             {
               "type": "visual",
-              "title": "Source B: A 50-Million Mark banknote from 1923, before the introduction of the Rentenmark.",
+              "title": "Source B: A photograph showing Berliners delivering stacks of hyperinflated currency to the Reichsbank in baskets, 1923.",
               "source": "/images/weimar_hyperinflation_note.jpg",
-              "caption": "A 50 Million Mark banknote demonstrating hyperinflation.",
-              "provenance_clue": "This is a physical artefact from the crisis. Think about what a banknote of this denomination tells you about the daily lives and savings of ordinary Germans."
+              "caption": "Berliners bringing baskets of nearly worthless paper money to the bank during the hyperinflation crisis.",
+              "provenance_clue": "Think about the sheer volume of paper money shown in the photograph. What does this tell you about the value of the Mark and its impact on everyday transactions?"
             }
           ]
         }
@@ -1845,10 +1845,10 @@
             },
             {
               "type": "visual",
-              "title": "Source B: A photograph of Adolf Hitler addressing a crowd in Munich in the early 1920s.",
+              "title": "Source B: A formal portrait of Adolf Hitler.",
               "source": "/images/hitler_munich_1920s.jpg",
-              "caption": "Hitler using his oratory skills to build support in Munich.",
-              "provenance_clue": "Photographs of speeches show the emotion and scale of early Nazi meetings. How useful is this for understanding why Hitler's leadership was so crucial to the party's early growth?"
+              "caption": "A formal photographic portrait of Adolf Hitler during his rise to prominence.",
+              "provenance_clue": "Formal portraits are often carefully staged to project a specific image of a leader. How useful is a static portrait for understanding the energetic oratory style that built his early support?"
             }
           ]
         }
@@ -2153,8 +2153,8 @@
             {
               "type": "visual",
               "title": "Source B: A photograph of the defendants of the Munich Putsch trial, including Hitler and Ludendorff, 1924.",
-              "source": "/images/munich_putsch_defendants.jpg",
-              "caption": "Hitler, Ludendorff, and other leaders during the Munich Putsch trial.",
+              "source": "/images/munich_putsch_defendants.jpg?v=2",
+              "caption": "Hitler, Ludendorff, and other leaders posing during the Munich Putsch trial.",
               "provenance_clue": "This photograph shows the accused posing confidently. Does it suggest they were treated harshly by the sympathetic right-wing judges in Bavaria?"
             }
           ]
@@ -3889,10 +3889,10 @@
             },
             {
               "type": "visual",
-              "title": "Source B: A photograph of a German mother receiving the Honour Cross of the German Mother (Mother's Cross).",
+              "title": "Source B: A photograph of the Honour Cross of the German Mother (Mother's Cross).",
               "source": "/images/mothers_cross_award.jpg",
-              "caption": "A German mother is awarded the Mother's Cross for having a large family.",
-              "provenance_clue": "The Mother's Cross was part of a major propaganda drive. Does a photograph of an award ceremony tell us whether ordinary women genuinely agreed with Nazi policies?"
+              "caption": "The Honour Cross of the German Mother, a state decoration awarded to women who had large families.",
+              "provenance_clue": "The Mother's Cross was awarded in bronze, silver, and gold depending on the number of children. Why would the Nazi regime create a military-style medal for childbirth?"
             }
           ]
         }
@@ -4094,10 +4094,10 @@
             },
             {
               "type": "visual",
-              "title": "Source B: A photograph showing members of the League of German Girls (BDM) doing gymnastics, 1936.",
+              "title": "Source B: An illustration of the official pennant (flag) used by the League of German Girls (BDM).",
               "source": "/images/bdm_gymnastics.jpg",
-              "caption": "Physical education was a core component of the BDM curriculum.",
-              "provenance_clue": "This photograph is likely an official press release. Why would the Nazis want to project an image of healthy, athletic young girls to the German public?"
+              "caption": "The official pennant of the League of German Girls, featuring the Hitler Youth emblem.",
+              "provenance_clue": "Youth groups were given flags and uniforms to create a sense of belonging and discipline. How useful is this official symbol for telling us about the actual experiences of the girls in the movement?"
             }
           ]
         }
