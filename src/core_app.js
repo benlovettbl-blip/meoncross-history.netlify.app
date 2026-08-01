@@ -759,9 +759,13 @@ export function initializeApp(unitData) {
 
   window.renderDashboard = function(skipHistory = false) {
     if (!skipHistory) {
-      const url = new URL(window.location);
-      url.searchParams.delete('lesson');
-      history.pushState({ dashboard: true }, "", url);
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('lesson');
+        history.pushState({ dashboard: true }, "", url);
+      } catch (e) {
+        console.warn('History routing disabled (e.g. file:// protocol):', e);
+      }
     }
     document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
     const homeLink = document.querySelector('.lesson-link');
@@ -1252,9 +1256,13 @@ export function initializeApp(unitData) {
     window.renderLessonByIndex = function(index, skipHistory = false) {
       if (unitData && unitData.lessons && unitData.lessons[index]) {
         if (!skipHistory) {
-          const url = new URL(window.location);
-          url.searchParams.set('lesson', index);
-          history.pushState({ lessonIndex: index }, "", url);
+          try {
+            const url = new URL(window.location);
+            url.searchParams.set('lesson', index);
+            history.pushState({ lessonIndex: index }, "", url);
+          } catch (e) {
+            console.warn('History routing disabled (e.g. file:// protocol):', e);
+          }
         }
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         // Try to activate the corresponding sidebar link
