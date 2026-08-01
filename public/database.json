@@ -26221,6 +26221,24 @@
       "lessons": [
         {
           "id": "lesson_1_1",
+          "utility_starters": {
+            "enquiry": "the origins of the Weimar Republic, 1918-19",
+            "sources": [
+              {
+                "type": "written",
+                "title": "Source A: From a speech by Philipp Scheidemann, announcing the new Republic from the balcony of the Reichstag, 9 November 1918.",
+                "content": "\"Workers and soldiers! The German people have won all along the line! The old and rotten monarchy has collapsed. Long live the new German Republic!\"",
+                "provenance_clue": "Consider who Scheidemann is addressing (the workers and soldiers) and why he might want to paint the revolution as a massive, positive victory right at that moment. Is he trying to calm a chaotic situation?"
+              },
+              {
+                "type": "visual",
+                "title": "Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+                "source": "/images/spartacist_uprising.jpg",
+                "caption": "Armed revolutionaries during the Spartacist Uprising",
+                "provenance_clue": "Photographs can capture a snapshot of reality, but think about what might be happening outside the frame. Does this image support the idea that the new republic was stable and fully supported by the people?"
+              }
+            ]
+          },
           "title": "KT1.1: The Origins of the Republic, 1918–1919",
           "enquiry": "Out of the ashes: How did the devastating legacy of the First World War forge the Weimar Republic, and were the democratic foundations of its new Constitution fatally flawed from the start?",
           "teacher_notes": {
