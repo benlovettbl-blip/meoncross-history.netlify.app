@@ -1454,7 +1454,7 @@ export const unitData = {
     {
       "id": "lesson_2_1",
       "title": "KT2.1: The Early Development of the Nazi Party, 1919–1922",
-      "enquiry_question": "From the shadows: How did a tiny, obscure political group in a Munich beer hall transform into a highly organised and violent political machine under Adolf Hitler's early leadership?",
+      "enquiry": "From the shadows: How did a tiny, obscure political group in a Munich beer hall transform into a highly organised and violent political machine under Adolf Hitler's early leadership?",
       "teacher_notes": {
         "primer": "This lesson explores the origins of the Nazi Party and Hitler's early rise to power, focusing on his oratory, the 25-Point Programme, and the establishment of the SA. The goal is for students to understand how a fringe regional group built the machinery for a national movement.",
         "objectives": [
