@@ -1333,11 +1333,23 @@ export function initializeApp(unitData) {
     
     let html = `<div class="lesson-content">`;
     
+    let headerEnquiry = lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question;
+    let stickyHeaderText = '';
+    if (headerEnquiry) {
+      stickyHeaderText = `${lessonPrefix}: ${headerEnquiry}`;
+    } else {
+      if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(lesson.title)) {
+        stickyHeaderText = lesson.title;
+      } else {
+        stickyHeaderText = `${lessonPrefix}: ${lesson.title}`;
+      }
+    }
+    
     // Sticky Header (No visible background, but opaque to hide scrolling text)
     html += `
       <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
-          ${lessonPrefix}: ${lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question || lesson.title}
+          ${stickyHeaderText}
         </h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
           <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
