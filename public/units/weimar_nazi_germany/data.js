@@ -4217,14 +4217,9 @@ export const unitData = {
             "name": "Philipp Scheidemann",
             "role": "SPD Politician",
             "bio": "A leading member of the Social Democratic Party who famously rushed to the balcony of the Reichstag on 9 November 1918 to proclaim the new German Republic.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bundesarchiv_Bild_146-1972-045-20%2C_Philipp_Scheidemann.jpg/500px-Bundesarchiv_Bild_146-1972-045-20%2C_Philipp_Scheidemann.jpg"
+            "image": "/images/weimar_individuals/philipp_scheidemann.jpg"
         },
-        {
-            "name": "Kaiser Wilhelm II",
-            "role": "Emperor of Germany",
-            "bio": "The last German Emperor and King of Prussia. His erratic foreign policy and the catastrophic First World War led to his forced abdication in November 1918.",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Kaiser_Wilhelm_II_of_Germany_-_1902.jpg/500px-Kaiser_Wilhelm_II_of_Germany_-_1902.jpg"
-        },
+        
         {
             "group": "Key Topic 1",
             "name": "Friedrich Ebert",
