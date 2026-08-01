@@ -2208,7 +2208,9 @@ export function initializeApp(unitData) {
         const correctIdx = opts.indexOf(q.answer || q.a);
         return { ...q, options: opts, answer: correctIdx };
       } else if (q.options && typeof q.answer === 'string') {
-        return { ...q, answer: q.options.indexOf(q.answer) };
+        let opts = [...q.options];
+        opts = opts.sort(() => Math.random() - 0.5);
+        return { ...q, options: opts, answer: opts.indexOf(q.answer) };
       }
       return q;
     });
@@ -2860,7 +2862,9 @@ window.startQuiz = function(lessonId) {
       const correctIdx = opts.indexOf(q.answer || q.a);
       return { ...q, options: opts, answer: correctIdx };
     } else if (q.options && typeof q.answer === 'string') {
-      return { ...q, answer: q.options.indexOf(q.answer) };
+      let opts = [...q.options];
+      opts = opts.sort(() => Math.random() - 0.5);
+      return { ...q, options: opts, answer: opts.indexOf(q.answer) };
     }
     return q;
   });
