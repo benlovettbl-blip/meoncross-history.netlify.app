@@ -192,17 +192,17 @@ export const unitData = {
                 {
                     "type": "narrative",
                     "theme_heading": "1. The Legacy of the First World War: A Nation on the Brink",
-                    "text": "By the autumn of 1918, Germany was physically, financially, and psychologically broken. The First World War had drained the nation's resources. Financially, the German government’s debt had tripled from 50 billion marks in 1914 to 150 billion marks in 1918. Humanly, the cost was staggering: 2 million German soldiers had been killed and over 4 million wounded (roughly 55% of all German troops became casualties).<br><br>Crucially, the home front was collapsing. The British naval blockade had prevented food and supplies from reaching Germany, resulting in the starvation of approximately 750,000 civilians. Disillusionment quickly turned to anger. The German public had been fed government propaganda promising imminent victory; when the reality of unavoidable defeat set in, society began to implode. Strikes rippled across the country, and the people turned their fury on their autocratic ruler, Kaiser Wilhelm II."
+                    "text": "By the autumn of 1918, Germany was physically, financially, and psychologically broken. The First World War had drained the nation's resources. Financially, the German government’s debt had tripled from 50 billion marks in 1914 to 150 billion marks in 1918. Humanly, the cost was staggering: 2 million German soldiers had been killed and over 4 million wounded (roughly 55% of all German troops became casualties).<br><br>Crucially, the home front was collapsing. The British naval blockade had prevented food and supplies from reaching Germany, resulting in the starvation of approximately 750,000 civilians. Disillusionment quickly turned to anger. The German public had been fed government propaganda promising imminent victory; when the reality of unavoidable defeat set in, society began to implode. Strikes rippled across the country, and the people turned their fury on their autocratic ruler, [Key Individual: Kaiser Wilhelm II]."
                 },
                 {
                     "type": "narrative",
                     "theme_heading": "2. Revolution from Below: Mutiny and Abdication",
-                    "text": "The breaking point occurred in late October 1918. The German naval command ordered a final, suicidal attack on the British Royal Navy. The sailors at the Kiel naval base refused to follow orders, triggering a widespread mutiny. This defiance spread like wildfire. Across Germany, workers and soldiers began setting up their own unofficial councils, seizing control of local governments in major cities.<br><br>Realising that the army would no longer fight for him, and informed by the Allies that they would not negotiate peace with a military autocrat, Kaiser Wilhelm II bowed to the inevitable. On 9 November 1918, he abdicated and fled to exile in Holland."
+                    "text": "The breaking point occurred in late October 1918. The German naval command ordered a final, suicidal attack on the British Royal Navy. The sailors at the Kiel naval base refused to follow orders, triggering a widespread mutiny. This defiance spread like wildfire. Across Germany, workers and soldiers began setting up their own unofficial councils, seizing control of local governments in major cities.<br><br>Realising that the army would no longer fight for him, and informed by the Allies that they would not negotiate peace with a military autocrat, [Key Individual: Kaiser Wilhelm II] bowed to the inevitable. On 9 November 1918, he abdicated and fled to exile in Holland."
                 },
                 {
                     "type": "narrative",
                     "theme_heading": "3. The Birth of the Republic and the Armistice",
-                    "text": "With the Kaiser gone, Berlin descended into chaos. To prevent a communist takeover by the radical Spartacists, Philipp Scheidemann, a leading member of the Social Democratic Party (SPD), rushed to a balcony of the Reichstag and proclaimed Germany a democratic republic.<br><br>The following day, Friedrich Ebert (SPD) became Chancellor of a temporary government called the Council of People's Representatives. His most pressing task was ending the war. On 11 November 1918, his representative, Matthias Erzberger, signed the Armistice. While this ended the bloodshed, it was deeply unpopular. Because the German army had not been invaded and was still stationed in France, many Germans felt betrayed. A toxic myth was born: the <em>Dolchstoßlegende</em>. The democratic politicians who signed the Armistice were branded the 'November Criminals'. From day one, the new Republic was associated with surrender and national shame."
+                    "text": "With the Kaiser gone, Berlin descended into chaos. To prevent a communist takeover by the radical Spartacists, [Key Individual: Philipp Scheidemann], a leading member of the Social Democratic Party (SPD), rushed to a balcony of the Reichstag and proclaimed Germany a democratic republic.<br><br>The following day, [Key Individual: Friedrich Ebert] (SPD) became Chancellor of a temporary government called the Council of People's Representatives. His most pressing task was ending the war. On 11 November 1918, his representative, [Key Individual: Matthias Erzberger], signed the Armistice. While this ended the bloodshed, it was deeply unpopular. Because the German army had not been invaded and was still stationed in France, many Germans felt betrayed. A toxic myth was born: the <em>Dolchstoßlegende</em>. The democratic politicians who signed the Armistice were branded the 'November Criminals'. From day one, the new Republic was associated with surrender and national shame."
                 },
                 {
                     "type": "narrative",
@@ -4213,6 +4213,18 @@ export const unitData = {
         }
     ],
     "key_individuals": [
+        {
+            "name": "Philipp Scheidemann",
+            "role": "SPD Politician",
+            "bio": "A leading member of the Social Democratic Party who famously rushed to the balcony of the Reichstag on 9 November 1918 to proclaim the new German Republic.",
+            "image": ""
+        },
+        {
+            "name": "Kaiser Wilhelm II",
+            "role": "Emperor of Germany",
+            "bio": "The last German Emperor and King of Prussia. His erratic foreign policy and the catastrophic First World War led to his forced abdication in November 1918.",
+            "image": ""
+        },
         {
             "group": "Key Topic 1",
             "name": "Friedrich Ebert",
