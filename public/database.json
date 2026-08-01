@@ -26543,6 +26543,10 @@
             {
               "question": "Vocabulary in Context: Write a 4-sentence summary of the birth of the Weimar Republic. You must use all five of these keywords correctly: Autocracy, Dolchstoßlegende, November Criminals, Armistice, Reichstag.",
               "model": "The German autocracy collapsed when the Kaiser abdicated, allowing democratic politicians in the Reichstag to form a new Republic. Their first major act was signing the Armistice to end the horrific war. However, right-wing nationalists felt betrayed and created the Dolchstoßlegende, claiming the army was stabbed in the back. Because of this, the politicians were forever branded as the November Criminals."
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why the Weimar Republic was highly unstable in 1919: 1) The legacy of the First World War 2) The 'Stab-in-the-back' myth 3) Proportional Representation 4) Article 48. Rank these four causes in order of importance. Write a persuasive, open-ended paragraph justifying your #1 choice over your #2 choice. *Level 9 Challenge: In your paragraph, explicitly explain how your #1 cause directly triggered or worsened your #2 cause.*",
+              "model": "Student answers will vary. A top-level answer might argue: 'The legacy of the First World War was the most important cause of instability because it acted as the primary trigger for all subsequent crises. Without the desperation caused by the blockade and military defeat, there would have been no need for an Armistice. This directly triggered my second most important cause, the Stab-in-the-back myth, because the sudden, shocking defeat allowed right-wing nationalists to falsely claim the new democratic politicians were traitors, fundamentally poisoning the Republic's reputation from day one.'"
             }
           ]
         },
