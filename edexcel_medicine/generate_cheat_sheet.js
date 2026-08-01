@@ -13,11 +13,8 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-const unitData = require(dataPath);
-if (unitData.unitData) {
-  // Handle case where it's exported as { unitData }
-  Object.assign(unitData, unitData.unitData);
-}
+const rawData = require(dataPath);
+const unitData = rawData.unitData || rawData;
 
 let masterVocab = [];
 let examTasks = [];
