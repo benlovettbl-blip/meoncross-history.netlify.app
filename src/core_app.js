@@ -2302,10 +2302,10 @@ export function initializeApp(unitData) {
         opts = opts.sort(() => Math.random() - 0.5);
         const correctIdx = opts.indexOf(q.answer || q.a);
         return { ...q, options: opts, answer: correctIdx };
-      } else if (q.options && typeof q.answer === 'string') {
+      } else if (q.options && typeof (q.answer || q.a) === 'string') {
         let opts = [...q.options];
         opts = opts.sort(() => Math.random() - 0.5);
-        return { ...q, options: opts, answer: opts.indexOf(q.answer) };
+        return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
       }
       return q;
     });
@@ -2956,10 +2956,10 @@ window.startQuiz = function(lessonId) {
       opts = opts.sort(() => Math.random() - 0.5);
       const correctIdx = opts.indexOf(q.answer || q.a);
       return { ...q, options: opts, answer: correctIdx };
-    } else if (q.options && typeof q.answer === 'string') {
+    } else if (q.options && typeof (q.answer || q.a) === 'string') {
       let opts = [...q.options];
       opts = opts.sort(() => Math.random() - 0.5);
-      return { ...q, options: opts, answer: opts.indexOf(q.answer) };
+      return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
     }
     return q;
   });
