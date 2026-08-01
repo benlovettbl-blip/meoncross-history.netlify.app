@@ -1254,6 +1254,7 @@ export function initializeApp(unitData) {
   
   // Render Lesson Content
     window.renderLessonByIndex = function(index, skipHistory = false) {
+      window.seenKeyIndividuals = new Set();
       if (unitData && unitData.lessons && unitData.lessons[index]) {
         if (!skipHistory) {
           try {
@@ -1785,7 +1786,11 @@ export function initializeApp(unitData) {
         
         // Add inline Key Individual links
         contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
-            return `<button class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+            if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
+                return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+            }
+            if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
+            return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
         });
 
         contentStr = formatBold(contentStr);
@@ -1804,7 +1809,11 @@ export function initializeApp(unitData) {
           
           // Add inline Key Individual links
           l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
-              return `<button class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+              if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
+                  return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+              }
+              if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
+              return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
           });
 
           l4ContentStr = formatBold(l4ContentStr);
