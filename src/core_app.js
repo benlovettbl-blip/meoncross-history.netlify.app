@@ -1315,7 +1315,18 @@ export function initializeApp(unitData) {
     
     // Tabs container logic
     const heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
-    const lessonNumberText = (lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}` : 'Lesson';
+    let lessonPrefix = 'Lesson';
+    let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
+    if (ktMatch) {
+      lessonPrefix = `KT ${ktMatch[1]}`;
+    } else if (lesson.id && lesson.id.startsWith('lesson_')) {
+      const parts = lesson.id.split('_');
+      if (parts.length > 2) {
+        lessonPrefix = `Lesson ${parts.slice(1).join('.')}`;
+      } else {
+        lessonPrefix = `Lesson ${parts[1]}`;
+      }
+    }
     
     const contentArea = document.getElementById('content-area');
     if (contentArea) contentArea.style.paddingTop = '0'; // Fix gap
@@ -1326,7 +1337,7 @@ export function initializeApp(unitData) {
     html += `
       <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
-          ${(lesson.id && lesson.id.startsWith('lesson_')) ? `Lesson ${lesson.id.split('_')[1]}: ` : ''}${lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question || lesson.title}
+          ${lessonPrefix}: ${lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question || lesson.title}
         </h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
           <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
@@ -1340,7 +1351,7 @@ export function initializeApp(unitData) {
       <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') center/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
-          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonNumberText}</span>
+          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonPrefix}</span>
           <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 2.5rem; margin: 0.5rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">${lesson.title}</h2>
         </div>
       </div>
