@@ -26527,6 +26527,22 @@
             {
               "question": "Historian's Judgement: Read Source B carefully. What was General Ludendorff's primary motive for claiming the army was 'stabbed in the back'? How does this motive affect the reliability of the source?",
               "model": "Ludendorff's primary motive was self-preservation. As a military leader, he wanted to shift the blame for Germany's defeat away from his own strategic failures on the battlefield and onto the new democratic politicians at home. Because he is actively lying to protect his own reputation and the honour of the army, the source is highly unreliable as an objective account of why Germany lost the war."
+            },
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) Proportional Representation was highly democratic, BUT... 2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt betrayed by the Armistice, SO...",
+              "model": "1) BUT it allowed tiny extremist parties into the Reichstag and forced weak, unstable coalition governments. 2) BECAUSE he wanted to prevent a violent communist revolution by the radical Spartacists. 3) SO they created the 'Stab-in-the-back' myth, blaming the 'November Criminals' for the defeat."
+            },
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining exactly how the British Naval Blockade eventually led to the Abdication of the Kaiser. You must explain the chain reaction of events (the 'domino effect') that connects them.",
+              "model": "The British Naval Blockade caused mass starvation in Germany, leading to severe desperation and a collapse in morale on the home front. When the naval command ordered a final, suicidal attack in October 1918, the starving, exhausted sailors at Kiel refused and mutinied. This mutiny sparked a nationwide revolution as workers and soldiers set up their own councils. Realizing he had lost control of the country and the army, Kaiser Wilhelm II was forced to abdicate to prevent a full civil war."
+            },
+            {
+              "question": "Transforming Information: Imagine you are an advisor to President Ebert in 1919. Write a short, urgent memo to him explaining which specific weakness of the new Constitution (Article 48, Proportional Representation, or Coalitions) poses the greatest threat to the Republic, and why.",
+              "model": "President Ebert, I must urgently warn you about Article 48. While Proportional Representation will cause weak coalitions, Article 48 is a fatal flaw. By allowing the President to bypass the Reichstag in an emergency, it creates a legal loophole for a dictator to take absolute power and destroy our democracy from within."
+            },
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of the birth of the Weimar Republic. You must use all five of these keywords correctly: Autocracy, Dolchstoßlegende, November Criminals, Armistice, Reichstag.",
+              "model": "The German autocracy collapsed when the Kaiser abdicated, allowing democratic politicians in the Reichstag to form a new Republic. Their first major act was signing the Armistice to end the horrific war. However, right-wing nationalists felt betrayed and created the Dolchstoßlegende, claiming the army was stabbed in the back. Because of this, the politicians were forever branded as the November Criminals."
             }
           ]
         },
