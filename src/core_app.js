@@ -1365,6 +1365,7 @@ export function initializeApp(unitData) {
 
     let seenTerms = new Set();
     const highlightGlossary = (text) => {
+      if (!text) return '';
       if (Object.keys(vocabDict).length === 0) return text;
       let processedText = text;
       const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
@@ -1691,7 +1692,8 @@ export function initializeApp(unitData) {
         }
 
         const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
-        let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
+        let blockText = block.text || '';
+        let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${blockText}</em>` : highlightGlossary(blockText);
         
         // Add inline Key Individual links
         contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
@@ -2831,6 +2833,8 @@ window.startQuiz = function(lessonId) {
       opts = opts.sort(() => Math.random() - 0.5);
       const correctIdx = opts.indexOf(q.answer || q.a);
       return { ...q, options: opts, answer: correctIdx };
+    } else if (q.options && typeof q.answer === 'string') {
+      return { ...q, answer: q.options.indexOf(q.answer) };
     }
     return q;
   });
