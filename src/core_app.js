@@ -1357,14 +1357,6 @@ export function initializeApp(unitData) {
       </div>
     `;
 
-    const unitEnquiryText = window.currentUnitData?.enquiry_question || window.currentUnitData?.enquiry || '';
-    if (unitEnquiryText) {
-      html += `
-        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #1e3a8a; padding: 15px 20px; border-radius: 12px; margin-bottom: 2rem; text-align: center; font-size: 1.15rem; font-family: 'Playfair Display', serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.5);">
-          <i class="fa-solid fa-lightbulb" style="color: #d97706; margin-right: 10px;"></i> ${unitEnquiryText}
-        </div>
-      `;
-    }
     html += `
       <div id="progress-container" style="background: rgba(226,232,240,0.5); height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden; backdrop-filter: blur(5px);">
         <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
