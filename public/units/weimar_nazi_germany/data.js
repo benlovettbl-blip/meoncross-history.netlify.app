@@ -35,24 +35,28 @@ export const unitData = {
         {
             "id": "KT1",
             "title": "Key Topic 1: The Weimar Republic",
+            "url": "workbook_KT1.html",
             "image": "",
             "prefix": "lesson_1_"
         },
         {
             "id": "KT2",
             "title": "Key Topic 2: Hitler's Rise to Power, 1919-33",
+            "url": "workbook_KT2.html",
             "image": "",
             "prefix": "lesson_2_"
         },
         {
             "id": "KT3",
             "title": "Key Topic 3: Nazi Control and Dictatorship",
+            "url": "workbook_KT3.html",
             "image": "",
             "prefix": "lesson_3_"
         },
         {
             "id": "KT4",
             "title": "Key Topic 4: Life in Nazi Germany, 1933–39",
+            "url": "workbook_KT4.html",
             "prefix": "lesson_4_"
         }
     ],
