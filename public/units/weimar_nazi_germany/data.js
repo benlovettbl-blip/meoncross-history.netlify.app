@@ -407,16 +407,14 @@ export const unitData = {
                     "answer": 1
                 }
             ],
-            "exam_practice": [
+            "tasks": [
                 {
-                    "type": "q2b",
-                    "question": "Explain why the German Revolution of 1918 occurred.",
-                    "marks": 12,
-                    "stimulus": [
-                        "Military defeat / the blockade",
-                        "The Kiel Mutiny",
-                        "The abdication of the Kaiser"
-                    ]
+                    "question": "Constrained Summary: Summarize Philipp Scheidemann's declaration in Source A in exactly 10 words. You are NOT allowed to use the words 'Monarchy' or 'Republic'.",
+                    "model": "The old royal system collapsed; a new democracy replaced it."
+                },
+                {
+                    "question": "Historian's Judgement: Read Source B carefully. What was General Ludendorff's primary motive for claiming the army was 'stabbed in the back'? How does this motive affect the reliability of the source?",
+                    "model": "Ludendorff's primary motive was self-preservation. As a military leader, he wanted to shift the blame for Germany's defeat away from his own strategic failures on the battlefield and onto the new democratic politicians at home. Because he is actively lying to protect his own reputation and the honour of the army, the source is highly unreliable as an objective account of why Germany lost the war."
                 }
             ]
         },
