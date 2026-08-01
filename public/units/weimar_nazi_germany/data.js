@@ -406,6 +406,18 @@ export const unitData = {
                     ],
                     "answer": 1
                 }
+            ],
+            "exam_practice": [
+                {
+                    "type": "q2b",
+                    "question": "Explain why the German Revolution of 1918 occurred.",
+                    "marks": 12,
+                    "stimulus": [
+                        "Military defeat / the blockade",
+                        "The Kiel Mutiny",
+                        "The abdication of the Kaiser"
+                    ]
+                }
             ]
         },
         {
