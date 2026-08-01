@@ -374,6 +374,11 @@ allDirs.forEach(unitId => {
         const kiRegex = /\[Key Individual:\s*(.+)\]/ig;
         textToRender = textToRender.replace(kiRegex, (match, p1) => {
            const name = p1.trim();
+           
+           if (unitId === 'weimar_nazi_germany') {
+               return `<strong>${name}</strong>`;
+           }
+           
            let person = null;
            if (unitData.biographies) person = unitData.biographies.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
            if (!person && unitData.key_individuals) person = unitData.key_individuals.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
