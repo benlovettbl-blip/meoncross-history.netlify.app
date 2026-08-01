@@ -3180,83 +3180,203 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "Who was the leader of the SS, who eventually took control of all police forces in Germany?",
-                    "a": "Heinrich Himmler"
+                    "a": "Heinrich Himmler",
+                    "options": [
+                        "Heinrich Himmler",
+                        "Ernst Röhm",
+                        "Joseph Goebbels",
+                        "Hermann Goering"
+                    ]
                 },
                 {
                     "q": "What does the abbreviation 'SD' stand for?",
-                    "a": "Sicherheitsdienst / Security Service"
+                    "a": "Sicherheitsdienst / Security Service",
+                    "options": [
+                        "Sturmabteilung / Storm Detachment",
+                        "Sicherheitsdienst / Security Service",
+                        "Staatspolizei / State Police",
+                        "Schutzstaffel / Protection Squadron"
+                    ]
                 },
                 {
                     "q": "What was the RSHA, created in 1939 under Reinhard Heydrich?",
-                    "a": "The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together"
+                    "a": "The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together",
+                    "options": [
+                        "The secret police force that replaced the Gestapo",
+                        "The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together",
+                        "The Ministry of Public Enlightenment and Propaganda",
+                        "A network of early concentration camps in Bavaria"
+                    ]
                 },
                 {
                     "q": "What was the specific job of the SD?",
-                    "a": "Intelligence gathering / spying on opponents and keeping index cards on them"
+                    "a": "Intelligence gathering / spying on opponents and keeping index cards on them",
+                    "options": [
+                        "Patrolling the streets in uniform to intimidate voters",
+                        "Guarding the concentration camps",
+                        "Arresting people in the middle of the night and interrogating them",
+                        "Intelligence gathering / spying on opponents and keeping index cards on them"
+                    ]
                 },
                 {
                     "q": "Because the Gestapo was actually quite small, who did they rely on for 80% of their information?",
-                    "a": "Ordinary citizens / informers denouncing their neighbours"
+                    "a": "Ordinary citizens / informers denouncing their neighbours",
+                    "options": [
+                        "The regular local police force",
+                        "Ordinary citizens / informers denouncing their neighbours",
+                        "Undercover SS officers working in factories",
+                        "Secret listening devices planted in homes"
+                    ]
                 },
                 {
                     "q": "What is the German term for 'Protective Custody', which allowed the Gestapo to arrest people without trial?",
-                    "a": "Schutzhaft"
+                    "a": "Schutzhaft",
+                    "options": [
+                        "Lebensraum",
+                        "Dolchstoß",
+                        "Schutzhaft",
+                        "Gleichschaltung"
+                    ]
                 },
                 {
                     "q": "What was the name of the compulsory organisation that all German judges were forced to join?",
-                    "a": "The National Socialist League for the Maintenance of the Law"
+                    "a": "The National Socialist League for the Maintenance of the Law",
+                    "options": [
+                        "The Reich Judicial Chamber",
+                        "The Gestapo Legal Department",
+                        "The National Socialist League for the Maintenance of the Law",
+                        "The People's Court"
+                    ]
                 },
                 {
                     "q": "What was the name of the new court set up in 1934 to hear cases of treason without a jury?",
-                    "a": "The People's Court"
+                    "a": "The People's Court",
+                    "options": [
+                        "The Supreme Court of Justice",
+                        "The Nuremberg Court",
+                        "The Reichstag Tribunal",
+                        "The People's Court"
+                    ]
                 },
                 {
                     "q": "Name the first concentration camp, opened in Germany in 1933.",
-                    "a": "Dachau"
+                    "a": "Dachau",
+                    "options": [
+                        "Dachau",
+                        "Buchenwald",
+                        "Treblinka",
+                        "Auschwitz"
+                    ]
                 },
                 {
                     "q": "In the years 1933–39, which specific groups of people made up the vast majority of concentration camp inmates?",
-                    "a": "Political prisoners / Communists / Trade Unionists"
+                    "a": "Political prisoners / Communists / Trade Unionists",
+                    "options": [
+                        "Corrupt businessmen and bankers",
+                        "Jewish people and their families",
+                        "Captured enemy soldiers from foreign wars",
+                        "Political prisoners / Communists / Trade Unionists"
+                    ]
                 },
                 {
                     "q": "In what month and year did Hitler sign the Concordat with the Catholic Church?",
-                    "a": "July 1933"
+                    "a": "July 1933",
+                    "options": [
+                        "July 1933",
+                        "January 1933",
+                        "November 1938",
+                        "August 1934"
+                    ]
                 },
                 {
                     "q": "Under the Concordat, what did the Pope agree to do?",
-                    "a": "Keep the Catholic Church out of German politics"
+                    "a": "Keep the Catholic Church out of German politics",
+                    "options": [
+                        "Keep the Catholic Church out of German politics",
+                        "Merge the Catholic Church with the Protestant Reich Church",
+                        "Support the Nazi Party in all local elections",
+                        "Allow Catholic schools to teach Nazi Race Studies"
+                    ]
                 },
                 {
                     "q": "Who was placed in charge of the newly created Ministry of Church Affairs in 1935?",
-                    "a": "Hanns Kerrl"
+                    "a": "Hanns Kerrl",
+                    "options": [
+                        "Dietrich Bonhoeffer",
+                        "Ludwig Müller",
+                        "Martin Niemöller",
+                        "Hanns Kerrl"
+                    ]
                 },
                 {
                     "q": "Give one example of how Hitler broke the Concordat.",
-                    "a": "He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests"
+                    "a": "He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests",
+                    "options": [
+                        "He ordered the Pope to be arrested during a visit to Berlin",
+                        "He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests",
+                        "He completely banned Catholicism and forced everyone to become Protestant",
+                        "He forced Catholic priests to wear the swastika during Mass"
+                    ]
                 },
                 {
                     "q": "What was the title of the angry letter the Pope had smuggled into Germany and read out in 1937?",
-                    "a": "'Mit brennender Sorge' / With Burning Concern"
+                    "a": "'Mit brennender Sorge' / With Burning Concern",
+                    "options": [
+                        "'Mit brennender Sorge' / With Burning Concern",
+                        "'Mein Kampf' / My Struggle",
+                        "'Dolchstoßlegende' / Stab-in-the-back myth",
+                        "'Glaube und Schönheit' / Faith and Beauty"
+                    ]
                 },
                 {
                     "q": "What was the name of the official, Nazified Protestant church set up by the government?",
-                    "a": "The Reich Church"
+                    "a": "The Reich Church",
+                    "options": [
+                        "The German Catholic League",
+                        "The Reich Church",
+                        "The Confessional Church",
+                        "The People's Church"
+                    ]
                 },
                 {
                     "q": "Who was appointed as the 'Reich Bishop' to lead the Nazified Protestant church?",
-                    "a": "Ludwig Müller"
+                    "a": "Ludwig Müller",
+                    "options": [
+                        "Dietrich Bonhoeffer",
+                        "Martin Niemöller",
+                        "Ludwig Müller",
+                        "Hanns Kerrl"
+                    ]
                 },
                 {
                     "q": "What did members of the Reich Church proudly call themselves?",
-                    "a": "'German Christians'"
+                    "a": "'German Christians'",
+                    "options": [
+                        "'German Christians'",
+                        "'Aryan Believers'",
+                        "'The Pure Christians'",
+                        "'Hitler's Flock'"
+                    ]
                 },
                 {
                     "q": "What was the name of the illegal, breakaway Protestant church set up in opposition to the Nazis?",
-                    "a": "The Confessional Church"
+                    "a": "The Confessional Church",
+                    "options": [
+                        "The Edelweiss Church",
+                        "The Reich Church",
+                        "The Free German Church",
+                        "The Confessional Church"
+                    ]
                 },
                 {
                     "q": "Name one of the key leaders of the Confessional Church who opposed the Nazis.",
-                    "a": "Martin Niemöller or Dietrich Bonhoeffer"
+                    "a": "Martin Niemöller or Dietrich Bonhoeffer",
+                    "options": [
+                        "Martin Niemöller or Dietrich Bonhoeffer",
+                        "Hanns Kerrl",
+                        "Ludwig Müller",
+                        "Bernhard Rust"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -3381,83 +3501,203 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "Who was appointed as the Minister of Public Enlightenment and Propaganda in 1933?",
-                    "a": "Joseph Goebbels"
+                    "a": "Joseph Goebbels",
+                    "options": [
+                        "Hermann Goering",
+                        "Joseph Goebbels",
+                        "Heinrich Himmler",
+                        "Albert Speer"
+                    ]
                 },
                 {
                     "q": "What was the 'Editor's Law' of 1933?",
-                    "a": "A law making newspaper editors personally responsible for anything printed in their papers"
+                    "a": "A law making newspaper editors personally responsible for anything printed in their papers",
+                    "options": [
+                        "A law shutting down all newspapers except the Nazi daily paper",
+                        "A law making newspaper editors personally responsible for anything printed in their papers",
+                        "A law making it illegal to own a printing press",
+                        "A law forcing editors to write positive reviews of Nazi films"
+                    ]
                 },
                 {
                     "q": "What was the name of the Nazi publishing house that bought up 82% of all German newspapers by 1939?",
-                    "a": "The Eher Verlag"
+                    "a": "The Eher Verlag",
+                    "options": [
+                        "The Volksempfänger",
+                        "The Reich Chamber of Press",
+                        "The Eher Verlag",
+                        "Der Stürmer"
+                    ]
                 },
                 {
                     "q": "What happened in Berlin and other university towns in May 1933?",
-                    "a": "Massive book burnings of works by Jewish and communist authors"
+                    "a": "Massive book burnings of works by Jewish and communist authors",
+                    "options": [
+                        "Jewish students were banned from attending university classes",
+                        "A huge strike by university professors protesting the Nazis",
+                        "Massive book burnings of works by Jewish and communist authors",
+                        "The first compulsory Hitler Youth rallies"
+                    ]
                 },
                 {
                     "q": "What was the German name for the cheap, mass-produced 'People's Receiver' radio?",
-                    "a": "Volksempfänger"
+                    "a": "Volksempfänger",
+                    "options": [
+                        "Volksempfänger",
+                        "Lebensraum",
+                        "Eher Verlag",
+                        "Gleichschaltung"
+                    ]
                 },
                 {
                     "q": "Why were the Nazi radios deliberately designed with short range?",
-                    "a": "So Germans could not pick up foreign broadcasts like the BBC"
+                    "a": "So Germans could not pick up foreign broadcasts like the BBC",
+                    "options": [
+                        "So Germans could not pick up foreign broadcasts like the BBC",
+                        "To prevent people from communicating with the Edelweiss Pirates",
+                        "So they would break quickly, forcing people to buy replacements",
+                        "Because cheap materials were used to keep the price down"
+                    ]
                 },
                 {
                     "q": "How did the Nazis ensure people listened to Hitler's speeches even if they weren't at home?",
-                    "a": "They put loudspeakers in streets and sounded sirens in factories to stop work"
+                    "a": "They put loudspeakers in streets and sounded sirens in factories to stop work",
+                    "options": [
+                        "They made it illegal to walk on the streets while Hitler was talking",
+                        "They forced employers to pay workers extra if they listened to speeches",
+                        "They put loudspeakers in streets and sounded sirens in factories to stop work",
+                        "They delivered printed transcripts of the speech to every house within an hour"
+                    ]
                 },
                 {
                     "q": "In which city did the Nazis hold their massive, carefully choreographed annual rallies?",
-                    "a": "Nuremberg"
+                    "a": "Nuremberg",
+                    "options": [
+                        "Weimar",
+                        "Munich",
+                        "Nuremberg",
+                        "Berlin"
+                    ]
                 },
                 {
                     "q": "Who was the architect who designed the 'Cathedral of Light' for the Nuremberg Rallies?",
-                    "a": "Albert Speer"
+                    "a": "Albert Speer",
+                    "options": [
+                        "Walter Gropius",
+                        "Joseph Goebbels",
+                        "Albert Speer",
+                        "Heinrich Himmler"
+                    ]
                 },
                 {
                     "q": "What was the name of the famous female film director who made 'Triumph of the Will'?",
-                    "a": "Leni Riefenstahl"
+                    "a": "Leni Riefenstahl",
+                    "options": [
+                        "Gertrud Scholtz-Klink",
+                        "Leni Riefenstahl",
+                        "Judith Kerr",
+                        "Marlene Dietrich"
+                    ]
                 },
                 {
                     "q": "Why were 80% of Nazi films actually comedies or dramas rather than blatant propaganda?",
-                    "a": "Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment"
+                    "a": "Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment",
+                    "options": [
+                        "Because Leni Riefenstahl refused to make more political films after 1935",
+                        "Hitler personally preferred watching comedies",
+                        "Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment",
+                        "Because the German public refused to buy tickets to propaganda films"
+                    ]
                 },
                 {
                     "q": "In what year did Berlin host the Olympic Games?",
-                    "a": "1936"
+                    "a": "1936",
+                    "options": [
+                        "1938",
+                        "1939",
+                        "1933",
+                        "1936"
+                    ]
                 },
                 {
                     "q": "Give one example of how the Nazis hid their true nature during the Olympics.",
-                    "a": "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers"
+                    "a": "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers",
+                    "options": [
+                        "They allowed all Jewish athletes to compete for the German team",
+                        "Hitler refused to attend the games to avoid controversy",
+                        "They allowed the Communist Party to campaign during the Games",
+                        "They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers"
+                    ]
                 },
                 {
                     "q": "Who was the African-American athlete who won four gold medals at the 1936 Olympics?",
-                    "a": "Jesse Owens"
+                    "a": "Jesse Owens",
+                    "options": [
+                        "Carl Lewis",
+                        "Muhammad Ali",
+                        "Jackie Robinson",
+                        "Jesse Owens"
+                    ]
                 },
                 {
                     "q": "How many gold medals did Germany win at the 1936 Olympics, allowing Goebbels to claim it was a domestic triumph?",
-                    "a": "33 gold medals"
+                    "a": "33 gold medals",
+                    "options": [
+                        "12 gold medals",
+                        "50 gold medals",
+                        "33 gold medals",
+                        "21 gold medals"
+                    ]
                 },
                 {
                     "q": "What organisation did all artists, writers, and musicians have to join to get work?",
-                    "a": "The Reich Chamber of Culture"
+                    "a": "The Reich Chamber of Culture",
+                    "options": [
+                        "The National Socialist Teachers' League",
+                        "The German Labour Front",
+                        "The Reich Chamber of Culture",
+                        "The Eher Verlag"
+                    ]
                 },
                 {
                     "q": "What was the Nazi term for modern, abstract art that they completely banned?",
-                    "a": "Degenerate Art / Entartete Kunst"
+                    "a": "Degenerate Art / Entartete Kunst",
+                    "options": [
+                        "Bolshevik Art",
+                        "Weimar Art",
+                        "Jewish Art",
+                        "Degenerate Art / Entartete Kunst"
+                    ]
                 },
                 {
                     "q": "What was the purpose of the 1937 'Degenerate Art Exhibition' in Munich?",
-                    "a": "To deliberately display banned modern art so the German public could mock and laugh at it"
+                    "a": "To deliberately display banned modern art so the German public could mock and laugh at it",
+                    "options": [
+                        "To deliberately display banned modern art so the German public could mock and laugh at it",
+                        "To showcase the new heroic, realistic style of art the Nazis approved of",
+                        "To burn all the modern paintings in a massive public bonfire",
+                        "To sell off the banned paintings to wealthy foreign buyers to raise money"
+                    ]
                 },
                 {
                     "q": "Why did Hitler and Albert Speer build their architecture on such a massive scale?",
-                    "a": "To make the individual feel small and the Nazi State feel eternal and powerful"
+                    "a": "To make the individual feel small and the Nazi State feel eternal and powerful",
+                    "options": [
+                        "Because classical Roman architecture was the only style they knew how to design",
+                        "To compete with the skyscrapers being built in New York",
+                        "Because they needed massive spaces to hold all the new factory workers",
+                        "To make the individual feel small and the Nazi State feel eternal and powerful"
+                    ]
                 },
                 {
                     "q": "Which genre of music did the Nazis ban because they racistly viewed it as 'black music'?",
-                    "a": "Jazz"
+                    "a": "Jazz",
+                    "options": [
+                        "Classical",
+                        "Opera",
+                        "Jazz",
+                        "Folk music"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -3589,83 +3829,203 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "What is the term for low-level, non-violent opposition, such as telling an anti-Nazi joke or working slowly?",
-                    "a": "Passive Resistance"
+                    "a": "Passive Resistance",
+                    "options": [
+                        "Active Resistance",
+                        "Gleichschaltung",
+                        "Passive Resistance",
+                        "Subversion"
+                    ]
                 },
                 {
                     "q": "Roughly how many Germans were sent to concentration camps for political offenses between 1933 and 1939?",
-                    "a": "1.3 million"
+                    "a": "1.3 million",
+                    "options": [
+                        "1.3 million",
+                        "6 million",
+                        "500,000",
+                        "100,000"
+                    ]
                 },
                 {
                     "q": "What was the name of the secret intelligence reports smuggled out of Germany by the exiled SPD?",
-                    "a": "The Sopade reports"
+                    "a": "The Sopade reports",
+                    "options": [
+                        "The Red Orchestra files",
+                        "The Sopade reports",
+                        "The Munich reports",
+                        "The Edelweiss reports"
+                    ]
                 },
                 {
                     "q": "Since trade unions were banned, give two subtle ways industrial workers resisted the Nazis in factories.",
-                    "a": "Sabotaging machinery / absenteeism / working deliberately slowly"
+                    "a": "Sabotaging machinery / absenteeism / working deliberately slowly",
+                    "options": [
+                        "Printing anti-Nazi newspapers inside the factories / holding union meetings",
+                        "Going on nationwide strikes / protesting in the streets",
+                        "Sabotaging machinery / absenteeism / working deliberately slowly",
+                        "Assassinating their factory managers / setting fire to buildings"
+                    ]
                 },
                 {
                     "q": "Who was the German carpenter who planted a time bomb in a Munich beer hall in November 1939?",
-                    "a": "Georg Elser"
+                    "a": "Georg Elser",
+                    "options": [
+                        "Georg Elser",
+                        "Martin Niemöller",
+                        "Marinus van der Lubbe",
+                        "Dietrich Bonhoeffer"
+                    ]
                 },
                 {
                     "q": "Why did Georg Elser's assassination attempt fail?",
-                    "a": "Hitler finished his speech early and left the building 13 minutes before the bomb went off"
+                    "a": "Hitler finished his speech early and left the building 13 minutes before the bomb went off",
+                    "options": [
+                        "The bomb was a dud and failed to explode",
+                        "Hitler finished his speech early and left the building 13 minutes before the bomb went off",
+                        "The Gestapo discovered the plot and arrested him beforehand",
+                        "He accidentally placed the bomb in the wrong beer hall"
+                    ]
                 },
                 {
                     "q": "Which top German Army General resigned in 1938 in protest of Hitler's aggressive foreign policy?",
-                    "a": "General Ludwig Beck"
+                    "a": "General Ludwig Beck",
+                    "options": [
+                        "General Kurt von Schleicher",
+                        "General Paul von Hindenburg",
+                        "General Erich Ludendorff",
+                        "General Ludwig Beck"
+                    ]
                 },
                 {
                     "q": "Who was the religious martyr murdered in 1939, known as the 'Preacher of Buchenwald'?",
-                    "a": "Pastor Paul Schneider"
+                    "a": "Pastor Paul Schneider",
+                    "options": [
+                        "Ludwig Müller",
+                        "Dietrich Bonhoeffer",
+                        "Martin Niemöller",
+                        "Pastor Paul Schneider"
+                    ]
                 },
                 {
                     "q": "In what year did membership of the Hitler Youth become legally compulsory?",
-                    "a": "1936"
+                    "a": "1936",
+                    "options": [
+                        "1936",
+                        "1939",
+                        "1938",
+                        "1933"
+                    ]
                 },
                 {
                     "q": "Why did some teenagers begin to hate the Hitler Youth by the late 1930s?",
-                    "a": "It became too strict, militaristic, and focused on boring military drills"
+                    "a": "It became too strict, militaristic, and focused on boring military drills",
+                    "options": [
+                        "They were forced to attend church every Sunday",
+                        "It became too strict, militaristic, and focused on boring military drills",
+                        "They weren't allowed to play any sports at all",
+                        "It was run entirely by strict school teachers they hated"
+                    ]
                 },
                 {
                     "q": "What was the name of the working-class youth opposition group that emerged in cities like Cologne and Essen?",
-                    "a": "The Edelweiss Pirates"
+                    "a": "The Edelweiss Pirates",
+                    "options": [
+                        "The Navajos",
+                        "The Swing Youth",
+                        "The White Rose Group",
+                        "The Edelweiss Pirates"
+                    ]
                 },
                 {
                     "q": "Name one of the specific local gangs that made up the Edelweiss Pirates.",
-                    "a": "The Navajos / The Roving Dudes / The Kittelbach Pirates"
+                    "a": "The Navajos / The Roving Dudes / The Kittelbach Pirates",
+                    "options": [
+                        "The Navajos / The Roving Dudes / The Kittelbach Pirates",
+                        "The Black Hand / The Wandervogel",
+                        "The Red Orchestra / The Kreisau Circle",
+                        "The Munich Swingers / The Berlin Jazz Boys"
+                    ]
                 },
                 {
                     "q": "What symbol did the Edelweiss Pirates wear on their lapels to identify each other?",
-                    "a": "The white edelweiss flower"
+                    "a": "The white edelweiss flower",
+                    "options": [
+                        "A small silver skull",
+                        "A broken swastika",
+                        "A red star",
+                        "The white edelweiss flower"
+                    ]
                 },
                 {
                     "q": "Give two ways the Edelweiss Pirates rebelled against the Nazis.",
-                    "a": "They went on hikes / wore checked shirts / beat up Hitler Youth members"
+                    "a": "They went on hikes / wore checked shirts / beat up Hitler Youth members",
+                    "options": [
+                        "They bombed Gestapo headquarters / assassinated Nazi officials",
+                        "They secretly broadcast anti-Nazi radio programs from the woods",
+                        "They smuggled Jewish families out of the country / forged passports",
+                        "They went on hikes / wore checked shirts / beat up Hitler Youth members"
+                    ]
                 },
                 {
                     "q": "What was the name of the middle-class youth opposition group found in cities like Berlin and Hamburg?",
-                    "a": "The Swing Youth"
+                    "a": "The Swing Youth",
+                    "options": [
+                        "The Wandervogel",
+                        "The White Rose Group",
+                        "The Swing Youth",
+                        "The Edelweiss Pirates"
+                    ]
                 },
                 {
                     "q": "How did the social class of the Swing Youth differ from the Edelweiss Pirates?",
-                    "a": "The Swing Youth were middle/upper class; the Pirates were working class"
+                    "a": "The Swing Youth were middle/upper class; the Pirates were working class",
+                    "options": [
+                        "Both groups were entirely made up of wealthy university students",
+                        "The Swing Youth were middle/upper class; the Pirates were working class",
+                        "The Swing Youth were farmers; the Pirates were city workers",
+                        "The Swing Youth were working class; the Pirates were middle class"
+                    ]
                 },
                 {
                     "q": "What banned genre of music did the Swing Youth illegally listen to?",
-                    "a": "American Jazz and Swing"
+                    "a": "American Jazz and Swing",
+                    "options": [
+                        "American Jazz and Swing",
+                        "Russian Folk Music",
+                        "French Classical",
+                        "British Rock and Roll"
+                    ]
                 },
                 {
                     "q": "Why did the Nazis hate Jazz music?",
-                    "a": "Because of its African-American origins, they viewed it as racially inferior / 'black music'"
+                    "a": "Because of its African-American origins, they viewed it as racially inferior / 'black music'",
+                    "options": [
+                        "Because the lyrics were usually anti-government",
+                        "Because the instruments were too expensive to produce in Germany",
+                        "Because of its African-American origins, they viewed it as racially inferior / 'black music'",
+                        "Because it was invented by Jewish composers"
+                    ]
                 },
                 {
                     "q": "How did the girls in the Swing Youth rebel against the Nazi ideal of German womanhood?",
-                    "a": "They wore makeup and fashionable clothes, rather than the natural 'peasant' look"
+                    "a": "They wore makeup and fashionable clothes, rather than the natural 'peasant' look",
+                    "options": [
+                        "They publicly burned their BDM uniforms in the street",
+                        "They wore makeup and fashionable clothes, rather than the natural 'peasant' look",
+                        "They refused to ever get married or have children",
+                        "They shaved their heads and dressed entirely in black"
+                    ]
                 },
                 {
                     "q": "Before 1939, how did the Gestapo usually punish Edelweiss Pirates who were caught?",
-                    "a": "They arrested them, shaved their heads, and beat them, but rarely killed them"
+                    "a": "They arrested them, shaved their heads, and beat them, but rarely killed them",
+                    "options": [
+                        "They executed them publicly by hanging",
+                        "They arrested them, shaved their heads, and beat them, but rarely killed them",
+                        "They simply sent them home with a warning letter to their parents",
+                        "They immediately sent them to extermination camps"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -3794,83 +4154,203 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "What three German words (starting with K) summarised the traditional Nazi ideal for women?",
-                    "a": "Kinder, Küche, Kirche"
+                    "a": "Kinder, Küche, Kirche",
+                    "options": [
+                        "Krankheit, Kontrolle, Kreuz",
+                        "Kinder, Küche, Kirche",
+                        "Krieg, Kunst, Kaiser",
+                        "Kraft, Kultur, Kampf"
+                    ]
                 },
                 {
                     "q": "Translate those three words into English.",
-                    "a": "Children, Kitchen, Church"
+                    "a": "Children, Kitchen, Church",
+                    "options": [
+                        "Children, Kitchen, Church",
+                        "Strength, Culture, Struggle",
+                        "War, Art, Emperor",
+                        "Sickness, Control, Cross"
+                    ]
                 },
                 {
                     "q": "What was the name of the 1933 law that gave couples 1,000 marks to marry?",
-                    "a": "The Law for the Encouragement of Marriage"
+                    "a": "The Law for the Encouragement of Marriage",
+                    "options": [
+                        "The Four Year Plan",
+                        "The Law for the Protection of German Blood",
+                        "The Nuremberg Laws",
+                        "The Law for the Encouragement of Marriage"
+                    ]
                 },
                 {
                     "q": "What was the condition placed on the wife for the couple to receive this loan?",
-                    "a": "She had to quit her job"
+                    "a": "She had to quit her job",
+                    "options": [
+                        "She had to quit her job",
+                        "She had to swear loyalty to Hitler",
+                        "She had to have blonde hair and blue eyes",
+                        "She had to join the BDM"
+                    ]
                 },
                 {
                     "q": "How much of the marriage loan was forgiven for each child born?",
-                    "a": "25% / one quarter"
+                    "a": "25% / one quarter",
+                    "options": [
+                        "100% / all of it",
+                        "10%",
+                        "50% / one half",
+                        "25% / one quarter"
+                    ]
                 },
                 {
                     "q": "How many children did a woman have to give birth to in order to win the Gold Mother's Cross?",
-                    "a": "8 or more"
+                    "a": "8 or more",
+                    "options": [
+                        "8 or more",
+                        "10",
+                        "6",
+                        "4"
+                    ]
                 },
                 {
                     "q": "What did Hitler Youth members have to do if they saw a woman wearing a Gold Mother's Cross?",
-                    "a": "Salute her"
+                    "a": "Salute her",
+                    "options": [
+                        "Carry her shopping",
+                        "Salute her",
+                        "Give her money",
+                        "Sing the Nazi anthem"
+                    ]
                 },
                 {
                     "q": "What was the name of the SS 'Spring of Life' breeding programme started by Heinrich Himmler in 1935?",
-                    "a": "Lebensborn"
+                    "a": "Lebensborn",
+                    "options": [
+                        "Gleichschaltung",
+                        "Lebensraum",
+                        "Lebensborn",
+                        "Kraft durch Freude"
+                    ]
                 },
                 {
                     "q": "What did the 1933 Sterilisation Law allow the government to do?",
-                    "a": "Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers"
+                    "a": "Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers",
+                    "options": [
+                        "Ban women from buying birth control",
+                        "Close down all maternity wards in Jewish hospitals",
+                        "Force all women to have children before age 30",
+                        "Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers"
+                    ]
                 },
                 {
                     "q": "Give two ways the Nazis wanted the ideal Aryan woman to style her hair.",
-                    "a": "Tied back in a bun or in traditional plaits/braids"
+                    "a": "Tied back in a bun or in traditional plaits/braids",
+                    "options": [
+                        "Cut very short in a bob",
+                        "Left completely loose and unbrushed",
+                        "Dyed blonde and curled",
+                        "Tied back in a bun or in traditional plaits/braids"
+                    ]
                 },
                 {
                     "q": "Why were women heavily discouraged from slimming/dieting?",
-                    "a": "The Nazis believed heavier women had easier childbirths/produced healthier babies"
+                    "a": "The Nazis believed heavier women had easier childbirths/produced healthier babies",
+                    "options": [
+                        "The Nazis believed heavier women had easier childbirths/produced healthier babies",
+                        "Hitler personally hated thin women",
+                        "There was a national food shortage",
+                        "It was considered an American capitalist trend"
+                    ]
                 },
                 {
                     "q": "Who was the 'Reich Women's Leader' in charge of all female organisations?",
-                    "a": "Gertrud Scholtz-Klink"
+                    "a": "Gertrud Scholtz-Klink",
+                    "options": [
+                        "Leni Riefenstahl",
+                        "Eva Braun",
+                        "Sophie Scholl",
+                        "Gertrud Scholtz-Klink"
+                    ]
                 },
                 {
                     "q": "What was the difference between the NSF and the DFW?",
-                    "a": "The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills"
+                    "a": "The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills",
+                    "options": [
+                        "The NSF taught politics; the DFW taught combat training",
+                        "The NSF was for factory workers; the DFW was for office workers",
+                        "The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills",
+                        "The NSF was for young girls; the DFW was for married women"
+                    ]
                 },
                 {
                     "q": "What was the legal quota cap placed on female university enrolment?",
-                    "a": "Maximum 10%"
+                    "a": "Maximum 10%",
+                    "options": [
+                        "Maximum 25%",
+                        "Maximum 10%",
+                        "Maximum 50%",
+                        "Maximum 5%"
+                    ]
                 },
                 {
                     "q": "Which female professionals were immediately forced to give up their jobs in 1933?",
-                    "a": "Female teachers, doctors, and civil servants"
+                    "a": "Female teachers, doctors, and civil servants",
+                    "options": [
+                        "Female factory workers and farmers",
+                        "Female teachers, doctors, and civil servants",
+                        "Female nurses and midwives",
+                        "Female shop assistants and waitresses"
+                    ]
                 },
                 {
                     "q": "What profession were women completely banned from entering in 1936?",
-                    "a": "The legal profession / becoming judges or lawyers"
+                    "a": "The legal profession / becoming judges or lawyers",
+                    "options": [
+                        "Medicine and nursing",
+                        "The teaching profession",
+                        "Acting and film directing",
+                        "The legal profession / becoming judges or lawyers"
+                    ]
                 },
                 {
                     "q": "What economic plan, introduced by Göring in 1936, forced the Nazis to change their minds about women working?",
-                    "a": "The Four Year Plan for rearmament"
+                    "a": "The Four Year Plan for rearmament",
+                    "options": [
+                        "The Dawes Plan",
+                        "The Four Year Plan for rearmament",
+                        "The New Plan for trade",
+                        "The Young Plan"
+                    ]
                 },
                 {
                     "q": "Why did the Four Year Plan mean women had to go back to work?",
-                    "a": "Men were joining the army, creating a massive labor shortage in factories"
+                    "a": "Men were joining the army, creating a massive labor shortage in factories",
+                    "options": [
+                        "Hitler realised women were better at building weapons",
+                        "Men were joining the army, creating a massive labor shortage in factories",
+                        "Women were protesting in the streets for their jobs back",
+                        "The government ran out of money for marriage loans"
+                    ]
                 },
                 {
                     "q": "What was the 'Compulsory Duty Year' introduced in 1937?",
-                    "a": "A policy forcing young women to work on farms or in factories"
+                    "a": "A policy forcing young women to work on farms or in factories",
+                    "options": [
+                        "A policy forcing young women to attend university",
+                        "A policy forcing young women to marry SS officers",
+                        "A policy forcing young women to work on farms or in factories",
+                        "A policy forcing young women to join the army"
+                    ]
                 },
                 {
                     "q": "Did female employment go up or down between 1933 and 1939? (Give the statistics if you can).",
-                    "a": "It went up, rising from 11.6 million to 14.6 million"
+                    "a": "It went up, rising from 11.6 million to 14.6 million",
+                    "options": [
+                        "It stayed exactly the same",
+                        "It went down, falling from 14.6 million to 11.6 million",
+                        "It dropped to zero by 1939",
+                        "It went up, rising from 11.6 million to 14.6 million"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -3999,83 +4479,203 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "Who was the Nazi Minister of Education?",
-                    "a": "Bernhard Rust"
+                    "a": "Bernhard Rust",
+                    "options": [
+                        "Joseph Goebbels",
+                        "Hjalmar Schacht",
+                        "Robert Ley",
+                        "Bernhard Rust"
+                    ]
                 },
                 {
                     "q": "What was the name of the compulsory union that 97% of teachers had joined by 1939?",
-                    "a": "The National Socialist Teachers' League / NSLB"
+                    "a": "The National Socialist Teachers' League / NSLB",
+                    "options": [
+                        "The Gestapo Education Wing",
+                        "The National Socialist Teachers' League / NSLB",
+                        "The German Labour Front / DAF",
+                        "The Reich Teachers' Chamber"
+                    ]
                 },
                 {
                     "q": "What happened to teachers who refused to teach Nazi ideas?",
-                    "a": "They were sacked or reported to the Gestapo"
+                    "a": "They were sacked or reported to the Gestapo",
+                    "options": [
+                        "They were sent to re-education camps in Switzerland",
+                        "They were fined 1,000 marks",
+                        "They were forced to join the army instead",
+                        "They were sacked or reported to the Gestapo"
+                    ]
                 },
                 {
                     "q": "What new compulsory subject taught students to classify races and measure skulls?",
-                    "a": "Race Studies / Eugenics"
+                    "a": "Race Studies / Eugenics",
+                    "options": [
+                        "Race Studies / Eugenics",
+                        "Physical Education",
+                        "Aryan History",
+                        "Biology"
+                    ]
                 },
                 {
                     "q": "What percentage of the school timetable was eventually taken up by Physical Education (PE)?",
-                    "a": "15%"
+                    "a": "15%",
+                    "options": [
+                        "50%",
+                        "30%",
+                        "15%",
+                        "5%"
+                    ]
                 },
                 {
                     "q": "Give an example of how mathematics was used for propaganda.",
-                    "a": "Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories"
+                    "a": "Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories",
+                    "options": [
+                        "Teaching students to calculate the interest on Jewish bank accounts",
+                        "Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories",
+                        "Banning algebra because it was invented in the Middle East",
+                        "Making students memorize the exact dates of all of Hitler's speeches"
+                    ]
                 },
                 {
                     "q": "From 1935 onwards, what book became a compulsory textbook in all schools?",
-                    "a": "Hitler's autobiography, Mein Kampf"
+                    "a": "Hitler's autobiography, Mein Kampf",
+                    "options": [
+                        "The Communist Manifesto",
+                        "The Protocols of the Elders of Zion",
+                        "Grimm's Fairy Tales",
+                        "Hitler's autobiography, Mein Kampf"
+                    ]
                 },
                 {
                     "q": "In what year were Jewish children banned from attending German state schools entirely?",
-                    "a": "1938"
+                    "a": "1938",
+                    "options": [
+                        "1933",
+                        "1938",
+                        "1939",
+                        "1935"
+                    ]
                 },
                 {
                     "q": "Name one of the two types of elite boarding schools set up for the most promising Aryan boys.",
-                    "a": "Napolas or Adolf Hitler Schools"
+                    "a": "Napolas or Adolf Hitler Schools",
+                    "options": [
+                        "Napolas or Adolf Hitler Schools",
+                        "Hitler Youth Academies",
+                        "Reich Leadership Schools",
+                        "Schutzstaffel Boarding Schools"
+                    ]
                 },
                 {
                     "q": "Who was appointed by Hitler in 1933 as the Reich Youth Leader?",
-                    "a": "Baldur von Schirach"
+                    "a": "Baldur von Schirach",
+                    "options": [
+                        "Heinrich Himmler",
+                        "Baldur von Schirach",
+                        "Ernst Röhm",
+                        "Joseph Goebbels"
+                    ]
                 },
                 {
                     "q": "What was the name of the youth group for boys aged 14-18?",
-                    "a": "Hitlerjugend / HJ / Hitler Youth"
+                    "a": "Hitlerjugend / HJ / Hitler Youth",
+                    "options": [
+                        "Wandervogel",
+                        "Hitlerjugend / HJ / Hitler Youth",
+                        "Deutsches Jungvolk / DJ",
+                        "Sturmabteilung / SA"
+                    ]
                 },
                 {
                     "q": "Give two examples of typical Hitler Youth activities for boys.",
-                    "a": "Rifle shooting, map reading, hiking, military drill"
+                    "a": "Rifle shooting, map reading, hiking, military drill",
+                    "options": [
+                        "Reading poetry and painting landscapes",
+                        "Rifle shooting, map reading, hiking, military drill",
+                        "Learning foreign languages and studying abroad",
+                        "Cooking, sewing, and nursing"
+                    ]
                 },
                 {
                     "q": "What was the ultimate goal for boys in the Hitler Youth?",
-                    "a": "To become soldiers for the army"
+                    "a": "To become soldiers for the army",
+                    "options": [
+                        "To become wealthy businessmen",
+                        "To become soldiers for the army",
+                        "To become university professors",
+                        "To become politicians in the Reichstag"
+                    ]
                 },
                 {
                     "q": "What was the name of the youth group for girls aged 14-18?",
-                    "a": "Bund Deutscher Mädel / BDM / League of German Maidens"
+                    "a": "Bund Deutscher Mädel / BDM / League of German Maidens",
+                    "options": [
+                        "Jungmädelbund / JM",
+                        "Faith and Beauty Society",
+                        "National Socialist Women's League",
+                        "Bund Deutscher Mädel / BDM / League of German Maidens"
+                    ]
                 },
                 {
                     "q": "What was the ultimate goal for girls in the BDM?",
-                    "a": "To become healthy, racially pure mothers"
+                    "a": "To become healthy, racially pure mothers",
+                    "options": [
+                        "To become nurses for the army on the front lines",
+                        "To become factory managers during wartime",
+                        "To become female politicians and leaders",
+                        "To become healthy, racially pure mothers"
+                    ]
                 },
                 {
                     "q": "What was the name of the society created in 1938 for young women aged 17-21 to stop them forgetting their domestic training?",
-                    "a": "The Faith and Beauty Society"
+                    "a": "The Faith and Beauty Society",
+                    "options": [
+                        "The Lebensborn Sisterhood",
+                        "The Reich Women's Guild",
+                        "The League of German Mothers",
+                        "The Faith and Beauty Society"
+                    ]
                 },
                 {
                     "q": "How did the Nazis use the youth movements to undermine families?",
-                    "a": "They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime"
+                    "a": "They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime",
+                    "options": [
+                        "They banned parents from speaking to their children about politics",
+                        "They paid children a salary so they wouldn't need their parents' money",
+                        "They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime",
+                        "They forced children to move out of their homes at age 10"
+                    ]
                 },
                 {
                     "q": "In what year did the Hitler Youth Law make the youth movements effectively mandatory?",
-                    "a": "1936"
+                    "a": "1936",
+                    "options": [
+                        "1933",
+                        "1935",
+                        "1939",
+                        "1936"
+                    ]
                 },
                 {
                     "q": "Roughly how many members were in the Nazi youth movements by 1939?",
-                    "a": "8 million"
+                    "a": "8 million",
+                    "options": [
+                        "1 million",
+                        "4 million",
+                        "12 million",
+                        "8 million"
+                    ]
                 },
                 {
                     "q": "Why did some young people start to hate the Hitler Youth by the late 1930s?",
-                    "a": "It became compulsory, too strict, and focused on boring military drill instead of fun"
+                    "a": "It became compulsory, too strict, and focused on boring military drill instead of fun",
+                    "options": [
+                        "It became compulsory, too strict, and focused on boring military drill instead of fun",
+                        "The camping trips were too expensive for working class families",
+                        "They were banned from wearing uniforms",
+                        "It was run by the Catholic Church"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -4208,103 +4808,253 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "How many Germans were officially unemployed when Hitler became Chancellor in 1933?",
-                    "a": "Nearly 6 million"
+                    "a": "Nearly 6 million",
+                    "options": [
+                        "Around 2 million",
+                        "Just under 500,000",
+                        "10 million",
+                        "Nearly 6 million"
+                    ]
                 },
                 {
                     "q": "What was the official unemployment figure reported by the Nazis in 1939?",
-                    "a": "Approximately 300,000"
+                    "a": "Approximately 300,000",
+                    "options": [
+                        "Zero",
+                        "6 million",
+                        "Approximately 300,000",
+                        "1.5 million"
+                    ]
                 },
                 {
                     "q": "What do the initials RAD stand for in English?",
-                    "a": "National Labour Service"
+                    "a": "National Labour Service",
+                    "options": [
+                        "National Agricultural Duty",
+                        "National Labour Service",
+                        "Reich Aviation Department",
+                        "Reich Army Division"
+                    ]
                 },
                 {
                     "q": "In what year did the RAD become compulsory for all young men aged 18–25?",
-                    "a": "1935"
+                    "a": "1935",
+                    "options": [
+                        "1933",
+                        "1939",
+                        "1935",
+                        "1938"
+                    ]
                 },
                 {
                     "q": "How long did young men have to serve in the RAD?",
-                    "a": "6 months"
+                    "a": "6 months",
+                    "options": [
+                        "6 months",
+                        "2 years",
+                        "3 months",
+                        "1 year"
+                    ]
                 },
                 {
                     "q": "By 1938, how many men were employed building the Autobahns?",
-                    "a": "Over 100,000"
+                    "a": "Over 100,000",
+                    "options": [
+                        "1 million",
+                        "500,000",
+                        "Around 10,000",
+                        "Over 100,000"
+                    ]
                 },
                 {
                     "q": "What term is used to describe the Nazi manipulation of unemployment statistics?",
-                    "a": "Invisible Unemployment"
+                    "a": "Invisible Unemployment",
+                    "options": [
+                        "The Four Year Plan",
+                        "Economic Miracle",
+                        "Gleichschaltung",
+                        "Invisible Unemployment"
+                    ]
                 },
                 {
                     "q": "Name two groups of people who were removed from the workforce but not counted in the unemployment figures.",
-                    "a": "Jews and Women"
+                    "a": "Jews and Women",
+                    "options": [
+                        "Farmers and Soldiers",
+                        "SS officers and Gestapo agents",
+                        "Teachers and Doctors",
+                        "Jews and Women"
+                    ]
                 },
                 {
                     "q": "How large did the German army grow between 1933 and 1939 after conscription was reintroduced?",
-                    "a": "From 100,000 to 1.4 million men"
+                    "a": "From 100,000 to 1.4 million men",
+                    "options": [
+                        "From 10,000 to 100,000 men",
+                        "From 100,000 to 1.4 million men",
+                        "From 500,000 to 3 million men",
+                        "From 1 million to 5 million men"
+                    ]
                 },
                 {
                     "q": "Who was the Minister of Economics responsible for the 'New Plan' (1934-1937)?",
-                    "a": "Hjalmar Schacht"
+                    "a": "Hjalmar Schacht",
+                    "options": [
+                        "Robert Ley",
+                        "Hjalmar Schacht",
+                        "Joseph Goebbels",
+                        "Hermann Goering"
+                    ]
                 },
                 {
                     "q": "Who was put in charge of the 'Four Year Plan' in 1936?",
-                    "a": "Hermann Goering"
+                    "a": "Hermann Goering",
+                    "options": [
+                        "Hjalmar Schacht",
+                        "Albert Speer",
+                        "Hermann Goering",
+                        "Heinrich Himmler"
+                    ]
                 },
                 {
                     "q": "What was the ultimate goal of the Four Year Plan?",
-                    "a": "To prepare the German economy for war within four years"
+                    "a": "To prepare the German economy for war within four years",
+                    "options": [
+                        "To colonise Eastern Europe",
+                        "To pay back all of Germany's war debts",
+                        "To completely eliminate unemployment",
+                        "To prepare the German economy for war within four years"
+                    ]
                 },
                 {
                     "q": "What is the term for the economic policy of self-sufficiency?",
-                    "a": "Autarky"
+                    "a": "Autarky",
+                    "options": [
+                        "Gleichschaltung",
+                        "Lebensraum",
+                        "Ersatz",
+                        "Autarky"
+                    ]
                 },
                 {
                     "q": "What is the German word for the artificial substitute goods developed to achieve self-sufficiency?",
-                    "a": "Ersatz"
+                    "a": "Ersatz",
+                    "options": [
+                        "Ersatz",
+                        "Kraft",
+                        "Volksempfänger",
+                        "Autarky"
+                    ]
                 },
                 {
                     "q": "Give an example of an Ersatz good.",
-                    "a": "Making rubber or oil from coal"
+                    "a": "Making rubber or oil from coal",
+                    "options": [
+                        "Making clothes from paper",
+                        "Making weapons from scrap metal",
+                        "Making rubber or oil from coal",
+                        "Making bread from sawdust"
+                    ]
                 },
                 {
                     "q": "In May 1933, what did Hitler ban to gain control over the workers?",
-                    "a": "Trade Unions"
+                    "a": "Trade Unions",
+                    "options": [
+                        "The Reichstag",
+                        "Political Parties",
+                        "Trade Unions",
+                        "Catholic Schools"
+                    ]
                 },
                 {
                     "q": "What Nazi organisation replaced trade unions?",
-                    "a": "The German Labour Front / DAF"
+                    "a": "The German Labour Front / DAF",
+                    "options": [
+                        "Strength Through Joy / KdF",
+                        "National Labour Service / RAD",
+                        "Beauty of Labour / SdA",
+                        "The German Labour Front / DAF"
+                    ]
                 },
                 {
                     "q": "Who was the leader of the DAF?",
-                    "a": "Robert Ley"
+                    "a": "Robert Ley",
+                    "options": [
+                        "Albert Speer",
+                        "Hermann Goering",
+                        "Robert Ley",
+                        "Hjalmar Schacht"
+                    ]
                 },
                 {
                     "q": "What did Strength Through Joy (KdF) provide for workers?",
-                    "a": "Cheap, subsidised leisure activities like theatre tickets and cruises"
+                    "a": "Cheap, subsidised leisure activities like theatre tickets and cruises",
+                    "options": [
+                        "Higher wages and shorter hours",
+                        "Free housing and healthcare",
+                        "Cheap, subsidised leisure activities like theatre tickets and cruises",
+                        "Better working conditions in factories"
+                    ]
                 },
                 {
                     "q": "How much did workers pay per week into the Volkswagen savings scheme?",
-                    "a": "5 marks"
+                    "a": "5 marks",
+                    "options": [
+                        "50 marks",
+                        "1 mark",
+                        "5 marks",
+                        "10 marks"
+                    ]
                 },
                 {
                     "q": "Why was the Volkswagen scheme a massive scam?",
-                    "a": "Production shifted to military vehicles in 1939; no one got a car and no money was refunded"
+                    "a": "Production shifted to military vehicles in 1939; no one got a car and no money was refunded",
+                    "options": [
+                        "Production shifted to military vehicles in 1939; no one got a car and no money was refunded",
+                        "Only Nazi Party officials were allowed to buy them",
+                        "The factory was never actually built",
+                        "The cars were badly built and broke down immediately"
+                    ]
                 },
                 {
                     "q": "What was the catch with the 'Beauty of Labour' (SdA) improvements?",
-                    "a": "Workers had to build the new facilities themselves during their unpaid free time"
+                    "a": "Workers had to build the new facilities themselves during their unpaid free time",
+                    "options": [
+                        "The government secretly filmed the workers in the break rooms",
+                        "Workers had to build the new facilities themselves during their unpaid free time",
+                        "The factories charged workers to use the new canteens and toilets",
+                        "Only SS members were allowed to use the facilities"
+                    ]
                 },
                 {
                     "q": "How much did the average working week increase between 1933 and 1939?",
-                    "a": "From 43 hours to 49 hours"
+                    "a": "From 43 hours to 49 hours",
+                    "options": [
+                        "It actually decreased to 40 hours",
+                        "From 50 hours to 60 hours",
+                        "From 43 hours to 49 hours",
+                        "From 35 hours to 40 hours"
+                    ]
                 },
                 {
                     "q": "Which phrase describes the tension between military spending and consumer goods?",
-                    "a": "'Guns versus Butter'"
+                    "a": "'Guns versus Butter'",
+                    "options": [
+                        "'Guns versus Butter'",
+                        "'Strength Through Joy'",
+                        "'Blood and Soil'",
+                        "'Bread and Work'"
+                    ]
                 },
                 {
                     "q": "Did 'real wages' (purchasing power) for the average worker improve by 1939?",
-                    "a": "No, because food prices rose faster than their wages"
+                    "a": "No, because food prices rose faster than their wages",
+                    "options": [
+                        "Yes, because taxes were completely abolished",
+                        "No, because all wages were paid in Ersatz money",
+                        "No, because food prices rose faster than their wages",
+                        "Yes, they were much richer than before 1933"
+                    ]
                 }
             ],
             "gcse_task": {
@@ -4433,103 +5183,253 @@ export const unitData = {
             "quiz": [
                 {
                     "q": "What twisted biological theory underpinned Hitler's racial ideology?",
-                    "a": "Social Darwinism"
+                    "a": "Social Darwinism",
+                    "options": [
+                        "Capitalism",
+                        "Eugenics",
+                        "Social Darwinism",
+                        "Marxism"
+                    ]
                 },
                 {
                     "q": "What did the term 'Untermenschen' mean?",
-                    "a": "Sub-humans"
+                    "a": "Sub-humans",
+                    "options": [
+                        "Traitors",
+                        "Super-humans",
+                        "Master Race",
+                        "Sub-humans"
+                    ]
                 },
                 {
                     "q": "Give two examples of groups the Nazis considered 'Asocials'.",
-                    "a": "Homosexuals, vagrants, alcoholics"
+                    "a": "Homosexuals, vagrants, alcoholics",
+                    "options": [
+                        "Homosexuals, vagrants, alcoholics",
+                        "Trade unionists and teachers",
+                        "Jewish people and Roma",
+                        "Communists and Social Democrats"
+                    ]
                 },
                 {
                     "q": "What was the name of the 1933 law that allowed the government to surgically prevent disabled people from having children?",
-                    "a": "The Law for the Prevention of Hereditarily Diseased Offspring"
+                    "a": "The Law for the Prevention of Hereditarily Diseased Offspring",
+                    "options": [
+                        "The Law for the Protection of German Blood",
+                        "The Nuremberg Laws",
+                        "The Sterilisation Act",
+                        "The Law for the Prevention of Hereditarily Diseased Offspring"
+                    ]
                 },
                 {
                     "q": "Roughly how many people were forcibly sterilised under this law?",
-                    "a": "400,000"
+                    "a": "400,000",
+                    "options": [
+                        "10,000",
+                        "1.5 million",
+                        "400,000",
+                        "50,000"
+                    ]
                 },
                 {
                     "q": "What was the T4 programme introduced in 1939?",
-                    "a": "A secret state euthanasia programme killing disabled babies and children"
+                    "a": "A secret state euthanasia programme killing disabled babies and children",
+                    "options": [
+                        "The code name for the invasion of Poland",
+                        "A programme to breed racially pure Aryan children",
+                        "A secret programme to build the atomic bomb",
+                        "A secret state euthanasia programme killing disabled babies and children"
+                    ]
                 },
                 {
                     "q": "Where were hundreds of Roma and Sinti forced to live ahead of the 1936 Berlin Olympics?",
-                    "a": "The Marzahn internment camp"
+                    "a": "The Marzahn internment camp",
+                    "options": [
+                        "The Warsaw Ghetto",
+                        "The Marzahn internment camp",
+                        "The Munich Olympic Village",
+                        "Auschwitz concentration camp"
+                    ]
                 },
                 {
                     "q": "Why were homosexual men targeted by the Nazis?",
-                    "a": "They did not fit the traditional family ideal and did not produce children for the Reich"
+                    "a": "They did not fit the traditional family ideal and did not produce children for the Reich",
+                    "options": [
+                        "They did not fit the traditional family ideal and did not produce children for the Reich",
+                        "They were usually communists",
+                        "They refused to join the army",
+                        "They were considered a threat to Hitler's leadership"
+                    ]
                 },
                 {
                     "q": "What colour triangle were homosexual prisoners forced to wear in concentration camps?",
-                    "a": "Pink"
+                    "a": "Pink",
+                    "options": [
+                        "Pink",
+                        "Black",
+                        "Yellow",
+                        "Red"
+                    ]
                 },
                 {
                     "q": "In what month and year did the SA lead a one-day boycott of Jewish shops and businesses?",
-                    "a": "April 1933"
+                    "a": "April 1933",
+                    "options": [
+                        "September 1935",
+                        "April 1933",
+                        "November 1938",
+                        "January 1933"
+                    ]
                 },
                 {
                     "q": "What 1933 law resulted in Jewish teachers, judges, and government workers losing their jobs?",
-                    "a": "The Civil Service Act"
+                    "a": "The Civil Service Act",
+                    "options": [
+                        "The Enabling Act",
+                        "The Nuremberg Laws",
+                        "The Civil Service Act",
+                        "The Law against the Overcrowding of German Schools"
+                    ]
                 },
                 {
                     "q": "In what year were the Nuremberg Laws passed?",
-                    "a": "1935"
+                    "a": "1935",
+                    "options": [
+                        "1933",
+                        "1939",
+                        "1938",
+                        "1935"
+                    ]
                 },
                 {
                     "q": "What did the 'Reich Citizenship Law' do?",
-                    "a": "Stripped Jewish people of their German citizenship and the right to vote"
+                    "a": "Stripped Jewish people of their German citizenship and the right to vote",
+                    "options": [
+                        "Banned Jewish people from leaving Germany",
+                        "Stripped Jewish people of their German citizenship and the right to vote",
+                        "Forced all Jewish people to wear the Star of David",
+                        "Banned marriage between Jews and Aryans"
+                    ]
                 },
                 {
                     "q": "What did the 'Law for the Protection of German Blood and Honour' forbid?",
-                    "a": "Marriage and sexual relations between Jews and Aryans"
+                    "a": "Marriage and sexual relations between Jews and Aryans",
+                    "options": [
+                        "Jewish people attending German state schools",
+                        "Jewish people working as doctors or lawyers",
+                        "Marriage and sexual relations between Jews and Aryans",
+                        "Jewish people owning businesses"
+                    ]
                 },
                 {
                     "q": "In October 1938, what was stamped on the passports of all Jewish people?",
-                    "a": "A large red letter 'J'"
+                    "a": "A large red letter 'J'",
+                    "options": [
+                        "A black swastika",
+                        "A large red letter 'J'",
+                        "The word 'Untermenschen'",
+                        "A yellow Star of David"
+                    ]
                 },
                 {
                     "q": "What middle names were Jewish men and women forced to adopt in 1938?",
-                    "a": "Israel for men, Sarah for women"
+                    "a": "Israel for men, Sarah for women",
+                    "options": [
+                        "Israel for men, Sarah for women",
+                        "Jacob for men, Ruth for women",
+                        "Abraham for men, Mary for women",
+                        "David for men, Rachel for women"
+                    ]
                 },
                 {
                     "q": "What is the exact date of Kristallnacht?",
-                    "a": "9-10 November 1938"
+                    "a": "9-10 November 1938",
+                    "options": [
+                        "9 November 1923",
+                        "9-10 November 1938",
+                        "1-2 September 1939",
+                        "30 June 1934"
+                    ]
                 },
                 {
                     "q": "Who orchestrated Kristallnacht to win Hitler's favour?",
-                    "a": "Joseph Goebbels"
+                    "a": "Joseph Goebbels",
+                    "options": [
+                        "Reinhard Heydrich",
+                        "Hermann Goering",
+                        "Joseph Goebbels",
+                        "Heinrich Himmler"
+                    ]
                 },
                 {
                     "q": "How many Jewish men were arrested and sent to concentration camps following Kristallnacht?",
-                    "a": "30,000"
+                    "a": "30,000",
+                    "options": [
+                        "10,000",
+                        "100,000",
+                        "50,000",
+                        "30,000"
+                    ]
                 },
                 {
                     "q": "According to Gestapo and Sopade reports, why were many ordinary Germans disgusted by Kristallnacht?",
-                    "a": "They hated the public disorder and the wasteful destruction of property"
+                    "a": "They hated the public disorder and the wasteful destruction of property",
+                    "options": [
+                        "They were secretly Jewish sympathisers",
+                        "They were angry that the SA was gaining too much power",
+                        "They were worried about international retaliation",
+                        "They hated the public disorder and the wasteful destruction of property"
+                    ]
                 },
                 {
                     "q": "Who did the Nazi government blame for the destruction of Kristallnacht?",
-                    "a": "The Jewish community"
+                    "a": "The Jewish community",
+                    "options": [
+                        "The Jewish community",
+                        "Communist agitators",
+                        "The SA",
+                        "British spies"
+                    ]
                 },
                 {
                     "q": "What was the exact fine placed on the Jewish community to pay for the damage?",
-                    "a": "1 billion marks"
+                    "a": "1 billion marks",
+                    "options": [
+                        "2 billion marks",
+                        "100 million marks",
+                        "1 billion marks",
+                        "500,000 marks"
+                    ]
                 },
                 {
                     "q": "What does the term 'Aryanisation' mean in the context of 1938-1939?",
-                    "a": "The forced transfer of Jewish businesses and property to Aryans"
+                    "a": "The forced transfer of Jewish businesses and property to Aryans",
+                    "options": [
+                        "The forced transfer of Jewish businesses and property to Aryans",
+                        "The introduction of Race Studies in schools",
+                        "The process of proving your racial purity to the SS",
+                        "The renaming of streets and cities to sound more German"
+                    ]
                 },
                 {
                     "q": "In January 1939, what organisation did Reinhard Heydrich set up?",
-                    "a": "The Reich Office for Jewish Emigration"
+                    "a": "The Reich Office for Jewish Emigration",
+                    "options": [
+                        "The Gestapo",
+                        "The Reich Office for Jewish Emigration",
+                        "The SD",
+                        "The Einsatzgruppen"
+                    ]
                 },
                 {
                     "q": "What was the purpose of this new office?",
-                    "a": "To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas"
+                    "a": "To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas",
+                    "options": [
+                        "To transport Jewish people to concentration camps",
+                        "To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas",
+                        "To negotiate trade deals with other countries",
+                        "To oversee the creation of Jewish ghettos in Poland"
+                    ]
                 }
             ],
             "gcse_task": {
