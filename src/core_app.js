@@ -1695,7 +1695,7 @@ export function initializeApp(unitData) {
         
         // Add inline Key Individual links
         contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
-            return `<button class="key-individual-inline-link no-print" onclick="window.openKeyIndividualModal('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+            return `<button class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
         });
 
         contentStr = formatBold(contentStr);
@@ -1714,7 +1714,7 @@ export function initializeApp(unitData) {
           
           // Add inline Key Individual links
           l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
-              return `<button class="key-individual-inline-link no-print" onclick="window.openKeyIndividualModal('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+              return `<button class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
           });
 
           l4ContentStr = formatBold(l4ContentStr);
@@ -2595,57 +2595,38 @@ window.toggleMap = function(btn) {
   container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
 };
 
-// --- Key Individual Modal Global Functions ---
-window.injectKeyIndividualModalIfNeeded = function() {
-  if (document.getElementById('keyIndividualModal')) return;
-  const html = `
-  <div id="keyIndividualModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeKeyIndividualModal()">
-    <div class="modal-content" style="background: white; border-radius: 12px; max-width: 800px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
-      <button onclick="window.closeKeyIndividualModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer; z-index: 10;"><i class="fa-solid fa-xmark"></i></button>
-      <div id="keyIndividualModalContent" style="max-height: 85vh; overflow-y: auto;">
-        <!-- Content populated dynamically -->
-      </div>
-    </div>
-  </div>`;
-  document.body.insertAdjacentHTML('beforeend', html);
-};
-
-window.openKeyIndividualModal = function(name) {
-  window.injectKeyIndividualModalIfNeeded();
-  let person = null;
-  if (window.db && window.db[window.currentUnitId]) {
-    const unitDb = window.db[window.currentUnitId];
-    person = unitDb.data?.key_individuals?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
-    if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
+// --- Key Individual Link Global Functions ---
+window.jumpToKeyIndividual = function(name) {
+  // 1. Find the Key Individuals sidebar link and click it
+  const kiLinks = document.querySelectorAll('.lesson-link');
+  let targetLink = null;
+  kiLinks.forEach(l => {
+    if (l.innerText.includes('Key Individuals')) targetLink = l;
+  });
+  if (targetLink) {
+    targetLink.click();
   }
   
-  if (!person && window.currentUnitData) {
-    person = window.currentUnitData.key_individuals?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
-    if (!person) person = window.currentUnitData.biographies?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
-  }
-  
-  const contentDiv = document.getElementById('keyIndividualModalContent');
-  if (person && typeof generateKeyIndividualCardHTML === 'function') {
-    // We wrap it in some padding and set a width so the flip card renders correctly
-    contentDiv.innerHTML = '<div style="padding: 20px; display: flex; justify-content: center;"><div style="width: 350px;">' + generateKeyIndividualCardHTML(person) + '</div></div>';
-  } else {
-    contentDiv.innerHTML = `<div style="padding: 30px; text-align: center;"><h3>${name}</h3><p>No detailed biography found.</p></div>`;
-  }
-  
-  const modal = document.getElementById('keyIndividualModal');
-  modal.style.display = 'flex';
-  void modal.offsetWidth;
-  modal.style.opacity = '1';
-  modal.querySelector('.modal-content').style.transform = 'scale(1)';
-};
-
-window.closeKeyIndividualModal = function() {
-  const modal = document.getElementById('keyIndividualModal');
-  if (modal) {
-    modal.style.opacity = '0';
-    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
-    setTimeout(() => { modal.style.display = 'none'; }, 300);
-  }
+  // 2. Wait for the page to render then find and scroll to the card
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.person-card');
+    let targetCard = null;
+    cards.forEach(card => {
+      const h3 = card.querySelector('h3');
+      if (h3 && h3.innerText.toLowerCase().includes(name.toLowerCase())) {
+        targetCard = card;
+      }
+    });
+    if (targetCard) {
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const originalBoxShadow = targetCard.style.boxShadow;
+      targetCard.style.boxShadow = '0 0 0 4px rgba(59, 130, 246, 0.5)';
+      targetCard.style.transition = 'box-shadow 0.3s ease';
+      setTimeout(() => {
+        targetCard.style.boxShadow = originalBoxShadow;
+      }, 2000);
+    }
+  }, 100);
 };
 
 // --- Debate Modal Global Functions ---
