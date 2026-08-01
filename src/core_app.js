@@ -1868,7 +1868,7 @@ export function initializeApp(unitData) {
           html += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                ${qText}
+                Task ${tIdx + 1}: ${qText}
                 <span style="display: inline-flex; vertical-align: middle;">
                   ${clueBtn}
                   ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}

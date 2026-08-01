@@ -467,10 +467,10 @@ allDirs.forEach(unitId => {
 
     if (lesson.tasks && lesson.tasks.length > 0) {
       html += `<h3 style="margin-top: 20px; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Active Tasks</h3>`;
-      lesson.tasks.forEach(task => {
+      lesson.tasks.forEach((task, tIdx) => {
         let qText = task.question || task.text || '';
         html += `<div class="task-box">`;
-        html += `<p style="font-weight: bold; margin-top: 0;">${qText}</p>`;
+        html += `<p style="font-weight: bold; margin-top: 0;">Task ${tIdx + 1}: ${qText}</p>`;
         for(let i=0; i<6; i++) {
             html += `<div class="task-lines-large"></div>`;
         }
