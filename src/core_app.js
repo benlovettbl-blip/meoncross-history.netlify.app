@@ -757,7 +757,12 @@ export function initializeApp(unitData) {
     }
   }
 
-  window.renderDashboard = function() {
+  window.renderDashboard = function(skipHistory = false) {
+    if (!skipHistory) {
+      const url = new URL(window.location);
+      url.searchParams.delete('lesson');
+      history.pushState({ dashboard: true }, "", url);
+    }
     document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
     const homeLink = document.querySelector('.lesson-link');
     if (homeLink) homeLink.classList.add('active');
@@ -1244,8 +1249,13 @@ export function initializeApp(unitData) {
   };
   
   // Render Lesson Content
-    window.renderLessonByIndex = function(index) {
+    window.renderLessonByIndex = function(index, skipHistory = false) {
       if (unitData && unitData.lessons && unitData.lessons[index]) {
+        if (!skipHistory) {
+          const url = new URL(window.location);
+          url.searchParams.set('lesson', index);
+          history.pushState({ lessonIndex: index }, "", url);
+        }
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         // Try to activate the corresponding sidebar link
         const links = document.querySelectorAll('.lesson-link');
@@ -2358,8 +2368,22 @@ export function initializeApp(unitData) {
   if (unitData.lessons.length > 0) {
     renderSidebar();
     
-    // Initial Render - load homepage
-    renderHomepage();
+    // Initial Render - load homepage or specific lesson based on URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const lessonIdx = urlParams.get('lesson');
+    if (lessonIdx !== null && !isNaN(lessonIdx)) {
+      window.renderLessonByIndex(parseInt(lessonIdx), true);
+    } else {
+      renderHomepage();
+    }
+    
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.lessonIndex !== undefined) {
+        window.renderLessonByIndex(e.state.lessonIndex, true);
+      } else {
+        window.renderDashboard(true);
+      }
+    });
   } else {
     contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
   }
