@@ -2619,10 +2619,15 @@ window.openKeyIndividualModal = function(name) {
     if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
   }
   
+  if (!person && window.currentUnitData) {
+    person = window.currentUnitData.key_individuals?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
+    if (!person) person = window.currentUnitData.biographies?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
+  }
+  
   const contentDiv = document.getElementById('keyIndividualModalContent');
-  if (person && window.generateKeyIndividualEmbedHTML) {
+  if (person && typeof generateKeyIndividualEmbedHTML === 'function') {
     // We wrap it in some padding to match the modal style
-    contentDiv.innerHTML = '<div style="padding: 20px;">' + window.generateKeyIndividualEmbedHTML(person) + '</div>';
+    contentDiv.innerHTML = '<div style="padding: 20px;">' + generateKeyIndividualEmbedHTML(person) + '</div>';
   } else {
     contentDiv.innerHTML = `<div style="padding: 30px; text-align: center;"><h3>${name}</h3><p>No detailed biography found.</p></div>`;
   }
