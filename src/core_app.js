@@ -2625,9 +2625,9 @@ window.openKeyIndividualModal = function(name) {
   }
   
   const contentDiv = document.getElementById('keyIndividualModalContent');
-  if (person && typeof generateKeyIndividualEmbedHTML === 'function') {
-    // We wrap it in some padding to match the modal style
-    contentDiv.innerHTML = '<div style="padding: 20px;">' + generateKeyIndividualEmbedHTML(person) + '</div>';
+  if (person && typeof generateKeyIndividualCardHTML === 'function') {
+    // We wrap it in some padding and set a width so the flip card renders correctly
+    contentDiv.innerHTML = '<div style="padding: 20px; display: flex; justify-content: center;"><div style="width: 350px;">' + generateKeyIndividualCardHTML(person) + '</div></div>';
   } else {
     contentDiv.innerHTML = `<div style="padding: 30px; text-align: center;"><h3>${name}</h3><p>No detailed biography found.</p></div>`;
   }
