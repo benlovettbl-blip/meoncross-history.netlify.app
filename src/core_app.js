@@ -1377,18 +1377,22 @@ export function initializeApp(unitData) {
     let vocabDict = {};
     if (lesson.vocab) {
       lesson.vocab.forEach(v => {
-        vocabDict[v.term.toLowerCase()] = v.definition;
+        const termDef = v.definition || v.def || v.desc || '';
+        if (termDef) {
+          vocabDict[v.term.toLowerCase()] = termDef;
+        }
       });
     }
 
     let seenTerms = new Set();
     const highlightGlossary = (text) => {
-      if (!text) return '';
+      if (!text || typeof text !== 'string') return text || '';
       if (Object.keys(vocabDict).length === 0) return text;
       let processedText = text;
       const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
       for (const term of sortedTerms) {
         const def = vocabDict[term];
+        if (!def || typeof def !== 'string') continue;
         if (!seenTerms.has(term)) {
           const regex = new RegExp(`\\b(${term})\\b`, 'i');
           if (regex.test(processedText)) {
