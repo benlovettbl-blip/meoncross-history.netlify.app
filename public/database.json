@@ -26290,6 +26290,16 @@
               "definition": "A constitutional emergency clause allowing the President to rule by decree, bypassing the Reichstag."
             }
           ],
+          "sources": [
+            {
+              "title": "Source A: Philipp Scheidemann's dramatic declaration of the new German Republic from the balcony of the Reichstag, 9 November 1918.",
+              "content": "\"Workers and soldiers! The German people have won across the line. The old and rotten has collapsed; militarism is finished! The Hohenzollerns have abdicated! Long live the German Republic!\""
+            },
+            {
+              "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
+              "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\""
+            }
+          ],
           "narrative_blocks": [
             {
               "type": "narrative",
