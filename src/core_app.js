@@ -1786,6 +1786,10 @@ export function initializeApp(unitData) {
         
         // Add inline Key Individual links
         contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+            const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
+            if (!hasPerson) {
+                return `<strong class="no-print" style="color: #475569;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+            }
             if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
                 return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
             }
@@ -1809,6 +1813,10 @@ export function initializeApp(unitData) {
           
           // Add inline Key Individual links
           l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+              const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
+              if (!hasPerson) {
+                  return `<strong class="no-print" style="color: #475569;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+              }
               if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
                   return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
               }
