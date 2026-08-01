@@ -1692,6 +1692,12 @@ export function initializeApp(unitData) {
 
         const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
         let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.text}</em>` : highlightGlossary(block.text);
+        
+        // Add inline Key Individual links
+        contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+            return `<button class="key-individual-inline-link no-print" onclick="window.openKeyIndividualModal('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+        });
+
         contentStr = formatBold(contentStr);
         contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/units/' + window.currentUnitId + '/assets/');
         let styledContent = contentStr;
@@ -1705,6 +1711,12 @@ export function initializeApp(unitData) {
         let simplifyBtn = '';
         if (block.level_4) {
           let l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.level_4}</em>` : highlightGlossary(block.level_4);
+          
+          // Add inline Key Individual links
+          l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+              return `<button class="key-individual-inline-link no-print" onclick="window.openKeyIndividualModal('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</button><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+          });
+
           l4ContentStr = formatBold(l4ContentStr);
           l4StyledContent = l4ContentStr;
           if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
@@ -2581,6 +2593,54 @@ window.toggleMap = function(btn) {
   
   // Update caption
   container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
+};
+
+// --- Key Individual Modal Global Functions ---
+window.injectKeyIndividualModalIfNeeded = function() {
+  if (document.getElementById('keyIndividualModal')) return;
+  const html = `
+  <div id="keyIndividualModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeKeyIndividualModal()">
+    <div class="modal-content" style="background: white; border-radius: 12px; max-width: 800px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button onclick="window.closeKeyIndividualModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer; z-index: 10;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="keyIndividualModalContent" style="max-height: 85vh; overflow-y: auto;">
+        <!-- Content populated dynamically -->
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.openKeyIndividualModal = function(name) {
+  window.injectKeyIndividualModalIfNeeded();
+  let person = null;
+  if (window.db && window.db[window.currentUnitId]) {
+    const unitDb = window.db[window.currentUnitId];
+    person = unitDb.data?.key_individuals?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
+    if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(name.toLowerCase()));
+  }
+  
+  const contentDiv = document.getElementById('keyIndividualModalContent');
+  if (person && window.generateKeyIndividualEmbedHTML) {
+    // We wrap it in some padding to match the modal style
+    contentDiv.innerHTML = '<div style="padding: 20px;">' + window.generateKeyIndividualEmbedHTML(person) + '</div>';
+  } else {
+    contentDiv.innerHTML = `<div style="padding: 30px; text-align: center;"><h3>${name}</h3><p>No detailed biography found.</p></div>`;
+  }
+  
+  const modal = document.getElementById('keyIndividualModal');
+  modal.style.display = 'flex';
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+};
+
+window.closeKeyIndividualModal = function() {
+  const modal = document.getElementById('keyIndividualModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => { modal.style.display = 'none'; }, 300);
+  }
 };
 
 // --- Debate Modal Global Functions ---
