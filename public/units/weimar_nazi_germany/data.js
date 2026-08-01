@@ -71,7 +71,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
-                        "source": "/images/spartacist_uprising.jpg",
+                        "source": "/images/spartacist_uprising.jpg?v=4",
                         "caption": "Armed revolutionaries during the Spartacist Uprising",
                         "provenance_clue": "Photographs can capture a snapshot of reality, but think about what might be happening outside the frame. Does this image support the idea that the new republic was stable and fully supported by the people?"
                     }
@@ -813,7 +813,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph showing Freikorps soldiers during the Kapp Putsch in Berlin, March 1920.",
-                        "source": "/images/kapp_putsch_freikorps.jpg",
+                        "source": "/images/kapp_putsch_freikorps.jpg?v=4",
                         "caption": "Freikorps troops occupying Berlin during the Kapp Putsch.",
                         "provenance_clue": "Photographs can show the reality of a situation. Consider the heavy armament of these soldiers on the streets of the capital. Does this suggest the Weimar government was in control?"
                     }
@@ -1167,7 +1167,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph showing Berliners delivering stacks of hyperinflated currency to the Reichsbank in baskets, 1923.",
-                        "source": "/images/weimar_hyperinflation_note.jpg",
+                        "source": "/images/weimar_hyperinflation_note.jpg?v=4",
                         "caption": "Berliners bringing baskets of nearly worthless paper money to the bank during the hyperinflation crisis.",
                         "provenance_clue": "Think about the sheer volume of paper money shown in the photograph. What does this tell you about the value of the Mark and its impact on everyday transactions?"
                     }
@@ -1516,7 +1516,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of the Bauhaus school building in Dessau, designed by Walter Gropius.",
-                        "source": "/images/bauhaus_dessau.jpg",
+                        "source": "/images/bauhaus_dessau.jpg?v=4",
                         "caption": "The Bauhaus building in Dessau, a symbol of Weimar's cultural innovation.",
                         "provenance_clue": "The Bauhaus represents the cutting edge of modernist design. How useful is this building for showing the cultural shifts and modern attitudes taking root in Weimar Germany?"
                     }
@@ -1845,7 +1845,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A formal portrait of Adolf Hitler.",
-                        "source": "/images/hitler_munich_1920s.jpg",
+                        "source": "/images/hitler_munich_1920s.jpg?v=4",
                         "caption": "A formal photographic portrait of Adolf Hitler during his rise to prominence.",
                         "provenance_clue": "Formal portraits are often carefully staged to project a specific image of a leader. How useful is a static portrait for understanding the energetic oratory style that built his early support?"
                     }
@@ -2151,10 +2151,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph showing crowds and paramilitaries on the streets of Munich during the Beer Hall Putsch, 9 November 1923.",
-                        "source": "/images/munich_putsch_defendants.jpg?v=2",
-                        "caption": "Armed supporters of the Nazis and nationalist groups gathered at Marienplatz during the Munich Putsch.",
-                        "provenance_clue": "This photograph captures the public dimension of the Putsch. Consider who is in the crowd—does the presence of armed paramilitaries on the streets suggest a highly organized rebellion or chaotic opportunism?"
+                        "title": "Source B: A photograph of the defendants of the Munich Putsch trial, including Hitler and Ludendorff, 1924.",
+                        "source": "/images/munich_putsch_defendants.jpg?v=4",
+                        "caption": "Hitler, Ludendorff, and other leaders posing during the Munich Putsch trial.",
+                        "provenance_clue": "This photograph shows the accused posing confidently. Does it suggest they were treated harshly by the sympathetic right-wing judges in Bavaria?"
                     }
                 ]
             }
@@ -2451,7 +2451,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A Nazi election poster from 1932. The caption reads 'Our Last Hope: Hitler'.",
-                        "source": "/images/nazi_poster_our_last_hope.jpg",
+                        "source": "/images/nazi_poster_our_last_hope.jpg?v=4",
                         "caption": "A famous Nazi propaganda poster aimed at millions of unemployed Germans.",
                         "provenance_clue": "Propaganda posters are designed to manipulate emotions. Think about the desperation of the figures in the poster and how the Nazis presented Hitler as a saviour."
                     }
@@ -2756,7 +2756,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of Paul von Hindenburg and Adolf Hitler on the day Hitler was appointed Chancellor, 30 January 1933.",
-                        "source": "/images/hitler_hindenburg_1933.jpg",
+                        "source": "/images/hitler_hindenburg_1933.jpg?v=4",
                         "caption": "President Hindenburg and the newly appointed Chancellor Adolf Hitler.",
                         "provenance_clue": "Look closely at the body language between the two men. Hindenburg despised Hitler. How useful is this photograph for showing the uneasy alliance that brought Hitler to power?"
                     }
@@ -3066,9 +3066,9 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph showing the ruins of the Reichstag building after the fire, February 1933.",
-                        "source": "/images/reichstag_fire_ruins.jpg",
-                        "caption": "The devastated interior of the Reichstag building.",
+                        "title": "Source B: A photograph showing the exterior of the Reichstag building on fire, February 1933.",
+                        "source": "/images/reichstag_fire_ruins.jpg?v=4",
+                        "caption": "The Reichstag building engulfed in flames.",
                         "provenance_clue": "While the photograph shows the physical destruction, does it tell you anything about who actually started the fire or how the Nazis used it to their advantage?"
                     }
                 ]
@@ -3275,7 +3275,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of prisoners at the Dachau concentration camp during roll call, 1938.",
-                        "source": "/images/dachau_roll_call.jpg",
+                        "source": "/images/dachau_roll_call.jpg?v=4",
                         "caption": "Prisoners standing at attention in Dachau, the first Nazi concentration camp.",
                         "provenance_clue": "This photograph may have been taken by the SS. Consider why they would take photographs of the camps—was it for documentation, or to create a climate of fear among the public?"
                     }
@@ -3476,7 +3476,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of the Nuremberg Rallies, showing thousands of SA and SS men marching.",
-                        "source": "/images/nuremberg_rally.jpg",
+                        "source": "/images/nuremberg_rally.jpg?v=4",
                         "caption": "The mass spectacle of the annual Nazi Party rally in Nuremberg.",
                         "provenance_clue": "This photograph is official Nazi propaganda. It is designed to show overwhelming unity and strength. How does this limit its usefulness for understanding the true feelings of ordinary Germans?"
                     }
@@ -3684,7 +3684,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of Edelweiss Pirates graffiti found on a wall in Cologne, late 1930s.",
-                        "source": "/images/edelweiss_pirates_graffiti.jpg",
+                        "source": "/images/edelweiss_pirates_graffiti.jpg?v=4",
                         "caption": "Anti-Hitler Youth graffiti left by the Edelweiss Pirates.",
                         "provenance_clue": "Graffiti is an anonymous form of protest. Why might young people have to resort to graffiti to express their opposition to the regime?"
                     }
@@ -3889,7 +3889,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: A photograph of the Honour Cross of the German Mother (Mother's Cross).",
-                        "source": "/images/mothers_cross_award.jpg",
+                        "source": "/images/mothers_cross_award.jpg?v=4",
                         "caption": "The Honour Cross of the German Mother, a state decoration awarded to women who had large families.",
                         "provenance_clue": "The Mother's Cross was awarded in bronze, silver, and gold depending on the number of children. Why would the Nazi regime create a military-style medal for childbirth?"
                     }
@@ -4094,7 +4094,7 @@ export const unitData = {
                     {
                         "type": "visual",
                         "title": "Source B: An illustration of the official pennant (flag) used by the League of German Girls (BDM).",
-                        "source": "/images/bdm_gymnastics.jpg",
+                        "source": "/images/bdm_gymnastics.jpg?v=4",
                         "caption": "The official pennant of the League of German Girls, featuring the Hitler Youth emblem.",
                         "provenance_clue": "Youth groups were given flags and uniforms to create a sense of belonging and discipline. How useful is this official symbol for telling us about the actual experiences of the girls in the movement?"
                     }
@@ -4322,10 +4322,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph of workers constructing the Autobahn, 1935.",
-                        "source": "/images/autobahn_construction.jpg",
-                        "caption": "Manual labourers building the new German motorway network.",
-                        "provenance_clue": "Photographs of the Autobahn were used heavily in propaganda to prove Hitler was fulfilling his promise of 'work and bread'. Does this image tell us about the wages or working conditions of these men?"
+                        "title": "Source B: A photograph of a section of the new Reichsautobahn.",
+                        "source": "/images/autobahn_construction.jpg?v=4",
+                        "caption": "A completed section of the new German motorway network.",
+                        "provenance_clue": "Photographs of the Autobahn were used heavily in propaganda to prove Hitler was fulfilling his promise of 'work and bread'. Does this image tell us about the wages or working conditions of the men who built it?"
                     }
                 ]
             }
@@ -4547,10 +4547,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph showing the destruction of a Jewish-owned shop in Berlin after Kristallnacht, November 1938.",
-                        "source": "/images/kristallnacht_shop.jpg",
-                        "caption": "A Jewish-owned business destroyed during the November Pogrom.",
-                        "provenance_clue": "This photograph captures the physical aftermath of state-sponsored violence. Consider what it tells us about the escalation of persecution by 1938 compared to the earlier boycotts."
+                        "title": "Source B: A photograph showing the destroyed interior of the Fasanenstrasse Synagogue in Berlin after Kristallnacht, November 1938.",
+                        "source": "/images/kristallnacht_shop.jpg?v=4",
+                        "caption": "The interior of a major Berlin synagogue destroyed during the November Pogrom.",
+                        "provenance_clue": "This photograph captures the physical aftermath of state-sponsored violence against a sacred religious space. Consider what it tells us about the escalation of persecution by 1938 compared to earlier economic boycotts."
                     }
                 ]
             }
