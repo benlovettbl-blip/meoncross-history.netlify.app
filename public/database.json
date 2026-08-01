@@ -23530,21 +23530,6 @@
       "lessons": [
         {
           "title": "Lesson 1: Why were young men so desperat...",
-          "narrative": [
-            "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?",
-            "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",
-            "The outbreak of the First World War in August 1914 was not an accidental occurrence; it was the explosive culmination of deep geopolitical rivalries that had polarized Europe since the creation of a unified German Empire in 1871. This new industrial giant in the center of Europe fundamentally disrupted the continent's historic balance of power. To secure their territories, European nations formed rigid, antagonistic military alliances: the Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy).",
-            "These alliances did not guarantee peace; instead, they guaranteed that any localized conflict would drag the entire continent into an industrial war. Tensions were further inflamed by a massive naval arms race, sparked by the British launch of the ultra-modern battleship HMS Dreadnought in 1906, which prompted Germany to build its own fleet to challenge Britain's global empire. Germany feared 'encirclement' by its hostile neighbors, while British politicians grew increasingly suspicious of German militarism.",
-            "The explosive spark was struck in the Balkans, a highly unstable region of southeastern Europe where ethnic groups sought independence from declining empires. In 1908, the Austro-Hungarian Empire annexed Bosnia and Herzegovina, a territory populated by thousands of nationalistic Serbs. This act of imperial expansion deeply angered neighboring Serbia and led to the creation of the Black Hand, a radical Pan-Serbian secret society led by Colonel Dragutin Dimitrijevic (codenamed 'Apis').",
-            "On 28 June 1914, Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, paid a state visit to the Bosnian capital of Sarajevo. Taking advantage of the highly publicized route, six young Black Hand assassins positioned themselves along the streets. After an initial bomb attempt failed, the Archduke’s car took a wrong turn, stopping directly in front of nineteen-year-old nationalist Gavrilo Princip. Princip fired twice, killing Franz Ferdinand and his wife Sophie. This localized act of terrorism triggered the diplomatic escalation of the July Crisis, dragging the allied powers into conflict. By 5 August 1914, Britain’s promise to defend Belgian neutrality drew its vast global empire into a total European war.",
-            "When war was declared in August 1914, Britain’s professional army was tiny compared to continental forces. Yet, within the first twelve months of the conflict, a staggering 1.1 million British men voluntarily enlisted to fight. This massive, enthusiastic rush to join—the 'stampede'—was driven by a powerful mixture of social and psychological factors:",
-            "<strong>Jingoism and Duty:</strong> Intense, aggressive patriotism swept the British public. Propelled by posters featuring Field Marshal Lord Kitchener, men were told that enlisting was a moral duty to defend King, Country, and the honor of weak nations like Belgium.",
-            "<strong>The Myth of a Quick War:</strong> There was a universal belief among politicians, media, and the public that modern industrial warfare would be swift and decisive. The common phrase was that the war would be 'over by Christmas'.",
-            "<strong>Escape from Grinding Labor:</strong> For working-class young men stuck in low-paid, monotonous factory, agricultural, or domestic jobs, the army offered a thrilling promise of travel, uniform, steady pay, and high social status.",
-            "To exploit this enlisting enthusiasm, the British government introduced a unique social experiment: the Pals' Battalions. The War Office promised that if men volunteered together, they would be kept in the same unit to train, travel, and fight side-by-side.",
-            "Whole factories, offices, neighborhood streets, and local football teams enlisted en masse. This collective volunteering transformed military enlistment from an individual choice into an intense community event. If a young man hesitated, he faced immense social shame, such as being handed a white feather (a symbol of cowardice) by local women.",
-            "While the Pals' Battalions successfully raised morale and built deep combat trust, they had a tragic structural flaw. When these highly localized units were sent into intense industrial combat—such as the devastating infantry charges on the first day of the Battle of the Somme in 1916—they suffered catastrophic casualties. In a single afternoon, entire towns and villages lost their entire young male population, leaving communities back home shattered by collective grief."
-          ],
           "sources": [],
           "tasks": [
             {
@@ -23697,15 +23682,51 @@
               }
             ]
           },
-          "enquiry": "Why was the historical context of Why were young men so desperat... so significant?"
+          "enquiry": "Why was the historical context of Why were young men so desperat... so significant?",
+          "narrative_blocks": [
+            {
+              "text": "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?"
+            },
+            {
+              "text": "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions)."
+            },
+            {
+              "text": "The outbreak of the First World War in August 1914 was not an accidental occurrence; it was the explosive culmination of deep geopolitical rivalries that had polarized Europe since the creation of a unified German Empire in 1871. This new industrial giant in the center of Europe fundamentally disrupted the continent's historic balance of power. To secure their territories, European nations formed rigid, antagonistic military alliances: the Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy)."
+            },
+            {
+              "text": "These alliances did not guarantee peace; instead, they guaranteed that any localized conflict would drag the entire continent into an industrial war. Tensions were further inflamed by a massive naval arms race, sparked by the British launch of the ultra-modern battleship HMS Dreadnought in 1906, which prompted Germany to build its own fleet to challenge Britain's global empire. Germany feared 'encirclement' by its hostile neighbors, while British politicians grew increasingly suspicious of German militarism."
+            },
+            {
+              "text": "The explosive spark was struck in the Balkans, a highly unstable region of southeastern Europe where ethnic groups sought independence from declining empires. In 1908, the Austro-Hungarian Empire annexed Bosnia and Herzegovina, a territory populated by thousands of nationalistic Serbs. This act of imperial expansion deeply angered neighboring Serbia and led to the creation of the Black Hand, a radical Pan-Serbian secret society led by Colonel Dragutin Dimitrijevic (codenamed 'Apis')."
+            },
+            {
+              "text": "On 28 June 1914, Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, paid a state visit to the Bosnian capital of Sarajevo. Taking advantage of the highly publicized route, six young Black Hand assassins positioned themselves along the streets. After an initial bomb attempt failed, the Archduke’s car took a wrong turn, stopping directly in front of nineteen-year-old nationalist Gavrilo Princip. Princip fired twice, killing Franz Ferdinand and his wife Sophie. This localized act of terrorism triggered the diplomatic escalation of the July Crisis, dragging the allied powers into conflict. By 5 August 1914, Britain’s promise to defend Belgian neutrality drew its vast global empire into a total European war."
+            },
+            {
+              "text": "When war was declared in August 1914, Britain’s professional army was tiny compared to continental forces. Yet, within the first twelve months of the conflict, a staggering 1.1 million British men voluntarily enlisted to fight. This massive, enthusiastic rush to join—the 'stampede'—was driven by a powerful mixture of social and psychological factors:"
+            },
+            {
+              "text": "<strong>Jingoism and Duty:</strong> Intense, aggressive patriotism swept the British public. Propelled by posters featuring Field Marshal Lord Kitchener, men were told that enlisting was a moral duty to defend King, Country, and the honor of weak nations like Belgium."
+            },
+            {
+              "text": "<strong>The Myth of a Quick War:</strong> There was a universal belief among politicians, media, and the public that modern industrial warfare would be swift and decisive. The common phrase was that the war would be 'over by Christmas'."
+            },
+            {
+              "text": "<strong>Escape from Grinding Labor:</strong> For working-class young men stuck in low-paid, monotonous factory, agricultural, or domestic jobs, the army offered a thrilling promise of travel, uniform, steady pay, and high social status."
+            },
+            {
+              "text": "To exploit this enlisting enthusiasm, the British government introduced a unique social experiment: the Pals' Battalions. The War Office promised that if men volunteered together, they would be kept in the same unit to train, travel, and fight side-by-side."
+            },
+            {
+              "text": "Whole factories, offices, neighborhood streets, and local football teams enlisted en masse. This collective volunteering transformed military enlistment from an individual choice into an intense community event. If a young man hesitated, he faced immense social shame, such as being handed a white feather (a symbol of cowardice) by local women."
+            },
+            {
+              "text": "While the Pals' Battalions successfully raised morale and built deep combat trust, they had a tragic structural flaw. When these highly localized units were sent into intense industrial combat—such as the devastating infantry charges on the first day of the Battle of the Somme in 1916—they suffered catastrophic casualties. In a single afternoon, entire towns and villages lost their entire young male population, leaving communities back home shattered by collective grief."
+            }
+          ]
         },
         {
           "title": "Lesson 2: Did British generals make the ...",
-          "narrative": [
-            "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?",
-            "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
-            "Placeholder narrative paragraph."
-          ],
           "sources": [],
           "tasks": [],
           "vocab": [],
@@ -23738,15 +23759,21 @@
               }
             ]
           },
-          "enquiry": "Why was the historical context of Did British generals make the ... so significant?"
+          "enquiry": "Why was the historical context of Did British generals make the ... so significant?",
+          "narrative_blocks": [
+            {
+              "text": "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?"
+            },
+            {
+              "text": "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme)."
+            },
+            {
+              "text": "Placeholder narrative paragraph."
+            }
+          ]
         },
         {
           "title": "Lesson 3: Was the Great War truly a glob...",
-          "narrative": [
-            "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?",
-            "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops).",
-            "Placeholder narrative paragraph."
-          ],
           "sources": [],
           "tasks": [],
           "vocab": [],
@@ -23779,15 +23806,21 @@
               }
             ]
           },
-          "enquiry": "Why was the historical context of Was the Great War truly a glob... so significant?"
+          "enquiry": "Why was the historical context of Was the Great War truly a glob... so significant?",
+          "narrative_blocks": [
+            {
+              "text": "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?"
+            },
+            {
+              "text": "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops)."
+            },
+            {
+              "text": "Placeholder narrative paragraph."
+            }
+          ]
         },
         {
           "title": "Lesson 4: How did a war fought miles awa...",
-          "narrative": [
-            "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?",
-            "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions).",
-            "Placeholder narrative paragraph."
-          ],
           "sources": [],
           "tasks": [],
           "vocab": [],
@@ -23820,15 +23853,21 @@
               }
             ]
           },
-          "enquiry": "Why was the historical context of How did a war fought miles awa... so significant?"
+          "enquiry": "Why was the historical context of How did a war fought miles awa... so significant?",
+          "narrative_blocks": [
+            {
+              "text": "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?"
+            },
+            {
+              "text": "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions)."
+            },
+            {
+              "text": "Placeholder narrative paragraph."
+            }
+          ]
         },
         {
           "title": "Lesson 5: Did the Treaty of Versailles s...",
-          "narrative": [
-            "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
-            "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII).",
-            "Placeholder narrative paragraph."
-          ],
           "sources": [],
           "tasks": [],
           "vocab": [],
@@ -23861,7 +23900,18 @@
               }
             ]
           },
-          "enquiry": "Why was the historical context of Did the Treaty of Versailles s... so significant?"
+          "enquiry": "Why was the historical context of Did the Treaty of Versailles s... so significant?",
+          "narrative_blocks": [
+            {
+              "text": "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"
+            },
+            {
+              "text": "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII)."
+            },
+            {
+              "text": "Placeholder narrative paragraph."
+            }
+          ]
         }
       ],
       "staticPages": [],
@@ -27566,7 +27616,7 @@
         {
           "id": "lesson_2_1",
           "title": "KT2.1: The Early Development of the Nazi Party, 1919–1922",
-          "enquiry_question": "From the shadows: How did a tiny, obscure political group in a Munich beer hall transform into a highly organised and violent political machine under Adolf Hitler's early leadership?",
+          "enquiry": "From the shadows: How did a tiny, obscure political group in a Munich beer hall transform into a highly organised and violent political machine under Adolf Hitler's early leadership?",
           "teacher_notes": {
             "primer": "This lesson explores the origins of the Nazi Party and Hitler's early rise to power, focusing on his oratory, the 25-Point Programme, and the establishment of the SA. The goal is for students to understand how a fringe regional group built the machinery for a national movement.",
             "objectives": [
@@ -28137,12 +28187,30 @@
             }
           ],
           "narrative_blocks": [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {}
+            {
+              "text": "By November 1923, the Weimar Republic appeared to be collapsing. French troops were occupying the Ruhr, hyperinflation had destroyed the currency, and the democratic government in Berlin looked entirely powerless.\n\nHitler believed the time was right to strike, heavily inspired by the Italian fascist leader Benito Mussolini, who had successfully marched on Rome and seized power the year before. In Bavaria, the local right-wing government—led by the **Triumvirate** of Gustav von Kahr (Bavarian Prime Minister), Otto von Lossow (head of the Bavarian army), and Hans von Seisser (head of the Bavarian police)—was also actively plotting against the Weimar government. Hitler intended to hijack their plot, use their authority to take control of Munich, and then march his SA stormtroopers to Berlin to tear down the Republic.",
+              "heading": "1. The Causes of the Munich Putsch (November 1923)"
+            },
+            {
+              "text": "On the evening of **8 November 1923**, the Bavarian Triumvirate were speaking at a meeting in the Bürgerbräukeller (a large beer hall) in Munich. Hitler, backed by 600 armed SA members, burst through the doors. He fired a gunshot into the ceiling and declared a national revolution. At gunpoint, he forced Kahr, Lossow, and Seisser into a back room and made them swear loyalty to his uprising. Crucially, Hitler also had the backing of **General Erich Ludendorff**, a highly respected First World War military hero.\n\nHowever, the Putsch quickly unravelled. Hitler made a fatal error by leaving the beer hall to deal with a crisis elsewhere, allowing Ludendorff to let the Triumvirate go home. Once free, Kahr and Lossow immediately broke their promises and contacted the regular army and police to stop the Nazis.\n\nOn **9 November**, Hitler and Ludendorff marched 2,000 Nazis into the centre of Munich. They were met by armed police. A brief, bloody firefight broke out. Fourteen Nazis and four policemen were killed. Hitler dislocated his shoulder, fled the scene, and was arrested two days later hiding in a wardrobe.",
+              "heading": "2. The Events of the Putsch"
+            },
+            {
+              "text": "On the surface, the Putsch was a humiliating failure. The Nazi Party was banned, and Hitler was put on trial for high treason. However, Hitler turned his trial into a political masterstroke.\n\nThe trial gave Hitler national media coverage for the very first time. He used the courtroom as a theatrical stage, delivering passionate speeches arguing that he wasn't a traitor, but a patriot trying to save Germany from the \"treasonous 'November Criminals'\". The Weimar judiciary (judges) were traditionally very right-wing and sympathised with his hatred of the Republic. Instead of the death penalty (the standard punishment for treason), Hitler was given a remarkably lenient sentence of just five years in **Landsberg Prison**.\n\nIn reality, he served only **nine months** in comfortable conditions. He spent this time dictating his manifesto, ***Mein Kampf*** **(My Struggle)**. This book laid out his core beliefs, which would become the blueprint for Nazi Germany:\n\n* **Race:** The belief that the Germanic **Aryan** race was superior and destined to rule, while Jewish people were part of a global conspiracy plotting to weaken Germany.\n* **Lebensraum (Living Space):** The necessity of expanding Germany's borders into Eastern Europe and Russia to gain land and resources.\n* **Totalitarianism:** The destruction of democracy in favour of the **Führerprinzip** (the total authority of a single leader).",
+              "heading": "3. Advanced Analysis: Turning Disaster into Victory"
+            },
+            {
+              "text": "While in prison, Hitler realised a crucial lesson: the Nazis could no longer try to seize power by force. They had to destroy democracy from the inside by winning elections—what he called the **\"legal route\"** to power: *\"We shall have to hold our noses and enter the Reichstag.\"*\n\nUpon his release in December 1924, the ban on the Nazi Party was lifted, and Hitler set about drastically reorganising the political machine:\n\n* **National Structure:** He divided Germany into 35 local regions (*Gaue*), appointing a loyal **Gauleiter** to run each one and drive local recruitment.\n* **The SS:** Because the SA was too rowdy and heavily loyal to Ernst Röhm, Hitler created the **SS (Schutzstaffel)** in 1925. Run by **Heinrich Himmler**, they wore black uniforms and acted as Hitler's fiercely loyal, elite personal bodyguards.\n* **Targeting the Youth:** In 1926, the party officially formed the **Hitler Youth** (*Hitlerjugend*) to indoctrinate young boys, alongside the Nazi Women's League.",
+              "heading": "4. The Wilderness / Lean Years (1924–1928)"
+            },
+            {
+              "text": "As the party expanded nationally, a dangerous split emerged. The northern Gauleiters (like Gregor Strasser and Joseph Goebbels) wanted to focus heavily on the 'Socialist' parts of the 25-Point Programme to win over poor industrial workers. The southern Gauleiters wanted to focus on the 'Nationalist' parts to win over wealthy businessmen and the army.\n\nTo prevent the party from fracturing, Hitler called the **Bamberg Conference** in 1926. He ruthlessly crushed the socialist wing of the party, asserting his absolute authority. Recognising talent, Hitler cleverly won over **Joseph Goebbels**, promoting him to Gauleiter of Berlin. Strasser was sidelined, and Hitler’s total ideological dominance was secured.",
+              "heading": "5. Advanced Analysis: The Bamberg Conference (1926)"
+            },
+            {
+              "text": "Despite having over 100,000 highly disciplined members by 1928, the Nazis were an electoral failure, winning just 12 seats (2.6% of the vote) in the 1928 Reichstag elections.\n\nThe primary reason for this failure was Gustav Stresemann. The Weimar Republic was experiencing an economic 'Golden Age'. Hyperinflation was over, American Dawes Plan loans were flowing in, and in 1925, the German people had elected the conservative war hero Paul von Hindenburg as President. With the country feeling stable and proud, voters simply ignored the extreme politics of the Nazi Party.\n\nHowever, the Nazis were highly adaptable. Realising that industrial workers were voting for the Communists or Social Democrats, the Nazis shifted their propaganda. They began heavily targeting **farmers** (who were suffering from plummeting food prices) and the **lower-middle classes** (the *Mittelstand*, who had never recovered from hyperinflation). While they failed to win power in 1928, the Nazis had built a highly organised, national political machine just waiting for the next major crisis to strike.",
+              "heading": "6. Shifting Propaganda and Electoral Failure"
+            }
           ]
         },
         {
@@ -28404,11 +28472,26 @@
             }
           ],
           "narrative_blocks": [
-            {},
-            {},
-            {},
-            {},
-            {}
+            {
+              "text": "In October 1929, the US stock market collapsed, triggering the **Wall Street Crash**. Gustav Stresemann’s warning that Germany was \"dancing on a volcano\" became a terrifying reality. Under the Dawes Plan of 1924, the German economy was entirely reliant on American loans. Following the crash, panicked American banks demanded their money back immediately.\n\nThe economic impact on Germany was catastrophic. Without American investment, German factories were forced to shut down. By 1932, unemployment had reached a staggering **6 million** (roughly 40% of the German workforce). Millions were left homeless, relying on soup kitchens and sleeping in parks. Crucially, the middle classes—who had already lost their savings during the 1923 hyperinflation crisis—found themselves facing ruin once again as businesses and banks collapsed.",
+              "heading": "1. The Wall Street Crash and the Economic Earthquake"
+            },
+            {
+              "text": "As the economic crisis deepened, the Weimar political system completely paralysed. The Chancellor, a Social Democrat named **Hermann Müller**, led a 'Grand Coalition' of moderate parties. However, as unemployment skyrocketed, the politicians bitterly argued over whether to raise taxes or cut unemployment benefits. Unable to agree, Müller resigned in March 1930. This marked the end of truly democratic government in Weimar Germany.\n\nHe was replaced by **Heinrich Brüning**. Because Brüning could not get a majority in the Reichstag, he relied on President Hindenburg to pass laws using **Article 48** (emergency decrees).\n\n**Advanced Analysis: The 'Hunger Chancellor'**\nBrüning’s response to the crisis was disastrous. Fearing a repeat of the 1923 hyperinflation, he refused to print more money. Instead, he raised taxes, slashed government wages, and cut unemployment benefits. This caused immense suffering, earning him the bitter nickname the **'Hunger Chancellor'**. With the moderate government actively making the people poorer and bypassing parliament, desperate Germans began to abandon democracy entirely and vote for extreme parties who promised radical solutions.",
+              "heading": "2. The Death of Democracy: Müller and Brüning"
+            },
+            {
+              "text": "The first group to benefit from this desperation was the **KPD (Communist Party)**. Unemployed, starving industrial workers flocked to the KPD, which promised to overthrow the wealthy industrialists and share the nation's wealth equally. By 1932, the KPD had gained 100 seats in the Reichstag.\n\nHowever, this surge in communist support terrified the German middle classes, rural farmers, and wealthy business owners. Rich industrialists like **Fritz Thyssen**, the Krupp family, and Bosch were terrified of a Russian-style revolution where their factories would be confiscated. Consequently, they began secretly pouring millions of marks into the Nazi Party, viewing Hitler as their best defence against the Communists. This massive financial backing allowed Joseph Goebbels to fund an unparalleled propaganda campaign.",
+              "heading": "3. The Communist Threat and Big Business"
+            },
+            {
+              "text": "Using this new wealth, the Nazis presented themselves as the only political force strong enough to save Germany.\n\n* **The 1932 Presidential Election:** Hitler challenged the ageing Hindenburg for the presidency. Although Hitler lost, he won an astonishing **13.4 million votes**. This campaign catapulted him to national superstar status. He was the first politician to fly by aeroplane to multiple cities in a single day (the *\"Hitler over Germany\"* campaign), giving him the image of a dynamic, energetic saviour.\n* **Targeted Propaganda:** Nazi propaganda was highly sophisticated. If an anti-Semitic poster didn't work in a certain town, they quietly dropped it and used a poster promising higher crop prices for farmers instead. They promised *'Work and Bread'* to the unemployed.\n* **Appealing to Demographics:** They successfully targeted **women** by claiming that voting for the Nazis was the best way to protect traditional family values and save their children from starvation. They targeted **young people** by portraying the Weimar Republic as weak and elderly, and the Nazi movement as exciting and rebellious.",
+              "heading": "4. The Appeal of Hitler and Nazi Propaganda"
+            },
+            {
+              "text": "The growth of the Nazi Party was not just about brilliant posters; it was deeply rooted in violence and **negative cohesion**.\n\nBy 1932, the SA had grown to 400,000 members. Germany’s streets were erupting into open warfare as the SA fought brutal battles against the communist private army, the *Rotfrontkämpferbund*. Dozens of people were killed in political street fights.\n\nParadoxically, the Nazis used this violence to their advantage. They deliberately started the fights with the communists, but then used their highly disciplined, uniformed SA marches to present themselves to the middle classes as the only party capable of restoring order. Millions of middle-class voters ultimately voted for the Nazis not because they fully supported Hitler’s extreme racial views, but because of *negative cohesion*—they shared Hitler's hatred of the Weimar Republic and his absolute determination to crush the communists.",
+              "heading": "5. Advanced Analysis: The SA and Negative Cohesion"
+            }
           ]
         },
         {
@@ -28676,11 +28759,26 @@
             }
           ],
           "narrative_blocks": [
-            {},
-            {},
-            {},
-            {},
-            {}
+            {
+              "text": "By the spring of 1932, the Weimar Constitution was effectively broken. Chancellor Heinrich Brüning had lost control of the Reichstag and was relying entirely on President Hindenburg to pass laws using **Article 48** (emergency decrees).\n\nIn May 1932, Brüning made two fatal miscalculations. First, to curb street violence, he banned the SA and the SS, which outraged right-wing politicians. Second, he proposed buying up bankrupt country estates from the wealthy elite to house unemployed workers. Hindenburg, himself a wealthy landowner, was furious and viewed this as practically communist. Brüning was forced to resign.",
+              "heading": "1. The Fall of Brüning and the Death of Democracy (May 1932)"
+            },
+            {
+              "text": "Hindenburg was advised by General Kurt von Schleicher to appoint a wealthy, conservative nobleman named **Franz von Papen** as the new Chancellor. Papen’s government was incredibly undemocratic; it was made up entirely of wealthy landowners and industrial elites, earning it the nickname the **'Cabinet of Barons'**.\n\nBecause Papen had almost no support in the Reichstag, he held a general election in **July 1932**, hoping to win a majority. It was a disaster for him, but a triumph for the Nazis. The Nazi Party won **230 seats**, making them the largest single party in the Reichstag. Hitler immediately demanded that Hindenburg make him Chancellor. Hindenburg, who openly despised Hitler (referring to him insultingly as \"that Bohemian corporal\"), flatly refused.",
+              "heading": "2. Franz von Papen and the 'Cabinet of Barons' (July 1932)"
+            },
+            {
+              "text": "Refusing to cooperate, the Nazis and Communists used their majority to vote down everything Papen proposed. Paralyzed, Papen convinced Hindenburg to call *another* election in **November 1932**, hoping the voters were getting tired of the Nazis.\n\nPapen was partially right. In November, the Nazi vote dropped to **196 seats**. Furthermore, the Nazis had fought three major election campaigns in one year; party funds were completely exhausted, and Goebbels wrote in his diary of deep despair. The Nazi momentum was breaking.\n\nAt this critical moment, big business intervened. Terrified of a communist takeover, wealthy industrialists (organised by Hjalmar Schacht) sent Hindenburg a formal petition demanding he appoint Hitler as Chancellor to protect their wealth.",
+              "heading": "3. Advanced Analysis: The November Crisis and Nazi Exhaustion"
+            },
+            {
+              "text": "Fearing that keeping Papen in power would cause the SA to start a civil war, Hindenburg sacked Papen and reluctantly made General **Kurt von Schleicher** Chancellor in December 1932.\n\nSchleicher’s time as Chancellor was a complete failure. He had no political support and could not control the Reichstag. Meanwhile, a furious and humiliated Franz von Papen wanted revenge against Schleicher.\n\nPapen began a **'backstairs intrigue'**—secretly meeting with Adolf Hitler, alongside members of Hindenburg's **camarilla** (his son Oskar von Hindenburg and advisor Otto von Meissner). They struck a backroom deal: if Papen could convince the ageing President to make Hitler Chancellor, Hitler would make Papen Vice-Chancellor.",
+              "heading": "4. Schleicher's Failure and the 'Backstairs Plot' (Dec 1932 - Jan 1933)"
+            },
+            {
+              "text": "On **30 January 1933**, President Hindenburg officially appointed Adolf Hitler as Chancellor of Germany.\n\nTo a modern historian, it seems unbelievable that the conservative elites would hand power to a violent extremist. However, they believed they had trapped Hitler in a political cage. Out of a Cabinet of 12 ministers, Hindenburg and Papen allowed **only two other Nazis** (Wilhelm Frick and Hermann Göring); the rest were traditional conservatives.\n\nThe elites severely underestimated Hitler, viewing him as an uneducated political amateur they could easily manipulate to crush the communists. Papen famously boasted to a friend: *\"We have framed him... in two months we will have pushed Hitler into a corner so hard that he'll be squeaking.\"* They believed they were hiring Hitler as their puppet; in reality, they had just handed him the keys to the Republic.",
+              "heading": "5. Advanced Analysis: The Fatal Miscalculation"
+            }
           ]
         },
         {
@@ -28943,28 +29041,36 @@
           "vocab": [],
           "narrative_blocks": [
             {
-              "theme_heading": "The Reichstag Fire (February 1933)"
+              "heading": "The Reichstag Fire (February 1933)",
+              "text": "When Hitler became Chancellor in January 1933, his power was extremely limited. Germany was still a democracy, he did not have a majority in the Reichstag, and President Hindenburg could sack him at any time. Hitler immediately called an election for March 1933, hoping to secure a clear majority.<br><br>Six days before the election, on **27 February 1933**, the Reichstag building was burned to the ground. A young Dutch communist, **Marinus van der Lubbe**, was caught at the scene with matches and firelighters. Hitler claimed this was the signal for a violent communist takeover of Germany."
             },
             {
-              "theme_heading": "Advanced Analysis: The Emergency Decree"
+              "heading": "Advanced Analysis: The Emergency Decree",
+              "text": "Hitler manipulated this crisis perfectly. He convinced President Hindenburg to declare a state of emergency and sign the **Decree for the Protection of the People and the State**. This decree legally suspended civil rights—freedom of speech, freedom of the press, and the right to assemble were instantly gone. Using this terrifying new power, Hermann Göring's police arrested 4,000 communist leaders and shut down all opposition newspapers, severely weakening Nazi opponents right before the election."
             },
             {
-              "theme_heading": "The Enabling Act (March 1933)"
+              "heading": "The Enabling Act (March 1933)",
+              "text": "Despite the violence and intimidation, the Nazis still only won 288 seats (44%) in the March 1933 election—not the two-thirds majority needed to change the constitution.<br><br>To gain absolute power legally, Hitler proposed the **Enabling Act**. This law would give him the right to pass laws without the Reichstag for four years. To get the required two-thirds vote, Hitler used his emergency powers to ban the 81 Communist politicians from entering the building."
             },
             {
-              "theme_heading": "Advanced Analysis: Political Deal-Making"
+              "heading": "Advanced Analysis: Political Deal-Making",
+              "text": "Hitler still needed more votes, so he struck a deal with the Catholic Centre Party, falsely promising to protect the Catholic Church if they voted for him. Meanwhile, the SA surrounded the Kroll Opera House (where the parliament was temporarily meeting), chanting, 'Give us the bill or else fire and murder!' The remaining politicians were terrified. The Enabling Act passed by a massive margin of 444 votes to 94. **Democracy in Germany was officially dead.** The Reichstag had essentially voted itself out of existence."
             },
             {
-              "theme_heading": "Gleichschaltung (Coordination) and Crushing Opposition"
+              "heading": "Gleichschaltung (Coordination) and Crushing Opposition",
+              "text": "Armed with the Enabling Act, Hitler began the rapid process of ***Gleichschaltung***—bringing all of German society into line. He systematically destroyed all external opposition:<br><br>* **May 1933 (Trade Unions):** Trade unions were banned, their leaders arrested, and their funds confiscated. Workers were forced into the Nazi-run German Labour Front (DAF). This meant workers could no longer strike against the government.<br><br>* **July 1933 (Political Parties):** Hitler passed the *Law Against the Formation of Parties*. All political parties except the NSDAP were officially banned. Germany was now a one-party state.<br><br>* **January 1934 (Local Government):** The 18 regional state governments (*Länder*) were stripped of their power, and highly loyal Nazi governors were appointed to run every region directly from Berlin."
             },
             {
-              "theme_heading": "The Internal Threat: The Night of the Long Knives (June 1934)"
+              "heading": "The Internal Threat: The Night of the Long Knives (June 1934)",
+              "text": "By 1934, Hitler’s only remaining threat was internal: **Ernst Röhm and the SA**.<br><br>The SA had grown to over 3 million men and was intensely loyal to Röhm rather than Hitler. Röhm wanted a 'second revolution' to make Germany more socialist, and he wanted to merge his SA with the regular German army (*Reichswehr*).<br><br>The regular army generals and wealthy industrialists despised Röhm. They warned Hitler that if the SA was not stopped, the army would step in and remove Hitler from power. Hitler knew he needed the army to survive. To justify action, Heinrich Himmler and Reinhard Heydrich fabricated evidence that Röhm was planning a treasonous uprising (the 'Röhm Putsch').<br><br>On **30 June 1934**, Hitler launched the **Night of the Long Knives**. The SS arrested Röhm and hundreds of SA leaders, dragging them from their beds. Röhm was later shot in his cell."
             },
             {
-              "theme_heading": "Advanced Analysis: Tying Up Loose Ends"
+              "heading": "Advanced Analysis: Tying Up Loose Ends",
+              "text": "Hitler used this violent purge not just to crush the SA, but to murder old enemies and settle scores. **Gregor Strasser**, a prominent left-wing Nazi rival, was assassinated. Former Chancellor **Kurt von Schleicher** (who had tried to split the Nazis in 1932) was shot dead alongside his wife. **Gustav von Kahr** (who had betrayed Hitler during the 1923 Munich Putsch) was hacked to death in a swamp. Vice-Chancellor Franz von Papen was put under house arrest, permanently terrifying him into silence. Approximately 400 people were murdered. Days later, Hitler passed a law making the murders legal, proving that he was now above the law itself."
             },
             {
-              "theme_heading": "The Death of Hindenburg and the Army Oath (August 1934)"
+              "heading": "The Death of Hindenburg and the Army Oath (August 1934)",
+              "text": "On **2 August 1934**, President Hindenburg died at the age of 86. Within hours, Hitler declared himself **Führer** (Supreme Leader), officially combining the roles of Chancellor and President.<br><br>On the exact same day, the entire German army swore a new **Oath of Allegiance**. Crucially, they did not swear to protect Germany or the constitution; they swore unconditional obedience to the person of *Adolf Hitler*. To cement this, Hitler held a public plebiscite (referendum) in mid-August; 90% of German voters agreed with his new powers. With the army firmly on his side, and the SA broken, Hitler’s totalitarian dictatorship was complete."
             }
           ]
         },
