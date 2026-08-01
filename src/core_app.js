@@ -1334,15 +1334,13 @@ export function initializeApp(unitData) {
     let html = `<div class="lesson-content">`;
     
     let headerEnquiry = lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question;
+    let targetText = headerEnquiry || lesson.title || '';
     let stickyHeaderText = '';
-    if (headerEnquiry) {
-      stickyHeaderText = `${lessonPrefix}: ${headerEnquiry}`;
+    
+    if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(targetText)) {
+      stickyHeaderText = targetText;
     } else {
-      if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(lesson.title)) {
-        stickyHeaderText = lesson.title;
-      } else {
-        stickyHeaderText = `${lessonPrefix}: ${lesson.title}`;
-      }
+      stickyHeaderText = `${lessonPrefix}: ${targetText}`;
     }
     
     // Sticky Header (No visible background, but opaque to hide scrolling text)
