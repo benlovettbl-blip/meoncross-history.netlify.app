@@ -16595,6 +16595,14 @@
           "id": "lesson_1_1",
           "title": "KT1.1: The situation on Elizabeth’s accession, 1558",
           "enquiry": "From crippling debt to looming foreign invasions: How did a young, inexperienced, and contested queen secure a divided and vulnerable England in 1558?",
+          "video": {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
+            "title": "Elizabeth I: From Prison to Palace (Episode 1)",
+            "duration": "49 mins 36 secs",
+            "viewing_task": "Watch this overview and note down the key dangers Elizabeth faced before and immediately after becoming queen.",
+            "model_answer": "1. She survived imprisonment in the Tower of London under her sister Mary's reign.\n2. She faced extreme financial debt upon taking the throne.\n3. She was surrounded by Catholic enemies at home and abroad who questioned her legitimacy."
+          },
           "teacher_notes": {
             "primer": "This lesson establishes the precarious nature of Elizabeth's accession in 1558. It explores the rigid Tudor social hierarchy, the prejudices against female rule, and the immediate crises of state debt and foreign hostility she inherited.",
             "objectives": [
@@ -17926,6 +17934,32 @@
           "id": "lesson_2_1",
           "title": "KT2.1: Plots and revolts at home",
           "enquiry": "Why did English Catholics continually plot to assassinate Elizabeth between 1569 and 1586, and how did Walsingham’s ruthless spy network ultimately lead to the execution of Mary, Queen of Scots?",
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=vZRq1fuD4pE",
+              "title": "Rebellion of the Northern Earls, 1569",
+              "duration": "13 mins 12 secs",
+              "viewing_task": "Note down the main causes of the Rebellion of the Northern Earls and why it ultimately failed.",
+              "model_answer": "Causes: Catholic Earls (Northumberland and Westmorland) wanted to restore Catholicism and felt sidelined by Elizabeth's Protestant advisors like Cecil.\nFailure: Lack of widespread support, Elizabeth moved Mary Queen of Scots, and the Earl of Sussex raised a massive royal army."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=PbXbn1ppTm0",
+              "title": "The Babington Plot",
+              "duration": "4 mins 37 secs",
+              "viewing_task": "How did Francis Walsingham use the Babington Plot to finally trap Mary, Queen of Scots?",
+              "model_answer": "Walsingham intercepted Mary's letters hidden in beer barrels. He deciphered them and waited until Mary explicitly approved the plot to assassinate Elizabeth, giving him the undeniable treasonous evidence needed to execute her."
+            },
+            {
+              "type": "era",
+              "url": "https://era.org.uk/streaming-service-resource/elizabeth-is-secret-agents/",
+              "title": "Elizabeth I's Secret Agents",
+              "duration": "45 mins 0 secs",
+              "viewing_task": "Describe the methods used by Francis Walsingham's spy network to protect the Queen.",
+              "model_answer": "Walsingham used a vast network of informers, double agents, and codebreakers (like Thomas Phelippes). He intercepted letters, used torture to extract confessions, and employed agents provocateurs to draw out conspirators."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson explores the persistent domestic Catholic threat to Elizabeth, tracking the evolution of plots from the Northern Earls to the Babington Plot, and the vital role of Walsingham's spy network.",
             "objectives": [
@@ -18865,6 +18899,14 @@
           "id": "lesson_2_4",
           "title": "KT2.4: The Armada",
           "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
+          "video": {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=RR-XqmhV1Oc",
+            "title": "The Spanish Defeat Scene (The Golden Age)",
+            "duration": "3 mins 8 secs",
+            "viewing_task": "Watch this cinematic depiction of the Armada's defeat. What tactics and environmental factors are shown destroying the Spanish fleet?",
+            "model_answer": "The English used devastating fireships to scatter the Spanish crescent formation. Following this, the chaotic 'Protestant Wind' and violent storms smashed the fleeing Spanish galleons against the rocky coasts of Scotland and Ireland."
+          },
           "teacher_notes": {
             "primer": "This lesson covers the culmination of Anglo-Spanish tensions: the Armada. The focus is on evaluating the overlapping motivations for the invasion, the logistical flaws in the Spanish plan, and the combination of English tactics and weather that caused its defeat.",
             "objectives": [
