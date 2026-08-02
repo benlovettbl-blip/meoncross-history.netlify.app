@@ -92,6 +92,26 @@ export const unitData = {
             "id": "lesson_1_1",
             "title": "KT1.1: The situation on Elizabeth’s accession, 1558",
             "enquiry": "From crippling debt to looming foreign invasions: How did a young, inexperienced, and contested queen secure a divided and vulnerable England in 1558?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "Who was Elizabeth I's father?"
+                },
+                {
+                          "question": "Which religion did Elizabeth's sister, Mary I, ruthlessly enforce during her reign?"
+                },
+                {
+                          "question": "What is the term used to describe the head of the Catholic Church?"
+                },
+                {
+                          "question": "Why was England's economy struggling prior to 1558?"
+                },
+                {
+                          "question": "Why did many Catholics believe Elizabeth was illegitimate and had no right to the throne?"
+                }
+          ]
+},
             "video": {
                 "type": "youtube",
                 "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
@@ -462,6 +482,26 @@ export const unitData = {
             "id": "lesson_1_2",
             "title": "KT1.2: The 'settlement' of religion, 1559",
             "enquiry": "How did Elizabeth I attempt to unite a religiously fractured England in 1559, and why did her 'Middle Way' immediately provoke outrage from both Puritans and Catholics?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "In what year did Elizabeth I become Queen of England?"
+                },
+                {
+                          "question": "How much debt was the Crown in when Elizabeth took over?"
+                },
+                {
+                          "question": "Which European superpower, allied with Scotland, posed a massive invasion threat in 1558?"
+                },
+                {
+                          "question": "Why was Elizabeth's gender considered a serious weakness by 16th-century society?"
+                },
+                {
+                          "question": "Explain how the French threat and the 'Auld Alliance' forced Elizabeth to be cautious during her first year."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson explores Elizabeth's attempt to navigate the treacherous religious divide in England by establishing a 'Middle Way'. The pedagogical focus is on helping students understand that the Religious Settlement of 1559 was a political compromise rather than a purely theological one, and to evaluate how the Church functioned as an instrument of state control before analysing the subsequent backlash from both extremes (Puritans and Catholics).",
                 "objectives": [
@@ -790,6 +830,26 @@ export const unitData = {
             "id": "lesson_1_3",
             "title": "KT1.3: Challenge to the religious settlement",
             "enquiry": "Why did Elizabeth's 'Middle Way' face such fierce opposition, and why did the Catholic threat ultimately eclipse the Puritan grumblings?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "What was the name of the peace treaty Elizabeth signed with France in 1559?"
+                },
+                {
+                          "question": "What title did Elizabeth give herself in the Act of Supremacy to appease both Catholics and Protestants?"
+                },
+                {
+                          "question": "What did the Act of Uniformity dictate about church services and appearances?"
+                },
+                {
+                          "question": "How did the Church of England act as a mechanism for social control for the government?"
+                },
+                {
+                          "question": "Why might a strict Puritan be deeply angered by the compromises made in the Religious Settlement?"
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson evaluates the dual threats to Elizabeth's Religious Settlement. Pedagogically, the focus is on contrasting the fundamentally different natures of these threats: the Puritan challenge was internal, theological, and ultimately contained, whereas the Catholic challenge morphed from passive domestic disobedience into a foreign-backed, treasonous attempt to overthrow the monarchy.",
                 "objectives": [
@@ -1113,6 +1173,26 @@ export const unitData = {
             "id": "lesson_1_4",
             "title": "KT1.4: The problem of Mary, Queen of Scots",
             "enquiry": "Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "What was the role of the 'Royal Visitations' in enforcing the Religious Settlement?"
+                },
+                {
+                          "question": "Which extreme Protestant group wanted to completely remove all traces of Catholicism from the Church?"
+                },
+                {
+                          "question": "What was the 'Crucifix Controversy'?"
+                },
+                {
+                          "question": "Why was the Papal Bull of Excommunication (1570) such a dangerous turning point for Elizabeth?"
+                },
+                {
+                          "question": "Explain how the Revolt of the Northern Earls (1569) proved that the Catholic threat was severe."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson explores the dynastic and political crisis triggered by Mary, Queen of Scots' arrival in England in 1568. The pedagogical goal is for students to grasp the complexity of Elizabeth's dilemma—she could not easily help, punish, banish, or imprison Mary without causing a separate geopolitical disaster.",
                 "objectives": [
@@ -1431,6 +1511,26 @@ export const unitData = {
             "id": "lesson_2_1",
             "title": "KT2.1: Plots and revolts at home",
             "enquiry": "Why did English Catholics continually plot to assassinate Elizabeth between 1569 and 1586, and how did Walsingham’s ruthless spy network ultimately lead to the execution of Mary, Queen of Scots?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "How was Mary, Queen of Scots related to Elizabeth I?"
+                },
+                {
+                          "question": "Why did Mary, Queen of Scots flee to England in 1568?"
+                },
+                {
+                          "question": "What did the Pope do in 1570 that actively encouraged Catholics to rebel against Elizabeth?"
+                },
+                {
+                          "question": "Why did Elizabeth choose to imprison Mary rather than execute her or send her back to Scotland?"
+                },
+                {
+                          "question": "Explain how Mary's presence in England acted as a 'magnet' for Catholic plotters."
+                }
+          ]
+},
             "video": [
                 {
                     "type": "youtube",
@@ -1793,6 +1893,26 @@ export const unitData = {
             "id": "lesson_2_2",
             "title": "KT2.2: Relations with Spain",
             "enquiry": "Why did the 'Cold War' between England and Spain ultimately erupt into the launch of the Spanish Armada in 1588, and how did Elizabeth survive the greatest military threat of her reign?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "Which 1569 rebellion was the first major Catholic attempt to overthrow Elizabeth?"
+                },
+                {
+                          "question": "Who was the mastermind behind the 1571 plot to assassinate Elizabeth and replace her with Mary?"
+                },
+                {
+                          "question": "How did Francis Walsingham use spy networks to protect the Queen?"
+                },
+                {
+                          "question": "Why was the Babington Plot (1586) the final straw for Mary, Queen of Scots?"
+                },
+                {
+                          "question": "Explain how Walsingham's interception of the Babington letters provided the undeniable proof needed for Mary's execution."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson covers the escalation of the Anglo-Spanish conflict from privateering and proxy wars into the full-scale invasion attempt of the Spanish Armada. The pedagogical focus is on helping students weigh the different factors (tactics, Spanish mistakes, weather) that led to the Armada's defeat.",
                 "objectives": [
@@ -2121,6 +2241,26 @@ export const unitData = {
             "id": "lesson_2_3",
             "title": "KT2.3: Outbreak of war with Spain, 1585–88",
             "enquiry": "Why did the 'Cold War' between England and Spain finally escalate into open military conflict in 1585, and how did Robert Dudley's campaign in the Netherlands and Francis Drake's raid on Cadiz shape the coming war?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "In what year was Mary, Queen of Scots executed?"
+                },
+                {
+                          "question": "Who was the powerful Catholic King of Spain during Elizabeth's reign?"
+                },
+                {
+                          "question": "What was a 'privateer' and how did Elizabeth use them against Spain?"
+                },
+                {
+                          "question": "Why was Philip II of Spain angered by Elizabeth's support of the Dutch rebels?"
+                },
+                {
+                          "question": "Explain how Francis Drake's circumnavigation and raids on Spanish treasure ships increased tensions between England and Spain."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson details the transition from cold war to open conflict with Spain, focusing on the deterioration of relations and English direct involvement in the Netherlands via the Treaty of Nonsuch.",
                 "objectives": [
@@ -2396,6 +2536,26 @@ export const unitData = {
             "id": "lesson_2_4",
             "title": "KT2.4: The Armada",
             "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "What was the name of the treaty in 1585 where Elizabeth officially agreed to help the Dutch Protestant rebels?"
+                },
+                {
+                          "question": "Who did Elizabeth send to the Netherlands to command the English army?"
+                },
+                {
+                          "question": "What did Francis Drake do at Cadiz in 1587?"
+                },
+                {
+                          "question": "Why did Drake's raid on Cadiz become known as 'singeing the King of Spain's beard'?"
+                },
+                {
+                          "question": "Explain how the Treaty of Nonsuch and the raid on Cadiz made open warfare with Spain inevitable."
+                }
+          ]
+},
             "video": {
                 "type": "youtube",
                 "url": "https://www.youtube.com/watch?v=RR-XqmhV1Oc",
@@ -2706,6 +2866,26 @@ export const unitData = {
             "id": "lesson_3_1",
             "title": "KT3.1: Education and leisure",
             "enquiry": "How did education and leisure activities reflect the strict social hierarchy of Elizabethan England, and why did the theatre emerge as such a revolutionary—and controversial—cultural phenomenon?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "What formation did the Spanish Armada use to sail up the English Channel?"
+                },
+                {
+                          "question": "What tactic did the English use at the Battle of Gravelines to break the Spanish formation?"
+                },
+                {
+                          "question": "Who was the commander of the Spanish Armada?"
+                },
+                {
+                          "question": "Why did the Spanish ships have to flee north around Scotland and Ireland?"
+                },
+                {
+                          "question": "Explain how the 'Protestant Wind' and English ship design contributed to the catastrophic failure of the Armada."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson explores the strict social hierarchy of Elizabethan England through the lens of education and leisure, culminating in the cultural revolution of the theatre.",
                 "objectives": [
@@ -3017,6 +3197,26 @@ export const unitData = {
             "id": "lesson_3_2",
             "title": "KT3.2: The Problem of Poverty",
             "enquiry": "Why did poverty and vagabondage explode into a national crisis during Elizabeth’s reign, and what forced the government to completely change its strategy from brutal punishment to national welfare?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "In Elizabethan society, what was the 'Great Chain of Being'?"
+                },
+                {
+                          "question": "Name one leisure activity enjoyed exclusively by the nobility."
+                },
+                {
+                          "question": "What was the most popular and affordable form of entertainment for the lower classes in London?"
+                },
+                {
+                          "question": "Why were the Puritans strongly opposed to the theatre?"
+                },
+                {
+                          "question": "Explain how education in Elizabethan England was highly dependent on a person's gender and social class."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson covers the economic crisis of Elizabethan England, focusing on population growth, inflation, enclosure, and the Tudor categorization of the poor. It transitions from early brutal punishments to the foundational steps of a national welfare state.",
                 "objectives": [
@@ -3346,6 +3546,26 @@ export const unitData = {
             "id": "lesson_3_3",
             "title": "KT3.3: Exploration and voyages of discovery",
             "enquiry": "Why did the Elizabethan era become an 'Age of Discovery', and why did Walter Raleigh’s ambitious dream of a New World colony end in disaster?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "What was the term used to describe homeless people who moved from parish to parish looking for work?"
+                },
+                {
+                          "question": "Which Elizabethan law categorised the poor into the 'deserving' and the 'idle'?"
+                },
+                {
+                          "question": "Why did population growth contribute to the poverty crisis?"
+                },
+                {
+                          "question": "How did the enclosure of land for sheep farming negatively impact rural labourers?"
+                },
+                {
+                          "question": "Explain why the Elizabethan government was terrified of vagabonds and why they eventually introduced the Poor Law of 1601."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This lesson covers the technological and economic drivers of Elizabethan exploration, focusing on Drake's circumnavigation and Raleigh's disastrous attempts to colonise Virginia. It emphasises the catastrophic intersection of poor planning, Native American resistance, and the Spanish Armada in dooming the Roanoke colony.",
                 "objectives": [
@@ -3661,6 +3881,26 @@ export const unitData = {
             "id": "lesson_3_4",
             "title": "KT3.4: Raleigh and Virginia",
             "enquiry": "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
+            "do_now": {
+          "type": "retrieval",
+          "questions": [
+                {
+                          "question": "Who was the first Englishman to successfully circumnavigate the globe?"
+                },
+                {
+                          "question": "What was the name of Drake's famous ship?"
+                },
+                {
+                          "question": "Why was the astrolabe crucial for Elizabethan explorers?"
+                },
+                {
+                          "question": "How did the desire to break the Spanish monopoly on the New World drive English exploration?"
+                },
+                {
+                          "question": "Explain how the voyages of discovery not only brought immense wealth to England but also increased international prestige."
+                }
+          ]
+},
             "teacher_notes": {
                 "primer": "This final lesson of the Elizabethan unit examines Raleigh's Virginia colonies. It highlights the intersection of economic motives, disastrous planning (like the grounding of The Tiger), aggressive leadership, and the catastrophic impact of the Spanish Armada on supply lines, culminating in the mystery of the Lost Colony.",
                 "objectives": [

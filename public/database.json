@@ -188,6 +188,272 @@
             "viewing_task": "As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.",
             "model_answer": "The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba)."
           },
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=2yBolHdMejM",
+              "title": "Palestine Population &amp; Jewish Immigration",
+              "duration": "7 mins 57 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fGH94HoSJ2s",
+              "title": "Britain’s WW1 gamble | Origins of the Israel-Palestine Conflict | Part 1",
+              "duration": "15 mins 44 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=pjtQ4Jmxh_8",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=II9mU5ERYak",
+              "title": "Exodus 1947 Documentary Trailer",
+              "duration": "3 mins 10 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=adsPqcpEg0o\\&t=2s",
+              "title": "Pre-IDF Brigades: Haganah, Irgun and Lechi | History of Israel Explained | Unpacked",
+              "duration": "13 mins 54 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=5M6d45bHffE",
+              "title": "Palestine Bomb Outrage (1946)",
+              "duration": "3 mins 16 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=4hs4Z5b-ddE",
+              "title": "KING DAVID HOTEL BLOWN UP",
+              "duration": "2 mins 29 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=EDSxwh3uu9c",
+              "title": "Resolution 181: The Zionist Dream Comes True | History of Israel Explained | Unpacked",
+              "duration": "8 mins 40 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=21_ELNcGSB8",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TB0M-6UdBRQ",
+              "title": "29 November 1947 - UN Passes Resolution 181 - The Partition Plan",
+              "duration": "2 mins 21 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kbdvn8QHyX8",
+              "title": "The Balfour Declaration&#39;s impact, 100 years on",
+              "duration": "8 mins 3 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eTMRMX7Pw5U",
+              "title": "The Arab-Israeli War of 1948 and Nakba explained",
+              "duration": "5 mins 29 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=wjysy7ONisA",
+              "title": "1948 Israeli War of Independence | History of Israel Explained | Unpacked",
+              "duration": "10 mins 42 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=OhQ7yfI0Nbo",
+              "title": "IsraelPalestine For Critical Thinkers: #9 Independence or Nakba",
+              "duration": "6 mins 0 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=megzzpTWajg",
+              "title": "How did the Nakba happen? | Al Jazeera English",
+              "duration": "6 mins 13 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=EcEHjwSBixU",
+              "title": "Ben-Gurion - One Place, One People",
+              "duration": "22 mins 38 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=0e7LZu_ceZQ",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LNvuls_2dCo",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jitbYp16w5w",
+              "title": "Who Will Fire First? (Survival of a Nation)",
+              "duration": "7 mins 23 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Jclz5Fq3y2w",
+              "title": "War on Three Fronts (Survival of a Nation)",
+              "duration": "9 mins 56 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=SOLg_p4ScAU",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=F4GGpOxJW7I",
+              "title": "The W@r Israel Wasn’t Supposed to Survive | Unpacked",
+              "duration": "18 mins 16 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=adsPqcpEg0o\\&t=2s",
+              "title": "Pre-IDF Brigades: Haganah, Irgun and Lechi | History of Israel Explained | Unpacked",
+              "duration": "13 mins 54 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=y0wlOTilVIA",
+              "title": "A brief history of US support for Israel",
+              "duration": "7 mins 41 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eONfl0UbrhI",
+              "title": "Anwar Sadat Visits Israel (This Week in Jewish History) Dr. Henry Abramson",
+              "duration": "6 mins 4 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=SQrbPhrPJ7I",
+              "title": "Yasser Arafat Speech Young at the United Nations in 1974 [English subtitles]",
+              "duration": "10 mins 3 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=eP_4P2mLJTs",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=_pGg50bzLN0",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=E0uLbeQlwjw",
+              "title": "Israeli settlements, explained | Settlements Part I",
+              "duration": "8 mins 5 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fbV4HOBlRFU",
+              "title": "Palestinian ambassador Husam Zomlot wants ‘clear commitment from UK to fix the mess created here&#39;",
+              "duration": "10 mins 24 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=nhOeVObkc7o",
+              "title": "Why Did Israel Refrain from Retaliating against Iraq in 1991?",
+              "duration": "2 mins 19 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=nERZr_d343w",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=cVcC79-Ho_s\\&t=48s",
+              "title": "Historical Video",
+              "duration": "Duration not found",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "UN Partition Plan for Palestine (1947)",
@@ -1380,6 +1646,40 @@
             }
           ],
           "draw_tasks": [],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fwRFhmcfHgg",
+              "title": "The Brink of War: Suez Crisis: (1/2)",
+              "duration": "14 mins 4 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=WwkKiv4AYVY",
+              "title": "A Global Flashpoint: Suez Crisis (2/2)",
+              "duration": "14 mins 56 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=43DqkyuItH8\\&t=2346s",
+              "title": "Nasser: From Dream to Disaster | History | Subtitled Documentary",
+              "duration": "53 mins 4 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=43DqkyuItH8\\&t=2346s",
+              "title": "Nasser: From Dream to Disaster | History | Subtitled Documentary",
+              "duration": "53 mins 4 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "Gamal Abdel Nasser",
@@ -1859,6 +2159,56 @@
               "marks": 8
             }
           ],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=B60O6Kcijso",
+              "title": "Here&#39;s How the Six-Day War Changed the Map of the Middle East | History",
+              "duration": "4 mins 22 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=h7wiiKSYrv8\\&t=237s",
+              "title": "Arab-Israeli War 1967 (Six-Day War Documentary)",
+              "duration": "22 mins 55 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "era",
+              "url": "https://era.org.uk/streaming-service-resource/s3e6-battle-for-the-holy-city-the-six-day-war-days-that-shook-the-world/",
+              "title": "S3e6 Battle For The Holy City The Six Day War Days That Shook The World",
+              "duration": "45 mins 0 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=8i3uIz7hoYs",
+              "title": "Six Days of Miracles",
+              "duration": "10 mins 9 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=h7wiiKSYrv8\\&t=237s",
+              "title": "Arab-Israeli War 1967 (Six-Day War Documentary)",
+              "duration": "22 mins 55 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=44u2JfQg9z8",
+              "title": "1967: A Story of Occupation",
+              "duration": "3 mins 22 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "The Six-Day War Map",
@@ -2317,6 +2667,16 @@
             {
               "question": "Explain the importance of the expulsion of the PLO from Jordan, 1970, for PLO activities in Lebanon.",
               "marks": 8
+            }
+          ],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=s7zFGaUPGUA",
+              "title": "Resolution 242",
+              "duration": "9 mins 3 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
             }
           ],
           "sources": [
@@ -2778,6 +3138,80 @@
               "marks": 4
             }
           ],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=1sBdLja2aVs",
+              "title": "Golda trailer",
+              "duration": "2 mins 8 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Qzl1tWoPQnU",
+              "title": "Israel at War: 1973 | 5 Minute Videos | PragerU",
+              "duration": "5 mins 52 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sFyFynucf7k\\&t=102s",
+              "title": "Yom Kippur War Explained 1973: A Brief History",
+              "duration": "3 mins 8 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=IHypjF9z8Ko",
+              "title": "The Yom Kippur War: Behind The Valley of Tears (Part 1) | History of Israel Explained | Unpacked",
+              "duration": "10 mins 49 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=sFyFynucf7k\\&t=102s",
+              "title": "Yom Kippur War Explained 1973: A Brief History",
+              "duration": "3 mins 8 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=fwWdCNAgB9w",
+              "title": "The Yom Kippur War: How Israel Turned the Tide (Part 2) | History of Israel Explained | Unpacked",
+              "duration": "9 mins 58 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=bFiqwj0qFps",
+              "title": "🕎☪💥 Yom Kippur WAR of 1973 in GREAT HD!!",
+              "duration": "36 mins 23 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "audio",
+              "url": "https://www.bbc.co.uk/programmes/w3cswsnv",
+              "title": "BBC World Service - Witness History, The 1973 Oil Crisis",
+              "duration": "BBC audio/video",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=jENMO7-bFjs",
+              "title": "Golda Meir: &quot;You always called me an old lady, didn&#39;t you.&quot; (she jokingly reproved Anwar Sadat)",
+              "duration": "1 mins 2 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "The Yom Kippur War (1973)",
@@ -3152,6 +3586,40 @@
             }
           ],
           "draw_tasks": [],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=LYhJOjv0Yc8",
+              "title": "When Anwar Sadat visited Israel | Turning Point",
+              "duration": "1 mins 45 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=mbc9ElB5vfQ",
+              "title": "Here&#39;s How the Camp David Accords Impacted the Middle East | History",
+              "duration": "4 mins 9 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=P2C7iBtyOOo",
+              "title": "WE REMEMBER - Israel and Egypt Peace treaty",
+              "duration": "1 mins 29 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=VXzH8SMw1Lo",
+              "title": "The Egypt-Israel peace treaty",
+              "duration": "1 mins 41 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "Sadat visits Jerusalem",
@@ -3620,6 +4088,104 @@
             }
           ],
           "draw_tasks": [],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=D3K9VJ6dhNQ\\&list=RDCMUCU63EiU7Y-8xcRntPIRVrzA\\&index=9",
+              "title": "The Munich Massacre | History of Israel Explained | Unpacked",
+              "duration": "11 mins 8 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "era",
+              "url": "https://era.org.uk/streaming-service-resource/s1e8-black-september-hijackings-days-that-shook-the-world/",
+              "title": "S1e8 Black September Hijackings Days That Shook The World",
+              "duration": "45 mins 0 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=try3LAQxSAE\\&t=698s",
+              "title": "Black September: When Palestine Almost Stole Jordan | Full Documentary",
+              "duration": "13 mins 51 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Azud40CQ3IE",
+              "title": "SEPTEMBER 5 | Official Trailer (2024 Movie)",
+              "duration": "2 mins 23 secs",
+              "viewing_task": "Watch the video and note down 3 key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=D3K9VJ6dhNQ\\&list=RDCMUCU63EiU7Y-8xcRntPIRVrzA\\&index=9",
+              "title": "The Munich Massacre | History of Israel Explained | Unpacked",
+              "duration": "11 mins 8 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=try3LAQxSAE\\&t=698s",
+              "title": "Black September: When Palestine Almost Stole Jordan | Full Documentary",
+              "duration": "13 mins 51 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=T2DNaEPwzQI",
+              "title": "Micro History: The First Lebanon War (1982)",
+              "duration": "2 mins 37 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=NssFRFwJyP0",
+              "title": "What Were The Palestinian Intifadas? | NowThis World",
+              "duration": "5 mins 12 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=rN2safTViZ0",
+              "title": "Micro History: First Intifada (1987-1993)",
+              "duration": "1 mins 59 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=cZ16zTbDx2Q",
+              "title": "NAILA AND THE UPRISING : The First Intifada Begins",
+              "duration": "2 mins 24 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?si=gCLy3WaRHqmF834A\\&v=w3UGTwutpZw\\&feature=youtu.be",
+              "title": "Palestine Remix - How the Gulf War Weakened the PLO",
+              "duration": "1 mins 48 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ENOcD4pQGzg",
+              "title": "The Gulf War in Israel, Explained",
+              "duration": "4 mins 30 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            }
+          ],
           "sources": [
             {
               "title": "The First Intifada (1987)",
@@ -4134,6 +4700,56 @@
             {
               "question": "Explain one consequence of Oslo II, 1995.",
               "marks": 4
+            }
+          ],
+          "extra_videos": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ism-ctaSbw0\\&t=2543",
+              "title": "The Price of Oslo (Episode 1) | Al Jazeera World Documentary",
+              "duration": "47 mins 15 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=TgFWEVQTeHM",
+              "title": "The Price of Oslo (Episode 2) | Al Jazeera World Documentary",
+              "duration": "47 mins 30 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Jk7JQxTDhdM\\&t=329s",
+              "title": "The Oslo Accords | History Lessons",
+              "duration": "6 mins 37 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=5SIAW4cX62I",
+              "title": "Have Israelis &amp; Palestinians Ever Made Peace? | The Oslo Accords Explained",
+              "duration": "13 mins 10 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Ncg713gHwos",
+              "title": "How and why Oslo Accords failed",
+              "duration": "4 mins 42 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=B1RNj8FXKqY",
+              "title": "How Israel automated occupation in Hebron | The Listening Post",
+              "duration": "25 mins 20 secs",
+              "viewing_task": "Watch the material and note down key points.",
+              "model_answer": "Answers will vary."
             }
           ],
           "sources": [
@@ -16595,6 +17211,27 @@
           "id": "lesson_1_1",
           "title": "KT1.1: The situation on Elizabeth’s accession, 1558",
           "enquiry": "From crippling debt to looming foreign invasions: How did a young, inexperienced, and contested queen secure a divided and vulnerable England in 1558?",
+          "do_now": {
+            "type": "retrieval",
+            "questions": [
+              {
+                "question": "Recall: What vital English territory was lost to France in 1559 under the Treaty of Cateau-Cambrésis?",
+                "answer": "Calais"
+              },
+              {
+                "question": "Define: Queen Regnant",
+                "answer": "A queen who rules in her own right with actual power, rather than just being the wife of a king."
+              },
+              {
+                "question": "Explain: Why was the 'Auld Alliance' viewed as a direct geographical threat to Elizabethan England?",
+                "answer": "It was an alliance between France and Scotland, meaning French Catholic troops could be stationed in Scotland on England's northern border."
+              },
+              {
+                "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about why Catholics viewed Elizabeth as an illegitimate monarch.",
+                "answer": "Verbal response required."
+              }
+            ]
+          },
           "video": {
             "type": "youtube",
             "url": "https://www.youtube.com/watch?v=OOeal_k4bmE",
@@ -16620,27 +17257,6 @@
                 "objective": "Evaluate the interconnected domestic and foreign threats facing England in 1558, specifically severe financial weaknesses, the loss of Calais, and the dangerous 'Auld Alliance' between France and Scotland.",
                 "primer": "Connect the domestic financial ruin (£300k debt) to the foreign threats, demonstrating how Elizabeth's lack of funds severely limited her ability to fight a two-front war against France and Scotland.",
                 "question": "How did the 'Auld Alliance' act as a direct geographical and military threat to an already financially crippled England?"
-              }
-            ]
-          },
-          "do_now": {
-            "type": "retrieval",
-            "questions": [
-              {
-                "question": "Recall: What vital English territory was lost to France in 1559 under the Treaty of Cateau-Cambrésis?",
-                "answer": "Calais"
-              },
-              {
-                "question": "Define: Queen Regnant",
-                "answer": "A queen who rules in her own right with actual power, rather than just being the wife of a king."
-              },
-              {
-                "question": "Explain: Why was the 'Auld Alliance' viewed as a direct geographical threat to Elizabethan England?",
-                "answer": "It was an alliance between France and Scotland, meaning French Catholic troops could be stationed in Scotland on England's northern border."
-              },
-              {
-                "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about why Catholics viewed Elizabeth as an illegitimate monarch.",
-                "answer": "Verbal response required."
               }
             ]
           },
@@ -16965,26 +17581,6 @@
           "id": "lesson_1_2",
           "title": "KT1.2: The 'settlement' of religion, 1559",
           "enquiry": "How did Elizabeth I attempt to unite a religiously fractured England in 1559, and why did her 'Middle Way' immediately provoke outrage from both Puritans and Catholics?",
-          "teacher_notes": {
-            "primer": "This lesson explores Elizabeth's attempt to navigate the treacherous religious divide in England by establishing a 'Middle Way'. The pedagogical focus is on helping students understand that the Religious Settlement of 1559 was a political compromise rather than a purely theological one, and to evaluate how the Church functioned as an instrument of state control before analysing the subsequent backlash from both extremes (Puritans and Catholics).",
-            "objectives": [
-              {
-                "objective": "Understand the key features and impact of Elizabeth's religious settlement (1559), including the Act of Supremacy and the Act of Uniformity.",
-                "primer": "Direct students to the first narrative block ('The Middle Way'). Emphasise the subtle language changes, such as 'Supreme Governor', and how ambiguity in the communion service was designed to appease Catholics.",
-                "question": "Why did Elizabeth choose the title 'Supreme Governor' instead of 'Supreme Head', and who was she trying to appease?"
-              },
-              {
-                "objective": "Analyse the crucial role of the Church of England in society, specifically its function in enforcing social control, managing Church courts, and conducting visitations.",
-                "primer": "Use the second narrative block to broaden students' understanding of the Church beyond worship. Highlight the Church courts and visitations to show how religion was used for political and social enforcement.",
-                "question": "How did the Church of England act as a national police force or mechanism for social control in the absence of a standing army?"
-              },
-              {
-                "objective": "Evaluate the nature and extent of the Puritan and Catholic challenges to the religious settlement, including the role of the nobility, the Papacy, and foreign powers.",
-                "primer": "Compare the Puritan and Catholic threats in the final blocks. Focus on how the Puritan threat was largely contained within the clergy, whereas the Catholic threat escalated into foreign-backed treason.",
-                "question": "Why did the arrival of Mary, Queen of Scots in 1568 and the Papal excommunication in 1570 fundamentally transform the Catholic threat?"
-              }
-            ]
-          },
           "do_now": {
             "type": "retrieval",
             "questions": [
@@ -17003,6 +17599,26 @@
               {
                 "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the financial weaknesses Elizabeth inherited in 1558.",
                 "answer": "Verbal response required. Students should mention the £300,000 debt, the Antwerp Exchange, inflation from debasement, and the sale of Crown lands by Mary I."
+              }
+            ]
+          },
+          "teacher_notes": {
+            "primer": "This lesson explores Elizabeth's attempt to navigate the treacherous religious divide in England by establishing a 'Middle Way'. The pedagogical focus is on helping students understand that the Religious Settlement of 1559 was a political compromise rather than a purely theological one, and to evaluate how the Church functioned as an instrument of state control before analysing the subsequent backlash from both extremes (Puritans and Catholics).",
+            "objectives": [
+              {
+                "objective": "Understand the key features and impact of Elizabeth's religious settlement (1559), including the Act of Supremacy and the Act of Uniformity.",
+                "primer": "Direct students to the first narrative block ('The Middle Way'). Emphasise the subtle language changes, such as 'Supreme Governor', and how ambiguity in the communion service was designed to appease Catholics.",
+                "question": "Why did Elizabeth choose the title 'Supreme Governor' instead of 'Supreme Head', and who was she trying to appease?"
+              },
+              {
+                "objective": "Analyse the crucial role of the Church of England in society, specifically its function in enforcing social control, managing Church courts, and conducting visitations.",
+                "primer": "Use the second narrative block to broaden students' understanding of the Church beyond worship. Highlight the Church courts and visitations to show how religion was used for political and social enforcement.",
+                "question": "How did the Church of England act as a national police force or mechanism for social control in the absence of a standing army?"
+              },
+              {
+                "objective": "Evaluate the nature and extent of the Puritan and Catholic challenges to the religious settlement, including the role of the nobility, the Papacy, and foreign powers.",
+                "primer": "Compare the Puritan and Catholic threats in the final blocks. Focus on how the Puritan threat was largely contained within the clergy, whereas the Catholic threat escalated into foreign-backed treason.",
+                "question": "Why did the arrival of Mary, Queen of Scots in 1568 and the Papal excommunication in 1570 fundamentally transform the Catholic threat?"
               }
             ]
           },
@@ -17293,26 +17909,6 @@
           "id": "lesson_1_3",
           "title": "KT1.3: Challenge to the religious settlement",
           "enquiry": "Why did Elizabeth's 'Middle Way' face such fierce opposition, and why did the Catholic threat ultimately eclipse the Puritan grumblings?",
-          "teacher_notes": {
-            "primer": "This lesson evaluates the dual threats to Elizabeth's Religious Settlement. Pedagogically, the focus is on contrasting the fundamentally different natures of these threats: the Puritan challenge was internal, theological, and ultimately contained, whereas the Catholic challenge morphed from passive domestic disobedience into a foreign-backed, treasonous attempt to overthrow the monarchy.",
-            "objectives": [
-              {
-                "objective": "Understand the nature and extent of the Puritan challenge, focusing on their theological objections, the Crucifix Controversy, and the Vestment Controversy.",
-                "primer": "Guide students through the first narrative block. Ensure they understand why Puritans were so outraged by the 'Middle Way' (viewing it as Catholic superstition) but ultimately would not rebel against a Protestant queen.",
-                "question": "Why did the Puritans, despite their anger over crucifixes and vestments, refuse to actively plot to overthrow Elizabeth?"
-              },
-              {
-                "objective": "Evaluate the Catholic challenge at home, including recusancy and the rising threat of the northern nobility.",
-                "primer": "Use the second narrative block to explain the transition from quiet recusancy to the 1569 Northern Earls rebellion. Highlight Elizabeth's initial leniency and why it failed.",
-                "question": "Why did Elizabeth initially instruct her authorities not to strictly enforce recusancy fines on Catholics?"
-              },
-              {
-                "objective": "Analyse the existential threat from abroad, encompassing the Counter-Reformation, the 1570 Papal Bull of excommunication, and the looming shadow of foreign superpowers.",
-                "primer": "Direct students to the third block. Emphasise how the Papal Bull of 1570 fundamentally altered the landscape, weaponising domestic Catholics and drawing in foreign powers.",
-                "question": "How did the 1570 Papal Bull transform the Catholic challenge from a matter of private faith into outright treason?"
-              }
-            ]
-          },
           "do_now": {
             "type": "retrieval",
             "questions": [
@@ -17331,6 +17927,26 @@
               {
                 "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about why the Church of England was essential for social control.",
                 "answer": "Verbal response required. Students should mention Church courts, moral policing, visitations, and preaching loyalty to the Queen."
+              }
+            ]
+          },
+          "teacher_notes": {
+            "primer": "This lesson evaluates the dual threats to Elizabeth's Religious Settlement. Pedagogically, the focus is on contrasting the fundamentally different natures of these threats: the Puritan challenge was internal, theological, and ultimately contained, whereas the Catholic challenge morphed from passive domestic disobedience into a foreign-backed, treasonous attempt to overthrow the monarchy.",
+            "objectives": [
+              {
+                "objective": "Understand the nature and extent of the Puritan challenge, focusing on their theological objections, the Crucifix Controversy, and the Vestment Controversy.",
+                "primer": "Guide students through the first narrative block. Ensure they understand why Puritans were so outraged by the 'Middle Way' (viewing it as Catholic superstition) but ultimately would not rebel against a Protestant queen.",
+                "question": "Why did the Puritans, despite their anger over crucifixes and vestments, refuse to actively plot to overthrow Elizabeth?"
+              },
+              {
+                "objective": "Evaluate the Catholic challenge at home, including recusancy and the rising threat of the northern nobility.",
+                "primer": "Use the second narrative block to explain the transition from quiet recusancy to the 1569 Northern Earls rebellion. Highlight Elizabeth's initial leniency and why it failed.",
+                "question": "Why did Elizabeth initially instruct her authorities not to strictly enforce recusancy fines on Catholics?"
+              },
+              {
+                "objective": "Analyse the existential threat from abroad, encompassing the Counter-Reformation, the 1570 Papal Bull of excommunication, and the looming shadow of foreign superpowers.",
+                "primer": "Direct students to the third block. Emphasise how the Papal Bull of 1570 fundamentally altered the landscape, weaponising domestic Catholics and drawing in foreign powers.",
+                "question": "How did the 1570 Papal Bull transform the Catholic challenge from a matter of private faith into outright treason?"
               }
             ]
           },
@@ -17616,26 +18232,6 @@
           "id": "lesson_1_4",
           "title": "KT1.4: The problem of Mary, Queen of Scots",
           "enquiry": "Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?",
-          "teacher_notes": {
-            "primer": "This lesson explores the dynastic and political crisis triggered by Mary, Queen of Scots' arrival in England in 1568. The pedagogical goal is for students to grasp the complexity of Elizabeth's dilemma—she could not easily help, punish, banish, or imprison Mary without causing a separate geopolitical disaster.",
-            "objectives": [
-              {
-                "objective": "Understand the strength of Mary, Queen of Scots' claim to the English throne and why English Catholics viewed her as the legitimate monarch.",
-                "primer": "Guide students through Mary's royal lineage (great-granddaughter of Henry VII). Ensure they connect her legitimacy to the Catholic rejection of Henry VIII's divorce from Catherine of Aragon.",
-                "question": "Why did devout Catholics believe Mary, Queen of Scots was the true Queen of England, rather than Elizabeth?"
-              },
-              {
-                "objective": "Explain the dramatic events in Scotland that forced Mary to abdicate and flee across the border into England in 1568.",
-                "primer": "Walk through the sequence of Lord Darnley's murder, the Bothwell marriage, and the subsequent Scottish rebellion, emphasising how these events destroyed Mary's authority in Scotland.",
-                "question": "What disastrous decision by Mary directly triggered the uprising of the Scottish Protestant lords?"
-              },
-              {
-                "objective": "Analyse the profound dilemma Mary’s arrival created for Elizabeth, including the investigation into the 'Casket Letters' and the strategic decision to keep her in captivity.",
-                "primer": "Break down the four impossible options Elizabeth faced. Explain the 'Casket Letters' inquiry and how Elizabeth's 'not proven' verdict was a deliberate political fudge.",
-                "question": "Why was the 'not proven' verdict regarding the Casket Letters actually a perfect, calculated outcome for Elizabeth?"
-              }
-            ]
-          },
           "do_now": {
             "type": "retrieval",
             "questions": [
@@ -17654,6 +18250,26 @@
               {
                 "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the Revolt of the Northern Earls (1569).",
                 "answer": "Verbal response required. Students should mention the leaders (Northumberland/Westmorland), the goal to depose Elizabeth, and the storming of Durham Cathedral."
+              }
+            ]
+          },
+          "teacher_notes": {
+            "primer": "This lesson explores the dynastic and political crisis triggered by Mary, Queen of Scots' arrival in England in 1568. The pedagogical goal is for students to grasp the complexity of Elizabeth's dilemma—she could not easily help, punish, banish, or imprison Mary without causing a separate geopolitical disaster.",
+            "objectives": [
+              {
+                "objective": "Understand the strength of Mary, Queen of Scots' claim to the English throne and why English Catholics viewed her as the legitimate monarch.",
+                "primer": "Guide students through Mary's royal lineage (great-granddaughter of Henry VII). Ensure they connect her legitimacy to the Catholic rejection of Henry VIII's divorce from Catherine of Aragon.",
+                "question": "Why did devout Catholics believe Mary, Queen of Scots was the true Queen of England, rather than Elizabeth?"
+              },
+              {
+                "objective": "Explain the dramatic events in Scotland that forced Mary to abdicate and flee across the border into England in 1568.",
+                "primer": "Walk through the sequence of Lord Darnley's murder, the Bothwell marriage, and the subsequent Scottish rebellion, emphasising how these events destroyed Mary's authority in Scotland.",
+                "question": "What disastrous decision by Mary directly triggered the uprising of the Scottish Protestant lords?"
+              },
+              {
+                "objective": "Analyse the profound dilemma Mary’s arrival created for Elizabeth, including the investigation into the 'Casket Letters' and the strategic decision to keep her in captivity.",
+                "primer": "Break down the four impossible options Elizabeth faced. Explain the 'Casket Letters' inquiry and how Elizabeth's 'not proven' verdict was a deliberate political fudge.",
+                "question": "Why was the 'not proven' verdict regarding the Casket Letters actually a perfect, calculated outcome for Elizabeth?"
               }
             ]
           },
@@ -17934,6 +18550,27 @@
           "id": "lesson_2_1",
           "title": "KT2.1: Plots and revolts at home",
           "enquiry": "Why did English Catholics continually plot to assassinate Elizabeth between 1569 and 1586, and how did Walsingham’s ruthless spy network ultimately lead to the execution of Mary, Queen of Scots?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "In what year did Mary, Queen of Scots cross the border and arrive in England?",
+                "a": "1568"
+              },
+              {
+                "q": "What is a 'recusant'?",
+                "a": "A Catholic who refused to attend the new Protestant Church of England services"
+              },
+              {
+                "q": "How did the 1559 Religious Settlement attempt to find a \"middle way\"?",
+                "a": "It established Protestant doctrine but allowed some traditional Catholic practices to remain"
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the reasons for the Puritan Choir's opposition to the Elizabethan Church."
+              }
+            ]
+          },
           "video": [
             {
               "type": "youtube",
@@ -17996,27 +18633,6 @@
               "Describe what happened during the Revolt of the Northern Earls.",
               "List the main Catholic plots against Elizabeth.",
               "Explain how Walsingham used spies to catch plotters."
-            ]
-          },
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "In what year did Mary, Queen of Scots cross the border and arrive in England?",
-                "a": "1568"
-              },
-              {
-                "q": "What is a 'recusant'?",
-                "a": "A Catholic who refused to attend the new Protestant Church of England services"
-              },
-              {
-                "q": "How did the 1559 Religious Settlement attempt to find a \"middle way\"?",
-                "a": "It established Protestant doctrine but allowed some traditional Catholic practices to remain"
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the reasons for the Puritan Choir's opposition to the Elizabethan Church."
-              }
             ]
           },
           "vocab": [],
@@ -18296,6 +18912,27 @@
           "id": "lesson_2_2",
           "title": "KT2.2: Relations with Spain",
           "enquiry": "Why did the 'Cold War' between England and Spain ultimately erupt into the launch of the Spanish Armada in 1588, and how did Elizabeth survive the greatest military threat of her reign?",
+          "do_now": {
+            "type": "retrieval",
+            "questions": [
+              {
+                "question": "Recall: In what year was Mary, Queen of Scots executed at Fotheringhay Castle?",
+                "answer": "1587"
+              },
+              {
+                "question": "Define: What is an 'agent provocateur'?",
+                "answer": "An agent who encourages others to commit a crime or treason in order to trap them."
+              },
+              {
+                "question": "Explain: How did the 1570 Papal Bull impact Philip II's view of his duty towards Elizabeth?",
+                "answer": "It officially declared Elizabeth a heretic and illegitimate, providing religious justification and duty for Philip to overthrow her."
+              },
+              {
+                "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the Babington Plot.",
+                "answer": "Verbal response required."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This lesson covers the escalation of the Anglo-Spanish conflict from privateering and proxy wars into the full-scale invasion attempt of the Spanish Armada. The pedagogical focus is on helping students weigh the different factors (tactics, Spanish mistakes, weather) that led to the Armada's defeat.",
             "objectives": [
@@ -18318,27 +18955,6 @@
                 "objective": "Evaluate the reasons for the Armada's catastrophic failure, weighing English tactics against Spanish mistakes and the weather.",
                 "primer": "Deconstruct the failure into three categories: English strengths (galleons, fireships), Spanish weaknesses (Medina Sidonia, communication), and the weather (the 'Protestant Wind').",
                 "question": "Which factor do you think was most responsible for the Armada's defeat: English tactics, Spanish mistakes, or the weather?"
-              }
-            ]
-          },
-          "do_now": {
-            "type": "retrieval",
-            "questions": [
-              {
-                "question": "Recall: In what year was Mary, Queen of Scots executed at Fotheringhay Castle?",
-                "answer": "1587"
-              },
-              {
-                "question": "Define: What is an 'agent provocateur'?",
-                "answer": "An agent who encourages others to commit a crime or treason in order to trap them."
-              },
-              {
-                "question": "Explain: How did the 1570 Papal Bull impact Philip II's view of his duty towards Elizabeth?",
-                "answer": "It officially declared Elizabeth a heretic and illegitimate, providing religious justification and duty for Philip to overthrow her."
-              },
-              {
-                "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the Babington Plot.",
-                "answer": "Verbal response required."
               }
             ]
           },
@@ -18624,6 +19240,27 @@
           "id": "lesson_2_3",
           "title": "KT2.3: Outbreak of war with Spain, 1585–88",
           "enquiry": "Why did the 'Cold War' between England and Spain finally escalate into open military conflict in 1585, and how did Robert Dudley's campaign in the Netherlands and Francis Drake's raid on Cadiz shape the coming war?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "In what year was Francis Drake knighted on the deck of the *Golden Hind*?",
+                "a": "1581"
+              },
+              {
+                "q": "What is a 'privateer'?",
+                "a": "A private ship owner authorised by their government to attack and capture enemy ships"
+              },
+              {
+                "q": "How did the 1584 Bond of Association respond to the Throckmorton Plot?",
+                "a": "It stated that if Elizabeth were assassinated, Mary, Queen of Scots would be executed"
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the reasons why English Catholics became an increasing threat after 1570."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This lesson details the transition from cold war to open conflict with Spain, focusing on the deterioration of relations and English direct involvement in the Netherlands via the Treaty of Nonsuch.",
             "objectives": [
@@ -18654,27 +19291,6 @@
               "List the reasons why England and Spain became enemies.",
               "Describe what Robert Dudley did in the Netherlands.",
               "Explain how Francis Drake's raid on Cadiz helped England."
-            ]
-          },
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "In what year was Francis Drake knighted on the deck of the *Golden Hind*?",
-                "a": "1581"
-              },
-              {
-                "q": "What is a 'privateer'?",
-                "a": "A private ship owner authorised by their government to attack and capture enemy ships"
-              },
-              {
-                "q": "How did the 1584 Bond of Association respond to the Throckmorton Plot?",
-                "a": "It stated that if Elizabeth were assassinated, Mary, Queen of Scots would be executed"
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the reasons why English Catholics became an increasing threat after 1570."
-              }
             ]
           },
           "vocab": [],
@@ -18899,6 +19515,27 @@
           "id": "lesson_2_4",
           "title": "KT2.4: The Armada",
           "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "In what year did Elizabeth sign the Treaty of Nonsuch?",
+                "a": "1585"
+              },
+              {
+                "q": "What is a 'galleon'?",
+                "a": "A large sailing ship used especially by the Spanish for war and commerce"
+              },
+              {
+                "q": "How did Francis Drake’s 1587 raid on Cadiz specifically impact Spanish food and water supplies?",
+                "a": "He destroyed thousands of seasoned wooden barrel staves, causing the food to rot in new wood"
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the execution of Mary, Queen of Scots."
+              }
+            ]
+          },
           "video": {
             "type": "youtube",
             "url": "https://www.youtube.com/watch?v=RR-XqmhV1Oc",
@@ -18944,27 +19581,6 @@
               "Describe the Spanish plan and why it went wrong.",
               "Explain how the English defeated the Armada.",
               "Describe what happened after the Armada was defeated."
-            ]
-          },
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "In what year did Elizabeth sign the Treaty of Nonsuch?",
-                "a": "1585"
-              },
-              {
-                "q": "What is a 'galleon'?",
-                "a": "A large sailing ship used especially by the Spanish for war and commerce"
-              },
-              {
-                "q": "How did Francis Drake’s 1587 raid on Cadiz specifically impact Spanish food and water supplies?",
-                "a": "He destroyed thousands of seasoned wooden barrel staves, causing the food to rot in new wood"
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the execution of Mary, Queen of Scots."
-              }
             ]
           },
           "vocab": [],
@@ -19209,6 +19825,27 @@
           "id": "lesson_3_1",
           "title": "KT3.1: Education and leisure",
           "enquiry": "How did education and leisure activities reflect the strict social hierarchy of Elizabethan England, and why did the theatre emerge as such a revolutionary—and controversial—cultural phenomenon?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
+                "a": "The Duke of Medina Sidonia"
+              },
+              {
+                "q": "What were 'Dutch flyboats'?",
+                "a": "Small, fast Dutch rebel ships that blockaded the Duke of Parma"
+              },
+              {
+                "q": "How did the 1584 Treaty of Joinville act as a political motivation for the Armada?",
+                "a": "It united France and Spain, leaving England isolated and pushing Philip to attack"
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the English use of fireships at Calais."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This lesson explores the strict social hierarchy of Elizabethan England through the lens of education and leisure, culminating in the cultural revolution of the theatre.",
             "objectives": [
@@ -19245,27 +19882,6 @@
               "Describe the different types of schools in Elizabethan England.",
               "List some sports played by the nobility and the lower classes.",
               "Explain why the theatre was popular and why some people hated it."
-            ]
-          },
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
-                "a": "The Duke of Medina Sidonia"
-              },
-              {
-                "q": "What were 'Dutch flyboats'?",
-                "a": "Small, fast Dutch rebel ships that blockaded the Duke of Parma"
-              },
-              {
-                "q": "How did the 1584 Treaty of Joinville act as a political motivation for the Armada?",
-                "a": "It united France and Spain, leaving England isolated and pushing Philip to attack"
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the English use of fireships at Calais."
-              }
             ]
           },
           "vocab": [],
@@ -19520,6 +20136,27 @@
           "id": "lesson_3_2",
           "title": "KT3.2: The Problem of Poverty",
           "enquiry": "Why did poverty and vagabondage explode into a national crisis during Elizabeth’s reign, and what forced the government to completely change its strategy from brutal punishment to national welfare?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
+                "a": "Duke of Medina Sidonia"
+              },
+              {
+                "q": "What does the term 'Humanism' mean in the context of Elizabethan education?",
+                "a": "A philosophical movement focused on learning, logic, and producing well-rounded scholars instead of just religious study."
+              },
+              {
+                "q": "Why were the Puritans so fiercely opposed to the theatre?",
+                "a": "They believed it encouraged sinful behaviour, drunkenness, and distracted people from prayer."
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the education of an Elizabethan girl."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This lesson covers the economic crisis of Elizabethan England, focusing on population growth, inflation, enclosure, and the Tudor categorization of the poor. It transitions from early brutal punishments to the foundational steps of a national welfare state.",
             "objectives": [
@@ -19603,27 +20240,6 @@
               "model_answer": "Poverty increased significantly in Elizabethan England primarily due to population growth. The population rose from around 3 million in 1551 to over 4 million by 1601. This meant there was a greater demand for food, clothes, and housing, which drove up prices (inflation). At the same time, because there was a surplus of workers, wages fell, making it incredibly difficult for the poorest to afford basic necessities.\n\nSecondly, changes in farming practices, specifically enclosure, worsened the situation. Landlords began enclosing common land to farm profitable sheep instead of growing crops. This meant ordinary villagers lost their traditional rights to graze animals or gather firewood. Furthermore, sheep farming required far fewer labourers than growing crops, leading to massive rural unemployment and forcing many to become vagabonds travelling to towns in search of work.\n\nFinally, the collapse of traditional support systems contributed to the crisis. Before 1536, monasteries had provided food, shelter, and medical care for the poor. Following the Dissolution of the Monasteries under Henry VIII, this vital safety net disappeared, leaving the sick and elderly destitute and entirely reliant on inadequate local parish charity."
             }
           ],
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
-                "a": "Duke of Medina Sidonia"
-              },
-              {
-                "q": "What does the term 'Humanism' mean in the context of Elizabethan education?",
-                "a": "A philosophical movement focused on learning, logic, and producing well-rounded scholars instead of just religious study."
-              },
-              {
-                "q": "Why were the Puritans so fiercely opposed to the theatre?",
-                "a": "They believed it encouraged sinful behaviour, drunkenness, and distracted people from prayer."
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the education of an Elizabethan girl."
-              }
-            ]
-          },
           "narrative_blocks": [
             {
               "theme_heading": "The Causes of the Poverty Crisis",
@@ -19849,6 +20465,27 @@
           "id": "lesson_3_3",
           "title": "KT3.3: Exploration and voyages of discovery",
           "enquiry": "Why did the Elizabethan era become an 'Age of Discovery', and why did Walter Raleigh’s ambitious dream of a New World colony end in disaster?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "What compulsory local tax was introduced by the 1572 Vagabonds Act?",
+                "a": "The Poor Rate"
+              },
+              {
+                "q": "What was an 'Able-Bodied Poor' person?",
+                "a": "An unemployed person physically capable of working, often viewed with intense suspicion by Tudors as lazy or dangerous."
+              },
+              {
+                "q": "How did the agricultural practice of enclosure contribute to the poverty crisis?",
+                "a": "Landlords fenced off land for sheep farming, which required far fewer workers than crop farming, leading to mass evictions and rural unemployment."
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the Puritan opposition to the Elizabethan theatre."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This lesson covers the technological and economic drivers of Elizabethan exploration, focusing on Drake's circumnavigation and Raleigh's disastrous attempts to colonise Virginia. It emphasises the catastrophic intersection of poor planning, Native American resistance, and the Spanish Armada in dooming the Roanoke colony.",
             "objectives": [
@@ -19918,27 +20555,6 @@
               "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
             }
           ],
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "What compulsory local tax was introduced by the 1572 Vagabonds Act?",
-                "a": "The Poor Rate"
-              },
-              {
-                "q": "What was an 'Able-Bodied Poor' person?",
-                "a": "An unemployed person physically capable of working, often viewed with intense suspicion by Tudors as lazy or dangerous."
-              },
-              {
-                "q": "How did the agricultural practice of enclosure contribute to the poverty crisis?",
-                "a": "Landlords fenced off land for sheep farming, which required far fewer workers than crop farming, leading to mass evictions and rural unemployment."
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the Puritan opposition to the Elizabethan theatre."
-              }
-            ]
-          },
           "narrative_blocks": [
             {
               "theme_heading": "The Catalyst for Exploration",
@@ -20164,6 +20780,27 @@
           "id": "lesson_3_4",
           "title": "KT3.4: Raleigh and Virginia",
           "enquiry": "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
+          "do_now": {
+            "type": "questions",
+            "tasks": [
+              {
+                "q": "How much Spanish treasure did Francis Drake capture during his circumnavigation?",
+                "a": "£400,000"
+              },
+              {
+                "q": "What was the purpose of an 'astrolabe'?",
+                "a": "It was a navigational instrument used by sailors to determine their latitude by the position of the stars."
+              },
+              {
+                "q": "Why was the 1576 Poor Relief Act considered a turning point in government attitudes to poverty?",
+                "a": "It finally recognised that some able-bodied people genuinely wanted to work but couldn't, providing them with raw materials instead of just brutal punishment."
+              },
+              {
+                "q": "15 Second Challenge",
+                "a": "Try to speak for 15 seconds non-stop about the Battle of Gravelines."
+              }
+            ]
+          },
           "teacher_notes": {
             "primer": "This final lesson of the Elizabethan unit examines Raleigh's Virginia colonies. It highlights the intersection of economic motives, disastrous planning (like the grounding of The Tiger), aggressive leadership, and the catastrophic impact of the Spanish Armada on supply lines, culminating in the mystery of the Lost Colony.",
             "objectives": [
@@ -20231,27 +20868,6 @@
               "model_answer": "The English attempts to colonise Virginia ultimately failed because of deteriorating relations with the Native American populations. Although initially welcoming, the Algonquian people, led by Chief Wingina, became increasingly hostile. This was because the English colonists, suffering from food shortages, constantly demanded food and resources, which angered the natives. Following violence and the spread of deadly European diseases, the colonists could no longer rely on the natives for survival, crippling the settlement.\n\nSecondly, a severe lack of supplies doomed the colony from the start. The voyage itself was disastrous; the flagship 'Tiger' hit a sandbank upon arrival in 1585, which ruined the majority of their food seeds and gunpowder. Because they arrived too late in the year to plant new crops, they immediately faced starvation and were utterly dependent on supply ships from England, which were dangerously delayed.\n\nFinally, the colonists themselves were poorly chosen for the harsh reality of building a settlement. Many were soldiers or wealthy gentlemen who expected to find instant gold, rather than farmers willing to do the grueling manual labour required to grow crops and build shelters. This lack of relevant skills meant the colony was never self-sufficient and collapsed under the harsh conditions."
             }
           ],
-          "do_now": {
-            "type": "questions",
-            "tasks": [
-              {
-                "q": "How much Spanish treasure did Francis Drake capture during his circumnavigation?",
-                "a": "£400,000"
-              },
-              {
-                "q": "What was the purpose of an 'astrolabe'?",
-                "a": "It was a navigational instrument used by sailors to determine their latitude by the position of the stars."
-              },
-              {
-                "q": "Why was the 1576 Poor Relief Act considered a turning point in government attitudes to poverty?",
-                "a": "It finally recognised that some able-bodied people genuinely wanted to work but couldn't, providing them with raw materials instead of just brutal punishment."
-              },
-              {
-                "q": "15 Second Challenge",
-                "a": "Try to speak for 15 seconds non-stop about the Battle of Gravelines."
-              }
-            ]
-          },
           "narrative_blocks": [
             {
               "theme_heading": "The Significance of Walter Raleigh",

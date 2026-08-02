@@ -55,12 +55,15 @@ async function generate() {
                             let currentDbLink = '';
                             if (lesson.video) {
                                 if (Array.isArray(lesson.video) && lesson.video.length > 0) {
-                                    // Just use the first video's URL for the tracker, or join them
-                                    // Since the tracker expects a single line, we'll join multiple links or take the first
                                     currentDbLink = lesson.video.map(v => v.url).join(', ');
                                 } else if (lesson.video.url) {
                                     currentDbLink = lesson.video.url;
                                 }
+                            }
+                            if (lesson.extra_videos && Array.isArray(lesson.extra_videos)) {
+                                let evLinks = lesson.extra_videos.map(v => v.url).join(', ');
+                                if (currentDbLink) currentDbLink += ', ' + evLinks;
+                                else currentDbLink = evLinks;
                             }
 
                             let finalLink = (saved && saved.link) ? saved.link : currentDbLink;

@@ -1705,9 +1705,15 @@ export function initializeApp(unitData) {
       `;
     }
 
+    let videos = [];
     if (lesson.video) {
-      const videos = Array.isArray(lesson.video) ? lesson.video : [lesson.video];
-      
+      videos = videos.concat(Array.isArray(lesson.video) ? lesson.video : [lesson.video]);
+    }
+    if (lesson.extra_videos && Array.isArray(lesson.extra_videos)) {
+      videos = videos.concat(lesson.extra_videos);
+    }
+    
+    if (videos.length > 0) {
       html += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
           <summary style="cursor: pointer; padding: 20px; font-size: 1.25rem; color: #b45309; font-weight: 600; display: flex; align-items: center; gap: 10px; user-select: none;">

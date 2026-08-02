@@ -186,7 +186,274 @@ export const unitData = {
         "viewing_task": "As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.",
         "model_answer": "The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba)."
       },
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=2yBolHdMejM",
+                  "title": "Palestine Population &amp; Jewish Immigration",
+                  "duration": "7 mins 57 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=fGH94HoSJ2s",
+                  "title": "Britain’s WW1 gamble | Origins of the Israel-Palestine Conflict | Part 1",
+                  "duration": "15 mins 44 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=pjtQ4Jmxh_8",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=II9mU5ERYak",
+                  "title": "Exodus 1947 Documentary Trailer",
+                  "duration": "3 mins 10 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=adsPqcpEg0o\\&t=2s",
+                  "title": "Pre-IDF Brigades: Haganah, Irgun and Lechi | History of Israel Explained | Unpacked",
+                  "duration": "13 mins 54 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=5M6d45bHffE",
+                  "title": "Palestine Bomb Outrage (1946)",
+                  "duration": "3 mins 16 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=4hs4Z5b-ddE",
+                  "title": "KING DAVID HOTEL BLOWN UP",
+                  "duration": "2 mins 29 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=EDSxwh3uu9c",
+                  "title": "Resolution 181: The Zionist Dream Comes True | History of Israel Explained | Unpacked",
+                  "duration": "8 mins 40 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=21_ELNcGSB8",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=TB0M-6UdBRQ",
+                  "title": "29 November 1947 - UN Passes Resolution 181 - The Partition Plan",
+                  "duration": "2 mins 21 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=kbdvn8QHyX8",
+                  "title": "The Balfour Declaration&#39;s impact, 100 years on",
+                  "duration": "8 mins 3 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=eTMRMX7Pw5U",
+                  "title": "The Arab-Israeli War of 1948 and Nakba explained",
+                  "duration": "5 mins 29 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=wjysy7ONisA",
+                  "title": "1948 Israeli War of Independence | History of Israel Explained | Unpacked",
+                  "duration": "10 mins 42 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=OhQ7yfI0Nbo",
+                  "title": "IsraelPalestine For Critical Thinkers: #9 Independence or Nakba",
+                  "duration": "6 mins 0 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=megzzpTWajg",
+                  "title": "How did the Nakba happen? | Al Jazeera English",
+                  "duration": "6 mins 13 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=EcEHjwSBixU",
+                  "title": "Ben-Gurion - One Place, One People",
+                  "duration": "22 mins 38 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=0e7LZu_ceZQ",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=LNvuls_2dCo",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=jitbYp16w5w",
+                  "title": "Who Will Fire First? (Survival of a Nation)",
+                  "duration": "7 mins 23 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=Jclz5Fq3y2w",
+                  "title": "War on Three Fronts (Survival of a Nation)",
+                  "duration": "9 mins 56 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=SOLg_p4ScAU",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=F4GGpOxJW7I",
+                  "title": "The W@r Israel Wasn’t Supposed to Survive | Unpacked",
+                  "duration": "18 mins 16 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=adsPqcpEg0o\\&t=2s",
+                  "title": "Pre-IDF Brigades: Haganah, Irgun and Lechi | History of Israel Explained | Unpacked",
+                  "duration": "13 mins 54 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=y0wlOTilVIA",
+                  "title": "A brief history of US support for Israel",
+                  "duration": "7 mins 41 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=eONfl0UbrhI",
+                  "title": "Anwar Sadat Visits Israel (This Week in Jewish History) Dr. Henry Abramson",
+                  "duration": "6 mins 4 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=SQrbPhrPJ7I",
+                  "title": "Yasser Arafat Speech Young at the United Nations in 1974 [English subtitles]",
+                  "duration": "10 mins 3 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=eP_4P2mLJTs",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=_pGg50bzLN0",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=E0uLbeQlwjw",
+                  "title": "Israeli settlements, explained | Settlements Part I",
+                  "duration": "8 mins 5 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=fbV4HOBlRFU",
+                  "title": "Palestinian ambassador Husam Zomlot wants ‘clear commitment from UK to fix the mess created here&#39;",
+                  "duration": "10 mins 24 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=nhOeVObkc7o",
+                  "title": "Why Did Israel Refrain from Retaliating against Iraq in 1991?",
+                  "duration": "2 mins 19 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=nERZr_d343w",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=cVcC79-Ho_s\\&t=48s",
+                  "title": "Historical Video",
+                  "duration": "Duration not found",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "UN Partition Plan for Palestine (1947)",
           "src": "/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg",
@@ -1378,7 +1645,42 @@ export const unitData = {
         }
       ],
       "draw_tasks": [],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=fwRFhmcfHgg",
+                  "title": "The Brink of War: Suez Crisis: (1/2)",
+                  "duration": "14 mins 4 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=WwkKiv4AYVY",
+                  "title": "A Global Flashpoint: Suez Crisis (2/2)",
+                  "duration": "14 mins 56 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=43DqkyuItH8\\&t=2346s",
+                  "title": "Nasser: From Dream to Disaster | History | Subtitled Documentary",
+                  "duration": "53 mins 4 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=43DqkyuItH8\\&t=2346s",
+                  "title": "Nasser: From Dream to Disaster | History | Subtitled Documentary",
+                  "duration": "53 mins 4 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "Gamal Abdel Nasser",
           "src": "/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg",
@@ -1857,7 +2159,58 @@ export const unitData = {
           "marks": 8
         }
       ],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=B60O6Kcijso",
+                  "title": "Here&#39;s How the Six-Day War Changed the Map of the Middle East | History",
+                  "duration": "4 mins 22 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=h7wiiKSYrv8\\&t=237s",
+                  "title": "Arab-Israeli War 1967 (Six-Day War Documentary)",
+                  "duration": "22 mins 55 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "era",
+                  "url": "https://era.org.uk/streaming-service-resource/s3e6-battle-for-the-holy-city-the-six-day-war-days-that-shook-the-world/",
+                  "title": "S3e6 Battle For The Holy City The Six Day War Days That Shook The World",
+                  "duration": "45 mins 0 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=8i3uIz7hoYs",
+                  "title": "Six Days of Miracles",
+                  "duration": "10 mins 9 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=h7wiiKSYrv8\\&t=237s",
+                  "title": "Arab-Israeli War 1967 (Six-Day War Documentary)",
+                  "duration": "22 mins 55 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=44u2JfQg9z8",
+                  "title": "1967: A Story of Occupation",
+                  "duration": "3 mins 22 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "The Six-Day War Map",
           "src": "/units/cme_new/assets/palestine_1967_map.png",
@@ -2317,7 +2670,18 @@ export const unitData = {
           "marks": 8
         }
       ],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=s7zFGaUPGUA",
+                  "title": "Resolution 242",
+                  "duration": "9 mins 3 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "The Khartoum Resolution",
           "src": "/units/cme_new/assets/card_nasser.png",
@@ -2776,7 +3140,82 @@ export const unitData = {
           "marks": 4
         }
       ],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=1sBdLja2aVs",
+                  "title": "Golda trailer",
+                  "duration": "2 mins 8 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=Qzl1tWoPQnU",
+                  "title": "Israel at War: 1973 | 5 Minute Videos | PragerU",
+                  "duration": "5 mins 52 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=sFyFynucf7k\\&t=102s",
+                  "title": "Yom Kippur War Explained 1973: A Brief History",
+                  "duration": "3 mins 8 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=IHypjF9z8Ko",
+                  "title": "The Yom Kippur War: Behind The Valley of Tears (Part 1) | History of Israel Explained | Unpacked",
+                  "duration": "10 mins 49 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=sFyFynucf7k\\&t=102s",
+                  "title": "Yom Kippur War Explained 1973: A Brief History",
+                  "duration": "3 mins 8 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=fwWdCNAgB9w",
+                  "title": "The Yom Kippur War: How Israel Turned the Tide (Part 2) | History of Israel Explained | Unpacked",
+                  "duration": "9 mins 58 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=bFiqwj0qFps",
+                  "title": "🕎☪💥 Yom Kippur WAR of 1973 in GREAT HD!!",
+                  "duration": "36 mins 23 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "audio",
+                  "url": "https://www.bbc.co.uk/programmes/w3cswsnv",
+                  "title": "BBC World Service - Witness History, The 1973 Oil Crisis",
+                  "duration": "BBC audio/video",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=jENMO7-bFjs",
+                  "title": "Golda Meir: &quot;You always called me an old lady, didn&#39;t you.&quot; (she jokingly reproved Anwar Sadat)",
+                  "duration": "1 mins 2 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "The Yom Kippur War (1973)",
           "src": "/units/cme_new/assets/yom_kippur_crossing.png",
@@ -3150,7 +3589,42 @@ export const unitData = {
         }
       ],
       "draw_tasks": [],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=LYhJOjv0Yc8",
+                  "title": "When Anwar Sadat visited Israel | Turning Point",
+                  "duration": "1 mins 45 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=mbc9ElB5vfQ",
+                  "title": "Here&#39;s How the Camp David Accords Impacted the Middle East | History",
+                  "duration": "4 mins 9 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=P2C7iBtyOOo",
+                  "title": "WE REMEMBER - Israel and Egypt Peace treaty",
+                  "duration": "1 mins 29 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=VXzH8SMw1Lo",
+                  "title": "The Egypt-Israel peace treaty",
+                  "duration": "1 mins 41 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "Sadat visits Jerusalem",
           "src": "/units/cme_new/assets/anwar_sadat.jpg",
@@ -3618,7 +4092,106 @@ export const unitData = {
         }
       ],
       "draw_tasks": [],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=D3K9VJ6dhNQ\\&list=RDCMUCU63EiU7Y-8xcRntPIRVrzA\\&index=9",
+                  "title": "The Munich Massacre | History of Israel Explained | Unpacked",
+                  "duration": "11 mins 8 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "era",
+                  "url": "https://era.org.uk/streaming-service-resource/s1e8-black-september-hijackings-days-that-shook-the-world/",
+                  "title": "S1e8 Black September Hijackings Days That Shook The World",
+                  "duration": "45 mins 0 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=try3LAQxSAE\\&t=698s",
+                  "title": "Black September: When Palestine Almost Stole Jordan | Full Documentary",
+                  "duration": "13 mins 51 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=Azud40CQ3IE",
+                  "title": "SEPTEMBER 5 | Official Trailer (2024 Movie)",
+                  "duration": "2 mins 23 secs",
+                  "viewing_task": "Watch the video and note down 3 key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=D3K9VJ6dhNQ\\&list=RDCMUCU63EiU7Y-8xcRntPIRVrzA\\&index=9",
+                  "title": "The Munich Massacre | History of Israel Explained | Unpacked",
+                  "duration": "11 mins 8 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=try3LAQxSAE\\&t=698s",
+                  "title": "Black September: When Palestine Almost Stole Jordan | Full Documentary",
+                  "duration": "13 mins 51 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=T2DNaEPwzQI",
+                  "title": "Micro History: The First Lebanon War (1982)",
+                  "duration": "2 mins 37 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=NssFRFwJyP0",
+                  "title": "What Were The Palestinian Intifadas? | NowThis World",
+                  "duration": "5 mins 12 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=rN2safTViZ0",
+                  "title": "Micro History: First Intifada (1987-1993)",
+                  "duration": "1 mins 59 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=cZ16zTbDx2Q",
+                  "title": "NAILA AND THE UPRISING : The First Intifada Begins",
+                  "duration": "2 mins 24 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?si=gCLy3WaRHqmF834A\\&v=w3UGTwutpZw\\&feature=youtu.be",
+                  "title": "Palestine Remix - How the Gulf War Weakened the PLO",
+                  "duration": "1 mins 48 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=ENOcD4pQGzg",
+                  "title": "The Gulf War in Israel, Explained",
+                  "duration": "4 mins 30 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "The First Intifada (1987)",
           "src": "/units/cme_new/assets/first_intifada.png",
@@ -4134,7 +4707,58 @@ export const unitData = {
           "marks": 4
         }
       ],
-      "sources": [
+      
+            "extra_videos": [
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=ism-ctaSbw0\\&t=2543",
+                  "title": "The Price of Oslo (Episode 1) | Al Jazeera World Documentary",
+                  "duration": "47 mins 15 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=TgFWEVQTeHM",
+                  "title": "The Price of Oslo (Episode 2) | Al Jazeera World Documentary",
+                  "duration": "47 mins 30 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=Jk7JQxTDhdM\\&t=329s",
+                  "title": "The Oslo Accords | History Lessons",
+                  "duration": "6 mins 37 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=5SIAW4cX62I",
+                  "title": "Have Israelis &amp; Palestinians Ever Made Peace? | The Oslo Accords Explained",
+                  "duration": "13 mins 10 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=Ncg713gHwos",
+                  "title": "How and why Oslo Accords failed",
+                  "duration": "4 mins 42 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                },
+                {
+                  "type": "youtube",
+                  "url": "https://www.youtube.com/watch?v=B1RNj8FXKqY",
+                  "title": "How Israel automated occupation in Hebron | The Listening Post",
+                  "duration": "25 mins 20 secs",
+                  "viewing_task": "Watch the material and note down key points.",
+                  "model_answer": "Answers will vary."
+                }
+            ],
+            "sources": [
         {
           "title": "The Oslo Handshake (1993)",
           "src": "/units/cme_new/assets/yitzhak_rabin.jpg",
