@@ -27,6 +27,14 @@ export const unitData = {
                 ],
                 "model_answer": "Students should observe the deep, continuous channel beneath the seating designed for running water to flush away waste, demonstrating advanced Roman hydraulic engineering, while noting the lack of privacy as a limitation by modern standards."
             },
+            "video": {
+                "type": "era",
+                "url": "https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/",
+                "title": "Learning Zone: Public Baths in Roman Britain",
+                "duration": "5 mins 11 secs",
+                "viewing_task": "Identify three features of a Roman public bathhouse and explain how they helped improve public health.",
+                "model_answer": "Roman bathhouses featured a hypocaust heating system, hot and cold pools (caldarium and frigidarium), and latrines. They improved public health by providing a cheap, communal place for regular washing, which removed dirt and reduced the spread of disease, even though the Romans did not understand germ theory."
+            },
             "do_now": {
                 "type": "questions",
                 "items": [

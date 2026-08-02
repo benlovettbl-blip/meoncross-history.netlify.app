@@ -180,6 +180,14 @@
         {
           "id": "lesson_1",
           "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
+          "video": {
+            "type": "era",
+            "url": "https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/",
+            "title": "Twentieth Century History: Israel and the Arab States",
+            "duration": "20 mins 7 secs",
+            "viewing_task": "As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.",
+            "model_answer": "The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba)."
+          },
           "sources": [
             {
               "title": "UN Partition Plan for Palestine (1947)",
@@ -24028,6 +24036,14 @@
             ],
             "model_answer": "Students should observe the deep, continuous channel beneath the seating designed for running water to flush away waste, demonstrating advanced Roman hydraulic engineering, while noting the lack of privacy as a limitation by modern standards."
           },
+          "video": {
+            "type": "era",
+            "url": "https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/",
+            "title": "Learning Zone: Public Baths in Roman Britain",
+            "duration": "5 mins 11 secs",
+            "viewing_task": "Identify three features of a Roman public bathhouse and explain how they helped improve public health.",
+            "model_answer": "Roman bathhouses featured a hypocaust heating system, hot and cold pools (caldarium and frigidarium), and latrines. They improved public health by providing a cheap, communal place for regular washing, which removed dirt and reduced the spread of disease, even though the Romans did not understand germ theory."
+          },
           "do_now": {
             "type": "questions",
             "items": [
@@ -26235,14 +26251,8 @@
                 "provenance_clue": "Consider who Scheidemann is addressing (the workers and soldiers) and why he might want to paint the revolution as a massive, positive victory right at that moment. Is he trying to calm a chaotic situation?"
               },
               {
-                "type": "written",
-                "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
-                "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\"",
-                "provenance_clue": "Consider who is writing this (a top General) and when (after losing the war). Why might he want to blame politicians rather than admit his army was beaten on the battlefield?"
-              },
-              {
                 "type": "visual",
-                "title": "Source C: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+                "title": "Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
                 "source": "/images/spartacist_uprising.jpg?v=4",
                 "caption": "Armed revolutionaries during the Spartacist Uprising",
                 "provenance_clue": "Photographs can capture a snapshot of reality, but think about what might be happening outside the frame. Does this image support the idea that the new republic was stable and fully supported by the people?"
@@ -26270,12 +26280,6 @@
                 "question": "Why was Proportional Representation considered a 'fatal flaw' despite being highly democratic?"
               }
             ]
-          },
-          "video": {
-            "type": "youtube",
-            "url": "https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1",
-            "title": "Overview: The Birth of the Weimar Republic",
-            "viewing_task": "Watch the first 4 minutes. Note down three major problems the new government faced on day one."
           },
           "do_now": {
             "type": "questions",
@@ -26676,6 +26680,24 @@
               }
             ]
           },
+          "video": [
+            {
+              "type": "era",
+              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
+              "title": "Hitler's Rise, the Colour Films - The Treaty of Versailles",
+              "duration": "50 mins",
+              "viewing_task": "Watch this clip and identify three ways the Treaty of Versailles caused deep resentment in Germany.",
+              "model_answer": "1. The 'War Guilt' clause (Article 231) felt like a humiliating national insult.<br>2. The staggering £6.6 billion reparations bill threatened to bankrupt the economy.<br>3. The extreme loss of territory (13% of land, including the Polish Corridor) left Germany feeling vulnerable and weak."
+            },
+            {
+              "type": "era",
+              "url": "https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/",
+              "title": "Make Germany Pay - Twentieth Century History",
+              "duration": "20 mins",
+              "viewing_task": "Note down the key financial and territorial penalties imposed on Germany.",
+              "model_answer": "<b>Financial:</b> Germany was forced to pay £6.6 billion in reparations (mostly to France and Belgium).<br><b>Territorial:</b> They lost all overseas colonies, Alsace-Lorraine was returned to France, and the Polish Corridor was created, splitting Germany in two."
+            }
+          ],
           "do_now": {
             "type": "retrieval",
             "questions": [

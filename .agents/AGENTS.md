@@ -57,7 +57,11 @@ Whenever generating or modifying the `generate_worksheets.js` Node script for pr
 Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the following safe sync commands for the specific unit:
 1. `node extract_units.js <unit_id>`
 2. `node build_database.cjs`
+3. `node generate_tracker_v2.mjs`
 Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run these safe unit-targeted commands proactively so the user never has to remember or type the phrases themselves.
+
+## Video Injection Metadata
+Whenever injecting a new ERA or YouTube video link into a lesson, you MUST automatically fetch the URL's metadata and accurately determine its exact duration (e.g., '5 mins 11 secs') rather than using placeholder text like 'Short clip'.
 ## "How Useful" Scaffolding (Provenance Clues)
 Whenever you create or modify a "How useful" source assessment question **specifically for the Medicine Through Time (Paper 1) unit**, you MUST provide scaffolding clues for provenance. Students find provenance very difficult, so the scaffolding box must include specific hints (e.g., using a `provenance_clue` property) that prompt them to consider the author, audience, and motive of the source. Do not apply this rule to other units unless explicitly asked.
 

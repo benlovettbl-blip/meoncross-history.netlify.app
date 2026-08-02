@@ -178,6 +178,14 @@ export const unitData = {
     {
       "id": "lesson_1",
       "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
+      "video": {
+        "type": "era",
+        "url": "https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/",
+        "title": "Twentieth Century History: Israel and the Arab States",
+        "duration": "20 mins 7 secs",
+        "viewing_task": "As you watch the programme, note down three ways in which the creation of the State of Israel in 1948 changed the political geography of the Middle East.",
+        "model_answer": "The creation of Israel fundamentally changed the Middle East by establishing a sovereign Jewish state in Palestine, triggering the First Arab-Israeli War, redrawing borders as Israel expanded its territory, and causing the permanent displacement of over 700,000 Palestinian Arabs (the Nakba)."
+      },
       "sources": [
         {
           "title": "UN Partition Plan for Palestine (1947)",

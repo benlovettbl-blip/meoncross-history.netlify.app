@@ -74,14 +74,8 @@
               "provenance_clue": "Consider who Scheidemann is addressing (the workers and soldiers) and why he might want to paint the revolution as a massive, positive victory right at that moment. Is he trying to calm a chaotic situation?"
             },
             {
-              "type": "written",
-              "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
-              "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\"",
-              "provenance_clue": "Consider who is writing this (a top General) and when (after losing the war). Why might he want to blame politicians rather than admit his army was beaten on the battlefield?"
-            },
-            {
               "type": "visual",
-              "title": "Source C: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+              "title": "Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
               "source": "/images/spartacist_uprising.jpg?v=4",
               "caption": "Armed revolutionaries during the Spartacist Uprising",
               "provenance_clue": "Photographs can capture a snapshot of reality, but think about what might be happening outside the frame. Does this image support the idea that the new republic was stable and fully supported by the people?"
@@ -109,12 +103,6 @@
               "question": "Why was Proportional Representation considered a 'fatal flaw' despite being highly democratic?"
             }
           ]
-        },
-        "video": {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1",
-          "title": "Overview: The Birth of the Weimar Republic",
-          "viewing_task": "Watch the first 4 minutes. Note down three major problems the new government faced on day one."
         },
         "do_now": {
           "type": "questions",
@@ -515,6 +503,24 @@
             }
           ]
         },
+        "video": [
+          {
+            "type": "era",
+            "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
+            "title": "Hitler's Rise, the Colour Films - The Treaty of Versailles",
+            "duration": "50 mins",
+            "viewing_task": "Watch this clip and identify three ways the Treaty of Versailles caused deep resentment in Germany.",
+            "model_answer": "1. The 'War Guilt' clause (Article 231) felt like a humiliating national insult.<br>2. The staggering £6.6 billion reparations bill threatened to bankrupt the economy.<br>3. The extreme loss of territory (13% of land, including the Polish Corridor) left Germany feeling vulnerable and weak."
+          },
+          {
+            "type": "era",
+            "url": "https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/",
+            "title": "Make Germany Pay - Twentieth Century History",
+            "duration": "20 mins",
+            "viewing_task": "Note down the key financial and territorial penalties imposed on Germany.",
+            "model_answer": "<b>Financial:</b> Germany was forced to pay £6.6 billion in reparations (mostly to France and Belgium).<br><b>Territorial:</b> They lost all overseas colonies, Alsace-Lorraine was returned to France, and the Polish Corridor was created, splitting Germany in two."
+          }
+        ],
         "do_now": {
           "type": "retrieval",
           "questions": [

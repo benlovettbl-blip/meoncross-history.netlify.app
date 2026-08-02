@@ -1708,24 +1708,52 @@ export function initializeApp(unitData) {
     if (lesson.video) {
       const videos = Array.isArray(lesson.video) ? lesson.video : [lesson.video];
       
-      videos.forEach((vid, idx) => {
-        let embedHtml = '';
-        if (vid.type === 'youtube') {
-          embedHtml = `<iframe src="${vid.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 400px; border-radius: 8px;"></iframe>`;
-        } else if (vid.type === 'era') {
-          embedHtml = `<iframe src="${vid.url}" style="width: 100%; height: 400px; border: none; border-radius: 8px;"></iframe>`;
-        }
-        
+      html += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <summary style="cursor: pointer; padding: 20px; font-size: 1.25rem; color: #b45309; font-weight: 600; display: flex; align-items: center; gap: 10px; user-select: none;">
+            <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> Lesson Video Resources (${videos.length})
+          </summary>
+          <div style="padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 15px;">
+      `;
+
+      videos.forEach((vid) => {
+        let providerText = vid.type === 'youtube' ? 'YouTube' : 'ERA';
+        let iconColor = vid.type === 'youtube' ? '#dc2626' : '#3b82f6';
+        let iconClass = vid.type === 'youtube' ? 'fa-brands fa-youtube' : 'fa-solid fa-arrow-up-right-from-square';
+
         html += `
-          <div class="video-container" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: ${idx === videos.length - 1 ? '30px' : '20px'}; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <h3 style="margin-top: 0; color: #b45309; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-              <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> ${vid.title || 'Lesson Overview Video'}
-            </h3>
-            ${embedHtml}
-            ${vid.viewing_task ? `<div style="margin-top: 15px; padding: 12px; background: #fffbeb; border-left: 4px solid #f59e0b; color: #b45309; font-weight: 600; border-radius: 4px;"><i class="fa-solid fa-bullseye" style="margin-right: 5px;"></i> Viewing Task: ${vid.viewing_task}</div>` : ''}
+          <div style="background: #f8fafc; border-left: 4px solid ${iconColor}; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="${iconClass}" style="font-size: 1.2rem; color: ${iconColor};"></i>
+                <div>
+                  <div style="color: #1e293b; font-size: 0.95rem; font-weight: 600;">${vid.title || 'External Video Resource'} ${vid.duration ? `<span style="color: #64748b; font-weight: normal; margin-left: 8px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}</div>
+                  <div style="color: #64748b; font-size: 0.85rem;">External ${providerText} Video. Opens in a new secure tab.</div>
+                </div>
+              </div>
+              <a href="${vid.url}" target="_blank" style="white-space: nowrap; background: #eff6ff; color: #2563eb; padding: 6px 12px; border: 1px solid #bfdbfe; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;">
+                Watch <i class="fa-solid fa-play" style="margin-left: 4px; font-size: 0.8rem;"></i>
+              </a>
+            </div>
+            ${vid.viewing_task ? `<div style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; font-size: 0.9rem; color: #b45309;"><i class="fa-solid fa-bullseye" style="margin-right: 5px;"></i> <b>Viewing Task:</b> ${vid.viewing_task}</div>` : ''}
+            ${vid.model_answer ? `
+            <details style="background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 2px;">
+              <summary style="cursor: pointer; padding: 8px 12px; font-size: 0.9rem; color: #166534; font-weight: 600; user-select: none; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-key"></i> Reveal Model Answer
+              </summary>
+              <div style="padding: 0 12px 12px 12px; font-size: 0.9rem; color: #14532d; line-height: 1.5;">
+                ${vid.model_answer}
+              </div>
+            </details>
+            ` : ''}
           </div>
         `;
       });
+      
+      html += `
+          </div>
+        </details>
+      `;
     }
 
     if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
