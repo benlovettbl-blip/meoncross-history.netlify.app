@@ -137,7 +137,7 @@ export const unitData = {
                     "theme_heading": "Roman Water Transforms Britain"
                 },
                 {
-                    "image": "water_local_fishbourne.jpg",
+                    "image": "/assets/water_local_fishbourne.jpg",
                     "tasks": [
                         {
                             "type": "text",
@@ -392,7 +392,7 @@ export const unitData = {
                     "theme_heading": "Monastic Cleanliness and Hygiene"
                 },
                 {
-                    "image": "water_local_titchfield.jpg",
+                    "image": "/assets/water_local_titchfield.jpg",
                     "tasks": [
                         {
                             "type": "text",
@@ -665,7 +665,7 @@ export const unitData = {
                     "theme_heading": "London's New Water Architecture"
                 },
                 {
-                    "image": "water_local_southsea.jpg",
+                    "image": "/assets/water_local_southsea.jpg",
                     "tasks": [
                         {
                             "type": "text",
@@ -910,7 +910,7 @@ export const unitData = {
                     "theme_heading": "Squalid Urban Living"
                 },
                 {
-                    "image": "water_local_cholera.jpg",
+                    "image": "/assets/water_local_cholera.jpg",
                     "tasks": [
                         {
                             "type": "text",
@@ -1169,7 +1169,7 @@ export const unitData = {
                     "theme_heading": "The Great Stink Forces Action"
                 },
                 {
-                    "image": "water_local_eastney.jpg",
+                    "image": "/assets/water_local_eastney.jpg",
                     "tasks": [
                         {
                             "type": "text",

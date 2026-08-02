@@ -1705,7 +1705,28 @@ export function initializeApp(unitData) {
       `;
     }
 
-
+    if (lesson.video) {
+      const videos = Array.isArray(lesson.video) ? lesson.video : [lesson.video];
+      
+      videos.forEach((vid, idx) => {
+        let embedHtml = '';
+        if (vid.type === 'youtube') {
+          embedHtml = `<iframe src="${vid.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 400px; border-radius: 8px;"></iframe>`;
+        } else if (vid.type === 'era') {
+          embedHtml = `<iframe src="${vid.url}" style="width: 100%; height: 400px; border: none; border-radius: 8px;"></iframe>`;
+        }
+        
+        html += `
+          <div class="video-container" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: ${idx === videos.length - 1 ? '30px' : '20px'}; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #b45309; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+              <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> ${vid.title || 'Lesson Overview Video'}
+            </h3>
+            ${embedHtml}
+            ${vid.viewing_task ? `<div style="margin-top: 15px; padding: 12px; background: #fffbeb; border-left: 4px solid #f59e0b; color: #b45309; font-weight: 600; border-radius: 4px;"><i class="fa-solid fa-bullseye" style="margin-right: 5px;"></i> Viewing Task: ${vid.viewing_task}</div>` : ''}
+          </div>
+        `;
+      });
+    }
 
     if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
       let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
@@ -1788,10 +1809,10 @@ export function initializeApp(unitData) {
         contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
             const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
             if (!hasPerson) {
-                return `<strong class="no-print" style="color: #475569;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+                return name;
             }
             if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
-                return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+                return name;
             }
             if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
             return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
@@ -1815,10 +1836,10 @@ export function initializeApp(unitData) {
           l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
               const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
               if (!hasPerson) {
-                  return `<strong class="no-print" style="color: #475569;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+                  return name;
               }
               if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
-                  return `<strong class="key-individual-inline-text no-print" style="color: #2563eb;">${name}</strong><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+                  return name;
               }
               if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
               return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
@@ -1977,7 +1998,9 @@ export function initializeApp(unitData) {
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         lesson.tasks.forEach((task, tIdx) => {
-          let qText = formatQuestion(task.text || task.question);
+          let rawQText = task.text || task.question || "";
+          let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+          let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
           let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
           let clueBtn = '';
           if (clueParaMatch) {
@@ -1985,10 +2008,18 @@ export function initializeApp(unitData) {
             clueBtn = `<button class="btn btn-secondary btn-sm-icon" title="Find Evidence" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i></button>`;
           }
 
+          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+          let displayHeading = '';
+          if (match) {
+              displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
+              qText = match[2];
+          }
+
           html += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              ${displayHeading}
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                Task ${tIdx + 1}: ${qText}
+                Q${tIdx + 1}. ${qText}
                 <span style="display: inline-flex; vertical-align: middle;">
                   ${clueBtn}
                   ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}
@@ -2148,8 +2179,8 @@ export function initializeApp(unitData) {
     if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
       let gcseHtml = `
         <div class="phase-card">
-          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> ${window.unitData && window.unitData.title && window.unitData.title.includes('KS3') ? 'Assessment Practice' : 'Assessment Practice'}</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${window.unitData && window.unitData.title && window.unitData.title.includes('KS3') ? 'Assessment Practice' : 'Assessment Practice'}</div>
             <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
           </div>
       `;
@@ -2476,7 +2507,15 @@ export function initializeApp(unitData) {
     }
     
     window.addEventListener('popstate', (e) => {
-      if (e.state && e.state.lessonIndex !== undefined) {
+      if (e.state && e.state.customTab) {
+        // Trigger the corresponding custom tab
+        const links = document.querySelectorAll('.lesson-link');
+        links.forEach(l => {
+          if (l.innerText.toLowerCase().includes(e.state.customTab.replace('_', ' '))) {
+            l.click();
+          }
+        });
+      } else if (e.state && e.state.lessonIndex !== undefined) {
         window.renderLessonByIndex(e.state.lessonIndex, true);
       } else {
         window.renderDashboard(true);
@@ -2723,6 +2762,11 @@ window.toggleMap = function(btn) {
 
 // --- Key Individual Link Global Functions ---
 window.jumpToKeyIndividual = function(name) {
+  // Push state manually since targetLink.click() is an untrusted event and we've blocked it from pushing state automatically
+  const url = new URL(window.location);
+  url.searchParams.set('tab', 'key_individuals');
+  history.pushState({ customTab: 'key_individuals' }, "", url);
+
   // 1. Find the Key Individuals sidebar link and click it
   const kiLinks = document.querySelectorAll('.lesson-link');
   let targetLink = null;

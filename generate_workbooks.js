@@ -146,9 +146,11 @@ allDirs.forEach(unitId => {
       } else {
         trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">Do Now: / ${maxScore}</td><td style="border:1px solid #333; padding:6px; width:60px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
         
-        trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q1: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
-        trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q2: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
-        trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q3: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        if (unitData.has_gcse_exams) {
+          trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q1: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+          trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q2: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+          trackerRows += `<tr><td style="border:1px solid #333; padding:6px; padding-left: 20px; font-style: italic; font-size: 0.9em;">&#x21b3; Exam Q3: ...........................................................</td><td style="border:1px solid #333; padding:6px; text-align:center; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        }
       }
     });
 
@@ -297,12 +299,12 @@ allDirs.forEach(unitId => {
     // Sources
     if (lesson.sources && lesson.sources.length > 0) {
       lesson.sources.forEach(source => {
-        if(source.src) {
-          let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src;
+        if(source.src || source.caption || source.text) {
           html += `
             <div class="source-container" style="page-break-inside: avoid;">
               ${source.title ? `<strong>${source.title}</strong><br>` : ''}
-              <img src="${src}" alt="Source">
+              ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
+              ${source.text ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${source.text}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
             </div>
           `;
@@ -475,7 +477,17 @@ allDirs.forEach(unitId => {
       lesson.tasks.forEach((task, tIdx) => {
         let qText = task.question || task.text || '';
         html += `<div class="task-box">`;
-        html += `<p style="font-weight: bold; margin-top: 0;">Task ${tIdx + 1}: ${qText}</p>`;
+        
+        let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+        if (match) {
+            let subhead = match[1];
+            let rest = match[2];
+            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${tIdx + 1}. ${rest}</p>`;
+        } else {
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${tIdx + 1}. ${qText}</p>`;
+        }
+        
         for(let i=0; i<6; i++) {
             html += `<div class="task-lines-large"></div>`;
         }

@@ -41,6 +41,12 @@ if (!unitId) {
         tlLink.href = '#';
         tlLink.onclick = (e) => {
           e.preventDefault();
+          if (e.isTrusted !== false) {
+            const url = new URL(window.location);
+            url.searchParams.set('tab', 'timeline');
+            history.pushState({ customTab: 'timeline' }, "", url);
+          }
+
           document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
           tlLink.classList.add('active');
           const contentArea = document.getElementById('content-area');
@@ -59,6 +65,12 @@ if (!unitId) {
         termLink.href = '#';
         termLink.onclick = (e) => {
           e.preventDefault();
+          if (e.isTrusted !== false) {
+            const url = new URL(window.location);
+            url.searchParams.set('tab', 'terminology');
+            history.pushState({ customTab: 'terminology' }, "", url);
+          }
+
           document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
           termLink.classList.add('active');
           const contentArea = document.getElementById('content-area');
@@ -78,6 +90,12 @@ if (!unitId) {
         kiLink.href = '#';
         kiLink.onclick = (e) => {
           e.preventDefault();
+          if (e.isTrusted !== false) {
+            const url = new URL(window.location);
+            url.searchParams.set('tab', 'key_individuals');
+            history.pushState({ customTab: 'key_individuals' }, "", url);
+          }
+
           document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
           kiLink.classList.add('active');
           const contentArea = document.getElementById('content-area');

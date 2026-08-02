@@ -6,8 +6,16 @@ import { state } from './state.js';
 import { parseMarkdown } from './markdown_parser.js';
 import { renderDashboard, renderInteractiveQuiz, renderTimeline, renderBookletView, renderProfileView, renderDecisionsView, renderTabooView, renderLessonsView } from './views.js';
 
-export async function switchView(viewName, param = null) {
+export async function switchView(viewName, param = null, skipHistory = false) {
   state.currentView = viewName;
+  
+  if (!skipHistory) {
+    const url = new URL(window.location);
+    url.searchParams.set('view', viewName);
+    if (param) url.searchParams.set('unit', param);
+    else url.searchParams.delete('unit');
+    window.history.pushState({ view: viewName, unit: param }, "", url);
+  }
   
   // Manage Back Button
   const backBtn = document.getElementById('header-back-btn');

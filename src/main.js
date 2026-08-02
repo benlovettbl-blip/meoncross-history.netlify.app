@@ -34,8 +34,20 @@ window.addEventListener('DOMContentLoaded', async () => {
     themeBtn.classList.add('active');
   }
 
-  // Load main dashboard
-  switchView('dashboard');
+  // Load view based on URL or fallback to dashboard
+  const urlParams = new URLSearchParams(window.location.search);
+  const view = urlParams.get('view') || 'dashboard';
+  const unit = urlParams.get('unit');
+  
+  switchView(view, unit, true);
+
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.view) {
+      switchView(e.state.view, e.state.unit, true);
+    } else {
+      switchView('dashboard', null, true);
+    }
+  });
   
   // Hide the loading curtain smoothly
   setTimeout(() => {

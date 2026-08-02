@@ -24138,7 +24138,7 @@
               "theme_heading": "Roman Water Transforms Britain"
             },
             {
-              "image": "water_local_fishbourne.jpg",
+              "image": "/assets/water_local_fishbourne.jpg",
               "tasks": [
                 {
                   "type": "text",
@@ -24393,7 +24393,7 @@
               "theme_heading": "Monastic Cleanliness and Hygiene"
             },
             {
-              "image": "water_local_titchfield.jpg",
+              "image": "/assets/water_local_titchfield.jpg",
               "tasks": [
                 {
                   "type": "text",
@@ -24666,7 +24666,7 @@
               "theme_heading": "London's New Water Architecture"
             },
             {
-              "image": "water_local_southsea.jpg",
+              "image": "/assets/water_local_southsea.jpg",
               "tasks": [
                 {
                   "type": "text",
@@ -24911,7 +24911,7 @@
               "theme_heading": "Squalid Urban Living"
             },
             {
-              "image": "water_local_cholera.jpg",
+              "image": "/assets/water_local_cholera.jpg",
               "tasks": [
                 {
                   "type": "text",
@@ -25170,7 +25170,7 @@
               "theme_heading": "The Great Stink Forces Action"
             },
             {
-              "image": "water_local_eastney.jpg",
+              "image": "/assets/water_local_eastney.jpg",
               "tasks": [
                 {
                   "type": "text",
@@ -26235,8 +26235,14 @@
                 "provenance_clue": "Consider who Scheidemann is addressing (the workers and soldiers) and why he might want to paint the revolution as a massive, positive victory right at that moment. Is he trying to calm a chaotic situation?"
               },
               {
+                "type": "written",
+                "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
+                "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\"",
+                "provenance_clue": "Consider who is writing this (a top General) and when (after losing the war). Why might he want to blame politicians rather than admit his army was beaten on the battlefield?"
+              },
+              {
                 "type": "visual",
-                "title": "Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+                "title": "Source C: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
                 "source": "/images/spartacist_uprising.jpg?v=4",
                 "caption": "Armed revolutionaries during the Spartacist Uprising",
                 "provenance_clue": "Photographs can capture a snapshot of reality, but think about what might be happening outside the frame. Does this image support the idea that the new republic was stable and fully supported by the people?"
@@ -26264,6 +26270,12 @@
                 "question": "Why was Proportional Representation considered a 'fatal flaw' despite being highly democratic?"
               }
             ]
+          },
+          "video": {
+            "type": "youtube",
+            "url": "https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1",
+            "title": "Overview: The Birth of the Weimar Republic",
+            "viewing_task": "Watch the first 4 minutes. Note down three major problems the new government faced on day one."
           },
           "do_now": {
             "type": "questions",
@@ -26370,6 +26382,10 @@
             {
               "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
               "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\""
+            },
+            {
+              "title": "Source C: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+              "source": "/images/spartacist_uprising.jpg?v=4"
             }
           ],
           "narrative_blocks": [
@@ -26607,8 +26623,8 @@
               "model": "The old royal system collapsed; a new democracy replaced it."
             },
             {
-              "question": "Historian's Judgement: Read Source B carefully. What was General Ludendorff's primary motive for claiming the army was 'stabbed in the back'? How does this motive affect the reliability of the source?",
-              "model": "Ludendorff's primary motive was self-preservation. As a military leader, he wanted to shift the blame for Germany's defeat away from his own strategic failures on the battlefield and onto the new democratic politicians at home. Because he is actively lying to protect his own reputation and the honour of the army, the source is highly unreliable as an objective account of why Germany lost the war."
+              "question": "Historian's Judgement: How useful is Source B for an enquiry into the reasons for Germany's defeat in 1918? Evaluate the source using its provenance (motive) and your own contextual knowledge.",
+              "model": "Source B is highly useful for revealing what top generals wanted the public to believe, but it is not a reliable factual account of the defeat. Ludendorff's primary motive was self-preservation: he wanted to shift the blame for his own strategic military failures onto the new democratic politicians. Using contextual knowledge, we know the army was already collapsing before the armistice due to the Allied blockade and military exhaustion. Therefore, its utility lies in showing the origins of the 'Stab-in-the-back' myth, rather than the reality of the military defeat."
             },
             {
               "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) Proportional Representation was highly democratic, BUT... 2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt betrayed by the Armistice, SO...",
@@ -26627,8 +26643,12 @@
               "model": "The German autocracy collapsed when the Kaiser abdicated, allowing democratic politicians in the Reichstag to form a new Republic. Their first major act was signing the Armistice to end the horrific war. However, right-wing nationalists felt betrayed and created the Dolchstoßlegende, claiming the army was stabbed in the back. Because of this, the politicians were forever branded as the November Criminals."
             },
             {
-              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why the Weimar Republic was highly unstable in 1919: 1) The legacy of the First World War 2) The 'Stab-in-the-back' myth 3) Proportional Representation 4) Article 48. Rank these four causes in order of importance. Write a persuasive, open-ended paragraph justifying your #1 choice over your #2 choice. *Level 9 Challenge: In your paragraph, explicitly explain how your #1 cause directly triggered or worsened your #2 cause.*",
-              "model": "Student answers will vary. A top-level answer might argue: 'The legacy of the First World War was the most important cause of instability because it acted as the primary trigger for all subsequent crises. Without the desperation caused by the blockade and military defeat, there would have been no need for an Armistice. This directly triggered my second most important cause, the Stab-in-the-back myth, because the sudden, shocking defeat allowed right-wing nationalists to falsely claim the new democratic politicians were traitors, fundamentally poisoning the Republic's reputation from day one.'"
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why the Weimar Republic was highly unstable in 1919: <ol style=\"margin-top: 5px; margin-bottom: 10px;\"><li>The legacy of the First World War</li><li>The 'Stab-in-the-back' myth</li><li>Proportional Representation</li><li>Article 48</li></ol>Rank these four causes in order of importance. Write a persuasive, open-ended paragraph justifying your #1 choice over your #2 choice.<br><br><span style=\"color: #ea580c; font-weight: bold;\">Level 9 Challenge:</span> <em>In your paragraph, use complex causal reasoning to explicitly explain how your #1 cause directly triggered or worsened your #2 cause.</em>",
+              "model": "Student answers will vary. A top-level answer might argue: 'The legacy of the First World War was the most important cause of instability because it acted as the primary trigger for all subsequent crises. Without the desperation caused by the blockade and military defeat, there would have been no need for an Armistice. Using complex causal reasoning, we can see this directly triggered my second most important cause, the Stab-in-the-back myth, because the sudden, shocking defeat allowed right-wing nationalists to falsely claim the new democratic politicians were traitors, fundamentally poisoning the Republic's reputation from day one.'"
+            },
+            {
+              "question": "GCSE Exam Practice<br><br>Explain why the Weimar Republic was highly unstable in 1919 (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>The 'Stab-in-the-back' myth</li><li>Proportional Representation</li></ul>You must also use information of your own.",
+              "model": "<p>This model answer has been structured specifically to meet the <strong>Pearson Edexcel Level 4 criteria (10–12 marks)</strong>. To access the highest marks, this response covers <strong>three distinct aspects of content</strong> (the two provided stimulus points plus one factor of own knowledge), maintains a <strong>consistent analytical focus on causation</strong>, and avoids unnecessary introductions or conclusions.</p><h3 style=\"margin-top: 15px; margin-bottom: 5px;\">Colour Coding Key:</h3><ul style=\"margin-top: 0; margin-bottom: 15px;\"><li>🔴 <span style=\"color: #dc2626; font-weight: bold;\">Point (P):</span> Identifies a distinct, valid cause of instability in 1919.</li><li>🔵 <span style=\"color: #2563eb; font-weight: bold;\">Evidence (E):</span> Deploys precise, accurate, and detailed historical knowledge (AO1).</li><li>🟢 <span style=\"color: #16a34a; font-weight: bold;\">Explanation (E):</span> Analyzes exactly <em>how</em> and <em>why</em> this factor caused severe instability (AO2).</li><li>🟡 <span style=\"color: #d97706; font-weight: bold;\">Link (L):</span> Connects the paragraph's analysis back to the focus of the question.</li></ul><hr style=\"margin: 20px 0;\"><h3 style=\"margin-top: 0; margin-bottom: 10px;\">PEEL Model Answer: Explain why the Weimar Republic was highly unstable in 1919.</h3><p style=\"margin-bottom: 15px;\">🔴 <span style=\"color: #dc2626;\"><strong>One major reason why the Weimar Republic was highly unstable in 1919 was the deep political delegitimisation and anger caused by the 'stab-in-the-back' myth (<em>Dolchstoßlegende</em>)</strong>.</span> 🔵 <span style=\"color: #2563eb;\">This myth was born after moderate politicians signed the <strong>Armistice on 11 November 1918</strong> to end the First World War. Right-wing nationalists, monarchists, and senior army figures claimed that the German military had not been defeated on the battlefield, but had been betrayed from within by the civilian politicians, whom they branded the <strong>\"November Criminals\"</strong>. When these same politicians were forced to sign the devastating <strong>Treaty of Versailles on 28 June 1919</strong>—which forced Germany to accept total blame under <strong>Article 231 (the War Guilt Clause)</strong> and pay <strong>£6.6 billion in reparations</strong>—public outrage reached a crisis point.</span> 🟢 <span style=\"color: #16a34a;\">This created profound instability because it stripped the brand-new Republic of public trust and authority from its inception. Millions of citizens and demobilised soldiers refused to accept the legitimacy of a democratic state they believed was founded on national humiliation and betrayal. Because conservative judges and civil servants retained their old imperial offices, they actively sympathised with right-wing nationalists, allowing right-wing paramilitaries to operate with near-impunity.</span> 🟡 <span style=\"color: #d97706;\"><strong>As a result, the 'stab-in-the-back' theory severely destabilised the Republic in 1919 by permanently linking democratic rule with national defeat and treason in the minds of the German electorate.</strong></span></p><p style=\"margin-bottom: 15px;\">🔴 <span style=\"color: #dc2626;\"><strong>Another key cause of instability in 1919 was the structural weakness of the new constitution, specifically the voting system of Proportional Representation</strong>.</span> 🔵 <span style=\"color: #2563eb;\">Under <strong>Article 22 of the Weimar Constitution</strong>, agreed in the town of Weimar in <strong>July 1919</strong>, all parliamentary seats in the <strong>Reichstag</strong> were allocated based on the exact percentage of votes won. For the <strong>Constituent Assembly elections of 19 January 1919</strong>, this system meant that even tiny, fringe political parties could easily win seats. Consequently, no single party managed to secure a majority; the Social Democrats (SPD) won only 40% of the vote.</span> 🟢 <span style=\"color: #16a34a;\">This caused intense instability because it forced the government to rely on weak and highly fragile <strong>coalition governments</strong> to pass laws. These coalitions were formed by parties with wildly differing policies, making swift decision-making near-impossible and causing governments to frequently fall apart. For example, in <strong>June 1919</strong>, Chancellor Philipp Scheidemann resigned in protest over the Treaty of Versailles, throwing the cabinet into immediate disarray and showing the public that the government was internally fractured. This continuous gridlock and cabinet fragility made the democratic system look weak and ineffective, encouraging extremist forces to believe they could bypass or overthrow the Reichstag.</span> 🟡 <span style=\"color: #d97706;\"><strong>Therefore, Proportional Representation directly caused instability in 1919 by creating politically weak and divided coalitions that were entirely incapable of presenting a strong, united authority during a year of national crisis.</strong></span></p><p style=\"margin-bottom: 15px;\">🔴 <span style=\"color: #dc2626;\"><strong>Finally, the Weimar Republic was pushed to the brink of collapse in 1919 by violent revolutionary challenges from the extreme Left, most notably the Spartacist Uprising</strong>.</span> 🔵 <span style=\"color: #2563eb;\">In <strong>January 1919</strong>, the <strong>Spartacist League</strong>, a radical communist group led by <strong>Rosa Luxemburg and Karl Liebknecht</strong>, launched a violent revolt in Berlin. Over <strong>100,000 workers went on strike</strong>, seizing control of key telegraph offices and government buildings in an attempt to trigger a Russian-style revolution. Because the regular army (<em>Reichswehr</em>) was too weak to defend the capital, Chancellor Friedrich Ebert turned to the <strong>Freikorps</strong>—private, right-wing armies of ex-soldiers who fiercely hated communism. The Freikorps brutally crushed the uprising, executing Liebknecht and Luxemburg.</span> 🟢 <span style=\"color: #16a34a;\">This created massive instability because it forced the Republic to depend on brutal, extra-parliamentary violence to survive. By utilizing armed, right-wing thugs to execute left-wing workers, the SPD government permanently alienated the German working classes. Crucially, it exposed the state's fatal weakness: the government lacked a reliable monopoly on physical force and was dependent on radical, anti-democratic mercenaries who openly despised the new Republic and wanted to restore the Kaiser.</span> 🟡 <span style=\"color: #d97706;\"><strong>Ultimately, left-wing revolts like the Spartacist Uprising proved the Republic was highly unstable in 1919 because they forced the government to rely on the armed protection of right-wing extremists who were themselves enemies of democracy.</strong></span></p>"
             }
           ]
         },
