@@ -2161,11 +2161,11 @@ export function initializeApp(unitData) {
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
                 ${q.question}
                 <span style="display: inline-flex; vertical-align: middle;">
-                  ${q.model ? \`<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-$\{qIdx\}')"><i class="fa-solid fa-check-double"></i></button>\` : ''}
+                  ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                 </span>
               </div>
               <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-              ${q.model ? \`<div id="ep-model-$\{qIdx\}" class="scaffold-box model-box" style="display:none;">$\{typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model\}</div>\` : ''}
+              ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
             </div>
           `;
         });
