@@ -27700,6 +27700,58 @@
                 "provenance_clue": "Photographs can show the reality of a situation. Consider the heavy armament of these soldiers on the streets of the capital. Does this suggest the Weimar government was in control?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) [Event] was significant, BUT... 2) [Person] acted BECAUSE... 3) [Outcome] happened, SO...",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Transforming Information: Imagine you are [Historical Figure]. Write a short memo explaining your actions during [Event].",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -28054,6 +28106,58 @@
                 "provenance_clue": "Think about the sheer volume of paper money shown in the photograph. What does this tell you about the value of the Mark and its impact on everyday transactions?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of this lesson. You must use all five of these keywords correctly: [Keyword 1], [Keyword 2], [Keyword 3], [Keyword 4], [Keyword 5].",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why [Event] occurred. Rank these causes in order of importance. Write a persuasive paragraph justifying your #1 choice over your #2 choice.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -28403,6 +28507,58 @@
                 "provenance_clue": "The Bauhaus represents the cutting edge of modernist design. How useful is this building for showing the cultural shifts and modern attitudes taking root in Weimar Germany?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining the causes of [Key Event] in this lesson.",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Constrained Summary: Summarize the significance of [Key Person/Event] in exactly 12 words.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -28732,6 +28888,58 @@
                 "provenance_clue": "Formal portraits are often carefully staged to project a specific image of a leader. How useful is a static portrait for understanding the energetic oratory style that built his early support?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) [Event] was significant, BUT... 2) [Person] acted BECAUSE... 3) [Outcome] happened, SO...",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Transforming Information: Imagine you are [Historical Figure]. Write a short memo explaining your actions during [Event].",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -29039,6 +29247,58 @@
                 "provenance_clue": "This photograph shows the accused posing confidently. Does it suggest they were treated harshly by the sympathetic right-wing judges in Bavaria?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of this lesson. You must use all five of these keywords correctly: [Keyword 1], [Keyword 2], [Keyword 3], [Keyword 4], [Keyword 5].",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why [Event] occurred. Rank these causes in order of importance. Write a persuasive paragraph justifying your #1 choice over your #2 choice.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -29336,6 +29596,58 @@
                 "source": "/images/nazi_poster_our_last_hope.jpg?v=4",
                 "caption": "A famous Nazi propaganda poster aimed at millions of unemployed Germans.",
                 "provenance_clue": "Propaganda posters are designed to manipulate emotions. Think about the desperation of the figures in the poster and how the Nazis presented Hitler as a saviour."
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining the causes of [Key Event] in this lesson.",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Constrained Summary: Summarize the significance of [Key Person/Event] in exactly 12 words.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
@@ -29641,6 +29953,58 @@
                 "source": "/images/hitler_hindenburg_1933.jpg?v=4",
                 "caption": "President Hindenburg and the newly appointed Chancellor Adolf Hitler.",
                 "provenance_clue": "Look closely at the body language between the two men. Hindenburg despised Hitler. How useful is this photograph for showing the uneasy alliance that brought Hitler to power?"
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) [Event] was significant, BUT... 2) [Person] acted BECAUSE... 3) [Outcome] happened, SO...",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Transforming Information: Imagine you are [Historical Figure]. Write a short memo explaining your actions during [Event].",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
@@ -29952,6 +30316,58 @@
                 "source": "/images/reichstag_fire_ruins.jpg?v=4",
                 "caption": "The Reichstag building engulfed in flames.",
                 "provenance_clue": "While the photograph shows the physical destruction, does it tell you anything about who actually started the fire or how the Nazis used it to their advantage?"
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of this lesson. You must use all five of these keywords correctly: [Keyword 1], [Keyword 2], [Keyword 3], [Keyword 4], [Keyword 5].",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why [Event] occurred. Rank these causes in order of importance. Write a persuasive paragraph justifying your #1 choice over your #2 choice.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
@@ -30282,6 +30698,58 @@
                 "provenance_clue": "This photograph may have been taken by the SS. Consider why they would take photographs of the camps—was it for documentation, or to create a climate of fear among the public?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining the causes of [Key Event] in this lesson.",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Constrained Summary: Summarize the significance of [Key Person/Event] in exactly 12 words.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -30601,6 +31069,58 @@
                 "source": "/images/nuremberg_rally.jpg?v=4",
                 "caption": "The mass spectacle of the annual Nazi Party rally in Nuremberg.",
                 "provenance_clue": "This photograph is official Nazi propaganda. It is designed to show overwhelming unity and strength. How does this limit its usefulness for understanding the true feelings of ordinary Germans?"
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) [Event] was significant, BUT... 2) [Person] acted BECAUSE... 3) [Outcome] happened, SO...",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Transforming Information: Imagine you are [Historical Figure]. Write a short memo explaining your actions during [Event].",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
@@ -30931,6 +31451,58 @@
                 "provenance_clue": "Graffiti is an anonymous form of protest. Why might young people have to resort to graffiti to express their opposition to the regime?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of this lesson. You must use all five of these keywords correctly: [Keyword 1], [Keyword 2], [Keyword 3], [Keyword 4], [Keyword 5].",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why [Event] occurred. Rank these causes in order of importance. Write a persuasive paragraph justifying your #1 choice over your #2 choice.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -31256,6 +31828,58 @@
                 "provenance_clue": "The Mother's Cross was awarded in bronze, silver, and gold depending on the number of children. Why would the Nazi regime create a military-style medal for childbirth?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining the causes of [Key Event] in this lesson.",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Constrained Summary: Summarize the significance of [Key Person/Event] in exactly 12 words.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -31579,6 +32203,58 @@
                 "source": "/images/bdm_gymnastics.jpg?v=4",
                 "caption": "The official pennant of the League of German Girls, featuring the Hitler Youth emblem.",
                 "provenance_clue": "Youth groups were given flags and uniforms to create a sense of belonging and discipline. How useful is this official symbol for telling us about the actual experiences of the girls in the movement?"
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) [Event] was significant, BUT... 2) [Person] acted BECAUSE... 3) [Outcome] happened, SO...",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Transforming Information: Imagine you are [Historical Figure]. Write a short memo explaining your actions during [Event].",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
@@ -31960,6 +32636,58 @@
                 "provenance_clue": "Photographs of the Autobahn were used heavily in propaganda to prove Hitler was fulfilling his promise of 'work and bread'. Does this image tell us about the wages or working conditions of the men who built it?"
               }
             ]
+          },
+          "tasks": [
+            {
+              "question": "Vocabulary in Context: Write a 4-sentence summary of this lesson. You must use all five of these keywords correctly: [Keyword 1], [Keyword 2], [Keyword 3], [Keyword 4], [Keyword 5].",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "The 'Diamond Ranking' Challenge: You have been given four reasons why [Event] occurred. Rank these causes in order of importance. Write a persuasive paragraph justifying your #1 choice over your #2 choice.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
+              }
+            ]
           }
         },
         {
@@ -32333,6 +33061,58 @@
                 "source": "/images/kristallnacht_shop.jpg?v=4",
                 "caption": "The interior of a major Berlin synagogue destroyed during the November Pogrom.",
                 "provenance_clue": "This photograph captures the physical aftermath of state-sponsored violence against a sacred religious space. Consider what it tells us about the escalation of persecution by 1938 compared to earlier economic boycotts."
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "question": "Causal Linkage: Write a short paragraph explaining the causes of [Key Event] in this lesson.",
+              "model": "[Placeholder for model answer]"
+            },
+            {
+              "question": "Constrained Summary: Summarize the significance of [Key Person/Event] in exactly 12 words.",
+              "model": "[Placeholder for model answer]"
+            }
+          ],
+          "exam_practice": {
+            "stimulus": [
+              {
+                "title": "Interpretation 1: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 1 text here]\""
+              },
+              {
+                "title": "Interpretation 2: From a modern historian, evaluating [Topic].",
+                "content": "\"[Placeholder: Insert interpretation 2 text here]\""
+              },
+              {
+                "title": "Source C: [Placeholder for Source C title]",
+                "content": "\"[Placeholder: Insert Source C text here]\""
+              },
+              {
+                "title": "Source D: [Placeholder for Source D title]",
+                "content": "\"[Placeholder: Insert Source D text here]\""
+              }
+            ],
+            "questions": [
+              {
+                "question": "2. Explain why [Topic] was significant (12 marks).<br><br>You may use the following in your answer:<ul style=\"margin-top: 5px; margin-bottom: 10px;\"><li>[Bullet 1]</li><li>[Bullet 2]</li></ul>You must also use information of your own.",
+                "model": "[Placeholder for 12-mark model answer]"
+              },
+              {
+                "question": "3a. How useful are Sources C and D for an enquiry into [Topic]? Explain your answer, using Sources C and D and your knowledge of the historical context. (8 marks)",
+                "model": "[Placeholder for 8-mark model answer]"
+              },
+              {
+                "question": "3b. Study Interpretations 1 and 2. They give different views about [Topic]. What is the main difference between these views? (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3c. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about [Topic]. You may use Sources C and D to help explain your answer. (4 marks)",
+                "model": "[Placeholder for 4-mark model answer]"
+              },
+              {
+                "question": "3d. How far do you agree with Interpretation 2 about [Topic]? Explain your answer, using both interpretations and your knowledge of the historical context. (16 marks)",
+                "model": "[Placeholder for 16-mark model answer]"
               }
             ]
           }
