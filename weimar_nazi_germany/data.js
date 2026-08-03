@@ -202,15 +202,15 @@ export const unitData = {
             ],
             "sources": [
                 {
-                    "title": "Source A: Philipp Scheidemann's dramatic declaration of the new German Republic from the balcony of the Reichstag, 9 November 1918.",
+                    "title": "Source C: Philipp Scheidemann's dramatic declaration of the new German Republic from the balcony of the Reichstag, 9 November 1918.",
                     "content": "\"Workers and soldiers! The German people have won across the line. The old and rotten has collapsed; militarism is finished! The Hohenzollerns have abdicated! Long live the German Republic!\""
                 },
                 {
-                    "title": "Source B: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
+                    "title": "Source D: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
                     "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\""
                 },
                 {
-                    "title": "Source C: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
+                    "title": "Source E: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
                     "source": "/images/spartacist_uprising.jpg?v=4"
                 }
             ],
@@ -445,12 +445,12 @@ export const unitData = {
             ],
             "tasks": [
                 {
-                    "question": "Constrained Summary: Summarize Philipp Scheidemann's declaration in Source A in exactly 10 words. You are NOT allowed to use the words 'Monarchy' or 'Republic'.",
+                    "question": "Constrained Summary: Summarize Philipp Scheidemann's declaration in Source C in exactly 10 words. You are NOT allowed to use the words 'Monarchy' or 'Republic'.",
                     "model": "The old royal system collapsed; a new democracy replaced it."
                 },
                 {
-                    "question": "Historian's Judgement: How useful is Source B for an enquiry into the reasons for Germany's defeat in 1918? Evaluate the source using its provenance (motive) and your own contextual knowledge.",
-                    "model": "Source B is highly useful for revealing what top generals wanted the public to believe, but it is not a reliable factual account of the defeat. Ludendorff's primary motive was self-preservation: he wanted to shift the blame for his own strategic military failures onto the new democratic politicians. Using contextual knowledge, we know the army was already collapsing before the armistice due to the Allied blockade and military exhaustion. Therefore, its utility lies in showing the origins of the 'Stab-in-the-back' myth, rather than the reality of the military defeat."
+                    "question": "Historian's Judgement: How useful is Source E for an enquiry into the stability of the new Weimar Republic in early 1919? Evaluate the source using its provenance and your own contextual knowledge.",
+                    "model": "Source E is highly useful as it provides direct visual evidence of the severe internal threats facing the new Republic, showing armed left-wing revolutionaries (Spartacists) actively fighting in the streets of Berlin. This accurately reflects the chaotic and unstable political environment. However, as a single photograph, its utility is limited because it only captures a snapshot of the violence; contextual knowledge is needed to understand that the government was so weak it had to rely on the right-wing, anti-democratic Freikorps to crush this uprising, highlighting the Republic's fundamental fragility."
                 },
                 {
                     "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) Proportional Representation was highly democratic, BUT... 2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt betrayed by the Armistice, SO...",
