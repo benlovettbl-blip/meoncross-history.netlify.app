@@ -202,16 +202,16 @@ export const unitData = {
             ],
             "sources": [
                 {
-                    "title": "Source C: Philipp Scheidemann's dramatic declaration of the new German Republic from the balcony of the Reichstag, 9 November 1918.",
-                    "content": "\"Workers and soldiers! The German people have won across the line. The old and rotten has collapsed; militarism is finished! The Hohenzollerns have abdicated! Long live the German Republic!\""
+                    "title": "Source C: An extract from the diary of Princess Evelyn Blücher, an Englishwoman living in Berlin, written in November 1918.",
+                    "content": "\"The people are crying out for bread... The revolution is not a political one, but a revolution of empty stomachs. The Allied blockade has done its work; the people are simply too starved to fight any longer.\""
                 },
                 {
-                    "title": "Source D: General Erich Ludendorff's justification for Germany's defeat, written in 1919.",
-                    "content": "\"The German army was undefeated in the field. It was stabbed in the back by the cowardly politicians at home—the socialists and Jews who started the revolution and signed the shameful armistice.\""
+                    "title": "Source D: General Wilhelm Groener recalling his secret telephone agreement with Chancellor Friedrich Ebert on 9 November 1918 (The Ebert-Groener Pact).",
+                    "content": "\"In the evening I telephoned the Reich Chancellery and told Ebert that the army put itself at the disposal of his government... In return, the officer corps expected the government to fight against Bolshevism and radical workers' councils.\""
                 },
                 {
-                    "title": "Source E: A photograph showing armed Spartacists on the streets of Berlin, January 1919.",
-                    "source": "/images/spartacist_uprising.jpg?v=4"
+                    "title": "Source E: An extract from Article 48 of the Weimar Constitution, signed into law in August 1919.",
+                    "content": "\"If public security and order are seriously disturbed or endangered within the German Reich, the President of the Reich may take measures necessary for their restoration, intervening if need be with the assistance of the armed forces.\""
                 }
             ],
             "narrative_blocks": [
@@ -445,12 +445,16 @@ export const unitData = {
             ],
             "tasks": [
                 {
-                    "question": "Constrained Summary: Summarize Philipp Scheidemann's declaration in Source C in exactly 10 words. You are NOT allowed to use the words 'Monarchy' or 'Republic'.",
-                    "model": "The old royal system collapsed; a new democracy replaced it."
+                    "question": "Causal Linkage: Write a short paragraph explaining how the conditions described in Source C directly led to the events in Source D.",
+                    "model": "The extreme starvation and desperation described in Source C (caused by the Allied naval blockade) triggered massive social unrest and mutinies, such as the Kiel Mutiny. This desperation caused the 'revolution of empty stomachs,' forcing the Kaiser to abdicate and threatening a full communist takeover. To prevent this communist threat and restore order, Chancellor Ebert was forced to make a desperate deal with the old Imperial Army, as shown in Source D. Ebert agreed to rely on the army to crush left-wing revolts (like the Spartacists) in exchange for the army's loyalty to the new Republic."
                 },
                 {
-                    "question": "Historian's Judgement: How useful is Source E for an enquiry into the stability of the new Weimar Republic in early 1919? Evaluate the source using its provenance and your own contextual knowledge.",
-                    "model": "Source E is highly useful as it provides direct visual evidence of the severe internal threats facing the new Republic, showing armed left-wing revolutionaries (Spartacists) actively fighting in the streets of Berlin. This accurately reflects the chaotic and unstable political environment. However, as a single photograph, its utility is limited because it only captures a snapshot of the violence; contextual knowledge is needed to understand that the government was so weak it had to rely on the right-wing, anti-democratic Freikorps to crush this uprising, highlighting the Republic's fundamental fragility."
+                    "question": "Historian's Judgement: How useful is Source D for an enquiry into the stability of the new Weimar Republic in early 1919? Evaluate the source using its provenance and your own contextual knowledge.",
+                    "model": "Source D is highly useful for showing the fundamental fragility of the new Weimar Republic. The provenance—a memoir from General Groener—reveals a secret pact where the democratic government had to beg for the protection of the old, right-wing Imperial Army. Using contextual knowledge, we know that Ebert had to use these forces (and the Freikorps) to brutally crush the Spartacist Uprising in January 1919. This proves the Republic was highly unstable, as it lacked its own loyal democratic army and was entirely dependent on conservative forces that secretly despised democracy."
+                },
+                {
+                    "question": "Constrained Summary: Summarize the potential danger of Source E (Article 48) in exactly 12 words.",
+                    "model": "It allowed the President to become a dictator during times of crisis."
                 },
                 {
                     "question": "The 'But/Because/So' Strategy: Complete these three sentences with historically accurate details: 1) Proportional Representation was highly democratic, BUT... 2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt betrayed by the Armistice, SO...",
