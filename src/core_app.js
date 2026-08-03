@@ -2140,6 +2140,25 @@ export function initializeApp(unitData) {
             <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
           </div>
       `;
+      const renderQuestion = (q, qIdx) => `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${q.question}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+              ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+            </div>
+      `;
+
+      if (ep.questions && ep.questions.length > 0) {
+        let q2Index = ep.questions.findIndex(q => q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')));
+        if (q2Index !== -1) {
+           html += renderQuestion(ep.questions[q2Index], q2Index);
+        }
+      }
       
       if (ep.stimulus && ep.stimulus.length > 0) {
         html += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
@@ -2156,18 +2175,10 @@ export function initializeApp(unitData) {
       
       if (ep.questions && ep.questions.length > 0) {
         ep.questions.forEach((q, qIdx) => {
-          html += `
-            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                ${q.question}
-                <span style="display: inline-flex; vertical-align: middle;">
-                  ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
-                </span>
-              </div>
-              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-              ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
-            </div>
-          `;
+          let isQ2 = q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
+          if (!isQ2) {
+             html += renderQuestion(q, qIdx);
+          }
         });
       }
       

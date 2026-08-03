@@ -107,11 +107,24 @@ async function processLesson(lessonId) {
     }
 }
 
-// Read target lesson from args
+async function processAll() {
+    const lessonsToProcess = unitData.lessons.filter(l => l.id !== 'lesson_1_1' && l.id !== 'lesson_1_2');
+    for (const lesson of lessonsToProcess) {
+        await processLesson(lesson.id);
+        // Wait 10 seconds between requests to avoid rate limits
+        await new Promise(r => setTimeout(r, 10000));
+    }
+    console.log("All lessons processed!");
+}
+
 const targetLesson = process.argv[2];
 if (!targetLesson) {
-    console.log("Please provide a lesson ID to process. Example: node generate_weimar_mocks_api.mjs lesson_1_2");
+    console.log("Please provide a lesson ID to process, or 'all'. Example: node generate_weimar_mocks_api.mjs lesson_1_2");
     process.exit(1);
 }
 
-processLesson(targetLesson);
+if (targetLesson === 'all') {
+    processAll();
+} else {
+    processLesson(targetLesson);
+}
