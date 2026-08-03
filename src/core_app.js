@@ -2131,6 +2131,49 @@ export function initializeApp(unitData) {
       `;
     }
 
+    if (lesson.exam_practice) {
+      const ep = Array.isArray(lesson.exam_practice) ? lesson.exam_practice[0] : lesson.exam_practice; // Handle array or object
+      html += `
+        <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
+          <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Exam Practice: Historical Interpretations</h3>
+            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+          </div>
+      `;
+      
+      if (ep.stimulus && ep.stimulus.length > 0) {
+        html += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
+        ep.stimulus.forEach((stim, sIdx) => {
+          html += `
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
+              <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
+            </div>
+          `;
+        });
+        html += `</div>`;
+      }
+      
+      if (ep.questions && ep.questions.length > 0) {
+        ep.questions.forEach((q, qIdx) => {
+          html += `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${q.question}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${q.model ? \`<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-$\{qIdx\}')"><i class="fa-solid fa-check-double"></i></button>\` : ''}
+                </span>
+              </div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+              ${q.model ? \`<div id="ep-model-$\{qIdx\}" class="scaffold-box model-box" style="display:none;">$\{typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model\}</div>\` : ''}
+            </div>
+          `;
+        });
+      }
+      
+      html += `</div>`;
+    }
+
     if (lesson.flashcards && lesson.flashcards.length > 0) {
       html += `
         <div class="phase-card">
