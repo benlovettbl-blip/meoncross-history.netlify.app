@@ -2407,16 +2407,6 @@ export function initializeApp(unitData) {
       }
       gcseHtml += `</div>`;
       html += gcseHtml;
-    } else {
-      html += `
-        <div class="phase-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</div>
-          </div>
-          <div style="text-align: center; padding: 30px; color: #64748b; font-style: italic; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1;">
-            Assessment materials pending teacher review.
-          </div>
-        </div>`;
     }
 
     if (lesson.quiz && lesson.quiz.length > 0) {
