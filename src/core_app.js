@@ -1315,9 +1315,16 @@ export function initializeApp(unitData) {
     window.currentActiveLesson = lesson;
     
     // Tabs container logic
-    const heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+    let heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
     let lessonPrefix = 'Lesson';
     let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
+    
+    if (window.currentUnitId === 'cme_new' && ktMatch) {
+      if (ktMatch[1].startsWith('1')) heroImage = '/assets/cme_new_kt1_cover.png';
+      else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
+      else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
+    }
+
     if (ktMatch) {
       lessonPrefix = `KT ${ktMatch[1]}`;
     } else if (lesson.id && lesson.id.startsWith('lesson_')) {

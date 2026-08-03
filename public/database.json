@@ -303,7 +303,7 @@
                 "primer": "Demonstrate the geographical challenges and fragmented nature of the proposed borders.",
                 "objectives": [
                   {
-                    "objective": "Analyze the UN Partition Plan",
+                    "objective": "Understand the conflicting interests and demands of Jews and Arabs within the British Mandate.",
                     "primer": "Highlight the international zone of Jerusalem and the intersecting borders.",
                     "question": "What does this source reveal about why Arab leaders rejected the UN Partition Plan?"
                   }
@@ -318,7 +318,7 @@
                 "primer": "Use this image to explore the impact of the Holocaust on international sympathy for Zionism.",
                 "objectives": [
                   {
-                    "objective": "Understand the plight of Jewish refugees",
+                    "objective": "Analyze the key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.",
                     "primer": "Discuss the political pressure this placed on the British Mandate.",
                     "question": "What does this source reveal about the failure of British policy in Palestine after WW2?"
                   }
@@ -333,7 +333,7 @@
                 "primer": "Discuss the immediate political and military consequences of this declaration.",
                 "objectives": [
                   {
-                    "objective": "Identify the foundation of Israel",
+                    "objective": "Describe the key events of the Arab-Israeli war (1948–49).",
                     "primer": "Note the portraits of Theodor Herzl in the background to connect to early Zionism.",
                     "question": "What does this source reveal about the Zionist fulfillment of a Jewish state?"
                   }
@@ -431,26 +431,26 @@
           "learning_objectives": {
             "overarching": "To evaluate the causes and consequences of the 1948 Arab-Israeli War.",
             "scaffolded": [
-              "Explain why the British handed Palestine to the UN.",
-              "Describe the UN Partition Plan and its immediate consequences.",
-              "Analyze the reasons for Israel's military victory."
+              "Understand the conflicting interests and demands of Jews and Arabs within the British Mandate.",
+              "Analyze the key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.",
+              "Describe the key events of the Arab-Israeli war (1948–49)."
             ]
           },
           "teacher_notes": {
             "primer": "This lesson establishes the foundational chronology for the entire unit. It tracks the shift from British colonial rule to Jewish statehood. Emphasize the cause-and-effect narrative: British immigration limits -> Jewish Insurgency -> British withdrawal -> UN Partition -> Civil War -> Declaration of Israel -> Arab Invasion. The GCSE Task provides a perfect 8-mark model for this exact chronological chain.",
             "objectives": [
               {
-                "objective": "Explain why the British handed Palestine to the UN.",
+                "objective": "Understand the conflicting interests and demands of Jews and Arabs within the British Mandate.",
                 "primer": "Direct students to the section on the Jewish Insurgency and the King David Hotel bombing. Emphasize that the British public were war-weary and broke after WWII.",
                 "question": "What event on 22 July 1946 was the 'final straw' for British morale?"
               },
               {
-                "objective": "Describe the UN Partition Plan and its immediate consequences.",
+                "objective": "Analyze the key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.",
                 "primer": "Highlight the disproportionate land split (55% to 33% of the population). Use the map to show why this would lead to immediate civil war upon British withdrawal.",
                 "question": "Why did the Arab League immediately reject UN Resolution 181?"
               },
               {
-                "objective": "Analyze the reasons for Israel's military victory.",
+                "objective": "Describe the key events of the Arab-Israeli war (1948–49).",
                 "primer": "Use the 'Deep Historical Analysis' section to break down the factors. The key takeaway is that Israeli victory was due to organization (IDF), foreign arms (Czech deal), and Arab disunity.",
                 "question": "How did the 30-day UN truce actually give Israel the decisive advantage?"
               }
@@ -805,17 +805,17 @@
             "primer": "This lesson covers the immediate fallout of the 1948-49 war, focusing on the redrawing of borders (the Green Line) and the birth of the Palestinian refugee crisis (the Nakba). It also introduces the consolidation of the Israeli state via the IDF and Law of Return, and sets the stage for the Suez Crisis by detailing Egyptian hostilities (blockades and Fedayeen raids).",
             "objectives": [
               {
-                "objective": "Describe the territorial changes established by the 1949 Green Line armistice.",
+                "objective": "Explain the territorial changes and their impact, including the refugee status of Palestinian Arabs.",
                 "primer": "Use the map to show how Israel expanded from 55% to 79%, and explain the fates of the West Bank (Jordan) and Gaza Strip (Egypt).",
                 "question": "Why was an independent Palestinian state not created after the 1948-49 war?"
               },
               {
-                "objective": "Explain the causes and consequences of the Palestinian refugee crisis (Nakba).",
+                "objective": "Understand the creation of the Israeli Defence Forces (IDF) and the Law of Return (1950), and the importance of US aid to Israel.",
                 "primer": "Focus on the scale of displacement (700,000) and contrast the Israeli policy (denial of return to maintain Jewish majority) with the Arab states' policy (refusal to integrate refugees).",
                 "question": "Why did neighboring Arab states (except Jordan) refuse to grant citizenship to Palestinian refugees?"
               },
               {
-                "objective": "Analyze how Israel consolidated its new state and countered Egyptian hostility.",
+                "objective": "Analyze Israel’s relations with Egypt in the aftermath of the war.",
                 "primer": "Explain the importance of the IDF and the Law of Return for Israel's survival, and outline the cycle of Egyptian Fedayeen raids and Israeli reprisal attacks.",
                 "question": "How did the Law of Return help solve Israel's security vulnerability?"
               }
@@ -1049,9 +1049,9 @@
           "learning_objectives": {
             "overarching": "To evaluate the territorial shifts and the origins of the Palestinian refugee crisis.",
             "scaffolded": [
-              "Describe the territorial changes established by the 1949 Green Line armistice.",
-              "Explain the causes and consequences of the Palestinian refugee crisis (Nakba).",
-              "Analyze how Israel consolidated its new state and countered Egyptian hostility."
+              "Explain the territorial changes and their impact, including the refugee status of Palestinian Arabs.",
+              "Understand the creation of the Israeli Defence Forces (IDF) and the Law of Return (1950), and the importance of US aid to Israel.",
+              "Analyze Israel’s relations with Egypt in the aftermath of the war."
             ]
           },
           "enquiry": "What were the immediate geopolitical and human consequences of the 1948-49 War?",
@@ -1345,17 +1345,17 @@
             "primer": "This lesson shifts the focus from internal Palestinian-Israeli conflict to the wider Cold War context. The narrative traces how Nasser's Pan-Arabism and domestic ambitions (Aswan High Dam) clashed with Western interests, leading to the Suez Crisis. The key pedagogical focus is the cause-and-consequence chain: Gaza Raid -> Czech Arms Deal -> Dam Funding Pulled -> Canal Nationalised -> Protocol of Sèvres.",
             "objectives": [
               {
-                "objective": "Explain how the Czech Arms Deal and the Aswan High Dam led to the nationalisation of the Suez Canal.",
+                "objective": "Understand Nasser and Egypt’s leadership of the Arab world.",
                 "primer": "Draw the cause-and-effect chain on the board. Emphasize that Nasser needed money for the dam, but lost Western funding because he bought weapons from the Soviets.",
                 "question": "Why did the US and UK cancel their loan for the Aswan High Dam?"
               },
               {
-                "objective": "Describe the secret tripartite plan detailed in the Protocol of Sèvres.",
+                "objective": "Analyze the events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.",
                 "primer": "Use a map to show the intended pincer movement: Israel attacks across Sinai first, giving Britain and France an excuse to drop paratroopers on the canal to 'separate' the fighting.",
                 "question": "What was the 'excuse' Britain and France used to invade the Canal Zone?"
               },
               {
-                "objective": "Analyze the consequences of the Suez Crisis for Israel and Egypt.",
+                "objective": "Evaluate the events and significance of the Suez Crisis (1956), including the formation of the United Arab Republic (UAR) in 1958.",
                 "primer": "Contrast the military reality (Israel won and routed Egypt) with the political reality (Nasser survived, stood up to imperialists, and became a hero). Highlight the UNEF deployment as the key to a decade of peace.",
                 "question": "How did the deployment of UNEF benefit Israel's security?"
               }
@@ -1620,9 +1620,9 @@
           "learning_objectives": {
             "overarching": "To analyze the causes, events, and long-term significance of the Suez Crisis.",
             "scaffolded": [
-              "Explain Nasser's motives for nationalizing the Suez Canal.",
-              "Describe the secret Sevres Protocol and the ensuing military invasion.",
-              "Analyze why Britain and France were forced to withdraw and the impact this had on Cold War dynamics."
+              "Understand Nasser and Egypt’s leadership of the Arab world.",
+              "Analyze the events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.",
+              "Evaluate the events and significance of the Suez Crisis (1956), including the formation of the United Arab Republic (UAR) in 1958."
             ]
           },
           "enquiry": "Why did the Suez Crisis of 1956 fundamentally shift the balance of power in the Middle East?",
@@ -1717,26 +1717,26 @@
           "learning_objectives": {
             "overarching": "To evaluate how border tensions and political brinkmanship led to the Six Day War.",
             "scaffolded": [
-              "Explain how disputes over water and guerrilla raids increased tensions.",
-              "Identify the key turning points of the May 1967 Crisis.",
-              "Analyse the strategic impact of Israel's territorial conquests."
+              "Understand the significance of the Cairo Conference (1964) and the growth of Fatah and the PLO.",
+              "Analyze the escalating tension between Israel, Syria and Jordan: Syria’s support for Fatah, Israel’s raid on Samu and the events of 7 April 1967.",
+              "Evaluate the actions of the USSR, Nasser and the USA in the period leading to war, and the key events of the war."
             ]
           },
           "teacher_notes": {
             "primer": "This lesson details the critical escalation from border skirmishes to full-scale regional conflict. The focus should be on how the 'May 1967 Cascade' created an unstoppable momentum toward war. Students must understand that while Nasser initiated the blockade and mobilisation, it was Israel that launched the pre-emptive strike, radically altering the geopolitical map.",
             "objectives": [
               {
-                "objective": "Explain how disputes over water and guerrilla raids increased tensions.",
+                "objective": "Understand the significance of the Cairo Conference (1964) and the growth of Fatah and the PLO.",
                 "primer": "Direct students to the Cairo Conference flowchart and the Samu Raid narrative. Emphasise that state-sponsored guerrilla warfare (Fatah) created an environment where conventional retaliation was inevitable.",
                 "question": "Why did the creation of Fatah and the dispute over the River Jordan make border clashes inevitable?"
               },
               {
-                "objective": "Identify the key turning points of the May 1967 Crisis.",
+                "objective": "Analyze the escalating tension between Israel, Syria and Jordan: Syria’s support for Fatah, Israel’s raid on Samu and the events of 7 April 1967.",
                 "primer": "Use the 'Chronology of Crisis' study map. Walk students through each step from May 13 to May 30, showing how each action (Soviet misinfo -> UNEF withdrawal -> Blockade) boxed both sides into a corner.",
                 "question": "Which event in May 1967 do you think made war truly unavoidable, and why?"
               },
               {
-                "objective": "Analyse the strategic impact of Israel's territorial conquests.",
+                "objective": "Evaluate the actions of the USSR, Nasser and the USA in the period leading to war, and the key events of the war.",
                 "primer": "Use the final 'Redrawn Map' table. Help students visualize how expanding from the vulnerable 'Green Line' to the Jordan River and Suez Canal provided massive strategic depth but also sowed the seeds for future conflicts.",
                 "question": "How did capturing the West Bank, Golan Heights, and Sinai Peninsula change Israel's strategic position overnight?"
               }
@@ -2187,17 +2187,17 @@
             "primer": "This lesson shifts focus from conventional warfare to the diplomatic stalemate and the rise of asymmetrical guerrilla conflict. Students will explore how the Six Day War created the occupied territories and triggered the radicalization of the PLO, culminating in the Black September civil war and the Munich Olympics massacre.",
             "objectives": [
               {
-                "objective": "Understand the diplomatic deadlock created by UN Resolution 242 and the Khartoum 'Three Nos'.",
+                "objective": "Understand UN Resolution 242 and the continued dispute over the Suez Canal.",
                 "primer": "Guide students through the linguistic loopholes of 242 and the Arab League's steadfast refusal to negotiate.",
                 "question": "What was the fundamental disagreement in interpreting the English and French texts of UN Resolution 242?"
               },
               {
-                "objective": "Analyze the strategic and demographic consequences of the Israeli occupation of the West Bank, Gaza, Sinai, and the Golan Heights.",
+                "objective": "Analyze the situation of Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.",
                 "primer": "Use the buffer zone diagram to explain Israel's military logic, while highlighting the origins of the Jewish settlement project.",
                 "question": "Why did the occupied territories act as a vital military buffer for Israel?"
               },
               {
-                "objective": "Evaluate the shift in Palestinian tactics from conventional reliance on Arab armies to international terrorism under the PFLP and Black September.",
+                "objective": "Evaluate the use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics; and the expulsion of the PLO from Jordan (1970).",
                 "primer": "Trace the causal chain from the Dawson's Field hijackings to the expulsion of the PLO from Jordan and the subsequent Munich Olympics massacre.",
                 "question": "Why did King Hussein order the Jordanian army to attack the PLO during 'Black September'?"
               }
@@ -2539,9 +2539,9 @@
           "learning_objectives": {
             "overarching": "To assess the geopolitical shifts, territorial occupations, and rising tensions following the Six Day War.",
             "scaffolded": [
-              "Identify the new territories occupied by Israel (Sinai, Gaza, West Bank, Golan Heights).",
-              "Explain the significance of UN Resolution 242 and the concept of 'land for peace'.",
-              "Analyze the impact of the occupation on Palestinian nationalism and the rise of the PLO."
+              "Understand UN Resolution 242 and the continued dispute over the Suez Canal.",
+              "Analyze the situation of Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.",
+              "Evaluate the use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics; and the expulsion of the PLO from Jordan (1970)."
             ]
           },
           "enquiry": "How did Israel's dramatic victory in 1967 permanently alter the Middle East conflict?",
@@ -2667,17 +2667,17 @@
             "primer": "This lesson focuses on the transition from the War of Attrition to the dramatic outbreak of the Yom Kippur War. Students will explore Sadat's diplomatic maneuvers, the failure of the Bar Lev Line, and the devastating global impact of the OPEC oil weapon.",
             "objectives": [
               {
-                "objective": "Understand the causes and nature of the War of Attrition.",
+                "objective": "Analyze Egyptian relations with Israel, the USA, the USSR and other Arab states.",
                 "primer": "Explain Nasser's strategy to wear down the IDF using Soviet support and continuous artillery fire.",
                 "question": "Why did President Nasser launch the War of Attrition instead of engaging in full-scale warfare?"
               },
               {
-                "objective": "Analyze Anwar Sadat's motivations for launching the Yom Kippur War.",
+                "objective": "Understand Israel’s consolidation of control of the occupied territories.",
                 "primer": "Highlight Sadat's domestic economic crisis and his expulsion of Soviet advisors to win US favor.",
                 "question": "What two diplomatic actions did Sadat take before deciding on a surprise military attack?"
               },
               {
-                "objective": "Evaluate the geopolitical consequences of the Yom Kippur War, including the OPEC oil embargo.",
+                "objective": "Describe the key events of the Yom Kippur War (1973) and its aftermath.",
                 "primer": "Trace the escalation from the American 'Operation Nickel Grass' airlift to the Soviet intervention threat and the Arab oil embargo.",
                 "question": "How did the OPEC 'oil weapon' successfully force the United States to pressure Israel into a ceasefire?"
               }
@@ -3024,9 +3024,9 @@
           "learning_objectives": {
             "overarching": "To understand the causes, course, and consequences of the 1973 Yom Kippur War.",
             "scaffolded": [
-              "Explain Sadat's strategic objectives in planning a surprise attack on Israel.",
-              "Describe the initial successes of the Egyptian military and the eventual Israeli counter-attack.",
-              "Analyze how the war broke the diplomatic stalemate and restored Arab pride."
+              "Analyze Egyptian relations with Israel, the USA, the USSR and other Arab states.",
+              "Understand Israel’s consolidation of control of the occupied territories.",
+              "Describe the key events of the Yom Kippur War (1973) and its aftermath."
             ]
           },
           "enquiry": "Why did Anwar Sadat launch the Yom Kippur War, and what did it achieve?",
@@ -3300,17 +3300,17 @@
             "primer": "This lesson explores the shift from military conflict to high-stakes diplomacy in the Middle East. Students will examine how the 1973 Oil Crisis incentivized the superpowers to broker peace, the intricacies of Kissinger's 'shuttle diplomacy', and the dramatic breakthrough of the Camp David Accords.",
             "objectives": [
               {
-                "objective": "Evaluate the geopolitical impact of the 1973 Oil Crisis.",
+                "objective": "Understand the significance of the oil crisis and the involvement of the USA and the USSR.",
                 "primer": "Discuss how OPEC's embargo caused stagflation in the West, forcing the US to actively mediate peace to secure its energy supply.",
                 "question": "Why did the United States suddenly have a powerful financial incentive to broker peace after 1973?"
               },
               {
-                "objective": "Understand Henry Kissinger's 'shuttle diplomacy'.",
+                "objective": "Analyze Kissinger, ‘shuttle diplomacy’ and the reopening of the Suez Canal.",
                 "primer": "Map out the step-by-step agreements of Sinai I, Golan, and Sinai II, highlighting the reopening of the Suez Canal.",
                 "question": "What specific strategic concessions did Israel make in the Sinai II Agreement?"
               },
               {
-                "objective": "Analyze the Camp David Accords and the Treaty of Washington.",
+                "objective": "Evaluate Sadat’s visit to Israel (1977), Begin’s visit to Egypt (1977), US President Carter and Camp David (1978) and the Treaty of Washington (1979).",
                 "primer": "Break down the two framework agreements of Camp David and the resulting 1979 Peace Treaty, evaluating the severe backlash Sadat faced from the Arab world.",
                 "question": "What were the two distinct framework agreements produced during the 13 days of seclusion at Camp David?"
               }
@@ -3600,9 +3600,9 @@
           "learning_objectives": {
             "overarching": "To evaluate the Camp David Accords and the difficult process of Egyptian-Israeli peacemaking.",
             "scaffolded": [
-              "Explain the significance of Sadat's historic 1977 visit to Jerusalem.",
-              "Describe the roles of Sadat, Begin, and Jimmy Carter at Camp David.",
-              "Analyze the terms of the 1979 Peace Treaty and why it angered the wider Arab world."
+              "Understand the significance of the oil crisis and the involvement of the USA and the USSR.",
+              "Analyze Kissinger, ‘shuttle diplomacy’ and the reopening of the Suez Canal.",
+              "Evaluate Sadat’s visit to Israel (1977), Begin’s visit to Egypt (1977), US President Carter and Camp David (1978) and the Treaty of Washington (1979)."
             ]
           },
           "enquiry": "How did historic enemies Egypt and Israel finally achieve a lasting peace treaty?",
@@ -3763,17 +3763,17 @@
             "primer": "This lesson covers the diplomatic shift of the PLO, its military relocation to Lebanon, and the brutal civil uprising of the First Intifada. Students will trace Arafat's dual strategy of 'the gun and the olive branch' and evaluate the consequences of the 1982 Lebanese invasion.",
             "objectives": [
               {
-                "objective": "Understand the significance of Yasser Arafat's 1974 speech to the UN.",
+                "objective": "Understand Arafat’s speech to the UN (1974) and the significance of PLO activities in Lebanon.",
                 "primer": "Emphasize the metaphorical 'gun and olive branch' and the resulting UN Resolution 3236 which granted the PLO observer status.",
                 "question": "Why did Arafat bring both a gun and an olive branch to the UN General Assembly?"
               },
               {
-                "objective": "Analyze the causes and consequences of the 1982 Israeli invasion of Lebanon.",
+                "objective": "Analyze Israeli reprisals, the invasion of Lebanon (1982) and the results.",
                 "primer": "Track the establishment of 'Fatahland' to the assassination of Bashir Gemayel and the ensuing Sabra and Shatila massacres.",
                 "question": "Why did Ariel Sharon use the attempted assassination of Shlomo Argov as a pretext to invade Lebanon?"
               },
               {
-                "objective": "Evaluate the nature of the First Intifada and its impact on Israeli policy.",
+                "objective": "Evaluate the situation in the Israeli occupied territories and the First Palestinian Intifada (1987–93).",
                 "primer": "Highlight the grassroots civil disobedience of the Intifada and how global media coverage of Rabin's 'Iron Fist' policy shifted international sympathy.",
                 "question": "How did the First Intifada differ fundamentally from previous PLO military operations?"
               }
@@ -4206,9 +4206,9 @@
           "learning_objectives": {
             "overarching": "To analyze the shifting strategies of the PLO, the Lebanon War, and the grassroots uprising of the Intifada.",
             "scaffolded": [
-              "Explain why Israel invaded Lebanon in 1982 to expel the PLO.",
-              "Describe the causes and grassroots nature of the First Intifada.",
-              "Analyze how the Intifada challenged Israeli security and forced the PLO to change its diplomatic stance."
+              "Understand Arafat’s speech to the UN (1974) and the significance of PLO activities in Lebanon.",
+              "Analyze Israeli reprisals, the invasion of Lebanon (1982) and the results.",
+              "Evaluate the situation in the Israeli occupied territories and the First Palestinian Intifada (1987–93)."
             ]
           },
           "enquiry": "How did the First Intifada change the nature of the Palestinian struggle?",
@@ -4259,17 +4259,17 @@
             "primer": "This final lesson explores the culmination of the peace process, analyzing the geopolitical shifts that forced the PLO and Israel to the negotiating table, the breakthrough of the Oslo Accords, and the tragic collapse of the process following Rabin's assassination.",
             "objectives": [
               {
-                "objective": "Evaluate Arafat's 1988 renunciation of terrorism and the two-state policy.",
+                "objective": "Understand the significance of Arafat’s renunciation of terrorism in a speech at the UN (1988).",
                 "primer": "Discuss the PLO's strategic shift in response to the First Intifada and King Hussein's land renunciation.",
                 "question": "Why did Arafat explicitly renounce terrorism at the UN in Geneva?"
               },
               {
-                "objective": "Analyze how superpower shifts accelerated the peace process.",
+                "objective": "Analyze changing superpower policies in the Middle East: US involvement in the Gulf War (1991), and the end of the Cold War.",
                 "primer": "Track the collapse of the USSR, the influx of Soviet Jewish immigrants, and the resulting US financial leverage over Israel.",
                 "question": "How did the collapse of the Soviet Union force both the PLO and Israel into negotiations?"
               },
               {
-                "objective": "Understand the terms and collapse of the Oslo Accords.",
+                "objective": "Evaluate Arafat, Rabin and the Oslo Accords (1993); the setting up of the Palestinian National Authority; the Israel-Jordan peace treaty (1994); and Oslo II (1995).",
                 "primer": "Detail the division of the West Bank into Areas A, B, and C, and the intense domestic backlash leading to Rabin's assassination.",
                 "question": "What were the three main territorial divisions established by the Oslo II Accords?"
               }
@@ -4612,9 +4612,9 @@
           "learning_objectives": {
             "overarching": "To understand the breakthrough of the Oslo Accords and the tragic obstacles to a final two-state solution.",
             "scaffolded": [
-              "Explain why both Israel and the PLO were finally willing to secretly negotiate.",
-              "Describe the key agreements of the Oslo Accords (mutual recognition and the creation of the Palestinian Authority).",
-              "Analyze the violent opposition from extremists on both sides, culminating in the assassination of Yitzhak Rabin."
+              "Understand the significance of Arafat’s renunciation of terrorism in a speech at the UN (1988).",
+              "Analyze changing superpower policies in the Middle East: US involvement in the Gulf War (1991), and the end of the Cold War.",
+              "Evaluate Arafat, Rabin and the Oslo Accords (1993); the setting up of the Palestinian National Authority; the Israel-Jordan peace treaty (1994); and Oslo II (1995)."
             ]
           },
           "enquiry": "Why did the Oslo Accords bring hope for peace, yet fail to end the conflict?",

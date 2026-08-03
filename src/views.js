@@ -98,7 +98,7 @@ export function renderDashboard() {
       displayDesc = title;
     }
     
-    const bgPos = unit.id === 'edexcel_medicine' ? 'center 10%' : 'center';
+    const bgPos = unit.id === 'edexcel_medicine' ? 'center 10%' : (unit.id === 'eee' ? 'center 10%' : 'center');
     
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer;" onclick="if(${isUnlocked}) { window.launchSubApp('${unit.id}'); } else { window.launchSubApp('${unit.id}'); }">
