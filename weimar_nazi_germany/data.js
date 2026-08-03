@@ -3127,10 +3127,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph of Paul von Hindenburg and Adolf Hitler on the day Hitler was appointed Chancellor, 30 January 1933.",
+                        "title": "Source B: A photograph of Adolf Hitler bowing to President Paul von Hindenburg at the Day of Potsdam, 21 March 1933.",
                         "source": "/images/hitler_hindenburg_1933.jpg?v=4",
-                        "caption": "President Hindenburg and the newly appointed Chancellor Adolf Hitler.",
-                        "provenance_clue": "Look closely at the body language between the two men. Hindenburg despised Hitler. How useful is this photograph for showing the uneasy alliance that brought Hitler to power?"
+                        "caption": "Hitler ceremonially greeting Hindenburg shortly after becoming Chancellor.",
+                        "provenance_clue": "Look closely at the body language between the two men. Hitler is bowing to show deep respect. How useful is this photograph as a piece of propaganda designed to reassure conservative Germans?"
                     }
                 ]
             },
@@ -4623,10 +4623,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph of Edelweiss Pirates graffiti found on a wall in Cologne, late 1930s.",
+                        "title": "Source B: A photograph of Edelweiss Pirates members Jean Jülich and Gertrud Koch.",
                         "source": "/images/edelweiss_pirates_graffiti.jpg?v=4",
-                        "caption": "Anti-Hitler Youth graffiti left by the Edelweiss Pirates.",
-                        "provenance_clue": "Graffiti is an anonymous form of protest. Why might young people have to resort to graffiti to express their opposition to the regime?"
+                        "caption": "Members of the Edelweiss Pirates youth group.",
+                        "provenance_clue": "This photograph shows young people who opposed the strict conformity of the Hitler Youth. Why might they have chosen to rebel in this way?"
                     }
                 ]
             },
