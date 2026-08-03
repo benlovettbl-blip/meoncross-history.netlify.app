@@ -4623,10 +4623,10 @@ export const unitData = {
                     },
                     {
                         "type": "visual",
-                        "title": "Source B: A photograph of Edelweiss Pirates members Jean Jülich and Gertrud Koch.",
-                        "source": "/images/edelweiss_pirates_graffiti.jpg?v=4",
-                        "caption": "Members of the Edelweiss Pirates youth group.",
-                        "provenance_clue": "This photograph shows young people who opposed the strict conformity of the Hitler Youth. Why might they have chosen to rebel in this way?"
+                        "title": "Source B: A Gestapo photograph of Sophie Scholl taken after her capture, 18 February 1943.",
+                        "source": "/images/sophie_scholl_gestapo.jpg",
+                        "caption": "Sophie Scholl was a core member of the White Rose youth resistance group.",
+                        "provenance_clue": "This photograph was taken by the Gestapo (secret police) following her arrest for distributing anti-Nazi leaflets. What does her capture suggest about the dangers of resisting the Nazi regime?"
                     }
                 ]
             },
