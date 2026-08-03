@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "sync": "node scripts/ai_heal_headings.js && node extract_units.js && node build_database.cjs && node verify_asset_paths.js && node scripts/generate_all_quiz_packs.js && node generate_workbooks.js && node scripts/generate_mastery_packs.js",
+    "sync": "node scripts/ai_heal_headings.js && node extract_units.js && node build_database.cjs && node verify_asset_paths.js && node scripts/generate_all_quiz_packs.js && node generate_workbooks.js && node scripts/generate_mastery_packs.js && npm run export:pdf",
     "build-unit": "node scripts/build_unit.js",
     "create-unit": "node scripts/create_unit.js",
     "test:content": "node scripts/test_content.mjs",

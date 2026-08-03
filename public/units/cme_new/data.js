@@ -9,6 +9,7 @@ export const unitData = {
   "icon": "fa-dove",
   "color": "#0ea5e9",
   "bg": "rgba(14, 165, 233, 0.1)",
+  "specification_file": "/data/cme_new_spec.json",
   "mock_exams": [
     {
       "id": "cme_mock_a",
@@ -97,6 +98,7 @@ export const unitData = {
     {
       "id": "lesson_0",
       "title": "KT1: Geography of the Middle East",
+      "full_page_map": "/images/middle_east_map.png",
       "teacher_notes": {
         "primer": "Before diving into the historical narrative of the Middle East conflict, students must establish a foundational understanding of the region's geography. The complexities of borders, waterways, and contested territories (like the Sinai and Golan Heights) are critical for comprehending the stakes of the wars they will study.",
         "objectives": [
@@ -132,11 +134,6 @@ export const unitData = {
           "title": "Map of the Middle East",
           "provenance": "Reference Map",
           "content": "/images/middle_east_map.png"
-        },
-        "source_b": {
-          "title": "Map of the Middle East (Answer Key)",
-          "provenance": "Teacher Reference",
-          "content": "/images/middle_east_map_answers.png"
         }
       },
       "vocabulary": [
@@ -166,11 +163,6 @@ export const unitData = {
           "title": "Zoomed Map (Blank)",
           "provenance": "Student Copy",
           "content": "/images/israel_zoomed_map.png"
-        },
-        "source_b": {
-          "title": "Zoomed Map (Answer Key)",
-          "provenance": "Teacher Reference",
-          "content": "/images/israel_zoomed_map_answers.png"
         },
         "provenance_clue": "Focus on the precise borders. After the 1967 war, Israel captured the West Bank from Jordan, the Gaza Strip and Sinai Peninsula from Egypt, and the Golan Heights from Syria."
       }
@@ -366,6 +358,10 @@ export const unitData = {
         }
       ],
       "vocab_cloze_text": "Following World War II, Britain struggled to control its League of Nations [Mandate] in Palestine. The horrors of the Holocaust increased international sympathy for [Zionism], leading to demands for a Jewish state. As tensions rose, militant groups like the [Irgun] launched violent attacks against the British, such as the bombing of the King David Hotel. Ultimately, the 1948 war resulted in the creation of Israel but also led to the [Nakba], where hundreds of thousands of Palestinians were displaced.",
+      "historians_corner": {
+        "title": "The Decisive Factor in Israel's Victory",
+        "text": "GCSE examiners award top marks to students who can analyze how multiple, interrelated factors combined to produce the war's final outcome. Israel's victory was not a miracle, but rather the result of distinct military, political, and structural advantages.\n\nThe Arab coalition was plagued by deep political rivalries and conflicting territorial ambitions. For example, King Abdullah of Transjordan was primarily interested in annexing the West Bank for his own kingdom, rather than destroying Israel. Although facing a combined Arab population of 41 million, the 650,000 Jews of Israel mobilized their entire society. At the war's start, Israel's combat forces stood at 35,000 (already larger than the active invasion force). By December 1948, the IDF grew to a highly coordinated force of 108,000 troops, vastly outnumbering the fragmented Arab armies."
+      },
       "do_now": {
         "items": [
           {

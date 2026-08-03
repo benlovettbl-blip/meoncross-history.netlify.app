@@ -134,6 +134,8 @@ allDirs.forEach(unitId => {
     const periodTitle = period.title;
     const periodName = period.name;
 
+    let appendixData = [];
+
     let trackerRows = '';
     periodLessons.forEach(l => {
       let maxScore = 5;
@@ -219,6 +221,18 @@ allDirs.forEach(unitId => {
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
     
     html += `<h2 style="margin-bottom: 20px;">${formatText(lesson.title)}</h2>`;
+
+    if (lesson.teacher_notes && lesson.teacher_notes.objectives && lesson.teacher_notes.objectives.length > 0) {
+      html += `<div style="margin-bottom: 25px; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; page-break-inside: avoid;">`;
+      html += `<h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; text-transform: uppercase;">Learning Objectives</h4>`;
+      lesson.teacher_notes.objectives.forEach(obj => {
+        html += `<div style="display: flex; align-items: flex-start; margin-bottom: 8px;">`;
+        html += `<div style="width: 14px; height: 14px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 10px; margin-top: 3px; flex-shrink: 0; background: #fff;"></div>`;
+        html += `<div style="font-size: 11pt; color: #334155; line-height: 1.4;">${formatText(obj.objective)}</div>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+    }
 
     if (lesson.hook_text) {
       html += `<p style="font-size: 12pt; font-style: italic; background: #eef2ff; padding: 15px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">${lesson.hook_text}</p>`;
@@ -569,7 +583,7 @@ allDirs.forEach(unitId => {
              html += `<br>`;
           });
         } else if (lesson.gcse_task.sources) {
-          if (unitId === 'edexcel_medicine') {
+          if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
             html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
           } else {
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}</p>`;
@@ -590,7 +604,7 @@ allDirs.forEach(unitId => {
           sourceHTML += '</div>';
           html += sourceHTML;
 
-          if (unitId === 'edexcel_medicine') {
+          if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
             html += `<h3 style="margin-top: 0;">Source Evaluation Notes</h3>
               <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; page-break-inside: avoid;">
                 <tr><th style="border: 2px solid #000; padding: 8px; width: 10%;">Source</th><th style="border: 2px solid #000; padding: 8px; width: 30%;">N.O.P.</th><th style="border: 2px solid #000; padding: 8px; width: 30%;">Content</th><th style="border: 2px solid #000; padding: 8px; width: 30%;">Context</th></tr>
@@ -667,6 +681,19 @@ allDirs.forEach(unitId => {
       }
       html += `</div>`;
     }
+    // Inject General Notes Box
+    html += `
+      <div class="task-box" style="margin-bottom: 30px; page-break-inside: avoid; border: 2px solid #64748b; background: #f8fafc;">
+        <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
+        <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    `;
 
     // Inject Discreet Grading Footer for the Lesson
     html += `
@@ -683,6 +710,17 @@ allDirs.forEach(unitId => {
       </div>
     `;
 
+    if (lesson.full_page_map) {
+      let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
+      html += `<div style="page-break-before: always; height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">`;
+      html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
+      html += `</div>`;
+    }
+
+
+    if (lesson.extra_videos && lesson.extra_videos.length > 0) {
+        appendixData.push({ title: lesson.title, videos: lesson.extra_videos });
+    }
   });
 
   if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
@@ -710,7 +748,38 @@ allDirs.forEach(unitId => {
     `;
   }
 
+  if (appendixData.length > 0) {
+      html += `<div style="page-break-before: always; padding: 20px;">`;
+      html += `<h2 style="text-align: center; font-size: 24pt; margin-bottom: 20px; font-family: 'Playfair Display', serif; color: #1a237e;">Appendix: Further Watching</h2>`;
+      html += `<p style="text-align: center; font-size: 11pt; margin-bottom: 30px; color: #475569;">Scan the QR codes below to watch historical documentaries and videos related to each lesson. Use these for independent revision or homework.</p>`;
+      
+      appendixData.forEach(appx => {
+          html += `<h3 style="margin-top: 30px; margin-bottom: 20px; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px;">${formatText(appx.title)}</h3>`;
+          html += `<div style="display: flex; flex-wrap: wrap; gap: 2%; row-gap: 20px;">`;
+          appx.videos.forEach(v => {
+              let qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(v.url)}`;
+              let vTitle = v.title || "Historical Video";
+              let vDuration = v.duration || "Short clip";
+              html += `<div style="width: 32%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #f8fafc; page-break-inside: avoid; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center;">
+                  <img src="${qrUrl}" style="width: 100px; height: 100px; margin-bottom: 15px; border: 1px solid #ccc; padding: 5px; background: white; filter: grayscale(100%) contrast(150%);">
+                  <div style="font-weight: 600; font-size: 10.5pt; color: #1e293b; margin-bottom: 8px; line-height: 1.3;">${vTitle}</div>
+                  <div style="font-size: 9pt; color: #64748b; font-style: italic; margin-top: auto;">${vDuration}</div>
+              </div>`;
+          });
+          html += `</div>`;
+      });
+      html += `</div>`;
+  }
+
+  const genDate = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+  html += `<div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8; page-break-inside: avoid; border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: ${genDate} | Unit: ${unitId}</div>`;
   html += `</body></html>`;
+  
+  // Fix any root-absolute paths in injected HTML so they work locally/in PDFs
+  html = html.replace(/src="\/units\//g, 'src="../../units/');
+  html = html.replace(/src="\/images\//g, 'src="../../images/');
+  html = html.replace(/src="\/assets\//g, 'src="../../assets/');
+
   const filename = period.name === 'full' ? 'workbook.html' : `workbook_${period.name}.html`;
   const outPath = path.join(publicUnitsDir, unitId, filename);
   fs.writeFileSync(outPath, html);

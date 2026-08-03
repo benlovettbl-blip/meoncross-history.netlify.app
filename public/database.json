@@ -11,6 +11,7 @@
       "icon": "fa-dove",
       "color": "#0ea5e9",
       "bg": "rgba(14, 165, 233, 0.1)",
+      "specification_file": "/data/cme_new_spec.json",
       "mock_exams": [
         {
           "id": "cme_mock_a",
@@ -99,6 +100,7 @@
         {
           "id": "lesson_0",
           "title": "KT1: Geography of the Middle East",
+          "full_page_map": "/images/middle_east_map.png",
           "teacher_notes": {
             "primer": "Before diving into the historical narrative of the Middle East conflict, students must establish a foundational understanding of the region's geography. The complexities of borders, waterways, and contested territories (like the Sinai and Golan Heights) are critical for comprehending the stakes of the wars they will study.",
             "objectives": [
@@ -134,11 +136,6 @@
               "title": "Map of the Middle East",
               "provenance": "Reference Map",
               "content": "/images/middle_east_map.png"
-            },
-            "source_b": {
-              "title": "Map of the Middle East (Answer Key)",
-              "provenance": "Teacher Reference",
-              "content": "/images/middle_east_map_answers.png"
             }
           },
           "vocabulary": [
@@ -168,11 +165,6 @@
               "title": "Zoomed Map (Blank)",
               "provenance": "Student Copy",
               "content": "/images/israel_zoomed_map.png"
-            },
-            "source_b": {
-              "title": "Zoomed Map (Answer Key)",
-              "provenance": "Teacher Reference",
-              "content": "/images/israel_zoomed_map_answers.png"
             },
             "provenance_clue": "Focus on the precise borders. After the 1967 war, Israel captured the West Bank from Jordan, the Gaza Strip and Sinai Peninsula from Egypt, and the Golan Heights from Syria."
           }
@@ -368,6 +360,10 @@
             }
           ],
           "vocab_cloze_text": "Following World War II, Britain struggled to control its League of Nations [Mandate] in Palestine. The horrors of the Holocaust increased international sympathy for [Zionism], leading to demands for a Jewish state. As tensions rose, militant groups like the [Irgun] launched violent attacks against the British, such as the bombing of the King David Hotel. Ultimately, the 1948 war resulted in the creation of Israel but also led to the [Nakba], where hundreds of thousands of Palestinians were displaced.",
+          "historians_corner": {
+            "title": "The Debate over Plan Dalet",
+            "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+          },
           "do_now": {
             "items": [
               {
@@ -426,10 +422,6 @@
           ],
           "pair_share": {
             "prompt": "If you were the British government in 1945, exhausted by WWII and facing attacks from Jewish paramilitaries, what would you have done with the Mandate?"
-          },
-          "historians_corner": {
-            "title": "The Debate over Plan Dalet",
-            "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
           },
           "gcse_task": {
             "topic": "Write a narrative account analysing the key events of 1945–48 which led to the creation of Israel. (8 marks)",

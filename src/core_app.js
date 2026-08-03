@@ -1862,7 +1862,6 @@ export function initializeApp(unitData) {
         }
         
         let l4StyledContent = '';
-        let simplifyBtn = '';
         if (block.level_4) {
           let l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.level_4}</em>` : highlightGlossary(block.level_4);
           
@@ -1886,7 +1885,6 @@ export function initializeApp(unitData) {
              const rest = l4ContentStr.slice(1);
              l4StyledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` + rest;
           }
-          simplifyBtn = `<button class="btn btn-secondary no-print" onclick="window.toggleSimplify(this)" data-original="${encodeURIComponent(styledContent)}" data-simplified="${encodeURIComponent(l4StyledContent)}" style="padding: 6px 10px; flex-shrink: 0; margin-left: 5px; color: #047857;" title="Simplify Text"><i class="fa-solid fa-child-reaching"></i></button>`;
         }
 
         let themeHeadingHtml = '';
@@ -1901,7 +1899,6 @@ export function initializeApp(unitData) {
               <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
               <div style="display: flex; align-items: flex-start;">
                 <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
-                ${simplifyBtn}
               </div>
             </div>
           </div>

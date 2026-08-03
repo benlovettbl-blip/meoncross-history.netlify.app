@@ -15,9 +15,10 @@ const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
     browser = await puppeteer.launch({ headless: true });
   }
   
-  const allDirs = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
+  let allDirs = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory() && !ignoredDirs.includes(dirent.name))
     .map(dirent => dirent.name);
+  if (process.argv[2]) allDirs = [process.argv[2]];
 
   for (const unitId of allDirs) {
     const unitPath = path.join(publicUnitsDir, unitId);
