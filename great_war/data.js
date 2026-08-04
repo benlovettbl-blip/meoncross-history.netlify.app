@@ -1,4 +1,19 @@
 export const unitData = {
+    "debatePrompts": [
+        {
+                "title": "Bismarck & Unification",
+                "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
+        },
+        {
+                "title": "The Scramble for Africa",
+                "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
+        },
+        {
+                "title": "The Alliance System",
+                "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
+        }
+],
+
           "specification_file": "/data/great_war_overview.json",
           "title": "KS3: Causes of the Great War",
           "homepage_background": "/assets/somme_trench_1916.jpg",

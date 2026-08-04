@@ -1,4 +1,19 @@
 export const unitData = {
+    "debatePrompts": [
+        {
+                "title": "Elizabeth's Religious Settlement",
+                "prompt": "<strong>Debate:</strong> Was Elizabeth's 'Middle Way' a brilliant compromise that prevented civil war, or a cowardly failure to commit to true Protestantism? Argue your case."
+        },
+        {
+                "title": "The Problem of Mary, Queen of Scots",
+                "prompt": "<strong>Roleplay:</strong> You are Sir Francis Walsingham in 1586. Convince Queen Elizabeth that executing her cousin Mary is the only way to save England from Catholic plots like the Babington Plot."
+        },
+        {
+                "title": "The Spanish Armada",
+                "prompt": "<strong>Debate:</strong> Did the Spanish Armada fail because of superior English tactics and naval technology, or was it simply defeated by disastrous Spanish planning and the weather (the 'Protestant Wind')? Pick a side."
+        }
+],
+
     "specification_file": "/data/eee_overview.json",
     "title": "From religious division to the Armada: How did Elizabeth secure her throne?",
     "subtitle": "Paper 2: Early Elizabethan England, 1558-88",

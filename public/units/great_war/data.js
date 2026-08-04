@@ -1,4 +1,19 @@
 export const unitData = {
+    "debatePrompts": [
+        {
+                "title": "Bismarck & Unification",
+                "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
+        },
+        {
+                "title": "The Scramble for Africa",
+                "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
+        },
+        {
+                "title": "The Alliance System",
+                "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
+        }
+],
+
           "specification_file": "/data/great_war_overview.json",
           "title": "KS3: Causes of the Great War",
           "homepage_background": "/assets/somme_trench_1916.jpg",
@@ -986,6 +1001,22 @@ export const unitData = {
                                                   "duration": "26 mins 6 secs",
                                                   "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
                                                   "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=efV3uZqc3so",
+                                                  "title": "80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I",
+                                                  "duration": "12 mins 49 secs",
+                                                  "viewing_task": "Note down how the industrial revolution pushed European nations to scramble for African colonies.",
+                                                  "model_answer": "The industrial revolution required massive amounts of raw materials and new markets. The Scramble for Africa allowed European powers to extract resources cheaply and sell manufactured goods back, rapidly increasing imperial wealth and military power."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=DduN1cU2p9U",
+                                                  "title": "What was the 'Scramble for Africa'? - BBC What's New",
+                                                  "duration": "3 mins 0 secs",
+                                                  "viewing_task": "Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.",
+                                                  "model_answer": "At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted."
                                         }
                               ],
                               "narrative_blocks": [

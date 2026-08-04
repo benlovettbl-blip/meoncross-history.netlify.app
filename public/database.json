@@ -17112,6 +17112,20 @@
   },
   "eee": {
     "data": {
+      "debatePrompts": [
+        {
+          "title": "Elizabeth's Religious Settlement",
+          "prompt": "<strong>Debate:</strong> Was Elizabeth's 'Middle Way' a brilliant compromise that prevented civil war, or a cowardly failure to commit to true Protestantism? Argue your case."
+        },
+        {
+          "title": "The Problem of Mary, Queen of Scots",
+          "prompt": "<strong>Roleplay:</strong> You are Sir Francis Walsingham in 1586. Convince Queen Elizabeth that executing her cousin Mary is the only way to save England from Catholic plots like the Babington Plot."
+        },
+        {
+          "title": "The Spanish Armada",
+          "prompt": "<strong>Debate:</strong> Did the Spanish Armada fail because of superior English tactics and naval technology, or was it simply defeated by disastrous Spanish planning and the weather (the 'Protestant Wind')? Pick a side."
+        }
+      ],
       "specification_file": "/data/eee_overview.json",
       "title": "From religious division to the Armada: How did Elizabeth secure her throne?",
       "subtitle": "Paper 2: Early Elizabethan England, 1558-88",
@@ -21360,6 +21374,20 @@
   },
   "great_war": {
     "data": {
+      "debatePrompts": [
+        {
+          "title": "Bismarck & Unification",
+          "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
+        },
+        {
+          "title": "The Scramble for Africa",
+          "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
+        },
+        {
+          "title": "The Alliance System",
+          "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
+        }
+      ],
       "specification_file": "/data/great_war_overview.json",
       "title": "KS3: Causes of the Great War",
       "homepage_background": "/assets/somme_trench_1916.jpg",
@@ -22356,6 +22384,22 @@
               "duration": "26 mins 6 secs",
               "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
               "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=efV3uZqc3so",
+              "title": "80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I",
+              "duration": "12 mins 49 secs",
+              "viewing_task": "Note down how the industrial revolution pushed European nations to scramble for African colonies.",
+              "model_answer": "The industrial revolution required massive amounts of raw materials and new markets. The Scramble for Africa allowed European powers to extract resources cheaply and sell manufactured goods back, rapidly increasing imperial wealth and military power."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=DduN1cU2p9U",
+              "title": "What was the 'Scramble for Africa'? - BBC What's New",
+              "duration": "3 mins 0 secs",
+              "viewing_task": "Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.",
+              "model_answer": "At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted."
             }
           ],
           "narrative_blocks": [
@@ -24554,6 +24598,20 @@
   },
   "great_war_part2": {
     "data": {
+      "debatePrompts": [
+        {
+          "title": "Lions Led By Donkeys?",
+          "prompt": "<strong>Debate:</strong> Were British generals like Sir Douglas Haig incompetent butchers who threw lives away at the Somme, or did they adapt as best as they could to a new, industrial type of war?"
+        },
+        {
+          "title": "A Truly Global War?",
+          "prompt": "<strong>Debate:</strong> Was World War I truly a 'World' war, or was it just a European civil war that unfairly dragged in colonial subjects from India and Africa against their will?"
+        },
+        {
+          "title": "The Treaty of Versailles",
+          "prompt": "<strong>Roleplay:</strong> You are French Prime Minister Georges Clemenceau in 1919. Explain to Woodrow Wilson why Germany must be utterly crushed, disarmed, and punished financially for the devastation of the war."
+        }
+      ],
       "lessons": [
         {
           "title": "Lesson 1: Why were young men so desperat...",
@@ -25027,6 +25085,20 @@
   },
   "water_and_sanitation": {
     "data": {
+      "debatePrompts": [
+        {
+          "title": "Roman Public Health",
+          "prompt": "<strong>Debate:</strong> Did the Romans build complex aqueducts and bathhouses because they actually understood how disease spread, or just because they liked feeling clean and showing off their imperial wealth?"
+        },
+        {
+          "title": "Medieval Public Health",
+          "prompt": "<strong>Roleplay:</strong> You are a medieval town councilor. The Black Death is approaching. Defend your decision to clean the streets of rotting animals and fine butchers for dumping waste, rather than just praying."
+        },
+        {
+          "title": "The Great Stink",
+          "prompt": "<strong>Debate:</strong> 'It wasn't cholera or John Snow that forced the government to build London's sewers, it was simply the overwhelming smell of the River Thames outside Parliament.' Do you agree? Argue your case."
+        }
+      ],
       "id": "water_and_sanitation",
       "title": "KS3: Water and Sanitation Through Time",
       "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",

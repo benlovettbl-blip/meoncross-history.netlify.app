@@ -1,5 +1,19 @@
 {
   "data": {
+    "debatePrompts": [
+      {
+        "title": "Roman Public Health",
+        "prompt": "<strong>Debate:</strong> Did the Romans build complex aqueducts and bathhouses because they actually understood how disease spread, or just because they liked feeling clean and showing off their imperial wealth?"
+      },
+      {
+        "title": "Medieval Public Health",
+        "prompt": "<strong>Roleplay:</strong> You are a medieval town councilor. The Black Death is approaching. Defend your decision to clean the streets of rotting animals and fine butchers for dumping waste, rather than just praying."
+      },
+      {
+        "title": "The Great Stink",
+        "prompt": "<strong>Debate:</strong> 'It wasn't cholera or John Snow that forced the government to build London's sewers, it was simply the overwhelming smell of the River Thames outside Parliament.' Do you agree? Argue your case."
+      }
+    ],
     "id": "water_and_sanitation",
     "title": "KS3: Water and Sanitation Through Time",
     "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",

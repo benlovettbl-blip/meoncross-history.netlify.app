@@ -1,4 +1,19 @@
 export const unitData = {
+    "debatePrompts": [
+        {
+                "title": "Lions Led By Donkeys?",
+                "prompt": "<strong>Debate:</strong> Were British generals like Sir Douglas Haig incompetent butchers who threw lives away at the Somme, or did they adapt as best as they could to a new, industrial type of war?"
+        },
+        {
+                "title": "A Truly Global War?",
+                "prompt": "<strong>Debate:</strong> Was World War I truly a 'World' war, or was it just a European civil war that unfairly dragged in colonial subjects from India and Africa against their will?"
+        },
+        {
+                "title": "The Treaty of Versailles",
+                "prompt": "<strong>Roleplay:</strong> You are French Prime Minister Georges Clemenceau in 1919. Explain to Woodrow Wilson why Germany must be utterly crushed, disarmed, and punished financially for the devastation of the war."
+        }
+],
+
   "lessons": [
     {
       "title": "Lesson 1: Why were young men so desperat...",
