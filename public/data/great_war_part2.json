@@ -28,7 +28,7 @@
     "lessons": [
       {
         "id": "lesson_1",
-        "title": "Lesson 1: The Spark & The Stampede (1914)",
+        "title": "Lesson 1: Why were young men so desperate to join the slaughter of 1914?",
         "teacher_notes": {
           "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
           "objectives": [
@@ -62,15 +62,116 @@
           ]
         },
         "enquiry": "Why were young men so desperate to join the slaughter of 1914?",
+        "vocab": [
+          {
+            "word": "Conscription",
+            "def": "A compulsory law forcing citizens of a country to enlist in the armed forces."
+          },
+          {
+            "word": "Pals Battalions",
+            "def": "Special British Army units raised during WWI that allowed friends, neighbors, and co-workers to enlist and serve together."
+          },
+          {
+            "word": "Propaganda",
+            "def": "Biased or misleading information publicized by a government to promote a political cause or encourage patriotism."
+          },
+          {
+            "word": "Historiography",
+            "def": "The study of how historians' interpretations of past events change over time."
+          },
+          {
+            "word": "Pragmatism",
+            "def": "Making decisions based on practical, real-world realities (like needing a steady wage) rather than romance or emotion."
+          }
+        ],
+        "flashcards": [
+          {
+            "question": "What was the main reason the British military had to rely on volunteers in August 1914?",
+            "options": [
+              "Britain had no conscription law and possessed a small professional army.",
+              "Parliament ran out of money to pay soldiers.",
+              "The King banned the use of regular soldiers."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?",
+            "options": [
+              "The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).",
+              "The Stubbington Guards.",
+              "Kitchener's Fareham Conscripts."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which statement best explains why white feathers were such a powerful recruitment tool?",
+            "options": [
+              "They weaponized social shame and humiliation within close-knit local communities.",
+              "They carried legal force and resulted in a heavy fine.",
+              "They were official government warnings that a man was about to be arrested."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
+            "options": [
+              "The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.",
+              "They were tricked by romanticized stories of quick, glorious victories.",
+              "They were promised free houses in London after the war ended."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
+            "options": [
+              "The desire to protect international law and civilization after Germany invaded neutral Belgium.",
+              "The need to escape the boring, repetitive work of the textile mills.",
+              "The fear of being fired by an employer who demanded they join."
+            ],
+            "answer": 0
+          }
+        ],
         "narrative_blocks": [
           {
-            "title": "Enquiry & Key Concepts",
-            "text": "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?<br><br><strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions).",
+            "title": "The Spark & The Stampede",
+            "text": "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark. That spark was struck on June 28 in Sarajevo, when Archduke Franz Ferdinand, heir to the Austro-Hungarian Empire, was assassinated. Within weeks, the continent's major empires were dragged into a catastrophic war.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
             "tasks": [
               {
                 "type": "text",
-                "text": "Task 1: Placeholder for lesson narrative analysis.",
-                "model": "Model answer will be populated here."
+                "text": "<strong>Part A: Core Factual Recall</strong><br>1. What was the 'spark' that triggered the outbreak of the First World War in 1914?<br>2. Why did Great Britain desperately need volunteers to fight when war was declared?",
+                "model": "1. The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914.\n2. Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
+              }
+            ]
+          },
+          {
+            "title": "Local History: The Pompey Pals",
+            "text": "To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in \"Pals Battalions.\" For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the \"Pompey Pals\". Local boys trained together and went to France together. Tragically, the industrialized slaughter of the Western Front tore these communities apart. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went \"over the top\" near the River Ancre; 457 of them became casualties in a single day, devastating local families.",
+            "tasks": [
+              {
+                "type": "text",
+                "text": "<strong>Part A: Core Factual Recall (Continued)</strong><br>3. Who were the 'Pompey Pals'?<br>4. What happened to the 1st Pompey Pals on September 3, 1916?",
+                "model": "3. The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914.\n4. During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community."
+              }
+            ]
+          },
+          {
+            "title": "Historical Interpretations: Why did they go?",
+            "text": "<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be \"over by Christmas.\"</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this \"gullible volunteer\" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany's invasion of \"Brave Little Belgium\" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>",
+            "tasks": [
+              {
+                "type": "text",
+                "text": "<strong>Part B: Causal Matrix (Push vs. Pull Factors)</strong><br>Categorize the following reasons for enlistment into \"Push Factors\" (negative things driving them away from home) and \"Pull Factors\" (positive things attracting them to the army): <em>The threat of receiving a white feather, the promise of a shilling a day, grinding poverty at home, defending 'Brave Little Belgium', government propaganda.</em>",
+                "model": "Push Factors = Threat of a white feather, grinding poverty at home.\nPull Factors = A shilling a day, defending Belgium, government propaganda."
+              },
+              {
+                "type": "text",
+                "text": "<strong>Part C: Historical Interpretations</strong><br>1. How does historian Catriona Pennell's view of WWI volunteers differ from the traditional view?<br>2. Explain what historian Gary Sheffield means when he suggests volunteers were motivated by \"economic pragmatism.\"",
+                "model": "1. While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium.\n2. Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
+              },
+              {
+                "type": "text",
+                "text": "<strong>Part D: The \"Judgement & Nuance\" Paragraph Scaffold</strong><br>Write a structured paragraph answering the following: <em>\"To what extent was government propaganda the most important reason for the mass enlistment of 1914?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While state propaganda created the initial momentum, economic reality and local community ties were more decisive...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Pompey Pals, a shilling a day, white feathers...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the alternative historian's view (<em>However, as historian Catriona Pennell argues, it would be reductive to ignore the genuine moral outrage over...</em>)</li><li><strong>Evaluation:</strong> Conclude by weighing the factors against each other to form a final historical judgment.</li></ul>",
+                "model": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
               }
             ]
           }
@@ -78,7 +179,7 @@
       },
       {
         "id": "lesson_2",
-        "title": "Lesson 2: The Reality of the Mud (Western Front)",
+        "title": "Lesson 2: Did British generals make the horror of trench warfare worse?",
         "teacher_notes": {
           "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
           "objectives": [
@@ -128,7 +229,7 @@
       },
       {
         "id": "lesson_3",
-        "title": "Lesson 3: The Forgotten Empire (The Global War)",
+        "title": "Lesson 3: How much of a 'World' War was it, and why were the Empire's troops forgotten?",
         "teacher_notes": {
           "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
           "objectives": [
@@ -161,16 +262,101 @@
             }
           ]
         },
-        "enquiry": "Was the Great War truly a global war of empires?",
+        "enquiry": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+        "vocab": [
+          {
+            "word": "Eurocentric",
+            "def": "Focusing on European culture or history to the exclusion of a wider view of the world."
+          },
+          {
+            "word": "British West Indies Regiment (BWIR)",
+            "def": "A military unit of the British Army formed during WWI, made up of volunteers from British colonies in the Caribbean."
+          },
+          {
+            "word": "Racial Hierarchy",
+            "def": "A system of stratification that privileges one racial group over others (e.g., placing white British officers at the top)."
+          },
+          {
+            "word": "Historical Amnesia",
+            "def": "The collective forgetting or intentional erasing of specific events or groups of people from a society's history."
+          },
+          {
+            "word": "Mutiny",
+            "def": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
+          }
+        ],
+        "flashcards": [
+          {
+            "question": "Which imperial force contributed over 1.5 million men to the British war effort, fighting in places like Ypres and Mesopotamia?",
+            "options": [
+              "The British Indian Army",
+              "The British West Indies Regiment",
+              "The Australian and New Zealand Army Corps (ANZAC)"
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Why were many black soldiers in the British West Indies Regiment (BWIR) angry about their treatment?",
+            "options": [
+              "They were stripped of combat roles, paid less, and forced into dangerous manual labor.",
+              "They were forced to fight on the front lines without any weapons.",
+              "They were forced to return to the Caribbean before the war ended."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What happened in Taranto, Italy, in 1918?",
+            "options": [
+              "Soldiers of the BWIR mutinied in protest against systemic racism and degrading conditions.",
+              "The British Army officially apologized for its racist policies.",
+              "Indian troops broke through the German lines and ended the war."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "What does historian David Olusoga mean when he discusses 'historical amnesia' regarding WWI?",
+            "options": [
+              "The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.",
+              "The fact that soldiers who suffered from shell shock lost their memories.",
+              "The failure of the British government to keep accurate records of casualties."
+            ],
+            "answer": 0
+          },
+          {
+            "question": "Which term best describes a historical narrative (like Interpretation A) that focuses almost exclusively on white, European experiences while ignoring the rest of the world?",
+            "options": [
+              "Eurocentric",
+              "Pragmatic",
+              "Revisionist"
+            ],
+            "answer": 0
+          }
+        ],
         "narrative_blocks": [
           {
-            "title": "Enquiry & Key Concepts",
-            "text": "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?<br><br><strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops).",
+            "title": "The Core Narrative",
+            "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign.<br><br><strong>Racial Hierarchy and Discrimination</strong><br>Despite their sacrifices, soldiers of color faced systemic racism and a strict imperial racial hierarchy. The British War Office was deeply uncomfortable with the idea of non-white troops fighting European armies. Consequently, many black soldiers, particularly in the BWIR, were stripped of their combat roles and reassigned to dangerous, degrading manual labor—digging trenches, carrying ammunition, and burying the dead under heavy artillery fire. Black soldiers were paid less than their white counterparts, were barred from being promoted to commissioned officers, and were often denied access to the same canteens and hospitals. In 1918, BWIR soldiers mutinied in Taranto, Italy, over these exact degrading conditions.",
             "tasks": [
               {
                 "type": "text",
-                "text": "Task 1: Placeholder task evaluating imperial contributions.",
-                "model": "Model answer will be populated here."
+                "text": "<strong>Part A: Core Factual Recall</strong><br>1. How many men did the British Indian Army contribute to the First World War?<br>2. What crucial role did Indian troops play on the Western Front in late 1914?<br>3. What was the British West Indies Regiment (BWIR), and how many men served in it?<br>4. Why did soldiers of the BWIR mutiny in Taranto, Italy, in 1918?",
+                "model": "1. Over 1.5 million men.\n2. Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres.\n3. It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving.\n4. They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
+              }
+            ]
+          },
+          {
+            "title": "The Historians' Debate: How is the war remembered?",
+            "text": "For decades, the popular memory of the First World War was heavily Eurocentric—dominated by images of white British soldiers in the mud of the Western Front. Read the two contrasting interpretations below to understand how modern historians are challenging this narrative.<br><br><blockquote><strong>Interpretation A: The Traditional (Eurocentric) Focus</strong><br><em>\"The Great War was a European tragedy, fought on the muddy fields of Flanders and the plains of France. It was here, in the brutal stalemate of the trenches, that the British soldier endured the ultimate test of endurance and secured the victory of the civilized world.\"</em><br>— <em>Adapted from the typical narrative focus of mid-20th-century British school textbooks</em></blockquote><br><br><blockquote><strong>Interpretation B: The Modern Global View</strong><br><em>\"The First World War was a truly global conflict... Yet in the decades that followed, the presence of hundreds of thousands of black and Asian soldiers was subtly marginalized. This historical amnesia was no accident. The narrative of a 'white man’s war' was constructed to preserve the racial hierarchy of the Empire.\"</em><br>— <em>Adapted from David Olusoga, The World's War (2014)</em></blockquote>",
+            "tasks": [
+              {
+                "type": "text",
+                "text": "<strong>Part B: Analyzing Historical Interpretations</strong><br>1. Read Interpretation A. Which specific words or phrases show that this traditional view is \"Eurocentric\"?<br>2. Read Interpretation B. According to David Olusoga, why was the contribution of the Empire \"marginalized\" (ignored) after the war?",
+                "model": "1. The extract focuses solely on \"European tragedy,\" \"Flanders,\" \"France,\" and the \"British soldier,\" completely ignoring the battlefields of the Middle East or Africa, and the soldiers of the wider Empire.\n2. Olusoga argues this \"historical amnesia\" was intentional; the government wanted to promote the idea of a \"white man's war\" to maintain the racial hierarchy and justify the continued existence of the British Empire."
+              },
+              {
+                "type": "text",
+                "text": "<strong>Part C: The \"Judgement & Nuance\" Paragraph Scaffold</strong><br>Write a structured paragraph answering the following: <em>\"To what extent was the First World War a 'global' rather than a 'European' conflict?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>Although the most famous battles took place in Europe, the war was fundamentally a global conflict because...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>1.5 million Indian troops, the BWIR, fighting in Mesopotamia and East Africa, the Taranto mutiny...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge why the European view exists (<em>However, looking at Interpretation A, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties...</em>)</li><li><strong>Evaluation:</strong> Conclude by using Olusoga's concept of \"historical amnesia\" to explain why remembering the global contribution is essential to understanding the true reality of the war.</li></ul>",
+                "model": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation A, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
               }
             ]
           }
@@ -178,7 +364,7 @@
       },
       {
         "id": "lesson_4",
-        "title": "Lesson 4: Total War at Home (The Home Front)",
+        "title": "Lesson 4: How did a war fought miles away completely control daily life in Britain?",
         "teacher_notes": {
           "primer": "Examine how the war transformed daily life in Britain, focusing on government control and women's roles.",
           "objectives": [
@@ -228,7 +414,7 @@
       },
       {
         "id": "lesson_5",
-        "title": "Lesson 5: The Fragile Peace (Armistice & Versailles)",
+        "title": "Lesson 5: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
         "teacher_notes": {
           "primer": "Conclude the unit by analyzing the flawed peace settlement and its long-term consequences for Europe.",
           "objectives": [
