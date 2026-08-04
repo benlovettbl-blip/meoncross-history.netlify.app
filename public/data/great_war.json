@@ -1380,6 +1380,32 @@
           "source_context": "Launched in 1906, HMS Dreadnought was so heavily armored and carried such massive guns that it instantly made every older battleship in the world obsolete. Ironically, while intended to secure British naval supremacy, it effectively reset the naval arms race to zero, allowing Germany to start building their own Dreadnoughts on an equal footing. **Hinge Question:** Why did the launch of a single ship effectively reset the global balance of naval power?"
         },
         "vocab_cloze_text": "Britain's traditional [Naval Supremacy] was challenged when Germany began a rapid naval buildup. This sparked a fierce [Arms Race] between the two nations. Britain relied on the [Two-Power Standard] to maintain a massive fleet, but the invention of the heavily-armed [Dreadnought] battleship reset the competition.",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=-osfjjJuY6U",
+            "title": "Anglo-German Dreadnought Arms Race - Anything you can build I can build better!",
+            "duration": "32 mins 1 sec",
+            "viewing_task": "Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.",
+            "model_answer": "The Dreadnought made all older ships obsolete, effectively resetting the naval race to zero. This gave Germany a realistic chance to challenge British naval supremacy from scratch, escalating tensions as both sides scrambled to out-build each other."
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=yryey5NVODs",
+            "title": "14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law",
+            "duration": "2 mins 35 secs",
+            "viewing_task": "Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.",
+            "model_answer": "The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes."
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=qmYJUYwsZqY",
+            "title": "67. Anglo-German Relations",
+            "duration": "52 mins 22 secs",
+            "viewing_task": "Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.",
+            "model_answer": "Public opinion in both countries was whipped up by nationalist groups like the German Navy League and the British press. This turned the naval rivalry from a government policy into a fierce matter of national pride and paranoia."
+          }
+        ],
         "narrative_blocks": [
           {
             "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."

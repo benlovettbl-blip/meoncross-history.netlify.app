@@ -1772,6 +1772,24 @@ export const unitData = {
                                         "source_context": "This cartoon perfectly illustrates how the alliance system functioned as a 'doomsday machine'. A localized dispute in the Balkans quickly cascaded into a global conflict because each nation was bound to protect its ally. **Hinge Question:** How does this cartoon demonstrate the inherent danger of mutual defense treaties?"
                               },
                               "vocab_cloze_text": "Bismarck feared a two-front war and created the [Reinsurance Treaty] to keep Russia friendly. However, after his dismissal, Germany faced a nightmare scenario: [Encirclement] by hostile powers. Europe split into two armed camps: the [Triple Entente] (Britain, France, Russia) and the [Triple Alliance] (Germany, Austria-Hungary, Italy).",
+                              "video": [
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=f11CKYB2FCA",
+                                                  "title": "Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3",
+                                                  "duration": "9 mins 47 secs",
+                                                  "viewing_task": "Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.",
+                                                  "model_answer": "The alliance system was formed as countries sought security in an increasingly competitive Europe. The secret, defensive nature of these treaties was intended as a deterrent, but instead bred intense suspicion and paranoia, turning Europe into two armed camps."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=dYrofaDfMKI",
+                                                  "title": "Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3",
+                                                  "duration": "7 mins 37 secs",
+                                                  "viewing_task": "Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.",
+                                                  "model_answer": "The alliance system acted like a 'doomsday machine'. Because nations were strictly bound to protect their allies, the local dispute between Austria-Hungary and Serbia quickly dragged all the major European powers into a global conflict."
+                                        }
+                              ],
                               "narrative_blocks": [
                                         {
                                                   "text": "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
