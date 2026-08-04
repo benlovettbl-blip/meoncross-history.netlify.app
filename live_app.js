@@ -2647,7 +2647,7 @@ import"./modulepreload-polyfill-Dezn_h7o.js";import{t as e}from"./preload-helper
         </div>
         <div style="flex: 1; text-align: left; min-width: 0;">
           <div style="font-size: 0.55rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; line-height: 1;">Level ${t.level} Profile: ${o}</div>
-          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 800; color: var(--text-main); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${n}">${n}</div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 800; color: var(--text-main); margin-top: 1px; line-height: 1.3;" title="${n}">${n}</div>
           
           <!-- XP Progress Bar -->
           <div style="margin-top: 3px;">
@@ -2675,7 +2675,7 @@ import"./modulepreload-polyfill-Dezn_h7o.js";import{t as e}from"./preload-helper
         <span class="nav-item-content" style="flex-shrink: 0; font-weight: 600;">
           <span class="topic-prefix">Topic </span>${i}
         </span>
-        <span class="nav-item-desc" style="flex: 1; min-width: 0; margin: 0 8px; font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; opacity: 0.85;">
+        <span class="nav-item-desc" style="flex: 1; min-width: 0; margin: 0 8px; font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; text-align: left; opacity: 0.85;">
           ${a}
         </span>
         <span class="nav-item-progress" id="nav-pct-${e.id}" style="flex-shrink: 0;">${c}%</span>
@@ -3522,7 +3522,7 @@ import"./modulepreload-polyfill-Dezn_h7o.js";import{t as e}from"./preload-helper
       </div>
       <h4 class="decision-card-title">${e.title}</h4>
       <div class="decision-card-role"><strong>Role:</strong> ${e.role}</div>
-      <p style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 6px 0 0 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+      <p style="font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin: 6px 0 0 0;">
         ${e.crisis}
       </p>
     </div>
