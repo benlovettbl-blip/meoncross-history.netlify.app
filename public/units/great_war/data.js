@@ -286,6 +286,17 @@ export const unitData = {
                                                                       "type": "text",
                                                                       "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
                                                                       "model": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
+                                                            },
+                                                            {
+                                                                      "type": "drag_drop_timeline",
+                                                                      "title": "Interactive Task: The Three Wars of Unification",
+                                                                      "instruction": "Drag the three wars into the correct chronological order to reveal the secret code.",
+                                                                      "items": [
+                                                                                { "id": "w1", "text": "Denmark (1864)" },
+                                                                                { "id": "w2", "text": "Austria (1866)" },
+                                                                                { "id": "w3", "text": "France (1870)" }
+                                                                      ],
+                                                                      "secret_code": "BISMARCK1871"
                                                             }
                                                   ]
                                         },
