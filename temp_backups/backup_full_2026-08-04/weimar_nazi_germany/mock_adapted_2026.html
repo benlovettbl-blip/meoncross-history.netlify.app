@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Paper 4 (Adapted 2026)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 15mm;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .top-warning {
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    
+    .cover-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .candidate-info:last-child {
+      margin-bottom: 0;
+    }
+    .input-label {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .input-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      background: white;
+    }
+    .char-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      width: 25px;
+      display: inline-block;
+      background: white;
+      margin-right: 2px;
+    }
+    
+    .edexcel-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 15px 0 5px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .exam-header {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .exam-header-left {
+      flex: 3;
+    }
+    .exam-header-right {
+      flex: 1;
+      background: #555;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .date-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .time-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .subject-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .booklet-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .paper-ref-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .paper-ref-val {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .must-have-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .total-marks-box {
+      border: 3px solid #666;
+      border-radius: 10px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .instructions-section {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    .instructions-section h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+    .instructions-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .instructions-section li {
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 12px;
+    }
+    .barcode {
+      font-family: 'Libre Barcode 39 Text', monospace;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+    .turn-over {
+      font-weight: 700;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .pearson-logo {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: serif;
+    }
+
+    /* Inner Page Styles */
+    .page-inner {
+      flex: 1;
+      position: relative;
+    }
+    
+    .margin-watermark {
+      position: absolute;
+      top: 0;
+      right: -15mm;
+      bottom: 0;
+      width: 40mm;
+      background: repeating-linear-gradient(
+        -45deg,
+        #f0f0f0,
+        #f0f0f0 2px,
+        #ffffff 2px,
+        #ffffff 4px
+      );
+      border-left: 2px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      overflow: hidden;
+    }
+    
+    .watermark-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: #666;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .inner-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .question-block {
+      margin-bottom: 20px;
+    }
+    .question-text {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+    }
+    .question-num {
+      width: 35px;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .marks {
+      text-align: right;
+      font-weight: 400;
+      font-size: 14px;
+      color: #444;
+      margin-top: 5px;
+    }
+
+    /* Dotted Lines for Handwriting */
+    .dotted-line {
+      border-bottom: 1.5px dotted #999;
+      height: 28px;
+      width: 100%;
+    }
+
+    .choice-box {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .checkbox-item:last-child {
+      margin-bottom: 0;
+    }
+    .checkbox-square {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      margin-right: 15px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .bullet-point-box {
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 15px 0 15px 35px;
+      width: 80%;
+      background: #fff;
+    }
+    .bullet-point-box ul {
+      margin: 5px 0 0 0;
+      padding-left: 20px;
+    }
+    
+    .indicate-choice {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 10px 0 20px 35px;
+    }
+
+    .source-box {
+      border: 2px solid #000;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      background: #fdfdfd;
+      border-radius: 8px;
+    }
+    .model-answer {
+      font-size: 14px;
+      color: #b91c1c;
+      font-weight: 600;
+      padding: 15px;
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      margin-bottom: 20px;
+    }
+  
+    .print-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 30px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background-color 0.2s;
+    }
+    .print-button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button no-print" onclick="window.print()">🖨️ Print to PDF</button>
+
+  
+  <!-- Cover Page -->
+  <div class="page">
+    <div class="top-warning">
+      Please check the examination details below before entering your candidate information
+    </div>
+    
+    <div class="cover-box">
+      <div class="candidate-info">
+        <div style="flex: 2;">
+          <div class="input-label">Candidate surname</div>
+          <div class="input-box"></div>
+        </div>
+        <div style="flex: 1.5;">
+          <div class="input-label">Other names</div>
+          <div class="input-box"></div>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <div style="flex: 1;">
+          <div class="input-label">Centre Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div class="input-label">Candidate Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edexcel-title">Pearson Edexcel GCSE (9-1)</div>
+
+    <div class="exam-header">
+      <div class="exam-header-left">
+        <div class="date-text">Tuesday 9 June 2026</div>
+        <div class="time-text">Afternoon (Time: 1 hour 20 minutes)</div>
+        <div class="subject-title">History</div>
+        <div class="booklet-title">Paper 3: Modern depth study</div>
+        <div class="booklet-title" style="font-size: 16px; margin-top: 10px;">Option 31: Weimar and Nazi Germany, 1918-39</div>
+      </div>
+      <div class="exam-header-right">
+        <div class="paper-ref-label">Paper<br>reference</div>
+        <div class="paper-ref-val">1HI0/31</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <div class="must-have-box" style="flex: 1;">
+        <div>
+          <strong>You must have:</strong><br>
+          Sources/Interpretations Booklet (enclosed)
+        </div>
+      </div>
+      <div class="total-marks-box">
+        Total Marks
+      </div>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Use <strong>black</strong> ink or ball-point pen.</li>
+        <li><strong>Fill in the boxes</strong> at the top of this page with your name,<br>centre number and candidate number.</li>
+        <li>Answer <strong>all</strong> questions in Section A and Section B.</li>
+        <li>Answer the questions in the spaces provided<br><em>- there may be more space than you need.</em></li>
+      </ul>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Information</h3>
+      <ul>
+        <li>The total mark for this paper is 52.</li>
+        <li>The marks for <strong>each</strong> question are shown in brackets<br><em>- use this as a guide as to how much time to spend on each question.</em></li>
+        <li>The marks available for spelling, punctuation, grammar and use of specialist terminology are clearly indicated.</li>
+      </ul>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Advice</h3>
+      <ul>
+        <li>Read each question carefully before you start to answer it.</li>
+        <li>Try to divide your time equally between Section A and Section B.</li>
+        <li>Check your answers if you have time at the end.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>P79031A<br>&copy;2026 Pearson Education Ltd.</div>
+      
+      <div style="display:flex; align-items:center; gap:20px;">
+        <span class="turn-over">Turn over &#9654;</span>
+        <span class="pearson-logo">Pearson</span>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="page"><div class="page-inner"><div class="inner-header">SECTION A<br><br>Answer ALL questions in this section.</div>
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">1</div>
+          <div style="width: 100%;">
+            Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–39.
+            <span style="float: right; font-weight: 400; color: #444;">(4)</span>
+          </div>
+        </div>
+    <div class="source-box" style="margin-top: 15px;">Source A: A summary of a post-war statement by a German religious figure (Pastor Niemöller), reflecting on how the Nazi regime eliminated its opponents group by group—starting with political rivals like communists and trade unionists, before targeting Jews and the church—while ordinary citizens were too afraid to protest.</div></div><div style="margin-top: 20px; font-weight: bold; margin-bottom: 20px;">Complete the table below to explain your answer.</div><div style="margin-top: 15px;">(i) What I can infer:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 15px;">Details in the source that tell me this:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 25px;">(ii) What I can infer:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 15px;">Details in the source that tell me this:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner">
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">2</div>
+          <div style="width: 100%;">
+            Explain why there were changes in the position of women in German society in the years 1924–39.
+            <span style="float: right; font-weight: 400; color: #444;">(12)</span>
+          </div>
+        </div>
+    
+        <div class="bullet-point-box">
+          <em>You <strong>may</strong> use the following in your answer:</em>
+          <ul>
+            <li>Jobs for women in Weimar Germany</li><li>Nazi policies on family</li>
+          </ul>
+          <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>
+        </div>
+      </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner">
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">3</div>
+          <div style="width: 100%;">
+            Explain why Adolf Hitler was appointed Chancellor in 1933.
+            <span style="float: right; font-weight: 400; color: #444;">(12)</span>
+          </div>
+        </div>
+    
+        <div class="bullet-point-box">
+          <em>You <strong>may</strong> use the following in your answer:</em>
+          <ul>
+            <li>President Hindenburg</li><li>Elections in 1932</li>
+          </ul>
+          <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>
+        </div>
+      </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="inner-header">SECTION B<br><br>For use with Section B, Answer ALL questions.</div><div class="source-box">Source B: A 1923 photograph showing German citizens in Berlin using a cart to transport massive baskets of banknotes.<br><br><img src="/images/weimar_hyperinflation_cart.jpg" alt="Hyperinflation cart full of banknotes" style="max-width: 100%; height: auto; border: 1px solid #ccc; display: block; margin: 15px 0;"><br><br>Source C: A public declaration by right-wing nationalist leader Adolf Hitler in a Munich beer hall in Nov 1923, announcing the overthrow of the Weimar 'November Criminals' and the establishment of a new nationalist government.<br><br>Interpretation 1: A historical summary emphasising that the 1923 crisis was primarily economic, driven by the French occupation of the Ruhr and the catastrophic hyperinflation that destroyed the currency and forced the government to pay welfare for striking workers.<br><br>Interpretation 2: A historical summary arguing that the defining issue of 1923 was political instability, culminating in the autumn when right-wing extremists, led by Hitler's SA, attempted an armed takeover of the government in Munich.</div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">Enquiry: The problems faced by the Weimar Republic in 1923<br><br>3(a) How useful are Sources B and C for an enquiry into the problems faced by the Weimar Republic in 1923? Explain your answer, using Sources B and C and your knowledge of the historical context. (8)</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(b) Study Interpretations 1 and 2. They give different views about the problems faced by the Weimar Republic in 1923. What is the main difference between these views? Explain your answer, using details from both interpretations. (4)</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="font-weight: bold; margin-bottom: 20px; margin-top: 30px;">3(c) Suggest one reason why Interpretations 1 and 2 give different views about the problems faced by the Weimar Republic in 1923. You may use Sources B and C to help explain your answer. (4)</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(d) How far do you agree with Interpretation 2 about the problems faced by the Weimar Republic in 1923? Explain your answer, using both interpretations and your knowledge of the historical context. (16+4 SPaG)</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div></div>
+
+</body>
+</html>

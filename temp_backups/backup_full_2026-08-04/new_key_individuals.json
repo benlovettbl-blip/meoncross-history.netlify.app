@@ -1,0 +1,188 @@
+[
+  {
+    "name": "King Henry VIII",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "King of England (1509–1547); Elizabeth's father whose marital changes created her legitimacy crisis.",
+    "image": "/images/king_henry_viii.jpg"
+  },
+  {
+    "name": "Queen Mary I (Mary Tudor)",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Queen of England (1553–1558); Elizabeth’s older Catholic sister and predecessor.",
+    "image": "/images/queen_mary_i_mary_tudor.jpg"
+  },
+  {
+    "name": "Queen Elizabeth I",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Queen of England (1558–1603); Supreme Governor of the Church of England.",
+    "image": "/images/queen_elizabeth_i.jpg"
+  },
+  {
+    "name": "King Philip II of Spain",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Sovereign ruler of the global Spanish Empire; Elizabeth's chief Catholic rival.",
+    "image": "/images/king_philip_ii_of_spain.jpg"
+  },
+  {
+    "name": "Francis II",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "King of France; briefly King-consort of Scotland through his marriage to Mary, Queen of Scots.",
+    "image": "/images/francis_ii.jpg"
+  },
+  {
+    "name": "Mary, Queen of Scots (Mary Stuart)",
+    "group": "👑 Tier 1: The Monarchs (Sovereign Rulers)",
+    "bio": "Sovereign Queen of Scotland; Elizabeth's cousin and claimant to the English throne.",
+    "image": "/images/mary_queen_of_scots_mary_stuart.jpg"
+  },
+  {
+    "name": "The Duke of Norfolk (Thomas Howard)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "The highest-ranking nobleman in England; executed in 1572 for plotting to marry Mary, Queen of Scots.",
+    "image": "/images/the_duke_of_norfolk_thomas_howard.jpg"
+  },
+  {
+    "name": "The Duke of Alba",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "High-ranking Spanish nobleman and military commander sent by Philip II to crush the Dutch Revolt.",
+    "image": "/images/the_duke_of_alba.jpg"
+  },
+  {
+    "name": "The Duke of Parma",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Spanish nobleman and governor of the Netherlands; commander of the invasion force the Armada was sent to transport.",
+    "image": "/images/the_duke_of_parma.png"
+  },
+  {
+    "name": "The Duke of Medina Sidonia",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Spanish nobleman appointed to command the Spanish Armada.",
+    "image": "/images/the_duke_of_medina_sidonia.jpg"
+  },
+  {
+    "name": "The Duke of Guise",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Powerful French Catholic noble who conspired to launch a French invasion of England.",
+    "image": "/images/the_duke_of_guise.jpg"
+  },
+  {
+    "name": "Robert Dudley (Earl of Leicester)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Elizabeth's favorite courtier and leading Privy Councillor; later Governor-General of the Low Countries.",
+    "image": "/images/robert_dudley_earl_of_leicester.jpg"
+  },
+  {
+    "name": "The Earl of Northumberland (Thomas Percy)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Catholic noble who co-led the failed Revolt of the Northern Earls.",
+    "image": "/images/the_earl_of_northumberland_thomas_percy.jpg"
+  },
+  {
+    "name": "The Earl of Westmorland (Charles Neville)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Catholic noble who co-led the Revolt of the Northern Earls.",
+    "image": "/images/the_earl_of_westmorland_charles_neville.jpg"
+  },
+  {
+    "name": "Lord Darnley (Henry Stuart)",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Nobleman of royal blood; second husband of Mary, Queen of Scots.",
+    "image": "/images/lord_darnley_henry_stuart.jpg"
+  },
+  {
+    "name": "Lady Jane Grey",
+    "group": "🏰 Tier 2: The Nobility (Dukes, Earls, and Barons)",
+    "bio": "Briefly named Protestant Queen in 1553; cousin of Elizabeth.",
+    "image": "/images/lady_jane_grey.jpg"
+  },
+  {
+    "name": "Sir William Cecil (Lord Burghley)",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Elizabeth’s first Secretary of State and most trusted advisor.",
+    "image": "/images/sir_william_cecil_lord_burghley.jpg"
+  },
+  {
+    "name": "Sir Francis Walsingham",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Elizabeth's Secretary of State and Spymaster.",
+    "image": "/images/sir_francis_walsingham.jpg"
+  },
+  {
+    "name": "Sir Walter Raleigh",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Courtier, explorer, and knight given the royal patent to colonize Virginia.",
+    "image": "/images/sir_walter_raleigh.jpg"
+  },
+  {
+    "name": "Sir Francis Drake",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Privateer, navigator, and naval commander; knighted in 1580.",
+    "image": "/images/sir_francis_drake.jpg"
+  },
+  {
+    "name": "Sir John Hawkins",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Merchant, privateer, and treasurer of the Royal Navy.",
+    "image": "/images/sir_john_hawkins.JPG"
+  },
+  {
+    "name": "Sir Richard Grenville",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "Naval commander of the 1585 expedition to Roanoke.",
+    "image": "/images/sir_richard_grenville.jpg"
+  },
+  {
+    "name": "Anthony Babington",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "A wealthy Catholic gentleman who led the Babington Plot.",
+    "image": "/images/anthony_babington.jpg"
+  },
+  {
+    "name": "Francis Throckmorton",
+    "group": "🛡️ Tier 3: The Gentry (Knights, Chief Ministers, and Landowners)",
+    "bio": "A Catholic gentleman who acted as a key intermediary in the Throckmorton Plot.",
+    "image": "/images/francis_throckmorton.jpg"
+  },
+  {
+    "name": "James Pilkington",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "The Protestant Bishop of Durham appointed by Elizabeth.",
+    "image": ""
+  },
+  {
+    "name": "Thomas Harriot",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Brilliant mathematician, navigator, and scholar who recorded the Roanoke voyage.",
+    "image": "/images/thomas_harriot.jpg"
+  },
+  {
+    "name": "Thomas Phelippes",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Walsingham’s chief cryptographer and codebreaker.",
+    "image": ""
+  },
+  {
+    "name": "Gilbert Gifford",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "A Catholic priest who acted as Walsingham’s agent provocateur during the Babington Plot.",
+    "image": ""
+  },
+  {
+    "name": "Edmund Campion",
+    "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
+    "bio": "Highly educated Jesuit missionary priest executed for treason.",
+    "image": ""
+  },
+  {
+    "name": "Roberto Ridolfi",
+    "group": "⚖️ Tier 5: The \"Middling Sort\" (Wealthy Merchants & Bankers)",
+    "bio": "An Italian banker based in London who used his financial networks to organize the Ridolfi Plot in 1571.",
+    "image": ""
+  },
+  {
+    "name": "Chief Wingina",
+    "group": "🌍 Sovereign Status: Indigenous Leadership",
+    "bio": "The ruler (mandoac) of the local Algonquian tribe at Roanoke. While he did not fit into the European feudal hierarchy, he occupied the supreme position of political and military leadership within his own sovereign nation.",
+    "image": "/images/chief_wingina.jpg"
+  }
+]

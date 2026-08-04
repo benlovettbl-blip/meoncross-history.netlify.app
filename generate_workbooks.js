@@ -272,15 +272,24 @@ allDirs.forEach(unitId => {
     // Primary Source
     if (lesson.primary_source) {
       let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
-      let imgTags = srcs.map(src => {
-        let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : src;
-        const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
-        return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
-      }).join(' ');
+      let renderImages = true;
+      if (lesson.a4_map && lesson.primary_source.src) {
+        let a4Str = JSON.stringify(lesson.a4_map);
+        let srcStr = JSON.stringify(lesson.primary_source.src);
+        if (a4Str === srcStr || lesson.a4_map === lesson.primary_source.src) renderImages = false;
+      }
+
+      let imgTags = '';
+      if (renderImages) {
+          imgTags = srcs.map(src => {
+            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : src;
+            const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
+            return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
+          }).join(' ');
+      }
 
       html += `
         <div class="source-container" style=" margin-bottom: 15px;">
-          ${lesson.primary_source.question ? `<h3 style="margin-top: 0;">Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</h3>` : ''}
           ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
