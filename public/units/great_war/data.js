@@ -274,6 +274,14 @@ export const unitData = {
                                                   "duration": "5 mins 21 secs",
                                                   "viewing_task": "Note down the key steps Bismarck took to unify the German states and create the Empire.",
                                                   "model_answer": "Bismarck used a policy of 'blood and iron' to strengthen the Prussian military. He orchestrated three strategic wars: defeating Denmark (1864), crushing Austria (1866) to establish undisputed Prussian dominance, and finally provoking a war with France (1870-1871) to rally the independent southern German states into joining the new German Empire."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=o_PKusG7NFs",
+                                                  "title": "\"The Great War\" 1 | What Made Germany So Successful Before World War 1?",
+                                                  "duration": "23 mins 7 secs",
+                                                  "viewing_task": "Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.",
+                                                  "model_answer": "Germany was highly successful because of its rapidly growing population, heavily industrialized economy (becoming Europe's leading producer of steel and chemicals), massive and well-disciplined army, and advanced education system."
                                         }
                               ],
                               "narrative_blocks": [
@@ -970,6 +978,16 @@ export const unitData = {
                                         "source_context": "This cartoon references the 1884-85 Berlin Conference where Bismarck helped orchestrate the \"Scramble for Africa\". Britain, long the dominant global empire, felt deeply threatened by Germany's sudden, aggressive expansion into Africa and the Pacific (Weltpolitik), fearing it would disrupt their economic dominance. **Hinge Question:** How does this cartoon reflect the fundamental cause of the Anglo-German naval race?"
                               },
                               "vocab_cloze_text": "In the late 19th century, European powers engaged in a [Scramble for Africa]. This fierce [Imperialism] was driven by a desire for raw materials and global prestige. Every major power wanted to build a vast overseas [Empire] by taking control of another [Colony].",
+                              "video": [
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=0SEgckAL-xc",
+                                                  "title": "Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm",
+                                                  "duration": "26 mins 6 secs",
+                                                  "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
+                                                  "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+                                        }
+                              ],
                               "narrative_blocks": [
                                         {
                                                   "text": "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership."

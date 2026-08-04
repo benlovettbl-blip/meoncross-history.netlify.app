@@ -986,6 +986,22 @@ export const unitData = {
                                                   "duration": "26 mins 6 secs",
                                                   "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
                                                   "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=efV3uZqc3so",
+                                                  "title": "80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I",
+                                                  "duration": "12 mins 49 secs",
+                                                  "viewing_task": "Note down how the industrial revolution pushed European nations to scramble for African colonies.",
+                                                  "model_answer": "The industrial revolution required massive amounts of raw materials and new markets. The Scramble for Africa allowed European powers to extract resources cheaply and sell manufactured goods back, rapidly increasing imperial wealth and military power."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=DduN1cU2p9U",
+                                                  "title": "What was the 'Scramble for Africa'? - BBC What's New",
+                                                  "duration": "3 mins 0 secs",
+                                                  "viewing_task": "Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.",
+                                                  "model_answer": "At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted."
                                         }
                               ],
                               "narrative_blocks": [

@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 async function getYT() {
-  const res = await fetch('https://www.youtube.com/watch?v=0SEgckAL-xc');
+  const res = await fetch('https://www.youtube.com/watch?v=DduN1cU2p9U');
   const text = await res.text();
   const titleMatch = text.match(/<title>(.*?) - YouTube<\/title>/);
   const lengthMatch = text.match(/"lengthSeconds":"(\d+)"/);
