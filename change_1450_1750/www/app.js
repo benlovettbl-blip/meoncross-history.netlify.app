@@ -15,18 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Tab mapping to page indices (0-indexed)
   const tabMappings = {
-    cover: [0, 1, 2],       // Pages 1, 2, 2A
-    timeline: [3],       // Page 3 (Road to WWI)
-    lesson1: [4, 5, 6, 7, 8],   // Pages 4-8
-    lesson2: [9, 10, 11, 12, 13],  // Pages 9-13
-    lesson3: [14, 15, 16, 17, 18], // Pages 14-18
-    lesson4: [19, 20, 21, 22, 23], // Pages 19-23
-    lesson5: [24, 25, 26, 27, 28, 29], // Pages 24-28 (including 25a)
-    assessment: [30, 32, 33],    // Page 29 (L5B), Pages 30A, 30B (Vault)
-    glossary: [31, 34],  // Page 30 (Glossary), Page 31A (Post-War Map)
-    exhibition: [35, 36], // Pages 31, 32 (Curator's Market & Placards)
-    games: [37],          // Page 33 (Interactive Revision Games)
-    cards: [38]           // Page 34 (Historical Trading Cards)
+    lesson1: [0],
+    lesson2: [1],
+    lesson3: [2],
+    lesson4: [3],
+    lesson5: [4],
+    lesson6: [5]
   };
 
   // 2. Dynamic Line Generation for visible pages

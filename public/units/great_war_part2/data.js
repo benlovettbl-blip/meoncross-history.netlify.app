@@ -1,4 +1,15 @@
 export const unitData = {
+    "title": "KS3: The Great War (1914-1919)",
+    "homepage_background": "/images/bg_great_war_part2.jpg",
+    "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
+    "cover_image": "/assets/placeholder.jpg",
+    "cover_caption": "Placeholder for The Great War cover image.",
+    "printable_workbooks": [
+        {
+            "title": "Unit Workbook",
+            "url": "workbook.html"
+        }
+    ],
     "debatePrompts": [
         {
                 "title": "Lions Led By Donkeys?",
@@ -12,394 +23,418 @@ export const unitData = {
                 "title": "The Treaty of Versailles",
                 "prompt": "<strong>Roleplay:</strong> You are French Prime Minister Georges Clemenceau in 1919. Explain to Woodrow Wilson why Germany must be utterly crushed, disarmed, and punished financially for the devastation of the war."
         }
-],
-
-  "lessons": [
-    {
-      "title": "Lesson 1: Why were young men so desperat...",
-      "sources": [],
-      "tasks": [
+    ],
+    "lessons": [
         {
-          "type": "written",
-          "text": "Q1: Identify the two military alliances that divided European power in 1914.",
-          "model": "The Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy).",
-          "starter": "The two military alliances that divided European power in 1914 were...",
-          "clue": "Look for the Triple Entente and the Triple Alliance in the first paragraph."
+            "id": "lesson_1",
+            "title": "Lesson 1: Why were young men so desperate to join the slaughter of 1914?",
+            "teacher_notes": {
+                "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
+                "objectives": [
+                    {
+                        "objective": "Understand the short-term and long-term causes of WWI.",
+                        "primer": "Guide students through the distinction between the trigger event and the underlying alliance structures.",
+                        "question": "What was the spark that ignited the alliance system?"
+                    },
+                    {
+                        "objective": "Empathize with the young men volunteering in 1914.",
+                        "primer": "Discuss the 'Pals' Battalions' and why propaganda was so effective.",
+                        "question": "Why did young men think volunteering was a good idea in 1914?"
+                    }
+                ]
+            },
+            "do_now": {
+                "title": "Do Now: Recall",
+                "type": "quiz",
+                "questions": [
+                    {
+                        "question": "Which of these was a long-term cause of WWI?",
+                        "options": ["The Alliance System", "The assassination of Archduke Franz Ferdinand", "The Schlieffen Plan failing", "The Treaty of Versailles"],
+                        "answer": 0,
+                        "explanation": "The alliance system had divided Europe into two armed camps over decades."
+                    }
+                ]
+            },
+            "enquiry": "Why were young men so desperate to join the slaughter of 1914?",
+            "vocab": [
+                {
+                    "word": "Conscription",
+                    "def": "A compulsory law forcing citizens of a country to enlist in the armed forces."
+                },
+                {
+                    "word": "Pals Battalions",
+                    "def": "Special British Army units raised during WWI that allowed friends, neighbors, and co-workers to enlist and serve together."
+                },
+                {
+                    "word": "Propaganda",
+                    "def": "Biased or misleading information publicized by a government to promote a political cause or encourage patriotism."
+                },
+                {
+                    "word": "Historiography",
+                    "def": "The study of how historians' interpretations of past events change over time."
+                },
+                {
+                    "word": "Pragmatism",
+                    "def": "Making decisions based on practical, real-world realities (like needing a steady wage) rather than romance or emotion."
+                }
+            ],
+            "flashcards": [
+                {
+                    "question": "What was the main reason the British military had to rely on volunteers in August 1914?",
+                    "options": [
+                        "Britain had no conscription law and possessed a small professional army.",
+                        "Parliament ran out of money to pay soldiers.",
+                        "The King banned the use of regular soldiers."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?",
+                    "options": [
+                        "The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).",
+                        "The Stubbington Guards.",
+                        "Kitchener's Fareham Conscripts."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Which statement best explains why white feathers were such a powerful recruitment tool?",
+                    "options": [
+                        "They weaponized social shame and humiliation within close-knit local communities.",
+                        "They carried legal force and resulted in a heavy fine.",
+                        "They were official government warnings that a man was about to be arrested."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
+                    "options": [
+                        "The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.",
+                        "They were tricked by romanticized stories of quick, glorious victories.",
+                        "They were promised free houses in London after the war ended."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
+                    "options": [
+                        "The desire to protect international law and civilization after Germany invaded neutral Belgium.",
+                        "The need to escape the boring, repetitive work of the textile mills.",
+                        "The fear of being fired by an employer who demanded they join."
+                    ],
+                    "answer": 0
+                }
+            ],
+            "narrative_blocks": [
+                {
+                    "title": "The Spark & The Stampede",
+                    "text": "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark. That spark was struck on June 28 in Sarajevo, when Archduke Franz Ferdinand, heir to the Austro-Hungarian Empire, was assassinated. Within weeks, the continent's major empires were dragged into a catastrophic war.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "<strong>Part A: Core Factual Recall</strong><br>1. What was the 'spark' that triggered the outbreak of the First World War in 1914?<br>2. Why did Great Britain desperately need volunteers to fight when war was declared?",
+                            "model": "1. The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914.\n2. Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
+                        }
+                    ]
+                },
+                {
+                    "title": "Local History: The Pompey Pals",
+                    "text": "To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in \"Pals Battalions.\" For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the \"Pompey Pals\". Local boys trained together and went to France together. Tragically, the industrialized slaughter of the Western Front tore these communities apart. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went \"over the top\" near the River Ancre; 457 of them became casualties in a single day, devastating local families.",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "<strong>Part A: Core Factual Recall (Continued)</strong><br>3. Who were the 'Pompey Pals'?<br>4. What happened to the 1st Pompey Pals on September 3, 1916?",
+                            "model": "3. The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914.\n4. During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community."
+                        }
+                    ]
+                },
+                {
+                    "title": "Historical Interpretations: Why did they go?",
+                    "text": "<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be \"over by Christmas.\"</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this \"gullible volunteer\" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany's invasion of \"Brave Little Belgium\" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "<strong>Part B: Causal Matrix (Push vs. Pull Factors)</strong><br>Categorize the following reasons for enlistment into \"Push Factors\" (negative things driving them away from home) and \"Pull Factors\" (positive things attracting them to the army): <em>The threat of receiving a white feather, the promise of a shilling a day, grinding poverty at home, defending 'Brave Little Belgium', government propaganda.</em>",
+                            "model": "Push Factors = Threat of a white feather, grinding poverty at home.\nPull Factors = A shilling a day, defending Belgium, government propaganda."
+                        },
+                        {
+                            "type": "text",
+                            "text": "<strong>Part C: Historical Interpretations</strong><br>1. How does historian Catriona Pennell's view of WWI volunteers differ from the traditional view?<br>2. Explain what historian Gary Sheffield means when he suggests volunteers were motivated by \"economic pragmatism.\"",
+                            "model": "1. While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium.\n2. Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
+                        },
+                        {
+                            "type": "text",
+                            "text": "<strong>Part D: The \"Judgement & Nuance\" Paragraph Scaffold</strong><br>Write a structured paragraph answering the following: <em>\"To what extent was government propaganda the most important reason for the mass enlistment of 1914?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While state propaganda created the initial momentum, economic reality and local community ties were more decisive...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Pompey Pals, a shilling a day, white feathers...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the alternative historian's view (<em>However, as historian Catriona Pennell argues, it would be reductive to ignore the genuine moral outrage over...</em>)</li><li><strong>Evaluation:</strong> Conclude by weighing the factors against each other to form a final historical judgment.</li></ul>",
+                            "model": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "written",
-          "text": "Q2: State the exact location and date of the assassination of Archduke Franz Ferdinand.",
-          "model": "Sarajevo, Bosnia and Herzegovina, on 28 June 1914.",
-          "starter": "The assassination of Franz Ferdinand took place in...",
-          "clue": "It happened in Bosnia in late June."
+            "id": "lesson_2",
+            "title": "Lesson 2: Did British generals make the horror of trench warfare worse?",
+            "teacher_notes": {
+                "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
+                "objectives": [
+                    {
+                        "objective": "Analyze the conditions of trench warfare.",
+                        "primer": "Use source evidence to understand the physical and psychological toll on soldiers.",
+                        "question": "What evidence shows that trenches were unlivable?"
+                    },
+                    {
+                        "objective": "Evaluate historical interpretations of General Haig.",
+                        "primer": "Contrast the 'Butcher of the Somme' interpretation with modern defensive arguments.",
+                        "question": "Was General Haig a 'butcher' or a product of his time?"
+                    }
+                ]
+            },
+            "do_now": {
+                "title": "Do Now: Recall",
+                "type": "quiz",
+                "questions": [
+                    {
+                        "question": "What event acted as the 'spark' for WWI?",
+                        "options": ["The assassination of Archduke Franz Ferdinand", "The sinking of the Lusitania", "The invasion of Poland", "The Battle of the Somme"],
+                        "answer": 0,
+                        "explanation": "The assassination in Sarajevo triggered the alliance system."
+                    }
+                ]
+            },
+            "enquiry": "Did British generals make the horror of trench warfare worse?",
+            "narrative_blocks": [
+                {
+                    "title": "Enquiry & Key Concepts",
+                    "text": "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?<br><br><strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "Task 1: Placeholder for source analysis on trench warfare.",
+                            "model": "Model answer will be populated here."
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "written",
-          "text": "Q3: Name the secret militant society responsible for organizing the Sarajevo assassination.",
-          "model": "The Black Hand (Pan-Serbian secret society).",
-          "starter": "The secret militant society was called...",
-          "clue": "It has a color and a hand in the name."
+            "id": "lesson_3",
+            "title": "Lesson 3: How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+            "teacher_notes": {
+                "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
+                "objectives": [
+                    {
+                        "objective": "Recognize the global nature of the conflict.",
+                        "primer": "Highlight that over a million Indian, Caribbean, and African troops fought.",
+                        "question": "Why is WWI often incorrectly remembered as a 'white man's war'?"
+                    },
+                    {
+                        "objective": "Understand the racial barriers faced by colonial troops.",
+                        "primer": "Discuss the treatment and post-war legacy of imperial soldiers.",
+                        "question": "How were colonial troops treated differently than British soldiers?"
+                    }
+                ]
+            },
+            "do_now": {
+                "title": "Do Now: Recall",
+                "type": "quiz",
+                "questions": [
+                    {
+                        "question": "What was the main tactical problem at the Battle of the Somme?",
+                        "options": ["The artillery barrage failed to destroy the barbed wire.", "The soldiers ran away.", "The tanks broke down completely.", "The French refused to fight."],
+                        "answer": 0,
+                        "explanation": "The failure of the artillery barrage left troops exposed to machine gun fire."
+                    }
+                ]
+            },
+            "enquiry": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+            "vocab": [
+                {
+                    "word": "Eurocentric",
+                    "def": "Focusing on European culture or history to the exclusion of a wider view of the world."
+                },
+                {
+                    "word": "British West Indies Regiment (BWIR)",
+                    "def": "A military unit of the British Army formed during WWI, made up of volunteers from British colonies in the Caribbean."
+                },
+                {
+                    "word": "Racial Hierarchy",
+                    "def": "A system of stratification that privileges one racial group over others (e.g., placing white British officers at the top)."
+                },
+                {
+                    "word": "Historical Amnesia",
+                    "def": "The collective forgetting or intentional erasing of specific events or groups of people from a society's history."
+                },
+                {
+                    "word": "Mutiny",
+                    "def": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
+                }
+            ],
+            "flashcards": [
+                {
+                    "question": "Which imperial force contributed over 1.5 million men to the British war effort, fighting in places like Ypres and Mesopotamia?",
+                    "options": [
+                        "The British Indian Army",
+                        "The British West Indies Regiment",
+                        "The Australian and New Zealand Army Corps (ANZAC)"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Why were many black soldiers in the British West Indies Regiment (BWIR) angry about their treatment?",
+                    "options": [
+                        "They were stripped of combat roles, paid less, and forced into dangerous manual labor.",
+                        "They were forced to fight on the front lines without any weapons.",
+                        "They were forced to return to the Caribbean before the war ended."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What happened in Taranto, Italy, in 1918?",
+                    "options": [
+                        "Soldiers of the BWIR mutinied in protest against systemic racism and degrading conditions.",
+                        "The British Army officially apologized for its racist policies.",
+                        "Indian troops broke through the German lines and ended the war."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "What does historian David Olusoga mean when he discusses 'historical amnesia' regarding WWI?",
+                    "options": [
+                        "The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.",
+                        "The fact that soldiers who suffered from shell shock lost their memories.",
+                        "The failure of the British government to keep accurate records of casualties."
+                    ],
+                    "answer": 0
+                },
+                {
+                    "question": "Which term best describes a historical narrative (like Interpretation A) that focuses almost exclusively on white, European experiences while ignoring the rest of the world?",
+                    "options": [
+                        "Eurocentric",
+                        "Pragmatic",
+                        "Revisionist"
+                    ],
+                    "answer": 0
+                }
+            ],
+            "narrative_blocks": [
+                {
+                    "title": "The Core Narrative",
+                    "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign.<br><br><strong>Racial Hierarchy and Discrimination</strong><br>Despite their sacrifices, soldiers of color faced systemic racism and a strict imperial racial hierarchy. The British War Office was deeply uncomfortable with the idea of non-white troops fighting European armies. Consequently, many black soldiers, particularly in the BWIR, were stripped of their combat roles and reassigned to dangerous, degrading manual labor—digging trenches, carrying ammunition, and burying the dead under heavy artillery fire. Black soldiers were paid less than their white counterparts, were barred from being promoted to commissioned officers, and were often denied access to the same canteens and hospitals. In 1918, BWIR soldiers mutinied in Taranto, Italy, over these exact degrading conditions.",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "<strong>Part A: Core Factual Recall</strong><br>1. How many men did the British Indian Army contribute to the First World War?<br>2. What crucial role did Indian troops play on the Western Front in late 1914?<br>3. What was the British West Indies Regiment (BWIR), and how many men served in it?<br>4. Why did soldiers of the BWIR mutiny in Taranto, Italy, in 1918?",
+                            "model": "1. Over 1.5 million men.\n2. Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres.\n3. It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving.\n4. They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
+                        }
+                    ]
+                },
+                {
+                    "title": "The Historians' Debate: How is the war remembered?",
+                    "text": "For decades, the popular memory of the First World War was heavily Eurocentric—dominated by images of white British soldiers in the mud of the Western Front. Read the two contrasting interpretations below to understand how modern historians are challenging this narrative.<br><br><blockquote><strong>Interpretation A: The Traditional (Eurocentric) Focus</strong><br><em>\"The Great War was a European tragedy, fought on the muddy fields of Flanders and the plains of France. It was here, in the brutal stalemate of the trenches, that the British soldier endured the ultimate test of endurance and secured the victory of the civilized world.\"</em><br>— <em>Adapted from the typical narrative focus of mid-20th-century British school textbooks</em></blockquote><br><br><blockquote><strong>Interpretation B: The Modern Global View</strong><br><em>\"The First World War was a truly global conflict... Yet in the decades that followed, the presence of hundreds of thousands of black and Asian soldiers was subtly marginalized. This historical amnesia was no accident. The narrative of a 'white man’s war' was constructed to preserve the racial hierarchy of the Empire.\"</em><br>— <em>Adapted from David Olusoga, The World's War (2014)</em></blockquote>",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "<strong>Part B: Analyzing Historical Interpretations</strong><br>1. Read Interpretation A. Which specific words or phrases show that this traditional view is \"Eurocentric\"?<br>2. Read Interpretation B. According to David Olusoga, why was the contribution of the Empire \"marginalized\" (ignored) after the war?",
+                            "model": "1. The extract focuses solely on \"European tragedy,\" \"Flanders,\" \"France,\" and the \"British soldier,\" completely ignoring the battlefields of the Middle East or Africa, and the soldiers of the wider Empire.\n2. Olusoga argues this \"historical amnesia\" was intentional; the government wanted to promote the idea of a \"white man's war\" to maintain the racial hierarchy and justify the continued existence of the British Empire."
+                        },
+                        {
+                            "type": "text",
+                            "text": "<strong>Part C: The \"Judgement & Nuance\" Paragraph Scaffold</strong><br>Write a structured paragraph answering the following: <em>\"To what extent was the First World War a 'global' rather than a 'European' conflict?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>Although the most famous battles took place in Europe, the war was fundamentally a global conflict because...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>1.5 million Indian troops, the BWIR, fighting in Mesopotamia and East Africa, the Taranto mutiny...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge why the European view exists (<em>However, looking at Interpretation A, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties...</em>)</li><li><strong>Evaluation:</strong> Conclude by using Olusoga's concept of \"historical amnesia\" to explain why remembering the global contribution is essential to understanding the true reality of the war.</li></ul>",
+                            "model": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation A, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "written",
-          "text": "Q4: Describe how the British government used 'Pals' Battalions' to encourage young men to volunteer for military service in 1914.",
-          "model": "The government promised that if men volunteered together from the same factory, office, or neighborhood, they would serve in the same unit. This made enlisting a community event and created social pressure to join.",
-          "starter": "The British government used Pals' Battalions by...",
-          "clue": "Think about promising friends they could serve and train together."
+            "id": "lesson_4",
+            "title": "Lesson 4: How did a war fought miles away completely control daily life in Britain?",
+            "teacher_notes": {
+                "primer": "Examine how the war transformed daily life in Britain, focusing on government control and women's roles.",
+                "objectives": [
+                    {
+                        "objective": "Understand the concept of 'Total War'.",
+                        "primer": "Explain DORA and conscription.",
+                        "question": "How did DORA give the government unprecedented control?"
+                    },
+                    {
+                        "objective": "Analyze the changing role of women.",
+                        "primer": "Discuss women in munitions factories and the long-term impact on suffrage.",
+                        "question": "Did the war permanently change the status of women in Britain?"
+                    }
+                ]
+            },
+            "do_now": {
+                "title": "Do Now: Recall",
+                "type": "quiz",
+                "questions": [
+                    {
+                        "question": "Which of these groups contributed over a million troops to the war effort?",
+                        "options": ["The Indian Army", "The American Expeditionary Force", "The Japanese Navy", "The Brazilian Corps"],
+                        "answer": 0,
+                        "explanation": "The Indian Army contributed over 1.5 million men to the conflict."
+                    }
+                ]
+            },
+            "enquiry": "How did a war fought miles away completely control daily life in Britain?",
+            "narrative_blocks": [
+                {
+                    "title": "Enquiry & Key Concepts",
+                    "text": "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?<br><br><strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions).",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "Task 1: Placeholder for analyzing DORA regulations.",
+                            "model": "Model answer will be populated here."
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "written",
-          "text": "Q5: Describe two social or economic reasons why a working-class teenager in 1914 might find military enlisting highly attractive.",
-          "model": "1) Aggressive patriotism (jingoism) and a sense of duty to defend their country. 2) Escape from grinding, monotonous, low-paid factory or agricultural work, offering travel, steady pay, and social status.",
-          "starter": "Two reasons a teenager would enlist were...",
-          "clue": "Think about patriotism (jingoism) and escaping monotonous factory work."
-        },
-        {
-          "type": "written",
-          "text": "Q6: Explain how the localized assassination of an Austrian Archduke in Sarajevo escalated into a global war involving Great Britain by August 1914. Use strict causal transition words—such as because, as a result of, due to, and this led to—to structure your narrative.",
-          "model": "The localized assassination in Sarajevo escalated into a global war because of Europe's rigid alliance systems. When Gavrilo Princip shot the Austrian heir, Austria-Hungary blamed Serbia and declared war. As a result of this declaration, Russia mobilized its army to protect its Serbian ally. Due to the Schlieffen Plan, which required Germany to defeat France quickly before fighting Russia, Germany declared war on Russia and invaded neutral Belgium to reach French territory. This led to Great Britain entering the war, as Britain had signed a treaty promising to defend Belgian neutrality. Ultimately, Britain's entry brought its global empire into the war, converting a European dispute into a world war.",
-          "starter": "The localized assassination in Sarajevo escalated into a global war because...",
-          "clue": "Chronologically track Austria, Russia, Germany's Schlieffen Plan, and Belgium."
-        },
-        {
-          "type": "written",
-          "text": "Q7: Compare the long-term causes of the First World War (the alliance systems, the naval race, and imperial rivalries) with the short-term trigger (the Sarajevo assassination). To what extent was the war caused by the trigger event of 28 June 1914, rather than deep-seated European systems? Write a structured, balanced evaluation.",
-          "model": "While the assassination of Archduke Franz Ferdinand was the immediate spark of the conflict, the war was fundamentally caused by long-term structural factors. On one hand, the Sarajevo trigger on 28 June 1914 was important because it provided the political excuse that Austria-Hungary needed to try and destroy its rival, Serbia, which it feared was fueling Balkan nationalism. Without this high-profile assassination, the July Crisis would not have occurred when it did. However, the deep-seated systems of imperial rivalry and military alliances were far more significant long-term causes. Years of naval arms racing, initiated by the launch of HMS Dreadnought, had already placed Britain and Germany in a state of high tension. The division of Europe into the Triple Entente and Triple Alliance created a dangerous situation where any small conflict would inevitably drag the entire continent into war. On balance, the Sarajevo assassination was merely a contributory cause that set off the war, whereas the alliance systems and naval arms race were necessary causes. Without these deep structural tensions, the assassination of Franz Ferdinand would have remained a local crisis rather than escalating into a global conflict.",
-          "starter": "On one hand, the Sarajevo trigger was important because... On the other hand, long-term causes...",
-          "clue": "Compare the immediate 'spark' of the murder to the 'powder keg' of alliances and arms race."
+            "id": "lesson_5",
+            "title": "Lesson 5: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+            "teacher_notes": {
+                "primer": "Conclude the unit by analyzing the flawed peace settlement and its long-term consequences for Europe.",
+                "objectives": [
+                    {
+                        "objective": "Understand the terms of the Treaty of Versailles.",
+                        "primer": "Break down the territorial, military, and financial punishments on Germany.",
+                        "question": "Which term of the Treaty do you think angered Germans the most?"
+                    },
+                    {
+                        "objective": "Evaluate the legacy of the peace.",
+                        "primer": "Discuss how the treaty laid the groundwork for WWII.",
+                        "question": "Did the Treaty of Versailles solve the problems of 1914?"
+                    }
+                ]
+            },
+            "do_now": {
+                "title": "Do Now: Recall",
+                "type": "quiz",
+                "questions": [
+                    {
+                        "question": "What was the Defense of the Realm Act (DORA)?",
+                        "options": ["A law that gave the British government sweeping powers over daily life.", "A German military tactic.", "A rationing system in France.", "A treaty signed with Russia."],
+                        "answer": 0,
+                        "explanation": "DORA allowed the government to censor the press, control pubs, and introduce rationing."
+                    }
+                ]
+            },
+            "enquiry": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+            "narrative_blocks": [
+                {
+                    "title": "Enquiry & Key Concepts",
+                    "text": "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?<br><br><strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII).",
+                    "tasks": [
+                        {
+                            "type": "text",
+                            "text": "Task 1: Placeholder for analyzing the Treaty of Versailles.",
+                            "model": "Model answer will be populated here."
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "vocab": [
-        {
-          "term": "Balance of Power",
-          "definition": "The distribution of power among nations to prevent any one nation from becoming strong enough to dominate the others."
-        },
-        {
-          "term": "Jingoism",
-          "definition": "Intense, aggressive patriotism and foreign policy."
-        },
-        {
-          "term": "Pals' Battalions",
-          "definition": "Special units of the British Army consisting of men who enlisted together from the same local area or workplace."
-        }
-      ],
-      "extended": null,
-      "do_now": {
-        "type": "questions",
-        "items": [
-          {
-            "question": "Q1: Under the pre-1832 British electoral system, what term described depopulated geographic areas (such as Old Sarum) that still sent two MPs to Parliament?",
-            "answer": "Rotten boroughs (constituencies with almost no voters but disproportionate parliamentary representation)"
-          },
-          {
-            "question": "Q2: Name the two distinct suffrage organizations that campaigned for female voting rights in early 20th-century Britain, specifying which was militant.",
-            "answer": "The National Union of Women's Suffrage Societies (NUWSS / Suffragists) led by Millicent Fawcett (peaceful/legal), and the Women's Social and Political Union (WSPU / Suffragettes) led by Emmeline Pankhurst (militant/illegal)."
-          },
-          {
-            "question": "Q3: Define the core Victorian middle-class ideology of 'Separate Spheres' (or the 'Angel in the House') that restricted women to domestic life.",
-            "answer": "The belief that a respectable woman's place was strictly inside the home to please her husband and raise children, sheltered from the corrupting influence of public and professional life."
-          },
-          {
-            "question": "Q4: Explain why European empires viewed control over territories like Egypt's Suez Canal as vital to maintaining global geopolitical dominance.",
-            "answer": "The canal was a vital shipping gateway that connected Britain to its empire in India and secured access to Persian oil supplies, which were needed to fuel modern naval warships."
-          },
-          {
-            "question": "Q5: Rearrange these three constitutional milestones in the correct chronological order: The Equal Franchise Act, The Great Reform Act, The Representation of the People Act.",
-            "answer": "The Great Reform Act (1832) -> The Representation of the People Act (1918) -> The Equal Franchise Act (1928)."
-          },
-          {
-            "question": "Q6: When evaluating a contemporary historical source, why must a historian examine its 'provenance' (nature, origin, purpose) rather than just its literal content?",
-            "answer": "To understand its limitations, bias, and reliability. Literal content can be faked, staged, or intended as propaganda; analyzing why, when, and by whom a source was constructed reveals its true historical utility."
-          }
-        ]
-      },
-      "gcse_task": null,
-      "flashcards": [
-        {
-          "term": "HMS Dreadnought",
-          "definition": "Which battleship, launched by Great Britain in 1906, revolutionized naval design and triggered a massive European arms race?"
-        },
-        {
-          "term": "Bosnia and Herzegovina",
-          "definition": "Which province did Austria-Hungary annex in 1908, deeply angering Serbian nationalists?"
-        },
-        {
-          "term": "Colonel Dragutin Dimitrijevic ('Apis')",
-          "definition": "Who was the leader of the radical Pan-Serbian secret society known as the Black Hand?"
-        },
-        {
-          "term": "1.1 million",
-          "definition": "Approximately how many British men voluntarily enlisted in the military during the first twelve months of World War I?"
-        },
-        {
-          "term": "Pals' Battalions",
-          "definition": "Why did the 'Pals' Battalions' prove to be a devastating experiment for local British communities?"
-        }
-      ],
-      "historians_corner": {
-        "title": "The Outbreak of 1914: Fritz Fischer vs. Christopher Clark",
-        "text": "Historians have fiercely debated who was responsible for the outbreak of war. <strong>Fritz Fischer (1961)</strong> argued that Germany bore sole responsibility, having planned a war for European domination. Conversely, <strong>Christopher Clark (2012)</strong> described the leaders of Europe as 'sleepwalkers', stumbling into war through mutual paranoia and failures of diplomacy, rather than a single calculated conspiracy.",
-        "stretch_question": "Evaluate Fritz Fischer's argument. To what extent do you agree that Germany planned the outbreak of war in 1914?",
-        "stretch_model": "Fischer's argument is supported by the 'Blank Cheque' given to Austria-Hungary, which encouraged military action. However, Clark's 'sleepwalkers' thesis highlights how all Great Powers engaged in aggressive military mobilization timetables, which left no room for diplomatic compromise.",
-        "starter": "Fischer's argument that Germany planned the war is supported by...",
-        "clue": "Contrast Germany's Blank Cheque with the general paranoia and rigid mobilization timetables across all European powers."
-      },
-      "learning_objectives": {
-        "overarching": "To evaluate why were young men so desperate to join the slaughter of 1914.",
-        "scaffolded": [
-          "Identify the key features of this topic.",
-          "Explain the core concepts and historical context.",
-          "Evaluate the overall significance."
-        ]
-      },
-      "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
-        "objectives": [
-          {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          }
-        ]
-      },
-      "enquiry": "Why was the historical context of Why were young men so desperat... so significant?",
-      "narrative_blocks": [
-        {
-          "text": "<strong>Enquiry Question:</strong> Why were young men so desperate to join the slaughter of 1914?"
-        },
-        {
-          "text": "<strong>Key Concepts:</strong> Causation (Sarajevo trigger vs. long-term alliance systems) and Historical Empathy (Pals' Battalions)."
-        },
-        {
-          "text": "The outbreak of the First World War in August 1914 was not an accidental occurrence; it was the explosive culmination of deep geopolitical rivalries that had polarized Europe since the creation of a unified German Empire in 1871. This new industrial giant in the center of Europe fundamentally disrupted the continent's historic balance of power. To secure their territories, European nations formed rigid, antagonistic military alliances: the Triple Entente (Great Britain, France, and Russia) and the Triple Alliance (Germany, Austria-Hungary, and Italy)."
-        },
-        {
-          "text": "These alliances did not guarantee peace; instead, they guaranteed that any localized conflict would drag the entire continent into an industrial war. Tensions were further inflamed by a massive naval arms race, sparked by the British launch of the ultra-modern battleship HMS Dreadnought in 1906, which prompted Germany to build its own fleet to challenge Britain's global empire. Germany feared 'encirclement' by its hostile neighbors, while British politicians grew increasingly suspicious of German militarism."
-        },
-        {
-          "text": "The explosive spark was struck in the Balkans, a highly unstable region of southeastern Europe where ethnic groups sought independence from declining empires. In 1908, the Austro-Hungarian Empire annexed Bosnia and Herzegovina, a territory populated by thousands of nationalistic Serbs. This act of imperial expansion deeply angered neighboring Serbia and led to the creation of the Black Hand, a radical Pan-Serbian secret society led by Colonel Dragutin Dimitrijevic (codenamed 'Apis')."
-        },
-        {
-          "text": "On 28 June 1914, Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, paid a state visit to the Bosnian capital of Sarajevo. Taking advantage of the highly publicized route, six young Black Hand assassins positioned themselves along the streets. After an initial bomb attempt failed, the Archduke’s car took a wrong turn, stopping directly in front of nineteen-year-old nationalist Gavrilo Princip. Princip fired twice, killing Franz Ferdinand and his wife Sophie. This localized act of terrorism triggered the diplomatic escalation of the July Crisis, dragging the allied powers into conflict. By 5 August 1914, Britain’s promise to defend Belgian neutrality drew its vast global empire into a total European war."
-        },
-        {
-          "text": "When war was declared in August 1914, Britain’s professional army was tiny compared to continental forces. Yet, within the first twelve months of the conflict, a staggering 1.1 million British men voluntarily enlisted to fight. This massive, enthusiastic rush to join—the 'stampede'—was driven by a powerful mixture of social and psychological factors:"
-        },
-        {
-          "text": "<strong>Jingoism and Duty:</strong> Intense, aggressive patriotism swept the British public. Propelled by posters featuring Field Marshal Lord Kitchener, men were told that enlisting was a moral duty to defend King, Country, and the honor of weak nations like Belgium."
-        },
-        {
-          "text": "<strong>The Myth of a Quick War:</strong> There was a universal belief among politicians, media, and the public that modern industrial warfare would be swift and decisive. The common phrase was that the war would be 'over by Christmas'."
-        },
-        {
-          "text": "<strong>Escape from Grinding Labor:</strong> For working-class young men stuck in low-paid, monotonous factory, agricultural, or domestic jobs, the army offered a thrilling promise of travel, uniform, steady pay, and high social status."
-        },
-        {
-          "text": "To exploit this enlisting enthusiasm, the British government introduced a unique social experiment: the Pals' Battalions. The War Office promised that if men volunteered together, they would be kept in the same unit to train, travel, and fight side-by-side."
-        },
-        {
-          "text": "Whole factories, offices, neighborhood streets, and local football teams enlisted en masse. This collective volunteering transformed military enlistment from an individual choice into an intense community event. If a young man hesitated, he faced immense social shame, such as being handed a white feather (a symbol of cowardice) by local women."
-        },
-        {
-          "text": "While the Pals' Battalions successfully raised morale and built deep combat trust, they had a tragic structural flaw. When these highly localized units were sent into intense industrial combat—such as the devastating infantry charges on the first day of the Battle of the Somme in 1916—they suffered catastrophic casualties. In a single afternoon, entire towns and villages lost their entire young male population, leaving communities back home shattered by collective grief."
-        }
-      ]
-    },
-    {
-      "title": "Lesson 2: Did British generals make the ...",
-      "sources": [],
-      "tasks": [],
-      "vocab": [],
-      "extended": null,
-      "do_now": null,
-      "gcse_task": null,
-      "flashcards": [],
-      "learning_objectives": {
-        "overarching": "To understand did British generals make the horror of trench warfare worse.",
-        "scaffolded": [
-          "Identify the key features of this topic.",
-          "Explain the core concepts and historical context.",
-          "Evaluate the overall significance."
-        ]
-      },
-      "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
-        "objectives": [
-          {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          }
-        ]
-      },
-      "enquiry": "Why was the historical context of Did British generals make the ... so significant?",
-      "narrative_blocks": [
-        {
-          "text": "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?"
-        },
-        {
-          "text": "<strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme)."
-        },
-        {
-          "text": "Placeholder narrative paragraph."
-        }
-      ]
-    },
-    {
-      "title": "Lesson 3: Was the Great War truly a glob...",
-      "sources": [],
-      "tasks": [],
-      "vocab": [],
-      "extended": null,
-      "do_now": null,
-      "gcse_task": null,
-      "flashcards": [],
-      "learning_objectives": {
-        "overarching": "To understand was the Great War truly a global war of empires.",
-        "scaffolded": [
-          "Identify the key features of this topic.",
-          "Explain the core concepts and historical context.",
-          "Evaluate the overall significance."
-        ]
-      },
-      "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
-        "objectives": [
-          {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          }
-        ]
-      },
-      "enquiry": "Why was the historical context of Was the Great War truly a glob... so significant?",
-      "narrative_blocks": [
-        {
-          "text": "<strong>Enquiry Question:</strong> Was the Great War truly a global war of empires?"
-        },
-        {
-          "text": "<strong>Key Concepts:</strong> Diversity (humanising the contributions, sacrifices, and racial barriers faced by over a million Indian, Caribbean, and African troops)."
-        },
-        {
-          "text": "Placeholder narrative paragraph."
-        }
-      ]
-    },
-    {
-      "title": "Lesson 4: How did a war fought miles awa...",
-      "sources": [],
-      "tasks": [],
-      "vocab": [],
-      "extended": null,
-      "do_now": null,
-      "gcse_task": null,
-      "flashcards": [],
-      "learning_objectives": {
-        "overarching": "To analyze how did a war fought miles away completely control daily life in Britain.",
-        "scaffolded": [
-          "Identify the key features of this topic.",
-          "Explain the core concepts and historical context.",
-          "Evaluate the overall significance."
-        ]
-      },
-      "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
-        "objectives": [
-          {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          }
-        ]
-      },
-      "enquiry": "Why was the historical context of How did a war fought miles awa... so significant?",
-      "narrative_blocks": [
-        {
-          "text": "<strong>Enquiry Question:</strong> How did a war fought miles away completely control daily life in Britain?"
-        },
-        {
-          "text": "<strong>Key Concepts:</strong> Change and Continuity (conscription, rationing, the Defense of the Realm Act [DORA], and women working in munitions)."
-        },
-        {
-          "text": "Placeholder narrative paragraph."
-        }
-      ]
-    },
-    {
-      "title": "Lesson 5: Did the Treaty of Versailles s...",
-      "sources": [],
-      "tasks": [],
-      "vocab": [],
-      "extended": null,
-      "do_now": null,
-      "gcse_task": null,
-      "flashcards": [],
-      "learning_objectives": {
-        "overarching": "To understand did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939.",
-        "scaffolded": [
-          "Identify the key features of this topic.",
-          "Explain the core concepts and historical context.",
-          "Evaluate the overall significance."
-        ]
-      },
-      "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
-        "objectives": [
-          {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          }
-        ]
-      },
-      "enquiry": "Why was the historical context of Did the Treaty of Versailles s... so significant?",
-      "narrative_blocks": [
-        {
-          "text": "<strong>Enquiry Question:</strong> Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"
-        },
-        {
-          "text": "<strong>Key Concepts:</strong> Consequence (the collapse of empires, territorial changes, reparations, and the seeds of WWII)."
-        },
-        {
-          "text": "Placeholder narrative paragraph."
-        }
-      ]
-    }
-  ],
-  "staticPages": []
+    ]
 };

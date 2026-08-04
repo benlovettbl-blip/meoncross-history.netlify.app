@@ -75,8 +75,8 @@ async function buildDatabase() {
               db[unitKey].data.icon = "fa-crown";
           }
           if (unitKey === 'great_war_part2' && !db[unitKey].data.title) {
-              db[unitKey].data.title = "KS3: The Great War - Part 2";
-              db[unitKey].data.desc = "The conclusion of the First World War, the home front, and the legacy of the conflict.";
+              db[unitKey].data.title = "KS3: The Great War (1914-1919)";
+              db[unitKey].data.desc = "A comprehensive journey from the spark at Sarajevo, through the mud of the trenches and the global empires, to the fragile peace of Versailles.";
               db[unitKey].data.yearGroup = "Year 9";
               db[unitKey].data.icon = "fa-dove";
           }
