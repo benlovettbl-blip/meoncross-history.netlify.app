@@ -258,6 +258,24 @@ export const unitData = {
                                                   ]
                                         }
                               ],
+                              "video": [
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=GZGIcfoaX9c",
+                                                  "title": "Educational Film: The rise of the German Empire to economic power",
+                                                  "duration": "3 mins 31 secs",
+                                                  "viewing_task": "Watch this clip and summarize how the German Empire rose to become an economic powerhouse in the late 19th century.",
+                                                  "model_answer": "Germany used its abundance of natural resources (like coal and iron from newly acquired territories), significant government investment in new technologies and transport, and a highly educated workforce to rapidly expand its industrial output, eventually overtaking Britain."
+                                        },
+                                        {
+                                                  "type": "youtube",
+                                                  "url": "https://www.youtube.com/watch?v=-PAEmgYv0DE",
+                                                  "title": "German Unification and Empire - History in 5 Minutes",
+                                                  "duration": "5 mins 21 secs",
+                                                  "viewing_task": "Note down the key steps Bismarck took to unify the German states and create the Empire.",
+                                                  "model_answer": "Bismarck used a policy of 'blood and iron' to strengthen the Prussian military. He orchestrated three strategic wars: defeating Denmark (1864), crushing Austria (1866) to establish undisputed Prussian dominance, and finally provoking a war with France (1870-1871) to rally the independent southern German states into joining the new German Empire."
+                                        }
+                              ],
                               "narrative_blocks": [
                                         {
                                                   "title": "Briefing (GCSE Taster!)",
