@@ -2,7 +2,7 @@ export const unitData = {
     "title": "KS3: The Great War (1914-1919)",
     "homepage_background": "/images/bg_great_war_part2.jpg",
     "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
-    "cover_image": "/assets/placeholder.jpg",
+    "cover_image": "/images/bg_great_war_part2.jpg",
     "cover_caption": "Placeholder for The Great War cover image.",
     "printable_workbooks": [
         {
