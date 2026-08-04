@@ -24827,44 +24827,162 @@
             "objectives": [
               {
                 "objective": "Analyze the conditions of trench warfare.",
-                "primer": "Use source evidence to understand the physical and psychological toll on soldiers.",
+                "primer": "Focus on the 'Core Narrative' section describing life in the trenches. Emphasize the physical hardships like trench foot, rats, and gas attacks.",
                 "question": "What evidence shows that trenches were unlivable?"
               },
               {
                 "objective": "Evaluate historical interpretations of General Haig.",
-                "primer": "Contrast the 'Butcher of the Somme' interpretation with modern defensive arguments.",
+                "primer": "Contrast the 'Butcher of the Somme' interpretation with modern defensive arguments. Discuss how the failure of the initial bombardment led to massive casualties on the first day of the Somme.",
                 "question": "Was General Haig a 'butcher' or a product of his time?"
               }
             ]
           },
           "do_now": {
-            "title": "Do Now: Recall",
-            "type": "quiz",
-            "questions": [
+            "title": "Do Now: Retrieval Grid",
+            "type": "grid",
+            "items": [
               {
-                "question": "What event acted as the 'spark' for WWI?",
-                "options": [
-                  "The assassination of Archduke Franz Ferdinand",
-                  "The sinking of the Lusitania",
-                  "The invasion of Poland",
-                  "The Battle of the Somme"
-                ],
-                "answer": 0,
-                "explanation": "The assassination in Sarajevo triggered the alliance system."
+                "question": "What name was given to WWI units made up of local friends, neighbors, and colleagues who enlisted together?",
+                "answer": "Pals Battalions.",
+                "points": 1,
+                "category": "Lesson 1 Recall"
+              },
+              {
+                "question": "Why did Britain have to rely entirely on voluntary enlistment when war was declared in August 1914?",
+                "answer": "Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.",
+                "points": 1,
+                "category": "Lesson 1 Recall"
+              },
+              {
+                "question": "What medieval sanitation workers were hired to clear overflowing town cesspits exclusively at night?",
+                "answer": "Gongfermers.",
+                "points": 2,
+                "category": "Thematic Recall"
+              },
+              {
+                "question": "What scientific theory did Victorian doctors believe in before Louis Pasteur proved Germ Theory in 1860?",
+                "answer": "Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).",
+                "points": 2,
+                "category": "Thematic Recall"
+              },
+              {
+                "question": "What is the difference between a primary source and a secondary source?",
+                "answer": "A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.",
+                "points": 3,
+                "category": "Historical Skills"
+              },
+              {
+                "question": "Why must historians avoid the concept of \"presentism\" when studying past historical periods?",
+                "answer": "Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.",
+                "points": 3,
+                "category": "Historical Skills"
               }
             ]
           },
           "enquiry": "Did British generals make the horror of trench warfare worse?",
           "narrative_blocks": [
             {
-              "title": "Enquiry & Key Concepts",
-              "text": "<strong>Enquiry Question:</strong> Did British generals make the horror of trench warfare worse?<br><br><strong>Key Concepts:</strong> Evidence (trench conditions) and Interpretations (evaluating General Haig and the Battle of the Somme).",
+              "title": "The Core Narrative",
+              "text": "By late 1914, the hope of a quick war vanished. Both sides dug a vast, unbroken network of defensive trenches stretching from the English Channel to the Swiss border, creating the stagnant deadlock of the Western Front. Life in these trenches was defined by extreme physical hardship and constant danger. Soldiers lived in subterranean dirt channels, constantly exposed to freezing mud, torrential rain, and waterlogged ground. This relentless dampness caused \"trench foot\"—a painful medical condition where a soldier's feet began to rot inside wet boots. Trenches also overflowed with rotting organic waste and human debris, attracting millions of disease-carrying black rats and lice, while the air was frequently poisoned by chlorine or mustard gas.<br><br>This horrific reality of industrialized warfare became the backdrop for one of the greatest military debates in British history: the competence of its high command. On July 1, 1916, General Douglas Haig launched the Battle of the Somme to relieve pressure on the French army at Verdun. Believing that a week-long artillery bombardment had completely shattered the German defensive wire and dugouts, Haig ordered British troops to march slowly across No Man's Land in neat, orderly rows while carrying heavy equipment packs.<br><br>The result was an absolute slaughter. German defenders, who had safely survived the bombardment in deep, concrete-reinforced underground bunkers, emerged with machine guns the moment the shelling stopped. On the first day of the Somme alone, the British Army suffered 57,470 casualties, including 19,240 deaths—the bloodiest single day in British military history.<br><br>This disaster led to two sharply contrasting historical interpretations of General Haig. For decades, popular history portrayed Haig as a foolish, outdated \"donkey\" leading brave, patriotic \"lions\" to useless slaughter—a view heavily supported by wartime politicians and famous war poets. However, modern revisionist historians offer a different interpretation. They argue that Haig faced an unprecedented technological challenge, forced to fight a massive, industrialized war with no prior template. They point out that he eventually adapted his tactics to utilize tanks, creeping artillery barrages, and coordinated aircraft to secure the final Allied victory in 1918. Whether Haig was a callous butcher or a determined strategist remains a central question for historians.",
               "tasks": [
                 {
                   "type": "text",
-                  "text": "Task 1: Placeholder for source analysis on trench warfare.",
-                  "model": "Model answer will be populated here."
+                  "text": "**Part A: Core Comprehension**\n1. Why did the Western Front become a stagnant deadlock by the winter of 1914?\n2. Describe two physical challenges soldiers faced inside the Western Front trenches.\n3. Why did General Douglas Haig believe the infantry could easily walk across No Man's Land on July 1, 1916?\n4. What were the British casualty figures for the first day of the Battle of the Somme?",
+                  "model": "1. Both the Allied and German armies dug massive, defensive trench networks that neither side could easily penetrate.\n2. Soldiers faced freezing mud that caused trench foot and massive infestations of disease-carrying black rats and lice.\n3. Haig believed his troops could walk across safely because a week-long artillery bombardment was assumed to have destroyed the German defenses.\n4. 57,470 casualties on the first day, including 19,240 deaths."
+                },
+                {
+                  "type": "text",
+                  "text": "**Part B: Conceptual Analysis**\n5. **Causation:** Why did the deep, concrete-reinforced bunkers built by the German army cause the British offensive on the Somme to fail?\n6. **Historical Interpretations:** Explain why popular history books might refer to British soldiers as \"Lions led by Donkeys\" during the First World War.\n7. **The \"IDEA\" Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
+                  "model": "5. The deep bunkers protected German soldiers from the heavy artillery. Once the bombardment stopped, they emerged unharmed with machine guns.\n6. Ordinary soldiers were incredibly brave (\"lions\"), but commanded by outdated, uncaring generals (\"donkeys\") who repeated failed tactics.\n7. I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
                 }
+              ]
+            },
+            {
+              "title": "Contemporary Source Evidence",
+              "text": "### Source A: Post-War Political Commentary\n> \"They were military commanders who were utterly incapable of adapting their minds to the new conditions of warfare... they sent hundreds of thousands of men to be slaughtered without a single clear strategic purpose.\"\n> — **David Lloyd George, former British Prime Minister, *War Memoirs*, 1933**\n\n### Source B: Eyewitness Trench Account\n> \"The mud is not just on your boots; it is in your food, your hair, and your thoughts. The shelling never stops. We watch the water rise in the trench, knowing that our feet are turning black inside our boots, yet we must stand ready to climb the ladder when the whistle blows.\"\n> — **Private Arthur Vance, diary entry near the River Somme, August 1916**",
+              "tasks": [
+                {
+                  "type": "text",
+                  "text": "**Part C: Contemporary Source Analysis**\n8. Study Source A. Why should a historian exercise caution when using the memoirs of a former politician like David Lloyd George to evaluate General Haig's competence?",
+                  "model": "Politicians often write memoirs after events to protect their own reputations and shift blame away from themselves. Since Lloyd George clashed with military leaders, his memoirs may exaggerate the stupidity of the generals to avoid political responsibility for the war's high human cost."
+                }
+              ]
+            },
+            {
+              "title": "Extension & Local History Task",
+              "text": "Research tasks for independent study.",
+              "tasks": [
+                {
+                  "type": "text",
+                  "text": "9. Open your browser and search for the **\"1916 Battle of the Somme cinema film\"**. Research how British audiences reacted when this real, uncensored footage of the front line was shown in local cinemas in 1916. Write down their reactions.\n10. Look up **\"WWI whale oil trench foot prevention\"**. Write a brief paragraph explaining the strict daily foot care routines officers forced soldiers to perform to maintain army health in wet conditions.\n11. Search for **\"General Haig modern revisionist defense\"**. Find and write down one argument made by a modern historian defending Haig's overall strategy on the Western Front.",
+                  "model": "Student independent research based on specific prompts."
+                }
+              ]
+            }
+          ],
+          "key_vocabulary": [
+            {
+              "term": "No Man's Land",
+              "definition": "The desolate, heavily cratered, and wire-strewn territory situated between the opposing front-line trenches."
+            },
+            {
+              "term": "Trench Foot",
+              "definition": "A painful medical condition caused by prolonged exposure of the feet to cold, damp, and unsanitary conditions, often leading to severe infection and gangrene."
+            },
+            {
+              "term": "Revisionist Historian",
+              "definition": "A historian who re-examines traditional historical interpretations in light of new evidence, perspectives, or analytical methods."
+            }
+          ],
+          "quiz": [
+            {
+              "q": "What was the main cause of the medical condition known as \"trench foot\" during WWI?",
+              "a": "Prolonged exposure to freezing, wet, and unsanitary mud inside boots.",
+              "options": [
+                "Prolonged exposure to freezing, wet, and unsanitary mud inside boots.",
+                "Inhaling poisonous gas clouds without wearing a mask.",
+                "Bites from disease-carrying black rats and lice.",
+                "Being shot in the foot by an enemy sniper."
+              ]
+            },
+            {
+              "q": "Why did the British artillery bombardment fail to destroy German defenses before the Somme offensive?",
+              "a": "German soldiers survived safely inside deep, concrete-reinforced underground bunkers.",
+              "options": [
+                "German soldiers survived safely inside deep, concrete-reinforced underground bunkers.",
+                "The British artillery fired in the wrong direction due to poor maps.",
+                "The German army used giant electric magnets to deflect the shells.",
+                "The British simply ran out of ammunition."
+              ]
+            },
+            {
+              "q": "On which date did the infamous first day of the Battle of the Somme occur?",
+              "a": "July 1, 1916",
+              "options": [
+                "July 1, 1916",
+                "August 4, 1914",
+                "November 11, 1918",
+                "June 28, 1914"
+              ]
+            },
+            {
+              "q": "What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?",
+              "a": "Lions led by Donkeys",
+              "options": [
+                "Lions led by Donkeys",
+                "The Kitchener Stampede",
+                "The Silent Front",
+                "The Grand Illusion"
+              ]
+            },
+            {
+              "q": "How did modern \"revisionist\" historians change the historical debate surrounding General Douglas Haig?",
+              "a": "They argued he was a determined leader who successfully learned how to win an unprecedented modern war.",
+              "options": [
+                "They argued he was a determined leader who successfully learned how to win an unprecedented modern war.",
+                "They proved that he never actually visited the Western Front during the war.",
+                "They discovered that he was secretly a double agent working for the German Empire.",
+                "They claimed he deliberately tried to lose the war to help France."
               ]
             }
           ]
