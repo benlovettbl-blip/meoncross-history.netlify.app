@@ -191,6 +191,7 @@ export const unitData = {
                     "definition": "The traditional, historical military alliance between France and Scotland, posing a direct threat to England's northern border."
                 }
             ],
+            "vocab_cloze_text": "When Elizabeth ascended the throne in 1558, Tudor society was strictly organized according to the [Great Chain of Being], a hierarchical structure where everyone had a fixed place. To maintain control and reward loyalty, the Queen relied heavily on the system of [Patronage], distributing land and titles to powerful nobles. She was advised by a small, elite group of trusted ministers called the [Privy Council]. However, as an unmarried [Queen Regnant], she faced immense challenges, including Catholic doubts about her [Legitimacy], economic ruin caused by the [Debasement] of the coinage, and the constant foreign threat of the [Auld Alliance] between France and Scotland.",
             "flashcards": [
                 {
                     "term": "Great Chain of Being",
@@ -561,6 +562,7 @@ export const unitData = {
                     "definition": "Official inspections carried out by bishops every 3–4 years to ensure that local clergy were strictly obeying the religious settlement."
                 }
             ],
+            "vocab_cloze_text": "To solve the religious turmoil dividing England, Elizabeth created a 'middle way' settlement that blended Catholic traditions with Protestant theology. To enforce these changes, the government issued the [Royal Injunctions], a set of strict rules detailing exactly how church services should be conducted. Commissioners carried out regular [Visitations] across the country to inspect churches and ensure the clergy were obeying the new laws. This compromise angered radical [Puritan] groups who wanted all Catholic traces removed, while a stubborn minority of Catholics, known as a [Recusant], refused to attend the new services entirely.",
             "flashcards": [
                 {
                     "term": "Puritan",
@@ -909,6 +911,7 @@ export const unitData = {
                     "definition": "The severe punishment of being officially expelled from the Catholic Church, absolving a person's subjects from loyalty."
                 }
             ],
+            "vocab_cloze_text": "Throughout the 1570s and 1580s, the Catholic Church launched a fierce [Counter-Reformation] across Europe in an attempt to roll back the spread of Protestantism. As part of this offensive, the Pope issued a powerful [Papal Bull] in 1570 declaring Elizabeth's formal [Excommunication] from the Catholic Church and actively encouraging her subjects to overthrow her. To support the underground Catholic resistance in England, secretly trained priests were smuggled in from a foreign [Seminary] to secretly hold Mass and keep the old faith alive.",
             "flashcards": [
                 {
                     "term": "Counter-Reformation",
@@ -1252,6 +1255,7 @@ export const unitData = {
                     "definition": "The legal inquiry set up by Elizabeth to investigate whether Mary was guilty of Lord Darnley's murder."
                 }
             ],
+            "vocab_cloze_text": "Following a scandalous marriage to the man suspected of murdering her husband, Scottish nobles rebelled against Mary, forcing her to [Abdicate] her throne in favor of her infant son. When Mary fled to England seeking Elizabeth's help, she carried the unshakeable belief that she was chosen by God under the [Divine Right of Kings]. However, Elizabeth refused to restore her to power, instead organizing the [Conference of York] to investigate Mary's alleged crimes. The primary evidence presented against Mary were the highly controversial [Casket Letters], a collection of poems and documents that supposedly proved her involvement in the murder.",
             "flashcards": [
                 {
                     "term": "Abdicate",
@@ -1977,6 +1981,7 @@ export const unitData = {
                     "definition": "Empty ships set on fire and deliberately steered into an enemy fleet to cause panic and break their defensive formation."
                 }
             ],
+            "vocab_cloze_text": "As tensions rose between England and Spain, Elizabeth secretly encouraged English [Privateer] captains like Francis Drake to raid Spanish treasure fleets in the New World. The undeclared war escalated dramatically when Elizabeth signed the [Treaty of Nonsuch (1585)], committing English troops to fight the Spanish in the Netherlands. When the mighty Spanish Armada finally attacked, the English fleet relied on their faster [Galleon] ships to outmaneuver the enemy. The Spanish formation was ultimately broken in Calais when the English launched blazing [Fireships] directly into the anchored fleet, causing mass panic.",
             "flashcards": [
                 {
                     "term": "Privateer",
@@ -3278,6 +3283,7 @@ export const unitData = {
                     "definition": "A compulsory local tax collected by Justices of the Peace (JPs) to fund financial support for the impotent poor."
                 }
             ],
+            "vocab_cloze_text": "During the Elizabethan era, a rapidly growing population and the widespread practice of farming [Enclosure] pushed many rural laborers into desperate poverty. The government categorized the poor strictly: the elderly or sick were deemed the [Impotent Poor] and given relief funded by a local [Poor Rate] tax. Those who could work but couldn't find jobs were classed as the [Able-Bodied Poor] and sent to workhouses. Meanwhile, any wandering beggar looking for work was heavily punished and branded a criminal [Vagabond / Vagrant].",
             "exam_practice": [
                 {
                     "question": "Describe one characteristic of poverty in early Elizabethan England. (2 marks)\nDescribe one characteristic of poverty in early Elizabethan England. (2 marks)",
@@ -3951,6 +3957,7 @@ export const unitData = {
                     "definition": "The local Native American tribes who initially traded with the English but were later driven to war by English aggression."
                 }
             ],
+            "vocab_cloze_text": "In 1584, Elizabeth I granted Walter Raleigh a [Royal Charter] giving him exclusive rights to explore and colonize any lands not held by a Christian prince. Raleigh organized an ambitious expedition to establish a permanent colony in North America, naming the vast territory [Virginia] in honor of the 'Virgin Queen'. The settlers landed on [Roanoke] Island, but the colony was doomed by poor planning and increasingly hostile relations with the local [Algonquian] Native American tribes, leading to the mysterious disappearance of the colonists.",
             "exam_practice": [
                 {
                     "question": "Describe one characteristic of the English attempts to colonise Virginia. (2 marks)\nDescribe one characteristic of the English attempts to colonise Virginia. (2 marks)",

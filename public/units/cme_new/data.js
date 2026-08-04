@@ -41,17 +41,17 @@ export const unitData = {
     {
       "id": "KT1",
       "title": "KT1",
-      "image": "/assets/cme_new_kt1_cover.png"
+      "image": "/assets/cme_new_kt1_cover.png", "prefix": "KT1"
     },
     {
       "id": "KT2",
       "title": "KT2",
-      "image": "/assets/cme_new_yom_kippur_crossing.png"
+      "image": "/assets/cme_new_yom_kippur_crossing.png", "prefix": "KT2"
     },
     {
       "id": "KT3",
       "title": "KT3",
-      "image": "/assets/cme_new_camp_david_accords.png"
+      "image": "/assets/cme_new_camp_david_accords.png", "prefix": "KT3"
     }
   ],
   "groupings": [
@@ -755,6 +755,7 @@ export const unitData = {
           "definition": "Palestinian guerrilla fighters who launched cross-border raids into Israel from the Gaza Strip."
         }
       ],
+      "vocab_cloze_text": "Following the 1948–49 Arab-Israeli War, the borders of the new Jewish state were defined by the [Green Line], separating Israel from its Arab neighbors. To deal with the massive influx of displaced Palestinians, the United Nations established [UNRWA] to provide essential relief and refugee camps. Meanwhile, Israel passed the [Law of Return], granting any Jew the right to immigrate and become a citizen, even as Palestinian [Fedayeen] began launching cross-border guerrilla raids to fight for their lost homeland.",
       "do_now": {
         "items": [
           {
@@ -2272,6 +2273,7 @@ export const unitData = {
           "definition": "A highly secretive, global assassination campaign launched by the Israeli Mossad to hunt down the planners of the Munich Olympics massacre."
         }
       ],
+      "vocab_cloze_text": "In the aftermath of the Six-Day War, the international community passed [UN Resolution 242], calling for Israeli withdrawal from captured territories in exchange for peace. However, Arab leaders firmly rejected negotiations by issuing the [Three Nos of Khartoum]. As conventional war failed, Palestinian militant groups like the [PFLP] turned to international terrorism, notably hijacking planes to [Dawson's Field] and killing Israeli athletes during the [Black September] Munich Olympics. In response, Israel launched [Operation Wrath of God] to hunt down and assassinate those responsible.",
       "flashcards": [
         {
           "term": "UN Resolution 242",
@@ -2752,6 +2754,7 @@ export const unitData = {
           "definition": "An Arab oil embargo that quadrupled global energy prices to force the West into restraining Israel."
         }
       ],
+      "vocab_cloze_text": "Following the devastating 1967 defeat, Egypt engaged in a continuous [War of Attrition] against Israel, regularly shelling the heavily fortified [Bar Lev Line] along the Suez Canal. When the Yom Kippur War broke out in 1973, Israel suffered heavy early losses until the US launched [Operation Nickel Grass], a massive airlift to supply them with crucial weapons and [SAM-3 Missiles] replacements. In retaliation for Western support of Israel, Arab nations deployed the [OPEC Oil Weapon], embargoing oil exports and triggering a severe global economic crisis.",
       "flashcards": [
         {
           "term": "War of Attrition",
@@ -3386,6 +3389,7 @@ export const unitData = {
           "definition": "The 1979 formal peace treaty where Israel returned the Sinai to Egypt in exchange for official diplomatic recognition."
         }
       ],
+      "vocab_cloze_text": "In the years following the Yom Kippur War, Henry Kissinger utilized exhaustive [Shuttle Diplomacy] to mediate initial disengagements like the [Sinai II Agreement] between Israel and its neighbors. A major political shift occurred in Israel with the election of the right-wing [Likud] party, led by Menachem Begin. Despite Begin's hardline stance, intense negotiations with Egypt led to the historic [Camp David Accords] in 1978. This framework ultimately resulted in the 1979 [Treaty of Washington], marking the first formal peace treaty between Israel and an Arab nation amidst an era of global economic [Stagflation] influenced by [OPEC].",
       "flashcards": [
         {
           "term": "Stagflation",
@@ -3853,6 +3857,7 @@ export const unitData = {
           "definition": "A radical Shia militant movement ('The Party of God') backed by Iran that emerged in Lebanon following the PLO's expulsion."
         }
       ],
+      "vocab_cloze_text": "In 1974, the PLO gained significant international recognition when [UN Resolution 3236] formally acknowledged the inalienable rights of the Palestinian people. However, the PLO's stronghold in southern Lebanon, nicknamed [Fatahland], became a launching pad for attacks against Israel, prompting a massive Israeli invasion known as [Operation Peace for Galilee]. The invasion led to international outrage following the horrific massacre of Palestinians by Christian Phalangists at the [Sabra and Shatila] refugee camps. The ongoing tension eventually erupted into a massive grassroots uprising known as the [First Intifada], facing an intense [Iron Fist Policy] from Israel, while a new militant group, [Hezbollah], emerged in Lebanon.",
       "flashcards": [
         {
           "term": "UN Resolution 3236",

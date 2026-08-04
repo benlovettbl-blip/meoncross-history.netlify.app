@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   initData();
   
   try {
-    const res = await fetch('/database.json');
+    const res = await fetch(`/database.json?v=${Date.now()}`);
     window.db = await res.json();
   } catch (err) {
     console.error('Failed to load database.json:', err);

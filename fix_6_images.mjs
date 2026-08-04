@@ -1,24 +1,56 @@
-import { execSync } from 'child_process';
+import fs from 'fs';
 import path from 'path';
 
-const images = [
-    { dest: "dachau_roll_call.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Dachau_Concentration_Camp_roll_call.jpg/500px-Dachau_Concentration_Camp_roll_call.jpg" },
-    { dest: "hitler_hindenburg_1933.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bundesarchiv_Bild_102-14269%2C_Potsdam%2C_Tag_von_Potsdam%2C_Adolf_Hitler%2C_Paul_v._Hindenburg.jpg/500px-Bundesarchiv_Bild_102-14269%2C_Potsdam%2C_Tag_von_Potsdam%2C_Adolf_Hitler%2C_Paul_v._Hindenburg.jpg" },
-    { dest: "munich_putsch_defendants.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bundesarchiv_Bild_102-00344A%2C_M%C3%BCnchen%2C_nach_Hitler-Ludendorff_Prozess.jpg/500px-Bundesarchiv_Bild_102-00344A%2C_M%C3%BCnchen%2C_nach_Hitler-Ludendorff_Prozess.jpg" },
-    { dest: "nazi_poster_our_last_hope.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wahlplakat_Hitler_unsere_letzte_Hoffnung.jpg/500px-Wahlplakat_Hitler_unsere_letzte_Hoffnung.jpg" },
-    { dest: "nuremberg_rally.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bundesarchiv_Bild_102-17049%2C_N%C3%BCrnberg%2C_Reichsparteitag%2C_SA-_und_SS-Appell.jpg/500px-Bundesarchiv_Bild_102-17049%2C_N%C3%BCrnberg%2C_Reichsparteitag%2C_SA-_und_SS-Appell.jpg" },
-    { dest: "reichstag_fire_ruins.jpg", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bundesarchiv_Bild_102-14364%2C_Berlin%2C_Reichstagsbrand.jpg/500px-Bundesarchiv_Bild_102-14364%2C_Berlin%2C_Reichstagsbrand.jpg" }
+const filesToDownload = [
+    {
+        filename: 'munich_putsch_defendants.jpg',
+        wikiFile: 'Bundesarchiv_Bild_102-00344A,_München,_Nach_Hitler-Ludendorff_Prozess.jpg'
+    },
+    {
+        filename: 'nazi_poster_our_last_hope.jpg',
+        wikiFile: 'Unsere_letzte_Hoffnung-Hitler_(1932).jpg'
+    },
+    {
+        filename: 'hitler_hindenburg_1933.jpg',
+        wikiFile: 'Bundesarchiv_Bild_183-S38324,_Tag_von_Potsdam,_Adolf_Hitler,_Paul_v._Hindenburg.jpg'
+    },
+    {
+        filename: 'dachau_roll_call.jpg',
+        wikiFile: 'Bundesarchiv_Bild_152-27-13A,_Dachau_Konzentrationslager,_Häftlinge_beim_Appell.jpg'
+    },
+    {
+        filename: 'nuremberg_rally.jpg',
+        wikiFile: 'Bundesarchiv_Bild_183-1982-1130-502,_Nürnberg,_Reichsparteitag,_SA-_und_SS-Appell.jpg'
+    },
+    {
+        filename: 'edelweiss_pirates_graffiti.jpg',
+        wikiFile: 'Edelweißpiraten_Jülich_Koch.jpg'
+    }
 ];
 
-for (const img of images) {
-    const destPath = path.join(process.cwd(), 'public', 'images', img.dest);
-    const curlCommand = `curl -s -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -H "Accept: image/webp,image/apng,image/*,*/*;q=0.8" "${img.url}" -o "${destPath}"`;
-    try {
-        console.log(`Downloading ${img.dest}...`);
-        execSync(curlCommand, { stdio: 'inherit' });
-    } catch (e) {
-        console.error(`Failed to download ${img.dest}`);
+async function downloadImages() {
+    for (const item of filesToDownload) {
+        const url = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(item.wikiFile)}?width=800`;
+        console.log(`Downloading ${item.filename} from ${url}`);
+        
+        try {
+            const response = await fetch(url, {
+                headers: { 'User-Agent': 'MeoncrossHistoryApp/1.0 (Student Project)' }
+            });
+            
+            if (!response.ok) {
+                console.error(`Failed to download ${item.filename}: ${response.status} ${response.statusText}`);
+                continue;
+            }
+            
+            const buffer = await response.arrayBuffer();
+            const dest = path.resolve('public/images', item.filename);
+            fs.writeFileSync(dest, Buffer.from(buffer));
+            console.log(`Successfully saved ${item.filename}`);
+        } catch (e) {
+            console.error(`Error downloading ${item.filename}:`, e.message);
+        }
     }
 }
 
-console.log("Finished downloading broken images.");
+downloadImages();

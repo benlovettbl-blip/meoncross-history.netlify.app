@@ -65,21 +65,19 @@ Whenever injecting a new ERA or YouTube video link into a lesson, you MUST autom
 ## "How Useful" Scaffolding (Provenance Clues)
 Whenever you create or modify a "How useful" source assessment question **specifically for the Medicine Through Time (Paper 1) unit**, you MUST provide scaffolding clues for provenance. Students find provenance very difficult, so the scaffolding box must include specific hints (e.g., using a `provenance_clue` property) that prompt them to consider the author, audience, and motive of the source. Do not apply this rule to other units unless explicitly asked.
 
-## Key Individuals Tracking
-Whenever ANY historical individual (including historians, historical figures, or authors mentioned by name in sources) is added to or mentioned in a unit's curriculum data (`data.js` or elsewhere), they MUST also be added to the unit's `key_individuals` page/array. Proactively add their name, role, a brief bio, and an image reference to ensure the individuals page remains comprehensive.
 
 ## Wikimedia Image Thumbnails
 Whenever you need to add an image from Wikimedia Commons for a historical figure or source, ALWAYS use the Wikimedia API to fetch the embeddable 500px thumbnail URL (e.g. `https://en.wikipedia.org/w/api.php?action=query&titles=X&prop=pageimages&format=json&pithumbsize=500`) instead of guessing the raw `.jpg` file path, as raw paths often lead to 404 errors due to Wikimedia's hotlinking restrictions.
 
 
 ## Edexcel GCSE Exam Specification: Feature Questions
-Whenever generating or evaluating Edexcel GCSE History exam questions, remember that the 'features' question format has changed. Instead of a single 4-mark question asking to 'Describe two features of...', it is now structured as two separate 2-mark questions: 'Describe one feature of...' which appears twice. Ensure all exam practice forms, UI templates, and generated assessments reflect this.
+Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 1 (Medicine) or Early Elizabethan England, remember that the 'features' question format has changed. Instead of a single 4-mark question asking to 'Describe two features of...', it is now structured as two separate 2-mark questions: 'Describe one feature of...' which appears twice. Ensure all exam practice forms, UI templates, and generated assessments reflect this.
 
 ### Fallback for Hotlink-Protected Images
 If a Wikimedia Commons URL works via the API (or curl) but returns a 403 Forbidden broken image icon in the browser (due to Wikimedia's hotlinking protection on high-traffic images), you MUST completely bypass hotlinking. Download the 500px thumbnail image directly into the `public/images/` directory using a Node script or curl, and update the JSON curriculum data to reference the local file path (e.g., `/images/vesalius.jpg`). This guarantees the image will always load flawlessly in the web app.
 
 ## Edexcel GCSE Exam Specification: Consequence Questions
-Whenever generating or evaluating Edexcel GCSE History exam questions, remember that the 'consequences' question format has changed. There is no longer an 8-mark question asking to 'Explain two consequences of...'. It is now a single 4-mark question asking to 'Explain one consequence of...'. Ensure all exam practice forms, UI templates, and generated assessments reflect this updated 4-mark format.
+Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 2 (Middle East), remember that the 'consequences' question format has changed. There is no longer an 8-mark question asking to 'Explain two consequences of...'. It is now a single 4-mark question asking to 'Explain one consequence of...'. Ensure all exam practice forms, UI templates, and generated assessments reflect this updated 4-mark format.
 
 ## Auto-Git Checkpoint
 Before running any automated extraction scripts, rebuilding the database, or making large structural refactors to curriculum files, you MUST automatically run `git add .` and `git commit -m "Auto-backup checkpoint before <task>"` if the workspace is clean and has untracked or modified files. This ensures a robust version history that can be instantly restored if anything breaks.

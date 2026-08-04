@@ -273,28 +273,28 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
   const bannerMap = {
     'Key Topic 1': {
       title: 'Key Topic 1: The Weimar Republic (1918-29)',
-      image: 'assets/banners/kt1_weimar_banner.png',
+      image: 'images/weimar_kt1_cover.jpg',
       gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
       border: '#3b82f6',
       enquiry: 'To what extent did the Weimar Republic recover from its early crises?'
     },
     'Key Topic 2': {
       title: "Key Topic 2: Hitler's Rise to Power, 1919-33",
-      image: 'assets/banners/kt2_weimar_banner.png',
+      image: 'images/weimar_kt2_cover.jpg',
       gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
       border: '#dc2626',
       enquiry: 'How did a tiny obscure political group transform?'
     },
     'Key Topic 3': {
       title: "Key Topic 3: Nazi Control and Dictatorship",
-      image: 'assets/banners/kt3_weimar_banner.png',
+      image: 'images/weimar_kt3_cover.jpg',
       gradient: 'linear-gradient(135deg, #4b5563, #1f2937)',
       border: '#1f2937',
       enquiry: 'From chains to absolute control'
     },
     'Key Topic 4': {
       title: "Key Topic 4: Life in Nazi Germany, 1933-39",
-      image: 'assets/banners/kt4_weimar_banner.png',
+      image: 'images/weimar_kt4_cover.jpg',
       gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)',
       border: '#65a30d',
       enquiry: 'Did life improve under the Nazis?'

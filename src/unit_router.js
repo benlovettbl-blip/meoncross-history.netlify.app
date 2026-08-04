@@ -10,7 +10,7 @@ window.currentUnitId = unitId;
 if (!unitId) {
   document.body.innerHTML = '<h1>Unit not found</h1><p>Please return to the <a href="/">Dashboard</a>.</p>';
 } else {
-  fetch(`/data/${unitId}.json`).then(r => {
+  fetch(`/data/${unitId}.json?v=${Date.now()}`).then(r => {
     if (!r.ok) throw new Error('Unit not found');
     return r.json();
   }).then(unitPayload => {

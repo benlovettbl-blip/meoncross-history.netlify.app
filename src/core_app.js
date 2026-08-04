@@ -837,10 +837,10 @@ export function initializeApp(unitData) {
         ];
       } else if (window.currentUnitId === 'weimar_nazi_germany' || (window.currentUnitData && window.currentUnitData.title && window.currentUnitData.title.includes('Weimar'))) {
         periods = [
-          { id: 'KT1', title: 'Key Topic 1: The Weimar Republic (1918-29)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/banners/kt1_weimar_banner.png', enquiry: 'To what extent did the Weimar Republic recover from its early crises?' },
-          { id: 'KT2', title: "Key Topic 2: Hitler's Rise to Power, 1919-33", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/banners/kt2_weimar_banner.png', enquiry: 'How did a tiny obscure political group transform?' },
-          { id: 'KT3', title: "Key Topic 3: Nazi Control and Dictatorship", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'assets/banners/kt3_weimar_banner.png', enquiry: 'From chains to absolute control' },
-          { id: 'KT4', title: "Key Topic 4: Life in Nazi Germany, 1933-39", prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)', border: '#65a30d', image: 'assets/banners/kt4_weimar_banner.png', enquiry: 'Did life improve under the Nazis?' }
+          { id: 'KT1', title: 'Key Topic 1: The Weimar Republic (1918-29)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'images/weimar_kt1_cover.jpg', enquiry: 'To what extent did the Weimar Republic recover from its early crises?' },
+          { id: 'KT2', title: "Key Topic 2: Hitler's Rise to Power, 1919-33", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'images/weimar_kt2_cover.jpg', enquiry: 'How did a tiny obscure political group transform?' },
+          { id: 'KT3', title: "Key Topic 3: Nazi Control and Dictatorship", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'images/weimar_kt3_cover.jpg', enquiry: 'From chains to absolute control' },
+          { id: 'KT4', title: "Key Topic 4: Life in Nazi Germany, 1933-39", prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)', border: '#65a30d', image: 'images/weimar_kt4_cover.jpg', enquiry: 'Did life improve under the Nazis?' }
         ];
       } else if (window.currentUnitId === 'eee' || (window.currentUnitData && window.currentUnitData.title && window.currentUnitData.title.includes('Elizabeth'))) {
         periods = [
@@ -1277,6 +1277,7 @@ export function initializeApp(unitData) {
     };
 
     function renderLesson(lesson) {
+      window.postRenderHooks = [];
       const formatBold = window.formatBold;
     lesson = JSON.parse(JSON.stringify(lesson));
     
@@ -1465,11 +1466,13 @@ export function initializeApp(unitData) {
     html += ``;
     
     if (lesson.primary_source) {
-      let src = lesson.primary_source.src;
+      let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
       html += `
         <div class="phase-card">
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-            <img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 15px;">
+              ${srcs.map(src => `<img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: ${srcs.length > 1 ? '45%' : '100%'}; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">`).join('')}
+            </div>
             <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
             ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
             ${lesson.primary_source.question ? `
@@ -1968,6 +1971,16 @@ export function initializeApp(unitData) {
         if (block.tasks && block.tasks.length > 0) {
           html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
           block.tasks.forEach((task, tIdx) => {
+             if (task.type === 'drag_drop_timeline') {
+               const timelineId = `dd-timeline-emb-${index}-${tIdx}`;
+               html += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./drag_drop_timeline.js').then(mod => {
+                    mod.initDragDropTimeline(document.getElementById(timelineId), task);
+                 });
+               });
+               return;
+             }
              const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
              const ansId = `ans-emb-${index}-${tIdx}`;
              const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
@@ -2036,6 +2049,16 @@ export function initializeApp(unitData) {
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         lesson.tasks.forEach((task, tIdx) => {
+          if (task.type === 'drag_drop_timeline') {
+            const timelineId = `dd-timeline-lesson-${tIdx}`;
+            html += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('./drag_drop_timeline.js').then(mod => {
+                 mod.initDragDropTimeline(document.getElementById(timelineId), task);
+              });
+            });
+            return;
+          }
           let rawQText = task.text || task.question || "";
           let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
           let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
@@ -2483,6 +2506,10 @@ export function initializeApp(unitData) {
         } catch (e) {
           console.error("Mermaid render error:", e);
         }
+      }
+      if (window.postRenderHooks) {
+        window.postRenderHooks.forEach(hook => hook());
+        window.postRenderHooks = [];
       }
     }, 100); 
   }
