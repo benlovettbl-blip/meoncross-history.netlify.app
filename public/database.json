@@ -8135,6 +8135,18 @@
             {
               "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-long-term-change-history-file/",
               "title": "History File: Medicine and Long Term Change (Overview)"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/1-medicine-religion-and-natural-causes-history-file/",
+              "title": "1 Medicine Religion And Natural Causes History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/1-medicine-and-religion-history-file/",
+              "title": "1 Medicine And Religion History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-pain-message-bbc-four/",
+              "title": "Pain Pus And Poison The Search For Modern Medicine Pain Message Bbc Four"
             }
           ]
         },
@@ -8790,7 +8802,13 @@
           "draw_tasks": {
             "title": "The Apothecary's Shop",
             "instructions": "Sketch an apothecary mixing herbal remedies. Label at least three common ingredients they might use (like honey, mint, or theriac)."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/3-medicine-women-and-society-history-file/",
+              "title": "3 Medicine Women And Society History File"
+            }
+          ]
         },
         {
           "id": "lesson_1_3",
@@ -9245,6 +9263,14 @@
               "duration": "4 mins",
               "viewing_task": "How did people respond to the devastating outbreak of the Black Death in 1348?",
               "model_answer": "People responded with panic. Some whipped themselves to earn God's forgiveness (flagellants), others blamed minority groups, while local governments ordered streets to be cleaned to remove bad smells."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/",
+              "title": "Bbc Two A History Of Britain By Simon Schama Series 1 King Death The Symptoms Of Black Death And How It Spread"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-medieval-treatment-and-beliefs-on-the-cause-of-the-black-death/",
+              "title": "Bbc Two A History Of Britain By Simon Schama Series 1 King Death Medieval Treatment And Beliefs On The Cause Of The Black Death"
             }
           ]
         },
@@ -9710,7 +9736,17 @@
           "draw_tasks": {
             "title": "The Printing Press",
             "instructions": "Sketch a simple printing press and explain in a speech bubble why this invention was so dangerous to the Catholic Church's control of knowledge."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-galen-and-leonardo-galenic-anatomy/",
+              "title": "Bbc Four The Beauty Of Anatomy Galen And Leonardo Galenic Anatomy"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-andreas-vesalius-the-muscle-men/",
+              "title": "Bbc Four The Beauty Of Anatomy Andreas Vesalius The Muscle Men"
+            }
+          ]
         },
         {
           "id": "lesson_2_2",
@@ -11078,7 +11114,17 @@
           "draw_tasks": {
             "title": "Pasteur's Swan-Neck Flask",
             "instructions": "Sketch Louis Pasteur's famous swan-neck flask experiment. Show how the curved neck prevented airborne bacteria from reaching the liquid inside."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-and-science-history-file/",
+              "title": "2 Medicine And Science History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-medical-mavericks-series-1-beating-infection-robert-koch-cholera/",
+              "title": "Bbc Four Medical Mavericks Series 1 Beating Infection Robert Koch Cholera"
+            }
+          ]
         },
         {
           "id": "lesson_3_2",
@@ -11556,7 +11602,21 @@
           "draw_tasks": {
             "title": "The Carbolic Spray",
             "instructions": "Draw Joseph Lister operating on a patient while a cumbersome machine sprays carbolic acid over the wound to kill bacteria."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-public-health-and-government-history-file/",
+              "title": "2 Medicine Public Health And Government History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-diagrams-florence-nightingale-florence-nightingales-rose-diagram/",
+              "title": "Bbc Four The Beauty Of Diagrams Florence Nightingale Florence Nightingales Rose Diagram"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/florence-nightingale-nursing-pioneer/",
+              "title": "Florence Nightingale Nursing Pioneer"
+            }
+          ]
         },
         {
           "id": "lesson_3_3",
@@ -12010,7 +12070,29 @@
           "draw_tasks": {
             "title": "The Broad Street Pump",
             "instructions": "Draw John Snow removing the handle from the Broad Street water pump, while angry locals who still believe in miasma watch on."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/jenners-marvellous-medicine-a-history-of-the-world/",
+              "title": "Jenners Marvellous Medicine A History Of The World"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-true-stories-episode-2-the-life-and-work-of-edward-jenner/",
+              "title": "Bbc Two True Stories Episode 2 The Life And Work Of Edward Jenner"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-house-through-time-series-1-episode-2-cholera/",
+              "title": "Bbc Two A House Through Time Series 1 Episode 2 Cholera"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/",
+              "title": "The Story Of John Snow Moments Of Genius"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/the-doctor-who-discovered-how-cholera-spread-witness-history/",
+              "title": "The Doctor Who Discovered How Cholera Spread Witness History"
+            }
+          ]
         },
         {
           "id": "lesson_4_1",
@@ -12458,7 +12540,17 @@
           "draw_tasks": {
             "title": "The Double Helix",
             "instructions": "Sketch the twisted ladder structure of DNA (the double helix). Label it with the names of the four key scientists involved in its discovery."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-technology-and-the-individual-history-file/",
+              "title": "5 Medicine Technology And The Individual History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/0-goes-back-in-time-operation-ouch/",
+              "title": "0 Goes Back In Time Operation Ouch"
+            }
+          ]
         },
         {
           "id": "lesson_4_2",
@@ -12928,7 +13020,37 @@
           "draw_tasks": {
             "title": "The Magic Bullet",
             "instructions": "Draw a literal 'magic bullet' flying through the bloodstream, hitting a specific nasty-looking bacteria while ignoring the healthy red blood cells."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-and-surgery-history-file/",
+              "title": "5 Medicine And Surgery History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/3-medicine-and-government-history-file/",
+              "title": "3 Medicine And Government History File"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/s12e02-health-before-the-nhs-a-medical-revolution-timeshift/",
+              "title": "S12e02 Health Before The Nhs A Medical Revolution Timeshift"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-exploring-the-past-post-war-britain-post-war-britain-the-development-of-the-national-health-service-nhs/",
+              "title": "Bbc Two Exploring The Past Post War Britain Post War Britain The Development Of The National Health Service Nhs"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-viruses-and-vaccines-bbc-four/",
+              "title": "Pain Pus And Poison The Search For Modern Medicine Viruses And Vaccines Bbc Four"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/into-the-brain-blood-and-guts-a-history-of-surgery/",
+              "title": "Into The Brain Blood And Guts A History Of Surgery"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-grays-anatomy-the-beauty-of-anatomy/",
+              "title": "5 Grays Anatomy The Beauty Of Anatomy"
+            }
+          ]
         },
         {
           "id": "lesson_4_3",
@@ -13379,7 +13501,17 @@
           "draw_tasks": {
             "title": "Fleming's Petri Dish",
             "instructions": "Sketch Alexander Fleming's messy laboratory bench. Show a petri dish with a ring of mold (penicillin) actively killing the surrounding bacteria."
-          }
+          },
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/breaking-the-mould-the-story-of-penicillin/",
+              "title": "Breaking The Mould The Story Of Penicillin"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-discovery-of-penicillin-bbc-four/",
+              "title": "Pain Pus And Poison The Search For Modern Medicine Discovery Of Penicillin Bbc Four"
+            }
+          ]
         },
         {
           "id": "lesson_4_4",
@@ -14323,6 +14455,12 @@
                 "The RAMC had completely abandoned surgery in favor of chemical remedies."
               ],
               "answer": 1
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-war-history-file/",
+              "title": "4 Medicine And War History File"
             }
           ]
         },
@@ -16296,6 +16434,16 @@
                 "They required the patient to hold their breath for 20 minutes."
               ],
               "answer": 0
+            }
+          ],
+          "video": [
+            {
+              "url": "https://era.org.uk/streaming-service-resource/carrel-dakin-method-the-crimson-field/",
+              "title": "Carrel Dakin Method The Crimson Field"
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/fixing-faces-blood-and-guts-a-history-of-surgery/",
+              "title": "Fixing Faces Blood And Guts A History Of Surgery"
             }
           ]
         }
