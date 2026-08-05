@@ -62,7 +62,7 @@ export function renderDashboard() {
   `;
 
   const units = getUnits();
-  const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
+  const ks3Order = ['water_and_sanitation', 'great_war', 'early_modern_world', 'industrialisation_and_empire', 'great_war_part2'];
   const ks3Units = units.filter(u => (u.title || '').includes('KS3:')).sort((a, b) => {
     let idxA = ks3Order.indexOf(a.id);
     let idxB = ks3Order.indexOf(b.id);

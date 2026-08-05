@@ -27,18 +27,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -71,18 +64,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -115,18 +101,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -159,18 +138,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -203,18 +175,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -247,18 +212,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },
@@ -291,18 +249,11 @@
         },
         "do_now": {
           "title": "Do Now: Recall",
-          "type": "quiz",
-          "questions": [
+          "type": "questions",
+          "items": [
             {
               "question": "Recall question from previous lesson.",
-              "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "answer": 0,
-              "explanation": "Explanation."
+              "answer": "A"
             }
           ]
         },

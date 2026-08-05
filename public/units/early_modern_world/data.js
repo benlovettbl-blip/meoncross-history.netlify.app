@@ -36,18 +36,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Knowledge Retrieval",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall from Year 7: What was the main purpose of a medieval castle?",
-                        "options": [
-                            "To defend and control the surrounding land",
-                            "To act as a trade market",
-                            "To host jousting tournaments",
-                            "To serve as a peasant hospital"
-                        ],
-                        "answer": 0,
-                        "explanation": "Castles were primarily military structures used by lords and kings to maintain control over a region."
+                        "answer": "Castles were primarily military structures used by lords and kings to maintain control over a region. They defended and controlled the surrounding land."
                     }
                 ]
             },
@@ -243,18 +236,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Recall",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall question from previous lesson.",
-                        "options": [
-                            "A",
-                            "B",
-                            "C",
-                            "D"
-                        ],
-                        "answer": 0,
-                        "explanation": "Explanation."
+                        "answer": "A"
                     }
                 ]
             },
@@ -287,18 +273,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Recall",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall question from previous lesson.",
-                        "options": [
-                            "A",
-                            "B",
-                            "C",
-                            "D"
-                        ],
-                        "answer": 0,
-                        "explanation": "Explanation."
+                        "answer": "A"
                     }
                 ]
             },
@@ -331,18 +310,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Recall",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall question from previous lesson.",
-                        "options": [
-                            "A",
-                            "B",
-                            "C",
-                            "D"
-                        ],
-                        "answer": 0,
-                        "explanation": "Explanation."
+                        "answer": "A"
                     }
                 ]
             },
@@ -375,18 +347,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Recall",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall question from previous lesson.",
-                        "options": [
-                            "A",
-                            "B",
-                            "C",
-                            "D"
-                        ],
-                        "answer": 0,
-                        "explanation": "Explanation."
+                        "answer": "A"
                     }
                 ]
             },
@@ -419,18 +384,11 @@ export const unitData = {
             },
             "do_now": {
                 "title": "Do Now: Recall",
-                "type": "quiz",
-                "questions": [
+                "type": "questions",
+                "items": [
                     {
                         "question": "Recall question from previous lesson.",
-                        "options": [
-                            "A",
-                            "B",
-                            "C",
-                            "D"
-                        ],
-                        "answer": 0,
-                        "explanation": "Explanation."
+                        "answer": "A"
                     }
                 ]
             },
