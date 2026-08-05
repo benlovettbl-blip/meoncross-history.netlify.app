@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const searches = [
-  { term: "Map of Europe alliances 1914", filename: "gw_alliance_map.jpg" },
-  { term: "Indian cavalry western front 1914", filename: "gw_indian_army.jpg" }
+  { term: "File:Map_Europe_alliances_1914-en.svg", filename: "gw_alliance_map.jpg" }
 ];
 
 const destDir = path.join(__dirname, 'public', 'images');
@@ -26,23 +25,22 @@ async function downloadImage(url, filepath) {
 
 async function searchAndDownload(searchObj) {
   try {
-      console.log(`Searching Wikimedia API for: "${searchObj.term}"...`);
-      const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(searchObj.term)}&prop=pageimages&pithumbsize=500&format=json`;
+      console.log(`Searching Wikimedia API for exact title: "${searchObj.term}"...`);
+      // Use titles= instead of generator=search
+      const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(searchObj.term)}&prop=pageimages&pithumbsize=500&format=json`;
       
       const data = await fetchJSON(searchUrl);
       const pages = data.query?.pages;
       
-      if (!pages) {
-          console.error(`❌ No images found for search term: "${searchObj.term}"`);
+      if (!pages || Object.keys(pages)[0] === "-1") {
+          console.error(`❌ No image found for title: "${searchObj.term}"`);
           return false;
       }
 
-      const pageWithThumb = Object.values(pages)
-          .filter(p => p.thumbnail)
-          .sort((a, b) => (a.index || 99) - (b.index || 99))[0];
+      const pageWithThumb = Object.values(pages)[0];
       
-      if (!pageWithThumb) {
-          console.error(`❌ No image thumbnails found for search term: "${searchObj.term}"`);
+      if (!pageWithThumb.thumbnail) {
+          console.error(`❌ No image thumbnail found for title: "${searchObj.term}"`);
           return false;
       }
 
@@ -63,7 +61,7 @@ async function run() {
   for (const s of searches) {
     await searchAndDownload(s);
   }
-  console.log("Done fetching images.");
+  console.log("Done fetching exact images.");
 }
 
 run();

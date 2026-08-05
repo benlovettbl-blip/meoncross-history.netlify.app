@@ -160,7 +160,7 @@
               }
             ],
             "image": "/images/gw_gavrilo_princip.jpg",
-            "image_alt": "Arrest of Gavrilo Princip in Sarajevo"
+            "image_alt": "Portrait of Gavrilo Princip"
           },
           {
             "title": "Historical Interpretations: Why did they go?",
@@ -333,7 +333,7 @@
               }
             ],
             "image": "/images/gw_trench_diagram.jpg",
-            "image_alt": "Diagram of a typical First World War trench system"
+            "image_alt": "Aerial reconnaissance photograph of a zig-zag trench system"
           },
           {
             "title": "Extension & Local History Task",
@@ -345,8 +345,12 @@
                 "model": "Student independent research based on specific prompts."
               },
               {
-                "text": "<strong>Part D: Edexcel Source Utility</strong><br>Study Source A (the photograph of the flooded trench above) and Interpretation 1 (a historian writing in 2014 stating: 'The British high command callously ignored the horrific conditions of the mud').<br><br>How useful are Source A and Interpretation 1 for an inquiry into the conditions on the Western Front? (8 marks)",
-                "model": "Source A is highly useful because it is a contemporary photograph that provides visual evidence of the horrific, water-logged conditions soldiers endured, directly causing trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line. Interpretation 1 is also useful because it provides a historian's overview, arguing that the commanders ignored these conditions. However, this interpretation can be challenged because we know generals did attempt to solve the mud problem by building duckboards and deeper dugouts."
+                "text": "<strong>Part C: Edexcel Source Utility</strong><br>Study Source A (the photograph of the flooded trench).<br><br>How useful is Source A for an inquiry into the conditions on the Western Front? (8 marks)",
+                "model": "Source A is highly useful because it is a contemporary photograph providing visual evidence of the horrific, water-logged conditions soldiers endured, which directly caused trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line."
+              },
+              {
+                "text": "<strong>Part D: Evaluating Interpretations</strong><br>Study Interpretation 1 (a historian writing in 2014 stating: 'The British high command callously ignored the horrific conditions of the mud').<br><br>How far do you agree with Interpretation 1 about the attitude of the high command? Explain your answer. (16 marks + 4 SPaG)",
+                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
               }
             ]
           }
@@ -561,9 +565,12 @@
             "text": "For decades, the popular memory of the First World War was heavily Eurocentric—dominated by images of white British soldiers in the mud of the Western Front. Read the two contrasting interpretations below to understand how modern historians are challenging this narrative.<br><br><blockquote><strong>Interpretation A: The Traditional (Eurocentric) Focus</strong><br><em>\"The Great War was a European tragedy, fought on the muddy fields of Flanders and the plains of France. It was here, in the brutal stalemate of the trenches, that the British soldier endured the ultimate test of endurance and secured the victory of the civilized world.\"</em><br>— <em>Adapted from the typical narrative focus of mid-20th-century British school textbooks</em></blockquote><br><br><blockquote><strong>Interpretation B: The Modern Global View</strong><br><em>\"The First World War was a truly global conflict... Yet in the decades that followed, the presence of hundreds of thousands of black and Asian soldiers was subtly marginalized. This historical amnesia was no accident. The narrative of a 'white man’s war' was constructed to preserve the racial hierarchy of the Empire.\"</em><br>— <em>Adapted from David Olusoga, The World's War (2014)</em></blockquote>",
             "tasks": [
               {
-                "type": "text",
-                "text": "<strong>Part B: Edexcel Source Utility</strong><br>Study Source A (the photograph of the British Indian Army above) and Interpretation B (David Olusoga's text).<br><br>How useful are Source A and Interpretation B for an inquiry into the global nature of the First World War? (8 marks)",
-                "model": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. Interpretation B is useful because it provides a modern historian's view (Olusoga) that the contribution of these imperial troops was deliberately marginalized in post-war memory to preserve racial hierarchies. Together, they are highly useful for understanding both the reality of the global conflict and how it has been remembered."
+                "text": "<strong>Part C: Edexcel Source Utility</strong><br>Study Source A (the photograph of the British Indian Army).<br><br>How useful is Source A for an inquiry into the global nature of the First World War? (8 marks)",
+                "model": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. However, it is limited because it only shows one specific regiment at one moment in time."
+              },
+              {
+                "text": "<strong>Part D: Evaluating Interpretations</strong><br>Study Interpretation 1 (David Olusoga's text arguing that the contribution of imperial troops was deliberately marginalized in post-war memory to preserve racial hierarchies).<br><br>How far do you agree with Interpretation 1 about the memory of the Empire's contribution? Explain your answer. (16 marks + 4 SPaG)",
+                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree by noting how post-war memorials and dominant narratives heavily focused on white British soldiers (e.g., the 'Tommies'), often leaving colonial troops out of the popular national memory.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that there are large monuments, such as the India Gate, dedicated to colonial troops, so they were not entirely erased.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on Olusoga's view."
               },
               {
                 "type": "text",
@@ -730,9 +737,12 @@
             "text": "<p>In 1918, Parliament passed the Representation of the People Act, granting the vote to women over 30 who met property qualifications. But did the war truly change the social status of women, or was it a temporary illusion?</p><blockquote><strong>Interpretation A: The Optimistic View (War as an engine of change)</strong><br><em>\"The First World War was a massive engine of social change. By proving they could do the heavy, highly skilled industrial work previously reserved for men, women shattered the Victorian myth of female weakness. Their vital contribution to the Home Front made it politically impossible for the government to deny them the vote in 1918.\"</em><br>— <em>Adapted from Arthur Marwick, The Deluge (1965)</em></blockquote><br><br><blockquote><strong>Interpretation B: The Feminist Revisionist View (The temporary illusion)</strong><br><em>\"The idea that the war liberated women is a myth. The changes were strictly temporary and driven by desperate national necessity, not a desire for equality. Women were paid less than men for the exact same work. When the war ended, women were immediately fired and forced back into domestic service to give jobs to returning soldiers. Furthermore, the 1918 vote was given to older, middle-class women—not the young, working-class Canary Girls who actually risked their lives in the factories.\"</em><br>— <em>Adapted from Gail Braybon, Women Workers in the First World War (1981)</em></blockquote>",
             "tasks": [
               {
-                "type": "text",
-                "text": "<strong>Part B: Edexcel Source Utility</strong><br>Study Source A (the photograph of the Munitionettes above) and Interpretation A (Arthur Marwick's text).<br><br>How useful are Source A and Interpretation A for an inquiry into the impact of the war on women? (8 marks)",
-                "model": "Source A is highly useful as contemporary evidence showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, it might be a staged propaganda photograph. Interpretation A is useful because Marwick provides a historian's overview, arguing the war permanently liberated women. However, this interpretation is limited, as we know many women were forced to give up these jobs when men returned in 1919."
+                "text": "<strong>Part C: Edexcel Source Utility</strong><br>Study Source A (the painting of the Munitionettes).<br><br>How useful is Source A for an inquiry into the impact of the war on women? (8 marks)",
+                "model": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
+              },
+              {
+                "text": "<strong>Part D: Evaluating Interpretations</strong><br>Study Interpretation 1 (Arthur Marwick's text arguing that the war permanently liberated women).<br><br>How far do you agree with Interpretation 1 about the impact of the war on women? Explain your answer. (16 marks + 4 SPaG)",
+                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Marwick by arguing that women gained financial independence, left domestic service, and proved they could do 'men's work', leading to the 1918 Representation of the People Act.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by pointing out that this 'liberation' was temporary; many women were forced out of these factories when the men returned in 1919, and the 1918 Act only gave the vote to women over 30 who met property qualifications.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on whether the war was a genuine turning point for women."
               },
               {
                 "type": "text",
@@ -741,7 +751,7 @@
               }
             ],
             "image": "/images/gw_munitionettes.jpg",
-            "image_alt": "Female Munitionettes working in a factory"
+            "image_alt": "Painting of female Munitionettes working in a factory"
           }
         ],
         "quiz": [
@@ -899,9 +909,12 @@
             "text": "Did the Treaty of Versailles directly cause World War II because it was too harsh, or because the Allies failed to enforce it?\n\n<blockquote><strong>Interpretation A: The Traditional View (The Harsh Peace)</strong><br>\n<em>\"If we aim deliberately at the impoverishment of Central Europe, vengeance, I dare predict, will not limp... we shall destroy the economic system of Europe, and a war which will dwarf the one we have just survived will not be far off. This is a Carthaginian peace [a brutal, destructive peace].\"</em><br>\n— <em>Adapted from John Maynard Keynes, The Economic Consequences of the Peace (1919). Keynes was a British economist at the conference who quit in disgust.</em></blockquote>\n\n<blockquote><strong>Interpretation B: The Modern Revisionist View (The Enforcement Failure)</strong><br>\n<em>\"The Treaty of Versailles was not excessively harsh. Germany lost territory, but it remained the largest and wealthiest nation in central Europe. When compared to the brutal treaty Germany had forced upon Russia in 1918, Versailles was quite moderate. The true tragedy was not the treaty itself, but that the Allies later lacked the unity and will to enforce it.\"</em><br>\n— <em>Adapted from Margaret MacMillan, Peacemakers (2001)</em></blockquote>",
             "tasks": [
               {
-                "type": "text",
-                "text": "<strong>Part B: Edexcel Source Utility</strong><br>Study Source A (the political cartoon above) and Interpretation A (John Maynard Keynes).<br><br>How useful are Source A and Interpretation A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
-                "model": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased and ignores German suffering. Interpretation A is useful because Keynes, who was present at the conference, argues the economic reparations were too harsh and would ruin Europe. Together, they show the tension between public desire for revenge and the economic reality of a ruined continent."
+                "text": "<strong>Part C: Edexcel Source Utility</strong><br>Study Source A (the political cartoon).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
+                "model": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
+              },
+              {
+                "text": "<strong>Part D: Evaluating Interpretations</strong><br>Study Interpretation 1 (John Maynard Keynes arguing the economic reparations were too harsh and would ruin Europe).<br><br>How far do you agree with Interpretation 1 about the Treaty of Versailles? Explain your answer. (16 marks + 4 SPaG)",
+                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Keynes by discussing the massive £6.6 billion reparations figure, which crippled the German economy and arguably paved the way for future instability.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing the Treaty was actually quite lenient compared to what Germany did to Russia at the Treaty of Brest-Litovsk, and that France needed the reparations to rebuild its destroyed country.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on the fairness of the treaty."
               },
               {
                 "type": "text",
@@ -1166,21 +1179,21 @@
             ]
           },
           {
-            "text": "<strong>Part C: Evaluating Source Utility & Interpretations (8 Marks)</strong><br>Study Source A (the photograph of the 'Canary Girls' in the munitions factory) and Interpretation 1 (Arthur Marwick's view that the war liberated women).",
+            "text": "<strong>Part C: Evaluating Source Utility (8 Marks)</strong><br>Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
             "image": "/images/gw_munitionettes.jpg",
-            "image_alt": "Women working in a munitions factory",
+            "image_alt": "Painting of women working in a munitions factory",
             "tasks": [
               {
-                "text": "How useful are Source A and Interpretation 1 for an inquiry into the impact of the First World War on women? (8 marks)",
-                "model": "Source A is highly useful for showing the reality of the Home Front, as it is a photograph from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a photograph captures a single moment and may have been staged for propaganda to encourage recruitment. Interpretation 1 is also very useful because it provides a historian's overview of the long-term impact, arguing the war permanently liberated women. However, it can be challenged by the fact that many women were forced out of these jobs when the men returned in 1919."
+                "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
+                "model": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
               }
             ]
           },
           {
-            "text": "<strong>Part D: The Judgement Essay (16 Marks)</strong><br><em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",
+            "text": "<strong>Part D: Evaluating Interpretations (20 Marks)</strong><br>Study Interpretation 1. <em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",
             "tasks": [
               {
-                "text": "How far do you agree with this statement? Explain your answer using your own knowledge. (12 marks + 4 SPaG)",
+                "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
                 "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
               }
             ]
