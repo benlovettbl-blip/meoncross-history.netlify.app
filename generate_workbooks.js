@@ -186,8 +186,21 @@ allDirs.forEach(unitId => {
       <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
       <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
     </div>
+    `;
 
+    if (unitData.hero_image) {
+      let heroImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(unitData.hero_image, 2) : `../..${unitData.hero_image.startsWith('/') ? unitData.hero_image : '/' + unitData.hero_image}`;
+      html += `
+      <div style="margin: 40px auto 20px auto; text-align: center; max-width: 85%;">
+        <img src="${heroImageSrc}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #cbd5e1;">
+        ${unitData.hero_caption ? `<p style="font-size: 11pt; color: #475569; margin-top: 15px; font-style: italic;">${unitData.hero_caption}</p>` : ''}
+      </div>
+      `;
+    }
+
+    html += `
     <!-- Tracker Table on its own page -->
+    <div style="page-break-before: always;"></div>
     <h2 style="margin-bottom: 25px; margin-top: 60px; font-size: 24pt; text-align: center; border-bottom: none;">Progress & Assessment Tracker</h2>
     <div style="margin: 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">

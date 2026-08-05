@@ -1235,22 +1235,34 @@ export function initializeApp(unitData) {
   
   // Global markdown formatter for inline text and bullet points
   window.formatBold = function(text) {
-    if (!text) return '';
-    let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    parsed = parsed.replace(/\\n/g, '\n');
-    
-    // Handle lists
-    if (parsed.match(/(^|\n)[\*\-]\s/)) {
-      parsed = parsed.replace(/(^|\n)[\*\-]\s+(.*)/g, '$1<li>$2</li>');
-      parsed = parsed.replace(/(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g, '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>');
-    }
-    
-    parsed = parsed.replace(/\n/g, '<br>');
-    // Clean up <br> around lists
-    parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
-    
-    return parsed;
-  };
+      if (!text) return '';
+      let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Handle blockquotes
+      parsed = parsed.replace(/(^|\n)> (.*?)(?=\n|$)/g, '$1<blockquote style="border-left: 4px solid #cbd5e1; padding-left: 15px; margin-left: 0; color: #475569; font-style: italic; background: rgba(248, 250, 252, 0.5); padding-top: 5px; padding-bottom: 5px; border-radius: 0 4px 4px 0;">$2</blockquote>');
+      // Handle headers
+      parsed = parsed.replace(/(^|\n)### (.*?)(?=\n|$)/g, '$1<h4 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h4>');
+      parsed = parsed.replace(/(^|\n)## (.*?)(?=\n|$)/g, '$1<h3 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h3>');
+      
+      parsed = parsed.replace(/\\n/g, '\n');
+      
+      // Handle lists
+      if (parsed.match(/(^|\n)[\*\-]\s/)) {
+        parsed = parsed.replace(/(^|\n)[\*\-]\s+(.*)/g, '$1<li>$2</li>');
+        parsed = parsed.replace(/(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g, '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>');
+      }
+
+      // Handle italics (after lists so we don't conflict with bullet points)
+      parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
+      
+      parsed = parsed.replace(/\n/g, '<br>');
+      // Clean up <br> around elements
+      parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
+      parsed = parsed.replace(/<br><blockquote/g, '<blockquote').replace(/<\/blockquote><br>/g, '</blockquote>');
+      parsed = parsed.replace(/<br><h/g, '<h').replace(/<\/h4><br>/g, '</h4>').replace(/<\/h3><br>/g, '</h3>');
+      
+      return parsed;
+    };
   
   // Render Lesson Content
     window.renderLessonByIndex = function(index, skipHistory = false) {
@@ -1621,9 +1633,12 @@ export function initializeApp(unitData) {
             </summary>
             <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
       `;
-      lesson.do_now.items.forEach((item, index) => {
-        let qText = item.question;
-        let aText = item.answer;
+      const doNowItems = lesson.do_now.items || lesson.do_now.tasks || [];
+      doNowItems.forEach((item, index) => {
+        let qText = item.question || item.event || '';
+        let aText = item.answer || item.year || '';
+        if (typeof qText !== 'string') qText = String(qText);
+        if (typeof aText !== 'string') aText = String(aText);
         if (window.currentUnitId) {
           qText = qText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
           aText = aText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
@@ -1902,8 +1917,19 @@ export function initializeApp(unitData) {
           themeHeadingHtml = `<h4 style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
         }
 
+        let imageHtml = '';
+        if (block.image) {
+           imageHtml = `
+             <div class="narrative-image-container" style="text-align: center; margin: 20px 0;">
+               <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1;">
+               ${block.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${block.image_alt}</div>` : ''}
+             </div>
+           `;
+        }
+
         html += `
           <div class="standard-narrative-container">
+            ${imageHtml}
             <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
               <div class="para-number">${index + 1}</div>
               <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
@@ -1987,11 +2013,11 @@ export function initializeApp(unitData) {
              const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
              html += `
                <div style="margin-bottom: 10px;">
-                 <strong>${qPrefix}${task.text}</strong>
-                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="margin-left: 10px; padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + task.text)}</div>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
                  ${starterDiv}
-                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03;">${task.model}</div>
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model)}</div>
                </div>
              `;
           });
@@ -2208,23 +2234,36 @@ export function initializeApp(unitData) {
       html += `</div>`;
     }
 
-    if (lesson.flashcards && lesson.flashcards.length > 0) {
+    let deck = null;
+    if (lesson.vocab && lesson.vocab.length > 0) {
+      deck = lesson.vocab;
+    } else if (lesson.key_vocabulary && lesson.key_vocabulary.length > 0) {
+      deck = lesson.key_vocabulary;
+    } else if (lesson.flashcards && lesson.flashcards.length > 0) {
+      if (lesson.flashcards[0].term || lesson.flashcards[0].word) {
+         deck = lesson.flashcards;
+      }
+    }
+
+    if (deck) {
       html += `
         <div class="phase-card">
           <div class="phase-title">Consolidation & Recall</div>
           <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
           <div class="flashcard-deck">
       `;
-      lesson.flashcards.forEach(fc => {
+      deck.forEach(fc => {
+        let t = fc.term || fc.word || fc.title || '';
+        let d = fc.definition || fc.meaning || fc.desc || '';
         html += `
           <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
             <div class="flashcard-inner">
               <div class="flashcard-face flashcard-front">
-                <h4>${fc.term}</h4>
+                <h4>${t}</h4>
                 <p>Tap to reveal</p>
               </div>
               <div class="flashcard-face flashcard-back">
-                ${fc.definition}
+                ${d}
               </div>
             </div>
           </div>

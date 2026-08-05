@@ -54,8 +54,9 @@
       <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
       <div style="width: 100%; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
     </div>
-
+    
     <!-- Tracker Table on its own page -->
+    <div style="page-break-before: always;"></div>
     <h2 style="margin-bottom: 25px; margin-top: 60px; font-size: 24pt; text-align: center; border-bottom: none;">Progress & Assessment Tracker</h2>
     <div style="margin: 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
@@ -98,22 +99,22 @@
       <div style="display: flex; gap: 10px; align-items: center;">
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-star" style="color: #eab308;"></i> 4 Marks</span>
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-regular fa-clock" style="color: #3b82f6;"></i> 5 mins</span>
-        <button onclick="window.toggleExamTimer('card-kdlpqpndk', 5)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
+        <button onclick="window.toggleExamTimer('card-ha7nfiqi2', 5)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
       </div>
     </div>
     
-    <div id="timer-container-card-kdlpqpndk" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
+    <div id="timer-container-card-ha7nfiqi2" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center; gap: 15px;">
-        <button onclick="window.adjustExamTimer('card-kdlpqpndk', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
-        <div id="timer-display-card-kdlpqpndk" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">5:00</div>
-        <button onclick="window.adjustExamTimer('card-kdlpqpndk', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
+        <button onclick="window.adjustExamTimer('card-ha7nfiqi2', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
+        <div id="timer-display-card-ha7nfiqi2" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">5:00</div>
+        <button onclick="window.adjustExamTimer('card-ha7nfiqi2', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div style="flex-grow: 1; margin: 0 25px; height: 8px; background: #dbeafe; border-radius: 4px; overflow: hidden; position: relative;">
-        <div id="timer-progress-card-kdlpqpndk" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
+        <div id="timer-progress-card-ha7nfiqi2" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
       </div>
       <div style="display: flex; gap: 10px;">
-        <button id="timer-start-btn-card-kdlpqpndk" onclick="window.startExamTimer('card-kdlpqpndk')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
-        <button onclick="window.resetExamTimer('card-kdlpqpndk', 5)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+        <button id="timer-start-btn-card-ha7nfiqi2" onclick="window.startExamTimer('card-ha7nfiqi2')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
+        <button onclick="window.resetExamTimer('card-ha7nfiqi2', 5)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
       </div>
     </div>
     
@@ -155,22 +156,22 @@
       <div style="display: flex; gap: 10px; align-items: center;">
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-star" style="color: #eab308;"></i> 12 Marks</span>
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-regular fa-clock" style="color: #3b82f6;"></i> 15-18 mins</span>
-        <button onclick="window.toggleExamTimer('card-f60pkynpj', 18)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
+        <button onclick="window.toggleExamTimer('card-twlkolc41', 18)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
       </div>
     </div>
     
-    <div id="timer-container-card-f60pkynpj" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
+    <div id="timer-container-card-twlkolc41" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center; gap: 15px;">
-        <button onclick="window.adjustExamTimer('card-f60pkynpj', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
-        <div id="timer-display-card-f60pkynpj" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">18:00</div>
-        <button onclick="window.adjustExamTimer('card-f60pkynpj', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
+        <button onclick="window.adjustExamTimer('card-twlkolc41', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
+        <div id="timer-display-card-twlkolc41" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">18:00</div>
+        <button onclick="window.adjustExamTimer('card-twlkolc41', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div style="flex-grow: 1; margin: 0 25px; height: 8px; background: #dbeafe; border-radius: 4px; overflow: hidden; position: relative;">
-        <div id="timer-progress-card-f60pkynpj" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
+        <div id="timer-progress-card-twlkolc41" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
       </div>
       <div style="display: flex; gap: 10px;">
-        <button id="timer-start-btn-card-f60pkynpj" onclick="window.startExamTimer('card-f60pkynpj')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
-        <button onclick="window.resetExamTimer('card-f60pkynpj', 18)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+        <button id="timer-start-btn-card-twlkolc41" onclick="window.startExamTimer('card-twlkolc41')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
+        <button onclick="window.resetExamTimer('card-twlkolc41', 18)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
       </div>
     </div>
     
@@ -212,22 +213,22 @@
       <div style="display: flex; gap: 10px; align-items: center;">
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-star" style="color: #eab308;"></i> 16+4 Marks</span>
         <span style="background: #f1f5f9; color: #475569; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"><i class="fa-regular fa-clock" style="color: #3b82f6;"></i> 25-30 mins</span>
-        <button onclick="window.toggleExamTimer('card-nht60lpz6', 30)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
+        <button onclick="window.toggleExamTimer('card-z279nx2wu', 30)" style="background: #e2e8f0; color: #475569; border: none; border-radius: 20px; padding: 6px 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s;" onmouseover="this.style.background='#cbd5e1'" onmouseout="this.style.background='#e2e8f0'"><i class="fa-solid fa-stopwatch" style="color: #6366f1;"></i> Timer</button>
       </div>
     </div>
     
-    <div id="timer-container-card-nht60lpz6" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
+    <div id="timer-container-card-z279nx2wu" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px; align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center; gap: 15px;">
-        <button onclick="window.adjustExamTimer('card-nht60lpz6', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
-        <div id="timer-display-card-nht60lpz6" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">30:00</div>
-        <button onclick="window.adjustExamTimer('card-nht60lpz6', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
+        <button onclick="window.adjustExamTimer('card-z279nx2wu', -1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-minus"></i></button>
+        <div id="timer-display-card-z279nx2wu" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: bold; color: #1e3a8a; width: 110px; text-align: center;">30:00</div>
+        <button onclick="window.adjustExamTimer('card-z279nx2wu', 1)" style="background: white; border: 1px solid #93c5fd; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1d4ed8; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='white'"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div style="flex-grow: 1; margin: 0 25px; height: 8px; background: #dbeafe; border-radius: 4px; overflow: hidden; position: relative;">
-        <div id="timer-progress-card-nht60lpz6" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
+        <div id="timer-progress-card-z279nx2wu" style="width: 100%; height: 100%; background: #3b82f6; transition: width 1s linear;"></div>
       </div>
       <div style="display: flex; gap: 10px;">
-        <button id="timer-start-btn-card-nht60lpz6" onclick="window.startExamTimer('card-nht60lpz6')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
-        <button onclick="window.resetExamTimer('card-nht60lpz6', 30)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+        <button id="timer-start-btn-card-z279nx2wu" onclick="window.startExamTimer('card-z279nx2wu')" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'"><i class="fa-solid fa-play"></i> Start</button>
+        <button onclick="window.resetExamTimer('card-z279nx2wu', 30)" style="background: #64748b; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#64748b'"><i class="fa-solid fa-rotate-right"></i> Reset</button>
       </div>
     </div>
     
@@ -468,4 +469,4 @@ Some towns tried to enforce early quarantine laws, isolating newcomers for 40 da
         </tbody>
       </table>
     </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-05 07:46:54 UTC | Unit: edexcel_medicine</div></body></html>
+    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-05 16:07:45 UTC | Unit: edexcel_medicine</div></body></html>
