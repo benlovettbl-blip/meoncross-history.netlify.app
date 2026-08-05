@@ -90,3 +90,7 @@ Unless the user explicitly asks you to work globally or sync all units, you are 
 
 ## Automated Image Verification (Anti-Corruption)
 Before pushing any code to GitHub or triggering a Netlify deployment, you MUST automatically run `node verify_images.js`. This script physically checks the `public/images/` directory to ensure no Wikipedia downloads have silently failed (e.g. 403 HTML error pages masquerading as `.jpg` files). If the script flags any broken files, you must halt the deployment, fix the broken files using the updated `fetch_wikimedia_images.js` script or manual fallback, and re-run the verification until it passes cleanly.
+
+
+## Automatic Visual Source Inspection
+Whenever you fetch, download, or add a new visual source (image) to a lesson, you MUST automatically use your iew_file tool to visually inspect the downloaded image. You must verify that the image content perfectly matches the intended historical subject, caption, and alt text. If the image is incorrect, you must re-fetch a correct image or update the descriptive text to accurately reflect the source (e.g., specifying if it is a painting rather than a photograph). This must be done proactively before completing the task.

@@ -1085,8 +1085,8 @@ export const unitData = {
               "model": "<em>Teacher Note: These are open-ended masterclass extension tasks. Ensure pupils are utilizing the provided links and primary sources to develop their independent historical research skills.</em>"
             }
           ],
-          "image": "/images/gw_thiepval.jpg",
-          "image_alt": "The Thiepval Memorial to the Missing of the Somme"
+          "image": "/images/stubbington_memorial_1.jpg",
+          "image_alt": "The wooden Stubbington War Memorial on the village green"
         }
       ],
       "quiz": [
