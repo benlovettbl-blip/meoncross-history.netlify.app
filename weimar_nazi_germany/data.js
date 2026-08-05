@@ -517,7 +517,25 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 1, which argues that the transition of power in November 1918 was fundamentally a \"superficial compromise that failed to achieve a deep, revolutionary transformation,\" allowing \"old, anti-democratic power structures\" to survive. While the establishment of a republic was a significant step, the manner of its birth created inherent weaknesses that ultimately contributed to its fragility.</p><p>Interpretation 1 is strongly supported by historical evidence, particularly the crucial Ebert-Groener Pact, as highlighted in Source C. Friedrich Ebert, fearing the widespread radicalism and \"complete chaos\" described in Source B, made a pragmatic but ultimately damaging alliance with General Groener and the conservative army. This meant that the military, a powerful institution deeply rooted in the imperial past and largely anti-democratic in its outlook, was preserved and even given a mandate to suppress left-wing challenges. This was not a revolutionary transformation but a compromise that left the army's power and influence largely untouched. Furthermore, as Interpretation 1 correctly states, the judiciary and civil service also remained largely unreformed. Judges, many of whom were conservative monarchists, often showed leniency towards right-wing extremists (e.g., Hitler after the Munich Putsch) while harshly punishing left-wingers. This created a \"republic without republicans,\" where key state institutions were staffed by individuals who harboured little loyalty to the democratic system, actively undermining it from within.</p><p>While Interpretation 2 argues that the revolution was a \"genuine and hard-fought victory for democratic forces\" that prevented a \"violent civil war and a communist takeover,\" this view, while acknowledging the immediate challenges, overlooks the long-term consequences of the compromises made. It is true that Ebert's actions likely prevented a full-scale communist revolution and a bloody civil war, and the establishment of a parliamentary republic with universal suffrage was a democratic achievement. The workers' councils, as Interpretation 2 suggests, could be seen as a temporary measure to secure political liberty. However, the cost of this immediate stability was the preservation of powerful, anti-democratic elements within the state. The army, for instance, despite its oath to the Republic, remained a state within a state, often acting independently and even against the government's interests, as seen during the Kapp Putsch in 1920 when it refused to fire on fellow soldiers.</p><p>In conclusion, while the Social Democratic leadership faced immense pressure and made decisions that ensured the immediate survival of the state, Interpretation 1's assessment of a \"superficial compromise\" is more accurate in explaining the long-term fragility of the Weimar Republic. The failure to dismantle the old imperial structures and purge anti-democratic elites meant that the Republic was built on shaky foundations, constantly undermined by the very institutions it relied upon for stability. The \"genuine democratic victory\" was therefore incomplete and ultimately fragile, as the survival of these anti-democratic elements proved to be a fatal weakness that contributed to its eventual downfall in 1933.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/",
+          "title": "Make Germany Pay Twentieth Century History"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
+          "title": "6 Making Germany Pay History File"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
+          "title": "Hitlers Rise The Colour Films The Treaty Of Versailles Channel 4"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-the-end-of-ww1/",
+          "title": "Bbc Two Nazis A Warning From History Helped Into Power The End Of Ww1"
+        }
+      ]
     },
     {
       "id": "lesson_1_2",
@@ -559,6 +577,14 @@ const unitData = {
           "duration": "20 mins",
           "viewing_task": "Note down the key financial and territorial penalties imposed on Germany.",
           "model_answer": "<b>Financial:</b> Germany was forced to pay £6.6 billion in reparations (mostly to France and Belgium).<br><b>Territorial:</b> They lost all overseas colonies, Alsace-Lorraine was returned to France, and the Polish Corridor was created, splitting Germany in two."
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-opposition-to-the-weimar-republic/",
+          "title": "Bbc Two Nazis A Warning From History Helped Into Power Opposition To The Weimar Republic"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-freikorps/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Freikorps"
         }
       ],
       "do_now": {
@@ -1363,7 +1389,13 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 2, which argues that the economic prosperity of the mid-1920s was a 'fragile, superficial illusion built on quicksand foundations'. While there were undeniable improvements during Stresemann's tenure, these masked fundamental weaknesses that ultimately made the Republic vulnerable to the global economic downturn.</p><p>Interpretation 2's central argument about the 'dangerous over-dependence on short-term US loans' is powerfully supported by historical context and Source B. The Dawes Plan (1924) and later the Young Plan (1929) were crucial for Germany to meet reparations and rebuild its economy, but they relied heavily on American credit. As Source B, a private letter from Stresemann himself in 1928, warns, 'If our American creditors should ever decide to call in their short-term loans, a very large section of our industrial and commercial economy will collapse immediately.' This proved tragically prophetic with the Wall Street Crash in 1929, which led to the immediate withdrawal of these loans, plunging Germany into the Great Depression. This external vulnerability, inherent in the structure of the recovery, confirms the 'quicksand foundations' described by Interpretation 2.</p><p>Furthermore, Interpretation 2 accurately points to unresolved 'structural weaknesses'. Despite industrial growth, unemployment never fell below 1.3 million, indicating persistent issues in the labour market. Crucially, the agricultural sector was in a deep depression throughout the 'Golden Years', with many farmers struggling with debt and low prices. This meant that a significant portion of the German population did not experience the 'genuine stability' lauded by Interpretation 1 and Source C. Small family businesses also continued to face challenges, unable to compete with larger, modernised industries. These disparities highlight that the recovery was uneven and did not benefit all segments of society, creating pockets of discontent that extremist parties would later exploit.</p><p>However, it is important to acknowledge the strengths of Interpretation 1. It correctly identifies significant achievements under Stresemann, such as the introduction of the Rentenmark, which ended hyperinflation, and diplomatic successes like the Locarno Pact (1925) and Germany's entry into the League of Nations (1926). These actions did restore national prestige and foster a sense of stability, leading to a 'drastic fall in votes for radical parties', as noted in Interpretation 1. Source C, from a German financial newspaper, reflects this positive sentiment, reporting 'genuine stability' and 'soaring industrial production'. For a time, the Republic did appear safer, and coalition parties worked together more constructively than in the chaotic early years. These achievements were real and provided a much-needed respite for the Republic.</p><p>Despite these successes, the underlying fragility described in Interpretation 2 ultimately proved more significant. The political stability was also somewhat superficial; while extremist votes fell, anti-democratic sentiment remained strong among conservative elites and sections of the military, as seen in the continued reverence for figures like Hindenburg. Stresemann's death in October 1929 removed the Republic's most capable statesman just as the global economic storm was breaking, further exposing its inherent weaknesses. Therefore, while the 'Golden Years' brought a period of relative calm and progress, it was a recovery built on precarious foundations, making Interpretation 2 a more accurate assessment of its long-term viability.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
+          "title": "6 Making Germany Pay History File (Start at 15:00)"
+        }
+      ]
     },
     {
       "id": "lesson_1_4",
@@ -2161,7 +2193,13 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 2 that the Nazi Party's early appeal was primarily driven by the \"hypnotic, personal magnetism of Adolf Hitler\" and his \"unique oratorical star power.\" While the 25-Point Programme provided the ideological framework, it was Hitler's extraordinary ability to communicate and inspire that truly brought the message to life and attracted a dedicated following in the chaotic early years of the Weimar Republic.</p><p>Interpretation 2 accurately captures the essence of Hitler's early appeal. Source B, a contemporary diary entry, vividly illustrates this, describing how Hitler could silence a beer hall, move audiences to tears, and be perceived as the \"savior of Germany.\" This emotional connection, fostered by his \"intense gaze and violent hand gestures,\" was crucial in a period of national humiliation and political instability. Hitler was a master of theatrical delivery, rehearsing his speeches to project an image of strength and conviction, as Interpretation 2 suggests. His ability to articulate the widespread anger against the Treaty of Versailles, the \"November Criminals,\" and the perceived weakness of the Weimar government, even if the solutions were simplistic, resonated deeply. His personal charisma was so potent that he was able to assert absolute leadership over the nascent movement, as evidenced by his successful power struggle within the DAP in 1921, becoming the Führer of the party.</p><p>However, it is also important to acknowledge the validity of Interpretation 1, which argues that the \"targeted appeal of its 25-Point Programme\" was a \"fundamental driver.\" Source C, the official programme, clearly shows how the Nazis combined aggressive nationalism, extreme anti-Semitism, and socialist welfare promises. This \"catch-all\" approach offered something to various disgruntled groups: national pride to demobilized soldiers, economic security to the lower middle class, and a scapegoat in the form of Jews for those seeking someone to blame for Germany's woes. Without this ideological content, Hitler's oratory would have lacked substance. The programme provided the specific grievances and promises that Hitler could then amplify and deliver with his unique style. For example, the demand for the \"destruction of the Treaty of Versailles\" (Source C) was a powerful rallying cry that Hitler repeatedly used to tap into national resentment.</p><p>Ultimately, while the 25-Point Programme provided the necessary ideological content, it was Hitler's charismatic oratory that served as the indispensable delivery mechanism. In a politically charged and emotionally volatile environment, the raw power of his speeches, combined with the physical presence of the SA (as mentioned in Interpretation 2), created an atmosphere of both excitement and intimidation. Many Germans were not necessarily drawn to every single point of the programme but were captivated by Hitler's promise of a strong leader who could restore Germany's pride and order. Therefore, while the programme was essential, it was Hitler's unique ability to articulate its message and inspire belief that was the primary factor in the Nazi Party's early growth. His personal magnetism transformed a small, obscure group into a significant political force, laying the groundwork for its future expansion.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-stormtroopers/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Stormtroopers"
+        }
+      ]
     },
     {
       "id": "lesson_2_2",
@@ -2528,7 +2566,17 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 2 that the period between 1924 and 1928 was a vital era of party reorganization for the Nazi Party, despite the outward appearance of political failure. While Interpretation 1 correctly identifies the lack of electoral success and public indifference during these 'Lean Years', it overlooks the crucial internal developments that laid the groundwork for the Nazis' future rise to power.</p><p>Interpretation 2's argument for vital reorganization is strongly supported by historical evidence. Following the failed Munich Putsch in 1923, Hitler's imprisonment provided him with time to reflect and write *Mein Kampf*, which solidified the party's ideology and shifted its strategy from violent revolution to legal political struggle. Upon his release, Hitler systematically rebuilt the party. As Source C indicates, he asserted the \"Führerprinzip\" at the Bamberg Conference in 1926, demanding \"absolute, unquestioning obedience\" and purging internal dissent, particularly from the more socialist-leaning Strasser wing. This created a highly centralized and disciplined party structure, essential for future campaigns. Furthermore, as mentioned in Source B, the party was \"highly organized,\" divided into regional \"Gaue\" with local leaders (Gauleiter), and established various affiliated organizations like the Hitler Youth, the SA, and professional leagues. This bureaucratic and organizational infrastructure, though not immediately yielding electoral dividends, transformed the Nazis from a chaotic paramilitary group into a national political machine capable of reaching different segments of society. This internal strengthening was a strategic success, even if it wasn't visible in election results.</p><p>However, Interpretation 1 also holds significant truth regarding the *external* perception and electoral performance of the Nazi Party during this period. Source B vividly illustrates this, with the local Nazi organizer lamenting, \"Our election results are an absolute disaster; we have won only twelve seats in the Reichstag, and the public completely ignores us.\" This was largely due to the 'Golden Years' of the Weimar Republic under Gustav Stresemann. The introduction of the Rentenmark, the Dawes Plan, and American loans brought economic stability, reducing the widespread discontent that had previously fueled extremist support. Diplomatic successes like the Locarno Pact and Germany's entry into the League of Nations restored national pride, undermining the Nazi narrative of national humiliation. Therefore, from an electoral perspective, the Nazis were indeed an \"irrelevant, failing extremist group\" as Interpretation 1 suggests, struggling to gain traction against a backdrop of relative prosperity and stability. Their vote share remained low, peaking at only 2.6% in the 1928 Reichstag elections.</p><p>In conclusion, while the Nazi Party undeniably experienced a period of limited public support and electoral stagnation – the 'Lean Years' described by Interpretation 1 – this external failure masked a crucial internal transformation. Interpretation 2 correctly identifies this period as vital for reorganization. Hitler's strategic shift, the consolidation of his leadership, and the establishment of a disciplined, centralized party structure were essential preparations. Without this internal groundwork, the Nazis would not have been in a position to exploit the catastrophic economic crisis of the Great Depression from 1929 onwards. Therefore, I agree with Interpretation 2 that these years were a 'vital reorganization' period, even if they appeared as 'political failure' on the surface.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-mein-kampf/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Mein Kampf"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-beer-hall-putsch/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Beer Hall Putsch"
+        }
+      ]
     },
     {
       "id": "lesson_2_3",
@@ -2887,7 +2935,13 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 1 that the growth of Nazi support between 1929 and 1932 was fundamentally caused by the catastrophic economic distress of the Great Depression. My knowledge of the historical context strongly supports the idea that the economic crisis created the essential conditions for the Nazis' surge in popularity. The Wall Street Crash in October 1929 led to the immediate withdrawal of vital US loans, plunging Germany into an unprecedented economic depression. Unemployment skyrocketed from 1.3 million in 1929 to over 6 million by 1932, industrial production halved, and thousands of businesses and banks collapsed. Source C powerfully illustrates this despair, describing the 'young, unemployed men' in Berlin who had 'lost all hope' and felt 'completely abandoned by the Weimar government's welfare cuts.' This widespread economic ruin destroyed the livelihoods and savings of millions, particularly the middle class, who had already suffered hyperinflation in 1923. The Weimar government's inability to respond effectively, with Chancellors like Brüning implementing unpopular austerity measures and relying on Article 48 emergency decrees, further alienated the populace and eroded faith in democracy. Without this profound economic catastrophe, the Nazis, who had been a fringe party during the 'Golden Years' of 1924-29, would almost certainly have remained on the political margins, as Interpretation 1 suggests.</p><p>However, while the economic crisis was the necessary condition, it was not the sole factor, and Interpretation 2 highlights a crucial complementary element. Interpretation 2 argues that the 'primary driver' was 'the unique, charismatic appeal of Adolf Hitler,' who 'brilliantly projected himself as a dynamic, modern, and strong leader.' My knowledge confirms that Hitler's personal leadership and the Nazi Party's sophisticated propaganda were vital in channeling the widespread despair into active support. Source B, from Luise Solmitz's diary, vividly describes Hitler being seen as a 'helper, their savior, their deliverer from unbearable distress' by a massive crowd, demonstrating his powerful emotional connection with the public. Hitler was a master orator, using carefully staged rallies, modern technology like air travel, and simple, repetitive slogans crafted by Joseph Goebbels to present himself as the only leader capable of rescuing Germany. He offered clear scapegoats (Jews, 'November Criminals') and a compelling vision of national renewal, which resonated with a desperate population seeking decisive action. The Nazi Party's effective organisation, built during the 'lean years' of 1924-28, also allowed them to capitalize on the crisis more effectively than other parties, including the Communists, who also saw a rise in support.</p><p>In conclusion, I largely agree with Interpretation 1 that the Great Depression was the fundamental cause, as it created the widespread discontent and desperation that made radical solutions appealing. The economic collapse was the catalyst that destabilized the Republic and pushed millions towards extremist parties. However, Interpretation 2 is also highly valuable because it explains *why* the Nazis, specifically, were so successful in exploiting these conditions. Hitler's charisma, combined with the party's effective propaganda and organisation, was the crucial factor that translated economic despair into millions of votes. Therefore, while the economic crisis opened the door for extremism, it was Hitler's unique leadership and the Nazi Party's strategic exploitation of that crisis that allowed them to walk through it and achieve mass support. Both interpretations offer essential insights into a complex historical phenomenon, but the economic crisis provided the fertile ground upon which Hitler's charisma could flourish.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-sa-and-the-appeal-of-the-nazis-bbc-two/",
+          "title": "Rise Of The Nazis The Sa And The Appeal Of The Nazis Bbc Two"
+        }
+      ]
     },
     {
       "id": "lesson_2_4",
@@ -3252,7 +3306,41 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 2, which argues that Hitler’s appointment as Chancellor was the direct result of secret political scheming and backstairs intrigue, rather than an inevitable outcome. While the Weimar Republic was undoubtedly in a state of severe crisis, the specific actions and miscalculations of conservative elites were the decisive factor in bringing Hitler to power.</p><p>Interpretation 2 is powerfully supported by contemporary evidence and historical context. By late 1932, the Nazi Party was actually facing significant challenges. Their vote had declined in the November 1932 Reichstag elections, and the party was in severe financial difficulties, on the verge of bankruptcy. Many within the party feared its momentum was waning. This directly contradicts the idea of inevitability and suggests that Hitler's path to power was far from assured. Source B, Franz von Papen's letter to Hindenburg, is crucial here. It explicitly reveals the intrigue, with Papen assuring the President that Hitler could be controlled \"like a puppet.\" This demonstrates the deliberate, cynical decision-making of Papen and other conservative elites, such as Oskar von Hindenburg and State Secretary Meissner (the 'Camarilla'), who actively worked to undermine Chancellor Kurt von Schleicher and install Hitler. Their motivation was not a reluctant acceptance of the largest party, but a desire to use Hitler's mass appeal to establish an authoritarian government that would serve their own interests, underestimating his ruthlessness and ambition.</p><p>However, it is important to acknowledge the context provided by Interpretation 1, which highlights the \"collapse of the Weimar democratic system.\" Source C, from an American journalist in December 1932, vividly describes the \"political gridlock,\" \"violent battles,\" and the public's complete loss of faith in democracy. The Great Depression had indeed paralyzed the Reichstag, forcing successive chancellors to rule by unpopular Article 48 emergency decrees. This created an environment of profound instability and disillusionment, making the public receptive to radical solutions and a 'strong man' leader. The fact that the Nazis, despite their decline, remained the largest party in the Reichstag meant they held significant political leverage that could not be entirely ignored by those seeking to form a stable government.</p><p>Nevertheless, the democratic collapse, while creating the *opportunity* for Hitler, did not make his Chancellorship *inevitable*. Chancellor Schleicher was attempting to form a 'querfront' government, appealing to trade unions and the left, which threatened the conservative elites. It was the fear of Schleicher's potential success, combined with Papen's personal vendetta and the elites' desire for a more authoritarian, right-wing government, that led them to actively choose Hitler. They believed they could contain him within a cabinet dominated by conservatives, with only three Nazis initially appointed. This was a fatal miscalculation, as Hitler swiftly dismantled democratic institutions and consolidated his power, proving Papen's 'puppet' theory utterly wrong.</p><p>In conclusion, while the severe crisis of the Weimar Republic (Interpretation 1) provided the backdrop, it was the specific, deliberate political maneuvering and profound misjudgment of the conservative elites (Interpretation 2) that ultimately placed Hitler in the Chancellor's office. The Nazi Party was in a vulnerable position, and without the active intervention and cynical calculations of Papen and his allies, Hitler's path to power was far from guaranteed. Therefore, Interpretation 2 offers a more accurate and nuanced explanation of the final, decisive steps that led to Hitler becoming Chancellor.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/1-the-rise-of-hitler-history-file/",
+          "title": "1 The Rise Of Hitler History File"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-chancellor/",
+          "title": "Bbc Two Nazis A Warning From History Helped Into Power Chancellor"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-chancellor-franz-von-papen-bbc-two/",
+          "title": "Rise Of The Nazis Chancellor Franz Von Papen Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-how-hitler-becomes-chancellor-bbc-two/",
+          "title": "Rise Of The Nazis How Hitler Becomes Chancellor Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-reflections-on-hitlers-rise-to-power-bbc-two/",
+          "title": "Rise Of The Nazis Reflections On Hitlers Rise To Power Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-one-andrew-marrs-history-of-the-world-adolf-hitlers-rise-to-power/",
+          "title": "Bbc One Andrew Marrs History Of The World Adolf Hitlers Rise To Power"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-scheming-general-von-schleicher-bbc-two/",
+          "title": "Rise Of The Nazis Scheming General Von Schleicher Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-mein-kampf-channel-4/",
+          "title": "Hitlers Rise The Colour Films Mein Kampf Channel 4"
+        }
+      ]
     },
     {
       "id": "lesson_3_1",
@@ -3623,7 +3711,25 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 1 that Hitler consolidated his dictatorship primarily by exploiting the Reichstag Fire to construct a legal state of emergency, but I also recognise that this was not the sole factor and that other events were equally crucial. Interpretation 1 accurately highlights the critical initial steps Hitler took to dismantle the Weimar Republic's democratic framework.</p><p>There is strong evidence to support Interpretation 1's claim that the Reichstag Fire was pivotal. On 27 February 1933, the Reichstag building was set ablaze, and Hitler immediately blamed the Communists. As Source B illustrates, Hitler's reaction was swift and decisive, ordering mass arrests and declaring a 'Communist uprising.' This allowed him to persuade President Hindenburg to sign the 'Decree for the Protection of the People and the State' on 28 February. This decree, as Interpretation 1 states, 'dismantled all constitutional civil liberties,' suspending freedom of speech, assembly, and the press. This enabled the Nazis to arrest thousands of political opponents, including Communists and Social Democrats, before the crucial March 1933 election, thereby suppressing opposition and creating an atmosphere of fear. The subsequent passage of the Enabling Act on 23 March 1933, which granted Hitler the power to make laws without the Reichstag for four years, was the legal death knell of Weimar democracy. This act, achieved through intimidation and the absence of opposition, perfectly aligns with Interpretation 1's argument that Hitler used legalistic means to 'permanently ended democracy.'</p><p>However, Interpretation 1's assertion that this was *primarily* how the dictatorship was consolidated is an oversimplification. While the legal framework was dismantled, Hitler's power was not yet absolute. Interpretation 2 offers a crucial counter-argument, stating that 'The decisive turning point... was the elimination of the internal threat through the Night of the Long Knives in June 1934.' My own knowledge confirms that the SA, led by Ernst Röhm, posed a significant threat to Hitler's authority and the regular army. The SA's demands for a 'second revolution' and its desire to absorb the army alienated the conservative military and industrial elites whose support Hitler needed. Source C strongly supports Interpretation 2, showing the 'deep relief' of a senior army officer that Hitler 'crushed the leadership of the SA' and that this action 'earned our absolute, unconditional loyalty.' The Night of the Long Knives, a brutal purge on 30 June 1934, saw the execution of Röhm and other SA leaders, along with other political opponents. This violent act was not 'legalistic' but was essential for securing the army's backing and demonstrating Hitler's ruthless control over his own party.</p><p>Furthermore, the death of President Hindenburg on 2 August 1934 was another critical, non-legalistic event that cemented Hitler's power. Hindenburg was the last constitutional check on Hitler, and his death allowed Hitler to merge the offices of Chancellor and President, declaring himself 'Führer and Reich Chancellor.' This move, subsequently approved by a plebiscite, removed any remaining constitutional constraints and made Hitler the supreme head of state, government, and commander-in-chief of the armed forces. The army then swore a personal oath of allegiance directly to Hitler, as mentioned in Interpretation 2, solidifying his personal dictatorship.</p><p>In conclusion, while Interpretation 1 correctly identifies the crucial role of the Reichstag Fire and the Enabling Act in legally dismantling democracy, it understates the equally vital importance of the violent purges and the death of Hindenburg in securing the army's loyalty and establishing Hitler's absolute personal rule. The creation of the dictatorship was a multi-faceted process involving both the exploitation of legal loopholes and the ruthless application of violence to eliminate rivals and consolidate power across all state institutions. Therefore, I largely agree with Interpretation 1 regarding the initial steps, but I believe Interpretation 2 and additional historical context are necessary for a complete understanding of how the dictatorship was fully consolidated.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/4-hitlers-germany-1933-36-twentieth-century-history/",
+          "title": "4 Hitlers Germany 1933 36 Twentieth Century History"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-unifying-germany/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Unifying Germany"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-reichstag-fire-and-the-enabling-act-bbc-two/",
+          "title": "Rise Of The Nazis The Reichstag Fire And The Enabling Act Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-rise-of-the-dictatorship-bbc-two/",
+          "title": "Rise Of The Nazis Rise Of The Dictatorship Bbc Two"
+        }
+      ]
     },
     {
       "id": "lesson_3_2",
@@ -4008,7 +4114,25 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 1's view that the Nazi regime maintained absolute control through a 'pervasive, terrifying, and all-powerful system of terror'. While Interpretation 2 offers a valuable insight into the mechanisms of public cooperation, the fundamental nature of the Nazi police state was indeed one of systematic intimidation and extra-legal violence, which ultimately underpinned any 'cooperation'.</p><p>Interpretation 1 accurately describes the core elements of this terror. The 'overlapping networks of the SS, the SD, and the Gestapo' were indeed the backbone of the police state. Heinrich Himmler, as head of the SS, consolidated control over all police forces, including the Gestapo (State Secret Police) and the SD (Security Service), creating a formidable apparatus of repression. These organisations operated outside the traditional legal framework, as highlighted by Interpretation 1's mention of 'bypassing the legal system'. Source B provides compelling evidence of this, showing a Gestapo arrest for a trivial remark and detention under 'Schutzhaft' (protective custody), which meant indefinite imprisonment without trial in concentration camps. The establishment of concentration camps like Dachau from 1933 for political prisoners, and later for other 'undesirables', served as a constant, terrifying threat, silencing dissent and forcing outward conformity. The 'People's Courts' (Volksgerichtshof), led by figures like Roland Freisler, were not impartial judicial bodies but instruments of state terror, handing down harsh sentences for political crimes, often without due process. This systematic dismantling of civil liberties, enshrined in the 1933 Decree for the Protection of People and State, created a climate where fear was pervasive and the state's power was absolute.</p><p>However, Interpretation 2's point about 'public cooperation' and the Gestapo being 'understaffed' is also historically accurate and provides an important nuance. The Gestapo, with only around 7,000 officers for a population of 60 million, could not have been 'all-knowing' through direct surveillance alone. Source C, detailing the role of Block Wardens, illustrates how the Nazi Party mobilised its members to monitor and report on their neighbours, extending the state's reach into every street and household. Interpretation 2's claim that 'over 80% of political cases were initiated by unpaid public denunciations' suggests that ordinary citizens played a significant role in identifying and reporting dissent. This cooperation could stem from genuine ideological belief, a desire to gain favour, or, crucially, from fear of being denounced themselves. The terror created by the Gestapo and the concentration camps made people more likely to report others, or at least not to protect them, for fear of being implicated. Therefore, while cooperation was a mechanism, it was often a cooperation born out of, or amplified by, the underlying terror of the state.</p><p>In conclusion, while Interpretation 2 correctly identifies that the police state relied on public involvement to extend its reach, this 'cooperation' was largely a consequence of the 'totalitarian terror' described in Interpretation 1. The fear of arbitrary arrest, concentration camps, and the complete lack of legal protection made both the Gestapo's threats credible and public denunciations potent. The Nazi police state's fundamental nature was one of terror, which then leveraged and exploited public fear and willingness to conform to maintain its comprehensive control. Therefore, Interpretation 1 provides a more accurate and encompassing view of the nature of the Nazi police state.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-political-prisoners-and-concentration-camps/",
+          "title": "Bbc Two Nazis A Warning From History Chaos And Consent Political Prisoners And Concentration Camps"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-gestapo/",
+          "title": "Bbc Two Nazis A Warning From History Chaos And Consent The Gestapo"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-himmler-and-the-ss-bbc-two/",
+          "title": "Rise Of The Nazis Himmler And The Ss Bbc Two"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-creation-of-the-gestapo-bbc-two/",
+          "title": "Rise Of The Nazis The Creation Of The Gestapo Bbc Two"
+        }
+      ]
     },
     {
       "id": "lesson_3_3",
@@ -4386,7 +4510,17 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 2, which argues that the impact of Nazi propaganda was \"highly limited and achieved only a superficial compliance,\" failing to change \"deep-seated religious and political beliefs.\" While the Nazi regime undoubtedly created an inescapable propaganda machine, evidence suggests that genuine indoctrination was often less successful than outward conformity. However, it is important to acknowledge the areas where propaganda was highly effective, as suggested by Interpretation 1.</p><p>Interpretation 2 is strongly supported by Source C, where an ordinary citizen describes turning off the radio and complying \"to avoid trouble.\" This highlights the crucial role of fear and the Gestapo in enforcing outward loyalty, rather than genuine belief. My own knowledge reinforces this; the Nazi police state, with its network of Block Wardens and the threat of concentration camps (as seen in Key Topic 3.2), ensured that public dissent was almost impossible. Many Germans, particularly older generations, were too set in their ways or too cynical about politics to be genuinely converted by repetitive propaganda. Religious groups, as explored in Key Topic 3.4, often maintained their faith despite intense pressure, with figures like Pastor Martin Niemöller speaking out, demonstrating that deep-seated beliefs could resist Nazification. The very need for such extensive terror suggests that propaganda alone was insufficient to secure the population's hearts and minds.</p><p>However, Interpretation 1's view of \"total indoctrination\" cannot be entirely dismissed, especially when considering certain segments of society. Source B, Goebbels' instructions, clearly shows the regime's ambition to \"penetrate every cell of life\" with propaganda. This was particularly effective with the younger generation. Children who grew up entirely under the Nazi regime, through a Nazified school curriculum and compulsory membership in the Hitler Youth and BDM (Key Topic 4.2), were often genuinely indoctrinated. Textbooks were rewritten, songs and activities promoted Nazi ideology, and they were isolated from alternative viewpoints. For this generation, the propaganda was highly successful in shaping their worldview and creating fanatically loyal supporters. Furthermore, the cult of the Führer, meticulously crafted by propaganda, genuinely resonated with many Germans who saw Hitler as a strong leader who had restored national pride and economic stability (Key Topic 4.3). The linking of economic recovery and full employment to Nazi policies fostered genuine gratitude and positive attitudes among many workers, even if their real wages were falling.</p><p>In conclusion, while Nazi propaganda was incredibly pervasive and successful in eliminating alternative viewpoints and enforcing outward conformity, Interpretation 2 more accurately captures the nuanced reality for the broader German population. Many Germans developed a cynical indifference, complying out of fear rather than genuine belief, especially when it came to deeply held religious or political convictions. The success of propaganda was often in reinforcing existing prejudices (like anti-Semitism) or tapping into pre-existing nationalism, rather than fundamentally changing all attitudes. Therefore, while the regime achieved significant control over public discourse and behaviour, its ability to achieve total, genuine indoctrination of all citizens was ultimately limited, relying heavily on the coercive power of the police state to bridge the gap between superficial compliance and true belief.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-hitlers-leadership/",
+          "title": "Bbc Two Nazis A Warning From History Chaos And Consent Hitlers Leadership"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/great-continental-railway-journeys-nazi-olympic-games-of-1936-bbc-two/",
+          "title": "Great Continental Railway Journeys Nazi Olympic Games Of 1936 Bbc Two"
+        }
+      ]
     },
     {
       "id": "lesson_3_4",
@@ -4771,7 +4905,17 @@ const unitData = {
             "model": "<p>I partially agree with Interpretation 1's 'Brave Resistance View' that the Christian Churches were largely successful in resisting the Nazi regime's attempts to achieve total control over religious life. While there were significant acts of courage and a degree of success in defending theological independence, the overall impact on the wider Nazi state and its atrocities was ultimately limited, as highlighted by Interpretation 2.</p><p>Interpretation 1 is supported by compelling evidence of principled resistance. The formation of the Confessing Church in 1934, led by figures like Martin Niemöller and Dietrich Bonhoeffer, was a direct challenge to the Nazi-backed 'German Christians' and their attempts to Nazify Protestantism. Source B, Niemöller's sermon from 1937, powerfully illustrates this, stating, 'We must obey God rather than men, even if it leads us to the concentration camps.' This demonstrates a clear refusal to compromise core religious beliefs and a willingness to suffer for them. The Confessing Church, despite persecution, maintained its theological integrity and provided an alternative spiritual home for many Protestants. Similarly, the Catholic Church, initially protected by the 1933 Concordat, also showed resistance. Source C, the Gestapo report, notes the 'unbroken' influence of the Catholic Church in Bavaria and how priests 'exploit' the Concordat to spread 'subtle criticisms.' This indicates that the Church retained a degree of autonomy and influence over its followers, preventing total Nazi ideological penetration. Pope Pius XI's 1937 encyclical 'Mit brennender Sorge' (With Burning Concern) was smuggled into Germany and read from pulpits, condemning Nazi ideology as 'pagan' and 'hostile to Christ,' a clear act of defiance against the regime's attempts to control religious thought. Bishop Galen of Münster also famously denounced the Nazi euthanasia programme in 1941, leading to its temporary halt, demonstrating the potential power of church leaders to influence public opinion and even state policy on specific issues.</p><p>However, Interpretation 2 provides a crucial counter-argument that limits the extent of agreement with Interpretation 1. It argues that Christian opposition was 'extremely limited, narrow, and ultimately failed to challenge the wider atrocities of the state.' This is largely true. While the Confessing Church resisted theological interference, its protests rarely extended to the persecution of Jews or the destruction of democracy. Many church leaders, both Protestant and Catholic, shared Hitler's anti-communism and nationalism, and were often willing to accommodate the regime as long as their own institutions were not directly threatened. The 'subtle criticisms' mentioned in Source C, while showing some defiance, also suggest a cautious approach, prioritising the survival of the Church over outright confrontation. The vast majority of church members remained silent on issues like Kristallnacht (1938) and the escalating persecution of Jews. The Concordat, while initially offering some protection, was frequently violated by the Nazis, who closed Catholic schools and youth groups, yet the Vatican's protests remained largely diplomatic rather than confrontational. Ultimately, figures like Niemöller and Bonhoeffer were imprisoned, demonstrating the limits of their 'success' in preventing state control. The fact that the Holocaust proceeded largely unchallenged by the mainstream Churches underscores the narrow scope of their resistance, which primarily focused on defending church administration and doctrine rather than universal human rights.</p><p>In conclusion, while I acknowledge the 'brave resistance' of individuals and groups within the Christian Churches, particularly in defending their theological independence, I only partially agree with Interpretation 1. The Churches did prevent total Nazification of their internal affairs and provided a moral alternative for some. However, as Interpretation 2 rightly points out, this resistance was often limited in scope, failing to challenge the broader, more horrific aspects of the Nazi regime, such as the persecution of minorities and the dismantling of democracy. The fear of the police state, the appeal of Nazi nationalism, and a shared anti-communism meant that widespread, effective opposition from the Churches against the regime's core policies remained tragically limited.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/5-opposition-to-hitler-history-file/",
+          "title": "5 Opposition To Hitler History File"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-fighting-to-the-end-internal-criticism/",
+          "title": "Bbc Two Nazis A Warning From History Fighting To The End Internal Criticism"
+        }
+      ]
     },
     {
       "id": "lesson_4_1",
@@ -5535,7 +5679,17 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 2, which argues that the Nazification of German youth was 'only a superficial success' that masked 'growing boredom, resentment, and active rebellion'. While the Nazi regime certainly exerted immense control and achieved some initial success in indoctrination, the evidence suggests that by the late 1930s, widespread disillusionment and resistance undermined their aim of creating a generation of fanatically loyal supporters.</p><p>Interpretation 2 is strongly supported by the provided sources and broader historical context. Source B, a letter from a 15-year-old in a Hitler Youth camp in 1936, vividly describes the 'military barrack life' and 'grueling military drill' that left him exhausted and wishing 'to sleep'. This personal account directly contradicts the image of enthusiastic, willing participation that the Nazis sought to project. Furthermore, Source C, a secret SOPADE report from 1938, provides compelling evidence of declining enthusiasm, noting that teenagers viewed meetings as a 'boring chore' and that 'usually only a third of the group appears for roll-call'. The report also highlights that 'many parents are secretly supporting their children’s truancy', indicating a significant level of passive and active resistance from both youth and their families. This decline in enthusiasm and rise in absenteeism was largely a consequence of the 1936 law making Hitler Youth membership compulsory, which, as Interpretation 2 suggests, 'alienated millions of teenagers' by replacing adventure with repetitive military drill. Beyond the sources, my own knowledge confirms the emergence of rebellious youth sub-cultures like the Edelweiss Pirates and the Swing Youth. These groups actively rejected Nazi discipline, listened to banned music, and even engaged in physical clashes with the Hitler Youth, demonstrating a clear failure of 'brainwashing' for a significant segment of young people. The Gestapo's need to monitor and suppress these groups, often sending members to concentration camps, further illustrates that 'complete indoctrination' was far from achieved.</p><p>However, it is important to acknowledge the initial successes and the extent of Nazi control, as highlighted by Interpretation 1. The regime did make a concerted effort to 'completely Nazify the school curriculum', purging teachers, rewriting textbooks, and introducing subjects like 'Race Studies' and intense physical education. The Hitler Youth and BDM initially attracted many young people with promises of adventure, comradeship, and escape from the economic hardships of the Weimar era. For younger children, especially, the constant exposure to propaganda, rallies, and the cult of the Führer, combined with the isolation from alternative viewpoints, likely did produce a generation that was, to some extent, indoctrinated and loyal. Interpretation 1's claim that they 'successfully isolated children from traditional family influences' holds true for many, as children were encouraged to report on their parents' dissent. Therefore, it would be inaccurate to dismiss the Nazi's efforts as a total failure; a significant portion of the youth, particularly those who were younger or who benefited from the opportunities offered, did conform and internalise Nazi values.</p><p>In conclusion, while Interpretation 1 accurately describes the *aims* and initial *methods* of Nazi youth policies, Interpretation 2 offers a more nuanced and ultimately more accurate assessment of their *long-term effectiveness* by 1939. The compulsory nature of the Hitler Youth, coupled with the increasingly rigid and militaristic activities, led to widespread boredom and resentment, as evidenced by the sources and the rise of rebellious groups. While some level of indoctrination and conformity was achieved, particularly among younger children, the idea of a generation of 'fanatically loyal supporters' across the board is an overstatement. The growing absenteeism and active rebellion demonstrate that the Nazification of German youth was, by the eve of war, a superficial success rather than a complete triumph of indoctrination.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/4-youth-in-hitlers-germany-history-file/",
+          "title": "4 Youth In Hitlers Germany History File"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-2-german-youth/",
+          "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 2 German Youth"
+        }
+      ]
     },
     {
       "id": "lesson_4_3",
@@ -5971,7 +6125,13 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 2 that the apparent improvement in workers' living standards was largely a \"propaganda illusion that masked severe economic exploitation.\" While the Nazi regime did achieve full employment, the cost to workers' rights and real wages was substantial, making the \"exploitation\" view more historically accurate.</p><p>Interpretation 2 correctly highlights that \"Workers lost their independent trade unions, the right to strike, and their political voice.\" This is a crucial point. In May 1933, all independent trade unions were abolished and replaced by the German Labour Front (DAF), a Nazi organisation. This meant workers had no means to negotiate for better pay or conditions, effectively becoming subservient to the state's economic goals of rearmament. Furthermore, Source C strongly supports Interpretation 2 by stating, \"their wages are frozen and the price of food has risen significantly. They are forced to work longer hours under compulsory service, and heavy deductions are taken directly from their pay.\" This is corroborated by historical evidence: the 'Wage Stop Law' froze wages, while the demands of rearmament led to a significant increase in average working hours (from 43 hours in 1933 to 47 hours in 1939). While nominal wages might have slightly increased, real wages (purchasing power) often fell due to inflation, particularly for food and consumer goods, meaning workers were effectively poorer despite having jobs.</p><p>Moreover, Interpretation 2 accurately describes schemes like the Volkswagen savings program as \"outright con tricks designed to fund secret rearmament.\" Source C reinforces this, noting that \"The KdF trips are viewed as a propaganda circus that only a few highly paid party favorites can actually afford.\" While some workers did benefit from subsidised leisure, the most ambitious schemes, like the 'people's car', were never delivered, with workers' savings diverted to the war economy. This demonstrates the regime's cynical manipulation rather than genuine concern for worker welfare, using these schemes to secure loyalty and mask the underlying economic exploitation.</p><p>However, it is important to acknowledge the points raised by Interpretation 1. It correctly identifies \"Full employment\" as a key factor. The Nazi regime did dramatically reduce unemployment from over 6 million in 1933 to virtually none by 1939 through massive public works projects (Autobahns, rearmament). This provided a sense of security and dignity that was genuinely welcomed after the despair of the Great Depression. Source B also supports Interpretation 1, with the factory worker stating, \"Through the Strength through Joy (KdF) scheme, our lives have genuinely improved. We are able to go on cheap weekly theater trips and even subsidized holidays.\" For many, the access to leisure activities, even if subsidised and controlled, represented an improvement over the austerity of the Weimar years. The 'Winter Relief' charity also provided essential support to millions. These initiatives fostered a sense of \"comradeship\" and gratitude, as Interpretation 1 suggests, which was crucial for maintaining public morale and loyalty.</p><p>In conclusion, while Interpretation 1 highlights the undeniable achievement of full employment and the superficial benefits of schemes like KdF, it largely overlooks the coercive and exploitative nature of the Nazi economic system. The \"material progress\" was often an illusion, built on the suppression of workers' rights, declining real wages, and increased working hours, all in service of rearmament. The loyalty gained was often a complex mix of genuine gratitude for employment, fear of the regime, and the success of propaganda. Therefore, I strongly agree with Interpretation 2 that the apparent improvement in living standards was primarily a \"propaganda illusion\" masking severe exploitation, making it a more accurate and comprehensive assessment of the workers' experience under Nazism.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/",
+          "title": "2 Life In Hitlers Germany History File"
+        }
+      ]
     },
     {
       "id": "lesson_4_4",
@@ -6403,7 +6563,25 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 1, which asserts that the anti-Semitic violence of Kristallnacht was a \"highly coordinated, systematic operation planned and executed entirely from above by Joseph Goebbels and the paramilitary SA.\" This interpretation is overwhelmingly supported by historical evidence and the sources provided, which demonstrate the deliberate and organised nature of the pogrom.</p><p>Interpretation 1's claim of a \"highly coordinated, systematic operation\" is strongly corroborated by Source C, an eyewitness report from a British diplomat. This source explicitly states that the destruction was \"executed with military precision\" and carried out by \"organized groups of SA men in civilian clothes who arrived in trucks carrying hammers and incendiary devices.\" This directly refutes any notion of spontaneity and points to central planning. My own knowledge further confirms this: Joseph Goebbels, the Minister of Propaganda, explicitly ordered the events at a meeting of Nazi leaders in Munich on 9 November 1938, using the assassination of Ernst vom Rath by a Jewish teenager as a pretext. He instructed that 'spontaneous' anti-Jewish demonstrations should not be hindered by the police, effectively giving a green light for violence. The scale of the destruction – over 1,000 synagogues destroyed, 7,500 Jewish businesses looted, and around 30,000 Jewish men arrested and sent to concentration camps across Germany – could only have been achieved through such coordination.</p><p>Furthermore, Interpretation 1 correctly identifies the aim as forcing \"Jewish families into absolute economic and physical isolation.\" This is evident from the immediate aftermath: Jews were collectively fined 1 billion Reichsmarks for the damage, and their insurance payouts were confiscated. This was a clear act of economic plunder designed to impoverish the Jewish community and accelerate their emigration, building upon earlier discriminatory measures like the Nuremberg Laws of 1935 and the Aryanisation of businesses. The arrests and deportations to concentration camps marked a significant escalation in physical persecution, moving beyond legal discrimination to overt state-sanctioned violence.</p><p>While I strongly agree with Interpretation 1, Interpretation 2 offers a valuable, nuanced perspective on the public's reaction. Interpretation 2 suggests that \"many ordinary Germans watched the destruction with deep alarm, concern, and disapproval,\" even if they remained silent due to \"terror of the Gestapo and fear of immediate arrest.\" Source B, the diary entry of a Berlin citizen, supports this, describing a \"silent crowd of ordinary citizens watched the devastation from a distance with looks of shock and absolute terror.\" This indicates that while the state orchestrated the violence, public enthusiasm was not universal. Many Germans, even those with latent anti-Semitic views, were reportedly shocked by the brutality and destruction. However, this public disapproval did not translate into active resistance. The pervasive fear of the Gestapo and the consequences of dissent, as highlighted by Interpretation 2, meant that the state-sponsored pogrom proceeded largely unhindered. This passive compliance, born of terror, allowed the regime to achieve its objectives without significant internal opposition.</p><p>In conclusion, Interpretation 1 accurately captures the essence of Kristallnacht as a meticulously planned and executed state pogrom, driven by Nazi ideology and aimed at the systematic isolation and persecution of Jews. The evidence from both sources and my own knowledge overwhelmingly supports this view. Interpretation 2 adds an important layer of understanding by highlighting the public's fearful reaction, but this does not diminish the fact that the event itself was a deliberate act of state-sponsored terror. Therefore, I strongly agree with Interpretation 1 as the primary explanation for the events of Kristallnacht, while acknowledging the crucial role of public fear in enabling its execution.</p>"
           }
         ]
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/3-the-master-race-history-file/",
+          "title": "3 The Master Race History File"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-night-of-the-broken-glass/",
+          "title": "Bbc Two Nazis A Warning From History Chaos And Consent The Night Of The Broken Glass"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-the-road-to-treblinka-the-jewish-question/",
+          "title": "Bbc Two Nazis A Warning From History The Road To Treblinka The Jewish Question"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/my-family-the-holocaust-and-me-the-aftermath-of-kristallnacht-bbc-one/",
+          "title": "My Family The Holocaust And Me The Aftermath Of Kristallnacht Bbc One"
+        }
+      ]
     }
   ],
   "key_individuals": [
@@ -6746,6 +6924,7 @@ const unitData = {
     }
   ]
 };
+
 
 if (typeof module !== 'undefined') {
   module.exports = { unitData };
