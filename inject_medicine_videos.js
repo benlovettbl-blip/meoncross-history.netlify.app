@@ -6,7 +6,10 @@ const dataStr = fs.readFileSync(unitPath, 'utf8');
 // It's an ES module: "export const unitData = { ..."
 const jsonStartIndex = dataStr.indexOf('{');
 const preText = dataStr.substring(0, jsonStartIndex);
-const data = JSON.parse(dataStr.substring(jsonStartIndex));
+let jsonStr = dataStr.substring(jsonStartIndex);
+// Remove trailing semicolon and whitespace
+jsonStr = jsonStr.replace(/;\s*$/, '');
+const data = JSON.parse(jsonStr);
 
 const newVideos = {
     'lesson_1_1': {
