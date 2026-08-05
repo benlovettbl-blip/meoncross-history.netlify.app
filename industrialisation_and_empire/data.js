@@ -1,5 +1,5 @@
 export const unitData = {
-    "title": "Industrialisation, Empire, and Power (1750–1900)",
+    "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
     "homepage_background": "/images/bg_great_war.jpg",
     "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
     "cover_image": "/assets/placeholder.jpg",
