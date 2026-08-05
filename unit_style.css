@@ -216,6 +216,38 @@ body.focus-mode .content-area {
 }
 
 /* =========================================
+   Local History Spotlight 
+   ========================================= */
+.local-history-spotlight {
+  background: #fdf5e6;
+  border-left: 5px solid #d97706;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.local-history-spotlight::before {
+  content: '📍';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.local-history-spotlight strong:first-child {
+  color: #b45309;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
    Mobile Optimization 
    ========================================= */
 @media (max-width: 768px) {
