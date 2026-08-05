@@ -950,7 +950,13 @@ export const unitData = {
       "draw_tasks": {
         "title": "Sketch the Four Humours",
         "instructions": "Draw the Four Humours wheel, making sure to link each humour to its corresponding season, element, and temperature (e.g. Blood = Spring, Air, Hot/Wet)."
-      }
+      },
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-long-term-change-history-file/",
+          "title": "History File: Medicine and Long Term Change (Overview)"
+        }
+      ]
     },
     {
       "id": "lesson_1_2",
