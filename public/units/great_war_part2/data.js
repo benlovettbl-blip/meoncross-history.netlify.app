@@ -27,7 +27,7 @@ export const unitData = {
   "lessons": [
     {
       "id": "lesson_1",
-      "title": "Lesson 1: Why were young men so desperate to join the slaughter of 1914?",
+      "title": "Why were young men so desperate to join the slaughter of 1914?",
       "teacher_notes": {
         "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
         "objectives": [
@@ -238,7 +238,7 @@ export const unitData = {
     },
     {
       "id": "lesson_2",
-      "title": "Lesson 2: Did British generals make the horror of trench warfare worse?",
+      "title": "Did British generals make the horror of trench warfare worse?",
       "teacher_notes": {
         "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
         "objectives": [
@@ -445,7 +445,7 @@ export const unitData = {
     },
     {
       "id": "lesson_3",
-      "title": "Lesson 3: How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+      "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
       "teacher_notes": {
         "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
         "objectives": [
@@ -636,7 +636,7 @@ export const unitData = {
     },
     {
       "id": "lesson_4",
-      "title": "Lesson 4: How did a war fought miles away completely control daily life in Britain?",
+      "title": "How did a war fought miles away completely control daily life in Britain?",
       "teacher_notes": {
         "primer": "Examine how the concept of 'Total War' completely transformed the British home front, focusing on government control, conscription, and the complex, often temporary, shifts in women's social status.",
         "objectives": [
@@ -808,7 +808,7 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
-      "title": "Lesson 5: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+      "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
       "enquiry": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
       "teacher_notes": {
         "primer": "This lesson evaluates the conclusion of the First World War and introduces students to high-level historiographical debate regarding the Treaty of Versailles, shifting from basic source utility to complex interpretation analysis.",
@@ -981,7 +981,7 @@ export const unitData = {
     },
     {
       "id": "lesson_6",
-      "title": "Lesson 6: How did the \"Lost Generation\" impact the village of Stubbington?",
+      "title": "How did the \"Lost Generation\" impact the village of Stubbington?",
       "enquiry": "How did the \"Lost Generation\" impact the village of Stubbington?",
       "teacher_notes": {
         "primer": "This lesson concludes the unit by scaling down the macro-statistics of the Great War into a localized micro-history, focusing on the Stubbington War Memorial and the tragic loss of the Lowry brothers. This fosters historical empathy and helps students grasp the profound demographic and emotional toll of the conflict.",
