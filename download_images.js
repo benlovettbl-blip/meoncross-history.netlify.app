@@ -2,51 +2,23 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const downloads = [
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Sir_Edwin_Chadwick._Photograph_by_John_%26_Chas._Watkins._Wellcome_V0026137.jpg', name: 'chadwick.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Joseph_Bazalgette_by_Lock_%26_Whitfield.jpg', name: 'bazalgette.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/2/25/Sir_Hugh_Myddelton%2C_1st_Bt_by_Cornelius_Johnson.jpg', name: 'myddelton.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Workshop_of_Hans_Holbein_the_Younger_-_Portrait_of_Henry_VIII_-_Google_Art_Project.jpg', name: 'henry_viii.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Frederick_Bramwell.jpg', name: 'bramwell.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Pont_du_Gard_Oct_2007.jpg', name: 'frontinus.jpg' },
-  { url: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Simon_Schama.jpg', name: 'schama.jpg' }
+const images = [
+    { name: 'martin_luther_portrait.jpg', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Lucas_Cranach_d.%C3%84._-_Martin_Luther%2C_1528_%28Veste_Coburg%29.jpg/500px-Lucas_Cranach_d.%C3%84._-_Martin_Luther%2C_1528_%28Veste_Coburg%29.jpg' },
+    { name: 'francis_drake.jpg', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Gheeraerts_Francis_Drake_1591.jpg/500px-Gheeraerts_Francis_Drake_1591.jpg' },
+    { name: 'armada_portrait.jpg', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Elizabeth_I_%28Armada_Portrait%29.jpg/500px-Elizabeth_I_%28Armada_Portrait%29.jpg' }
 ];
 
-const downloadImage = (url, name) => {
-  return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(path.join(__dirname, 'public', 'images', name));
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, response => {
-      response.pipe(file);
-      file.on('finish', () => {
-        file.close();
-        resolve();
-      });
-    }).on('error', err => {
-      reject(err);
+images.forEach(img => {
+    const dest = path.join(__dirname, 'public', 'images', img.name);
+    const file = fs.createWriteStream(dest);
+    https.get(img.url, { headers: { 'User-Agent': 'AntigravityAgent/1.0 (test@example.com)' } }, (response) => {
+        response.pipe(file);
+        file.on('finish', () => {
+            file.close();
+            console.log(`Downloaded ${img.name}`);
+        });
+    }).on('error', (err) => {
+        fs.unlink(dest, () => {});
+        console.error(`Error downloading ${img.name}: ${err.message}`);
     });
-  });
-};
-
-(async () => {
-  for (const item of downloads) {
-    try {
-      await downloadImage(item.url, item.name);
-      console.log('Downloaded ' + item.name);
-    } catch (e) {
-      console.error('Failed ' + item.name, e);
-    }
-  }
-  
-  let dataJs = fs.readFileSync('water_and_sanitation/data.js', 'utf8');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/4/4b/Sir_Edwin_Chadwick._Photograph_by_John_%26_Chas._Watkins._Wellcome_V0026137.jpg').join('/images/chadwick.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/1/1a/Joseph_Bazalgette_by_Lock_%26_Whitfield.jpg').join('/images/bazalgette.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/2/25/Sir_Hugh_Myddelton%2C_1st_Bt_by_Cornelius_Johnson.jpg').join('/images/myddelton.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/0/07/Workshop_of_Hans_Holbein_the_Younger_-_Portrait_of_Henry_VIII_-_Google_Art_Project.jpg').join('/images/henry_viii.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/2/23/Frederick_Bramwell.jpg').join('/images/bramwell.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/4/4a/Pont_du_Gard_Oct_2007.jpg').join('/images/frontinus.jpg');
-  dataJs = dataJs.split('https://upload.wikimedia.org/wikipedia/commons/2/23/Simon_Schama.jpg').join('/images/schama.jpg');
-  dataJs = dataJs.split('"assets/john_snow.jpg"').join('"/assets/john_snow.jpg"');
-  
-  fs.writeFileSync('water_and_sanitation/data.js', dataJs);
-  console.log('Updated water_and_sanitation/data.js');
-})();
+});
