@@ -967,6 +967,10 @@ export const unitData = {
         {
           "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-pain-message-bbc-four/",
           "title": "Pain Pus And Poison The Search For Modern Medicine Pain Message Bbc Four"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
+          "title": "Medieval Medicine | Secondary History - Medicine Through Time"
         }
       ]
     },
@@ -3013,7 +3017,13 @@ export const unitData = {
       "draw_tasks": {
         "title": "Sydenham at the Bedside",
         "instructions": "Draw Thomas Sydenham observing a patient. Instead of a book in his hand, draw him taking notes on the patient's actual symptoms."
-      }
+      },
+      "video": [
+        {
+          "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
+          "title": "Vesalius, Paré and Harvey | Secondary History - Medicine Through Time"
+        }
+      ]
     },
     {
       "id": "lesson_2_3",
@@ -3474,7 +3484,17 @@ export const unitData = {
       "draw_tasks": {
         "title": "The Plague Doctor",
         "instructions": "Draw a 1665 Plague Doctor. Label his protective clothing, including the thick leather cloak, wooden stick, and the beak filled with herbs."
-      }
+      },
+      "video": [
+        {
+          "url": "https://www.youtube.com/watch?v=w6q50_qNMoA",
+          "title": "Ceaseless motion: William Harvey's experiments in circulation"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=LoeAVaM48Y0",
+          "title": "WILLIAM HARVEY - The Theory of Blood Circulation"
+        }
+      ]
     },
     {
       "id": "lesson_3_1",
@@ -4435,6 +4455,10 @@ export const unitData = {
         {
           "url": "https://era.org.uk/streaming-service-resource/florence-nightingale-nursing-pioneer/",
           "title": "Florence Nightingale Nursing Pioneer"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=7pjAH84f-c0",
+          "title": "18th Century Medicine | Secondary History - Medicine Through Time"
         }
       ]
     },
@@ -4911,6 +4935,10 @@ export const unitData = {
         {
           "url": "https://era.org.uk/streaming-service-resource/the-doctor-who-discovered-how-cholera-spread-witness-history/",
           "title": "The Doctor Who Discovered How Cholera Spread Witness History"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
+          "title": "Chadwick and Snow | Secondary History - Medicine Through Time"
         }
       ]
     },
@@ -5369,6 +5397,10 @@ export const unitData = {
         {
           "url": "https://era.org.uk/streaming-service-resource/0-goes-back-in-time-operation-ouch/",
           "title": "0 Goes Back In Time Operation Ouch"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=my14ZuzjH5I",
+          "title": "Modern Medicine | Secondary History - Medicine Through Time"
         }
       ]
     },
@@ -8271,6 +8303,12 @@ export const unitData = {
           ],
           "answer": 1
         }
+      ],
+      "video": [
+        {
+          "url": "https://www.youtube.com/watch?v=x8OazQml0gw",
+          "title": "Infections - WW1 Uncut - BBC"
+        }
       ]
     },
     {
@@ -8770,6 +8808,24 @@ export const unitData = {
             "Because it was the first hospital to be completely run by robots."
           ],
           "answer": 1
+        }
+      ],
+      "video": [
+        {
+          "url": "https://www.youtube.com/watch?v=4xKWnE63E8U",
+          "title": "How the RAMC Worked in WW1 | Field Ambulance Organisation Explained"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=TTaoz0YVO2Y",
+          "title": "Casualty Clearing Station, with Andy Robertshaw"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=-jTZ7AwCyug",
+          "title": "Women Medics WW1 Uncut BBC"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=xsz0-8-qAi8",
+          "title": "The Battle of the Somme: Dressing station"
         }
       ]
     },
