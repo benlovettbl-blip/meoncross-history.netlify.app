@@ -24706,24 +24706,24 @@
           "enquiry": "Why were young men so desperate to join the slaughter of 1914?",
           "vocab": [
             {
-              "word": "Conscription",
-              "def": "A compulsory law forcing citizens of a country to enlist in the armed forces."
+              "term": "Conscription",
+              "definition": "A compulsory law forcing citizens of a country to enlist in the armed forces."
             },
             {
-              "word": "Pals Battalions",
-              "def": "Special British Army units raised during WWI that allowed friends, neighbors, and co-workers to enlist and serve together."
+              "term": "Pals Battalions",
+              "definition": "Special British Army units raised during WWI that allowed friends, neighbors, and co-workers to enlist and serve together."
             },
             {
-              "word": "Propaganda",
-              "def": "Biased or misleading information publicized by a government to promote a political cause or encourage patriotism."
+              "term": "Propaganda",
+              "definition": "Biased or misleading information publicized by a government to promote a political cause or encourage patriotism."
             },
             {
-              "word": "Historiography",
-              "def": "The study of how historians' interpretations of past events change over time."
+              "term": "Historiography",
+              "definition": "The study of how historians' interpretations of past events change over time."
             },
             {
-              "word": "Pragmatism",
-              "def": "Making decisions based on practical, real-world realities (like needing a steady wage) rather than romance or emotion."
+              "term": "Pragmatism",
+              "definition": "Making decisions based on practical, real-world realities (like needing a steady wage) rather than romance or emotion."
             }
           ],
           "flashcards": [
@@ -25007,42 +25007,35 @@
           },
           "do_now": {
             "title": "Do Now: Recall",
-            "type": "quiz",
-            "questions": [
+            "type": "mixed",
+            "items": [
               {
-                "question": "What was the main tactical problem at the Battle of the Somme?",
-                "options": [
-                  "The artillery barrage failed to destroy the barbed wire.",
-                  "The soldiers ran away.",
-                  "The tanks broke down completely.",
-                  "The French refused to fight."
-                ],
-                "answer": 0,
-                "explanation": "The failure of the artillery barrage left troops exposed to machine gun fire."
+                "question": "What was the main tactical problem at the Battle of the Somme? (A) The artillery barrage failed to destroy the barbed wire., B) The soldiers ran away., C) The tanks broke down completely., D) The French refused to fight.)",
+                "answer": "The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire."
               }
             ]
           },
           "enquiry": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
           "vocab": [
             {
-              "word": "Eurocentric",
-              "def": "Focusing on European culture or history to the exclusion of a wider view of the world."
+              "term": "Eurocentric",
+              "definition": "Focusing on European culture or history to the exclusion of a wider view of the world."
             },
             {
-              "word": "British West Indies Regiment (BWIR)",
-              "def": "A military unit of the British Army formed during WWI, made up of volunteers from British colonies in the Caribbean."
+              "term": "British West Indies Regiment (BWIR)",
+              "definition": "A military unit of the British Army formed during WWI, made up of volunteers from British colonies in the Caribbean."
             },
             {
-              "word": "Racial Hierarchy",
-              "def": "A system of stratification that privileges one racial group over others (e.g., placing white British officers at the top)."
+              "term": "Racial Hierarchy",
+              "definition": "A system of stratification that privileges one racial group over others (e.g., placing white British officers at the top)."
             },
             {
-              "word": "Historical Amnesia",
-              "def": "The collective forgetting or intentional erasing of specific events or groups of people from a society's history."
+              "term": "Historical Amnesia",
+              "definition": "The collective forgetting or intentional erasing of specific events or groups of people from a society's history."
             },
             {
-              "word": "Mutiny",
-              "def": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
+              "term": "Mutiny",
+              "definition": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
             }
           ],
           "flashcards": [
@@ -25185,24 +25178,24 @@
           "enquiry": "How did a war fought miles away completely control daily life in Britain?",
           "vocab": [
             {
-              "word": "Total War",
-              "def": "A conflict in which a nation mobilizes all of its resources, industries, and civilian population to support the war effort."
+              "term": "Total War",
+              "definition": "A conflict in which a nation mobilizes all of its resources, industries, and civilian population to support the war effort."
             },
             {
-              "word": "Defense of the Realm Act (DORA)",
-              "def": "An emergency British law passed in August 1914 that gave the government sweeping powers to control daily life."
+              "term": "Defense of the Realm Act (DORA)",
+              "definition": "An emergency British law passed in August 1914 that gave the government sweeping powers to control daily life."
             },
             {
-              "word": "Conscientious Objector",
-              "def": "A person who refuses to serve in the armed forces or fight in a conflict due to moral, ethical, or religious objections."
+              "term": "Conscientious Objector",
+              "definition": "A person who refuses to serve in the armed forces or fight in a conflict due to moral, ethical, or religious objections."
             },
             {
-              "word": "Conscription",
-              "def": "A compulsory law forcing citizens to enlist in the armed forces."
+              "term": "Conscription",
+              "definition": "A compulsory law forcing citizens to enlist in the armed forces."
             },
             {
-              "word": "Priddy's Hard",
-              "def": "A major Royal Navy armaments depot in Gosport where local women worked filling shells and handling explosives during the war."
+              "term": "Priddy's Hard",
+              "definition": "A major Royal Navy armaments depot in Gosport where local women worked filling shells and handling explosives during the war."
             }
           ],
           "narrative_blocks": [
