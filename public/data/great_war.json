@@ -276,14 +276,6 @@
         "video": [
           {
             "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=GZGIcfoaX9c",
-            "title": "Educational Film: The rise of the German Empire to economic power",
-            "duration": "3 mins 31 secs",
-            "viewing_task": "Watch this clip and summarize how the German Empire rose to become an economic powerhouse in the late 19th century.",
-            "model_answer": "Germany used its abundance of natural resources (like coal and iron from newly acquired territories), significant government investment in new technologies and transport, and a highly educated workforce to rapidly expand its industrial output, eventually overtaking Britain."
-          },
-          {
-            "type": "youtube",
             "url": "https://www.youtube.com/watch?v=-PAEmgYv0DE",
             "title": "German Unification and Empire - History in 5 Minutes",
             "duration": "5 mins 21 secs",

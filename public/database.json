@@ -8130,17 +8130,7 @@
           "draw_tasks": {
             "title": "Sketch the Four Humours",
             "instructions": "Draw the Four Humours wheel, making sure to link each humour to its corresponding season, element, and temperature (e.g. Blood = Spring, Air, Hot/Wet)."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=R9_mG-j569s",
-              "title": "BBC Teach: Medieval Medicine",
-              "duration": "5 mins",
-              "viewing_task": "How did Hippocrates, Galen, and the Church influence beliefs about the causes of illness?",
-              "model_answer": "They believed illness was caused by an imbalance of the Four Humours (Hippocrates), bad air (Miasma), or was a punishment from God."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_1_2",
@@ -8794,17 +8784,7 @@
           "draw_tasks": {
             "title": "The Apothecary's Shop",
             "instructions": "Sketch an apothecary mixing herbal remedies. Label at least three common ingredients they might use (like honey, mint, or theriac)."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=R9_mG-j569s",
-              "title": "BBC Teach: Medieval Treatments",
-              "duration": "5 mins",
-              "viewing_task": "What were the most common ways to treat and prevent disease in the Middle Ages?",
-              "model_answer": "Treatments included bleeding, purging, and praying, while prevention focused on living a sin-free life and carrying sweet-smelling herbs to ward off miasma."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_1_3",
@@ -9724,17 +9704,7 @@
           "draw_tasks": {
             "title": "The Printing Press",
             "instructions": "Sketch a simple printing press and explain in a speech bubble why this invention was so dangerous to the Catholic Church's control of knowledge."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=J8n0-d8GsmE",
-              "title": "BBC Teach: Renaissance Medicine",
-              "duration": "5 mins",
-              "viewing_task": "How did the Renaissance change people's beliefs about the causes of illness?",
-              "model_answer": "The invention of the printing press and the Royal Society allowed new scientific ideas to spread, leading figures like Thomas Sydenham to challenge the Four Humours."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_2_2",
@@ -10181,17 +10151,7 @@
           "draw_tasks": {
             "title": "Sydenham at the Bedside",
             "instructions": "Draw Thomas Sydenham observing a patient. Instead of a book in his hand, draw him taking notes on the patient's actual symptoms."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=J8n0-d8GsmE",
-              "title": "BBC Teach: Andreas Vesalius",
-              "duration": "5 mins",
-              "viewing_task": "How did Andreas Vesalius improve anatomical knowledge?",
-              "model_answer": "Vesalius performed his own human dissections, proving that Galen had made over 300 mistakes (as Galen only dissected animals), and published 'The Fabric of the Human Body'."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_2_3",
@@ -10652,17 +10612,7 @@
           "draw_tasks": {
             "title": "The Plague Doctor",
             "instructions": "Draw a 1665 Plague Doctor. Label his protective clothing, including the thick leather cloak, wooden stick, and the beak filled with herbs."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=9g0HihOqBBE",
-              "title": "BBC Teach: William Harvey",
-              "duration": "4 mins",
-              "viewing_task": "How significant was William Harvey's discovery?",
-              "model_answer": "Harvey proved that blood circulates around the body pumped by the heart, disproving Galen's theory that blood was constantly manufactured in the liver."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_3_1",
@@ -11122,17 +11072,7 @@
           "draw_tasks": {
             "title": "Pasteur's Swan-Neck Flask",
             "instructions": "Sketch Louis Pasteur's famous swan-neck flask experiment. Show how the curved neck prevented airborne bacteria from reaching the liquid inside."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=1FhW3D3qX6o",
-              "title": "BBC Teach: Louis Pasteur and Germ Theory",
-              "duration": "4 mins",
-              "viewing_task": "How did Germ Theory change our understanding of disease?",
-              "model_answer": "Pasteur proved that microbes in the air caused decay, completely disproving the theory of spontaneous generation and proving that germs cause disease."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_3_2",
@@ -11610,17 +11550,7 @@
           "draw_tasks": {
             "title": "The Carbolic Spray",
             "instructions": "Draw Joseph Lister operating on a patient while a cumbersome machine sprays carbolic acid over the wound to kill bacteria."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=KzXkC2_F0Lg",
-              "title": "BBC Teach: Florence Nightingale",
-              "duration": "5 mins",
-              "viewing_task": "How did the Industrial Revolution and Nightingale transform hospital care?",
-              "model_answer": "Nightingale revolutionized nursing by emphasizing strict hygiene and ventilation, vastly reducing death rates in hospitals during the Crimean War."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_3_3",
@@ -12074,17 +12004,7 @@
           "draw_tasks": {
             "title": "The Broad Street Pump",
             "instructions": "Draw John Snow removing the handle from the Broad Street water pump, while angry locals who still believe in miasma watch on."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=b0O-L2iXyT4",
-              "title": "BBC Teach: Edward Jenner and John Snow",
-              "duration": "5 mins",
-              "viewing_task": "How significant were Jenner's vaccination and Snow's map?",
-              "model_answer": "Jenner developed the first ever vaccine for smallpox using cowpox, while Snow proved cholera was waterborne by mapping deaths around the Broad Street pump."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_4_1",
@@ -12532,17 +12452,7 @@
           "draw_tasks": {
             "title": "The Double Helix",
             "instructions": "Sketch the twisted ladder structure of DNA (the double helix). Label it with the names of the four key scientists involved in its discovery."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=4y54B8L00wE",
-              "title": "BBC Teach: The Discovery of DNA",
-              "duration": "5 mins",
-              "viewing_task": "How did Watson, Crick, and Franklin change modern medicine?",
-              "model_answer": "They discovered the double-helix structure of DNA, unlocking the secret to genetic diseases and allowing for the eventual mapping of the human genome."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_4_2",
@@ -13012,17 +12922,7 @@
           "draw_tasks": {
             "title": "The Magic Bullet",
             "instructions": "Draw a literal 'magic bullet' flying through the bloodstream, hitting a specific nasty-looking bacteria while ignoring the healthy red blood cells."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=4y54B8L00wE",
-              "title": "BBC Teach: The Creation of the NHS",
-              "duration": "5 mins",
-              "viewing_task": "How did the creation of the NHS in 1948 transform treatment?",
-              "model_answer": "The NHS provided free healthcare at the point of delivery for all citizens, funded by taxes, ensuring everyone had access to hospitals, doctors, and modern treatments."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_4_3",
@@ -13473,17 +13373,7 @@
           "draw_tasks": {
             "title": "Fleming's Petri Dish",
             "instructions": "Sketch Alexander Fleming's messy laboratory bench. Show a petri dish with a ring of mold (penicillin) actively killing the surrounding bacteria."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=gTtb3cTfUms",
-              "title": "BBC Teach: Alexander Fleming and Penicillin",
-              "duration": "4 mins",
-              "viewing_task": "How was Penicillin discovered and mass-produced?",
-              "model_answer": "Fleming discovered the mold by chance in 1928, but it was Florey and Chain who successfully purified and mass-produced it using US funding during WW2."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_4_4",
@@ -13933,17 +13823,7 @@
           "draw_tasks": {
             "title": "Government Anti-Smoking Campaign",
             "instructions": "Design a modern cigarette packet that complies with government regulations (plain packaging, graphic health warnings) to deter people from smoking."
-          },
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=4y54B8L00wE",
-              "title": "BBC Bitesize: Lung Cancer",
-              "duration": "3 mins",
-              "viewing_task": "How has the government attempted to tackle the modern epidemic of lung cancer?",
-              "model_answer": "The government launched massive anti-smoking campaigns, banned smoking in public places, and increased taxes on tobacco products to prevent the disease."
-            }
-          ]
+          }
         },
         {
           "id": "lesson_5_1",
@@ -14437,16 +14317,6 @@
                 "The RAMC had completely abandoned surgery in favor of chemical remedies."
               ],
               "answer": 1
-            }
-          ],
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=H74tq3wV0jA",
-              "title": "BBC Teach: Medicine on the Western Front",
-              "duration": "5 mins",
-              "viewing_task": "What was the medical context of the Western Front?",
-              "model_answer": "The sheer scale of artillery and machine gun fire resulted in unprecedented numbers of horrific casualties, forcing the medical services to adapt rapidly."
             }
           ]
         },
@@ -14942,16 +14812,6 @@
               ],
               "answer": 2
             }
-          ],
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=H74tq3wV0jA",
-              "title": "BBC Teach: The Trench Environment",
-              "duration": "5 mins",
-              "viewing_task": "How did the trench environment create new medical challenges?",
-              "model_answer": "The mud and heavily manured farmland meant wounds were highly prone to infection (gangrene), and standing in freezing water caused severe trench foot."
-            }
           ]
         },
         {
@@ -15446,16 +15306,6 @@
                 "Because there were no actual combat casualties during the first two years of the war."
               ],
               "answer": 1
-            }
-          ],
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=H74tq3wV0jA",
-              "title": "BBC Teach: Gas Attacks",
-              "duration": "4 mins",
-              "viewing_task": "What new terrifying weapons did soldiers face?",
-              "model_answer": "Soldiers faced deadly poison gas attacks (chlorine, phosgene, mustard gas) which caused blindness, blistering, and suffocation."
             }
           ]
         },
@@ -15957,16 +15807,6 @@
               ],
               "answer": 1
             }
-          ],
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=H74tq3wV0jA",
-              "title": "BBC Teach: The Chain of Evacuation",
-              "duration": "4 mins",
-              "viewing_task": "How did the RAMC and FANY operate the chain of evacuation?",
-              "model_answer": "Wounded men were moved from Regimental Aid Posts, to Dressing Stations, to Casualty Clearing Stations (where emergency surgery occurred), and finally Base Hospitals."
-            }
           ]
         },
         {
@@ -16450,16 +16290,6 @@
                 "They required the patient to hold their breath for 20 minutes."
               ],
               "answer": 0
-            }
-          ],
-          "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=H74tq3wV0jA",
-              "title": "BBC Teach: WW1 Medical Advances",
-              "duration": "5 mins",
-              "viewing_task": "What incredible medical advances were forged on the Western Front?",
-              "model_answer": "Advances included the use of mobile X-ray units, blood banks (using sodium citrate to stop clotting), the Thomas Splint, and plastic surgery for facial injuries."
             }
           ]
         }
@@ -21828,14 +21658,6 @@
             }
           ],
           "video": [
-            {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=GZGIcfoaX9c",
-              "title": "Educational Film: The rise of the German Empire to economic power",
-              "duration": "3 mins 31 secs",
-              "viewing_task": "Watch this clip and summarize how the German Empire rose to become an economic powerhouse in the late 19th century.",
-              "model_answer": "Germany used its abundance of natural resources (like coal and iron from newly acquired territories), significant government investment in new technologies and transport, and a highly educated workforce to rapidly expand its industrial output, eventually overtaking Britain."
-            },
             {
               "type": "youtube",
               "url": "https://www.youtube.com/watch?v=-PAEmgYv0DE",
