@@ -3,7 +3,7 @@ export const unitData = {
   "homepage_background": "/images/bg_great_war_part2.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
   "cover_image": "/images/bg_great_war_part2.jpg",
-  "cover_caption": "Placeholder for The Great War cover image.",
+  "cover_caption": "The cover image displays two powerful historical sources that bookend the First World War: on the left, an illustration of the assassination of Archduke Franz Ferdinand in Sarajevo (the spark that ignited the conflict in 1914), and on the right, the official Treaty of Versailles document (the controversial peace settlement signed in 1919).",
   "printable_workbooks": [
     {
       "title": "Unit Workbook",
@@ -178,7 +178,7 @@ export const unitData = {
       "quiz": [
         {
           "q": "What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?",
-          "a": 0,
+          "a": "HMS Dreadnought",
           "options": [
             "HMS Dreadnought",
             "SMS Panther",
@@ -188,7 +188,7 @@ export const unitData = {
         },
         {
           "q": "Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?",
-          "a": 0,
+          "a": "The Black Hand",
           "options": [
             "The Black Hand",
             "The White Rose",
@@ -198,7 +198,7 @@ export const unitData = {
         },
         {
           "q": "Which European empire declared war on Serbia first during the July Days?",
-          "a": 0,
+          "a": "Austria-Hungary",
           "options": [
             "Austria-Hungary",
             "Germany",
@@ -208,7 +208,7 @@ export const unitData = {
         },
         {
           "q": "Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?",
-          "a": 0,
+          "a": "Lord Horatio Kitchener",
           "options": [
             "Lord Horatio Kitchener",
             "Winston Churchill",
@@ -218,7 +218,7 @@ export const unitData = {
         },
         {
           "q": "What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?",
-          "a": 0,
+          "a": "Pals Battalions",
           "options": [
             "Pals Battalions",
             "Buddy Brigades",
@@ -306,8 +306,8 @@ export const unitData = {
             },
             {
               "type": "text",
-              "text": "<strong>Part B: Edexcel GCSE Paper 1 Features Practice</strong><br>1a. Describe one feature of early military aircraft. (2 marks)<br>1b. Describe one feature of early military aircraft. (2 marks)",
-              "model": "1a. One feature of early military aircraft was how fragile they were. For example, they were constructed merely of wood and thick cloth held together by piano wire.<br><br>1b. Another feature of early military aircraft was the complete lack of safety equipment for pilots. For example, they flew in completely open cockpits without parachutes, relying entirely on thick clothes to stop themselves from freezing to death."
+              "text": "<strong>Part B: Edexcel GCSE Paper 1 Features Practice</strong><br>1a. Describe one feature of early military aircraft. (2 marks)<br>1b. Describe one feature of trench warfare. (2 marks)",
+              "model": "1a. One feature of early military aircraft was how fragile they were. For example, they were constructed merely of wood and thick cloth held together by piano wire.<br><br>1b. One feature of trench warfare was the horrific conditions soldiers endured. For example, the constant mud and water in the trenches led to thousands of men suffering from \"Trench Foot\", which often required amputation."
             }
           ]
         },
@@ -531,7 +531,7 @@ export const unitData = {
       "quiz": [
         {
           "q": "Approximately how many men from the British Empire and its dominions served in the First World War?",
-          "a": 0,
+          "a": "3 million",
           "options": [
             "3 million",
             "500,000",
@@ -541,7 +541,7 @@ export const unitData = {
         },
         {
           "q": "Which imperial army sent over 1.5 million men to fight in the war?",
-          "a": 0,
+          "a": "The British Indian Army",
           "options": [
             "The British Indian Army",
             "The Canadian Army",
@@ -551,7 +551,7 @@ export const unitData = {
         },
         {
           "q": "Which battle featured troops from Australia and New Zealand (ANZACs) fighting a devastating campaign against the Ottoman Empire?",
-          "a": 0,
+          "a": "Gallipoli",
           "options": [
             "Gallipoli",
             "The Somme",
@@ -561,7 +561,7 @@ export const unitData = {
         },
         {
           "q": "In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?",
-          "a": 0,
+          "a": "Taranto, Italy",
           "options": [
             "Taranto, Italy",
             "Ypres, Belgium",
@@ -571,7 +571,7 @@ export const unitData = {
         },
         {
           "q": "Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?",
-          "a": 0,
+          "a": "They were largely forgotten and excluded from events like the London Victory Parade.",
           "options": [
             "They were largely forgotten and excluded from events like the London Victory Parade.",
             "They were given the highest honors and led the parades.",
@@ -696,7 +696,7 @@ export const unitData = {
       "quiz": [
         {
           "q": "What term describes a conflict where the boundary between soldiers and civilians vanishes?",
-          "a": 0,
+          "a": "Total War",
           "options": [
             "Total War",
             "Absolute War",
@@ -706,7 +706,7 @@ export const unitData = {
         },
         {
           "q": "What law gave the British government sweeping emergency powers in August 1914?",
-          "a": 0,
+          "a": "The Defense of the Realm Act (DORA)",
           "options": [
             "The Defense of the Realm Act (DORA)",
             "The Emergency Powers Act",
@@ -716,7 +716,7 @@ export const unitData = {
         },
         {
           "q": "What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?",
-          "a": 0,
+          "a": "Canary Girls",
           "options": [
             "Canary Girls",
             "Yellow Women",
@@ -726,7 +726,7 @@ export const unitData = {
         },
         {
           "q": "What term describes men who refused to fight in the war on moral, political, or religious grounds?",
-          "a": 0,
+          "a": "Conscientious Objectors",
           "options": [
             "Conscientious Objectors",
             "Pacifist Resisters",
@@ -736,7 +736,7 @@ export const unitData = {
         },
         {
           "q": "How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?",
-          "a": 0,
+          "a": "They introduced rationing to ensure fair distribution of food.",
           "options": [
             "They introduced rationing to ensure fair distribution of food.",
             "They surrendered to Germany.",
@@ -858,7 +858,7 @@ export const unitData = {
       "quiz": [
         {
           "q": "What date was the Treaty of Versailles officially signed by Allied and German leaders?",
-          "a": 0,
+          "a": "June 28, 1919",
           "options": [
             "June 28, 1919",
             "November 11, 1918",
@@ -868,7 +868,7 @@ export const unitData = {
         },
         {
           "q": "Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?",
-          "a": 0,
+          "a": "Woodrow Wilson",
           "options": [
             "Woodrow Wilson",
             "Georges Clemenceau",
@@ -878,7 +878,7 @@ export const unitData = {
         },
         {
           "q": "What was the name of Article 231 of the Treaty of Versailles?",
-          "a": 0,
+          "a": "The War Guilt Clause",
           "options": [
             "The War Guilt Clause",
             "The Demilitarization Act",
@@ -888,7 +888,7 @@ export const unitData = {
         },
         {
           "q": "Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?",
-          "a": 0,
+          "a": "Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.",
           "options": [
             "Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.",
             "Because the Allies forgave Germany's debt in 1920.",
@@ -898,7 +898,7 @@ export const unitData = {
         },
         {
           "q": "Why did the German people call the Treaty of Versailles a 'Diktat'?",
-          "a": 0,
+          "a": "They were completely excluded from the peace talks and forced to sign it.",
           "options": [
             "They were completely excluded from the peace talks and forced to sign it.",
             "The entire treaty was written in a secret code they couldn't read.",
@@ -1014,7 +1014,7 @@ export const unitData = {
       "quiz": [
         {
           "q": "In what year was the Stubbington War Memorial erected?",
-          "a": 0,
+          "a": "1922",
           "options": [
             "1922",
             "1918",
@@ -1024,7 +1024,7 @@ export const unitData = {
         },
         {
           "q": "What physical structure does the Stubbington War Memorial cover?",
-          "a": 0,
+          "a": "The local village pump.",
           "options": [
             "The local village pump.",
             "The entrance to the local church.",
@@ -1034,7 +1034,7 @@ export const unitData = {
         },
         {
           "q": "Who proposed and designed the memorial in Stubbington?",
-          "a": 0,
+          "a": "The mother of the only woman commemorated among the fallen.",
           "options": [
             "The mother of the only woman commemorated among the fallen.",
             "The Mayor of Fareham.",
@@ -1044,7 +1044,7 @@ export const unitData = {
         },
         {
           "q": "How many names of the fallen are recorded on the Stubbington memorial?",
-          "a": 0,
+          "a": "67",
           "options": [
             "67",
             "12",
@@ -1054,7 +1054,7 @@ export const unitData = {
         },
         {
           "q": "What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?",
-          "a": 0,
+          "a": "Micro-history",
           "options": [
             "Micro-history",
             "Historiography",
