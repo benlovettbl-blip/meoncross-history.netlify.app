@@ -866,9 +866,16 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     }
 
-
+    let allVideos = [];
+    if (lesson.video) {
+      if (Array.isArray(lesson.video)) allVideos = allVideos.concat(lesson.video);
+      else allVideos.push(lesson.video);
+    }
     if (lesson.extra_videos && lesson.extra_videos.length > 0) {
-        appendixData.push({ title: lesson.title, videos: lesson.extra_videos });
+      allVideos = allVideos.concat(lesson.extra_videos);
+    }
+    if (allVideos.length > 0) {
+        appendixData.push({ title: lesson.title, videos: allVideos });
     }
   });
 
