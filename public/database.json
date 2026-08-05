@@ -7239,32 +7239,26 @@
             {
               "title": "2. Macro-History: The Real Centers of Wealth in 1450",
               "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, Sultan Mehmed II controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded.",
-              "image": {
-                "url": "/images/ottoman_1453.jpg",
-                "alt": "Fresco depicting the Siege of Constantinople in 1453",
-                "caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire."
-              },
-              "tasks": []
+              "image": "/images/ottoman_1453.jpg",
+              "tasks": [],
+              "image_alt": "Fresco depicting the Siege of Constantinople in 1453",
+              "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire."
             },
             {
               "title": "West Africa: Kingdoms of Gold and Brass",
               "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>",
-              "image": {
-                "url": "/images/benin_bronze.jpg",
-                "alt": "15th-Century Benin Bronze Relief Plaque",
-                "caption": "A 15th-century Benin Bronze plaque showing the Oba of Benin with attendants."
-              },
-              "tasks": []
+              "image": "/images/benin_bronze.jpg",
+              "tasks": [],
+              "image_alt": "15th-Century Benin Bronze Relief Plaque",
+              "image_caption": "A 15th-century Benin Bronze plaque showing the Oba of Benin with attendants."
             },
             {
               "title": "The Silk Road & Ming China: The World's Industrial Engine",
               "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Admiral Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than Christopher Columbus’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>",
-              "image": {
-                "url": "/images/silk_road.jpg",
-                "alt": "The Silk Road Trade Routes Map",
-                "caption": "A map of the ancient Silk Road overland and maritime trade routes connecting Asia to Europe."
-              },
-              "tasks": []
+              "image": "/images/silk_road.jpg",
+              "tasks": [],
+              "image_alt": "The Silk Road Trade Routes Map",
+              "image_caption": "A map of the ancient Silk Road overland and maritime trade routes connecting Asia to Europe."
             },
             {
               "title": "3. Primary Source Analysis",
