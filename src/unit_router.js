@@ -2,7 +2,7 @@ import { initializeApp } from './core_app.js';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
-
+import { initGeographicalLocationsTask } from './geographical_locations.js';
 const urlParams = new URLSearchParams(window.location.search);
 let unitId = urlParams.get('id');
 window.currentUnitId = unitId;
@@ -104,6 +104,30 @@ if (!unitId) {
           if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
         };
         sidebarNav.appendChild(kiLink);
+      }
+      // 4. Geographical Locations Tab
+      const geoLocationsData = db[unitId].data && db[unitId].data.geographical_locations;
+      if (geoLocationsData) {
+        const geoLink = document.createElement('a');
+        geoLink.className = 'lesson-link';
+        geoLink.innerHTML = '<i class="fa-solid fa-earth-americas" style="margin-right: 8px;"></i> Geographical Locations';
+        geoLink.href = '#';
+        geoLink.onclick = (e) => {
+          e.preventDefault();
+          if (e.isTrusted !== false) {
+            const url = new URL(window.location);
+            url.searchParams.set('tab', 'geographical_locations');
+            history.pushState({ customTab: 'geographical_locations' }, "", url);
+          }
+
+          document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+          geoLink.classList.add('active');
+          const contentArea = document.getElementById('content-area');
+          contentArea.innerHTML = '';
+          initGeographicalLocationsTask(contentArea, geoLocationsData);
+          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        sidebarNav.appendChild(geoLink);
       }
 
 

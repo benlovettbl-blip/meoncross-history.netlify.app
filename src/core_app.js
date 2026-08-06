@@ -3,6 +3,7 @@ import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndiv
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
 import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide , elizabethGuide} from './exam_guide_content.js';
+import { renderCoverSourcesHTML } from './cover_sources.js';
 
 window.examTimers = {};
 
@@ -952,33 +953,7 @@ export function initializeApp(unitData) {
           ${unitData.title}
         </h2>
         
-        ${unitData.cover_sources ? `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; text-align: left;">
-            ${unitData.cover_sources.map(src => `
-              <div style="display: flex; align-items: center; gap: 15px; background: #f8fafc; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                <div style="flex: 0 0 150px; height: 150px; border-radius: 8px; overflow: hidden; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                  <img src="${getAssetUrl(src.image)}" alt="${src.title}" style="width: 100%; height: 100%; object-fit: cover; cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)">
-                </div>
-                <div style="flex: 1;">
-                  <h4 style="margin: 0 0 5px 0; color: #0f172a; font-size: 1rem;">${src.title}</h4>
-                  <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.4;">${src.description}</p>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        ` : Array.isArray(unitData.cover_image) ? `
-          <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
-            ${unitData.cover_image.map(img => `
-              <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; flex: 1; max-height: 400px; display: flex; align-items: center; justify-content: center; background: #0f172a;">
-                <img src="${getAssetUrl(img)}" alt="Unit Cover" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
-              </div>
-            `).join('')}
-          </div>
-        ` : (unitData.cover_image ? `
-          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; display: block; margin: 0 auto 5px auto; max-width: 33%;">
-            <img src="${getAssetUrl(unitData.cover_image)}" alt="Unit Cover" style="max-width: 100%; height: auto; display: block; max-height: 400px; margin: 0 auto;">
-          </div>
-        ` : '')}
+        ${renderCoverSourcesHTML(unitData, getAssetUrl)}
         
         ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
         
