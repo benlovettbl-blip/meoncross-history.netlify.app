@@ -1342,7 +1342,7 @@ export function initializeApp(unitData) {
     window.currentActiveLesson = lesson;
     
     // Tabs container logic
-    let heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+    let heroImage = lesson.banner || window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
     let lessonPrefix = 'Lesson';
     let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
     
@@ -1932,7 +1932,18 @@ export function initializeApp(unitData) {
         }
 
         let imageHtml = '';
-        if (block.image) {
+        if (block.images && Array.isArray(block.images) && block.images.length > 0) {
+           imageHtml = `
+             <div class="narrative-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 20px 0;">
+               ${block.images.map(img => `
+                 <div class="narrative-image-container" style="text-align: center;">
+                   <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                   ${img.alt || img.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                 </div>
+               `).join('')}
+             </div>
+           `;
+        } else if (block.image) {
            imageHtml = `
              <div class="narrative-image-container" style="text-align: center; margin: 20px 0;">
                <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
