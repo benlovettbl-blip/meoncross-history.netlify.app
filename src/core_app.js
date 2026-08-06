@@ -1937,20 +1937,20 @@ export function initializeApp(unitData) {
            imageHtml = `
              <style>
                .image-hint-caption {
-                 font-size: 0.9rem; color: transparent; text-shadow: 0 0 10px rgba(100,116,139,0.8); margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+                 font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
                }
                .image-hint-caption:hover {
                  background: rgba(0,0,0,0.02);
                }
-               .image-hint-caption.revealed {
-                 color: #64748b !important; text-shadow: none !important; cursor: default;
+               .image-hint-caption.blurred {
+                 color: transparent !important; text-shadow: 0 0 10px rgba(100,116,139,0.8) !important;
                }
              </style>
              <div class="narrative-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 20px 0;">
                ${block.images.map((img, idx) => `
                  <div class="narrative-image-container" style="text-align: center;">
                    <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
-                   ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.add('revealed'); const i = this.querySelector('i'); if(i) { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; }" title="Click to reveal caption"><i class="fa-solid fa-eye-slash" style="margin-right:4px; color: #94a3b8;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                   ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
                  </div>
                `).join('')}
              </div>
@@ -1959,18 +1959,18 @@ export function initializeApp(unitData) {
            imageHtml = `
              <style>
                .image-hint-caption {
-                 font-size: 0.9rem; color: transparent; text-shadow: 0 0 10px rgba(100,116,139,0.8); margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+                 font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
                }
                .image-hint-caption:hover {
                  background: rgba(0,0,0,0.02);
                }
-               .image-hint-caption.revealed {
-                 color: #64748b !important; text-shadow: none !important; cursor: default;
+               .image-hint-caption.blurred {
+                 color: transparent !important; text-shadow: 0 0 10px rgba(100,116,139,0.8) !important;
                }
              </style>
              <div class="narrative-image-container" style="text-align: center; margin: 20px 0;">
                <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
-               ${block.image_alt ? `<div class="image-hint-caption" onclick="this.classList.add('revealed'); const i = this.querySelector('i'); if(i) { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; }" title="Click to reveal caption"><i class="fa-solid fa-eye-slash" style="margin-right:4px; color: #94a3b8;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
+               ${block.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
              </div>
            `;
         }

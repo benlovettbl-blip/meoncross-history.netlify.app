@@ -180,7 +180,7 @@ export const unitData = {
           ],
           "images": [
             {
-              "image": "A wide horizontal crop of the Catalan Atlas (1375) showing Mansa Musa of Mali holding a gold coin, alongside Asian caravan routes.",
+              "image": "/images/early_mod_l1_banner.jpg",
               "image_alt": "Catalan Atlas (1375) showing Mansa Musa"
             }
           ]
@@ -289,7 +289,7 @@ export const unitData = {
           "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450."
         ]
       },
-      "banner": "A wide horizontal crop of the Catalan Atlas (1375) showing Mansa Musa of Mali holding a gold coin, alongside Asian caravan routes."
+      "banner": "/images/early_mod_l1_banner.jpg"
     },
     {
       "id": "lesson_2",
@@ -403,7 +403,7 @@ export const unitData = {
           "source_letter": "A",
           "images": [
             {
-              "image": "Panorama of the Spanish Armada off the English Coast (1588) by Hendrick Cornelisz Vroom.",
+              "image": "/images/early_mod_l2_banner.jpg",
               "image_alt": "Panorama of the Spanish Armada (1588)"
             },
             {
@@ -656,7 +656,7 @@ export const unitData = {
           "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions."
         ]
       },
-      "banner": "Panorama of the Spanish Armada off the English Coast (1588) by Hendrick Cornelisz Vroom."
+      "banner": "/images/early_mod_l2_banner.jpg"
     },
     {
       "id": "lesson_3",
@@ -1112,7 +1112,7 @@ export const unitData = {
           "source_letter": "A",
           "images": [
             {
-              "image": "A wide interior engraving or painting of the 18th-century House of Commons in session alongside the Royal Exchange.",
+              "image": "/images/early_mod_l4_banner.jpg",
               "image_alt": "18th-century House of Commons in session alongside the Royal Exchange"
             },
             {
@@ -1362,7 +1362,7 @@ export const unitData = {
           "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists."
         ]
       },
-      "banner": "A wide interior engraving or painting of the 18th-century House of Commons in session alongside the Royal Exchange."
+      "banner": "/images/early_mod_l4_banner.jpg"
     },
     {
       "id": "lesson_5",
@@ -1917,7 +1917,7 @@ export const unitData = {
           "source_letter": "A",
           "images": [
             {
-              "image": "Panoramic split view of 18th-Century London from Southwark / London Bridge showing merchant shipping on the Thames alongside urban congestion.",
+              "image": "/images/early_mod_l6_banner.jpg",
               "image_alt": "Panoramic split view of 18th-Century London from Southwark / London Bridge"
             },
             {
@@ -2075,7 +2075,7 @@ export const unitData = {
           "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
         ]
       },
-      "banner": "Panoramic split view of 18th-Century London from Southwark / London Bridge showing merchant shipping on the Thames alongside urban congestion."
+      "banner": "/images/early_mod_l6_banner.jpg"
     }
   ],
   "portraits": [
