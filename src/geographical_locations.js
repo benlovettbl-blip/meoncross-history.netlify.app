@@ -261,7 +261,7 @@ export function initGeographicalLocationsTask(container, locationsData) {
   header.style.marginBottom = '40px';
   header.innerHTML = `
     <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">Geographical Locations</h1>
-    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped these events.</p>
+    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Explore the key geographical locations and understand their significance.</p>
   `;
   wrapper.appendChild(header);
 
