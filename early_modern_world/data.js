@@ -184,7 +184,7 @@ export const unitData = {
                     "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
                     "image": "/images/global_canton.jpg",
                     "image_alt": "View of the Thirteen Factories in Canton",
-                    "image_caption": "An 18th-century painting showing the foreign trading factories at Canton (Guangzhou) along the Pearl River in China. This was the bustling, highly regulated district where British, Dutch, and French East India Companies were forced to operate under strict Chinese imperial oversight.",
+                    "image_caption": "An 18th-century painting showing the foreign trading factories at Canton (Guangzhou) along the Pearl River in China. By the 1700s, this port handled massive quantities of tea, silk, and porcelain destined for European markets, fueling an enormous global trading network.",
                     "source_letter": "A",
                     "tasks": [
                         {
@@ -200,7 +200,7 @@ export const unitData = {
                     "image": "/images/ottoman_1453.jpg",
                     "tasks": [],
                     "image_alt": "Fresco depicting the Siege of Constantinople in 1453",
-                    "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire. This expansion terrified Western European rulers, as the Ottomans now controlled the vital land routes to Asia, forcing Europeans to seek new oceanic trade routes or face economic ruin.",
+                    "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire. The 53-day siege utilized massive cannons that shattered the ancient walls, effectively ending the 1,000-year-old Byzantine Empire.",
                     "source_letter": "A"
                 },
                 {
@@ -388,7 +388,7 @@ export const unitData = {
                     "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
                     "image": "/images/francis_drake.jpg",
                     "image_alt": "Portrait of Sir Francis Drake",
-                    "image_caption": "Sir Francis Drake, whose personal vendetta against Spain helped transform England into a global maritime power. Initially operating as a state-sponsored pirate (privateer), Drake's circumnavigation of the globe brought immense stolen wealth back to Queen Elizabeth I, fueling England's naval ambitions.",
+                    "image_caption": "Sir Francis Drake, whose personal vendetta against Spain helped transform England into a global maritime power. In 1577, he set sail on the Pelican (later renamed the Golden Hind), becoming the first Englishman to successfully circumnavigate the globe.",
                     "tasks": [
                         {
                             "type": "comprehension",
@@ -805,7 +805,7 @@ export const unitData = {
                     "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>",
                     "image": "/images/jamestown_fort.jpg",
                     "image_alt": "Map plan of the triangular James Fort in Virginia, 1607",
-                    "image_caption": "The 1607 triangular plan of James Fort, demonstrating the heavily militarized and defensive nature of early English settlements in America. Surrounded by the powerful Powhatan Confederacy, the English settlers lived in constant fear of attack, disease, and starvation, clinging desperately to the edge of the continent.",
+                    "image_caption": "The 1607 triangular plan of James Fort, demonstrating the heavily militarized and defensive nature of early English settlements in America. The fort was built in just 19 days on a swampy peninsula, with wooden palisades enclosing a church, storehouse, and living quarters.",
                     "tasks": [
                         {
                             "type": "analysis",
