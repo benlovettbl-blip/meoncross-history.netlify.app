@@ -158,12 +158,12 @@ export const unitData = {
                 ]
             },
             "do_now": {
-                "title": "Do Now: Knowledge Retrieval",
+                "title": "Do Now: The Cover Connection",
                 "type": "questions",
                 "items": [
                     {
-                        "question": "Recall from Year 7: What was the main purpose of a medieval castle?",
-                        "answer": "Castles were primarily military structures used by lords and kings to maintain control over a region. They defended and controlled the surrounding land."
+                        "question": "Look at the four images on the front cover of your workbook. What connections can you draw between them? How do they show that the world was becoming more connected?",
+                        "answer": "The images show wealth and power shifting across the globe. For example, the East India Company trading in China (Canton) connects to the bustling River Thames in London. The Mercator map shows how exploration made these global trade routes possible, while the image of Britannia receiving riches shows how Britain benefited from this worldwide network."
                     }
                 ]
             },
@@ -200,7 +200,7 @@ export const unitData = {
                     "image": "/images/ottoman_1453.jpg",
                     "tasks": [],
                     "image_alt": "Fresco depicting the Siege of Constantinople in 1453",
-                    "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire.",
+                    "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire. This expansion terrified Western European rulers, as the Ottomans now controlled the vital land routes to Asia, forcing Europeans to seek new oceanic trade routes or face economic ruin.",
                     "source_letter": "A"
                 },
                 {
@@ -209,7 +209,7 @@ export const unitData = {
                     "image": "/images/benin_bronze.jpg",
                     "tasks": [],
                     "image_alt": "15th-Century Benin Bronze Relief Plaque",
-                    "image_caption": "A 15th-century Benin Bronze plaque showing the Oba of Benin with attendants.",
+                    "image_caption": "A 15th-century Benin Bronze plaque showing the Oba of Benin with attendants. Crafted with highly sophisticated metallurgy techniques, this plaque demonstrates the immense wealth, power, and cultural advancement of West African kingdoms long before European colonization.",
                     "source_letter": "B"
                 },
                 {
@@ -388,7 +388,7 @@ export const unitData = {
                     "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
                     "image": "/images/francis_drake.jpg",
                     "image_alt": "Portrait of Sir Francis Drake",
-                    "image_caption": "Sir Francis Drake, whose personal vendetta against Spain helped transform England into a global maritime power.",
+                    "image_caption": "Sir Francis Drake, whose personal vendetta against Spain helped transform England into a global maritime power. Initially operating as a state-sponsored pirate (privateer), Drake's circumnavigation of the globe brought immense stolen wealth back to Queen Elizabeth I, fueling England's naval ambitions.",
                     "tasks": [
                         {
                             "type": "comprehension",
@@ -403,7 +403,7 @@ export const unitData = {
                     "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time.",
                     "image": "/images/global_mercator.jpg",
                     "image_alt": "Mercator World Map 1569",
-                    "image_caption": "A 16th-century Nautical Planisphere (Mercator World Map). This map revolutionized oceanic travel, showing complex ocean trade routes, wind currents, and the terrifying scale of the vast unknown oceans that European sailors faced.",
+                    "image_caption": "A 16th-century Nautical Planisphere (Mercator World Map). This map revolutionized oceanic travel, showing complex ocean trade routes, wind currents, and the terrifying scale of the vast unknown oceans that European sailors faced. By accurately depicting the curvature of the Earth for navigation, it empowered European sailors to finally cross the treacherous Atlantic and Indian Oceans.",
                     "source_letter": "B",
                     "tasks": []
                 },
@@ -421,7 +421,7 @@ export const unitData = {
                     "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494, Pope Alexander VI issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant Queen Elizabeth I took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, Walter Raleigh, and John Hawkins were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II.",
                     "image": "/images/tordesillas_map_new.png",
                     "image_alt": "Map showing the Treaty of Tordesillas line",
-                    "image_caption": "The 1494 Treaty of Tordesillas divided the newly discovered lands outside Europe between the Portuguese Empire and the Spanish Empire.",
+                    "image_caption": "The 1494 Treaty of Tordesillas divided the newly discovered lands outside Europe between the Portuguese Empire and the Spanish Empire. Brokered by the Pope, this treaty audaciously ignored the millions of Indigenous people already living in these lands, viewing the entire non-European world as property to be claimed.",
                     "tasks": [
                         {
                             "type": "analysis",
@@ -805,7 +805,7 @@ export const unitData = {
                     "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>",
                     "image": "/images/jamestown_fort.jpg",
                     "image_alt": "Map plan of the triangular James Fort in Virginia, 1607",
-                    "image_caption": "The 1607 triangular plan of James Fort, demonstrating the heavily militarized and defensive nature of early English settlements in America.",
+                    "image_caption": "The 1607 triangular plan of James Fort, demonstrating the heavily militarized and defensive nature of early English settlements in America. Surrounded by the powerful Powhatan Confederacy, the English settlers lived in constant fear of attack, disease, and starvation, clinging desperately to the edge of the continent.",
                     "tasks": [
                         {
                             "type": "analysis",
@@ -1493,7 +1493,7 @@ export const unitData = {
                     "text": "<strong>What Truly Destroyed Slavery—White Abolitionists or Black Resistance?</strong><br><br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;\">   <div style=\"background: #fdf4ff; border: 1px solid #f0abfc; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #a21caf;\">Interpretation A: The Traditional Imperial View</h4>       <p><em>\"Britain’s abolition of the slave trade in 1807 was a noble gesture of Christian humanitarianism. It was brought about by the tireless moral campaigning of white parliamentary heroes like William Wilberforce and Thomas Clarkson in London.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Reginald Coupland, 1933</strong></p>   </div>   <div style=\"background: #f0fdfa; border: 1px solid #5eead4; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #0f766e;\">Interpretation B: The Anti-Colonial View</h4>       <p><em>\"Slavery was not simply voted away by politicians in London; it was rendered unprofitable and politically unworkable by continuous slave rebellions across the Caribbean... The enslaved freed themselves.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Dr. Eric Williams, 1944</strong></p>   </div></div><br><strong>Modern Resonance: Reparations and Imperial Fortunes</strong><br>The profits of Atlantic slavery did not disappear when slavery was abolished in 1833. Modern historians have proven that Caribbean sugar wealth directly funded major British banks (e.g., Barclays), insurance institutions (Lloyd's of London), and railway networks.<br><br><strong>The 1833 Compensation Scandal:</strong> When Britain abolished slavery, the government paid <strong>£20 million</strong> (equivalent to £17 billion today) in compensation—not to the enslaved people, but to the <strong>46,000 white slave owners</strong> for their \"loss of property\"! This debt was so massive that British taxpayers did not finish paying it off until <strong>2015</strong>.",
                     "image": "/images/brookes_ship.jpg",
                     "image_alt": "Diagram of the Slave Ship Brookes",
-                    "image_caption": "The famous 1788 abolitionist plan showing the horrific tight stowage on the slave ship Brookes, used to shock the British public.",
+                    "image_caption": "The famous 1788 abolitionist plan showing the horrific tight stowage on the slave ship Brookes, used to shock the British public. This diagram became one of history's most effective pieces of political propaganda, forcing the public to confront the brutal, industrial scale of the transatlantic slave trade.",
                     "tasks": [
                         {
                             "type": "comprehension",
