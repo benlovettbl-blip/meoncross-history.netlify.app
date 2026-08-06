@@ -22,8 +22,46 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
     // Determine the structure type
     const isGrouped = timelineData.length > 0 && timelineData[0].events && Array.isArray(timelineData[0].events);
 
+    // Extract unique themes
+    const themes = new Set();
+    if (isGrouped) {
+        timelineData.forEach(group => {
+            group.events.forEach(evt => { if (evt.theme) themes.add(evt.theme); });
+        });
+    } else {
+        timelineData.forEach(evt => { if (evt.theme) themes.add(evt.theme); });
+    }
+
     let html = `
     <style>
+        .timeline-filters {
+            text-align: center;
+            margin: 20px 0 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .timeline-filter-btn {
+            background: white;
+            border: 2px solid #cbd5e1;
+            color: #475569;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .timeline-filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .timeline-filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
         .timeline-container {
             max-width: 900px;
             margin: 0 auto;
@@ -159,7 +197,19 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             to { opacity: 1; transform: translateX(0); }
         }
     </style>
-    <div class="timeline-container">
+    `;
+
+    if (themes.size > 0) {
+        html += `
+        <div class="timeline-filters">
+            <button class="timeline-filter-btn active" data-theme="all">All</button>
+            ${Array.from(themes).map(theme => `<button class="timeline-filter-btn" data-theme="${theme}">${theme}</button>`).join('')}
+        </div>
+        `;
+    }
+
+    html += `
+    <div class="timeline-container" id="timeline-container-main">
     `;
 
     let delay = 0;
@@ -182,7 +232,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             
             group.events.forEach(evt => {
                 html += `
-                <div class="timeline-event" style="animation-delay: ${delay}s">
+                <div class="timeline-event" data-theme="${evt.theme || ''}" style="animation-delay: ${delay}s">
                     <div class="timeline-card">
                         ${evt.key_topic ? `<div class="timeline-kt">${evt.key_topic}</div>` : ''}
                         ${evt.image ? `
@@ -215,7 +265,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
             }
 
             html += `
-            <div class="timeline-event" style="animation-delay: ${delay}s">
+            <div class="timeline-event" data-theme="${evt.theme || ''}" style="animation-delay: ${delay}s">
                 <div class="timeline-card">
                     ${evt.key_topic ? `<div class="timeline-kt">${evt.key_topic}</div>` : ''}
                     ${evt.image ? `
@@ -238,4 +288,32 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
 
     html += `</div>`;
     container.innerHTML = html;
+
+    // Attach filter logic
+    if (themes.size > 0) {
+        const filterBtns = container.querySelectorAll('.timeline-filter-btn');
+        const events = container.querySelectorAll('.timeline-event');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const selectedTheme = btn.dataset.theme;
+                
+                events.forEach(event => {
+                    if (selectedTheme === 'all' || event.dataset.theme === selectedTheme) {
+                        event.style.display = 'block';
+                        // Reset animation to replay it
+                        event.style.animation = 'none';
+                        event.offsetHeight; // trigger reflow
+                        event.style.animation = null;
+                    } else {
+                        event.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 }

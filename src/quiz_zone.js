@@ -5,6 +5,7 @@ export function renderQuizZone(container, unitData) {
     let quizPack = [];
     let masterBank = [];
     let vocabBank = [];
+    let portraitBank = [];
     
     let groupedLevels = {};
     let groupedFlashcardLevels = {};
@@ -21,8 +22,8 @@ export function renderQuizZone(container, unitData) {
                 groupedFlashcardLevels[topicKey] = { title: topicKey, questions: [] };
             }
 
-            const addQuestion = (q, options, a) => {
-                const questionObj = { q, a, options, source: l.title };
+            const addQuestion = (q, options, a, img) => {
+                const questionObj = { q, a, options, img, source: l.title };
                 quizPack.push(questionObj);
                 groupedLevels[topicKey].questions.push(questionObj);
             };
@@ -30,7 +31,12 @@ export function renderQuizZone(container, unitData) {
             // For quizPack (structured quizzes)
             if (l.quiz && Array.isArray(l.quiz)) {
                 l.quiz.forEach(q => {
-                    addQuestion(q.question || q.q, q.options, q.options ? q.options[q.answer] : q.a);
+                    const qText = q.question || q.q;
+                    if (qText === "Who is this historical figure?") {
+                        portraitBank.push({ q: qText, a: q.options ? q.options[q.answer] : q.a, options: q.options, img: q.img, source: l.title });
+                    } else {
+                        addQuestion(qText, q.options, q.options ? q.options[q.answer] : q.a, q.img);
+                    }
                 });
             } 
             if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
@@ -106,6 +112,13 @@ export function renderQuizZone(container, unitData) {
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Vocab Match-Up</h3>
                         <p style="color: #64748b; margin:0;">Drag and drop to match 5 key terms to their definitions.</p>
                     </div>
+                    ${portraitBank.length > 0 ? `
+                    <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'; this.style.background='#f8fafc';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='white';" id="btn-mode-portrait">
+                        <i class="fa-solid fa-user-tie" style="font-size: 3rem; color: #db2777; margin-bottom: 15px;"></i>
+                        <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Who Am I? (Portraits)</h3>
+                        <p style="color: #64748b; margin:0;">Identify ${portraitBank.length} historical figures by their portraits.</p>
+                    </div>
+                    ` : ''}
                 </div>
             </div>
 
@@ -140,6 +153,15 @@ export function renderQuizZone(container, unitData) {
         uiContainer.style.display = 'block';
         startVocabMatchUp();
     });
+
+    if (portraitBank.length > 0) {
+        container.querySelector('#btn-mode-portrait').addEventListener('click', () => {
+            activeMode = 'portrait';
+            modeSelect.style.display = 'none';
+            uiContainer.style.display = 'block';
+            startQuiz(portraitBank, 'Who Am I? (Portraits)', false);
+        });
+    }
 
     function shuffleArray(array) {
         const newArr = [...array];
@@ -245,6 +267,7 @@ export function renderQuizZone(container, unitData) {
                         <span>Question ${currentIndex + 1} of ${sessionQuestions.length}</span>
                     </div>
                     <h2 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 30px;">${q.q}</h2>
+                    ${q.img ? `<img src="${q.img}" style="max-height: 300px; max-width: 100%; border-radius: 8px; margin-bottom: 25px; object-fit: contain; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">` : ''}
                     <div id="quiz-options" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: 0 auto;">
                         ${q.shuffledOptions.map((opt, i) => `
                             <button class="quiz-option-btn" data-answer="${opt.replace(/"/g, '&quot;')}" style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 15px; font-size: 1.1rem; color: #334155; cursor: pointer; transition: all 0.2s; text-align: left; position: relative;">
@@ -365,11 +388,72 @@ export function renderQuizZone(container, unitData) {
     // 2. FLASHCARD FRENZY LOGIC
     // ==========================================
     function startFlashcardFrenzy() {
-        if (Object.keys(groupedFlashcardLevels).length === 0) {
+        if (masterBank.length === 0) {
             uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">No flashcard data available.</div><button onclick="document.getElementById('mode-select-container').style.display='block'; document.getElementById('quiz-ui-container').style.display='none';" style="padding: 10px; cursor: pointer;">Back</button>`;
             return;
         }
-        renderLevelSelect(true);
+        
+        let themeHtml = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="color: #0f172a; margin: 0;">Select a Flashcard Theme</h2>
+                <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+        `;
+        
+        const themes = [
+            { id: 'all', title: 'All Units (Random)', color: '#1e3a8a', icon: 'fa-layer-group', lessons: [] },
+            { id: 'trade', title: 'Exploration & Trade', color: '#10b981', icon: 'fa-globe', lessons: ['1450', 'Trade or takeover'] },
+            { id: 'conflict', title: 'Conflict & Power', color: '#ef4444', icon: 'fa-gavel', lessons: ['Who controlled Britain', 'enslaved Africans'] },
+            { id: 'religion', title: 'Religion & Society', color: '#8b5cf6', icon: 'fa-church', lessons: ['religious conflict', 'modern'] }
+        ];
+
+        themes.forEach(t => {
+            themeHtml += `
+                <div class="theme-card" data-theme="${t.id}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="font-size: 2.5rem; color: ${t.color}; margin-bottom: 15px;"><i class="fa-solid ${t.icon}"></i></div>
+                    <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">${t.title}</h3>
+                </div>
+            `;
+        });
+        
+        themeHtml += `</div>
+        <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <h3 style="color: #475569; font-size: 1rem; margin-bottom: 10px;">Or revise by specific lesson:</h3>
+            <button id="btn-by-lesson" style="background: white; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">View Lesson Decks</button>
+        </div>`;
+        
+        uiContainer.innerHTML = themeHtml;
+        
+        uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
+            uiContainer.style.display = 'none';
+            modeSelect.style.display = 'block';
+        });
+
+        uiContainer.querySelector('#btn-by-lesson').addEventListener('click', () => {
+            renderLevelSelect(true);
+        });
+
+        uiContainer.querySelectorAll('.theme-card').forEach(card => {
+            card.addEventListener('mouseover', () => { card.style.transform = 'translateY(-3px)'; card.style.borderColor = '#94a3b8'; });
+            card.addEventListener('mouseout', () => { card.style.transform = 'translateY(0)'; card.style.borderColor = '#e2e8f0'; });
+            card.addEventListener('click', () => {
+                const themeId = card.dataset.theme;
+                const theme = themes.find(t => t.id === themeId);
+                
+                let filteredBank = masterBank;
+                if (themeId !== 'all') {
+                    filteredBank = masterBank.filter(q => theme.lessons.some(keyword => q.source && q.source.includes(keyword)));
+                }
+                
+                if (filteredBank.length === 0) {
+                    alert("No flashcards found for this theme!");
+                    return;
+                }
+                
+                startFlashcardUI(filteredBank, theme.title);
+            });
+        });
     }
 
     function startFlashcardUI(questionsSet, title) {

@@ -1,61 +1,275 @@
 [
   {
-    "name": "Kaiser Wilhelm II",
-    "role": "Emperor of Germany",
-    "lifespan": "1859 – 1941",
-    "achievements": [
-      "Pursued aggressive 'Weltpolitik' to expand German global influence.",
-      "Expanded the German Imperial Navy, sparking an arms race with Britain.",
-      "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
-    ],
-    "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
-    "image": "assets/card_wilhelm.png"
+    "name": "Niccolò Barbaro",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Venetian merchant",
+    "bio": "Witnessed and recorded the fall of Constantinople in 1453.",
+    "image": "/images/individuals/niccol_barbaro.jpg"
   },
   {
-    "name": "Tsar Nicholas II",
-    "role": "Emperor of Russia",
-    "lifespan": "1868 – 1918",
-    "achievements": [
-      "Led the rapid industrialisation of the Russian Empire.",
-      "Formed an alliance with France to counter the Triple Alliance.",
-      "Ordered the mobilization of the Russian army in July 1914."
-    ],
-    "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
-    "image": "assets/card_nicholas.png"
+    "name": "Sultan Mehmed II",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Ottoman Sultan",
+    "bio": "Captured Constantinople in 1453, destroying the Byzantine Empire.",
+    "image": "/images/individuals/sultan_mehmed_ii.jpg"
   },
   {
-    "name": "Gavrilo Princip",
-    "role": "Bosnian Serb Nationalist",
-    "lifespan": "1894 – 1918",
-    "achievements": [
-      "Joined the secret nationalist society 'Young Bosnia'.",
-      "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
-      "Fired the fatal shots in Sarajevo on June 28, 1914."
-    ],
-    "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
-    "image": "assets/card_princip.png"
+    "name": "Mansa Musa",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Emperor of Mali",
+    "bio": "Renowned for his immense gold wealth and famous pilgrimage to Mecca.",
+    "image": "/images/individuals/mansa_musa.jpg"
   },
   {
-    "name": "Count Leopold Berchtold",
-    "role": "Austro-Hungarian Foreign Minister",
-    "lifespan": "1863 – 1942",
-    "achievements": [
-      "Drafted the severe July Ultimatum presented to Serbia.",
-      "Convinced Emperor Franz Joseph to declare war on Serbia.",
-      "Secured Germany's unconditional support (the 'Blank Cheque')."
-    ],
-    "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+    "name": "Admiral Zheng He",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Ming Dynasty Admiral",
+    "bio": "Commanded massive Chinese treasure fleets across the Indian Ocean.",
+    "image": "/images/individuals/admiral_zheng_he.jpg"
   },
   {
-    "name": "Alfred von Schlieffen",
-    "role": "German Field Marshal",
-    "lifespan": "1833 – 1913",
-    "achievements": [
-      "Chief of the Imperial German General Staff (1891–1906).",
-      "Authored the famous 'Schlieffen Plan' for a two-front war.",
-      "Prioritized military strategy over diplomatic consequences."
-    ],
-    "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
-    "image": "assets/alfred_von_schlieffen.jpg"
+    "name": "Christopher Columbus",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Explorer",
+    "bio": "His 1492 voyage to the Americas initiated European global expansion.",
+    "image": "/images/individuals/christopher_columbus.jpg"
+  },
+  {
+    "name": "Martin Luther",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "German Monk",
+    "bio": "His 1517 protests sparked the Protestant Reformation, dividing Europe.",
+    "image": "/images/individuals/martin_luther.jpg"
+  },
+  {
+    "name": "Pope Alexander VI",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "Pope",
+    "bio": "Issued the 1494 Treaty of Tordesillas dividing the Americas between Spain and Portugal.",
+    "image": "/images/individuals/pope_alexander_vi.jpg"
+  },
+  {
+    "name": "King Philip II",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "King of Spain",
+    "bio": "Catholic monarch who launched the Spanish Armada against England.",
+    "image": "/images/individuals/king_philip_ii.jpg"
+  },
+  {
+    "name": "Queen Elizabeth I",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "Queen of England",
+    "bio": "Protestant Queen who authorized privateers and defeated the Spanish Armada.",
+    "image": "/images/individuals/queen_elizabeth_i.jpg"
+  },
+  {
+    "name": "Mary, Queen of Scots",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "Queen of Scotland",
+    "bio": "Catholic monarch whose execution angered Philip II.",
+    "image": "/images/individuals/mary_queen_of_scots.jpg"
+  },
+  {
+    "name": "Henry VIII",
+    "group": "Lesson 2: What drove the European 'Age of Discovery'?",
+    "role": "King of England",
+    "bio": "Broke away from the Catholic Church in 1534.",
+    "image": "/images/individuals/henry_viii.jpg"
+  },
+  {
+    "name": "Francis Drake",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "English Privateer",
+    "bio": "Circumnavigated the globe and heavily raided Spanish treasure ships.",
+    "image": "/images/individuals/francis_drake.jpg"
+  },
+  {
+    "name": "John Hawkins",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "English Sea Captain",
+    "bio": "Cousin to Francis Drake and pioneer of the English slave trade.",
+    "image": "/images/individuals/john_hawkins.JPG"
+  },
+  {
+    "name": "Sir Walter Raleigh",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "English Explorer",
+    "bio": "Organized the first failed English colonization attempt at Roanoke.",
+    "image": "/images/individuals/sir_walter_raleigh.jpg"
+  },
+  {
+    "name": "Chief Powhatan",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "Native American Leader",
+    "bio": "Leader of the Powhatan Confederacy who interacted with Jamestown settlers.",
+    "image": "/images/individuals/chief_powhatan.jpg"
+  },
+  {
+    "name": "John Rolfe",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "English Settler",
+    "bio": "Introduced a profitable tobacco strain to Jamestown.",
+    "image": "/images/individuals/john_rolfe.jpg"
+  },
+  {
+    "name": "King James I",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "King of England",
+    "bio": "Sent an ambassador to the Mughal Empire.",
+    "image": "/images/individuals/king_james_i.jpg"
+  },
+  {
+    "name": "Sir Thomas Roe",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "English Diplomat",
+    "bio": "Sent to the court of the Mughal Emperor in 1615 to secure trading rights.",
+    "image": "/images/individuals/sir_thomas_roe.jpg"
+  },
+  {
+    "name": "Emperor Jahangir",
+    "group": "Lesson 3: Privateers, Companies, and the first English colonies",
+    "role": "Mughal Emperor",
+    "bio": "Wealthy and powerful ruler who permitted early English trade in India.",
+    "image": "/images/individuals/emperor_jahangir.jpeg"
+  },
+  {
+    "name": "King Charles I",
+    "group": "Lesson 4: How did the British Civil War create an Imperial Republic?",
+    "role": "King of England",
+    "bio": "Believed in the Divine Right of Kings; executed by Parliament in 1649.",
+    "image": "/images/individuals/king_charles_i.jpg"
+  },
+  {
+    "name": "Oliver Cromwell",
+    "group": "Lesson 4: How did the British Civil War create an Imperial Republic?",
+    "role": "Lord Protector",
+    "bio": "Strict Puritan commander of the New Model Army.",
+    "image": "/images/individuals/oliver_cromwell.jpg"
+  },
+  {
+    "name": "John Bradshaw",
+    "group": "Lesson 4: How did the British Civil War create an Imperial Republic?",
+    "role": "President of the High Court",
+    "bio": "Presided over the trial of King Charles I.",
+    "image": "/images/individuals/john_bradshaw.png"
+  },
+  {
+    "name": "Martin Noell",
+    "group": "Lesson 4: How did the British Civil War create an Imperial Republic?",
+    "role": "London Merchant",
+    "bio": "Wealthy merchant, slave trader, and pamphleteer.",
+    "image": ""
+  },
+  {
+    "name": "King Charles II",
+    "group": "Lesson 4: How did the British Civil War create an Imperial Republic?",
+    "role": "King of England",
+    "bio": "Returned to the throne during the Restoration in 1660.",
+    "image": "/images/individuals/king_charles_ii.jpg"
+  },
+  {
+    "name": "Queen Nanny (Nanny of the Maroons)",
+    "group": "Lesson 5: What was the reality of the Transatlantic Slave Trade?",
+    "role": "Maroon Leader",
+    "bio": "Led the Jamaican Maroons in a successful guerrilla war against the British.",
+    "image": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg"
+  },
+  {
+    "name": "Olaudah Equiano",
+    "group": "Lesson 5: What was the reality of the Transatlantic Slave Trade?",
+    "role": "Abolitionist",
+    "bio": "Formerly enslaved African who published a bestselling autobiography exposing slavery's horrors.",
+    "image": "/images/individuals/olaudah_equiano.png"
+  },
+  {
+    "name": "Thomas Thistlewood",
+    "group": "Lesson 5: What was the reality of the Transatlantic Slave Trade?",
+    "role": "Plantation Overseer",
+    "bio": "Jamaican sugar plantation overseer whose diary detailed brutal punishments and slave resistance.",
+    "image": ""
+  },
+  {
+    "name": "King George II",
+    "group": "Lesson 6: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+    "role": "King of Great Britain",
+    "bio": "Governed through a constitutional monarchy via Parliament.",
+    "image": "/images/individuals/king_george_ii.jpg"
+  },
+  {
+    "name": "Pierre-Jean Grosley",
+    "group": "Lesson 6: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+    "role": "French Aristocrat",
+    "bio": "Observed the extreme contrasts of wealth and poverty in London in 1750.",
+    "image": "/images/individuals/pierre_jean_grosley.jpg"
+  },
+  {
+    "name": "Henry Fielding",
+    "group": "Lesson 6: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+    "role": "London Magistrate",
+    "bio": "Author who reported on rampant crime and poverty in 1751 London.",
+    "image": "/images/individuals/henry_fielding.jpg"
+  },
+  {
+    "name": "William Hogarth",
+    "group": "Lesson 6: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+    "role": "Artist",
+    "bio": "Famous for his 1751 engraving 'Gin Lane' depicting social decay.",
+    "image": "/images/individuals/william_hogarth.jpg"
+  },
+  {
+    "name": "Kritovoulos of Imbros",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "15th-Century Scholar",
+    "bio": "A 15th-century Greek scholar and historian. Though Greek, he became a subject of the Ottoman Empire and served as an eyewitness and chronicler of the Ottoman siege and capture of Constantinople in 1453.",
+    "image": ""
+  },
+  {
+    "name": "Professor Peter Frankopan",
+    "group": "Lesson 1: Who held global power in 1450?",
+    "role": "Modern Historian",
+    "bio": "A modern historian and author of 'The Silk Roads'. He challenges the Eurocentric myth of 1450, arguing that true global wealth and power were concentrated in the East and along the Silk Road networks, not in Western Europe.",
+    "image": "/images/individuals/professor_peter_frankopan.JPG"
+  },
+  {
+    "name": "Dr. Geoffrey Parker",
+    "group": "Lesson 3: Why was the Spanish Armada defeated?",
+    "role": "Modern Revisionist Historian",
+    "bio": "A modern revisionist historian who offers a structural view of the Spanish Armada's defeat. He argues that Spain's failure was due to fundamental logistical flaws, poor communication, and bad weather, rather than just English naval superiority.",
+    "image": ""
+  },
+  {
+    "name": "Shashi Tharoor",
+    "group": "Lesson 4: How did a company conquer a subcontinent?",
+    "role": "Modern Historian / Author",
+    "bio": "A modern historian and author of 'Inglorious Empire'. He argues that the British East India Company and similar joint-stock companies were specifically designed to ruthlessly extract wealth and subjugate local populations.",
+    "image": "/images/individuals/shashi_tharoor.jpg"
+  },
+  {
+    "name": "Professor Christopher Hill",
+    "group": "Lesson 5: Why did the English kill their King?",
+    "role": "Modern Historian",
+    "bio": "A prominent Marxist historian who championed the 'Political View' of the English Civil War. He argued that the conflict permanently smashed absolute monarchy and laid the groundwork for modern parliamentary democracy.",
+    "image": ""
+  },
+  {
+    "name": "Professor Eric Williams",
+    "group": "Lesson 5: Why did the English kill their King?",
+    "role": "Modern Historian",
+    "bio": "A pioneering historian and author of 'Capitalism and Slavery'. He argued the 'Imperial/Economic View' that the true victors of the Civil War were the Atlantic mercantile class, whose rise to power accelerated the transatlantic slave trade.",
+    "image": "/images/individuals/professor_eric_williams.jpg"
+  },
+  {
+    "name": "Professor Roy Porter",
+    "group": "Lesson 6: Synthesis & Assessment",
+    "role": "Modern Historian",
+    "bio": "A modern historian of medicine and society who viewed 1750 Britain as a vibrant, modern, and secular consumer society poised for the Industrial Revolution.",
+    "image": ""
+  },
+  {
+    "name": "Professor J.C.D. Clark",
+    "group": "Lesson 6: Synthesis & Assessment",
+    "role": "Modern Historian",
+    "bio": "A modern historian who challenges the idea of a rapidly modernizing Britain in 1750. He viewed it as an un-modern, traditional 'Ancien Régime' deeply rooted in aristocratic and religious authority.",
+    "image": ""
   }
 ]

@@ -1329,3 +1329,29 @@ body.large-text { font-size: 1.15rem; } body.large-text h1 { font-size: 2rem; } 
   100% { transform: scale(1.05); opacity: 1; }
 }
   
+
+/* Side Quest Gamification */
+.side-quest-box {
+  background-color: var(--card-bg, #fff);
+  border: 2px dashed #ffd700;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.side-quest-box summary {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #d4af37;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.side-quest-box summary:hover {
+  opacity: 0.8;
+}
+.side-quest-box p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+@media print { .side-quest-box { display: none !important; } }

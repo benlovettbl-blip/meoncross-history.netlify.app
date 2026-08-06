@@ -1,0 +1,312 @@
+[
+  {
+    "q": "Who am I? Witnessed and recorded the fall of Constantinople in 1453.",
+    "options": [
+      "Niccolò Barbaro",
+      "Chief Powhatan",
+      "King James I",
+      "William Hogarth"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Captured Constantinople in 1453, destroying the Byzantine Empire.",
+    "options": [
+      "Emperor Jahangir",
+      "Sultan Mehmed II",
+      "Henry VIII",
+      "Queen Nanny (Nanny of the Maroons)"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Renowned for his immense gold wealth and famous pilgrimage to Mecca.",
+    "options": [
+      "Mansa Musa",
+      "Sir Thomas Roe",
+      "Admiral Zheng He",
+      "King Charles I"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Commanded massive Chinese treasure fleets across the Indian Ocean.",
+    "options": [
+      "Admiral Zheng He",
+      "Queen Elizabeth I",
+      "Martin Noell",
+      "Pierre-Jean Grosley"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? His 1492 voyage to the Americas initiated European global expansion.",
+    "options": [
+      "John Bradshaw",
+      "Christopher Columbus",
+      "Francis Drake",
+      "Mansa Musa"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? His 1517 protests sparked the Protestant Reformation, dividing Europe.",
+    "options": [
+      "Martin Luther",
+      "Emperor Jahangir",
+      "Chief Powhatan",
+      "Henry VIII"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Issued the 1494 Treaty of Tordesillas dividing the Americas between Spain and Portugal.",
+    "options": [
+      "Thomas Thistlewood",
+      "Oliver Cromwell",
+      "Pope Alexander VI",
+      "King James I"
+    ],
+    "answer": 2
+  },
+  {
+    "q": "Who am I? Catholic monarch who launched the Spanish Armada against England.",
+    "options": [
+      "Mary, Queen of Scots",
+      "King Philip II",
+      "Pope Alexander VI",
+      "Sir Walter Raleigh"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Protestant Queen who authorized privateers and defeated the Spanish Armada.",
+    "options": [
+      "Pope Alexander VI",
+      "Olaudah Equiano",
+      "John Hawkins",
+      "Queen Elizabeth I"
+    ],
+    "answer": 3
+  },
+  {
+    "q": "Who am I? Catholic monarch whose execution angered Philip II.",
+    "options": [
+      "Mary, Queen of Scots",
+      "William Hogarth",
+      "Niccolò Barbaro",
+      "Admiral Zheng He"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Broke away from the Catholic Church in 1534.",
+    "options": [
+      "John Rolfe",
+      "Henry VIII",
+      "Christopher Columbus",
+      "Emperor Jahangir"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Circumnavigated the globe and heavily raided Spanish treasure ships.",
+    "options": [
+      "John Bradshaw",
+      "Queen Nanny (Nanny of the Maroons)",
+      "Henry VIII",
+      "Francis Drake"
+    ],
+    "answer": 3
+  },
+  {
+    "q": "Who am I? Cousin to Francis Drake and pioneer of the English slave trade.",
+    "options": [
+      "King James I",
+      "John Hawkins",
+      "Sir Thomas Roe",
+      "Mansa Musa"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Organized the first failed English colonization attempt at Roanoke.",
+    "options": [
+      "Sir Walter Raleigh",
+      "Henry Fielding",
+      "King Philip II",
+      "Martin Noell"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Leader of the Powhatan Confederacy who interacted with Jamestown settlers.",
+    "options": [
+      "Chief Powhatan",
+      "Thomas Thistlewood",
+      "Pope Alexander VI",
+      "Henry VIII"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Introduced a profitable tobacco strain to Jamestown.",
+    "options": [
+      "John Rolfe",
+      "Emperor Jahangir",
+      "Olaudah Equiano",
+      "Queen Elizabeth I"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Sent an ambassador to the Mughal Empire.",
+    "options": [
+      "Mansa Musa",
+      "Admiral Zheng He",
+      "King James I",
+      "King Charles I"
+    ],
+    "answer": 2
+  },
+  {
+    "q": "Who am I? Sent to the court of the Mughal Emperor in 1615 to secure trading rights.",
+    "options": [
+      "Henry Fielding",
+      "Sir Thomas Roe",
+      "King Philip II",
+      "Thomas Thistlewood"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Wealthy and powerful ruler who permitted early English trade in India.",
+    "options": [
+      "Emperor Jahangir",
+      "Pierre-Jean Grosley",
+      "Oliver Cromwell",
+      "King Charles I"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Believed in the Divine Right of Kings; executed by Parliament in 1649.",
+    "options": [
+      "Henry VIII",
+      "Francis Drake",
+      "King Charles I",
+      "William Hogarth"
+    ],
+    "answer": 2
+  },
+  {
+    "q": "Who am I? Strict Puritan commander of the New Model Army.",
+    "options": [
+      "Oliver Cromwell",
+      "King Charles I",
+      "King Charles II",
+      "Emperor Jahangir"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Presided over the trial of King Charles I.",
+    "options": [
+      "John Bradshaw",
+      "Admiral Zheng He",
+      "Olaudah Equiano",
+      "Sir Walter Raleigh"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Wealthy merchant, slave trader, and pamphleteer.",
+    "options": [
+      "Martin Noell",
+      "Niccolò Barbaro",
+      "Chief Powhatan",
+      "Henry VIII"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Returned to the throne during the Restoration in 1660.",
+    "options": [
+      "Henry Fielding",
+      "King Charles II",
+      "Sultan Mehmed II",
+      "Sir Walter Raleigh"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Led the Jamaican Maroons in a successful guerrilla war against the British.",
+    "options": [
+      "King James I",
+      "Mary, Queen of Scots",
+      "Queen Nanny (Nanny of the Maroons)",
+      "King Charles I"
+    ],
+    "answer": 2
+  },
+  {
+    "q": "Who am I? Formerly enslaved African who published a bestselling autobiography exposing slavery's horrors.",
+    "options": [
+      "Olaudah Equiano",
+      "Sir Thomas Roe",
+      "Oliver Cromwell",
+      "Martin Luther"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Jamaican sugar plantation overseer whose diary detailed brutal punishments and slave resistance.",
+    "options": [
+      "Admiral Zheng He",
+      "Thomas Thistlewood",
+      "Sir Thomas Roe",
+      "King James I"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Governed through a constitutional monarchy via Parliament.",
+    "options": [
+      "King George II",
+      "Admiral Zheng He",
+      "King Charles II",
+      "Sultan Mehmed II"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Observed the extreme contrasts of wealth and poverty in London in 1750.",
+    "options": [
+      "John Rolfe",
+      "Pierre-Jean Grosley",
+      "Henry Fielding",
+      "King George II"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Who am I? Author who reported on rampant crime and poverty in 1751 London.",
+    "options": [
+      "Henry Fielding",
+      "Chief Powhatan",
+      "Admiral Zheng He",
+      "Mansa Musa"
+    ],
+    "answer": 0
+  },
+  {
+    "q": "Who am I? Famous for his 1751 engraving 'Gin Lane' depicting social decay.",
+    "options": [
+      "Thomas Thistlewood",
+      "King George II",
+      "John Rolfe",
+      "William Hogarth"
+    ],
+    "answer": 3
+  }
+]

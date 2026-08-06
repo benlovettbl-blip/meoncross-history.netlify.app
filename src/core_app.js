@@ -952,7 +952,21 @@ export function initializeApp(unitData) {
           ${unitData.title}
         </h2>
         
-        ${Array.isArray(unitData.cover_image) ? `
+        ${unitData.cover_sources ? `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; text-align: left;">
+            ${unitData.cover_sources.map(src => `
+              <div style="display: flex; align-items: center; gap: 15px; background: #f8fafc; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="flex: 0 0 150px; height: 150px; border-radius: 8px; overflow: hidden; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  <img src="${getAssetUrl(src.image)}" alt="${src.title}" style="width: 100%; height: 100%; object-fit: cover; cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)">
+                </div>
+                <div style="flex: 1;">
+                  <h4 style="margin: 0 0 5px 0; color: #0f172a; font-size: 1rem;">${src.title}</h4>
+                  <p style="margin: 0; color: #475569; font-size: 0.85rem; line-height: 1.4;">${src.description}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        ` : Array.isArray(unitData.cover_image) ? `
           <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
             ${unitData.cover_image.map(img => `
               <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid white; flex: 1; max-height: 400px; display: flex; align-items: center; justify-content: center; background: #0f172a;">
@@ -1921,8 +1935,8 @@ export function initializeApp(unitData) {
         if (block.image) {
            imageHtml = `
              <div class="narrative-image-container" style="text-align: center; margin: 20px 0;">
-               <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1;">
-               ${block.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${block.image_alt}</div>` : ''}
+               <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
+               ${block.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
              </div>
            `;
         }
@@ -2007,17 +2021,27 @@ export function initializeApp(unitData) {
                });
                return;
              }
+             if (task.type === 'spectrum_mapper') {
+               const spectrumId = `spectrum-emb-${index}-${tIdx}`;
+               html += `<div id="${spectrumId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./spectrum_mapper.js').then(mod => {
+                    mod.initSpectrumMapper(document.getElementById(spectrumId), task);
+                 });
+               });
+               return;
+             }
              const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
              const ansId = `ans-emb-${index}-${tIdx}`;
              const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
              const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
              html += `
                <div style="margin-bottom: 10px;">
-                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + task.text)}</div>
+                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
                  <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
                  ${starterDiv}
-                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model)}</div>
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model || task.model_answer || '')}</div>
                </div>
              `;
           });
@@ -2702,6 +2726,7 @@ window.updateProgress = () => {
       if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
       else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
     }
+    q = 1;
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
         if (block.tasks) block.tasks.forEach(task => task.qNum = q++);
@@ -2752,7 +2777,7 @@ window.updateProgress = () => {
       activeLesson.narrative_blocks.forEach(block => {
         if (block.tasks) {
           block.tasks.forEach(task => {
-            addQuestionCard(task.qNum, task.text, task.model || '');
+            addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
           });
         }
       });

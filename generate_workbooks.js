@@ -188,7 +188,24 @@ allDirs.forEach(unitId => {
     </div>
     `;
 
-    if (unitData.hero_image) {
+    if (unitData.cover_sources) {
+      html += `
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 85%; margin: 40px auto 20px auto;">
+        ${unitData.cover_sources.map(src => {
+          let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(src.image, 2) : `../..${src.image.startsWith('/') ? src.image : '/' + src.image}`;
+          return `
+          <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <img src="${imgSrc}" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
+            <div style="text-align: left; flex: 1;">
+              <strong style="display: block; font-size: 9pt; color: #1a237e; margin-bottom: 3px;">${src.title}</strong>
+              <span style="font-size: 8pt; color: #475569; line-height: 1.2; display: block;">${src.description}</span>
+            </div>
+          </div>
+          `;
+        }).join('')}
+      </div>
+      `;
+    } else if (unitData.hero_image) {
       let heroImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(unitData.hero_image, 2) : `../..${unitData.hero_image.startsWith('/') ? unitData.hero_image : '/' + unitData.hero_image}`;
       html += `
       <div style="margin: 40px auto 20px auto; text-align: center; max-width: 85%;">
@@ -458,9 +475,12 @@ allDirs.forEach(unitId => {
         if (block.image) {
           let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(block.image, 2) : block.image;
           if (src.toLowerCase().endsWith('.svg')) {
-              html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto; border-radius: 8px; border: 1.5px solid #475569; padding: 10px; background: #f8fafc;">`;
+              html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto 5px auto; border-radius: 8px; border: 1.5px solid #475569; padding: 10px; background: #f8fafc;">`;
           } else {
-              html += `<img src="${src}" style="max-width:100%; max-height: 250px; display:block; margin: 15px auto; border-radius: 6px; border: 1px solid #ccc;">`;
+              html += `<img src="${src}" style="max-width:100%; max-height: 250px; display:block; margin: 15px auto 5px auto; border-radius: 6px; border: 1px solid #ccc;">`;
+          }
+          if (block.image_alt) {
+              html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>`;
           }
         }
         
@@ -552,6 +572,40 @@ allDirs.forEach(unitId => {
     if (lesson.tasks && lesson.tasks.length > 0) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
+        if (task.type === 'spectrum_mapper') {
+             html += `<div style="page-break-before: always;"></div>`;
+             html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
+             
+             // Draw the spectrum line
+             html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+             html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+             html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
+             html += `</div>`;
+             html += `<div style="height: 4px; background: #000; width: 100%; position: relative;">`;
+             html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; background: #000;"></div>`;
+             html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; background: #000;"></div>`;
+             html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; background: #000;"></div>`;
+             html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; background: #000;"></div>`;
+             html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; background: #000;"></div>`;
+             html += `</div></div>`;
+
+             html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+             html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+             task.items.forEach(item => {
+                 html += `<div style="border: 2px solid #333; padding: 15px; width: 45%; border-radius: 8px;">`;
+                 html += `<strong>${item.title}</strong><br>`;
+                 if (item.desc) html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+                 html += `</div>`;
+             });
+             html += `</div>`;
+
+             html += `<h3>Notes & Paragraph Plan</h3>`;
+             for(let i=0; i<15; i++) {
+                html += `<div class="task-lines-large"></div>`;
+             }
+             return;
+        }
+
         let qText = task.question || task.text || '';
         html += `<div class="task-box">`;
         
