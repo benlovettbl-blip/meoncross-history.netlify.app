@@ -1,8 +1,7 @@
 import { getAssetUrl } from './core_app.js';
 
 export function generateGeographicalLocationEmbedHTML(location) {
-  const hasBackData = location.actions || (location.achievements && !Array.isArray(location.achievements)) || location.limitations;
-  
+  // Keeping this for backward compatibility if it's used elsewhere
   let imgSrcHtml = '';
   if (location.image || location.image_url) {
     const imgSrc = location.image_url ? location.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(location.image) : location.image);
@@ -24,33 +23,6 @@ export function generateGeographicalLocationEmbedHTML(location) {
     basicBio += `</div>`;
   }
 
-  let backHtml = '';
-  if (hasBackData) {
-    backHtml = `<div style="flex: 1.5; min-width: 350px; display: flex; flex-direction: column; gap: 15px; justify-content: center;">`;
-    if (location.actions) {
-      backHtml += `
-        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; border-radius: 4px;">
-          <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Core Actions</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.actions}</span>
-        </div>`;
-    }
-    if (location.achievements && !Array.isArray(location.achievements)) {
-      backHtml += `
-        <div style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; padding: 10px; border-radius: 4px;">
-          <strong style="color: #22c55e; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Impact / Achievements</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.achievements}</span>
-        </div>`;
-    }
-    if (location.limitations) {
-      backHtml += `
-        <div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 10px; border-radius: 4px;">
-          <strong style="color: #ef4444; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Structural Limitations</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.limitations}</span>
-        </div>`;
-    }
-    backHtml += `</div>`;
-  }
-
   let coordinatesHtml = location.coordinates ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -5px; margin-bottom: 10px;">${location.coordinates}</p>` : '';
 
   return `
@@ -62,14 +34,112 @@ export function generateGeographicalLocationEmbedHTML(location) {
         ${basicBio}
         ${imgSrcHtml}
       </div>
-      ${backHtml}
     </div>
   `;
 }
 
-export function generateGeographicalLocationCardHTML(location) {
-  const hasBackData = location.actions || (location.achievements && !Array.isArray(location.achievements)) || location.limitations;
+window.openGeographyModal = function(index) {
+  if (!window.locationsDataGlobal || !window.locationsDataGlobal[index]) return;
+  const location = window.locationsDataGlobal[index];
   
+  let modal = document.getElementById('geo-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'geo-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    modal.style.zIndex = '999999';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.padding = '20px';
+    modal.style.boxSizing = 'border-box';
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modal.innerHTML = '';
+      }
+    };
+    document.body.appendChild(modal);
+  }
+
+  const mapQuery = location.mapQuery || location.name;
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+
+  let timelineHtml = '';
+  if (location.timeline && Array.isArray(location.timeline) && location.timeline.length > 0) {
+    timelineHtml = `
+      <div style="flex: 0 0 350px; background: #f8fafc; padding: 25px; border-left: 1px solid #cbd5e1; overflow-y: auto;">
+        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Key Events</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; position: relative; border-left: 3px solid #3b82f6; margin-left: 10px;">
+    `;
+    location.timeline.forEach((event, i) => {
+      // Try to split year and description for better styling
+      const parts = event.split(' - ');
+      const year = parts.length > 1 ? parts[0] : '';
+      const text = parts.length > 1 ? parts.slice(1).join(' - ') : event;
+      
+      timelineHtml += `
+        <li style="position: relative; margin-bottom: 20px; padding-left: 20px;">
+          <div style="position: absolute; left: -8px; top: 5px; width: 13px; height: 13px; border-radius: 50%; background: #3b82f6; border: 3px solid #f8fafc;"></div>
+          ${year ? `<div style="font-weight: bold; color: #1d4ed8; font-size: 0.95rem; margin-bottom: 4px;">${year}</div>` : ''}
+          <div style="color: #334155; font-size: 0.9rem; line-height: 1.5;">${text}</div>
+        </li>
+      `;
+    });
+    timelineHtml += `
+        </ul>
+      </div>
+    `;
+  } else if (location.description) {
+     timelineHtml = `
+      <div style="flex: 0 0 350px; background: #f8fafc; padding: 25px; border-left: 1px solid #cbd5e1; overflow-y: auto;">
+        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">About</h2>
+        <p style="color: #334155; font-size: 1rem; line-height: 1.6;">${location.description}</p>
+      </div>
+    `;
+  }
+
+  modal.innerHTML = `
+    <div style="background: white; border-radius: 12px; width: 100%; max-width: 1200px; height: 80vh; max-height: 800px; display: flex; flex-direction: column; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+      
+      <!-- Header -->
+      <div style="padding: 15px 25px; background: #0f172a; color: white; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h2 style="margin: 0; font-size: 1.4rem;">${location.name}</h2>
+          <div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">${location.region || ''} ${location.coordinates ? `| ${location.coordinates}` : ''}</div>
+        </div>
+        <button onclick="document.getElementById('geo-modal').style.display='none'; document.getElementById('geo-modal').innerHTML='';" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer; padding: 0 10px; line-height: 1;">&times;</button>
+      </div>
+      
+      <!-- Body -->
+      <div style="display: flex; flex: 1; overflow: hidden; flex-direction: row;">
+        <!-- Left: Map -->
+        <div style="flex: 1; background: #e2e8f0; position: relative;">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            style="border:0; display:block;"
+            src="${mapSrc}" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+        <!-- Right: Timeline / Info -->
+        ${timelineHtml}
+      </div>
+
+    </div>
+  `;
+  modal.style.display = 'flex';
+};
+
+export function generateGeographicalLocationCardHTML(location, index) {
   let frontImgHtml = '';
   if (location.image || location.image_url) {
     const imgSrc = location.image_url ? location.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(location.image) : location.image);
@@ -91,54 +161,17 @@ export function generateGeographicalLocationCardHTML(location) {
     basicBio += `</div>`;
   }
 
-  let backHtml = '';
-  if (hasBackData) {
-    backHtml = `
-      <h3 style="margin: 0 0 15px 0; color: var(--primary); font-family: var(--font-heading); text-align: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">${location.name}</h3>
-    `;
-    if (location.actions) {
-      backHtml += `
-        <div style="background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
-          <strong style="color: #3b82f6; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Core Actions</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.actions}</span>
-        </div>`;
-    }
-    if (location.achievements && !Array.isArray(location.achievements)) {
-      backHtml += `
-        <div style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
-          <strong style="color: #22c55e; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Impact / Achievements</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.achievements}</span>
-        </div>`;
-    }
-    if (location.limitations) {
-      backHtml += `
-        <div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
-          <strong style="color: #ef4444; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Structural Limitations</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${location.limitations}</span>
-        </div>`;
-    }
-    
-    backHtml += `<div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-undo"></i> Tap to flip back</div>`;
-  }
-
   let coordinatesHtml = location.coordinates ? `<p style="font-size: 0.85rem; color: var(--text-muted); margin-top: -10px; margin-bottom: 10px;">${location.coordinates}</p>` : '';
 
-  const onclickAttr = hasBackData ? `onclick="this.classList.toggle('flipped')"` : '';
-
   return `
-    <div class="location-card" ${onclickAttr} style="height: 100%;">
-      <div class="card-inner">
-        <div class="card-front">
-          ${frontImgHtml}
-          <div style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
-            <h3 style="margin: 0 0 5px 0; color: var(--primary); font-family: var(--font-heading);">${location.name}</h3>
-            ${coordinatesHtml}
-            <p style="margin: 0 0 15px 0; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">${location.region || ''}</p>
-            ${basicBio}
-            ${hasBackData ? `<div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: #10b981; font-weight: bold;"><i class="fas fa-sync-alt" style="margin-right: 5px;"></i> Tap for Exam Breakdown</div>` : ''}
-          </div>
-        </div>
-        ${hasBackData ? `<div class="card-back">${backHtml}</div>` : ''}
+    <div class="location-card" onclick="window.openGeographyModal(${index})" style="height: 100%; background: var(--bg-card, rgba(255, 255, 255, 0.05)); border: 1px solid var(--border-glass); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+      ${frontImgHtml}
+      <div style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
+        <h3 style="margin: 0 0 5px 0; color: var(--primary); font-family: var(--font-heading);">${location.name}</h3>
+        ${coordinatesHtml}
+        <p style="margin: 0 0 15px 0; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">${location.region || ''}</p>
+        ${basicBio}
+        <div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: #10b981; font-weight: bold;"><i class="fas fa-map-marked-alt" style="margin-right: 5px;"></i> View Interactive Map</div>
       </div>
     </div>
   `;
@@ -146,109 +179,9 @@ export function generateGeographicalLocationCardHTML(location) {
 
 export function initGeographicalLocationsTask(container, locationsData) {
   if (!locationsData || locationsData.length === 0) return;
-
-  // Pre-inject the flip-card styles into the document
-  let style = document.getElementById('flip-card-styles');
-  if (!style) {
-    style = document.createElement('style');
-    style.id = 'flip-card-styles';
-    document.head.appendChild(style);
-  }
-  style.innerHTML = `
-    .location-card {
-      background: transparent;
-      cursor: pointer;
-    }
-    .card-inner {
-      position: relative;
-      height: 100%;
-      perspective: 1000px;
-    }
-    .location-card:hover:not(.flipped) .card-inner {
-      transform: translateY(-5px);
-      -webkit-transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .card-front, .card-back {
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-      -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-      background: var(--bg-card, rgba(255, 255, 255, 0.05));
-      border: 1px solid var(--border-glass);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-    }
-    .card-front {
-      position: relative;
-      transform: rotateY(0deg);
-      -webkit-transform: rotateY(0deg);
-      height: 100%;
-    }
-    .card-back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-      padding: 20px;
-      overflow-y: auto;
-      box-sizing: border-box;
-    }
-    .location-card.flipped .card-front {
-      transform: rotateY(-180deg);
-      -webkit-transform: rotateY(-180deg);
-    }
-    .location-card.flipped .card-back {
-      transform: rotateY(0deg);
-      -webkit-transform: rotateY(0deg);
-    }
-
-    /* Premium Banner Styles */
-    .premium-banner {
-      position: relative; overflow: hidden; border-radius: 12px; padding: 25px 30px; margin-top: 30px; margin-bottom: 20px; 
-      box-shadow: 0 10px 25px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; 
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: default;
-    }
-    .premium-banner:hover {
-      transform: scale(1.01) translateY(-3px);
-      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
-    }
-    .premium-banner-bg {
-      position: absolute; top: -5%; left: -5%; width: 110%; height: 110%; 
-      background-position: center; background-size: cover; 
-      z-index: 1; filter: brightness(0.9); transition: transform 0.8s ease;
-    }
-    .premium-banner:hover .premium-banner-bg {
-      transform: scale(1.03);
-    }
-    .premium-banner-overlay-1 {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%); z-index: 2;
-    }
-    .premium-banner-overlay-2 {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-      opacity: 0.45; mix-blend-mode: multiply; z-index: 3;
-    }
-    .premium-banner-glow {
-      position: absolute; bottom: -50px; right: -50px; width: 300px; height: 300px; 
-      filter: blur(40px); z-index: 3; opacity: 0.6; border-radius: 50%;
-    }
-    .premium-banner-content {
-      position: relative; z-index: 4; padding-left: 20px;
-    }
-    .premium-banner-title {
-      margin: 0; color: #ffffff; font-size: 2rem; font-weight: 700; 
-      font-family: 'Playfair Display', serif; text-shadow: 0px 4px 12px rgba(0,0,0,0.8); letter-spacing: -0.5px;
-    }
-    .premium-banner-enquiry {
-      margin: 8px 0 0 0; color: #f8fafc; font-size: 1.05rem; font-style: italic; 
-      max-width: 800px; font-weight: 300; text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
-    }
-  `;
+  
+  // Attach data to window for modal lookup
+  window.locationsDataGlobal = locationsData;
 
   const wrapper = document.createElement('div');
   wrapper.className = 'key-individuals-wrapper fade-in';
@@ -306,7 +239,7 @@ export function initGeographicalLocationsTask(container, locationsData) {
     let htmlContent = '';
     let isFirstGroup = true;
 
-    locationsData.forEach(location => {
+    locationsData.forEach((location, index) => {
       if (location.group !== currentGroup) {
         if (!isFirstGroup) {
           htmlContent += '</div>'; // Close previous grid
@@ -320,14 +253,14 @@ export function initGeographicalLocationsTask(container, locationsData) {
           const bannerUrl = typeof getAssetUrl === 'function' ? getAssetUrl('/' + bannerData.image) : '/' + bannerData.image;
           htmlContent += `
             <div style="margin-top: 40px; margin-bottom: 25px;">
-              <div class="premium-banner" style="position: relative; margin: 0; min-height: 140px;">
-                <div class="premium-banner-bg" style="background-image: url('${bannerUrl}'); background-position: center;"></div>
-                <div class="premium-banner-overlay-1"></div>
-                <div class="premium-banner-overlay-2" style="background: ${bannerData.gradient};"></div>
-                <div class="premium-banner-glow" style="background: radial-gradient(circle, ${bannerData.border} 0%, transparent 70%);"></div>
-                <div class="premium-banner-content" style="border-left: 6px solid ${bannerData.border};">
-                  <h3 class="premium-banner-title">${bannerData.title}</h3>
-                  <p class="premium-banner-enquiry">${bannerData.enquiry}</p>
+              <div class="premium-banner" style="position: relative; overflow: hidden; border-radius: 12px; padding: 25px 30px; margin: 0; min-height: 140px; box-shadow: 0 10px 25px -10px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                <div class="premium-banner-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('${bannerUrl}'); background-position: center; background-size: cover; z-index: 1; filter: brightness(0.9);"></div>
+                <div class="premium-banner-overlay-1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%); z-index: 2;"></div>
+                <div class="premium-banner-overlay-2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.45; mix-blend-mode: multiply; z-index: 3; background: ${bannerData.gradient};"></div>
+                <div class="premium-banner-glow" style="position: absolute; bottom: -50px; right: -50px; width: 300px; height: 300px; filter: blur(40px); z-index: 3; opacity: 0.6; border-radius: 50%; background: radial-gradient(circle, ${bannerData.border} 0%, transparent 70%);"></div>
+                <div class="premium-banner-content" style="position: relative; z-index: 4; padding-left: 20px; border-left: 6px solid ${bannerData.border};">
+                  <h3 class="premium-banner-title" style="margin: 0; color: #ffffff; font-size: 2rem; font-weight: 700; font-family: 'Playfair Display', serif; text-shadow: 0px 4px 12px rgba(0,0,0,0.8);">${bannerData.title}</h3>
+                  <p class="premium-banner-enquiry" style="margin: 8px 0 0 0; color: #f8fafc; font-size: 1.05rem; font-style: italic; max-width: 800px; font-weight: 300; text-shadow: 0px 2px 8px rgba(0,0,0,0.8);">${bannerData.enquiry}</p>
                 </div>
               </div>
             </div>
@@ -345,7 +278,7 @@ export function initGeographicalLocationsTask(container, locationsData) {
         htmlContent += `<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; align-items: stretch;">`;
       }
       
-      htmlContent += generateGeographicalLocationCardHTML(location);
+      htmlContent += generateGeographicalLocationCardHTML(location, index);
     });
 
     if (!isFirstGroup) {
@@ -363,8 +296,8 @@ export function initGeographicalLocationsTask(container, locationsData) {
     grid.style.alignItems = 'stretch';
     
     let gridHtml = '';
-    locationsData.forEach(location => {
-      gridHtml += generateGeographicalLocationCardHTML(location);
+    locationsData.forEach((location, index) => {
+      gridHtml += generateGeographicalLocationCardHTML(location, index);
     });
     grid.innerHTML = gridHtml;
     wrapper.appendChild(grid);
