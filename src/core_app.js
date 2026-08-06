@@ -1933,21 +1933,44 @@ export function initializeApp(unitData) {
 
         let imageHtml = '';
         if (block.images && Array.isArray(block.images) && block.images.length > 0) {
+           const galleryData = encodeURIComponent(JSON.stringify(block.images.map(img => ({ src: getAssetUrl(img.src || img.image), alt: img.alt || img.image_alt || '' }))));
            imageHtml = `
+             <style>
+               .image-hint-caption {
+                 font-size: 0.9rem; color: transparent; text-shadow: 0 0 10px rgba(100,116,139,0.8); margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+               }
+               .image-hint-caption:hover {
+                 background: rgba(0,0,0,0.02);
+               }
+               .image-hint-caption.revealed {
+                 color: #64748b !important; text-shadow: none !important; cursor: default;
+               }
+             </style>
              <div class="narrative-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 20px 0;">
-               ${block.images.map(img => `
+               ${block.images.map((img, idx) => `
                  <div class="narrative-image-container" style="text-align: center;">
-                   <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
-                   ${img.alt || img.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                   <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
+                   ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.add('revealed'); const i = this.querySelector('i'); if(i) { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; }" title="Click to reveal caption"><i class="fa-solid fa-eye-slash" style="margin-right:4px; color: #94a3b8;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
                  </div>
                `).join('')}
              </div>
            `;
         } else if (block.image) {
            imageHtml = `
+             <style>
+               .image-hint-caption {
+                 font-size: 0.9rem; color: transparent; text-shadow: 0 0 10px rgba(100,116,139,0.8); margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+               }
+               .image-hint-caption:hover {
+                 background: rgba(0,0,0,0.02);
+               }
+               .image-hint-caption.revealed {
+                 color: #64748b !important; text-shadow: none !important; cursor: default;
+               }
+             </style>
              <div class="narrative-image-container" style="text-align: center; margin: 20px 0;">
                <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
-               ${block.image_alt ? `<div style="font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic;">${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
+               ${block.image_alt ? `<div class="image-hint-caption" onclick="this.classList.add('revealed'); const i = this.querySelector('i'); if(i) { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; }" title="Click to reveal caption"><i class="fa-solid fa-eye-slash" style="margin-right:4px; color: #94a3b8;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
              </div>
            `;
         }
@@ -3441,4 +3464,126 @@ if (document.readyState === 'loading') {
     modal.appendChild(img);
     document.body.appendChild(modal);
   };
+
+  window.openGallery = function(encodedData, startIndex) {
+    const images = JSON.parse(decodeURIComponent(encodedData));
+    let currentIndex = startIndex;
+
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+    modal.style.zIndex = '999999';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '20px';
+    closeBtn.style.right = '20px';
+    closeBtn.style.background = 'none';
+    closeBtn.style.border = 'none';
+    closeBtn.style.color = 'white';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.onclick = () => modal.remove();
+    modal.appendChild(closeBtn);
+
+    const imgContainer = document.createElement('div');
+    imgContainer.style.position = 'relative';
+    imgContainer.style.width = '80%';
+    imgContainer.style.height = '80%';
+    imgContainer.style.display = 'flex';
+    imgContainer.style.flexDirection = 'column';
+    imgContainer.style.justifyContent = 'center';
+    imgContainer.style.alignItems = 'center';
+
+    const img = document.createElement('img');
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '90%';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '8px';
+    img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+    imgContainer.appendChild(img);
+
+    const caption = document.createElement('div');
+    caption.style.color = 'white';
+    caption.style.marginTop = '15px';
+    caption.style.fontSize = '1.1rem';
+    caption.style.textAlign = 'center';
+    imgContainer.appendChild(caption);
+
+    modal.appendChild(imgContainer);
+
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.style.position = 'absolute';
+    prevBtn.style.left = '5%';
+    prevBtn.style.top = '50%';
+    prevBtn.style.transform = 'translateY(-50%)';
+    prevBtn.style.background = 'rgba(255,255,255,0.2)';
+    prevBtn.style.border = 'none';
+    prevBtn.style.color = 'white';
+    prevBtn.style.fontSize = '2rem';
+    prevBtn.style.width = '60px';
+    prevBtn.style.height = '60px';
+    prevBtn.style.borderRadius = '50%';
+    prevBtn.style.cursor = 'pointer';
+    prevBtn.style.display = 'flex';
+    prevBtn.style.justifyContent = 'center';
+    prevBtn.style.alignItems = 'center';
+    prevBtn.onclick = (e) => { e.stopPropagation(); if (currentIndex > 0) { currentIndex--; updateImage(); } };
+    modal.appendChild(prevBtn);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.style.position = 'absolute';
+    nextBtn.style.right = '5%';
+    nextBtn.style.top = '50%';
+    nextBtn.style.transform = 'translateY(-50%)';
+    nextBtn.style.background = 'rgba(255,255,255,0.2)';
+    nextBtn.style.border = 'none';
+    nextBtn.style.color = 'white';
+    nextBtn.style.fontSize = '2rem';
+    nextBtn.style.width = '60px';
+    nextBtn.style.height = '60px';
+    nextBtn.style.borderRadius = '50%';
+    nextBtn.style.cursor = 'pointer';
+    nextBtn.style.display = 'flex';
+    nextBtn.style.justifyContent = 'center';
+    nextBtn.style.alignItems = 'center';
+    nextBtn.onclick = (e) => { e.stopPropagation(); if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
+    modal.appendChild(nextBtn);
+
+    const updateImage = () => {
+      img.src = images[currentIndex].src;
+      caption.innerHTML = images[currentIndex].alt || '';
+      prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+      nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
+    };
+
+    modal.onclick = (e) => {
+      if (e.target === modal || e.target === imgContainer) modal.remove();
+    };
+    
+    const keyHandler = (e) => {
+      if (!document.body.contains(modal)) {
+        document.removeEventListener('keydown', keyHandler);
+        return;
+      }
+      if (e.key === 'Escape') modal.remove();
+      if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateImage(); }
+      if (e.key === 'ArrowRight' && currentIndex < images.length - 1) { currentIndex++; updateImage(); }
+    };
+    document.addEventListener('keydown', keyHandler);
+
+    updateImage();
+    document.body.appendChild(modal);
+  };
+
   
