@@ -181,7 +181,9 @@ export const unitData = {
           "images": [
             {
               "image": "/images/early_mod_l1_banner.jpg",
-              "image_alt": "Catalan Atlas (1375) showing Mansa Musa"
+              "image_alt": "Catalan Atlas (1375) - Mansa Musa",
+              "image_caption": "Detail from the Catalan Atlas (1375) by Abraham Cresques. It depicts Mansa Musa, the wealthy ruler of the Mali Empire, holding a gold coin, illustrating West Africa's vast gold reserves and its integration into medieval global trade networks.",
+              "source_letter": "A"
             }
           ]
         },
@@ -189,9 +191,9 @@ export const unitData = {
           "title": "Macro-History: The Wealth of the East",
           "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
           "image": "/images/global_canton.jpg",
-          "image_alt": "View of the Thirteen Factories in Canton",
-          "image_caption": "An 18th-century painting showing the foreign trading factories at Canton (Guangzhou) along the Pearl River in China. By the 1700s, this port handled massive quantities of tea, silk, and porcelain destined for European markets, fueling an enormous global trading network.",
-          "source_letter": "A",
+          "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
+          "image_caption": "An early 19th-century painting by an unknown Chinese artist showing the Thirteen Factories in Canton (Guangzhou). This was the only area where foreign merchants (including the British East India Company) were permitted to trade with Qing dynasty China.",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "comprehension",
@@ -205,27 +207,27 @@ export const unitData = {
           "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, Sultan Mehmed II controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded.",
           "image": "/images/ottoman_1453.jpg",
           "tasks": [],
-          "image_alt": "Fresco depicting the Siege of Constantinople in 1453",
-          "image_caption": "A historical fresco depicting the Siege of Constantinople (1453), marking the dramatic expansion of the Ottoman Empire. The 53-day siege utilized massive cannons that shattered the ancient walls, effectively ending the 1,000-year-old Byzantine Empire.",
-          "source_letter": "A"
+          "image_alt": "Fresco of the Siege of Constantinople (1537)",
+          "image_caption": "A 1537 fresco from the Moldovița Monastery in Romania depicting the 1453 Siege of Constantinople. The fall of the city to the Ottoman Turks severely disrupted European access to the Silk Road, forcing Christian nations to seek alternative maritime routes to Asia.",
+          "source_letter": "C"
         },
         {
           "title": "West Africa: Kingdoms of Gold and Brass",
           "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>",
           "image": "/images/benin_bronze.jpg",
           "tasks": [],
-          "image_alt": "15th-Century Benin Bronze Relief Plaque",
-          "image_caption": "A 15th-century Benin Bronze plaque showing the Oba of Benin with attendants. Crafted with highly sophisticated metallurgy techniques, this plaque demonstrates the immense wealth, power, and cultural advancement of West African kingdoms long before European colonization.",
-          "source_letter": "B"
+          "image_alt": "16th-Century Benin Bronze Plaque",
+          "image_caption": "A 16th-century brass plaque from the Kingdom of Benin (modern-day Nigeria). Crafted by the Edo people, such plaques decorated the royal palace of the Oba. They demonstrate the highly advanced metallurgical skills and complex societal structure of West African kingdoms prior to European colonization.",
+          "source_letter": "D"
         },
         {
           "title": "The Silk Road & Ming China: The World's Industrial Engine",
           "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Admiral Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than Christopher Columbus’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>",
           "image": "/images/silk_road.jpg",
           "tasks": [],
-          "image_alt": "The Silk Road Trade Routes Map",
-          "image_caption": "A map of the ancient Silk Road overland and maritime trade routes connecting Asia to Europe. These routes spanned over 4,000 miles and were traversed primarily by relay systems using camels and horses.",
-          "source_letter": "C"
+          "image_alt": "Map of the Silk Road Trade Routes",
+          "image_caption": "A modern historical map illustrating the vast network of Eurasian trade routes known as the Silk Road. Before 1450, these overland routes were the primary arteries for luxury goods, spices, and technologies flowing from Asia into the Mediterranean.",
+          "source_letter": "E"
         },
         {
           "title": "3. Primary Source Analysis",
@@ -404,12 +406,15 @@ export const unitData = {
           "images": [
             {
               "image": "/images/early_mod_l2_banner.jpg",
-              "image_alt": "Panorama of the Spanish Armada (1588)"
+              "image_alt": "Map of the Spanish Armada Route (1588)",
+              "image_caption": "An expedition map showing the route of the Spanish Armada in 1588. King Philip II of Spain launched the massive fleet to overthrow the Protestant Queen Elizabeth I, but it was defeated by English naval tactics and severe storms.",
+              "source_letter": "A"
             },
             {
               "image": "/images/francis_drake.jpg",
-              "image_alt": "Portrait of Sir Francis Drake",
-              "image_caption": "Sir Francis Drake, whose personal vendetta against Spain helped transform England into a global maritime power. In 1577, he set sail on the Pelican (later renamed the Golden Hind), becoming the first Englishman to successfully circumnavigate the globe."
+              "image_alt": "Portrait of Sir Francis Drake (1591)",
+              "image_caption": "Portrait of Sir Francis Drake (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.",
+              "source_letter": "B"
             }
           ]
         },
@@ -417,26 +422,26 @@ export const unitData = {
           "title": "Macro-History: Navigating the Unknown",
           "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time.",
           "image": "/images/global_mercator.jpg",
-          "image_alt": "Mercator World Map 1569",
-          "image_caption": "A 16th-century Nautical Planisphere (Mercator World Map). This map revolutionized oceanic travel, showing complex ocean trade routes, wind currents, and the terrifying scale of the vast unknown oceans that European sailors faced. By accurately depicting the curvature of the Earth for navigation, it empowered European sailors to finally cross the treacherous Atlantic and Indian Oceans.",
-          "source_letter": "B",
+          "image_alt": "Mercator World Map (1569)",
+          "image_caption": "The 1569 world map by Gerardus Mercator. His revolutionary cylindrical projection allowed sailors to chart courses as straight lines, greatly facilitating the explosive growth of global European navigation and exploration.",
+          "source_letter": "C",
           "tasks": []
         },
         {
           "title": "Macro-History: The Reformation (1517)",
           "text": "<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named Martin Luther nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of \"indulgences\" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after Henry VIII broke away from Rome in 1534.</li></ul>",
           "image": "/images/martin_luther_portrait.jpg",
-          "image_alt": "Martin Luther holding the Bible",
-          "image_caption": "Martin Luther, whose 1517 protests sparked the Protestant Reformation and divided Europe. A German monk and professor, Luther translated the Bible into German, using the newly invented printing press to spread his ideas rapidly.",
+          "image_alt": "Portrait of Martin Luther (1529)",
+          "image_caption": "Portrait of Martin Luther by Lucas Cranach the Elder (1529). Luther was a German monk whose 1517 Ninety-five Theses sparked the Protestant Reformation, permanently shattering the religious unity of Western Europe and triggering decades of conflict.",
           "tasks": [],
-          "source_letter": "B"
+          "source_letter": "D"
         },
         {
           "title": "Macro-History: The New World Monopoly & Privateers",
           "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494, Pope Alexander VI issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant Queen Elizabeth I took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, Walter Raleigh, and John Hawkins were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II.",
           "image": "/images/tordesillas_map_new.png",
-          "image_alt": "Map showing the Treaty of Tordesillas line",
-          "image_caption": "The 1494 Treaty of Tordesillas divided the newly discovered lands outside Europe between the Portuguese Empire and the Spanish Empire. Brokered by the Pope, this treaty audaciously ignored the millions of Indigenous people already living in these lands, viewing the entire non-European world as property to be claimed.",
+          "image_alt": "Map of the Treaty of Tordesillas (1494)",
+          "image_caption": "A historical map depicting the Line of Demarcation established by the Treaty of Tordesillas in 1494. Blessed by the Pope, it audaciously divided the newly discovered non-Christian world exclusively between the rival Catholic powers of Spain and Portugal.",
           "tasks": [
             {
               "type": "analysis",
@@ -444,7 +449,7 @@ export const unitData = {
               "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
             }
           ],
-          "source_letter": "C"
+          "source_letter": "E"
         },
         {
           "title": "The Climax: The Spanish Armada (1588)",
@@ -482,8 +487,8 @@ export const unitData = {
           "title": "Visual Analysis: The Armada Portrait (1588)",
           "text": "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>",
           "image": "/images/armada_portrait.jpg",
-          "image_alt": "The Armada Portrait of Queen Elizabeth I",
-          "image_caption": "The Armada Portrait, heavy with symbolism, showing Elizabeth resting her hand on a globe covering North America. Painted in 1588 after the defeat of the Spanish Armada, it portrays the Queen wearing pearls to symbolize her purity and imperial ambitions.",
+          "image_alt": "The Armada Portrait of Queen Elizabeth I (c. 1588)",
+          "image_caption": "The Armada Portrait of Queen Elizabeth I (c. 1588), attributed to George Gower. The Queen rests her hand on a globe, symbolizing England's rising imperial ambitions, while the background depicts the miraculous defeat of the Spanish Armada.",
           "tasks": [
             {
               "type": "analysis",
@@ -779,12 +784,16 @@ export const unitData = {
           "images": [
             {
               "image": "Panoramic painting of the Fort St. George at Madras (Chennai) or the East India Company docks at Surat.",
-              "image_alt": "Panoramic painting of the East India Company docks"
+              "image_alt": "East India Company Fort St. George",
+              "src": "/images/early_mod_l3_banner.jpg",
+              "image_caption": "Historical depiction representing the early colonial trading outposts established by the East India Company in the 17th century, serving as highly fortified bases for securing lucrative spice and textile monopolies.",
+              "source_letter": "A"
             },
             {
               "image": "/images/pocahontas.jpg",
-              "image_alt": "Engraving of Pocahontas in English attire",
-              "image_caption": "An engraving of Matoaka (Pocahontas) dressed in English court fashion in 1616, used as propaganda by the Virginia Company. She was presented to London society as 'Lady Rebecca' to secure further financial investment for the struggling Jamestown colony."
+              "image_alt": "Engraving of Pocahontas (1616)",
+              "image_caption": "A 1616 engraving of Matoaka (Pocahontas) by Simon van de Passe. She was dressed in English court fashion and presented to London society as 'Lady Rebecca'—a deliberate piece of propaganda by the Virginia Company to project success and secure financial investment for the struggling Jamestown colony.",
+              "source_letter": "B"
             }
           ]
         },
@@ -792,8 +801,8 @@ export const unitData = {
           "title": "Macro-History: The Big Picture",
           "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, John Rolfe introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by Emperor Jahangir.<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India.",
           "image": "/images/sir_thomas_roe.jpg",
-          "image_alt": "Sir Thomas Roe at Mughal Court",
-          "image_caption": "Sir Thomas Roe presenting his credentials to the wealthy and powerful Mughal Emperor Jahangir in 1615. Roe spent four years at the court trying to negotiate exclusive trading rights for the East India Company, though the Emperor remained largely unimpressed by the English.",
+          "image_alt": "Sir Thomas Roe at the Mughal Court (1615)",
+          "image_caption": "A depiction of Sir Thomas Roe, an English diplomat, presenting his credentials to the powerful Mughal Emperor Jahangir in 1615. Roe successfully negotiated exclusive trading rights for the East India Company, laying the foundation for British dominance in India.",
           "tasks": [
             {
               "type": "analysis",
@@ -801,7 +810,7 @@ export const unitData = {
               "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
             }
           ],
-          "source_letter": "B"
+          "source_letter": "C"
         },
         {
           "title": "Primary Source Analysis",
@@ -828,8 +837,8 @@ export const unitData = {
           "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
           "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>",
           "image": "/images/jamestown_fort.jpg",
-          "image_alt": "Map plan of the triangular James Fort in Virginia, 1607",
-          "image_caption": "The 1607 triangular plan of James Fort, demonstrating the heavily militarized and defensive nature of early English settlements in America. The fort was built in just 19 days on a swampy peninsula, with wooden palisades enclosing a church, storehouse, and living quarters.",
+          "image_alt": "Plan of James Fort in Virginia (1607)",
+          "image_caption": "A historical plan of the triangular James Fort built in 1607. It was the first permanent English settlement in the Americas, heavily fortified to defend against both the indigenous Powhatan Confederacy and potential attacks from rival Spanish ships.",
           "tasks": [
             {
               "type": "analysis",
@@ -837,7 +846,7 @@ export const unitData = {
               "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "D"
         },
         {
           "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
@@ -1113,12 +1122,15 @@ export const unitData = {
           "images": [
             {
               "image": "/images/early_mod_l4_banner.jpg",
-              "image_alt": "18th-century House of Commons in session alongside the Royal Exchange"
+              "image_alt": "Coat of Arms of Great Britain (1714)",
+              "image_caption": "The Coat of Arms of Great Britain following the Hanoverian succession in 1714. This era saw the stabilization of a constitutional monarchy where Parliament, rather than the King, held ultimate financial and political authority.",
+              "source_letter": "A"
             },
             {
               "image": "/images/charles_i_execution.jpg",
-              "image_alt": "Engraving of the execution of King Charles I",
-              "image_caption": "The execution of King Charles I outside the Banqueting House in Whitehall, 1649. The King was executed for high treason, marking the first time in history a reigning English monarch was legally tried and killed by his own subjects."
+              "image_alt": "Execution of King Charles I (1649)",
+              "image_caption": "A contemporary engraving by John Weesop depicting the execution of King Charles I outside the Banqueting House in Whitehall, 1649. His trial and execution for high treason marked a radical shift in power, proving that an English monarch could be held legally accountable by his own subjects.",
+              "source_letter": "B"
             }
           ]
         },
@@ -1137,8 +1149,8 @@ export const unitData = {
           "title": "Macro-History: The Financial Hub",
           "text": "By the 1700s, the geography of wealth in Britain had fundamentally changed. London was no longer just the seat of the King; it had become the beating heart of a new global financial empire. The River Thames was choked with a forest of wooden ship masts from the East India Company and transatlantic slave ships. The wealth generated by this massive maritime trade built institutions like the Bank of England and the Royal Exchange, shifting power from the monarchy to the merchant class.",
           "image": "/images/royal_exchange.jpg",
-          "image_alt": "The Royal Exchange in London",
-          "image_caption": "An 18th-century view of the Royal Exchange in London. During this period, the River Thames became crowded with merchant ships and a forest of wooden masts, transforming London into the maritime and financial hub of global trade.",
+          "image_alt": "The Royal Exchange, London (1644)",
+          "image_caption": "An engraving of the Royal Exchange in London by Wenceslaus Hollar (1644). Established as a center for commerce, it became the beating heart of England's financial revolution, where merchants traded stocks, commodities, and funded global colonial ventures.",
           "source_letter": "C",
           "tasks": [
             {
@@ -1173,8 +1185,8 @@ export const unitData = {
           "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
           "text": "Look closely at the <strong>1651 Great Seal of England</strong>, created after the King’s execution:<br><br><ul><li><strong>No Royal Crown or Arms:</strong> For 600 years, the Great Seal bore the face of the ruling King or Queen on a horse. In 1651, the King’s face was completely erased.</li><li><strong>The House of Commons Side:</strong> Shows hundreds of MPs sitting in Parliament with the motto: <em>\"In the First Year of Freedom by God's Blessing Restored.\"</em></li><li><strong>The Map Side:</strong> Shows a detailed map of England, Ireland, and naval ships sailing in the Atlantic, emphasizing maritime power and imperial expansion over royal bloodlines.</li></ul>",
           "image": "/images/oliver_cromwell.jpg",
-          "image_alt": "Portrait of Oliver Cromwell",
-          "image_caption": "Portrait of Oliver Cromwell, who ruled as Lord Protector after the execution of King Charles I. A fiercely Puritan military leader, Cromwell refused the title of King but ruled with absolute power over the short-lived English republic.",
+          "image_alt": "Portrait of Oliver Cromwell (1656)",
+          "image_caption": "Portrait of Oliver Cromwell by Samuel Cooper (1656). Following the English Civil War, Cromwell ruled as Lord Protector of the Commonwealth, enforcing strict Puritan values and aggressively expanding English naval power.",
           "tasks": [
             {
               "type": "analysis",
@@ -1182,7 +1194,7 @@ export const unitData = {
               "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "D"
         },
         {
           "title": "Historical Interpretations: Who Was the Real Winner?",
@@ -1204,8 +1216,8 @@ export const unitData = {
           "title": "Historiographical Debate: Who won the English Civil War?",
           "text": "<div class='scaffold-box'><strong>Interpretation A: Professor Christopher Hill (The Political View)</strong><br><em>\"The English Civil War was a revolutionary class struggle. It permanently smashed the absolute monarchy and the old feudal order, transferring political power to Parliament and the middling sorts.\"</em></div><br><br><div class='scaffold-box'><strong>Interpretation B: Professor Eric Williams (The Imperial/Economic View)</strong><br><em>\"The true victors of the 17th century were the imperial merchant classes. By restricting the monarchy, Parliament secured the political stability needed to build the massive joint-stock companies (like the East India Company and the Royal African Company) which extracted vast wealth through colonization and slavery.\"</em></div>",
           "image": "/images/sources/east_india_docks.jpg",
-          "image_alt": "East India Company Docks",
-          "image_caption": "The docks of the British East India Company in London, bustling with global trade and imperial wealth. By the late 1700s, the Company controlled its own private army of over 200,000 soldiers, larger than the official British army.",
+          "image_alt": "East India Company Docks (c. 1730)",
+          "image_caption": "An 18th-century painting by Samuel Scott depicting the bustling East India Company docks in London. The immense volume of imported global goods transformed London into the wealthiest maritime trading hub in the world.",
           "tasks": [
             {
               "type": "comprehension",
@@ -1213,7 +1225,7 @@ export const unitData = {
               "model_answer": "Professor Christopher Hill focuses on the political revolution and the destruction of the absolute monarchy. Professor Eric Williams argues the true victory was economic, laying the foundation for imperial merchants and global joint-stock capitalism."
             }
           ],
-          "source_letter": "F"
+          "source_letter": "E"
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
@@ -1470,12 +1482,16 @@ export const unitData = {
           "images": [
             {
               "image": "The horizontal fold-out cross-section diagram of the Slave Ship Brooks (1788).",
-              "image_alt": "Fold-out cross-section diagram of the Slave Ship Brooks (1788)"
+              "image_alt": "Diagram of the Slave Ship Brookes (1788)",
+              "src": "/images/early_mod_l5_banner.jpg",
+              "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage, galvanizing public outrage in Britain.",
+              "source_letter": "A"
             },
             {
               "image": "/images/jamaica_maroons.jpg",
-              "image_alt": "18th-century map of Jamaica",
-              "image_caption": "An 18th-century map of Jamaica. The rugged interior provided sanctuary for Maroon communities fighting British colonial forces. The Maroons, descended from escaped African slaves, waged a highly successful guerrilla war in the Cockpit Country for over eighty years."
+              "image_alt": "Map of Jamaica (1775)",
+              "image_caption": "A 1775 map of Jamaica by Thomas Jefferys. The island's rugged, mountainous interior provided sanctuary for Maroon communities—escaped enslaved Africans who waged a highly successful, decades-long guerrilla war against British colonial forces.",
+              "source_letter": "B"
             }
           ]
         },
@@ -1483,8 +1499,8 @@ export const unitData = {
           "title": "Macro-History: The Triangular Machinery of Exploitation",
           "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 15px; background: #e0f2fe; padding: 25px; border-radius: 8px; border: 1px solid #7dd3fc; margin: 20px 0; font-family: sans-serif;\">    <div style=\"background: #0284c7; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\">        EUROPE (e.g. Bristol, Liverpool, London)<br><span style=\"font-size: 0.85em; font-weight: normal;\">Exports Manufactured Goods (Guns, Alcohol, Textiles)</span>    </div>    <div style=\"font-size: 1.5rem; color: #0284c7;\">↓</div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #d97706; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\">            WEST AFRICA<br><span style=\"font-size: 0.85em; font-weight: normal;\">Forced capture, shattered communities</span>        </div>        <div style=\"text-align: center; color: #475569; font-weight: bold; font-size: 0.9em;\">THE MIDDLE PASSAGE<br>⟶<br>Enslaved Africans</div>        <div style=\"background: #16a34a; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\">            THE AMERICAS<br><span style=\"font-size: 0.85em; font-weight: normal;\">Plantation labor (Sugar, Tobacco, Cotton)</span>        </div>    </div>    <div style=\"font-size: 1.5rem; color: #16a34a;\">↑</div>    <div style=\"background: #475569; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\">        RAW MATERIALS TO EUROPE<br><span style=\"font-size: 0.85em; font-weight: normal;\">European Capital Accumulation</span>    </div></div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>",
           "image": "/images/triangular_trade.png",
-          "image_alt": "Map of the Triangular Trade",
-          "image_caption": "The Triangular Trade linked Europe, Africa, and the Americas in a continuous loop of capitalist exploitation. This massive network forcefully transported over 12 million enslaved Africans across the Atlantic, fundamentally reshaping the demographics and economies of three continents.",
+          "image_alt": "Diagram of the Triangular Trade",
+          "image_caption": "A map illustrating the Triangular Trade system. British manufactured goods were traded for enslaved Africans, who were transported under horrific conditions to the Americas to produce cash crops like sugar and tobacco, which were then shipped back to Europe.",
           "tasks": [
             {
               "type": "analysis",
@@ -1492,7 +1508,7 @@ export const unitData = {
               "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
             }
           ],
-          "source_letter": "B"
+          "source_letter": "C"
         },
         {
           "title": "The Spectrum of Resistance: How Enslaved People Fought Back",
@@ -1509,8 +1525,8 @@ export const unitData = {
           "title": "Primary Source Deep Dive: Authentic Voices of Resistance",
           "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source D: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source E: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source F: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of Thomas Thistlewood</strong>, a Jamaican sugar plantation overseer.</blockquote>",
           "image": "/images/equiano.jpg",
-          "image_alt": "Portrait of Olaudah Equiano",
-          "image_caption": "Olaudah Equiano, an abolitionist who purchased his freedom and exposed the horrors of slavery through his bestselling 1789 autobiography. His book went through nine editions in his lifetime, and he toured across Britain to drum up immense public support for the abolitionist movement.",
+          "image_alt": "Portrait of Olaudah Equiano (1789)",
+          "image_caption": "Frontispiece portrait of Olaudah Equiano from his 1789 autobiography. As a formerly enslaved man who purchased his own freedom, his vivid first-hand account of the horrors of slavery became a crucial piece of evidence in the British abolitionist movement.",
           "tasks": [
             {
               "type": "source_analysis",
@@ -1528,14 +1544,14 @@ export const unitData = {
               "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
             }
           ],
-          "source_letter": "C"
+          "source_letter": "D"
         },
         {
           "title": "Historical Debates: What Truly Destroyed Slavery?",
           "text": "<strong>What Truly Destroyed Slavery—White Abolitionists or Black Resistance?</strong><br><br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;\">   <div style=\"background: #fdf4ff; border: 1px solid #f0abfc; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #a21caf;\">Interpretation A: The Traditional Imperial View</h4>       <p><em>\"Britain’s abolition of the slave trade in 1807 was a noble gesture of Christian humanitarianism. It was brought about by the tireless moral campaigning of white parliamentary heroes like William Wilberforce and Thomas Clarkson in London.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Reginald Coupland, 1933</strong></p>   </div>   <div style=\"background: #f0fdfa; border: 1px solid #5eead4; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #0f766e;\">Interpretation B: The Anti-Colonial View</h4>       <p><em>\"Slavery was not simply voted away by politicians in London; it was rendered unprofitable and politically unworkable by continuous slave rebellions across the Caribbean... The enslaved freed themselves.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Dr. Eric Williams, 1944</strong></p>   </div></div><br><strong>Modern Resonance: Reparations and Imperial Fortunes</strong><br>The profits of Atlantic slavery did not disappear when slavery was abolished in 1833. Modern historians have proven that Caribbean sugar wealth directly funded major British banks (e.g., Barclays), insurance institutions (Lloyd's of London), and railway networks.<br><br><strong>The 1833 Compensation Scandal:</strong> When Britain abolished slavery, the government paid <strong>£20 million</strong> (equivalent to £17 billion today) in compensation—not to the enslaved people, but to the <strong>46,000 white slave owners</strong> for their \"loss of property\"! This debt was so massive that British taxpayers did not finish paying it off until <strong>2015</strong>.",
           "image": "/images/brookes_ship.jpg",
-          "image_alt": "Diagram of the Slave Ship Brookes",
-          "image_caption": "The famous 1788 abolitionist plan showing the horrific tight stowage on the slave ship Brookes, used to shock the British public. This diagram became one of history's most effective pieces of political propaganda, forcing the public to confront the brutal, industrial scale of the transatlantic slave trade.",
+          "image_alt": "Diagram of the Slave Ship Brookes (1788)",
+          "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage.",
           "tasks": [
             {
               "type": "comprehension",
@@ -1543,7 +1559,7 @@ export const unitData = {
               "model_answer": "It is considered a scandal because the massive payout (£20 million) was given entirely to the slave owners who had profited from the abuse, while the enslaved people received absolutely nothing for generations of stolen labor and suffering."
             }
           ],
-          "source_letter": "G"
+          "source_letter": "E"
         },
         {
           "title": "Digital Research Task: The Legacies of British Slavery",
@@ -1918,12 +1934,15 @@ export const unitData = {
           "images": [
             {
               "image": "/images/early_mod_l6_banner.jpg",
-              "image_alt": "Panoramic split view of 18th-Century London from Southwark / London Bridge"
+              "image_alt": "London Bridge from St Olaf Stairs (1632)",
+              "image_caption": "A 1632 painting by Claude de Jongh showing London Bridge. By the 18th century, the River Thames was choked with global merchant shipping, reflecting London's explosion in population and its status as the center of a global empire.",
+              "source_letter": "A"
             },
             {
               "image": "/images/gin_lane.jpg",
-              "image_alt": "William Hogarth's Gin Lane",
-              "image_caption": "William Hogarth's 1751 engraving 'Gin Lane' depicts the horrifying social decay, poverty, and alcohol addiction rampant in 18th-century London slums. Hogarth created this print as a direct piece of propaganda to support the Gin Act of 1751, seeking to reduce the mass consumption of cheap spirits."
+              "image_alt": "William Hogarth's Gin Lane (1751)",
+              "image_caption": "William Hogarth's 1751 engraving 'Gin Lane' depicts the horrifying social decay, poverty, and alcohol addiction rampant in 18th-century London slums. Hogarth created this print as a direct piece of propaganda to support the Gin Act, seeking to reduce the mass consumption of cheap spirits.",
+              "source_letter": "B"
             }
           ]
         },
@@ -1931,9 +1950,9 @@ export const unitData = {
           "title": "Macro-History: The Ideology of Empire",
           "text": "As Britain grew incredibly wealthy from the transatlantic slave trade and the East India Company, it developed a powerful new self-image. The British elite did not view themselves as brutal conquerors; instead, they believed they were bringing civilization and order to the world. Art from this period heavily utilized classical mythology to portray Britannia as a righteous, glorious figure receiving the willing submission and wealth of the globe.",
           "image": "/images/global_britannia.jpg",
-          "image_alt": "The East Offering its Riches to Britannia",
-          "image_caption": "'The East Offering its Riches to Britannia' (Spiridione Roma, 1778). Commissioned by the East India Company for their headquarters in London, this allegorical ceiling painting shows Britannia seated high above, receiving riches like jewels, spices, and silk offered by personifications of Asia, Africa, and India.",
-          "source_letter": "A",
+          "image_alt": "The East Offering its Riches to Britannia (1778)",
+          "image_caption": "A 1778 ceiling painting by Spiridione Roma titled 'The East Offering its Riches to Britannia,' commissioned for the East India Company headquarters. It is a prime example of imperial propaganda, portraying Britain as a majestic and benevolent ruler receiving willing global tribute.",
+          "source_letter": "C",
           "tasks": [
             {
               "type": "source_analysis",
@@ -1946,8 +1965,8 @@ export const unitData = {
           "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
           "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"argBtn1\" onclick=\"document.getElementById('arg1').style.display='block'; document.getElementById('arg2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #059669;\">Argument A: Global Wealth (Modern)</button>        <button id=\"argBtn2\" onclick=\"document.getElementById('arg1').style.display='none'; document.getElementById('arg2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #dc2626;\">Argument B: Domestic Reality (Un-Modern)</button>    </div>    <div id=\"arg1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #059669;\">Britain Was Superbly \"Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div id=\"arg2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #dc2626;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>",
           "image": "/images/royal_exchange.jpg",
-          "image_alt": "18th-century painting of the Royal Exchange",
-          "image_caption": "The bustling Royal Exchange in London, where global merchants traded stocks, insurance, and commodities, representing Britain's financial modernity.",
+          "image_alt": "The Royal Exchange, London (1644)",
+          "image_caption": "An engraving of the Royal Exchange in London by Wenceslaus Hollar (1644). Established as a center for commerce, it became the beating heart of England's financial revolution, where merchants traded stocks, commodities, and funded global colonial ventures.",
           "tasks": [
             {
               "type": "analysis",
@@ -1955,14 +1974,14 @@ export const unitData = {
               "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'."
             }
           ],
-          "source_letter": "B"
+          "source_letter": "D"
         },
         {
           "title": "Primary Source Analysis: The Dual Reality",
           "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source D: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source E: From a London Magistrate's Report on Crime (Henry Fielding, 1751)</strong><br><em>\"The streets of this great city are daily rendered unsafe by bands of armed footpads and cutpurses... Multitudes of wretches perish annually of sheer cold and gin-poisoning in the cellars of St. Giles, unheeded by any magistrate. Our prisons are foul dens of typhus fever where accused men rot for months before trial. We boast of our liberties, yet our poor live in a state of barbarism lower than the beasts.\"</em></blockquote>",
           "image": "/images/turnpike_map.jpg",
-          "image_alt": "Map of London Turnpikes 1746",
-          "image_caption": "An 18th-century map showing the expansion of turnpike roads across London and surrounding regions, rapidly increasing the speed of internal trade. Turnpike trusts were private companies allowed to charge tolls to road users, sparking widespread riots among the rural poor who could not afford to travel.",
+          "image_alt": "John Rocque's Map of London (1746)",
+          "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
           "tasks": [
             {
               "type": "source_analysis",
@@ -1980,7 +1999,7 @@ export const unitData = {
               "model_answer": "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society."
             }
           ],
-          "source_letter": "C"
+          "source_letter": "E"
         },
         {
           "title": "Historiographical Debate: 'The First Modern Society'?",
