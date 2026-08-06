@@ -7180,9 +7180,8 @@
   "early_modern_world": {
     "data": {
       "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
-      "homepage_background": "/images/bg_great_war.jpg",
       "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
-      "cover_image": "/images/global_cover_collage.jpg",
+      "cover_image": "/images/global_mercator.jpg",
       "cover_caption": "Early Modern World 1450-1750.",
       "printable_workbooks": [
         {
@@ -7228,6 +7227,20 @@
           "theme": "Religion & Society"
         },
         {
+          "date": "1569",
+          "title": "Mercator World Map",
+          "description": "Gerardus Mercator published his famous world map, revolutionising navigation for European sailors.",
+          "icon": "fa-solid fa-map",
+          "theme": "Exploration & Trade"
+        },
+        {
+          "date": "1577-1580",
+          "title": "Drake's Circumnavigation",
+          "description": "Sir Francis Drake became the first Englishman to circumnavigate the globe, plundering Spanish ships along the way.",
+          "icon": "fa-solid fa-ship",
+          "theme": "Exploration & Trade"
+        },
+        {
           "date": "1585",
           "title": "Roanoke Colony Founded",
           "description": "Sir Walter Raleigh organized the first, ultimately unsuccessful, English settlement in North America.",
@@ -7240,6 +7253,13 @@
           "description": "England repelled a massive invasion fleet sent by Catholic Spain.",
           "icon": "fa-solid fa-water",
           "theme": "Conflict & Power"
+        },
+        {
+          "date": "1600",
+          "title": "East India Company Founded",
+          "description": "Queen Elizabeth I granted a royal charter to the EIC, creating a joint-stock monopoly on trade with Asia.",
+          "icon": "fa-solid fa-coins",
+          "theme": "Exploration & Trade"
         },
         {
           "date": "1607",
@@ -7274,6 +7294,13 @@
           "title": "The Restoration",
           "description": "The monarchy was restored under King Charles II after the collapse of the Protectorate.",
           "icon": "fa-solid fa-chess-king",
+          "theme": "Conflict & Power"
+        },
+        {
+          "date": "1694",
+          "title": "Bank of England Founded",
+          "description": "Created to help fund the government's debt, it triggered a 'Financial Revolution' in Britain.",
+          "icon": "fa-solid fa-building-columns",
           "theme": "Conflict & Power"
         },
         {
@@ -7461,6 +7488,20 @@
                   "model_answer": "The source illustrates peasants performing intense manual agricultural labor, emphasizing that their lives revolved around grueling physical work just to produce enough food to survive."
                 }
               ]
+            },
+            {
+              "title": "Plenary Check",
+              "text": "Before we move on, let's check our understanding of the changing balance of global power in 1450.",
+              "hinge_question": {
+                "question": "Which of the following best describes the position of Western Europe in 1450?",
+                "options": [
+                  "A wealthy, dominant global superpower.",
+                  "An isolated region, desperate for new trade routes to Asia.",
+                  "The center of the Silk Road network."
+                ],
+                "answer": 1,
+                "explanation": "Europe was cut off from the wealth of Asia by the Ottoman Empire."
+              }
             }
           ],
           "learning_objectives": {
@@ -7719,6 +7760,20 @@
                   "model_answer": "The image shows severe degradation of the gums and teeth, highlighting the brutal physical decay scurvy caused in the mouth."
                 }
               ]
+            },
+            {
+              "title": "Plenary Check",
+              "text": "Let's review the connection between religion, exploration, and rivalry.",
+              "hinge_question": {
+                "question": "Why did the Pope create the Treaty of Tordesillas (1494)?",
+                "options": [
+                  "To encourage Protestant countries to explore.",
+                  "To divide the newly 'discovered' lands between Catholic Spain and Portugal to prevent war.",
+                  "To ban all European exploration of the Americas."
+                ],
+                "answer": 1,
+                "explanation": "The Pope wanted to prevent a war between two powerful Catholic nations."
+              }
             }
           ],
           "quiz": [
@@ -8014,6 +8069,25 @@
               ]
             },
             {
+              "title": "Vocabulary Check: Building Empires",
+              "text": "Understanding how the British Empire was built requires some specific historical vocabulary.",
+              "tasks": [
+                {
+                  "type": "vocab_match",
+                  "words": [
+                    "Monopoly",
+                    "Charter",
+                    "Joint-Stock Company"
+                  ],
+                  "definitions": [
+                    "Exclusive control over trade in a specific area.",
+                    "A royal document granting rights and privileges to a company.",
+                    "A business where investors buy shares and share the risks and profits."
+                  ]
+                }
+              ]
+            },
+            {
               "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
               "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>",
               "image": "/images/jamestown_fort.jpg",
@@ -8069,6 +8143,20 @@
                   "model_answer": "It shows highly organized, neat fields of crops that were unfenced and integrated into the natural environment, leaving them vulnerable to roaming English livestock."
                 }
               ]
+            },
+            {
+              "title": "Plenary Check",
+              "text": "Let's test your understanding of how early trade turned into empire.",
+              "hinge_question": {
+                "question": "How was the East India Company different from early colonies like Jamestown?",
+                "options": [
+                  "It was run directly by the King.",
+                  "It focused purely on capturing land for farming.",
+                  "It was a wealthy, militarised corporation focused on controlling trade networks."
+                ],
+                "answer": 2,
+                "explanation": "The EIC was a powerful joint-stock company focused on trade, eventually building its own army."
+              }
             }
           ],
           "quiz": [
@@ -8777,6 +8865,20 @@
                   "model_answer": "It highlights the deep scientific and botanical knowledge required to understand which local plants were toxic, demonstrating that Obeah was rooted in highly intelligent natural science."
                 }
               ]
+            },
+            {
+              "title": "Plenary Check",
+              "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade.",
+              "hinge_question": {
+                "question": "Why is it historically inaccurate to view enslaved Africans simply as passive victims?",
+                "options": [
+                  "Because slavery only lasted for a short time.",
+                  "Because there was continuous resistance, from mutinies on ships to guerrilla wars led by Maroons.",
+                  "Because the British government eventually banned it."
+                ],
+                "answer": 1,
+                "explanation": "Enslaved people constantly fought back, preserving their humanity and actively resisting."
+              }
             }
           ],
           "quiz": [
@@ -9681,22 +9783,143 @@
         {
           "image": "/images/global_britannia.jpg",
           "title": "The East Offering its Riches to Britannia (1778)",
-          "description": "An allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire."
+          "description": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House in London (now held by the British Library). It is an allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire."
         },
         {
           "image": "/images/global_canton.jpg",
           "title": "Foreign Trading Factories at Canton (Guangzhou)",
-          "description": "The highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power."
+          "description": "A reverse glass painting by an unknown Chinese artist (c. 1805) currently held by the Peabody Essex Museum. It depicts the highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power."
         },
         {
           "image": "/images/royal_exchange.jpg",
           "title": "The Financial Hub of London",
-          "description": "A view of the Royal Exchange. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade."
+          "description": "An engraving of the Second Royal Exchange in London by Wenceslaus Hollar (1644), now held by the Metropolitan Museum of Art. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade."
         },
         {
           "image": "/images/global_mercator.jpg",
           "title": "Nautical Planisphere World Map",
-          "description": "Early modern maps revolutionized travel, showing the massive ocean trade routes and the terrifying scale of global exploration."
+          "description": "A world map created by Flemish cartographer Gerardus Mercator in 1569. Early modern maps revolutionized travel by introducing new projections for navigation, showing the massive ocean trade routes and the terrifying scale of global exploration."
+        }
+      ],
+      "key_individuals": [
+        {
+          "name": "Niccolò Barbaro",
+          "role": "Venetian Doctor & Merchant",
+          "lifespan": "c. 1420 – 1494",
+          "bio": "A Venetian who was present in Constantinople during the Ottoman siege in 1453. He wrote a famous eyewitness diary detailing the fall of the city.",
+          "image": "/images/individuals/niccol_barbaro.jpg"
+        },
+        {
+          "name": "Sultan Mehmed II",
+          "role": "Ottoman Sultan",
+          "lifespan": "1432 – 1481",
+          "bio": "Known as 'The Conqueror', he captured Constantinople at age 21, destroying the Byzantine Empire and transforming the city into the jewel of the Islamic world.",
+          "achievements": [
+            "Conquered Constantinople (1453)",
+            "Expanded the Ottoman Empire into Europe"
+          ],
+          "image": "/images/individuals/sultan_mehmed_ii.jpg"
+        },
+        {
+          "name": "Mansa Musa",
+          "role": "Emperor of Mali",
+          "lifespan": "c. 1280 – 1337",
+          "bio": "The famously wealthy ruler of the Mali Empire. His pilgrimage to Mecca in 1324 demonstrated the vast gold wealth of West Africa to the rest of the world.",
+          "image": "/images/individuals/mansa_musa.jpg"
+        },
+        {
+          "name": "Christopher Columbus",
+          "role": "Explorer",
+          "lifespan": "1451 – 1506",
+          "bio": "An Italian explorer funded by Spain. His 1492 voyage to find a western sea route to Asia accidentally encountered the Americas, changing world history forever.",
+          "actions": "Initiated European colonisation of the Americas.",
+          "image": "/images/individuals/christopher_columbus.jpg"
+        },
+        {
+          "name": "Martin Luther",
+          "role": "German Monk & Theologian",
+          "lifespan": "1483 – 1546",
+          "bio": "A German monk who sparked the Protestant Reformation in 1517 by challenging the corruption of the Catholic Church. This triggered centuries of religious conflict.",
+          "image": "/images/individuals/martin_luther.jpg"
+        },
+        {
+          "name": "Sir Francis Drake",
+          "role": "English Privateer & Explorer",
+          "lifespan": "c. 1540 – 1596",
+          "bio": "A famous English sea captain, privateer, and explorer. He circumnavigated the globe and helped defeat the Spanish Armada in 1588.",
+          "image": "/images/individuals/francis_drake.jpg"
+        },
+        {
+          "name": "Queen Elizabeth I",
+          "role": "Queen of England",
+          "lifespan": "1533 – 1603",
+          "bio": "Ruled England during a 'Golden Age'. She oversaw the defeat of the Spanish Armada and the founding of the East India Company, strengthening England's global position.",
+          "image": "/images/individuals/queen_elizabeth_i.jpg"
+        },
+        {
+          "name": "Pocahontas",
+          "role": "Powhatan Diplomat",
+          "lifespan": "c. 1596 – 1617",
+          "bio": "A Native American woman who played a crucial role in the survival of the Jamestown colony. She later travelled to England, where she was treated as royalty.",
+          "image": "/images/individuals/pocahontas.jpg"
+        },
+        {
+          "name": "King Charles I",
+          "role": "King of England",
+          "lifespan": "1600 – 1649",
+          "bio": "His belief in the 'Divine Right of Kings' led to the English Civil War. He was tried and executed by Parliament in 1649.",
+          "image": "/images/individuals/king_charles_i.jpg"
+        },
+        {
+          "name": "Oliver Cromwell",
+          "role": "Lord Protector",
+          "lifespan": "1599 – 1658",
+          "bio": "A Puritan military leader who commanded the Parliamentarian army in the Civil War. He ruled England as a republic ('The Protectorate') after Charles I's execution.",
+          "image": "/images/individuals/oliver_cromwell.jpg"
+        },
+        {
+          "name": "Olaudah Equiano",
+          "role": "Abolitionist & Writer",
+          "lifespan": "c. 1545 – 1597",
+          "bio": "An enslaved African who bought his own freedom and wrote a bestselling autobiography exposing the horrors of the Transatlantic Slave Trade.",
+          "image": "/images/individuals/olaudah_equiano.png"
+        }
+      ],
+      "geographical_locations": [
+        {
+          "name": "Constantinople (Istanbul)",
+          "region": "Ottoman Empire (Modern Turkey)",
+          "coordinates": "41° 0' N, 28° 57' E",
+          "description": "The ancient capital of the Byzantine Empire. When it was captured by the Ottomans in 1453, it blocked European access to the Silk Road, forcing them to explore new sea routes.",
+          "image": "/images/locations/constantinople.jpg"
+        },
+        {
+          "name": "Guangzhou (Canton)",
+          "region": "Qing Dynasty (China)",
+          "coordinates": "23° 7' N, 113° 15' E",
+          "description": "A massive, wealthy port city. European merchants (like the British East India Company) were restricted to trading only in a small area of the city, desperate for Chinese tea and silk.",
+          "image": "/images/locations/canton.jpg"
+        },
+        {
+          "name": "Jamestown",
+          "region": "Virginia (North America)",
+          "coordinates": "37° 12' N, 76° 46' W",
+          "description": "The first permanent English settlement in the Americas (1607). Early colonists struggled with starvation and disease until they discovered how to grow tobacco.",
+          "image": "/images/locations/jamestown.jpg"
+        },
+        {
+          "name": "Potosí",
+          "region": "Viceroyalty of Peru (Modern Bolivia)",
+          "coordinates": "19° 35' S, 65° 45' W",
+          "description": "A Spanish colonial mining city. Enslaved Indigenous people were forced to mine thousands of tons of silver from the 'Cerro Rico' mountain, financing the Spanish Empire.",
+          "image": "/images/locations/potosi.jpg"
+        },
+        {
+          "name": "Timbuktu",
+          "region": "Mali Empire (West Africa)",
+          "coordinates": "16° 46' N, 3° 0' W",
+          "description": "A wealthy and sophisticated city in West Africa. It was a center of global trade (gold and salt) and Islamic learning, boasting vast libraries and a famous university.",
+          "image": "/images/locations/timbuktu.jpg"
         }
       ]
     },
