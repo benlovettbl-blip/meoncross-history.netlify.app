@@ -1947,7 +1947,6 @@ export function initializeApp(unitData) {
         });
         html += `</div>`;
       }
-      });
 
       if (lesson.sources && lesson.sources.length > 0) {
         html += `<div class="sources-grid" style="margin-top: 20px;">`;
@@ -2616,7 +2615,6 @@ window.updateProgress = () => {
     else bar.style.width = `${(filled / inputs.length) * 100}%`;
   }
 };
-}
 
 
   function assignQuestionNumbers(lesson) {
