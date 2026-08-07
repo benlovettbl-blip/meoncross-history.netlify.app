@@ -1840,7 +1840,7 @@ export function initializeApp(unitData) {
                  <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
                    <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
                  </h4>
-                 <p style="margin: 0; color: #334155; line-height: 1.6; font-size: 1rem;">${block.image_context}</p>
+                 <p style="margin: 0; color: #334155; line-height: 1.6; font-size: 1rem;">${block.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}</p>
                </div>
                `
              : '';
