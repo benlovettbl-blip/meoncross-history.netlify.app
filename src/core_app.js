@@ -1798,12 +1798,33 @@ export function initializeApp(unitData) {
                }
              </style>
              <div class="narrative-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 20px 0;">
-               ${block.images.map((img, idx) => `
-                 <div class="narrative-image-container" style="text-align: center;">
-                   <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
-                   ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
-                 </div>
-               `).join('')}
+               ${block.images.map((img, idx) => {
+                 if (img.image_context) {
+                   return `
+                     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0; width: 100%; grid-column: 1 / -1;">
+                       <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                         <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
+                         ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                       </div>
+                       <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
+                         <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
+                           <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
+                         </h4>
+                         <p style="margin: 0; font-size: 1rem; color: #334155; line-height: 1.6;">
+                           ${img.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}
+                         </p>
+                       </div>
+                     </div>
+                   `;
+                 } else {
+                   return `
+                     <div class="narrative-image-container" style="text-align: center;">
+                       <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
+                       ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                     </div>
+                   `;
+                 }
+               }).join('')}
              </div>
            `;
         } else if (block.image) {
