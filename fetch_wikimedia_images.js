@@ -1,76 +1,89 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 
-// Helper to parse CLI arguments
-const args = process.argv.slice(2);
-if (args.length < 2) {
-    console.error('Usage: node fetch_wikimedia_images.js "<search term>" "<output_filename.jpg>"');
-    console.error('Example: node fetch_wikimedia_images.js "Aktion T4 poster" "t4_poster.jpg"');
-    process.exit(1);
+async function downloadImage(url, dest) {
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'Accept': 'image/avif,image/webp,*/*'
+      }
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    const buffer = await res.arrayBuffer();
+    fs.writeFileSync(dest, Buffer.from(buffer));
+  } catch (err) {
+    throw new Error(`Failed to download image: ${err.message}`);
+  }
 }
 
-const searchTerm = args[0];
-const outputFilename = args[1];
-const outputDir = path.join(__dirname, 'public', 'images');
-const outputPath = path.join(outputDir, outputFilename);
+async function fetchImages() {
+  const file = 'early_modern_world/data.js';
+  const m = await import('./early_modern_world/data.js');
+  const data = m.unitData || m.default || Object.values(m)[0];
 
-const USER_AGENT = 'MeoncrossHistoryApp/1.0 (https://meoncross-history.netlify.app; contact@meoncross.school)';
+  const imagesDir = path.join(__dirname, 'public', 'images');
+  if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir, { recursive: true });
+  }
 
-async function fetchJSON(url) {
-    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
-    if (!response.ok) throw new Error(`API returned ${response.status} ${response.statusText}`);
-    return await response.json();
-}
+  let updatedCount = 0;
 
-async function downloadImage(url, filepath) {
-    // The native fetch API automatically follows HTTP redirects (301, 302)
-    // which was the primary reason the older https.get method failed with 403s/429s.
-    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
-    if (!response.ok) {
-        throw new Error(`Failed to download image: ${response.status} ${response.statusText}`);
-    }
-    const buffer = await response.arrayBuffer();
-    fs.writeFileSync(filepath, Buffer.from(buffer));
-}
+  for (const person of data.key_individuals) {
+    if (person.image) continue; // Skip if already has an image
 
-async function run() {
+    // Optional: strip titles like "Prof. ", "Dr. ", "Sir " for better Wikipedia searching
+    let searchName = person.name.replace(/^(Prof\.|Dr\.|Sir|King|Queen|Emperor|Pope)\s+/i, '');
+    
+    // Hardcoded overrides for better matching
+    if (searchName === 'Peter Frankopan') searchName = 'Peter Frankopan';
+    if (searchName === 'Shashi Tharoor') searchName = 'Shashi Tharoor';
+
     try {
-        console.log(`Searching Wikimedia API for: "${searchTerm}"...`);
-        const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(searchTerm)}&prop=pageimages&pithumbsize=500&format=json`;
-        
-        const data = await fetchJSON(searchUrl);
-        const pages = data.query?.pages;
-        
-        if (!pages) {
-            console.error(`❌ No images found for search term: "${searchTerm}"`);
-            process.exit(1);
-        }
+      const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(searchName)}&prop=pageimages&format=json&pithumbsize=500`;
+      
+      await new Promise(r => setTimeout(r, 2000)); // sleep 2 seconds BEFORE fetch to avoid rate limiting
+      
+      const options = {
+        headers: { 'User-Agent': 'LovettHistoryHub/1.0 (lovett@example.com)' }
+      };
+      
+      const res = await fetch(apiUrl, options);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const response = await res.json();
 
-        // Find the page with the lowest index that actually has a thumbnail
-        const pageWithThumb = Object.values(pages)
-            .filter(p => p.thumbnail)
-            .sort((a, b) => (a.index || 99) - (b.index || 99))[0];
-        
-        if (!pageWithThumb) {
-            console.error(`❌ No image thumbnails found for search term: "${searchTerm}"`);
-            process.exit(1);
-        }
+      const pages = response.query.pages;
+      const pageId = Object.keys(pages)[0];
 
-        const imageUrl = pageWithThumb.thumbnail.source;
-        console.log(`Found image: ${imageUrl}`);
-        
-        // Ensure the public/images directory exists
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-        }
+      if (pageId !== '-1' && pages[pageId].thumbnail) {
+        const imageUrl = pages[pageId].thumbnail.source;
+        const ext = path.extname(imageUrl).split('?')[0] || '.jpg';
+        // Create safe filename
+        const safeName = person.name.toLowerCase().replace(/[^a-z0-9]/g, '_');
+        const filename = `${safeName}${ext}`;
+        const dest = path.join(imagesDir, filename);
 
-        console.log(`Downloading to: ${outputPath}...`);
-        await downloadImage(imageUrl, outputPath);
+        console.log(`Downloading image for ${person.name}...`);
+        await downloadImage(imageUrl, dest);
         
-        console.log(`✅ Successfully downloaded image to ${outputPath}`);
+        person.image = `/images/${filename}`;
+        updatedCount++;
+      } else {
+        console.log(`No Wikipedia image found for ${searchName}`);
+      }
     } catch (err) {
-        console.error('❌ Error:', err.message);
+      console.error(`Error fetching for ${person.name}:`, err.message);
     }
+  }
+
+  if (updatedCount > 0) {
+    const output = `export const unitData = ${JSON.stringify(data, null, 2)};`;
+    fs.writeFileSync(file, output);
+    console.log(`Successfully fetched and downloaded ${updatedCount} images!`);
+  } else {
+    console.log("No new images were added.");
+  }
 }
 
-run();
+fetchImages().catch(console.error);

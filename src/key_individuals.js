@@ -149,7 +149,7 @@ export function generateKeyIndividualCardHTML(person) {
   `;
 }
 
-export function initKeyIndividualsTask(container, keyIndividualsData) {
+export function initKeyIndividualsTask(container, keyIndividualsData, customTitle, customDescription) {
   if (!keyIndividualsData || keyIndividualsData.length === 0) return;
 
   // Pre-inject the flip-card styles into the document
@@ -264,9 +264,11 @@ export function initKeyIndividualsTask(container, keyIndividualsData) {
   const header = document.createElement('div');
   header.style.textAlign = 'center';
   header.style.marginBottom = '40px';
+    const title = customTitle || 'Key Individuals';
+  const desc = customDescription || 'Profiles of the major historical figures who shaped these events.';
   header.innerHTML = `
-    <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">Key Individuals</h1>
-    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Profiles of the major historical figures who shaped these events.</p>
+    <h1 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">${title}</h1>
+    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">${desc}</p>
   `;
   wrapper.appendChild(header);
 
