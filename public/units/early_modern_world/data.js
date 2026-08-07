@@ -2907,7 +2907,7 @@ export const unitData = {
       "role": "King of England",
       "actions": "<ul><li>Broke England away from the Catholic Church in 1534 to secure an annulment, fundamentally altering English religion and politics.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/henry_viii.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/henry_viii.jpg"
     },
     {
       "name": "Pope Alexander VI",
@@ -2920,14 +2920,14 @@ export const unitData = {
       "role": "English Explorer & Courtier",
       "actions": "<ul><li>Sponsored the doomed Roanoke colony attempt in the 1580s; popularised tobacco in England.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/sir_walter_raleigh.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/sir_walter_raleigh.jpg"
     },
     {
       "name": "Mary, Queen of Scots",
       "role": "Queen of Scotland",
       "actions": "<ul><li>A Catholic claimant to the English throne whose execution by Elizabeth I provoked the Spanish Armada.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/mary__queen_of_scots.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/mary__queen_of_scots.jpg"
     },
     {
       "name": "Don Francisco de Zárate",
@@ -2946,7 +2946,7 @@ export const unitData = {
       "role": "English Planter",
       "actions": "<ul><li>Married Pocahontas (Matoaka) in 1614; introduced a sweet strain of Caribbean tobacco that made Jamestown profitable.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/john_rolfe.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      "image": "/images/john_rolfe.jpg"
     },
     {
       "name": "Chief Powhatan",
@@ -2959,14 +2959,14 @@ export const unitData = {
       "role": "Mughal Emperor",
       "actions": "<ul><li>Ruled 25% of global GDP; permitted the English East India Company to build small trading posts, viewing them as insignificant merchants.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/emperor_jahangir.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/emperor_jahangir.jpg"
     },
     {
       "name": "Sir Thomas Roe",
       "role": "English Diplomat",
       "actions": "<ul><li>Spent three years at the Mughal Court (1615-1618) begging for trading rights for the East India Company.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/sir_thomas_roe.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      "image": "/images/sir_thomas_roe.jpg"
     },
     {
       "name": "John Bradshaw",
@@ -2997,14 +2997,14 @@ export const unitData = {
       "role": "English Abolitionist",
       "actions": "<ul><li>Led the parliamentary campaign against the slave trade, culminating in the 1807 Abolition Act.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/william_wilberforce.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/william_wilberforce.jpg"
     },
     {
       "name": "Thomas Clarkson",
       "role": "Abolitionist Campaigner",
       "actions": "<ul><li>Travelled thousands of miles gathering horrific physical evidence (shackles, ship diagrams) to expose the realities of the slave trade to the British public.</li></ul>",
       "group": "Historical Figures",
-      "image": "/images/thomas_clarkson.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/thomas_clarkson.jpg"
     },
     {
       "name": "Kritovoulos of Imbros",
@@ -3021,7 +3021,7 @@ export const unitData = {
       "actions": "<ul><li>Wrote the bestselling book 'The Silk Roads' (2015).</li></ul>",
       "achievements": "Focus: Global & Silk Road History",
       "group": "Historians",
-      "image": "/images/prof__peter_frankopan.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/prof__peter_frankopan.jpg"
     },
     {
       "name": "Dr. Geoffrey Parker",
@@ -3037,7 +3037,8 @@ export const unitData = {
       "bio": "A 19th-century historian writing at the height of the British Empire. He famously argued that the British Empire was acquired 'in a fit of absence of mind'.",
       "actions": "<ul><li>Wrote 'The Expansion of England' (1883).</li></ul>",
       "achievements": "Focus: 19th-Century British Imperialism",
-      "group": "Historians"
+      "group": "Historians",
+      "image": "/images/sir_john_seeley.jpg"
     },
     {
       "name": "Prof. Shashi Tharoor",
@@ -3046,7 +3047,7 @@ export const unitData = {
       "actions": "<ul><li>Wrote 'Inglorious Empire' (2017), focusing on how corporate entities like the East India Company violently extracted wealth from India.</li></ul>",
       "achievements": "Focus: British Colonial History in India",
       "group": "Historians",
-      "image": "/images/prof__shashi_tharoor.org&utm_campaign=api&utm_content=thumbnail"
+      "image": "/images/prof__shashi_tharoor.jpg"
     },
     {
       "name": "Prof. Christopher Hill",
@@ -3063,7 +3064,7 @@ export const unitData = {
       "actions": "<ul><li>Wrote 'Capitalism and Slavery' (1944), proving that Britain abolished slavery because slave rebellions made it economically unviable.</li></ul>",
       "achievements": "Focus: Atlantic Slavery & Economics",
       "group": "Historians",
-      "image": "/images/prof__eric_williams.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      "image": "/images/prof__eric_williams.jpg"
     },
     {
       "name": "Reginald Coupland",
