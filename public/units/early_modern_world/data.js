@@ -1626,10 +1626,10 @@ export const unitData = {
           "source_letter": "A",
           "images": [
             {
-              "image": "The horizontal fold-out cross-section diagram of the Slave Ship Brooks (1788).",
+              "image": "/images/brookes_ship.jpg",
               "image_alt": "Diagram of the Slave Ship Brookes (1788)",
             "image_context": "Look at the horrifying, mathematical precision with which human beings were packed tightly into the hold of the ship. This diagram was arguably the most effective piece of visual propaganda in history, mass-produced by abolitionists to shock the British public into confronting the true, industrial cruelty of the Middle Passage. **Hinge Question:** Why was a cold, technical diagram more effective at changing public opinion than an emotional painting might have been?",
-              "src": "/images/early_mod_l5_banner.jpg",
+              "src": "/images/brookes_ship.jpg",
               "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage, galvanizing public outrage in Britain.",
               "source_letter": "A"
             },
@@ -1724,7 +1724,11 @@ export const unitData = {
         },
         {
           "title": "Side Quest: Obeah and Botanical Warfare",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_cassava.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source H:</strong> An 18th-century botanical illustration of the Cassava root, a native plant that could be highly toxic if prepared incorrectly.</i>\n</div>\n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
+          "image": "/images/sidequest_cassava.jpg",
+            "image_alt": "18th-century botanical illustration of the Cassava root",
+            "source_letter": "H",
+            "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
+            "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",

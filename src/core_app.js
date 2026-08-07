@@ -3341,35 +3341,61 @@ if (document.readyState === 'loading') {
   initGlossaryPopover();
 }
 
+window.openModal = function(src) {
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
+      modal.style.zIndex = '999999';
+      modal.style.display = 'flex';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      img.style.borderRadius = '8px';
+      img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+      img.style.transition = 'transform 0.1s ease';
+      img.style.cursor = 'zoom-in';
 
+      let scale = 1;
+      modal.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scale += e.deltaY * -0.005;
+        scale = Math.min(Math.max(1, scale), 5); 
+        const rect = img.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        if (scale === 1) {
+            img.style.transformOrigin = 'center center';
+            img.style.cursor = 'zoom-in';
+        } else if (e.deltaY < 0) {
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.cursor = 'zoom-out';
+        }
+        img.style.transform = `scale(${scale})`;
+      });
 
-  window.openModal = function(src) {
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
-    modal.style.zIndex = '999999';
-    modal.style.display = 'flex';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    modal.style.cursor = 'zoom-out';
-    modal.onclick = () => modal.remove();
-    
-    const img = document.createElement('img');
-    img.src = src;
-    img.style.maxWidth = '90%';
-    img.style.maxHeight = '90%';
-    img.style.borderRadius = '8px';
-    img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
-    
-    modal.appendChild(img);
-    document.body.appendChild(modal);
-  };
+      modal.onclick = (e) => {
+          if (scale > 1) {
+              scale = 1;
+              img.style.transform = `scale(1)`;
+              img.style.cursor = 'zoom-in';
+          } else {
+              modal.remove();
+          }
+      };
+      
+      modal.appendChild(img);
+      document.body.appendChild(modal);
+    };
 
-  window.openGallery = function(encodedData, startIndex) {
+window.openGallery = function(encodedData, startIndex) {
     const images = JSON.parse(decodeURIComponent(encodedData));
     let currentIndex = startIndex;
 
@@ -3413,6 +3439,8 @@ if (document.readyState === 'loading') {
     img.style.objectFit = 'contain';
     img.style.borderRadius = '8px';
     img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+    img.style.transition = 'transform 0.1s ease';
+    img.style.cursor = 'zoom-in';
     imgContainer.appendChild(img);
 
     const caption = document.createElement('div');
@@ -3423,6 +3451,32 @@ if (document.readyState === 'loading') {
     imgContainer.appendChild(caption);
 
     modal.appendChild(imgContainer);
+
+    let scale = 1;
+    imgContainer.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      scale += e.deltaY * -0.005;
+      scale = Math.min(Math.max(1, scale), 5); 
+      const rect = img.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      if (scale === 1) {
+          img.style.transformOrigin = 'center center';
+          img.style.cursor = 'zoom-in';
+      } else if (e.deltaY < 0) {
+          img.style.transformOrigin = `${x}% ${y}%`;
+          img.style.cursor = 'zoom-out';
+      }
+      img.style.transform = `scale(${scale})`;
+    });
+
+    imgContainer.onclick = (e) => {
+        if (scale > 1) {
+            scale = 1;
+            img.style.transform = `scale(1)`;
+            img.style.cursor = 'zoom-in';
+        }
+    };
 
     const prevBtn = document.createElement('button');
     prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
@@ -3441,7 +3495,7 @@ if (document.readyState === 'loading') {
     prevBtn.style.display = 'flex';
     prevBtn.style.justifyContent = 'center';
     prevBtn.style.alignItems = 'center';
-    prevBtn.onclick = (e) => { e.stopPropagation(); if (currentIndex > 0) { currentIndex--; updateImage(); } };
+    prevBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex > 0) { currentIndex--; updateImage(); } };
     modal.appendChild(prevBtn);
 
     const nextBtn = document.createElement('button');
@@ -3461,7 +3515,7 @@ if (document.readyState === 'loading') {
     nextBtn.style.display = 'flex';
     nextBtn.style.justifyContent = 'center';
     nextBtn.style.alignItems = 'center';
-    nextBtn.onclick = (e) => { e.stopPropagation(); if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
+    nextBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
     modal.appendChild(nextBtn);
 
     const updateImage = () => {
