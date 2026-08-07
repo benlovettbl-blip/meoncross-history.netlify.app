@@ -1945,8 +1945,6 @@ export function initializeApp(unitData) {
 
         html += extrasHtml;
         });
-        html += `</div>`;
-      }
 
       if (lesson.sources && lesson.sources.length > 0) {
         html += `<div class="sources-grid" style="margin-top: 20px;">`;
@@ -2603,6 +2601,7 @@ if (document.readyState === 'loading') {
   init();
 }
 
+}
 window.updateProgress = () => {
   const inputs = document.querySelectorAll('.student-answer-input');
   let filled = 0;
