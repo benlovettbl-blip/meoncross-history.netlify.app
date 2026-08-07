@@ -1,8 +1,8 @@
 export const unitData = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
-  "cover_image": "/images/global_mercator.jpg",
-  "cover_caption": "Early Modern World 1450-1750.",
+  "cover_image": "/images/east_offering.jpg",
+  "cover_caption": "The East Offering its Riches to Britannia by Spiridione Roma (1778).",
   "printable_workbooks": [
     {
       "title": "Unit Workbook",
@@ -207,7 +207,7 @@ export const unitData = {
           ],
           "images": [
             {
-              "image": "/images/early_mod_l1_banner.jpg",
+              "image": "/images/mansa_musa_catalan.jpg",
               "image_alt": "Catalan Atlas (1375) - Mansa Musa",
               "image_caption": "Detail from the Catalan Atlas (1375) by Abraham Cresques. It depicts Mansa Musa, the wealthy ruler of the Mali Empire, holding a gold coin, illustrating West Africa's vast gold reserves and its integration into medieval global trade networks.",
               "source_letter": "A"
@@ -221,7 +221,8 @@ export const unitData = {
           "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
           "image_caption": "An early 19th-century painting by an unknown Chinese artist showing the Thirteen Factories in Canton (Guangzhou). This was the only area where foreign merchants (including the British East India Company) were permitted to trade with Qing dynasty China.",
           "source_letter": "B",
-          "tasks": [
+            "image_context": "Notice the prominent display of European flags (Danish, Spanish, American, Swedish, British, and Dutch) confined to a tiny strip of land outside the city walls. This image shatters the myth of European dominance in the 1700s—Western merchants were entirely at the mercy of the powerful Qing Emperor, restricted to these small 'factories' because China had little need for European goods, while Europeans desperately craved Chinese tea, silk, and porcelain.",
+            "tasks": [
             {
               "type": "comprehension",
               "question": "Based on Source A, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
