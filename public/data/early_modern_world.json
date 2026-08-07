@@ -2719,7 +2719,8 @@
           "His diary remains one of the most vital primary sources for European historians studying the siege.",
           "Provides a unique, on-the-ground perspective of 15th-century warfare and medicine."
         ],
-        "limitations": "His account is highly biased; he viewed the Ottomans as 'infidels' and often blamed the Genoese for the city's fall, requiring historians to cross-reference his claims."
+        "limitations": "His account is highly biased; he viewed the Ottomans as 'infidels' and often blamed the Genoese for the city's fall, requiring historians to cross-reference his claims.",
+        "group": "Historical Figures"
       },
       {
         "name": "Sultan Mehmed II",
@@ -2733,7 +2734,8 @@
         ],
         "image": "/images/individuals/sultan_mehmed_ii.jpg",
         "actions": "<ul><li>Orchestrated the 53-day siege of Constantinople in 1453 using massive cannons and a huge land/sea force.</li><li>Transformed the conquered city into Istanbul, the new capital of the Ottoman Empire.</li><li>Centralised state administration and codified Ottoman law.</li></ul>",
-        "limitations": "His relentless military campaigns drained the Ottoman treasury and provoked endless conflicts with European powers like Venice and Hungary."
+        "limitations": "His relentless military campaigns drained the Ottoman treasury and provoked endless conflicts with European powers like Venice and Hungary.",
+        "group": "Historical Figures"
       },
       {
         "name": "Mansa Musa",
@@ -2747,7 +2749,8 @@
           "Put West Africa on the map for European cartographers (literally, as seen in the Catalan Atlas of 1375).",
           "Considered by many historians to be the wealthiest individual in human history."
         ],
-        "limitations": "His immense wealth distribution in Cairo during his Hajj accidentally caused severe hyperinflation, devastating the local Egyptian economy for a decade."
+        "limitations": "His immense wealth distribution in Cairo during his Hajj accidentally caused severe hyperinflation, devastating the local Egyptian economy for a decade.",
+        "group": "Historical Figures"
       },
       {
         "name": "Christopher Columbus",
@@ -2760,7 +2763,8 @@
           "Sparked the 'Columbian Exchange' of plants, animals, and diseases between hemispheres."
         ],
         "limitations": "His arrival directly caused the catastrophic collapse of indigenous populations (like the Taíno people) through brutal forced labor, warfare, and the introduction of European diseases.",
-        "image": "/images/individuals/christopher_columbus.jpg"
+        "image": "/images/individuals/christopher_columbus.jpg",
+        "group": "Historical Figures"
       },
       {
         "name": "Martin Luther",
@@ -2774,7 +2778,8 @@
           "Pioneered the use of the newly invented printing press to mass-distribute religious propaganda.",
           "Fundamentally changed European politics, leading to centuries of religious wars."
         ],
-        "limitations": "His fiery rhetoric accidentally inspired the violent German Peasants' War (which he then brutally condemned), and his later writings were violently anti-Semitic."
+        "limitations": "His fiery rhetoric accidentally inspired the violent German Peasants' War (which he then brutally condemned), and his later writings were violently anti-Semitic.",
+        "group": "Historical Figures"
       },
       {
         "name": "Sir Francis Drake",
@@ -2788,7 +2793,8 @@
           "Shattered the myth of Spanish naval invincibility.",
           "Pioneered English global maritime exploration and challenged the Iberian monopoly on global trade."
         ],
-        "limitations": "To the Spanish, he was merely a violent pirate ('El Draque'). He was also heavily involved in the early, brutal stages of the English transatlantic slave trade alongside John Hawkins."
+        "limitations": "To the Spanish, he was merely a violent pirate ('El Draque'). He was also heavily involved in the early, brutal stages of the English transatlantic slave trade alongside John Hawkins.",
+        "group": "Historical Figures"
       },
       {
         "name": "Queen Elizabeth I",
@@ -2802,7 +2808,8 @@
           "Successfully defended England against the existential threat of the 1588 Spanish Armada.",
           "Granted the royal charter to the East India Company in 1600, laying the foundations for the British Empire."
         ],
-        "limitations": "She refused to marry or name an heir, creating severe anxiety about the succession. Her policies in Ireland were also aggressively colonial and brutal."
+        "limitations": "She refused to marry or name an heir, creating severe anxiety about the succession. Her policies in Ireland were also aggressively colonial and brutal.",
+        "group": "Historical Figures"
       },
       {
         "name": "Pocahontas",
@@ -2815,7 +2822,8 @@
           "Her intervention and food provisions were instrumental in the survival of the Jamestown colony during its starving years.",
           "Challenged English stereotypes of Indigenous peoples during her celebrated tour of London society."
         ],
-        "limitations": "Her story was heavily romanticised and weaponised as colonial propaganda by the English. She tragically died of European disease at Gravesend at just 21 years old."
+        "limitations": "Her story was heavily romanticised and weaponised as colonial propaganda by the English. She tragically died of European disease at Gravesend at just 21 years old.",
+        "group": "Historical Figures"
       },
       {
         "name": "King Charles I",
@@ -2828,7 +2836,8 @@
           "Was a major patron of the arts, assembling one of the greatest art collections in Europe.",
           "His execution in 1649 established the radical precedent that a monarch could be tried and killed by their own people for treason."
         ],
-        "limitations": "His absolute belief in the 'Divine Right of Kings' made him dangerously uncompromising, ultimately destroying his own monarchy and plunging the British Isles into a devastating, bloody civil war."
+        "limitations": "His absolute belief in the 'Divine Right of Kings' made him dangerously uncompromising, ultimately destroying his own monarchy and plunging the British Isles into a devastating, bloody civil war.",
+        "group": "Historical Figures"
       },
       {
         "name": "Oliver Cromwell",
@@ -2842,7 +2851,8 @@
           "Temporarily established the only republican government in British history.",
           "Aggressively expanded English naval and commercial power against the Dutch and Spanish."
         ],
-        "limitations": "His brutal military campaign in Ireland (including the massacres at Drogheda and Wexford) left a legacy of deep, enduring hatred. His puritanical regime banned popular pastimes like theatre and Christmas."
+        "limitations": "His brutal military campaign in Ireland (including the massacres at Drogheda and Wexford) left a legacy of deep, enduring hatred. His puritanical regime banned popular pastimes like theatre and Christmas.",
+        "group": "Historical Figures"
       },
       {
         "name": "Olaudah Equiano",
@@ -2856,7 +2866,8 @@
           "Became a leading figure in the British abolitionist movement, working closely with the Sons of Africa.",
           "Fundamentally shifted British public opinion against the Transatlantic Slave Trade."
         ],
-        "limitations": "Despite his immense influence, he died in 1797, ten years before the British Parliament finally abolished the slave trade in 1807."
+        "limitations": "Despite his immense influence, he died in 1797, ten years before the British Parliament finally abolished the slave trade in 1807.",
+        "group": "Historical Figures"
       },
       {
         "name": "Nanny of the Maroons",
@@ -2868,7 +2879,205 @@
           "Forced the mighty British Empire to sign a peace treaty granting the Maroons land and freedom in 1739.",
           "Recognized today as a National Hero of Jamaica."
         ],
-        "image": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg"
+        "image": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Admiral Zheng He",
+        "role": "Ming Dynasty Explorer",
+        "actions": "<ul><li>Commanded massive fleets of Chinese 'treasure ships' between 1405-1433.</li></ul>",
+        "achievements": "Projected Chinese maritime power across the Indian Ocean and East Africa decades before European explorers.",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "John Hawkins",
+        "role": "English Privateer & Slave Trader",
+        "actions": "<ul><li>Architect of early English involvement in the Transatlantic Slave Trade, alongside Drake.</li></ul>",
+        "achievements": "Helped build the Elizabethan navy that defeated the Spanish Armada.",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "King Philip II",
+        "role": "King of Spain",
+        "actions": "<ul><li>Ruled a vast global Catholic empire; launched the Spanish Armada against England in 1588.</li></ul>",
+        "limitations": "His rigid tactics and overextension drained the massive wealth extracted from the Americas.",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Henry VIII",
+        "role": "King of England",
+        "actions": "<ul><li>Broke England away from the Catholic Church in 1534 to secure an annulment, fundamentally altering English religion and politics.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Pope Alexander VI",
+        "role": "Head of the Catholic Church",
+        "actions": "<ul><li>Issued the 1494 Treaty of Tordesillas, arrogantly dividing the entire undiscovered world between Spain and Portugal.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Sir Walter Raleigh",
+        "role": "English Explorer & Courtier",
+        "actions": "<ul><li>Sponsored the doomed Roanoke colony attempt in the 1580s; popularised tobacco in England.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Mary, Queen of Scots",
+        "role": "Queen of Scotland",
+        "actions": "<ul><li>A Catholic claimant to the English throne whose execution by Elizabeth I provoked the Spanish Armada.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Don Francisco de Zárate",
+        "role": "Spanish Captain",
+        "actions": "<ul><li>Captured by Francis Drake in 1579, leaving behind a famous primary source account of Drake's character and piracy.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "King James I",
+        "role": "King of England and Scotland",
+        "actions": "<ul><li>Received Pocahontas at court; granted charters to early colonial companies like the Virginia Company.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "John Rolfe",
+        "role": "English Planter",
+        "actions": "<ul><li>Married Pocahontas (Matoaka) in 1614; introduced a sweet strain of Caribbean tobacco that made Jamestown profitable.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Chief Powhatan",
+        "role": "Indigenous Leader",
+        "actions": "<ul><li>Leader of the Powhatan Confederacy who initially kept the starving Jamestown colonists alive through trade before relations violently collapsed.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Emperor Jahangir",
+        "role": "Mughal Emperor",
+        "actions": "<ul><li>Ruled 25% of global GDP; permitted the English East India Company to build small trading posts, viewing them as insignificant merchants.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Sir Thomas Roe",
+        "role": "English Diplomat",
+        "actions": "<ul><li>Spent three years at the Mughal Court (1615-1618) begging for trading rights for the East India Company.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "John Bradshaw",
+        "role": "Judge",
+        "actions": "<ul><li>Served as President of the High Court of Justice that shockingly tried and condemned King Charles I to death in 1649.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Martin Noell",
+        "role": "London Merchant",
+        "actions": "<ul><li>Grew immensely wealthy from Caribbean sugar and slavery; helped financially back Oliver Cromwell's New Model Army.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Charles II",
+        "role": "King of England",
+        "actions": "<ul><li>Restored to the throne in 1660 after the collapse of the English Republic, marking the 'Restoration'.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Gerrard Winstanley",
+        "role": "Radical Leader (The Diggers)",
+        "actions": "<ul><li>Led a radical movement during the Civil War attempting to abolish private property and establish a fully equal, agrarian society.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "William Wilberforce",
+        "role": "English Abolitionist",
+        "actions": "<ul><li>Led the parliamentary campaign against the slave trade, culminating in the 1807 Abolition Act.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Thomas Clarkson",
+        "role": "Abolitionist Campaigner",
+        "actions": "<ul><li>Travelled thousands of miles gathering horrific physical evidence (shackles, ship diagrams) to expose the realities of the slave trade to the British public.</li></ul>",
+        "group": "Historical Figures"
+      },
+      {
+        "name": "Kritovoulos of Imbros",
+        "role": "Greek Scholar & Historian",
+        "bio": "A Greek scholar who lived through the fall of the Byzantine Empire. Instead of resisting, he entered the service of Sultan Mehmed II.",
+        "actions": "<ul><li>Wrote a vital, though highly flattering, primary source history of Sultan Mehmed II's conquests.</li></ul>",
+        "achievements": "Focus: 15th-Century Ottoman Conquest",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. Peter Frankopan",
+        "role": "Professor of Global History, Oxford",
+        "bio": "He is famous for challenging Eurocentric history, arguing that for thousands of years the true centre of global wealth and power lay in Asia.",
+        "actions": "<ul><li>Wrote the bestselling book 'The Silk Roads' (2015).</li></ul>",
+        "achievements": "Focus: Global & Silk Road History",
+        "group": "Historians"
+      },
+      {
+        "name": "Dr. Geoffrey Parker",
+        "role": "Leading Expert on the Spanish Empire",
+        "bio": "His revisionist work on the Spanish Armada argues that the English victory was due to Spanish logistical failures and superior English ship design.",
+        "actions": "<ul><li>Revolutionised the understanding of Early Modern Warfare.</li></ul>",
+        "achievements": "Focus: Early Modern Warfare & Spain",
+        "group": "Historians"
+      },
+      {
+        "name": "Sir John Seeley",
+        "role": "Victorian Historian",
+        "bio": "A 19th-century historian writing at the height of the British Empire. He famously argued that the British Empire was acquired 'in a fit of absence of mind'.",
+        "actions": "<ul><li>Wrote 'The Expansion of England' (1883).</li></ul>",
+        "achievements": "Focus: 19th-Century British Imperialism",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. Shashi Tharoor",
+        "role": "Indian Politician & Historian",
+        "bio": "A former UN Under-Secretary-General. He aggressively dismantles the myth of a 'benevolent' British Empire.",
+        "actions": "<ul><li>Wrote 'Inglorious Empire' (2017), focusing on how corporate entities like the East India Company violently extracted wealth from India.</li></ul>",
+        "achievements": "Focus: British Colonial History in India",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. Christopher Hill",
+        "role": "Marxist Historian",
+        "bio": "One of the most famous Marxist historians of the 20th century, based at Oxford. He argued the English Civil War was a revolutionary class struggle.",
+        "actions": "<ul><li>Wrote 'The World Turned Upside Down' (1972).</li></ul>",
+        "achievements": "Focus: 17th-Century English Radicalism",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. Eric Williams",
+        "role": "Historian & Prime Minister",
+        "bio": "A brilliant historian who later became the first Prime Minister of Trinidad and Tobago.",
+        "actions": "<ul><li>Wrote 'Capitalism and Slavery' (1944), proving that Britain abolished slavery because slave rebellions made it economically unviable.</li></ul>",
+        "achievements": "Focus: Atlantic Slavery & Economics",
+        "group": "Historians"
+      },
+      {
+        "name": "Reginald Coupland",
+        "role": "Imperial Historian",
+        "bio": "An Oxford historian writing in the 1930s. He promoted the 'Traditional Imperial View' of abolition.",
+        "actions": "<ul><li>Argued that Britain ended the slave trade purely out of noble, Christian humanitarianism, focusing heavily on white heroes like Wilberforce.</li></ul>",
+        "achievements": "Focus: Imperial History & Abolition",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. Roy Porter",
+        "role": "Medical & Social Historian",
+        "bio": "A highly prolific historian at the Wellcome Institute. He argued that by the 18th century, Britain was a deeply modern, secular, consumer-driven society.",
+        "actions": "<ul><li>Pioneered the study of social history and the Enlightenment in Britain.</li></ul>",
+        "achievements": "Focus: The Enlightenment & Social History",
+        "group": "Historians"
+      },
+      {
+        "name": "Prof. J.C.D. Clark",
+        "role": "Revisionist Historian",
+        "bio": "A prominent revisionist historian who fiercely challenged Porter's view.",
+        "actions": "<ul><li>Wrote 'English Society 1688-1832' (1985), arguing 18th-century Britain was a traditional, aristocratic 'Ancien Régime' dominated by religion.</li></ul>",
+        "achievements": "Focus: Revisionist 18th-Century Britain",
+        "group": "Historians"
       }
     ],
     "geographical_locations": [
