@@ -68,7 +68,8 @@ export function generateKeyIndividualEmbedHTML(person) {
 }
 
 export function generateKeyIndividualCardHTML(person) {
-  const hasBackData = person.actions || (person.achievements && !Array.isArray(person.achievements)) || person.limitations;
+  // Fix: Any actions, achievements (array or string), or limitations triggers the flip
+  const hasBackData = !!(person.actions || person.achievements || person.limitations);
   
   let frontImgHtml = '';
   if (person.image || person.image_url) {
@@ -84,11 +85,7 @@ export function generateKeyIndividualCardHTML(person) {
   if (person.bio) {
     basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;">${person.bio}</div>`;
   } else if (person.significance) {
-    basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;"><strong>Significance:</strong> ${person.significance}`;
-    if (person.achievements && Array.isArray(person.achievements) && person.achievements.length > 0) {
-      basicBio += `<br><br><strong>Achievements:</strong><ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>`;
-    }
-    basicBio += `</div>`;
+    basicBio = `<div style="margin: 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;"><strong>Significance:</strong> ${person.significance}</div>`;
   }
 
   let backHtml = '';
@@ -103,11 +100,12 @@ export function generateKeyIndividualCardHTML(person) {
           <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.actions}</span>
         </div>`;
     }
-    if (person.achievements && !Array.isArray(person.achievements)) {
+    if (person.achievements) {
+      const achievementsList = Array.isArray(person.achievements) ? `<ul style="margin-top: 5px; padding-left: 20px; margin-bottom: 0;"><li>${person.achievements.join('</li><li>')}</li></ul>` : person.achievements;
       backHtml += `
         <div style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
           <strong style="color: #22c55e; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Impact / Achievements</strong>
-          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${person.achievements}</span>
+          <span style="font-size: 0.9rem; color: var(--text-main); display: block;">${achievementsList}</span>
         </div>`;
     }
     if (person.limitations) {
@@ -135,7 +133,7 @@ export function generateKeyIndividualCardHTML(person) {
             ${lifespanHtml}
             <p style="margin: 0 0 15px 0; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">${person.role || ''}</p>
             ${basicBio}
-            ${hasBackData ? `<div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: #10b981; font-weight: bold;"><i class="fas fa-sync-alt" style="margin-right: 5px;"></i> Tap for Exam Breakdown</div>` : ''}
+            ${hasBackData ? `<div style="text-align: center; margin-top: auto; padding-top: 15px; font-size: 0.85rem; color: #10b981; font-weight: bold;"><i class="fas fa-sync-alt" style="margin-right: 5px;"></i> Tap for Details</div>` : ''}
           </div>
         </div>
         ${hasBackData ? `<div class="card-back">${backHtml}</div>` : ''}
