@@ -1,4 +1,4 @@
-window.unitData = {
+export const unitData = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
   "cover_image": "/images/global_mercator.jpg",
@@ -332,7 +332,14 @@ window.unitData = {
           "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450."
         ]
       },
-      "banner": "/images/early_mod_l1_banner.jpg"
+      "banner": "/images/early_mod_l1_banner.jpg",
+      "tasks": [
+        {
+          "qNum": 11,
+          "text": "Lesson Reflection: Looking at the state of the world in 1450, why might a historian argue that Europe was actually on the periphery of global power rather than at its center?",
+          "model": "A strong answer should reference the immense wealth of the Ming Dynasty in China, the military dominance of the Ottoman Empire, or the vast riches of African kingdoms like Mali or Benin, contrasting these with the relative poverty, isolation, and basic agricultural lifestyle of European peasants."
+        }
+      ]
     },
     {
       "id": "lesson_2",
@@ -716,7 +723,14 @@ window.unitData = {
           "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions."
         ]
       },
-      "banner": "/images/early_mod_l2_banner.jpg"
+      "banner": "/images/early_mod_l2_banner.jpg",
+      "tasks": [
+        {
+          "qNum": 19,
+          "text": "Lesson Reflection: To what extent did the Protestant Reformation act as the primary catalyst for European expansion and global exploration during the 16th century?",
+          "model": "A strong answer should explain how the religious schism created fierce competition between Catholic nations (like Spain/Portugal) and Protestant nations (like England/Netherlands), driving them to seek new wealth, resources, and converts globally to fund their religious wars in Europe."
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -1099,7 +1113,14 @@ window.unitData = {
           "Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation."
         ]
       },
-      "banner": "Panoramic painting of the Fort St. George at Madras (Chennai) or the East India Company docks at Surat."
+      "banner": "Panoramic painting of the Fort St. George at Madras (Chennai) or the East India Company docks at Surat.",
+      "tasks": [
+        {
+          "qNum": 19,
+          "text": "Lesson Reflection: Based on the early encounters between Europeans and indigenous populations, how did initial trade relationships gradually transform into systems of imperial control and exploitation?",
+          "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew."
+        }
+      ]
     },
     {
       "id": "lesson_4",
@@ -1462,7 +1483,14 @@ window.unitData = {
           "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists."
         ]
       },
-      "banner": "/images/early_mod_l4_banner.jpg"
+      "banner": "/images/early_mod_l4_banner.jpg",
+      "tasks": [
+        {
+          "qNum": 20,
+          "text": "Lesson Reflection: Considering the English Civil War and the rise of transatlantic trade, did political ideology or economic ambition play a greater role in shifting the balance of power in Britain?",
+          "model": "A strong answer could argue either way, provided it references the ideological battle between the Divine Right of Kings and Parliament's demand for liberties, while also acknowledging how the massive influx of wealth from the Atlantic trade empowered a new merchant class who demanded a greater say in government."
+        }
+      ]
     },
     {
       "id": "lesson_5",
@@ -1821,7 +1849,14 @@ window.unitData = {
           "Investigate the Jamaican Maroon Wars and how armed rebellion forced imperial compromises."
         ]
       },
-      "banner": "The horizontal fold-out cross-section diagram of the Slave Ship Brooks (1788)."
+      "banner": "The horizontal fold-out cross-section diagram of the Slave Ship Brooks (1788).",
+      "tasks": [
+        {
+          "qNum": 18,
+          "text": "Lesson Reflection: In what ways did enslaved Africans maintain their agency and resist the brutal dehumanization of the Transatlantic Slave Trade, both physically and culturally?",
+          "model": "A strong answer should provide specific examples of physical resistance (such as shipboard mutinies or escaping to form Maroon communities) alongside cultural resistance (such as preserving African religious practices, music, language, and forging new community bonds despite being stripped of their identities)."
+        }
+      ]
     },
     {
       "id": "lesson_6",
@@ -2209,7 +2244,14 @@ window.unitData = {
           "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
         ]
       },
-      "banner": "/images/early_mod_l6_banner.jpg"
+      "banner": "/images/early_mod_l6_banner.jpg",
+      "tasks": [
+        {
+          "qNum": 17,
+          "text": "Lesson Reflection: Synthesizing everything you have learned in this unit, which development between 1450 and 1750 had the most profound impact on shaping the 'modern' world we live in today?",
+          "model": "A strong answer should select one major theme (e.g., the printing press accelerating knowledge, the Atlantic slave trade establishing global capitalism, or the shift of power from kings to parliaments) and justify why this specific change laid the foundational structures of the modern world."
+        }
+      ]
     }
   ],
   "portraits": [

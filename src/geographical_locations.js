@@ -70,20 +70,31 @@ window.openGeographyModal = function(index) {
   const mapQuery = location.mapQuery || location.name;
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
-  let timelineHtml = '';
+  let rightPanelHtml = `
+    <div style="flex: 0 0 350px; background: #f8fafc; padding: 25px; border-left: 1px solid #cbd5e1; overflow-y: auto; display: flex; flex-direction: column; gap: 25px;">
+  `;
+
+  if (location.description) {
+    rightPanelHtml += `
+      <div>
+        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 12px; font-size: 1.3rem;">About</h2>
+        <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin: 0;">${location.description}</p>
+      </div>
+    `;
+  }
+
   if (location.timeline && Array.isArray(location.timeline) && location.timeline.length > 0) {
-    timelineHtml = `
-      <div style="flex: 0 0 350px; background: #f8fafc; padding: 25px; border-left: 1px solid #cbd5e1; overflow-y: auto;">
-        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">Key Events</h2>
+    rightPanelHtml += `
+      <div>
+        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px; font-size: 1.3rem;">Key Events</h2>
         <ul style="list-style: none; padding: 0; margin: 0; position: relative; border-left: 3px solid #3b82f6; margin-left: 10px;">
     `;
     location.timeline.forEach((event, i) => {
-      // Try to split year and description for better styling
       const parts = event.split(' - ');
       const year = parts.length > 1 ? parts[0] : '';
       const text = parts.length > 1 ? parts.slice(1).join(' - ') : event;
       
-      timelineHtml += `
+      rightPanelHtml += `
         <li style="position: relative; margin-bottom: 20px; padding-left: 20px;">
           <div style="position: absolute; left: -8px; top: 5px; width: 13px; height: 13px; border-radius: 50%; background: #3b82f6; border: 3px solid #f8fafc;"></div>
           ${year ? `<div style="font-weight: bold; color: #1d4ed8; font-size: 0.95rem; margin-bottom: 4px;">${year}</div>` : ''}
@@ -91,18 +102,13 @@ window.openGeographyModal = function(index) {
         </li>
       `;
     });
-    timelineHtml += `
+    rightPanelHtml += `
         </ul>
       </div>
     `;
-  } else if (location.description) {
-     timelineHtml = `
-      <div style="flex: 0 0 350px; background: #f8fafc; padding: 25px; border-left: 1px solid #cbd5e1; overflow-y: auto;">
-        <h2 style="margin-top: 0; color: #0f172a; font-family: var(--font-heading, sans-serif); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;">About</h2>
-        <p style="color: #334155; font-size: 1rem; line-height: 1.6;">${location.description}</p>
-      </div>
-    `;
   }
+
+  rightPanelHtml += `</div>`;
 
   modal.innerHTML = `
     <div style="background: white; border-radius: 12px; width: 100%; max-width: 1200px; height: 80vh; max-height: 800px; display: flex; flex-direction: column; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
@@ -131,7 +137,7 @@ window.openGeographyModal = function(index) {
         </div>
         
         <!-- Right: Timeline / Info -->
-        ${timelineHtml}
+        ${rightPanelHtml}
       </div>
 
     </div>

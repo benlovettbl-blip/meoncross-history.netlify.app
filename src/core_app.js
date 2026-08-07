@@ -1296,7 +1296,48 @@ export function initializeApp(unitData) {
       `;
     }
 
-    // ==========================================
+          if (lesson.sources && lesson.sources.length > 0) {
+        html += `<div class="sources-grid" style="margin-top: 20px;">`;
+        lesson.sources.forEach(source => {
+          html += `
+            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+              ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
+              
+              ${source.src ? `
+                <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
+                  <div style="position: relative;">
+                    <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" onclick="window.openModal(this.src)">
+                    ${source.caption ? `
+                      <button class="source-accordion-btn no-print" onclick="const panel = this.parentElement.nextElementSibling; panel.style.display = panel.style.display === 'none' ? 'block' : 'none';" title="Source Information" style="position: absolute; top: 10px; right: 10px; background: #10b981; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-info"></i>
+                      </button>
+                    ` : ''}
+                  </div>
+                  ${source.caption ? `
+                    <div class="source-info-panel" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; font-size: 0.95rem; color: #334155; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+                      <strong style="color: #0f172a; margin-bottom: 5px; display: block;">
+                        <i class="fa-solid fa-circle-info" style="color: #10b981; margin-right: 5px;"></i>
+                        About this source
+                      </strong>
+                      ${source.caption}
+                    </div>
+                  ` : ''}
+                </div>
+              ` : ''}
+              
+              ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
+              ${source.question ? `
+                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+        html += `</div>`;
+      }
+
+// ==========================================
     // TAB 1: PREPARATION
     // ==========================================
     html += ``;
@@ -1743,7 +1784,7 @@ export function initializeApp(unitData) {
 
         let imageHtml = '';
         if (block.images && Array.isArray(block.images) && block.images.length > 0) {
-           const galleryData = encodeURIComponent(JSON.stringify(block.images.map(img => ({ src: getAssetUrl(img.src || img.image), alt: img.alt || img.image_alt || '' }))));
+           const galleryData = encodeURIComponent(JSON.stringify(block.images.map(img => ({ src: getAssetUrl(img.src || img.image), alt: img.alt || img.image_alt || '' })))).replace(/'/g, "%27");
            imageHtml = `
              <style>
                .image-hint-caption {
@@ -1786,20 +1827,21 @@ export function initializeApp(unitData) {
         }
 
         html += `
-          <div class="standard-narrative-container">
-            ${imageHtml}
-            <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-              <div class="para-number">${index + 1}</div>
-              <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
-              <div style="display: flex; align-items: flex-start;">
-                <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+            <div class="standard-narrative-container">
+              ${imageHtml}
+              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="para-number">${index + 1}</div>
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
+                <div style="display: flex; align-items: flex-start;">
+                  <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                </div>
               </div>
             </div>
-          </div>
-        `;
+          `;
 
+        let extrasHtml = '';
         if (block.level_4) {
-          html += `
+          extrasHtml += `
             <div class="level4-narrative-container" style="display: none;">
               <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
@@ -1814,12 +1856,14 @@ export function initializeApp(unitData) {
         
         if (block.hinge_question) {
           const hingeId = `hinge-${index}`;
-          html += `
+          const hingeQuestionText = block.hinge_question.text || block.hinge_question.question;
+          const correctIndex = block.hinge_question.correct_index !== undefined ? block.hinge_question.correct_index : block.hinge_question.answer;
+          extrasHtml += `
             <div class="hinge-question-container no-print" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px;">
-              <button class="btn btn-secondary" id="btn-${hingeId}" onclick="document.getElementById('${hingeId}').style.display = 'block'; this.style.display = 'none';" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Class Quiz</button>
+              <button class="btn btn-secondary" id="btn-${hingeId}" onclick="document.getElementById('${hingeId}').style.display = 'block'; this.style.display = 'none';" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Hinge Question</button>
               <div id="${hingeId}" style="display: none; background: #f0f9ff; border: 2px solid #38bdf8; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                 <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Hinge Question</div>
-                <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${block.hinge_question.text}"</div>
+                <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${hingeQuestionText}"</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                   ${block.hinge_question.options.map((opt, i) => `
                     <button onclick="
@@ -1827,13 +1871,13 @@ export function initializeApp(unitData) {
                       const explanation = parent.nextElementSibling;
                       for (let child of parent.children) {
                         child.style.pointerEvents = 'none';
-                        if (child.dataset.index == ${block.hinge_question.correct_index}) {
+                        if (child.dataset.index == ${correctIndex}) {
                           child.style.backgroundColor = '#dcfce7';
                           child.style.borderColor = '#22c55e';
                           child.style.color = '#166534';
                         }
                       }
-                      if (${i} !== ${block.hinge_question.correct_index}) {
+                      if (${i} !== ${correctIndex}) {
                         this.style.backgroundColor = '#fee2e2';
                         this.style.borderColor = '#ef4444';
                         this.style.color = '#991b1b';
@@ -1853,11 +1897,11 @@ export function initializeApp(unitData) {
         }
         
         if (block.tasks && block.tasks.length > 0) {
-          html += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
+          extrasHtml += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
           block.tasks.forEach((task, tIdx) => {
              if (task.type === 'drag_drop_timeline') {
                const timelineId = `dd-timeline-emb-${index}-${tIdx}`;
-               html += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+               extrasHtml += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
                window.postRenderHooks.push(() => {
                  import('./drag_drop_timeline.js').then(mod => {
                     mod.initDragDropTimeline(document.getElementById(timelineId), task);
@@ -1867,7 +1911,7 @@ export function initializeApp(unitData) {
              }
              if (task.type === 'spectrum_mapper') {
                const spectrumId = `spectrum-emb-${index}-${tIdx}`;
-               html += `<div id="${spectrumId}" style="margin-bottom: 20px;"></div>`;
+               extrasHtml += `<div id="${spectrumId}" style="margin-bottom: 20px;"></div>`;
                window.postRenderHooks.push(() => {
                  import('./spectrum_mapper.js').then(mod => {
                     mod.initSpectrumMapper(document.getElementById(spectrumId), task);
@@ -1879,7 +1923,7 @@ export function initializeApp(unitData) {
              const ansId = `ans-emb-${index}-${tIdx}`;
              const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
              const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
-             html += `
+             extrasHtml += `
                <div style="margin-bottom: 10px;">
                  <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
                  <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
@@ -1889,8 +1933,20 @@ export function initializeApp(unitData) {
                </div>
              `;
           });
-          html += `</div>`;
+          extrasHtml += `</div>`;
         }
+
+        let isSideQuest = styledContent.includes('</details>') && (block.title && block.title.includes('Side Quest'));
+        if (isSideQuest) {
+           styledContent = styledContent.replace('</details>', extrasHtml + '</details>');
+           extrasHtml = '';
+           // Rewrite the actual styledContent in the narrative chunk manually below
+        }
+
+        html += extrasHtml;
+        });
+        html += `</div>`;
+      }
       });
 
       if (lesson.sources && lesson.sources.length > 0) {

@@ -1,15 +1,13 @@
 const fs = require('fs');
 
 let c = fs.readFileSync('src/core_app.js', 'utf8');
-const find = `          \`;
-      if (lesson.tasks) {`;
+const idx = c.indexOf('// ==========================================');
 
-const replace = `          \`;
-
-        html += extrasHtml;
-      });
-
-      if (lesson.sources && lesson.sources.length > 0) {
+if (idx !== -1) {
+    const before = c.substring(0, idx);
+    const after = c.substring(idx);
+    
+    const injection = `      if (lesson.sources && lesson.sources.length > 0) {
         html += \`<div class="sources-grid" style="margin-top: 20px;">\`;
         lesson.sources.forEach(source => {
           html += \`
@@ -49,31 +47,11 @@ const replace = `          \`;
         });
         html += \`</div>\`;
       }
-      html += \`</div>\`;
-    }
 
-    // ==========================================
-    // TAB 3: APPLICATION
-    // ==========================================
-    html += \`\`;
-
-    if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
-      let hasModels = false;
-      if (lesson.tasks) {`;
-
-if (c.includes(find)) {
-  fs.writeFileSync('src/core_app.js', c.replace(find, replace));
-  console.log('Fixed');
+`;
+    
+    fs.writeFileSync('src/core_app.js', before + injection + after);
+    console.log('Successfully injected sources!');
 } else {
-  // try different whitespace
-  const lines = c.split('\n');
-  const index = lines.findIndex(l => l.includes('if (lesson.tasks) {'));
-  if (index > -1 && lines[index-1].includes('          `;')) {
-    const pre = lines.slice(0, index-1).join('\n');
-    const post = lines.slice(index+1).join('\n');
-    fs.writeFileSync('src/core_app.js', pre + '\n' + replace + '\n' + post);
-    console.log('Fixed with slice');
-  } else {
-    console.log('Not found');
-  }
+    console.log('Could not find injection point');
 }
