@@ -1,0 +1,76 @@
+
+=== LESSON 0 ===
+SOURCES DEFINED:
+A: Catalan Atlas (1375) - Mansa Musa
+B: 2. Macro-History: The Real Centers of Wealth in 1450
+C: West Africa: Kingdoms of Gold and Brass
+D: The Silk Road & Ming China: The World's Industrial Engine
+REFERENCES:
+Text E (affold-box'><strong>Source E: An Eyewitn)
+Text F (affold-box'><strong>Source F: A European)
+Text G (r:#64748b;"><strong>Source G:</strong> A)
+
+=== LESSON 1 ===
+SOURCES DEFINED:
+A: Map of the Spanish Armada Route (1588)
+B: Macro-History: Navigating the Unknown
+C: Macro-History: The Reformation (1517)
+D: Macro-History: The New World Monopoly & Privateers
+G: Visual Analysis: The Armada Portrait (1588)
+REFERENCES:
+Text E (<blockquote><strong>Source E: An Excerpt)
+Text F (<blockquote><strong>Source F: A Spanish )
+Text H (r:#64748b;"><strong>Source H:</strong> H)
+
+=== LESSON 2 ===
+SOURCES DEFINED:
+A: The Thirteen Factories at Canton
+B: Macro-History: The Big Picture
+E: Visual Analysis: The Jamestown Triangular Fort Plan (1607)
+REFERENCES:
+Text C (<blockquote><strong>Source C: From the F)
+Text D (<blockquote><strong>Source D: From the J)
+Text F (r:#64748b;"><strong>Source F:</strong> J)
+
+=== LESSON 3 ===
+SOURCES DEFINED:
+A: Coat of Arms of Great Britain (1707–1714)
+B: Macro-History: The Financial Hub
+F: Visual Analysis: The Great Seal of the Commonwealth (1651)
+G: Historiographical Debate: Who won the English Civil War?
+REFERENCES:
+Text C (<blockquote><strong>Source C: The Charge)
+Text D (<blockquote><strong>Source D: A London M)
+Text E (<blockquote><strong>Source E: [Key Indiv)
+Text H (r:#64748b;"><strong>Source H:</strong> T)
+
+=== LESSON 4 ===
+SOURCES DEFINED:
+A: Micro-History: The Barracoons of West Africa
+B: Macro-History: The Triangular Machinery of Exploitation
+C: Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco
+REFERENCES:
+
+
+=== LESSON 5 ===
+SOURCES DEFINED:
+A: Diagram of the Slave Ship Brookes (1788)
+B: Primary Source Deep Dive: Authentic Voices of Resistance
+F: Case Study: The Underground Railroad
+G: Side Quest: Obeah and Botanical Warfare
+H: Historical Debates: What Truly Destroyed Slavery?
+REFERENCES:
+Text C (dius: 4px;"><strong>Source C: Olaudah Eq)
+Text D (dius: 4px;"><strong>Source D: Equiano De)
+Text E (dius: 4px;"><strong>Source E: A Jamaican)
+
+=== LESSON 6 ===
+SOURCES DEFINED:
+A: London Bridge from St Olaf Stairs (1632)
+B: Macro-History: The Ideology of Empire
+C: Macro-History: Weighing the Evidence (1450 vs. 1750)
+D: Primary Source Analysis: The Dual Reality
+REFERENCES:
+Text E (dius: 4px;"><strong>Source E: From a Ger)
+Text F (dius: 4px;"><strong>Source F: From a Lon)
+Text G (r:#64748b;"><strong>Source G:</strong> A)

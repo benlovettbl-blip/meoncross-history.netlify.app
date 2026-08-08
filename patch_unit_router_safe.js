@@ -1,13 +1,7 @@
 const fs = require('fs');
+let code = fs.readFileSync('src/unit_router.js', 'utf8');
 
-let f = fs.readFileSync('src/unit_router.js', 'utf8');
-const oldGeo = `        };
-        sidebarNav.appendChild(geoLink);
-      }`;
-
-const newCode = `        };
-        sidebarNav.appendChild(geoLink);
-      }
+const injection = `
 
       // 5. Printable Workbook Tab
       {
@@ -40,10 +34,11 @@ const newCode = `        };
         sidebarNav.appendChild(wbLink);
       }`;
 
-if(f.includes(oldGeo)) {
-  f = f.replace(oldGeo, newCode);
-  fs.writeFileSync('src/unit_router.js', f);
-  console.log('Successfully patched src/unit_router.js');
+const anchorMatch = code.match(/sidebarNav\.appendChild\(geoLink\);\s*\}/);
+if (anchorMatch) {
+    code = code.replace(anchorMatch[0], anchorMatch[0] + injection);
+    fs.writeFileSync('src/unit_router.js', code, 'utf8');
+    console.log('Successfully injected Printable Workbook tab');
 } else {
-  console.error('Could not find the target code in src/unit_router.js!');
+    console.log('Anchor not found');
 }

@@ -36,9 +36,6 @@ The `teacher_notes` property MUST be an object following this exact schema:
     - `primer`: Actionable instructions for the teacher on how to achieve this objective, referencing specific paragraphs or tasks in the narrative.
     - `question`: A "Hinge Question" designed to check student understanding of this specific objective.
 
-## Output Formatting (Links)
-Always append the local host web link (e.g., http://localhost:3003 if running Vite, or other relevant local port) and the Netlify web link (https://meoncross-history.netlify.app) at the very end of every output.
-
 ## Proactive Planning & Design Persona
 Act as an experienced app builder and an experienced history teacher. Whenever completing a task or planning work, always think ahead and provide 1 to 3 proactive recommendations at the end of your output. These recommendations should suggest where to go next in terms of architecture, design, structure, layout, pedagogy, content, historical knowledge, or pupil tasks.
 
@@ -58,6 +55,7 @@ Whenever you (the AI agent) make structural changes to any unit's curriculum fil
 1. `node extract_units.js <unit_id>`
 2. `node build_database.cjs`
 3. `node generate_tracker_v2.mjs`
+4. `node export_pdfs.js <unit_id>`
 Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run these safe unit-targeted commands proactively so the user never has to remember or type the phrases themselves.
 
 ## Video Injection Metadata

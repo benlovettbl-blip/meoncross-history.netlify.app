@@ -41,10 +41,13 @@ const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
         path: pdfPath,
         format: 'A4',
         printBackground: true,
+        displayHeaderFooter: true,
+        headerTemplate: '<div></div>',
+        footerTemplate: '<div style="font-size: 10px; width: 100%; text-align: center; color: #64748b; font-family: Arial, sans-serif; padding-bottom: 5px;"><span class="pageNumber"></span></div>',
         margin: {
           top: '0px',
           right: '0px',
-          bottom: '0px',
+          bottom: '12mm',
           left: '0px'
         }
       });

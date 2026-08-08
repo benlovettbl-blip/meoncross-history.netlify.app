@@ -1575,29 +1575,25 @@ export function initializeApp(unitData) {
     // ==========================================
     html += ``;
 
-    let fallbackEnquiry = lesson.enquiry || lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
-    if (fallbackEnquiry) {
-      html += `
-        <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-            <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Enquiry Question
-          </h3>
-          <p style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0;">
-            ${fallbackEnquiry}
-          </p>
-        </div>
-      `;
-    }
-
     if (lesson.learning_objectives) {
-      html += `
-        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
-          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
-          </h3>
+      // Smart check: Only render overarching objective if it differs from the main lesson title
+      let overarchingHtml = '';
+      const cleanTitle = (lesson.title || '').replace(/^Lesson\s*\d+:\s*/i, '').trim();
+      const cleanObj = (lesson.learning_objectives.overarching || '').trim();
+      if (cleanObj && cleanObj !== cleanTitle) {
+        overarchingHtml = `
           <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
             ${lesson.learning_objectives.overarching}
           </p>
+        `;
+      }
+      
+      html += `
+        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; margin-bottom: ${overarchingHtml ? '0' : '15px'};">
+            <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
+          </h3>
+          ${overarchingHtml}
           <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
             ${lesson.learning_objectives.scaffolded.map(obj => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
           </ul>
@@ -1663,12 +1659,8 @@ export function initializeApp(unitData) {
     }
 
     if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
-      let enquiryTitle = lesson.title.replace(/^Lesson\s*\d+:\s*/i, '');
       html += `
         <div class="phase-card">
-          <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #1e3a8a;">${enquiryTitle}</div>
-          </div>
       `;
       
       lesson.narrative_blocks.forEach((block, index) => {
@@ -1809,7 +1801,7 @@ export function initializeApp(unitData) {
                      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0; width: 100%; grid-column: 1 / -1;">
                        <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
                          <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
-                         ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                         ${(img.caption || img.image_caption || img.alt || img.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
                        </div>
                        <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
                          <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
@@ -1825,7 +1817,7 @@ export function initializeApp(unitData) {
                    return `
                      <div class="narrative-image-container" style="text-align: center;">
                        <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
-                       ${img.alt || img.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.alt || img.image_alt}</div>` : ''}
+                       ${(img.caption || img.image_caption || img.alt || img.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
                      </div>
                    `;
                  }
@@ -1865,7 +1857,7 @@ export function initializeApp(unitData) {
              <div class="narrative-image-container" style="${containerStyle}">
                <div style="${imgWrapperStyle}">
                  <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
-                 ${block.image_alt ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>` : ''}
+                 ${(block.caption || block.image_caption || block.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
                </div>
                ${contextHtml}
              </div>
