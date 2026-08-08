@@ -1090,7 +1090,6 @@ export function initializeApp(unitData) {
   
   // Render Lesson Content
     window.renderLessonByIndex = function(index, skipHistory = false) {
-      window.seenKeyIndividuals = new Set();
       if (unitData && unitData.lessons && unitData.lessons[index]) {
         if (!skipHistory) {
           try {
@@ -1242,25 +1241,36 @@ export function initializeApp(unitData) {
       });
     }
 
-    let seenTerms = new Set();
-    const highlightGlossary = (text) => {
-      if (!text || typeof text !== 'string') return text || '';
-      if (Object.keys(vocabDict).length === 0) return text;
-      let processedText = text;
-      const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
-      for (const term of sortedTerms) {
-        const def = vocabDict[term];
-        if (!def || typeof def !== 'string') continue;
-        if (!seenTerms.has(term)) {
-          const regex = new RegExp(`\\b(${term})\\b`, 'i');
-          if (regex.test(processedText)) {
-            processedText = processedText.replace(regex, `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">$1</span>`);
-            seenTerms.add(term);
+       let seenTerms = new Set();
+      const highlightGlossary = (text) => {
+        if (!text || typeof text !== 'string') return text || '';
+        if (Object.keys(vocabDict).length === 0) return text;
+        let processedText = text;
+        const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
+        for (const term of sortedTerms) {
+          const def = vocabDict[term];
+          if (!def || typeof def !== 'string') continue;
+          if (!seenTerms.has(term)) {
+            // Regex matches HTML tags OR the specific term word boundary
+            const regex = new RegExp(`(<[^>]+>)|\\b(${term})\\b`, 'gi');
+            let matchedTerm = false;
+            
+            processedText = processedText.replace(regex, (match, htmlTag, word) => {
+              if (htmlTag) return htmlTag; // Skip and preserve anything already in an HTML tag
+              if (word) {
+                matchedTerm = true;
+                return `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">${word}</span>`;
+              }
+              return match;
+            });
+            
+            if (matchedTerm) {
+              seenTerms.add(term);
+            }
           }
         }
-      }
-      return processedText;
-    };
+        return processedText;
+      };
 
 
     if (lesson.teacher_notes) {
@@ -1727,20 +1737,18 @@ export function initializeApp(unitData) {
 
         const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
         let blockText = block.text || '';
-        let contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${blockText}</em>` : highlightGlossary(blockText);
         
-        // Add inline Key Individual links
-        contentStr = contentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+        // 1. Add inline Key Individual links FIRST
+        let contentStr = blockText.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
             const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
             if (!hasPerson) {
                 return name;
             }
-            if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
-                return name;
-            }
-            if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
             return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
         });
+
+        // 2. Add Glossary highlighting SECOND (it will skip the <a> tags we just made)
+        contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${contentStr}</em>` : highlightGlossary(contentStr);
 
         contentStr = formatBold(contentStr);
         contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/units/' + window.currentUnitId + '/assets/');
@@ -1753,20 +1761,17 @@ export function initializeApp(unitData) {
         
         let l4StyledContent = '';
         if (block.level_4) {
-          let l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${block.level_4}</em>` : highlightGlossary(block.level_4);
-          
-          // Add inline Key Individual links
-          l4ContentStr = l4ContentStr.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+          // 1. Add inline Key Individual links FIRST
+          let l4ContentStr = block.level_4.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
               const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
               if (!hasPerson) {
                   return name;
               }
-              if (window.seenKeyIndividuals && window.seenKeyIndividuals.has(name)) {
-                  return name;
-              }
-              if (window.seenKeyIndividuals) window.seenKeyIndividuals.add(name);
               return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
           });
+          
+          // 2. Add Glossary highlighting SECOND
+          l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${l4ContentStr}</em>` : highlightGlossary(l4ContentStr);
 
           l4ContentStr = formatBold(l4ContentStr);
           l4StyledContent = l4ContentStr;
