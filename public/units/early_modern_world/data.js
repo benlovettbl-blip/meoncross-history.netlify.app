@@ -1240,6 +1240,7 @@ export const unitData = {
           "definition": "Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth."
         }
       ],
+        "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
       "narrative_blocks": [
         {
           "title": "Micro-History: The Executioner’s Block (27 January 1649)",
@@ -1837,6 +1838,7 @@ export const unitData = {
     },
     {
       "id": "lesson_6",
+      "banner": "/images/brookes_ship.jpg",
       "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
       "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Covert resistance, Obeah, Armed Rebellions)",
       "teacher_notes": {
@@ -2377,6 +2379,7 @@ export const unitData = {
           "definition": "The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes."
         }
       ],
+        "vocab_cloze_text": "To write a successful [Synoptic] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
       "narrative_blocks": [
         {
           "title": "Micro-History: The Contrast of London Bridge (1750)",
