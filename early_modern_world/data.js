@@ -1697,6 +1697,10 @@ export const unitData = {
         {
           "url": "https://www.youtube.com/watch?v=k7OQjNRsrvI",
           "title": "David Harewood Learns Horrifying Details of Barbados Slave Code"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/a-people-stolen-enslaved-with-samuel-l-jackson/",
+          "title": "A People Stolen: Enslaved with Samuel L. Jackson"
         }
       ],
       "quiz": [
@@ -1810,7 +1814,8 @@ export const unitData = {
           "answer": 0,
           "explanation": "The juxtaposition of sophisticated financial markets in London with the brutal reality of plantation slavery reveals a dark contradiction in Britain's 'modernity'."
         }
-      ]
+      ],
+      "banner": "/images/cape_coast_castle.jpg"
     },
     {
       "id": "lesson_6",
