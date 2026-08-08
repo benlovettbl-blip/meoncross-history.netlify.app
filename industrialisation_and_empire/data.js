@@ -46,6 +46,12 @@ export const unitData = {
             }
           ]
         }
+      ],
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-black-and-british-a-forgotten-history-moral-mission-mississippi-cotton/",
+          "title": "Black and British: Moral Mission (Mississippi Cotton)"
+        }
       ]
     },
     {

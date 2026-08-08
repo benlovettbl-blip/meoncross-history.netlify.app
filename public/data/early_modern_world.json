@@ -863,11 +863,11 @@
             "source_letter": "A",
             "images": [
               {
-                "image": "Panoramic painting of the Fort St. George at Madras (Chennai) or the East India Company docks at Surat.",
-                "image_alt": "East India Company Fort St. George",
-                "image_context": "Observe the heavily fortified walls and the orderly, European-style buildings planted firmly on the Indian coast. This wasn't just a trading post; it was a militarized foothold. It shows how the EIC operated more like an independent nation with its own army than a simple business. **Hinge Question:** Why would a trading company need to build massive military fortresses in a foreign country?",
+                "image": "The Thirteen Factories at Canton (Guangzhou), China.",
+                "image_alt": "The Thirteen Factories at Canton",
+                "image_context": "Observe the national flags flying outside the trading posts (including Denmark, Spain, USA, Sweden, Britain, and the Netherlands) along the Pearl River. Unlike the militarised forts in India, Qing dynasty authorities strictly prohibited foreign merchants from building military fortifications or stationing troops here. These were purely commercial leased warehouses. **Hinge Question:** What does the presence of multiple international flags, rather than a single European military fort, suggest about who held the real power in Canton?",
                 "src": "/images/early_mod_l3_banner.jpg",
-                "image_caption": "Historical depiction representing the early colonial trading outposts established by the East India Company in the 17th century, serving as highly fortified bases for securing lucrative spice and textile monopolies.",
+                "image_caption": "An early 19th-century painting showing the Thirteen Factories in Canton (Guangzhou). This was a designated trading enclave where foreign merchants were permitted to do business, strictly controlled by Chinese authorities without any European military fortifications.",
                 "source_letter": "A"
               },
               {
@@ -1128,12 +1128,22 @@
             "Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation."
           ]
         },
-        "banner": "Panoramic painting of the Fort St. George at Madras (Chennai) or the East India Company docks at Surat.",
+        "banner": "/images/early_mod_l3_banner.jpg",
         "tasks": [
           {
             "qNum": 19,
             "text": "Lesson Reflection: Based on the early encounters between Europeans and indigenous populations, how did initial trade relationships gradually transform into systems of imperial control and exploitation?",
             "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew."
+          }
+        ],
+        "video": [
+          {
+            "url": "https://era.org.uk/streaming-service-resource/roanoke-horrible-histories/",
+            "title": "Roanoke (Horrible Histories)"
+          },
+          {
+            "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
+            "title": "Joint-Stock Companies: Empire with David Olusoga"
           }
         ]
       },
@@ -1702,6 +1712,14 @@
           {
             "url": "https://era.org.uk/streaming-service-resource/a-people-stolen-enslaved-with-samuel-l-jackson/",
             "title": "A People Stolen: Enslaved with Samuel L. Jackson"
+          },
+          {
+            "url": "https://era.org.uk/streaming-service-resource/a-precious-cargo-enslaved-with-samuel-l-jackson/",
+            "title": "A Precious Cargo: Enslaved with Samuel L. Jackson"
+          },
+          {
+            "url": "https://era.org.uk/streaming-service-resource/our-people-enslaved-with-samuel-l-jackson/",
+            "title": "Our People: Enslaved with Samuel L. Jackson"
           }
         ],
         "quiz": [
@@ -2155,6 +2173,10 @@
           {
             "url": "https://www.youtube.com/watch?v=ITtNDpkW26c&t=38s",
             "title": "Abolitionism and why it was opposed"
+          },
+          {
+            "url": "https://era.org.uk/streaming-service-resource/resistance-enslaved-with-samuel-l-jackson/",
+            "title": "Resistance: Enslaved with Samuel L. Jackson"
           }
         ]
       },
