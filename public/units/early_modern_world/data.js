@@ -1522,95 +1522,337 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
-      "flashcards": [
-        {
-          "term": "Queen Nanny (Nanny of the Maroons)",
-          "definition": "Led the Jamaican Maroons in a successful guerrilla war against the British."
-        },
-        {
-          "term": "Olaudah Equiano",
-          "definition": "Formerly enslaved African who published a bestselling autobiography exposing slavery's horrors."
-        },
-        {
-          "term": "Thomas Thistlewood",
-          "definition": "Jamaican sugar plantation overseer whose diary detailed brutal punishments and slave resistance."
-        }
-      ],
-      "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
-      "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Triangular Trade, Plantation economics, African resistance)",
+      "title": "What were the mechanics of the Transatlantic Slave Trade?",
+      "enquiry": "What were the mechanics of the Transatlantic Slave Trade? (Triangular Trade, Plantation economics, Legacies of British Slavery)",
       "teacher_notes": {
-        "primer": "This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against the mechanics of the Transatlantic Slave Trade and plantation economics. It also highlights how this wealth shaped modern Britain.",
+        "primer": "This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.",
         "objectives": [
           {
-            "objective": "Unpack the mechanics of the Transatlantic Slave Trade and plantation economics.",
-            "primer": "Direct students to the Triangular Trade flowchart to visually understand the flow of capital and humans.",
-            "question": "How did the Triangular Trade system depend on both European manufactured goods and enslaved African labor to generate wealth?"
+            "objective": "Understand the Triangular Trade and the middle passage.",
+            "primer": "Focus on the Macro-History block to explain the flow of goods, enslaved people, and wealth.",
+            "question": "What were the three main 'legs' of the Triangular Trade?"
           },
           {
-            "objective": "Analyze primary sources from formerly enslaved Africans to evaluate different modes of resistance.",
-            "primer": "Use the interactive tabs for 'Forms of Resistance' alongside the primary sources from Equiano and Thistlewood.",
-            "question": "Why was day-to-day covert resistance just as important as overt armed rebellion in challenging plantation slavery?"
-          },
-          {
-            "objective": "Investigate the Jamaican Maroon Wars and how armed rebellion forced imperial compromises.",
-            "primer": "Focus on the Micro-History of Queen Nanny to demonstrate successful overt resistance.",
-            "question": "How did Queen Nanny and the Maroons force the British to compromise and grant them freedom?"
-          },
-          {
-            "objective": "Understand the inhumanity and scale of the Middle Passage.",
-            "primer": "Display the Brookes ship source. Ask students to calculate the physical space allocated to individuals.",
-            "question": "Hinge Question: Does the Brookes ship diagram primarily show us how enslavers maximized profit, or does it show us the suffering of the enslaved? Can a source show both unintentionally?"
-          }
-        ]
-      },
-      "do_now": {
-        "title": "Do Now: Previous Knowledge",
-        "type": "questions",
-        "items": [
-          {
-            "question": "What political belief claimed a monarch was chosen by God and had absolute power?",
-            "answer": "The Divine Right of Kings"
-          },
-          {
-            "question": "Which King was executed by his own Parliament in 1649?",
-            "answer": "King Charles I"
-          },
-          {
-            "question": "What was the name of the strict Puritan commander who led the New Model Army?",
-            "answer": "Oliver Cromwell"
-          },
-          {
-            "question": "Which Caribbean island generated immense wealth for English merchants through sugar plantations?",
-            "answer": "Barbados"
-          },
-          {
-            "question": "How did the Atlantic Merchants influence the outcome of the English Civil War?",
-            "answer": "They used their massive profits from colonial trade to fund Parliament's New Model Army."
+            "objective": "Evaluate the economic legacy of slavery on Britain.",
+            "primer": "Use the Digital Research Task to show how slave-generated wealth funded modern British institutions.",
+            "question": "How did the wealth from the slave trade continue to benefit Britain long after abolition?"
           }
         ]
       },
       "vocab": [
         {
-          "term": "Chattel Slavery",
-          "definition": "A system where human beings are legally defined as personal property to be bought, sold, and inherited."
+          "term": "Triangular Trade",
+          "definition": "The three-legged transatlantic trade network connecting Europe, Africa, and the Americas."
         },
         {
           "term": "Middle Passage",
-          "definition": "The horrific forced voyage of enslaved Africans across the Atlantic Ocean to the Americas."
+          "definition": "The brutal forced voyage of enslaved Africans across the Atlantic Ocean."
         },
         {
-          "term": "Maroon",
-          "definition": "Communities of formerly enslaved people who escaped and established free autonomous settlements, often in mountainous areas."
+          "term": "Plantation",
+          "definition": "A large agricultural estate where enslaved people were forced to grow cash crops like sugar and tobacco."
+        }
+      ],
+      "learning_objectives": {
+        "overarching": "What were the mechanics of the Transatlantic Slave Trade?",
+        "scaffolded": [
+          "Understand the Triangular Trade and the middle passage.",
+          "Evaluate the economic legacy of slavery on Britain."
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "title": "Micro-History: The Barracoons of West Africa",
+          "image": "/images/cape_coast_castle.jpg",
+          "image_alt": "Cape Coast Castle, a European slave fort on the Gold Coast",
+          "source_letter": "A",
+          "image_context": "This image shows Cape Coast Castle, a massive European 'factory' (fort) built on the West African coast. Notice the heavy fortifications pointing out to sea (to defend against rival European navies) and the 'door of no return' leading to the ships.",
+          "text": "The Transatlantic Slave Trade was not simply a case of European ships arriving and kidnapping people from the beach. It was a massive, highly organized global business that relied on complex treaties and alliances. Powerful African empires, such as the Dahomey and the Asante, grew wealthy by launching military campaigns against rival inland groups, taking prisoners of war. These captives were marched for weeks to the coast and sold to European merchants in exchange for manufactured goods like brass, textiles, and, crucially, European firearms. The European merchants would lock the enslaved Africans in brutally crowded, disease-ridden coastal fortresses known as 'barracoons' or 'castles' (like Cape Coast Castle in modern-day Ghana) for months, waiting for slave ships to arrive. The trade enriched both European merchants and coastal African elites, while completely devastating the interior of the African continent.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "How did powerful African empires like the Dahomey acquire people to sell into slavery?",
+              "model_answer": "They launched military campaigns against rival inland groups and sold the prisoners of war."
+            },
+            {
+              "type": "comprehension",
+              "question": "What goods did European merchants trade in exchange for enslaved people?",
+              "model_answer": "They traded manufactured goods like brass, textiles, and European firearms."
+            },
+            {
+              "type": "comprehension",
+              "question": "What was a 'barracoon'?",
+              "model_answer": "A brutally crowded, disease-ridden coastal fortress where enslaved people were locked up while waiting for slave ships."
+            },
+            {
+              "type": "comprehension",
+              "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
+              "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
+            }
+          ]
+        },
+        {
+          "title": "Macro-History: The Triangular Machinery of Exploitation",
+          "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"background: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin: 20px 0; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.2);\">\n    <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center; width: 100%; margin-bottom: 20px;\">Interactive Trade Map</h3>\n    \n    <div style=\"display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;\">\n        <button onclick=\"document.getElementById('map-eur').style.display='block'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='none'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6'; this.nextElementSibling.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 1; transition: 0.3s;\">Europe</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='block'; document.getElementById('map-ame').style.display='none'; this.previousElementSibling.style.opacity='0.6'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #d97706; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">West Africa</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='block'; this.previousElementSibling.style.opacity='0.6'; this.previousElementSibling.previousElementSibling.style.opacity='0.6'; this.style.opacity='1';\" style=\"flex: 1 1 150px; padding: 12px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">The Americas</button>\n    </div>\n\n    <div id=\"map-eur\" style=\"background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0284c7;\">\n        <h4 style=\"margin-top: 0; color: #38bdf8;\">Exports from Europe (Bristol, Liverpool, London)</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Manufactured Firearms:</strong> Cheap muskets and gunpowder used to fuel regional African wars.</li>\n            <li><strong>Textiles and Cloth:</strong> Mass-produced British cotton and wool items.</li>\n            <li><strong>Alcohol:</strong> Spirits such as rum and brandy used as trade currency.</li>\n            <li><strong>Metal Goods:</strong> Iron bars, brass pans, and manillas (copper bracelets).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-afr\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #d97706;\">\n        <h4 style=\"margin-top: 0; color: #fbbf24;\">Exports from West Africa</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Enslaved Human Beings:</strong> Men, women, and children captured in warfare or raids.</li>\n            <li><strong>Gold Dust:</strong> Extracted from the Gold Coast and heavily sought after by European merchants.</li>\n            <li><strong>Ivory:</strong> Elephant tusks traded as a luxury good.</li>\n            <li><strong>Spices:</strong> Exotic items like malagueta pepper (Guinea pepper).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-ame\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #16a34a;\">\n        <h4 style=\"margin-top: 0; color: #4ade80;\">Exports from The Americas</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Raw Sugar & Molasses:</strong> The most lucrative cash crop, grown in the brutal Caribbean plantations.</li>\n            <li><strong>Tobacco:</strong> Grown extensively in the colonies of Virginia and Maryland.</li>\n            <li><strong>Raw Cotton:</strong> Crucial raw material shipped to British textile mills during the Industrial Revolution.</li>\n            <li><strong>Coffee and Cocoa:</strong> Luxury consumables destined for European coffeehouses.</li>\n        </ul>\n    </div>\n</div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>",
+          "image": "/images/triangular_trade.png",
+          "image_alt": "Diagram of the Triangular Trade",
+          "image_context": "Trace the continuous, cyclical flow of goods, enslaved people, and raw materials across the Atlantic. This diagram reduces the horrors of the Middle Passage to a sanitized economic model, showing how European industrial growth was directly fueled by the exploitation of African labor and American land. **Hinge Question:** Who benefited the most from this system, and who bore the ultimate cost?",
+          "image_caption": "A map illustrating the Triangular Trade system. British manufactured goods were traded for enslaved Africans, who were transported under horrific conditions to the Americas to produce cash crops like sugar and tobacco, which were then shipped back to Europe.",
+          "tasks": [
+            {
+              "type": "analysis",
+              "question": "Based on the flowchart, what specific goods were exchanged for enslaved Africans in West Africa?",
+              "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
+            }
+          ],
+          "source_letter": "C"
+        },
+        {
+          "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
+          "image": "/images/plantation.jpg",
+          "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
+          "source_letter": "B",
+          "image_context": "An illustration of an early modern plantation. Notice the vast scale of the agricultural operation and the intense manual labor required to harvest the cash crops.",
+          "text": "The experience of an enslaved African depended heavily on where the slave ship landed. In the Caribbean (like Jamaica and Barbados), the primary crop was sugar. Sugar cultivation was incredibly brutal, dangerous, and physically destroying labor. Many Caribbean plantations were owned by 'absentee landlords'—rich white men who lived in luxury in London and never even visited their estates, leaving brutal overseers in charge. Because profits were so high, these overseers calculated that it was cheaper to literally work enslaved people to death (the 'death camp' model) and simply buy replacements from Africa. Life expectancy upon arriving on a sugar plantation was often less than seven years. By contrast, in the North American colony of Virginia, the primary crop was tobacco. Tobacco required less intensive daily physical destruction than sugar. Furthermore, a different climate and slightly better diet meant that, by the 1700s, the enslaved population in Virginia became 'self-sustaining' (growing through childbirth rather than relying entirely on importing new people from Africa). While Virginia was still a brutal system of chattel slavery, the lethal intensity of the Caribbean sugar machine was unmatched.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "What is an 'absentee landlord'?",
+              "model_answer": "A rich plantation owner who lived in Britain and never visited their estate, leaving brutal overseers in charge."
+            },
+            {
+              "type": "comprehension",
+              "question": "Why was the Caribbean sugar system often described as a 'death camp' model?",
+              "model_answer": "Because overseers calculated it was cheaper to work enslaved people to death and simply buy replacements, leading to horrific mortality rates."
+            },
+            {
+              "type": "comprehension",
+              "question": "How did the enslaved population in Virginia differ from the Caribbean by the 1700s?",
+              "model_answer": "The Virginia population became 'self-sustaining' through childbirth, whereas the Caribbean relied heavily on constantly importing new people due to the lethal conditions."
+            },
+            {
+              "type": "comprehension",
+              "question": "Study Source B. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?",
+              "model_answer": "Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it."
+            }
+          ]
+        },
+        {
+          "title": "Digital Research Task: The Legacies of British Slavery",
+          "text": "To understand how slavery shaped modern Britain, conduct a real-world historical investigation using the Centre for the Study of the Legacies of British Slavery at University College London (UCL).<br><br><div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px; font-family: monospace;\">  <h3 style=\"margin-top: 0; color: #38bdf8;\">🖥️ STUDENT RESEARCH INSTRUCTIONS</h3>  <ol style=\"margin-bottom: 20px; line-height: 1.6;\">    <li>Open your web browser and navigate to the <strong>UCL Legacies of British Slavery Database</strong> (ucl.ac.uk/lbs).</li>    <li>Click on <strong>\"Search the Database\"</strong> and select <strong>\"Commercial & Financial Legacies\"</strong> or search by <strong>Geographic Location</strong> (e.g., Bristol, Liverpool, London).</li>  </ol>  <div style=\"background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; color: #10b981; border: 1px solid #334155;\">    [Visit ucl.ac.uk/lbs] ──► [Search Your Region] ──► [Trace Local Wealth]  </div>  <h3 style=\"margin-top: 25px; color: #f472b6;\">📋 INVESTIGATION WORKSHEET</h3>  <ul style=\"line-height: 1.6;\">    <li><strong>Task A:</strong> Identify one individual/family who claimed compensation in 1833. Record their name, the number of enslaved people they 'owned', and the payout received.</li>    <li><strong>Task B:</strong> Investigate what happened to that wealth. Was it invested in local British buildings, railways, artwork, or bank stocks?</li>    <li><strong>Task C:</strong> Write a 150-word summary evaluating how your local area directly benefited from Atlantic plantation economies.</li>  </ul></div>",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "Synoptic Reflection: How does the reality of the Transatlantic Slave Trade challenge the idea that 18th-century Britain was a 'modern', enlightened society?",
+              "model_answer": "While Britain had modern financial systems (banks, stock exchanges) and global trade, this wealth was built entirely on chattel slavery. Treating millions of African human beings as property to be tortured and exploited for sugar profits shows that society was deeply un-modern and brutal."
+            }
+          ]
+        },
+        {
+          "title": "Plenary Check",
+          "text": "Let's review the mechanics of the Transatlantic Slave Trade.",
+          "hinge_question": {
+            "question": "Which of the following best describes the 'Middle Passage'?",
+            "options": [
+              "The journey of manufactured goods from Europe to Africa.",
+              "The brutal forced voyage of enslaved Africans across the Atlantic.",
+              "The transport of sugar and tobacco from the Americas to Europe.",
+              "The overland trade routes within the African continent."
+            ],
+            "answer": 1,
+            "explanation": "The Middle Passage specifically refers to the horrific voyage across the Atlantic Ocean where millions of enslaved Africans were transported to the Americas in horrific conditions."
+          },
+          "tasks": []
+        }
+      ],
+      "video": [
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-west-india-docks-and-the-sugar-economy/",
+          "title": "BBC Two: Britain's Forgotten Slave Owners - Profit and Loss"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-first-slave-society-in-barbados/",
+          "title": "Profit and Loss: First Slave Society in Barbados"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-slave-plantation-system/",
+          "title": "Profit and Loss: Slave Plantation System"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-implements-of-torture/",
+          "title": "Profit and Loss: Implements of Torture"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-the-legacies-of-slavery/",
+          "title": "The Price of Freedom: The Legacies of Slavery"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-where-did-the-slavery-compensation-money-end-up/",
+          "title": "Where Did the Slavery Compensation Money End Up?"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IpgD2ehtMmM",
+          "title": "How Barbados became the first slave society"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=k7OQjNRsrvI",
+          "title": "David Harewood Learns Horrifying Details of Barbados Slave Code"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What were the three main stages of the Triangular Trade?",
+          "options": [
+            "Europe to Africa, Africa to the Americas, the Americas to Europe.",
+            "Europe to Asia, Asia to Africa, Africa to Europe.",
+            "The Americas to Europe, Europe to Asia, Asia to the Americas.",
+            "Africa to the Americas, the Americas to Asia, Asia to Africa."
+          ],
+          "answer": 0,
+          "explanation": "The Triangular Trade connected Europe, Africa, and the Americas in a continuous cycle of exploitation and profit."
+        },
+        {
+          "question": "Which of the following was NOT a typical good traded by Europeans in West Africa?",
+          "options": [
+            "Sugar",
+            "Guns",
+            "Alcohol",
+            "Textiles"
+          ],
+          "answer": 0,
+          "explanation": "Sugar was produced in the Americas. Europeans traded manufactured goods like guns, alcohol, and textiles in West Africa."
+        },
+        {
+          "question": "What was the 'Middle Passage'?",
+          "options": [
+            "The brutal forced voyage of enslaved Africans across the Atlantic.",
+            "The overland trade route across the Sahara Desert.",
+            "The journey of manufactured goods from Europe to Africa.",
+            "The transport of sugar and tobacco from the Americas to Europe."
+          ],
+          "answer": 0,
+          "explanation": "The Middle Passage was the horrific transatlantic journey where millions of enslaved Africans were transported in appalling conditions."
+        },
+        {
+          "question": "What was the primary crop grown on Caribbean plantations such as in Jamaica and Barbados?",
+          "options": [
+            "Sugar",
+            "Tobacco",
+            "Cotton",
+            "Indigo"
+          ],
+          "answer": 0,
+          "explanation": "Sugar was the incredibly profitable but brutally demanding primary crop of the Caribbean."
+        },
+        {
+          "question": "How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?",
+          "options": [
+            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
+            "Virginia plantations relied on a 'death camp' model to constantly import new enslaved people.",
+            "Enslaved people in Virginia primarily farmed sugar rather than tobacco.",
+            "There was no significant difference between the two regions."
+          ],
+          "answer": 0,
+          "explanation": "In Virginia, the population began to grow through childbirth, unlike the Caribbean where the brutal conditions necessitated constant importation."
+        },
+        {
+          "question": "What is an 'absentee landlord' in the context of Caribbean sugar plantations?",
+          "options": [
+            "A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.",
+            "An enslaved person who escaped the plantation.",
+            "A European merchant who never visited West Africa.",
+            "An overseer who refused to work on the plantation."
+          ],
+          "answer": 0,
+          "explanation": "Absentee landlords enjoyed the immense profits of sugar in London while ignoring the brutal realities of the labor that produced it."
+        },
+        {
+          "question": "Why was the Caribbean sugar system often described as a 'death camp' model?",
+          "options": [
+            "Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.",
+            "It was a system designed primarily to punish criminals.",
+            "The plantations were located in areas with high rates of natural disasters.",
+            "Enslaved people frequently died from starvation during the Middle Passage."
+          ],
+          "answer": 0,
+          "explanation": "The extreme profitability of sugar led overseers to brutally exploit enslaved people, knowing they could easily purchase more from the slave trade."
+        },
+        {
+          "question": "How did the Triangular Trade fuel the Industrial Revolution in Britain?",
+          "options": [
+            "Profits from slave-produced goods were invested in British banks, infrastructure, and factories.",
+            "Enslaved Africans were brought to Britain to work in factories.",
+            "Britain stopped trading with Europe to focus solely on the Americas.",
+            "The British government used taxes from the trade to build free public schools."
+          ],
+          "answer": 0,
+          "explanation": "The immense wealth generated by the exploitation of enslaved labor in the Americas provided the capital needed for Britain's industrialization."
+        },
+        {
+          "question": "According to the UCL Legacies of British Slavery Database, what happened in 1833?",
+          "options": [
+            "The British government paid massive compensation to former slave owners.",
+            "The British government paid reparations to formerly enslaved people.",
+            "The Triangular Trade officially began.",
+            "The first slave ship arrived in Virginia."
+          ],
+          "answer": 0,
+          "explanation": "When slavery was abolished, the British government controversially paid millions in compensation to the enslavers, not the enslaved."
+        },
+        {
+          "question": "How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?",
+          "options": [
+            "It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.",
+            "It shows that Britain was less technologically advanced than its European rivals.",
+            "It proves that the Enlightenment had no impact on British politics.",
+            "It highlights the fact that Britain was still primarily a feudal society."
+          ],
+          "answer": 0,
+          "explanation": "The juxtaposition of sophisticated financial markets in London with the brutal reality of plantation slavery reveals a dark contradiction in Britain's 'modernity'."
+        }
+      ]
+    },
+    {
+      "id": "lesson_6",
+      "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
+      "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Covert resistance, Obeah, Armed Rebellions)",
+      "teacher_notes": {
+        "primer": "This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.",
+        "objectives": [
+          {
+            "objective": "Analyze primary sources from formerly enslaved Africans.",
+            "primer": "Use the Primary Source Deep Dive to interrogate authentic voices.",
+            "question": "How does Equiano's account challenge the idea that enslaved people were passive?"
+          },
+          {
+            "objective": "Investigate the Jamaican Maroon Wars.",
+            "primer": "Use the Micro-History of Queen Nanny to explore armed rebellion.",
+            "question": "Why were the Jamaican Maroons so difficult for the British military to defeat?"
+          }
+        ]
+      },
+      "vocab": [
+        {
+          "term": "Obeah",
+          "definition": "A system of spiritual and healing practices developed by enslaved people in the Caribbean, often involving botanical knowledge."
+        },
+        {
+          "term": "Maroons",
+          "definition": "Communities of formerly enslaved Africans who escaped and established free settlements in mountainous or remote areas."
         },
         {
           "term": "Covert Resistance",
-          "definition": "Hidden, day-to-day acts of defiance, such as working slowly or breaking tools, that sabatoged the plantation system."
-        },
-        {
-          "term": "Overt Resistance",
-          "definition": "Open, visible acts of defiance against slavery, such as armed rebellions and running away."
+          "definition": "Hidden or secretive acts of rebellion, such as working slowly or breaking tools."
         }
       ],
+      "learning_objectives": {
+        "overarching": "How did enslaved Africans resist the Transatlantic Slave Trade?",
+        "scaffolded": [
+          "Understand the different forms of covert and overt resistance.",
+          "Analyze primary sources from formerly enslaved Africans.",
+          "Investigate the Jamaican Maroon Wars."
+        ]
+      },
       "narrative_blocks": [
         {
           "title": "Micro-History: Queen Nanny and the Blue Mountains (1730s)",
@@ -1640,22 +1882,6 @@ export const unitData = {
               "source_letter": "B"
             }
           ]
-        },
-        {
-          "title": "Macro-History: The Triangular Machinery of Exploitation",
-          "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"background: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin: 20px 0; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.2);\">\n    <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center; width: 100%; margin-bottom: 20px;\">Interactive Trade Map</h3>\n    \n    <div style=\"display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;\">\n        <button onclick=\"document.getElementById('map-eur').style.display='block'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='none'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6'; this.nextElementSibling.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 1; transition: 0.3s;\">Europe</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='block'; document.getElementById('map-ame').style.display='none'; this.previousElementSibling.style.opacity='0.6'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #d97706; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">West Africa</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='block'; this.previousElementSibling.style.opacity='0.6'; this.previousElementSibling.previousElementSibling.style.opacity='0.6'; this.style.opacity='1';\" style=\"flex: 1 1 150px; padding: 12px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">The Americas</button>\n    </div>\n\n    <div id=\"map-eur\" style=\"background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0284c7;\">\n        <h4 style=\"margin-top: 0; color: #38bdf8;\">Exports from Europe (Bristol, Liverpool, London)</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Manufactured Firearms:</strong> Cheap muskets and gunpowder used to fuel regional African wars.</li>\n            <li><strong>Textiles and Cloth:</strong> Mass-produced British cotton and wool items.</li>\n            <li><strong>Alcohol:</strong> Spirits such as rum and brandy used as trade currency.</li>\n            <li><strong>Metal Goods:</strong> Iron bars, brass pans, and manillas (copper bracelets).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-afr\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #d97706;\">\n        <h4 style=\"margin-top: 0; color: #fbbf24;\">Exports from West Africa</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Enslaved Human Beings:</strong> Men, women, and children captured in warfare or raids.</li>\n            <li><strong>Gold Dust:</strong> Extracted from the Gold Coast and heavily sought after by European merchants.</li>\n            <li><strong>Ivory:</strong> Elephant tusks traded as a luxury good.</li>\n            <li><strong>Spices:</strong> Exotic items like malagueta pepper (Guinea pepper).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-ame\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #16a34a;\">\n        <h4 style=\"margin-top: 0; color: #4ade80;\">Exports from The Americas</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Raw Sugar & Molasses:</strong> The most lucrative cash crop, grown in the brutal Caribbean plantations.</li>\n            <li><strong>Tobacco:</strong> Grown extensively in the colonies of Virginia and Maryland.</li>\n            <li><strong>Raw Cotton:</strong> Crucial raw material shipped to British textile mills during the Industrial Revolution.</li>\n            <li><strong>Coffee and Cocoa:</strong> Luxury consumables destined for European coffeehouses.</li>\n        </ul>\n    </div>\n</div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>",
-          "image": "/images/triangular_trade.png",
-          "image_alt": "Diagram of the Triangular Trade",
-          "image_context": "Trace the continuous, cyclical flow of goods, enslaved people, and raw materials across the Atlantic. This diagram reduces the horrors of the Middle Passage to a sanitized economic model, showing how European industrial growth was directly fueled by the exploitation of African labor and American land. **Hinge Question:** Who benefited the most from this system, and who bore the ultimate cost?",
-          "image_caption": "A map illustrating the Triangular Trade system. British manufactured goods were traded for enslaved Africans, who were transported under horrific conditions to the Americas to produce cash crops like sugar and tobacco, which were then shipped back to Europe.",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "Based on the flowchart, what specific goods were exchanged for enslaved Africans in West Africa?",
-              "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
-            }
-          ],
-          "source_letter": "C"
         },
         {
           "title": "The Spectrum of Resistance: How Enslaved People Fought Back",
@@ -1695,29 +1921,32 @@ export const unitData = {
           "source_letter": "D"
         },
         {
-          "title": "Historical Debates: What Truly Destroyed Slavery?",
-          "text": "<strong>What Truly Destroyed Slavery—White Abolitionists or Black Resistance?</strong><br><br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;\">   <div style=\"background: #fdf4ff; border: 1px solid #f0abfc; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #a21caf;\">Interpretation A: The Traditional Imperial View</h4>       <p><em>\"Britain’s abolition of the slave trade in 1807 was a noble gesture of Christian humanitarianism. It was brought about by the tireless moral campaigning of white parliamentary heroes like William Wilberforce and Thomas Clarkson in London.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Reginald Coupland, 1933</strong></p>   </div>   <div style=\"background: #f0fdfa; border: 1px solid #5eead4; padding: 20px; border-radius: 8px;\">       <h4 style=\"margin-top:0; color: #0f766e;\">Interpretation B: The Anti-Colonial View</h4>       <p><em>\"Slavery was not simply voted away by politicians in London; it was rendered unprofitable and politically unworkable by continuous slave rebellions across the Caribbean... The enslaved freed themselves.\"</em></p>       <p style=\"text-align:right; margin-bottom:0;\">— <strong>Dr. Eric Williams, 1944</strong></p>   </div></div><br><strong>Modern Resonance: Reparations and Imperial Fortunes</strong><br>The profits of Atlantic slavery did not disappear when slavery was abolished in 1833. Modern historians have proven that Caribbean sugar wealth directly funded major British banks (e.g., Barclays), insurance institutions (Lloyd's of London), and railway networks.<br><br><strong>The 1833 Compensation Scandal:</strong> When Britain abolished slavery, the government paid <strong>£20 million</strong> (equivalent to £17 billion today) in compensation—not to the enslaved people, but to the <strong>46,000 white slave owners</strong> for their \"loss of property\"! This debt was so massive that British taxpayers did not finish paying it off until <strong>2015</strong>.",
-          "image": "/images/brookes_ship.jpg",
-          "image_alt": "Diagram of the Slave Ship Brookes (1788)",
-          "image_context": "Look at the horrifying, mathematical precision with which human beings were packed tightly into the hold of the ship. This diagram was arguably the most effective piece of visual propaganda in history, mass-produced by abolitionists to shock the British public into confronting the true, industrial cruelty of the Middle Passage. **Hinge Question:** Why was a cold, technical diagram more effective at changing public opinion than an emotional painting might have been?",
-          "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage.",
+          "title": "Case Study: The Underground Railroad",
+          "image": "/images/harriet_tubman.jpg",
+          "image_alt": "Harriet Tubman, a key figure in the Underground Railroad",
+          "source_letter": "C",
+          "image_context": "Harriet Tubman (born Araminta Ross) was an American abolitionist and political activist. Born into slavery, she escaped and subsequently made some 13 missions to rescue approximately 70 enslaved people, including family and friends.",
+          "text": "While armed rebellions (like the Maroons) were the most explosive forms of resistance, a highly organized, grassroots network known as the 'Underground Railroad' represented a different kind of fight. Although this network reached its peak slightly later in the 19th century, it was the ultimate evolution of the runaway networks that began in our era. The Underground Railroad was not a physical train, but a secret web of safe houses, hidden routes, and abolitionist sympathizers that helped enslaved people escape from the American South to free states in the North or into Canada. It relied on absolute secrecy, coded songs, and immense bravery. 'Conductors' like Harriet Tubman—who escaped slavery herself only to repeatedly risk her life sneaking back to rescue others—guided thousands to freedom. This ground-up, grassroots resistance proved that enslaved people were constantly, actively fighting for their own liberation, long before white politicians in Parliament began discussing abolition.",
           "tasks": [
             {
               "type": "comprehension",
-              "question": "Why is the 1833 compensation payout considered a 'scandal' by modern historians?",
-              "model_answer": "It is considered a scandal because the massive payout (£20 million) was given entirely to the slave owners who had profited from the abuse, while the enslaved people received absolutely nothing for generations of stolen labor and suffering."
-            }
-          ],
-          "source_letter": "E"
-        },
-        {
-          "title": "Digital Research Task: The Legacies of British Slavery",
-          "text": "To understand how slavery shaped modern Britain, conduct a real-world historical investigation using the Centre for the Study of the Legacies of British Slavery at University College London (UCL).<br><br><div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px; font-family: monospace;\">  <h3 style=\"margin-top: 0; color: #38bdf8;\">🖥️ STUDENT RESEARCH INSTRUCTIONS</h3>  <ol style=\"margin-bottom: 20px; line-height: 1.6;\">    <li>Open your web browser and navigate to the <strong>UCL Legacies of British Slavery Database</strong> (ucl.ac.uk/lbs).</li>    <li>Click on <strong>\"Search the Database\"</strong> and select <strong>\"Commercial & Financial Legacies\"</strong> or search by <strong>Geographic Location</strong> (e.g., Bristol, Liverpool, London).</li>  </ol>  <div style=\"background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; color: #10b981; border: 1px solid #334155;\">    [Visit ucl.ac.uk/lbs] ──► [Search Your Region] ──► [Trace Local Wealth]  </div>  <h3 style=\"margin-top: 25px; color: #f472b6;\">📋 INVESTIGATION WORKSHEET</h3>  <ul style=\"line-height: 1.6;\">    <li><strong>Task A:</strong> Identify one individual/family who claimed compensation in 1833. Record their name, the number of enslaved people they 'owned', and the payout received.</li>    <li><strong>Task B:</strong> Investigate what happened to that wealth. Was it invested in local British buildings, railways, artwork, or bank stocks?</li>    <li><strong>Task C:</strong> Write a 150-word summary evaluating how your local area directly benefited from Atlantic plantation economies.</li>  </ul></div>",
-          "tasks": [
+              "question": "What was the 'Underground Railroad'?",
+              "model_answer": "A secret network of safe houses, hidden routes, and abolitionist sympathizers that helped enslaved people escape to freedom."
+            },
             {
               "type": "comprehension",
-              "question": "Synoptic Reflection: How does the reality of the Transatlantic Slave Trade challenge the idea that 18th-century Britain was a 'modern', enlightened society?",
-              "model_answer": "While Britain had modern financial systems (banks, stock exchanges) and global trade, this wealth was built entirely on chattel slavery. Treating millions of African human beings as property to be tortured and exploited for sugar profits shows that society was deeply un-modern and brutal."
+              "question": "Who was a famous 'Conductor' on the Underground Railroad, and what did they do?",
+              "model_answer": "Harriet Tubman, who escaped slavery herself and risked her life repeatedly to sneak back and rescue dozens of others."
+            },
+            {
+              "type": "comprehension",
+              "question": "Why does the Underground Railroad prove that enslaved people were not 'passive victims'?",
+              "model_answer": "It shows they were highly organized, immensely brave, and constantly taking active, dangerous steps to fight for their own liberation."
+            },
+            {
+              "type": "comprehension",
+              "question": "Study Source C. How does learning about individuals like Harriet Tubman challenge traditional historical narratives of the slave trade?",
+              "model_answer": "It challenges the narrative by shifting the focus from white politicians 'freeing' passive slaves, to enslaved Black women actively and courageously dismantling the system themselves."
             }
           ]
         },
@@ -1752,6 +1981,36 @@ export const unitData = {
           ]
         },
         {
+          "title": "Historical Debates: What Truly Destroyed Slavery?",
+          "image": "/images/william_wilberforce.jpg",
+          "image_alt": "Portrait of William Wilberforce, a British politician and abolitionist",
+          "source_letter": "D",
+          "image_context": "William Wilberforce was a prominent British Member of Parliament who led the parliamentary campaign against the British slave trade for twenty years until the passage of the Slave Trade Act of 1807.",
+          "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
+              "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
+            },
+            {
+              "type": "comprehension",
+              "question": "What role did William Wilberforce actually play in abolition?",
+              "model_answer": "He led a tireless, decades-long campaign in the British Parliament to ban the trade, using shocking evidence to change public opinion."
+            },
+            {
+              "type": "comprehension",
+              "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
+              "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
+            },
+            {
+              "type": "comprehension",
+              "question": "Study Source D. Why is it problematic to only teach about men like Wilberforce when studying the end of slavery?",
+              "model_answer": "Because it silences the agency of the enslaved people themselves, making it seem like they passively waited to be rescued by white politicians, rather than acknowledging their active, violent resistance that forced the government's hand."
+            }
+          ]
+        },
+        {
           "title": "Plenary Check",
           "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade.",
           "hinge_question": {
@@ -1768,135 +2027,133 @@ export const unitData = {
       ],
       "quiz": [
         {
-          "question": "What name was given to the leg of the Triangular Trade that transported enslaved Africans across the Atlantic Ocean?",
+          "question": "What were the 'Maroons' in Jamaica?",
           "options": [
-            "The Columbian Exchange",
-            "The Golden Route",
-            "The Middle Passage",
-            "The Northwest Passage"
-          ],
-          "answer": 2,
-          "explanation": "The Middle Passage"
-        },
-        {
-          "question": "What legal term described a system of slavery where human beings were treated as personal property to be bought and sold?",
-          "options": [
-            "Indentured Servitude",
-            "Feudal Serfdom",
-            "Debt Bondage",
-            "Chattel Slavery"
-          ],
-          "answer": 3,
-          "explanation": "Chattel Slavery"
-        },
-        {
-          "question": "Who was the famous female leader of the Windward Maroons in Jamaica who forced the British to sign a 1739 peace treaty?",
-          "options": [
-            "Queen Nanny (Nanny of the Maroons)",
-            "Mary Prince",
-            "Harriet Tubman",
-            "Sojourner Truth"
+            "Communities of escaped enslaved people who fought guerrilla wars against the British.",
+            "British politicians who campaigned for the abolition of the slave trade.",
+            "A secret network of safe houses in the American South.",
+            "Enslaved people who worked primarily as domestic servants."
           ],
           "answer": 0,
-          "explanation": "Queen Nanny (Nanny of the Maroons)"
+          "explanation": "The Maroons were fierce communities of formerly enslaved people who successfully resisted British control in the Jamaican mountains."
         },
         {
-          "question": "What name was given to communities of formerly enslaved people who escaped into the mountains or forests of the Caribbean?",
+          "question": "What was the significance of the Haitian Revolution (1791-1804)?",
           "options": [
-            "Maroons",
-            "The Free Soil Coalition",
-            "The Exodusters",
-            "The Abolitionists"
+            "It was the only successful large-scale slave revolt in history, resulting in an independent nation.",
+            "It led to the immediate abolition of slavery throughout the British Empire.",
+            "It was a peaceful transition to independence negotiated by French politicians.",
+            "It resulted in the creation of the Underground Railroad."
           ],
           "answer": 0,
-          "explanation": "Maroons"
+          "explanation": "The Haitian Revolution, led by figures like Toussaint Louverture, utterly shattered the myth that enslaved people would not fight back and win."
         },
         {
-          "question": "Name the formerly enslaved African author whose 1789 autobiography became an international bestseller and abolitionist weapon.",
+          "question": "Who was Harriet Tubman?",
           "options": [
-            "Frederick Douglass",
-            "Toussaint Louverture",
-            "Ignatius Sancho",
-            "Olaudah Equiano"
-          ],
-          "answer": 3,
-          "explanation": "Olaudah Equiano"
-        },
-        {
-          "question": "What cash crop grown in Jamaica and Barbados was so profitable it was nicknamed 'white gold'?",
-          "options": [
-            "Cotton",
-            "Sugarcane (Sugar)",
-            "Tobacco",
-            "Indigo"
-          ],
-          "answer": 1,
-          "explanation": "Sugarcane (Sugar)"
-        },
-        {
-          "question": "Which Caribbean island saw a successful 1791 slave revolution led by Toussaint Louverture, creating the world's first free Black republic?",
-          "options": [
-            "Jamaica",
-            "Saint-Domingue (renamed Haiti)",
-            "Cuba",
-            "Puerto Rico"
-          ],
-          "answer": 1,
-          "explanation": "Saint-Domingue (renamed Haiti)"
-        },
-        {
-          "question": "In what year did the British Parliament pass the Act for the Abolition of the Slave Trade (banning the trade, though not slavery itself)?",
-          "options": [
-            "1776",
-            "1833",
-            "1865",
-            "1807"
-          ],
-          "answer": 3,
-          "explanation": "1807"
-        },
-        {
-          "question": "Who received the £20 million compensation payout from the British government when slavery was abolished in 1833?",
-          "options": [
-            "The white slave owners (for their 'loss of property')",
-            "The formerly enslaved people",
-            "West African governments",
-            "The Royal Navy"
+            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
+            "A British politician who campaigned alongside William Wilberforce.",
+            "The leader of the First Maroon War in Jamaica.",
+            "A Jamaican plantation overseer who wrote a diary about enslaved resistance."
           ],
           "answer": 0,
-          "explanation": "The white slave owners (for their 'loss of property')"
+          "explanation": "Harriet Tubman demonstrated immense courage by repeatedly returning to the South to guide enslaved people to freedom."
         },
         {
-          "question": "Which modern university hosts the 'Legacies of British Slavery' database used to trace slave-ownership wealth?",
+          "question": "What was the 'Underground Railroad'?",
           "options": [
-            "University College London (UCL)",
-            "Oxford University",
-            "Cambridge University",
-            "London School of Economics (LSE)"
+            "A secret network of safe houses and routes that helped enslaved people escape.",
+            "A literal subterranean train system built by enslaved people.",
+            "A British political movement to abolish the slave trade.",
+            "A trade route used by the Maroons to smuggle goods."
           ],
           "answer": 0,
-          "explanation": "University College London (UCL)"
+          "explanation": "This grassroots resistance network was a vital lifeline for enslaved people seeking freedom in the American North or Canada."
+        },
+        {
+          "question": "What was 'Obeah' in the context of the Caribbean?",
+          "options": [
+            "A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.",
+            "A type of cash crop grown alongside sugar.",
+            "The name of a famous British slave ship.",
+            "A term used to describe absentee landlords."
+          ],
+          "answer": 0,
+          "explanation": "Obeah practitioners used their expert knowledge of plants not only for healing but occasionally to secretly poison brutal enslavers."
+        },
+        {
+          "question": "Why did enslavers live in constant terror of Obeah?",
+          "options": [
+            "Because practitioners could use their botanical knowledge to slowly and undetectably poison them.",
+            "Because Obeah leaders frequently organized massive armed rebellions.",
+            "Because Obeah was supported by the British government.",
+            "Because it encouraged enslaved people to stop working entirely."
+          ],
+          "answer": 0,
+          "explanation": "The silent, psychological, and chemical threat posed by Obeah created deep paranoia among plantation owners."
+        },
+        {
+          "question": "What is the 'White Savior Narrative' regarding the abolition of slavery?",
+          "options": [
+            "The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.",
+            "The belief that enslaved people freed themselves without any outside help.",
+            "The argument that slavery ended primarily due to economic factors.",
+            "The view that abolition was a mistake supported only by a small minority."
+          ],
+          "answer": 0,
+          "explanation": "This traditional narrative often ignores the crucial role played by enslaved people's own resistance."
+        },
+        {
+          "question": "According to historians like Eric Williams, what were the two TRUE main reasons for the abolition of slavery?",
+          "options": [
+            "Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.",
+            "The moral campaigning of William Wilberforce and the Enlightenment.",
+            "The invention of the steam engine and the end of the Triangular Trade.",
+            "The discovery of new trade routes to Asia and the decline of the Royal Navy."
+          ],
+          "answer": 0,
+          "explanation": "Williams argues that economic shifts and the immense cost/danger of suppressing slave revolts forced the British government's hand."
+        },
+        {
+          "question": "How does the story of the Underground Railroad challenge traditional historical narratives?",
+          "options": [
+            "It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.",
+            "It proves that slavery was not as brutal as some historians claim.",
+            "It suggests that abolition was primarily an American, rather than British, achievement.",
+            "It demonstrates that the Triangular Trade was economically unsustainable."
+          ],
+          "answer": 0,
+          "explanation": "The active, courageous resistance of individuals like Harriet Tubman refutes the idea that enslaved people were mere passive victims."
+        },
+        {
+          "question": "Based on Source A (Olaudah Equiano), what was a primary cause of death during the Middle Passage?",
+          "options": [
+            "Suffocation and sickness caused by severe overcrowding and lack of ventilation.",
+            "Starvation due to a complete lack of food provisions.",
+            "Execution by the ship's crew for attempted mutiny.",
+            "Drowning from ships sinking in frequent Atlantic storms."
+          ],
+          "answer": 0,
+          "explanation": "Equiano describes the 'closeness of the place' and 'copious perspirations' leading to sickness and death in the horrific conditions of the ship's hold."
         }
       ],
-      "learning_objectives": {
-        "overarching": "How did enslaved Africans resist the Transatlantic Slave Trade? (Triangular Trade, Plantation economics, African resistance)",
-        "scaffolded": [
-          "Unpack the mechanics of the Transatlantic Slave Trade and plantation economics.",
-          "Analyze primary sources from formerly enslaved Africans to evaluate different modes of resistance.",
-          "Investigate the Jamaican Maroon Wars and how armed rebellion forced imperial compromises."
-        ]
-      },
-      "banner": "The horizontal fold-out cross-section diagram of the Slave Ship Brooks (1788).",
-      "tasks": [
+      "video": [
         {
-          "qNum": 18,
-          "text": "Lesson Reflection: In what ways did enslaved Africans maintain their agency and resist the brutal dehumanization of the Transatlantic Slave Trade, both physically and culturally?",
-          "model": "A strong answer should provide specific examples of physical resistance (such as shipboard mutinies or escaping to form Maroon communities) alongside cultural resistance (such as preserving African religious practices, music, language, and forging new community bonds despite being stripped of their identities)."
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-propaganda-tactics/",
+          "title": "Slave Owner Propaganda Tactics"
+        },
+        {
+          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-compensation-arguments/",
+          "title": "Slave Owner Compensation Arguments"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=ITtNDpkW26c&t=38s",
+          "title": "Abolitionism and why it was opposed"
         }
       ]
     },
     {
-      "id": "lesson_6",
+      "id": "lesson_7",
       "quiz": [
         {
           "question": "In what year was the Bank of England established, revolutionizing British national debt and finance?",
