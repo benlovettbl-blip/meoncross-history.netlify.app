@@ -79,7 +79,7 @@
           {
             "src": "/assets/water_and_sanitation_seneca.jpg",
             "title": "Source B: Seneca the Younger (c. 4 BC – AD 65)",
-            "caption": "Seneca the Younger (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
+            "caption": "[Key Individual: Seneca the Younger] (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
             "question": null,
             "tasks": [],
             "model_answer": null
@@ -286,7 +286,7 @@
         },
         "historians_corner": {
           "title": "Historian's Corner",
-          "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
+          "text": "<strong>[Key Individual: Simon Schama]</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
           "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
           "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
         }
@@ -569,7 +569,7 @@
         "title": "To what extent did towns become filthier during the Early Modern period?",
         "primary_source": {
           "src": "/assets/water_and_sanitation_harington_toilet.jpg",
-          "title": "Source A: Sir John Harington's flushing toilet design (1596)",
+          "title": "Source A: [Key Individual: Sir John Harington]'s flushing toilet design (1596)",
           "caption": "<strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harington, a godson of Queen Elizabeth I. It illustrates his invention: the first modern flushing water closet, which he called the 'Ajax'. It featured a flush valve to release water and a wash-down design to empty the bowl.",
           "question": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?",
           "tasks": [
@@ -632,7 +632,7 @@
           "scaffolded": [
             "Describe the sanitation problems in growing Tudor and Stuart towns.",
             "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
-            "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation."
+            "Evaluate how [Key Individual: Samuel Pepys]'s diary reveals the reality of Early Modern sanitation."
           ]
         },
         "teacher_notes": {
@@ -674,7 +674,7 @@
             "theme_heading": "Harington"
           },
           {
-            "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named Sir Hugh Myddelton successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
+            "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named [Key Individual: Sir Hugh Myddelton] successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
             "level_4": "In 1613, the New River was opened, a massive engineering project that brought fresh spring water from Hertfordshire over 38 miles directly into North London using gravity. This project provided London with a clean water supply to feed the houses of wealthy subscribers through wooden pipes.",
             "tasks": [
               {
@@ -775,7 +775,7 @@
               "Sir John Harington",
               "Samuel Pepys",
               "King Charles I",
-              "Joseph Bazalgette"
+              "[Key Individual: Joseph Bazalgette]"
             ],
             "answer": 1
           }
@@ -828,7 +828,7 @@
         "title": "How did the Industrial Revolution lead to a public health crisis?",
         "primary_source": {
           "src": "/assets/water_and_sanitation_snow_cholera_map.jpg",
-          "title": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
+          "title": "Source A: Dr. [Key Individual: John Snow]'s Cholera Map of Soho (1854)",
           "caption": "<strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during the devastating 1854 cholera outbreak in Soho, London. Each black bar on the map represents a death from cholera at that specific address. Snow noticed that the deaths clustered tightly around one specific public water pump on Broad Street.",
           "question": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
           "tasks": [
@@ -864,7 +864,7 @@
             {
               "year": "1842",
               "title": "Chadwick's Report",
-              "detail": "Edwin Chadwick publishes his damning report on sanitary conditions."
+              "detail": "[Key Individual: Edwin Chadwick] publishes his damning report on sanitary conditions."
             }
           ],
           "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
@@ -1199,7 +1199,7 @@
                 "text": "How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?"
               }
             ],
-            "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+            "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by [Key Individual: Sir Frederick Bramwell], these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
             "level_4": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
             "theme_heading": "Portsmouth's Victorian Clean"
           },

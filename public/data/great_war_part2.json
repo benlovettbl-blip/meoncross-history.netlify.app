@@ -249,7 +249,7 @@
               "Lord Horatio Kitchener",
               "Winston Churchill",
               "Douglas Haig",
-              "David Lloyd George"
+              "[Key Individual: David Lloyd George]"
             ]
           },
           {
@@ -277,7 +277,7 @@
             "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/",
             "title": "Y is for Your Country Needs You | WWI A-Z",
             "duration": "3 mins",
-            "viewing_task": "How was Lord Kitchener's famous poster used to drum up initial excitement for the war?",
+            "viewing_task": "How was [Key Individual: Lord Kitchener]'s famous poster used to drum up initial excitement for the war?",
             "model_answer": "The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty."
           },
           {
@@ -393,7 +393,7 @@
           },
           {
             "title": "The Brutal Reality: Wilfred Owen",
-            "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>Wilfred Owen</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
+            "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>[Key Individual: Wilfred Owen]</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
             "image": "/images/gw_wilfred_owen.jpg",
             "image_alt": "Wilfred Owen",
             "tasks": [
@@ -642,7 +642,7 @@
         "narrative_blocks": [
           {
             "title": "The Core Narrative",
-            "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>Khudadad Khan</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
+            "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>[Key Individual: Khudadad Khan]</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
             "tasks": [
               {
                 "type": "text",
@@ -1072,7 +1072,7 @@
         "narrative_blocks": [
           {
             "title": "The Core Narrative",
-            "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>Georges Clemenceau (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>Woodrow Wilson (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
+            "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>[Key Individual: Georges Clemenceau] (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>[Key Individual: Woodrow Wilson] (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
             "tasks": [
               {
                 "type": "text",
