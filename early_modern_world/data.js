@@ -3557,6 +3557,16 @@ export const unitData = {
         "lat": 51.5049,
         "lng": -0.0215
       }
+    },
+    {
+      "name": "Bristol Docks",
+      "type": "Trade Infrastructure",
+      "description": "A major port in England that grew incredibly wealthy from the Transatlantic Slave Trade. It was home to merchants like Edward Colston, whose controversial statue was toppled by protestors in 2020.",
+      "significance": "Highlights how British port cities profited directly from slavery, and how the legacy of those individuals (like Colston) remains a resonant and controversial part of modern history.",
+      "coordinates": {
+        "lat": 51.4485,
+        "lng": -2.5991
+      }
     }
   ]
 };
