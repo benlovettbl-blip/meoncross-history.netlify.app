@@ -74,11 +74,14 @@ export function generateKeyIndividualCardHTML(person) {
   let frontImgHtml = '';
   if (person.image || person.image_url) {
     const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
-    frontImgHtml = `
-      <div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
-        <img src="${imgSrc}" loading="lazy" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.parentElement.style.display='none'">
-      </div>
-    `;
+    frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
+      <img src="${imgSrc}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.src='/images/placeholder_portrait.jpg'">
+    </div>`;
+  } else {
+    frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden; flex-direction: column; color: var(--text-muted);">
+      <i class="fa-solid fa-image" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+      <div style="font-size: 0.9rem; font-style: italic; opacity: 0.7;">Image hidden (Copyright)</div>
+    </div>`;
   }
 
   let basicBio = '';
@@ -120,6 +123,16 @@ export function generateKeyIndividualCardHTML(person) {
       </div>`;
   }
   
+  if (person.quotes) {
+    hasDetailedContent = true;
+    let quotesHtml = Array.isArray(person.quotes) ? person.quotes.map(q => `&ldquo;${q}&rdquo;`).join('<br><br>') : `&ldquo;${person.quotes}&rdquo;`;
+    backHtml += `
+      <div style="background: rgba(168, 85, 247, 0.1); border-left: 3px solid #a855f7; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+        <strong style="color: #a855f7; display: block; margin-bottom: 3px; font-size: 0.85rem; text-transform: uppercase;">Key Quotes</strong>
+        <span style="font-size: 0.9rem; color: var(--text-main); display: block; font-style: italic;">${quotesHtml}</span>
+      </div>`;
+  }
+
   if (!hasDetailedContent) {
      backHtml += `<div style="padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; background: rgba(0,0,0,0.02); border-radius: 8px;">Detailed revision notes for this individual are currently being compiled. Check back soon!</div>`;
   }

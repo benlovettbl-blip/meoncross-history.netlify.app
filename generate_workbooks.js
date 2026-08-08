@@ -482,12 +482,14 @@ allDirs.forEach(unitId => {
            return `<strong>${p1.trim()}</strong>`;
         });
         
-        html += `<p class="narrative-block" id="para-${bIdx+1}">${formatText(textToRender)}</p>`;
+        let finalRenderedText = formatText(textToRender);
+        finalRenderedText = finalRenderedText.replace(/<details/gi, '<details open="true"');
+        html += `<p class="narrative-block" id="para-${bIdx+1}">${finalRenderedText}</p>`;
         
         if (block.hinge_question) {
           html += `<div class="task-box" style="background: #f8fafc; border: 2px dashed #94a3b8;">`;
           html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
-          html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text}</strong></p>`;
+          html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
           html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
           block.hinge_question.options.forEach((opt, idx) => {
             html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65+idx)}. ${opt}</li>`;
