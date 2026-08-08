@@ -220,7 +220,7 @@ export const unitData = {
           "image": "/images/global_canton.jpg",
           "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
           "image_caption": "An early 19th-century painting by an unknown Chinese artist showing the Thirteen Factories in Canton (Guangzhou). This was the only area where foreign merchants (including the British East India Company) were permitted to trade with Qing dynasty China.",
-          "source_letter": "B",
+          "source_letter": "A",
           "image_context": "Notice the prominent display of European flags (Danish, Spanish, American, Swedish, British, and Dutch) confined to a tiny strip of land outside the city walls. This image shatters the myth of European dominance in the 1700s—Western merchants were entirely at the mercy of the powerful Qing Emperor, restricted to these small 'factories' because China had little need for European goods, while Europeans desperately craved Chinese tea, silk, and porcelain.",
           "tasks": [
             {
@@ -238,7 +238,7 @@ export const unitData = {
           "image_alt": "Fresco of the Siege of Constantinople (1537)",
           "image_context": "Observe the massive defensive walls of the city being breached by Ottoman cannons. The fall of Constantinople was a seismic shock to Christian Europe, not just religiously, but economically. With the Ottoman Empire now controlling the vital land routes to Asia, European merchants were suddenly cut off from the lucrative Silk Road. **Hinge Question:** How did the fall of this city directly force Europeans to begin exploring the oceans?",
           "image_caption": "A 1537 fresco from the Moldovița Monastery in Romania depicting the 1453 Siege of Constantinople. The fall of the city to the Ottoman Turks severely disrupted European access to the Silk Road, forcing Christian nations to seek alternative maritime routes to Asia.",
-          "source_letter": "C"
+          "source_letter": "B"
         },
         {
           "title": "West Africa: Kingdoms of Gold and Brass",
@@ -248,7 +248,7 @@ export const unitData = {
           "image_alt": "16th-Century Benin Bronze Plaque",
           "image_context": "Look closely at the intricate details of the figures, their weapons, and their ceremonial clothing. This is not primitive art; it requires highly advanced metallurgical skills (lost-wax casting) that rivalled or exceeded anything in Europe at the time. It serves as powerful evidence of the complex, wealthy, and highly organized societies that existed in West Africa. **Hinge Question:** How does this bronze plaque challenge traditional Eurocentric views of pre-colonial African societies?",
           "image_caption": "A 16th-century brass plaque from the Kingdom of Benin (modern-day Nigeria). Crafted by the Edo people, such plaques decorated the royal palace of the Oba. They demonstrate the highly advanced metallurgical skills and complex societal structure of West African kingdoms prior to European colonization.",
-          "source_letter": "D"
+          "source_letter": "C"
         },
         {
           "title": "The Silk Road & Ming China: The World's Industrial Engine",
@@ -258,11 +258,11 @@ export const unitData = {
           "image_alt": "Map of the Silk Road Trade Routes",
           "image_context": "Trace the sprawling network of red lines stretching from China, across Central Asia, and into the Mediterranean. Before the era of global maritime empires, this was the economic superhighway of the world. Europe was merely a peripheral terminus at the far western edge of this vast Eurasian trading system, entirely dependent on Asian and Middle Eastern middlemen. **Hinge Question:** Why was controlling these overland routes so incredibly profitable for empires like the Ottomans?",
           "image_caption": "A modern historical map illustrating the vast network of Eurasian trade routes known as the Silk Road. Before 1450, these overland routes were the primary arteries for luxury goods, spices, and technologies flowing from Asia into the Mediterranean.",
-          "source_letter": "E"
+          "source_letter": "D"
         },
         {
           "title": "3. Primary Source Analysis",
-          "text": "<div class='scaffold-box'><strong>Source B: An Eyewitness Account of [Key Individual: Sultan Mehmed II] entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>[Key Individual: Kritovoulos of Imbros]</strong>, a Greek scholar writing in 1454.</div><br><br><div class='scaffold-box'><strong>Source C: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>",
+          "text": "<div class='scaffold-box'><strong>Source E: An Eyewitness Account of [Key Individual: Sultan Mehmed II] entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>[Key Individual: Kritovoulos of Imbros]</strong>, a Greek scholar writing in 1454.</div><br><br><div class='scaffold-box'><strong>Source F: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>",
           "tasks": [
             {
               "type": "text",
@@ -289,7 +289,7 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The English Peasant's Pottage",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The English Peasant's Pottage</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_peasant.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source B:</strong> An authentic 15th-century manuscript illumination showing peasants performing grueling manual agricultural labor.</i>\n</div>\n<p>While the Oba of Benin commissioned magnificent bronze plaques and Ming Emperors wore silk, the vast majority of people in 1450 England were destitute peasant farmers. An ordinary English peasant lived in a dark, smokey, single-room wattle-and-daub hut shared with their livestock. Their diet was incredibly monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats. They rarely travelled more than five miles from their birthplace and were completely oblivious to the vast riches flowing through the Silk Road or the trans-Saharan trade networks. Europe in 1450 was not the center of the world; for the average peasant, it was a cold, isolated struggle for survival.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The English Peasant's Pottage</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_peasant.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> An authentic 15th-century manuscript illumination showing peasants performing grueling manual agricultural labor.</i>\n</div>\n<p>While the Oba of Benin commissioned magnificent bronze plaques and Ming Emperors wore silk, the vast majority of people in 1450 England were destitute peasant farmers. An ordinary English peasant lived in a dark, smokey, single-room wattle-and-daub hut shared with their livestock. Their diet was incredibly monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats. They rarely travelled more than five miles from their birthplace and were completely oblivious to the vast riches flowing through the Silk Road or the trans-Saharan trade networks. Europe in 1450 was not the center of the world; for the average peasant, it was a cold, isolated struggle for survival.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -479,7 +479,7 @@ export const unitData = {
           "image_alt": "Portrait of Gerardus Mercator (1574)",
           "image_context": "Look at the globes and measuring instruments surrounding Mercator. His revolutionary map projection (1569) allowed sailors to plot straight-line courses across the oceans, drastically accelerating the age of global exploration and European empire-building. **Hinge Question:** How did advances in mathematics and map-making directly contribute to the growth of the British Empire?",
           "image_caption": "Portrait of Gerardus Mercator (1574) by Frans Hogenberg. In 1569, Mercator invented a revolutionary cylindrical map projection that allowed sailors to chart courses as straight lines, greatly facilitating the explosive growth of global European navigation and exploration.",
-          "source_letter": "C",
+          "source_letter": "B",
           "tasks": []
         },
         {
@@ -490,7 +490,7 @@ export const unitData = {
           "image_context": "Observe Luther's serious, unidealized expression and his firm grip on the Bible. By translating the Bible into everyday German, he democratized religion and shattered the absolute authority of the Catholic Church, plunging Europe into centuries of violent conflict. **Hinge Question:** Why was the act of translating the Bible into a common language considered so dangerous by the Church?",
           "image_caption": "Portrait of Martin Luther by Lucas Cranach the Elder (1529). Luther was a German monk whose 1517 Ninety-five Theses sparked the Protestant Reformation, permanently shattering the religious unity of Western Europe and triggering decades of conflict.",
           "tasks": [],
-          "source_letter": "D"
+          "source_letter": "C"
         },
         {
           "title": "Macro-History: The New World Monopoly & Privateers",
@@ -506,7 +506,7 @@ export const unitData = {
               "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "D"
         },
         {
           "title": "The Climax: The Spanish Armada (1588)",
@@ -521,7 +521,7 @@ export const unitData = {
         },
         {
           "title": "Primary Source Analysis",
-          "text": "<blockquote><strong>Source A: An Excerpt from Queen Elizabeth I's Speech at Tilbury (August 1588)</strong><br><em>\"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king, and of a king of England too, and think foul scorn that Parma or Spain, or any prince of Europe, should dare to invade the borders of my realm... We shall shortly have a famous victory over these enemies of my God, of my kingdom, and of my people.\"</em></blockquote><br><br><blockquote><strong>Source B: A Spanish Catholic Account of English Privateers (1579)</strong><br><em>\"This Francisco Drake is a thief, a heretic, and a minister of the Devil. He robs churches, desecrates holy images, and steals the treasure that belongs by divine right to His Catholic Majesty King Philip. He does not fight for trade; he fights to destroy the Holy Mother Church.\"</em><br>— <strong>Adapted from a letter by [Key Individual: Don Francisco de Zárate]</strong>, a Spanish captain captured by Drake.</blockquote>",
+          "text": "<blockquote><strong>Source E: An Excerpt from Queen Elizabeth I's Speech at Tilbury (August 1588)</strong><br><em>\"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king, and of a king of England too, and think foul scorn that Parma or Spain, or any prince of Europe, should dare to invade the borders of my realm... We shall shortly have a famous victory over these enemies of my God, of my kingdom, and of my people.\"</em></blockquote><br><br><blockquote><strong>Source F: A Spanish Catholic Account of English Privateers (1579)</strong><br><em>\"This Francisco Drake is a thief, a heretic, and a minister of the Devil. He robs churches, desecrates holy images, and steals the treasure that belongs by divine right to His Catholic Majesty King Philip. He does not fight for trade; he fights to destroy the Holy Mother Church.\"</em><br>— <strong>Adapted from a letter by [Key Individual: Don Francisco de Zárate]</strong>, a Spanish captain captured by Drake.</blockquote>",
           "tasks": [
             {
               "type": "source_analysis",
@@ -554,7 +554,7 @@ export const unitData = {
               "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
             }
           ],
-          "source_letter": "F"
+          "source_letter": "G"
         },
         {
           "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
@@ -574,7 +574,7 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The Horrors of Scurvy",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source C:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source H:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -600,7 +600,7 @@ export const unitData = {
         },
         {
           "title": "Plenary Check",
-          "text": "Let's review the connection between religion, exploration, and rivalry.",
+          "text": "",
           "hinge_question": {
             "question": "Why did the Pope create the Treaty of Tordesillas (1494)?",
             "options": [
@@ -892,11 +892,11 @@ export const unitData = {
               "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
             }
           ],
-          "source_letter": "C"
+          "source_letter": "B"
         },
         {
           "title": "Primary Source Analysis",
-          "text": "<blockquote><strong>Source A: From the First Charter of the Virginia Company (1606)</strong><br><em>\"We greatly commend their desires for the furtherance of so noble a work, which may, by the Providence of Almighty God, hereafter tend to the Glory of His Divine Majesty, in propagating of Christian Religion to such People as yet live in Ignorance and miserable Barbarism, and may in time bring the infidels and savages living in those parts to human civility...\"</em></blockquote><br><br><blockquote><strong>Source B: From the Journal of Sir Thomas Roe at the Mughal Court (1616)</strong><br><em>\"The Emperor Jahangir hath rich carpets, thrones of solid gold, and jewels beyond counting. He treats our King’s letters with polite indifference, viewing us as small traders from a cold, poor island... He cares nothing for our goods, save for clockwork toys and English hunting dogs, but he permits us to trade so long as we pay our taxes and remain obedient subjects.\"</em></blockquote>",
+          "text": "<blockquote><strong>Source C: From the First Charter of the Virginia Company (1606)</strong><br><em>\"We greatly commend their desires for the furtherance of so noble a work, which may, by the Providence of Almighty God, hereafter tend to the Glory of His Divine Majesty, in propagating of Christian Religion to such People as yet live in Ignorance and miserable Barbarism, and may in time bring the infidels and savages living in those parts to human civility...\"</em></blockquote><br><br><blockquote><strong>Source D: From the Journal of Sir Thomas Roe at the Mughal Court (1616)</strong><br><em>\"The Emperor Jahangir hath rich carpets, thrones of solid gold, and jewels beyond counting. He treats our King’s letters with polite indifference, viewing us as small traders from a cold, poor island... He cares nothing for our goods, save for clockwork toys and English hunting dogs, but he permits us to trade so long as we pay our taxes and remain obedient subjects.\"</em></blockquote>",
           "tasks": [
             {
               "type": "source_analysis",
@@ -948,7 +948,7 @@ export const unitData = {
               "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
             }
           ],
-          "source_letter": "D"
+          "source_letter": "E"
         },
         {
           "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
@@ -968,7 +968,7 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The Invasion of the Pigs",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Invasion of the Pigs</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_secotan.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source C:</strong> John White's authentic 1585 watercolor painting of the Algonquian village of Secotan, showing their carefully managed, unfenced corn fields.</i>\n</div>\n<p>When textbooks talk about the English colonization of North America, they focus on guns, land treaties, and tobacco. But one of the most destructive weapons the English brought to Jamestown was the common pig. The Algonquian Powhatan people did not use fences; they carefully managed open forests and planted complex, exposed fields of corn, beans, and squash. The English, however, let their livestock roam wild. Hundreds of English pigs invaded the forests, devouring the natives' crops, destroying the roots of native plants, and wrecking the delicate ecological balance that the Powhatan relied on for survival. For the Indigenous people, the English were not just a military threat; they were an ecological disaster that literally ate the local food supply.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Invasion of the Pigs</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_secotan.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> John White's authentic 1585 watercolor painting of the Algonquian village of Secotan, showing their carefully managed, unfenced corn fields.</i>\n</div>\n<p>When textbooks talk about the English colonization of North America, they focus on guns, land treaties, and tobacco. But one of the most destructive weapons the English brought to Jamestown was the common pig. The Algonquian Powhatan people did not use fences; they carefully managed open forests and planted complex, exposed fields of corn, beans, and squash. The English, however, let their livestock roam wild. Hundreds of English pigs invaded the forests, devouring the natives' crops, destroying the roots of native plants, and wrecking the delicate ecological balance that the Powhatan relied on for survival. For the Indigenous people, the English were not just a military threat; they were an ecological disaster that literally ate the local food supply.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -1240,7 +1240,7 @@ export const unitData = {
           "definition": "Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth."
         }
       ],
-        "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
+      "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
       "narrative_blocks": [
         {
           "title": "Micro-History: The Executioner’s Block (27 January 1649)",
@@ -1288,7 +1288,7 @@ export const unitData = {
           "image_alt": "The Royal Exchange, London (1644)",
           "image_context": "Notice the bustling courtyard packed with merchants in various international dress. This was the beating heart of early modern capitalism, where global goods were traded, joint-stock companies were formed, and the foundations of the British Empire's financial dominance were laid. **Hinge Question:** How did the creation of centralized financial markets like the Royal Exchange accelerate global exploration?",
           "image_caption": "An engraving of the Royal Exchange in London by Wenceslaus Hollar (1644). Established as a center for commerce, it became the beating heart of England's financial revolution, where merchants traded stocks, commodities, and funded global colonial ventures.",
-          "source_letter": "C",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "comprehension",
@@ -1299,7 +1299,7 @@ export const unitData = {
         },
         {
           "title": "Investigation Station: Primary Source Evidence",
-          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source A: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>[Key Individual: John Bradshaw]</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source B: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by [Key Individual: Martin Noell]</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source C: [Key Individual: Oliver Cromwell]’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
+          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source C: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>[Key Individual: John Bradshaw]</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source D: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by [Key Individual: Martin Noell]</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source E: [Key Individual: Oliver Cromwell]’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
             {
               "type": "source_analysis",
@@ -1332,7 +1332,7 @@ export const unitData = {
               "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion."
             }
           ],
-          "source_letter": "D"
+          "source_letter": "F"
         },
         {
           "title": "Historical Interpretations: Who Was the Real Winner?",
@@ -1353,7 +1353,7 @@ export const unitData = {
         {
           "title": "Historiographical Debate: Who won the English Civil War?",
           "text": "<div class='scaffold-box'><strong>Interpretation A: Professor Christopher Hill (The Political View)</strong><br><em>\"The English Civil War was a revolutionary class struggle. It permanently smashed the absolute monarchy and the old feudal order, transferring political power to Parliament and the middling sorts.\"</em></div><br><br><div class='scaffold-box'><strong>Interpretation B: Professor Eric Williams (The Imperial/Economic View)</strong><br><em>\"The true victors of the 17th century were the imperial merchant classes. By restricting the monarchy, Parliament secured the political stability needed to build the massive joint-stock companies (like the East India Company and the Royal African Company) which extracted vast wealth through colonization and slavery.\"</em></div>",
-          "image": "/images/sources/east_india_docks.jpg",
+          "image": "/images/global_thames.jpg",
           "image_alt": "East India Company Docks (c. 1730)",
           "image_context": "Observe the forest of ship masts and the warehouses overflowing with global commodities. This scene captures the immense, staggering scale of the East India Company's monopoly, which transformed London into the undisputed center of global maritime trade. **Hinge Question:** How did the wealth flowing through these docks fundamentally change the daily lives and diets of ordinary British people?",
           "image_caption": "An 18th-century painting by Samuel Scott depicting the bustling East India Company docks in London. The immense volume of imported global goods transformed London into the wealthiest maritime trading hub in the world.",
@@ -1364,11 +1364,11 @@ export const unitData = {
               "model_answer": "Professor Christopher Hill focuses on the political revolution and the destruction of the absolute monarchy. Professor Eric Williams argues the true victory was economic, laying the foundation for imperial merchants and global joint-stock capitalism."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "G"
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source D:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by [Key Individual: Gerrard Winstanley].</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by [Key Individual: Gerrard Winstanley] in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source H:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by [Key Individual: Gerrard Winstanley].</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by [Key Individual: Gerrard Winstanley] in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -1616,13 +1616,13 @@ export const unitData = {
               "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
             }
           ],
-          "source_letter": "C"
+          "source_letter": "B"
         },
         {
           "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
           "image": "/images/plantation.jpg",
           "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
-          "source_letter": "B",
+          "source_letter": "C",
           "image_context": "An illustration of an early modern plantation. Notice the vast scale of the agricultural operation and the intense manual labor required to harvest the cash crops.",
           "text": "The experience of an enslaved African depended heavily on where the slave ship landed. In the Caribbean (like Jamaica and Barbados), the primary crop was sugar. Sugar cultivation was incredibly brutal, dangerous, and physically destroying labor. Many Caribbean plantations were owned by 'absentee landlords'—rich white men who lived in luxury in London and never even visited their estates, leaving brutal overseers in charge. Because profits were so high, these overseers calculated that it was cheaper to literally work enslaved people to death (the 'death camp' model) and simply buy replacements from Africa. Life expectancy upon arriving on a sugar plantation was often less than seven years. By contrast, in the North American colony of Virginia, the primary crop was tobacco. Tobacco required less intensive daily physical destruction than sugar. Furthermore, a different climate and slightly better diet meant that, by the 1700s, the enslaved population in Virginia became 'self-sustaining' (growing through childbirth rather than relying entirely on importing new people from Africa). While Virginia was still a brutal system of chattel slavery, the lethal intensity of the Caribbean sugar machine was unmatched.",
           "tasks": [
@@ -1921,7 +1921,7 @@ export const unitData = {
         },
         {
           "title": "Primary Source Deep Dive: Authentic Voices of Resistance",
-          "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>",
+          "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source C: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source D: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source E: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>",
           "image": "/images/equiano.jpg",
           "image_alt": "Portrait of Olaudah Equiano (1789)",
           "image_context": "Notice Equiano's refined gentleman's clothing and the Bible in his hand. He deliberately presented himself as an educated, devout, and respectable British citizen to force European audiences to recognize his humanity and to directly challenge the racist justifications for slavery. **Hinge Question:** Why was it so important for Equiano to present himself this way when campaigning for abolition?",
@@ -1943,13 +1943,13 @@ export const unitData = {
               "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
             }
           ],
-          "source_letter": "D"
+          "source_letter": "B"
         },
         {
           "title": "Case Study: The Underground Railroad",
           "image": "/images/harriet_tubman.jpg",
           "image_alt": "[Key Individual: Harriet Tubman], a key figure in the Underground Railroad",
-          "source_letter": "C",
+          "source_letter": "F",
           "image_context": "[Key Individual: Harriet Tubman] (born Araminta Ross) was an American abolitionist and political activist. Born into slavery, she escaped and subsequently made some 13 missions to rescue approximately 70 enslaved people, including family and friends.",
           "text": "While armed rebellions (like the Maroons) were the most explosive forms of resistance, a highly organized, grassroots network known as the 'Underground Railroad' represented a different kind of fight. Although this network reached its peak slightly later in the 19th century, it was the ultimate evolution of the runaway networks that began in our era. The Underground Railroad was not a physical train, but a secret web of safe houses, hidden routes, and abolitionist sympathizers that helped enslaved people escape from the American South to free states in the North or into Canada. It relied on absolute secrecy, coded songs, and immense bravery. 'Conductors' like [Key Individual: Harriet Tubman]—who escaped slavery herself only to repeatedly risk her life sneaking back to rescue others—guided thousands to freedom. This ground-up, grassroots resistance proved that enslaved people were constantly, actively fighting for their own liberation, long before white politicians in Parliament began discussing abolition.",
           "tasks": [
@@ -1979,7 +1979,7 @@ export const unitData = {
           "title": "Side Quest: Obeah and Botanical Warfare",
           "image": "/images/sidequest_cassava.jpg",
           "image_alt": "18th-century botanical illustration of the Cassava root",
-          "source_letter": "H",
+          "source_letter": "G",
           "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
           "tasks": [
@@ -2009,7 +2009,7 @@ export const unitData = {
           "title": "Historical Debates: What Truly Destroyed Slavery?",
           "image": "/images/william_wilberforce.jpg",
           "image_alt": "Portrait of [Key Individual: William [Key Individual: William [Key Individual: William Wilberforce]]], a British politician and abolitionist",
-          "source_letter": "D",
+          "source_letter": "H",
           "image_context": "William Wilberforce was a prominent British Member of Parliament who led the parliamentary campaign against the British slave trade for twenty years until the passage of the Slave Trade Act of 1807.",
           "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London.",
           "tasks": [
@@ -2379,7 +2379,7 @@ export const unitData = {
           "definition": "The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes."
         }
       ],
-        "vocab_cloze_text": "To write a successful [Synoptic] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
+      "vocab_cloze_text": "To write a successful [Synoptic] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
       "narrative_blocks": [
         {
           "title": "Micro-History: The Contrast of London Bridge (1750)",
@@ -2416,7 +2416,7 @@ export const unitData = {
           "image_alt": "The East Offering its Riches to Britannia (1778)",
           "image_context": "Observe Britannia sitting elevated on a throne, passively receiving jewels, spices, and silks from subservient figures representing Asia, Africa, and India. This allegorical ceiling painting is pure imperial propaganda, designed to justify the Empire by portraying Britain as the natural, divinely ordained ruler of the world's wealth. **Hinge Question:** How does this painting attempt to make the violent realities of empire building look peaceful and natural?",
           "image_caption": "A 1778 ceiling painting by Spiridione Roma titled 'The East Offering its Riches to Britannia,' commissioned for the East India Company headquarters. It is a prime example of imperial propaganda, portraying Britain as a majestic and benevolent ruler receiving willing global tribute.",
-          "source_letter": "C",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "source_analysis",
@@ -2439,11 +2439,11 @@ export const unitData = {
               "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'."
             }
           ],
-          "source_letter": "D"
+          "source_letter": "C"
         },
         {
           "title": "Primary Source Analysis: The Dual Reality",
-          "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source B: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source C: From a London Magistrate's Report on Crime (Henry Fielding, 1751)</strong><br><em>\"The streets of this great city are daily rendered unsafe by bands of armed footpads and cutpurses... Multitudes of wretches perish annually of sheer cold and gin-poisoning in the cellars of St. Giles, unheeded by any magistrate. Our prisons are foul dens of typhus fever where accused men rot for months before trial. We boast of our liberties, yet our poor live in a state of barbarism lower than the beasts.\"</em></blockquote>",
+          "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source E: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source F: From a London Magistrate's Report on Crime (Henry Fielding, 1751)</strong><br><em>\"The streets of this great city are daily rendered unsafe by bands of armed footpads and cutpurses... Multitudes of wretches perish annually of sheer cold and gin-poisoning in the cellars of St. Giles, unheeded by any magistrate. Our prisons are foul dens of typhus fever where accused men rot for months before trial. We boast of our liberties, yet our poor live in a state of barbarism lower than the beasts.\"</em></blockquote>",
           "image": "/images/turnpike_map.jpg",
           "image_alt": "John Rocque's Map of London (1746)",
           "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
@@ -2465,7 +2465,7 @@ export const unitData = {
               "model_answer": "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "D"
         },
         {
           "title": "Historiographical Debate: 'The First Modern Society'?",
@@ -2527,7 +2527,7 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The Mudlarks of London",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Mudlarks of London</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source B:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Mudlarks of London</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",

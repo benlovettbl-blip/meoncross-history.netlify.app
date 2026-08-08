@@ -114,7 +114,7 @@ allDirs.forEach(unitId => {
     tr:last-child td { border-bottom: none; }
     td:last-child, th:last-child { border-right: none; }
     tbody tr:nth-child(even) { background: #f8fafc; }
-    .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc;  }
+    .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: avoid; }
     .grading-boxes { display: flex; justify-content: space-between; }
     .grade-box { display: flex; align-items: center; gap: 5px; }
     .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px; background: #fff; }
@@ -173,7 +173,7 @@ allDirs.forEach(unitId => {
     html += `
     <h3 style="text-align: center; color: #555; margin-top: 0; margin-bottom: 10px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">${unitData.title}</h3>
     <div style="width: 100%; height: 160px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #1a237e;">
-      ${bannerImageSrc ? `<img src="${bannerImageSrc}" style="width: 100%; height: 100%; object-fit: cover;">` : ''}
+      <!-- Banner image removed per user request -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
         <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
           <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">${periodTitle}</h1>
@@ -492,9 +492,10 @@ allDirs.forEach(unitId => {
         
         let finalRenderedText = formatText(textToRender);
         finalRenderedText = finalRenderedText.replace(/<details[^>]*>/gi, '<div class="side-quest-box" style="page-break-inside: avoid; border: 2px solid #8b5cf6; border-radius: 8px; padding: 15px; margin: 15px 0; background: #f5f3ff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">');
-        finalRenderedText = finalRenderedText.replace(/<\/details>/gi, '</div>');
+        let isSideQuest = finalRenderedText.includes('<details class="side-quest-box"');
+        finalRenderedText = finalRenderedText.replace(/<\/details>/gi, ''); // Don't close yet
         finalRenderedText = finalRenderedText.replace(/<summary[^>]*>(.*?)<\/summary>/gi, '<h3 style="color: #6d28d9; margin-top: 0; font-size: 14pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px dashed #c4b5fd; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">$1</h3>');
-        html += `<p class="narrative-block" id="para-${bIdx+1}">${finalRenderedText}</p>`;
+        html += `<div class="narrative-block" id="para-${bIdx+1}">${finalRenderedText}`;
         
         if (block.hinge_question) {
           html += `<div class="task-box" style="background: #f8fafc; border: 2px dashed #94a3b8;">`;

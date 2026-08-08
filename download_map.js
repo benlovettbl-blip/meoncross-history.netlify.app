@@ -1,29 +1,33 @@
-const https = require('https');
 const fs = require('fs');
+const https = require('https');
 
-const url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Deutsches_Reich_%281871-1918%29-en.png/1280px-Deutsches_Reich_%281871-1918%29-en.png';
-const file = fs.createWriteStream('./public/images/german_empire_1871.png');
+async function downloadTordesillasMap() {
+  try {
+    const searchUrl = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Treaty%20of%20Tordesillas%20map%20filetype:bitmap';
+    const searchRes = await fetch(searchUrl);
+    const searchData = await searchRes.json();
+    
+    // We'll just hardcode a known good map url
+    const mapUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Spain_and_Portugal_Empires_map.svg/500px-Spain_and_Portugal_Empires_map.svg.png';
+    const mapUrl2 = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Tordesillas.png/500px-Tordesillas.png';
+    
+    console.log('Downloading map...');
+    const file = fs.createWriteStream('public/images/tordesillas_map.jpg');
+    https.get(mapUrl2, function(response) {
+      if(response.statusCode !== 200) {
+        console.error('Failed to download: ', response.statusCode);
+      }
+      response.pipe(file);
+      file.on('finish', function() {
+        file.close();
+        console.log('Successfully downloaded tordesillas_map.jpg!');
+      });
+    }).on('error', function(err) {
+      console.error(err);
+    });
 
-const options = {
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-    'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Referer': 'https://commons.wikimedia.org/'
+  } catch (err) {
+    console.error(err);
   }
-};
-
-https.get(url, options, res => {
-  if (res.statusCode !== 200) {
-    console.error(`Failed to download image. Status code: ${res.statusCode}`);
-    res.resume(); // consume response data to free up memory
-    return;
-  }
-  res.pipe(file);
-  file.on('finish', () => {
-    file.close();
-    console.log('Image downloaded successfully!');
-  });
-}).on('error', err => {
-  console.error(`Error downloading image: ${err.message}`);
-});
+}
+downloadTordesillasMap();
