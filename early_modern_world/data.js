@@ -600,7 +600,7 @@ export const unitData = {
         },
         {
           "title": "Plenary Check",
-          "text": "Let's review the connection between religion, exploration, and rivalry.",
+          
           "hinge_question": {
             "question": "Why did the Pope create the Treaty of Tordesillas (1494)?",
             "options": [

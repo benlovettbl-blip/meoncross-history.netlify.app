@@ -119,7 +119,15 @@ allDirs.forEach(unitId => {
     .grade-box { display: flex; align-items: center; gap: 5px; }
     .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px; background: #fff; }
     .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
-    @media print { * { box-shadow: none !important; border-radius: 0 !important; }
+    @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
+        img { max-width: 100% !important; object-fit: contain !important;  }
+        .source-container { page-break-inside: avoid; }
+        .narrative-block { page-break-inside: avoid; }
+        .task-box { page-break-inside: avoid; }
+        h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+        div[style*="display: none"] { display: block !important; }
+        button[onclick*="display='none'"] { display: none !important; }
+      }
       img { max-width: 100% !important; object-fit: contain !important;  }
       .source-container {  }
     }
@@ -168,8 +176,8 @@ allDirs.forEach(unitId => {
       ${bannerImageSrc ? `<img src="${bannerImageSrc}" style="width: 100%; height: 100%; object-fit: cover;">` : ''}
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
         <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 36pt; color: white; padding: 0;">${periodTitle}</h1>
-          <p style="font-size:16pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">Student Workbook</p>
+          <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">${periodTitle}</h1>
+          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;"><strong>Assessment Question:</strong> ${unitData.enquiry || 'Student Workbook'}</p>
         </div>
       </div>
     </div>
@@ -247,7 +255,7 @@ allDirs.forEach(unitId => {
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
     
-    html += `<h2 style="margin-bottom: 10px; page-break-before: always;">${formatText(lesson.title)}</h2>`;
+    html += `<h2 style="margin-bottom: 10px; page-break-before: always;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
     
     if (lesson.a4_map) {
       if (Array.isArray(lesson.a4_map)) {
@@ -483,7 +491,9 @@ allDirs.forEach(unitId => {
         });
         
         let finalRenderedText = formatText(textToRender);
-        finalRenderedText = finalRenderedText.replace(/<details/gi, '<details open="true"');
+        finalRenderedText = finalRenderedText.replace(/<details[^>]*>/gi, '<div class="side-quest-box" style="page-break-inside: avoid; border: 2px solid #8b5cf6; border-radius: 8px; padding: 15px; margin: 15px 0; background: #f5f3ff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">');
+        finalRenderedText = finalRenderedText.replace(/<\/details>/gi, '</div>');
+        finalRenderedText = finalRenderedText.replace(/<summary[^>]*>(.*?)<\/summary>/gi, '<h3 style="color: #6d28d9; margin-top: 0; font-size: 14pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px dashed #c4b5fd; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">$1</h3>');
         html += `<p class="narrative-block" id="para-${bIdx+1}">${finalRenderedText}</p>`;
         
         if (block.hinge_question) {
@@ -612,9 +622,9 @@ allDirs.forEach(unitId => {
             let subhead = match[1];
             let rest = match[2];
             html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${tIdx + 1}. ${rest}</p>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${task.qNum || (tIdx + 1)}. ${rest}</p>`;
         } else {
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${tIdx + 1}. ${qText}</p>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${task.qNum || (tIdx + 1)}. ${qText}</p>`;
         }
         let hasExamTaskLater = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
         let numLines = (!hasExamTaskLater && tIdx === lesson.tasks.length - 1) ? 20 : 6;
