@@ -3345,6 +3345,26 @@ export const unitData = {
       "actions": "<ul><li>Wrote 'English Society 1688-1832' (1985), arguing 18th-century Britain was a traditional, aristocratic 'Ancien Régime' dominated by religion.</li></ul>",
       "achievements": "Focus: Revisionist 18th-Century Britain",
       "group": "Historians"
+    },
+    {
+      "name": "Harriet Tubman",
+      "role": "Abolitionist & Activist",
+      "actions": "<ul><li>An enslaved woman who escaped and became a legendary 'Conductor' on the Underground Railroad, risking her life to lead others to freedom.</li></ul>",
+      "group": "Historical Figures",
+      "image": "/images/harriet_tubman.jpg"
+    },
+    {
+      "name": "Toussaint Louverture",
+      "role": "Haitian Revolutionary Leader",
+      "actions": "<ul><li>A formerly enslaved man who led the only successful large-scale slave revolt in history, securing Haitian independence from France.</li></ul>",
+      "group": "Historical Figures",
+      "image": "/images/toussaint_louverture.jpg"
+    },
+    {
+      "name": "Thomas Thistlewood",
+      "role": "Jamaican Overseer",
+      "actions": "<ul><li>An English overseer whose diary provides brutal, first-hand evidence of the daily torture of enslaved people and their relentless covert resistance.</li></ul>",
+      "group": "Historical Figures"
     }
   ],
   "geographical_locations": [
@@ -3487,6 +3507,56 @@ export const unitData = {
         "1587 - Virginia Dare born, the first English child born in the Americas.",
         "1590 - John White returns to find the colony deserted with the word 'CROATOAN' carved."
       ]
+    },
+    {
+      "name": "West Africa (Barracoons)",
+      "type": "Origin & Exploitation Point",
+      "description": "The primary origin point for enslaved people during the Transatlantic Slave Trade. Enslaved Africans were often held in brutal coastal prisons known as 'barracoons' before being forced onto slave ships.",
+      "significance": "Highlights the horrific starting point of the Middle Passage and the infrastructure of the slave trade on the African coast.",
+      "coordinates": {
+        "lat": 5.556,
+        "lng": -0.1969
+      }
+    },
+    {
+      "name": "St Helena",
+      "type": "Strategic Stopping Point",
+      "description": "A small, remote island in the South Atlantic Ocean controlled by the British East India Company.",
+      "significance": "Served as a vital provisioning and stopping-off point for ships making the grueling transatlantic and East Indian voyages.",
+      "coordinates": {
+        "lat": -15.965,
+        "lng": -5.7089
+      }
+    },
+    {
+      "name": "Barbados",
+      "type": "Colony & Slave Society",
+      "description": "A small Caribbean island that became England's first highly profitable sugar colony, heavily reliant on brutal enslaved labor.",
+      "significance": "Considered the first true 'slave society', where the economy and laws were entirely structured around the exploitation of enslaved Africans.",
+      "coordinates": {
+        "lat": 13.1939,
+        "lng": -59.5432
+      }
+    },
+    {
+      "name": "Jamaica",
+      "type": "Colony & Sugar Hub",
+      "description": "Captured by the English from the Spanish in 1655, it grew to become the crown jewel of the British Caribbean sugar empire.",
+      "significance": "Generated immense wealth for absentee landlords in Britain, but was also a site of fierce resistance, such as the Maroon Wars.",
+      "coordinates": {
+        "lat": 18.1096,
+        "lng": -77.2975
+      }
+    },
+    {
+      "name": "West India Docks",
+      "type": "Trade Infrastructure",
+      "description": "Massive docks built in London to handle the staggering volume of sugar, rum, and mahogany arriving from the Caribbean.",
+      "significance": "A physical symbol of how the wealth extracted from the Triangular Trade flowed directly into the British economy, fueling its development.",
+      "coordinates": {
+        "lat": 51.5049,
+        "lng": -0.0215
+      }
     }
   ]
 };
