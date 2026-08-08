@@ -74,8 +74,8 @@ export function generateKeyIndividualCardHTML(person) {
   let frontImgHtml = '';
   if (person.image || person.image_url) {
     const imgSrc = person.image_url ? person.image_url : (typeof getAssetUrl === 'function' ? getAssetUrl(person.image) : person.image);
-    frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
-      <img src="${imgSrc}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.src='/images/placeholder_portrait.jpg'">
+    frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card, #f8fafc); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden;">
+      <img src="${imgSrc}" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;" onerror="this.src='/images/placeholder_portrait.jpg'">
     </div>`;
   } else {
     frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden; flex-direction: column; color: var(--text-muted);">

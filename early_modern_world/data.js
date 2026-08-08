@@ -1837,6 +1837,7 @@ export const unitData = {
     },
     {
       "id": "lesson_6",
+      "banner": "/images/brookes_ship.jpg",
       "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
       "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Covert resistance, Obeah, Armed Rebellions)",
       "teacher_notes": {
