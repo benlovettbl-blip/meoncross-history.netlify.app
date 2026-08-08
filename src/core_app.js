@@ -1003,21 +1003,23 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    const examPracticeLink = document.createElement('a');
-    examPracticeLink.className = 'lesson-link';
-    examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
-    examPracticeLink.style.marginTop = '15px';
-    examPracticeLink.style.color = '#60a5fa'; // Blue-400
-    examPracticeLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-      examPracticeLink.classList.add('active');
-      const contentArea = document.getElementById('content-area');
-      contentArea.innerHTML = ''; // clear
-      renderExamPracticeZone(contentArea, unitData);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    navContainer.appendChild(examPracticeLink);
+    if (window.currentUnitId !== 'early_modern_world') {
+      const examPracticeLink = document.createElement('a');
+      examPracticeLink.className = 'lesson-link';
+      examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
+      examPracticeLink.style.marginTop = '15px';
+      examPracticeLink.style.color = '#60a5fa'; // Blue-400
+      examPracticeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        examPracticeLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = ''; // clear
+        renderExamPracticeZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(examPracticeLink);
+    }
 
     const quizPackLink = document.createElement('a');
     quizPackLink.id = 'quiz-zone-link';
@@ -1038,7 +1040,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation') {
+    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';

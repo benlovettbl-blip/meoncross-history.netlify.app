@@ -1,0 +1,365 @@
+{
+  "id": "lesson_6",
+  "banner": "/images/brookes_ship.jpg",
+  "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
+  "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Covert resistance, Obeah, Armed Rebellions)",
+  "teacher_notes": {
+    "primer": "This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.",
+    "objectives": [
+      {
+        "objective": "Analyze primary sources from formerly enslaved Africans.",
+        "primer": "Use the Primary Source Deep Dive to interrogate authentic voices.",
+        "question": "How does [Key Individual: Olaudah [Key Individual: Olaudah [Key Individual: Olaudah Equiano]]]'s account challenge the idea that enslaved people were passive?"
+      },
+      {
+        "objective": "Investigate the Jamaican Maroon Wars.",
+        "primer": "Use the Micro-History of [Key Individual: Nanny of the Maroons] to explore armed rebellion.",
+        "question": "Why were the Jamaican Maroons so difficult for the British military to defeat?"
+      }
+    ]
+  },
+  "vocab": [
+    {
+      "term": "Obeah",
+      "definition": "A system of spiritual and healing practices developed by enslaved people in the Caribbean, often involving botanical knowledge."
+    },
+    {
+      "term": "Maroons",
+      "definition": "Communities of formerly enslaved Africans who escaped and established free settlements in mountainous or remote areas."
+    },
+    {
+      "term": "Covert Resistance",
+      "definition": "Hidden or secretive acts of rebellion, such as working slowly or breaking tools."
+    }
+  ],
+  "learning_objectives": {
+    "overarching": "How did enslaved Africans resist the Transatlantic Slave Trade?",
+    "scaffolded": [
+      "Understand the different forms of covert and overt resistance.",
+      "Analyze primary sources from formerly enslaved Africans.",
+      "Investigate the Jamaican Maroon Wars."
+    ]
+  },
+  "narrative_blocks": [
+    {
+      "title": "Micro-History: [Key Individual: Nanny of the Maroons] and the Blue Mountains (1730s)",
+      "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen [Key Individual: Nanny of the Maroons]</strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
+      "tasks": [
+        {
+          "type": "comprehension",
+          "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
+          "model_answer": "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties."
+        }
+      ],
+      "images": [
+        {
+          "image": "/images/brookes_ship.jpg",
+          "image_alt": "Diagram of the Slave Ship Brookes (1788)",
+          "image_context": "Look at the horrifying, mathematical precision with which human beings were packed tightly into the hold of the ship. This diagram was arguably the most effective piece of visual propaganda in history, mass-produced by abolitionists to shock the British public into confronting the true, industrial cruelty of the Middle Passage. **Hinge Question:** Why was a cold, technical diagram more effective at changing public opinion than an emotional painting might have been?",
+          "src": "/images/brookes_ship.jpg",
+          "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage, galvanizing public outrage in Britain.",
+          "source_letter": "A"
+        },
+        {
+          "image": "/images/jamaica_maroons.jpg",
+          "image_alt": "Map of Jamaica (1775)",
+          "image_context": "Look closely at the grid-like division of the land into massive sugar estates. The island's geography was entirely reshaped to serve the brutal efficiency of the plantation economy, completely wiping out indigenous landscapes to maximize sugar production for European markets. **Hinge Question:** How does a map like this hide the human suffering and enslaved labor required to make those estates profitable?",
+          "image_caption": "A 1775 map of Jamaica by Thomas Jefferys. The island's rugged, mountainous interior provided sanctuary for Maroon communities—escaped enslaved Africans who waged a highly successful, decades-long guerrilla war against British colonial forces.",
+          "source_letter": "B"
+        }
+      ]
+    },
+    {
+      "title": "The Spectrum of Resistance: How Enslaved People Fought Back",
+      "text": "Resistance was not always an armed uprising. Enslaved Africans fought back against a dehumanizing system in dozens of calculated ways every single day.<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"resBtn1\" onclick=\"document.getElementById('res1').style.display='block'; document.getElementById('res2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">Day-to-Day (Covert) Resistance</button>        <button id=\"resBtn2\" onclick=\"document.getElementById('res1').style.display='none'; document.getElementById('res2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">Revolutionary (Overt) Resistance</button>    </div>    <div id=\"res1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #475569;\">Hidden Sabotage</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li>Slowing down work pace on the fields to damage profits</li>            <li>Breaking tools and expensive plantation machinery on purpose</li>            <li>Feigning illness, injury, or ignorance to avoid forced labor</li>            <li>Secretly preserving African languages, religions, and music</li>            <li>Poisoning overseers' food or livestock using local plants</li>        </ul>    </div>    <div id=\"res2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #b91c1c;\">Armed & Direct Defiance</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li>Armed rebellion, assassinations, and plantation burning</li>            <li>Shipboard revolts and mutinies during the Middle Passage</li>            <li><strong>Marronage:</strong> Escaping permanently to form free, fortified towns</li>            <li>Self-emancipation (purchasing own freedom) and publishing memoirs</li>            <li>Political activism and speaking tours in European capitals</li>        </ul>    </div></div>",
+      "tasks": [
+        {
+          "type": "comprehension",
+          "question": "Give one example of covert resistance and explain why an enslaved person might choose it over overt resistance.",
+          "model_answer": "An example of covert resistance is breaking tools or slowing down work. An enslaved person might choose this because it was less likely to result in immediate, fatal punishment compared to an armed rebellion, yet it still effectively harmed the slave owner's profits."
+        }
+      ]
+    },
+    {
+      "title": "Voices of Resistance: Equiano's Testimony",
+      "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source G: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source G: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source G: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>",
+      "image": "/images/equiano.jpg",
+      "image_alt": "Portrait of Olaudah Equiano (1789)",
+      "image_context": "Notice Equiano's refined gentleman's clothing and the Bible in his hand. He deliberately presented himself as an educated, devout, and respectable British citizen to force European audiences to recognize his humanity and to directly challenge the racist justifications for slavery. **Hinge Question:** Why was it so important for Equiano to present himself this way when campaigning for abolition?",
+      "image_caption": "Frontispiece portrait of Olaudah Equiano from his 1789 autobiography. As a formerly enslaved man who purchased his own freedom, his vivid first-hand account of the horrors of slavery became a crucial piece of evidence in the British abolitionist movement.",
+      "tasks": [
+        {
+          "type": "source_analysis",
+          "question": "Inferring Motive (Source C): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
+          "model_answer": "Jumping overboard was a powerful act of resistance because it was a total rejection of their commodification; by taking their own lives, they reclaimed control over their own bodies and actively destroyed the 'property' and profits of the slave traders."
+        },
+        {
+          "type": "source_analysis",
+          "question": "Cross-Referencing Utility: How does Source C confirm that \"day-to-day\" resistance was real and effective, even when reported by a hostile white overseer?",
+          "model_answer": "Source G shows the overseer constantly suspecting sabotage ('done maliciously', 'poisoned with nightshade root'). Even though Thistlewood is hostile, his diary proves that enslaved people were successfully delaying work and causing economic damage while maintaining plausible deniability ('deny all knowledge')."
+        },
+        {
+          "type": "source_analysis",
+          "question": "Evaluating Significance (Source C): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?",
+          "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
+        }
+      ],
+      "source_letter": "C"
+    },
+    {
+      "title": "Case Study: The Underground Railroad",
+      "image": "/images/harriet_tubman.jpg",
+      "image_alt": "[Key Individual: Harriet Tubman], a key figure in the Underground Railroad",
+      "image_context": "[Key Individual: Harriet Tubman] (born Araminta Ross) was an American abolitionist and political activist. Born into slavery, she escaped and subsequently made some 13 missions to rescue approximately 70 enslaved people, including family and friends. Hinge Question: Why is it important to learn about individuals like Harriet Tubman when studying the abolition of slavery?",
+      "text": "While armed rebellions (like the Maroons) were the most explosive forms of resistance, a highly organized, grassroots network known as the 'Underground Railroad' represented a different kind of fight. Although this network reached its peak slightly later in the 19th century, it was the ultimate evolution of the runaway networks that began in our era. The Underground Railroad was not a physical train, but a secret web of safe houses, hidden routes, and abolitionist sympathizers that helped enslaved people escape from the American South to free states in the North or into Canada. It relied on absolute secrecy, coded songs, and immense bravery. 'Conductors' like [Key Individual: Harriet Tubman]—who escaped slavery herself only to repeatedly risk her life sneaking back to rescue others—guided thousands to freedom. This ground-up, grassroots resistance proved that enslaved people were constantly, actively fighting for their own liberation, long before white politicians in Parliament began discussing abolition.",
+      "tasks": [
+        {
+          "type": "comprehension",
+          "question": "What was the 'Underground Railroad'?",
+          "model_answer": "A secret network of safe houses, hidden routes, and abolitionist sympathizers that helped enslaved people escape to freedom."
+        },
+        {
+          "type": "comprehension",
+          "question": "Who was a famous 'Conductor' on the Underground Railroad, and what did they do?",
+          "model_answer": "Harriet Tubman, who escaped slavery herself and risked her life repeatedly to sneak back and rescue dozens of others."
+        },
+        {
+          "type": "comprehension",
+          "question": "Why does the Underground Railroad prove that enslaved people were not 'passive victims'?",
+          "model_answer": "It shows they were highly organized, immensely brave, and constantly taking active, dangerous steps to fight for their own liberation."
+        },
+        {
+          "type": "comprehension",
+          "question": "Study Source D. How does learning about individuals like Harriet Tubman challenge traditional historical narratives of the slave trade?",
+          "model_answer": "It challenges the narrative by shifting the focus from white politicians 'freeing' passive slaves, to enslaved Black women actively and courageously dismantling the system themselves."
+        }
+      ],
+      "image_caption": "A portrait of Harriet Tubman, an escaped enslaved woman who became a famous 'conductor' on the Underground Railroad, risking her life to lead dozens to freedom.",
+      "source_letter": "D"
+    },
+    {
+      "title": "Side Quest: Obeah and Botanical Warfare",
+      "image": "/images/sidequest_cassava.jpg",
+      "image_alt": "18th-century botanical illustration of the Cassava root",
+      "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
+      "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
+      "tasks": [
+        {
+          "type": "comprehension",
+          "question": "What was Obeah, and why did it involve botanical knowledge?",
+          "model_answer": "Obeah was a spiritual belief system brought from West Africa, whose practitioners possessed expert knowledge of local toxic plants and acted as healers."
+        },
+        {
+          "type": "comprehension",
+          "question": "How did enslaved women use their positions in the plantation house to resist their enslavers?",
+          "model_answer": "They used their positions cooking food to slowly and secretly poison brutal overseers and plantation owners using their botanical knowledge."
+        },
+        {
+          "type": "comprehension",
+          "question": "Why might psychological and chemical resistance have been just as effective as armed rebellion?",
+          "model_answer": "It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat."
+        },
+        {
+          "type": "comprehension",
+          "question": "Study Source E. How does this botanical illustration help explain the secret power held by Obeah healers?",
+          "model_answer": "It highlights the deep scientific and botanical knowledge required to understand which local plants were toxic, demonstrating that Obeah was rooted in highly intelligent natural science."
+        }
+      ],
+      "image_caption": "A botanical illustration of the cassava plant. Enslaved people frequently used their deep botanical knowledge of toxic plants to quietly poison their enslavers.",
+      "source_letter": "E"
+    },
+    {
+      "title": "Historical Debates: What Truly Destroyed Slavery?",
+      "image": "/images/william_wilberforce.jpg",
+      "image_alt": "Portrait of [Key Individual: William Wilberforce], a British politician and abolitionist",
+      "image_context": "William Wilberforce was a prominent British Member of Parliament who led the parliamentary campaign against the British slave trade for twenty years until the passage of the Slave Trade Act of 1807. Hinge Question: Why is it problematic to credit Wilberforce entirely for the abolition of slavery, while ignoring the resistance of enslaved people themselves?",
+      "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London.",
+      "tasks": [
+        {
+          "type": "comprehension",
+          "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
+          "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
+        },
+        {
+          "type": "comprehension",
+          "question": "What role did William Wilberforce actually play in abolition?",
+          "model_answer": "He led a tireless, decades-long campaign in the British Parliament to ban the trade, using shocking evidence to change public opinion."
+        },
+        {
+          "type": "comprehension",
+          "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
+          "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
+        },
+        {
+          "type": "comprehension",
+          "question": "Study Source F. Why is it problematic to only teach about men like Wilberforce when studying the end of slavery?",
+          "model_answer": "Because it silences the agency of the enslaved people themselves, making it seem like they passively waited to be rescued by white politicians, rather than acknowledging their active, violent resistance that forced the government's hand."
+        }
+      ],
+      "image_caption": "Portrait of William Wilberforce, the British Member of Parliament who famously led the parliamentary campaign to abolish the slave trade.",
+      "source_letter": "F"
+    },
+    {
+      "title": "Plenary Check",
+      "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade.",
+      "hinge_question": {
+        "question": "Why is it historically inaccurate to view enslaved Africans simply as passive victims?",
+        "options": [
+          "Because slavery only lasted for a short time.",
+          "Because there was continuous resistance, from mutinies on ships to guerrilla wars led by Maroons.",
+          "Because the British government eventually banned it."
+        ],
+        "answer": 1,
+        "explanation": "Enslaved people constantly fought back, preserving their humanity and actively resisting."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What were the 'Maroons' in Jamaica?",
+      "options": [
+        "Communities of escaped enslaved people who fought guerrilla wars against the British.",
+        "British politicians who campaigned for the abolition of the slave trade.",
+        "A secret network of safe houses in the American South.",
+        "Enslaved people who worked primarily as domestic servants."
+      ],
+      "answer": 0,
+      "explanation": "The Maroons were fierce communities of formerly enslaved people who successfully resisted British control in the Jamaican mountains."
+    },
+    {
+      "question": "What was the significance of the Haitian Revolution (1791-1804)?",
+      "options": [
+        "It was the only successful large-scale slave revolt in history, resulting in an independent nation.",
+        "It led to the immediate abolition of slavery throughout the British Empire.",
+        "It was a peaceful transition to independence negotiated by French politicians.",
+        "It resulted in the creation of the Underground Railroad."
+      ],
+      "answer": 0,
+      "explanation": "The Haitian Revolution, led by figures like [Key Individual: Toussaint Louverture], utterly shattered the myth that enslaved people would not fight back and win."
+    },
+    {
+      "question": "Who was Harriet Tubman?",
+      "options": [
+        "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
+        "A British politician who campaigned alongside William Wilberforce.",
+        "The leader of the First Maroon War in Jamaica.",
+        "A Jamaican plantation overseer who wrote a diary about enslaved resistance."
+      ],
+      "answer": 0,
+      "explanation": "Harriet Tubman demonstrated immense courage by repeatedly returning to the South to guide enslaved people to freedom."
+    },
+    {
+      "question": "What was the 'Underground Railroad'?",
+      "options": [
+        "A secret network of safe houses and routes that helped enslaved people escape.",
+        "A literal subterranean train system built by enslaved people.",
+        "A British political movement to abolish the slave trade.",
+        "A trade route used by the Maroons to smuggle goods."
+      ],
+      "answer": 0,
+      "explanation": "This grassroots resistance network was a vital lifeline for enslaved people seeking freedom in the American North or Canada."
+    },
+    {
+      "question": "What was 'Obeah' in the context of the Caribbean?",
+      "options": [
+        "A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.",
+        "A type of cash crop grown alongside sugar.",
+        "The name of a famous British slave ship.",
+        "A term used to describe absentee landlords."
+      ],
+      "answer": 0,
+      "explanation": "Obeah practitioners used their expert knowledge of plants not only for healing but occasionally to secretly poison brutal enslavers."
+    },
+    {
+      "question": "Why did enslavers live in constant terror of Obeah?",
+      "options": [
+        "Because practitioners could use their botanical knowledge to slowly and undetectably poison them.",
+        "Because Obeah leaders frequently organized massive armed rebellions.",
+        "Because Obeah was supported by the British government.",
+        "Because it encouraged enslaved people to stop working entirely."
+      ],
+      "answer": 0,
+      "explanation": "The silent, psychological, and chemical threat posed by Obeah created deep paranoia among plantation owners."
+    },
+    {
+      "question": "What is the 'White Savior Narrative' regarding the abolition of slavery?",
+      "options": [
+        "The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.",
+        "The belief that enslaved people freed themselves without any outside help.",
+        "The argument that slavery ended primarily due to economic factors.",
+        "The view that abolition was a mistake supported only by a small minority."
+      ],
+      "answer": 0,
+      "explanation": "This traditional narrative often ignores the crucial role played by enslaved people's own resistance."
+    },
+    {
+      "question": "According to historians like Eric Williams, what were the two TRUE main reasons for the abolition of slavery?",
+      "options": [
+        "Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.",
+        "The moral campaigning of William Wilberforce and the Enlightenment.",
+        "The invention of the steam engine and the end of the Triangular Trade.",
+        "The discovery of new trade routes to Asia and the decline of the Royal Navy."
+      ],
+      "answer": 0,
+      "explanation": "Williams argues that economic shifts and the immense cost/danger of suppressing slave revolts forced the British government's hand."
+    },
+    {
+      "question": "How does the story of the Underground Railroad challenge traditional historical narratives?",
+      "options": [
+        "It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.",
+        "It proves that slavery was not as brutal as some historians claim.",
+        "It suggests that abolition was primarily an American, rather than British, achievement.",
+        "It demonstrates that the Triangular Trade was economically unsustainable."
+      ],
+      "answer": 0,
+      "explanation": "The active, courageous resistance of individuals like Harriet Tubman refutes the idea that enslaved people were mere passive victims."
+    },
+    {
+      "question": "Based on Source A (Olaudah Equiano), what was a primary cause of death during the Middle Passage?",
+      "options": [
+        "Suffocation and sickness caused by severe overcrowding and lack of ventilation.",
+        "Starvation due to a complete lack of food provisions.",
+        "Execution by the ship's crew for attempted mutiny.",
+        "Drowning from ships sinking in frequent Atlantic storms."
+      ],
+      "answer": 0,
+      "explanation": "Equiano describes the 'closeness of the place' and 'copious perspirations' leading to sickness and death in the horrific conditions of the ship's hold."
+    }
+  ],
+  "video": [
+    {
+      "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-propaganda-tactics/",
+      "title": "Slave Owner Propaganda Tactics"
+    },
+    {
+      "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-compensation-arguments/",
+      "title": "Slave Owner Compensation Arguments"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ITtNDpkW26c&t=38s",
+      "title": "Abolitionism and why it was opposed"
+    },
+    {
+      "url": "https://era.org.uk/streaming-service-resource/resistance-enslaved-with-samuel-l-jackson/",
+      "title": "Resistance: Enslaved with Samuel L. Jackson"
+    }
+  ],
+  "do_now": {
+    "title": "Do Now: Previous Knowledge",
+    "type": "questions",
+    "items": [
+      {
+        "question": "What were the three legs of the Triangular Trade?",
+        "answer": "1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe."
+      },
+      {
+        "question": "What was a 'barracoon'?",
+        "answer": "A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships."
+      },
+      {
+        "question": "Why was sugar known as a 'killer crop'?",
+        "answer": "Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people."
+      }
+    ]
+  }
+}

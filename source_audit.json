@@ -1,0 +1,292 @@
+{
+  "Lesson 0": [
+    {
+      "title": "Analyzing the Evidence: The Fall of Constantinople",
+      "blockLetter": "A",
+      "textSources": [
+        "<strong>Source A:"
+      ],
+      "tasks": []
+    },
+    {
+      "title": "Macro-History: The Wealth of the East",
+      "blockLetter": "B",
+      "textSources": null,
+      "tasks": [
+        "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?"
+      ]
+    },
+    {
+      "title": "Macro-History: The Real Centers of Wealth in 1450",
+      "blockLetter": "C",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Analyzing the Evidence: The Wealth of West Africa",
+      "blockLetter": "D",
+      "textSources": [
+        "<strong>Source D:"
+      ],
+      "tasks": []
+    },
+    {
+      "title": "The Silk Road & Ming China: The World's Industrial Engine",
+      "blockLetter": "E",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Side Quest: The English Peasant's Pottage",
+      "blockLetter": "F",
+      "textSources": [
+        "<strong>Source F:"
+      ],
+      "tasks": [
+        "Study Source F. How does this visual source support the idea that everyday life for a peasant was a brutal struggle?"
+      ]
+    }
+  ],
+  "Lesson 1": [
+    {
+      "title": "Macro-History: Navigating the Unknown",
+      "blockLetter": "A",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Macro-History: The Reformation (1517)",
+      "blockLetter": "B",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Macro-History: The New World Monopoly & Privateers",
+      "blockLetter": "C",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Opposing Views: A Queen and a Captive (Part 1)",
+      "blockLetter": "D",
+      "textSources": [
+        "<strong>Source B:",
+        "<strong>Source C:"
+      ],
+      "tasks": [
+        "How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?",
+        "Why does Elizabeth refer to the Spanish Armada as 'enemies of my God' in Source B?",
+        "How useful is Source C to a historian studying Spanish attitudes toward English exploration in the 16th century?"
+      ]
+    },
+    {
+      "title": "Visual Analysis: The Armada Portrait (1588)",
+      "blockLetter": "F",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Side Quest: The Horrors of Scurvy",
+      "blockLetter": "G",
+      "textSources": [
+        "<strong>Source G:"
+      ],
+      "tasks": []
+    }
+  ],
+  "Lesson 2": [
+    {
+      "title": "Macro-History: The Big Picture",
+      "blockLetter": "A",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Justifying Empire: Religion vs. Profit",
+      "blockLetter": "B",
+      "textSources": [
+        "<strong>Source B:",
+        "<strong>Source A:"
+      ],
+      "tasks": [
+        "What was the primary motivation stated in Source B for colonizing Virginia, and why might the Virginia Company emphasize religious duty over profit?",
+        "Using Source A, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas English settlers in Virginia acted aggressively toward Native Americans."
+      ]
+    },
+    {
+      "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
+      "blockLetter": "D",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Side Quest: The Invasion of the Pigs",
+      "blockLetter": "E",
+      "textSources": [
+        "<strong>Source D:"
+      ],
+      "tasks": []
+    }
+  ],
+  "Lesson 3": [
+    {
+      "title": "Macro-History: The Financial Hub",
+      "blockLetter": "A",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Investigating Power: The King vs. The Merchants",
+      "blockLetter": "B",
+      "textSources": [
+        "<strong>Source B:",
+        "<strong>Source C:",
+        "<strong>Source D:"
+      ],
+      "tasks": [
+        "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?",
+        "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?",
+        "How reliable is Source B as an objective record of Charles I’s reign?"
+      ]
+    },
+    {
+      "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
+      "blockLetter": "E",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Historiographical Debate: Who won the English Civil War?",
+      "blockLetter": "F",
+      "textSources": [
+        "<strong>Source F:"
+      ],
+      "tasks": [
+        "How useful are the two interpretations in Source F for understanding the long-term consequences of the English Civil War?"
+      ]
+    },
+    {
+      "title": "Side Quest: The Diggers and the Dream of Equality",
+      "blockLetter": "G",
+      "textSources": [
+        "<strong>Source G:"
+      ],
+      "tasks": [
+        "Study Source G. Based on the title page of this pamphlet, what was the primary goal of the Diggers?"
+      ]
+    }
+  ],
+  "Lesson 4": [
+    {
+      "title": "Micro-History: The Barracoons of West Africa",
+      "blockLetter": "A",
+      "textSources": null,
+      "tasks": [
+        "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?"
+      ]
+    },
+    {
+      "title": "Macro-History: The Triangular Machinery of Exploitation",
+      "blockLetter": "B",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
+      "blockLetter": "C",
+      "textSources": null,
+      "tasks": [
+        "Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?"
+      ]
+    }
+  ],
+  "Lesson 5": [
+    {
+      "title": "Voices of Resistance: Equiano's Testimony",
+      "blockLetter": "A",
+      "textSources": [
+        "<strong>Source A:",
+        "<strong>Source B:",
+        "<strong>Source C:"
+      ],
+      "tasks": [
+        "Inferring Motive (Source [Y]): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
+        "Cross-Referencing Utility: How does Source C confirm that \"day-to-day\" resistance was real and effective, even when reported by a hostile white overseer?",
+        "Evaluating Significance (Equiano's Portrait & Source [X]): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?"
+      ]
+    },
+    {
+      "title": "Case Study: The Stono Rebellion (1739)",
+      "blockLetter": "D",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Side Quest: Obeah and Botanical Warfare",
+      "blockLetter": "E",
+      "textSources": null,
+      "tasks": [
+        "Study Source E. How does this botanical illustration help explain the secret power held by Obeah healers?"
+      ]
+    },
+    {
+      "title": "Historical Debates: What Truly Destroyed Slavery?",
+      "blockLetter": "F",
+      "textSources": null,
+      "tasks": [
+        "Study Source F. Why is it problematic to only teach about men like Wilberforce when studying the end of slavery?"
+      ]
+    }
+  ],
+  "Lesson 6": [
+    {
+      "title": "Macro-History: The Ideology of Empire",
+      "blockLetter": "A",
+      "textSources": null,
+      "tasks": [
+        "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?"
+      ]
+    },
+    {
+      "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
+      "blockLetter": "B",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Primary Source Analysis: The Dual Reality",
+      "blockLetter": "C",
+      "textSources": [
+        "<strong>Source C:"
+      ],
+      "tasks": [
+        "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?"
+      ]
+    },
+    {
+      "title": "Primary Source Analysis: The Dark Side",
+      "blockLetter": "D",
+      "textSources": [
+        "<strong>Source D:"
+      ],
+      "tasks": [
+        "Analyzing Audience & Purpose: Why would Henry Fielding (Source F), a London magistrate, exaggerate the chaos and crime in London in 1751?",
+        "Synthesis Challenge: Combine the insights from Sources E and F with your knowledge of the Atlantic Slave Trade to write a nuanced 3-sentence summary of British society in 1750."
+      ]
+    },
+    {
+      "title": "Urban Sprawl: Mapping 18th-Century London",
+      "blockLetter": "E",
+      "textSources": null,
+      "tasks": []
+    },
+    {
+      "title": "Side Quest: The Mudlarks of London",
+      "blockLetter": "F",
+      "textSources": [
+        "<strong>Source F:"
+      ],
+      "tasks": []
+    }
+  ]
+}

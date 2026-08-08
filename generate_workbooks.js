@@ -993,28 +993,7 @@ allDirs.forEach(unitId => {
     `;
   }
 
-  if (appendixData.length > 0) {
-      html += `<div style="page-break-before: always; padding: 20px;">`;
-      html += `<h2 style="text-align: center; font-size: 24pt; margin-bottom: 10px; font-family: 'Playfair Display', serif; color: #1a237e;">Appendix: Further Watching</h2>`;
-      html += `<p style="text-align: center; font-size: 11pt; margin-bottom: 15px; color: #475569;">Scan the QR codes below to watch historical documentaries and videos related to each lesson. Use these for independent revision or homework.</p>`;
-      
-      appendixData.forEach(appx => {
-          html += `<h3 style="margin-top: 30px; margin-bottom: 10px; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px;">${formatText(appx.title)}</h3>`;
-          html += `<div style="display: block; text-align: center;">`;
-          appx.videos.forEach(v => {
-              let qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(v.url)}`;
-              let vTitle = v.title || "Historical Video";
-              let vDuration = v.duration || "Short clip";
-              html += `<div style="width: 32%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 8px; padding-top: 10px; padding-bottom: 10px;   display: inline-block; vertical-align: top; margin: 1%; text-align: center;">
-                  <img src="${qrUrl}" style="width: 100px; height: 100px; margin-bottom: 15px; border: 1px solid #ccc; padding: 5px; background: white; ">
-                  <div style="font-weight: 600; font-size: 10.5pt; color: #1e293b; margin-bottom: 8px; line-height: 1.3;">${vTitle}</div>
-                  <div style="font-size: 9pt; color: #64748b; font-style: italic; margin-top: auto;">${vDuration}</div>
-              </div>`;
-          });
-          html += `</div>`;
-      });
-      html += `</div>`;
-  }
+  // QR Code Appendix removed per user request
 
   const genDate = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
   html += `<div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: ${genDate} | Unit: ${unitId}</div>`;
