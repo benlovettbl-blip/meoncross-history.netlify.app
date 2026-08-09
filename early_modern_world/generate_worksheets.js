@@ -170,7 +170,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
         ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
         <img src="${src}" alt="Primary Source" style="max-width: 100%; max-height: 250px; object-fit: contain; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
         ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-        ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
+        ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
       </div>
     `;
   }
@@ -232,6 +232,7 @@ unitData.lessons.forEach((lesson, lessonIndex) => {
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
             <img src="${src}" alt="Source">
             ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
+            ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${source.qNum ? source.qNum + '.' : ''} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
           </div>
         `;
       }
