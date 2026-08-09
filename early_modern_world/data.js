@@ -304,16 +304,14 @@ export const unitData = {
           ]
         },
         {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How does the vast wealth of Ming China and the Mali Empire in 1450 challenge the traditional idea that Europe was the only 'modern' or advanced civilization?",
-            "scaffolding": [
-              "Sentence Starter: Before 1450, many people assume Europe was the most advanced, but...",
-              "Sentence Starter: For example, the Ming Dynasty was highly modern because...",
-              "Sentence Starter: Similarly, the Mali Empire showed immense wealth when...",
-              "Key Vocabulary Checklist: Mansa Musa, Industrial Engine, Silk Road."
-            ]
-          }
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 11,
+              "text": "Lesson Reflection: Looking at the state of the world in 1450, why might a historian argue that Europe was actually on the periphery of global power rather than at its center?",
+              "model": "A strong answer should reference the immense wealth of the Ming Dynasty in China, the military dominance of the Ottoman Empire, or the vast riches of African kingdoms like Mali or Benin, contrasting these with the relative poverty, isolation, and basic agricultural lifestyle of European peasants."
+            }
+          ]
         },
         {
           "title": "Side Quest: The English Peasant's Pottage",
@@ -352,13 +350,15 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l1_banner.jpg",
-      "tasks": [
-        {
-          "qNum": 11,
-          "text": "Lesson Reflection: Looking at the state of the world in 1450, why might a historian argue that Europe was actually on the periphery of global power rather than at its center?",
-          "model": "A strong answer should reference the immense wealth of the Ming Dynasty in China, the military dominance of the Ottoman Empire, or the vast riches of African kingdoms like Mali or Benin, contrasting these with the relative poverty, isolation, and basic agricultural lifestyle of European peasants."
-        }
-      ]
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How does the vast wealth of Ming China and the Mali Empire in 1450 challenge the traditional idea that Europe was the only 'modern' or advanced civilization?",
+        "scaffolding": [
+          "Sentence Starter: Before 1450, many people assume Europe was the most advanced, but...",
+          "Sentence Starter: For example, the Ming Dynasty was highly modern because...",
+          "Sentence Starter: Similarly, the Mali Empire showed immense wealth when...",
+          "Key Vocabulary Checklist: Mansa Musa, Industrial Engine, Silk Road."
+        ]
+      }
     },
     {
       "id": "lesson_2",
@@ -520,17 +520,7 @@ export const unitData = {
               "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
             }
           ],
-          "source_letter": "C",
-          "hinge_question": {
-            "question": "Why did the Pope create the Treaty of Tordesillas (1494)?",
-            "options": [
-              "To encourage Protestant countries to explore.",
-              "To divide the newly 'discovered' lands between Catholic Spain and Portugal to prevent war.",
-              "To ban all European exploration of the Americas."
-            ],
-            "answer": 1,
-            "explanation": "The Pope wanted to prevent a war between two powerful Catholic nations."
-          }
+          "source_letter": "C"
         },
         {
           "title": "The Climax: The Spanish Armada (1588)",
@@ -562,8 +552,7 @@ export const unitData = {
               "question": "How useful is Source C to a historian studying Spanish attitudes toward English exploration in the 16th century?",
               "model_answer": "Source C is highly useful because it provides a direct, contemporary perspective from a Spanish captain. It reveals the intense religious animosity and legal perspective of the Spanish, who viewed English privateering not as legitimate exploration, but as heretical piracy and a direct assault on the Catholic Church."
             }
-          ],
-          "source_letter": "D"
+          ]
         },
         {
           "title": "Visual Analysis: The Armada Portrait (1588)",
@@ -598,16 +587,14 @@ export const unitData = {
           ]
         },
         {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** To what extent did the defeat of the Spanish Armada and the rise of joint-stock privateers lay the foundation for a 'modern' global empire?",
-            "scaffolding": [
-              "Sentence Starter: The defeat of the Spanish Armada was a turning point because...",
-              "Sentence Starter: Instead of just using the Royal Navy, the Queen used privateers to...",
-              "Sentence Starter: This laid the foundation for a modern empire by...",
-              "Key Vocabulary Checklist: Monopoly, Privateers, Sir Francis Drake."
-            ]
-          }
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 19,
+              "text": "Lesson Reflection: To what extent did the Protestant Reformation act as the primary catalyst for European expansion and global exploration during the 16th century?",
+              "model": "A strong answer should explain how the religious schism created fierce competition between Catholic nations (like Spain/Portugal) and Protestant nations (like England/Netherlands), driving them to seek new wealth, resources, and converts globally to fund their religious wars in Europe."
+            }
+          ]
         },
         {
           "title": "Side Quest: The Horrors of Scurvy",
@@ -634,7 +621,7 @@ export const unitData = {
               "model_answer": "The image shows severe degradation of the gums and teeth, highlighting the brutal physical decay scurvy caused in the mouth."
             }
           ],
-          "source_letter": "G"
+          "source_letter": "F"
         }
       ],
       "quiz": [
@@ -758,13 +745,15 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l2_banner.jpg",
-      "tasks": [
-        {
-          "qNum": 19,
-          "text": "Lesson Reflection: To what extent did the Protestant Reformation act as the primary catalyst for European expansion and global exploration during the 16th century?",
-          "model": "A strong answer should explain how the religious schism created fierce competition between Catholic nations (like Spain/Portugal) and Protestant nations (like England/Netherlands), driving them to seek new wealth, resources, and converts globally to fund their religious wars in Europe."
-        }
-      ]
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** To what extent did the defeat of the Spanish Armada and the rise of joint-stock privateers lay the foundation for a 'modern' global empire?",
+        "scaffolding": [
+          "Sentence Starter: The defeat of the Spanish Armada was a turning point because...",
+          "Sentence Starter: Instead of just using the Royal Navy, the Queen used privateers to...",
+          "Sentence Starter: This laid the foundation for a modern empire by...",
+          "Key Vocabulary Checklist: Monopoly, Privateers, Sir Francis Drake."
+        ]
+      }
     },
     {
       "id": "lesson_3",
@@ -915,17 +904,7 @@ export const unitData = {
               "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
             }
           ],
-          "source_letter": "A",
-          "hinge_question": {
-            "question": "How was the East India Company different from early colonies like Jamestown?",
-            "options": [
-              "It was run directly by the King.",
-              "It focused purely on capturing land for farming.",
-              "It was a wealthy, militarised corporation focused on controlling trade networks."
-            ],
-            "answer": 2,
-            "explanation": "The EIC was a powerful joint-stock company focused on trade, eventually building its own army."
-          }
+          "source_letter": "A"
         },
         {
           "title": "Justifying Empire: Religion vs. Profit",
@@ -946,8 +925,7 @@ export const unitData = {
               "question": "Which source is more useful to a historian studying the economic motivations behind early British overseas expansion?",
               "model_answer": "Source C is more useful for studying economic motivations because it directly addresses trade, taxes, and goods. Roe's journal reveals the practical realities and desperation of English merchants trying to secure a foothold in lucrative Asian markets. Source B is less useful for economics, as it primarily serves as religious propaganda to justify the Virginia Company's colonial charter."
             }
-          ],
-          "source_letter": "B"
+          ]
         },
         {
           "title": "Vocabulary Check: Building Empires",
@@ -1001,20 +979,14 @@ export const unitData = {
           ]
         },
         {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the creation of joint-stock companies (like the East India Company) make Britain financially 'modern', despite their brutal early struggles?",
-            "scaffolding": [
-              "Sentence Starter: Joint-stock companies were a very modern invention because they allowed merchants to...",
-              "Sentence Starter: The East India Company showed modern financial power by...",
-              "Sentence Starter: However, their early methods were often brutal, for example...",
-              "Key Vocabulary Checklist: Joint-stock, Mughal Empire, Investment."
-            ]
-          }
-        },
-        {
-          "title": "Plenary Check",
-          "text": "Let's test your understanding of how early trade turned into empire."
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 19,
+              "text": "Lesson Reflection: Based on the early encounters between Europeans and indigenous populations, how did initial trade relationships gradually transform into systems of imperial control and exploitation?",
+              "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew."
+            }
+          ]
         },
         {
           "title": "Side Quest: The Invasion of the Pigs",
@@ -1041,7 +1013,11 @@ export const unitData = {
               "model_answer": "It shows highly organized, neat fields of crops that were unfenced and integrated into the natural environment, leaving them vulnerable to roaming English livestock."
             }
           ],
-          "source_letter": "E"
+          "source_letter": "G"
+        },
+        {
+          "title": "Plenary Check",
+          "text": "Let's test your understanding of how early trade turned into empire."
         }
       ],
       "quiz": [
@@ -1165,13 +1141,6 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l3_banner.jpg",
-      "tasks": [
-        {
-          "qNum": 19,
-          "text": "Lesson Reflection: Based on the early encounters between Europeans and indigenous populations, how did initial trade relationships gradually transform into systems of imperial control and exploitation?",
-          "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew."
-        }
-      ],
       "video": [
         {
           "url": "https://era.org.uk/streaming-service-resource/roanoke-horrible-histories/",
@@ -1181,7 +1150,16 @@ export const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
           "title": "Joint-Stock Companies: Empire with David Olusoga"
         }
-      ]
+      ],
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the creation of joint-stock companies (like the East India Company) make Britain financially 'modern', despite their brutal early struggles?",
+        "scaffolding": [
+          "Sentence Starter: Joint-stock companies were a very modern invention because they allowed merchants to...",
+          "Sentence Starter: The East India Company showed modern financial power by...",
+          "Sentence Starter: However, their early methods were often brutal, for example...",
+          "Key Vocabulary Checklist: Joint-stock, Mughal Empire, Investment."
+        ]
+      }
     },
     {
       "id": "lesson_4",
@@ -1352,8 +1330,7 @@ export const unitData = {
               "question": "How reliable is Source B as an objective record of Charles I’s reign?",
               "model_answer": "Source B is highly unreliable as an objective record because it was written by [Key Individual: John Bradshaw], the President of the High Court trying the King. It is a highly biased political document designed to justify the predetermined outcome of executing Charles I, portraying him solely as a 'traitor' and 'tyrant'."
             }
-          ],
-          "source_letter": "B"
+          ]
         },
         {
           "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
@@ -1401,19 +1378,18 @@ export const unitData = {
               "question": "How useful are the two interpretations in Source F for understanding the long-term consequences of the English Civil War?",
               "model_answer": "Both interpretations in Source F are highly useful because they provide different, complementary perspectives on the war's consequences. Interpretation A is useful for understanding the political shift away from absolute monarchy, while Interpretation B is useful for understanding how that political stability enabled the massive economic expansion of the British Empire."
             }
-          ]
+          ],
+          "source_letter": "F"
         },
         {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** Did the execution of Charles I and the rise of Parliament make Britain's government truly 'modern', or just transfer power to wealthy merchants?",
-            "scaffolding": [
-              "Sentence Starter: In one way, the government became more modern because the absolute power of the King was...",
-              "Sentence Starter: The new Great Seal showed this change by...",
-              "Sentence Starter: However, some historians argue it wasn't truly modern for everyone, because...",
-              "Key Vocabulary Checklist: Absolute Monarchy, House of Commons, The Commonwealth."
-            ]
-          }
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 20,
+              "text": "Lesson Reflection: Considering the English Civil War and the rise of transatlantic trade, did political ideology or economic ambition play a greater role in shifting the balance of power in Britain?",
+              "model": "A strong answer could argue either way, provided it references the ideological battle between the Divine Right of Kings and Parliament's demand for liberties, while also acknowledging how the massive influx of wealth from the Atlantic trade empowered a new merchant class who demanded a greater say in government."
+            }
+          ]
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
@@ -1564,13 +1540,6 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l4_banner.jpg",
-      "tasks": [
-        {
-          "qNum": 20,
-          "text": "Lesson Reflection: Considering the English Civil War and the rise of transatlantic trade, did political ideology or economic ambition play a greater role in shifting the balance of power in Britain?",
-          "model": "A strong answer could argue either way, provided it references the ideological battle between the Divine Right of Kings and Parliament's demand for liberties, while also acknowledging how the massive influx of wealth from the Atlantic trade empowered a new merchant class who demanded a greater say in government."
-        }
-      ],
       "sources": [
         {
           "title": "The East Offering its Riches to Britannia (1778)",
@@ -1579,7 +1548,16 @@ export const unitData = {
           "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
           "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
         }
-      ]
+      ],
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** Did the execution of Charles I and the rise of Parliament make Britain's government truly 'modern', or just transfer power to wealthy merchants?",
+        "scaffolding": [
+          "Sentence Starter: In one way, the government became more modern because the absolute power of the King was...",
+          "Sentence Starter: The new Great Seal showed this change by...",
+          "Sentence Starter: However, some historians argue it wasn't truly modern for everyone, because...",
+          "Key Vocabulary Checklist: Absolute Monarchy, House of Commons, The Commonwealth."
+        ]
+      }
     },
     {
       "id": "lesson_5",
@@ -1667,18 +1645,7 @@ export const unitData = {
               "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
             }
           ],
-          "source_letter": "B",
-          "hinge_question": {
-            "question": "Which of the following best describes the 'Middle Passage'?",
-            "options": [
-              "The journey of manufactured goods from Europe to Africa.",
-              "The brutal forced voyage of enslaved Africans across the Atlantic.",
-              "The transport of sugar and tobacco from the Americas to Europe.",
-              "The overland trade routes within the African continent."
-            ],
-            "answer": 1,
-            "explanation": "The Middle Passage specifically refers to the horrific voyage across the Atlantic Ocean where millions of enslaved Africans were transported to the Americas in horrific conditions."
-          }
+          "source_letter": "B"
         },
         {
           "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
@@ -1726,18 +1693,6 @@ export const unitData = {
               "model_answer": "While Britain had modern financial systems (banks, stock exchanges) and global trade, this wealth was built entirely on chattel slavery. Treating millions of African human beings as property to be tortured and exploited for sugar profits shows that society was deeply un-modern and brutal."
             }
           ]
-        },
-        {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the Transatlantic Slave Trade expose the dark contradiction between Britain's 'modern' economic wealth and its brutal, un-modern social exploitation?",
-            "scaffolding": [
-              "Sentence Starter: The Transatlantic Slave Trade created massive 'modern' wealth for Britain by...",
-              "Sentence Starter: However, this wealth was built on deeply un-modern and brutal practices, such as...",
-              "Sentence Starter: The conditions in the barracoons and ships proved that...",
-              "Key Vocabulary Checklist: Triangular Trade, Barracoons, Chattel Slavery."
-            ]
-          }
         },
         {
           "title": "Plenary Check",
@@ -1921,6 +1876,15 @@ export const unitData = {
             "answer": "Parliament (led by Oliver Cromwell's New Model Army)"
           }
         ]
+      },
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the Transatlantic Slave Trade expose the dark contradiction between Britain's 'modern' economic wealth and its brutal, un-modern social exploitation?",
+        "scaffolding": [
+          "Sentence Starter: The Transatlantic Slave Trade created massive 'modern' wealth for Britain by...",
+          "Sentence Starter: However, this wealth was built on deeply un-modern and brutal practices, such as...",
+          "Sentence Starter: The conditions in the barracoons and ships proved that...",
+          "Key Vocabulary Checklist: Triangular Trade, Barracoons, Chattel Slavery."
+        ]
       }
     },
     {
@@ -1992,17 +1956,7 @@ export const unitData = {
               "image_caption": "A 1775 map of Jamaica by Thomas Jefferys. The island's rugged, mountainous interior provided sanctuary for Maroon communities—escaped enslaved Africans who waged a highly successful, decades-long guerrilla war against British colonial forces.",
               "source_letter": "B"
             }
-          ],
-          "hinge_question": {
-            "question": "Why is it historically inaccurate to view enslaved Africans simply as passive victims?",
-            "options": [
-              "Because slavery only lasted for a short time.",
-              "Because there was continuous resistance, from mutinies on ships to guerrilla wars led by Maroons.",
-              "Because the British government eventually banned it."
-            ],
-            "answer": 1,
-            "explanation": "Enslaved people constantly fought back, preserving their humanity and actively resisting."
-          }
+          ]
         },
         {
           "title": "The Spectrum of Resistance: How Enslaved People Fought Back",
@@ -2038,8 +1992,7 @@ export const unitData = {
               "question": "Evaluating Significance (Equiano's Portrait & Source A): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?",
               "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
             }
-          ],
-          "source_letter": "A"
+          ]
         },
         {
           "title": "Case Study: The Stono Rebellion (1739)",
@@ -2104,22 +2057,6 @@ export const unitData = {
           "source_letter": "F"
         },
         {
-          "title": "Synoptic Challenge (Extension)",
-          "extended": {
-            "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the continuous resistance of enslaved Africans prove that 'modernity' and freedom were not gifts given by Europeans, but rights fought for by the oppressed?",
-            "scaffolding": [
-              "Sentence Starter: Enslaved Africans did not just wait for Europeans to free them; instead they...",
-              "Sentence Starter: One clear example of this resistance was...",
-              "Sentence Starter: This proves that the push for 'modern' human rights actually came from...",
-              "Key Vocabulary Checklist: The Stono Rebellion, Equiano, Day-to-day resistance."
-            ]
-          }
-        },
-        {
-          "title": "Plenary Check",
-          "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade."
-        },
-        {
           "title": "Side Quest: Obeah and Botanical Warfare",
           "image": "/images/sidequest_cassava.jpg",
           "image_alt": "18th-century botanical illustration of the Cassava root",
@@ -2149,6 +2086,10 @@ export const unitData = {
           ],
           "image_caption": "A botanical illustration of the cassava plant. Enslaved people frequently used their deep botanical knowledge of toxic plants to quietly poison their enslavers.",
           "source_letter": "E"
+        },
+        {
+          "title": "Plenary Check",
+          "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade."
         }
       ],
       "quiz": [
@@ -2297,6 +2238,15 @@ export const unitData = {
             "question": "Why was sugar known as a 'killer crop'?",
             "answer": "Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people."
           }
+        ]
+      },
+      "extended": {
+        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the continuous resistance of enslaved Africans prove that 'modernity' and freedom were not gifts given by Europeans, but rights fought for by the oppressed?",
+        "scaffolding": [
+          "Sentence Starter: Enslaved Africans did not just wait for Europeans to free them; instead they...",
+          "Sentence Starter: One clear example of this resistance was...",
+          "Sentence Starter: This proves that the push for 'modern' human rights actually came from...",
+          "Key Vocabulary Checklist: The Stono Rebellion, Equiano, Day-to-day resistance."
         ]
       }
     },
@@ -2656,16 +2606,14 @@ export const unitData = {
           ]
         },
         {
-          "title": "Final Assessment (16 marks)",
-          "extended": {
-            "question": "Using your essay plan above, you must now write your final synoptic essay answering the overarching unit enquiry. You will be graded on your ability to deploy specific historical facts, your analysis of 'modernity', and your ability to weigh up competing factors.\n\n**Task:** Write an essay answering the question: How 'modern' was Britain by 1750? (16 marks)",
-            "scaffolding": [
-              "Introduction: Define 'modernity' and outline your argument that Britain was a mix of modern finance/trade but deeply traditional social structures.",
-              "Paragraph 1: Explain the ways Britain was modern (e.g., Bank of England 1694, Parliament, Global Trade).",
-              "Paragraph 2: Explain the ways Britain was NOT modern (e.g., Bloody Code, Transatlantic Chattel Slavery, Women's lack of legal rights, extreme poverty).",
-              "Conclusion: Summarise your final judgement on how 'modern' Britain truly was."
-            ]
-          }
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 17,
+              "text": "Lesson Reflection: Synthesizing everything you have learned in this unit, which development between 1450 and 1750 had the most profound impact on shaping the 'modern' world we live in today?",
+              "model": "A strong answer should select one major theme (e.g., the printing press accelerating knowledge, the Atlantic slave trade establishing global capitalism, or the shift of power from kings to parliaments) and justify why this specific change laid the foundational structures of the modern world."
+            }
+          ]
         },
         {
           "title": "Side Quest: The Mudlarks of London",
@@ -2704,13 +2652,15 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l6_banner.jpg",
-      "tasks": [
-        {
-          "qNum": 17,
-          "text": "Lesson Reflection: Synthesizing everything you have learned in this unit, which development between 1450 and 1750 had the most profound impact on shaping the 'modern' world we live in today?",
-          "model": "A strong answer should select one major theme (e.g., the printing press accelerating knowledge, the Atlantic slave trade establishing global capitalism, or the shift of power from kings to parliaments) and justify why this specific change laid the foundational structures of the modern world."
-        }
-      ]
+      "extended": {
+        "question": "Using your essay plan above, you must now write your final synoptic essay answering the overarching unit enquiry. You will be graded on your ability to deploy specific historical facts, your analysis of 'modernity', and your ability to weigh up competing factors.\n\n**Task:** Write an essay answering the question: How 'modern' was Britain by 1750? (16 marks)",
+        "scaffolding": [
+          "Introduction: Define 'modernity' and outline your argument that Britain was a mix of modern finance/trade but deeply traditional social structures.",
+          "Paragraph 1: Explain the ways Britain was modern (e.g., Bank of England 1694, Parliament, Global Trade).",
+          "Paragraph 2: Explain the ways Britain was NOT modern (e.g., Bloody Code, Transatlantic Chattel Slavery, Women's lack of legal rights, extreme poverty).",
+          "Conclusion: Summarise your final judgement on how 'modern' Britain truly was."
+        ]
+      }
     }
   ],
   "portraits": [

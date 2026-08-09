@@ -217,7 +217,8 @@ allDirs.forEach(unitId => {
     }
 
     html += `
-    <!-- Tracker Table now on front page -->
+    <!-- Tracker Table now on page 2 -->
+    <div style="page-break-before: always;"></div>
     <div style="margin: 30px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
@@ -513,43 +514,67 @@ allDirs.forEach(unitId => {
         let isSideQuest = finalRenderedText.includes('<details class="side-quest-box"');
         finalRenderedText = finalRenderedText.replace(/<\/details>/gi, '</div>'); // Close side-quest-box properly
         finalRenderedText = finalRenderedText.replace(/<summary[^>]*>(.*?)<\/summary>/gi, '<h3 style="color: #334155; margin-top: 0; font-size: 14pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px dashed #94a3b8; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; page-break-after: avoid; break-after: avoid;">$1</h3>');
-        html += `<div class="narrative-block" id="para-${bIdx+1}">${finalRenderedText}`;
         
-        if (block.hinge_question) {
-          html += `<div class="task-box" style=" ">`;
-          html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
-          html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
-          html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
-          block.hinge_question.options.forEach((opt, idx) => {
-            html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65+idx)}. ${opt}</li>`;
-          });
-          html += `</ul></div>`;
-        }
-        
-        if (block.tasks && block.tasks.length > 0) {
-          html += `<div class="task-box">`;
-          block.tasks.forEach(task => {
-            if (task.type === 'draw') {
-               html += `<div class="draw-task">Q${task.qNum}: ${task.text || task.question}</div>`;
-            } else {
-               if (task.type === 'vocab_match') {
-                  // Do nothing
-                } else {
-                  html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
-                }
-               let linesToDraw = 3;
-               let tText = (task.text || task.question || '').toLowerCase();
-               if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
-                  linesToDraw = 6;
-               }
-               for(let i=0; i<linesToDraw; i++) {
-                  html += `<div class="task-lines"></div>`;
-               }
+        let hasContent = finalRenderedText.trim() !== '' || block.hinge_question || (block.tasks && block.tasks.length > 0) || block.extended;
+        if (hasContent) {
+          html += `<div class="narrative-block" id="para-${bIdx+1}">`;
+          if (finalRenderedText.trim() !== '') {
+            html += finalRenderedText;
+          }
+          
+          if (block.hinge_question) {
+            html += `<div class="task-box" style=" ">`;
+            html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
+            html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
+            html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
+            block.hinge_question.options.forEach((opt, idx) => {
+              html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65+idx)}. ${opt}</li>`;
+            });
+            html += `</ul></div>`;
+          }
+          
+          if (block.extended && block.extended.question) {
+            html += `<div class="task-box" style="margin-bottom: 20px;">`;
+            html += `<p style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${block.extended.question}</p>`;
+            if (block.extended.scaffolding && block.extended.scaffolding.length > 0) {
+              html += `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">`;
+              block.extended.scaffolding.forEach(hint => {
+                html += `<li>${formatText(hint)}</li>`;
+              });
+              html += `</ul></div>`;
             }
-          });
-          html += `</div>`;
+            html += `<div style="min-height: 200px;">`;
+            for(let i=0; i<8; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div></div>`;
+          }
+          
+          if (block.tasks && block.tasks.length > 0) {
+            html += `<div class="task-box">`;
+            block.tasks.forEach(task => {
+              if (task.type === 'draw') {
+                 html += `<div class="draw-task">Q${task.qNum}: ${task.text || task.question}</div>`;
+              } else {
+                 if (task.type === 'vocab_match') {
+                    // Do nothing
+                  } else {
+                    html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
+                  }
+                 let linesToDraw = 3;
+                 let tText = (task.text || task.question || '').toLowerCase();
+                 if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
+                    linesToDraw = 6;
+                 }
+                 for(let i=0; i<linesToDraw; i++) {
+                    html += `<div class="task-lines"></div>`;
+                 }
+              }
+            });
+            html += `</div>`;
+          }
+          html += `</div>`; // Close narrative-block div
         }
-        html += `</div>`; // Close narrative-block div
       });
     }
 
