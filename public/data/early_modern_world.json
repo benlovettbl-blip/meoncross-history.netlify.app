@@ -225,8 +225,7 @@
                 "text": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
                 "model": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source B describes European rulers 'quaking with fear' at Ottoman military might, while Source C highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
               }
-            ],
-            "source_letter": "A"
+            ]
           },
           {
             "title": "Macro-History: The Wealth of the East",
@@ -251,8 +250,7 @@
             "tasks": [],
             "image_alt": "Fresco of the Siege of Constantinople (1537)",
             "image_context": "Observe the massive defensive walls of the city being breached by Ottoman cannons. The fall of Constantinople was a seismic shock to Christian Europe, not just religiously, but economically. With the Ottoman Empire now controlling the vital land routes to Asia, European merchants were suddenly cut off from the lucrative Silk Road. **Hinge Question:** How did the fall of this city directly force Europeans to begin exploring the oceans?",
-            "image_caption": "A 1537 fresco from the Moldovița Monastery in Romania depicting the 1453 Siege of Constantinople. The fall of the city to the Ottoman Turks severely disrupted European access to the Silk Road, forcing Christian nations to seek alternative maritime routes to Asia.",
-            "source_letter": "C"
+            "image_caption": "A 1537 fresco from the Moldovița Monastery in Romania depicting the 1453 Siege of Constantinople. The fall of the city to the Ottoman Turks severely disrupted European access to the Silk Road, forcing Christian nations to seek alternative maritime routes to Asia."
           },
           {
             "title": "West Africa: Kingdoms of Gold and Brass",
@@ -275,8 +273,7 @@
           {
             "title": "Analyzing the Evidence: The Wealth of West Africa",
             "text": "<div class='scaffold-box'><strong>Source D: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>",
-            "tasks": [],
-            "source_letter": "D"
+            "tasks": []
           },
           {
             "title": "The Silk Road & Ming China: The World's Industrial Engine",
@@ -285,8 +282,7 @@
             "tasks": [],
             "image_alt": "Map of the Silk Road Trade Routes",
             "image_context": "Trace the sprawling network of red lines stretching from China, across Central Asia, and into the Mediterranean. Before the era of global maritime empires, this was the economic superhighway of the world. Europe was merely a peripheral terminus at the far western edge of this vast Eurasian trading system, entirely dependent on Asian and Middle Eastern middlemen. **Hinge Question:** Why was controlling these overland routes so incredibly profitable for empires like the Ottomans?",
-            "image_caption": "A modern historical map illustrating the vast network of Eurasian trade routes known as the Silk Road. Before 1450, these overland routes were the primary arteries for luxury goods, spices, and technologies flowing from Asia into the Mediterranean.",
-            "source_letter": "E"
+            "image_caption": "A modern historical map illustrating the vast network of Eurasian trade routes known as the Silk Road. Before 1450, these overland routes were the primary arteries for luxury goods, spices, and technologies flowing from Asia into the Mediterranean."
           },
           {
             "title": "Historical Interpretations: The Eurocentric Myth",
@@ -296,11 +292,6 @@
                 "type": "debate",
                 "text": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
                 "model": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
-              },
-              {
-                "type": "comprehension",
-                "question": "Synoptic Reflection: Based on what you have learned today, how 'modern' was the world outside of Europe in 1450 compared to Europe?",
-                "model_answer": "In 1450, the non-European world was highly advanced and 'modern'. Empires like the Ottomans had massive military power, China had invented gunpowder and printing long before Europe, and African kingdoms controlled vast global wealth. By contrast, Europe was an isolated, poorer region on the edge of the global trading system."
               }
             ]
           },
@@ -320,23 +311,13 @@
             "tasks": [
               {
                 "type": "comprehension",
-                "question": "What was the main diet of an ordinary English peasant in 1450?",
-                "model_answer": "Their main diet was 'pottage', a bland, thick stew made of boiled cabbage, peas, and oats."
-              },
-              {
-                "type": "comprehension",
-                "question": "How does this peasant's life contrast with the wealth of the Oba of Benin or the Ming Emperor?",
-                "model_answer": "Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut shared with animals."
+                "question": "How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
+                "model_answer": "Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive."
               },
               {
                 "type": "comprehension",
                 "question": "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
                 "model_answer": "It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages."
-              },
-              {
-                "type": "comprehension",
-                "question": "Study Source F. How does this visual source support the idea that everyday life for a peasant was a brutal struggle?",
-                "model_answer": "The source illustrates peasants performing intense manual agricultural labor, emphasizing that their lives revolved around grueling physical work just to produce enough food to survive."
               }
             ],
             "source_letter": "F"
