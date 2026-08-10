@@ -1,0 +1,17 @@
+const fs = require('fs');
+const path = require('path');
+
+const dataPath = path.join(__dirname, '../early_modern_world/data.js');
+let txt = fs.readFileSync(dataPath, 'utf8');
+
+const regex = /Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\\"border: 1px solid #cbd5e1;[\s\S]*?<\/div><\/div>/g;
+
+const newHTML = `Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\\"display: flex; gap: 15px; margin-top: 15px;\\">    <div style=\\"flex: 1; padding: 25px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;\\">        <h3 style=\\"margin-top: 0; color: #059669; text-align: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;\\">Argument A: Global Wealth (Modern)</h3>        <h4 style=\\"color: #047857; margin-bottom: 5px;\\">Britain Was Superbly \\"Modern\\" by 1750</h4>        <ul style=\\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #064e3b;\\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div style=\\"flex: 1; padding: 25px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px;\\">        <h3 style=\\"margin-top: 0; color: #dc2626; text-align: center; border-bottom: 2px solid #fecaca; padding-bottom: 10px;\\">Argument B: Domestic Reality (Un-Modern)</h3>        <h4 style=\\"color: #b91c1c; margin-bottom: 5px;\\">Britain Remained Profoundly \\"Un-Modern\\" by 1750</h4>        <ul style=\\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #7f1d1d;\\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \\"Bloody Code\\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \\"modernity\\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>`;
+
+if (regex.test(txt)) {
+  txt = txt.replace(regex, newHTML);
+  fs.writeFileSync(dataPath, txt, 'utf8');
+  console.log('Successfully replaced argBtn tabs with side-by-side flex layout using regex.');
+} else {
+  console.log('Error: Regex did not match any content.');
+}
