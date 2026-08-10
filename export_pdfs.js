@@ -30,7 +30,7 @@ if (!fs.existsSync(pdfsDir)){
     for (const file of files) {
       const htmlPath = path.join(unitDir, file);
       console.log('Generating PDF for ' + unit + '/' + file + '...');
-      await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0', timeout: 90000 });
+      await page.goto('file://' + htmlPath, { waitUntil: 'domcontentloaded', timeout: 60000 });
       const pdfFileName = unit + '_' + file.replace('.html', '.pdf');
       const pdfPath = path.join(pdfsDir, pdfFileName);
       await page.pdf({

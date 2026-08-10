@@ -209,16 +209,41 @@ export const unitData = {
           "text": "In May 1453, a Venetian merchant named [Key Individual: Niccolò Barbaro] stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old [Key Individual: Sultan Mehmed II] of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
           "tasks": [
             {
-              "type": "text",
-              "text": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
-              "model": "The fall of Constantinople meant that the Ottoman Empire now controlled the vital crossroads linking Europe to the Silk Road and Indian Ocean trade. This gave the Ottomans the power to block or heavily tax European merchants."
+              "type": "multiple_choice",
+              "text": "Knowledge Check: Review the events of 1450.",
+              "questions": [
+                {
+                  "q": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
+                  "options": [
+                    "It blocked the Silk Road trade routes",
+                    "It destroyed all European ships",
+                    "It ended the Renaissance",
+                    "It forced them to pay higher taxes to the Pope"
+                  ]
+                },
+                {
+                  "q": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                  "options": [
+                    "Europeans were forced to stay in small, confined trading posts",
+                    "Europeans owned the entire city of Canton",
+                    "The Chinese refused to trade entirely",
+                    "Europeans had stronger armies than the Ming Emperor"
+                  ]
+                }
+              ]
             }
           ]
         },
         {
           "title": "Analyzing the Evidence: The Fall of Constantinople",
           "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of [Key Individual: Sultan Mehmed II] entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>[Key Individual: Kritovoulos of Imbros]</strong>, a Greek scholar writing in 1454.</div><br><br>",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin.",
+              "lines": 10
+            }
+          ]
         },
         {
           "title": "Macro-History: The Wealth of the East",
@@ -291,7 +316,7 @@ export const unitData = {
           "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: [Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Peter Frankopan]]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
           "tasks": [
             {
-              "type": "debate",
+              "type": "think_pair_share",
               "text": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
               "model": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
             }
@@ -452,6 +477,16 @@ export const unitData = {
           "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, [Key Individual: John Hawkins], had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against [Key Individual: King Philip II] of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
           "tasks": [
             {
+              "type": "sorting",
+              "text": "Chronological Sort: Number these events from 1 to 4 in the order they happened.",
+              "events": [
+                "The Spanish Armada is defeated by the English fleet and bad weather.",
+                "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
+                "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
+                "The Pope splits the 'New World' between Spain and Portugal."
+              ]
+            },
+            {
               "type": "comprehension",
               "question": "Why did the Spanish attack Francis Drake and [Key Individual: John Hawkins] at San Juan de Ulúa despite having signed a truce?",
               "model_answer": "The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal."
@@ -482,7 +517,13 @@ export const unitData = {
           "title": "Examining the Evidence",
           "image": "/images/global_mercator.jpg",
           "image_alt": "Portrait of Gerardus Mercator (1574)",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Sketch the crescent formation of the Spanish Armada being attacked by English fireships.",
+              "lines": 10
+            }
+          ]
         },
         {
           "title": "Macro-History: The Reformation (1517)",
@@ -571,7 +612,7 @@ export const unitData = {
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
           "tasks": [
             {
-              "type": "comprehension",
+              "type": "think_pair_share",
               "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
               "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
             }
@@ -832,9 +873,17 @@ export const unitData = {
           "text": "In the winter of 1616, a 21-year-old Algonquin woman named Matoaka—popularly known as [Key Individual: Pocahontas]—arrived at the court of [Key Individual: King [Key Individual: King [Key Individual: King James I]]] in London.<br><br>She was dressed not in the traditional deer skins of her Powhatan homeland in North America, but in heavy English velvet, lace ruffles, and a tall felt hat. Rechristened \"Rebecca Rolfe\" following her conversion to Christianity and marriage to English tobacco planter [Key Individual: John Rolfe], she was brought to England by the <strong>Virginia Company</strong> as a living advertisement.<br><br>To the rich investors of London, Matoaka was proof that native populations in the \"New World\" could be tamed, converted, and integrated into a profitable English empire. But the reality back in North America was far grim. Matoaka had been kidnapped three years earlier by English colonists during a bloody border war. Within months of her court appearance in London, as she boarded a ship to return home, she fell ill and died at Gravesend on the River Thames.<br><br>Matoaka’s tragic life encapsulated the reality of early British expansion: what began as desperate, fragile trade encounters between unequal powers rapidly hardened into violent land seizures and permanent imperial domination.",
           "tasks": [
             {
-              "type": "comprehension",
+              "type": "cloze",
               "question": "Why was Matoaka brought to the court of King James I in London?",
-              "model_answer": "She was brought by the Virginia Company as a living advertisement to prove to rich investors that native populations could be converted to Christianity, civilized, and integrated into a profitable English empire."
+              "model_answer": "She was brought by the Virginia Company as a living advertisement to prove to rich investors that native populations could be converted to Christianity, civilized, and integrated into a profitable English empire.",
+              "text": "Fill in the blanks using the words provided to summarize the story of Matoaka (Pocahontas).",
+              "cloze_text": "Matoaka, often known as [Pocahontas], was brought to the court of King [James I] in London. The Virginia Company used her as a living piece of [propaganda] to convince wealthy investors that the indigenous people of America could be 'civilized' and [converted] to Christianity, hiding the brutal reality of the early colonial encounters.",
+              "words": [
+                "propaganda",
+                "James I",
+                "converted",
+                "Pocahontas"
+              ]
             }
           ],
           "images": [
@@ -868,6 +917,11 @@ export const unitData = {
               "type": "analysis",
               "question": "How did the funding of early English colonial expansion differ from the Spanish model?",
               "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
+            },
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses.",
+              "lines": 10
             }
           ]
         },
@@ -914,7 +968,7 @@ export const unitData = {
           "text": "<blockquote><strong>Historian Perspective A: [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir John Seeley]]] (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: [Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Shashi Tharoor]]] (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
           "tasks": [
             {
-              "type": "comprehension",
+              "type": "think_pair_share",
               "question": "How do Perspective A and Perspective B disagree on the origins of the British Empire?",
               "model_answer": "Perspective A argues the Empire was an \"accidental\" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible."
             }
@@ -1231,7 +1285,7 @@ export const unitData = {
           "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>[Key Individual: John Bradshaw]</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by [Key Individual: Martin Noell]</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: [Key Individual: Oliver Cromwell]’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
             {
-              "type": "source_analysis",
+              "type": "think_pair_share",
               "question": "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?",
               "model_answer": "Source B gives an official, ideological reason for victory, claiming Parliament was defending the laws of the land against a 'tyrannical' King. Source C reveals the hidden economic truth: Parliament won because of immense wealth generated by Barbados sugar, stating directly that without it, the 'New Model Army would starve for want of pay'."
             },
@@ -1571,7 +1625,7 @@ export const unitData = {
           "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong>[Key Individual: Charles II]</strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Christopher Hill]]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though [Key Individual: Charles II] returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Eric Williams]]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
           "tasks": [
             {
-              "type": "comprehension",
+              "type": "think_pair_share",
               "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
               "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
             }
@@ -1797,6 +1851,11 @@ export const unitData = {
               "type": "comprehension",
               "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
               "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
+            },
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point.",
+              "lines": 10
             }
           ]
         },
@@ -2185,16 +2244,22 @@ export const unitData = {
           "source_letter": "D",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
-              "model_answer": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors.",
-              "text": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
-              "model": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors."
-            },
-            {
-              "type": "comprehension",
-              "question": "What was the long-term consequence of the rebellion for enslaved people in South Carolina?",
-              "model_answer": "The panicked planters passed the brutal 1740 Negro Act, which heavily restricted the rights of enslaved people to assemble, earn money, or learn to read, in order to prevent future uprisings."
+              "type": "matching",
+              "text": "Match the aspects of the Stono Rebellion to their correct historical descriptions.",
+              "pairs": [
+                {
+                  "left": "The Cause",
+                  "right": "The Spanish promised freedom in Florida to any enslaved person who escaped."
+                },
+                {
+                  "left": "The Event",
+                  "right": "A group of 20 enslaved Africans broke into a store, armed themselves, and marched south beating drums."
+                },
+                {
+                  "left": "The Consequence",
+                  "right": "The British planters passed the brutal Negro Act of 1740, heavily restricting movement, assembly, and education."
+                }
+              ]
             }
           ]
         },
@@ -2209,7 +2274,7 @@ export const unitData = {
           "source_letter": "F",
           "tasks": [
             {
-              "type": "comprehension",
+              "type": "think_pair_share",
               "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
               "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
             },
@@ -2217,6 +2282,11 @@ export const unitData = {
               "type": "comprehension",
               "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
               "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
+            },
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.",
+              "lines": 10
             }
           ]
         },
@@ -2657,7 +2727,24 @@ export const unitData = {
         },
         {
           "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
-          "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"display: flex; gap: 15px; margin-top: 15px;\">    <div style=\"flex: 1; padding: 25px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #059669; text-align: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;\">Argument A: Global Wealth (Modern)</h3>        <h4 style=\"color: #047857; margin-bottom: 5px;\">Britain Was Superbly \"Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #064e3b;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div style=\"flex: 1; padding: 25px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #dc2626; text-align: center; border-bottom: 2px solid #fecaca; padding-bottom: 10px;\">Argument B: Domestic Reality (Un-Modern)</h3>        <h4 style=\"color: #b91c1c; margin-bottom: 5px;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #7f1d1d;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>"
+          "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"display: flex; gap: 15px; margin-top: 15px;\">    <div style=\"flex: 1; padding: 25px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #059669; text-align: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;\">Argument A: Global Wealth (Modern)</h3>        <h4 style=\"color: #047857; margin-bottom: 5px;\">Britain Was Superbly \"Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #064e3b;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div style=\"flex: 1; padding: 25px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #dc2626; text-align: center; border-bottom: 2px solid #fecaca; padding-bottom: 10px;\">Argument B: Domestic Reality (Un-Modern)</h3>        <h4 style=\"color: #b91c1c; margin-bottom: 5px;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #7f1d1d;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>",
+          "tasks": [
+            {
+              "type": "table_planner",
+              "text": "Assessment Planner: Structure your argument before you write your final essay.",
+              "columns": [
+                "Point (Your claim)",
+                "Evidence (Historical facts)",
+                "Explanation (Why this matters)"
+              ],
+              "rows": 3
+            },
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).",
+              "lines": 10
+            }
+          ]
         },
         {
           "title": "Analyzing Source B",
@@ -2678,7 +2765,7 @@ export const unitData = {
           "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source C: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote>",
           "tasks": [
             {
-              "type": "source_analysis",
+              "type": "think_pair_share",
               "question": "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?",
               "model_answer": "The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums."
             }
