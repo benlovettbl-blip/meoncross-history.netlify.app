@@ -250,19 +250,6 @@ export const unitData = {
           "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
         },
         {
-          "title": "Analyzing Source B",
-          "image": "/images/global_canton.jpg",
-          "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
-          "source_letter": "B",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-              "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
-            }
-          ]
-        },
-        {
           "title": "Macro-History: The Real Centers of Wealth in 1450",
           "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, [Key Individual: Sultan Mehmed II] controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded."
         },
@@ -483,16 +470,6 @@ export const unitData = {
           "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, [Key Individual: John Hawkins], had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against [Key Individual: King Philip II] of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
           "tasks": [
             {
-              "type": "sorting",
-              "text": "Chronological Sort: Number these events from 1 to 4 in the order they happened.",
-              "events": [
-                "The Spanish Armada is defeated by the English fleet and bad weather.",
-                "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
-                "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
-                "The Pope splits the 'New World' between Spain and Portugal."
-              ]
-            },
-            {
               "type": "comprehension",
               "question": "Why did the Spanish attack Francis Drake and [Key Individual: John Hawkins] at San Juan de Ulúa despite having signed a truce?",
               "model_answer": "The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal."
@@ -626,7 +603,17 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
               "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
-            }
+            },
+            {
+              "type": "sorting",
+              "text": "Chronological Sort: Number these events from 1 to 4 in the order they happened.",
+              "events": [
+                "The Spanish Armada is defeated by the English fleet and bad weather.",
+                "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
+                "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
+                "The Pope splits the 'New World' between Spain and Portugal."
+              ]
+            },
           ],
           "source_letter": "F"
         }
@@ -2192,6 +2179,11 @@ export const unitData = {
               "type": "comprehension",
               "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
               "model_answer": "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties."
+            },
+            {
+              "type": "drawing",
+              "text": "Visual Mapping: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.",
+              "lines": 10
             }
           ],
           "images": [
@@ -2303,11 +2295,6 @@ export const unitData = {
               "type": "comprehension",
               "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
               "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
-            },
-            {
-              "type": "drawing",
-              "text": "Visual Mapping: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.",
-              "lines": 10
             }
           ]
         },
@@ -2756,16 +2743,6 @@ export const unitData = {
           "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"display: flex; gap: 15px; margin-top: 15px;\">    <div style=\"flex: 1; padding: 25px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #059669; text-align: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;\">Argument A: Global Wealth (Modern)</h3>        <h4 style=\"color: #047857; margin-bottom: 5px;\">Britain Was Superbly \"Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #064e3b;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div style=\"flex: 1; padding: 25px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px;\">        <h3 style=\"margin-top: 0; color: #dc2626; text-align: center; border-bottom: 2px solid #fecaca; padding-bottom: 10px;\">Argument B: Domestic Reality (Un-Modern)</h3>        <h4 style=\"color: #b91c1c; margin-bottom: 5px;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h4>        <ul style=\"line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #7f1d1d;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>",
           "tasks": [
             {
-              "type": "table_planner",
-              "text": "Assessment Planner: Structure your argument before you write your final essay.",
-              "columns": [
-                "Point (Your claim)",
-                "Evidence (Historical facts)",
-                "Explanation (Why this matters)"
-              ],
-              "rows": 3
-            },
-            {
               "type": "drawing",
               "text": "Visual Mapping: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).",
               "lines": 10
@@ -2834,6 +2811,16 @@ export const unitData = {
           "title": "Synthesis Essay Planning Task",
           "text": "To conclude this entire 1450–1750 unit, you will write a 4-paragraph final essay answering the enquiry question: <strong>\"How 'modern' was Britain by 1750?\"</strong>",
           "tasks": [
+            {
+              "type": "table_planner",
+              "text": "Assessment Planner: Structure your argument before you write your final essay.",
+              "columns": [
+                "Point (Your claim)",
+                "Evidence (Historical facts)",
+                "Explanation (Why this matters)"
+              ],
+              "rows": 3
+            },
             {
               "type": "spectrum_mapper",
               "text": "Map these historical realities onto the spectrum below to plan your argument.",
