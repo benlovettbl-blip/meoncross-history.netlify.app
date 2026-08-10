@@ -2580,7 +2580,7 @@ export const unitData = {
       ],
       "title": "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
       "teacher_notes": {
-        "primer": "This is the final synoptic assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
+        "primer": "This is the final assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
         "objectives": [
           {
             "objective": "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
@@ -2593,7 +2593,7 @@ export const unitData = {
             "question": "How did the wealth of the British Empire contrast with the lives of the poor in London slums?"
           },
           {
-            "objective": "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750.",
+            "objective": "Construct a high-level, structured final essay evaluating the extent of Britain's 'modernity' by 1750.",
             "primer": "Direct students to the Essay Synthesis Builder at the bottom of the page to plan their 4-paragraph essay.",
             "question": "What is your nuanced overall judgment regarding Britain's modernity by 1750?"
           }
@@ -2627,8 +2627,8 @@ export const unitData = {
           "definition": "In history, the transition away from traditional, agricultural, feudal societies towards commercial, secular, and industrialized ones."
         },
         {
-          "term": "Synoptic",
-          "definition": "Taking a comprehensive mental view of a wide series of events across a long period of time."
+          "term": "Comprehensive",
+          "definition": "Taking a complete mental view of a wide series of events across a long period of time."
         },
         {
           "term": "National Debt",
@@ -2643,7 +2643,7 @@ export const unitData = {
           "definition": "The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes."
         }
       ],
-      "vocab_cloze_text": "To write a successful [Synoptic] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
+      "vocab_cloze_text": "To write a successful [Comprehensive] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
       "narrative_blocks": [
         {
           "title": "Micro-History: The Contrast of London Bridge (1750)",
@@ -2741,7 +2741,7 @@ export const unitData = {
         },
         {
           "title": "Synthesis Essay Planning Task",
-          "text": "To conclude this entire 1450–1750 unit, you will write a 4-paragraph synoptic essay answering the enquiry question: <strong>\"How 'modern' was Britain by 1750?\"</strong>",
+          "text": "To conclude this entire 1450–1750 unit, you will write a 4-paragraph final essay answering the enquiry question: <strong>\"How 'modern' was Britain by 1750?\"</strong>",
           "tasks": [
             {
               "type": "spectrum_mapper",
@@ -2805,15 +2805,15 @@ export const unitData = {
         }
       ],
       "learning_objectives": {
-        "overarching": "How 'modern' was Britain by 1750? (Periodisation and synoptic essay synthesis)",
+        "overarching": "How 'modern' was Britain by 1750? (Periodisation and final essay synthesis)",
         "scaffolded": [
           "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
           "Synthesise domestic social realities with imperial/commercial expansion across the period 1450–1750.",
-          "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
+          "Construct a high-level, structured final essay evaluating the extent of Britain's 'modernity' by 1750."
         ]
       },
       "extended": {
-        "title": "Synoptic Assessment",
+        "title": "Final Assessment",
         "question": "How 'modern' was Britain by 1750?",
         "hints": [
           "Intro: Define modernity and state your overall argument (it was modern economically, but traditional socially).",

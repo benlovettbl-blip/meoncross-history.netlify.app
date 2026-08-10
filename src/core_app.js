@@ -2288,7 +2288,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       let gcseHtml = `
         <div class="phase-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${window.unitData && window.unitData.title && window.unitData.title.includes('KS3') ? 'Assessment Practice' : 'Assessment Practice'}</div>
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${(lesson.extended && lesson.extended.title) ? lesson.extended.title : 'Assessment Practice'}</div>
             <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
           </div>
       `;
