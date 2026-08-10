@@ -335,7 +335,16 @@
             "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450."
           ]
         },
-        "banner": "/images/early_mod_l1_banner.jpg"
+        "banner": "/images/early_mod_l1_banner.jpg",
+        "lesson_assessment": {
+          "question": "Explain why Europe was NOT the center of global wealth and power in 1450.",
+          "hints": "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
+          "sentence_starters": [
+            "In 1450, the true centers of global wealth were...",
+            "This was because they controlled...",
+            "By contrast, Europe was relatively isolated because..."
+          ]
+        }
       },
       {
         "id": "lesson_2",
@@ -694,7 +703,16 @@
             "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions."
           ]
         },
-        "banner": "/images/early_mod_l2_banner.jpg"
+        "banner": "/images/early_mod_l2_banner.jpg",
+        "lesson_assessment": {
+          "question": "How did the Protestant Reformation push England into global exploration and conflict with Spain?",
+          "hints": "Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.",
+          "sentence_starters": [
+            "When England became Protestant, it created conflict with Catholic Spain because...",
+            "To challenge Spain’s wealth in the New World, English monarchs encouraged...",
+            "This rivalry culminated in..."
+          ]
+        }
       },
       {
         "id": "lesson_3",
@@ -1053,7 +1071,16 @@
             "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
             "title": "Joint-Stock Companies: Empire with David Olusoga"
           }
-        ]
+        ],
+        "lesson_assessment": {
+          "question": "Explain how the creation of the East India Company (EIC) transformed British trade.",
+          "hints": "Mention joint-stock companies, monopolies, violence, and Asian spices/textiles.",
+          "sentence_starters": [
+            "Before the EIC, individual merchants struggled to trade in Asia because...",
+            "The EIC solved this by using a 'joint-stock' model, which meant...",
+            "However, they often used violence to secure a 'monopoly', allowing them to..."
+          ]
+        }
       },
       {
         "id": "lesson_4",
@@ -1375,7 +1402,16 @@
             "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
             "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
           }
-        ]
+        ],
+        "lesson_assessment": {
+          "question": "How did the English Civil War and the execution of Charles I change the balance of power?",
+          "hints": "Mention the Divine Right of Kings, Parliament, and Oliver Cromwell.",
+          "sentence_starters": [
+            "Before the Civil War, Charles I believed in the 'Divine Right of Kings', meaning...",
+            "However, Parliament challenged this by...",
+            "By executing the King in 1649, it proved that..."
+          ]
+        }
       },
       {
         "id": "lesson_5",
@@ -1660,7 +1696,16 @@
             "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
             "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
           }
-        ]
+        ],
+        "lesson_assessment": {
+          "question": "Explain how the 'Financial Revolution' (like the Bank of England) helped Britain build a modern empire.",
+          "hints": "Mention the National Debt, the Bank of England (1694), and funding the Royal Navy.",
+          "sentence_starters": [
+            "Following the Glorious Revolution, Britain created the Bank of England, which allowed the government to...",
+            "This 'National Debt' was crucial because...",
+            "Consequently, Britain could out-spend its rivals by building..."
+          ]
+        }
       },
       {
         "id": "lesson_6",
@@ -1978,6 +2023,15 @@
               "question": "Who won the English Civil War (1642-1651)?",
               "answer": "Parliament (led by Oliver Cromwell's New Model Army)"
             }
+          ]
+        },
+        "lesson_assessment": {
+          "question": "How did the Triangular Trade directly enrich British port cities?",
+          "hints": "Mention Bristol/Liverpool, manufactured goods, enslaved people, and sugar/tobacco.",
+          "sentence_starters": [
+            "The Triangular Trade enriched Britain through three main stages. Firstly...",
+            "Secondly, enslaved Africans were brutally transported to...",
+            "Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
           ]
         }
       },
@@ -2304,6 +2358,15 @@
               "question": "Why was sugar known as a 'killer crop'?",
               "answer": "Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people."
             }
+          ]
+        },
+        "lesson_assessment": {
+          "question": "Explain how the Jamaican Maroons successfully resisted British control.",
+          "hints": "Mention Nanny of the Maroons, guerrilla warfare, and the geography of Jamaica.",
+          "sentence_starters": [
+            "The Maroons were communities of...",
+            "They were able to successfully resist the British army because they used...",
+            "Ultimately, the British were forced to..."
           ]
         }
       },
@@ -2703,6 +2766,32 @@
           ]
         },
         "banner": "/images/early_mod_l6_banner.jpg"
+      },
+      {
+        "id": "lesson_9",
+        "title": "Model Essay: How 'modern' was Britain by 1750?",
+        "teacher_notes": {
+          "primer": "This lesson provides a high-quality model synoptic essay for students to read, analyze, and use as a benchmark for their own writing on the final unit enquiry.",
+          "objectives": [
+            {
+              "objective": "Analyze a model synoptic essay.",
+              "primer": "Read through the model essay with the class, highlighting how the author balances commercial modernity with social traditionalism.",
+              "question": "How does the model essay define 'modernity' in its introduction?"
+            }
+          ]
+        },
+        "do_now": {
+          "title": "Do Now: Essay Structure Recall",
+          "type": "text",
+          "text": "Before we read the model essay, remind me: What are the three key ingredients of a strong historical introduction?",
+          "model": "A strong historical introduction should: 1. Define the key terms of the question (e.g. 'modern'), 2. State a clear, overarching thesis or argument, 3. Briefly outline the main points that will be covered in the essay."
+        },
+        "narrative_blocks": [
+          {
+            "title": "Model Synoptic Essay: How 'modern' was Britain by 1750?",
+            "text": "By 1750, Britain stood at a fascinating crossroads in its history. On the surface, the nation appeared to be rapidly modernizing, driven by a financial revolution, constitutional government, and an explosive expansion into global trade. However, to label Britain as a fully 'modern' state by this point would be a significant oversimplification. Beneath the veneer of commercial success and Enlightenment science lay deeply traditional, brutal, and unequal social realities. Therefore, while Britain’s economy and global reach were distinctly modern, its domestic social structures and imperial methods remained rooted in exploitation and ancient hierarchies.<br><br>On one hand, Britain’s financial and commercial systems had become undeniably modern by 1750. The establishment of the Bank of England in 1694 created a sophisticated system of national debt and paper credit, allowing the state to fund massive wars and infrastructure projects without instantly bankrupting the Crown. Furthermore, London had transformed into the bustling financial hub of the world. Global joint-stock companies, such as the East India Company, operated highly complex, intercontinental trade networks, bringing luxury goods like tea, silk, and sugar to a growing, wealthy middle class. The rise of coffee house culture in London fostered a new 'public sphere' where men debated politics, science, and Enlightenment philosophy, demonstrating a society moving rapidly away from medieval feudalism toward modern capitalism.<br><br>However, this modern economic surface was built upon profoundly un-modern, traditional, and often brutal foundations. The immense wealth flowing into Britain from the Caribbean was generated by the transatlantic chattel slave trade—a system that treated millions of human beings as disposable property rather than people with rights. Domestically, the social hierarchy was just as rigid. The legal system, known as the 'Bloody Code', was heavily weighted to protect the property of the wealthy elite, prescribing the death penalty for over 200 minor crimes, including stealing a loaf of bread. Meanwhile, women remained legally subservient to their husbands, and the urban poor—such as the desperate child 'Mudlarks' scavenging in the Thames—suffered in extreme, disease-ridden poverty. These deep inequalities reveal a society that lacked the modern concepts of universal human rights, democracy, and social welfare.<br><br>In conclusion, 1750 Britain was a paradoxical nation. It had successfully developed the financial, political, and commercial architecture of a modern capitalist state, allowing it to project unprecedented power across the globe. Yet, it completely lacked the social conscience and egalitarian structures that define true modernity today. Ultimately, Britain in 1750 was not a modern nation, but rather a traditional, highly unequal society that had discovered very modern, highly efficient ways to extract wealth."
+          }
+        ]
       }
     ],
     "portraits": [
