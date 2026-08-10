@@ -203,22 +203,22 @@ allDirs.forEach(unitId => {
     let appendixData = [];
 
     let trackerRows = '';
-    periodLessons.forEach(l => {
+    periodLessons.forEach((l, i) => {
       let maxScore = 5;
       if (l.do_now && l.do_now.items) maxScore = l.do_now.items.length;
       
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
       }
     });
 
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr><td style="border:1px solid #333; padding:4px;">${a.title}</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>`;
+        trackerRows += `<tr style="height: 50px;"><td style="border:1px solid #333; padding:12px 6px; font-weight:bold; background:#e2e8f0;">Assessment: ${a.title}</td><td style="border:1px solid #333; padding:12px 6px;"></td><td style="border:1px solid #333; padding:12px 6px;"></td><td style="border:1px solid #333; padding:12px 6px;"></td></tr>`;
       });
     }
 
@@ -279,25 +279,19 @@ allDirs.forEach(unitId => {
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
-            <th style="border: 1px solid #333; padding: 6px; width: 25%;">Progress & Assessment Tracker</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Do Now</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 6%; text-align: center;">RAG</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Effort</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Level</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 20%;">WWW (What Went Well)</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 23%;">EBI (Even Better If)</th>
+            <th style="border: 1px solid #333; padding: 12px 6px; width: 35%;">Progress & Assessment Tracker</th>
+            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Effort</th>
+            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Level</th>
+            <th style="border: 1px solid #333; padding: 12px 6px; width: 45%;">Teacher Comments</th>
           </tr>
         </thead>
         <tbody>
           ${trackerRows}
-          <tr style=" font-weight: bold;">
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; text-align: right;">Final Unit Grade:</td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
+          <tr style=" font-weight: bold; height: 50px;">
+            <td style="border: 1px solid #333; padding: 12px 6px; text-align: right;">Final Unit Grade:</td>
+            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
+            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
+            <td style="border: 1px solid #333; padding: 12px 6px;"></td>
           </tr>
         </tbody>
       </table>
@@ -670,7 +664,7 @@ allDirs.forEach(unitId => {
                  return;
               }
               if (task.type === 'think_pair_share') {
-                 html += `<div class="task-box" style="box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+                 html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ''} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ''}</h4>`;
                  html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
                    <thead><tr>
@@ -879,7 +873,7 @@ allDirs.forEach(unitId => {
              return;
         }
         if (task.type === 'think_pair_share') {
-             html += `<div class="task-box" style="box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+             html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
              html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || (tIdx + 1)} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ''}</h4>`;
              html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
                <thead><tr>
