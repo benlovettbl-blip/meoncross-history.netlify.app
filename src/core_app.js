@@ -2296,7 +2296,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       if (lesson.extended && lesson.extended.question) {
         let hintsHtml = '';
         if (lesson.extended.hints && lesson.extended.hints.length > 0) {
-           hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">${lesson.extended.hints.map(h => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
+           hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${lesson.extended.hints.map(h => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
         }
 
         let sourceHtml = '';

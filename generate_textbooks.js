@@ -751,7 +751,8 @@ allDirs.forEach(unitId => {
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-      html += `<h2 style="margin-top: 0;">GCSE Exam Practice</h2>`;
+      let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
+      html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
 
       const renderLines = (text) => {
           if (text.includes("16 marks")) {
