@@ -271,7 +271,13 @@ export const unitData = {
           "image": "/images/ottoman_1453.jpg",
           "image_alt": "Fresco of the Siege of Constantinople (1537)",
           "source_letter": "C",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "analysis",
+              "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+              "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
+            }
+          ]
         },
         {
           "title": "West Africa: Kingdoms of Gold and Brass",
@@ -546,6 +552,11 @@ export const unitData = {
           "image_alt": "Map of the Treaty of Tordesillas (1494)",
           "source_letter": "C",
           "tasks": [
+            {
+              "type": "analysis",
+              "question": "Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?",
+              "model_answer": "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly."
+            },
             {
               "type": "analysis",
               "question": "How did Queen Elizabeth I use privateers as a strategic tool against Spain?",
@@ -2244,6 +2255,11 @@ export const unitData = {
           "source_letter": "D",
           "tasks": [
             {
+              "type": "analysis",
+              "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
+              "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
+            },
+            {
               "type": "matching",
               "text": "Match the aspects of the Stono Rebellion to their correct historical descriptions.",
               "pairs": [
@@ -2273,6 +2289,11 @@ export const unitData = {
           "image_alt": "Portrait of [Key Individual: William Wilberforce], a British politician and abolitionist",
           "source_letter": "F",
           "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Compare Source F with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source F when trying to understand how and why the slave trade was eventually abolished?",
+              "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
+            },
             {
               "type": "think_pair_share",
               "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
@@ -2309,6 +2330,11 @@ export const unitData = {
           "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
           "tasks": [
+            {
+              "type": "analysis",
+              "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
+              "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
+            },
             {
               "type": "comprehension",
               "question": "Why might psychological and chemical resistance have been just as effective as armed rebellion?",
@@ -2786,11 +2812,17 @@ export const unitData = {
         },
         {
           "title": "Urban Sprawl: Mapping 18th-Century London",
-          "image": "/images/turnpike_map.jpg",
+          "image": "/images/rocque_map.jpg",
           "image_alt": "John Rocque's Map of London (1746)",
           "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
           "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "analysis",
+              "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+              "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
+            }
+          ],
           "source_letter": "E"
         },
         {
