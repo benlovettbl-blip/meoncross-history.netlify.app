@@ -601,9 +601,90 @@ allDirs.forEach(unitId => {
           if (block.tasks && block.tasks.length > 0) {
             html += `<div class="task-box">`;
             block.tasks.forEach(task => {
-              if (task.type === 'draw') {
-                 html += `<div class="draw-task">Q${task.qNum}: ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ''}</div>`;
-              } else {
+              if (task.type === 'drawing' || task.type === 'draw') {
+                 html += `<div class="task-box" style="margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px;">`;
+                 html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || ''} ${task.text || task.question}</h4>`;
+                 html += `<div style="height: 250px;"></div>`;
+                 html += `</div>`;
+                 return;
+              }
+              if (task.type === 'multiple_choice') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}</h4>`;
+                 task.questions.forEach((q, qIdx) => {
+                   html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx+1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+                   q.options.forEach(opt => {
+                     html += `<li style="margin-bottom: 5px;"><div style="display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:8px; position:relative; top:2px;"></div>${opt}</li>`;
+                   });
+                   html += `</ul>`;
+                 });
+                 html += `</div>`;
+                 return;
+              }
+              if (task.type === 'sorting') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}</h4>`;
+                 html += `<ul style="list-style-type:none; padding-left:0;">`;
+                 task.events.forEach(ev => {
+                   html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+                 });
+                 html += `</ul></div>`;
+                 return;
+              }
+              if (task.type === 'cloze') {
+                 let cloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '______________');
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}</h4>`;
+                 html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(' | ')}</p>`;
+                 html += `<p style="line-height: 2;">${cloze}</p>`;
+                 html += `</div>`;
+                 return;
+              }
+              if (task.type === 'matching') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}</h4>`;
+                 html += `<table style="width:100%; border:none;"><tbody>`;
+                 const rightMixed = [...task.pairs].sort(() => Math.random() - 0.5);
+                 task.pairs.forEach((p, i) => {
+                   html += `<tr>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${p.left}</td>
+                     <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${rightMixed[i].right}</td>
+                   </tr>`;
+                 });
+                 html += `</tbody></table></div>`;
+                 return;
+              }
+              if (task.type === 'table_planner') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}</h4>`;
+                 html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+                 task.columns.forEach(c => { html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`; });
+                 html += `</tr></thead><tbody>`;
+                 for(let i=0; i<task.rows; i++) {
+                   html += `<tr>`;
+                   task.columns.forEach(() => { html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`; });
+                   html += `</tr>`;
+                 }
+                 html += `</tbody></table></div>`;
+                 return;
+              }
+              if (task.type === 'think_pair_share') {
+                 html += `<div class="task-box" style="border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+                 html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ''} ${task.text || task.question}</h4>`;
+                 html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+                   <thead><tr>
+                     <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
+                     <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
+                   </tr></thead>
+                   <tbody><tr>
+                     <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                     <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                   </tr></tbody>
+                 </table></div>`;
+                 return;
+              }
+              if (false) {
                  if (task.type === 'vocab_match') {
                     // Do nothing
                   } else {
@@ -726,6 +807,90 @@ allDirs.forEach(unitId => {
              }
              html += `</div>`;
 
+             return;
+        }
+
+        if (task.type === 'drawing' || task.type === 'draw') {
+             html += `<div class="task-box" style="margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px;">`;
+             html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || (tIdx + 1)} ${task.text || task.question}</h4>`;
+             html += `<div style="height: 250px;"></div>`;
+             html += `</div>`;
+             return;
+        }
+        if (task.type === 'multiple_choice') {
+             html += `<div class="task-box">`;
+             html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
+             task.questions.forEach((q, qIdx) => {
+               html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx+1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+               q.options.forEach(opt => {
+                 html += `<li style="margin-bottom: 5px;"><div style="display:inline-block; width:12px; height:12px; border:1px solid #000; margin-right:8px; position:relative; top:2px;"></div>${opt}</li>`;
+               });
+               html += `</ul>`;
+             });
+             html += `</div>`;
+             return;
+        }
+        if (task.type === 'sorting') {
+             html += `<div class="task-box">`;
+             html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
+             html += `<ul style="list-style-type:none; padding-left:0;">`;
+             task.events.forEach(ev => {
+               html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+             });
+             html += `</ul></div>`;
+             return;
+        }
+        if (task.type === 'cloze') {
+             let cloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '______________');
+             html += `<div class="task-box">`;
+             html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
+             html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(' | ')}</p>`;
+             html += `<p style="line-height: 2;">${cloze}</p>`;
+             html += `</div>`;
+             return;
+        }
+        if (task.type === 'matching') {
+             html += `<div class="task-box">`;
+             html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
+             html += `<table style="width:100%; border:none;"><tbody>`;
+             const rightMixed = [...task.pairs].sort(() => Math.random() - 0.5);
+             task.pairs.forEach((p, i) => {
+               html += `<tr>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${p.left}</td>
+                 <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${rightMixed[i].right}</td>
+               </tr>`;
+             });
+             html += `</tbody></table></div>`;
+             return;
+        }
+        if (task.type === 'table_planner') {
+             html += `<div class="task-box">`;
+             html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
+             html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+             task.columns.forEach(c => { html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`; });
+             html += `</tr></thead><tbody>`;
+             for(let i=0; i<task.rows; i++) {
+               html += `<tr>`;
+               task.columns.forEach(() => { html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`; });
+               html += `</tr>`;
+             }
+             html += `</tbody></table></div>`;
+             return;
+        }
+        if (task.type === 'think_pair_share') {
+             html += `<div class="task-box" style="border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+             html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || (tIdx + 1)} ${task.text || task.question}</h4>`;
+             html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+               <thead><tr>
+                 <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
+                 <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
+               </tr></thead>
+               <tbody><tr>
+                 <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                 <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+               </tr></tbody>
+             </table></div>`;
              return;
         }
 

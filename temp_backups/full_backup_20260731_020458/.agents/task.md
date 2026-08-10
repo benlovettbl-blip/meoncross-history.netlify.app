@@ -1,5 +1,0 @@
-- [ ] Download Middle East Map SVG/PNG to `public/images/middle_east_map.png`.
-- [ ] Insert new "Lesson 0: Geography of the Middle East" into `public/units/cme_new/data.js` at the top of the `lessons` array.
-- [ ] Add the new lesson tab mapping in `public/units/cme_new/app.js` (if necessary, though `extract_units.js` might overwrite `app.js` from `src/core_app.js`, I'll check).
-- [ ] Run `npm run sync` to rebuild the database and the printed workbooks.
-- [ ] Check if the workbook for CME includes the map task.

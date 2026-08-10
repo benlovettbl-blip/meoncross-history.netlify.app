@@ -1969,6 +1969,101 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
                });
                return;
              }
+             if (task.type === 'multiple_choice') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text}</h4>
+                 ${task.questions.map((q, qIdx) => `
+                   <div style="margin-top: 15px;">
+                     <strong>${q.q}</strong>
+                     <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+                       ${q.options.map((opt, oIdx) => `
+                         <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+                           <input type="radio" name="mc-${index}-${tIdx}-${qIdx}" value="${oIdx}">
+                           <span>${opt}</span>
+                         </label>
+                       `).join('')}
+                     </div>
+                   </div>
+                 `).join('')}
+               </div>`;
+               return;
+             }
+             if (task.type === 'sorting') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-arrow-down-1-9"></i> ${task.text}</h4>
+                 <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                   ${task.events.map((ev, eIdx) => `
+                     <div style="display:flex; align-items:center; gap:10px;">
+                       <input type="number" min="1" max="${task.events.length}" style="width:50px; padding:5px; border:1px solid #ccc; border-radius:4px;">
+                       <span>${ev}</span>
+                     </div>
+                   `).join('')}
+                 </div>
+               </div>`;
+               return;
+             }
+             if (task.type === 'cloze') {
+               let renderedCloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '<input type="text" placeholder="..." style="border:none; border-bottom:2px solid #3b82f6; background:transparent; width:100px; text-align:center; margin:0 5px;" />');
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-pen-clip"></i> ${task.text}</h4>
+                 <div style="margin-bottom: 15px; padding:10px; background:#e0f2fe; border-radius:6px; font-weight:bold; color:#0369a1;">Word Bank: ${task.words.join(' | ')}</div>
+                 <p style="line-height:1.8; font-size:1.05rem;">${renderedCloze}</p>
+               </div>`;
+               return;
+             }
+             if (task.type === 'matching') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-link"></i> ${task.text}</h4>
+                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:15px;">
+                   <div style="display:flex; flex-direction:column; gap:10px;">
+                     ${task.pairs.map(p => `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">${p.left}</div>`).join('')}
+                   </div>
+                   <div style="display:flex; flex-direction:column; gap:10px;">
+                     ${[...task.pairs].sort(() => Math.random() - 0.5).map(p => `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px;">${p.right}</div>`).join('')}
+                   </div>
+                 </div>
+               </div>`;
+               return;
+             }
+             if (task.type === 'table_planner') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; overflow-x:auto;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-table"></i> ${task.text}</h4>
+                 <table style="width:100%; border-collapse:collapse; margin-top:10px; background:white;">
+                   <thead><tr>${task.columns.map(c => `<th style="border:1px solid #cbd5e1; padding:10px; background:#e2e8f0; color:#1e293b; text-align:left;">${c}</th>`).join('')}</tr></thead>
+                   <tbody>
+                     ${Array.from({length: task.rows}).map(() => `<tr>${task.columns.map(() => `<td style="border:1px solid #cbd5e1; padding:10px;"><textarea style="width:100%; min-height:60px; border:none; resize:vertical; outline:none;" placeholder="Type here..."></textarea></td>`).join('')}</tr>`).join('')}
+                   </tbody>
+                 </table>
+               </div>`;
+               return;
+             }
+             if (task.type === 'think_pair_share') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #ecfdf5; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
+                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> Think-Pair-Share</h4>
+                 <p style="font-weight:bold; color:#0f172a; font-size:1.1rem;">${task.text || task.question}</p>
+                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:15px;">
+                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-brain"></i> My Thoughts</div>
+                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="Jot down your initial ideas..."></textarea>
+                   </div>
+                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
+                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
+                   </div>
+                 </div>
+               </div>`;
+               return;
+             }
+             if (task.type === 'drawing') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed #f59e0b; text-align:center;">
+                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> Drawing Task</h4>
+                 <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text}</p>
+                 <div style="margin:20px auto; width:80%; height:200px; background:white; border:1px solid #d1d5db; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-style:italic;">
+                   [Draw your response in your workbook]
+                 </div>
+               </div>`;
+               return;
+             }
              const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
              const ansId = `ans-emb-${index}-${tIdx}`;
              const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
