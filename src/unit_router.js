@@ -1,4 +1,4 @@
-import { initializeApp } from './core_app.js';
+import { initializeApp } from './core_app.js?v=2';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
@@ -158,36 +158,31 @@ if (!unitId) {
         sidebarNav.appendChild(geoLink);
       }
 
-      // 5. Printable Workbook Tab
+      
+      // 5. PDF Textbook and Workbook Tabs
       {
+        const tbLink = document.createElement('a');
+        tbLink.className = 'lesson-link';
+        tbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Textbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Reading material only</div></div>';
+        tbLink.href = '/pdfs/' + unitId + '_textbook.pdf';
+        tbLink.target = '_blank';
+        sidebarNav.appendChild(tbLink);
+
         const wbLink = document.createElement('a');
         wbLink.className = 'lesson-link';
-        wbLink.innerHTML = '<i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Printable Workbook';
-        wbLink.href = '#';
-        wbLink.onclick = (e) => {
-          e.preventDefault();
-          if (e.isTrusted !== false) {
-            const url = new URL(window.location);
-            url.searchParams.set('tab', 'workbook');
-            history.pushState({ customTab: 'workbook' }, "", url);
-          }
-
-          document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-          wbLink.classList.add('active');
-          const contentArea = document.getElementById('content-area');
-          contentArea.innerHTML = `
-            <div style="height: 100%; display: flex; flex-direction: column;">
-              <div style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                <h2 style="margin: 0; color: #1e3a8a;"><i class="fa-solid fa-file-pdf"></i> PDF Workbook Preview</h2>
-                <a href="/units/${unitId}/workbook.pdf" download class="btn btn-primary"><i class="fa-solid fa-download"></i> Download PDF</a>
-              </div>
-              <iframe src="/units/${unitId}/workbook.pdf" style="width: 100%; height: 80vh; border: none; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" title="Workbook PDF"></iframe>
-            </div>
-          `;
-          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
-        };
+        wbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-pencil" style="margin-right: 8px;"></i> Guided Workbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Reading + Writing tasks (All-in-one)</div></div>';
+        wbLink.href = '/pdfs/' + unitId + '_workbook.pdf';
+        wbLink.target = '_blank';
         sidebarNav.appendChild(wbLink);
+
+        const pwbLink = document.createElement('a');
+        pwbLink.className = 'lesson-link';
+        pwbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-user-pen" style="margin-right: 8px;"></i> Pupil Workbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Writing tasks only (No reading text)</div></div>';
+        pwbLink.href = '/pdfs/' + unitId + '_pupil_workbook.pdf';
+        pwbLink.target = '_blank';
+        sidebarNav.appendChild(pwbLink);
       }
+
 
 
     }

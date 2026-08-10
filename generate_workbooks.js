@@ -22,10 +22,20 @@ const formatText = (text) => {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 };
 
+const badgeSource = (title) => {
+  if (!title) return '';
+  return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
+};
+
 const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
-const allDirs = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
+let allDirs = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory() && !ignoredDirs.includes(dirent.name))
   .map(dirent => dirent.name);
+
+const targetUnit = process.argv[2];
+if (targetUnit && allDirs.includes(targetUnit)) {
+  allDirs = [targetUnit];
+}
 
 allDirs.forEach(unitId => {
   console.log(`Processing workbooks for unit: ${unitId}`);
@@ -62,8 +72,33 @@ allDirs.forEach(unitId => {
 
   if (!unitData.lessons) return;
 
-  unitData.lessons.forEach(lesson => {
+  const markersPath = path.join(__dirname, 'scratch', `pdf_markers_${unitId}.json`);
+  let pdfMarkers = [];
+  if (fs.existsSync(markersPath)) {
+    try {
+      pdfMarkers = JSON.parse(fs.readFileSync(markersPath, 'utf8'));
+    } catch (e) {
+      console.error(`Error reading pdf markers for ${unitId}:`, e.message);
+    }
+  }
+
+  unitData.lessons.forEach((lesson, lIdx) => {
     if (typeof sanitizeLessonData === 'function') sanitizeLessonData(lesson);
+    
+    const startMarker = pdfMarkers.find(m => m.marker === `L${lIdx}_Start`);
+    if (startMarker) {
+      lesson.startPage = startMarker.page;
+    }
+
+    if (lesson.sources) {
+      lesson.sources.forEach((source, sIdx) => {
+        const markerKey = `L${lIdx}_Source_${sIdx}`;
+        const markerObj = pdfMarkers.find(m => m.marker === markerKey);
+        if (markerObj) {
+          source.page = markerObj.page;
+        }
+      });
+    }
   });
 
   let workbooksToGenerate = [];
@@ -154,15 +189,15 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #333; padding:6px; width:60px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">Do Now: / ${maxScore}</td><td style="border:1px solid #333; padding:6px; width:60px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
       }
     });
 
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr><td style="border:1px solid #333; padding:4px;">${a.title}</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>`;
+        trackerRows += `<tr><td style="border:1px solid #333; padding:4px;">${a.title}</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>`;
       });
     }
 
@@ -222,11 +257,14 @@ allDirs.forEach(unitId => {
     <div style="margin: 30px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
-          <tr style=" color: white;">
-            <th style="border: 1px solid #333; padding: 6px; width: 35%;">Progress & Assessment Tracker</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 12%; text-align: center;">Do Now</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 13%; text-align: center;">Level</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 40%;">Teacher Comment</th>
+          <tr style="background-color: #1a237e; color: white;">
+            <th style="border: 1px solid #333; padding: 6px; width: 25%;">Progress & Assessment Tracker</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Do Now</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 6%; text-align: center;">RAG</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Effort</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Level</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 20%;">WWW (What Went Well)</th>
+            <th style="border: 1px solid #333; padding: 6px; width: 23%;">EBI (Even Better If)</th>
           </tr>
         </thead>
         <tbody>
@@ -234,6 +272,9 @@ allDirs.forEach(unitId => {
           <tr style=" font-weight: bold;">
             <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; text-align: right;">Final Unit Grade:</td>
             <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
+            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
+            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
+            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
             <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
             <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
           </tr>
@@ -255,7 +296,12 @@ allDirs.forEach(unitId => {
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
     
-    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 10px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+    if (lesson.startPage) {
+      html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
+    } else {
+      html += `<div style="margin-bottom: 10px;"></div>`;
+    }
     
     if (lesson.a4_map) {
       if (Array.isArray(lesson.a4_map)) {
@@ -319,8 +365,8 @@ allDirs.forEach(unitId => {
       }
 
       html += `
-        <div class="source-container" style=" margin-bottom: 15px;">
-          ${lesson.primary_source.title ? `<strong>${lesson.primary_source.title}</strong><br>` : ''}
+        <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
+          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
@@ -363,6 +409,17 @@ allDirs.forEach(unitId => {
 
         if (lesson.do_now.prediction_question) {
           html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+        }
+        html += `</div>`;
+      } else if (lesson.do_now.type === "text") {
+        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Do Now Activity"}</h3>
+                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+                   </div>`;
+        html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${lesson.do_now.text}</strong></div>`;
+        for (let i = 0; i < 5; i++) {
           html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
         }
         html += `</div>`;
@@ -456,7 +513,7 @@ allDirs.forEach(unitId => {
         if(source.src || source.caption || sourceContent) {
           html += `
             <div class="source-container" style="">
-              ${source.title ? `<strong>${source.title}</strong><br>` : ''}
+              ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
               ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
@@ -476,8 +533,9 @@ allDirs.forEach(unitId => {
         // Support for new 'images' array schema
         if (block.images && Array.isArray(block.images)) {
           block.images.forEach(imgObj => {
-            if (imgObj.image) {
-              let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(imgObj.image, 2) : imgObj.image;
+            let rawSrc = imgObj.src || imgObj.image;
+            if (rawSrc) {
+              let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(rawSrc, 2) : rawSrc;
               if (src.toLowerCase().endsWith('.svg')) {
                   html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto 5px auto; border-radius: 8px; border: 1.5px solid #475569; padding-top: 10px; padding-bottom: 10px; ">`;
               } else {
@@ -545,7 +603,8 @@ allDirs.forEach(unitId => {
               html += `</ul></div>`;
             }
             html += `<div style="min-height: 200px;">`;
-            for(let i=0; i<8; i++) {
+            const lineCount = block.extended.lines || 8;
+            for(let i=0; i<lineCount; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
             html += `</div></div>`;
@@ -1001,7 +1060,7 @@ allDirs.forEach(unitId => {
       <p style="text-align: center; font-size: 12pt; margin-bottom: 15px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
       <table style="width: 100%; border-collapse: collapse; ">
         <thead>
-          <tr style=" color: white;">
+          <tr style="background-color: #1a237e; color: white;">
             <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
             <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
           </tr>

@@ -1,56 +1,17 @@
 const fs = require('fs');
-const path = require('path');
+let code = fs.readFileSync('public/units/early_modern_world/data.js', 'utf8');
+code = code.replace(/export const unitData\s*=\s*/, 'module.exports = ');
+fs.writeFileSync('temp_data.js', code);
+const data = require('./temp_data');
 
-const unitsDir = path.join(__dirname, 'public', 'units');
-const units = fs.readdirSync(unitsDir).filter(f => fs.statSync(path.join(unitsDir, f)).isDirectory());
-
-units.forEach(unitId => {
-    const dataPath = path.join(unitsDir, unitId, 'data.js');
-    if (!fs.existsSync(dataPath)) return;
-
-    let f = fs.readFileSync(dataPath, 'utf8');
-    let jsonStr = f.substring(f.indexOf('export const unitData = ') + 24);
-    jsonStr = jsonStr.substring(0, jsonStr.lastIndexOf(';') > -1 ? jsonStr.lastIndexOf(';') : jsonStr.length);
-    let unit;
-    try {
-        unit = eval('(' + jsonStr + ')');
-    } catch(e) { return; }
-
-    if (!unit.lessons) return;
-
-    unit.lessons.forEach(lesson => {
-        // Collect all source letters in the lesson
-        let lessonSources = [];
-        if (lesson.primary_source) {
-            lessonSources.push(lesson.primary_source.title || ''); // maybe has "Source A" in title
-        }
-        if (lesson.narrative_blocks) {
-            lesson.narrative_blocks.forEach(b => {
-                if (b.source_letter) lessonSources.push(b.source_letter);
-                if (b.images) {
-                    b.images.forEach(i => {
-                        if (i.source_letter) lessonSources.push(i.source_letter);
-                    });
-                }
-            });
-        }
-
-        // Now check all tasks
-        if (lesson.narrative_blocks) {
-            lesson.narrative_blocks.forEach(b => {
-                if (b.tasks) {
-                    b.tasks.forEach(t => {
-                        let text = t.text || '';
-                        let matches = [...text.matchAll(/Source ([A-Z])/g)];
-                        matches.forEach(m => {
-                            let letter = m[1];
-                            if (!lessonSources.includes(letter)) {
-                                console.log(`Mismatch in ${unitId} -> "${lesson.title}": Task references Source ${letter}, but sources are: ${lessonSources.join(', ')}`);
-                            }
-                        });
-                    });
-                }
-            });
-        }
+let sources = [];
+data.lessons.forEach((lesson, lIdx) => {
+  if (lesson.primary_source) sources.push('L' + (lIdx+1) + ' Primary Source: ' + lesson.primary_source.caption);
+  if (lesson.starters) lesson.starters.forEach((s, sIdx) => sources.push('L' + (lIdx+1) + ' Starter ' + (sIdx+1) + ': ' + s.caption));
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach((b, bIdx) => {
+      if (b.image) sources.push('L' + (lIdx+1) + ' Block ' + (bIdx+1) + ': ' + (b.text ? b.text.substring(0, 50) + '...' : 'No text'));
     });
+  }
 });
+console.log(sources.slice(0, 10).join('\n'));

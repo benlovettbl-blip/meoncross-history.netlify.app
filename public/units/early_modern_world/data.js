@@ -218,70 +218,73 @@ export const unitData = {
         {
           "title": "Analyzing the Evidence: The Fall of Constantinople",
           "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of [Key Individual: Sultan Mehmed II] entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>[Key Individual: Kritovoulos of Imbros]</strong>, a Greek scholar writing in 1454.</div><br><br>",
-          "tasks": [
-            {
-              "type": "text",
-              "text": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
-              "model": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source B describes European rulers 'quaking with fear' at Ottoman military might, while Source C highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
-            }
-          ]
+          "tasks": []
         },
         {
           "title": "Macro-History: The Wealth of the East",
-          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
+          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
+        },
+        {
+          "title": "Analyzing Source B",
           "image": "/images/global_canton.jpg",
           "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
-          "image_caption": "An early 19th-century painting by an unknown Chinese artist showing the Thirteen Factories in Canton (Guangzhou). This was the only area where foreign merchants (including the British East India Company) were permitted to trade with Qing dynasty China.",
-          "image_context": "Notice the prominent display of European flags (Danish, Spanish, American, Swedish, British, and Dutch) confined to a tiny strip of land outside the city walls. This image shatters the myth of European dominance in the 1700s—Western merchants were entirely at the mercy of the powerful Qing Emperor, restricted to these small 'factories' because China had little need for European goods, while Europeans desperately craved Chinese tea, silk, and porcelain. Hinge Question: Why might the Chinese emperor have restricted European merchants to this tiny trading strip in Canton?",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "comprehension",
               "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
               "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
             }
-          ],
-          "source_letter": "B"
+          ]
         },
         {
           "title": "Macro-History: The Real Centers of Wealth in 1450",
-          "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, [Key Individual: Sultan Mehmed II] controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded.",
+          "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, [Key Individual: Sultan Mehmed II] controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded."
+        },
+        {
+          "title": "Analyzing Source C",
           "image": "/images/ottoman_1453.jpg",
-          "tasks": [],
           "image_alt": "Fresco of the Siege of Constantinople (1537)",
-          "image_context": "Observe the massive defensive walls of the city being breached by Ottoman cannons. The fall of Constantinople was a seismic shock to Christian Europe, not just religiously, but economically. With the Ottoman Empire now controlling the vital land routes to Asia, European merchants were suddenly cut off from the lucrative Silk Road. **Hinge Question:** How did the fall of this city directly force Europeans to begin exploring the oceans?",
-          "image_caption": "A 1537 fresco from the Moldovița Monastery in Romania depicting the 1453 Siege of Constantinople. The fall of the city to the Ottoman Turks severely disrupted European access to the Silk Road, forcing Christian nations to seek alternative maritime routes to Asia."
+          "source_letter": "C",
+          "tasks": []
         },
         {
           "title": "West Africa: Kingdoms of Gold and Brass",
-          "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>",
+          "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source D",
           "image": "/images/benin_bronze.jpg",
-          "tasks": [],
           "image_alt": "16th-Century Benin Bronze Plaque",
-          "image_context": "Look closely at the intricate details of the figures, their weapons, and their ceremonial clothing. This is not primitive art; it requires highly advanced metallurgical skills (lost-wax casting) that rivalled or exceeded anything in Europe at the time. It serves as powerful evidence of the complex, wealthy, and highly organized societies that existed in West Africa. **Hinge Question:** How does this bronze plaque challenge traditional Eurocentric views of pre-colonial African societies?",
-          "image_caption": "A 16th-century brass plaque from the Kingdom of Benin (modern-day Nigeria). Crafted by the Edo people, such plaques decorated the royal palace of the Oba. They demonstrate the highly advanced metallurgical skills and complex societal structure of West African kingdoms prior to European colonization.",
-          "images": [
+          "source_letter": "D",
+          "tasks": []
+        },
+        {
+          "title": "Analyzing the Evidence: The Wealth of West Africa",
+          "text": "<div class='scaffold-box'><strong>Source E: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>"
+        },
+        {
+          "title": "Analyzing Source E",
+          "image": "/images/mansa_musa_catalan.jpg",
+          "image_alt": "Catalan Atlas (1375) - Mansa Musa",
+          "source_letter": "E",
+          "tasks": [
             {
-              "image": "/images/mansa_musa_catalan.jpg",
-              "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-              "image_context": "Observe the gold coin held by [Key Individual: Mansa Musa] and the intricate trade routes spanning the Sahara. This vividly illustrates that West Africa was a spectacularly wealthy and integral part of the global economy long before European maritime dominance. **Hinge Question:** Why would a mapmaker in Europe in 1375 depict an African king with such prominent symbols of wealth?",
-              "image_caption": "Detail from the Catalan Atlas (1375) by Abraham Cresques. It depicts [Key Individual: Mansa Musa], the wealthy ruler of the Mali Empire, holding a gold coin, illustrating West Africa's vast gold reserves and its integration into medieval global trade networks.",
-              "source_letter": "C"
+              "type": "comprehension",
+              "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
+              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
             }
           ]
         },
         {
-          "title": "Analyzing the Evidence: The Wealth of West Africa",
-          "text": "<div class='scaffold-box'><strong>Source D: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>",
-          "tasks": []
+          "title": "The Silk Road & Ming China: The World's Industrial Engine",
+          "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, [Key Individual: Admiral [Key Individual: Admiral [Key Individual: Admiral Zheng He]]] commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than [Key Individual: Christopher Columbus]’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
         },
         {
-          "title": "The Silk Road & Ming China: The World's Industrial Engine",
-          "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, [Key Individual: Admiral [Key Individual: Admiral [Key Individual: Admiral Zheng He]]] commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than [Key Individual: Christopher Columbus]’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>",
+          "title": "Examining the Evidence",
           "image": "/images/silk_road.jpg",
-          "tasks": [],
           "image_alt": "Map of the Silk Road Trade Routes",
-          "image_context": "Trace the sprawling network of red lines stretching from China, across Central Asia, and into the Mediterranean. Before the era of global maritime empires, this was the economic superhighway of the world. Europe was merely a peripheral terminus at the far western edge of this vast Eurasian trading system, entirely dependent on Asian and Middle Eastern middlemen. **Hinge Question:** Why was controlling these overland routes so incredibly profitable for empires like the Ottomans?",
-          "image_caption": "A modern historical map illustrating the vast network of Eurasian trade routes known as the Silk Road. Before 1450, these overland routes were the primary arteries for luxury goods, spices, and technologies flowing from Asia into the Mediterranean."
+          "tasks": []
         },
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
@@ -300,7 +303,8 @@ export const unitData = {
             {
               "qNum": 11,
               "text": "Lesson Reflection: Looking at the state of the world in 1450, why might a historian argue that Europe was actually on the periphery of global power rather than at its center?",
-              "model": "A strong answer should reference the immense wealth of the Ming Dynasty in China, the military dominance of the Ottoman Empire, or the vast riches of African kingdoms like Mali or Benin, contrasting these with the relative poverty, isolation, and basic agricultural lifestyle of European peasants."
+              "model": "A strong answer should reference the immense wealth of the Ming Dynasty in China, the military dominance of the Ottoman Empire, or the vast riches of African kingdoms like Mali or Benin, contrasting these with the relative poverty, isolation, and basic agricultural lifestyle of European peasants.",
+              "starter": "One reason Europe might be considered on the periphery of global power in 1450 is..."
             }
           ]
         },
@@ -331,13 +335,13 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l1_banner.jpg",
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How does the vast wealth of Ming China and the Mali Empire in 1450 challenge the traditional idea that Europe was the only 'modern' or advanced civilization?",
-        "scaffolding": [
-          "Sentence Starter: Before 1450, many people assume Europe was the most advanced, but...",
-          "Sentence Starter: For example, the Ming Dynasty was highly modern because...",
-          "Sentence Starter: Similarly, the Mali Empire showed immense wealth when...",
-          "Key Vocabulary Checklist: Mansa Musa, Industrial Engine, Silk Road."
+      "lesson_assessment": {
+        "question": "Explain why Europe was NOT the center of global wealth and power in 1450.",
+        "hints": "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
+        "sentence_starters": [
+          "In 1450, the true centers of global wealth were...",
+          "This was because they controlled...",
+          "By contrast, Europe was relatively isolated because..."
         ]
       }
     },
@@ -370,7 +374,6 @@ export const unitData = {
         }
       ],
       "title": "How did religious conflict trigger global exploration (1517–1588)?",
-      "enquiry": "How did religious conflict trigger global exploration (1517–1588)?",
       "teacher_notes": {
         "primer": "This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.",
         "objectives": [
@@ -469,39 +472,41 @@ export const unitData = {
         },
         {
           "title": "Macro-History: Navigating the Unknown",
-          "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time.",
+          "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time."
+        },
+        {
+          "title": "Examining the Evidence",
           "image": "/images/global_mercator.jpg",
           "image_alt": "Portrait of Gerardus Mercator (1574)",
-          "image_context": "Look at the globes and measuring instruments surrounding Mercator. His revolutionary map projection (1569) allowed sailors to plot straight-line courses across the oceans, drastically accelerating the age of global exploration and European empire-building. **Hinge Question:** How did advances in mathematics and map-making directly contribute to the growth of the British Empire?",
-          "image_caption": "Portrait of Gerardus Mercator (1574) by Frans Hogenberg. In 1569, Mercator invented a revolutionary cylindrical map projection that allowed sailors to chart courses as straight lines, greatly facilitating the explosive growth of global European navigation and exploration.",
-          "tasks": [],
-          "source_letter": "A"
+          "tasks": []
         },
         {
           "title": "Macro-History: The Reformation (1517)",
-          "text": "<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named [Key Individual: Martin Luther] nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of \"indulgences\" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after [Key Individual: Henry VIII] broke away from Rome in 1534.</li></ul>",
+          "text": "<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named [Key Individual: Martin Luther] nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of \"indulgences\" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after [Key Individual: Henry VIII] broke away from Rome in 1534.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source B",
           "image": "/images/martin_luther_portrait.jpg",
           "image_alt": "Portrait of Martin Luther (1529)",
-          "image_context": "Observe Luther's serious, unidealized expression and his firm grip on the Bible. By translating the Bible into everyday German, he democratized religion and shattered the absolute authority of the Catholic Church, plunging Europe into centuries of violent conflict. **Hinge Question:** Why was the act of translating the Bible into a common language considered so dangerous by the Church?",
-          "image_caption": "Portrait of Martin Luther by Lucas Cranach the Elder (1529). Luther was a German monk whose 1517 Ninety-five Theses sparked the Protestant Reformation, permanently shattering the religious unity of Western Europe and triggering decades of conflict.",
-          "tasks": [],
-          "source_letter": "B"
+          "source_letter": "B",
+          "tasks": []
         },
         {
           "title": "Macro-History: The New World Monopoly & Privateers",
-          "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494, [Key Individual: Pope Alexander VI] issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant [Key Individual: Queen Elizabeth I] took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir Walter Raleigh]]], and [Key Individual: John Hawkins] were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II.",
+          "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494, [Key Individual: Pope Alexander VI] issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant [Key Individual: Queen Elizabeth I] took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir Walter Raleigh]]], and [Key Individual: John Hawkins] were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II."
+        },
+        {
+          "title": "Analyzing Source C",
           "image": "/images/tordesillas_map.png",
           "image_alt": "Map of the Treaty of Tordesillas (1494)",
-          "image_context": "Look at the bold, straight line slicing through the Atlantic Ocean and South America. In an act of staggering arrogance, the Pope literally divided the entire undiscovered world between just two Catholic superpowers: Spain and Portugal. **Hinge Question:** How do you think Protestant nations like England reacted to being entirely left out of this global division?",
-          "image_caption": "A historical map depicting the Line of Demarcation established by the Treaty of Tordesillas in 1494. Blessed by the Pope, it audaciously divided the newly discovered non-Christian world exclusively between the rival Catholic powers of Spain and Portugal.",
+          "source_letter": "C",
           "tasks": [
             {
               "type": "analysis",
               "question": "How did Queen Elizabeth I use privateers as a strategic tool against Spain?",
               "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
             }
-          ],
-          "source_letter": "C"
+          ]
         },
         {
           "title": "The Climax: The Spanish Armada (1588)",
@@ -522,34 +527,25 @@ export const unitData = {
               "type": "source_analysis",
               "question": "How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?",
               "model_answer": "Source B frames the conflict as a holy defense of England against 'enemies of my God', portraying the English as righteous defenders. Source C, written by a Spanish Catholic, views Drake as a 'thief' and a 'heretic' fighting to destroy the Catholic Church, focusing on his piracy and religious desecration rather than legitimate warfare."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Why does Elizabeth refer to the Spanish Armada as 'enemies of my God' in Source B?",
-              "model_answer": "Elizabeth refers to them as 'enemies of my God' because the conflict was fundamentally religious; Spain was Catholic and attempting to force Protestant England back into Catholicism. By claiming God was on her side, she united her Protestant subjects in a holy war."
-            },
-            {
-              "type": "source_analysis",
-              "question": "How useful is Source C to a historian studying Spanish attitudes toward English exploration in the 16th century?",
-              "model_answer": "Source C is highly useful because it provides a direct, contemporary perspective from a Spanish captain. It reveals the intense religious animosity and legal perspective of the Spanish, who viewed English privateering not as legitimate exploration, but as heretical piracy and a direct assault on the Catholic Church."
             }
           ]
         },
         {
           "title": "Visual Analysis: The Armada Portrait (1588)",
-          "text": "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>",
+          "text": "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source F",
           "image": "/images/armada_portrait.jpg",
           "image_alt": "The Armada Portrait of Queen Elizabeth I (c. 1588)",
-          "image_context": "Notice Elizabeth's hand resting firmly on a globe, specifically covering the Americas, while the defeated Spanish fleet sinks in the background. This is a masterful piece of royal propaganda, projecting an image of divine victory, unyielding power, and global ambition. **Hinge Question:** What specific symbols in this portrait suggest that Elizabeth I intended for England to become a global superpower?",
-          "image_caption": "The Armada Portrait of Queen Elizabeth I (c. 1588), attributed to George Gower. The Queen rests her hand on a globe, symbolizing England's rising imperial ambitions, while the background depicts the miraculous defeat of the Spanish Armada.",
+          "source_letter": "F",
           "tasks": [
             {
               "type": "analysis",
               "question": "What message was the artist of the Armada Portrait trying to convey about England's future?",
               "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
             }
-          ],
-          "source_letter": "F"
+          ]
         },
         {
           "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
@@ -559,11 +555,6 @@ export const unitData = {
               "type": "comprehension",
               "question": "How does the revisionist view (Perspective B) challenge the traditional view (Perspective A) of the Armada's defeat?",
               "model_answer": "Perspective A argues the defeat was a divine, miraculous event driven by the 'Protestant Wind' sent by God. Perspective B challenges this by arguing it was actually caused by human errors and Spanish structural flaws—such as poor logistics, rigid tactics, and superior English ship design—with the weather only playing a secondary role at the end."
-            },
-            {
-              "type": "comprehension",
-              "question": "Synoptic Reflection: Identify one piece of evidence from this lesson that shows England becoming more 'modern' and globally powerful.",
-              "model_answer": "England became more modern by challenging Catholic Spain's dominance through state-sponsored privateers (like Francis Drake), building a navy capable of defeating the Armada, and establishing global trading ambitions."
             }
           ]
         },
@@ -573,7 +564,8 @@ export const unitData = {
             {
               "qNum": 19,
               "text": "Lesson Reflection: To what extent did the Protestant Reformation act as the primary catalyst for European expansion and global exploration during the 16th century?",
-              "model": "A strong answer should explain how the religious schism created fierce competition between Catholic nations (like Spain/Portugal) and Protestant nations (like England/Netherlands), driving them to seek new wealth, resources, and converts globally to fund their religious wars in Europe."
+              "model": "A strong answer should explain how the religious schism created fierce competition between Catholic nations (like Spain/Portugal) and Protestant nations (like England/Netherlands), driving them to seek new wealth, resources, and converts globally to fund their religious wars in Europe.",
+              "starter": "The Protestant Reformation acted as a catalyst for global exploration because..."
             }
           ]
         },
@@ -583,23 +575,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "What was the primary cause of scurvy on long oceanic voyages?",
-              "model_answer": "Scurvy was caused by a severe lack of Vitamin C because fresh fruit spoiled quickly on long voyages."
-            },
-            {
-              "type": "comprehension",
-              "question": "Describe two horrifying physical symptoms of scurvy experienced by Tudor sailors.",
-              "model_answer": "Symptoms included gums swelling and rotting, teeth falling out, and old wounds ripping open again."
-            },
-            {
-              "type": "comprehension",
               "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
               "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study F. Based on this visual evidence, what physical impact did scurvy have on the human body?",
-              "model_answer": "The image shows severe degradation of the gums and teeth, highlighting the brutal physical decay scurvy caused in the mouth."
             }
           ],
           "source_letter": "F"
@@ -726,13 +703,13 @@ export const unitData = {
         ]
       },
       "banner": "/images/early_mod_l2_banner.jpg",
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** To what extent did the defeat of the Spanish Armada and the rise of joint-stock privateers lay the foundation for a 'modern' global empire?",
-        "scaffolding": [
-          "Sentence Starter: The defeat of the Spanish Armada was a turning point because...",
-          "Sentence Starter: Instead of just using the Royal Navy, the Queen used privateers to...",
-          "Sentence Starter: This laid the foundation for a modern empire by...",
-          "Key Vocabulary Checklist: Monopoly, Privateers, Sir Francis Drake."
+      "lesson_assessment": {
+        "question": "How did the Protestant Reformation push England into global exploration and conflict with Spain?",
+        "hints": "Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.",
+        "sentence_starters": [
+          "When England became Protestant, it created conflict with Catholic Spain because...",
+          "To challenge Spain’s wealth in the New World, English monarchs encouraged...",
+          "This rivalry culminated in..."
         ]
       }
     },
@@ -773,7 +750,6 @@ export const unitData = {
         }
       ],
       "title": "Trade or takeover: How did early encounters turn into empire?",
-      "enquiry": "How did early encounters turn into empire? (East India Company, Jamestown/Roanoke)",
       "teacher_notes": {
         "primer": "This lesson compares two contrasting forms of early English colonial expansion: desperate territorial settlement in North America (Roanoke/Jamestown) and polite mercantile trade with the powerful Mughal Empire in India. It aims to show students that the British Empire was not a monolithic, pre-planned military conquest, but a varied process driven by joint-stock capitalism that opportunistically shifted from trade to takeover.",
         "objectives": [
@@ -873,19 +849,19 @@ export const unitData = {
         },
         {
           "title": "Macro-History: The Big Picture",
-          "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, [Key Individual: John Rolfe] introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by [Key Individual: Emperor [Key Individual: Emperor [Key Individual: Emperor Jahangir]]].<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India.",
+          "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, [Key Individual: John Rolfe] introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by [Key Individual: Emperor [Key Individual: Emperor [Key Individual: Emperor Jahangir]]].<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India."
+        },
+        {
+          "title": "Examining the Evidence",
           "image": "/images/sir_thomas_roe.jpg",
           "image_alt": "Sir Thomas Roe at the Mughal Court (1615)",
-          "image_context": "Look at the contrast between the modest English ambassador, Sir Thomas Roe, and the staggering, overwhelming opulence of the Mughal Emperor Jahangir. In 1615, the Mughal Empire was vastly wealthier and more powerful than England, and Roe had to beg for trading rights. **Hinge Question:** How does this image completely contradict the idea that the English were naturally dominant when they first arrived in India?",
-          "image_caption": "A depiction of Sir Thomas Roe, an English diplomat, presenting his credentials to the powerful Mughal Emperor Jahangir in 1615. Roe successfully negotiated exclusive trading rights for the East India Company, laying the foundation for British dominance in India.",
           "tasks": [
             {
               "type": "analysis",
               "question": "How did the funding of early English colonial expansion differ from the Spanish model?",
               "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
             }
-          ],
-          "source_letter": "A"
+          ]
         },
         {
           "title": "Justifying Empire: Religion vs. Profit",
@@ -900,48 +876,30 @@ export const unitData = {
               "type": "source_analysis",
               "question": "Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas English settlers in Virginia acted aggressively toward Native Americans.",
               "model_answer": "Source C shows that the Mughal Empire was incredibly wealthy..."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Which source is more useful to a historian studying the economic motivations behind early British overseas expansion?",
-              "model_answer": "Source C is more useful for studying economic motivations because it directly addresses trade, taxes, and goods. Roe's journal reveals the practical realities and desperation of English merchants trying to secure a foothold in lucrative Asian markets. Source B is less useful for economics, as it primarily serves as religious propaganda to justify the Virginia Company's colonial charter."
             }
           ]
         },
         {
           "title": "Vocabulary Check: Building Empires",
           "text": "Understanding how the British Empire was built requires some specific historical vocabulary.",
-          "tasks": [
-            {
-              "type": "vocab_match",
-              "words": [
-                "Monopoly",
-                "Charter",
-                "Joint-Stock Company"
-              ],
-              "definitions": [
-                "Exclusive control over trade in a specific area.",
-                "A royal document granting rights and privileges to a company.",
-                "A business where investors buy shares and share the risks and profits."
-              ]
-            }
-          ]
+          "tasks": []
         },
         {
           "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
-          "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>",
+          "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source D",
           "image": "/images/jamestown_fort.jpg",
           "image_alt": "Plan of James Fort in Virginia (1607)",
-          "image_context": "Observe the tight, triangular wooden palisades surrounding the tiny settlement. This defensive structure reveals the extreme paranoia and vulnerability of the early English colonists, who were completely dependent on, yet deeply fearful of, the surrounding Powhatan Confederacy. **Hinge Question:** What does the shape and structure of this fort suggest about the relationship between the English settlers and the Indigenous population?",
-          "image_caption": "A historical plan of the triangular James Fort built in 1607. It was the first permanent English settlement in the Americas, heavily fortified to defend against both the indigenous Powhatan Confederacy and potential attacks from rival Spanish ships.",
+          "source_letter": "D",
           "tasks": [
             {
               "type": "analysis",
               "question": "What does the design of the Jamestown Fort suggest about the relationship between the English settlers and the local indigenous population?",
               "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
             }
-          ],
-          "source_letter": "D"
+          ]
         },
         {
           "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
@@ -951,11 +909,6 @@ export const unitData = {
               "type": "comprehension",
               "question": "How do Perspective A and Perspective B disagree on the origins of the British Empire?",
               "model_answer": "Perspective A argues the Empire was an \"accidental\" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible."
-            },
-            {
-              "type": "comprehension",
-              "question": "Synoptic Reflection: How did joint-stock capitalism make England's economy more 'modern', but also more ruthless?",
-              "model_answer": "Joint-stock capitalism allowed wealthy merchants to pool their money and share risks without needing the King's funding. This drove massive commercial expansion (like the EIC and Virginia Company), but made them ruthless because their primary goal was extracting profit by any means necessary, including land theft and war."
             }
           ]
         },
@@ -965,7 +918,8 @@ export const unitData = {
             {
               "qNum": 19,
               "text": "Lesson Reflection: Based on the early encounters between Europeans and indigenous populations, how did initial trade relationships gradually transform into systems of imperial control and exploitation?",
-              "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew."
+              "model": "A strong answer should trace the shift from initial mutually beneficial trading (e.g., European merchants relying on local rulers) to violent conquest, establishing fortified trading posts, exploiting local rivalries, and eventually imposing direct colonial administration as European technological and military power grew.",
+              "starter": "Initial encounters were often based on trade because... However, this transformed into imperial control when..."
             }
           ]
         },
@@ -975,23 +929,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "How did Algonquian farming methods differ from English ones?",
-              "model_answer": "The Algonquian Powhatan planted in exposed, unfenced fields and managed open forests, whereas the English relied on fences and let their livestock roam wild."
-            },
-            {
-              "type": "comprehension",
-              "question": "Explain how free-roaming English pigs became a weapon of ecological destruction.",
-              "model_answer": "The pigs invaded the forests, devouring native crops and destroying the roots of native plants, wrecking the ecological balance."
-            },
-            {
-              "type": "comprehension",
               "question": "How does this 'ground-up' detail change our understanding of why Native Americans became hostile to the Jamestown settlers?",
               "model_answer": "It shows that hostility wasn't just about politics or land ownership; it was a desperate reaction to an ecological disaster that was literally eating their food supply."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study G. What does this watercolor tell us about how the Algonquian Powhatan organized their agriculture?",
-              "model_answer": "It shows highly organized, neat fields of crops that were unfenced and integrated into the natural environment, leaving them vulnerable to roaming English livestock."
             }
           ],
           "source_letter": "G"
@@ -1132,13 +1071,13 @@ export const unitData = {
           "title": "Joint-Stock Companies: Empire with David Olusoga"
         }
       ],
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the creation of joint-stock companies (like the East India Company) make Britain financially 'modern', despite their brutal early struggles?",
-        "scaffolding": [
-          "Sentence Starter: Joint-stock companies were a very modern invention because they allowed merchants to...",
-          "Sentence Starter: The East India Company showed modern financial power by...",
-          "Sentence Starter: However, their early methods were often brutal, for example...",
-          "Key Vocabulary Checklist: Joint-stock, Mughal Empire, Investment."
+      "lesson_assessment": {
+        "question": "Explain how the creation of the East India Company (EIC) transformed British trade.",
+        "hints": "Mention joint-stock companies, monopolies, violence, and Asian spices/textiles.",
+        "sentence_starters": [
+          "Before the EIC, individual merchants struggled to trade in Asia because...",
+          "The EIC solved this by using a 'joint-stock' model, which meant...",
+          "However, they often used violence to secure a 'monopoly', allowing them to..."
         ]
       }
     },
@@ -1166,8 +1105,7 @@ export const unitData = {
           "definition": "Returned to the throne during the Restoration in 1660."
         }
       ],
-      "title": "Who controlled Britain: The King, Parliament, or Imperial Profits?",
-      "enquiry": "Who controlled Britain: The King, Parliament, or Imperial Profits?",
+      "title": "Who controlled Britain? The Ideological Battle",
       "teacher_notes": {
         "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
         "objectives": [
@@ -1277,22 +1215,6 @@ export const unitData = {
           ]
         },
         {
-          "title": "Macro-History: The Financial Hub",
-          "text": "By the 1700s, the geography of wealth in Britain had fundamentally changed. London was no longer just the seat of the King; it had become the beating heart of a new global financial empire. The River Thames was choked with a forest of wooden ship masts from the East India Company and transatlantic slave ships. The wealth generated by this massive maritime trade built institutions like the Bank of England and the Royal Exchange, shifting power from the monarchy to the merchant class.",
-          "image": "/images/royal_exchange_courtyard.jpg",
-          "image_alt": "The Royal Exchange, London (1644)",
-          "image_context": "Notice the bustling courtyard packed with merchants in various international dress. This was the beating heart of early modern capitalism, where global goods were traded, joint-stock companies were formed, and the foundations of the British Empire's financial dominance were laid. **Hinge Question:** How did the creation of centralized financial markets like the Royal Exchange accelerate global exploration?",
-          "image_caption": "An engraving of the Royal Exchange in London by Wenceslaus Hollar (1644). Established as a center for commerce, it became the beating heart of England's financial revolution, where merchants traded stocks, commodities, and funded global colonial ventures.",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How did the visual appearance of London change as it became a global financial hub?",
-              "model_answer": "The River Thames became choked with a 'forest of wooden ship masts' from global trading vessels, and the city saw the rise of grand financial institutions like the Royal Exchange."
-            }
-          ],
-          "source_letter": "A"
-        },
-        {
           "title": "Investigating Power: The King vs. The Merchants",
           "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>[Key Individual: John Bradshaw]</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by [Key Individual: Martin Noell]</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: [Key Individual: Oliver Cromwell]’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
@@ -1305,43 +1227,6 @@ export const unitData = {
               "type": "source_analysis",
               "question": "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?",
               "model_answer": "Cromwell accuses MPs of becoming 'lovers of money' and corrupt ('noblemen for gold'). This is highly ironic because Cromwell himself relied entirely on the massive financial wealth of the Atlantic merchants to build and fund his New Model Army and secure his rise to power."
-            },
-            {
-              "type": "source_analysis",
-              "question": "How reliable is Source B as an objective record of Charles I’s reign?",
-              "model_answer": "Source B is highly unreliable as an objective record because it was written by [Key Individual: John Bradshaw], the President of the High Court trying the King. It is a highly biased political document designed to justify the predetermined outcome of executing Charles I, portraying him solely as a 'traitor' and 'tyrant'."
-            }
-          ]
-        },
-        {
-          "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
-          "text": "Look closely at the <strong>1651 Great Seal of England</strong>, created after the King’s execution:<br><br><ul><li><strong>No Royal Crown or Arms:</strong> For 600 years, the Great Seal bore the face of the ruling King or Queen on a horse. In 1651, the King’s face was completely erased.</li><li><strong>The House of Commons Side:</strong> Shows hundreds of MPs sitting in Parliament with the motto: <em>\"In the First Year of Freedom by God's Blessing Restored.\"</em></li><li><strong>The Map Side:</strong> Shows a detailed map of England, Ireland, and naval ships sailing in the Atlantic, emphasizing maritime power and imperial expansion over royal bloodlines.</li></ul>",
-          "image": "/images/great_seal_1651.png",
-          "image_alt": "The Great Seal of the Commonwealth of England (1651)",
-          "image_context": "This seal was a revolutionary piece of propaganda. For 600 years, English seals showed the monarch on horseback. By replacing the King with the House of Commons, the new Republic was visually announcing the total destruction of the old royal order. **Hinge Question:** Why was it so important for the new government to completely erase the King's face from the official seal?",
-          "image_caption": "The 1651 Great Seal of the Commonwealth. Notice the complete absence of any monarch. Instead, it depicts the House of Commons in session, physically illustrating that power now rested with Parliament.",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-              "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion."
-            }
-          ],
-          "source_letter": "E"
-        },
-        {
-          "title": "Historical Interpretations: Who Was the Real Winner?",
-          "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong>[Key Individual: Charles II]</strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Christopher Hill]]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though [Key Individual: Charles II] returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Eric Williams]]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
-              "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
-            },
-            {
-              "type": "comprehension",
-              "question": "Synoptic Reflection: What evidence from this lesson suggests Britain's political and legal systems were still deeply 'un-modern' (brutal and unequal)?",
-              "model_answer": "Despite getting rid of an absolute monarch, the new Commonwealth and Parliament were still un-modern because only a tiny fraction of wealthy men could vote, and the legal system used horrific violence (like the Bloody Code and Cromwell's massacres in Ireland) to maintain control."
             }
           ]
         },
@@ -1353,24 +1238,9 @@ export const unitData = {
               "type": "comprehension",
               "question": "Which historian argues that the conflict was primarily about political and class rights, and which argues it was about establishing the conditions for global capitalism and empire?",
               "model_answer": "Professor Christopher Hill focuses on the political revolution and the destruction of the absolute monarchy. Professor Eric Williams argues the true victory was economic, laying the foundation for imperial merchants and global joint-stock capitalism."
-            },
-            {
-              "type": "source_analysis",
-              "question": "How useful are the two interpretations in Source F for understanding the long-term consequences of the English Civil War?",
-              "model_answer": "Both interpretations in Source F are highly useful because they provide different, complementary perspectives on the war's consequences. Interpretation A is useful for understanding the political shift away from absolute monarchy, while Interpretation B is useful for understanding how that political stability enabled the massive economic expansion of the British Empire."
             }
           ],
           "source_letter": "F"
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": [
-            {
-              "qNum": 20,
-              "text": "Lesson Reflection: Considering the English Civil War and the rise of transatlantic trade, did political ideology or economic ambition play a greater role in shifting the balance of power in Britain?",
-              "model": "A strong answer could argue either way, provided it references the ideological battle between the Divine Right of Kings and Parliament's demand for liberties, while also acknowledging how the massive influx of wealth from the Atlantic trade empowered a new merchant class who demanded a greater say in government."
-            }
-          ]
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
@@ -1385,19 +1255,21 @@ export const unitData = {
               "type": "comprehension",
               "question": "Why did wealthy Parliamentarians like Oliver Cromwell violently crush the Diggers?",
               "model_answer": "The Diggers' ideas threatened the wealth and power of the landowners, making their vision of total equality too extreme for Parliament."
-            },
-            {
-              "type": "comprehension",
-              "question": "Do you think the Diggers' ideas were 'ahead of their time'? Explain your answer.",
-              "model_answer": "Yes, because they advocated for ideas like communism, universal equality, and the abolition of poverty centuries before these concepts became mainstream political movements."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study Source G. Based on the title page of this pamphlet, what was the primary goal of the Diggers?",
-              "model_answer": "The title 'True Levellers Standard Advanced' suggests their goal was to completely 'level' society by removing social classes and establishing absolute equality."
             }
           ],
           "source_letter": "G"
+        },
+        {
+          "title": "Lesson Reflection",
+          "text": "It is time to synthesize your understanding of the ideological and physical battles of the English Civil War.",
+          "tasks": [
+            {
+              "type": "extended",
+              "text": "Lesson Reflection: Was the English Civil War a true revolution that gave power to the people, or just a transfer of power from the King to wealthy Parliamentarians?",
+              "model": "A strong answer should explain how the Divine Right of Kings was destroyed, but note that radical groups like the Diggers were crushed, meaning true power just shifted to wealthy merchants and landowners rather than ordinary people.",
+              "starter": "Some historians argue that the true revolution was the shift of power away from the King towards..."
+            }
+          ]
         }
       ],
       "quiz": [
@@ -1530,20 +1402,313 @@ export const unitData = {
           "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
         }
       ],
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** Did the execution of Charles I and the rise of Parliament make Britain's government truly 'modern', or just transfer power to wealthy merchants?",
-        "scaffolding": [
-          "Sentence Starter: In one way, the government became more modern because the absolute power of the King was...",
-          "Sentence Starter: The new Great Seal showed this change by...",
-          "Sentence Starter: However, some historians argue it wasn't truly modern for everyone, because...",
-          "Key Vocabulary Checklist: Absolute Monarchy, House of Commons, The Commonwealth."
+      "lesson_assessment": {
+        "question": "How did the English Civil War and the execution of Charles I change the balance of power?",
+        "hints": "Mention the Divine Right of Kings, Parliament, and Oliver Cromwell.",
+        "sentence_starters": [
+          "Before the Civil War, Charles I believed in the 'Divine Right of Kings', meaning...",
+          "However, Parliament challenged this by...",
+          "By executing the King in 1649, it proved that..."
         ]
       }
     },
     {
       "id": "lesson_5",
+      "flashcards": [
+        {
+          "term": "King Charles I",
+          "definition": "Believed in the Divine Right of Kings; executed by Parliament in 1649."
+        },
+        {
+          "term": "Oliver Cromwell",
+          "definition": "Strict Puritan commander of the New Model Army."
+        },
+        {
+          "term": "John Bradshaw",
+          "definition": "Presided over the trial of King Charles I."
+        },
+        {
+          "term": "Martin Noell",
+          "definition": "Wealthy merchant, slave trader, and pamphleteer."
+        },
+        {
+          "term": "King Charles II",
+          "definition": "Returned to the throne during the Restoration in 1660."
+        }
+      ],
+      "title": "Who controlled Britain? The Economic Shift",
+      "teacher_notes": {
+        "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
+        "objectives": [
+          {
+            "objective": "Analyze why [Key Individual: King [Key Individual: King [Key Individual: King Charles I]]] and Parliament fought the English Civil War (1642–1651).",
+            "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
+            "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
+          },
+          {
+            "objective": "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
+            "primer": "Use the 'Atlantic Merchants' tab and Source A to show how Caribbean sugar profits directly funded the New Model Army.",
+            "question": "How did the switch to sugar production in Barbados financially impact the outcome of the English Civil War?"
+          },
+          {
+            "objective": "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.",
+            "primer": "Use the Historical Interpretations section at the end of the lesson to have students weigh Prof. Hill's political view against Prof. Williams' economic view.",
+            "question": "Based on the evidence, was the English Civil War ultimately won by religious ideals or by mercantile wealth?"
+          }
+        ]
+      },
+      "do_now": {
+        "title": "Do Now: Previous Knowledge",
+        "type": "questions",
+        "items": [
+          {
+            "question": "What was the name of the first permanent English settlement in North America (1607)?",
+            "answer": "Jamestown"
+          },
+          {
+            "question": "Which cash crop saved the Jamestown colony from economic ruin?",
+            "answer": "Tobacco"
+          },
+          {
+            "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
+            "answer": "A Joint-Stock Company"
+          },
+          {
+            "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
+            "answer": "The Mughal Empire"
+          },
+          {
+            "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
+            "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
+          }
+        ]
+      },
+      "vocab": [
+        {
+          "term": "Divine Right of Kings",
+          "definition": "The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament."
+        },
+        {
+          "term": "New Model Army",
+          "definition": "A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War."
+        },
+        {
+          "term": "Commonwealth",
+          "definition": "The republic that ruled England from 1649 to 1660 following the execution of Charles I."
+        },
+        {
+          "term": "Plantation",
+          "definition": "An estate on which crops such as coffee, sugar, and tobacco are cultivated by resident labor, frequently enslaved labor."
+        },
+        {
+          "term": "Navigation Acts",
+          "definition": "Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth."
+        }
+      ],
+      "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
+      "narrative_blocks": [
+        {
+          "title": "Macro-History: The Financial Hub",
+          "text": "By the 1700s, the geography of wealth in Britain had fundamentally changed. London was no longer just the seat of the King; it had become the beating heart of a new global financial empire. The River Thames was choked with a forest of wooden ship masts from the East India Company and transatlantic slave ships. The wealth generated by this massive maritime trade built institutions like the Bank of England and the Royal Exchange, shifting power from the monarchy to the merchant class."
+        },
+        {
+          "title": "Analyzing Source A",
+          "image": "/images/royal_exchange_courtyard.jpg",
+          "image_alt": "The Royal Exchange, London (1644)",
+          "source_letter": "A",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?",
+              "model_answer": "The River Thames became choked with a 'forest of wooden ship masts' from global trading vessels, and the city saw the rise of grand financial institutions like the Royal Exchange.",
+              "text": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?"
+            }
+          ]
+        },
+        {
+          "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
+          "text": "Look closely at the <strong>1651 Great Seal of England</strong>, created after the King’s execution:<br><br><ul><li><strong>No Royal Crown or Arms:</strong> For 600 years, the Great Seal bore the face of the ruling King or Queen on a horse. In 1651, the King’s face was completely erased.</li><li><strong>The House of Commons Side:</strong> Shows hundreds of MPs sitting in Parliament with the motto: <em>\"In the First Year of Freedom by God's Blessing Restored.\"</em></li><li><strong>The Map Side:</strong> Shows a detailed map of England, Ireland, and naval ships sailing in the Atlantic, emphasizing maritime power and imperial expansion over royal bloodlines.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source E",
+          "image": "/images/great_seal_1651.png",
+          "image_alt": "The Great Seal of the Commonwealth of England (1651)",
+          "source_letter": "E",
+          "tasks": [
+            {
+              "type": "analysis",
+              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+              "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
+              "text": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
+            }
+          ]
+        },
+        {
+          "title": "Historical Interpretations: Who Was the Real Winner?",
+          "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong>[Key Individual: Charles II]</strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Christopher Hill]]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though [Key Individual: Charles II] returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Eric Williams]]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
+              "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
+            }
+          ]
+        },
+        {
+          "title": "Lesson Reflection",
+          "tasks": [
+            {
+              "qNum": 20,
+              "text": "Lesson Reflection: Considering the English Civil War and the rise of transatlantic trade, did political ideology or economic ambition play a greater role in shifting the balance of power in Britain?",
+              "model": "A strong answer could argue either way, provided it references the ideological battle between the Divine Right of Kings and Parliament's demand for liberties, while also acknowledging how the massive influx of wealth from the Atlantic trade empowered a new merchant class who demanded a greater say in government.",
+              "starter": "Although Parliament claimed victory, the economic reality was that power shifted to..."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
+          "options": [
+            "Constitutional Monarchy",
+            "The Divine Right of Kings",
+            "Papal Infallibility",
+            "Parliamentary Sovereignty"
+          ],
+          "answer": 1,
+          "explanation": "The Divine Right of Kings"
+        },
+        {
+          "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
+          "options": [
+            "The Window Tax",
+            "The Hearth Tax",
+            "The Poll Tax",
+            "Ship Money"
+          ],
+          "answer": 3,
+          "explanation": "Ship Money"
+        },
+        {
+          "question": "On what date was King Charles I executed outside the Banqueting House in London?",
+          "options": [
+            "30 January 1649",
+            "4 July 1776",
+            "5 November 1605",
+            "15 June 1215"
+          ],
+          "answer": 0,
+          "explanation": "30 January 1649"
+        },
+        {
+          "question": "What was the name of Parliament’s disciplined, professional military force created during the Civil War?",
+          "options": [
+            "The Royalist Vanguard",
+            "The New Model Army",
+            "The Continental Army",
+            "The Home Guard"
+          ],
+          "answer": 1,
+          "explanation": "The New Model Army"
+        },
+        {
+          "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
+          "options": [
+            "Oliver Cromwell",
+            "Prince Rupert",
+            "Sir Thomas Fairfax",
+            "John Pym"
+          ],
+          "answer": 0,
+          "explanation": "Oliver Cromwell"
+        },
+        {
+          "question": "What formal title was given to the English republic that ruled between 1649 and 1660?",
+          "options": [
+            "The United Kingdom",
+            "The First British Empire",
+            "The English Federation",
+            "The Commonwealth of England"
+          ],
+          "answer": 3,
+          "explanation": "The Commonwealth of England"
+        },
+        {
+          "question": "Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?",
+          "options": [
+            "Jamaica",
+            "Cuba",
+            "Bermuda",
+            "Barbados"
+          ],
+          "answer": 3,
+          "explanation": "Barbados"
+        },
+        {
+          "question": "What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?",
+          "options": [
+            "The Sugar Acts",
+            "The Stamp Acts",
+            "The Trade and Revenue Acts",
+            "The Navigation Acts"
+          ],
+          "answer": 3,
+          "explanation": "The Navigation Acts"
+        },
+        {
+          "question": "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
+          "options": [
+            "The Catholics",
+            "The Quakers",
+            "The Puritans",
+            "The Methodists"
+          ],
+          "answer": 2,
+          "explanation": "The Puritans"
+        },
+        {
+          "question": "What event in 1660 brought [Key Individual: Charles II] back to the throne, ending the Commonwealth era?",
+          "options": [
+            "The Glorious Revolution",
+            "The Norman Conquest",
+            "The Restoration",
+            "The Reformation"
+          ],
+          "answer": 2,
+          "explanation": "The Restoration"
+        }
+      ],
+      "learning_objectives": {
+        "overarching": "Who controlled Britain: The King, Parliament, or Imperial Profits?",
+        "scaffolded": [
+          "Analyze why Charles I and Parliament fought the English Civil War (1642–1651).",
+          "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
+          "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists."
+        ]
+      },
+      "banner": "/images/early_mod_l4_banner.jpg",
+      "sources": [
+        {
+          "title": "The East Offering its Riches to Britannia (1778)",
+          "src": "/images/global_britannia.jpg",
+          "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
+          "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
+          "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+        }
+      ],
+      "lesson_assessment": {
+        "question": "Explain how the 'Financial Revolution' (like the Bank of England) helped Britain build a modern empire.",
+        "hints": "Mention the National Debt, the Bank of England (1694), and funding the Royal Navy.",
+        "sentence_starters": [
+          "Following the Glorious Revolution, Britain created the Bank of England, which allowed the government to...",
+          "This 'National Debt' was crucial because...",
+          "Consequently, Britain could out-spend its rivals by building..."
+        ]
+      }
+    },
+    {
+      "id": "lesson_6",
       "title": "What were the mechanics of the Transatlantic Slave Trade?",
-      "enquiry": "What were the mechanics of the Transatlantic Slave Trade? (Triangular Trade, Plantation economics, Legacies of British Slavery)",
       "teacher_notes": {
         "primer": "This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.",
         "objectives": [
@@ -1583,10 +1748,13 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Micro-History: The Barracoons of West Africa",
+          "text": "The Transatlantic Slave Trade was not simply a case of European ships arriving and kidnapping people from the beach. It was a massive, highly organized global business that relied on complex treaties and alliances. Powerful African empires, such as the Dahomey and the Asante, grew wealthy by launching military campaigns against rival inland groups, taking prisoners of war. These captives were marched for weeks to the coast and sold to European merchants in exchange for manufactured goods like brass, textiles, and, crucially, European firearms. The European merchants would lock the enslaved Africans in brutally crowded, disease-ridden coastal fortresses known as 'barracoons' or 'castles' (like Cape Coast Castle in modern-day Ghana) for months, waiting for slave ships to arrive. The trade enriched both European merchants and coastal African elites, while completely devastating the interior of the African continent."
+        },
+        {
+          "title": "Analyzing Source A",
           "image": "/images/cape_coast_castle.jpg",
           "image_alt": "Cape Coast Castle, a European slave fort on the Gold Coast",
-          "image_context": "This image shows Cape Coast Castle, a massive European 'factory' (fort) built on the West African coast. Notice the heavy fortifications pointing out to sea (to defend against rival European navies) and the 'door of no return' leading to the ships. Hinge Question: Why were European 'slave castles' heavily fortified facing the sea as well as the land?",
-          "text": "The Transatlantic Slave Trade was not simply a case of European ships arriving and kidnapping people from the beach. It was a massive, highly organized global business that relied on complex treaties and alliances. Powerful African empires, such as the Dahomey and the Asante, grew wealthy by launching military campaigns against rival inland groups, taking prisoners of war. These captives were marched for weeks to the coast and sold to European merchants in exchange for manufactured goods like brass, textiles, and, crucially, European firearms. The European merchants would lock the enslaved Africans in brutally crowded, disease-ridden coastal fortresses known as 'barracoons' or 'castles' (like Cape Coast Castle in modern-day Ghana) for months, waiting for slave ships to arrive. The trade enriched both European merchants and coastal African elites, while completely devastating the interior of the African continent.",
+          "source_letter": "A",
           "tasks": [
             {
               "type": "comprehension",
@@ -1600,40 +1768,38 @@ export const unitData = {
             },
             {
               "type": "comprehension",
-              "question": "What was a 'barracoon'?",
-              "model_answer": "A brutally crowded, disease-ridden coastal fortress where enslaved people were locked up while waiting for slave ships."
-            },
-            {
-              "type": "comprehension",
               "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
               "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
             }
-          ],
-          "image_caption": "Cape Coast Castle, a 'slave castle' on the Gold Coast (modern-day Ghana). Captured Africans were held in brutal dungeons below, while European governors lived in luxury above.",
-          "source_letter": "A"
+          ]
         },
         {
           "title": "Macro-History: The Triangular Machinery of Exploitation",
-          "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"background: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin: 20px 0; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.2);\">\n    <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center; width: 100%; margin-bottom: 20px;\">Interactive Trade Map</h3>\n    \n    <div style=\"display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;\">\n        <button onclick=\"document.getElementById('map-eur').style.display='block'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='none'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6'; this.nextElementSibling.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 1; transition: 0.3s;\">Europe</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='block'; document.getElementById('map-ame').style.display='none'; this.previousElementSibling.style.opacity='0.6'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #d97706; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">West Africa</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='block'; this.previousElementSibling.style.opacity='0.6'; this.previousElementSibling.previousElementSibling.style.opacity='0.6'; this.style.opacity='1';\" style=\"flex: 1 1 150px; padding: 12px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">The Americas</button>\n    </div>\n\n    <div id=\"map-eur\" style=\"background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0284c7;\">\n        <h4 style=\"margin-top: 0; color: #38bdf8;\">Exports from Europe (Bristol, Liverpool, London)</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Manufactured Firearms:</strong> Cheap muskets and gunpowder used to fuel regional African wars.</li>\n            <li><strong>Textiles and Cloth:</strong> Mass-produced British cotton and wool items.</li>\n            <li><strong>Alcohol:</strong> Spirits such as rum and brandy used as trade currency.</li>\n            <li><strong>Metal Goods:</strong> Iron bars, brass pans, and manillas (copper bracelets).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-afr\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #d97706;\">\n        <h4 style=\"margin-top: 0; color: #fbbf24;\">Exports from West Africa</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Enslaved Human Beings:</strong> Men, women, and children captured in warfare or raids.</li>\n            <li><strong>Gold Dust:</strong> Extracted from the Gold Coast and heavily sought after by European merchants.</li>\n            <li><strong>Ivory:</strong> Elephant tusks traded as a luxury good.</li>\n            <li><strong>Spices:</strong> Exotic items like malagueta pepper (Guinea pepper).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-ame\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #16a34a;\">\n        <h4 style=\"margin-top: 0; color: #4ade80;\">Exports from The Americas</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Raw Sugar & Molasses:</strong> The most lucrative cash crop, grown in the brutal Caribbean plantations.</li>\n            <li><strong>Tobacco:</strong> Grown extensively in the colonies of Virginia and Maryland.</li>\n            <li><strong>Raw Cotton:</strong> Crucial raw material shipped to British textile mills during the Industrial Revolution.</li>\n            <li><strong>Coffee and Cocoa:</strong> Luxury consumables destined for European coffeehouses.</li>\n        </ul>\n    </div>\n</div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>",
+          "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"background: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin: 20px 0; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.2);\">\n    <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center; width: 100%; margin-bottom: 20px;\">Interactive Trade Map</h3>\n    \n    <div style=\"display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;\">\n        <button onclick=\"document.getElementById('map-eur').style.display='block'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='none'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6'; this.nextElementSibling.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 1; transition: 0.3s;\">Europe</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='block'; document.getElementById('map-ame').style.display='none'; this.previousElementSibling.style.opacity='0.6'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #d97706; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">West Africa</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='block'; this.previousElementSibling.style.opacity='0.6'; this.previousElementSibling.previousElementSibling.style.opacity='0.6'; this.style.opacity='1';\" style=\"flex: 1 1 150px; padding: 12px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">The Americas</button>\n    </div>\n\n    <div id=\"map-eur\" style=\"background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0284c7;\">\n        <h4 style=\"margin-top: 0; color: #38bdf8;\">Exports from Europe (Bristol, Liverpool, London)</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Manufactured Firearms:</strong> Cheap muskets and gunpowder used to fuel regional African wars.</li>\n            <li><strong>Textiles and Cloth:</strong> Mass-produced British cotton and wool items.</li>\n            <li><strong>Alcohol:</strong> Spirits such as rum and brandy used as trade currency.</li>\n            <li><strong>Metal Goods:</strong> Iron bars, brass pans, and manillas (copper bracelets).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-afr\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #d97706;\">\n        <h4 style=\"margin-top: 0; color: #fbbf24;\">Exports from West Africa</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Enslaved Human Beings:</strong> Men, women, and children captured in warfare or raids.</li>\n            <li><strong>Gold Dust:</strong> Extracted from the Gold Coast and heavily sought after by European merchants.</li>\n            <li><strong>Ivory:</strong> Elephant tusks traded as a luxury good.</li>\n            <li><strong>Spices:</strong> Exotic items like malagueta pepper (Guinea pepper).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-ame\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #16a34a;\">\n        <h4 style=\"margin-top: 0; color: #4ade80;\">Exports from The Americas</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Raw Sugar & Molasses:</strong> The most lucrative cash crop, grown in the brutal Caribbean plantations.</li>\n            <li><strong>Tobacco:</strong> Grown extensively in the colonies of Virginia and Maryland.</li>\n            <li><strong>Raw Cotton:</strong> Crucial raw material shipped to British textile mills during the Industrial Revolution.</li>\n            <li><strong>Coffee and Cocoa:</strong> Luxury consumables destined for European coffeehouses.</li>\n        </ul>\n    </div>\n</div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>"
+        },
+        {
+          "title": "Analyzing Source B",
           "image": "/images/triangular_trade.png",
           "image_alt": "Diagram of the Triangular Trade",
-          "image_context": "Trace the continuous, cyclical flow of goods, enslaved people, and raw materials across the Atlantic. This diagram reduces the horrors of the Middle Passage to a sanitized economic model, showing how European industrial growth was directly fueled by the exploitation of African labor and American land. **Hinge Question:** Who benefited the most from this system, and who bore the ultimate cost?",
-          "image_caption": "A map illustrating the Triangular Trade system. British manufactured goods were traded for enslaved Africans, who were transported under horrific conditions to the Americas to produce cash crops like sugar and tobacco, which were then shipped back to Europe.",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "analysis",
-              "question": "Based on the flowchart, what specific goods were exchanged for enslaved Africans in West Africa?",
-              "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people."
+              "question": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?",
+              "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.",
+              "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
             }
-          ],
-          "source_letter": "B"
+          ]
         },
         {
           "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
+          "text": "The experience of an enslaved African depended heavily on where the slave ship landed. In the Caribbean (like Jamaica and Barbados), the primary crop was sugar. Sugar cultivation was incredibly brutal, dangerous, and physically destroying labor. Many Caribbean plantations were owned by 'absentee landlords'—rich white men who lived in luxury in London and never even visited their estates, leaving brutal overseers in charge. Because profits were so high, these overseers calculated that it was cheaper to literally work enslaved people to death (the 'death camp' model) and simply buy replacements from Africa. Life expectancy upon arriving on a sugar plantation was often less than seven years. By contrast, in the North American colony of Virginia, the primary crop was tobacco. Tobacco required less intensive daily physical destruction than sugar. Furthermore, a different climate and slightly better diet meant that, by the 1700s, the enslaved population in Virginia became 'self-sustaining' (growing through childbirth rather than relying entirely on importing new people from Africa). While Virginia was still a brutal system of chattel slavery, the lethal intensity of the Caribbean sugar machine was unmatched."
+        },
+        {
+          "title": "Analyzing Source C",
           "image": "/images/plantation.jpg",
           "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
-          "image_context": "An illustration of an early modern plantation. Notice the vast scale of the agricultural operation and the intense manual labor required to harvest the cash crops. Hinge Question: How did the physical layout of a plantation enforce control over enslaved people?",
-          "text": "The experience of an enslaved African depended heavily on where the slave ship landed. In the Caribbean (like Jamaica and Barbados), the primary crop was sugar. Sugar cultivation was incredibly brutal, dangerous, and physically destroying labor. Many Caribbean plantations were owned by 'absentee landlords'—rich white men who lived in luxury in London and never even visited their estates, leaving brutal overseers in charge. Because profits were so high, these overseers calculated that it was cheaper to literally work enslaved people to death (the 'death camp' model) and simply buy replacements from Africa. Life expectancy upon arriving on a sugar plantation was often less than seven years. By contrast, in the North American colony of Virginia, the primary crop was tobacco. Tobacco required less intensive daily physical destruction than sugar. Furthermore, a different climate and slightly better diet meant that, by the 1700s, the enslaved population in Virginia became 'self-sustaining' (growing through childbirth rather than relying entirely on importing new people from Africa). While Virginia was still a brutal system of chattel slavery, the lethal intensity of the Caribbean sugar machine was unmatched.",
+          "source_letter": "C",
           "tasks": [
             {
               "type": "comprehension",
@@ -1647,17 +1813,10 @@ export const unitData = {
             },
             {
               "type": "comprehension",
-              "question": "How did the enslaved population in Virginia differ from the Caribbean by the 1700s?",
-              "model_answer": "The Virginia population became 'self-sustaining' through childbirth, whereas the Caribbean relied heavily on constantly importing new people due to the lethal conditions."
-            },
-            {
-              "type": "comprehension",
               "question": "Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?",
               "model_answer": "Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it."
             }
-          ],
-          "image_caption": "An 18th-century illustration of a Caribbean sugar plantation. Notice the systematic layout designed to maximize surveillance, control, and grueling labor.",
-          "source_letter": "C"
+          ]
         },
         {
           "title": "Digital Research Task: The Legacies of British Slavery",
@@ -1667,11 +1826,6 @@ export const unitData = {
               "type": "extended",
               "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here:",
               "lines": 20
-            },
-            {
-              "type": "comprehension",
-              "question": "Synoptic Reflection: How does the reality of the Transatlantic Slave Trade challenge the idea that 18th-century Britain was a 'modern', enlightened society?",
-              "model_answer": "While Britain had modern financial systems (banks, stock exchanges) and global trade, this wealth was built entirely on chattel slavery. Treating millions of African human beings as property to be tortured and exploited for sugar profits shows that society was deeply un-modern and brutal."
             }
           ]
         },
@@ -1679,6 +1833,18 @@ export const unitData = {
           "title": "Plenary Check",
           "text": "Let's review the mechanics of the Transatlantic Slave Trade.",
           "tasks": []
+        },
+        {
+          "title": "Lesson Reflection",
+          "text": "It is time to synthesize your understanding of the mechanics of the Transatlantic slave trade.",
+          "tasks": [
+            {
+              "type": "extended",
+              "text": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society?",
+              "model": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits.",
+              "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because..."
+            }
+          ]
         }
       ],
       "video": [
@@ -1858,21 +2024,20 @@ export const unitData = {
           }
         ]
       },
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the Transatlantic Slave Trade expose the dark contradiction between Britain's 'modern' economic wealth and its brutal, un-modern social exploitation?",
-        "scaffolding": [
-          "Sentence Starter: The Transatlantic Slave Trade created massive 'modern' wealth for Britain by...",
-          "Sentence Starter: However, this wealth was built on deeply un-modern and brutal practices, such as...",
-          "Sentence Starter: The conditions in the barracoons and ships proved that...",
-          "Key Vocabulary Checklist: Triangular Trade, Barracoons, Chattel Slavery."
+      "lesson_assessment": {
+        "question": "How did the Triangular Trade directly enrich British port cities?",
+        "hints": "Mention Bristol/Liverpool, manufactured goods, enslaved people, and sugar/tobacco.",
+        "sentence_starters": [
+          "The Triangular Trade enriched Britain through three main stages. Firstly...",
+          "Secondly, enslaved Africans were brutally transported to...",
+          "Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
         ]
       }
     },
     {
-      "id": "lesson_6",
+      "id": "lesson_7",
       "banner": "/images/brookes_ship.jpg",
       "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
-      "enquiry": "How did enslaved Africans resist the Transatlantic Slave Trade? (Covert resistance, Obeah, Armed Rebellions)",
       "teacher_notes": {
         "primer": "This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.",
         "objectives": [
@@ -1952,21 +2117,17 @@ export const unitData = {
         },
         {
           "title": "Voices of Resistance: Equiano's Testimony",
-          "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>",
+          "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>"
+        },
+        {
+          "title": "Examining the Evidence",
           "image": "/images/equiano.jpg",
           "image_alt": "Portrait of Olaudah Equiano (1789)",
-          "image_context": "Notice Equiano's refined gentleman's clothing and the Bible in his hand. He deliberately presented himself as an educated, devout, and respectable British citizen to force European audiences to recognize his humanity and to directly challenge the racist justifications for slavery. **Hinge Question:** Why was it so important for Equiano to present himself this way when campaigning for abolition?",
-          "image_caption": "Frontispiece portrait of Olaudah Equiano from his 1789 autobiography. As a formerly enslaved man who purchased his own freedom, his vivid first-hand account of the horrors of slavery became a crucial piece of evidence in the British abolitionist movement.",
           "tasks": [
             {
               "type": "source_analysis",
               "question": "Inferring Motive (Source B): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
               "model_answer": "Jumping overboard was a powerful act of resistance because it was a total rejection of their commodification; by taking their own lives, they reclaimed control over their own bodies and actively destroyed the 'property' and profits of the slave traders."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Cross-Referencing Utility: How does Source C confirm that \"day-to-day\" resistance was real and effective, even when reported by a hostile white overseer?",
-              "model_answer": "Source C shows the overseer constantly suspecting sabotage ('done maliciously', 'poisoned with nightshade root'). Even though Thistlewood is hostile, his diary proves that enslaved people were successfully delaying work and causing economic damage while maintaining plausible deniability ('deny all knowledge')."
             },
             {
               "type": "source_analysis",
@@ -1977,41 +2138,37 @@ export const unitData = {
         },
         {
           "title": "Case Study: The Stono Rebellion (1739)",
-          "image": "/images/stono_rebellion.jpg",
+          "text": "While hidden, day-to-day resistance was constant, sometimes it exploded into outright war. In September 1739, a literate enslaved man named Jemmy led a coordinated armed uprising in South Carolina known as the Stono Rebellion. The rebels seized weapons, marched under banners that read 'Liberty!', and beat drums to rally others as they marched south toward Spanish Florida, where they were promised freedom. Although the rebellion was eventually crushed by the brutal South Carolina militia, it terrified the planter class. It proved that enslaved Africans could organize militarily and were actively fighting for their freedom, leading the panicked British colonists to pass the draconian 1740 Negro Act, which severely restricted enslaved people's ability to assemble, grow their own food, or learn to read."
+        },
+        {
+          "title": "Analyzing Source D",
+          "image": "/images/stono_rebellion_map.png",
           "image_alt": "Map of the Stono Rebellion route (1739)",
-          "image_context": "Observe the location of South Carolina relative to Spanish Florida. The Spanish deliberately promised freedom to any enslaved person who could escape British territory and reach St. Augustine, weaponizing the enslaved population against their British imperial rivals. **Hinge Question:** Why did geopolitical rivalries between European empires sometimes create small windows of opportunity for enslaved people?",
-          "text": "While hidden, day-to-day resistance was constant, sometimes it exploded into outright war. In September 1739, a literate enslaved man named Jemmy led a coordinated armed uprising in South Carolina known as the Stono Rebellion. The rebels seized weapons, marched under banners that read 'Liberty!', and beat drums to rally others as they marched south toward Spanish Florida, where they were promised freedom. Although the rebellion was eventually crushed by the brutal South Carolina militia, it terrified the planter class. It proved that enslaved Africans could organize militarily and were actively fighting for their freedom, leading the panicked British colonists to pass the draconian 1740 Negro Act, which severely restricted enslaved people's ability to assemble, grow their own food, or learn to read.",
+          "source_letter": "D",
           "tasks": [
             {
               "type": "comprehension",
-              "question": "What was the immediate goal of the rebels during the Stono Rebellion?",
-              "model_answer": "Their immediate goal was to march south to Spanish Florida, where the Spanish authorities had promised them freedom."
-            },
-            {
-              "type": "comprehension",
-              "question": "How did the rebels organize and communicate their uprising?",
-              "model_answer": "They organized militarily, seized weapons, marched under banners reading 'Liberty!', and used drums to communicate and rally others to their cause."
-            },
-            {
-              "type": "comprehension",
-              "question": "Why did the Stono Rebellion terrify the British planter class?",
-              "model_answer": "It proved that enslaved Africans were not passive and were fully capable of organizing coordinated, armed military resistance against their enslavers."
+              "question": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
+              "model_answer": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors.",
+              "text": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
+              "model": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors."
             },
             {
               "type": "comprehension",
               "question": "What was the long-term consequence of the rebellion for enslaved people in South Carolina?",
               "model_answer": "The panicked planters passed the brutal 1740 Negro Act, which heavily restricted the rights of enslaved people to assemble, earn money, or learn to read, in order to prevent future uprisings."
             }
-          ],
-          "image_caption": "A map showing the geography of the Stono Rebellion. Enslaved rebels marched south from the Stono River in South Carolina, aiming for the Spanish territory of Florida where they were promised emancipation.",
-          "source_letter": "D"
+          ]
         },
         {
           "title": "Historical Debates: What Truly Destroyed Slavery?",
+          "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London."
+        },
+        {
+          "title": "Analyzing Source F",
           "image": "/images/william_wilberforce.jpg",
           "image_alt": "Portrait of [Key Individual: William Wilberforce], a British politician and abolitionist",
-          "image_context": "William Wilberforce was a prominent British Member of Parliament who led the parliamentary campaign against the British slave trade for twenty years until the passage of the Slave Trade Act of 1807. Hinge Question: Why is it problematic to credit Wilberforce entirely for the abolition of slavery, while ignoring the resistance of enslaved people themselves?",
-          "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London.",
+          "source_letter": "F",
           "tasks": [
             {
               "type": "comprehension",
@@ -2020,22 +2177,22 @@ export const unitData = {
             },
             {
               "type": "comprehension",
-              "question": "What role did William Wilberforce actually play in abolition?",
-              "model_answer": "He led a tireless, decades-long campaign in the British Parliament to ban the trade, using shocking evidence to change public opinion."
-            },
-            {
-              "type": "comprehension",
               "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
               "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study Source F. Why is it problematic to only teach about men like Wilberforce when studying the end of slavery?",
-              "model_answer": "Because it silences the agency of the enslaved people themselves, making it seem like they passively waited to be rescued by white politicians, rather than acknowledging their active, violent resistance that forced the government's hand."
             }
-          ],
-          "image_caption": "Portrait of William Wilberforce, the British Member of Parliament who famously led the parliamentary campaign to abolish the slave trade.",
-          "source_letter": "F"
+          ]
+        },
+        {
+          "title": "Lesson Reflection",
+          "text": "It is time to synthesize your understanding of how enslaved Africans resisted the Transatlantic Slave Trade.",
+          "tasks": [
+            {
+              "type": "extended",
+              "text": "Lesson Reflection: Why is it historically inaccurate and damaging to claim that the abolition of the slave trade was purely the result of benevolent white politicians like William Wilberforce?",
+              "model": "A strong answer should explain that this 'white savior' narrative ignores the centuries of relentless resistance by enslaved people themselves (both covert sabotage and overt rebellions like Stono), as well as the economic factors (like the declining profitability of sugar) that historians like Eric Williams argue were the true catalysts for abolition.",
+              "starter": "The 'white savior' narrative is historically inaccurate because it ignores the actions of..."
+            }
+          ]
         },
         {
           "title": "Side Quest: Obeah and Botanical Warfare",
@@ -2046,31 +2203,12 @@ export const unitData = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "What was Obeah, and why did it involve botanical knowledge?",
-              "model_answer": "Obeah was a spiritual belief system brought from West Africa, whose practitioners possessed expert knowledge of local toxic plants and acted as healers."
-            },
-            {
-              "type": "comprehension",
-              "question": "How did enslaved women use their positions in the plantation house to resist their enslavers?",
-              "model_answer": "They used their positions cooking food to slowly and secretly poison brutal overseers and plantation owners using their botanical knowledge."
-            },
-            {
-              "type": "comprehension",
               "question": "Why might psychological and chemical resistance have been just as effective as armed rebellion?",
               "model_answer": "It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study Source E. How does this botanical illustration help explain the secret power held by Obeah healers?",
-              "model_answer": "It highlights the deep scientific and botanical knowledge required to understand which local plants were toxic, demonstrating that Obeah was rooted in highly intelligent natural science."
             }
           ],
           "image_caption": "A botanical illustration of the cassava plant. Enslaved people frequently used their deep botanical knowledge of toxic plants to quietly poison their enslavers.",
           "source_letter": "E"
-        },
-        {
-          "title": "Plenary Check",
-          "text": "Let's review the key themes of resistance in the Transatlantic Slave Trade."
         }
       ],
       "quiz": [
@@ -2221,18 +2359,18 @@ export const unitData = {
           }
         ]
       },
-      "extended": {
-        "question": "This open-ended task is designed to prepare you for the final assessment in Lesson 6. Write a full paragraph answering the question below, using specific historical evidence from today's lesson.\n\n**Task:** How did the continuous resistance of enslaved Africans prove that 'modernity' and freedom were not gifts given by Europeans, but rights fought for by the oppressed?",
-        "scaffolding": [
-          "Sentence Starter: Enslaved Africans did not just wait for Europeans to free them; instead they...",
-          "Sentence Starter: One clear example of this resistance was...",
-          "Sentence Starter: This proves that the push for 'modern' human rights actually came from...",
-          "Key Vocabulary Checklist: The Stono Rebellion, Equiano, Day-to-day resistance."
+      "lesson_assessment": {
+        "question": "Explain how the Jamaican Maroons successfully resisted British control.",
+        "hints": "Mention Nanny of the Maroons, guerrilla warfare, and the geography of Jamaica.",
+        "sentence_starters": [
+          "The Maroons were communities of...",
+          "They were able to successfully resist the British army because they used...",
+          "Ultimately, the British were forced to..."
         ]
       }
     },
     {
-      "id": "lesson_7",
+      "id": "lesson_8",
       "quiz": [
         {
           "question": "In what year was the Bank of England established, revolutionizing British national debt and finance?",
@@ -2364,7 +2502,6 @@ export const unitData = {
         }
       ],
       "title": "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
-      "enquiry": "How 'modern' was Britain by 1750? (Periodisation and synoptic essay synthesis)",
       "teacher_notes": {
         "primer": "This is the final synoptic assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
         "objectives": [
@@ -2460,35 +2597,38 @@ export const unitData = {
         },
         {
           "title": "Macro-History: The Ideology of Empire",
-          "text": "As Britain grew incredibly wealthy from the transatlantic slave trade and the East India Company, it developed a powerful new self-image. The British elite did not view themselves as brutal conquerors; instead, they believed they were bringing civilization and order to the world. Art from this period heavily utilized classical mythology to portray Britannia as a righteous, glorious figure receiving the willing submission and wealth of the globe.",
+          "text": "As Britain grew incredibly wealthy from the transatlantic slave trade and the East India Company, it developed a powerful new self-image. The British elite did not view themselves as brutal conquerors; instead, they believed they were bringing civilization and order to the world. Art from this period heavily utilized classical mythology to portray Britannia as a righteous, glorious figure receiving the willing submission and wealth of the globe."
+        },
+        {
+          "title": "Analyzing Source A",
           "image": "/images/global_britannia.jpg",
           "image_alt": "The East Offering its Riches to Britannia (1778)",
-          "image_context": "Observe Britannia sitting elevated on a throne, passively receiving jewels, spices, and silks from subservient figures representing Asia, Africa, and India. This allegorical ceiling painting is pure imperial propaganda, designed to justify the Empire by portraying Britain as the natural, divinely ordained ruler of the world's wealth. **Hinge Question:** How does this painting attempt to make the violent realities of empire building look peaceful and natural?",
-          "image_caption": "A 1778 ceiling painting by Spiridione Roma titled 'The East Offering its Riches to Britannia,' commissioned for the East India Company headquarters. It is a prime example of imperial propaganda, portraying Britain as a majestic and benevolent ruler receiving willing global tribute.",
+          "source_letter": "A",
           "tasks": [
             {
               "type": "source_analysis",
               "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
               "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
             }
-          ],
-          "source_letter": "A"
+          ]
         },
         {
           "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
-          "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"argBtn1\" onclick=\"document.getElementById('arg1').style.display='block'; document.getElementById('arg2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #059669;\">Argument A: Global Wealth (Modern)</button>        <button id=\"argBtn2\" onclick=\"document.getElementById('arg1').style.display='none'; document.getElementById('arg2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #dc2626;\">Argument B: Domestic Reality (Un-Modern)</button>    </div>    <div id=\"arg1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #059669;\">Britain Was Superbly \"Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div id=\"arg2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #dc2626;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>",
+          "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"argBtn1\" onclick=\"document.getElementById('arg1').style.display='block'; document.getElementById('arg2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #059669;\">Argument A: Global Wealth (Modern)</button>        <button id=\"argBtn2\" onclick=\"document.getElementById('arg1').style.display='none'; document.getElementById('arg2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #dc2626;\">Argument B: Domestic Reality (Un-Modern)</button>    </div>    <div id=\"arg1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #059669;\">Britain Was Superbly \"Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div id=\"arg2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #dc2626;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>"
+        },
+        {
+          "title": "Analyzing Source B",
           "image": "/images/royal_exchange_courtyard.jpg",
           "image_alt": "The Royal Exchange, London (1644)",
-          "image_context": "Notice the bustling courtyard packed with merchants in various international dress. This was the beating heart of early modern capitalism, where global goods were traded, joint-stock companies were formed, and the foundations of the British Empire's financial dominance were laid. **Hinge Question:** How did the creation of centralized financial markets like the Royal Exchange accelerate global exploration?",
-          "image_caption": "An engraving of the Royal Exchange in London by Wenceslaus Hollar (1644). Established as a center for commerce, it became the beating heart of England's financial revolution, where merchants traded stocks, commodities, and funded global colonial ventures.",
+          "source_letter": "B",
           "tasks": [
             {
               "type": "analysis",
-              "question": "Using the toggle tabs, identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.",
-              "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'."
+              "question": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.",
+              "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
+              "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
             }
-          ],
-          "source_letter": "B"
+          ]
         },
         {
           "title": "Primary Source Analysis: The Dual Reality",
@@ -2508,11 +2648,6 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Analyzing Audience & Purpose: Why would Henry Fielding (Source D), a London magistrate, exaggerate the chaos and crime in London in 1751?",
-              "model_answer": "As a magistrate, Fielding's purpose was likely to convince Parliament or the government to give him more funding, pass stricter laws, or establish a proper police force to help him control crime."
-            },
-            {
-              "type": "source_analysis",
               "question": "Synthesis Challenge: Combine the insights from Sources C and D with your knowledge of the Atlantic Slave Trade to write a nuanced 3-sentence summary of British society in 1750.",
               "model_answer": "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society."
             }
@@ -2525,7 +2660,13 @@ export const unitData = {
           "image_alt": "John Rocque's Map of London (1746)",
           "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
           "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "Look at Source E. How does the map of London's urban sprawl visually represent the shift towards a modern, consumer-driven society?",
+              "model_answer": "The map shows London expanding rapidly beyond its medieval walls, driven by new wealth, trade, and a growing population, which is a key characteristic of a modern, consumer-driven society."
+            }
+          ],
           "source_letter": "E"
         },
         {
@@ -2592,7 +2733,8 @@ export const unitData = {
             {
               "qNum": 17,
               "text": "Lesson Reflection: Synthesizing everything you have learned in this unit, which development between 1450 and 1750 had the most profound impact on shaping the 'modern' world we live in today?",
-              "model": "A strong answer should select one major theme (e.g., the printing press accelerating knowledge, the Atlantic slave trade establishing global capitalism, or the shift of power from kings to parliaments) and justify why this specific change laid the foundational structures of the modern world."
+              "model": "A strong answer should select one major theme (e.g., the printing press accelerating knowledge, the Atlantic slave trade establishing global capitalism, or the shift of power from kings to parliaments) and justify why this specific change laid the foundational structures of the modern world.",
+              "starter": "Of all the developments between 1450 and 1750, I believe the most profound impact was caused by... because..."
             }
           ]
         },
@@ -2602,11 +2744,6 @@ export const unitData = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "Why did the poor of London drink massive quantities of gin in 1750 instead of water?",
-              "model_answer": "Gin was incredibly cheap due to plummeting grain prices, and it was considered safer to drink than the filthy, sewage-filled water of the Thames."
-            },
-            {
-              "type": "comprehension",
               "question": "What was a 'Mudlark', and what does their existence tell us about poverty in 1750?",
               "model_answer": "Mudlarks were desperate children who scavenged in the freezing mud of the Thames for scraps of coal to sell, showing that extreme, life-threatening poverty still existed."
             },
@@ -2614,11 +2751,6 @@ export const unitData = {
               "type": "comprehension",
               "question": "How does this paragraph challenge the idea that Britain had become a fully 'modern' society by 1750?",
               "model_answer": "It shows that while the rich enjoyed modern ideas like science and coffee houses, the poor were suffering from addiction, disease, and horrific living conditions."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study F. How does this image of Mudlarks contrast with the idea of London being a wealthy, modern capital?",
-              "model_answer": "The image portrays ragged, desperate children digging in the mud, exposing a dark underbelly of extreme suffering that contradicts the image of a wealthy, civilized Enlightenment city."
             }
           ],
           "source_letter": "F"
@@ -2632,16 +2764,7 @@ export const unitData = {
           "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
         ]
       },
-      "banner": "/images/early_mod_l6_banner.jpg",
-      "extended": {
-        "question": "Using your essay plan above, you must now write your final synoptic essay answering the overarching unit enquiry. You will be graded on your ability to deploy specific historical facts, your analysis of 'modernity', and your ability to weigh up competing factors.\n\n**Task:** Write an essay answering the question: How 'modern' was Britain by 1750? (16 marks)",
-        "scaffolding": [
-          "Introduction: Define 'modernity' and outline your argument that Britain was a mix of modern finance/trade but deeply traditional social structures.",
-          "Paragraph 1: Explain the ways Britain was modern (e.g., Bank of England 1694, Parliament, Global Trade).",
-          "Paragraph 2: Explain the ways Britain was NOT modern (e.g., Bloody Code, Transatlantic Chattel Slavery, Women's lack of legal rights, extreme poverty).",
-          "Conclusion: Summarise your final judgement on how 'modern' Britain truly was."
-        ]
-      }
+      "banner": "/images/early_mod_l6_banner.jpg"
     }
   ],
   "portraits": [

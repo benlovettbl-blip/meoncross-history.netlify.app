@@ -1,61 +1,51 @@
+const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
-const puppeteer = require('puppeteer');
 
-const publicUnitsDir = path.join(__dirname, 'public', 'units');
-const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
+require('./generate_workbooks.js');
+require('./generate_textbooks.js');
+require('./generate_pupil_workbooks.js');
+
+const publicDir = path.join(__dirname, 'public');
+const pdfsDir = path.join(__dirname, 'pdfs');
+
+if (!fs.existsSync(pdfsDir)){
+    fs.mkdirSync(pdfsDir);
+}
 
 (async () => {
-  console.log('Starting PDF export...');
-  let browser;
-  try {
-    browser = await puppeteer.launch({ headless: 'new' });
-  } catch (e) {
-    console.log("Could not launch puppeteer. Attempting with standard headless mode.");
-    browser = await puppeteer.launch({ headless: true });
-  }
+  console.log('Starting PDF export for early_modern_world...');
+  const browser = await puppeteer.launch({ headless: 'new' });
+  const page = await browser.newPage();
   
-  let allDirs = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory() && !ignoredDirs.includes(dirent.name))
-    .map(dirent => dirent.name);
-  if (process.argv[2]) allDirs = [process.argv[2]];
-
-  for (const unitId of allDirs) {
-    const unitPath = path.join(publicUnitsDir, unitId);
-    if (!fs.existsSync(unitPath)) continue;
-    
-    const files = fs.readdirSync(unitPath).filter(f => f.startsWith('workbook') && f.endsWith('.html'));
-    
+  const unit = process.argv[2] || 'early_modern_world';
+  const targetFile = process.argv[3];
+  console.log('Starting PDF export for ' + unit + '...');
+  const unitDir = path.join(publicDir, 'units', unit);
+  if (fs.existsSync(unitDir)) {
+    let files = fs.readdirSync(unitDir).filter(f => f.endsWith('.html'));
+    if (targetFile) {
+      files = files.filter(f => f === targetFile);
+    }
     for (const file of files) {
-      const htmlPath = path.join(unitPath, file);
-      const pdfPath = htmlPath.replace('.html', '.pdf');
-      console.log(`Generating PDF for ${unitId}/${file}...`);
-      
-      const page = await browser.newPage();
-      // Ensure file URI format works cross-platform
-      const fileUrl = `file:///${htmlPath.replace(/\\/g, '/')}`;
-      
-      await page.goto(fileUrl, { waitUntil: 'networkidle0' });
-      
+      const htmlPath = path.join(unitDir, file);
+      console.log('Generating PDF for ' + unit + '/' + file + '...');
+      await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0', timeout: 90000 });
+      const pdfFileName = unit + '_' + file.replace('.html', '.pdf');
+      const pdfPath = path.join(pdfsDir, pdfFileName);
       await page.pdf({
         path: pdfPath,
         format: 'A4',
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<div></div>',
-        footerTemplate: '<div style="font-size: 10px; width: 100%; text-align: center; color: #64748b; font-family: Arial, sans-serif; padding-bottom: 5px;"><span class="pageNumber"></span></div>',
-        margin: {
-          top: '0px',
-          right: '0px',
-          bottom: '12mm',
-          left: '0px'
-        }
+        footerTemplate: '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
       });
-      console.log(`Saved ${pdfPath}`);
-      await page.close();
+      console.log('Saved ' + pdfPath);
     }
   }
 
   await browser.close();
-  console.log('PDF export completed successfully.');
+  console.log('PDF generation for ' + unit + ' complete!');
 })();

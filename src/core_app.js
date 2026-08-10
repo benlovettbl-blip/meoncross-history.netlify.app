@@ -790,7 +790,11 @@ export function initializeApp(unitData) {
         
         ${renderCoverSourcesHTML(unitData, getAssetUrl)}
         
+        
         ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+        
+        
+
         
         <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>
         ${lessonsHTML}
@@ -933,6 +937,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(specLink);
     }
 
+    
     // Exam Masterclass Guide Tab - ONLY for KS4 units
     if (!unitData.title || !unitData.title.includes('KS3')) {
       const guideLink = document.createElement('a');
@@ -1114,7 +1119,8 @@ export function initializeApp(unitData) {
     };
 
     function renderLesson(lesson) {
-      window.postRenderHooks = [];
+        window.postRenderHooks = [];
+        let htmlDoNow="", htmlPrimary="", htmlSources1="", htmlNarrative="", htmlPairShare="", htmlHistorian="", htmlTasks="";
       const formatBold = window.formatBold;
     lesson = JSON.parse(JSON.stringify(lesson));
     
@@ -1308,10 +1314,11 @@ export function initializeApp(unitData) {
       `;
     }
 
-          if (lesson.sources && lesson.sources.length > 0) {
-        html += `<div class="sources-grid" style="margin-top: 20px;">`;
+          
+if (lesson.sources && lesson.sources.length > 0) {
+        htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
         lesson.sources.forEach(source => {
-          html += `
+          htmlSources1 += `
             <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
               ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
               
@@ -1346,17 +1353,18 @@ export function initializeApp(unitData) {
             </div>
           `;
         });
-        html += `</div>`;
+        htmlSources1 += `</div>`;
       }
 
 // ==========================================
     // TAB 1: PREPARATION
     // ==========================================
-    html += ``;
+    htmlSources1 += ``;
     
-    if (lesson.primary_source) {
+    
+if (lesson.primary_source) {
       let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
-      html += `
+      htmlPrimary += `
         <div class="phase-card">
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 15px;">
@@ -1376,7 +1384,7 @@ export function initializeApp(unitData) {
 
     
       if (lesson.starters && lesson.starters.length > 0) {
-        html += `
+        htmlPrimary += `
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <div style="padding: 15px 20px; background: linear-gradient(to right, #1e3a8a, #3b82f6); color: white; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center;">
               <i class="fa-solid fa-image" style="margin-right: 10px;"></i> Historical Sources: Think & Wonder
@@ -1384,7 +1392,7 @@ export function initializeApp(unitData) {
             <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
         `;
         lesson.starters.forEach((starter, index) => {
-          html += `
+          htmlPrimary += `
               <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
                 <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #3b82f6; padding-bottom: 5px;">Source ${String.fromCharCode(65 + index)}: ${starter.title}</h4>
                 <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
@@ -1400,14 +1408,14 @@ export function initializeApp(unitData) {
               </div>
           `;
         });
-        html += `
+        htmlPrimary += `
             </div>
           </div>
         `;
       }
       
       if (lesson.utility_starters && lesson.utility_starters.sources) {
-        html += `
+        htmlPrimary += `
           <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <div style="padding: 15px 20px; background: linear-gradient(to right, #475569, #334155); color: white; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center;">
               <i class="fa-solid fa-scale-balanced" style="margin-right: 10px;"></i> Historical Sources: Utility
@@ -1432,7 +1440,7 @@ export function initializeApp(unitData) {
              `;
           }
 
-          html += `
+          htmlPrimary += `
               <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
                 <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #475569; padding-bottom: 5px;">${source.title}</h4>
                 ${sourceContentHtml}
@@ -1448,7 +1456,7 @@ export function initializeApp(unitData) {
               </div>
           `;
         });
-        html += `
+        htmlPrimary += `
             </div>
             <div style="padding: 15px 20px; background: #f8fafc; border-top: 1px solid #e2e8f0; text-align: center;">
               <h3 style="margin: 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">
@@ -1459,8 +1467,9 @@ export function initializeApp(unitData) {
         `;
       }
       
-      if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
-      html += `
+      
+if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
               <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
@@ -1471,7 +1480,7 @@ export function initializeApp(unitData) {
               <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
       `;
       lesson.do_now.events.forEach((ev, idx) => {
-        html += `
+        htmlDoNow += `
           <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
             <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
             <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
@@ -1480,7 +1489,7 @@ export function initializeApp(unitData) {
           </div>
         `;
       });
-      html += `</div></div></details>`;
+      htmlDoNow += `</div></div></details>`;
     } else if (lesson.do_now && lesson.do_now.items) {
       try {
         const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
@@ -1499,7 +1508,7 @@ export function initializeApp(unitData) {
         }
       } catch(e) { console.error(e); }
 
-      html += `
+      htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
               <span><i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 10px;"></i> Do Now Tasks</span>
@@ -1521,7 +1530,7 @@ export function initializeApp(unitData) {
           aText = aText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
         }
         const cardId = `donow-card-${index}`;
-        html += `
+        htmlDoNow += `
           <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
             <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
             <div>${qText}</div>
@@ -1529,12 +1538,12 @@ export function initializeApp(unitData) {
           </div>
         `;
       });
-      html += `</div></details>`;
+      htmlDoNow += `</div></details>`;
     }
 
     const hasVocab = lesson.vocab && lesson.vocab.length > 0;
     if (hasVocab) {
-      html += `
+      htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #b45309; font-weight: bold; font-size: 1.05rem; background: #fffbeb; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
               <span><i class="fa-solid fa-spell-check" style="color: #b45309; margin-right: 10px;"></i> Key Vocabulary</span>
@@ -1547,19 +1556,19 @@ export function initializeApp(unitData) {
       `;
       
       lesson.vocab.forEach((v, idx) => {
-        html += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+        htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
       });
       
-      html += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+      htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
       
       let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
       defs.sort(() => Math.random() - 0.5);
       
       defs.forEach(d => {
-        html += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+        htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
       });
       
-      html += `
+      htmlDoNow += `
                 </div>
               </div>
               <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
@@ -1575,7 +1584,7 @@ export function initializeApp(unitData) {
     // ==========================================
     // TAB 2: THE HISTORY
     // ==========================================
-    html += ``;
+    htmlDoNow += ``;
 
     if (lesson.learning_objectives) {
       // Smart check: Only render overarching objective if it differs from the main lesson title
@@ -1590,7 +1599,7 @@ export function initializeApp(unitData) {
         `;
       }
       
-      html += `
+      htmlDoNow += `
         <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
           <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; margin-bottom: ${overarchingHtml ? '0' : '15px'};">
             <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
@@ -1612,7 +1621,7 @@ export function initializeApp(unitData) {
     }
     
     if (videos.length > 0) {
-      html += `
+      htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
           <summary style="cursor: pointer; padding: 20px; font-size: 1.25rem; color: #b45309; font-weight: 600; display: flex; align-items: center; gap: 10px; user-select: none;">
             <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> Lesson Video Resources (${videos.length})
@@ -1625,7 +1634,7 @@ export function initializeApp(unitData) {
         let iconColor = vid.type === 'youtube' ? '#dc2626' : '#3b82f6';
         let iconClass = vid.type === 'youtube' ? 'fa-brands fa-youtube' : 'fa-solid fa-arrow-up-right-from-square';
 
-        html += `
+        htmlDoNow += `
           <div style="background: #f8fafc; border-left: 4px solid ${iconColor}; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
               <div style="display: flex; align-items: center; gap: 12px;">
@@ -1654,30 +1663,31 @@ export function initializeApp(unitData) {
         `;
       });
       
-      html += `
+      htmlDoNow += `
           </div>
         </details>
       `;
     }
 
-    if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
-      html += `
+    
+if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+      htmlNarrative += `
         <div class="phase-card">
       `;
       
       lesson.narrative_blocks.forEach((block, index) => {
         if (block.type === 'interactive_map') {
-          html += `
+          htmlNarrative += `
             <div class="interactive-map-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
               <h3 style="margin-top: 0; color: #1e293b; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-map-location-dot"></i> Interactive Historical Map</h3>
               <div class="map-img-wrapper" style="position: relative; height: 500px; width: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
           `;
           
           block.maps.forEach((m, idx) => {
-            html += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+            htmlNarrative += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
           });
           
-          html += `
+          htmlNarrative += `
               </div>
               <div id="map-caption-display" style="font-size: 1.1rem; font-style: italic; color: #334155; min-height: 3em; margin-bottom: 20px;">${block.maps[0].caption}</div>
               <div class="map-controls" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -1685,14 +1695,14 @@ export function initializeApp(unitData) {
           
           block.maps.forEach((m, idx) => {
             const activeClass = idx === 0 ? 'active-map-btn' : '';
-            html += `
+            htmlNarrative += `
                 <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" onclick="toggleMap(this)" style="border-radius: 30px; padding: 8px 16px; font-weight: bold;">
                   ${m.year} ${m.label}
                 </button>
             `;
           });
           
-          html += `
+          htmlNarrative += `
               </div>
             </div>
           `;
@@ -1712,7 +1722,7 @@ export function initializeApp(unitData) {
           }
           if (person) {
              const cardHtml = generateKeyIndividualEmbedHTML ? generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
-             html += `
+             htmlNarrative += `
                <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                  <button onclick="const content = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if(content.style.display==='none'){content.style.display='block'; icon.classList.replace('fa-chevron-down','fa-chevron-up');}else{content.style.display='none'; icon.classList.replace('fa-chevron-up','fa-chevron-down');}" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
                    <span><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: #3b82f6;"></i> Key Individual: ${person.name}</span>
@@ -1866,11 +1876,11 @@ export function initializeApp(unitData) {
            `;
         }
 
-        html += `
+        htmlNarrative += `
             <div class="standard-narrative-container">
               ${imageHtml}
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div class="para-number">${index + 1}</div>
+                ${(!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection'))) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
                 <div style="display: flex; align-items: flex-start;">
                   <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
@@ -1983,41 +1993,12 @@ export function initializeApp(unitData) {
            // Rewrite the actual styledContent in the narrative chunk manually below
         }
 
-        html += extrasHtml;
+        htmlNarrative += extrasHtml;
         });
 
-      if (lesson.sources && lesson.sources.length > 0) {
-        html += `<div class="sources-grid" style="margin-top: 20px;">`;
-        lesson.sources.forEach(source => {
-          html += `
-            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-              ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
-              ${source.src ? `<img src="${getAssetUrl(source.src)}" alt="Source Image">` : ''}
-              ${source.caption ? `<p class="source-caption" style="text-align: left; color: #475569;">${source.caption}</p>` : ''}
-              ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
-              ${source.question ? `
-                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
-                </div>
-              ` : ''}
-            </div>
-          `;
-        });
-        html += `</div>`;
-      }
-      html += `</div>`;
-    }
-    
-    
-
-    // ==========================================
-    // TAB 3: APPLICATION
-    // ==========================================
-    html += ``;
-
-    if ((lesson.tasks && lesson.tasks.length > 0) || lesson.historians_corner) {
-      let hasModels = false;
-      if (lesson.tasks) {
+      
+let hasModels = false;
+if (lesson.tasks) {
         hasModels = lesson.tasks.some(t => !!t.model);
       }
       if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
@@ -2026,7 +2007,7 @@ export function initializeApp(unitData) {
       
       const revealBtn = hasModels ? `<button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>` : '';
 
-      html += `
+      htmlTasks += `
         <div class="phase-card">
           <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
             
@@ -2038,7 +2019,7 @@ export function initializeApp(unitData) {
         lesson.tasks.forEach((task, tIdx) => {
           if (task.type === 'drag_drop_timeline') {
             const timelineId = `dd-timeline-lesson-${tIdx}`;
-            html += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+            htmlTasks += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
             window.postRenderHooks.push(() => {
               import('./drag_drop_timeline.js').then(mod => {
                  mod.initDragDropTimeline(document.getElementById(timelineId), task);
@@ -2063,7 +2044,7 @@ export function initializeApp(unitData) {
               qText = match[2];
           }
 
-          html += `
+          htmlTasks += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
               ${displayHeading}
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
@@ -2085,9 +2066,10 @@ export function initializeApp(unitData) {
         });
       }
 
-      if (lesson.historians_corner) {
+      
+if (lesson.historians_corner) {
         const hc = lesson.historians_corner;
-        html += `
+        htmlHistorian += `
           <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
             <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
             <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${formatBold(hc.text || (hc.author_context + "<br><br><i>" + hc.extract + "</i>"))}</p>
@@ -2109,12 +2091,13 @@ export function initializeApp(unitData) {
           </div>
         `;
       }
-      html += `</div>`;
+      htmlHistorian += `</div>`;
     }
 
-    if (lesson.pair_share) {
+    
+if (lesson.pair_share) {
       const ps = lesson.pair_share;
-      html += `
+      htmlPairShare += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #059669; font-weight: bold; font-size: 1.05rem; background: #ecfdf5; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #a7f3d0;">
               <span><i class="fa-solid fa-users" style="color: #059669; margin-right: 10px;"></i> Think, Pair, Share</span>
@@ -2143,7 +2126,7 @@ export function initializeApp(unitData) {
 
     if (lesson.exam_practice) {
       const ep = Array.isArray(lesson.exam_practice) ? lesson.exam_practice[0] : lesson.exam_practice; // Handle array or object
-      html += `
+      htmlPairShare += `
         <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
           <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
             <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Exam Practice: Historical Interpretations</h3>
@@ -2166,33 +2149,33 @@ export function initializeApp(unitData) {
       if (ep.questions && ep.questions.length > 0) {
         let q2Index = ep.questions.findIndex(q => q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')));
         if (q2Index !== -1) {
-           html += renderQuestion(ep.questions[q2Index], q2Index);
+           htmlPairShare += renderQuestion(ep.questions[q2Index], q2Index);
         }
       }
       
       if (ep.stimulus && ep.stimulus.length > 0) {
-        html += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
+        htmlPairShare += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
         ep.stimulus.forEach((stim, sIdx) => {
-          html += `
+          htmlPairShare += `
             <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
               <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
               <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
             </div>
           `;
         });
-        html += `</div>`;
+        htmlPairShare += `</div>`;
       }
       
       if (ep.questions && ep.questions.length > 0) {
         ep.questions.forEach((q, qIdx) => {
           let isQ2 = q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
           if (!isQ2) {
-             html += renderQuestion(q, qIdx);
+             htmlPairShare += renderQuestion(q, qIdx);
           }
         });
       }
       
-      html += `</div>`;
+      htmlPairShare += `</div>`;
     }
 
     let deck = null;
@@ -2207,7 +2190,7 @@ export function initializeApp(unitData) {
     }
 
     if (deck) {
-      html += `
+      htmlPairShare += `
         <div class="phase-card">
           <div class="phase-title">Consolidation & Recall</div>
           <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
@@ -2216,7 +2199,7 @@ export function initializeApp(unitData) {
       deck.forEach(fc => {
         let t = fc.term || fc.word || fc.title || '';
         let d = fc.definition || fc.meaning || fc.desc || '';
-        html += `
+        htmlPairShare += `
           <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
             <div class="flashcard-inner">
               <div class="flashcard-face flashcard-front">
@@ -2230,7 +2213,7 @@ export function initializeApp(unitData) {
           </div>
         `;
       });
-      html += `</div></div>`;
+      htmlPairShare += `</div></div>`;
     }
 
     if (lesson.extended || lesson.debate_prep) {
@@ -2287,11 +2270,21 @@ export function initializeApp(unitData) {
       extHtml += `</div>`;
       
       if (lesson.debate_prep || (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title))) {
-         html += extHtml;
+         htmlPairShare += extHtml;
       }
     }
 
-    if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
+    
+      let myUnitData = window.currentUnitData || {};
+      const unitId = myUnitData.id || new URLSearchParams(window.location.search).get('id');
+      const isEarlyModern = (unitId === 'early_modern_world');
+
+      if (isEarlyModern) {
+          html += htmlDoNow + htmlPrimary + htmlSources1 + htmlNarrative + htmlPairShare + htmlHistorian + htmlTasks;
+      } else {
+          html += htmlSources1 + htmlPrimary + htmlDoNow + htmlNarrative + htmlTasks + htmlHistorian + htmlPairShare;
+      }
+if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
       let gcseHtml = `
         <div class="phase-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">

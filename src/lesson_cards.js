@@ -153,7 +153,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     }
 
     if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0) {
-      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Printable Workbooks</h2>';
+      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">PDF Materials</h2>';
       lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       unitData.printable_workbooks.forEach(wb => {
         const wbUrl = currentUnitId ? `/units/${currentUnitId}/${wb.url}` : wb.url;
