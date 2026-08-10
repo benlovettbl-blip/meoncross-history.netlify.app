@@ -752,7 +752,7 @@ allDirs.forEach(unitId => {
 
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
-      html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
+      html += `<div style="page-break-before: always; margin-top: 20px;">`;
       let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
       html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
 
@@ -814,7 +814,7 @@ allDirs.forEach(unitId => {
                html += `<strong style="color: #166534; font-size: 11pt;">Scaffolding & Hints:</strong>`;
                html += `<ul style="margin: 8px 0 0 0; padding-left: 20px; color: #15803d; font-size: 10pt;">`;
                lesson.extended.hints.forEach(hint => {
-                   html += `<li style="margin-bottom: 4px;">${formatBold(hint)}</li>`;
+                   html += `<li style="margin-bottom: 4px;">${formatText(hint)}</li>`;
                });
                html += `</ul></div>`;
           }
@@ -1048,17 +1048,13 @@ allDirs.forEach(unitId => {
     // Inject General Notes Box
     html += `<div style="">`;
     html += `
-      <div class="task-box" style="margin-bottom: 15px;   ">
-        <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
-        <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-      </div>
+      <div style="page-break-before: always; margin-top: 20px;">
+        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
     `;
+    for (let i = 0; i < 30; i++) {
+        html += `<div class="task-lines-large"></div>`;
+    }
+    html += `</div>`;
 
     // Inject Discreet Grading Footer for the Lesson
     html += `
