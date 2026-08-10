@@ -343,6 +343,17 @@ export const unitData = {
           "This was because they controlled...",
           "By contrast, Europe was relatively isolated because..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "Explain why Europe was not the center of global wealth and power in 1450.",
+        "hints": [
+          "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
+          "Sentence Starter: In 1450, the true centers of global wealth were...",
+          "Sentence Starter: This was because they controlled...",
+          "Sentence Starter: By contrast, Europe was relatively isolated because..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -711,6 +722,17 @@ export const unitData = {
           "To challenge Spain’s wealth in the New World, English monarchs encouraged...",
           "This rivalry culminated in..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "How did the Protestant Reformation push England into global exploration and conflict with Spain?",
+        "hints": [
+          "Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.",
+          "Sentence Starter: When England became Protestant, it created conflict with Catholic Spain because...",
+          "Sentence Starter: To challenge Spain’s wealth in the New World, English monarchs encouraged...",
+          "Sentence Starter: This rivalry culminated in..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -1079,6 +1101,17 @@ export const unitData = {
           "The EIC solved this by using a 'joint-stock' model, which meant...",
           "However, they often used violence to secure a 'monopoly', allowing them to..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "Explain how the creation of the East India Company (EIC) transformed British trade.",
+        "hints": [
+          "Mention joint-stock companies, monopolies, violence, and Asian spices/textiles.",
+          "Sentence Starter: Before the EIC, individual merchants struggled to trade in Asia because...",
+          "Sentence Starter: The EIC solved this by using a 'joint-stock' model, which meant...",
+          "Sentence Starter: However, they often used violence to secure a 'monopoly', allowing them to..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -1410,6 +1443,17 @@ export const unitData = {
           "However, Parliament challenged this by...",
           "By executing the King in 1649, it proved that..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "How did the English Civil War and the execution of Charles I change the balance of power?",
+        "hints": [
+          "Mention the Divine Right of Kings, Parliament, and Oliver Cromwell.",
+          "Sentence Starter: Before the Civil War, Charles I believed in the 'Divine Right of Kings', meaning...",
+          "Sentence Starter: However, Parliament challenged this by...",
+          "Sentence Starter: By executing the King in 1649, it proved that..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -1704,6 +1748,17 @@ export const unitData = {
           "This 'National Debt' was crucial because...",
           "Consequently, Britain could out-spend its rivals by building..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "Explain how the 'Financial Revolution' (like the Bank of England) helped Britain build a modern empire.",
+        "hints": [
+          "Mention the National Debt, the Bank of England (1694), and funding the Royal Navy.",
+          "Sentence Starter: Following the Glorious Revolution, Britain created the Bank of England, which allowed the government to...",
+          "Sentence Starter: This 'National Debt' was crucial because...",
+          "Sentence Starter: Consequently, Britain could out-spend its rivals by building..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -2032,6 +2087,17 @@ export const unitData = {
           "Secondly, enslaved Africans were brutally transported to...",
           "Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "How did the Triangular Trade directly enrich British port cities?",
+        "hints": [
+          "Mention Bristol/Liverpool, manufactured goods, enslaved people, and sugar/tobacco.",
+          "Sentence Starter: The Triangular Trade enriched Britain through three main stages. Firstly...",
+          "Sentence Starter: Secondly, enslaved Africans were brutally transported to...",
+          "Sentence Starter: Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -2367,6 +2433,17 @@ export const unitData = {
           "They were able to successfully resist the British army because they used...",
           "Ultimately, the British were forced to..."
         ]
+      },
+      "extended": {
+        "title": "Assessment Practice",
+        "question": "Explain how the Jamaican Maroons successfully resisted British control.",
+        "hints": [
+          "Mention Nanny of the Maroons, guerrilla warfare, and the geography of Jamaica.",
+          "Sentence Starter: The Maroons were communities of...",
+          "Sentence Starter: They were able to successfully resist the British army because they used...",
+          "Sentence Starter: Ultimately, the British were forced to..."
+        ],
+        "lines": 15
       }
     },
     {
@@ -2571,13 +2648,7 @@ export const unitData = {
         {
           "title": "Micro-History: The Contrast of London Bridge (1750)",
           "text": "In October 1750, a French aristocrat named Pierre-Jean Grosley stood on London Bridge and looked out over the River Thames.<br><br>To his right, he saw a forest of wooden masts belonging to over 1,000 merchant ships. These vessels had arrived from Canton, Calcutta, Barbados, and Virginia, packed with tea, silk, raw sugar, and tobacco. Nearby stood the <strong>Bank of England</strong> and the <strong>Royal Exchange</strong>, where stockbrokers traded paper credit, fire insurance, and national debt using complex mathematics that stunned the rest of Europe. London was the financial beating heart of a global, capitalist empire.<br><br>Then Grosley walked off the bridge and turned into the narrow alleys of St. Giles.<br><br>Within five minutes, the scent of expensive Indian spices was replaced by the stench of open sewage, rotting garbage, and cheap gin. He passed desperate mothers pouring raw grain spirit down the throats of crying infants to quiet them. In these slums, 50% of children died before the age of five. Medical care still relied on bloodletting with leeches, public executions at Tyburn Tree drew crowds of 30,000 howling spectators, and women had zero legal rights, remaining the legal property of their husbands.<br><br>Grosley was left with a baffling paradox: <strong>Was Britain in 1750 a hyper-modern global superpower, or a brutal, unequal medieval society wearing a wig?</strong>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "What was the 'baffling paradox' that Grosley observed in London in 1750?",
-              "model_answer": "The paradox was the extreme contrast between Britain's hyper-modern global wealth and complex financial systems (seen on the river and at the Bank of England) and the brutal, un-modern, diseased poverty found just streets away in the slums of St. Giles."
-            }
-          ],
+          "tasks": [],
           "images": [
             {
               "image": "/images/early_mod_l6_banner.jpg",
@@ -2660,25 +2731,13 @@ export const unitData = {
           "image_alt": "John Rocque's Map of London (1746)",
           "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
           "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Look at Source E. How does the map of London's urban sprawl visually represent the shift towards a modern, consumer-driven society?",
-              "model_answer": "The map shows London expanding rapidly beyond its medieval walls, driven by new wealth, trade, and a growing population, which is a key characteristic of a modern, consumer-driven society."
-            }
-          ],
+          "tasks": [],
           "source_letter": "E"
         },
         {
           "title": "Historiographical Debate: 'The First Modern Society'?",
           "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: [Key Individual: Prof. [Key Individual: Prof. Roy Porter]]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: [Key Individual: Prof. [Key Individual: Prof. J.C.D. Clark]]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A: [Key Individual: Prof. Roy Porter] (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B: [Key Individual: Prof. J.C.D. Clark] (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Which historian focuses on the 'consumer society' and middle class, and which focuses on 'ancient custom' and rural poverty?",
-              "model_answer": "Professor Roy Porter focuses on the consumer society and the enterprising middle class. Professor J.C.D. Clark focuses on ancient custom, traditional religion, and rural poverty."
-            }
-          ]
+          "tasks": []
         },
         {
           "title": "Synthesis Essay Planning Task",
@@ -2741,18 +2800,7 @@ export const unitData = {
         {
           "title": "Side Quest: The Mudlarks of London",
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Mudlarks of London</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "What was a 'Mudlark', and what does their existence tell us about poverty in 1750?",
-              "model_answer": "Mudlarks were desperate children who scavenged in the freezing mud of the Thames for scraps of coal to sell, showing that extreme, life-threatening poverty still existed."
-            },
-            {
-              "type": "comprehension",
-              "question": "How does this paragraph challenge the idea that Britain had become a fully 'modern' society by 1750?",
-              "model_answer": "It shows that while the rich enjoyed modern ideas like science and coffee houses, the poor were suffering from addiction, disease, and horrific living conditions."
-            }
-          ],
+          "tasks": [],
           "source_letter": "F"
         }
       ],
@@ -2764,7 +2812,7 @@ export const unitData = {
           "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
         ]
       },
-            "extended": {
+      "extended": {
         "title": "Synoptic Assessment",
         "question": "How 'modern' was Britain by 1750?",
         "hints": [
@@ -2776,7 +2824,8 @@ export const unitData = {
         "lines": 35
       },
       "banner": "/images/early_mod_l6_banner.jpg"
-    }],
+    }
+  ],
   "portraits": [
     {
       "q": "Who is this historical figure?",
