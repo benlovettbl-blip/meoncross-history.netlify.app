@@ -1,14 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
+const rootDir = __dirname;
 const unitsDir = path.join(__dirname, 'public', 'units');
 
-if (!fs.existsSync(unitsDir)) {
-    console.error('Units directory not found.');
-    process.exit(1);
-}
+// We want to fix the root unit directories FIRST so that extract_units.js doesn't overwrite our fixes!
+const rootFolders = fs.readdirSync(rootDir).filter(f => {
+  const stat = fs.statSync(path.join(rootDir, f));
+  return stat.isDirectory() && fs.existsSync(path.join(rootDir, f, 'data.js')) && f !== 'public' && f !== 'node_modules' && !f.startsWith('.');
+});
 
-const unitFolders = fs.readdirSync(unitsDir).filter(f => fs.statSync(path.join(unitsDir, f)).isDirectory());
+const publicFolders = fs.existsSync(unitsDir) ? fs.readdirSync(unitsDir).filter(f => {
+  const stat = fs.statSync(path.join(unitsDir, f));
+  return stat.isDirectory() && fs.existsSync(path.join(unitsDir, f, 'data.js'));
+}) : [];
 
 const replacements = {
   '\u00E2\u20AC\u02DC': "'", // left quote
@@ -23,8 +28,8 @@ const replacements = {
 
 let totalReplacements = 0;
 
-unitFolders.forEach(folder => {
-  const dataPath = path.join(unitsDir, folder, 'data.js');
+function fixFolder(folderPath) {
+  const dataPath = path.join(folderPath, 'data.js');
   if (fs.existsSync(dataPath)) {
     let content = fs.readFileSync(dataPath, 'utf8');
     let changed = false;
@@ -38,10 +43,20 @@ unitFolders.forEach(folder => {
 
     if (changed) {
       fs.writeFileSync(dataPath, content, 'utf8');
-      console.log(`Fixed encoding in ${folder}/data.js`);
+      console.log(`Fixed encoding in ${dataPath}`);
       totalReplacements++;
     }
   }
+}
+
+// Fix root folders first
+rootFolders.forEach(folder => {
+  fixFolder(path.join(rootDir, folder));
+});
+
+// Fix public folders
+publicFolders.forEach(folder => {
+  fixFolder(path.join(unitsDir, folder));
 });
 
 console.log(`Complete. Fixed ${totalReplacements} data.js files.`);
