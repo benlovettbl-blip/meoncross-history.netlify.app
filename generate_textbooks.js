@@ -501,7 +501,7 @@ allDirs.forEach(unitId => {
             html += `</div></div>`;
           }
           
-          if (block.tasks && block.tasks.length > 0) {
+          if (false) {
             html += `<div class="task-box">`;
             block.tasks.forEach((task, tIdx) => {
               if (task.type === 'draw') {
@@ -545,34 +545,6 @@ allDirs.forEach(unitId => {
     }
 
     // Pair Share
-    if (lesson.pair_share) {
-      html += `<div class="task-box" style="  ">`;
-      html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
-      
-      if (lesson.pair_share.sources) {
-         let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-         lesson.pair_share.sources.forEach(srcObj => {
-            sourceHTML += '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 10px; padding-bottom: 10px; text-align: left; ">';
-            if (srcObj.type === 'visual') {
-               let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(srcObj.src, 2) : srcObj.src;
-               sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            } else {
-               sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
-            }
-            if (srcObj.title) sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;
-            sourceHTML += '</div>';
-         });
-         sourceHTML += '</div>';
-         html += sourceHTML;
-      }
-
-      html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Prompt: ${lesson.pair_share.prompt}</p>`;
-      if (lesson.pair_share.think) html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-      html += `<div style="margin-top: 15px;"><strong>Your Notes:</strong></div>`;
-      html += `</div>`;
-    }
-
-    // Historians Corner
     if (lesson.historians_corner) {
       html += `<div class="task-box" style=" ">`;
       html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
@@ -580,7 +552,7 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     }
 
-    if (lesson.tasks && lesson.tasks.length > 0) {
+    if (false) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
@@ -638,7 +610,7 @@ allDirs.forEach(unitId => {
       });
     }
 
-    let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+    let hasExamTask = false;
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
       let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
@@ -775,173 +747,15 @@ allDirs.forEach(unitId => {
         html += `</div>`;
       }
 
-      
-      let epArray = lesson.exam_practice;
-      let epStimulus = [];
-      if (lesson.exam_practice && !Array.isArray(lesson.exam_practice) && lesson.exam_practice.questions) {
-          epArray = lesson.exam_practice.questions;
-          epStimulus = lesson.exam_practice.stimulus || [];
-      }
-      if (epArray && epArray.length > 0) {
-        html += `<div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;">`;
-        html += `<h2 style="margin-top: 0; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Practice</h2>`;
-        
-        let questionsBefore = [];
-        let questionsAfter = [];
-        epArray.forEach((ep, index) => {
-             let qText = ep.question.toLowerCase();
-             if (qText.includes('explain why') || qText.includes('explain one consequence') || qText.includes('describe two features') || qText.includes('describe one feature')) {
-                 questionsBefore.push({ep, index});
-             } else if (qText.includes('source') || qText.includes('interpretation')) {
-                 questionsAfter.push({ep, index});
-             } else {
-                 if (index < 2) questionsBefore.push({ep, index});
-                 else questionsAfter.push({ep, index});
-             }
-        });
-
-        const renderQuestionLines = (qText) => {
-            let lines = 8;
-            if (qText.includes("16 marks")) lines = 42;
-            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 32;
-            else if (qText.includes("8 marks")) lines = 20;
-            else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 8;
-            else if (qText.includes("2 marks")) lines = 4;
-            let lHtml = '';
-            for(let i=0; i<lines; i++) { lHtml += ``; }
-            return lHtml;
-        };
-
-        const renderQuestionItem = (item) => {
-            let ep = item.ep;
-            let index = item.index;
-            let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
-            if (ep.question.includes('marks)')) marksStr = '';
-            let questionHtml = `<div style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${index + 1}. ${formatText(ep.question)}${marksStr}</strong></div>`;
-
-            if (ep.stimulus && ep.stimulus.length > 0) {
-                let isSources = ep.question.toLowerCase().includes('useful') || ep.question.toLowerCase().includes('follow up') || ep.stimulus.some(s => typeof s === 'string' && (s.includes('Source A') || s.includes('Source B')));
-                if (isSources) {
-                   questionHtml += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px;">`;
-                   ep.stimulus.forEach((stimText, i) => {
-                     questionHtml += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                       <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${String.fromCharCode(65+i)}</strong>
-                       <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                         ${formatText(stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, '').replace(/\n/g, '<br>'))}
-                       </div>
-                     </div>`;
-                   });
-                   questionHtml += `</div>`;
-                } else {
-                   questionHtml += `<div style="margin-top: 5px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; border: 1.5px solid #cbd5e1; border-radius: 8px;   font-size: 0.95rem;">
-                     <p style="margin-top: 0; margin-bottom: 8px; font-weight: bold;">You may use the following in your answer:</p>
-                     <ul style="margin-top: 0; margin-bottom: 8px; padding-left: 25px;">`;
-                   ep.stimulus.forEach(stimText => { questionHtml += `<li style="margin-bottom: 4px;">${formatText(stimText)}</li>`; });
-                   questionHtml += `</ul><p style="margin-top: 0; margin-bottom: 0; font-weight: bold;">You must also use information of your own.</p></div>`;
-                }
-            }
-            html += questionHtml + renderQuestionLines(ep.question);
-        };
-
-        questionsBefore.forEach(renderQuestionItem);
-
-        if (epStimulus && epStimulus.length > 0) {
-           html += `</div>`; // Close the initial task-box
-           html += `<div style="page-break-inside: auto; margin-top: 20px;">`; // Do not isolate sources
-           html += `<h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2>`;
-           let sources = [];
-           let interpretations = [];
-           epStimulus.forEach((stim, i) => {
-               let sTitle = stim.title || `Source ${String.fromCharCode(65+i)}`;
-               if (sTitle.toLowerCase().includes('interpretation')) {
-                   interpretations.push({stim, sTitle});
-               } else {
-                   sources.push({stim, sTitle});
-               }
-           });
-
-           if (sources.length > 0) {
-               html += `<div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;">`;
-               sources.forEach((item) => {
-                   let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
-                   html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 10px; padding-bottom: 10px;  color: #0f172a; flex-grow: 1;">
-                        ${content}
-                      </div>
-                    </div>`;
-               });
-               html += `</div>`;
-           }
-           if (interpretations.length > 0) {
-               html += `<div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;">`;
-               interpretations.forEach((item) => {
-                   let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
-                   html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 10px; padding-bottom: 10px;  color: #0f172a; flex-grow: 1;">
-                        ${content}
-                      </div>
-                    </div>`;
-               });
-               html += `</div>`;
-           }
-           html += `</div>`; // Close the isolated sources page
-           html += `<div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;">`; // Re-open task-box for the remaining questions
-        }
-
-        questionsAfter.forEach(renderQuestionItem);
-        html += `</div>`;
-      }
+      // Removed Exam Practice
       html += `</div>`;
     }
 
-    if (lesson.lesson_assessment) {
-        html += `<div style="page-break-inside: auto; margin-top: 30px;">`;
-        html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
-        html += `<p style="font-weight: bold; color: #166534; margin-top: 0; margin-bottom: 8px; font-size: 1.1rem;">Assessment Practice: ${lesson.lesson_assessment.question}</p>`;
-        if (lesson.lesson_assessment.hints) {
-             html += `<p style="font-size: 0.95rem; margin-bottom: 5px; color: #15803d;"><strong>Hints:</strong> ${lesson.lesson_assessment.hints}</p>`;
-        }
-        if (lesson.lesson_assessment.sentence_starters) {
-             html += `<p style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; color: #15803d;"><strong>Sentence Starters:</strong></p>`;
-             html += `<ul style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; padding-left: 20px; color: #15803d;">`;
-             lesson.lesson_assessment.sentence_starters.forEach(starter => {
-                 html += `<li><em>${starter}</em></li>`;
-             });
-             html += `</ul>`;
-        }
-        html += `</div></div>`;
-    }
-    // Inject General Notes Box
-    html += `<div style="">`;
-    html += `
-      <div class="task-box" style="margin-bottom: 15px;   ">
-        <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
-        <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
-        
-        
-        
-        
-        
-        
-      </div>
-    `;
+    // Removed Lesson Assessment
+    // Removed General Notes Box
 
-    // Inject Discreet Grading Footer for the Lesson
-    html += `
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
-        </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    `;
+
+    
 
     if (lesson.full_page_map) {
       let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
@@ -963,30 +777,7 @@ allDirs.forEach(unitId => {
     }
   });
 
-  if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
-    html += `
-    <div style="page-break-before: always; padding: 20px;">
-      <h2 style="text-align: center; font-size: 24pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
-      <p style="text-align: center; font-size: 12pt; margin-bottom: 15px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
-      <table style="width: 100%; border-collapse: collapse; ">
-        <thead>
-          <tr style="background-color: #1a237e; color: white;">
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-        </tbody>
-      </table>
-    </div>
-    `;
-  }
+  
 
   // QR Code Appendix removed per user request
 
