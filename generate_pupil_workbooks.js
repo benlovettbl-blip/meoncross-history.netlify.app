@@ -471,7 +471,7 @@ allDirs.forEach(unitId => {
     }
     if (vocabTerms && vocabTerms.length > 0) {
       let vocabStyle = lessonIndex % 3;
-      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px;">`;
+      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
       html += `<h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
       
       if (vocabStyle === 0) {
@@ -554,16 +554,7 @@ allDirs.forEach(unitId => {
             // Narrative text removed for Pupil Workbook
           }
           
-          if (block.hinge_question) {
-            html += `<div class="task-box" style=" ">`;
-            html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
-            html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
-            html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
-            block.hinge_question.options.forEach((opt, idx) => {
-              html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65+idx)}. ${opt}</li>`;
-            });
-            html += `</ul></div>`;
-          }
+
           
           if (block.extended && block.extended.question) {
             html += `<div class="task-box" style="margin-bottom: 20px;">`;
@@ -686,6 +677,17 @@ allDirs.forEach(unitId => {
               }
             });
             html += `</div>`;
+          }
+          
+          if (block.hinge_question) {
+            html += `<div class="task-box" style=" ">`;
+            html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
+            html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
+            html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
+            block.hinge_question.options.forEach((opt, idx) => {
+              html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65+idx)}. ${opt}</li>`;
+            });
+            html += `</ul></div>`;
           }
           html += `</div>`; // Close narrative-block div
         }
@@ -910,15 +912,15 @@ allDirs.forEach(unitId => {
           if (customLines) {
               for(let i=0; i<customLines; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("16 marks")) {
-              for(let i=0; i<42; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<30; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("12 marks") || text.includes("Explain why")) {
-              for(let i=0; i<22; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<20; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("8 marks")) {
-              for(let i=0; i<19; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<15; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("2 marks")) {
               for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
-              for(let i=0; i<4; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<5; i++) { html += `<div class="task-lines-large"></div>`; }
           } else {
               for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
           }
@@ -976,8 +978,7 @@ allDirs.forEach(unitId => {
       }
 
       if (lesson.gcse_task) {
-        html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;
-        html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">GCSE Exam Practice</h2>`;
+        html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
         
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach(task => {
@@ -1056,8 +1057,7 @@ allDirs.forEach(unitId => {
           epStimulus = lesson.exam_practice.stimulus || [];
       }
       if (epArray && epArray.length > 0) {
-        html += `<div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;">`;
-        html += `<h2 style="margin-top: 0; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Practice</h2>`;
+        html += `<div class="task-box" style="margin-bottom: 10px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
         
         let questionsBefore = [];
         let questionsAfter = [];
@@ -1075,11 +1075,11 @@ allDirs.forEach(unitId => {
 
         const renderQuestionLines = (qText) => {
             let lines = 8;
-            if (qText.includes("16 marks")) lines = 42;
-            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 32;
-            else if (qText.includes("8 marks")) lines = 20;
-            else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 8;
-            else if (qText.includes("2 marks")) lines = 4;
+            if (qText.includes("16 marks")) lines = 30;
+            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 20;
+            else if (qText.includes("8 marks")) lines = 15;
+            else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 5;
+            else if (qText.includes("2 marks")) lines = 3;
             let lHtml = '';
             for(let i=0; i<lines; i++) { lHtml += `<div class="task-lines-large"></div>`; }
             return lHtml;
