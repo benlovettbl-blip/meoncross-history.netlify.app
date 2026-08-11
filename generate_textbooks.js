@@ -269,11 +269,7 @@ allDirs.forEach(unitId => {
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     
     html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
-    if (lesson.startPage) {
-      html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
-    } else {
-      html += `<div style="margin-bottom: 10px;"></div>`;
-    }
+    html += `<div style="margin-bottom: 10px;"></div>`;
     
     if (lesson.a4_map) {
       if (Array.isArray(lesson.a4_map)) {
@@ -605,7 +601,7 @@ allDirs.forEach(unitId => {
     if (lesson.historians_corner) {
       html += `<div class="task-box" style=" ">`;
       html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
       if (lesson.historians_corner.stretch_question) {
         html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div>`;
       }
@@ -680,8 +676,8 @@ allDirs.forEach(unitId => {
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-      let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
-      html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
+      // let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
+      // html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
 
       const renderLines = (text) => {
           if (text.includes("16 marks")) {

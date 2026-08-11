@@ -95,6 +95,14 @@
               }
             ],
             "model_answer": "Student responses should focus on the evidence of commerce and social activity, noting that the baths were loud, chaotic places where people exercised, received treatments, and bought food, demonstrating they were a central part of Roman daily life rather than strictly hygienic facilities."
+          },
+          {
+            "type": "visual",
+            "imageUrl": "/images/fishbourne.jpg",
+            "title": "Source D: Fishbourne Roman Palace",
+            "caption": "<strong>What is this source showing?</strong> This is a modern photograph of the excavated remains of Fishbourne Roman Palace, the largest residential Roman building discovered in Britain. It features incredibly well-preserved mosaics and the remains of a sophisticated hypocaust underfloor heating system, demonstrating the extreme luxury and sanitation enjoyed by elite Romans.",
+            "question": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?",
+            "model": "The remains of the hypocaust and bathhouse at Fishbourne show that elite Romans invested huge amounts of wealth into private heating and washing facilities."
           }
         ],
         "gcse_task": null,
@@ -160,7 +168,6 @@
             "theme_heading": "Roman Water Transforms Britain"
           },
           {
-            "image": "/assets/water_local_fishbourne.jpg",
             "tasks": [
               {
                 "type": "text",
@@ -351,7 +358,16 @@
             }
           ]
         },
-        "sources": [],
+        "sources": [
+          {
+            "type": "visual",
+            "imageUrl": "/images/titchfield.jpg",
+            "title": "Source B: Ruins of Titchfield Abbey",
+            "caption": "<strong>What is this source showing?</strong> This is a modern photograph of the stone ruins of Titchfield Abbey, founded in 1232. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in and a reredorter (latrine block) positioned over a running stream to carry waste away.",
+            "question": "How does the water management system at Titchfield Abbey support the idea that monasteries were much healthier places to live than Medieval towns?",
+            "model": "Monasteries like Titchfield were built with advanced latrines positioned over running streams and separate fresh water supplies, unlike towns which relied on overflowing cesspits."
+          }
+        ],
         "gcse_task": null,
         "learning_objective": "To understand the impact of Medieval Sanitation and The Church on public health.",
         "learning_objectives": {
@@ -415,7 +431,6 @@
             "theme_heading": "Monastic Cleanliness and Hygiene"
           },
           {
-            "image": "/assets/water_local_titchfield.jpg",
             "tasks": [
               {
                 "type": "text",
@@ -624,7 +639,16 @@
             }
           ]
         },
-        "sources": [],
+        "sources": [
+          {
+            "type": "visual",
+            "imageUrl": "/images/mary_rose.jpg",
+            "title": "Source B: The Cowdray Engraving of the Mary Rose (c. 1545)",
+            "caption": "<strong>What is this source showing?</strong> This is a detail from the Cowdray Engraving, a genuine historical artwork depicting the sinking of Henry VIIIs flagship, the Mary Rose, off the coast of Southsea Castle in 1545. The engraving provides a rare visual record of Tudor Portsmouth, which at the time was a vital naval hub filled with thousands of sailors, leading to severely overcrowded and unhygienic conditions.",
+            "question": "How might the rapid expansion of Portsmouth as a naval hub under Henry VIII have impacted public health in the town?",
+            "model": "The sudden influx of thousands of sailors and dockworkers would have overwhelmed the towns basic cesspits, leading to severe overcrowding and filthy streets."
+          }
+        ],
         "gcse_task": null,
         "learning_objective": "To understand the impact of Early Modern Filth and Cesspits on public health.",
         "learning_objectives": {
@@ -688,7 +712,6 @@
             "theme_heading": "London's New Water Architecture"
           },
           {
-            "image": "/assets/water_local_southsea.jpg",
             "tasks": [
               {
                 "type": "text",
@@ -869,7 +892,16 @@
           ],
           "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
         },
-        "sources": [],
+        "sources": [
+          {
+            "type": "visual",
+            "imageUrl": "/images/robert_rawlinson.jpg",
+            "title": "Source B: Sir Robert Rawlinson",
+            "caption": "<strong>Who is this?</strong> This is a portrait of Sir Robert Rawlinson, one of the most prominent engineers and public health reformers of the 19th century. In 1850, shortly after the devastating 1849 cholera epidemic in Portsmouth, he produced a damning sanitary report detailing the horrific conditions of the town, including open sewers and contaminated drinking wells.",
+            "question": "Why might Robert Rawlinsons 1850 report on Portsmouth have been crucial for public health reform?",
+            "model": "Rawlinsons report provided official, documented evidence of the horrific living conditions and contaminated water that were causing devastating cholera outbreaks."
+          }
+        ],
         "gcse_task": null,
         "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
         "learning_objectives": {
@@ -933,7 +965,6 @@
             "theme_heading": "Squalid Urban Living"
           },
           {
-            "image": "/assets/water_local_cholera.jpg",
             "tasks": [
               {
                 "type": "text",
@@ -1128,7 +1159,16 @@
             }
           ]
         },
-        "sources": [],
+        "sources": [
+          {
+            "type": "visual",
+            "imageUrl": "/images/eastney.jpg",
+            "title": "Source B: Eastney Beam Engine House",
+            "caption": "<strong>What is this source showing?</strong> This is a modern photograph of the Eastney Beam Engine House in Portsmouth, built in 1887. Similar to Bazalgettes work in London, these massive steam-powered beam engines were constructed to pump Portsmouths raw sewage far out to sea, finally cleaning up the citys streets.",
+            "question": "How did local projects like the Eastney Beam Engine House mirror the national public health improvements seen in London?",
+            "model": "Just like Bazalgettes London sewers, Portsmouth invested in massive steam-powered pumping engines at Eastney to safely remove sewage and eliminate cholera."
+          }
+        ],
         "gcse_task": null,
         "learning_objective": "To understand the impact of The Great Stink and Modern Sewers on public health.",
         "learning_objectives": {
@@ -1192,7 +1232,6 @@
             "theme_heading": "The Great Stink Forces Action"
           },
           {
-            "image": "/assets/water_local_eastney.jpg",
             "tasks": [
               {
                 "type": "text",
