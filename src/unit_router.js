@@ -205,7 +205,8 @@ if (!unitId) {
           };
 
           unitData.workbooks.forEach(wb => {
-             const subUrl = '/pdfs/' + unitId + '_' + typePrefix + '_' + wb.name + '.pdf';
+             const wbId = wb.id || wb.name;
+             const subUrl = '/pdfs/' + unitId + '_' + typePrefix + '_' + wbId + '.pdf';
              const subLink = renderLink(wb.title, 'fa-file-pdf', '', subUrl, true);
              // Remove subtitle margin for sublinks
              subLink.querySelector('div > div:nth-child(2)').style.display = 'none';
