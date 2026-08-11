@@ -7,7 +7,7 @@ require('./generate_textbooks.js');
 require('./generate_pupil_workbooks.js');
 
 const publicDir = path.join(__dirname, 'public');
-const pdfsDir = path.join(__dirname, 'pdfs');
+const pdfsDir = path.join(__dirname, 'public', 'pdfs');
 
 if (!fs.existsSync(pdfsDir)){
     fs.mkdirSync(pdfsDir);

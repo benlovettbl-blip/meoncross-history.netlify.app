@@ -28,7 +28,7 @@ try {
 
   // Step 4: Extract SRC_MARKER page numbers from Textbook PDF
   console.log(`\n[4/7] Extracting page markers from Textbook PDF...`);
-  const textbookPdfPath = `pdfs/${unitId}_textbook.pdf`;
+  const textbookPdfPath = `public/pdfs/${unitId}_textbook.pdf`;
   const markerJsonPath = `scratch/pdf_markers_${unitId}.json`;
   if (fs.existsSync(textbookPdfPath)) {
     execSync(`node scratch/puppeteer_pdf_extractor.js ${textbookPdfPath} ${markerJsonPath}`, { stdio: 'inherit' });
