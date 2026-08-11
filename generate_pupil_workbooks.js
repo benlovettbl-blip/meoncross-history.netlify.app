@@ -189,7 +189,7 @@ allDirs.forEach(unitId => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -213,7 +213,7 @@ allDirs.forEach(unitId => {
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: auto; }
+        .task-box { page-break-inside: avoid !important; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
@@ -397,7 +397,7 @@ allDirs.forEach(unitId => {
       let imgTags = '';
       if (renderImages) {
           imgTags = srcs.map(src => {
-            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : src;
+            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : `../..${src.startsWith('/') ? src : '/' + src}`;
             const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
             return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
           }).join(' ');
@@ -927,7 +927,8 @@ allDirs.forEach(unitId => {
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-before: always; margin-top: 20px;">`;
-      let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';
+      let fallbackExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
+      let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : fallbackExamTitle;
       html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
 
       const renderLines = (text, customLines) => {

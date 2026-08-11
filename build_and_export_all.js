@@ -36,6 +36,12 @@ try {
     console.error(`Warning: Textbook PDF not found at ${textbookPdfPath}. Skipping marker extraction.`);
   }
 
+  // Step 4.5: Re-generate and re-export the Textbook with accurate Table of Contents
+  console.log(`\n[4.5/7] Re-generating Textbook HTML with TOC Page Numbers...`);
+  execSync(`node generate_textbooks.js ${unitId}`, { stdio: 'inherit' });
+  console.log(`\n[4.6/7] Re-exporting Final Textbook PDF...`);
+  execSync(`node export_pdfs.js ${unitId} textbook.html`, { stdio: 'inherit' });
+
   // Step 5: Generate Workbooks (now that markers JSON exists, source pages will be injected)
   console.log(`\n[5/7] Generating Guided Workbook HTML...`);
   execSync(`node generate_workbooks.js ${unitId}`, { stdio: 'inherit' });

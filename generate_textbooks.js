@@ -261,12 +261,12 @@ allDirs.forEach(unitId => {
     let globalQNum = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
     if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
     
     html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
     if (lesson.startPage) {
@@ -330,7 +330,7 @@ allDirs.forEach(unitId => {
       let imgTags = '';
       if (renderImages) {
           imgTags = srcs.map(src => {
-            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : src;
+            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : `../..${src.startsWith('/') ? src : '/' + src}`;
             const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
             return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
           }).join(' ');
@@ -341,12 +341,69 @@ allDirs.forEach(unitId => {
           ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
+          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
           
         </div>
       `;
     }
 
     
+    
+    // Do Now
+    html += `<div>`;
+    if (lesson.do_now) {
+      if (lesson.do_now.type === "timeline") {
+        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+                     <h3 style="margin: 0; font-size: 11pt;">Chronological Domino Flowchart</h3>
+                   </div>
+                   <p style="font-style: italic; color: #555; margin-top: 0; font-size: 9.5pt; margin-bottom: 5px;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
+                   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 5px;">`;
+                   
+        let shuffledEvents = [...(lesson.do_now.events || [])];
+        for (let i = shuffledEvents.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledEvents[i], shuffledEvents[j]] = [shuffledEvents[j], shuffledEvents[i]];
+        }
+        
+        shuffledEvents.forEach((ev, idx) => {
+          const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
+          const m = margins[idx % margins.length];
+          html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
+                      <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
+                      <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
+                      <span style="font-size: 9pt;">${ev.detail || ''}</span>
+                   </div>`;
+        });
+        html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
+
+        if (lesson.do_now.prediction_question) {
+          html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+        }
+        html += `</div>`;
+      } else if (lesson.do_now.type === "text") {
+        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Do Now Activity"}</h3>
+                   </div>`;
+        html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${lesson.do_now.text}</strong></div>`;
+        html += `</div>`;
+      } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))) {
+        let items = lesson.do_now.items || lesson.do_now.questions;
+        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
+                   </div>`;
+        if (items) {
+          items.forEach((item, index) => {
+            html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${index + 1}.</strong> ${item.question}</div>`;
+          });
+        }
+        html += `</div>`;
+      }
+    }
+    html += `</div>`;
+
     // Vocab
     html += `<div>`;
     let vocabTerms = lesson.vocab;
@@ -501,7 +558,7 @@ allDirs.forEach(unitId => {
             html += `</div></div>`;
           }
           
-          if (false) {
+          if (block.tasks) {
             html += `<div class="task-box">`;
             block.tasks.forEach((task, tIdx) => {
               if (task.type === 'draw') {
@@ -549,10 +606,20 @@ allDirs.forEach(unitId => {
       html += `<div class="task-box" style=" ">`;
       html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
       html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div>`;
+      }
       html += `</div>`;
     }
 
-    if (false) {
+    if (lesson.pair_share) {
+      html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
+      html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
+      html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${lesson.pair_share.qNum}. ${lesson.pair_share.prompt}</p>`;
+      html += `</div>`;
+    }
+
+    if (lesson.tasks) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
@@ -610,7 +677,7 @@ allDirs.forEach(unitId => {
       });
     }
 
-    let hasExamTask = false;
+    let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
       let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : 'GCSE Exam Practice';

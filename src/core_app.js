@@ -1045,7 +1045,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world') {
+    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
@@ -1054,6 +1054,26 @@ export function initializeApp(unitData) {
       cheatSheetLink.style.marginTop = '15px';
       
       navContainer.appendChild(cheatSheetLink);
+    }
+
+    if (window.currentUnitId === 'water_and_sanitation') {
+      const pdfTextbookLink = document.createElement('a');
+      pdfTextbookLink.className = 'lesson-link';
+      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book-open"></i> PDF Textbook';
+      pdfTextbookLink.href = `/pdfs/water_and_sanitation_textbook.pdf`;
+      pdfTextbookLink.target = '_blank';
+      pdfTextbookLink.style.marginTop = '15px';
+      pdfTextbookLink.style.color = '#3b82f6';
+      navContainer.appendChild(pdfTextbookLink);
+
+      const pupilWorkbookLink = document.createElement('a');
+      pupilWorkbookLink.className = 'lesson-link';
+      pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Student Pupil Workbook';
+      pupilWorkbookLink.href = `/pdfs/water_and_sanitation_pupil_workbook.pdf`;
+      pupilWorkbookLink.target = '_blank';
+      pupilWorkbookLink.style.marginTop = '15px';
+      pupilWorkbookLink.style.color = '#8b5cf6';
+      navContainer.appendChild(pupilWorkbookLink);
     }
 
     // Attach Pupil Workbooks dynamically as a single Zone
@@ -1138,6 +1158,7 @@ export function initializeApp(unitData) {
         let htmlDoNow="", htmlPrimary="", htmlSources1="", htmlNarrative="", htmlPairShare="", htmlHistorian="", htmlTasks="";
       const formatBold = window.formatBold;
     lesson = JSON.parse(JSON.stringify(lesson));
+    assignQuestionNumbers(lesson);
     
     // Normalize do_now format
     if (Array.isArray(lesson.do_now)) {
@@ -1366,7 +1387,7 @@ if (lesson.sources && lesson.sources.length > 0) {
               ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
               ${source.question ? `
                 <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(source.question)}</strong></p>
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question)}</strong></p>
                 </div>
               ` : ''}
             </div>
@@ -1393,7 +1414,7 @@ if (lesson.primary_source) {
             ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
             ${lesson.primary_source.question ? `
               <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
-                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${formatQuestion(lesson.primary_source.question)}</strong></p>
+                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.primary_source.qNum ? `Q${lesson.primary_source.qNum}. ` : ''}${formatQuestion(lesson.primary_source.question)}</strong></p>
               </div>
             ` : ''}
           </div>
@@ -2162,7 +2183,7 @@ if (lesson.tasks) {
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
               ${displayHeading}
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                Q${tIdx + 1}. ${qText}
+                ${task.qNum ? `Q${task.qNum}. ` : ''}${qText}
                 <span style="display: inline-flex; vertical-align: middle;">
                   ${clueBtn}
                   ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}
@@ -2191,7 +2212,7 @@ if (lesson.historians_corner) {
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
               <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
               <div style="font-size: 1.05rem; margin-bottom: 12px;">
-                ${hc.stretch_question}
+                ${hc.qNum ? `Q${hc.qNum}. ` : ''}${hc.stretch_question}
                 <span style="display: inline-flex; vertical-align: middle;">
                   ${hc.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('hc-starter')"><i class="fa-solid fa-pen"></i></button>` : ''}
                   ${hc.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('hc-clue')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
@@ -2456,7 +2477,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
         gcseHtml += `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-              ${formatQuestion(lesson.extended.question)}
+              ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question)}
               <span style="display: inline-flex; vertical-align: middle;">
                 ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('extended-model-${lesson.id}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
@@ -2475,7 +2496,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
             gcseHtml += `
               <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
                 <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                  ${formatQuestion(task.text || task.question)}
+                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(task.text || task.question)}
                   <span style="display: inline-flex; vertical-align: middle;">
                     ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('gcse-model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                   </span>
@@ -2490,10 +2511,10 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
            let isNarrative = topicText.toLowerCase().includes("write a narrative account");
            
            if (isNarrative) {
-               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${topicText}</p>`;
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
                gcseHtml += `<p style="font-size: 1rem; color: #475569; margin-bottom: 10px;"><em>Read the historical sources below before writing your narrative account:</em></p>`;
            } else {
-               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
            }
            
            gcseHtml += `<div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">`;
@@ -2764,20 +2785,20 @@ window.updateProgress = () => {
 
 
   function assignQuestionNumbers(lesson) {
-    let q = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = q++;
-    if (lesson.do_now) {
-      if (lesson.do_now.type === "timeline" && lesson.do_now.prediction_question) lesson.do_now.qNum = q++;
-      else if (lesson.do_now.type === "questions") lesson.do_now.items.forEach(item => item.qNum = q++);
-    }
-    q = 1;
+    let globalQNum = 1;
+    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
-        if (block.tasks) block.tasks.forEach(task => task.qNum = q++);
+        if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; });
+        if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
       });
     }
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = q++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = q++;
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
   }
 
   function openTaskWhiteboard() {
@@ -2795,42 +2816,75 @@ window.updateProgress = () => {
     
     const addQuestionCard = (qNum, questionText, answerText) => {
       const finalAnswer = window.formatBold(answerText) || "Model answer to be discussed in class.";
+      const prefix = qNum && qNum !== '-' && qNum !== 'Do Now' ? `Q${qNum}. ` : (qNum === 'Do Now' ? '<strong>[Do Now]</strong> ' : '');
       html += `
         <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
-          <div style="font-weight: bold;">Q${qNum}. ${questionText}</div>
+          <div style="font-weight: bold;">${prefix}${questionText}</div>
           <div class="wb-answer">${finalAnswer}</div>
         </div>
       `;
     };
 
+    if (activeLesson.do_now) {
+      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
+        addQuestionCard('Do Now', activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
+      } else if (activeLesson.do_now.type === "questions") {
+        activeLesson.do_now.items.forEach(item => {
+           addQuestionCard('Do Now', item.question, item.answer || '');
+        });
+      }
+    }
+
     if (activeLesson.primary_source && activeLesson.primary_source.question) {
       addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
     }
     
-    if (activeLesson.do_now) {
-      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
-        addQuestionCard(activeLesson.do_now.qNum, activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
-      } else if (activeLesson.do_now.type === "questions") {
-        activeLesson.do_now.items.forEach(item => {
-           addQuestionCard(item.qNum, item.question, item.answer || '');
-        });
-      }
+    if (activeLesson.sources) {
+      activeLesson.sources.forEach(source => {
+        if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
+      });
+    }
+
+    if (activeLesson.tasks) {
+      activeLesson.tasks.forEach(task => {
+        addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
+      });
+    }
+
+    if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+      addQuestionCard(activeLesson.historians_corner.qNum, activeLesson.historians_corner.stretch_question, activeLesson.historians_corner.model_answer || '');
     }
     
     if (activeLesson.narrative_blocks) {
       activeLesson.narrative_blocks.forEach(block => {
         if (block.tasks) {
           block.tasks.forEach(task => {
-            addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
+            if (task.type !== 'vocab_match') {
+              addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
+            }
           });
         }
+        if (block.hinge_question) {
+          addQuestionCard(block.hinge_question.qNum, block.hinge_question.question || block.hinge_question, block.hinge_question.model_answer || '');
+        }
       });
+    }
+    
+    if (activeLesson.extended && activeLesson.extended.question) {
+      addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model_answer || '');
+    }
+
+    if (activeLesson.gcse_task && (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)) {
+      addQuestionCard(activeLesson.gcse_task.qNum, activeLesson.gcse_task.question || activeLesson.gcse_task.prompt, activeLesson.gcse_task.model_answer || '');
+    }
+
+    if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+      addQuestionCard(activeLesson.pair_share.qNum, activeLesson.pair_share.prompt, "Discuss in pairs.");
     }
     
     if (activeLesson.debate_prep) {
        addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
     }
-
 
     
     container.innerHTML = html;

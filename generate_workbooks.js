@@ -135,7 +135,7 @@ allDirs.forEach(unitId => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
@@ -159,7 +159,7 @@ allDirs.forEach(unitId => {
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: auto; }
+        .task-box { page-break-inside: avoid !important; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
@@ -252,8 +252,8 @@ allDirs.forEach(unitId => {
     }
 
     html += `
-    <!-- Tracker Table now on page 2 -->
-    <div style="page-break-before: always;"></div>
+    <!-- Tracker Table now on page 1 -->
+    <div style="margin-top: 20px;"></div>
     <div style="margin: 30px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
@@ -282,7 +282,6 @@ allDirs.forEach(unitId => {
       </table>
     </div>
 
-    ${(unitId === 'edexcel_medicine' || unitId === 'western_front') ? (periodName === 'western_front' || unitId === 'western_front' ? (global.sectionAGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionAGuide}</div>` : '') : (global.sectionBGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionBGuide}</div>` : '')) : ''}
     `;
 
   periodLessons.forEach((lesson, lessonIndex) => {
@@ -358,7 +357,7 @@ allDirs.forEach(unitId => {
       let imgTags = '';
       if (renderImages) {
           imgTags = srcs.map(src => {
-            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : src;
+            let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : `../..${src.startsWith('/') ? src : '/' + src}`;
             const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
             return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
           }).join(' ');
@@ -741,7 +740,8 @@ allDirs.forEach(unitId => {
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-      html += `<h2 style="margin-top: 0;">GCSE Exam Practice</h2>`;
+      let defaultExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
+      html += `<h2 style="margin-top: 0;">${defaultExamTitle}</h2>`;
 
       const renderLines = (text) => {
           if (text.includes("16 marks")) {
@@ -803,7 +803,8 @@ allDirs.forEach(unitId => {
 
       if (lesson.gcse_task) {
         html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;
-        html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">GCSE Exam Practice</h2>`;
+        let defaultExamTitle2 = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
+        html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">${defaultExamTitle2}</h2>`;
         
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach(task => {

@@ -1,0 +1,155 @@
+﻿commit 70cc79f45112a88557a8a23066101801b55d8195
+Author: benlovettbl-blip <benlovett.bl@gmail.com>
+Date:   Tue Aug 11 12:17:15 2026 +0100
+
+    Unified Print & PDF Hub in sidebar; stripped tasks, tracking grids, and exam guides from Textbook PDF generation
+
+diff --git a/generate_textbooks.js b/generate_textbooks.js
+index a7fcbd4..2eddf39 100644
+--- a/generate_textbooks.js
++++ b/generate_textbooks.js
+@@ -252,31 +252,9 @@ allDirs.forEach(unitId => {
+     }
+ 
+     html += `
+-    <!-- Tracker Table now on page 2 -->
+-    <div style="page-break-before: always;"></div>
+-    <div style="margin: 30px 5% 0 5%; width: 90%;">
+-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
+-        <thead>
+-          <tr style="background-color: #1a237e; color: white;">
+-            <th style="border: 1px solid #333; padding: 12px 6px; width: 35%;">Progress & Assessment Tracker</th>
+-            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Effort</th>
+-            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Level</th>
+-            <th style="border: 1px solid #333; padding: 12px 6px; width: 45%;">Teacher Comments</th>
+-          </tr>
+-        </thead>
+-        <tbody>
+-          ${trackerRows}
+-          <tr style=" font-weight: bold; height: 50px;">
+-            <td style="border: 1px solid #333; padding: 12px 6px; text-align: right;">Final Unit Grade:</td>
+-            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
+-            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
+-            <td style="border: 1px solid #333; padding: 12px 6px;"></td>
+-          </tr>
+-        </tbody>
+-      </table>
+-    </div>
++    
+ 
+-    ${(unitId === 'edexcel_medicine' || unitId === 'western_front') ? (periodName === 'western_front' || unitId === 'western_front' ? (global.sectionAGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionAGuide}</div>` : '') : (global.sectionBGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionBGuide}</div>` : '')) : ''}
++    
+     `;
+ 
+   periodLessons.forEach((lesson, lessonIndex) => {
+@@ -363,85 +341,12 @@ allDirs.forEach(unitId => {
+           ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ''}
+           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
+           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
+-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
++          
+         </div>
+       `;
+     }
+ 
+     
+-    // Starter Activities (Do Now & Vocab stacked)
+-    html += `<div style="width: 100%; margin-bottom: 10px;">`;
+-    
+-    // Do Now
+-    html += `<div>`;
+-    if (lesson.do_now) {
+-          if (lesson.do_now.type === "timeline") {
+-        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+-                     <h3 style="margin: 0; font-size: 11pt;">Chronological Domino Flowchart</h3>
+-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+-                   </div>
+-                   <p style="font-style: italic; color: #555; margin-top: 0; font-size: 9.5pt; margin-bottom: 5px;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A Ô×ö Event B Ô×ö Event C...).</p>
+-                   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 5px;">`;
+-                   
+-        let shuffledEvents = [...(lesson.do_now.events || [])];
+-        for (let i = shuffledEvents.length - 1; i > 0; i--) {
+-            const j = Math.floor(Math.random() * (i + 1));
+-            [shuffledEvents[i], shuffledEvents[j]] = [shuffledEvents[j], shuffledEvents[i]];
+-        }
+-        
+-        shuffledEvents.forEach((ev, idx) => {
+-          const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
+-          const m = margins[idx % margins.length];
+-          html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
+-                      <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
+-                      <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
+-                      <span style="font-size: 9pt;">${ev.detail || ''}</span>
+-                   </div>`;
+-        });
+-        html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
+-
+-        if (lesson.do_now.prediction_question) {
+-          html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+-          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+-        }
+-        html += `</div>`;
+-      } else if (lesson.do_now.type === "text") {
+-        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+-                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Do Now Activity"}</h3>
+-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
+-                   </div>`;
+-        html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${lesson.do_now.text}</strong></div>`;
+-        for (let i = 0; i < 5; i++) {
+-          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+-        }
+-        html += `</div>`;
+-      } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))) {
+-        let items = lesson.do_now.items || lesson.do_now.questions;
+-        let maxScore = items ? items.length : 5;
+-        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
+-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
+-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
+-                   </div>`;
+-        if (items) {
+-          items.forEach((item, index) => {
+-            html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${index + 1}.</strong> ${item.question}</div>`;
+-            let linesToDraw = 2;
+-            for(let i=0; i<linesToDraw; i++) {
+-              html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+-            }
+-            html += `<div style="height: 6px;"></div>`;
+-          });
+-        }
+-        html += `</div>`;
+-      }
+-    }
+-
+-    
+-    html += `</div>`;
+-
+     // Vocab
+     html += `<div>`;
+     let vocabTerms = lesson.vocab;
+@@ -466,20 +371,20 @@ allDirs.forEach(unitId => {
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least FOUR of the vocabulary words below correctly.</p>`;
+            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
+            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
+-           for(let i=0; i<4; i++) { html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`; }
++           for(let i=0; i<4; i++) { html += ``; }
+         }
+       } else if (vocabStyle === 1) {
+ 
+         html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p>`;
+         let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
+         html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
+-        html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
++        html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong>`;
+       } else if (vocabStyle === 2) {
+ 
+         let focusWord = vocabTerms[0].term;
+         html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a clear definition and a historically accurate sentence for the term: <strong>${focusWord}</strong></p>`;
+         html += `
+-          <div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>
++          
+         `;
+       }
+       html += `</div>`;

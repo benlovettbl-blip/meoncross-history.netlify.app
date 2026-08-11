@@ -136,7 +136,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: Identify how Iron Age communities managed their waste.",
+              "text": "Identify how Iron Age communities managed their waste.",
               "model": "Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.",
               "starter": "Iron Age communities managed their waste by...",
               "clue": "Think about population density and why simple methods worked when people were spread out."
@@ -150,7 +150,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Describe the purpose of Roman conduits and aqueducts.",
+              "text": "Describe the purpose of Roman conduits and aqueducts.",
               "model": "Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.",
               "starter": "The purpose of Roman conduits and aqueducts was to...",
               "clue": "Think about the scale of engineering and moving water using gravity."
@@ -176,7 +176,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: Explain how bathhouses and latrines improved public health in Roman towns.",
+              "text": "Explain how bathhouses and latrines improved public health in Roman towns.",
               "model": "They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.",
               "starter": "Bathhouses and latrines improved public health because...",
               "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
@@ -190,7 +190,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Evaluate the impact of the Roman withdrawal on Britain's sanitation.",
+              "text": "Evaluate the impact of the Roman withdrawal on Britain's sanitation.",
               "model": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
               "starter": "The Roman withdrawal significantly impacted sanitation because...",
               "clue": "Consider what happened to the pipes and sewers when the engineers left."
@@ -391,7 +391,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: Identify the main method of waste disposal in medieval villages like Wharram Percy.",
+              "text": "Identify the main method of waste disposal in medieval villages like Wharram Percy.",
               "model": "They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.",
               "starter": "The main method of waste disposal in medieval villages was...",
               "clue": "Think about why rural density prevented disease from spreading."
@@ -405,7 +405,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Describe the sanitation facilities found in medieval monasteries like Canterbury Priory.",
+              "text": "Describe the sanitation facilities found in medieval monasteries like Canterbury Priory.",
               "model": "Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.",
               "starter": "Medieval monasteries had sanitation facilities such as...",
               "clue": "Look at the Canterbury blueprints and who paid for the pipes."
@@ -431,7 +431,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: Explain why overcrowded medieval towns faced a filtration crisis.",
+              "text": "Explain why overcrowded medieval towns faced a filtration crisis.",
               "model": "Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.",
               "starter": "Overcrowded medieval towns faced a filtration crisis because...",
               "clue": "Consider how high density impacted shared wells and rivers."
@@ -445,7 +445,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Explain the role of gongfermers in medieval towns.",
+              "text": "Explain the role of gongfermers in medieval towns.",
               "model": "Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.",
               "starter": "The role of gongfermers was to...",
               "clue": "Think about what happened when cesspits overflowed and why they worked at night."
@@ -459,7 +459,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q5: Evaluate the significance of Edward III's cleanliness mandate in 1349.",
+              "text": "Evaluate the significance of Edward III's cleanliness mandate in 1349.",
               "model": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
               "starter": "Edward III's cleanliness mandate was significant because...",
               "clue": "Look at his 1357 letter to the Mayor of London."
@@ -664,7 +664,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: Identify who invented the first flushing water closet.",
+              "text": "Identify who invented the first flushing water closet.",
               "model": "He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.",
               "starter": "The first flushing water closet was invented by...",
               "clue": "Think about why an invention is useless without a network (water & sewers)."
@@ -678,7 +678,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Describe the purpose of the New River project in 1613.",
+              "text": "Describe the purpose of the New River project in 1613.",
               "model": "It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.",
               "starter": "The purpose of the New River project was to...",
               "clue": "Consider the distance the water traveled and how it was distributed."
@@ -704,7 +704,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: Explain what Samuel Pepys' diary reveals about Early Modern privies.",
+              "text": "Explain what Samuel Pepys' diary reveals about Early Modern privies.",
               "model": "It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.",
               "starter": "Samuel Pepys' diary reveals that Early Modern privies...",
               "clue": "Think about what he found in his cellar on October 20, 1660."
@@ -718,7 +718,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Evaluate the effectiveness of Early Modern water sellers for public health.",
+              "text": "Evaluate the effectiveness of Early Modern water sellers for public health.",
               "model": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
               "starter": "Early Modern water sellers were only partially effective because...",
               "clue": "Think about who bought their water and where they got it from."
@@ -909,7 +909,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: Identify two effects of the industrial population surge on factory towns.",
+              "text": "Identify two effects of the industrial population surge on factory towns.",
               "model": "It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.",
               "starter": "Two effects of the industrial population surge were...",
               "clue": "Think about the shift from 6 million to 21 million people."
@@ -923,7 +923,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Describe the living conditions in industrial back-to-back housing.",
+              "text": "Describe the living conditions in industrial back-to-back housing.",
               "model": "They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.",
               "starter": "Living conditions in industrial back-to-back housing were...",
               "clue": "Consider how landlords built cheap housing for factory workers."
@@ -949,7 +949,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: Explain how the cholera epidemics forced the government to act.",
+              "text": "Explain how the cholera epidemics forced the government to act.",
               "model": "They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.",
               "starter": "The cholera epidemics forced the government to act by...",
               "clue": "Think about the rapid, terrifying nature of cholera deaths."
@@ -963,7 +963,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Evaluate the significance of Edwin Chadwick's 1842 report.",
+              "text": "Evaluate the significance of Edwin Chadwick's 1842 report.",
               "model": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
               "starter": "Edwin Chadwick's 1842 report was significant because...",
               "clue": "Think about the evidence he gathered on the working class."
@@ -1168,7 +1168,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q1: Identify what John Snow's Broad Street map proved about cholera.",
+              "text": "Identify what John Snow's Broad Street map proved about cholera.",
               "model": "It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.",
               "starter": "John Snow's Broad Street map proved that...",
               "clue": "Consider how he used geography and data to locate the infection."
@@ -1182,7 +1182,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q2: Describe the impact of the Great Stink on Parliament in 1858.",
+              "text": "Describe the impact of the Great Stink on Parliament in 1858.",
               "model": "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
               "starter": "The Great Stink impacted Parliament by...",
               "clue": "Think about why the smell of the Thames affected the politicians personally."
@@ -1208,7 +1208,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q3: Explain how Joseph Bazalgette's sewer system solved London's waste problem.",
+              "text": "Explain how Joseph Bazalgette's sewer system solved London's waste problem.",
               "model": "It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.",
               "starter": "Joseph Bazalgette's sewer system solved the problem by...",
               "clue": "Think about how it moved waste out of the city and where it sent it."
@@ -1222,7 +1222,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q4: Explain the link between Louis Pasteur's Germ Theory and sanitation.",
+              "text": "Explain the link between Louis Pasteur's Germ Theory and sanitation.",
               "model": "It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.",
               "starter": "Louis Pasteur's Germ Theory linked to sanitation because...",
               "clue": "Think about how this disproved miasma theory permanently."
@@ -1236,7 +1236,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "written",
-              "text": "Q5: Evaluate the significance of the 1875 Public Health Act for modern sanitation.",
+              "text": "Evaluate the significance of the 1875 Public Health Act for modern sanitation.",
               "model": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
               "starter": "The Public Health Act of 1875 was significant because...",
               "clue": "Think about the transition from voluntary hygiene to mandatory laws."

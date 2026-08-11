@@ -1,0 +1,7 @@
+              block.extended.scaffolding.forEach(hint => {
+                html += `<li>${formatText(hint)}</li>`;
+              });
+              html += `</ul></div>`;
+            }
+            html += `<div style="min-height: 200px;">`;
+            const lineCount = block.extended.lines || 8;
