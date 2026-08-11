@@ -218,15 +218,7 @@ if (!unitId) {
           sidebarNav.appendChild(container);
         };
 
-        if (unitData.workbooks && unitData.workbooks.length > 0 && unitData.workbooks[0].name !== 'full') {
-          renderDropdown('Textbook PDFs', 'fa-book-open', 'Reading material only (Split by period)', 'textbook');
-          renderDropdown('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks (Split by period)', 'workbook');
-          renderDropdown('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only (Split by period)', 'pupil_workbook');
-        } else {
-          sidebarNav.appendChild(renderLink('Textbook PDF', 'fa-book-open', 'Reading material only', '/pdfs/' + unitId + '_textbook.pdf'));
-          sidebarNav.appendChild(renderLink('Guided Workbook PDF', 'fa-pencil', 'Reading + Writing tasks', '/pdfs/' + unitId + '_workbook.pdf'));
-          sidebarNav.appendChild(renderLink('Pupil Workbook PDF', 'fa-user-pen', 'Writing tasks only', '/pdfs/' + unitId + '_pupil_workbook.pdf'));
-        }
+
       }
 
 

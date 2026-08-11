@@ -152,7 +152,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '</div>';
     }
 
-    if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0) {
+    // Only show PDF Materials on the homepage if the dynamic workbooks zone isn't available
+    if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0 && (!unitData.workbooks || unitData.workbooks.length === 0)) {
       lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">PDF Materials</h2>';
       lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       unitData.printable_workbooks.forEach(wb => {

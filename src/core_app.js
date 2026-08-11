@@ -1056,20 +1056,24 @@ export function initializeApp(unitData) {
       navContainer.appendChild(cheatSheetLink);
     }
 
-    // Attach Pupil Workbooks dynamically
+    // Attach Pupil Workbooks dynamically as a single Zone
     if (unitData.workbooks && unitData.workbooks.length > 0) {
-      unitData.workbooks.forEach(wb => {
-        const wbLink = document.createElement('a');
-        wbLink.className = 'lesson-link';
-        wbLink.innerHTML = `<i class="fa-solid fa-book"></i> Pupil Workbook: ${wb.title || wb.id}`;
-        const filename = wb.id === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${wb.id}.html`;
-        wbLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/${filename}` : filename;
-        wbLink.target = '_blank';
-        wbLink.style.marginTop = '15px';
-        wbLink.style.color = '#8b5cf6'; // Purple icon/text focus
-        
-        navContainer.appendChild(wbLink);
+      const wbLink = document.createElement('a');
+      wbLink.className = 'lesson-link';
+      wbLink.innerHTML = `<i class="fa-solid fa-print"></i> Print & PDF Hub`;
+      wbLink.style.marginTop = '15px';
+      wbLink.style.color = '#8b5cf6'; // Purple icon/text focus
+      wbLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        wbLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        const { renderWorkbooksZone } = await import('./workbooks_zone.js');
+        renderWorkbooksZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+      navContainer.appendChild(wbLink);
     }
 
   }
