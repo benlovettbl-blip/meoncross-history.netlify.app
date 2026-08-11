@@ -201,60 +201,40 @@ allDirs.forEach(unitId => {
       });
     }
 
-    let bannerImageSrc = period.image || unitData.cover_image || '';
+    let bannerImageSrc = period.image || unitData.cover_image || '/assets/water_and_sanitation_was_roman_bathhouse.png';
     if (bannerImageSrc) {
       bannerImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(bannerImageSrc, 2) : `../..${bannerImageSrc.startsWith('/') ? bannerImageSrc : '/' + bannerImageSrc}`;
     }
 
     html += `
-    <h3 style="text-align: center; color: #555; margin-top: 0; margin-bottom: 10px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">${unitData.title}</h3>
-    <div style="width: 100%; height: 160px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-      <!-- Banner image removed per user request -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">${periodTitle}</h1>
-          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;"><strong>Assessment Question:</strong> ${unitData.enquiry || 'Student Workbook'}</p>
+    <div style="width: 100%; height: 500px; margin-top: 20px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); ">
+      ${bannerImageSrc ? `<img src="${bannerImageSrc}" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" />` : ''}
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; background: rgba(15, 23, 42, 0.75);">
+        <div style="padding: 40px 60px; border-radius: 12px; text-align: center; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); max-width: 80%;">
+          <h1 style="margin: 0 !important; font-size: 40pt; color: white; padding: 0; font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">${periodTitle}</h1>
+          ${unitData.enquiry ? `<p style="font-size:16pt; margin: 25px 0 0 0; font-family: 'Outfit', sans-serif; color: #f8fafc; font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"><strong>Course Enquiry:</strong> ${unitData.enquiry}</p>` : ''}
         </div>
       </div>
     </div>
     
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: 25px auto 0 auto; width: 80%; gap: 40px;">
-      <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
-      <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
+    <div style="margin-top: 50px; padding: 40px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+      <h2 style="margin-top: 0; font-family: 'Playfair Display', serif; color: #1e3a8a; font-size: 26pt; border-bottom: 2px solid #93c5fd; padding-bottom: 15px; text-align: center;">Contents</h2>
+      <table style="width: 100%; border: none; margin-top: 30px;">
+        <tbody>
+          ${periodLessons.map((l, i) => `
+            <tr>
+              <td style="padding: 16px 0; border-bottom: 1px dashed #cbd5e1; font-size: 15pt; color: #334155; font-weight: 500; width: 85%;">
+                Lesson ${i + 1}: ${l.title.replace(/Lesson \d+:\s*/i, '')}
+              </td>
+              <td style="padding: 16px 0; border-bottom: 1px dashed #cbd5e1; font-size: 15pt; color: #1e3a8a; font-weight: bold; text-align: right; width: 15%;">
+                ${l.startPage ? `Page ${l.startPage}` : '---'}
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
     </div>
-    `;
-
-    if (unitData.cover_sources) {
-      html += `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 25px auto 15px auto;">
-        ${unitData.cover_sources.map(src => {
-          let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(src.image, 2) : `../..${src.image.startsWith('/') ? src.image : '/' + src.image}`;
-          return `
-          <div style="display: flex; gap: 10px; align-items: center;  padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <img src="${imgSrc}" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
-            <div style="text-align: left; flex: 1;">
-              <strong style="display: block; font-size: 9pt; color: #1a237e; margin-bottom: 3px;">${src.title}</strong>
-              <span style="font-size: 8pt; color: #475569; line-height: 1.2; display: block;">${src.description}</span>
-            </div>
-          </div>
-          `;
-        }).join('')}
-      </div>
-      `;
-    } else if (unitData.hero_image) {
-      let heroImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(unitData.hero_image, 2) : `../..${unitData.hero_image.startsWith('/') ? unitData.hero_image : '/' + unitData.hero_image}`;
-      html += `
-      <div style="margin: 25px auto 10px auto; text-align: center; max-width: 85%;">
-        <img src="${heroImageSrc}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-        ${unitData.hero_caption ? `<p style="font-size: 11pt; color: #475569; margin-top: 15px; font-style: italic;">${unitData.hero_caption}</p>` : ''}
-      </div>
-      `;
-    }
-
-    html += `
-    
-
-    
+    <div style="page-break-after: always;"></div>
     `;
 
   periodLessons.forEach((lesson, lessonIndex) => {
