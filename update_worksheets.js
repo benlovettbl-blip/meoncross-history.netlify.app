@@ -62,7 +62,7 @@ const newVocabCode = `  // Render Vocabulary (Tier 3)
     } else {
       // Mini-Frayer Model
       const termToUse = vocabTerms[0].term;
-      html += \`<p><strong>Task:</strong> Complete the Frayer model grid for the word: <strong>\${termToUse}</strong></p>\`;
+      html += \`<p><strong>Task:</strong> Write a clear definition and a historically accurate sentence for the term: <strong>\${termToUse}</strong></p>\`;
       html += \`
         <table style="width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center;">
           <tr>

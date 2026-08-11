@@ -476,40 +476,31 @@ allDirs.forEach(unitId => {
       
       if (vocabStyle === 0) {
         if (lesson.vocab_cloze_text) {
-           html += `<p style="font-weight: bold; font-size: 9.5pt; margin: 2px 0;">Style: Contextual Cloze</p>`;
+
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
            let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
         } else {
-           html += `<p style="font-weight: bold; font-size: 9.5pt; margin: 2px 0;">Style: Vocabulary in Context</p>`;
+
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least FOUR of the vocabulary words below correctly.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
            for(let i=0; i<4; i++) { html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`; }
         }
       } else if (vocabStyle === 1) {
-        html += `<p style="font-weight: bold; font-size: 9.5pt; margin: 2px 0;">Style: Vocabulary Mapping</p>`;
+
         html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p>`;
         let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
         html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
         html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
       } else if (vocabStyle === 2) {
-        html += `<p style="font-weight: bold; font-size: 9.5pt; margin: 2px 0;">Style: Mini-Frayer Model</p>`;
+
         let focusWord = vocabTerms[0].term;
-        html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Complete the Frayer Model for the term: <strong>${focusWord}</strong></p>`;
+        html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a clear definition and a historically accurate sentence for the term: <strong>${focusWord}</strong></p>`;
         html += `
-          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 9.5pt;">
-            <tr>
-              <td style=" width: 50%; height: 60px; vertical-align: top; padding: 3px;"><strong>Definition</strong></td>
-              <td style=" width: 50%; height: 60px; vertical-align: top; padding: 3px;"><strong>Historical Example</strong></td>
-            </tr>
-            <tr>
-              <td style=" width: 50%; height: 60px; vertical-align: top; padding: 3px;"><strong>Non-Example / Sketch</strong></td>
-              <td style=" width: 50%; height: 60px; vertical-align: top; padding: 3px;"><strong>Your own sentence</strong></td>
-            </tr>
-          </table>
+          <div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>
         `;
       }
       html += `</div>`;
