@@ -161,26 +161,71 @@ if (!unitId) {
       
       // 5. PDF Textbook and Workbook Tabs
       {
-        const tbLink = document.createElement('a');
-        tbLink.className = 'lesson-link';
-        tbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Textbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Reading material only</div></div>';
-        tbLink.href = '/pdfs/' + unitId + '_textbook.pdf';
-        tbLink.target = '_blank';
-        sidebarNav.appendChild(tbLink);
+        const renderLink = (title, icon, subtitle, url, isSubLink = false) => {
+          const link = document.createElement('a');
+          link.className = 'lesson-link' + (isSubLink ? ' sub-link' : '');
+          if (isSubLink) {
+             link.style.paddingLeft = '2rem';
+             link.style.fontSize = '0.9em';
+             link.style.borderLeft = '2px solid var(--gold)';
+             link.style.background = 'rgba(0,0,0,0.02)';
+             link.style.marginBottom = '2px';
+          }
+          link.innerHTML = `<div style="display:flex; flex-direction:column;"><div><i class="fa-solid ${icon}" style="margin-right: 8px;"></i> ${title}</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">${subtitle}</div></div>`;
+          link.href = url;
+          link.target = '_blank';
+          return link;
+        };
 
-        const wbLink = document.createElement('a');
-        wbLink.className = 'lesson-link';
-        wbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-pencil" style="margin-right: 8px;"></i> Guided Workbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Reading + Writing tasks (All-in-one)</div></div>';
-        wbLink.href = '/pdfs/' + unitId + '_workbook.pdf';
-        wbLink.target = '_blank';
-        sidebarNav.appendChild(wbLink);
+        const renderDropdown = (title, icon, subtitle, typePrefix) => {
+          const container = document.createElement('div');
+          
+          const header = document.createElement('a');
+          header.className = 'lesson-link';
+          header.innerHTML = `<div style="display:flex; flex-direction:column; width:100%;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div><i class="fa-solid ${icon}" style="margin-right: 8px;"></i> ${title}</div>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.8em; opacity:0.6;"></i>
+            </div>
+            <div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">${subtitle}</div>
+          </div>`;
+          header.href = '#';
+          
+          const list = document.createElement('div');
+          list.style.display = 'none';
+          list.style.flexDirection = 'column';
+          
+          header.onclick = (e) => {
+            e.preventDefault();
+            list.style.display = list.style.display === 'none' ? 'flex' : 'none';
+            const iconEl = header.querySelector('.fa-chevron-down, .fa-chevron-up');
+            if (iconEl) {
+              iconEl.className = list.style.display === 'none' ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+            }
+          };
 
-        const pwbLink = document.createElement('a');
-        pwbLink.className = 'lesson-link';
-        pwbLink.innerHTML = '<div style="display:flex; flex-direction:column;"><div><i class="fa-solid fa-user-pen" style="margin-right: 8px;"></i> Pupil Workbook PDF</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">Writing tasks only (No reading text)</div></div>';
-        pwbLink.href = '/pdfs/' + unitId + '_pupil_workbook.pdf';
-        pwbLink.target = '_blank';
-        sidebarNav.appendChild(pwbLink);
+          unitData.workbooks.forEach(wb => {
+             const subUrl = '/pdfs/' + unitId + '_' + typePrefix + '_' + wb.name + '.pdf';
+             const subLink = renderLink(wb.title, 'fa-file-pdf', '', subUrl, true);
+             // Remove subtitle margin for sublinks
+             subLink.querySelector('div > div:nth-child(2)').style.display = 'none';
+             list.appendChild(subLink);
+          });
+
+          container.appendChild(header);
+          container.appendChild(list);
+          sidebarNav.appendChild(container);
+        };
+
+        if (unitData.workbooks && unitData.workbooks.length > 0 && unitData.workbooks[0].name !== 'full') {
+          renderDropdown('Textbook PDFs', 'fa-book-open', 'Reading material only (Split by period)', 'textbook');
+          renderDropdown('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks (Split by period)', 'workbook');
+          renderDropdown('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only (Split by period)', 'pupil_workbook');
+        } else {
+          sidebarNav.appendChild(renderLink('Textbook PDF', 'fa-book-open', 'Reading material only', '/pdfs/' + unitId + '_textbook.pdf'));
+          sidebarNav.appendChild(renderLink('Guided Workbook PDF', 'fa-pencil', 'Reading + Writing tasks', '/pdfs/' + unitId + '_workbook.pdf'));
+          sidebarNav.appendChild(renderLink('Pupil Workbook PDF', 'fa-user-pen', 'Writing tasks only', '/pdfs/' + unitId + '_pupil_workbook.pdf'));
+        }
       }
 
 

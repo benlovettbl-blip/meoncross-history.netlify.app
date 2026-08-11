@@ -1101,7 +1101,7 @@ allDirs.forEach(unitId => {
   html = html.replace(/display:\s*none;?/gi, 'display: block; margin-top: 15px;'); // Stack toggle tabs
   html = html.replace(/(?:using the toggle tabs,?\s*)/ig, ''); // Remove app-only phrasing
 
-  const filename = period.name === 'full' ? 'textbook.html' : `workbook_${period.name}.html`;
+  const filename = period.name === 'full' ? 'textbook.html' : `textbook_${period.name}.html`;
   const outPath = path.join(publicUnitsDir, unitId, filename);
   fs.writeFileSync(outPath, html);
   console.log(`Generated ${outPath}`);
