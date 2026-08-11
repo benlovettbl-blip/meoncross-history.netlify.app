@@ -125,10 +125,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?",
               "text": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Highlight the key technological features."
             }
           ],
           "theme_heading": "Roman Water Transforms Britain",
@@ -172,10 +168,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?",
               "text": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Highlight three different sounds Seneca complains about."
             }
           ],
           "theme_heading": "Roman Water and Hygiene",
@@ -401,10 +393,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?",
               "text": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Highlight the key technological features."
             }
           ],
           "theme_heading": "Monastic Cleanliness and Hygiene",
@@ -660,10 +648,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?",
               "text": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Highlight the key technological features."
             }
           ],
           "theme_heading": "Harington",
@@ -945,10 +929,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
               "text": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Circle the dense cluster of black bars representing cholera deaths centered around the Broad Street pump."
             }
           ],
           "theme_heading": "Britain's First Cholera",
@@ -1204,10 +1184,6 @@ export const unitData = {
               "type": "think_pair_share",
               "question": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?",
               "text": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?"
-            },
-            {
-              "type": "think_pair_share",
-              "text": "Draw an arrow pointing to the massive diameter of the brick tunnels, built to intercept all of London's waste."
             }
           ],
           "theme_heading": "Bazalgette",
