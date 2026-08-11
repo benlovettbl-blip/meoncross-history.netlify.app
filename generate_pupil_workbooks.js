@@ -273,8 +273,7 @@ allDirs.forEach(unitId => {
     }
 
     html += `
-    <!-- Tracker Table now on page 2 -->
-    <div style="page-break-before: always;"></div>
+    <!-- Tracker Table now on page 1 -->
     <div style="margin: 30px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
@@ -296,8 +295,6 @@ allDirs.forEach(unitId => {
         </tbody>
       </table>
     </div>
-
-    ${(unitId === 'edexcel_medicine' || unitId === 'western_front') ? (periodName === 'western_front' || unitId === 'western_front' ? (global.sectionAGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionAGuide}</div>` : '') : (global.sectionBGuide ? `<div style="page-break-before: always; page-break-after: always; padding: 20px;">${global.sectionBGuide}</div>` : '')) : ''}
     `;
 
   periodLessons.forEach((lesson, lessonIndex) => {
@@ -345,20 +342,7 @@ allDirs.forEach(unitId => {
       });
       html += `</div>`;
     }
-
-    if (lesson.hook_text) {
-      html += `<p style="font-size: 12pt; font-style: italic;  padding-top: 10px; padding-bottom: 10px; border-left: 4px solid #3b82f6; margin-bottom: 10px;">${lesson.hook_text}</p>`;
-    }
-
-    if (lesson.fun_facts && lesson.fun_facts.length > 0) {
-      html += `<div style=" border: 1px solid #fcd34d; padding-top: 10px; padding-bottom: 10px; margin-bottom: 10px; border-radius: 4px;">`;
-      html += `<h4 style="margin: 0 0 5px 0; color: #b45309; font-size: 12pt;">Did you know?</h4>`;
-      html += `<ul style="margin: 0; padding-left: 20px; font-size: 12pt; color: #92400e;">`;
-      lesson.fun_facts.forEach(fact => {
-        html += `<li style="margin-bottom: 5px;">${fact}</li>`;
-      });
-      html += `</ul></div>`;
-    }
+    // Hook text and fun facts removed for Pupil Workbook
 
     // Primary Source
     if (lesson.primary_source) {
@@ -733,17 +717,15 @@ allDirs.forEach(unitId => {
 
       html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Prompt: ${lesson.pair_share.prompt}</p>`;
       if (lesson.pair_share.think) html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-      html += `<div style="margin-top: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div></div>`;
+      html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+      for(let i = 0; i < 6; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
+      html += `</div>`;
       html += `</div>`;
     }
 
-    // Historians Corner
-    if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
-      html += `</div>`;
-    }
+    // Historians Corner (Removed for Pupil Workbook)
 
     if (lesson.tasks && lesson.tasks.length > 0) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
