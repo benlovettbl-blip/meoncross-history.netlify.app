@@ -56,6 +56,8 @@ export const unitData = {
           {
             "num": "2 (a)",
             "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an historian studying the immense challenges of treating casualties on the Western Front?\n\nExplain your answer, using Sources A and B and your own contextual knowledge.",
+
+            "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
             "marks": 8,
             "lines": 24,
             "sources": [
@@ -149,6 +151,8 @@ export const unitData = {
           {
             "num": "2 (a)",
             "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the physical trauma and preventative treatments associated with German poison gas attacks?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
+
+            "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
             "marks": 8,
             "lines": 24,
             "sources": [
@@ -245,6 +249,8 @@ export const unitData = {
           {
             "num": "2 (a)",
             "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the prevention and surgical management of deep wound infections on the Western Front?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
+
+            "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
             "marks": 8,
             "lines": 24,
             "sources": [
@@ -340,6 +346,8 @@ export const unitData = {
           {
             "num": "2 (a)",
             "text": "Study Sources A and B in the Sources Booklet.\n\nHow useful are Sources A and B for an enquiry into the development of techniques for blood transfusion and frontline storage?\n\nExplain your answer, using Sources A and B and your knowledge of the historical context.",
+
+            "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
             "marks": 8,
             "lines": 24,
             "sources": [
@@ -722,13 +730,15 @@ export const unitData = {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Homo_signorum-1580.png/500px-Homo_signorum-1580.png",
           "title": "The 'Zodiac Man' (Homo Signorum)",
           "caption": "A 14th-century detailed drawing showing how different astrological star signs govern different body parts.",
-          "think_wonder": "Why are the signs of the zodiac drawn over specific body parts? How do you think a medieval physician used this chart to decide when to treat a patient?"
+          "think_wonder": "Why are the signs of the zodiac drawn over specific body parts? How do you think a medieval physician used this chart to decide when to treat a patient?",
+          "hinge_question": "If you were a medieval physician consulting this Zodiac Man, how would your treatment plan change depending on the time of year? Does this show that medieval medicine was entirely irrational, or did it have its own internal logic?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg/500px-Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg",
           "title": "Medieval Urine Chart",
           "caption": "A circular chart showing 20 different shades and consistencies of urine.",
-          "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?"
+          "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?",
+          "hinge_question": "Why did medieval physicians rely so heavily on observing urine rather than cutting into the body to see what was wrong? What does this tell us about their understanding of anatomy?"
         }
       ],
       "quiz": [
@@ -7004,6 +7014,8 @@ export const unitData = {
           "type": "8-mark",
           "marks": 8,
           "question": "<strong>How useful are Sources A and B for an enquiry into the difficulties faced by soldiers in the trench system of the Western Front?</strong> Explain your answer, using Sources A and B and your knowledge of the historical context.",
+
+          "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
           "stimulus": [
             "<strong>Source A: From the personal pocket diary of Private Thomas Atkins, serving with the British Infantry in the Ypres Salient, November 1916.</strong> 'The communication trenches are flooded with three feet of icy water, and the clay walls are collapsing into thick slime. Our boots are permanently waterlogged, and we have to dig out our firesteps constantly. The enemy shelled our support lines yesterday, throwing up colossal geysers of wet mud that choked our drainage channels.'",
             "<strong>Source B: An official photograph taken on the Somme in October 1916. It shows British soldiers attempting to maintain a communication trench.</strong><br><br><div style=\"text-align:center;\"><img src=\"/assets/somme_trench_1916.jpg\" alt=\"British soldiers maintaining a trench on the Somme\" style=\"max-width: 100%; max-height: 250px; border-radius: 4px; border: 1px solid #ccc;\"></div>"
@@ -7029,6 +7041,8 @@ export const unitData = {
       },
       "extended": {
         "question": "1 (a). How useful are Sources A and B for an enquiry into the difficulties faced by soldiers in the trench system of the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+
+        "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
         "source_a": {
           "provenance": "From the personal pocket diary of Private Thomas Atkins, serving with the British Infantry in the Ypres Salient, November 1916.",
           "content": "\"The communication trenches are flooded with three feet of icy water, and the clay walls are collapsing into thick slime. Our boots are permanently waterlogged, and we have to dig out our firesteps constantly. The enemy shelled our support lines yesterday, throwing up colossal geysers of wet mud that choked our drainage channels.\""
@@ -7502,6 +7516,8 @@ export const unitData = {
           "type": "8-mark",
           "marks": 8,
           "question": "How useful are Sources A and B for an enquiry into the problem of ill health arising from the trench environment? Explain your answer, using Sources A and B and your knowledge of the historical context.",
+
+          "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
           "stimulus": [
             "Source A: A report from a Medical Officer in 1915: 'Altogether about 200 men had to be evacuated from our section of the trenches with swollen, numb feet due to the freezing mud. Several require amputation.'",
             "Source B: A diary entry from an RAMC surgeon: 'The men are brought in with horrific shrapnel injuries. The metal drives the filthy, manured soil deep into the muscle, creating an environment where gas gangrene thrives. We often have to amputate to save their lives.'"
@@ -7527,6 +7543,8 @@ export const unitData = {
       },
       "extended": {
         "question": "2 (a). How useful are Sources A and B for an enquiry into the impact of the terrain on the transport of the wounded on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+
+        "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
         "starter": "The army attempted to prevent Trench Foot by enforcing strict discipline, such as ordering soldiers to...",
         "model": "<strong>Source A is highly useful for an enquiry into the transport of the wounded because its content highlights the severe physical distress caused to patients by the poor transport infrastructure.</strong> It describes the journeys as <strong style=\"color: #0284c7;\">\"perfect nightmares\"</strong> because it was <strong style=\"color: #0284c7;\">\"impossible not to bump\"</strong> over the <strong style=\"color: #0284c7;\">\"appalling roads full of holes\"</strong>. <strong style=\"color: #16a34a;\">I can support this with my own contextual knowledge: constant artillery shelling completely destroyed the roads and terrain on the Western Front, meaning ambulance journeys were violently bumpy. This shaking frequently worsened soldiers' injuries and increased fatal blood loss before they could reach a Casualty Clearing Station for surgery.</strong> <strong style=\"color: #9333ea;\">The provenance makes the source extremely useful; as a published autobiography from an actual FANY ambulance driver who worked during the 1916 Somme offensive, it provides a highly reliable, eyewitness account of the emotional and physical reality of evacuating the wounded over devastated terrain.</strong> Overall, Source A provides highly useful evidence of how poor roads made motor transport agonizing for the wounded.<br><br><strong>Source B is also highly useful for this enquiry because its content provides direct visual evidence of the types of transport the medical services were forced to rely on due to the terrible conditions.</strong> It shows a basic, horse-drawn ambulance wagon navigating a muddy, rutted track. <strong style=\"color: #16a34a;\">My contextual knowledge confirms that although 512 motor ambulances were introduced after a public appeal in 1914, heavy motor vehicles frequently got stuck in the deep mud. This forced the RAMC to continue relying heavily on horse-drawn wagons-sometimes requiring up to six horses to pull them through the sludge-which were much slower and bumpier for the casualties inside.</strong> <strong style=\"color: #9333ea;\">The provenance makes the source useful as it is a photograph taken precisely at the time of the Battle of the Somme in September 1916, providing an objective, literal snapshot of the difficult, muddy environment the Field Ambulance had to operate in.</strong> Therefore, Source B is extremely useful as it demonstrates why modern motor ambulances could not entirely replace slower horse-drawn transport on the muddy Western Front.",
         "source_a": {
@@ -8022,6 +8040,8 @@ export const unitData = {
       },
       "extended": {
         "question": "2 (a). How useful are Sources A and B for an enquiry into the effects of poison gas attacks on soldiers on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+
+        "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
         "starter": "Infection was a major problem for shrapnel wounds because the agricultural soil of the Western Front was full of...",
         "model": "<strong>Source A is highly useful for an enquiry into the effects of gas attacks because its content vividly details the horrific physical symptoms it caused.</strong> It reveals that chlorine gas caused <strong style=\"color: #0284c7;\">\"a flooding of the lungs\"</strong> and the <strong style=\"color: #0284c7;\">\"coughing up of a greenish froth\"</strong>, ultimately <strong style=\"color: #0284c7;\">\"resulting in death\"</strong>. <strong style=\"color: #16a34a;\">I can support this with my own contextual knowledge: chlorine gas was first used as a weapon at the Second Battle of Ypres in 1915 and worked by suffocating the victim from the inside out, causing massive panic among the troops who were completely unprepared for it.</strong> <strong style=\"color: #9333ea;\">Furthermore, the provenance makes the source incredibly useful; it is a first-hand notebook account from Lance Sergeant Elmer Cotton who served during 1915, making it a reliable, eyewitness record of the sheer terror and physical trauma the gas inflicted on the men.</strong> Overall, Source A provides highly useful, accurate evidence of the deadly physical impact of early gas attacks.<br><br><strong>Source B is also highly useful for this enquiry because its content provides direct evidence of the lethal effectiveness and visual impact of gas on the victims.</strong> It describes a <strong style=\"color: #0284c7;\">\"huge, greenish cloud of smoke\"</strong> that caused a man's face to turn <strong style=\"color: #0284c7;\">\"dark blue\"</strong> as he was <strong style=\"color: #0284c7;\">\"struggling to breathe\"</strong>. <strong style=\"color: #16a34a;\">My contextual knowledge confirms that chlorine gas formed a visible green cloud that destroyed the lungs, and because the British army did not issue proper gas masks until July 1915, casualty rates in early attacks could be devastatingly high.</strong> <strong style=\"color: #9333ea;\">The provenance makes the source useful as it is a personal account from a soldier who directly witnessed the aftermath of the attack at the ambulances, providing a raw, emotional insight into the suffering.</strong> Therefore, Source B is extremely useful as it demonstrates exactly how vulnerable the soldiers initially were to the suffocating effects of this terrifying new weapon.",
         "source_a": {
@@ -8510,6 +8530,8 @@ export const unitData = {
           "type": "8-mark",
           "marks": 8,
           "question": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.",
+
+          "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
           "stimulus": [
             "Source A: A letter from an RAMC nurse working at a Casualty Clearing Station (CCS) in 1916: 'We worked night after night, in the thunderous noise of raging battles. The surgeons are constantly amputating limbs to stop the spread of gangrene before putting the men on the trains.'",
             "Source B: A diary entry from a member of the FANY in 1917: 'I drove my motor ambulance through the terrible mud for 14 hours straight today, bringing men from the Main Dressing Station down to the railhead.'"
@@ -8535,6 +8557,8 @@ export const unitData = {
       },
       "extended": {
         "question": "2 (a). How useful are Sources A and B for an enquiry into the problems of transporting the wounded on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+
+        "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
         "starter": "The Chain of Evacuation was a highly structured system designed to quickly move wounded men from the frontline to...",
         "model": "Model Answer:Source A is highly useful for an enquiry into the transport of the wounded because its content highlights the severe physical distress caused to patients by the poor transport infrastructure. It describes the journeys as \"perfect nightmares\" because it was \"impossible not to bump\" over the \"appalling roads full of holes\". I can support this with my own contextual knowledge: constant artillery shelling completely destroyed the roads and terrain on the Western Front, meaning ambulance journeys were violently bumpy. This shaking frequently worsened soldiers' injuries and increased fatal blood loss before they could reach a Casualty Clearing Station for surgery. The provenance makes the source extremely useful; as a published autobiography from an actual FANY ambulance driver who worked during the 1916 Somme offensive, it provides a highly reliable, eyewitness account of the emotional and physical reality of evacuating the wounded over devastated terrain. Overall, Source A provides highly useful evidence of how poor roads made motor transport agonizing for the wounded.\nSource B is also highly useful for this enquiry because its content provides direct visual evidence of the types of transport the medical services were forced to rely on due to the terrible conditions. It shows a basic, horse-drawn ambulance wagon navigating a muddy, rutted track. My contextual knowledge confirms that although 512 motor ambulances were introduced after a public appeal in 1914, heavy motor vehicles frequently got stuck in the deep mud. This forced the RAMC to continue relying heavily on horse-drawn wagons-sometimes requiring up to six horses to pull them through the sludge-which were much slower and bumpier for the casualties inside. The provenance makes the source useful as it is a photograph taken precisely at the time of the Battle of the Somme in September 1916, providing an objective, literal snapshot of the difficult, muddy environment the Field Ambulance had to operate in. Therefore, Source B is extremely useful as it demonstrates why modern motor ambulances could not entirely replace slower horse-drawn transport on the muddy Western Front.",
         "source_a": {
@@ -9028,6 +9052,8 @@ export const unitData = {
           "type": "8-mark",
           "marks": 8,
           "question": "<strong>How useful are Sources A and B for an enquiry into the effectiveness of new medical developments used to treat wounded soldiers on the Western Front?</strong> Explain your answer, using Sources A and B and your knowledge of the historical context.",
+
+          "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
           "stimulus": [
             "<strong>Source A: From an official clinical report written by Captain Arthur Vaughan, a surgeon serving with the Royal Army Medical Corps (RAMC) at a Casualty Clearing Station (CCS) behind the frontline, October 1916.</strong> 'Our medical team at the Casualty Clearing Station has fully adopted the new leg traction splint. Before we received this iron frame, almost every compound femur fracture arrived at our ward in a state of terminal shock due to the jagged bones grating inside the flesh during transit. Since implementing this immobilization frame last month, we have kept the fractured limbs completely rigid. Out of forty admissions with thigh wounds, we have lost only six patients.'",
             "<strong>Source B: A photograph from a British medical instruction manual, published in 1917, showing the deployment of a traction device.</strong> (Visual Description: A detailed, black-and-white studio photograph showing a soldier lying flat on a wooden stretcher. His right leg is suspended and held rigid inside a metallic Thomas splint, which consists of a padded leather ring pushed up against the groin and parallel steel rods running down both sides of the limb. Bandages and canvas straps are wrapped tightly around the thigh and calf to keep the leg completely straight. A canvas sling is hooked to the end of the splint to pull the foot forward, creating traction. Two medical orderlies in clean aprons stand alongside, demonstrating how to attach the secure traction cords.)"
@@ -9053,6 +9079,8 @@ export const unitData = {
       },
       "extended": {
         "question": "2 (a). How useful are Sources A and B for an enquiry into the effectiveness of new medical developments used to treat wounded soldiers on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+
+        "scaffolding": ["**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"],
         "source_a": {
           "provenance": "From an official clinical report written by Captain Arthur Vaughan, a surgeon serving with the Royal Army Medical Corps (RAMC) at a Casualty Clearing Station (CCS) behind the frontline, October 1916.",
           "content": "\"Our medical team at the Casualty Clearing Station has fully adopted the new leg traction splint. Before we received this iron frame, almost every compound femur fracture arrived at our ward in a state of terminal shock due to the jagged bones grating inside the flesh during transit. Since implementing this immobilization frame last month, we have kept the fractured limbs completely rigid. Out of forty admissions with thigh wounds, we have lost only six patients.\""

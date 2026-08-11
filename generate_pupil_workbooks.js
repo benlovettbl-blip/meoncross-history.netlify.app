@@ -81,6 +81,38 @@ allDirs.forEach(unitId => {
       console.error(`Error reading pdf markers for ${unitId}:`, e.message);
     }
   }
+  let globalExamQNum = 1;
+  unitData.lessons.forEach(l => {
+      function checkAndAdd(obj, force = false) {
+          if (!obj) return;
+          let qText = obj.question || obj.text || obj.topic || obj.stretch_question;
+          if (force || obj.marks || (qText && /\(\d+\s*marks?\)/i.test(qText))) {
+              obj.examQNum = globalExamQNum++;
+          }
+      }
+      if (l.primary_source) checkAndAdd(l.primary_source);
+      if (l.sources) l.sources.forEach(s => checkAndAdd(s));
+      if (l.tasks) l.tasks.forEach(t => checkAndAdd(t));
+      if (l.historians_corner) checkAndAdd(l.historians_corner);
+      if (l.narrative_blocks) l.narrative_blocks.forEach(b => {
+          if (b.tasks) b.tasks.forEach(t => checkAndAdd(t));
+          if (b.hinge_question) checkAndAdd(b.hinge_question);
+          if (b.extended) checkAndAdd(b.extended);
+      });
+      if (l.extended) checkAndAdd(l.extended);
+      if (l.gcse_task) {
+          checkAndAdd(l.gcse_task);
+          if (l.gcse_task.tasks) l.gcse_task.tasks.forEach(t => checkAndAdd(t));
+      }
+      if (l.pair_share) checkAndAdd(l.pair_share);
+      let epArray = l.exam_practice;
+      if (l.exam_practice && !Array.isArray(l.exam_practice) && l.exam_practice.questions) {
+          epArray = l.exam_practice.questions;
+      }
+      if (epArray && Array.isArray(epArray)) {
+          epArray.forEach(ep => checkAndAdd(ep, true));
+      }
+  });
 
   unitData.lessons.forEach((lesson, lIdx) => {
     if (typeof sanitizeLessonData === 'function') sanitizeLessonData(lesson);
@@ -150,21 +182,22 @@ allDirs.forEach(unitId => {
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
-    body { font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.3; color: #1e293b;  }
+    body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
+    h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
     h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 60px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
+    h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
     .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
-    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
+    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 8mm; margin-top: 0px; box-sizing: border-box; }
+    .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
     .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
     .source-container { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; text-align: center; page-break-inside: auto; }
-    .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; }
+    .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; font-family: 'Inter', sans-serif; }
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-    .watermark { position: fixed; bottom: 10px; right: 10px; font-size: 8pt; color: #94a3b8; opacity: 0.6; font-family: 'Inter', sans-serif; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
     th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
     td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 10px; padding-bottom: 10px; }
@@ -200,6 +233,13 @@ allDirs.forEach(unitId => {
     const periodTitle = period.title;
     const periodName = period.name;
 
+    let bannerQuestion = unitData.enquiry || 'Student Workbook';
+    if (periodName === 'medieval') bannerQuestion = 'How much did medicine really change in Medieval England?';
+    else if (periodName === 'renaissance') bannerQuestion = 'How much did medicine really change during the Medical Renaissance?';
+    else if (periodName === '18th_19th') bannerQuestion = 'How much did medicine really change in 18th and 19th Century Britain?';
+    else if (periodName === 'modern') bannerQuestion = 'How much did medicine really change in Modern Britain?';
+    else if (periodName === 'western_front') bannerQuestion = 'How did treatments and the trenches develop on the Western Front?';
+
     let appendixData = [];
 
     let trackerRows = '';
@@ -234,7 +274,7 @@ allDirs.forEach(unitId => {
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
         <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
           <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">${periodTitle}</h1>
-          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;"><strong>Assessment Question:</strong> ${unitData.enquiry || 'Student Workbook'}</p>
+          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">${bannerQuestion}</p>
         </div>
       </div>
     </div>
@@ -952,7 +992,7 @@ allDirs.forEach(unitId => {
                });
                html += `</ul></div>`;
           }
-          html += `<div style="margin-top: 15px;"><strong>Q${lesson.extended.qNum}. ${formatText(lesson.extended.question)}</strong></div>`;
+          html += `<div style="margin-top: 15px;"><strong>${lesson.extended.examQNum ? 'Exam Q' + lesson.extended.examQNum + '. ' : (lesson.extended.qNum ? 'Q' + lesson.extended.qNum + '. ' : '')}${formatText(lesson.extended.question)}</strong></div>`;
           if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
             renderLines(lesson.extended.question, lesson.extended.lines);
           }
@@ -964,7 +1004,15 @@ allDirs.forEach(unitId => {
         
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach(task => {
-             html += `<div style="margin-top: 15px;"><strong>Q${task.qNum ? task.qNum + '.' : ''} ${task.text}</strong></div>`;
+             let isLong = task.text.includes('12 marks') || task.text.includes('16 marks') || task.marks === 12 || task.marks === 16;
+             if (isLong) {
+                 html += `<div class="dirt-box">
+                    <h4 style="margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; font-size: 0.85em; font-family: 'Inter', sans-serif;">Teacher Feedback / D.I.R.T.</h4>
+                    <div style="height: 60px;"></div>
+                 </div>`;
+             }
+             let pbBefore = isLong ? 'page-break-before: always; margin-top: 30px;' : 'margin-top: 15px;';
+             html += `<div style="${pbBefore}"><strong>${task.examQNum ? 'Exam Q' + task.examQNum + '. ' : (task.qNum ? 'Q' + task.qNum + '. ' : '')}${task.text}</strong></div>`;
              renderLines(task.text);
              html += `<br>`;
           });
@@ -1070,9 +1118,18 @@ allDirs.forEach(unitId => {
         const renderQuestionItem = (item) => {
             let ep = item.ep;
             let index = item.index;
+            let rawQText = ep.question || ep.text || '';
             let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
-            if (ep.question.includes('marks)')) marksStr = '';
-            let questionHtml = `<div style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${index + 1}. ${formatText(ep.question)}${marksStr}</strong></div>`;
+            if (rawQText.includes('marks)')) marksStr = '';
+            let isLong = rawQText.includes('12 marks') || rawQText.includes('16 marks') || ep.marks === 12 || ep.marks === 16;
+            let pbBefore = isLong ? 'page-break-before: always; margin-top: 30px;' : 'margin-top: 15px;';
+            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${ep.examQNum ? 'Exam Q'+ep.examQNum : 'Q'+(index+1)}. ${formatText(rawQText)}${marksStr}</strong></div>`;
+            if (isLong) {
+                 questionHtml = `<div class="dirt-box">
+                    <h4 style="margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; font-size: 0.85em; font-family: 'Inter', sans-serif;">Teacher Feedback / D.I.R.T.</h4>
+                    <div style="height: 60px;"></div>
+                 </div>` + questionHtml;
+            }
 
             if (ep.stimulus && ep.stimulus.length > 0) {
                 let isSources = ep.question.toLowerCase().includes('useful') || ep.question.toLowerCase().includes('follow up') || ep.stimulus.some(s => typeof s === 'string' && (s.includes('Source A') || s.includes('Source B')));

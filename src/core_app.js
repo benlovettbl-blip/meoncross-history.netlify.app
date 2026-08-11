@@ -1053,13 +1053,24 @@ export function initializeApp(unitData) {
       cheatSheetLink.target = '_blank';
       cheatSheetLink.style.marginTop = '15px';
       
-
-
-
-      
       navContainer.appendChild(cheatSheetLink);
     }
 
+    // Attach Pupil Workbooks dynamically
+    if (unitData.workbooks && unitData.workbooks.length > 0) {
+      unitData.workbooks.forEach(wb => {
+        const wbLink = document.createElement('a');
+        wbLink.className = 'lesson-link';
+        wbLink.innerHTML = `<i class="fa-solid fa-book"></i> Pupil Workbook: ${wb.title || wb.id}`;
+        const filename = wb.id === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${wb.id}.html`;
+        wbLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/${filename}` : filename;
+        wbLink.target = '_blank';
+        wbLink.style.marginTop = '15px';
+        wbLink.style.color = '#8b5cf6'; // Purple icon/text focus
+        
+        navContainer.appendChild(wbLink);
+      });
+    }
 
   }
 
@@ -1342,7 +1353,11 @@ if (lesson.sources && lesson.sources.length > 0) {
                     </div>
                   ` : ''}
                 </div>
-              ` : ''}
+              ` : (source.caption ? `
+                <div style="text-align: left; margin-top: 15px; font-size: 1.05rem; color: #334155; line-height: 1.5; padding: 15px; background: #f8fafc; border-left: 4px solid #10b981; border-radius: 4px;">
+                  ${source.caption}
+                </div>
+              ` : '')}
               
               ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
               ${source.question ? `
