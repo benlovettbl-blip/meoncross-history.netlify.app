@@ -375,7 +375,7 @@ export const unitData = {
         {
           "title": "Map A: Alsace-Lorraine Border Region (1871)",
           "src": "/assets/great_war_alsace_lorraine_simple_map.svg",
-          "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire. Discussion: Why would the geographical location and resources of Alsace-Lorraine make it a source of long-term tension between France and Germany?"
+          "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
         }
       ],
       "vocab": [
@@ -817,12 +817,12 @@ export const unitData = {
         {
           "title": "Map A: Partition of Africa (1914)",
           "src": "/assets/great_war_map_lesson2.png",
-          "caption": "Discussion: How does the map illustrate the intense competition and border friction between European powers during the 'Scramble for Africa'?"
+          "caption": ""
         },
         {
           "title": "Map B: The Global Imperial Lanes",
           "src": "/assets/great_war_map_lesson2_b.png",
-          "caption": "Discussion: Why was maintaining control of these specific global imperial lanes so vital for the British Empire's survival and wealth?"
+          "caption": ""
         }
       ],
       "vocab": [
@@ -1210,7 +1210,7 @@ export const unitData = {
         {
           "title": "Map A: The North Sea & Naval Chokepoints",
           "src": "/assets/great_war_map_lesson3.png",
-          "caption": "Discussion: Based on the geography of the North Sea, why did Britain feel directly threatened by the expansion of the German navy stationed at Kiel?"
+          "caption": ""
         }
       ],
       "vocab": [
@@ -1600,7 +1600,7 @@ export const unitData = {
         {
           "title": "Diagram A: The Alliance System (1914)",
           "src": "/assets/great_war_alliance_system.svg",
-          "caption": "The complex web of treaties that dragged Europe into a global war. Discussion: How does this diagram show that a minor local conflict between any two nations could quickly drag the rest of Europe into a massive war?"
+          "caption": "The complex web of treaties that dragged Europe into a global war."
         },
         {
           "title": "Map A: European Military Alliance Blocs (1914)",
@@ -1981,17 +1981,17 @@ export const unitData = {
         {
           "title": "Diagram A: The July Crisis Domino Effect",
           "src": "/assets/great_war_july_crisis.svg",
-          "caption": "How a single assassination in the Balkans escalated into a world war within a month. Discussion: Which 'domino' in this sequence do you think was the most critical turning point that made a peaceful resolution impossible, and why?"
+          "caption": "How a single assassination in the Balkans escalated into a world war within a month."
         },
         {
           "title": "Map A: The Balkan Peninsula (1914)",
           "src": "/assets/great_war_balkans_1914_simple_map.png",
-          "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914. Discussion: Looking at the borders and proximity to empires, why was the Balkan Peninsula often referred to as the 'powder keg of Europe'?"
+          "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914."
         },
         {
           "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
           "src": "/assets/great_war_map_sarajevo_route.jpg",
-          "caption": "Discussion: How did the specific route and the driver's wrong turn along the river contribute to the success of Gavrilo Princip's assassination plot?"
+          "caption": ""
         }
       ],
       "vocab": [
