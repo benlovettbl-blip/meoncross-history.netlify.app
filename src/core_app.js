@@ -2409,11 +2409,16 @@ if (lesson.pair_share) {
       let myUnitData = window.currentUnitData || {};
       const unitId = myUnitData.id || new URLSearchParams(window.location.search).get('id');
       const isEarlyModern = (unitId === 'early_modern_world');
+      let isGCSE = (unitId === 'weimar_nazi_germany' || unitId === 'cme_new');
 
       if (isEarlyModern) {
-          html += htmlDoNow + htmlPrimary + htmlSources1 + htmlNarrative + htmlPairShare + htmlHistorian + htmlTasks;
+          html += htmlDoNow + htmlPrimary + (isGCSE ? '' : htmlSources1) + htmlNarrative + htmlPairShare + htmlHistorian + htmlTasks;
       } else {
-          html += htmlSources1 + htmlPrimary + htmlDoNow + htmlNarrative + htmlTasks + htmlHistorian + htmlPairShare;
+          html += (isGCSE ? '' : htmlSources1) + htmlPrimary + htmlDoNow + htmlNarrative + htmlTasks + htmlHistorian + htmlPairShare;
+      }
+      
+      if (isGCSE) {
+          html += htmlSources1;
       }
 if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
       let gcseHtml = `
