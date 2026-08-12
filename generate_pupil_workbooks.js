@@ -190,7 +190,7 @@ allDirs.forEach(unitId => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto !important; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -201,7 +201,7 @@ allDirs.forEach(unitId => {
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
     th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
-    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 10px; padding-bottom: 10px; }
+    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 5px; padding-bottom: 5px; }
     tr:last-child td { border-bottom: none; }
     td:last-child, th:last-child { border-right: none; }
     tbody tr:nth-child(even) {  }
@@ -214,7 +214,7 @@ allDirs.forEach(unitId => {
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: avoid !important; }
+        .task-box { page-break-inside: auto !important; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
@@ -270,17 +270,17 @@ allDirs.forEach(unitId => {
 
     html += `
     
-    <div style="width: 100%; height: 160px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
+    <div style="width: 100%; height: 90px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
       <!-- Banner image removed per user request -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">${periodTitle}</h1>
-          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">${bannerQuestion}</p>
+        <div style="background: rgba(15, 23, 42, 0.85); padding: 10px 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <h1 style="margin: 0 !important; font-size: 18pt; color: white; padding: 0;">${periodTitle}</h1>
+          <p style="font-size:11pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">${bannerQuestion}</p>
         </div>
       </div>
     </div>
     
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: 25px auto 0 auto; width: 80%; gap: 40px;">
+    <div style="display: flex; flex-direction: row; justify-content: center; margin: 15px auto 0 auto; width: 80%; gap: 40px;">
       <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
       <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
     </div>
@@ -288,11 +288,11 @@ allDirs.forEach(unitId => {
 
     if (unitData.cover_sources) {
       html += `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 25px auto 15px auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 15px auto 10px auto;">
         ${unitData.cover_sources.map(src => {
           let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(src.image, 2) : `../..${src.image.startsWith('/') ? src.image : '/' + src.image}`;
           return `
-          <div style="display: flex; gap: 10px; align-items: center;  padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="display: flex; gap: 10px; align-items: center;  padding-top: 5px; padding-bottom: 5px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <img src="${imgSrc}" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
             <div style="text-align: left; flex: 1;">
               <strong style="display: block; font-size: 9pt; color: #1a237e; margin-bottom: 3px;">${src.title}</strong>
@@ -315,7 +315,7 @@ allDirs.forEach(unitId => {
 
     html += `
     <!-- Tracker Table now on page 1 -->
-    <div style="margin: 30px 5% 0 5%; width: 90%;">
+    <div style="margin: 15px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
@@ -373,7 +373,7 @@ allDirs.forEach(unitId => {
     }
 
     if (lesson.teacher_notes && lesson.teacher_notes.objectives && lesson.teacher_notes.objectives.length > 0) {
-      html += `<div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  ">`;
+      html += `<div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  ">`;
       html += `<h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4>`;
       lesson.teacher_notes.objectives.forEach(obj => {
         html += `<div style="display: flex; align-items: flex-start; margin-bottom: 4px;">`;
@@ -742,7 +742,7 @@ allDirs.forEach(unitId => {
       if (lesson.pair_share.sources) {
          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
          lesson.pair_share.sources.forEach(srcObj => {
-            sourceHTML += '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 10px; padding-bottom: 10px; text-align: left; ">';
+            sourceHTML += '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
             if (srcObj.type === 'visual') {
                let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(srcObj.src, 2) : srcObj.src;
                sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
@@ -1028,7 +1028,7 @@ allDirs.forEach(unitId => {
           
           let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
           lesson.gcse_task.sources.forEach(srcObj => {
-            sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px; text-align: center; ">';
+            sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding-top: 5px; padding-bottom: 5px; text-align: center; ">';
             if (srcObj.type === 'visual') {
               let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(srcObj.src, 2) : srcObj.src;
               sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
@@ -1147,7 +1147,7 @@ allDirs.forEach(unitId => {
                    });
                    questionHtml += `</div>`;
                 } else {
-                   questionHtml += `<div style="margin-top: 5px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; border: 1.5px solid #cbd5e1; border-radius: 8px;   font-size: 0.95rem;">
+                   questionHtml += `<div style="margin-top: 5px; margin-bottom: 10px; padding-top: 5px; padding-bottom: 5px; border: 1.5px solid #cbd5e1; border-radius: 8px;   font-size: 0.95rem;">
                      <p style="margin-top: 0; margin-bottom: 8px; font-weight: bold;">You may use the following in your answer:</p>
                      <ul style="margin-top: 0; margin-bottom: 8px; padding-left: 25px;">`;
                    ep.stimulus.forEach(stimText => { questionHtml += `<li style="margin-bottom: 4px;">${formatText(stimText)}</li>`; });
@@ -1180,7 +1180,7 @@ allDirs.forEach(unitId => {
                    let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
                    html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
                       <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 10px; padding-bottom: 10px;  color: #0f172a; flex-grow: 1;">
+                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
                         ${content}
                       </div>
                     </div>`;
@@ -1193,7 +1193,7 @@ allDirs.forEach(unitId => {
                    let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
                    html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
                       <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 10px; padding-bottom: 10px;  color: #0f172a; flex-grow: 1;">
+                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
                         ${content}
                       </div>
                     </div>`;
@@ -1210,7 +1210,7 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     } else {
         html += `<div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;">`;
-        html += `<h2 style="margin-top: 0; color: #1e3a8a;">Assessment Practice & Knowledge Retrieval</h2>`;
+        html += `<h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2>`;
         
         if (lesson.lesson_assessment) {
             html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
@@ -1228,7 +1228,7 @@ allDirs.forEach(unitId => {
             }
             html += `</div>`;
         } else {
-            html += `<p style="font-weight: bold; margin-bottom: 15px;">Use the space below to summarize the most important knowledge from this lesson, or answer your teacher's assessment question.</p>`;
+            html += `<p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p>`;
         }
         
         for(let i=0; i<15; i++) {
@@ -1285,22 +1285,22 @@ allDirs.forEach(unitId => {
   if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
     html += `
     <div style="page-break-before: always; padding: 20px;">
-      <h2 style="text-align: center; font-size: 24pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
+      <h2 style="text-align: center; font-size: 18pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
       <p style="text-align: center; font-size: 12pt; margin-bottom: 15px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
       <table style="width: 100%; border-collapse: collapse; ">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
+            <th style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
+            <th style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
         </tbody>
       </table>
     </div>
