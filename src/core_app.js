@@ -2060,9 +2060,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
                    </div>
                    <div style="display:flex; flex-direction:column; gap:10px;">
                      ${[...task.pairs].sort(() => Math.random() - 0.5).map(p => `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px;">${p.right}</div>`).join('')}
-                   </div>
-                 </div>
-               </div>`;
+                   </div></div></details>`;
                return;
              }
              if (task.type === 'table_planner') {
@@ -2089,9 +2087,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
                    <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
                      <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
                      <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
-                   </div>
-                 </div>
-               </div>`;
+                   </div></div></details>`;
                return;
              }
              if (task.type === 'drawing') {
