@@ -541,7 +541,8 @@ allDirs.forEach(unitId => {
     html += `</div>`;
 
     // Sources
-    if (lesson.sources && lesson.sources.length > 0) {
+    let isGCSE = (unitId === 'weimar_nazi_germany' || unitId === 'cme_new');
+    if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
       const hasQuestions = lesson.sources.some(s => s.question);
       if (hasQuestions) {
         html += `<div style="page-break-inside: auto; margin-bottom: 15px;">`;
@@ -1089,6 +1090,25 @@ allDirs.forEach(unitId => {
       }
 
       
+      
+      if (lesson.sources && lesson.sources.length > 0 && isGCSE) {
+        html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
+        lesson.sources.forEach((source, sIdx) => {
+          let sourceContent = source.content || source.text;
+          if(source.src || source.caption || sourceContent) {
+            html += `
+              <div class="source-container" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 6px;">
+                ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ''}
+                ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ''}
+                ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${formatText(sourceContent)}</blockquote>` : ''}
+                ${source.caption ? `<div class="source-caption" style="margin-top: 5px; font-size: 10pt;">${source.caption}</div>` : ''}
+              </div>
+            `;
+          }
+        });
+        html += `</div>`;
+      }
+
       let epArray = lesson.exam_practice;
       let epStimulus = [];
       if (lesson.exam_practice && !Array.isArray(lesson.exam_practice) && lesson.exam_practice.questions) {
