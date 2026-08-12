@@ -59,11 +59,13 @@ export function renderWorkbooksZone(container, unitData) {
     html += renderSection('Textbook PDFs', 'fa-book-open', 'Reading material only (no blank writing lines or tasks). Perfect for reading on a screen or printing as a class set of reading books.', '#3b82f6', textbookItems);
 
     // 2. Guided Workbook PDFs
-    const guidedItems = unitData.workbooks.map(wb => ({
-      title: wb.title || wb.name,
-      url: getPdfUrl('workbook', wb.name || wb.id)
-    }));
-    html += renderSection('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks. Contains all narrative text alongside the writing spaces and tasks.', '#8b5cf6', guidedItems);
+    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
+      const guidedItems = unitData.workbooks.map(wb => ({
+        title: wb.title || wb.name,
+        url: getPdfUrl('workbook', wb.name || wb.id)
+      }));
+      html += renderSection('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks. Contains all narrative text alongside the writing spaces and tasks.', '#8b5cf6', guidedItems);
+    }
 
     // 3. Pupil Workbook PDFs
     const pupilItems = unitData.workbooks.map(wb => ({
@@ -73,11 +75,13 @@ export function renderWorkbooksZone(container, unitData) {
     html += renderSection('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only. Contains just the questions and blank spaces (assumes the student already has access to the Textbook).', '#f59e0b', pupilItems);
 
     // 4. Interactive Web Workbooks
-    const webItems = unitData.workbooks.map(wb => ({
-      title: wb.title || wb.name,
-      url: getHtmlUrl(wb.name || wb.id)
-    }));
-    html += renderSection('Interactive Web Workbooks', 'fa-laptop-code', 'Interactive HTML versions of the Pupil Workbooks that can be opened directly in the browser.', '#10b981', webItems);
+    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
+      const webItems = unitData.workbooks.map(wb => ({
+        title: wb.title || wb.name,
+        url: getHtmlUrl(wb.name || wb.id)
+      }));
+      html += renderSection('Interactive Web Workbooks', 'fa-laptop-code', 'Interactive HTML versions of the Pupil Workbooks that can be opened directly in the browser.', '#10b981', webItems);
+    }
 
   }
 

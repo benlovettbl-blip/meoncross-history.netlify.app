@@ -1057,23 +1057,25 @@ export function initializeApp(unitData) {
     }
 
     // Always show PDF Textbook and Workbook links
-    const pdfTextbookLink = document.createElement('a');
-    pdfTextbookLink.className = 'lesson-link';
-    pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book-open"></i> PDF Textbook';
-    pdfTextbookLink.href = `/pdfs/${window.currentUnitId}_textbook.pdf`;
-    pdfTextbookLink.target = '_blank';
-    pdfTextbookLink.style.marginTop = '15px';
-    pdfTextbookLink.style.color = '#3b82f6';
-    navContainer.appendChild(pdfTextbookLink);
+    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
+      const pdfTextbookLink = document.createElement('a');
+      pdfTextbookLink.className = 'lesson-link';
+      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book-open"></i> PDF Textbook';
+      pdfTextbookLink.href = `/pdfs/${window.currentUnitId}_textbook.pdf`;
+      pdfTextbookLink.target = '_blank';
+      pdfTextbookLink.style.marginTop = '15px';
+      pdfTextbookLink.style.color = '#3b82f6';
+      navContainer.appendChild(pdfTextbookLink);
 
-    const pupilWorkbookLink = document.createElement('a');
-    pupilWorkbookLink.className = 'lesson-link';
-    pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Printable Workbook';
-    pupilWorkbookLink.href = `/pdfs/${window.currentUnitId}_pupil_workbook.pdf`;
-    pupilWorkbookLink.target = '_blank';
-    pupilWorkbookLink.style.marginTop = '15px';
-    pupilWorkbookLink.style.color = '#8b5cf6';
-    navContainer.appendChild(pupilWorkbookLink);
+      const pupilWorkbookLink = document.createElement('a');
+      pupilWorkbookLink.className = 'lesson-link';
+      pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Printable Workbook';
+      pupilWorkbookLink.href = `/pdfs/${window.currentUnitId}_pupil_workbook.pdf`;
+      pupilWorkbookLink.target = '_blank';
+      pupilWorkbookLink.style.marginTop = '15px';
+      pupilWorkbookLink.style.color = '#8b5cf6';
+      navContainer.appendChild(pupilWorkbookLink);
+    }
 
     // Attach Pupil Workbooks dynamically as a single Zone
     if (unitData.workbooks && unitData.workbooks.length > 0) {

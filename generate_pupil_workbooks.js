@@ -941,11 +941,11 @@ allDirs.forEach(unitId => {
           if (customLines) {
               for(let i=0; i<customLines; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("16 marks")) {
-              for(let i=0; i<30; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<96; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("12 marks") || text.includes("Explain why")) {
-              for(let i=0; i<20; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<64; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("8 marks")) {
-              for(let i=0; i<15; i++) { html += `<div class="task-lines-large"></div>`; }
+              for(let i=0; i<32; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("2 marks")) {
               for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
           } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
@@ -1134,9 +1134,9 @@ allDirs.forEach(unitId => {
 
         const renderQuestionLines = (qText) => {
             let lines = 8;
-            if (qText.includes("16 marks")) lines = 30;
-            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 20;
-            else if (qText.includes("8 marks")) lines = 15;
+            if (qText.includes("16 marks")) lines = 96;
+            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 64;
+            else if (qText.includes("8 marks")) lines = 32;
             else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 5;
             else if (qText.includes("2 marks")) lines = 3;
             let lHtml = '';
@@ -1188,7 +1188,7 @@ allDirs.forEach(unitId => {
 
         if (epStimulus && epStimulus.length > 0) {
            html += `</div>`; // Close the initial task-box
-           html += `<div style="page-break-inside: auto; margin-top: 20px;">`; // Do not isolate sources
+           html += `<div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;">`; // Force new page for sources
            html += `<h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2>`;
            let sources = [];
            let interpretations = [];

@@ -43,8 +43,12 @@ try {
   execSync(`node export_pdfs.js ${unitId} textbook.html`, { stdio: 'inherit' });
 
   // Step 5: Generate Workbooks (now that markers JSON exists, source pages will be injected)
-  console.log(`\n[5/7] Generating Guided Workbook HTML...`);
-  execSync(`node generate_workbooks.js ${unitId}`, { stdio: 'inherit' });
+  if (unitId !== 'weimar_nazi_germany' && unitId !== 'cme_new') {
+    console.log(`\n[5/7] Generating Guided Workbook HTML...`);
+    execSync(`node generate_workbooks.js ${unitId}`, { stdio: 'inherit' });
+  } else {
+    console.log(`\n[5/7] Skipping Guided Workbook HTML for ${unitId}...`);
+  }
   
   console.log(`\n[6/7] Generating Pupil Workbook HTML...`);
   execSync(`node generate_pupil_workbooks.js ${unitId}`, { stdio: 'inherit' });
