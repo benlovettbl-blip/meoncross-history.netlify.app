@@ -242,7 +242,11 @@ allDirs.forEach(unitId => {
     let globalQNum = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
     if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => {
+              if (unitId === 'great_war' || unitId === 'great_war_part2') {
+                if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, '');
+                if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, '');
+              } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
     if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
@@ -541,7 +545,7 @@ allDirs.forEach(unitId => {
               if (task.type === 'draw') {
                  html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Task_${bIdx}_${tIdx}]]</span>Q${task.qNum}: ${task.text || task.question}</div>`;
               } else {
-                 if (task.type === 'vocab_match') {
+                 if (task.type === 'vocab_match' || ((unitId === 'great_war' || unitId === 'great_war_part2') && task.type === 'drag_drop_timeline')) {
                     // Do nothing
                   } else {
                     html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;

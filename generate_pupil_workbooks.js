@@ -344,7 +344,11 @@ allDirs.forEach(unitId => {
     if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
     if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
-    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => {
+              if (unitId === 'great_war' || unitId === 'great_war_part2') {
+                if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, '');
+                if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, '');
+              } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;

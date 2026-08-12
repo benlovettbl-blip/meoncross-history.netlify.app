@@ -26658,7 +26658,7 @@
           "sources": [
             {
               "title": "Map A: Partition of Africa (1914)",
-              "src": "assets/map_africa_1914.png",
+              "src": "/assets/great_war_map_lesson2.png",
               "caption": ""
             },
             {
@@ -27522,7 +27522,7 @@
             "title": "Source A: 'The Chain of Friendship', an American cartoon published in the Brooklyn Eagle, July 1914.",
             "src": "/assets/great_war_was_military_matrix.png",
             "caption": "<strong>What is this source showing?</strong> This cartoon shows how the complex web of alliances dragged all the European powers into war. Serbia is threatened by Austria, who is threatened by Russia, who is threatened by Germany, and so on.",
-            "question": "Enquiry: Study the intertwined hands and figures in this map. What does it suggest about how a local conflict might spread?",
+            "question": "Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
             "tasks": [
               {
                 "type": "draw",
