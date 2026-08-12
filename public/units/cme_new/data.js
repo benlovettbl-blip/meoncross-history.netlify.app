@@ -389,7 +389,7 @@ export const unitData = {
         "tasks": [
           {
             "type": "draw",
-            "text": "Task 1: Circle the area of the building that housed the British military and administrative headquarters.",
+            "text": "Circle the area of the building that housed the British military and administrative headquarters.",
             "model": "The student should circle the destroyed southern wing."
           }
         ],

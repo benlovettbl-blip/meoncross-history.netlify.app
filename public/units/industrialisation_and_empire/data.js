@@ -41,7 +41,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -84,7 +84,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -121,7 +121,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -158,7 +158,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -205,7 +205,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -242,7 +242,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
@@ -279,7 +279,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
+              "text": "Placeholder task.",
               "model": "Model answer placeholder."
             }
           ]
