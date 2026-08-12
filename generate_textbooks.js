@@ -125,7 +125,7 @@ allDirs.forEach(unitId => {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${unitData.title} - Printable Workbook</title>
+  <title>${unitData.title} - Textbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
       @page { @bottom-center { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; color: #666; } }

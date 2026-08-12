@@ -5,6 +5,7 @@
   <title>Pupil Workbook - edexcel_medicine</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
+      @page { @bottom-center { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; color: #666; } }
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
     body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
     h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
@@ -13,7 +14,7 @@
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto !important; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -24,7 +25,7 @@
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
     th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
-    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 10px; padding-bottom: 10px; }
+    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 5px; padding-bottom: 5px; }
     tr:last-child td { border-bottom: none; }
     td:last-child, th:last-child { border-right: none; }
     tbody tr:nth-child(even) {  }
@@ -37,7 +38,7 @@
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: avoid !important; }
+        .task-box { page-break-inside: auto !important; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: block; margin-top: 15px;"] { display: block !important; }
         button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
@@ -49,24 +50,24 @@
 </head>
 <body>
 
-    <h3 style="text-align: center; color: #555; margin-top: 0; margin-bottom: 10px; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">Paper 1: Medicine Through Time with the Western Front</h3>
-    <div style="width: 100%; height: 160px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
+    
+    <div style="width: 100%; height: 90px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
       <!-- Banner image removed per user request -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">Western Front</h1>
-          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">How did treatments and the trenches develop on the Western Front?</p>
+        <div style="background: rgba(15, 23, 42, 0.85); padding: 10px 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <h1 style="margin: 0 !important; font-size: 18pt; color: white; padding: 0;">Western Front</h1>
+          <p style="font-size:11pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">How did treatments and the trenches develop on the Western Front?</p>
         </div>
       </div>
     </div>
     
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: 25px auto 0 auto; width: 80%; gap: 40px;">
+    <div style="display: flex; flex-direction: row; justify-content: center; margin: 15px auto 0 auto; width: 80%; gap: 40px;">
       <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
       <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
     </div>
     
     <!-- Tracker Table now on page 1 -->
-    <div style="margin: 30px 5% 0 5%; width: 90%;">
+    <div style="margin: 15px 5% 0 5%; width: 90%;">
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
@@ -87,7 +88,7 @@
         </tbody>
       </table>
     </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: KT5.1: What was the historical and medical context of the Western Front?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the state of surgical asepsis, radiology, and transfusion science on the eve of World War I.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: KT5.1: What was the historical and medical context of the Western Front?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the state of surgical asepsis, radiology, and transfusion science on the eve of World War I.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 6</div>
@@ -133,7 +134,7 @@
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: KT5.2: How did the trench environment create new medical challenges?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the causes, symptoms, and preventive strategies developed to combat trench foot and trench fever.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyze the impact of weaponry on injuries, specifically focusing on shrapnel, head injuries, and gas gangrene from soil.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: KT5.2: How did the trench environment create new medical challenges?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the causes, symptoms, and preventive strategies developed to combat trench foot and trench fever.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyze the impact of weaponry on injuries, specifically focusing on shrapnel, head injuries, and gas gangrene from soil.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 6</div>
@@ -179,7 +180,7 @@
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: KT5.3: What new illnesses and wounds did soldiers face?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the connection between artillery weaponry, shrapnel, and the introduction of the steel Brodie helmet in 1915.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse how the muddy, manured environment of Flanders led to severe wound infections like gas gangrene and tetanus.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: KT5.3: What new illnesses and wounds did soldiers face?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the connection between artillery weaponry, shrapnel, and the introduction of the steel Brodie helmet in 1915.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse how the muddy, manured environment of Flanders led to severe wound infections like gas gangrene and tetanus.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 6</div>
@@ -217,7 +218,7 @@
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: KT5.4: How did the RAMC and FANY operate the chain of evacuation?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the four main stages of the Western Front chain of evacuation and the mode of transport between them.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the roles, significance, and contributions of the RAMC and FANY on the Western Front.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: KT5.4: How did the RAMC and FANY operate the chain of evacuation?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain the four main stages of the Western Front chain of evacuation and the mode of transport between them.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the roles, significance, and contributions of the RAMC and FANY on the Western Front.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 6</div>
@@ -263,7 +264,7 @@
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L5: KT5.5: What incredible medical advances were forged on the Western Front?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain how the Thomas splint and mobile X-ray units solved critical evacuation and surgical challenges.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyze the development of blood transfusion and the significance of the first blood bank at the Battle of Cambrai.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L5: KT5.5: What incredible medical advances were forged on the Western Front?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Explain how the Thomas splint and mobile X-ray units solved critical evacuation and surgical challenges.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyze the development of blood transfusion and the significance of the first blood bank at the Battle of Cambrai.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 6</div>
@@ -311,23 +312,23 @@
       </div>
     
     <div style="page-break-before: always; padding: 20px;">
-      <h2 style="text-align: center; font-size: 24pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: Western Front</h2>
+      <h2 style="text-align: center; font-size: 18pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: Western Front</h2>
       <p style="text-align: center; font-size: 12pt; margin-bottom: 15px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
       <table style="width: 100%; border-collapse: collapse; ">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
-            <th style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
+            <th style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
+            <th style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; width: 75%; font-size: 12pt;">Specific Historical Example & Impact</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
-          <tr><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding-top: 10px; padding-bottom: 10px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Individuals</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">The Church & Religion</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Government & Wealth</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Science & Technology</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">Attitudes in Society</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
+          <tr><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; font-weight: bold; font-size: 12pt;">War</td><td style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; height: 110px;"></td></tr>
         </tbody>
       </table>
     </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-11 16:21:47 UTC | Unit: edexcel_medicine</div></body></html>
+    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-12 08:38:00 UTC | Unit: edexcel_medicine</div></body></html>

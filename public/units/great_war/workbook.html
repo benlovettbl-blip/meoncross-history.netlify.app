@@ -49,52 +49,28 @@
 </head>
 <body>
 
-    
-    <div style="width: 100%; height: 160px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-      <!-- Banner image removed per user request -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <div style="background: rgba(15, 23, 42, 0.85); padding: 20px 40px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 24pt; color: white; padding: 0;">KS3: Causes of the Great War</h1>
-          <p style="font-size:14pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;"><strong>Assessment Question:</strong> How did decades of imperial rivalry and fear culminate in thirty days of madness?</p>
-        </div>
+    <div class="cover-page" style="page-break-after: always; text-align: center;">
+      <h1 style="font-size: 32pt; margin-bottom: 20px; color: #1e3a8a;">${periodTitle}</h1>
+      <h2 style="font-size: 16pt; margin-bottom: 20px; color: #64748b; border: none;">${unitData.title}</h2>
+      
+      <div style="margin-top: 30px; text-align: left; padding: 20px; border: 2px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
+          <thead>
+            <tr style="background-color: #1e3a8a; color: white;">
+              <th style="padding: 10px; border: 1px solid #cbd5e1; width: 60%; text-align: left;">Lesson Title</th>
+              <th style="padding: 10px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Do Now</th>
+              <th style="padding: 10px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Tasks</th>
+              <th style="padding: 10px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Review</th>
+              <th style="padding: 10px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${trackerRows}
+          </tbody>
+        </table>
       </div>
     </div>
-    
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: 25px auto 0 auto; width: 80%; gap: 40px;">
-      <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
-      <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
-    </div>
-    
-    <!-- Tracker Table now on page 1 -->
-    <div style="margin-top: 20px;"></div>
-    <div style="margin: 30px 5% 0 5%; width: 90%;">
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
-        <thead>
-          <tr style="background-color: #1a237e; color: white;">
-            <th style="border: 1px solid #333; padding: 6px; width: 25%;">Progress & Assessment Tracker</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Do Now</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 6%; text-align: center;">RAG</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Effort</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 8%; text-align: center;">Level</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 20%;">WWW (What Went Well)</th>
-            <th style="border: 1px solid #333; padding: 6px; width: 23%;">EBI (Even Better If)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">How was the German Empire created in 1871?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 4</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">How did the Franco-Prussian War create a lasting legacy of hatred?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">To what extent did the 'Scramble for Africa' increase tension in Europe?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 10</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">Why did a battleship building contest destroy Anglo-German relations?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 10</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">Did the Alliance System protect Europe or guarantee a global war?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 10</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">Why did a single assassination in Sarajevo ignite a World War?</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">/ 10</td><td style="border:1px solid #333; padding:6px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr><tr><td style="border:1px solid #333; padding:4px;">Assessment Option 1: The July Crisis Domino Flowchart</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr><tr><td style="border:1px solid #333; padding:4px;">Assessment Option 2: The M.A.I.N. Significance Diamond</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr><tr><td style="border:1px solid #333; padding:4px;">Assessment Option 3: Source Utility Analysis</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr><tr><td style="border:1px solid #333; padding:4px;">Assessment Option 4: The Historians' Debate</td><td style="border:1px solid #333; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td><td style="border:1px solid #333; padding:4px;"></td></tr>
-          <tr style=" font-weight: bold;">
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; text-align: right;">Final Unit Grade:</td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
-            <td style="border: 1px solid #333; padding-top: 8px; padding-bottom: 8px;"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: How was the German Empire created in 1871?</h2><div style="margin-bottom: 10px;"></div><div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;"><img src="../../images/german_empire_1871.png" style="max-width: 48%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;"><img src="../../images/modern_germany_map.png" style="max-width: 48%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand how Otto von Bismarck used 'blood and iron' to unify the German states.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyze the geographical impact of the new German Empire on the balance of power in Europe.</div></div></div>
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
           <strong><span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">Source A</span>: Map of the German Empire vs Modern Germany</strong><br>
@@ -165,17 +141,17 @@ As part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valua
                       <strong style="font-size: 9.5pt;">Imperial Rivalries</strong><br>
                       <span style="font-size: 9pt;">The Place in the Sun speech</span>
                    </div><div style="width: 45%;  padding: 5px; box-sizing: border-box;  margin-bottom: 5px; box-shadow: 2px 2px 0px #aaa;">
-                      <strong style="font-size: 9.5pt;">June 1914</strong><br>
-                      <strong style="font-size: 9.5pt;">The Spark in Sarajevo</strong><br>
-                      <span style="font-size: 9pt;">The Assassination of the Archduke</span>
-                   </div><div style="width: 45%;  padding: 5px; box-sizing: border-box;  margin-top: 0px; box-shadow: 2px 2px 0px #aaa;">
-                      <strong style="font-size: 9.5pt;">1907</strong><br>
-                      <strong style="font-size: 9.5pt;">Encirclement & Alliances</strong><br>
-                      <span style="font-size: 9pt;">The Triple Entente System</span>
-                   </div><div style="width: 45%;  padding: 5px; box-sizing: border-box;  margin-top: 5px; box-shadow: 2px 2px 0px #aaa;">
                       <strong style="font-size: 9.5pt;">1871</strong><br>
                       <strong style="font-size: 9.5pt;">The Unification of Germany</strong><br>
                       <span style="font-size: 9pt;">The Franco-Prussian War</span>
+                   </div><div style="width: 45%;  padding: 5px; box-sizing: border-box;  margin-top: 0px; box-shadow: 2px 2px 0px #aaa;">
+                      <strong style="font-size: 9.5pt;">June 1914</strong><br>
+                      <strong style="font-size: 9.5pt;">The Spark in Sarajevo</strong><br>
+                      <span style="font-size: 9pt;">The Assassination of the Archduke</span>
+                   </div><div style="width: 45%;  padding: 5px; box-sizing: border-box;  margin-top: 5px; box-shadow: 2px 2px 0px #aaa;">
+                      <strong style="font-size: 9.5pt;">1907</strong><br>
+                      <strong style="font-size: 9.5pt;">Encirclement & Alliances</strong><br>
+                      <span style="font-size: 9pt;">The Triple Entente System</span>
                    </div></div><div style="clear: both; margin-bottom: 5px;"></div><div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>1. Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?</strong></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div></div></div><div><div class="task-box" style="margin-bottom: 0px; padding: 5px;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3><p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p><div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">Alsace-Lorraine &nbsp;|&nbsp; Ems Telegram &nbsp;|&nbsp; Reparations &nbsp;|&nbsp; Siege</div><strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div></div></div></div><div style="page-break-inside: auto; margin-bottom: 15px;">
             <div class="source-container" style="">
               <strong>Map A: Alsace-Lorraine Border Region (1871)</strong><br>
@@ -431,4 +407,4 @@ However, other historians argue that the German High Command deliberately used t
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-12 08:25:33 UTC | Unit: great_war</div></body></html>
+    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-12 08:43:05 UTC | Unit: great_war</div></body></html>
