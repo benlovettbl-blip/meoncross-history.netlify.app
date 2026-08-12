@@ -1209,9 +1209,9 @@ export function initializeApp(unitData) {
     } else if (lesson.id && lesson.id.startsWith('lesson_')) {
       const parts = lesson.id.split('_');
       if (parts.length > 2) {
-        lessonPrefix = `Lesson ${parts.slice(1).join('.')}`;
+        lessonPrefix = `Lesson ${parseInt(parts[1]) + 1}.${parts.slice(2).join('.')}`;
       } else {
-        lessonPrefix = `Lesson ${parts[1]}`;
+        lessonPrefix = `Lesson ${parseInt(parts[1]) + 1}`;
       }
     }
     
@@ -1268,10 +1268,11 @@ export function initializeApp(unitData) {
     `;
 
     let globalQuestionNum = 1;
-    const formatQuestion = (qText) => {
+    const formatQuestion = (qText, prependNumber = true) => {
       if (!qText) return '';
       let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
-      return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
+      if (prependNumber) return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
+      return formatBold(cleaned);
     };
 
     let vocabDict = {};
@@ -1386,7 +1387,7 @@ if (lesson.sources && lesson.sources.length > 0) {
               ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
               ${source.question ? `
                 <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question)}</strong></p>
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question, !source.qNum)}</strong></p>
                 </div>
               ` : ''}
             </div>
@@ -1413,7 +1414,7 @@ if (lesson.primary_source) {
             ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
             ${lesson.primary_source.question ? `
               <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
-                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.primary_source.qNum ? `Q${lesson.primary_source.qNum}. ` : ''}${formatQuestion(lesson.primary_source.question)}</strong></p>
+                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.primary_source.qNum ? `Q${lesson.primary_source.qNum}. ` : ''}${formatQuestion(lesson.primary_source.question, !lesson.primary_source.qNum)}</strong></p>
               </div>
             ` : ''}
           </div>
@@ -2472,7 +2473,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
         gcseHtml += `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-              ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question)}
+              ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question, !lesson.extended.qNum)}
               <span style="display: inline-flex; vertical-align: middle;">
                 ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('extended-model-${lesson.id}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
@@ -2491,7 +2492,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
             gcseHtml += `
               <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
                 <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(task.text || task.question)}
+                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(task.text || task.question, !(lesson.gcse_task.qNum && tIdx === 0))}
                   <span style="display: inline-flex; vertical-align: middle;">
                     ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('gcse-model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                   </span>
