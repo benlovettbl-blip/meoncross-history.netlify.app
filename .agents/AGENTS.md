@@ -84,7 +84,9 @@ Before running any automated extraction scripts, rebuilding the database, or mak
 Before running `node extract_units.js` or `node build_database.cjs`, you MUST quickly validate the syntax of any `data.js` or `data.json` files you just modified to ensure they do not contain trailing commas, missing brackets, or JavaScript syntax errors that could crash the extraction process.
 
 ## Strict Containment
-Unless the user explicitly asks you to work globally or sync all units, you are STRICTLY FORBIDDEN from viewing, opening, or modifying files in any unit folders other than the specific unit the user is currently focused on. This completely isolates your workflow and guarantees you cannot accidentally alter other units.
+Unless the user explicitly asks you to work globally or sync all units, you are STRICTLY FORBIDDEN from viewing, opening, or modifying files in any unit folders other than the specific unit the user is currently focused on.
+Furthermore, when fixing a bug or adding a feature that requires modifying a **global script** (e.g., PDF generators like `generate_workbooks.js` or `core_app.js` that apply to all units), you MUST wrap your code changes in an explicit unit check (e.g., `if (unitId === 'great_war')`) to isolate the new behavior to the current unit ONLY. You must never change the default behavior for other units without explicit permission, as this risks breaking older units (especially due to the heavy structural variation between KS3 and GCSE formats).
+This completely isolates your workflow and guarantees you cannot accidentally alter other units.
 
 ## Automated Image Verification (Anti-Corruption)
 Before pushing any code to GitHub or triggering a Netlify deployment, you MUST automatically run `node verify_images.js`. This script physically checks the `public/images/` directory to ensure no Wikipedia downloads have silently failed (e.g. 403 HTML error pages masquerading as `.jpg` files). If the script flags any broken files, you must halt the deployment, fix the broken files using the updated `fetch_wikimedia_images.js` script or manual fallback, and re-run the verification until it passes cleanly.

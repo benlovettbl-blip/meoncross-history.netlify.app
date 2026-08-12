@@ -1,3671 +1,3197 @@
 module.exports = {
-  "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
-  "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
-  "cover_image": "/images/east_offering.jpg",
+  "debatePrompts": [
+    {
+      "title": "Bismarck & Unification",
+      "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
+    },
+    {
+      "title": "The Scramble for Africa",
+      "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
+    },
+    {
+      "title": "The Alliance System",
+      "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
+    }
+  ],
+  "specification_file": "/data/great_war_overview.json",
+  "title": "KS3: Causes of the Great War",
+  "homepage_background": "/assets/somme_trench_1916.jpg",
+  "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
+  "cover_image": "/assets/great_war_Naval-race-1909.jpg",
+  "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
   "printable_workbooks": [
     {
       "title": "Unit Workbook",
-      "url": "workbook.html",
-      "id": "full"
-    }
-  ],
-  "timeline": [
-    {
-      "date": "1453",
-      "title": "Fall of Constantinople",
-      "description": "The Ottoman Empire captured Constantinople, effectively ending the Byzantine Empire and blocking the main European trade route to Asia.",
-      "icon": "fa-solid fa-city",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1492",
-      "title": "Columbus's First Voyage",
-      "description": "Christopher Columbus reached the Americas, initiating widespread European exploration and colonization of the New World.",
-      "icon": "fa-solid fa-ship",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1494",
-      "title": "Treaty of Tordesillas",
-      "description": "Spain and Portugal divided the newly discovered lands outside Europe between themselves.",
-      "icon": "fa-solid fa-file-signature",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1517",
-      "title": "The Protestant Reformation Begins",
-      "description": "Martin Luther published his Ninety-five Theses, fracturing Christianity in Europe.",
-      "icon": "fa-solid fa-church",
-      "theme": "Religion & Society"
-    },
-    {
-      "date": "1534",
-      "title": "Act of Supremacy",
-      "description": "King Henry VIII broke away from the Catholic Church, making himself head of the Church of England.",
-      "icon": "fa-solid fa-crown",
-      "theme": "Religion & Society"
-    },
-    {
-      "date": "1569",
-      "title": "Mercator World Map",
-      "description": "Gerardus Mercator published his famous world map, revolutionising navigation for European sailors.",
-      "icon": "fa-solid fa-map",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1577-1580",
-      "title": "Drake's Circumnavigation",
-      "description": "Sir Francis Drake became the first Englishman to circumnavigate the globe, plundering Spanish ships along the way.",
-      "icon": "fa-solid fa-ship",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1585",
-      "title": "Roanoke Colony Founded",
-      "description": "Sir Walter Raleigh organized the first, ultimately unsuccessful, English settlement in North America.",
-      "icon": "fa-solid fa-anchor",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1588",
-      "title": "Defeat of the Spanish Armada",
-      "description": "England repelled a massive invasion fleet sent by Catholic Spain.",
-      "icon": "fa-solid fa-water",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1600",
-      "title": "East India Company Founded",
-      "description": "Queen Elizabeth I granted a royal charter to the EIC, creating a joint-stock monopoly on trade with Asia.",
-      "icon": "fa-solid fa-coins",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1607",
-      "title": "Jamestown Founded",
-      "description": "The first permanent English settlement in the Americas was established in Virginia.",
-      "icon": "fa-solid fa-campground",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1615",
-      "title": "Roe's Embassy to India",
-      "description": "Sir Thomas Roe arrived at the Mughal Court to secure trading rights for the East India Company.",
-      "icon": "fa-solid fa-handshake",
-      "theme": "Exploration & Trade"
-    },
-    {
-      "date": "1642",
-      "title": "English Civil War Begins",
-      "description": "Conflict erupted between King Charles I and Parliament over religious and political authority.",
-      "icon": "fa-solid fa-swords",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1649",
-      "title": "Execution of Charles I",
-      "description": "King Charles I was executed, and England briefly became a republic led by Oliver Cromwell.",
-      "icon": "fa-solid fa-gavel",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1660",
-      "title": "The Restoration",
-      "description": "The monarchy was restored under King Charles II after the collapse of the Protectorate.",
-      "icon": "fa-solid fa-chess-king",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1688",
-      "title": "The Glorious Revolution",
-      "description": "King James II was overthrown, leading to the Bill of Rights which established Parliament's ultimate authority over the monarchy.",
-      "icon": "fa-solid fa-scroll",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1694",
-      "title": "Bank of England Founded",
-      "description": "Created to help fund the government's debt, it triggered a 'Financial Revolution' in Britain.",
-      "icon": "fa-solid fa-building-columns",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1707",
-      "title": "Act of Union",
-      "description": "England and Scotland were united to form the Kingdom of Great Britain.",
-      "icon": "fa-solid fa-handshake",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1720s",
-      "title": "First Maroon War Begins",
-      "description": "Enslaved Africans in Jamaica who had escaped into the mountains fought a prolonged guerrilla war against the British.",
-      "icon": "fa-solid fa-mountain",
-      "theme": "Conflict & Power"
-    },
-    {
-      "date": "1750",
-      "title": "Britain on the Eve of Industrialization",
-      "description": "London became a booming metropolis marked by extreme wealth, widespread poverty, and global trade connections.",
-      "icon": "fa-solid fa-industry",
-      "theme": "Exploration & Trade"
+      "url": "workbook.html"
     }
   ],
   "lessons": [
     {
-      "id": "lesson_1",
-      "flashcards": [
-        {
-          "term": "Niccolò Barbaro",
-          "definition": "Witnessed and recorded the fall of Constantinople in 1453."
-        },
-        {
-          "term": "Sultan Mehmed II",
-          "definition": "Captured Constantinople in 1453, destroying the Byzantine Empire."
-        },
-        {
-          "term": "Mansa Musa",
-          "definition": "Renowned for his immense gold wealth and famous pilgrimage to Mecca."
-        },
-        {
-          "term": "Admiral Zheng He",
-          "definition": "Commanded massive Chinese treasure fleets across the Indian Ocean."
-        },
-        {
-          "term": "Christopher Columbus",
-          "definition": "His 1492 voyage to the Americas initiated European global expansion."
-        }
+      "id": "lesson_0",
+      "title": "How was the German Empire created in 1871?",
+      "a4_map": [
+        "/images/german_empire_1871.png",
+        "/images/modern_germany_map.png"
       ],
-      "title": "Who held global power in 1450?",
       "teacher_notes": {
-        "primer": "This lesson challenges Eurocentric narratives by showing that in 1450, true global wealth and power were held by the Ottoman Empire, the Silk Road networks, and African Kingdoms.",
+        "primer": "This lesson introduces students to the unification of Germany. Before understanding the alliance systems or the arms race, students must grasp the geographical and political shockwave caused by a unified, militaristic German Empire suddenly dominating Central Europe.",
         "objectives": [
           {
-            "objective": "Identify the major global powers and trading hubs in the year 1450.",
-            "primer": "Introduce the map of 1450, showing the Silk Road, Ottomans, and Benin/Mali.",
-            "question": "Which empire controlled the vital overland trade route to Asia in 1450?"
+            "objective": "Understand how Otto von Bismarck used 'blood and iron' to unify the German states.",
+            "primer": "Focus on the 'Otto von Bismarck and Blood and Iron' narrative block. Emphasize that he preferred military force over democratic speeches.",
+            "question": "What did Bismarck mean by 'blood and iron' and how did this differ from democratic methods?"
           },
           {
-            "objective": "Explain how the Ottoman Empire and West African kingdoms controlled global wealth.",
-            "primer": "Use the sources from Kritovoulos and the Catalan Atlas to demonstrate contemporary perceptions of wealth.",
-            "question": "How did [Key Individual: Mansa Musa]'s pilgrimage demonstrate the vast wealth of West Africa?"
-          },
-          {
-            "objective": "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450.",
-            "primer": "Explain that European exploration was driven by desperation due to the Ottoman blockade, not just curiosity.",
-            "question": "Why did Western Europe need to find a sea route to Asia in the 15th century?"
+            "objective": "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
+            "primer": "Focus on the 'Crowning a Kaiser' section and the taking of Alsace-Lorraine. Use the maps to show the massive new empire in the center of Europe.",
+            "question": "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?"
           }
         ]
       },
       "do_now": {
-        "title": "Do Now: Connecting the Sources",
-        "type": "text",
-        "text": "Look at the four historical sources depicted on the front cover of this workbook. What connections can you make between them, and what do they suggest about the balance of global power before 1450?",
-        "model": "Students should identify that the sources show powerful, wealthy non-European empires dominating trade and military power, suggesting that Europe was not the center of global power in 1450."
+        "title": "Do Now: Geography of Europe",
+        "type": "mixed",
+        "items": [
+          {
+            "question": "Name two major powers in Europe in 1870.",
+            "answer": "France and Russia"
+          },
+          {
+            "question": "What is an empire?",
+            "answer": "A large group of states or countries ruled by a single monarch (emperor)."
+          },
+          {
+            "question": "Why is having a strong army important for a country surrounded by others?",
+            "answer": "To defend against attacks from multiple sides (a two-front war)."
+          },
+          {
+            "question": "Define the term 'Balance of Power'.",
+            "answer": "A situation in which nations of the world have roughly equal power, preventing any one nation from dominating."
+          }
+        ]
       },
-      "narrative_blocks": [
+      "quiz": [
         {
-          "title": "Setting the Scene: The World in 1450",
-          "text": "Before we explore who held global power, it is important to understand what the world was like in 1450. At this time, Europe was recovering from the devastating Black Death and was relatively poor compared to the rest of the world. They desperately wanted luxury goods like silk and spices, which could only be found in Asia. However, the powerful empires of the East—such as the Ming Dynasty in China and the Ottoman Empire in the Middle East—controlled all the major trade routes, meaning Europe was effectively cut off from global wealth."
+          "q": "How many independent states existed in Central Europe before 1871?",
+          "a": "39",
+          "options": [
+            "39",
+            "300",
+            "15",
+            "50"
+          ]
         },
         {
-          "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
-          "text": "In May 1453, a Venetian merchant named [Key Individual: Niccolò Barbaro] stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old [Key Individual: Sultan Mehmed II] of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
+          "q": "Which state was the most powerful among the German states before 1871?",
+          "a": "Prussia",
+          "options": [
+            "Prussia",
+            "Bavaria",
+            "Saxony",
+            "Austria"
+          ]
+        },
+        {
+          "q": "Who became the Prime Minister of Prussia in 1862?",
+          "a": "Otto von Bismarck",
+          "options": [
+            "Otto von Bismarck",
+            "Wilhelm I",
+            "Frederick the Great",
+            "Klemens von Metternich"
+          ]
+        },
+        {
+          "q": "What was Bismarck's famous phrase for how Germany would be unified?",
+          "a": "Blood and iron",
+          "options": [
+            "Blood and iron",
+            "Peace and diplomacy",
+            "Gold and silver",
+            "Speeches and majority decisions"
+          ]
+        },
+        {
+          "q": "What did 'blood and iron' mean in Bismarck's approach?",
+          "a": "Warfare and military strength",
+          "options": [
+            "Warfare and military strength",
+            "Industrial factories only",
+            "Democratic votes",
+            "Peaceful treaties"
+          ]
+        },
+        {
+          "q": "Which three countries did Prussia defeat to unify Germany?",
+          "a": "Denmark, Austria, France",
+          "options": [
+            "Denmark, Austria, France",
+            "Britain, Russia, France",
+            "Italy, Austria, Spain",
+            "Sweden, Denmark, Russia"
+          ]
+        },
+        {
+          "q": "In what year did the Franco-Prussian War begin?",
+          "a": "1870",
+          "options": [
+            "1870",
+            "1864",
+            "1866",
+            "1914"
+          ]
+        },
+        {
+          "q": "Where was the King of Prussia proclaimed the first German Emperor?",
+          "a": "Palace of Versailles",
+          "options": [
+            "Palace of Versailles",
+            "Reichstag in Berlin",
+            "Schönbrunn Palace",
+            "Tower of London"
+          ]
+        },
+        {
+          "q": "When was the German Empire officially created?",
+          "a": "18 January 1871",
+          "options": [
+            "18 January 1871",
+            "1 September 1870",
+            "28 June 1914",
+            "11 November 1918"
+          ]
+        },
+        {
+          "q": "Which valuable French territory did Germany seize in 1871?",
+          "a": "Alsace-Lorraine",
+          "options": [
+            "Alsace-Lorraine",
+            "Normandy",
+            "Brittany",
+            "Burgundy"
+          ]
+        },
+        {
+          "q": "What was the economic union created by Prussia in 1834 called?",
+          "a": "Zollverein",
+          "options": [
+            "Zollverein",
+            "Reichstag",
+            "Kaiserreich",
+            "Wehrmacht"
+          ]
+        },
+        {
+          "q": "Which major German-speaking power was deliberately excluded from the Zollverein?",
+          "a": "Austria",
+          "options": [
+            "Austria",
+            "Bavaria",
+            "Saxony",
+            "Hanover"
+          ]
+        },
+        {
+          "q": "What was the German term for the new German Empire?",
+          "a": "Kaiserreich",
+          "options": [
+            "Kaiserreich",
+            "Lebensraum",
+            "Blitzkrieg",
+            "Reichstag"
+          ]
+        },
+        {
+          "q": "How long did it take the Prussian army to crush Austria in 1866?",
+          "a": "Seven weeks",
+          "options": [
+            "Seven weeks",
+            "Four years",
+            "Two months",
+            "One year"
+          ]
+        },
+        {
+          "q": "Who was the first Emperor (Kaiser) of the newly unified Germany?",
+          "a": "Wilhelm I",
+          "options": [
+            "Wilhelm I",
+            "Wilhelm II",
+            "Otto von Bismarck",
+            "Frederick III"
+          ]
+        },
+        {
+          "q": "Why did Bismarck provoke a war with France in 1870?",
+          "a": "To unite the southern German states with the north",
+          "options": [
+            "To unite the southern German states with the north",
+            "To steal French gold",
+            "To impress the British",
+            "Because France attacked first"
+          ]
+        },
+        {
+          "q": "Which French Emperor was captured by the Prussian military?",
+          "a": "Napoleon III",
+          "options": [
+            "Napoleon III",
+            "Louis XIV",
+            "Napoleon Bonaparte",
+            "Charles de Gaulle"
+          ]
+        },
+        {
+          "q": "What natural resources was Alsace-Lorraine rich in?",
+          "a": "Coal and iron",
+          "options": [
+            "Coal and iron",
+            "Gold and silver",
+            "Oil and gas",
+            "Timber and wheat"
+          ]
+        },
+        {
+          "q": "What long-term effect did the taking of Alsace-Lorraine have?",
+          "a": "It created long-term rivalry and hatred between France and Germany",
+          "options": [
+            "It created long-term rivalry and hatred between France and Germany",
+            "It made France and Germany permanent allies",
+            "It caused the collapse of the British Empire",
+            "It led directly to the Russian Revolution"
+          ]
+        },
+        {
+          "q": "Why was the unification of Germany a shock to the balance of power in Europe?",
+          "a": "A massive, powerful, militaristic state suddenly appeared in the center of Europe",
+          "options": [
+            "A massive, powerful, militaristic state suddenly appeared in the center of Europe",
+            "Germany was very weak and needed protecting",
+            "It meant Europe was now entirely peaceful",
+            "Britain lost its navy"
+          ]
+        }
+      ],
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=-PAEmgYv0DE",
+          "title": "German Unification and Empire - History in 5 Minutes",
+          "duration": "5 mins 21 secs",
+          "viewing_task": "Note down the key steps Bismarck took to unify the German states and create the Empire.",
+          "model_answer": "Bismarck used a policy of 'blood and iron' to strengthen the Prussian military. He orchestrated three strategic wars: defeating Denmark (1864), crushing Austria (1866) to establish undisputed Prussian dominance, and finally provoking a war with France (1870-1871) to rally the independent southern German states into joining the new German Empire."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=o_PKusG7NFs",
+          "title": "\"The Great War\" 1 | What Made Germany So Successful Before World War 1?",
+          "duration": "23 mins 7 secs",
+          "viewing_task": "Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.",
+          "model_answer": "Germany was highly successful because of its rapidly growing population, heavily industrialized economy (becoming Europe's leading producer of steel and chemicals), massive and well-disciplined army, and advanced education system."
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "title": "Briefing (GCSE Taster!)",
+          "text": "Today, Germany is one of the most powerful and successful industrial countries in Europe. But if you looked at a map of Europe in 1800, you would not find a country called \"Germany\" at all. Instead, you would see a messy patchwork of hundreds of small, independent states. In this lesson, you will discover the remarkable story of how a brilliant, ruthless statesman used \"blood and iron\" to crush his neighbours, unite these states, and create a brand-new superpower that would completely change the history of the world."
+        },
+        {
+          "title": "1. The Chessboard of 39 States",
+          "text": "At the start of the 19th century, the German-speaking people were divided. In 1800, there were around 400 separate states making up what was known as the Holy Roman Empire, each with its own independent ruler. Following the Napoleonic Wars, these states were simplified and reduced to 39 states, forming a loose grouping known as the German Confederation in 1815.\n\nWithin this Confederation, the two largest and most powerful states—the Catholic empire of Austria and the militaristic kingdom of Prussia—constantly competed with each other for leadership.\n\nIn 1834, Prussia gained a massive economic advantage by setting up a free-trade customs union called the *Zollverein*. By removing internal customs barriers while keeping taxes on foreign imports, the *Zollverein* bound the smaller German states economically to Prussia while deliberately excluding Austria. Prussia had won the first round of the battle for dominance."
+        },
+        {
+          "title": "2. Otto von Bismarck and \"Blood and Iron\"",
+          "text": "In 1862, a brilliant and fiercely conservative nobleman named Otto von Bismarck was appointed Chancellor of Prussia. Bismarck had a clear and single-minded goal: to exclude Austria from German affairs once and for all and unite the remaining German states under Prussian leadership.\n\nBismarck despised the slow, democratic methods of speeches and parliaments. In his very first speech as Chancellor, he warned the Prussian parliament of his plans:\n\n> *\"Germany is not looking to Prussia’s liberalism, but to her power... The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**.\"*\n\nBy \"blood,\" Bismarck meant the lives of soldiers; by \"iron,\" he meant the advanced technology of Prussia’s military machine, including its modern railways, artillery, and rapid-firing guns. From the mid-nineteenth century, Prussia built up a massive, exceptionally well-trained, and highly disciplined army. Bismarck was ready to unleash it.",
           "tasks": [
             {
               "type": "text",
-              "text": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
-              "model": "The fall of Constantinople meant that the Ottoman Empire now controlled the vital crossroads linking Europe to the Silk Road and Indian Ocean trade. This gave the Ottomans the power to block or heavily tax European merchants."
+              "text": "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
+              "model": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
             }
           ]
         },
         {
-          "title": "Analyzing the Evidence: The Fall of Constantinople",
-          "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of [Key Individual: Sultan Mehmed II] entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>[Key Individual: Kritovoulos of Imbros]</strong>, a Greek scholar writing in 1454.</div><br><br>",
-          "tasks": []
-        },
-        {
-          "title": "Macro-History: The Wealth of the East",
-          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
-        },
-        {
-          "title": "Analyzing Source B",
-          "image": "/images/global_canton.jpg",
-          "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
-          "source_letter": "B",
+          "title": "3. The Three Wars of Unification",
+          "text": "To unite Germany, Bismarck orchestrated three short, decisive wars over a seven-year period:\n\n*   **War 1: The Danish War (1864):** Prussia teamed up with Austria to quickly defeat Denmark in a dispute over territory, showing off their military coordination.\n*   **War 2: The Austro-Prussian War (1866):** Bismarck turned on his former ally, Austria. The modernized Prussian army crushed the Austrian forces in just seven weeks. Following this defeat, Austria was completely excluded from German affairs, leaving Prussia as the undisputed leader of the German states.\n*   **War 3: The Franco-Prussian War (1870–1871):** To convince the southern German states (who were wary of Prussian dominance) to join his new union, Bismarck needed a common enemy. He cleverly provoked a war with France. The Prussian military machine invaded France, totally destroyed the French armies, and captured the French Emperor.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Look at Source B in your Textbook. Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-              "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
-            }
-          ],
-          "text": "Source B shows the reality of global trade in Canton, where European merchants were restricted and tightly controlled by the Chinese Emperor, challenging the myth of European dominance.<br><br><strong>Discussion Point:</strong> Why might European monarchs have been frustrated by the tight controls in Canton?"
-        },
-        {
-          "title": "Macro-History: The Real Centers of Wealth in 1450",
-          "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, [Key Individual: Sultan Mehmed II] controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded."
-        },
-        {
-          "title": "Analyzing Source C",
-          "image": "/images/ottoman_1453.jpg",
-          "image_alt": "Fresco of the Siege of Constantinople (1537)",
-          "source_letter": "C",
-          "tasks": [],
-          "text": "Source C illustrates the fall of Constantinople in 1453 to the powerful Ottoman Empire, an event that deeply shocked Christian Europe and blocked their traditional trade routes to the East.<br><br><strong>Discussion Point:</strong> How might the Ottoman control of Constantinople have forced Europe to look for new sea routes?"
-        },
-        {
-          "title": "West Africa: Kingdoms of Gold and Brass",
-          "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source D",
-          "image": "/images/benin_bronze.jpg",
-          "image_alt": "16th-Century Benin Bronze Plaque",
-          "source_letter": "D",
-          "tasks": [],
-          "text": "Source D reveals the highly advanced metallurgical skills of the Benin Empire in West Africa, producing magnificent bronzes that rivalled or surpassed European art of the same period.<br><br><strong>Discussion Point:</strong> Why do you think European historians in the past often ignored or downplayed the advanced skills of African empires?"
-        },
-        {
-          "title": "Analyzing the Evidence: The Wealth of West Africa",
-          "text": "<div class='scaffold-box'><strong>Source E: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>"
-        },
-        {
-          "title": "Analyzing Source E",
-          "image": "/images/mansa_musa_catalan.jpg",
-          "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-          "source_letter": "E",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Look at Sources D and E in your Textbook. What impression do they give about the balance of power between Europe and the rest of the world in the 15th century?",
-              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
-            }
-          ],
-          "text": "Source E, a detail from the Catalan Atlas, highlights the staggering wealth of Mansa Musa and the Mali Empire, drawing desperate European merchants towards West African gold.<br><br><strong>Discussion Point:</strong> How did the image of Mansa Musa's wealth change Europe's relationship with West Africa?"
-        },
-        {
-          "title": "The Silk Road & Ming China: The World's Industrial Engine",
-          "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, [Key Individual: Admiral [Key Individual: Admiral [Key Individual: Admiral Zheng He]]] commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than [Key Individual: Christopher Columbus]’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/silk_road.jpg",
-          "image_alt": "Map of the Silk Road Trade Routes",
-          "tasks": []
-        },
-        {
-          "title": "Historical Interpretations: The Eurocentric Myth",
-          "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: [Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Peter Frankopan]]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
-          "tasks": [
-            {
-              "type": "debate",
-              "text": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
-              "model": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
-            }
-          ]
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": []
-        },
-        {
-          "title": "Side Quest: The English Peasant's Pottage",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The English Peasant's Pottage</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_peasant.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic 15th-century manuscript illumination showing peasants performing grueling manual agricultural labor.</i>\n</div>\n<p>While the Oba of Benin commissioned magnificent bronze plaques and Ming Emperors wore silk, the vast majority of people in 1450 England were destitute peasant farmers. An ordinary English peasant lived in a dark, smokey, single-room wattle-and-daub hut shared with their livestock. Their diet was incredibly monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats. They rarely travelled more than five miles from their birthplace and were completely oblivious to the vast riches flowing through the Silk Road or the trans-Saharan trade networks. Europe in 1450 was not the center of the world; for the average peasant, it was a cold, isolated struggle for survival.</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Look at Source F in your Textbook. How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
-              "model_answer": "Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive."
+              "type": "text",
+              "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
+              "model": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
             },
             {
-              "type": "comprehension",
-              "question": "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
-              "model_answer": "It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages."
+              "type": "drag_drop_timeline",
+              "title": "Interactive Task: The Three Wars of Unification",
+              "instruction": "Drag the three wars into the correct chronological order to reveal the secret code.",
+              "items": [
+                {
+                  "id": "w1",
+                  "text": "Denmark (1864)"
+                },
+                {
+                  "id": "w2",
+                  "text": "Austria (1866)"
+                },
+                {
+                  "id": "w3",
+                  "text": "France (1870)"
+                }
+              ],
+              "secret_code": "BISMARCK1871"
             }
-          ],
-          "source_letter": "F"
+          ]
+        },
+        {
+          "title": "4. Crowning a Kaiser in the Enemy's Palace",
+          "text": "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later."
         }
       ],
-      "learning_objectives": {
-        "overarching": "Who held global power in 1450?",
-        "scaffolded": [
-          "Identify the major global powers and trading hubs in the year 1450.",
-          "Explain how the Ottoman Empire and West African kingdoms controlled global wealth.",
-          "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450."
+      "primary_source": {
+        "title": "Source A: Map of the German Empire vs Modern Germany",
+        "src": [
+          "/images/german_empire_1871.png",
+          "/images/modern_germany_map.png"
+        ],
+        "caption": "A map showing the newly created German Empire in 1871 (left) compared to modern-day Germany (right).",
+        "question": "Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
+        "tasks": [
+          {
+            "type": "text",
+            "text": "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
+            "model": "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War."
+          },
+          {
+            "type": "text",
+            "text": "Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
+            "model": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
+          }
         ]
-      },
-      "banner": "/images/early_mod_l1_banner.jpg"
+      }
     },
     {
-      "id": "lesson_2",
-      "flashcards": [
+      "id": "lesson_1",
+      "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
+      "sources": [
         {
-          "term": "Martin Luther",
-          "definition": "His 1517 protests sparked the Protestant Reformation, dividing Europe."
-        },
-        {
-          "term": "Pope Alexander VI",
-          "definition": "Issued the 1494 Treaty of Tordesillas dividing the Americas between Spain and Portugal."
-        },
-        {
-          "term": "King Philip II",
-          "definition": "Catholic monarch who launched the Spanish Armada against England."
-        },
-        {
-          "term": "Queen Elizabeth I",
-          "definition": "Protestant Queen who authorized privateers and defeated the Spanish Armada."
-        },
-        {
-          "term": "Mary, Queen of Scots",
-          "definition": "Catholic monarch whose execution angered Philip II."
-        },
-        {
-          "term": "Henry VIII",
-          "definition": "Broke away from the Catholic Church in 1534."
+          "title": "Map A: Alsace-Lorraine Border Region (1871)",
+          "src": "/assets/great_war_alsace_lorraine_simple_map.svg",
+          "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
         }
       ],
-      "title": "How did religious conflict trigger global exploration (1517–1588)?",
-      "teacher_notes": {
-        "primer": "This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.",
-        "objectives": [
-          {
-            "objective": "Explain how the Protestant Reformation shattered European unity after 1517.",
-            "primer": "Direct students to the Macro-History section on [Key Individual: Martin Luther] and the 95 Theses. Emphasize how this split created a geopolitical divide that spilled into the New World.",
-            "question": "How did [Key Individual: Martin Luther]'s actions in 1517 directly contribute to the later naval conflict between England and Spain?"
-          },
-          {
-            "objective": "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
-            "primer": "Use the Micro-History of San Juan de Ulúa and the section on Protestant Privateers to show how Drake's personal vendetta aligned with Elizabeth's need to challenge Spain cheaply.",
-            "question": "Why did [Key Individual: Queen Elizabeth I] choose to use privateers like Francis Drake rather than sending an official Royal Navy fleet to challenge Spain in the Americas?"
-          },
-          {
-            "objective": "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions.",
-            "primer": "Focus on the visual analysis of the Armada Portrait and the historical interpretations to debate whether the victory was a divine miracle or a result of tactical superiority.",
-            "question": "Based on the visual evidence in the Armada Portrait, how did the defeat of the Spanish Armada change England's self-image and future ambitions?"
-          }
-        ]
-      },
-      "do_now": {
-        "title": "Do Now: Previous Knowledge",
-        "type": "questions",
-        "items": [
-          {
-            "question": "What was the overarching name for the ancient trade network connecting Asia to Europe?",
-            "answer": "The Silk Road"
-          },
-          {
-            "question": "Which major empire expanded to block overland European trade routes in 1453?",
-            "answer": "The Ottoman Empire"
-          },
-          {
-            "question": "What city was captured by Sultan Mehmed II in 1453?",
-            "answer": "Constantinople"
-          },
-          {
-            "question": "What West African kingdom was known for its detailed bronze plaques in the 15th century?",
-            "answer": "The Kingdom of Benin"
-          },
-          {
-            "question": "Why did the capture of Constantinople force European nations to look for new trade routes?",
-            "answer": "Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade."
-          }
-        ]
-      },
       "vocab": [
         {
-          "term": "Reformation",
-          "definition": "A 16th-century religious movement in Europe that resulted in the creation of Protestant churches and a split from the Catholic Church."
+          "term": "Alsace-Lorraine",
+          "definition": "A resource-rich border region taken by Germany from France in 1871."
         },
         {
-          "term": "Privateer",
-          "definition": "An armed ship owned by private individuals holding a government commission (Letter of Marque) and authorized for use in war, especially in the capture of enemy merchant shipping."
+          "term": "Ems Telegram",
+          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
         },
         {
-          "term": "Armada",
-          "definition": "A fleet of warships, particularly the Spanish fleet that sailed against England under the command of [Key Individual: King Philip II] in 1588."
+          "term": "Reparations",
+          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
         },
         {
-          "term": "Monopoly",
-          "definition": "The exclusive possession or control of the supply or trade in a commodity or service."
-        },
-        {
-          "term": "Indulgences",
-          "definition": "In the Catholic Church, a grant by the Pope of remission of the temporal punishment in purgatory still due for sins after absolution."
+          "term": "Siege",
+          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
         }
       ],
+      "extended": {
+        "question": "Evaluate how the change in leadership from Bismarck to [Key Individual: Kaiser Wilhelm II] fundamentally altered Germany's strategic position in Europe.",
+        "model": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
+      },
+      "do_now": {
+        "type": "timeline",
+        "events": [
+          {
+            "year": "1871",
+            "title": "The Unification of Germany",
+            "detail": "The Franco-Prussian War",
+            "img": "/assets/great_war_was_germany_unification.png"
+          },
+          {
+            "year": "1897",
+            "title": "Imperial Rivalries",
+            "detail": "The Place in the Sun speech",
+            "img": "/assets/great_war_was_greedy_boy.png"
+          },
+          {
+            "year": "1906",
+            "title": "The Naval Arms Race",
+            "detail": "The Launch of HMS Dreadnought",
+            "img": "/assets/great_war_was_dreadnought_blueprint.png"
+          },
+          {
+            "year": "1907",
+            "title": "Encirclement & Alliances",
+            "detail": "The Triple Entente System",
+            "img": "/assets/great_war_was_military_matrix.png"
+          },
+          {
+            "year": "June 1914",
+            "title": "The Spark in Sarajevo",
+            "detail": "The Assassination of the Archduke",
+            "img": "/assets/great_war_was_boiling_point.png"
+          }
+        ],
+        "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
+      },
+      "primary_source": {
+        "title": "Source A: Anton von Werner, 'The Proclamation of the German Empire at Versailles', painted in 1885.",
+        "src": "/assets/great_war_was_germany_unification.png",
+        "caption": "<strong>What is this source showing?</strong> This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
+        "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          }
+        ],
+        "model": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
+      },
+      "flashcards": [
+        {
+          "term": "Alsace-Lorraine",
+          "definition": "A resource-rich border region taken by Germany from France in 1871."
+        },
+        {
+          "term": "Ems Telegram",
+          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
+        },
+        {
+          "term": "Reparations",
+          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
+        },
+        {
+          "term": "Siege",
+          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Of the three penalties forced upon France in the 1871 treaty (loss of land, 5 billion franc fine, German occupation), which do you think caused the most bitter resentment, and why?",
+        "think": "Jot down your choice and one strong reason to support it.",
+        "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
+        "share": "Be ready to report your partner's best point to the class."
+      },
+      "historians_corner": {
+        "title": "The 'Master Planner' Debate",
+        "text": "Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
+        "stretch_question": "How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?",
+        "stretch_model": "Traditional historians argue Bismarck provoked France deliberately to unite Germany. However, Taylor challenges this by suggesting Bismarck didn't have a grand masterplan; instead, he was just incredibly skilled at reacting to events (like the Spanish succession crisis) and twisting them to Germany's advantage at the last minute."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "written",
+            "text": "“We must never forget the humiliation of 1871. The German Empire was proclaimed in our own Palace of Versailles, tearing away the bleeding wounds of Alsace and Lorraine. They have stolen our iron and our factories, and forced us to pay a crushing ransom of 5 billion francs. Every French child must grow up with one single thought: to rebuild our army and take back what was stolen from the motherland.”",
+            "title": "Source A: Adapted from a French school textbook, published in Paris, 1885."
+          },
+          {
+            "type": "written",
+            "text": "“France will never forgive us for taking Alsace-Lorraine. The peace we have forced upon them has left a bitter resentment that will not fade. We must accept that a French war of revenge is a certainty in the future. Therefore, our entire diplomatic focus must be to ensure she never finds an ally to help her take it back. As long as France remains diplomatically isolated, particularly from Russia, Germany will remain secure.”",
+            "title": "Source B: Adapted from a private letter written by German Chancellor Otto von Bismarck to a fellow diplomat, 1872."
+          }
+        ],
+        "topic": "the reasons for French hatred of Germany after 1871",
+        "model": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
+      },
+      "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
+      "learning_objectives": {
+        "overarching": "To evaluate why the Franco-Prussian War created long-term hatred.",
+        "scaffolded": [
+          "Identify the penalties forced upon France in 1871.",
+          "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+          "Evaluate the long-term impact on European relations."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal of this lesson is to understand the long-term diplomatic impact of the Franco-Prussian War. The narrative goes beyond just the events of 1871. It focuses on the resulting *revanche* (French desire for revenge) and Bismarck's subsequent need to isolate France through a web of alliances. Ensure students understand that this single conflict permanently poisoned European relations, forcing the creation of the rigid alliance systems that ultimately dragged Europe into World War I.",
+        "objectives": [
+          {
+            "objective": "Identify the penalties forced upon France in 1871.",
+            "primer": "Direct students to paragraph 4. The text explicitly lists the penalties out in a clear, easy-to-spot sentence: 'The peace treaty forced three severe penalties upon France...' Because these key penalties are bolded in the text, it is a highly accessible recall task for a 14-year-old.",
+            "question": "If you were a French citizen in 1871, which of the three penalties (losing land, paying 5 billion francs, or hosting an enemy army) would make you the most angry, and why?"
+          },
+          {
+            "objective": "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+            "primer": "Focus on paragraph 2 as a chronological mini-story. Explain to students how Bismarck took a friendly message, 'carefully edited and shortened the text,' and made it look like the Prussian King had 'explicitly insulted the French government.'",
+            "question": "Bismarck didn't actually lie in the Ems Telegram; he just deleted parts of it to change the tone. Why is editing the truth sometimes more dangerous than a flat-out lie?"
+          },
+          {
+            "objective": "Evaluate the long-term impact on European relations.",
+            "primer": "This requires higher-order thinking. The final two paragraphs explicitly guide students through this. Point out that Bismarck's 'greatest fear' was a two-front war, so he spent 20 years 'weaving a complex, dizzying web of alliances.'",
+            "question": "Bismarck created alliances to keep Germany safe, but how did these secret treaties actually make a future European war much more dangerous?"
+          }
+        ],
+        "source_context": "In the 1871 Franco-Prussian War, the newly formed German Empire conquered the French territories of Alsace and Lorraine. Proclaiming the German Empire inside the French royal palace of Versailles was a calculated humiliation. This fueled a burning French desire for revanche (revenge) that poisoned European diplomacy for decades. **Hinge Question:** Why might the location of this coronation guarantee future conflict between France and Germany?"
+      },
+      "vocab_cloze_text": "In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].",
       "narrative_blocks": [
         {
-          "title": "Micro-History: San Juan de Ulúa (September 1568)",
-          "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, [Key Individual: John Hawkins], had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against [Key Individual: King Philip II] of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
+          "text": "**Bismarck vs. Wilhelm: A Clash of Strategy**\n\nFollowing the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power\"specifically Russia\"which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.\n\nHowever, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
+        },
+        {
+          "theme_heading": "A Fragmented Germany",
+          "text": "There was no country called Germany until 1871. Instead, central Europe was a fragmented collection of independent small states loosely joined only by language and local customs. The most powerful, heavily militaristic state among them was the northern kingdom of Prussia. Desiring to unite these states, Prussia's brilliant, ruthless Chancellor Otto von Bismarck first grouped the northern states into the <strong>North German Confederation</strong>. To complete his dream of a single, mighty empire, Bismarck desperately needed the independent southern German states to unite with the north. He realized that nothing would unite these separate states faster than a shared national enemy.",
+          "level_4": "There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Why did the Spanish attack Francis Drake and [Key Individual: John Hawkins] at San Juan de Ulúa despite having signed a truce?",
-              "model_answer": "The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal."
+              "type": "written",
+              "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer.",
+              "model": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
+            }
+          ]
+        },
+        {
+          "text": "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck carefully edited and shortened the text of this message—now famously known as the <strong>Ems Telegram</strong>—before releasing it to the international press. The edited text read as though the Prussian King had explicitly insulted the French government. Horrified at this public blow to their national pride, France predictably declared war on 19 July 1870. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+          "level_4": "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.",
+              "model": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
             }
           ],
-          "images": [
-            {
-              "image": "/images/early_mod_l2_banner.jpg",
-              "image_alt": "Map of the Spanish Armada Route (1588)",
-              "image_context": "Trace the chaotic route of the Spanish fleet around the rugged coasts of Scotland and Ireland. This map highlights how the Armada was defeated not just by English naval tactics, but by disastrous weather (the 'Protestant Wind') and poor logistical planning. **Hinge Question:** Does this map suggest the English victory was due to superior skill, or lucky geography and weather?",
-              "image_caption": "An expedition map showing the route of the Spanish Armada in 1588. [Key Individual: King Philip II] of Spain launched the massive fleet to overthrow the Protestant [Key Individual: Queen Elizabeth I], but it was defeated by English naval tactics and severe storms.",
-              "source_letter": "A"
-            },
-            {
-              "image": "/images/francis_drake.jpg",
-              "image_alt": "Portrait of Sir Francis Drake (1591)",
-              "image_context": "Notice Drake's confident posture and the hand resting on a globe. To the English, he was a heroic explorer and a symbol of their growing naval power. To the Spanish, however, he was 'El Draque' (The Dragon)—a ruthless pirate who terrorized their galleons. **Hinge Question:** How can the exact same historical figure be remembered as both a national hero and a criminal pirate?",
-              "image_caption": "Portrait of [Key Individual: Sir Francis Drake] (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.",
-              "source_letter": "B"
-            }
-          ]
+          "theme_heading": "Ems Telegram Provokes War"
         },
         {
-          "title": "Macro-History: Navigating the Unknown",
-          "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time."
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/global_mercator.jpg",
-          "image_alt": "Portrait of Gerardus Mercator (1574)",
-          "tasks": []
-        },
-        {
-          "title": "Macro-History: The Reformation (1517)",
-          "text": "<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named [Key Individual: Martin Luther] nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of \"indulgences\" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after [Key Individual: Henry VIII] broke away from Rome in 1534.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source B",
-          "image": "/images/martin_luther_portrait.jpg",
-          "image_alt": "Portrait of Martin Luther (1529)",
-          "source_letter": "B",
-          "tasks": []
-        },
-        {
-          "title": "Macro-History: The New World Monopoly & Privateers",
-          "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494, [Key Individual: Pope Alexander VI] issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant [Key Individual: Queen Elizabeth I] took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir Walter Raleigh]]], and [Key Individual: John Hawkins] were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II."
-        },
-        {
-          "title": "Analyzing Source C",
-          "image": "/images/tordesillas_map.png",
-          "image_alt": "Map of the Treaty of Tordesillas (1494)",
-          "source_letter": "C",
+          "text": "Prussia's military strategy relied on two distinct advantages. First, they utilized an <strong>advanced railway network</strong> to mobilise and deploy 500,000 highly trained troops with astonishing speed. Second, they equipped their forces with <strong>Krupp steel artillery</strong>, which fired much faster and further than French guns. The smaller French force of 180,000 was completely caught off guard. During the terrible Siege of Metz, the best French troops were entirely surrounded. When the remaining French forces attempted to break the lines at the Battle of Sedan on 1 September, they suffered 17,000 casualties and over 21,000 soldiers were captured—including the French Emperor Napoleon III. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
+          "level_4": "Prussia's military strategy relied on two distinct advantages. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
           "tasks": [
             {
-              "type": "analysis",
-              "question": "How did Queen Elizabeth I use privateers as a strategic tool against Spain?",
-              "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
-            }
-          ]
-        },
-        {
-          "title": "The Climax: The Spanish Armada (1588)",
-          "text": "Furious at English privateering, Elizabeth's support for Protestant rebels in the Netherlands, and the execution of the Catholic [Key Individual: Mary, Queen of Scots], King Philip II decided to invade England.<br><br>In May 1588, Philip launched the <strong>Spanish Armada</strong>: 130 warships carrying 30,000 soldiers designed to overthrow Elizabeth and force England back to Catholicism.<br><br>The English navy, using smaller, faster ships equipped with long-range cannons, harassed the Armada up the English Channel. Off Calais, the English unleashed drifting <strong>fire ships</strong> (vessels packed with pitch and gunpowder set ablaze), forcing the panicked Spanish ships to cut their anchors and scatter. A disastrous storm—termed the \"Protestant Wind\"—blew the remaining Spanish fleet around the rocky coasts of Scotland and Ireland, destroying over half their ships.",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Describe the two main reasons the Spanish Armada failed to invade England.",
-              "model_answer": "The Armada failed due to English tactics, such as using faster ships with long-range cannons and launching fire ships that scattered the Spanish fleet at Calais, and bad weather—the 'Protestant Wind' that destroyed fleeing Spanish ships on the rocky coasts of Scotland and Ireland."
-            }
-          ]
-        },
-        {
-          "title": "Opposing Views: A Queen and a Captive (Part 1)",
-          "text": "<blockquote><strong>Source B: An Excerpt from Queen Elizabeth I's Speech at Tilbury (August 1588)</strong><br><em>\"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king, and of a king of England too, and think foul scorn that Parma or Spain, or any prince of Europe, should dare to invade the borders of my realm... We shall shortly have a famous victory over these enemies of my God, of my kingdom, and of my people.\"</em></blockquote><br><br><blockquote><strong>Source C: A Spanish Catholic Account of English Privateers (1579)</strong><br><em>\"This Francisco Drake is a thief, a heretic, and a minister of the Devil. He robs churches, desecrates holy images, and steals the treasure that belongs by divine right to His Catholic Majesty King Philip. He does not fight for trade; he fights to destroy the Holy Mother Church.\"</em><br>— <strong>Adapted from a letter by [Key Individual: Don Francisco de Zárate]</strong>, a Spanish captain captured by Drake.</blockquote>",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?",
-              "model_answer": "Source B frames the conflict as a holy defense of England against 'enemies of my God', portraying the English as righteous defenders. Source C, written by a Spanish Catholic, views Drake as a 'thief' and a 'heretic' fighting to destroy the Catholic Church, focusing on his piracy and religious desecration rather than legitimate warfare."
-            }
-          ]
-        },
-        {
-          "title": "Visual Analysis: The Armada Portrait (1588)",
-          "text": "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source F",
-          "image": "/images/armada_portrait.jpg",
-          "image_alt": "The Armada Portrait of Queen Elizabeth I (c. 1588)",
-          "source_letter": "F",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "What message was the artist of the Armada Portrait trying to convey about England's future?",
-              "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
-            }
-          ]
-        },
-        {
-          "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
-          "text": "<blockquote><strong>Historian Perspective A: Traditional View (19th Century)</strong><br><em>\"The defeat of the Armada was a miraculous victory for Protestantism and freedom. God sent a divine storm to scatter the Catholic tyrant’s fleet, paving the way for the rise of the British Empire.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Revisionist View ([Key Individual: Dr. [Key Individual: Dr. [Key Individual: Dr. Geoffrey Parker]]], 2013)</strong><br><em>\"Philip II’s invasion failed due to structural flaws: poor communications between Spain and the Netherlands, rigid tactics, and terrible naval logistics. The 'Protestant Wind' simply finished off a fleet that had already been outmaneuvered by superior English ship design and artillery.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How does the revisionist view (Perspective B) challenge the traditional view (Perspective A) of the Armada's defeat?",
-              "model_answer": "Perspective A argues the defeat was a divine, miraculous event driven by the 'Protestant Wind' sent by God. Perspective B challenges this by arguing it was actually caused by human errors and Spanish structural flaws—such as poor logistics, rigid tactics, and superior English ship design—with the weather only playing a secondary role at the end."
-            }
-          ]
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": []
-        },
-        {
-          "title": "Side Quest: The Horrors of Scurvy",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
-              "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
+              "type": "written",
+              "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.",
+              "model": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
             }
           ],
-          "source_letter": "F"
+          "theme_heading": "Prussia'"
+        },
+        {
+          "text": "The war permanently transformed the balance of power. In a final, agonizing humiliation for France, the German Empire was officially proclaimed inside the Hall of Mirrors at the Palace of Versailles—the historic home of French royalty. The peace treaty forced three severe penalties upon France: it ceded the strategic industrial border provinces of <strong>Alsace-Lorraine</strong>, was forced to pay a crushing war fine of <strong>5 billion francs</strong> over five years, and was forced to <strong>host a German occupation army</strong>. This deep humiliation shattered French national pride and planted a bitter seed of resentment. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.",
+          "level_4": "The war permanently transformed the balance of power. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.",
+              "model": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
+            }
+          ],
+          "theme_heading": "France's Humiliation"
+        },
+        {
+          "text": "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
+          "level_4": "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace.",
+              "model": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
+            }
+          ],
+          "theme_heading": "Bismarck'"
+        },
+        {
+          "text": "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
+          "level_4": "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
+          "theme_heading": "Bismarck's Alliance Web"
+        },
+        {
+          "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
+          "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
+          "theme_heading": "Wilhelm Undoes Bismarck"
         }
       ],
       "quiz": [
         {
-          "question": "In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?",
+          "q": "Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?",
+          "a": "Otto von Bismarck",
           "options": [
-            "1492",
-            "1517",
-            "1534",
-            "1588"
-          ],
-          "answer": 1,
-          "explanation": "1517"
+            "Otto von Bismarck",
+            "Kaiser Wilhelm II",
+            "Count von Schlieffen",
+            "Napoleon III"
+          ]
         },
         {
-          "question": "Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?",
+          "q": "Which telegram did Bismarck edit to provoke France into war?",
+          "a": "Ems Telegram",
           "options": [
-            "Elizabeth I",
-            "Mary I",
-            "Edward VI",
-            "[Key Individual: Henry VIII]"
-          ],
-          "answer": 3,
-          "explanation": "Henry VIII"
+            "Ems Telegram",
+            "Zimmermann Telegram",
+            "Blank Cheque",
+            "Versailles Dispatch"
+          ]
         },
         {
-          "question": "What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?",
+          "q": "In what year did the Franco-Prussian War break out?",
+          "a": "1870",
           "options": [
-            "The Treaty of Versailles",
-            "The Treaty of Tordesillas",
-            "The Magna Carta",
-            "The Edict of Nantes"
-          ],
-          "answer": 1,
-          "explanation": "The Treaty of Tordesillas"
+            "1870",
+            "1871",
+            "1890",
+            "1914"
+          ]
         },
         {
-          "question": "What official document gave privateers legal permission from a monarch to attack foreign ships?",
+          "q": "Which two provinces were taken from France in the peace settlement?",
+          "a": "Alsace and Lorraine",
           "options": [
-            "A Papal Bull",
-            "A Royal Charter",
-            "A Letter of Marque",
-            "An Indulgence"
-          ],
-          "answer": 2,
-          "explanation": "A Letter of Marque"
+            "Alsace and Lorraine",
+            "Ruhr and Saar",
+            "Normandy and Brittany",
+            "Rhineland and Bavaria"
+          ]
         },
         {
-          "question": "What nickname did the Spanish give to [Key Individual: Sir Francis Drake]?",
+          "q": "Where was the German Empire proclaimed in 1871, humiliating the French?",
+          "a": "Palace of Versailles",
           "options": [
-            "The Pirate King",
-            "The Heretic",
-            "El Draque (\"The Dragon\")",
-            "The English Devil"
-          ],
-          "answer": 2,
-          "explanation": "El Draque (\"The Dragon\")"
+            "Palace of Versailles",
+            "Reichstag Building",
+            "Notre Dame",
+            "Berlin Palace"
+          ]
         },
         {
-          "question": "Name the flagship on which [Key Individual: Sir Francis Drake] circumnavigated the globe between 1577 and 1580.",
+          "q": "What was the size of the war indemnity France was forced to pay?",
+          "a": "5 billion francs",
           "options": [
-            "The Mayflower",
-            "The Mary Rose",
-            "The Golden Hind",
-            "The Victory"
-          ],
-          "answer": 2,
-          "explanation": "The Golden Hind"
+            "5 billion francs",
+            "1 billion marks",
+            "6.6 billion pounds",
+            "132 billion gold marks"
+          ]
         },
         {
-          "question": "Which English naval tactic shattered the Spanish fleet formation while anchored off Calais in 1588?",
+          "q": "Who became the new German Emperor in 1888 and dismissed Bismarck?",
+          "a": "Kaiser Wilhelm II",
           "options": [
-            "Fire ships",
-            "Boarding parties",
-            "Submarine warfare",
-            "Cannon bombardment from shore"
-          ],
-          "answer": 0,
-          "explanation": "Fire ships"
+            "Kaiser Wilhelm II",
+            "Kaiser Wilhelm I",
+            "Franz Joseph",
+            "[Key Individual: Tsar Nicholas II]"
+          ]
         },
         {
-          "question": "Who was the Catholic King of Spain who launched the Armada against England in 1588?",
+          "q": "What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?",
+          "a": "Reinsurance Treaty",
           "options": [
-            "King Charles V",
-            "King Ferdinand II",
-            "King Philip II",
-            "King Louis XIV"
-          ],
-          "answer": 2,
-          "explanation": "King Philip II"
+            "Reinsurance Treaty",
+            "Treaty of London",
+            "Dual Alliance",
+            "Treaty of Frankfurt"
+          ]
         },
         {
-          "question": "What term was used to describe the storms that wrecked the fleeing Spanish ships off Scotland and Ireland?",
+          "q": "Which country allied with Russia in 1894 after Bismarck's dismissal?",
+          "a": "France",
           "options": [
-            "The Protestant Wind",
-            "The Armada Storm",
-            "The English Channel Gale",
-            "The Divine Tempest"
-          ],
-          "answer": 0,
-          "explanation": "The Protestant Wind"
+            "France",
+            "Britain",
+            "Austria-Hungary",
+            "Italy"
+          ]
         },
         {
-          "question": "What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?",
+          "q": "What was Germany's greatest fear that drove its military planning?",
+          "a": "A two-front war",
           "options": [
-            "North America",
-            "Europe",
-            "Africa",
-            "Asia"
-          ],
-          "answer": 0,
-          "explanation": "North America"
+            "A two-front war",
+            "A naval blockade",
+            "An Italian invasion",
+            "A socialist revolution"
+          ]
+        },
+        {
+          "q": "What was the name of the German military plan created to defeat France quickly?",
+          "a": "Schlieffen Plan",
+          "options": [
+            "Schlieffen Plan",
+            "Plan XVII",
+            "Bismarck Plan",
+            "Moltke Offensive"
+          ]
+        },
+        {
+          "q": "Which French leader was captured at the Battle of Sedan?",
+          "a": "Napoleon III",
+          "options": [
+            "Napoleon III",
+            "Georges Clemenceau",
+            "Louis XVI",
+            "Charles de Gaulle"
+          ]
+        },
+        {
+          "q": "What was the primary goal of Bismarck in defeating France?",
+          "a": "To unify the southern German states with the north",
+          "options": [
+            "To unify the southern German states with the north",
+            "To steal French gold",
+            "To crown himself Emperor",
+            "To conquer Paris permanently"
+          ]
+        },
+        {
+          "q": "Which French territory was annexed by Germany, creating lasting resentment?",
+          "a": "Alsace-Lorraine",
+          "options": [
+            "Alsace-Lorraine",
+            "Normandy",
+            "Burgundy",
+            "The Rhineland"
+          ]
+        },
+        {
+          "q": "Who was the Prussian King that was crowned German Emperor?",
+          "a": "Wilhelm I",
+          "options": [
+            "Wilhelm I",
+            "Wilhelm II",
+            "Frederick the Great",
+            "Bismarck"
+          ]
+        },
+        {
+          "q": "What event did Bismarck use to trick France into declaring war?",
+          "a": "Editing the Ems Telegram",
+          "options": [
+            "Editing the Ems Telegram",
+            "Assassinating a French minister",
+            "Invading a border town",
+            "Sinking a French ship"
+          ]
+        },
+        {
+          "q": "What happened to Napoleon III at the Battle of Sedan?",
+          "a": "He was captured along with his army",
+          "options": [
+            "He was captured along with his army",
+            "He was killed in combat",
+            "He successfully escaped to Britain",
+            "He defeated the Prussians"
+          ]
+        },
+        {
+          "q": "What treaty formally ended the Franco-Prussian War?",
+          "a": "Treaty of Frankfurt",
+          "options": [
+            "Treaty of Frankfurt",
+            "Treaty of Versailles",
+            "Treaty of Paris",
+            "Treaty of Berlin"
+          ]
+        },
+        {
+          "q": "Why did Bismarck fear a French alliance with Russia?",
+          "a": "It would force Germany into a two-front war",
+          "options": [
+            "It would force Germany into a two-front war",
+            "Russia had a stronger navy",
+            "France would buy Russian weapons",
+            "It would stop German trade"
+          ]
+        },
+        {
+          "q": "Where exactly was the new German Empire proclaimed?",
+          "a": "The Hall of Mirrors at Versailles",
+          "options": [
+            "The Hall of Mirrors at Versailles",
+            "The Louvre",
+            "The Reichstag in Berlin",
+            "Notre Dame Cathedral"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_2",
+      "title": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+      "sources": [
+        {
+          "title": "Map A: Partition of Africa (1914)",
+          "src": "assets/map_africa_1914.png",
+          "caption": ""
+        },
+        {
+          "title": "Map B: The Global Imperial Lanes",
+          "src": "/assets/great_war_map_lesson2_b.png",
+          "caption": ""
         }
       ],
-      "learning_objectives": {
-        "overarching": "How did religious conflict trigger global exploration (1517–1588)?",
-        "scaffolded": [
-          "Explain how the Protestant Reformation shattered European unity after 1517.",
-          "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
-          "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions."
+      "vocab": [
+        {
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+        },
+        {
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+        },
+        {
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+        },
+        {
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country."
+        }
+      ],
+      "extended": {
+        "question": "Explain why Kaiser Wilhelm's strategy of testing the Entente Cordiale during the Moroccan Crises was a massive strategic failure for Germany.",
+        "model": "Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany."
+      },
+      "do_now": {
+        "type": "questions",
+        "items": [
+          {
+            "question": "1. Who was the first Emperor of the newly unified Germany in 1871?",
+            "answer": "Kaiser Wilhelm I"
+          },
+          {
+            "question": "2. Which brilliant Chancellor united the German states?",
+            "answer": "Otto von Bismarck"
+          },
+          {
+            "question": "3. Which country was humiliatingly defeated in the Franco-Prussian War?",
+            "answer": "France"
+          },
+          {
+            "question": "4. What strategic border territory did Germany take in 1871?",
+            "answer": "Alsace-Lorraine"
+          },
+          {
+            "question": "5. What is the French word for their desire for revenge?",
+            "answer": "Revanche"
+          },
+          {
+            "question": "6. Explain how Bismarck used the Ems Telegram to trap France into a war.",
+            "answer": "He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride."
+          },
+          {
+            "question": "7. Detail the two military advantages the Prussian army possessed.",
+            "answer": "Advanced railway networks for rapid mobilization and superior Krupp steel artillery."
+          },
+          {
+            "question": "8. Why was the location of the German Empire's proclamation so humiliating for France?",
+            "answer": "It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty."
+          },
+          {
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "answer": "To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war."
+          },
+          {
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
+            "answer": "A two-front war against both France and Russia simultaneously."
+          }
         ]
       },
-      "banner": "/images/early_mod_l2_banner.jpg",
-      "tasks": [
+      "primary_source": {
+        "title": "Source A: John Tenniel, 'The Greedy Boy', a British political cartoon published in Punch Magazine, 1885.",
+        "src": "/assets/great_war_was_greedy_boy.png",
+        "caption": "<strong>What is this source showing?</strong> This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
+        "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.",
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.",
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word \"obstacle\" or \"encirclement\" in your answer.",
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          }
+        ],
+        "model": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire."
+      },
+      "flashcards": [
         {
-          "title": "Summary Task",
-          "type": "comprehension",
-          "question": "Summarize in two sentences how the religious conflict of the Reformation directly triggered global exploration and early colonialism by European powers.",
-          "model_answer": "The Reformation split Europe into hostile Catholic and Protestant camps, leading to intense geopolitical rivalry. To gain the upper hand, rival monarchs desperately sought new sources of wealth and new territories to spread their faith, driving them to explore and colonize the Americas."
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+        },
+        {
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+        },
+        {
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+        },
+        {
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country."
+        }
+      ],
+      "pair_share": {
+        "prompt": "If you were a British politician in 1897, would you view Kaiser Wilhelm's 'Place in the Sun' speech as a direct threat, or just a young leader showing off? Why?",
+        "think": "Jot down your view and one piece of evidence.",
+        "pair": "Discuss your views. Did your partner point out anything you missed?",
+        "share": "Be ready to share whether your partner changed your mind."
+      },
+      "historians_corner": {
+        "title": "The Primat der Innenpolitik",
+        "text": "Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
+        "stretch_question": "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
+        "stretch_model": "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/assets/great_war_was_greedy_boy.png",
+            "title": "Source A: A British political cartoon from 1897 showing Kaiser Wilhelm II."
+          },
+          {
+            "type": "written",
+            "text": "“We do not want to put anyone in the shade, but we too demand our place in the sun.”",
+            "title": "Source B: Speech by German Foreign Minister Bernhard von Bülow to the Reichstag, 1897."
+          }
+        ],
+        "topic": "the impact of Weltpolitik on international relations",
+        "model": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Kaiser Wilhelm II greedily grabbing the globe, mocking his desire for global domination.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
+      },
+      "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
+      "learning_objectives": {
+        "overarching": "To evaluate why the scramble for colonies turned empires into rivals.",
+        "scaffolded": [
+          "Identify the main European colonial powers and their territories.",
+          "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+          "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal of this lesson is to evaluate why the scramble for colonies turned empires into rivals. Ensure students understand that this wasn't just about claiming land; it was an economic race for raw materials and a strategic naval race. The Moroccan Crises serve as the key case study of how Germany's aggressive attempts to break up the British-French alliance actually pushed them closer together.",
+        "objectives": [
+          {
+            "objective": "Identify the main European colonial powers and their territories.",
+            "primer": "Direct students to paragraphs 1, 2, and 4. Have them identify Britain (largest empire, open sea routes, Suez Canal), France (North/West Africa), and Germany's late entry (Cameroons, East Africa).",
+            "question": "If you were the British Prime Minister looking at a map, why would Germany suddenly claiming colonies in Africa make you incredibly nervous about your own empire?"
+          },
+          {
+            "objective": "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+            "primer": "Focus on paragraph 3 and 4. Emphasize that Germany wasn't just claiming land; they were building a 'massive battle fleet' to defend it, which directly threatened Britain's naval supremacy and survival as an island nation.",
+            "question": "Germany claimed they had a 'legitimate right to historical greatness.' Why did Britain see this exact same ambition as an aggressive threat?"
+          },
+          {
+            "objective": "Evaluate the impact of the Moroccan Crises on the Entente Cordiale.",
+            "primer": "Read paragraphs 5, 6, and 7 as a story of a gamble gone wrong. The Kaiser tried to break the friendship between Britain and France by causing a crisis in Morocco. The key takeaway is that his 'gunboat diplomacy' backfired, pushing Britain and France into a 'much tighter military partnership.'",
+            "question": "Kaiser Wilhelm gambled that Britain wouldn't risk war to help France in Morocco. Why did his gamble actually make the alliance against Germany much stronger?"
+          }
+        ],
+        "source_context": "This cartoon references the 1884-85 Berlin Conference where Bismarck helped orchestrate the \"Scramble for Africa\". Britain, long the dominant global empire, felt deeply threatened by Germany's sudden, aggressive expansion into Africa and the Pacific (Weltpolitik), fearing it would disrupt their economic dominance. **Hinge Question:** How does this cartoon reflect the fundamental cause of the Anglo-German naval race?"
+      },
+      "vocab_cloze_text": "In the late 19th century, European powers engaged in a [Scramble for Africa]. This fierce [Imperialism] was driven by a desire for raw materials and global prestige. Every major power wanted to build a vast overseas [Empire] by taking control of another [Colony].",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=0SEgckAL-xc",
+          "title": "Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm",
+          "duration": "26 mins 6 secs",
+          "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
+          "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=efV3uZqc3so",
+          "title": "80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I",
+          "duration": "12 mins 49 secs",
+          "viewing_task": "Note down how the industrial revolution pushed European nations to scramble for African colonies.",
+          "model_answer": "The industrial revolution required massive amounts of raw materials and new markets. The Scramble for Africa allowed European powers to extract resources cheaply and sell manufactured goods back, rapidly increasing imperial wealth and military power."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=DduN1cU2p9U",
+          "title": "What was the 'Scramble for Africa'? - BBC What's New",
+          "duration": "3 mins 0 secs",
+          "viewing_task": "Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.",
+          "model_answer": "At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted."
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "text": "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership."
+        },
+        {
+          "text": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Colonies had become vital status symbols of industrial wealth and global importance. Each territory provided cheap raw materials to feed the factories of the ruling nation, while simultaneously serving as locked-down markets to purchase the home country's manufactured goods. This race had been formalized at the <strong>1884 Berlin Conference</strong>, where European leaders partitioned Africa among themselves without consulting any Africans. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
+          "level_4": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power.",
+              "model": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
+            }
+          ],
+          "theme_heading": "Imperialism's Global"
+        },
+        {
+          "text": "Great Britain possessed the vastest overseas empire in human history. Because Great Britain was an island nation, its entire imperial network relied heavily on open sea routes. Thousands of British merchant ships sailed the oceans daily, and the Royal Navy was given absolute priority to keep these global sea lanes clear of foreign rivals. Crucially, Britain controlled the <strong>Suez Canal</strong> in Egypt to secure its vital shipping lanes to India. Any challenge to this naval dominance was viewed by British politicians as a direct threat to the survival of the British Empire. France held the second-largest empire, focusing heavily on territories in North and West Africa. Having suffered the bitter humiliation of losing Alsace-Lorraine to Germany in 1871, French politicians fiercely guarded their colonies to protect their remaining international reputation. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.",
+          "level_4": "Great Britain possessed the vastest overseas empire in human history. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871?",
+              "model": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
+            }
+          ],
+          "theme_heading": "Empires"
+        },
+        {
+          "text": "The entire geopolitical landscape destabilized when Germany entered the race. Having only unified in 1871, Germany was a new nation right in the middle of Europe, but its industry was growing rapidly. The ambitious German Kaiser Wilhelm II and his politicians wanted Germany to match the global influence of Britain and France. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own \"place in the sun\".",
+          "level_4": "The entire geopolitical landscape destabilized when Germany entered the race. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own \"place in the sun\".",
+          "theme_heading": "Germany's Global"
+        },
+        {
+          "text": "Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. This aggressive push led to direct clashes. In 1911, the <strong>Agadir Crisis</strong> erupted when Germany sent a gunboat, the <strong>SMS Panther</strong>, to the Moroccan port of <strong>Agadir</strong> in an attempt to challenge French influence. The standoff ended when Germany recognized <strong>France</strong> as the protector of Morocco in exchange for minor territories in the Congo. To hold and defend this new empire, German politicians announced plans to construct a massive battle fleet. This move deeply alarmed Great Britain. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.",
+          "level_4": "Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain.",
+              "model": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
+            },
+            {
+              "type": "written",
+              "text": "What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany?",
+              "model": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
+            }
+          ],
+          "theme_heading": "German Ambition Alarms"
+        },
+        {
+          "text": "In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. Kaiser Wilhelm II of Germany was furious; he believed this friendship was designed to encircle Germany. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.",
+          "level_4": "In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.",
+          "theme_heading": "Germany Tests New Alliance"
+        },
+        {
+          "text": "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.",
+          "level_4": "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.",
+          "theme_heading": "Kaiser'"
+        },
+        {
+          "text": "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          "level_4": "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          "theme_heading": "Kaiser'"
+        },
+        {
+          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
+          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
+          "theme_heading": "Europe's"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What term describes the rapid colonization of Africa by European powers in the late 19th century?",
+          "a": "The Scramble for Africa",
+          "options": [
+            "The Scramble for Africa",
+            "The Great Game",
+            "Manifest Destiny",
+            "The African Partition"
+          ]
+        },
+        {
+          "q": "Which German leader famously stated that Germany wanted its 'place in the sun'?",
+          "a": "Kaiser Wilhelm II",
+          "options": [
+            "Kaiser Wilhelm II",
+            "Otto von Bismarck",
+            "Adolf Hitler",
+            "Paul von Hindenburg"
+          ]
+        },
+        {
+          "q": "In which year did the First Moroccan Crisis occur?",
+          "a": "1905",
+          "options": [
+            "1905",
+            "1911",
+            "1898",
+            "1914"
+          ]
+        },
+        {
+          "q": "What was the purpose of the 1884 Berlin Conference?",
+          "a": "To regulate European colonization and trade in Africa",
+          "options": [
+            "To regulate European colonization and trade in Africa",
+            "To form a military alliance against Britain",
+            "To ban slavery worldwide",
+            "To divide Asia among European powers"
+          ]
+        },
+        {
+          "q": "Which European power controlled the largest empire in Africa by 1914?",
+          "a": "Britain",
+          "options": [
+            "Britain",
+            "France",
+            "Germany",
+            "Belgium"
+          ]
+        },
+        {
+          "q": "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
+          "a": "He wanted Germany to have a global empire like Britain and France",
+          "options": [
+            "He wanted Germany to have a global empire like Britain and France",
+            "He wanted a holiday home in Africa",
+            "He wanted to conquer South America",
+            "He wanted to control the Mediterranean Sea"
+          ]
+        },
+        {
+          "q": "What happened during the First Moroccan Crisis (1905)?",
+          "a": "The Kaiser visited Tangier and declared support for Moroccan independence",
+          "options": [
+            "The Kaiser visited Tangier and declared support for Moroccan independence",
+            "Germany invaded Morocco",
+            "France surrendered Morocco to Britain",
+            "The local sultan defeated the French army"
+          ]
+        },
+        {
+          "q": "What was the main result of the Algeciras Conference (1906)?",
+          "a": "Germany was humiliated and France was given control of Moroccan police",
+          "options": [
+            "Germany was humiliated and France was given control of Moroccan police",
+            "Germany gained full control of Morocco",
+            "Morocco became fully independent",
+            "Britain took over Morocco"
+          ]
+        },
+        {
+          "q": "What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?",
+          "a": "Germany sent the gunboat Panther to the port of Agadir",
+          "options": [
+            "Germany sent the gunboat Panther to the port of Agadir",
+            "France declared war on Germany",
+            "Britain blockaded the Moroccan coast",
+            "Moroccans attacked German tourists"
+          ]
+        },
+        {
+          "q": "How did the Agadir Crisis end?",
+          "a": "Germany backed down after being given a small strip of the Congo",
+          "options": [
+            "Germany backed down after being given a small strip of the Congo",
+            "Germany successfully conquered Morocco",
+            "Britain declared war on Germany",
+            "France was forced to leave Africa"
+          ]
+        },
+        {
+          "q": "What effect did the Moroccan Crises have on Anglo-French relations?",
+          "a": "It pushed Britain and France closer together in a strong alliance",
+          "options": [
+            "It pushed Britain and France closer together in a strong alliance",
+            "It caused a war between them",
+            "It made Britain ally with Germany instead",
+            "It led to Britain abandoning its empire"
+          ]
         }
       ]
     },
     {
       "id": "lesson_3",
-      "flashcards": [
+      "title": "Why did a battleship building contest destroy Anglo-German relations?",
+      "sources": [
         {
-          "term": "Francis Drake",
-          "definition": "Circumnavigated the globe and heavily raided Spanish treasure ships."
-        },
-        {
-          "term": "John Hawkins",
-          "definition": "Cousin to Francis Drake and pioneer of the English slave trade."
-        },
-        {
-          "term": "Sir Walter Raleigh",
-          "definition": "Organized the first failed English colonization attempt at Roanoke."
-        },
-        {
-          "term": "Chief Powhatan",
-          "definition": "Leader of the [Key Individual: Chief [Key Individual: Chief [Key Individual: Chief Powhatan]]] Confederacy who interacted with Jamestown settlers."
-        },
-        {
-          "term": "John Rolfe",
-          "definition": "Introduced a profitable tobacco strain to Jamestown."
-        },
-        {
-          "term": "King James I",
-          "definition": "Sent an ambassador to the Mughal Empire."
-        },
-        {
-          "term": "Sir Thomas Roe",
-          "definition": "Sent to the court of the Mughal Emperor in 1615 to secure trading rights."
-        },
-        {
-          "term": "Emperor Jahangir",
-          "definition": "Wealthy and powerful ruler who permitted early English trade in India."
+          "title": "Map A: The North Sea & Naval Chokepoints",
+          "src": "/assets/great_war_map_lesson3.png",
+          "caption": ""
         }
       ],
-      "title": "Trade or takeover: How did early encounters turn into empire?",
-      "teacher_notes": {
-        "primer": "This lesson compares two contrasting forms of early English colonial expansion: desperate territorial settlement in North America (Roanoke/Jamestown) and polite mercantile trade with the powerful Mughal Empire in India. It aims to show students that the British Empire was not a monolithic, pre-planned military conquest, but a varied process driven by joint-stock capitalism that opportunistically shifted from trade to takeover.",
-        "objectives": [
-          {
-            "objective": "Explain how joint-stock corporations (like the East India Company and Virginia Company) funded early English expansion.",
-            "primer": "Highlight the Macro-History section on Joint-Stock Capital. Ensure students grasp that the Crown was poor, so private capitalism and shared risk drove the expansion.",
-            "question": "Why did the English rely on joint-stock companies rather than royal armies to explore and trade overseas?"
-          },
-          {
-            "objective": "Compare the early English colonial encounters in North America (Roanoke and Jamestown) with mercantile trade in Mughal India.",
-            "primer": "Use the Jamestown and Mughal India sections to draw a stark contrast. The English were aggressive and desperate in America, but submissive and polite in wealthy India.",
-            "question": "How did [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir Thomas Roe]]]'s behavior at the Mughal Court differ from the behavior of the English settlers in Virginia, and why?"
-          },
-          {
-            "objective": "Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation.",
-            "primer": "Discuss the Historical Interpretations section, particularly Tharoor's argument that joint-stock companies were always designed to extract wealth and subjugate when the opportunity arose.",
-            "question": "At what point did the East India Company transform from humble traders into a conquering force, and what allowed this to happen?"
-          }
-        ]
+      "vocab": [
+        {
+          "term": "Dreadnought",
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+        },
+        {
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+        },
+        {
+          "term": "Two-Power Standard",
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+        },
+        {
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
+        }
+      ],
+      "extended": {
+        "question": "How did the invention of the HMS Dreadnought ironically endanger British naval supremacy despite being a British invention?",
+        "model": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
       },
       "do_now": {
-        "title": "Do Now: Previous Knowledge",
         "type": "questions",
         "items": [
           {
-            "question": "In what year did Martin Luther post his 95 Theses?",
-            "answer": "1517"
+            "question": "1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "answer": "Weltpolitik (World Policy)"
           },
           {
-            "question": "What name was given to English sailors, like Francis Drake, who were given legal permission to attack Spanish ships?",
-            "answer": "Privateers"
+            "question": "2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
           },
           {
-            "question": "What was the name of the Spanish King who launched the Armada against England in 1588?",
-            "answer": "King Philip II"
+            "question": "3. Why was the Franco-Russian Alliance a strategic disaster for Germany?",
+            "answer": "It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war."
           },
           {
-            "question": "What weather event destroyed much of the fleeing Spanish Armada off the coast of Scotland?",
-            "answer": "The Protestant Wind"
+            "question": "4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           },
           {
-            "question": "Why did Queen Elizabeth I use privateers instead of the Royal Navy to challenge Spain in the Americas?",
-            "answer": "England was financially weak and lacked a large navy, so privateers were a cheap way to challenge Spain without a direct war."
+            "question": "5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
+            "answer": "Britain realized it could no longer defend its empire alone and sought European allies."
+          },
+          {
+            "question": "6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
+            "answer": "His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance."
+          },
+          {
+            "question": "7. Who dismissed Otto von Bismarck in 1890?",
+            "answer": "Kaiser Wilhelm II"
+          },
+          {
+            "question": "8. What strategic territory did Germany take from France in 1871?",
+            "answer": "Alsace-Lorraine"
+          },
+          {
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "answer": "To keep France diplomatically isolated so they could never start a revenge war."
+          },
+          {
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
+            "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
       },
-      "vocab": [
+      "primary_source": {
+        "title": "Source A: Official technical blueprint showing the design and armament of HMS Dreadnought, published in 1906.",
+        "src": "/assets/great_war_was_dreadnought_blueprint.png",
+        "caption": "<strong>What is this source showing?</strong> This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
+        "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
+            "model": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
+          }
+        ],
+        "model": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete."
+      },
+      "flashcards": [
         {
-          "term": "Joint-Stock Company",
-          "definition": "A company whose stock is owned jointly by the shareholders, spreading the financial risk of overseas ventures."
+          "term": "Dreadnought",
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
         },
         {
-          "term": "Charter",
-          "definition": "A written grant by a country's sovereign or legislative power, by which a company is created and its rights and privileges defined."
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
         },
         {
-          "term": "Mercantile",
-          "definition": "Relating to trade or commerce; commercial."
+          "term": "Two-Power Standard",
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
         },
         {
-          "term": "Subjugation",
-          "definition": "The action of bringing someone or something under domination or control."
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Who do you think was more to blame for the naval arms race: Germany for building a fleet they didn't strictly need, or Britain for refusing to share control of the seas?",
+        "think": "Decide who is more to blame and write down your main reason.",
+        "pair": "Debate your choice with your partner. Try to find a weakness in their argument.",
+        "share": "Be ready to summarize the strongest argument you heard."
+      },
+      "historians_corner": {
+        "title": "The Anglo-German Antagonism",
+        "text": "Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
+        "stretch_question": "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
+        "stretch_model": "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/assets/great_war_was_dreadnought_blueprint.png",
+            "title": "Source A: Official technical blueprint of HMS Dreadnought, 1906."
+          },
+          {
+            "type": "written",
+            "text": "“We want eight, and we won't wait!”",
+            "title": "Source B: Popular British political slogan chanted by the public in 1909."
+          }
+        ],
+        "topic": "the effects of the Anglo-German naval arms race",
+        "model": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
+      },
+      "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
+      "learning_objectives": {
+        "overarching": "To analyze how the naval arms race heightened tensions between Britain and Germany.",
+        "scaffolded": [
+          "Identify the significance of the HMS Dreadnought.",
+          "Explain the concept of the Two-Power Standard and Risk Theory.",
+          "Analyze how naval competition fed mutual suspicion."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal is to analyze how the naval arms race heightened tensions between Britain and Germany. The key concept here is the 'security dilemma': Britain built ships to feel safe, which made Germany feel unsafe, so Germany built ships, which made Britain feel unsafe. The HMS Dreadnought is the central turning point in this escalation.",
+        "objectives": [
+          {
+            "objective": "Identify the significance of the HMS Dreadnought.",
+            "primer": "Point students to paragraph 4 and 7. The HMS Dreadnought was so advanced it rendered all existing battleships 'obsolete overnight.' This is the crucial point to emphasize: it wiped out Britain's massive head start.",
+            "question": "The HMS Dreadnought was a triumph of British engineering, but why did launching it actually help Germany in the short term?"
+          },
+          {
+            "objective": "Explain the concept of the Two-Power Standard and Risk Theory.",
+            "primer": "Focus on paragraph 1 (Two-Power Standard) and paragraph 2 (Tirpitz's Navy Laws). Ensure students understand that Britain needed its navy to be bigger than the next two combined to survive, while Germany built its navy specifically to challenge that dominance.",
+            "question": "If you were a German citizen listening to Admiral Tirpitz, why might you feel it was perfectly fair and justified for Germany to build a massive navy?"
+          },
+          {
+            "objective": "Analyze how naval competition fed mutual suspicion.",
+            "primer": "Bring their attention to paragraph 8. The race was no longer about total ships, but about Dreadnoughts. This created a 'desperate scramble' that consumed the budgets and politics of both nations, destroying any trust between them.",
+            "question": "How does a massive arms race make war more likely, even if neither country originally planned to actually attack the other?"
+          }
+        ],
+        "source_context": "Launched in 1906, HMS Dreadnought was so heavily armored and carried such massive guns that it instantly made every older battleship in the world obsolete. Ironically, while intended to secure British naval supremacy, it effectively reset the naval arms race to zero, allowing Germany to start building their own Dreadnoughts on an equal footing. **Hinge Question:** Why did the launch of a single ship effectively reset the global balance of naval power?"
+      },
+      "vocab_cloze_text": "Britain's traditional [Naval Supremacy] was challenged when Germany began a rapid naval buildup. This sparked a fierce [Arms Race] between the two nations. Britain relied on the [Two-Power Standard] to maintain a massive fleet, but the invention of the heavily-armed [Dreadnought] battleship reset the competition.",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=-osfjjJuY6U",
+          "title": "Anglo-German Dreadnought Arms Race - Anything you can build I can build better!",
+          "duration": "32 mins 1 sec",
+          "viewing_task": "Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.",
+          "model_answer": "The Dreadnought made all older ships obsolete, effectively resetting the naval race to zero. This gave Germany a realistic chance to challenge British naval supremacy from scratch, escalating tensions as both sides scrambled to out-build each other."
         },
         {
-          "term": "Factory",
-          "definition": "In the 17th century, a fortified trading post or warehouse established by a merchant company in a foreign country."
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=yryey5NVODs",
+          "title": "14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law",
+          "duration": "2 mins 35 secs",
+          "viewing_task": "Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.",
+          "model_answer": "The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=qmYJUYwsZqY",
+          "title": "67. Anglo-German Relations",
+          "duration": "52 mins 22 secs",
+          "viewing_task": "Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.",
+          "model_answer": "Public opinion in both countries was whipped up by nationalist groups like the German Navy League and the British press. This turned the naval rivalry from a government policy into a fierce matter of national pride and paranoia."
         }
       ],
       "narrative_blocks": [
         {
-          "title": "Micro-History: Matoaka in London (1616)",
-          "text": "In the winter of 1616, a 21-year-old Algonquin woman named Matoaka—popularly known as [Key Individual: Pocahontas]—arrived at the court of [Key Individual: King [Key Individual: King [Key Individual: King James I]]] in London.<br><br>She was dressed not in the traditional deer skins of her Powhatan homeland in North America, but in heavy English velvet, lace ruffles, and a tall felt hat. Rechristened \"Rebecca Rolfe\" following her conversion to Christianity and marriage to English tobacco planter [Key Individual: John Rolfe], she was brought to England by the <strong>Virginia Company</strong> as a living advertisement.<br><br>To the rich investors of London, Matoaka was proof that native populations in the \"New World\" could be tamed, converted, and integrated into a profitable English empire. But the reality back in North America was far grim. Matoaka had been kidnapped three years earlier by English colonists during a bloody border war. Within months of her court appearance in London, as she boarded a ship to return home, she fell ill and died at Gravesend on the River Thames.<br><br>Matoaka’s tragic life encapsulated the reality of early British expansion: what began as desperate, fragile trade encounters between unequal powers rapidly hardened into violent land seizures and permanent imperial domination.",
+          "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
+        },
+        {
+          "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+          "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Why was Matoaka brought to the court of King James I in London?",
-              "model_answer": "She was brought by the Virginia Company as a living advertisement to prove to rich investors that native populations could be converted to Christianity, civilized, and integrated into a profitable English empire."
+              "type": "written",
+              "text": "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy.",
+              "model": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
             }
           ],
-          "images": [
+          "theme_heading": "British Naval Dominance"
+        },
+        {
+          "text": "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. The Kaiser believed that if Germany was ever to become a true world power, it had to explicitly challenge the global dominance of the British fleet. In 1898 and 1900, the German government passed the historic German Navy Laws, which ordered the rapid construction of a massive fleet, including 19 battleships in the first law and an additional 38 in the second. To back this policy, the German naval chief, Admiral Tirpitz, established the Navy League. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
+          "level_4": "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
+          "tasks": [
             {
-              "image": "The Thirteen Factories at Canton (Guangzhou), China.",
-              "image_alt": "The Thirteen Factories at Canton",
-              "image_context": "Observe the national flags flying outside the trading posts (including Denmark, Spain, USA, Sweden, Britain, and the Netherlands) along the Pearl River. Unlike the militarised forts in India, Qing dynasty authorities strictly prohibited foreign merchants from building military fortifications or stationing troops here. These were purely commercial leased warehouses. **Hinge Question:** What does the presence of multiple international flags, rather than a single European military fort, suggest about who held the real power in Canton?",
-              "src": "/images/early_mod_l3_banner.jpg",
-              "image_caption": "An early 19th-century painting showing the Thirteen Factories in Canton (Guangzhou). This was a designated trading enclave where foreign merchants were permitted to do business, strictly controlled by Chinese authorities without any European military fortifications.",
-              "source_letter": "A"
+              "type": "written",
+              "text": "Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct.",
+              "model": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
             },
             {
-              "image": "/images/pocahontas.jpg",
-              "image_alt": "Engraving of Pocahontas (1616)",
-              "image_context": "Notice that [Key Individual: Pocahontas] is dressed entirely in elite, formal English aristocratic clothing, not traditional Powhatan attire. This engraving was deliberately circulated in London as propaganda to prove that Native Americans could be 'civilized' and assimilated into English culture, encouraging more investment in the Virginia colony. **Hinge Question:** Does this portrait tell us more about [Key Individual: Pocahontas]'s actual identity, or about what the English wanted to see?",
-              "image_caption": "A 1616 engraving of Matoaka (Pocahontas) by Simon van de Passe. She was dressed in English court fashion and presented to London society as 'Lady Rebecca'—a deliberate piece of propaganda by the Virginia Company to project success and secure financial investment for the struggling Jamestown colony.",
-              "source_letter": "B"
-            }
-          ]
-        },
-        {
-          "title": "Macro-History: The Big Picture",
-          "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, [Key Individual: John Rolfe] introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by [Key Individual: Emperor [Key Individual: Emperor [Key Individual: Emperor Jahangir]]].<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India."
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/sir_thomas_roe.jpg",
-          "image_alt": "Sir Thomas Roe at the Mughal Court (1615)",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "How did the funding of early English colonial expansion differ from the Spanish model?",
-              "model_answer": "Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them."
-            }
-          ]
-        },
-        {
-          "title": "Justifying Empire: Religion vs. Profit",
-          "text": "<blockquote><strong>Source B: From the First Charter of the Virginia Company (1606)</strong><br><em>\"We greatly commend their desires for the furtherance of so noble a work, which may, by the Providence of Almighty God, hereafter tend to the Glory of His Divine Majesty, in propagating of Christian Religion to such People as yet live in Ignorance and miserable Barbarism, and may in time bring the infidels and savages living in those parts to human civility...\"</em></blockquote><br><br><blockquote><strong>Source C: From the Journal of Sir Thomas Roe at the Mughal Court (1616)</strong><br><em>\"The Emperor Jahangir hath rich carpets, thrones of solid gold, and jewels beyond counting. He treats our King’s letters with polite indifference, viewing us as small traders from a cold, poor island... He cares nothing for our goods, save for clockwork toys and English hunting dogs, but he permits us to trade so long as we pay our taxes and remain obedient subjects.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "What was the primary motivation stated in Source B for colonizing Virginia, and why might the Virginia Company emphasize religious duty over profit?",
-              "model_answer": "Source B states that the primary motivation was to spread the Christian religion to \"savages\" and bring them to \"human civility\". The Virginia Company likely emphasized this religious duty to gain moral and royal approval, masking their underlying desire for profit and making the colonial venture seem like a noble, God-ordained mission."
+              "type": "written",
+              "text": "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet.",
+              "model": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
             },
             {
-              "type": "source_analysis",
-              "question": "Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas English settlers in Virginia acted aggressively toward Native Americans.",
-              "model_answer": "Source C shows that the Mughal Empire was incredibly wealthy..."
-            }
-          ]
-        },
-        {
-          "title": "Vocabulary Check: Building Empires",
-          "text": "Understanding how the British Empire was built requires some specific historical vocabulary.",
-          "tasks": []
-        },
-        {
-          "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
-          "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source D",
-          "image": "/images/jamestown_fort.jpg",
-          "image_alt": "Plan of James Fort in Virginia (1607)",
-          "source_letter": "D",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "What does the design of the Jamestown Fort suggest about the relationship between the English settlers and the local indigenous population?",
-              "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
-            }
-          ]
-        },
-        {
-          "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
-          "text": "<blockquote><strong>Historian Perspective A: [Key Individual: Sir [Key Individual: Sir [Key Individual: Sir John Seeley]]] (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: [Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Shashi Tharoor]]] (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How do Perspective A and Perspective B disagree on the origins of the British Empire?",
-              "model_answer": "Perspective A argues the Empire was an \"accidental\" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible."
-            }
-          ]
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": []
-        },
-        {
-          "title": "Side Quest: The Invasion of the Pigs",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Invasion of the Pigs</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_secotan.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source E:</strong> John White's authentic 1585 watercolor painting of the Algonquian village of Secotan, showing their carefully managed, unfenced corn fields.</i>\n</div>\n<p>When textbooks talk about the English colonization of North America, they focus on guns, land treaties, and tobacco. But one of the most destructive weapons the English brought to Jamestown was the common pig. The Algonquian Powhatan people did not use fences; they carefully managed open forests and planted complex, exposed fields of corn, beans, and squash. The English, however, let their livestock roam wild. Hundreds of English pigs invaded the forests, devouring the natives' crops, destroying the roots of native plants, and wrecking the delicate ecological balance that the Powhatan relied on for survival. For the Indigenous people, the English were not just a military threat; they were an ecological disaster that literally ate the local food supply.</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How does this 'ground-up' detail change our understanding of why Native Americans became hostile to the Jamestown settlers?",
-              "model_answer": "It shows that hostility wasn't just about politics or land ownership; it was a desperate reaction to an ecological disaster that was literally eating their food supply."
+              "type": "written",
+              "text": "Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany.",
+              "model": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
             }
           ],
-          "source_letter": "G"
+          "theme_heading": "Germany's Naval Challenge"
         },
         {
-          "title": "Plenary Check",
-          "text": "Let's test your understanding of how early trade turned into empire."
+          "text": "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
+          "level_4": "British politicians were profoundly alarmed by Germany's actions. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
+          "theme_heading": "British Fear German Navy"
         },
         {
-          "title": "The Rise of the East India Company",
-          "text": "By 1600, the nature of empire was shifting from religious crusade to corporate monopoly. The English Crown granted a charter to the East India Company (EIC), a ruthless joint-stock corporation that built its own private army. The EIC eventually transitioned from trading spices in India to outright territorial conquest, laying the foundations for the British Empire in Asia.",
+          "text": "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. Launched in 1906, this vessel was so advanced in its speed, armor plating, and long-range rotating turrets that every existing battleship on earth was rendered instantly obsolete overnight. Rather than stopping the competition, HMS <em>Dreadnought</em> inadvertently reset the score to zero, giving Germany a chance to compete on equal terms. Germany immediately responded by manufacturing its own version of the battleship, the <em>SMS Rheinland</em>. The naval arms race was officially underway, with both nations building more and more of these massive, expensive weapons. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
+          "level_4": "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "How did the East India Company change the nature of British empire-building?",
-              "model_answer": "It shifted the focus from religious conflict to corporate profit, using a private company with its own army to conquer territory and monopolize trade in India."
+              "type": "written",
+              "text": "Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships.",
+              "model": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
             }
-          ]
+          ],
+          "theme_heading": "Naval Arms Race Begins"
+        },
+        {
+          "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong></strong> in Scotland, while the German High Seas Fleet was based at <strong></strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong></strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+          "level_4": "This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+          "theme_heading": "Naval Standoff Prepar"
+        },
+        {
+          "text": "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. Germany, despite passing ambitious Naval Laws under Admiral von Tirpitz, was struggling to catch up. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
+          "level_4": "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
+          "theme_heading": "Naval Power Shift"
+        },
+        {
+          "text": "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
+          "level_4": "The HMS Dreadnought was a technological marvel. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
+          "theme_heading": "Naval Revolution'"
+        },
+        {
+          "text": "Germany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          "level_4": "Germany recognized the opportunity immediately. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          "tasks": [
+            {
+              "type": "written",
+              "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo.",
+              "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
+            }
+          ],
+          "theme_heading": "Dreadnought Arms"
         }
       ],
       "quiz": [
         {
-          "question": "What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?",
+          "q": "What revolutionary British battleship was launched in 1906?",
+          "a": "HMS Dreadnought",
           "options": [
-            "Royal Monopolies",
-            "Feudal Guilds",
-            "State-Owned Enterprises",
-            "Joint-Stock Companies"
-          ],
-          "answer": 3,
-          "explanation": "Joint-Stock Companies"
+            "HMS Dreadnought",
+            "HMS Victory",
+            "HMS Belfast",
+            "HMS Invincible"
+          ]
         },
         {
-          "question": "On which island was the famous \"Lost Colony\" of 1585 founded by Sir Walter Raleigh?",
+          "q": "Which German Admiral was in charge of expanding the German Navy?",
+          "a": "Admiral von Tirpitz",
           "options": [
-            "Jamestown Island",
-            "Roanoke Island",
-            "Manhattan Island",
-            "Bermuda"
-          ],
-          "answer": 1,
-          "explanation": "Roanoke Island"
+            "Admiral von Tirpitz",
+            "Admiral Scheer",
+            "Admiral Hipper",
+            "Kaiser Wilhelm II"
+          ]
         },
         {
-          "question": "What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?",
+          "q": "What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?",
+          "a": "Two-Power Standard",
           "options": [
-            "DANGER",
-            "FAMINE",
-            "ABANDONED",
-            "CROATOAN"
-          ],
-          "answer": 3,
-          "explanation": "CROATOAN"
+            "Two-Power Standard",
+            "Splendid Isolation",
+            "Naval Supremacy Act",
+            "Dreadnought Rule"
+          ]
         },
         {
-          "question": "What was the name of the first permanent English settlement established in North America in 1607?",
+          "q": "Why was the HMS Dreadnought completely revolutionary?",
+          "a": "It was faster, heavier armored, and had all 'big-guns'",
           "options": [
-            "Plymouth",
-            "Jamestown",
-            "Boston",
-            "Williamsburg"
-          ],
-          "answer": 1,
-          "explanation": "Jamestown"
+            "It was faster, heavier armored, and had all 'big-guns'",
+            "It was the first submarine",
+            "It could launch airplanes",
+            "It was completely invisible to radar"
+          ]
         },
         {
-          "question": "Which cash crop introduced by [Key Individual: John Rolfe] saved the Jamestown colony from economic ruin?",
+          "q": "What was the consequence of the Dreadnought's launch?",
+          "a": "It made all older battleships instantly obsolete, resetting the naval race",
           "options": [
-            "Cotton",
-            "Tobacco",
-            "Sugar",
-            "Indigo"
-          ],
-          "answer": 1,
-          "explanation": "Tobacco"
+            "It made all older battleships instantly obsolete, resetting the naval race",
+            "Germany immediately surrendered",
+            "Britain stopped building ships",
+            "France allied with Germany"
+          ]
         },
         {
-          "question": "What was the title of the native ruler who led the Powhatan Confederacy when the English arrived in Virginia?",
+          "q": "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
+          "a": "Building a navy large enough that Britain wouldn't risk fighting it",
           "options": [
-            "Chief Sitting Bull",
-            "Chief Powhatan (Wahunsenacawh)",
-            "Chief Pontiac",
-            "Chief Tecumseh"
-          ],
-          "answer": 1,
-          "explanation": "Chief Powhatan (Wahunsenacawh)"
+            "Building a navy large enough that Britain wouldn't risk fighting it",
+            "Attacking Britain immediately",
+            "Building only submarines",
+            "Refusing to build any ships to avoid angering Britain"
+          ]
         },
         {
-          "question": "In what year was the English East India Company (EIC) granted its royal charter by Queen Elizabeth I?",
+          "q": "What slogan did the British public chant in 1909 to demand more ships?",
+          "a": "'We want eight and we won't wait!'",
           "options": [
-            "1600",
-            "1492",
-            "1588",
-            "1620"
-          ],
-          "answer": 0,
-          "explanation": "1600"
+            "'We want eight and we won't wait!'",
+            "'Rule Britannia!'",
+            "'Sink the Kaiser!'",
+            "'More dreadnoughts now!'"
+          ]
         },
         {
-          "question": "Which powerful Muslim empire ruled India during the 17th century when the English first arrived?",
+          "q": "Why did Britain feel so threatened by the German naval expansion?",
+          "a": "Britain is an island and relied entirely on its navy for survival and trade",
           "options": [
-            "The Ottoman Empire",
-            "The Safavid Empire",
-            "The Maratha Empire",
-            "The Mughal Empire"
-          ],
-          "answer": 3,
-          "explanation": "The Mughal Empire"
+            "Britain is an island and relied entirely on its navy for survival and trade",
+            "They were worried Germany would steal their ships",
+            "They wanted to attack Germany",
+            "They had no army at all"
+          ]
         },
         {
-          "question": "Name the English ambassador sent by King James I to bow before Emperor Jahangir in 1615.",
+          "q": "What laws were passed in Germany to fund their massive naval buildup?",
+          "a": "The Naval Laws of 1898 and 1900",
           "options": [
-            "Sir Walter Raleigh",
-            "Sir Thomas Roe",
-            "Sir Francis Drake",
-            "Sir John Hawkins"
-          ],
-          "answer": 1,
-          "explanation": "Sir Thomas Roe"
+            "The Naval Laws of 1898 and 1900",
+            "The Shipyard Acts",
+            "The Tirpitz Decrees",
+            "The Imperial Fleet Bills"
+          ]
         },
         {
-          "question": "What term was used to describe the fortified warehouse trading posts established by the EIC along the Indian coast?",
+          "q": "By 1914, who had won the naval race?",
+          "a": "Britain, with 29 dreadnoughts to Germany's 17",
           "options": [
-            "Fortresses",
-            "Factories",
-            "Emporiums",
-            "Citadels"
-          ],
-          "answer": 1,
-          "explanation": "Factories"
-        }
-      ],
-      "learning_objectives": {
-        "overarching": "How did early encounters turn into empire? (East India Company, Jamestown/Roanoke)",
-        "scaffolded": [
-          "Explain how joint-stock corporations (like the East India Company and Virginia Company) funded early English expansion.",
-          "Compare the early English colonial encounters in North America (Roanoke and Jamestown) with mercantile trade in Mughal India.",
-          "Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation."
-        ]
-      },
-      "banner": "/images/early_mod_l3_banner.jpg",
-      "video": [
-        {
-          "url": "https://era.org.uk/streaming-service-resource/roanoke-horrible-histories/",
-          "title": "Roanoke (Horrible Histories)"
+            "Britain, with 29 dreadnoughts to Germany's 17",
+            "Germany, with 30 dreadnoughts to Britain's 10",
+            "They had exactly the same number",
+            "France overtook both of them"
+          ]
         },
         {
-          "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
-          "title": "Joint-Stock Companies: Empire with David Olusoga"
+          "q": "How did the naval race affect British foreign policy?",
+          "a": "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+          "options": [
+            "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+            "It made them ally with Germany",
+            "It caused them to declare war on America",
+            "It made them give up their empire"
+          ]
         }
       ]
     },
     {
       "id": "lesson_4",
-      "flashcards": [
+      "title": "Did the Alliance System protect Europe or guarantee a global war?",
+      "sources": [
         {
-          "term": "King Charles I",
-          "definition": "Believed in the Divine Right of Kings; executed by Parliament in 1649."
+          "title": "Diagram A: The Alliance System (1914)",
+          "src": "/assets/great_war_alliance_system.svg",
+          "caption": "The complex web of treaties that dragged Europe into a global war."
         },
         {
-          "term": "Oliver Cromwell",
-          "definition": "Strict Puritan commander of the New Model Army."
-        },
-        {
-          "term": "John Bradshaw",
-          "definition": "Presided over the trial of King Charles I."
-        },
-        {
-          "term": "Martin Noell",
-          "definition": "Wealthy merchant, slave trader, and pamphleteer."
-        },
-        {
-          "term": "King Charles II",
-          "definition": "Returned to the throne during the Restoration in 1660."
+          "title": "Map A: European Military Alliance Blocs (1914)",
+          "src": "/assets/great_war_map_lesson4.png",
+          "caption": "",
+          "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
         }
       ],
-      "title": "Who controlled Britain? The Ideological Battle",
-      "teacher_notes": {
-        "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
-        "objectives": [
-          {
-            "objective": "Analyze why [Key Individual: King [Key Individual: King [Key Individual: King Charles I]]] and Parliament fought the English Civil War (1642–1651).",
-            "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
-            "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
-          },
-          {
-            "objective": "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
-            "primer": "Use the 'Atlantic Merchants' tab and Source A to show how Caribbean sugar profits directly funded the New Model Army.",
-            "question": "How did the switch to sugar production in Barbados financially impact the outcome of the English Civil War?"
-          },
-          {
-            "objective": "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.",
-            "primer": "Use the Historical Interpretations section at the end of the lesson to have students weigh Prof. Hill's political view against Prof. Williams' economic view.",
-            "question": "Based on the evidence, was the English Civil War ultimately won by religious ideals or by mercantile wealth?"
-          }
-        ]
+      "vocab": [
+        {
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+        },
+        {
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+        },
+        {
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
+        },
+        {
+          "term": "Encirclement",
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+        }
+      ],
+      "extended": {
+        "question": "Was the 'Blank Check' a reckless mistake by the Kaiser, or a calculated move by the German military to trigger a necessary war? Use historical reasoning to justify your stance.",
+        "model": "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late."
       },
       "do_now": {
-        "title": "Do Now: Previous Knowledge",
         "type": "questions",
         "items": [
           {
-            "question": "What was the name of the first permanent English settlement in North America (1607)?",
-            "answer": "Jamestown"
+            "question": "1. What revolutionary British battleship was launched in 1906?",
+            "answer": "HMS Dreadnought"
           },
           {
-            "question": "Which cash crop saved the Jamestown colony from economic ruin?",
-            "answer": "Tobacco"
+            "question": "2. What was the 'Two-Power Standard'?",
+            "answer": "A British policy stating their navy must be as large as the next two rival navies combined."
           },
           {
-            "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
-            "answer": "A Joint-Stock Company"
+            "question": "3. Why did Germany feel it needed a massive high seas fleet?",
+            "answer": "To protect their growing global trade and forcefully assert their status as a top-tier world power."
           },
           {
-            "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
-            "answer": "The Mughal Empire"
+            "question": "4. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
-            "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
-            "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
+            "question": "5. What was the popular British slogan chanted by the public in 1909?",
+            "answer": "We want eight, and we won't wait!"
+          },
+          {
+            "question": "6. Why did Britain feel their survival depended on massive naval supremacy?",
+            "answer": "As an island nation, Britain relied on the sea to import food and defend its global empire."
+          },
+          {
+            "question": "7. How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
+          },
+          {
+            "question": "8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "answer": "Weltpolitik (World Policy)"
+          },
+          {
+            "question": "9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
+          },
+          {
+            "question": "10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           }
         ]
       },
-      "vocab": [
+      "primary_source": {
+        "title": "Source A: 'The Chain of Friendship', an American cartoon published in the Brooklyn Eagle, July 1914.",
+        "src": "/assets/great_war_was_military_matrix.png",
+        "caption": "<strong>What is this source showing?</strong> This cartoon shows how the complex web of alliances dragged all the European powers into war. Serbia is threatened by Austria, who is threatened by Russia, who is threatened by Germany, and so on.",
+        "question": "Enquiry: Study the intertwined hands and figures in this map. What does it suggest about how a local conflict might spread?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Identify which figure represents Germany and explain how you know.",
+            "model": "The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia."
+          },
+          {
+            "type": "written",
+            "text": "Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.",
+            "model": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
+          }
+        ],
+        "model": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war."
+      },
+      "flashcards": [
         {
-          "term": "Divine Right of Kings",
-          "definition": "The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament."
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
         },
         {
-          "term": "New Model Army",
-          "definition": "A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War."
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
         },
         {
-          "term": "Commonwealth",
-          "definition": "The republic that ruled England from 1649 to 1660 following the execution of Charles I."
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
         },
         {
-          "term": "Plantation",
-          "definition": "An estate on which crops such as coffee, sugar, and tobacco are cultivated by resident labor, frequently enslaved labor."
-        },
-        {
-          "term": "Navigation Acts",
-          "definition": "Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth."
+          "term": "Encirclement",
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
         }
       ],
-      "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
+      "pair_share": {
+        "prompt": "Imagine you are an ordinary Serbian citizen in 1908. Why would Austria-Hungary's aggressive takeover of Bosnia make you feel personally threatened?",
+        "think": "Write down how you would feel and why.",
+        "pair": "Share your perspective with your partner.",
+        "share": "Be prepared to share an interesting insight from your discussion."
+      },
+      "historians_corner": {
+        "title": "The 'Powder Keg' Inevitability",
+        "text": "Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.",
+        "stretch_question": "Do you agree with Richard Evans that war was \"inevitable\" in the Balkans, or could diplomacy have dismantled the \"doomsday machine\"?",
+        "stretch_model": "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/assets/great_war_balkans_1914_simple_map.png",
+            "title": "Source A: Map of the Balkans showing the expansion of Serbia after 1913."
+          },
+          {
+            "type": "written",
+            "text": "“Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”",
+            "title": "Source B: Diary entry of the Austro-Hungarian Chief of Staff, Conrad von Hötzendorf, 1913."
+          }
+        ],
+        "topic": "the threat posed by Serbia to Austria-Hungary",
+        "model": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
+      },
+      "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
+      "learning_objectives": {
+        "overarching": "To evaluate whether the alliance system provided security or created a dangerous threat.",
+        "scaffolded": [
+          "Identify the members of the Triple Alliance and the Triple Entente.",
+          "Explain why countries felt the need to form secret defensive treaties.",
+          "Evaluate how the alliance system could drag all of Europe into a regional conflict."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal is to evaluate whether the alliance system provided security or created a dangerous threat. Students need to grasp the tragic irony of the alliances: they were built to act as a deterrent to stop wars, but they acted as a conveyor belt that dragged everyone into a global conflict once a local crisis broke out.",
+        "objectives": [
+          {
+            "objective": "Identify the members of the Triple Alliance and the Triple Entente.",
+            "primer": "This is a direct recall task from paragraph 2. Ensure they correctly identify the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Great Britain, France, Russia).",
+            "question": "Looking at a map of Europe, what is Germany's biggest geographic nightmare when facing the Triple Entente?"
+          },
+          {
+            "objective": "Explain why countries felt the need to form secret defensive treaties.",
+            "primer": "Focus on paragraph 1 and 3. The initial goal was deterrence—the logic that no one would attack a country if it meant fighting a whole alliance. However, as paragraph 3 shows, it bred 'intense suspicion and paranoia' instead.",
+            "question": "The alliances were designed to be purely defensive to keep countries safe. Why did they end up doing the exact opposite?"
+          },
+          {
+            "objective": "Evaluate how the alliance system could drag all of Europe into a regional conflict.",
+            "primer": "Focus on paragraphs 5 and 7. The 'Blank Check' is the perfect example. Because of the alliance system, Germany felt forced to back Austria unconditionally, which guaranteed a local Balkan crisis would explode into a continental war.",
+            "question": "Do you think Kaiser Wilhelm II gave Austria the 'Blank Check' because he actually wanted a world war, or because he felt trapped by the alliance system?"
+          }
+        ],
+        "source_context": "This cartoon perfectly illustrates how the alliance system functioned as a 'doomsday machine'. A localized dispute in the Balkans quickly cascaded into a global conflict because each nation was bound to protect its ally. **Hinge Question:** How does this cartoon demonstrate the inherent danger of mutual defense treaties?"
+      },
+      "vocab_cloze_text": "Bismarck feared a two-front war and created the [Reinsurance Treaty] to keep Russia friendly. However, after his dismissal, Germany faced a nightmare scenario: [Encirclement] by hostile powers. Europe split into two armed camps: the [Triple Entente] (Britain, France, Russia) and the [Triple Alliance] (Germany, Austria-Hungary, Italy).",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=f11CKYB2FCA",
+          "title": "Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3",
+          "duration": "9 mins 47 secs",
+          "viewing_task": "Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.",
+          "model_answer": "The alliance system was formed as countries sought security in an increasingly competitive Europe. The secret, defensive nature of these treaties was intended as a deterrent, but instead bred intense suspicion and paranoia, turning Europe into two armed camps."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=dYrofaDfMKI",
+          "title": "Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3",
+          "duration": "7 mins 37 secs",
+          "viewing_task": "Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.",
+          "model_answer": "The alliance system acted like a 'doomsday machine'. Because nations were strictly bound to protect their allies, the local dispute between Austria-Hungary and Serbia quickly dragged all the major European powers into a global conflict."
+        }
+      ],
       "narrative_blocks": [
         {
-          "title": "Micro-History: The Executioner’s Block (27 January 1649)",
-          "text": "At 2:00 PM on Tuesday, 30 January 1649, a man in a black velvet coat stepped out of a window of the Banqueting House in Whitehall, London, onto a wooden scaffold draped in black cloth.<br><br>The man was <strong>King Charles I</strong>. Below him stood thousands of silent onlookers, surrounded by ranks of iron-armored cavalry. For seven years, England had been ripped apart by a bloody Civil War that cost the lives of nearly 200,000 people—a higher proportion of the population than died in the First World War.<br><br>Charles put his head on the wooden block. He stretched out his hands—the prearranged signal—and the masked executioner’s axe severed his head with a single blow. The executioner held the dripping head aloft and shouted: <em>\"Behold the head of a traitor!\"</em><br><br>A collective groan echoed through the crowd. Never before in European history had a monarch been put on trial, condemned, and executed by his own Parliament.<br><br><strong>But who was really pulling the strings?</strong> Was this victory brought about by high-minded Parliamentary ideals of liberty? Or was it secretly fueled by a new class of ultra-rich Atlantic merchants whose sugar and tobacco profits were reshaping the British state?",
+          "text": "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
+        },
+        {
+          "text": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding military alliances. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.",
+          "level_4": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.",
+          "theme_heading": "Europe's Alliance System"
+        },
+        {
+          "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong></strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong></strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
+          "level_4": "By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Why was the execution of King Charles I such a shocking event in European history?",
-              "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
-            }
-          ],
-          "images": [
-            {
-              "image": "/images/early_mod_l4_banner.jpg",
-              "image_alt": "Coat of Arms of Great Britain (1707–1714)",
-              "image_context": "Look closely at the shield (escutcheon) in the centre. In the first and fourth quarters, the English lions and the Scottish lion rampant are impaled (joined) together. This heraldic blending on the shield represents the 1707 Act of Union, which formally joined England and Scotland into a single political entity: Great Britain. The supporters holding the shield—the English lion and the Scottish unicorn—had actually been paired together much earlier, since the 1603 Union of the Crowns under King James I. **Hinge Question:** Why was it so important for the monarch to create a single, unified visual identity for the newly formed nation?",
-              "image_caption": "The Coat of Arms of Great Britain following the Hanoverian succession in 1714. This era saw the stabilization of a constitutional monarchy where Parliament, rather than the King, held ultimate financial and political authority.",
-              "source_letter": "A"
+              "type": "written",
+              "text": "Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907.",
+              "model": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
             },
             {
-              "image": "/images/charles_i_execution.jpg",
-              "image_alt": "Execution of King Charles I (1649)",
-              "image_context": "Observe the massive, chaotic crowd witnessing the unthinkable: the public beheading of a divinely appointed monarch. This shocking event permanently shattered the concept of the 'Divine Right of Kings' in England and sent shockwaves of terror through every royal court in Europe. **Hinge Question:** How did the execution of Charles I permanently change the balance of power between the Monarchy and Parliament?",
-              "image_caption": "A contemporary engraving by John Weesop depicting the execution of King Charles I outside the Banqueting House in Whitehall, 1649. His trial and execution for high treason marked a radical shift in power, proving that an English monarch could be held legally accountable by his own subjects.",
-              "source_letter": "B"
-            }
-          ]
-        },
-        {
-          "title": "The Three-Way Tug-of-War for Power (1642–1660)",
-          "text": "To understand this chaotic era, we must investigate three competing forces battling for the soul—and wealth—of Britain.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;\">    <div style=\"background: #ef4444; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold;\">        THE CROWN (Charles I)<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Divine Right of Kings\"</span>    </div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #3b82f6; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            PARLIAMENT<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Godly Governance & Rights\"</span>        </div>        <div style=\"font-size: 1.5rem; font-weight: bold; color: #64748b;\">VS</div>        <div style=\"background: #10b981; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            ATLANTIC MERCHANTS<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Sugar, Tobacco & Empire\"</span>        </div>    </div></div><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 20px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"btn1\" onclick=\"document.getElementById('c1').style.display='block'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#fff'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">1. The Crown</button>        <button id=\"btn2\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='block'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#fff'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">2. Parliament</button>        <button id=\"btn3\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='block'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#fff';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; cursor: pointer; font-weight: bold; font-size: 1rem;\">3. Atlantic Merchants</button>    </div>    <div id=\"c1\" style=\"padding: 20px; display: block;\">        <h3 style=\"margin-top: 0;\">Contender 1: The King & \"Divine Right\" (Charles I)</h3>        <p>Charles I believed in the <strong>Divine Right of Kings</strong>—the conviction that God alone chose monarchs to rule, making royal authority absolute.</p>        <ul><li><strong>The Spark:</strong> Between 1629 and 1640, Charles ruled without calling Parliament at all (<strong>The Eleven Years' Tyranny</strong>). To raise money without Parliament's consent, he forced illegal taxes on the nation, such as <strong>Ship Money</strong>.</li><li><strong>The Explosion:</strong> When Charles marched into the House of Commons with 400 armed soldiers in 1642 to arrest five MP leaders, Parliament revolted. War broke out: <strong>Royalists (Cavaliers)</strong> supporting the King vs. <strong>Parliamentarians (Roundheads)</strong> fighting for parliamentary consent.</li></ul>    </div>    <div id=\"c2\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 2: Parliament & [Key Individual: Oliver Cromwell]’s New Model Army</h3>        <p>Parliament won the Civil War not because of noble speeches, but because of a revolutionary military machine: <strong>The New Model Army</strong>.</p>        <p>Led by a strict Puritan country gentleman named <strong>[Key Individual: Oliver Cromwell]</strong>, this army was built on merit rather than noble birth. Soldiers sang religious psalms as they charged into battle at Naseby (1645) and Preston (1648).</p>        <p>When Charles I was executed in 1649, monarchy was abolished. Britain was declared a republic: <strong>The Commonwealth of England</strong>. By 1653, Cromwell dismissed Parliament at swordpoint, taking total power as <strong>Lord Protector</strong>—a military dictator who banned Christmas, theater, and sports.</p>    </div>    <div id=\"c3\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 3: The Atlantic Merchant Elite</h3>        <p>While Royalists and Roundheads were hacking each other to pieces on English battlefields, a silent economic revolution was happening in the Caribbean and North America.</p>        <p>In the 1640s, English planters in <strong>Barbados</strong> transformed the island from tobacco farming to mass <strong>sugar plantation production</strong> powered by enslaved African labor. Sugar was nicknamed \"white gold.\"</p>        <ul><li>A single acre of Barbados sugar produced <strong>ten times more profit</strong> than an acre of English wheat.</li><li>By 1650, Barbados generated more export wealth than all the North American colonies combined.</li></ul>        <p><strong>The Hidden Link:</strong> The merchants who grew rich off Caribbean sugar and Virginian tobacco were almost all ardent supporters of Parliament. They hated Charles I because his royal monopolies interfered with their free trade. They poured millions into funding Cromwell’s New Model Army.</p>        <p>When Cromwell took power, he used their money to build the <strong>Commonwealth Navy</strong> and passed the <strong>Navigation Acts (1651)</strong>—laws stating that all colonial goods had to be carried on English ships, effectively seizing global trade from the Dutch!</p>    </div></div>",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "How did the Atlantic Merchants use their wealth to influence the outcome of the English Civil War?",
-              "model_answer": "The Atlantic Merchants, who hated Charles I for his royal monopolies, used the immense profits from Caribbean sugar and Virginian tobacco to fund Parliament's New Model Army, effectively paying for the military machine that defeated the King."
-            }
-          ]
-        },
-        {
-          "title": "Investigating Power: The King vs. The Merchants",
-          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>[Key Individual: John Bradshaw]</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by [Key Individual: Martin Noell]</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: [Key Individual: Oliver Cromwell]’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?",
-              "model_answer": "Source B gives an official, ideological reason for victory, claiming Parliament was defending the laws of the land against a 'tyrannical' King. Source C reveals the hidden economic truth: Parliament won because of immense wealth generated by Barbados sugar, stating directly that without it, the 'New Model Army would starve for want of pay'."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?",
-              "model_answer": "Cromwell accuses MPs of becoming 'lovers of money' and corrupt ('noblemen for gold'). This is highly ironic because Cromwell himself relied entirely on the massive financial wealth of the Atlantic merchants to build and fund his New Model Army and secure his rise to power."
-            }
-          ]
-        },
-        {
-          "title": "Historiographical Debate: Who won the English Civil War?",
-          "text": "<p><strong>Source F:</strong></p><div class='scaffold-box'><strong>Interpretation A: Professor Christopher Hill (The Political View)</strong><br><em>\"The English Civil War was a revolutionary class struggle. It permanently smashed the absolute monarchy and the old feudal order, transferring political power to Parliament and the middling sorts.\"</em></div><br><br><div class='scaffold-box'><strong>Interpretation B: Professor Eric Williams (The Imperial/Economic View)</strong><br><em>\"The true victors of the 17th century were the imperial merchant classes. By restricting the monarchy, Parliament secured the political stability needed to build the massive joint-stock companies (like the East India Company and the Royal African Company) which extracted vast wealth through colonization and slavery.\"</em></div>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Which historian argues that the conflict was primarily about political and class rights, and which argues it was about establishing the conditions for global capitalism and empire?",
-              "model_answer": "Professor Christopher Hill focuses on the political revolution and the destruction of the absolute monarchy. Professor Eric Williams argues the true victory was economic, laying the foundation for imperial merchants and global joint-stock capitalism."
+              "type": "written",
+              "text": "Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war.",
+              "model": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
             }
           ],
-          "source_letter": "F"
+          "theme_heading": "Europe's Two Alliances"
         },
         {
-          "title": "Side Quest: The Diggers and the Dream of Equality",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by [Key Individual: Gerrard Winstanley].</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by [Key Individual: Gerrard Winstanley] in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
+          "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong></strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong></strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong></strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+          "level_4": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "What radical belief did the Diggers hold about private property and the earth?",
-              "model_answer": "They believed the earth was a 'common treasury for all' and that private property should be completely abolished."
-            },
-            {
-              "type": "comprehension",
-              "question": "Why did wealthy Parliamentarians like Oliver Cromwell violently crush the Diggers?",
-              "model_answer": "The Diggers' ideas threatened the wealth and power of the landowners, making their vision of total equality too extreme for Parliament."
+              "type": "written",
+              "text": "According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable.",
+              "model": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
             }
           ],
-          "source_letter": "G"
+          "theme_heading": "German Fears and War Plans"
         },
         {
-          "title": "Lesson Reflection",
-          "text": "It is time to synthesize your understanding of the ideological and physical battles of the English Civil War.",
-          "tasks": []
-        },
-        {
-          "title": "The Ultimate Ideological Battle: The English Civil War",
-          "text": "The struggle for control between the monarch and the people exploded into the English Civil War (1642–1651). King Charles I believed in his divine right to rule absolutely, while Parliament demanded a say in taxation and governance. The conflict ended with the shocking execution of the King in 1649, temporarily turning England into a republic and permanently establishing that a British monarch could not rule without the consent of Parliament.",
+          "text": "Concurrently, the nature of war was becoming highly industrialization-driven. All the Great Powers utilized their factories to engage in a massive land-based arms race. Between 1906 and 1914, steel production in Germany skyrocketed to over 17 million tonnes, vastly outpacing Britain and France combined, to forge heavy artillery and armaments. Millions of kilometers of railway tracks were laid down across the continent for a single strategic purpose: to move hundreds of thousands of uniformed soldiers to the front lines within hours of a crisis breaking out. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.",
+          "level_4": "Concurrently, the nature of war was becoming highly industrialization-driven. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Why was the execution of King Charles I in 1649 such a significant turning point in the ideological battle for control of Britain?",
-              "model_answer": "It destroyed the idea of the 'Divine Right of Kings' and permanently established that a monarch's power was limited and subject to the consent of Parliament."
+              "type": "written",
+              "text": "Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization.",
+              "model": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
+            },
+            {
+              "type": "written",
+              "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power.",
+              "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
             }
-          ]
+          ],
+          "theme_heading": "Europe's Industrial War Machine"
+        },
+        {
+          "text": "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. To proceed safely, Austria needed a guarantee of German support. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
+          "level_4": "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
+          "theme_heading": "Germany's Blank Check"
+        },
+        {
+          "text": "This 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
+          "level_4": "This 'Blank Check' is one of the most debated actions in modern history. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
+          "theme_heading": "Kaiser's Motives"
+        },
+        {
+          "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
+          "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
+          "theme_heading": "Germany's Calculated War"
         }
       ],
       "quiz": [
         {
-          "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
+          "q": "Which three countries formed the Triple Entente in 1907?",
+          "a": "Britain, France, Russia",
           "options": [
-            "Constitutional Monarchy",
-            "The Divine Right of Kings",
-            "Papal Infallibility",
-            "Parliamentary Sovereignty"
-          ],
-          "answer": 1,
-          "explanation": "The Divine Right of Kings"
+            "Britain, France, Russia",
+            "Germany, Austria-Hungary, Italy",
+            "Britain, France, Italy",
+            "Germany, Russia, Austria-Hungary"
+          ]
         },
         {
-          "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
+          "q": "Which country left the Triple Alliance and joined the Entente in 1915?",
+          "a": "Italy",
           "options": [
-            "The Window Tax",
-            "The Hearth Tax",
-            "The Poll Tax",
-            "Ship Money"
-          ],
-          "answer": 3,
-          "explanation": "Ship Money"
+            "Italy",
+            "Ottoman Empire",
+            "Bulgaria",
+            "Romania"
+          ]
         },
         {
-          "question": "On what date was King Charles I executed outside the Banqueting House in London?",
+          "q": "What was Britain's traditional foreign policy before forming alliances?",
+          "a": "Splendid Isolation",
           "options": [
-            "30 January 1649",
-            "4 July 1776",
-            "5 November 1605",
-            "15 June 1215"
-          ],
-          "answer": 0,
-          "explanation": "30 January 1649"
+            "Splendid Isolation",
+            "Weltpolitik",
+            "Appeasement",
+            "Continental Commitment"
+          ]
         },
         {
-          "question": "What was the name of Parliament’s disciplined, professional military force created during the Civil War?",
+          "q": "Which three countries made up the Triple Alliance of 1882?",
+          "a": "Germany, Austria-Hungary, Italy",
           "options": [
-            "The Royalist Vanguard",
-            "The New Model Army",
-            "The Continental Army",
-            "The Home Guard"
-          ],
-          "answer": 1,
-          "explanation": "The New Model Army"
+            "Germany, Austria-Hungary, Italy",
+            "Germany, Russia, Austria-Hungary",
+            "Britain, France, Russia",
+            "Germany, Ottoman Empire, Italy"
+          ]
         },
         {
-          "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
+          "q": "Which three countries formed the Triple Entente by 1907?",
+          "a": "Britain, France, Russia",
           "options": [
-            "Oliver Cromwell",
-            "Prince Rupert",
-            "Sir Thomas Fairfax",
-            "John Pym"
-          ],
-          "answer": 0,
-          "explanation": "Oliver Cromwell"
+            "Britain, France, Russia",
+            "Germany, Austria-Hungary, Italy",
+            "Britain, USA, France",
+            "France, Russia, Italy"
+          ]
         },
         {
-          "question": "What formal title was given to the English republic that ruled between 1649 and 1660?",
+          "q": "What was a major flaw of the alliance system?",
+          "a": "A small dispute between two nations could drag all major powers into war",
           "options": [
-            "The United Kingdom",
-            "The First British Empire",
-            "The English Federation",
-            "The Commonwealth of England"
-          ],
-          "answer": 3,
-          "explanation": "The Commonwealth of England"
+            "A small dispute between two nations could drag all major powers into war",
+            "It prevented any trade between the blocs",
+            "It made the armies too small",
+            "It forced countries to disarm"
+          ]
         },
         {
-          "question": "Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?",
+          "q": "Why did Russia ally with France in 1894?",
+          "a": "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
           "options": [
-            "Jamaica",
-            "Cuba",
-            "Bermuda",
-            "Barbados"
-          ],
-          "answer": 3,
-          "explanation": "Barbados"
+            "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
+            "Because they shared the same religion",
+            "Because France promised them African colonies",
+            "Because Britain attacked them"
+          ]
         },
         {
-          "question": "What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?",
+          "q": "What was the 'Entente Cordiale' signed in 1904?",
+          "a": "A friendly agreement between Britain and France, settling colonial disputes",
           "options": [
-            "The Sugar Acts",
-            "The Stamp Acts",
-            "The Trade and Revenue Acts",
-            "The Navigation Acts"
-          ],
-          "answer": 3,
-          "explanation": "The Navigation Acts"
+            "A friendly agreement between Britain and France, settling colonial disputes",
+            "A military alliance between Germany and Russia",
+            "A peace treaty ending a war",
+            "An agreement to build dreadnoughts together"
+          ]
         },
         {
-          "question": "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
+          "q": "Why did Britain finally decide to form alliances?",
+          "a": "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
           "options": [
-            "The Catholics",
-            "The Quakers",
-            "The Puritans",
-            "The Methodists"
-          ],
-          "answer": 2,
-          "explanation": "The Puritans"
+            "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+            "They wanted to conquer Europe",
+            "They were invaded by France",
+            "They needed money from Russia"
+          ]
         },
         {
-          "question": "What event in 1660 brought [Key Individual: Charles II] back to the throne, ending the Commonwealth era?",
+          "q": "What does 'Weltpolitik' mean?",
+          "a": "World policy (Germany's desire for a global empire)",
           "options": [
-            "The Glorious Revolution",
-            "The Norman Conquest",
-            "The Restoration",
-            "The Reformation"
-          ],
-          "answer": 2,
-          "explanation": "The Restoration"
-        }
-      ],
-      "learning_objectives": {
-        "overarching": "Who controlled Britain: The King, Parliament, or Imperial Profits?",
-        "scaffolded": [
-          "Analyze why Charles I and Parliament fought the English Civil War (1642–1651).",
-          "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
-          "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists."
-        ]
-      },
-      "banner": "/images/early_mod_l4_banner.jpg",
-      "sources": [
+            "World policy (Germany's desire for a global empire)",
+            "Naval supremacy",
+            "Splendid isolation",
+            "Peaceful co-existence"
+          ]
+        },
         {
-          "title": "The East Offering its Riches to Britannia (1778)",
-          "src": "/images/global_britannia.jpg",
-          "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
-          "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
-          "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+          "q": "Which nation in the Triple Alliance was seen as the 'weak link'?",
+          "a": "Italy",
+          "options": [
+            "Italy",
+            "Germany",
+            "Austria-Hungary",
+            "Britain"
+          ]
         }
       ]
     },
     {
       "id": "lesson_5",
-      "flashcards": [
-        {
-          "term": "King Charles I",
-          "definition": "Believed in the Divine Right of Kings; executed by Parliament in 1649."
-        },
-        {
-          "term": "Oliver Cromwell",
-          "definition": "Strict Puritan commander of the New Model Army."
-        },
-        {
-          "term": "John Bradshaw",
-          "definition": "Presided over the trial of King Charles I."
-        },
-        {
-          "term": "Martin Noell",
-          "definition": "Wealthy merchant, slave trader, and pamphleteer."
-        },
-        {
-          "term": "King Charles II",
-          "definition": "Returned to the throne during the Restoration in 1660."
-        }
-      ],
-      "title": "Who controlled Britain? The Economic Shift",
-      "teacher_notes": {
-        "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
-        "objectives": [
-          {
-            "objective": "Analyze why [Key Individual: King [Key Individual: King [Key Individual: King Charles I]]] and Parliament fought the English Civil War (1642–1651).",
-            "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
-            "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
-          },
-          {
-            "objective": "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
-            "primer": "Use the 'Atlantic Merchants' tab and Source A to show how Caribbean sugar profits directly funded the New Model Army.",
-            "question": "How did the switch to sugar production in Barbados financially impact the outcome of the English Civil War?"
-          },
-          {
-            "objective": "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.",
-            "primer": "Use the Historical Interpretations section at the end of the lesson to have students weigh Prof. Hill's political view against Prof. Williams' economic view.",
-            "question": "Based on the evidence, was the English Civil War ultimately won by religious ideals or by mercantile wealth?"
-          }
-        ]
-      },
-      "do_now": {
-        "title": "Do Now: Previous Knowledge",
-        "type": "questions",
-        "items": [
-          {
-            "question": "What was the name of the first permanent English settlement in North America (1607)?",
-            "answer": "Jamestown"
-          },
-          {
-            "question": "Which cash crop saved the Jamestown colony from economic ruin?",
-            "answer": "Tobacco"
-          },
-          {
-            "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
-            "answer": "A Joint-Stock Company"
-          },
-          {
-            "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
-            "answer": "The Mughal Empire"
-          },
-          {
-            "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
-            "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Divine Right of Kings",
-          "definition": "The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament."
-        },
-        {
-          "term": "New Model Army",
-          "definition": "A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War."
-        },
-        {
-          "term": "Commonwealth",
-          "definition": "The republic that ruled England from 1649 to 1660 following the execution of Charles I."
-        },
-        {
-          "term": "Plantation",
-          "definition": "An estate on which crops such as coffee, sugar, and tobacco are cultivated by resident labor, frequently enslaved labor."
-        },
-        {
-          "term": "Navigation Acts",
-          "definition": "Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth."
-        }
-      ],
-      "vocab_cloze_text": "King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.",
-      "narrative_blocks": [
-        {
-          "title": "Macro-History: The Financial Hub",
-          "text": "By the 1700s, the geography of wealth in Britain had fundamentally changed. London was no longer just the seat of the King; it had become the beating heart of a new global financial empire. The River Thames was choked with a forest of wooden ship masts from the East India Company and transatlantic slave ships. The wealth generated by this massive maritime trade built institutions like the Bank of England and the Royal Exchange, shifting power from the monarchy to the merchant class."
-        },
-        {
-          "title": "Analyzing Source A",
-          "image": "/images/royal_exchange_courtyard.jpg",
-          "image_alt": "The Royal Exchange, London (1644)",
-          "source_letter": "A",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?",
-              "model_answer": "The River Thames became choked with a 'forest of wooden ship masts' from global trading vessels, and the city saw the rise of grand financial institutions like the Royal Exchange.",
-              "text": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?"
-            }
-          ]
-        },
-        {
-          "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
-          "text": "Look closely at the <strong>1651 Great Seal of England</strong>, created after the King’s execution:<br><br><ul><li><strong>No Royal Crown or Arms:</strong> For 600 years, the Great Seal bore the face of the ruling King or Queen on a horse. In 1651, the King’s face was completely erased.</li><li><strong>The House of Commons Side:</strong> Shows hundreds of MPs sitting in Parliament with the motto: <em>\"In the First Year of Freedom by God's Blessing Restored.\"</em></li><li><strong>The Map Side:</strong> Shows a detailed map of England, Ireland, and naval ships sailing in the Atlantic, emphasizing maritime power and imperial expansion over royal bloodlines.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source E",
-          "image": "/images/great_seal_1651.png",
-          "image_alt": "The Great Seal of the Commonwealth of England (1651)",
-          "source_letter": "E",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-              "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
-              "text": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
-            }
-          ]
-        },
-        {
-          "title": "Historical Interpretations: Who Was the Real Winner?",
-          "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong>[Key Individual: Charles II]</strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Christopher Hill]]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though [Key Individual: Charles II] returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View ([Key Individual: Prof. [Key Individual: Prof. [Key Individual: Prof. Eric Williams]]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
-              "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
-            }
-          ]
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": []
-        }
-      ],
-      "quiz": [
-        {
-          "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
-          "options": [
-            "Constitutional Monarchy",
-            "The Divine Right of Kings",
-            "Papal Infallibility",
-            "Parliamentary Sovereignty"
-          ],
-          "answer": 1,
-          "explanation": "The Divine Right of Kings"
-        },
-        {
-          "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
-          "options": [
-            "The Window Tax",
-            "The Hearth Tax",
-            "The Poll Tax",
-            "Ship Money"
-          ],
-          "answer": 3,
-          "explanation": "Ship Money"
-        },
-        {
-          "question": "On what date was King Charles I executed outside the Banqueting House in London?",
-          "options": [
-            "30 January 1649",
-            "4 July 1776",
-            "5 November 1605",
-            "15 June 1215"
-          ],
-          "answer": 0,
-          "explanation": "30 January 1649"
-        },
-        {
-          "question": "What was the name of Parliament’s disciplined, professional military force created during the Civil War?",
-          "options": [
-            "The Royalist Vanguard",
-            "The New Model Army",
-            "The Continental Army",
-            "The Home Guard"
-          ],
-          "answer": 1,
-          "explanation": "The New Model Army"
-        },
-        {
-          "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
-          "options": [
-            "Oliver Cromwell",
-            "Prince Rupert",
-            "Sir Thomas Fairfax",
-            "John Pym"
-          ],
-          "answer": 0,
-          "explanation": "Oliver Cromwell"
-        },
-        {
-          "question": "What formal title was given to the English republic that ruled between 1649 and 1660?",
-          "options": [
-            "The United Kingdom",
-            "The First British Empire",
-            "The English Federation",
-            "The Commonwealth of England"
-          ],
-          "answer": 3,
-          "explanation": "The Commonwealth of England"
-        },
-        {
-          "question": "Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?",
-          "options": [
-            "Jamaica",
-            "Cuba",
-            "Bermuda",
-            "Barbados"
-          ],
-          "answer": 3,
-          "explanation": "Barbados"
-        },
-        {
-          "question": "What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?",
-          "options": [
-            "The Sugar Acts",
-            "The Stamp Acts",
-            "The Trade and Revenue Acts",
-            "The Navigation Acts"
-          ],
-          "answer": 3,
-          "explanation": "The Navigation Acts"
-        },
-        {
-          "question": "Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?",
-          "options": [
-            "The Catholics",
-            "The Quakers",
-            "The Puritans",
-            "The Methodists"
-          ],
-          "answer": 2,
-          "explanation": "The Puritans"
-        },
-        {
-          "question": "What event in 1660 brought [Key Individual: Charles II] back to the throne, ending the Commonwealth era?",
-          "options": [
-            "The Glorious Revolution",
-            "The Norman Conquest",
-            "The Restoration",
-            "The Reformation"
-          ],
-          "answer": 2,
-          "explanation": "The Restoration"
-        }
-      ],
-      "learning_objectives": {
-        "overarching": "Who controlled Britain: The King, Parliament, or Imperial Profits?",
-        "scaffolded": [
-          "Analyze why Charles I and Parliament fought the English Civil War (1642–1651).",
-          "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
-          "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists."
-        ]
-      },
-      "banner": "/images/early_mod_l4_banner.jpg",
+      "title": "Why did a single assassination in Sarajevo ignite a World War?",
       "sources": [
         {
-          "title": "The East Offering its Riches to Britannia (1778)",
-          "src": "/images/global_britannia.jpg",
-          "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
-          "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
-          "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+          "title": "Diagram A: The July Crisis Domino Effect",
+          "src": "/assets/great_war_july_crisis.svg",
+          "caption": "How a single assassination in the Balkans escalated into a world war within a month."
+        },
+        {
+          "title": "Map A: The Balkan Peninsula (1914)",
+          "src": "/assets/great_war_balkans_1914_simple_map.png",
+          "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914."
+        },
+        {
+          "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
+          "src": "/assets/great_war_map_sarajevo_route.jpg",
+          "caption": ""
         }
       ],
-      "tasks": [
-        {
-          "title": "Summary Task",
-          "type": "comprehension",
-          "question": "Explain the connection between Britain's growing global trade and the shift in domestic economic power by 1750.",
-          "model_answer": "The massive profits generated from global trade, the East India Company, and the Transatlantic Slave Trade created a new, wealthy middle class. This shifted economic power away from the traditional land-owning aristocracy and paved the way for the Industrial Revolution."
-        }
-      ]
-    },
-    {
-      "id": "lesson_6",
-      "title": "What were the mechanics of the Transatlantic Slave Trade?",
-      "teacher_notes": {
-        "primer": "This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.",
-        "objectives": [
-          {
-            "objective": "Understand the Triangular Trade and the middle passage.",
-            "primer": "Focus on the Macro-History block to explain the flow of goods, enslaved people, and wealth.",
-            "question": "What were the three main 'legs' of the Triangular Trade?"
-          },
-          {
-            "objective": "Evaluate the economic legacy of slavery on Britain.",
-            "primer": "Use the Digital Research Task to show how slave-generated wealth funded modern British institutions.",
-            "question": "How did the wealth from the slave trade continue to benefit Britain long after abolition?"
-          }
-        ]
-      },
       "vocab": [
         {
-          "term": "Triangular Trade",
-          "definition": "The three-legged transatlantic trade network connecting Europe, Africa, and the Americas."
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
         },
         {
-          "term": "Middle Passage",
-          "definition": "The brutal forced voyage of enslaved Africans across the Atlantic Ocean."
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
         },
         {
-          "term": "Plantation",
-          "definition": "A large agricultural estate where enslaved people were forced to grow cash crops like sugar and tobacco."
-        }
-      ],
-      "learning_objectives": {
-        "overarching": "What were the mechanics of the Transatlantic Slave Trade?",
-        "scaffolded": [
-          "Understand the Triangular Trade and the middle passage.",
-          "Evaluate the economic legacy of slavery on Britain."
-        ]
-      },
-      "narrative_blocks": [
-        {
-          "title": "Micro-History: The Barracoons of West Africa",
-          "text": "The Transatlantic Slave Trade was not simply a case of European ships arriving and kidnapping people from the beach. It was a massive, highly organized global business that relied on complex treaties and alliances. Powerful African empires, such as the Dahomey and the Asante, grew wealthy by launching military campaigns against rival inland groups, taking prisoners of war. These captives were marched for weeks to the coast and sold to European merchants in exchange for manufactured goods like brass, textiles, and, crucially, European firearms. The European merchants would lock the enslaved Africans in brutally crowded, disease-ridden coastal fortresses known as 'barracoons' or 'castles' (like Cape Coast Castle in modern-day Ghana) for months, waiting for slave ships to arrive. The trade enriched both European merchants and coastal African elites, while completely devastating the interior of the African continent."
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
         },
         {
-          "title": "Analyzing Source A",
-          "image": "/images/cape_coast_castle.jpg",
-          "image_alt": "Cape Coast Castle, a European slave fort on the Gold Coast",
-          "source_letter": "A",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How did powerful African empires like the Dahomey acquire people to sell into slavery?",
-              "model_answer": "They launched military campaigns against rival inland groups and sold the prisoners of war."
-            },
-            {
-              "type": "comprehension",
-              "question": "What goods did European merchants trade in exchange for enslaved people?",
-              "model_answer": "They traded manufactured goods like brass, textiles, and European firearms."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
-              "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
-            }
-          ]
-        },
-        {
-          "title": "Macro-History: The Triangular Machinery of Exploitation",
-          "text": "Between 1500 and 1867, over 12.5 million African men, women, and children were kidnapped, forced onto ships, and transported across the Atlantic Ocean. Over 3 million were carried on British ships.<br><br><div style=\"background: #0f172a; padding: 25px; border-radius: 8px; border: 1px solid #334155; margin: 20px 0; font-family: sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.2);\">\n    <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center; width: 100%; margin-bottom: 20px;\">Interactive Trade Map</h3>\n    \n    <div style=\"display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;\">\n        <button onclick=\"document.getElementById('map-eur').style.display='block'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='none'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6'; this.nextElementSibling.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 1; transition: 0.3s;\">Europe</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='block'; document.getElementById('map-ame').style.display='none'; this.previousElementSibling.style.opacity='0.6'; this.style.opacity='1'; this.nextElementSibling.style.opacity='0.6';\" style=\"flex: 1 1 150px; padding: 12px; background: #d97706; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">West Africa</button>\n        \n        <button onclick=\"document.getElementById('map-eur').style.display='none'; document.getElementById('map-afr').style.display='none'; document.getElementById('map-ame').style.display='block'; this.previousElementSibling.style.opacity='0.6'; this.previousElementSibling.previousElementSibling.style.opacity='0.6'; this.style.opacity='1';\" style=\"flex: 1 1 150px; padding: 12px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem; opacity: 0.6; transition: 0.3s;\">The Americas</button>\n    </div>\n\n    <div id=\"map-eur\" style=\"background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0284c7;\">\n        <h4 style=\"margin-top: 0; color: #38bdf8;\">Exports from Europe (Bristol, Liverpool, London)</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Manufactured Firearms:</strong> Cheap muskets and gunpowder used to fuel regional African wars.</li>\n            <li><strong>Textiles and Cloth:</strong> Mass-produced British cotton and wool items.</li>\n            <li><strong>Alcohol:</strong> Spirits such as rum and brandy used as trade currency.</li>\n            <li><strong>Metal Goods:</strong> Iron bars, brass pans, and manillas (copper bracelets).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-afr\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #d97706;\">\n        <h4 style=\"margin-top: 0; color: #fbbf24;\">Exports from West Africa</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Enslaved Human Beings:</strong> Men, women, and children captured in warfare or raids.</li>\n            <li><strong>Gold Dust:</strong> Extracted from the Gold Coast and heavily sought after by European merchants.</li>\n            <li><strong>Ivory:</strong> Elephant tusks traded as a luxury good.</li>\n            <li><strong>Spices:</strong> Exotic items like malagueta pepper (Guinea pepper).</li>\n        </ul>\n    </div>\n\n    <div id=\"map-ame\" style=\"display: none; background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #16a34a;\">\n        <h4 style=\"margin-top: 0; color: #4ade80;\">Exports from The Americas</h4>\n        <ul style=\"line-height: 1.6; margin-bottom: 0;\">\n            <li><strong>Raw Sugar & Molasses:</strong> The most lucrative cash crop, grown in the brutal Caribbean plantations.</li>\n            <li><strong>Tobacco:</strong> Grown extensively in the colonies of Virginia and Maryland.</li>\n            <li><strong>Raw Cotton:</strong> Crucial raw material shipped to British textile mills during the Industrial Revolution.</li>\n            <li><strong>Coffee and Cocoa:</strong> Luxury consumables destined for European coffeehouses.</li>\n        </ul>\n    </div>\n</div><br><strong>The Mechanics of \"Chattel\" Slavery</strong><br>Unlike historical forms of bondage, Atlantic slavery was <strong>chattel slavery</strong>. Enslaved people were defined by law as personal property, bought, sold, mortgaged, and inherited like cattle or furniture.<br><br><ul><li><strong>The Middle Passage:</strong> A nightmare voyage lasting 6 to 10 weeks across the Atlantic. Humans were crammed below decks in spaces smaller than coffins. Between 15% and 20% of enslaved people died before reaching the Americas.</li><li><strong>Plantation Economics:</strong> Caribbean sugar production was brutal industrial labor. Enslaved workers were forced to cut sugarcane with machetes under burning heat for 18 hours a day, faced disease, and suffered severe punishment from white overseers.</li></ul>"
-        },
-        {
-          "title": "Analyzing Source B",
-          "image": "/images/triangular_trade.png",
-          "image_alt": "Diagram of the Triangular Trade",
-          "source_letter": "B",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?",
-              "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.",
-              "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
-            }
-          ]
-        },
-        {
-          "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
-          "text": "The experience of an enslaved African depended heavily on where the slave ship landed. In the Caribbean (like Jamaica and Barbados), the primary crop was sugar. Sugar cultivation was incredibly brutal, dangerous, and physically destroying labor. Many Caribbean plantations were owned by 'absentee landlords'—rich white men who lived in luxury in London and never even visited their estates, leaving brutal overseers in charge. Because profits were so high, these overseers calculated that it was cheaper to literally work enslaved people to death (the 'death camp' model) and simply buy replacements from Africa. Life expectancy upon arriving on a sugar plantation was often less than seven years. By contrast, in the North American colony of Virginia, the primary crop was tobacco. Tobacco required less intensive daily physical destruction than sugar. Furthermore, a different climate and slightly better diet meant that, by the 1700s, the enslaved population in Virginia became 'self-sustaining' (growing through childbirth rather than relying entirely on importing new people from Africa). While Virginia was still a brutal system of chattel slavery, the lethal intensity of the Caribbean sugar machine was unmatched."
-        },
-        {
-          "title": "Analyzing Source C",
-          "image": "/images/plantation.jpg",
-          "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
-          "source_letter": "C",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "What is an 'absentee landlord'?",
-              "model_answer": "A rich plantation owner who lived in Britain and never visited their estate, leaving brutal overseers in charge."
-            },
-            {
-              "type": "comprehension",
-              "question": "Why was the Caribbean sugar system often described as a 'death camp' model?",
-              "model_answer": "Because overseers calculated it was cheaper to work enslaved people to death and simply buy replacements, leading to horrific mortality rates."
-            },
-            {
-              "type": "comprehension",
-              "question": "Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?",
-              "model_answer": "Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it."
-            }
-          ]
-        },
-        {
-          "title": "Digital Research Task: The Legacies of British Slavery",
-          "text": "To understand how slavery shaped modern Britain, conduct a real-world historical investigation using the Centre for the Study of the Legacies of British Slavery at University College London (UCL).<br><br><div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px; font-family: monospace;\">  <h3 style=\"margin-top: 0; color: #38bdf8;\">🖥️ STUDENT RESEARCH INSTRUCTIONS</h3>  <ol style=\"margin-bottom: 20px; line-height: 1.6;\">    <li>Open your web browser and navigate to the <strong>UCL Legacies of British Slavery Database</strong> (ucl.ac.uk/lbs).</li>    <li>Click on <strong>\"Search the Database\"</strong> and select <strong>\"Commercial & Financial Legacies\"</strong> or search by <strong>Geographic Location</strong> (e.g., Bristol, Liverpool, London).</li>  </ol>  <div style=\"background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; color: #10b981; border: 1px solid #334155;\">    [Visit ucl.ac.uk/lbs] ──► [Search Your Region] ──► [Trace Local Wealth]  </div>  <h3 style=\"margin-top: 25px; color: #f472b6;\">📋 INVESTIGATION WORKSHEET</h3>  <ul style=\"line-height: 1.6;\">    <li><strong>Task A:</strong> Identify one individual/family who claimed compensation in 1833. Record their name, the number of enslaved people they 'owned', and the payout received.</li>    <li><strong>Task B:</strong> Investigate what happened to that wealth. Was it invested in local British buildings, railways, artwork, or bank stocks?</li>    <li><strong>Task C:</strong> Write a 150-word summary evaluating how your local area directly benefited from Atlantic plantation economies.</li>  </ul></div>",
-          "tasks": [
-            {
-              "type": "extended",
-              "question": "UCL Research Task Worksheet: <br><div style=\"border: 1px dashed #94a3b8; padding: 10px; margin-bottom: 10px; background: #f8fafc; color: #475569; font-style: italic; min-height: 80px;\">Planning Box: Jot down your findings for Task A and B here...</div>Now, write your 150-word summary for Task C below:",
-              "lines": 20
-            }
-          ]
-        },
-        {
-          "title": "Plenary Check",
-          "text": "Let's review the mechanics of the Transatlantic Slave Trade.",
-          "tasks": []
-        },
-        {
-          "title": "Lesson Reflection",
-          "text": "It is time to synthesize your understanding of the mechanics of the Transatlantic slave trade.",
-          "tasks": []
-        }
-      ],
-      "video": [
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-west-india-docks-and-the-sugar-economy/",
-          "title": "BBC Two: Britain's Forgotten Slave Owners - Profit and Loss"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-first-slave-society-in-barbados/",
-          "title": "Profit and Loss: First Slave Society in Barbados"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-slave-plantation-system/",
-          "title": "Profit and Loss: Slave Plantation System"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-implements-of-torture/",
-          "title": "Profit and Loss: Implements of Torture"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-the-legacies-of-slavery/",
-          "title": "The Price of Freedom: The Legacies of Slavery"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-where-did-the-slavery-compensation-money-end-up/",
-          "title": "Where Did the Slavery Compensation Money End Up?"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=IpgD2ehtMmM",
-          "title": "How Barbados became the first slave society"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=k7OQjNRsrvI",
-          "title": "David Harewood Learns Horrifying Details of Barbados Slave Code"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/a-people-stolen-enslaved-with-samuel-l-jackson/",
-          "title": "A People Stolen: Enslaved with Samuel L. Jackson"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/a-precious-cargo-enslaved-with-samuel-l-jackson/",
-          "title": "A Precious Cargo: Enslaved with Samuel L. Jackson"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/our-people-enslaved-with-samuel-l-jackson/",
-          "title": "Our People: Enslaved with Samuel L. Jackson"
-        }
-      ],
-      "quiz": [
-        {
-          "question": "What were the three main stages of the Triangular Trade?",
-          "options": [
-            "Europe to Africa, Africa to the Americas, the Americas to Europe.",
-            "Europe to Asia, Asia to Africa, Africa to Europe.",
-            "The Americas to Europe, Europe to Asia, Asia to the Americas.",
-            "Africa to the Americas, the Americas to Asia, Asia to Africa."
-          ],
-          "answer": 0,
-          "explanation": "The Triangular Trade connected Europe, Africa, and the Americas in a continuous cycle of exploitation and profit."
-        },
-        {
-          "question": "Which of the following was NOT a typical good traded by Europeans in West Africa?",
-          "options": [
-            "Sugar",
-            "Guns",
-            "Alcohol",
-            "Textiles"
-          ],
-          "answer": 0,
-          "explanation": "Sugar was produced in the Americas. Europeans traded manufactured goods like guns, alcohol, and textiles in West Africa."
-        },
-        {
-          "question": "What was the 'Middle Passage'?",
-          "options": [
-            "The brutal forced voyage of enslaved Africans across the Atlantic.",
-            "The overland trade route across the Sahara Desert.",
-            "The journey of manufactured goods from Europe to Africa.",
-            "The transport of sugar and tobacco from the Americas to Europe."
-          ],
-          "answer": 0,
-          "explanation": "The Middle Passage was the horrific transatlantic journey where millions of enslaved Africans were transported in appalling conditions."
-        },
-        {
-          "question": "What was the primary crop grown on Caribbean plantations such as in Jamaica and Barbados?",
-          "options": [
-            "Sugar",
-            "Tobacco",
-            "Cotton",
-            "Indigo"
-          ],
-          "answer": 0,
-          "explanation": "Sugar was the incredibly profitable but brutally demanding primary crop of the Caribbean."
-        },
-        {
-          "question": "How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?",
-          "options": [
-            "The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.",
-            "Virginia plantations relied on a 'death camp' model to constantly import new enslaved people.",
-            "Enslaved people in Virginia primarily farmed sugar rather than tobacco.",
-            "There was no significant difference between the two regions."
-          ],
-          "answer": 0,
-          "explanation": "In Virginia, the population began to grow through childbirth, unlike the Caribbean where the brutal conditions necessitated constant importation."
-        },
-        {
-          "question": "What is an 'absentee landlord' in the context of Caribbean sugar plantations?",
-          "options": [
-            "A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.",
-            "An enslaved person who escaped the plantation.",
-            "A European merchant who never visited West Africa.",
-            "An overseer who refused to work on the plantation."
-          ],
-          "answer": 0,
-          "explanation": "Absentee landlords enjoyed the immense profits of sugar in London while ignoring the brutal realities of the labor that produced it."
-        },
-        {
-          "question": "Why was the Caribbean sugar system often described as a 'death camp' model?",
-          "options": [
-            "Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.",
-            "It was a system designed primarily to punish criminals.",
-            "The plantations were located in areas with high rates of natural disasters.",
-            "Enslaved people frequently died from starvation during the Middle Passage."
-          ],
-          "answer": 0,
-          "explanation": "The extreme profitability of sugar led overseers to brutally exploit enslaved people, knowing they could easily purchase more from the slave trade."
-        },
-        {
-          "question": "How did the Triangular Trade fuel the Industrial Revolution in Britain?",
-          "options": [
-            "Profits from slave-produced goods were invested in British banks, infrastructure, and factories.",
-            "Enslaved Africans were brought to Britain to work in factories.",
-            "Britain stopped trading with Europe to focus solely on the Americas.",
-            "The British government used taxes from the trade to build free public schools."
-          ],
-          "answer": 0,
-          "explanation": "The immense wealth generated by the exploitation of enslaved labor in the Americas provided the capital needed for Britain's industrialization."
-        },
-        {
-          "question": "According to the UCL Legacies of British Slavery Database, what happened in 1833?",
-          "options": [
-            "The British government paid massive compensation to former slave owners.",
-            "The British government paid reparations to formerly enslaved people.",
-            "The Triangular Trade officially began.",
-            "The first slave ship arrived in Virginia."
-          ],
-          "answer": 0,
-          "explanation": "When slavery was abolished, the British government controversially paid millions in compensation to the enslavers, not the enslaved."
-        },
-        {
-          "question": "How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?",
-          "options": [
-            "It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.",
-            "It shows that Britain was less technologically advanced than its European rivals.",
-            "It proves that the Enlightenment had no impact on British politics.",
-            "It highlights the fact that Britain was still primarily a feudal society."
-          ],
-          "answer": 0,
-          "explanation": "The juxtaposition of sophisticated financial markets in London with the brutal reality of plantation slavery reveals a dark contradiction in Britain's 'modernity'."
-        }
-      ],
-      "banner": "/images/cape_coast_castle.jpg",
-      "do_now": {
-        "title": "Do Now: Previous Knowledge",
-        "type": "questions",
-        "items": [
-          {
-            "question": "What is a 'joint-stock company'?",
-            "answer": "A company where wealthy investors pool their money to share the risks and profits of overseas trade."
-          },
-          {
-            "question": "What cash crop saved the Jamestown colony from economic failure?",
-            "answer": "Tobacco"
-          },
-          {
-            "question": "Who won the English Civil War (1642-1651)?",
-            "answer": "Parliament (led by Oliver Cromwell's New Model Army)"
-          }
-        ]
-      }
-    },
-    {
-      "id": "lesson_7",
-      "banner": "/images/brookes_ship.jpg",
-      "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
-      "teacher_notes": {
-        "primer": "This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.",
-        "objectives": [
-          {
-            "objective": "Analyze primary sources from formerly enslaved Africans.",
-            "primer": "Use the Primary Source Deep Dive to interrogate authentic voices.",
-            "question": "How does [Key Individual: Olaudah [Key Individual: Olaudah [Key Individual: Olaudah Equiano]]]'s account challenge the idea that enslaved people were passive?"
-          },
-          {
-            "objective": "Investigate the Jamaican Maroon Wars.",
-            "primer": "Use the Micro-History of [Key Individual: Nanny of the Maroons] to explore armed rebellion.",
-            "question": "Why were the Jamaican Maroons so difficult for the British military to defeat?"
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Obeah",
-          "definition": "A system of spiritual and healing practices developed by enslaved people in the Caribbean, often involving botanical knowledge."
-        },
-        {
-          "term": "Maroons",
-          "definition": "Communities of formerly enslaved Africans who escaped and established free settlements in mountainous or remote areas."
-        },
-        {
-          "term": "Covert Resistance",
-          "definition": "Hidden or secretive acts of rebellion, such as working slowly or breaking tools."
-        }
-      ],
-      "learning_objectives": {
-        "overarching": "How did enslaved Africans resist the Transatlantic Slave Trade?",
-        "scaffolded": [
-          "Understand the different forms of covert and overt resistance.",
-          "Analyze primary sources from formerly enslaved Africans.",
-          "Investigate the Jamaican Maroon Wars."
-        ]
-      },
-      "narrative_blocks": [
-        {
-          "title": "Micro-History: [Key Individual: Nanny of the Maroons] and the Blue Mountains (1730s)",
-          "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen [Key Individual: Nanny of the Maroons]</strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
-              "model_answer": "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties."
-            }
-          ],
-          "images": [
-            {
-              "image": "/images/brookes_ship.jpg",
-              "image_alt": "Diagram of the Slave Ship Brookes (1788)",
-              "image_context": "Look at the horrifying, mathematical precision with which human beings were packed tightly into the hold of the ship. This diagram was arguably the most effective piece of visual propaganda in history, mass-produced by abolitionists to shock the British public into confronting the true, industrial cruelty of the Middle Passage. **Hinge Question:** Why was a cold, technical diagram more effective at changing public opinion than an emotional painting might have been?",
-              "src": "/images/brookes_ship.jpg",
-              "image_caption": "The infamous 1788 abolitionist poster showing a cross-section of the slave ship Brookes. It vividly exposed the horrific overcrowding and inhumane conditions enslaved Africans endured during the brutal Middle Passage, galvanizing public outrage in Britain.",
-              "source_letter": "A"
-            },
-            {
-              "image": "/images/jamaica_maroons.jpg",
-              "image_alt": "Map of Jamaica (1775)",
-              "image_context": "Look closely at the grid-like division of the land into massive sugar estates. The island's geography was entirely reshaped to serve the brutal efficiency of the plantation economy, completely wiping out indigenous landscapes to maximize sugar production for European markets. **Hinge Question:** How does a map like this hide the human suffering and enslaved labor required to make those estates profitable?",
-              "image_caption": "A 1775 map of Jamaica by Thomas Jefferys. The island's rugged, mountainous interior provided sanctuary for Maroon communities—escaped enslaved Africans who waged a highly successful, decades-long guerrilla war against British colonial forces.",
-              "source_letter": "B"
-            }
-          ]
-        },
-        {
-          "title": "The Spectrum of Resistance: How Enslaved People Fought Back",
-          "text": "Resistance was not always an armed uprising. Enslaved Africans fought back against a dehumanizing system in dozens of calculated ways every single day.<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"resBtn1\" onclick=\"document.getElementById('res1').style.display='block'; document.getElementById('res2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">Day-to-Day (Covert) Resistance</button>        <button id=\"resBtn2\" onclick=\"document.getElementById('res1').style.display='none'; document.getElementById('res2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">Revolutionary (Overt) Resistance</button>    </div>    <div id=\"res1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #475569;\">Hidden Sabotage</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li>Slowing down work pace on the fields to damage profits</li>            <li>Breaking tools and expensive plantation machinery on purpose</li>            <li>Feigning illness, injury, or ignorance to avoid forced labor</li>            <li>Secretly preserving African languages, religions, and music</li>            <li>Poisoning overseers' food or livestock using local plants</li>        </ul>    </div>    <div id=\"res2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #b91c1c;\">Armed & Direct Defiance</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li>Armed rebellion, assassinations, and plantation burning</li>            <li>Shipboard revolts and mutinies during the Middle Passage</li>            <li><strong>Marronage:</strong> Escaping permanently to form free, fortified towns</li>            <li>Self-emancipation (purchasing own freedom) and publishing memoirs</li>            <li>Political activism and speaking tours in European capitals</li>        </ul>    </div></div>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Give one example of covert resistance and explain why an enslaved person might choose it over overt resistance.",
-              "model_answer": "An example of covert resistance is breaking tools or slowing down work. An enslaved person might choose this because it was less likely to result in immediate, fatal punishment compared to an armed rebellion, yet it still effectively harmed the slave owner's profits."
-            }
-          ]
-        },
-        {
-          "title": "Voices of Resistance: Equiano's Testimony",
-          "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of [Key Individual: Thomas Thistlewood]</strong>, a Jamaican sugar plantation overseer.</blockquote>"
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/equiano.jpg",
-          "image_alt": "Portrait of Olaudah Equiano (1789)",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "Inferring Motive (Source B): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
-              "model_answer": "Jumping overboard was a powerful act of resistance because it was a total rejection of their commodification; by taking their own lives, they reclaimed control over their own bodies and actively destroyed the 'property' and profits of the slave traders."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Evaluating Significance (Equiano's Portrait & Source A): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?",
-              "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
-            }
-          ]
-        },
-        {
-          "title": "Case Study: The Stono Rebellion (1739)",
-          "text": "While hidden, day-to-day resistance was constant, sometimes it exploded into outright war. In September 1739, a literate enslaved man named Jemmy led a coordinated armed uprising in South Carolina known as the Stono Rebellion. The rebels seized weapons, marched under banners that read 'Liberty!', and beat drums to rally others as they marched south toward Spanish Florida, where they were promised freedom. Although the rebellion was eventually crushed by the brutal South Carolina militia, it terrified the planter class. It proved that enslaved Africans could organize militarily and were actively fighting for their freedom, leading the panicked British colonists to pass the draconian 1740 Negro Act, which severely restricted enslaved people's ability to assemble, grow their own food, or learn to read."
-        },
-        {
-          "title": "Analyzing Source D",
-          "image": "/images/stono_rebellion_map.png",
-          "image_alt": "Map of the Stono Rebellion route (1739)",
-          "source_letter": "D",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
-              "model_answer": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors.",
-              "text": "Based on Source D, why did the Stono Rebellion terrify the British planter class, and what was the immediate goal of the rebels?",
-              "model": "The rebels sought immediate freedom by marching to Spanish Florida. It terrified the planters because it proved enslaved people were capable of organizing armed, military-style uprisings against their oppressors."
-            },
-            {
-              "type": "comprehension",
-              "question": "What was the long-term consequence of the rebellion for enslaved people in South Carolina?",
-              "model_answer": "The panicked planters passed the brutal 1740 Negro Act, which heavily restricted the rights of enslaved people to assemble, earn money, or learn to read, in order to prevent future uprisings."
-            }
-          ]
-        },
-        {
-          "title": "Historical Debates: What Truly Destroyed Slavery?",
-          "text": "For a long time, the traditional history taught in British schools focused heavily on the 'White Savior Narrative'. This narrative argues that slavery was abolished in 1833 almost entirely because of moral, upper-class white politicians in Parliament—most famously, William Wilberforce. Wilberforce did indeed dedicate decades of his life to a tireless parliamentary campaign to ban the trade, using horrific evidence like the Brookes ship diagram to shock the British public. \n\nHowever, modern historians (like Eric Williams) strongly challenge this 'white savior' focus. They argue that Wilberforce's moral campaign only succeeded because of two deeper reasons. First, economics: by the 1800s, the sugar plantations were becoming less profitable as the world industrialized. Second, grassroots resistance: massive, terrifying armed rebellions by enslaved people (like the Haitian Revolution and the Jamaican Baptist War) made slavery too dangerous and expensive for the British to maintain. In this view, enslaved people essentially forced the British government's hand; Wilberforce simply passed the law in London."
-        },
-        {
-          "title": "Analyzing Source F",
-          "image": "/images/william_wilberforce.jpg",
-          "image_alt": "Portrait of [Key Individual: William Wilberforce], a British politician and abolitionist",
-          "source_letter": "F",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
-              "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
-            },
-            {
-              "type": "comprehension",
-              "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
-              "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
-            }
-          ]
-        },
-        {
-          "title": "Lesson Reflection",
-          "text": "It is time to synthesize your understanding of how enslaved Africans resisted the Transatlantic Slave Trade.",
-          "tasks": []
-        },
-        {
-          "title": "Side Quest: Obeah and Botanical Warfare",
-          "image": "/images/sidequest_cassava.jpg",
-          "image_alt": "18th-century botanical illustration of the Cassava root",
-          "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n<p><strong>Discussion Point:</strong> How does this form of resistance challenge the idea that enslaved people were powerless?</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "Why might psychological and chemical resistance have been just as effective as armed rebellion?",
-              "model_answer": "It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat."
-            }
-          ],
-          "image_caption": "A botanical illustration of the cassava plant. Enslaved people frequently used their deep botanical knowledge of toxic plants to quietly poison their enslavers.",
-          "source_letter": "E"
-        }
-      ],
-      "quiz": [
-        {
-          "question": "What were the 'Maroons' in Jamaica?",
-          "options": [
-            "Communities of escaped enslaved people who fought guerrilla wars against the British.",
-            "British politicians who campaigned for the abolition of the slave trade.",
-            "A secret network of safe houses in the American South.",
-            "Enslaved people who worked primarily as domestic servants."
-          ],
-          "answer": 0,
-          "explanation": "The Maroons were fierce communities of formerly enslaved people who successfully resisted British control in the Jamaican mountains."
-        },
-        {
-          "question": "What was the significance of the Haitian Revolution (1791-1804)?",
-          "options": [
-            "It was the only successful large-scale slave revolt in history, resulting in an independent nation.",
-            "It led to the immediate abolition of slavery throughout the British Empire.",
-            "It was a peaceful transition to independence negotiated by French politicians.",
-            "It resulted in the creation of the Underground Railroad."
-          ],
-          "answer": 0,
-          "explanation": "The Haitian Revolution, led by figures like [Key Individual: Toussaint Louverture], utterly shattered the myth that enslaved people would not fight back and win."
-        },
-        {
-          "question": "Who was Harriet Tubman?",
-          "options": [
-            "A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.",
-            "A British politician who campaigned alongside William Wilberforce.",
-            "The leader of the First Maroon War in Jamaica.",
-            "A Jamaican plantation overseer who wrote a diary about enslaved resistance."
-          ],
-          "answer": 0,
-          "explanation": "Harriet Tubman demonstrated immense courage by repeatedly returning to the South to guide enslaved people to freedom."
-        },
-        {
-          "question": "What was the 'Underground Railroad'?",
-          "options": [
-            "A secret network of safe houses and routes that helped enslaved people escape.",
-            "A literal subterranean train system built by enslaved people.",
-            "A British political movement to abolish the slave trade.",
-            "A trade route used by the Maroons to smuggle goods."
-          ],
-          "answer": 0,
-          "explanation": "This grassroots resistance network was a vital lifeline for enslaved people seeking freedom in the American North or Canada."
-        },
-        {
-          "question": "What was 'Obeah' in the context of the Caribbean?",
-          "options": [
-            "A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.",
-            "A type of cash crop grown alongside sugar.",
-            "The name of a famous British slave ship.",
-            "A term used to describe absentee landlords."
-          ],
-          "answer": 0,
-          "explanation": "Obeah practitioners used their expert knowledge of plants not only for healing but occasionally to secretly poison brutal enslavers."
-        },
-        {
-          "question": "Why did enslavers live in constant terror of Obeah?",
-          "options": [
-            "Because practitioners could use their botanical knowledge to slowly and undetectably poison them.",
-            "Because Obeah leaders frequently organized massive armed rebellions.",
-            "Because Obeah was supported by the British government.",
-            "Because it encouraged enslaved people to stop working entirely."
-          ],
-          "answer": 0,
-          "explanation": "The silent, psychological, and chemical threat posed by Obeah created deep paranoia among plantation owners."
-        },
-        {
-          "question": "What is the 'White Savior Narrative' regarding the abolition of slavery?",
-          "options": [
-            "The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.",
-            "The belief that enslaved people freed themselves without any outside help.",
-            "The argument that slavery ended primarily due to economic factors.",
-            "The view that abolition was a mistake supported only by a small minority."
-          ],
-          "answer": 0,
-          "explanation": "This traditional narrative often ignores the crucial role played by enslaved people's own resistance."
-        },
-        {
-          "question": "According to historians like Eric Williams, what were the two TRUE main reasons for the abolition of slavery?",
-          "options": [
-            "Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.",
-            "The moral campaigning of William Wilberforce and the Enlightenment.",
-            "The invention of the steam engine and the end of the Triangular Trade.",
-            "The discovery of new trade routes to Asia and the decline of the Royal Navy."
-          ],
-          "answer": 0,
-          "explanation": "Williams argues that economic shifts and the immense cost/danger of suppressing slave revolts forced the British government's hand."
-        },
-        {
-          "question": "How does the story of the Underground Railroad challenge traditional historical narratives?",
-          "options": [
-            "It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.",
-            "It proves that slavery was not as brutal as some historians claim.",
-            "It suggests that abolition was primarily an American, rather than British, achievement.",
-            "It demonstrates that the Triangular Trade was economically unsustainable."
-          ],
-          "answer": 0,
-          "explanation": "The active, courageous resistance of individuals like Harriet Tubman refutes the idea that enslaved people were mere passive victims."
-        },
-        {
-          "question": "Based on Source A (Olaudah Equiano), what was a primary cause of death during the Middle Passage?",
-          "options": [
-            "Suffocation and sickness caused by severe overcrowding and lack of ventilation.",
-            "Starvation due to a complete lack of food provisions.",
-            "Execution by the ship's crew for attempted mutiny.",
-            "Drowning from ships sinking in frequent Atlantic storms."
-          ],
-          "answer": 0,
-          "explanation": "Equiano describes the 'closeness of the place' and 'copious perspirations' leading to sickness and death in the horrific conditions of the ship's hold."
-        }
-      ],
-      "video": [
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-propaganda-tactics/",
-          "title": "Slave Owner Propaganda Tactics"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-compensation-arguments/",
-          "title": "Slave Owner Compensation Arguments"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=ITtNDpkW26c&t=38s",
-          "title": "Abolitionism and why it was opposed"
-        },
-        {
-          "url": "https://era.org.uk/streaming-service-resource/resistance-enslaved-with-samuel-l-jackson/",
-          "title": "Resistance: Enslaved with Samuel L. Jackson"
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
         }
       ],
       "do_now": {
-        "title": "Do Now: Previous Knowledge",
         "type": "questions",
         "items": [
           {
-            "question": "What were the three legs of the Triangular Trade?",
-            "answer": "1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe."
+            "question": "1. Which three countries made up the Triple Entente?",
+            "answer": "Great Britain, France, and Russia"
           },
           {
-            "question": "What was a 'barracoon'?",
-            "answer": "A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships."
+            "question": "2. Which three countries made up the Triple Alliance?",
+            "answer": "Germany, Austria-Hungary, and Italy"
           },
           {
-            "question": "Why was sugar known as a 'killer crop'?",
-            "answer": "Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people."
+            "question": "3. Explain the theoretical logic of how the alliance system was supposed to keep peace.",
+            "answer": "It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression."
+          },
+          {
+            "question": "4. Why did the alliance system actually increase paranoia instead of security?",
+            "answer": "Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack."
+          },
+          {
+            "question": "5. What military plan did Germany create to avoid a long two-front war?",
+            "answer": "The Schlieffen Plan"
+          },
+          {
+            "question": "6. Which neutral country did the Schlieffen Plan require invading?",
+            "answer": "Belgium"
+          },
+          {
+            "question": "7. What feeling of being surrounded by enemies haunted German planners?",
+            "answer": "Encirclement"
+          },
+          {
+            "question": "8. What revolutionary British battleship was launched in 1906?",
+            "answer": "HMS Dreadnought"
+          },
+          {
+            "question": "9. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
+          },
+          {
+            "question": "10. How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           }
         ]
-      }
-    },
-    {
-      "id": "lesson_8",
-      "quiz": [
-        {
-          "question": "In what year was the Bank of England established, revolutionizing British national debt and finance?",
-          "options": [
-            "1492",
-            "1694",
-            "1600",
-            "1750"
-          ],
-          "answer": 1,
-          "explanation": "1694"
-        },
-        {
-          "question": "What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?",
-          "options": [
-            "Gin Lane",
-            "Beer Street",
-            "The Rake's Progress",
-            "A Harlot's Progress"
-          ],
-          "answer": 0,
-          "explanation": "Gin Lane"
-        },
-        {
-          "question": "Roughly what percentage of the male population had the right to vote in British parliamentary elections in 1750?",
-          "options": [
-            "Around 20%",
-            "Less than 5% (approx. 3-5%)",
-            "About 50%",
-            "Over 80%"
-          ],
-          "answer": 1,
-          "explanation": "Less than 5% (approx. 3-5%)"
-        },
-        {
-          "question": "What term was used to describe private toll roads constructed in the 18th century to speed up travel and trade?",
-          "options": [
-            "Roman Roads",
-            "Canal Paths",
-            "Turnpike Roads",
-            "Macadam Highways"
-          ],
-          "answer": 2,
-          "explanation": "Turnpike Roads"
-        },
-        {
-          "question": "Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?",
-          "options": [
-            "The English Civil War and the Glorious Revolution",
-            "The French Revolution and the American Revolution",
-            "The Industrial Revolution and the Agrarian Revolution",
-            "The Protestant Reformation and the Renaissance"
-          ],
-          "answer": 0,
-          "explanation": "The English Civil War and the Glorious Revolution"
-        },
-        {
-          "question": "What informal term was given to the 18th-century English criminal code that carried over 200 capital offenses?",
-          "options": [
-            "Magna Carta",
-            "The Bill of Rights",
-            "The 'Bloody Code'",
-            "The Napoleonic Code"
-          ],
-          "answer": 2,
-          "explanation": "The 'Bloody Code'"
-        },
-        {
-          "question": "Which institution, founded in London in 1600, was by 1750 establishing territorial footholds in Mughal India?",
-          "options": [
-            "The Virginia Company",
-            "The Royal African Company",
-            "The South Sea Company",
-            "The East India Company (EIC)"
-          ],
-          "answer": 3,
-          "explanation": "The East India Company (EIC)"
-        },
-        {
-          "question": "What was the name given to corrupt parliamentary constituencies with very few voters that were easily bought by aristocrats?",
-          "options": [
-            "Pocket Counties",
-            "Gerrymandered Districts",
-            "Burgage Plots",
-            "Rotten Boroughs"
-          ],
-          "answer": 3,
-          "explanation": "Rotten Boroughs"
-        },
-        {
-          "question": "Name two major consumer goods imported into Britain in 1750 that relied directly on Caribbean plantation slave labor.",
-          "options": [
-            "Tea and Silk",
-            "Sugar and Tobacco",
-            "Cotton and Wool",
-            "Spices and Porcelain"
-          ],
-          "answer": 1,
-          "explanation": "Sugar and Tobacco"
-        },
-        {
-          "question": "Which major historical transformation, beginning around 1750, would turn Britain into the 'Workshop of the World'?",
-          "options": [
-            "The Commercial Revolution",
-            "The Scientific Revolution",
-            "The Agricultural Revolution",
-            "The Industrial Revolution"
-          ],
-          "answer": 3,
-          "explanation": "The Industrial Revolution"
-        }
-      ],
+      },
+      "primary_source": {
+        "title": "Source A: Leonard Raven-Hill, 'The Boiling Point', a British political cartoon published in Punch Magazine, 1912.",
+        "src": "/assets/great_war_was_boiling_point.png",
+        "caption": "<strong>What is this source showing?</strong> This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
+        "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.",
+            "model": "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')"
+          },
+          {
+            "type": "draw",
+            "text": "Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.",
+            "model": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
+          }
+        ],
+        "model": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war."
+      },
       "flashcards": [
         {
-          "term": "King George II",
-          "definition": "Governed through a constitutional monarchy via Parliament."
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
         },
         {
-          "term": "Pierre-Jean Grosley",
-          "definition": "Observed the extreme contrasts of wealth and poverty in London in 1750."
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
         },
         {
-          "term": "Henry Fielding",
-          "definition": "Author who reported on rampant crime and poverty in 1751 London."
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
         },
         {
-          "term": "William Hogarth",
-          "definition": "Famous for his 1751 engraving 'Gin Lane' depicting social decay."
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
         }
       ],
-      "title": "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+      "pair_share": {
+        "prompt": "Look at the timeline of the July Crisis. At which exact moment do you think a world war became completely unstoppable? Was it the assassination, the blank cheque, or the mobilisations?",
+        "think": "Pick the specific turning point and write down why you chose it.",
+        "pair": "Compare your turning points. Do you agree on when the 'point of no return' was?",
+        "share": "Be ready to defend your group's chosen turning point to the class."
+      },
+      "historians_corner": {
+        "title": "The Fischer Controversy",
+        "text": "In 1961, German historian Fritz Fischer shocked the world by arguing that Germany deliberately caused WWI to achieve world power status. He pointed to the 'Blank Cheque' as evidence that Germany actively pushed Austria into war, knowing it would provoke Russia.",
+        "stretch_question": "How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?",
+        "stretch_model": "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/assets/great_war_was_boiling_point.png",
+            "title": "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912."
+          },
+          {
+            "type": "written",
+            "text": "“You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”",
+            "title": "Source B: The 'Blank Cheque' telegram sent from Germany to Austria-Hungary, 5 July 1914."
+          }
+        ],
+        "topic": "the causes of the outbreak of World War I",
+        "model": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
+      },
+      "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
+      "learning_objectives": {
+        "overarching": "To analyze how a wrong turn in Sarajevo triggered a world war.",
+        "scaffolded": [
+          "Identify the events of 28 June 1914.",
+          "Explain how the assassination triggered the alliance system.",
+          "Analyze whether the resulting war was inevitable or accidental."
+        ]
+      },
       "teacher_notes": {
-        "primer": "This is the final synoptic assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
+        "primer": "The overarching goal is to analyze how a wrong turn in Sarajevo triggered a world war. This lesson brings all the long-term causes together into the short-term spark. Focus on the timeline: the sheer bad luck of the assassination itself, followed by the rapid, rigid escalation of the July Crisis driven by military timetables.",
         "objectives": [
           {
-            "objective": "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
-            "primer": "Review the '1450 vs 1750' flowchart and prompt students to define modernity.",
-            "question": "What specific economic and political institutions made Britain look 'modern' by 1750?"
+            "objective": "Identify the events of 28 June 1914.",
+            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and [Key Individual: Gavrilo Princip] seizing the unexpected opportunity.",
+            "question": "What was the single biggest piece of 'bad luck' that allowed Gavrilo Princip to assassinate the Archduke?"
           },
           {
-            "objective": "Synthesise domestic social realities with imperial/commercial expansion across the period 1450–1750.",
-            "primer": "Use the toggle tabs ('Argument A' vs 'Argument B') to help students categorize the evidence.",
-            "question": "How did the wealth of the British Empire contrast with the lives of the poor in London slums?"
+            "objective": "Explain how the assassination triggered the alliance system.",
+            "primer": "Direct students to paragraph 6. This is a crucial chronological sequence: Austria blames Serbia -> Russia mobilises -> Germany declares war -> Britain declares war to protect Belgium. Have them trace the dominoes.",
+            "question": "The Archduke was killed by a Serbian terrorist. Why on earth did Great Britain end up declaring war on Germany because of it?"
           },
           {
-            "objective": "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750.",
-            "primer": "Direct students to the Essay Synthesis Builder at the bottom of the page to plan their 4-paragraph essay.",
-            "question": "What is your nuanced overall judgment regarding Britain's modernity by 1750?"
+            "objective": "Analyze whether the resulting war was inevitable or accidental.",
+            "primer": "Focus on the 'July Crisis' in paragraphs 7, 8, and 9. Point out the 'Willy-Nicky Telegrams' as an example of leaders trying to stop the war, versus the rigid military timetables (like the Schlieffen Plan) that forced it to happen.",
+            "question": "After reading about the 'Willy-Nicky Telegrams' and the military timetables, do you think the politicians were in charge in July 1914, or were the generals running the show?"
           }
-        ]
+        ],
+        "source_context": "The Balkans was known as the \"Powder Keg of Europe\" because of explosive nationalist movements, particularly Slavic groups seeking independence from the Austro-Hungarian Empire. The \"Great Powers\" (Britain, France, Germany, Russia, Austria-Hungary) are shown desperately trying to keep a lid on the tension, which finally exploded with the Archduke's assassination. **Hinge Question:** Based on this image, why were the Great Powers unable to permanently solve the 'Balkan Troubles'?"
       },
-      "do_now": {
-        "title": "Do Now: Previous Knowledge",
-        "type": "questions",
-        "items": [
-          {
-            "question": "What was the primary function of the 1607 Jamestown Fort design?",
-            "answer": "Defense against both Spanish attacks and the local Powhatan confederacy."
-          },
-          {
-            "question": "Why did Oliver Cromwell execute King Charles I in 1649?",
-            "answer": "For committing high treason against Parliament and the English people."
-          },
-          {
-            "question": "What was the strategic advantage of the Jamaican Maroons' location?",
-            "answer": "The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer."
-          },
-          {
-            "question": "What motivated the creation of the Royal African Company?",
-            "answer": "To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants."
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Modernity",
-          "definition": "In history, the transition away from traditional, agricultural, feudal societies towards commercial, secular, and industrialized ones."
-        },
-        {
-          "term": "Synoptic",
-          "definition": "Taking a comprehensive mental view of a wide series of events across a long period of time."
-        },
-        {
-          "term": "National Debt",
-          "definition": "Money borrowed by a government (often via a central bank like the Bank of England) to fund state activities like war."
-        },
-        {
-          "term": "Rotten Borough",
-          "definition": "A tiny parliamentary constituency with very few voters, easily bought or controlled by a wealthy aristocrat."
-        },
-        {
-          "term": "The Bloody Code",
-          "definition": "The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes."
-        }
-      ],
-      "vocab_cloze_text": "To write a successful [Synoptic] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
+      "vocab_cloze_text": "The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war.",
       "narrative_blocks": [
         {
-          "title": "Micro-History: The Contrast of London Bridge (1750)",
-          "text": "In October 1750, a French aristocrat named Pierre-Jean Grosley stood on London Bridge and looked out over the River Thames.<br><br>To his right, he saw a forest of wooden masts belonging to over 1,000 merchant ships. These vessels had arrived from Canton, Calcutta, Barbados, and Virginia, packed with tea, silk, raw sugar, and tobacco. Nearby stood the <strong>Bank of England</strong> and the <strong>Royal Exchange</strong>, where stockbrokers traded paper credit, fire insurance, and national debt using complex mathematics that stunned the rest of Europe. London was the financial beating heart of a global, capitalist empire.<br><br>Then Grosley walked off the bridge and turned into the narrow alleys of St. Giles.<br><br>Within five minutes, the scent of expensive Indian spices was replaced by the stench of open sewage, rotting garbage, and cheap gin. He passed desperate mothers pouring raw grain spirit down the throats of crying infants to quiet them. In these slums, 50% of children died before the age of five. Medical care still relied on bloodletting with leeches, public executions at Tyburn Tree drew crowds of 30,000 howling spectators, and women had zero legal rights, remaining the legal property of their husbands.<br><br>Grosley was left with a baffling paradox: <strong>Was Britain in 1750 a hyper-modern global superpower, or a brutal, unequal medieval society wearing a wig?</strong>",
+          "text": "**The July Crisis: Inevitable or Preventable?**\n\n"
+        },
+        {
+          "text": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
+          "level_4": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
+          "theme_heading": "Balkans Ignite Conflict"
+        },
+        {
+          "text": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong></strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
+          "level_4": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "What was the 'baffling paradox' that Grosley observed in London in 1750?",
-              "model_answer": "The paradox was the extreme contrast between Britain's hyper-modern global wealth and complex financial systems (seen on the river and at the Bank of England) and the brutal, un-modern, diseased poverty found just streets away in the slums of St. Giles."
+              "type": "written",
+              "text": "Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire.",
+              "model": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
             }
           ],
-          "images": [
-            {
-              "image": "/images/early_mod_l6_banner.jpg",
-              "image_alt": "London Bridge from St Olaf Stairs (1632)",
-              "image_context": "Observe the dense, chaotic jumble of timber-framed houses crowding the bridge. This reveals the severely overcrowded, unsanitary, and highly flammable nature of Early Modern London, making it a perfect breeding ground for both the Great Plague and the Great Fire. **Hinge Question:** What were the major risks of living in such densely packed, unregulated urban environments?",
-              "image_caption": "A 1632 painting by Claude de Jongh showing London Bridge. By the 18th century, the River Thames was choked with global merchant shipping, reflecting London's explosion in population and its status as the center of a global empire.",
-              "source_letter": "A"
-            },
-            {
-              "image": "/images/gin_lane.jpg",
-              "image_alt": "William Hogarth's Gin Lane (1751)",
-              "image_context": "Notice the horrific details: a mother dropping her baby, starvation, suicide, and collapsing buildings. Hogarth created this satirical engraving as propaganda to expose the devastating social decay, poverty, and misery caused by the unchecked 'Gin Craze' among London's poorest classes. **Hinge Question:** Is this image a reliable reflection of daily life in 1751, or an exaggerated moral panic designed to shock the viewer?",
-              "image_caption": "William Hogarth's 1751 engraving 'Gin Lane' depicts the horrifying social decay, poverty, and alcohol addiction rampant in 18th-century London slums. Hogarth created this print as a direct piece of propaganda to support the Gin Act, seeking to reduce the mass consumption of cheap spirits.",
-              "source_letter": "B"
-            }
-          ]
+          "theme_heading": "Empire's Serbian"
         },
         {
-          "title": "Macro-History: The Ideology of Empire",
-          "text": "As Britain grew incredibly wealthy from the transatlantic slave trade and the East India Company, it developed a powerful new self-image. The British elite did not view themselves as brutal conquerors; instead, they believed they were bringing civilization and order to the world. Art from this period heavily utilized classical mythology to portray Britannia as a righteous, glorious figure receiving the willing submission and wealth of the globe."
+          "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong></strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          "theme_heading": "Ferdinand'"
         },
         {
-          "title": "Analyzing Source A",
-          "image": "/images/global_britannia.jpg",
-          "image_alt": "The East Offering its Riches to Britannia (1778)",
-          "source_letter": "A",
+          "text": "The initial assassination attempts failed completely. One terrorist couldn't get his gun out, another went home out of pity, and a third threw a bomb that bounced off the Archduke's car and exploded under the vehicle behind. Furious, Franz Ferdinand canceled the rest of his itinerary and decided to head back to the train station, ordering his driver to stop by the hospital first to visit the wounded officers. However, the route map was altered and the drivers took a critical wrong turn onto Franz Josef Street. Realizing the error, the drivers stopped and attempted to reverse.",
+          "level_4": "The initial assassination attempts failed completely. Realizing the error, the drivers stopped and attempted to reverse.",
           "tasks": [
             {
-              "type": "source_analysis",
-              "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
-              "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
-            }
-          ]
-        },
-        {
-          "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
-          "text": "To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style=\"background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;\">  <div style=\"background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;\">1450: FEUDAL & ISOLATED</div>  <p style=\"color: #64748b; font-size: 0.9rem;\">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style=\"font-size: 1.5rem; color: #94a3b8; margin: 10px 0;\">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style=\"background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;\">1750: THE PRE-INDUSTRIAL STATE</div>  <div style=\"display: flex; gap: 10px;\">    <div style=\"flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #059669;\">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;\">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style=\"flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;\">       <strong style=\"color: #dc2626;\">❌ UN-MODERN REALITIES</strong><br>       <ul style=\"padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;\">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"argBtn1\" onclick=\"document.getElementById('arg1').style.display='block'; document.getElementById('arg2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #059669;\">Argument A: Global Wealth (Modern)</button>        <button id=\"argBtn2\" onclick=\"document.getElementById('arg1').style.display='none'; document.getElementById('arg2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #dc2626;\">Argument B: Domestic Reality (Un-Modern)</button>    </div>    <div id=\"arg1\" style=\"padding: 25px; display: block; background: #fff;\">        <h3 style=\"margin-top: 0; color: #059669;\">Britain Was Superbly \"Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div id=\"arg2\" style=\"padding: 25px; display: none; background: #fff;\">        <h3 style=\"margin-top: 0; color: #dc2626;\">Britain Remained Profoundly \"Un-Modern\" by 1750</h3>        <ul style=\"line-height: 1.8; font-size: 1.05rem;\">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The \"Bloody Code\":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic \"modernity\" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>"
-        },
-        {
-          "title": "Analyzing Source B",
-          "image": "/images/royal_exchange_courtyard.jpg",
-          "image_alt": "The Royal Exchange, London (1644)",
-          "source_letter": "B",
-          "tasks": [
-            {
-              "type": "analysis",
-              "question": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.",
-              "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
-              "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
-            }
-          ]
-        },
-        {
-          "title": "Primary Source Analysis: The Dual Reality",
-          "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source C: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote>",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?",
-              "model_answer": "The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums."
+              "type": "written",
+              "text": "Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke.",
+              "model": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
             }
           ],
-          "source_letter": "C"
+          "theme_heading": "A Fateful Wrong Turn"
         },
         {
-          "title": "Primary Source Analysis: The Dark Side",
-          "text": "<blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source D: From a London Magistrate's Report on Crime (Henry Fielding, 1751)</strong><br><em>\"The streets of this great city are daily rendered unsafe by bands of armed footpads and cutpurses... Multitudes of wretches perish annually of sheer cold and gin-poisoning in the cellars of St. Giles, unheeded by any magistrate. Our prisons are foul dens of typhus fever where accused men rot for months before trial. We boast of our liberties, yet our poor live in a state of barbarism lower than the beasts.\"</em></blockquote>",
+          "text": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Seizing his unexpected luck, Princip stepped forward, pulled his pistol, and fired twice into the car. One bullet tore through the Archduke's throat; the second struck his wife, Sophie, in the stomach. Both died within minutes.",
+          "level_4": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes.",
+          "theme_heading": "Princip's Fatal"
+        },
+        {
+          "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong></strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+          "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
           "tasks": [
             {
-              "type": "source_analysis",
-              "question": "Synthesis Challenge: Combine the insights from Sources C and D with your knowledge of the Atlantic Slave Trade to write a nuanced 3-sentence summary of British society in 1750.",
-              "model_answer": "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society."
+              "type": "written",
+              "text": "Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war.",
+              "model": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
             }
           ],
-          "source_letter": "D"
+          "theme_heading": "War Erupts Globally"
         },
         {
-          "title": "Urban Sprawl: Mapping 18th-Century London",
-          "image": "/images/turnpike_map.jpg",
-          "image_alt": "John Rocque's Map of London (1746)",
-          "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
-          "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
+          "text": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+          "level_4": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+          "theme_heading": "July Crisis: Descent"
+        },
+        {
+          "text": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. Both monarchs pleaded with each other to stop military mobilizations, signing their telegrams with familiar nicknames. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
+          "level_4": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Look at Source E. How does the map of London's urban sprawl visually represent the shift towards a modern, consumer-driven society?",
-              "model_answer": "The map shows London expanding rapidly beyond its medieval walls, driven by new wealth, trade, and a growing population, which is a key characteristic of a modern, consumer-driven society."
+              "type": "written",
+              "text": "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis?",
+              "model": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
             }
           ],
-          "source_letter": "E"
+          "theme_heading": "Cousins' Failed Peace"
         },
         {
-          "title": "Historiographical Debate: 'The First Modern Society'?",
-          "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: [Key Individual: Prof. [Key Individual: Prof. Roy Porter]]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: [Key Individual: Prof. [Key Individual: Prof. J.C.D. Clark]]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A: [Key Individual: Prof. Roy Porter] (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B: [Key Individual: Prof. J.C.D. Clark] (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>",
+          "text": "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. Military timetables, such as Germany's rigid Schlieffen Plan and Russia's immense mobilization schedules, were so inflexible that once the train of war started moving, it could not be stopped. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
+          "level_4": "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Which historian focuses on the 'consumer society' and middle class, and which focuses on 'ancient custom' and rural poverty?",
-              "model_answer": "Professor Roy Porter focuses on the consumer society and the enterprising middle class. Professor J.C.D. Clark focuses on ancient custom, traditional religion, and rural poverty."
-            }
-          ]
-        },
-        {
-          "title": "Synthesis Essay Planning Task",
-          "text": "To conclude this entire 1450–1750 unit, you will write a 4-paragraph synoptic essay answering the enquiry question: <strong>\"How 'modern' was Britain by 1750?\"</strong>",
-          "tasks": []
-        },
-        {
-          "title": "Lesson Reflection",
-          "tasks": []
-        },
-        {
-          "title": "Side Quest: The Mudlarks of London",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Mudlarks of London</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>\n</details>",
-          "tasks": [
-            {
-              "type": "comprehension",
-              "question": "What was a 'Mudlark', and what does their existence tell us about poverty in 1750?",
-              "model_answer": "Mudlarks were desperate children who scavenged in the freezing mud of the Thames for scraps of coal to sell, showing that extreme, life-threatening poverty still existed."
-            },
-            {
-              "type": "comprehension",
-              "question": "How does this paragraph challenge the idea that Britain had become a fully 'modern' society by 1750?",
-              "model_answer": "It shows that while the rich enjoyed modern ideas like science and coffee houses, the poor were suffering from addiction, disease, and horrific living conditions."
+              "type": "written",
+              "text": "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914.",
+              "model": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
             }
           ],
-          "source_letter": "F"
+          "theme_heading": "Military Control Unleashes"
+        },
+        {
+          "text": "When war broke out in 1914, it was not just a European conflict. Because of the aggressive Scramble for Colonies (Lesson 2), millions of colonized people across Africa, Asia, and the Middle East were dragged into a war they had no part in causing. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
+          "level_4": "When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
+          "theme_heading": "Colonies Join World War"
+        },
+        {
+          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
+          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
+          "theme_heading": "Dominoes"
         }
       ],
-      "learning_objectives": {
-        "overarching": "How 'modern' was Britain by 1750? (Periodisation and synoptic essay synthesis)",
-        "scaffolded": [
-          "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
-          "Synthesise domestic social realities with imperial/commercial expansion across the period 1450–1750.",
-          "Construct a high-level, structured synoptic essay evaluating the extent of Britain's 'modernity' by 1750."
-        ]
-      },
-      "banner": "/images/early_mod_l6_banner.jpg"
+      "quiz": [
+        {
+          "q": "Who assassinated Archduke Franz Ferdinand?",
+          "a": "Gavrilo Princip",
+          "options": [
+            "Gavrilo Princip",
+            "Nedeljko Cabrinovic",
+            "Dragutin Dimitrijevic",
+            "Leon Trotsky"
+          ]
+        },
+        {
+          "q": "What was the name of the Serbian nationalist group responsible for the assassination?",
+          "a": "The Black Hand",
+          "options": [
+            "The Black Hand",
+            "The White Rose",
+            "The Red Guards",
+            "Young Bosnia"
+          ]
+        },
+        {
+          "q": "On what exact date was the Archduke assassinated?",
+          "a": "28 June 1914",
+          "options": [
+            "28 June 1914",
+            "28 July 1914",
+            "11 November 1918",
+            "4 August 1914"
+          ]
+        },
+        {
+          "q": "Which empire had annexed Bosnia in 1908, angering Serbian nationalists?",
+          "a": "Austria-Hungary",
+          "options": [
+            "Austria-Hungary",
+            "The Ottoman Empire",
+            "Russia",
+            "Germany"
+          ]
+        },
+        {
+          "q": "Who was the heir to the Austro-Hungarian throne that visited Sarajevo?",
+          "a": "Archduke Franz Ferdinand",
+          "options": [
+            "Archduke Franz Ferdinand",
+            "Emperor Franz Joseph",
+            "Kaiser Wilhelm II",
+            "Tsar Nicholas II"
+          ]
+        },
+        {
+          "q": "What terrorist group supplied the assassins with weapons?",
+          "a": "The Black Hand",
+          "options": [
+            "The Black Hand",
+            "Young Bosnia",
+            "The Red Army",
+            "The Serbian Guard"
+          ]
+        },
+        {
+          "q": "What was the first, failed assassination attempt on the Archduke that morning?",
+          "a": "A bomb was thrown at his car but bounced off",
+          "options": [
+            "A bomb was thrown at his car but bounced off",
+            "He was shot at but missed",
+            "His driver was poisoned",
+            "A bridge was blown up"
+          ]
+        },
+        {
+          "q": "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
+          "a": "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+          "options": [
+            "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+            "Princip had planned the exact route",
+            "The Archduke went in to buy a sandwich",
+            "The police ordered the car to stop there"
+          ]
+        },
+        {
+          "q": "What was the 'Blank Cheque'?",
+          "a": "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+          "options": [
+            "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+            "A bribe paid to the assassins",
+            "A peace offer from Russia",
+            "The money used to buy the guns"
+          ]
+        },
+        {
+          "q": "What happened on July 23, 1914?",
+          "a": "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+          "options": [
+            "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+            "Germany invaded Belgium",
+            "Russia declared war",
+            "Britain joined the war"
+          ]
+        },
+        {
+          "q": "Why did Britain declare war on Germany on August 4, 1914?",
+          "a": "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+          "options": [
+            "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+            "Because of the assassination in Sarajevo",
+            "Because France surrendered",
+            "Because Germany sank a British ship"
+          ]
+        }
+      ]
     }
   ],
-  "portraits": [
+  "quizPack": [
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/niccol_barbaro.jpg",
+      "q": "In what year did the Franco-Prussian War end?",
+      "a": "1871",
       "options": [
-        "Sultan Mehmed II",
-        "Pope Alexander VI",
-        "Niccolò Barbaro",
-        "Chief Powhatan"
+        "1871",
+        "1882",
+        "1914",
+        "1890"
       ],
-      "answer": 2,
-      "source": "Key Individuals"
+      "id": "gw_q1"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/sultan_mehmed_ii.jpg",
+      "q": "Which wealthy region did Germany take from France in 1871?",
+      "a": "Alsace-Lorraine",
       "options": [
-        "Sultan Mehmed II",
-        "Chief Powhatan",
-        "Professor Eric Williams",
-        "Olaudah Equiano"
+        "Alsace-Lorraine",
+        "The Rhineland",
+        "The Sudetenland",
+        "The Ruhr Valley"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q2"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/mansa_musa.jpg",
+      "q": "What was the French desire for revenge called?",
+      "a": "Revanche",
       "options": [
-        "Mansa Musa",
-        "John Hawkins",
-        "Shashi Tharoor",
-        "John Bradshaw"
+        "Revanche",
+        "Weltpolitik",
+        "Encirclement",
+        "Pan-Slavism"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q3"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/admiral_zheng_he.jpg",
+      "q": "Who was the German Chancellor that unified Germany?",
+      "a": "Otto von Bismarck",
       "options": [
-        "Admiral Zheng He",
-        "King Charles II",
-        "Professor Peter Frankopan",
-        "Sir Walter Raleigh"
+        "Otto von Bismarck",
+        "Kaiser Wilhelm II",
+        "Count Leo von Caprivi",
+        "Theobald von Bethmann-Hollweg"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q4"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/christopher_columbus.jpg",
+      "q": "What was Bismarck's greatest strategic fear?",
+      "a": "A war on two fronts (Encirclement)",
       "options": [
-        "Henry Fielding",
-        "Mary, Queen of Scots",
-        "Sir Walter Raleigh",
-        "Christopher Columbus"
+        "A war on two fronts (Encirclement)",
+        "A British naval blockade",
+        "An uprising by the working class",
+        "The collapse of Austria-Hungary"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q5"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/martin_luther.jpg",
+      "q": "Which two countries did Bismarck fear would ally against Germany?",
+      "a": "France and Russia",
       "options": [
-        "Martin Luther",
-        "Mary, Queen of Scots",
-        "Sir Walter Raleigh",
-        "Professor Eric Williams"
+        "France and Russia",
+        "Britain and France",
+        "Russia and Austria-Hungary",
+        "Britain and Russia"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q6"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/pope_alexander_vi.jpg",
+      "q": "What was the secret 1887 agreement between Germany and Russia?",
+      "a": "The Reinsurance Treaty",
       "options": [
-        "Christopher Columbus",
-        "Niccolò Barbaro",
-        "Henry Fielding",
-        "Pope Alexander VI"
+        "The Reinsurance Treaty",
+        "The Entente Cordiale",
+        "The Dual Alliance",
+        "The Treaty of London"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q7"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/king_philip_ii.jpg",
+      "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
+      "a": "Kaiser Wilhelm II",
       "options": [
-        "John Rolfe",
-        "Shashi Tharoor",
-        "King Philip II",
-        "Admiral Zheng He"
+        "Kaiser Wilhelm II",
+        "Kaiser Wilhelm I",
+        "Archduke Franz Ferdinand",
+        "Tsar Nicholas II"
       ],
-      "answer": 2,
-      "source": "Key Individuals"
+      "id": "gw_q8"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/queen_elizabeth_i.jpg",
+      "q": "What was Wilhelm II's aggressive global policy called?",
+      "a": "Weltpolitik (World Policy)",
       "options": [
-        "King George II",
-        "Chief Powhatan",
-        "Queen Elizabeth I",
-        "Mary, Queen of Scots"
+        "Weltpolitik (World Policy)",
+        "Realpolitik",
+        "Lebensraum",
+        "Splendid Isolation"
       ],
-      "answer": 2,
-      "source": "Key Individuals"
+      "id": "gw_q9"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/mary_queen_of_scots.jpg",
+      "q": "What previous policy of Bismarck's focused on European peace?",
+      "a": "Realpolitik",
       "options": [
-        "King Philip II",
-        "Sir Walter Raleigh",
-        "Martin Luther",
-        "Mary, Queen of Scots"
+        "Realpolitik",
+        "Weltpolitik (World Policy)",
+        "Mitteleuropa",
+        "Pan-Slavism"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q10"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/henry_viii.jpg",
+      "q": "What agreement did Britain and France sign in 1904?",
+      "a": "The Entente Cordiale",
       "options": [
-        "Oliver Cromwell",
-        "King Philip II",
-        "King Charles I",
-        "Henry VIII"
+        "The Entente Cordiale",
+        "The Triple Entente",
+        "The Treaty of Versailles",
+        "The Reinsurance Treaty"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q11"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/francis_drake.jpg",
+      "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
+      "a": "Morocco",
       "options": [
-        "King Philip II",
-        "Francis Drake",
-        "Olaudah Equiano",
-        "Oliver Cromwell"
+        "Morocco",
+        "Egypt",
+        "South Africa",
+        "Sudan"
       ],
-      "answer": 1,
-      "source": "Key Individuals"
+      "id": "gw_q12"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/john_hawkins.JPG",
+      "q": "What was the result of the First Moroccan (Tangier) Crisis?",
+      "a": "Britain and France grew closer, isolating Germany",
       "options": [
-        "Henry Fielding",
-        "Mary, Queen of Scots",
-        "Sultan Mehmed II",
-        "John Hawkins"
+        "Britain and France grew closer, isolating Germany",
+        "Germany gained control of Morocco",
+        "The Entente Cordiale was dissolved",
+        "Russia declared war on Germany"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q13"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/sir_walter_raleigh.jpg",
+      "q": "What name was given to Germany's aggressive threat of military force?",
+      "a": "Gunboat Diplomacy",
       "options": [
-        "Henry Fielding",
-        "Olaudah Equiano",
-        "Sir Walter Raleigh",
-        "Francis Drake"
+        "Gunboat Diplomacy",
+        "Dollar Diplomacy",
+        "Appeasement",
+        "Risk Theory"
       ],
-      "answer": 2,
-      "source": "Key Individuals"
+      "id": "gw_q14"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/chief_powhatan.jpg",
+      "q": "What was the name of the German gunboat sent to Agadir in 1911?",
+      "a": "SMS Panther",
       "options": [
-        "William Hogarth",
-        "Chief Powhatan",
-        "Oliver Cromwell",
-        "Christopher Columbus"
+        "SMS Panther",
+        "HMS Dreadnought",
+        "SMS Emden",
+        "SMS Bismarck"
       ],
-      "answer": 1,
-      "source": "Key Individuals"
+      "id": "gw_q15"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/john_rolfe.jpg",
+      "q": "What was the British policy requiring their navy to be larger than the next two combined?",
+      "a": "The Two-Power Standard",
       "options": [
-        "John Rolfe",
-        "William Hogarth",
-        "King James I",
-        "Chief Powhatan"
+        "The Two-Power Standard",
+        "The Risk Theory",
+        "The Imperial Defense Act",
+        "The Continental Commitment"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q16"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/king_james_i.jpg",
+      "q": "What revolutionary British battleship was launched in 1906?",
+      "a": "HMS Dreadnought",
       "options": [
-        "Martin Luther",
-        "Pierre-Jean Grosley",
-        "Oliver Cromwell",
-        "King James I"
+        "HMS Dreadnought",
+        "HMS Victory",
+        "HMS Invincible",
+        "HMS Iron Duke"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q17"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/sir_thomas_roe.jpg",
+      "q": "Why did the Dreadnought ironically threaten British supremacy?",
+      "a": "It made all older ships obsolete, resetting the naval race",
       "options": [
-        "Sir Thomas Roe",
-        "King Charles II",
-        "Christopher Columbus",
-        "Professor Eric Williams"
+        "It made all older ships obsolete, resetting the naval race",
+        "It was too expensive to build more than one",
+        "It was easily destroyed by German U-Boats",
+        "Its guns could not hit moving targets"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q18"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/emperor_jahangir.jpeg",
+      "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
+      "a": "Splendid Isolation",
       "options": [
-        "King Philip II",
-        "Professor Eric Williams",
-        "King James I",
-        "Emperor Jahangir"
+        "Splendid Isolation",
+        "The Two-Power Standard",
+        "Balance of Power",
+        "Appeasement"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q19"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/king_charles_i.jpg",
+      "q": "What was German Admiral Tirpitz's naval strategy called?",
+      "a": "Risk Theory",
       "options": [
-        "Pierre-Jean Grosley",
-        "Professor Eric Williams",
-        "William Hogarth",
-        "King Charles I"
+        "Risk Theory",
+        "The Schlieffen Plan",
+        "Weltpolitik",
+        "Unrestricted Submarine Warfare"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q20"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/oliver_cromwell.jpg",
+      "q": "What volatile region was known as the 'Powder Keg of Europe'?",
+      "a": "The Balkans",
       "options": [
-        "Queen Nanny (Nanny of the Maroons)",
-        "Henry VIII",
-        "Sultan Mehmed II",
-        "Oliver Cromwell"
+        "The Balkans",
+        "The Rhineland",
+        "The Middle East",
+        "The Caucasus"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q21"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/john_bradshaw.png",
+      "q": "What declining multi-ethnic empire dominated the northern Balkans?",
+      "a": "The Austro-Hungarian Empire",
       "options": [
-        "John Bradshaw",
-        "Sultan Mehmed II",
-        "Niccolò Barbaro",
-        "John Rolfe"
+        "The Austro-Hungarian Empire",
+        "The Ottoman Empire",
+        "The Russian Empire",
+        "The British Empire"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q22"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/king_charles_ii.jpg",
+      "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
+      "a": "The Ottoman Empire",
       "options": [
-        "King Charles II",
-        "Mary, Queen of Scots",
-        "Professor Peter Frankopan",
-        "Martin Luther"
+        "The Ottoman Empire",
+        "The Austro-Hungarian Empire",
+        "The Russian Empire",
+        "The German Empire"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q23"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg",
+      "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
+      "a": "Serbia",
       "options": [
-        "Pope Alexander VI",
-        "King Philip II",
-        "Queen Nanny (Nanny of the Maroons)",
-        "Sir Thomas Roe"
+        "Serbia",
+        "Bosnia",
+        "Croatia",
+        "Bulgaria"
       ],
-      "answer": 2,
-      "source": "Key Individuals"
+      "id": "gw_q24"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/olaudah_equiano.png",
+      "q": "Which region did Austria-Hungary formally annex in 1908?",
+      "a": "Bosnia",
       "options": [
-        "Emperor Jahangir",
-        "King James I",
-        "Professor Eric Williams",
-        "Olaudah Equiano"
+        "Bosnia",
+        "Serbia",
+        "Romania",
+        "Albania"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q25"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/king_george_ii.jpg",
+      "q": "Which major power considered itself the protector of the Slavic people?",
+      "a": "Russia",
       "options": [
-        "King Charles I",
-        "John Hawkins",
-        "John Rolfe",
-        "King George II"
+        "Russia",
+        "Germany",
+        "France",
+        "Britain"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q26"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/pierre_jean_grosley.jpg",
+      "q": "Who was the heir to the Austro-Hungarian throne?",
+      "a": "Archduke Franz Ferdinand",
       "options": [
-        "Sir Walter Raleigh",
-        "John Hawkins",
-        "Oliver Cromwell",
-        "Pierre-Jean Grosley"
+        "Archduke Franz Ferdinand",
+        "Emperor Franz Joseph",
+        "Kaiser Wilhelm II",
+        "Tsar Nicholas II"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q27"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/henry_fielding.jpg",
+      "q": "In which city was the Archduke assassinated?",
+      "a": "Sarajevo",
       "options": [
-        "Henry Fielding",
-        "Emperor Jahangir",
-        "King George II",
-        "Chief Powhatan"
+        "Sarajevo",
+        "Belgrade",
+        "Vienna",
+        "Berlin"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q28"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/william_hogarth.jpg",
+      "q": "On what date was the Archduke assassinated?",
+      "a": "June 28, 1914",
       "options": [
-        "Professor Eric Williams",
-        "Henry Fielding",
-        "Mansa Musa",
-        "William Hogarth"
+        "June 28, 1914",
+        "July 23, 1914",
+        "August 4, 1914",
+        "November 11, 1918"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q29"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/professor_peter_frankopan.JPG",
+      "q": "Who assassinated the Archduke?",
+      "a": "Gavrilo Princip",
       "options": [
-        "Professor Peter Frankopan",
-        "Martin Luther",
-        "Chief Powhatan",
-        "King Charles I"
+        "Gavrilo Princip",
+        "Nedeljko Čabrinović",
+        "Dragutin Dimitrijević",
+        "Leon Trotsky"
       ],
-      "answer": 0,
-      "source": "Key Individuals"
+      "id": "gw_q30"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/shashi_tharoor.jpg",
+      "q": "What secret Serbian society did the assassin belong to?",
+      "a": "The Black Hand",
       "options": [
-        "Henry Fielding",
-        "Professor Peter Frankopan",
-        "King James I",
-        "Shashi Tharoor"
+        "The Black Hand",
+        "The White Rose",
+        "The Young Turks",
+        "The Bolsheviks"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q31"
     },
     {
-      "q": "Who is this historical figure?",
-      "img": "/images/individuals/professor_eric_williams.jpg",
+      "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
+      "a": "The 'Blank Check'",
       "options": [
-        "Francis Drake",
-        "John Hawkins",
-        "Admiral Zheng He",
-        "Professor Eric Williams"
+        "The 'Blank Check'",
+        "The Reinsurance Treaty",
+        "The Entente Cordiale",
+        "The Ultimatum"
       ],
-      "answer": 3,
-      "source": "Key Individuals"
+      "id": "gw_q32"
+    },
+    {
+      "q": "What is the month of diplomatic failures after the assassination called?",
+      "a": "The July Crisis",
+      "options": [
+        "The July Crisis",
+        "The Sarajevo Crisis",
+        "The Balkan Wars",
+        "The Blank Check Incident"
+      ],
+      "id": "gw_q33"
+    },
+    {
+      "q": "What did Austria-Hungary issue to Serbia on July 23?",
+      "a": "An ultimatum",
+      "options": [
+        "An ultimatum",
+        "A declaration of war",
+        "A peace treaty",
+        "A demand for reparations"
+      ],
+      "id": "gw_q34"
+    },
+    {
+      "q": "Which country began mobilizing its army to protect Serbia?",
+      "a": "Russia",
+      "options": [
+        "Russia",
+        "France",
+        "Britain",
+        "Germany"
+      ],
+      "id": "gw_q35"
+    },
+    {
+      "q": "What was the name of Germany's military strategy for a two-front war?",
+      "a": "The Schlieffen Plan",
+      "options": [
+        "The Schlieffen Plan",
+        "The Risk Theory",
+        "Plan XVII",
+        "The Bismarck Strategy"
+      ],
+      "id": "gw_q36"
+    },
+    {
+      "q": "Which neutral country did Germany invade to attack France?",
+      "a": "Belgium",
+      "options": [
+        "Belgium",
+        "Switzerland",
+        "The Netherlands",
+        "Luxembourg"
+      ],
+      "id": "gw_q37"
+    },
+    {
+      "q": "Which country declared war on Germany due to the invasion of Belgium?",
+      "a": "Britain",
+      "options": [
+        "Britain",
+        "Russia",
+        "Italy",
+        "The United States"
+      ],
+      "id": "gw_q38"
+    },
+    {
+      "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
+      "a": "The Triple Alliance",
+      "options": [
+        "The Triple Alliance",
+        "The Triple Entente",
+        "The Central Powers",
+        "The League of Three Emperors"
+      ],
+      "id": "gw_q39"
+    },
+    {
+      "q": "What was the alliance of Britain, France, and Russia called?",
+      "a": "The Triple Entente",
+      "options": [
+        "The Triple Entente",
+        "The Triple Alliance",
+        "The Allied Powers",
+        "The Grand Alliance"
+      ],
+      "id": "gw_q40"
+    },
+    {
+      "q": "What treaty ended the First World War in 1919?",
+      "a": "The Treaty of Versailles",
+      "options": [
+        "The Treaty of Versailles",
+        "The Treaty of Brest-Litovsk",
+        "The Treaty of Trianon",
+        "The Congress of Vienna"
+      ],
+      "id": "gw_q41"
+    },
+    {
+      "q": "Which clause forced Germany to accept full responsibility for the war?",
+      "a": "Article 231 (War Guilt Clause)",
+      "options": [
+        "Article 231 (War Guilt Clause)",
+        "Article 48",
+        "The Blank Check",
+        "The Reparations Clause"
+      ],
+      "id": "gw_q42"
+    },
+    {
+      "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
+      "a": "Preventative War",
+      "options": [
+        "Preventative War",
+        "Total War",
+        "War of Attrition",
+        "Proxy War"
+      ],
+      "id": "gw_q43"
+    },
+    {
+      "q": "Which historian famously argued Germany planned a war of aggression?",
+      "a": "Fritz Fischer",
+      "options": [
+        "Fritz Fischer",
+        "Margaret MacMillan",
+        "A.J.P. Taylor",
+        "Christopher Clark"
+      ],
+      "id": "gw_q44"
+    },
+    {
+      "q": "Which historian argued the nations blundered into war due to rigid alliances?",
+      "a": "Margaret MacMillan",
+      "options": [
+        "Margaret MacMillan",
+        "Fritz Fischer",
+        "Ian Kershaw",
+        "Richard Evans"
+      ],
+      "id": "gw_q45"
+    },
+    {
+      "q": "What was the 'quarantine line' of new states created after WWI called?",
+      "a": "Cordon Sanitaire",
+      "options": [
+        "Cordon Sanitaire",
+        "The Iron Curtain",
+        "The Maginot Line",
+        "Mitteleuropa"
+      ],
+      "id": "gw_q46"
+    },
+    {
+      "q": "Name one new state created by the Treaty of Versailles.",
+      "a": "Poland",
+      "options": [
+        "Poland",
+        "Serbia",
+        "Bulgaria",
+        "Romania"
+      ],
+      "id": "gw_q47"
+    },
+    {
+      "q": "What European power was completely dismantled by the peace treaties?",
+      "a": "The Austro-Hungarian Empire",
+      "options": [
+        "The Austro-Hungarian Empire",
+        "The German Empire",
+        "The British Empire",
+        "The Russian Empire"
+      ],
+      "id": "gw_q48"
+    },
+    {
+      "q": "What ideological threat did the Allies want to separate from Germany after the war?",
+      "a": "Soviet Communism",
+      "options": [
+        "Soviet Communism",
+        "Fascism",
+        "Anarchism",
+        "Imperialism"
+      ],
+      "id": "gw_q49"
+    },
+    {
+      "q": "Which country did Germany invade on 3 August 1914?",
+      "a": "Belgium",
+      "options": [
+        "Belgium",
+        "France",
+        "Russia",
+        "Serbia"
+      ],
+      "id": "gw_q50"
     }
   ],
-  "description": "Study the four sources on the cover. How did an isolated island in 1450 become the center of global trade by 1750? This unit explores the rapid transformation of Britain through exploration, trade, empire, and slavery.",
-  "cover_sources": [
+  "glossary": [
     {
-      "image": "/images/global_britannia.jpg",
-      "title": "Source A: The East Offering its Riches to Britannia (1778)",
-      "description": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House in London (now held by the British Library). It is an allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire."
+      "term": "Alsace-Lorraine",
+      "definition": "A resource-rich border region taken by Germany from France in 1871."
     },
     {
-      "image": "/images/global_canton.jpg",
-      "title": "Source B: Foreign Trading Factories at Canton (Guangzhou)",
-      "description": "A reverse glass painting by an unknown Chinese artist (c. 1805) currently held by the Peabody Essex Museum. It depicts the highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power."
+      "term": "Ems Telegram",
+      "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
     },
     {
-      "image": "/images/royal_exchange_courtyard.jpg",
-      "title": "Source C: The Financial Hub of London",
-      "description": "An engraving of the Second Royal Exchange in London by Wenceslaus Hollar (1644), now held by the Metropolitan Museum of Art. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade."
+      "term": "Reparations",
+      "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
     },
     {
-      "image": "/images/global_mercator.jpg",
-      "title": "Source D: Nautical Planisphere World Map",
-      "description": "A world map created by Flemish cartographer Gerardus Mercator in 1569. Early modern maps revolutionized travel by introducing new projections for navigation, showing the massive ocean trade routes and the terrifying scale of global exploration."
+      "term": "Siege",
+      "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
+    },
+    {
+      "term": "Imperialism",
+      "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+    },
+    {
+      "term": "Scramble for Africa",
+      "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+    },
+    {
+      "term": "Empire",
+      "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+    },
+    {
+      "term": "Colony",
+      "definition": "A country or area under the full or partial political control of another country."
+    },
+    {
+      "term": "Dreadnought",
+      "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+    },
+    {
+      "term": "Arms Race",
+      "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+    },
+    {
+      "term": "Two-Power Standard",
+      "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+    },
+    {
+      "term": "Naval Supremacy",
+      "definition": "Having the most powerful and dominant navy in the world."
+    },
+    {
+      "term": "Triple Entente",
+      "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+    },
+    {
+      "term": "Triple Alliance",
+      "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+    },
+    {
+      "term": "Reinsurance Treaty",
+      "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
+    },
+    {
+      "term": "Encirclement",
+      "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+    },
+    {
+      "term": "Assassination",
+      "definition": "The murder of a prominent person, often a political leader or ruler."
+    },
+    {
+      "term": "Black Hand",
+      "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
+    },
+    {
+      "term": "Ultimatum",
+      "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+    },
+    {
+      "term": "Mobilisation",
+      "definition": "The action of a country or its government preparing and organizing troops for active service."
     }
   ],
   "key_individuals": [
     {
-      "name": "Niccolò Barbaro",
-      "role": "Venetian Doctor & Merchant",
-      "lifespan": "c. 1420 – 1494",
-      "bio": "A Venetian who was present in Constantinople during the Ottoman siege in 1453. He wrote a famous eyewitness diary detailing the fall of the city.",
-      "image": "/images/individuals/niccol_barbaro.jpg",
-      "actions": "<ul><li>Served as a medical professional (surgeon/physician) for the Venetian fleet during the 1453 siege.</li><li>Kept a daily, detailed eyewitness diary of the Ottoman bombardment and the final fall of Constantinople.</li></ul>",
-      "achievements": [
-        "His diary remains one of the most vital primary sources for European historians studying the siege.",
-        "Provides a unique, on-the-ground perspective of 15th-century warfare and medicine."
-      ],
-      "limitations": "His account is highly biased; he viewed the Ottomans as 'infidels' and often blamed the Genoese for the city's fall, requiring historians to cross-reference his claims.",
-      "group": "Historical Figures"
+      "id": "wilhelm",
+      "name": "Kaiser Wilhelm II",
+      "role": "Emperor of Germany",
+      "image": "/assets/great_war_card_wilhelm.png",
+      "bio": "The impulsive and militaristic ruler of Germany whose aggressive 'Weltpolitik' foreign policy alienated Britain, France, and Russia, setting the stage for the Great War."
     },
     {
-      "name": "Sultan Mehmed II",
-      "role": "Ottoman Sultan",
-      "lifespan": "1432 – 1481",
-      "bio": "Known as 'The Conqueror', he captured Constantinople at age 21, destroying the Byzantine Empire and transforming the city into the jewel of the Islamic world.",
-      "achievements": [
-        "Destroyed the 1,000-year-old Byzantine Empire at just 21 years old.",
-        "Expanded the Ottoman Empire deeply into Eastern Europe and the Balkans.",
-        "Fostered a cultural and intellectual renaissance by inviting scholars and artists to Istanbul."
-      ],
-      "image": "/images/individuals/sultan_mehmed_ii.jpg",
-      "actions": "<ul><li>Orchestrated the 53-day siege of Constantinople in 1453 using massive cannons and a huge land/sea force.</li><li>Transformed the conquered city into Istanbul, the new capital of the Ottoman Empire.</li><li>Centralised state administration and codified Ottoman law.</li></ul>",
-      "limitations": "His relentless military campaigns drained the Ottoman treasury and provoked endless conflicts with European powers like Venice and Hungary.",
-      "group": "Historical Figures"
+      "id": "princip",
+      "name": "Gavrilo Princip",
+      "role": "Serbian Nationalist",
+      "image": "/assets/great_war_card_princip.png",
+      "bio": "A member of the Black Hand secret society who assassinated Archduke Franz Ferdinand in Sarajevo, providing the spark that ignited the July Crisis and World War I."
     },
     {
-      "name": "Mansa Musa",
-      "role": "Emperor of Mali",
-      "lifespan": "c. 1280 – 1337",
-      "bio": "The famously wealthy ruler of the Mali Empire. His pilgrimage to Mecca in 1324 demonstrated the vast gold wealth of West Africa to the rest of the world.",
-      "image": "/images/individuals/mansa_musa.jpg",
-      "actions": "<ul><li>Ruled the vast Mali Empire, controlling key trans-Saharan trade routes for gold and salt.</li><li>Undertook a legendary, lavish pilgrimage (Hajj) to Mecca in 1324, distributing massive amounts of gold.</li><li>Brought back Islamic scholars, architects, and bureaucrats to transform Timbuktu.</li></ul>",
-      "achievements": [
-        "Built Timbuktu into a globally renowned centre of Islamic learning and commerce.",
-        "Put West Africa on the map for European cartographers (literally, as seen in the Catalan Atlas of 1375).",
-        "Considered by many historians to be the wealthiest individual in human history."
-      ],
-      "limitations": "His immense wealth distribution in Cairo during his Hajj accidentally caused severe hyperinflation, devastating the local Egyptian economy for a decade.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Christopher Columbus",
-      "role": "Explorer",
-      "lifespan": "1451 – 1506",
-      "bio": "An Italian explorer funded by Spain. His 1492 voyage to find a western sea route to Asia accidentally encountered the Americas, changing world history forever.",
-      "actions": "<ul><li>Led four transatlantic voyages between 1492 and 1502.</li><li>Established the first permanent European settlements in the Americas.</li><li>Initiated the devastating Spanish colonisation of the New World.</li></ul>",
-      "achievements": [
-        "Opened the Americas to European colonisation and trade.",
-        "Sparked the 'Columbian Exchange' of plants, animals, and diseases between hemispheres."
-      ],
-      "limitations": "His arrival directly caused the catastrophic collapse of indigenous populations (like the Taíno people) through brutal forced labor, warfare, and the introduction of European diseases.",
-      "image": "/images/individuals/christopher_columbus.jpg",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Martin Luther",
-      "role": "German Monk & Theologian",
-      "lifespan": "1483 – 1546",
-      "bio": "A German monk who sparked the Protestant Reformation in 1517 by challenging the corruption of the Catholic Church. This triggered centuries of religious conflict.",
-      "image": "/images/individuals/martin_luther.jpg",
-      "actions": "<ul><li>Nailed his '95 Theses' to the church door in Wittenberg in 1517, protesting the sale of indulgences.</li><li>Translated the Bible from Latin into vernacular German so ordinary people could read it.</li><li>Refused to recant his writings at the Diet of Worms (1521), standing against the Holy Roman Emperor.</li></ul>",
-      "achievements": [
-        "Sparked the Protestant Reformation, permanently shattering the unity of Western Christianity.",
-        "Pioneered the use of the newly invented printing press to mass-distribute religious propaganda.",
-        "Fundamentally changed European politics, leading to centuries of religious wars."
-      ],
-      "limitations": "His fiery rhetoric accidentally inspired the violent German Peasants' War (which he then brutally condemned), and his later writings were violently anti-Semitic.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Sir Francis Drake",
-      "role": "English Privateer & Explorer",
-      "lifespan": "c. 1540 – 1596",
-      "bio": "A famous English sea captain, privateer, and explorer. He circumnavigated the globe and helped defeat the Spanish Armada in 1588.",
-      "image": "/images/individuals/francis_drake.jpg",
-      "actions": "<ul><li>Conducted relentless privateering (state-sponsored piracy) raids against Spanish treasure fleets in the Americas.</li><li>Became the first Englishman to circumnavigate the globe (1577-1580).</li><li>Served as Vice-Admiral of the English fleet during the defeat of the Spanish Armada in 1588.</li></ul>",
-      "achievements": [
-        "Brought back massive wealth to England, heavily enriching Queen Elizabeth I's treasury.",
-        "Shattered the myth of Spanish naval invincibility.",
-        "Pioneered English global maritime exploration and challenged the Iberian monopoly on global trade."
-      ],
-      "limitations": "To the Spanish, he was merely a violent pirate ('El Draque'). He was also heavily involved in the early, brutal stages of the English transatlantic slave trade alongside John Hawkins.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Queen Elizabeth I",
-      "role": "Queen of England",
-      "lifespan": "1533 – 1603",
-      "bio": "Ruled England during a 'Golden Age'. She oversaw the defeat of the Spanish Armada and the founding of the East India Company, strengthening England's global position.",
-      "image": "/images/individuals/queen_elizabeth_i.jpg",
-      "actions": "<ul><li>Established the Elizabethan Religious Settlement (1559) to stabilise a religiously divided England.</li><li>Secretly funded privateers like Drake to weaken the Spanish Empire's monopoly.</li><li>Rallied English troops at Tilbury before the Spanish Armada with her famous 'heart and stomach of a king' speech.</li></ul>",
-      "achievements": [
-        "Oversaw a 'Golden Age' of English culture, literature (Shakespeare), and exploration.",
-        "Successfully defended England against the existential threat of the 1588 Spanish Armada.",
-        "Granted the royal charter to the East India Company in 1600, laying the foundations for the British Empire."
-      ],
-      "limitations": "She refused to marry or name an heir, creating severe anxiety about the succession. Her policies in Ireland were also aggressively colonial and brutal.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Pocahontas",
-      "role": "Powhatan Diplomat",
-      "lifespan": "c. 1596 – 1617",
-      "bio": "A Native American woman who played a crucial role in the survival of the Jamestown colony. She later travelled to England, where she was treated as royalty.",
-      "image": "/images/individuals/pocahontas.jpg",
-      "actions": "<ul><li>Acted as a crucial diplomatic liaison and peacemaker between the Powhatan Confederacy and the struggling Jamestown colonists.</li><li>Allegedly saved the life of English Captain John Smith from execution (though this narrative is debated by historians).</li><li>Married John Rolfe in 1614 (creating the 'Peace of Pocahontas') and travelled to London as a diplomatic symbol.</li></ul>",
-      "achievements": [
-        "Her intervention and food provisions were instrumental in the survival of the Jamestown colony during its starving years.",
-        "Challenged English stereotypes of Indigenous peoples during her celebrated tour of London society."
-      ],
-      "limitations": "Her story was heavily romanticised and weaponised as colonial propaganda by the English. She tragically died of European disease at Gravesend at just 21 years old.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "King Charles I",
-      "role": "King of England",
-      "lifespan": "1600 – 1649",
-      "bio": "His belief in the 'Divine Right of Kings' led to the English Civil War. He was tried and executed by Parliament in 1649.",
-      "image": "/images/individuals/king_charles_i.jpg",
-      "actions": "<ul><li>Ruled without Parliament for 11 years (the 'Personal Rule' or 'Eleven Years Tyranny').</li><li>Attempted to force a new English prayer book on Presbyterian Scotland, sparking the Bishops' Wars.</li><li>Stormed Parliament in 1642 to arrest five MPs, which triggered the English Civil War.</li></ul>",
-      "achievements": [
-        "Was a major patron of the arts, assembling one of the greatest art collections in Europe.",
-        "His execution in 1649 established the radical precedent that a monarch could be tried and killed by their own people for treason."
-      ],
-      "limitations": "His absolute belief in the 'Divine Right of Kings' made him dangerously uncompromising, ultimately destroying his own monarchy and plunging the British Isles into a devastating, bloody civil war.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Oliver Cromwell",
-      "role": "Lord Protector",
-      "lifespan": "1599 – 1658",
-      "bio": "A Puritan military leader who commanded the Parliamentarian army in the Civil War. He ruled England as a republic ('The Protectorate') after Charles I's execution.",
-      "image": "/images/individuals/oliver_cromwell.jpg",
-      "actions": "<ul><li>Reorganised the Parliamentarian forces into the highly disciplined and effective New Model Army.</li><li>Signed King Charles I's death warrant and oversaw the abolition of the monarchy.</li><li>Ruled England, Scotland, and Ireland as 'Lord Protector', acting as a military dictator.</li></ul>",
-      "achievements": [
-        "Won the English Civil War, defeating Royalist forces at key battles like Naseby.",
-        "Temporarily established the only republican government in British history.",
-        "Aggressively expanded English naval and commercial power against the Dutch and Spanish."
-      ],
-      "limitations": "His brutal military campaign in Ireland (including the massacres at Drogheda and Wexford) left a legacy of deep, enduring hatred. His puritanical regime banned popular pastimes like theatre and Christmas.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Olaudah Equiano",
-      "role": "Abolitionist & Writer",
-      "lifespan": "c. 1545 – 1597",
-      "bio": "An enslaved African who bought his own freedom and wrote a bestselling autobiography exposing the horrors of the Transatlantic Slave Trade.",
-      "image": "/images/individuals/olaudah_equiano.png",
-      "actions": "<ul><li>Survived the horrors of the Middle Passage and enslavement in the Caribbean and Americas.</li><li>Purchased his own freedom in 1766 for £40 after working as a merchant seaman.</li><li>Published 'The Interesting Narrative of the Life of Olaudah Equiano' in 1789 and toured the UK speaking against slavery.</li></ul>",
-      "achievements": [
-        "His autobiography became a massive bestseller, providing irrefutable, first-hand evidence of the brutal realities of slavery.",
-        "Became a leading figure in the British abolitionist movement, working closely with the Sons of Africa.",
-        "Fundamentally shifted British public opinion against the Transatlantic Slave Trade."
-      ],
-      "limitations": "Despite his immense influence, he died in 1797, ten years before the British Parliament finally abolished the slave trade in 1807.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Nanny of the Maroons",
-      "role": "Maroon Leader & National Hero",
-      "lifespan": "c. 1686 – c. 1733",
-      "bio": "An iconic Jamaican leader of the Windward Maroons. Born in West Africa, she escaped slavery in Jamaica and led a highly successful guerrilla war against the British colonial forces.",
-      "actions": "<ul><li>United escaped enslaved people to form secure, fortified mountain communities (Nanny Town).</li><li>Orchestrated decades of successful guerrilla warfare against British soldiers.</li><li>Freed over 800 enslaved people during raids on plantations.</li></ul>",
-      "achievements": [
-        "Forced the mighty British Empire to sign a peace treaty granting the Maroons land and freedom in 1739.",
-        "Recognized today as a National Hero of Jamaica."
-      ],
-      "image": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Admiral Zheng He",
-      "role": "Ming Dynasty Explorer",
-      "actions": "<ul><li>Commanded massive fleets of Chinese 'treasure ships' between 1405-1433.</li></ul>",
-      "achievements": "Projected Chinese maritime power across the Indian Ocean and East Africa decades before European explorers.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "John Hawkins",
-      "role": "English Privateer & Slave Trader",
-      "actions": "<ul><li>Architect of early English involvement in the Transatlantic Slave Trade, alongside Drake.</li></ul>",
-      "achievements": "Helped build the Elizabethan navy that defeated the Spanish Armada.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "King Philip II",
-      "role": "King of Spain",
-      "actions": "<ul><li>Ruled a vast global Catholic empire; launched the Spanish Armada against England in 1588.</li></ul>",
-      "limitations": "His rigid tactics and overextension drained the massive wealth extracted from the Americas.",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Henry VIII",
-      "role": "King of England",
-      "actions": "<ul><li>Broke England away from the Catholic Church in 1534 to secure an annulment, fundamentally altering English religion and politics.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/henry_viii.jpg"
-    },
-    {
-      "name": "Pope Alexander VI",
-      "role": "Head of the Catholic Church",
-      "actions": "<ul><li>Issued the 1494 Treaty of Tordesillas, arrogantly dividing the entire undiscovered world between Spain and Portugal.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Sir Walter Raleigh",
-      "role": "English Explorer & Courtier",
-      "actions": "<ul><li>Sponsored the doomed Roanoke colony attempt in the 1580s; popularised tobacco in England.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/sir_walter_raleigh.jpg"
-    },
-    {
-      "name": "Mary, Queen of Scots",
-      "role": "Queen of Scotland",
-      "actions": "<ul><li>A Catholic claimant to the English throne whose execution by Elizabeth I provoked the Spanish Armada.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/mary__queen_of_scots.jpg"
-    },
-    {
-      "name": "Don Francisco de Zárate",
-      "role": "Spanish Captain",
-      "actions": "<ul><li>Captured by Francis Drake in 1579, leaving behind a famous primary source account of Drake's character and piracy.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "King James I",
-      "role": "King of England and Scotland",
-      "actions": "<ul><li>Received Pocahontas at court; granted charters to early colonial companies like the Virginia Company.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "John Rolfe",
-      "role": "English Planter",
-      "actions": "<ul><li>Married Pocahontas (Matoaka) in 1614; introduced a sweet strain of Caribbean tobacco that made Jamestown profitable.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/john_rolfe.jpg"
-    },
-    {
-      "name": "Chief Powhatan",
-      "role": "Indigenous Leader",
-      "actions": "<ul><li>Leader of the Powhatan Confederacy who initially kept the starving Jamestown colonists alive through trade before relations violently collapsed.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Emperor Jahangir",
-      "role": "Mughal Emperor",
-      "actions": "<ul><li>Ruled 25% of global GDP; permitted the English East India Company to build small trading posts, viewing them as insignificant merchants.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/emperor_jahangir.jpg"
-    },
-    {
-      "name": "Sir Thomas Roe",
-      "role": "English Diplomat",
-      "actions": "<ul><li>Spent three years at the Mughal Court (1615-1618) begging for trading rights for the East India Company.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/sir_thomas_roe.jpg"
-    },
-    {
-      "name": "John Bradshaw",
-      "role": "Judge",
-      "actions": "<ul><li>Served as President of the High Court of Justice that shockingly tried and condemned King Charles I to death in 1649.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Martin Noell",
-      "role": "London Merchant",
-      "actions": "<ul><li>Grew immensely wealthy from Caribbean sugar and slavery; helped financially back Oliver Cromwell's New Model Army.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Charles II",
-      "role": "King of England",
-      "actions": "<ul><li>Restored to the throne in 1660 after the collapse of the English Republic, marking the 'Restoration'.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "Gerrard Winstanley",
-      "role": "Radical Leader (The Diggers)",
-      "actions": "<ul><li>Led a radical movement during the Civil War attempting to abolish private property and establish a fully equal, agrarian society.</li></ul>",
-      "group": "Historical Figures"
-    },
-    {
-      "name": "William Wilberforce",
-      "role": "English Abolitionist",
-      "actions": "<ul><li>Led the parliamentary campaign against the slave trade, culminating in the 1807 Abolition Act.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/william_wilberforce.jpg"
-    },
-    {
-      "name": "Thomas Clarkson",
-      "role": "Abolitionist Campaigner",
-      "actions": "<ul><li>Travelled thousands of miles gathering horrific physical evidence (shackles, ship diagrams) to expose the realities of the slave trade to the British public.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/thomas_clarkson.jpg"
-    },
-    {
-      "name": "Kritovoulos of Imbros",
-      "role": "Greek Scholar & Historian",
-      "bio": "A Greek scholar who lived through the fall of the Byzantine Empire. Instead of resisting, he entered the service of Sultan Mehmed II.",
-      "actions": "<ul><li>Wrote a vital, though highly flattering, primary source history of Sultan Mehmed II's conquests.</li></ul>",
-      "achievements": "Focus: 15th-Century Ottoman Conquest",
-      "group": "Historians"
-    },
-    {
-      "name": "Prof. Peter Frankopan",
-      "role": "Professor of Global History, Oxford",
-      "bio": "He is famous for challenging Eurocentric history, arguing that for thousands of years the true centre of global wealth and power lay in Asia.",
-      "actions": "<ul><li>Wrote the bestselling book 'The Silk Roads' (2015).</li></ul>",
-      "achievements": "Focus: Global & Silk Road History",
-      "group": "Historians",
-      "image": "/images/prof__peter_frankopan.jpg"
-    },
-    {
-      "name": "Dr. Geoffrey Parker",
-      "role": "Leading Expert on the Spanish Empire",
-      "bio": "His revisionist work on the Spanish Armada argues that the English victory was due to Spanish logistical failures and superior English ship design.",
-      "actions": "<ul><li>Revolutionised the understanding of Early Modern Warfare.</li></ul>",
-      "achievements": "Focus: Early Modern Warfare & Spain",
-      "group": "Historians"
-    },
-    {
-      "name": "Sir John Seeley",
-      "role": "Victorian Historian",
-      "bio": "A 19th-century historian writing at the height of the British Empire. He famously argued that the British Empire was acquired 'in a fit of absence of mind'.",
-      "actions": "<ul><li>Wrote 'The Expansion of England' (1883).</li></ul>",
-      "achievements": "Focus: 19th-Century British Imperialism",
-      "group": "Historians",
-      "image": "/images/sir_john_seeley.jpg"
-    },
-    {
-      "name": "Prof. Shashi Tharoor",
-      "role": "Indian Politician & Historian",
-      "bio": "A former UN Under-Secretary-General. He aggressively dismantles the myth of a 'benevolent' British Empire.",
-      "actions": "<ul><li>Wrote 'Inglorious Empire' (2017), focusing on how corporate entities like the East India Company violently extracted wealth from India.</li></ul>",
-      "achievements": "Focus: British Colonial History in India",
-      "group": "Historians",
-      "image": "/images/prof__shashi_tharoor.jpg"
-    },
-    {
-      "name": "Prof. Christopher Hill",
-      "role": "Marxist Historian",
-      "bio": "One of the most famous Marxist historians of the 20th century, based at Oxford. He argued the English Civil War was a revolutionary class struggle.",
-      "actions": "<ul><li>Wrote 'The World Turned Upside Down' (1972).</li></ul>",
-      "achievements": "Focus: 17th-Century English Radicalism",
-      "group": "Historians"
-    },
-    {
-      "name": "Prof. Eric Williams",
-      "role": "Historian & Prime Minister",
-      "bio": "A brilliant historian who later became the first Prime Minister of Trinidad and Tobago.",
-      "actions": "<ul><li>Wrote 'Capitalism and Slavery' (1944), proving that Britain abolished slavery because slave rebellions made it economically unviable.</li></ul>",
-      "achievements": "Focus: Atlantic Slavery & Economics",
-      "group": "Historians",
-      "image": "/images/prof__eric_williams.jpg"
-    },
-    {
-      "name": "Reginald Coupland",
-      "role": "Imperial Historian",
-      "bio": "An Oxford historian writing in the 1930s. He promoted the 'Traditional Imperial View' of abolition.",
-      "actions": "<ul><li>Argued that Britain ended the slave trade purely out of noble, Christian humanitarianism, focusing heavily on white heroes like Wilberforce.</li></ul>",
-      "achievements": "Focus: Imperial History & Abolition",
-      "group": "Historians"
-    },
-    {
-      "name": "Prof. Roy Porter",
-      "role": "Medical & Social Historian",
-      "bio": "A highly prolific historian at the Wellcome Institute. He argued that by the 18th century, Britain was a deeply modern, secular, consumer-driven society.",
-      "actions": "<ul><li>Pioneered the study of social history and the Enlightenment in Britain.</li></ul>",
-      "achievements": "Focus: The Enlightenment & Social History",
-      "group": "Historians"
-    },
-    {
-      "name": "Prof. J.C.D. Clark",
-      "role": "Revisionist Historian",
-      "bio": "A prominent revisionist historian who fiercely challenged Porter's view.",
-      "actions": "<ul><li>Wrote 'English Society 1688-1832' (1985), arguing 18th-century Britain was a traditional, aristocratic 'Ancien Régime' dominated by religion.</li></ul>",
-      "achievements": "Focus: Revisionist 18th-Century Britain",
-      "group": "Historians"
-    },
-    {
-      "name": "Harriet Tubman",
-      "role": "Abolitionist & Activist",
-      "actions": "<ul><li>An enslaved woman who escaped and became a legendary 'Conductor' on the Underground Railroad, risking her life to lead others to freedom.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/harriet_tubman.jpg"
-    },
-    {
-      "name": "Toussaint Louverture",
-      "role": "Haitian Revolutionary Leader",
-      "actions": "<ul><li>A formerly enslaved man who led the only successful large-scale slave revolt in history, securing Haitian independence from France.</li></ul>",
-      "group": "Historical Figures",
-      "image": "/images/toussaint_louverture.jpg"
-    },
-    {
-      "name": "Thomas Thistlewood",
-      "role": "Jamaican Overseer",
-      "actions": "<ul><li>An English overseer whose diary provides brutal, first-hand evidence of the daily torture of enslaved people and their relentless covert resistance.</li></ul>",
-      "group": "Historical Figures"
+      "id": "nicholas",
+      "name": "Tsar Nicholas II",
+      "role": "Emperor of Russia",
+      "image": "/assets/great_war_card_nicholas.png",
+      "bio": "The autocratic ruler of Russia who mobilized his vast army to defend Serbia against Austria-Hungary, triggering Germany's mobilization and the activation of the Schlieffen Plan."
     }
   ],
-  "geographical_locations": [
+  "guided_reading": [
     {
-      "name": "Constantinople (Istanbul)",
-      "region": "Ottoman Empire (Modern Turkey)",
-      "coordinates": "41° 0' N, 28° 57' E",
-      "description": "The ancient capital of the Byzantine Empire. When it was captured by the Ottomans in 1453, it blocked European access to the Silk Road, forcing them to explore new sea routes.",
-      "image": "/images/locations/constantinople.jpg",
-      "mapQuery": "Istanbul, Turkey",
-      "timeline": [
-        "330 AD - Founded as the new capital of the Roman Empire by Constantine.",
-        "1453 - Conquered by Sultan Mehmed II of the Ottoman Empire.",
-        "1453 - Hagia Sophia converted into a mosque.",
-        "16th Century - Reaches its peak of wealth and power under Suleiman the Magnificent."
+      "lesson_index": 0,
+      "book_title": "The Sleepwalkers: How Europe Went to War in 1914",
+      "author": "Christopher Clark",
+      "cover_image": "/assets/great_war_clark_cover.png",
+      "author_context": "Christopher Clark is an acclaimed Australian historian. In 'The Sleepwalkers' (2012), he argues that the outbreak of World War I was not a premeditated crime by one single nation, but a tragic, complex failure of diplomacy where European leaders 'sleepwalked' into disaster without fully understanding the consequences.",
+      "extract": "The protagonists of 1914 were sleepwalkers, watchful but unseeing, haunted by dreams, yet blind to the reality of the horror they were about to bring into the world. For decades, the narrative of the Great War's outbreak has often focused on a single villain, usually pointing the finger of blame squarely at the German Empire. However, to truly understand the catastrophe, one must look at the entire continent of Europe—a continent caught in a rigid and paranoid web of its own making.\n\nIn the years leading up to 1914, Europe was dominated by a complex system of alliances. Originally designed as defensive measures to ensure peace through mutual protection, these agreements slowly morphed into dangerous tripwires. The Triple Entente, linking Britain, France, and Russia, stood in tense opposition to the Triple Alliance of Germany, Austria-Hungary, and Italy. Instead of feeling secure, the great powers felt entirely encircled and deeply suspicious of one another. The Franco-Prussian War of 1870 had left a bitter legacy; France was obsessed with regaining the lost territories of Alsace and Lorraine, while a newly unified Germany was determined to assert its dominance on the world stage.\n\nAmidst this atmosphere of mutual distrust, the military establishments across Europe grew vastly in size and influence. An unprecedented arms race took hold, most notably the fierce naval rivalry between Britain and Germany. Every nation began drafting intricate, inflexible mobilization plans. The most famous of these, the German Schlieffen Plan, dictated that in the event of war with Russia, Germany must rapidly strike and defeat France first to avoid a two-front war. Such plans meant that once the order to mobilize was given, the military timetables would take control, leaving politicians and diplomats entirely powerless to stop the descent into violence.\n\nThe spark that ignited this powder keg occurred in the volatile Balkan peninsula. The Austro-Hungarian Empire, a sprawling and multi-ethnic state, was terrified by the rise of Serbian nationalism on its southern border. When Archduke Franz Ferdinand was assassinated in Sarajevo on June 28, 1914, by a Bosnian Serb nationalist, the authorities in Vienna saw a perfect pretext to crush Serbia once and for all. They were emboldened by the infamous 'Blank Cheque' from their ally Germany, which promised unconditional support.\n\nYet, even after the assassination, a general European war was not inevitable. The ensuing July Crisis was a masterclass in diplomatic blundering, miscalculation, and brinkmanship. Leaders sent ambiguous messages, ambassadors failed to communicate their governments' true intentions, and monarchs desperately exchanged telegrams trying to preserve the peace while simultaneously signing mobilization orders. They were all playing a high-stakes game of bluff, assuming the other side would eventually back down.\n\nWhen Russia chose to mobilize its massive army in defense of its Slavic ally, Serbia, the fatal clockwork mechanism of the alliance system was triggered. Germany, bound by the rigid logic of the Schlieffen Plan, declared war on Russia and immediately invaded neutral Belgium to strike at France. This violation of Belgian neutrality finally brought the British Empire into the fray. \n\nIn the end, the outbreak of the First World War was not a premeditated crime planned in a single capital, but a tragic, collective failure. The statesmen of Europe were men who prided themselves on their rationality and diplomatic skill. Yet, gripped by fear, bound by rigid alliances, and overwhelmed by the speed of events, they sleepwalked past every opportunity to halt the crisis. They plunged their nations into a conflict of unprecedented scale and industrial slaughter, a war that would sweep away empires, redraw the map of the world, and cast a long, dark shadow over the rest of the twentieth century.",
+      "audio_file": "/assets/great_war_reading_gw_l0.mp3",
+      "questions": [
+        "What metaphor does the author use in the opening paragraph to describe the European leaders of 1914?",
+        "According to the text, why did defensive alliances like the Triple Entente and Triple Alliance actually make the great powers feel less secure?",
+        "How did the existence of inflexible military strategies, such as the Schlieffen Plan, affect the power of politicians and diplomats during the July Crisis?"
+      ],
+      "hinge_question": "If the European leaders were truly just 'sleepwalkers' who didn't want war, does that mean they are innocent of causing it? Why or why not?",
+      "is_adapted": true
+    },
+    {
+      "lesson_index": 1,
+      "book_title": "Heart of Darkness",
+      "author": "Joseph Conrad",
+      "cover_image": "/assets/great_war_conrad_cover.png",
+      "author_context": "Joseph Conrad was a Polish-British author who worked as a sailor for many years. His 1899 novella 'Heart of Darkness' was based on his own horrifying experiences captaining a steamboat on the Congo River. It is a searing critique of the brutality, greed, and moral corruption of European imperialism in Africa.",
+      "extract": "The conquest of the earth, which mostly means the taking it away from those who have a different complexion or slightly flatter noses than ourselves, is not a pretty thing when you look into it too much. What redeems it is the idea only. An idea at the back of it; not a sentimental pretence but an idea; and an unselfish belief in the idea—something you can set up, and bow down before, and offer a sacrifice to...\n\nI left in a French steamer, and she called in every blamed port they have out there, for, as far as I could see, the sole purpose of landing soldiers and custom-house officers. I watched the coast. Watching a coast as it slips by the ship is like thinking about an enigma. There it is before you—smiling, frowning, inviting, grand, mean, insipid, or savage, and always mute with an air of whispering, 'Come and find out.' This one was almost featureless, as if still in the making, with an aspect of monotonous grimness. The edge of a colossal jungle, so dark-green as to be almost black, fringed with white surf, ran straight, like a ruled line, far, far away along a blue sea whose glitter was blurred by a creeping mist. The sun was fierce, the land seemed to glisten and drip with steam.\n\nNow and then a boat from the shore gave one a momentary contact with reality. It was paddled by black fellows. You could see from afar the white of their eyeballs glistening. They shouted, sang; their bodies streamed with perspiration; they had faces like grotesque masks—these chaps; but they had bone, muscle, a wild vitality, an intense energy of movement, that was as natural and true as the surf along their coast. They wanted no excuse for being there. They were a great comfort to look at. \n\nFor a time I would feel I belonged still to a world of straightforward facts; but the feeling would not last long. Something would turn up to scare it away. Once, I remember, we came upon a man-of-war anchored off the coast. There wasn't even a shed there, and she was shelling the bush. It appears the French had one of their wars going on thereabouts. Her ensign dropped limp like a rag; the muzzles of the long six-inch guns stuck out all over the low hull; the greasy, slimy swell swung her up lazily and let her down, swaying her thin masts. In the empty immensity of earth, sky, and water, there she was, incomprehensible, firing into a continent. Pop, would go one of the six-inch guns; a small flame would dart and vanish, a little white smoke would disappear, a tiny projectile would give a feeble screech—and nothing happened. Nothing could happen. There was a touch of insanity in the proceeding, a sense of lugubrious drollery in the sight; and it was not dissipated by somebody on board assuring me earnestly there was a camp of natives—he called them enemies!—hidden out of sight somewhere.\n\nWe gave her her letters (I heard the men in that lonely ship were dying of fever at the rate of three a day) and went on. We called at some more places with farcical names, where the merry dance of death and trade goes on in a still and earthy atmosphere as of an overheated catacomb; all along the formless coast bordered by dangerous surf, as if Nature herself had tried to ward off intruders; in and out of rivers, streams of death in life, whose banks were rotting into mud, whose waters, thickened into slime, invaded the contorted mangroves, that seemed to writhe at us in the extremity of an impotent despair.",
+      "audio_file": "/assets/great_war_reading_gw_l1.mp3",
+      "questions": [
+        "According to Conrad, what does the 'conquest of the earth' really involve?",
+        "How does the author describe the true motivations of the imperialists?",
+        "Why do you think this text was considered highly controversial when it was published in 1899?"
+      ],
+      "is_adapted": false,
+      "hinge_question": "How does Conrad use the image of the French warship 'firing into a continent' to expose the absurdity and violence of the 'civilizing mission' in Africa?"
+    },
+    {
+      "lesson_index": 2,
+      "book_title": "The Riddle of the Sands",
+      "author": "Erskine Childers",
+      "cover_image": "/assets/great_war_childers_cover.png",
+      "author_context": "Erskine Childers was a British author and sailor. Published in 1903, 'The Riddle of the Sands' is considered the first modern spy novel. It fueled British paranoia about a surprise German naval invasion, perfectly capturing the intense public anxiety surrounding the Anglo-German naval arms race.",
+      "extract": "It was a glorious, breezy morning, and the waters of the Frisian coast danced and sparkled in the brilliant sunshine. We had brought the 'Dulcibella' through the tricky channels behind the islands, navigating the intricate maze of sandbanks that guarded the German shore. To the casual observer, we were merely a pair of eccentric English yachtsmen indulging in a late summer cruise among the desolate, mud-strewn estuaries of the North Sea. But beneath the facade of our holiday, a dark and terrifying suspicion had taken root in our minds—a suspicion that had driven us into these treacherous, shifting waters.\n\nAs we dropped anchor in a narrow, desolate gut behind the island of Memmert, Davies stood by the mast, sweeping the horizon with his binoculars. The coastline here was a bleak, monotonous stretch of flat sand and grey water, seemingly devoid of human life. Yet, it was precisely this desolate emptiness that made it so perfect for a secret of such colossal magnitude. For weeks, we had been piecing together a puzzle made of innocuous clues: a tugboat operating where it had no business being, a mysterious salvage operation that recovered nothing, and the relentless, almost obsessive secrecy of a certain Herr Dollmann, an Englishman turned traitor in the service of the Kaiser.\n\n'Look there,' Davies said quietly, handing me the glasses and pointing towards the mainland. 'Just past the spit of sand. Do you see it?'\n\nI squinted through the lenses. At first, there was nothing but the grey blur of the tidal flats. Then, as my eyes adjusted, I saw them. Not fishing boats, not merchantmen, but long, low shapes moving with mechanical precision through a dredged channel that did not exist on any of our Admiralty charts. They were lighters—massive, flat-bottomed barges designed for carrying troops and heavy equipment. There were dozens of them, moored in a hidden basin, sheltered from the open sea and completely invisible from the standard shipping lanes.\n\nThe blood ran cold in my veins as the pieces of the terrible puzzle finally snapped into place. This was no innocent coastal defense project. The German Empire, cramped within its landlocked borders and burning with imperial ambition, was not merely building a High Seas Fleet to challenge our dreadnoughts in open battle. They were preparing something far more insidious, something that struck directly at the heart of our island security.\n\nBehind the barrier of these Frisian islands, protected by the shifting sands and the treacherous tides, a vast, secret invasion force was being assembled. These hidden channels, newly deepened by relentless dredging, were designed to allow a flotilla of troop-carrying barges to slip out into the North Sea under the cover of darkness or a thick sea fog. They would bypass the mighty guns of the Royal Navy and strike a sudden, paralyzing blow on the unprotected eastern shores of England. \n\nWe were sitting in the very nerve center of a meticulously organized naval conspiracy. The Kaiser's Germany was preparing to leap the moat. We alone held the secret, and our tiny, fragile yacht was the only thing standing between the oblivious British public and a sudden, catastrophic war. The riddle of the sands had been solved, but the true terror of what it meant for the future of our nation was only just beginning.",
+      "audio_file": "/assets/great_war_reading_gw_l2.mp3",
+      "questions": [
+        "What secret threat did the narrator believe they had discovered?",
+        "According to the extract, why was the German Empire building its fleet?",
+        "How would reading a popular thriller like this have affected the British public's attitude toward Germany?"
+      ],
+      "is_adapted": false,
+      "hinge_question": "If 'The Riddle of the Sands' was a fictional novel, why do you think it caused such real-world panic and paranoia among the British public regarding the German Navy?"
+    },
+    {
+      "lesson_index": 3,
+      "book_title": "The Guns of August",
+      "author": "Barbara W. Tuchman",
+      "cover_image": "/assets/great_war_tuchman_cover.png",
+      "author_context": "Barbara W. Tuchman was an American historian who won the Pulitzer Prize for 'The Guns of August' (1962). The book masterfully details the political calculations, military plans, and sheer arrogance of the Great Powers in the fateful month of August 1914 as the alliance system dragged them all into war.",
+      "extract": "The nations of Europe in the summer of 1914 were bound together by a series of treaties that were ostensibly designed for mutual defense. The theory behind these grand alliances was deterrence: if every major power was allied with another, the cost of aggression would be too high, and peace would be preserved. However, in reality, these treaties functioned not as safety nets, but as highly sensitive tripwires. The continent had become a rigid, inflexible machine, where a single spark could ignite the entire mechanism and drag millions into an unavoidable conflict. \n\nWhen the Archduke Franz Ferdinand was assassinated in the dusty streets of Sarajevo, the first of these tripwires was snapped. Austria-Hungary, determined to crush the irritating threat of Serbian nationalism, looked to its powerful ally, Germany, for support. The German Kaiser issued the infamous 'blank cheque,' a promise of unconditional backing that emboldened the Austrians to issue an ultimatum they knew Serbia could never fully accept. The localized crisis in the Balkans immediately began to pull the great powers into its gravitational vortex. \n\nRussia, presenting itself as the traditional protector of the Slavic people, felt compelled to stand by Serbia. But Russia’s vast size was its greatest weakness; its army was massive but agonizingly slow to gather. To have any hope of fighting effectively, the Russian Tsar had to order mobilization immediately, long before diplomacy had run its course. Once the Tsar gave the order, the fatal clockwork of the alliance system took over. \n\nMobilization in 1914 was not merely the calling up of reserves; it was an irrevocable step toward war. It meant the requisitioning of thousands of trains, the locking down of national borders, and the execution of highly detailed, down-to-the-minute railway timetables. For Germany, Russian mobilization triggered a terrifying strategic nightmare. Wedged between a hostile Russia to the east and a vengeful France to the west, the German military had devised the Schlieffen Plan. This plan dictated that Germany must immediately attack and defeat France in a lightning campaign of six weeks before the lumbering Russian army could reach the German borders. \n\nTherefore, when Russia mobilized, Germany could not wait. The German high command, terrified of fighting a two-front war, informed the civilian government that military necessity must now dictate political action. They declared war on Russia, but, bound by the rigid logic of the Schlieffen Plan, their armies immediately marched in the opposite direction—invading neutral Belgium to strike at France. \n\nThis violation of Belgian neutrality was the final tripwire. It outraged British public opinion and compelled the British Empire, tied to France and Russia by the Triple Entente, to declare war on Germany. In a matter of days, the entire continent had been plunged into disaster. The diplomats and politicians, who had spent the month of July sending frantic telegrams and attempting to bluff their way to victory, suddenly found themselves entirely powerless. The moment the mobilization orders were signed, control was handed over to the generals and their railway timetables. The statesmen of Europe had built a machine of alliances they believed would keep the peace, but once the gears started turning, it proved to be a machine of industrial slaughter that none of them could stop.",
+      "audio_file": "/assets/great_war_reading_gw_l3.mp3",
+      "questions": [
+        "Why does the author describe the defensive alliances as 'tripwires'?",
+        "What metaphor is used to describe the outbreak of the war?",
+        "According to the text, why were the diplomats unable to stop the war once it started?"
+      ],
+      "is_adapted": true,
+      "hinge_question": "How did the sheer speed and rigid timing of military mobilization plans like the Schlieffen Plan make a diplomatic solution almost impossible during the July Crisis?"
+    },
+    {
+      "lesson_index": 4,
+      "book_title": "All Quiet on the Western Front",
+      "author": "Erich Maria Remarque",
+      "cover_image": "/assets/great_war_all_quiet_cover.png",
+      "author_context": "Erich Maria Remarque was a German veteran of World War I. His 1929 novel 'All Quiet on the Western Front' became a defining anti-war masterpiece, detailing the extreme physical and mental trauma of the trenches, and the profound disillusionment of a generation. It was so powerful that it was later banned and burned by the Nazi regime.",
+      "extract": "We were eighteen years old, and we had only just begun to love life and the world; and we had to shoot it to pieces. Before the war, our lives were filled with the ordinary concerns of youth—school, parents, hobbies, and the vague, distant promises of the future. But all of that was swept away in a sudden, overwhelming tide of national fervor. The older generation, the men who sat comfortably in their armchairs and read the newspapers, told us it was our glorious duty to defend the Fatherland. They spoke of the Fatherland as if it were a beautiful, fragile thing that required our immediate sacrifice, and we, in our naive enthusiasm, believed them.\n\nThe most persuasive of these voices belonged to our schoolmaster, Kantorek. He was a small, stern man who used to glare at us through his spectacles, pacing in front of the chalkboard. During drill-time, Kantorek gave us long, impassioned lectures about the honor of wearing the uniform and the sacred duty of the German soldier. He spoke of heroism and glory with such conviction that the whole of our class went, under his shepherding, straight to the District Commandant and volunteered. I can see him now, his voice trembling with emotion as he asked, 'Won't you join up, Comrades?' \n\nWe were all at once terribly earnest. We marched out of the school gates feeling like men, ready to shoulder the destiny of the empire. No one had the vaguest idea what we were actually in for. The word 'war' was an abstract concept to us, a glorious adventure gleaned from history books and patriotic poetry. We pictured cavalry charges, gleaming medals, and a swift, victorious return home before the leaves fell from the trees. Kantorek called us the 'Iron Youth,' a phrase that made us stand a little taller and puff out our chests, completely unaware of the grim irony it would soon hold. \n\nIt was only when we reached the training camps, and later the muddy, rat-infested trenches of the Western Front, that the glittering facade of duty and glory was violently stripped away. The first bombardment showed us our mistake, and under it the world as they had taught it to us broke in pieces. We realized that the authority of our teachers and parents, the people who were supposed to guide us into the world, was a lie. They had sent us out into a storm of steel with high-sounding words, but they had no conception of the reality of modern, industrial slaughter. \n\nOut here in the mud, nobody cared about the 'Fatherland' or the grand political arguments of the Kaiser. We fought simply to survive, driven by instinct and a desperate loyalty to the men standing next to us in the trench. We had become a wasteland. The older men might have wives, children, and occupations to return to, a solid foundation built before the war. But for us, the young men of eighteen, the war was our only education. We were a generation of men who, even though they may have escaped shells, were destroyed by the war.",
+      "audio_file": "/assets/great_war_reading_gw_l4.mp3",
+      "questions": [
+        "Who was Kantorek, and what did he persuade the entire class to do?",
+        "How did the adults, like teachers, use the idea of 'duty' or 'comradeship' to pressure young men?",
+        "How does this extract help explain the incredible surge of Nationalism and volunteering at the outbreak of the war?"
+      ],
+      "is_adapted": true,
+      "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "timeline",
+      "title": "Assessment Option 1: The July Crisis Domino Flowchart",
+      "type": "timeline",
+      "description": "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
+      "events": [
+        {
+          "year": "28 June 1914",
+          "title": "The Spark",
+          "detail": "Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo."
+        },
+        {
+          "year": "5 July 1914",
+          "title": "The Blank Cheque",
+          "detail": "Germany promises unconditional support to Austria-Hungary for any action against Serbia."
+        },
+        {
+          "year": "23 July 1914",
+          "title": "The Ultimatum",
+          "detail": "Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it."
+        },
+        {
+          "year": "30 July 1914",
+          "title": "Russian Mobilisation",
+          "detail": "Russia mobilises its massive army to defend its Slavic ally, Serbia."
+        },
+        {
+          "year": "3 August 1914",
+          "title": "The Schlieffen Plan",
+          "detail": "Germany declares war on France and invades neutral Belgium to avoid a two-front war."
+        }
       ]
     },
     {
-      "name": "Guangzhou (Canton)",
-      "region": "Qing Dynasty (China)",
-      "coordinates": "23° 7' N, 113° 15' E",
-      "description": "A massive, wealthy port city. European merchants (like the British East India Company) were restricted to trading only in a small area of the city, desperate for Chinese tea and silk.",
-      "image": "/images/locations/canton.jpg",
-      "mapQuery": "Guangzhou, China",
-      "timeline": [
-        "1517 - Portuguese arrive and attempt to establish trade.",
-        "1757 - The Canton System is established by the Qing Dynasty.",
-        "18th Century - Becomes the sole port for European merchants trading tea and silk.",
-        "1839 - Destruction of British opium triggers the First Opium War."
+      "id": "diamond9",
+      "title": "Assessment Option 2: The M.A.I.N. Significance Diamond",
+      "type": "diamond9",
+      "description": "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
+      "factors": [
+        "The Assassination of Franz Ferdinand (The Spark)",
+        "The Alliance System dividing Europe",
+        "Germany's 'Blank Cheque' to Austria",
+        "Anglo-German Naval Race (Militarism)",
+        "The scramble for Imperial colonies in Africa",
+        "Serbian Nationalism (The Black Hand)",
+        "Russian Mobilisation schedules",
+        "The Schlieffen Plan's invasion of Belgium",
+        "The decline of the Ottoman Empire (Balkan instability)"
       ]
     },
     {
-      "name": "Jamestown",
-      "region": "Virginia (North America)",
-      "coordinates": "37° 12' N, 76° 46' W",
-      "description": "The first permanent English settlement in the Americas (1607). Early colonists struggled with starvation and disease until they discovered how to grow tobacco.",
-      "image": "/images/locations/jamestown.jpg",
-      "mapQuery": "Jamestown, Virginia",
-      "timeline": [
-        "1607 - Founded by the Virginia Company.",
-        "1609-1610 - 'The Starving Time' kills the majority of colonists.",
-        "1612 - John Rolfe introduces a successful strain of tobacco.",
-        "1619 - The first enslaved Africans are brought to the colony."
+      "id": "source_utility",
+      "title": "Assessment Option 3: Source Utility Analysis",
+      "type": "source_utility",
+      "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)",
+      "sources": [
+        {
+          "id": "Source B",
+          "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
+          "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
+          "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
+        },
+        {
+          "id": "Source C",
+          "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
+          "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
+          "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
+        }
       ]
     },
     {
-      "name": "Potosí",
-      "region": "Viceroyalty of Peru (Modern Bolivia)",
-      "coordinates": "19° 35' S, 65° 45' W",
-      "description": "A Spanish colonial mining city. Enslaved Indigenous people were forced to mine thousands of tons of silver from the 'Cerro Rico' mountain, financing the Spanish Empire.",
-      "image": "/images/locations/potosi.jpg",
-      "mapQuery": "Potosí, Bolivia",
-      "timeline": [
-        "1545 - Founded after the discovery of massive silver deposits.",
-        "1570s - The brutal 'mita' forced labor system is implemented by Viceroy Toledo.",
-        "17th Century - Becomes one of the largest and wealthiest cities in the world.",
-        "18th Century - Silver output declines as the easiest ores are depleted."
+      "id": "interpretations",
+      "title": "Assessment Option 4: The Historians' Debate",
+      "type": "interpretations",
+      "description": "Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.",
+      "interpretations": [
+        {
+          "id": "Interpretation 1",
+          "text": "No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first."
+        },
+        {
+          "id": "Interpretation 2",
+          "text": "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+        }
+      ],
+      "questions": [
+        "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
+        "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+        "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)"
       ]
-    },
-    {
-      "name": "Timbuktu",
-      "region": "Mali Empire (West Africa)",
-      "coordinates": "16° 46' N, 3° 0' W",
-      "description": "A wealthy and sophisticated city in West Africa. It was a center of global trade (gold and salt) and Islamic learning, boasting vast libraries and a famous university.",
-      "image": "/images/locations/timbuktu.jpg",
-      "mapQuery": "Timbuktu, Mali",
-      "timeline": [
-        "14th Century - Becomes a major center under the Mali Empire (Mansa Musa).",
-        "15th Century - Conquered by the Songhai Empire.",
-        "16th Century - Reaches its intellectual peak with the Sankore University.",
-        "1591 - Conquered by a Moroccan army, leading to decline."
-      ]
-    },
-    {
-      "name": "Calicut",
-      "region": "India",
-      "coordinates": "11° 15' N, 75° 46' E",
-      "description": "A major trading city on the Malabar Coast of India. In 1498, Vasco da Gama arrived here, becoming the first European to reach India by sea and bypassing the Ottoman Empire.",
-      "image": "/images/locations/calicut.jpg",
-      "mapQuery": "Kozhikode, Kerala, India",
-      "timeline": [
-        "1498 - Portuguese explorer Vasco da Gama arrives.",
-        "1500 - Pedro Álvares Cabral arrives and establishes a factory.",
-        "1502 - Da Gama returns and bombards the city.",
-        "1509 - Portuguese establish naval dominance in the Indian Ocean."
-      ]
-    },
-    {
-      "name": "Tenochtitlan",
-      "region": "Aztec Empire (Modern Mexico)",
-      "coordinates": "19° 26' N, 99° 8' W",
-      "description": "The capital of the Aztec Empire, built on an island in Lake Texcoco. It was larger and cleaner than any European city at the time before being conquered by Hernan Cortes.",
-      "image": "/images/locations/tenochtitlan.jpg",
-      "mapQuery": "Mexico City, Mexico",
-      "timeline": [
-        "1325 - City founded by the Mexica people.",
-        "1519 - Hernán Cortés arrives with Spanish conquistadors.",
-        "1520 - La Noche Triste: Spaniards driven from the city.",
-        "1521 - City falls after a brutal 93-day siege and smallpox outbreak."
-      ]
-    },
-    {
-      "name": "Elmina Castle",
-      "region": "Gold Coast (Modern Ghana)",
-      "coordinates": "5° 4' N, 1° 20' W",
-      "description": "Originally built by the Portuguese in 1482 as a trading post, it became one of the most important stops on the route of the transatlantic slave trade.",
-      "image": "/images/locations/elmina.jpg",
-      "mapQuery": "Elmina Castle, Ghana",
-      "timeline": [
-        "1482 - Built by the Portuguese as São Jorge da Mina.",
-        "1637 - Captured by the Dutch West India Company.",
-        "18th Century - Serves as a major hub for holding enslaved Africans before the Middle Passage.",
-        "1872 - Transferred to the British Empire."
-      ]
-    },
-    {
-      "name": "Malacca",
-      "region": "Malaysian Peninsula",
-      "coordinates": "2° 11' N, 102° 15' E",
-      "description": "A wealthy sultanate and the most important choke point for the global spice trade, connecting the Indian Ocean to the South China Sea.",
-      "image": "/images/locations/malacca.jpg",
-      "mapQuery": "Malacca City, Malaysia",
-      "timeline": [
-        "1400 - Founded by Parameswara, becoming a major trading port.",
-        "1511 - Conquered by Afonso de Albuquerque for Portugal.",
-        "1641 - Captured by the Dutch East India Company (VOC).",
-        "1795 - Briefly taken over by the British."
-      ]
-    },
-    {
-      "name": "Roanoke Island",
-      "region": "North America",
-      "coordinates": "35° 53' N, 75° 40' W",
-      "description": "The site of Sir Walter Raleigh's attempt to establish a permanent English settlement in the Americas, which mysteriously disappeared.",
-      "image": "/images/locations/roanoke.jpg",
-      "mapQuery": "Roanoke Island, North Carolina",
-      "timeline": [
-        "1585 - First colony established by Ralph Lane, but abandoned.",
-        "1587 - John White leads a second attempt with 115 colonists.",
-        "1587 - Virginia Dare born, the first English child born in the Americas.",
-        "1590 - John White returns to find the colony deserted with the word 'CROATOAN' carved."
-      ]
-    },
-    {
-      "name": "West Africa (Barracoons)",
-      "type": "Origin & Exploitation Point",
-      "description": "The primary origin point for enslaved people during the Transatlantic Slave Trade. Enslaved Africans were often held in brutal coastal prisons known as 'barracoons' before being forced onto slave ships.",
-      "significance": "Highlights the horrific starting point of the Middle Passage and the infrastructure of the slave trade on the African coast.",
-      "coordinates": {
-        "lat": 5.556,
-        "lng": -0.1969
-      }
-    },
-    {
-      "name": "St Helena",
-      "type": "Strategic Stopping Point",
-      "description": "A small, remote island in the South Atlantic Ocean controlled by the British East India Company.",
-      "significance": "Served as a vital provisioning and stopping-off point for ships making the grueling transatlantic and East Indian voyages.",
-      "coordinates": {
-        "lat": -15.965,
-        "lng": -5.7089
-      }
-    },
-    {
-      "name": "Barbados",
-      "type": "Colony & Slave Society",
-      "description": "A small Caribbean island that became England's first highly profitable sugar colony, heavily reliant on brutal enslaved labor.",
-      "significance": "Considered the first true 'slave society', where the economy and laws were entirely structured around the exploitation of enslaved Africans.",
-      "coordinates": {
-        "lat": 13.1939,
-        "lng": -59.5432
-      }
-    },
-    {
-      "name": "Jamaica",
-      "type": "Colony & Sugar Hub",
-      "description": "Captured by the English from the Spanish in 1655, it grew to become the crown jewel of the British Caribbean sugar empire.",
-      "significance": "Generated immense wealth for absentee landlords in Britain, but was also a site of fierce resistance, such as the Maroon Wars.",
-      "coordinates": {
-        "lat": 18.1096,
-        "lng": -77.2975
-      }
-    },
-    {
-      "name": "West India Docks",
-      "type": "Trade Infrastructure",
-      "description": "Massive docks built in London to handle the staggering volume of sugar, rum, and mahogany arriving from the Caribbean.",
-      "significance": "A physical symbol of how the wealth extracted from the Triangular Trade flowed directly into the British economy, fueling its development.",
-      "coordinates": {
-        "lat": 51.5049,
-        "lng": -0.0215
-      }
-    },
-    {
-      "name": "Bristol Docks",
-      "type": "Trade Infrastructure",
-      "description": "A major port in England that grew incredibly wealthy from the Transatlantic Slave Trade. It was home to merchants like Edward Colston, whose controversial statue was toppled by protestors in 2020.",
-      "significance": "Highlights how British port cities profited directly from slavery, and how the legacy of those individuals (like Colston) remains a resonant and controversial part of modern history.",
-      "coordinates": {
-        "lat": 51.4485,
-        "lng": -2.5991
-      }
     }
   ]
 };

@@ -254,12 +254,12 @@ allDirs.forEach(unitId => {
     
     if (lesson.a4_map) {
       if (Array.isArray(lesson.a4_map)) {
-        html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">`;
         lesson.a4_map.forEach(img => {
           let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(img, 2) : `../..${img.startsWith('/') ? img : '/' + img}`;
-          html += `<img src="${mapPath}" style="max-width: 48%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+          html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
+          html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+          html += `</div>`;
         });
-        html += `</div>`;
       } else {
         let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.a4_map, 2) : `../..${lesson.a4_map.startsWith('/') ? lesson.a4_map : '/' + lesson.a4_map}`;
         html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
@@ -730,10 +730,13 @@ allDirs.forEach(unitId => {
           });
         } else if (lesson.gcse_task.sources) {
           html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-          if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
-            html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
+          let topicText = lesson.gcse_task.topic || '';
+          let isNarrative = topicText.toLowerCase().includes("write a narrative account");
+          if (isNarrative) {
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+            html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
           } else {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}</p>`;
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
           
           let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';

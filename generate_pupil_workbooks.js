@@ -181,7 +181,7 @@ allDirs.forEach(unitId => {
   <title>Pupil Workbook - ${unitId}</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-      @page { @bottom-center { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; color: #666; } }
+      
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
     body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
     h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
@@ -251,9 +251,9 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
       }
     });
 
@@ -388,7 +388,7 @@ allDirs.forEach(unitId => {
     // Primary Source
     if (lesson.primary_source) {
       let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
-      let renderImages = true;
+      let renderImages = false; // globally disabled for pupil workbooks to save space
       if (lesson.a4_map && lesson.primary_source.src) {
         let a4Str = JSON.stringify(lesson.a4_map);
         let srcStr = JSON.stringify(lesson.primary_source.src);
@@ -399,7 +399,7 @@ allDirs.forEach(unitId => {
       if (renderImages) {
           imgTags = srcs.map(src => {
             let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : `../..${src.startsWith('/') ? src : '/' + src}`;
-            const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 250px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
+            const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 100%; max-height: 450px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 350px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
             return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
           }).join(' ');
       }
@@ -407,7 +407,7 @@ allDirs.forEach(unitId => {
       html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
           ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ''}
-          <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
+          <div style="${srcs.length > 1 ? 'display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;' : 'display: flex; justify-content: center; gap: 10px;'} margin: 15px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
         </div>
@@ -686,7 +686,7 @@ allDirs.forEach(unitId => {
                  return;
               }
               if (true) {
-                 if (task.type === 'vocab_match') {
+                 if (task.type === 'vocab_match' || task.type === 'drag_drop_timeline') {
                     // Do nothing
                   } else {
                     html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ''}</strong></p>`;
@@ -1020,10 +1020,13 @@ allDirs.forEach(unitId => {
           });
         } else if (lesson.gcse_task.sources) {
           html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-          if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
-            html += `<p style="font-weight: bold; font-size: 13pt;">How useful are Sources A and B for an enquiry into ${lesson.gcse_task.topic}?</p>`;
+          let topicText = lesson.gcse_task.topic || '';
+          let isNarrative = topicText.toLowerCase().includes("write a narrative account");
+          if (isNarrative) {
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+            html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
           } else {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}</p>`;
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
           
           let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';

@@ -1,28 +1,20 @@
 const fs = require('fs');
-let content = fs.readFileSync('great_war_part2/data.js', 'utf-8');
-content = content.replace(/"word"\s*:/g, '"term":');
-content = content.replace(/"def"\s*:/g, '"definition":');
+let code = fs.readFileSync('great_war/data.js', 'utf8');
 
-// Also fix lesson_3's do_now questions
-const jsonStart = content.indexOf('{');
-const jsonStr = content.substring(jsonStart, content.lastIndexOf('}') + 1);
-let unitData = JSON.parse(jsonStr);
+code = code.replace(
+  'A British political cartoon from 1897 showing Kaiser Wilhelm II',
+  "'The Greedy Boy', a British political cartoon published in 1885 showing German Chancellor Otto von Bismarck"
+);
 
-let l3 = unitData.lessons.find(l => l.id === 'lesson_3');
-if (l3 && l3.do_now && l3.do_now.type === 'quiz' && l3.do_now.questions) {
-  l3.do_now.type = 'mixed';
-  l3.do_now.items = l3.do_now.questions.map(q => {
-    let opts = q.options.map((opt, i) => `${String.fromCharCode(65+i)}) ${opt}`).join(', ');
-    let ansIndex = q.answer;
-    let ansOpt = q.options[ansIndex];
-    return {
-      question: `${q.question} (${opts})`,
-      answer: `${ansOpt}. Explanation: ${q.explanation}`
-    };
-  });
-  delete l3.do_now.questions;
-}
+code = code.replace(
+  'the cartoon depicts Kaiser Wilhelm II greedily grabbing the globe, mocking his desire for global domination.',
+  'the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany\\'s aggressive desire for a larger empire.'
+);
 
-let newContent = content.substring(0, jsonStart) + JSON.stringify(unitData, null, 2) + "\n";
-fs.writeFileSync('great_war_part2/data.js', newContent);
-console.log('Fixed data.js!');
+code = code.replace(
+  'showing the expansion of Serbia after 1913',
+  'showing the borders of Serbia and the Austro-Hungarian Empire in 1914'
+);
+
+fs.writeFileSync('great_war/data.js', code);
+console.log('Fixed data.js');

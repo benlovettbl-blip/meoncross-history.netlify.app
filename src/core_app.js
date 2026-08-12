@@ -1045,7 +1045,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine') {
+    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
