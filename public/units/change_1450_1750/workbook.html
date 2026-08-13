@@ -13,7 +13,7 @@
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
@@ -37,7 +37,7 @@
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: avoid !important; }
+        .task-box { page-break-inside: auto; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: block; margin-top: 15px;"] { display: block !important; }
         button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
@@ -49,29 +49,30 @@
 </head>
 <body>
 
-    <div class="cover-page" style="page-break-after: always; text-align: center;">
-      <h1 style="font-size: 32pt; margin-bottom: 20px; color: #1e3a8a;">${periodTitle}</h1>
-      <h2 style="font-size: 16pt; margin-bottom: 20px; color: #64748b; border: none;">${unitData.title}</h2>
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">KS3: Change 1450-1750</h1>
+      <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">KS3: Change 1450-1750</h2>
       
-      <div style="margin-top: 30px; text-align: left; padding: 20px; border: 2px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
-        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 13pt;">
+      <div style="margin-top: 20px; width: 100%; text-align: left; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 12pt;">
           <thead>
             <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 60%; text-align: left;">Lesson Title</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Do Now</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Tasks</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Review</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Score</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
             </tr>
           </thead>
           <tbody>
-            ${trackerRows}
+            <tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 1</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 2</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 3</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 4</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">Lesson 6</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ 5</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr><tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>
           </tbody>
         </table>
       </div>
     </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: Lesson 1</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: Lesson 1</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -79,22 +80,19 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: Lesson 2</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+      </div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: Lesson 2</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -102,22 +100,19 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: Lesson 3</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+      </div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: Lesson 3</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -125,22 +120,19 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: Lesson 4</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+      </div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: Lesson 4</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -148,22 +140,19 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L5: Lesson 5</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+      </div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L5: Lesson 5</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -171,22 +160,19 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L6: Lesson 6</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="">
+      </div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L6: Lesson 6</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the main concepts of the lesson.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1">Placeholder narrative.<div class="task-box"><p style="margin-top:10px;"><strong>Q1. Placeholder task.</strong></p><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div></div></div><div style="page-break-inside: avoid;">
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
         <p style="font-weight: bold; margin-bottom: 10px;">Title / Topic: ______________________________________________________________</p>
@@ -194,19 +180,16 @@
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-13 07:34:55 UTC | Unit: change_1450_1750</div></body></html>
+      </div><div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-08-13 13:42:48 UTC | Unit: change_1450_1750</div></body></html>

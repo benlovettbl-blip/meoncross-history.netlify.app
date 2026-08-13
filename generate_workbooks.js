@@ -190,12 +190,12 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
       }
-      for(let r=0; r<3; r++) {
-         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:10px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+      for(let r=0; r<2; r++) {
+         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
       }
     });
 
@@ -995,25 +995,27 @@ allDirs.forEach(unitId => {
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
         <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
-        <div class="task-lines-large"></div>
       </div>
     `;
 
-    // Inject Discreet Grading Footer for the Lesson
-    html += `
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+    // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
+    const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(unitId);
+    if (!isGCSEUnit) {
+      html += `
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    </div>
-    `;
+      `;
+    }
+    
+    html += `</div>`;
 
     if (lesson.full_page_map) {
       let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
@@ -1081,6 +1083,7 @@ allDirs.forEach(unitId => {
                       epArray.forEach((ep, index) => {
                           let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
                           if (ep.question.includes('marks)')) marksStr = '';
+                          if (ep.question.toLowerCase().includes('explain why')) marksStr = '';
                           allExamTasksHtml += `<div style="margin-top: 10px;"><strong>${index + 1}. ${formatText(ep.question)}${marksStr}</strong></div>`;
                       });
                   }

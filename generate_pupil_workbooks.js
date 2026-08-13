@@ -189,14 +189,15 @@ allDirs.forEach(unitId => {
     h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
-    .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto !important; }
+    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
-    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 8mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
-    .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
+    .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
     .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
-    .source-container { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; text-align: center; page-break-inside: auto; }
+    .source-container { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; text-align: center; page-break-inside: auto; }
+    .source-container img { max-height: 250px !important; object-fit: contain !important; display: block; margin: 0 auto; }
     .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; font-family: 'Inter', sans-serif; }
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
@@ -251,38 +252,48 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">L${i+1}: ${l.title}</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
+      }
+      for(let r=0; r<2; r++) {
+         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
       }
     });
 
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr style="height: 50px;"><td style="border:1px solid #333; padding:12px 6px; font-weight:bold; background:#e2e8f0;">Assessment: ${a.title}</td><td style="border:1px solid #333; padding:12px 6px;"></td><td style="border:1px solid #333; padding:12px 6px;"></td><td style="border:1px solid #333; padding:12px 6px;"></td></tr>`;
+        trackerRows += `<tr style="height: 50px;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">Assessment: ${a.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
       });
     }
 
-    let bannerImageSrc = period.image || unitData.cover_image || '';
-    if (bannerImageSrc) {
-      bannerImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(bannerImageSrc, 2) : `../..${bannerImageSrc.startsWith('/') ? bannerImageSrc : '/' + bannerImageSrc}`;
-    }
-
     html += `
-    
-    <div style="width: 100%; height: 90px; margin-top: 0px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-      <!-- Banner image removed per user request -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
-        <div style="background: rgba(15, 23, 42, 0.85); padding: 10px 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
-          <h1 style="margin: 0 !important; font-size: 18pt; color: white; padding: 0;">${periodTitle}</h1>
-          <p style="font-size:11pt; margin: 10px 0 0 0; font-family: 'Outfit', sans-serif; color: #cbd5e1;">${bannerQuestion}</p>
-        </div>
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
+      <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>
+      
+      <div style="display: flex; flex-direction: row; justify-content: center; margin: 15px auto 30px auto; width: 80%; gap: 40px;">
+        <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Name: </div>
+        <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Class: </div>
       </div>
-    </div>
-    
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: 15px auto 0 auto; width: 80%; gap: 40px;">
-      <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Name: </div>
-      <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt;">Class: </div>
+
+      <div style="margin-top: 20px; width: 100%; text-align: left; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Pupil Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 12pt;">
+          <thead>
+            <tr style="background-color: #1e3a8a; color: white;">
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${trackerRows}
+          </tbody>
+        </table>
+      </div>
     </div>
     `;
 
@@ -432,7 +443,7 @@ allDirs.forEach(unitId => {
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
                    </div>
                    <p style="font-style: italic; color: #555; margin-top: 0; font-size: 9.5pt; margin-bottom: 5px;"><strong>Task:</strong> The historical events below are out of order. Read them carefully, then use your pen to <strong>draw arrows connecting the boxes</strong> in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).</p>
-                   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 5px;">`;
+                   <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 5px;">`;
                    
         let shuffledEvents = [...(lesson.do_now.events || [])];
         for (let i = shuffledEvents.length - 1; i > 0; i--) {
@@ -441,19 +452,17 @@ allDirs.forEach(unitId => {
         }
         
         shuffledEvents.forEach((ev, idx) => {
-          const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
-          const m = margins[idx % margins.length];
           if (unitId === 'cme_new') {
-            html += `<div style="width: 31%; padding: 3px; box-sizing: border-box; ${m} box-shadow: 2px 2px 0px #aaa;">
-                        <strong style="font-size: 8pt;">${ev.year || ''}</strong><br>
+            html += `<div style="flex: 1 1 30%; max-width: 31%; border: 1px solid #94a3b8; padding: 5px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 4px; background: #fff;">
+                        <strong style="font-size: 8pt; color: #1e3a8a;">${ev.year || ''}</strong><br>
                         <strong style="font-size: 8pt;">${ev.title || ''}</strong><br>
-                        <span style="font-size: 7.5pt;">${ev.detail || ''}</span>
+                        <span style="font-size: 7.5pt; color: #475569;">${ev.detail || ''}</span>
                      </div>`;
           } else {
-            html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
-                        <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
+            html += `<div style="flex: 1 1 30%; max-width: 31%; border: 1px solid #94a3b8; padding: 6px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 4px; background: #fff;">
+                        <strong style="font-size: 9.5pt; color: #1e3a8a;">${ev.year || ''}</strong><br>
                         <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
-                        <span style="font-size: 9pt;">${ev.detail || ''}</span>
+                        <span style="font-size: 9pt; color: #475569;">${ev.detail || ''}</span>
                      </div>`;
           }
         });
@@ -939,7 +948,7 @@ allDirs.forEach(unitId => {
     }
 
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
-    if (hasExamTask) {
+    if (hasExamTask && unitId !== 'cme_new') {
       html += `<div style="page-break-before: always; margin-top: 20px;">`;
       let fallbackExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
       let examTitle = (lesson.extended && lesson.extended.title) ? lesson.extended.title : fallbackExamTitle;
@@ -1034,10 +1043,13 @@ allDirs.forEach(unitId => {
         } else if (lesson.gcse_task.sources) {
           html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
           let topicText = lesson.gcse_task.topic || '';
-          let isNarrative = topicText.toLowerCase().includes("write a narrative account");
-          if (isNarrative) {
+          let tLower = topicText.toLowerCase();
+          let isFullQuestion = tLower.includes("write a narrative account") || tLower.includes("explain one consequence") || tLower.includes("explain the importance") || tLower.includes("how useful") || tLower.includes("explain why") || tLower.includes("describe");
+          if (isFullQuestion) {
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
-            html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+            if (tLower.includes("write a narrative account")) {
+                html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+            }
           } else {
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
@@ -1277,25 +1289,28 @@ allDirs.forEach(unitId => {
       <div style="page-break-before: always; margin-top: 20px;">
         <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
     `;
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 12; i++) {
         html += `<div class="task-lines-large"></div>`;
     }
     html += `</div>`;
 
-    // Inject Discreet Grading Footer for the Lesson
-    html += `
-      <div style="margin-top: 10px;"></div>
-      <div class="grading-footer">
-        <div class="grading-boxes">
-          <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-          <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-          <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-          <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-          <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+    // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
+    const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(unitId);
+    if (!isGCSEUnit) {
+      html += `
+        <div style="margin-top: 10px;"></div>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
-        <div>Teacher Comment: <span class="teacher-comment"></span></div>
-      </div>
-    `;
+      `;
+    }
 
     if (lesson.full_page_map) {
       let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
@@ -1316,6 +1331,80 @@ allDirs.forEach(unitId => {
         appendixData.push({ title: lesson.title, videos: allVideos });
     }
   });
+
+  if (unitId === 'cme_new') {
+      let allExamTasksHtml = '';
+      periodLessons.forEach(lesson => {
+          let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+          if (hasExamTask) {
+              allExamTasksHtml += `<div style="margin-bottom: 25px; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; page-break-inside: avoid;">`;
+              allExamTasksHtml += `<h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 13pt;">From ${lesson.title}</h4>`;
+              
+              if (lesson.extended && lesson.extended.question) {
+                  allExamTasksHtml += `<div style="margin-bottom: 10px;"><strong>Q. ${formatText(lesson.extended.question)}</strong></div>`;
+              }
+              
+              if (lesson.gcse_task) {
+                  if (lesson.gcse_task.tasks) {
+                      lesson.gcse_task.tasks.forEach(task => {
+                          allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q${task.qNum ? task.qNum + '.' : ''} ${task.text}</strong></div>`;
+                      });
+                  } else if (lesson.gcse_task.topic) {
+                      let topicText = lesson.gcse_task.topic || '';
+                      let tLower = topicText.toLowerCase();
+                      let isFullQuestion = tLower.includes("write a narrative account") || tLower.includes("explain one consequence") || tLower.includes("explain the importance") || tLower.includes("how useful") || tLower.includes("explain why") || tLower.includes("describe");
+                      if (isFullQuestion) {
+                          allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+                      } else {
+                          allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+                      }
+                      
+                      if (lesson.gcse_task.sources) {
+                          lesson.gcse_task.sources.forEach(srcObj => {
+                              if (srcObj.type !== 'visual') {
+                                  allExamTasksHtml += `<div style="margin-top: 10px; padding: 10px; border-left: 3px solid #ccc; font-style: italic; font-size: 11pt;"><strong>${srcObj.title}:</strong> ${srcObj.text}</div>`;
+                              }
+                          });
+                      }
+                  }
+              }
+              
+              if (lesson.exam_practice) {
+                  let epArray = lesson.exam_practice;
+                  if (!Array.isArray(lesson.exam_practice) && lesson.exam_practice.questions) {
+                      epArray = lesson.exam_practice.questions;
+                  }
+                  if (epArray && epArray.length > 0) {
+                      epArray.forEach((ep, index) => {
+                          let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
+                          if (ep.question.includes('marks)')) marksStr = '';
+                          if (ep.question.toLowerCase().includes('explain why')) marksStr = '';
+                          allExamTasksHtml += `<div style="margin-top: 10px;"><strong>${index + 1}. ${formatText(ep.question)}${marksStr}</strong></div>`;
+                      });
+                  }
+              }
+              
+              allExamTasksHtml += `</div>`;
+          }
+      });
+      
+      if (allExamTasksHtml) {
+          html += `<div style="page-break-before: always;">
+            <h2 style="font-size: 24pt; color: #1e3a8a; text-align: center; border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 30px;">GCSE Exam Practice: Question Bank</h2>
+            <p style="font-size: 12pt; text-align: center; margin-bottom: 30px; font-style: italic;">Choose an exam question from the bank below and answer it on the blank lined pages that follow.</p>
+            ${allExamTasksHtml}
+          </div>`;
+          
+          for (let p = 0; p < 4; p++) {
+              html += `<div style="page-break-before: always; padding-top: 20px;">`;
+              html += `<h3 style="margin-top: 0; color: #64748b; margin-bottom: 20px;">Exam Practice Space (Page ${p+1})</h3>`;
+              for(let i=0; i<32; i++) {
+                  html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+          }
+      }
+  }
 
   if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
     html += `
