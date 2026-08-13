@@ -1045,7 +1045,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2') {
+    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
@@ -1060,7 +1060,7 @@ export function initializeApp(unitData) {
     if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
       const pdfTextbookLink = document.createElement('a');
       pdfTextbookLink.className = 'lesson-link';
-      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book"></i> Textbook & Reading Log';
+      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book"></i> Printable PDF Textbook';
       pdfTextbookLink.href = `/pdfs/${window.currentUnitId}_textbook.pdf`;
       pdfTextbookLink.target = '_blank';
       pdfTextbookLink.style.marginTop = '15px';
@@ -1069,7 +1069,7 @@ export function initializeApp(unitData) {
 
       const pupilWorkbookLink = document.createElement('a');
       pupilWorkbookLink.className = 'lesson-link';
-      pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Printable Workbook';
+      pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Printable PDF Workbook';
       pupilWorkbookLink.href = `/pdfs/${window.currentUnitId}_pupil_workbook.pdf`;
       pupilWorkbookLink.target = '_blank';
       pupilWorkbookLink.style.marginTop = '15px';
@@ -1211,9 +1211,9 @@ export function initializeApp(unitData) {
     } else if (lesson.id && lesson.id.startsWith('lesson_')) {
       const parts = lesson.id.split('_');
       if (parts.length > 2) {
-        lessonPrefix = `Lesson ${parseInt(parts[1]) + 1}.${parts.slice(2).join('.')}`;
+        lessonPrefix = `Lesson ${parseInt(parts[1])}.${parts.slice(2).join('.')}`;
       } else {
-        lessonPrefix = `Lesson ${parseInt(parts[1]) + 1}`;
+        lessonPrefix = `Lesson ${parseInt(parts[1])}`;
       }
     }
     
@@ -1913,9 +1913,48 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
            `;
         }
 
+        let blockSourceHtml = '';
+        if (block.source) {
+             let sourceContentHtml = '';
+             if (block.source.type === 'written') {
+                 sourceContentHtml = `
+                   <div style="width: 100%; max-height: 350px; background-color: #fefce8; border: 1px solid #fde047; border-radius: 4px; padding: 20px; overflow-y: auto; margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.6; color: #422006; box-shadow: inset 0 0 10px rgba(0,0,0,0.02);">
+                     <i class="fa-solid fa-quote-left" style="color: #facc15; font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                     ${block.source.content}
+                   </div>
+                 `;
+             } else {
+                 sourceContentHtml = `
+                    <div style="width: 100%; max-height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
+                      <img src="${getAssetUrl(block.source.source || block.source.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                    </div>
+                 `;
+             }
+
+             blockSourceHtml = `
+              <div class="gcse-source-container" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
+                ${block.source.title ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.title}
+                </h4>` : ''}
+                ${sourceContentHtml}
+                ${block.source.provenance_clue ? `
+                  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
+                    <strong style="color: #166534; display: block; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Provenance Clue:</strong>
+                    <span style="color: #15803d; font-size: 0.95rem;">${block.source.provenance_clue}</span>
+                  </div>
+                ` : ''}
+                ${block.source.question ? `<div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${block.source.qNum ? `Q${block.source.qNum}. ` : ''}${formatQuestion(block.source.question, !block.source.qNum)}</strong></p>
+                </div>` : ''}
+              </div>
+             `;
+        }
+
         htmlNarrative += `
             <div class="standard-narrative-container">
               ${imageHtml}
+              ${blockSourceHtml}
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 ${(!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection'))) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
@@ -2799,6 +2838,7 @@ window.updateProgress = () => {
     if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
+        if (block.source && block.source.question) block.source.qNum = globalQNum++;
         if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; });
         if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
       });
@@ -2864,6 +2904,9 @@ window.updateProgress = () => {
     
     if (activeLesson.narrative_blocks) {
       activeLesson.narrative_blocks.forEach(block => {
+        if (block.source && block.source.question) {
+          addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
+        }
         if (block.tasks) {
           block.tasks.forEach(task => {
             if (task.type !== 'vocab_match') {

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which construction firm is cited as using millions of 'Fareham Red' bricks?",
+    "options": ["Joseph Bull & Sons", "Edwin Chadwick & Co.", "Bazalgette Builders", "Cort Ironworks"],
+    "answer": 0
+  },
+  {
+    "question": "What famous London monument was built using Fareham Red bricks?",
+    "options": ["The Royal Albert Hall", "The Tower of London", "Buckingham Palace", "St Paul's Cathedral"],
+    "answer": 0
+  },
+  {
+    "question": "What was the main flaw of 'back-to-back' housing in Victorian slums?",
+    "options": ["It shared three walls and offered zero cross-ventilation", "It was built entirely of wood", "It was too expensive for workers to rent", "It was situated too far from the factories"],
+    "answer": 0
+  },
+  {
+    "question": "What did whole streets of back-to-back houses typically have to share?",
+    "options": ["A single outdoor privy and a water pump", "An indoor bathroom", "A communal kitchen and dining area", "A small garden and washhouse"],
+    "answer": 0
+  },
+  {
+    "question": "What was a 'cesspit' in a Victorian slum?",
+    "options": ["A deep hole under an outdoor privy where human waste collected", "A large tub for washing clothes", "A cellar where families stored coal", "An open drain running down the middle of the street"],
+    "answer": 0
+  },
+  {
+    "question": "Who wrote the 1842 government report on the living conditions of the working class?",
+    "options": ["Edwin Chadwick", "Dr. John Snow", "Joseph Bazalgette", "Henry Cort"],
+    "answer": 0
+  },
+  {
+    "question": "What did Edwin Chadwick's 1842 report conclude about the loss of life from filth?",
+    "options": ["It was greater than the loss of life from any wars Britain had fought", "It was improving steadily due to new sewers", "It was mostly confined to rural areas", "It was caused entirely by malnutrition"],
+    "answer": 0
+  },
+  {
+    "question": "In 1849, 54 working-class residents sent a letter complaining of living 'like pigs' to which newspaper?",
+    "options": ["The Times", "The Guardian", "The Daily Telegraph", "The Observer"],
+    "answer": 0
+  },
+  {
+    "question": "What was the deadly waterborne disease that killed within hours in the Victorian slums?",
+    "options": ["Cholera", "Smallpox", "Tuberculosis", "Typhoid"],
+    "answer": 0
+  },
+  {
+    "question": "What was the 'Miasma Theory'?",
+    "options": ["The belief that bad, foul-smelling air caused diseases", "The belief that germs in the water caused illnesses", "The belief that poverty was a punishment from God", "The belief that eating raw meat caused cholera"],
+    "answer": 0
+  },
+  {
+    "question": "Who proved that cholera was spread through contaminated water in 1854?",
+    "options": ["Dr. John Snow", "Joseph Bazalgette", "Edwin Chadwick", "Florence Nightingale"],
+    "answer": 0
+  },
+  {
+    "question": "How did Dr. John Snow prove his theory about cholera?",
+    "options": ["By mapping deaths around a contaminated Broad Street pump", "By examining bacteria under a microscope", "By testing the air quality in London slums", "By analyzing the diets of cholera victims"],
+    "answer": 0
+  },
+  {
+    "question": "What does the government policy of 'laissez-faire' mean?",
+    "options": ["Leaving things alone and not interfering", "Forcing local councils to build sewers", "Taxing the rich to help the poor", "Controlling all aspects of public health"],
+    "answer": 0
+  },
+  {
+    "question": "Why did the government maintain a 'laissez-faire' policy regarding public health for so long?",
+    "options": ["Improving sanitation and building sewers was considered too expensive", "They believed the working class preferred living in slums", "They had no scientific evidence that filth caused disease", "They thought private charities would solve the problem"],
+    "answer": 0
+  },
+  {
+    "question": "What event in the summer of 1858 finally forced the government to abandon its laissez-faire policy?",
+    "options": ["The 'Great Stink'", "The Great Fire of London", "The Peterloo Massacre", "The publication of Chadwick's report"],
+    "answer": 0
+  },
+  {
+    "question": "How did politicians try to cope with the 'Great Stink' in Parliament?",
+    "options": ["They soaked their curtains in chemicals to mask the smell", "They moved Parliament to a different city", "They wore masks filled with flowers", "They built a massive brick wall along the Thames"],
+    "answer": 0
+  },
+  {
+    "question": "Who was the engineer funded by the government to build London's massive underground sewer system?",
+    "options": ["Joseph Bazalgette", "Henry Cort", "Edwin Chadwick", "Dr. John Snow"],
+    "answer": 0
+  },
+  {
+    "question": "What did the 1875 Public Health Act force local councils to do?",
+    "options": ["Provide clean water and drainage", "Demolish all back-to-back housing", "Provide free healthcare to the poor", "Ban child labour in factories"],
+    "answer": 0
+  },
+  {
+    "question": "What do 'Pessimist' historians argue about industrialisation?",
+    "options": ["It was a catastrophe that subjected a generation to unlivable, deadly slums", "It immediately improved the standard of living for everyone", "It was a necessary evil that the working class accepted willingly", "It had no significant impact on life expectancy"],
+    "answer": 0
+  },
+  {
+    "question": "What do 'Optimist' historians argue about the public health crisis of industrialisation?",
+    "options": ["It forced the government to modernize and eventually build safe, sanitary cities", "It was entirely caused by the laziness of the working class", "It was exaggerated by reformers like Chadwick", "It would have resolved itself naturally without government intervention"],
+    "answer": 0
+  }
+]

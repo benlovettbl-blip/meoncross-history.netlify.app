@@ -36,11 +36,11 @@
           ]
         },
         "learning_objectives": {
-          "overarching": "To understand the origins of the Industrial Revolution and the impact of Henry Cort.",
+          "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
           "scaffolded": [
-            "Describe the difference between the domestic system and the factory system.",
-            "Explain how Henry Cort solved the 'pig iron' crisis using the puddling process.",
-            "Evaluate the importance of Cort's geographical location versus his technological genius."
+            "Understand the difference between the domestic system and the factory system.",
+            "Explain the significance of Henry Cort's puddling and rolling processes.",
+            "Evaluate the importance of location versus innovation in Cort's success."
           ]
         },
         "do_now": {
@@ -58,6 +58,14 @@
             {
               "question": "Why did the Gunpowder Plot of 1605 fail?",
               "answer": "Guy Fawkes was discovered in the cellars with the gunpowder before it could be lit."
+            },
+            {
+              "question": "What was the significance of the Magna Carta signed in 1215?",
+              "answer": "It limited the power of the king and established that everyone is subject to the law."
+            },
+            {
+              "question": "Why did Henry VIII break away from the Catholic Church?",
+              "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
             }
           ]
         },
@@ -255,7 +263,7 @@
       },
       {
         "id": "lesson_2",
-        "title": "Was industrial work progress or punishment? (Factory conditions, child labor; Case Study: Funtley Clay Pits & Fareham Brickfields)",
+        "title": "Was industrial work progress or punishment?",
         "teacher_notes": {
           "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
           "objectives": [
@@ -274,7 +282,8 @@
               "primer": "Bridge the gap to GCSE by having students weigh two competing historical interpretations of industrialisation's overall impact on the working class.",
               "question": "Can an event be a catastrophe for one generation but a triumph for the next?"
             }
-          ]
+          ],
+          "source_context": "The image provides a visual representation of the crowded and dangerous environment of a 19th-century factory/mill where young children worked. What specific dangers or difficulties can you identify in this workplace that would make it a harsh environment for a child? (Hinge Question)"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -291,6 +300,14 @@
             {
               "question": "What tragic event caused Henry Cort to lose his patents and die in poverty?",
               "answer": "His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds."
+            },
+            {
+              "question": "What was the primary cause of the English Civil War?",
+              "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+            },
+            {
+              "question": "What was the result of the Spanish Armada in 1588?",
+              "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
             }
           ]
         },
@@ -325,7 +342,7 @@
               {
                 "type": "text",
                 "qNum": 1,
-                "question": "Change & Continuity: What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
+                "question": "What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
                 "model_answer": "While children worked hard in both systems (showing continuity), the main change was the scale of danger and strict discipline. In the factory system, the pace of work was dictated by fast, unguarded steam-powered machines in a deafening and polluted environment, which caused horrific injuries that did not happen at home."
               }
             ]
@@ -338,7 +355,7 @@
               {
                 "type": "text",
                 "qNum": 2,
-                "question": "Source Evaluation: How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
+                "question": "How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
                 "model_answer": "The Sadler Report is highly useful because it is a primary source containing direct eyewitness testimony from real child workers like Matthew Crabtree. It provides specific details about the grueling 14-hour days and the physical abuse (being 'strapped') used by overseers to maintain discipline, giving a highly accurate insight into the brutal reality of factory conditions."
               }
             ]
@@ -351,7 +368,7 @@
               {
                 "type": "text",
                 "qNum": 3,
-                "question": "Causation: Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
+                "question": "Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
                 "model_answer": "The correct chronological chain of causation is: B (London's population explodes) -> D (Massive demand for building materials is created) -> A (Railways are built to transport heavy goods) -> C (Fareham Reds are used to build the Royal Albert Hall)."
               }
             ]
@@ -364,7 +381,7 @@
               {
                 "type": "text",
                 "qNum": 4,
-                "question": "Source Comparison: Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
+                "question": "Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
                 "model_answer": "A historian needs both because they provide different types of evidence. The Sadler Report provides the qualitative, emotional reality of the work (the pain, the beatings, the long hours), while the local Fareham Census provides quantitative, factual proof that this wasn't an isolated incident—it proves exactly how old the children were and that child labour was a widespread reality right across the country, even in rural Hampshire."
               }
             ]
@@ -377,7 +394,7 @@
               {
                 "type": "text",
                 "qNum": 5,
-                "question": "Extended Writing: Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
+                "question": "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
                 "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
               }
             ]
@@ -385,9 +402,9 @@
         ],
         "sources": [
           {
-            "title": "Source A: Fareham Brickfields",
-            "src": "/images/child_labour.jpg",
-            "caption": "An illustration of child apprentices working in a 19th-century textile factory, highlighting the brutal conditions many children faced."
+            "title": "Source A: Powerloom Weaving in 1835",
+            "src": "/images/19th_century_mill.jpg",
+            "caption": "A 19th-century engraving depicting child labour in an early industrial textile mill."
           }
         ],
         "exam_practice": {
@@ -449,18 +466,36 @@
               "Optimists think the domestic system was better, while Pessimists prefer the factory system."
             ]
           }
-        ]
+        ],
+        "learning_objectives": {
+          "overarching": "To explore: Was industrial work progress or punishment",
+          "scaffolded": [
+            "Understand the working conditions of the early Industrial Revolution with historical nuance.",
+            "Evaluate primary sources regarding child labour.",
+            "Analyse the 'Optimist vs. Pessimist' historical debate."
+          ]
+        }
       },
       {
         "id": "lesson_3",
-        "title": "Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London)",
+        "title": "Did industrialisation make British towns unlivable?",
         "teacher_notes": {
-          "primer": "This lesson focuses on: Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London). Students will explore the key events and concepts.",
+          "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
           "objectives": [
             {
-              "objective": "Understand the core themes of Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London).",
-              "primer": "Guide students through the narrative, focusing on key historical shifts.",
-              "question": "What is the most significant takeaway from this lesson?"
+              "objective": "Analyse the contrast between imperial wealth and working-class squalor.",
+              "primer": "Use Source A (the corporate perspective of Fareham brick builders) to show students how the same local industry that built grand monuments also fueled rapid, unregulated slum expansion.",
+              "question": "Did the economic boom of the brickfields benefit everyone in society equally?"
+            },
+            {
+              "objective": "Evaluate the usefulness of contrasting primary sources.",
+              "primer": "Guide students to evaluate Source B (top-down, official/statistical) against Source C (bottom-up, personal/emotional) to understand why historians need a variety of evidence to uncover the truth.",
+              "question": "Why might a government report use different language to a letter written by a slum resident?"
+            },
+            {
+              "objective": "Understand the catalysts for public health reform.",
+              "primer": "Ensure students grasp how 'Miasma Theory' delayed progress, and how the physical reality of the 'Great Stink' finally forced the government to abandon 'laissez-faire' policies.",
+              "question": "Was it scientific discovery or political discomfort that finally triggered the building of London's sewers?"
             }
           ]
         },
@@ -469,52 +504,147 @@
           "type": "questions",
           "items": [
             {
-              "question": "Recall question from previous lesson.",
-              "answer": "A"
+              "question": "What are 'Fareham Reds'?",
+              "answer": "Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects."
+            },
+            {
+              "question": "Name one highly dangerous or physically demanding job a child might perform in a 19th-century textile mill or brickfield.",
+              "answer": "Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard."
+            },
+            {
+              "question": "Why did factory owners actively prefer to hire children rather than adults?",
+              "answer": "Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts."
+            },
+            {
+              "question": "Explain how Henry Cort's inventions at the Funtley Ironworks helped power the Industrial Revolution globally.",
+              "answer": "Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance."
+            },
+            {
+              "question": "Why do 'Optimist' and 'Pessimist' historians disagree about the impact of the Industrial Revolution on working-class families?",
+              "answer": "Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy."
             }
           ]
         },
+        "vocab": [
+          {
+            "term": "Urbanisation",
+            "definition": "The massive movement of people from the countryside into towns and cities, causing them to expand rapidly."
+          },
+          {
+            "term": "Laissez-faire",
+            "definition": "A government policy of 'leaving things alone' and not interfering in people's lives or business affairs."
+          },
+          {
+            "term": "Miasma Theory",
+            "definition": "The incorrect Victorian medical belief that diseases were caused and spread by breathing in bad, foul-smelling air."
+          },
+          {
+            "term": "Provenance",
+            "definition": "The origin of a historical source (who wrote it, when, why, and what type of source it is), used to judge its usefulness."
+          },
+          {
+            "term": "Public Health",
+            "definition": "The health of the population as a whole, managed by the government through regulations on sanitation, clean water, and disease prevention."
+          }
+        ],
         "narrative_blocks": [
           {
-            "title": "Introduction",
-            "text": "Placeholder narrative.",
+            "title": "The Façade of Empire",
+            "text": "During the 19th century, Britain's population boomed and millions flooded into cities. Construction exploded. To understand the scale of this, historians look at sources like Source B, adapted from an industrial directory for Victorian contractors (like Joseph Bull & Sons). This shows the 'façade' of the Empire: wealthy exteriors built by local Hampshire mud. But behind these glorious public buildings lay a very different reality for the working classes.",
+            "level_4": "In the 1800s, millions of people moved to cities. Construction companies used millions of 'Fareham Red' bricks to build amazing places like the Royal Albert Hall. Source B is a record from one of these companies. This made Britain look rich and powerful, but the poor workers who made the bricks were forced to live in terrible, crowded slums.",
             "tasks": [
               {
                 "type": "text",
-                "text": "Task 1: Placeholder task.",
-                "model": "Model answer placeholder."
+                "qNum": 1,
+                "question": "Conceptual Analysis: Based on Source B, what was the primary concern of the Victorian contractors when building 'cottages' for their workers?",
+                "model_answer": "Source B reveals that the contractors' primary concern was 'efficiency of labour'. They built cottages 'instantly adjacent' to the worksites not for the comfort of the workers, but to ensure they could extract the maximum amount of work from them to keep pace with the massive demand for Fareham bricks."
+              }
+            ],
+            "source": {
+              "type": "written",
+              "title": "Source B: The Unregulated Capitalism / Corporate Perspective",
+              "content": "\"The demand for the Fareham bricks remains unprecedentedly high, owing to their great durability under heavy pressure. Contracts have been secured for the building of the vast railway arches, the expanding dockyards at Portsmouth, and prestigious public buildings in the capital. To keep pace with the building of these modern towns, the clay pits must work without interruption, and cottages for the labourers must be raised instantly adjacent to the works to secure the utmost efficiency of labour.\"\n— Adapted from 19th-Century Southern Industrial and Brick-making Directory Records",
+              "provenance_clue": "This is a corporate record focused on business and profit. Notice how it describes the workers' \"cottages\" purely in terms of \"efficiency of labour\"."
+            }
+          },
+          {
+            "title": "The Official Investigation",
+            "text": "To house the exploding population, landlords packed workers into tiny 'back-to-back' houses sharing three walls, offering zero ventilation. Entire families lived in a single room with no plumbing, sharing a single outdoor toilet over a deep cesspit. We know about this squalor from official investigations, such as Source A, an 1842 government report by reformer Edwin Chadwick.",
+            "level_4": "Landlords built 'back-to-back' houses. These houses shared three walls, so there was no fresh air. Whole families squeezed into one room sharing an outdoor toilet. Human waste often leaked into the drinking water. We know this from Source A, an 1842 government report by Edwin Chadwick.",
+            "tasks": [
+              {
+                "type": "text",
+                "qNum": 2,
+                "question": "Language Analysis: Look at Source A. Why do you think Edwin Chadwick chose to compare the deaths in the slums to the deaths in a 'modern war'?",
+                "model_answer": "Chadwick used the comparison to war to shock a 'laissez-faire' government into action. By comparing the deaths from 'filth and bad ventilation' to military casualties, he translated a public health issue into a national security crisis, using formal, striking language to prove that doing nothing was killing more British citizens than foreign enemies."
+              }
+            ],
+            "source": {
+              "type": "written",
+              "title": "Source A: The Official, Top-Down Government Data",
+              "content": "\"The charcoal-burners, the brick-makers, and the miners are all exposed to severe atmospheric changes and filth... In the town districts, the crowded back-to-back dwellings are built with no ventilation, and the refuse of the houses is thrown into open streets. The annual loss of life from filth and bad ventilation is greater than the loss from death or wounds in any wars in which the country has been engaged in modern times.\"\n— Edwin Chadwick, Report on the Sanitary Conditions of the Labouring Population of Great Britain, 1842",
+              "provenance_clue": "Chadwick was a government official writing a formal report. Think about why he uses statistics and comparisons to \"modern wars\" to make his point."
+            }
+          },
+          {
+            "title": "The Raw Human Perspective",
+            "text": "While Chadwick's report provided official statistics, historians also need the raw, human perspective to fully understand the crisis. Source C is an authentic letter sent to The Times newspaper in 1849 by 54 desperate residents of a London slum during a deadly disease outbreak.",
+            "level_4": "Historians also need to hear from the poor people themselves. Source C is a letter sent to a newspaper in 1849 by 54 poor slum workers who were terrified of getting sick and dying.",
+            "tasks": [
+              {
+                "type": "text",
+                "qNum": 3,
+                "question": "Source Comparison: How does Source C provide a different historical perspective to Source B?",
+                "model_answer": "Source B provides a top-down, corporate perspective, focusing coldly on 'efficiency' and 'contracts' for building the empire. In stark contrast, Source C provides a bottom-up, working-class perspective. It is highly emotional and desperate ('living like pigs', 'left to die'), revealing the horrific human cost and lack of basic amenities that the 'efficient' contractors in Source B completely ignored."
+              }
+            ],
+            "source": {
+              "type": "written",
+              "title": "Source C: The Bottom-Up, Raw Human Perspective",
+              "content": "\"We live in muck and filth. We aint got no privies, no dust bins, no drains, no water-splies, and no sewers in the whole place... We are living like pigs, and it aint fair. We hope you will print this to let the great people know how we are left to die of the cholera. We are your regular readers, and we pray you to help us.\"\n— Letter to the Editor of The Times, signed by 54 residents of London slums, 1849",
+              "provenance_clue": "This is a desperate plea from the people actually living in the slums. Contrast their highly emotional, raw language with the cold, official language of Source A."
+            }
+          },
+          {
+            "title": "King Cholera and The Great Stink",
+            "text": "The ultimate consequence of this squalor was Cholera, a deadly waterborne disease. Initially, Victorian doctors believed in the 'Miasma Theory' (that bad smells caused disease), so they burned barrels of tar. In 1854, Dr. John Snow proved cholera was in the water. Despite this, the government maintained a 'laissez-faire' (do nothing) policy because improving sanitation was expensive. This changed during the blazing hot summer of 1858. The 'Great Stink' of raw sewage drying in the River Thames became so unbearable that politicians in Parliament had to soak their curtains in chemicals to mask the stench. The physical reality of the smell finally forced the government to abandon laissez-faire, funding engineer Joseph Bazalgette millions to build a massive underground brick sewer system.",
+            "level_4": "The dirty water caused a terrible disease called Cholera. Doctors believed in the 'Miasma Theory' (that bad smells caused disease). In 1854, Dr. John Snow proved cholera was actually in the dirty drinking water. But the government kept a 'laissez-faire' (do nothing) policy because sewers cost too much. In 1858, a hot summer caused the River Thames to dry up, creating 'The Great Stink' of raw sewage. The smell was so bad it reached Parliament. Politicians finally acted and paid Joseph Bazalgette to build huge underground brick sewers.",
+            "tasks": [
+              {
+                "type": "text",
+                "qNum": 4,
+                "question": "Turning Point: Why did it take the 'Great Stink' for the government to finally abandon its 'laissez-faire' policy?",
+                "model_answer": "The government maintained a laissez-faire policy because public health interventions were highly expensive, and they previously ignored scientific evidence like John Snow's discoveries. It took the 'Great Stink' to force change because the unbearable smell directly impacted the politicians inside the Houses of Parliament, making the crisis a personal discomfort they could no longer ignore."
+              }
+            ]
+          },
+          {
+            "title": "The Public Health Act and the Historians' Debate",
+            "text": "Following the construction of the sewers, Parliament passed the 1875 Public Health Act, finally forcing local councils to provide clean water and drainage. Today, historians debate the legacy of this era. 'Pessimist' historians argue that industrialisation was a catastrophe that subjected a whole generation to unlivable, deadly slums, pointing to the staggering cholera death tolls of the 1830s and 40s. Conversely, 'Optimist' historians argue that this crisis was a necessary growing pain. The rapid urbanisation forced the government to modernize and abandon laissez-faire; the immense wealth generated by the factories eventually paid for engineering marvels like Bazalgette's sewers and the laws that created the safe, sanitary cities we live in today.",
+            "level_4": "In 1875, a new law forced all councils to provide clean water and drains. Today, historians debate if the cities were good or bad. 'Pessimist' historians say the industrial towns were a deadly disaster that killed thousands with diseases like cholera. But 'Optimist' historians argue that without this harsh period, the government would never have been forced to build the amazing sewers and pass the laws that make our modern cities clean and safe today.",
+            "tasks": [
+              {
+                "type": "text",
+                "qNum": 5,
+                "question": "Extended Writing: Write a structured paragraph answering: 'To what extent did industrialisation make British towns unlivable?'",
+                "model_answer": "To a significant extent, the early phase of industrialisation made British towns unlivable due to rapid, unregulated expansion. 'Pessimist' historians correctly argue that the initial explosion of back-to-back housing and lack of sanitation turned towns into death traps, evidenced by Chadwick's reports (Source A) and the desperate letters from slum dwellers (Source C). However, 'Optimist' historians provide a vital counter-perspective: this unlivable crisis eventually forced the government to abandon 'laissez-faire' policies. The Great Stink compelled the construction of Bazalgette's sewers and the 1875 Public Health Act, meaning that while industrialisation initially poisoned the towns, it eventually provided the wealth and engineering to make them modern and sanitary."
               }
             ]
           }
         ],
-        "vocab": [
-          {
-            "term": "Urbanisation",
-            "definition": "The increase in the proportion of people living in towns and cities."
-          },
-          {
-            "term": "Cholera",
-            "definition": "A deadly waterborne disease that spread rapidly in overcrowded and unsanitary Victorian slums."
-          }
-        ],
         "sources": [
           {
-            "title": "Source A: A Victorian Slum",
+            "title": "Visual Hook: Over London by Rail (1872)",
             "src": "/images/victorian_slum.jpg",
-            "caption": "Overcrowded and dirty streets in a 19th-century British industrial town."
+            "caption": "An engraving by Gustave Doré depicting the overcrowded and polluted back-to-back housing of Victorian London, published in 1872."
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain why public health was so poor in early industrial towns.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: Public health was poor due to rapid urbanisation...",
-                "Sentence Starter: For example, the lack of proper sewage systems led to..."
-              ]
-            }
+        "learning_objectives": {
+          "overarching": "To explore: Did industrialisation make British towns unlivable",
+          "scaffolded": [
+            "Analyse the contrast between imperial wealth and working-class squalor.",
+            "Evaluate the usefulness of contrasting primary sources.",
+            "Understand the catalysts for public health reform."
           ]
         }
       },
@@ -538,6 +668,22 @@
             {
               "question": "Recall question from previous lesson.",
               "answer": "A"
+            },
+            {
+              "question": "What was the significance of the Magna Carta signed in 1215?",
+              "answer": "It limited the power of the king and established that everyone is subject to the law."
+            },
+            {
+              "question": "Why did Henry VIII break away from the Catholic Church?",
+              "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
+            },
+            {
+              "question": "What was the primary cause of the English Civil War?",
+              "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+            },
+            {
+              "question": "What was the result of the Spanish Armada in 1588?",
+              "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
             }
           ]
         },
@@ -593,6 +739,12 @@
               ]
             }
           ]
+        },
+        "learning_objectives": {
+          "overarching": "To explore: How was the British Empire built and sustained? (Trade, Raj in India, Naval supremacy; Case Study: Portsmouth Dockyard & Royal Navy)",
+          "scaffolded": [
+            "Understand the core themes of How was the British Empire built and sustained? (Trade, Raj in India, Naval supremacy; Case Study: Portsmouth Dockyard & Royal Navy)."
+          ]
         }
       },
       {
@@ -615,6 +767,22 @@
             {
               "question": "Recall question from previous lesson.",
               "answer": "A"
+            },
+            {
+              "question": "What was the significance of the Battle of Hastings in 1066?",
+              "answer": "William the Conqueror defeated King Harold, leading to the Norman conquest of England."
+            },
+            {
+              "question": "What was the Black Death?",
+              "answer": "A devastating global epidemic of bubonic plague that struck Europe in the mid-1300s."
+            },
+            {
+              "question": "Who was Guy Fawkes?",
+              "answer": "A member of the Gunpowder Plot who attempted to blow up Parliament and King James I in 1605."
+            },
+            {
+              "question": "What was the Renaissance?",
+              "answer": "A period of 'rebirth' in arts, science, and culture that began in Italy in the 14th century."
             }
           ]
         },
@@ -660,6 +828,12 @@
               ]
             }
           ]
+        },
+        "learning_objectives": {
+          "overarching": "To explore: How did ordinary people fight for a voice? (Peterloo, Chartism, Trade Unions; Case Study: Hampshire Swing Riots)",
+          "scaffolded": [
+            "Understand the core themes of How did ordinary people fight for a voice? (Peterloo, Chartism, Trade Unions; Case Study: Hampshire Swing Riots)."
+          ]
         }
       },
       {
@@ -682,6 +856,22 @@
             {
               "question": "Recall question from previous lesson.",
               "answer": "A"
+            },
+            {
+              "question": "What was the significance of the Magna Carta signed in 1215?",
+              "answer": "It limited the power of the king and established that everyone is subject to the law."
+            },
+            {
+              "question": "Why did Henry VIII break away from the Catholic Church?",
+              "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
+            },
+            {
+              "question": "What was the primary cause of the English Civil War?",
+              "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+            },
+            {
+              "question": "What was the result of the Spanish Armada in 1588?",
+              "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
             }
           ]
         },
@@ -727,6 +917,12 @@
               ]
             }
           ]
+        },
+        "learning_objectives": {
+          "overarching": "To explore: How did the road to democracy expand? (Reform Acts 1832–1884, Secret Ballot; Case Study: Hampshire MPs & Pocket Boroughs)",
+          "scaffolded": [
+            "Understand the core themes of How did the road to democracy expand? (Reform Acts 1832–1884, Secret Ballot; Case Study: Hampshire MPs & Pocket Boroughs)."
+          ]
         }
       },
       {
@@ -749,6 +945,22 @@
             {
               "question": "Recall question from previous lesson.",
               "answer": "A"
+            },
+            {
+              "question": "What was the significance of the Battle of Hastings in 1066?",
+              "answer": "William the Conqueror defeated King Harold, leading to the Norman conquest of England."
+            },
+            {
+              "question": "What was the Black Death?",
+              "answer": "A devastating global epidemic of bubonic plague that struck Europe in the mid-1300s."
+            },
+            {
+              "question": "Who was Guy Fawkes?",
+              "answer": "A member of the Gunpowder Plot who attempted to blow up Parliament and King James I in 1605."
+            },
+            {
+              "question": "What was the Renaissance?",
+              "answer": "A period of 'rebirth' in arts, science, and culture that began in Italy in the 14th century."
             }
           ]
         },
@@ -793,6 +1005,12 @@
                 "Sentence Starter: However, others argue that over time, the working classes gained..."
               ]
             }
+          ]
+        },
+        "learning_objectives": {
+          "overarching": "To explore: Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)",
+          "scaffolded": [
+            "Understand the core themes of Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)."
           ]
         }
       }

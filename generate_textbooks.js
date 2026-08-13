@@ -215,7 +215,7 @@ allDirs.forEach(unitId => {
       ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
       
       <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook & Reading Log</h3>
+        <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook & Textbook</h3>
         ${unitData.enquiry ? `<p style="font-size: 14pt; color: #475569; font-style: italic; line-height: 1.5; margin-bottom: 0;"><strong>Enquiry:</strong> ${unitData.enquiry}</p>` : ''}
       </div>
     </div>
@@ -481,6 +481,20 @@ allDirs.forEach(unitId => {
           });
         }
         
+        if (block.source) {
+          let sIdx = lesson.sources ? lesson.sources.length + bIdx : bIdx;
+          html += `
+            <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
+              <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+              ${block.source.title ? `<strong>${badgeSource ? badgeSource(block.source.title) : block.source.title}</strong><br>` : ''}
+              ${block.source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src, 2) : block.source.src}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
+              ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
+              ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
+              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${block.source.qNum ? block.source.qNum + '.' : ''} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
+            </div>
+          `;
+        }
+
         // Legacy support for single 'image' string
         if (block.image && (!block.images || block.images.length === 0)) {
           let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(block.image, 2) : block.image;

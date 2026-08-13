@@ -35,11 +35,11 @@ export const unitData = {
         ]
       },
       "learning_objectives": {
-        "overarching": "To understand the origins of the Industrial Revolution and the impact of Henry Cort.",
+        "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
         "scaffolded": [
-          "Describe the difference between the domestic system and the factory system.",
-          "Explain how Henry Cort solved the 'pig iron' crisis using the puddling process.",
-          "Evaluate the importance of Cort's geographical location versus his technological genius."
+          "Understand the difference between the domestic system and the factory system.",
+          "Explain the significance of Henry Cort's puddling and rolling processes.",
+          "Evaluate the importance of location versus innovation in Cort's success."
         ]
       },
       "do_now": {
@@ -57,6 +57,14 @@ export const unitData = {
           {
             "question": "Why did the Gunpowder Plot of 1605 fail?",
             "answer": "Guy Fawkes was discovered in the cellars with the gunpowder before it could be lit."
+          },
+          {
+            "question": "What was the significance of the Magna Carta signed in 1215?",
+            "answer": "It limited the power of the king and established that everyone is subject to the law."
+          },
+          {
+            "question": "Why did Henry VIII break away from the Catholic Church?",
+            "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
           }
         ]
       },
@@ -254,7 +262,7 @@ export const unitData = {
     },
     {
       "id": "lesson_2",
-      "title": "Was industrial work progress or punishment? (Factory conditions, child labor; Case Study: Funtley Clay Pits & Fareham Brickfields)",
+      "title": "Was industrial work progress or punishment?",
       "teacher_notes": {
         "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
         "objectives": [
@@ -274,7 +282,7 @@ export const unitData = {
             "question": "Can an event be a catastrophe for one generation but a triumph for the next?"
           }
         ],
-        "source_context": "The image provides a visual representation of a traditional 19th-century brickfield in Fareham, illustrating the physical environment where young children worked. What specific dangers or difficulties can you identify in this workplace that would make it a harsh environment for a child? (Hinge Question)"
+        "source_context": "The image provides a visual representation of the crowded and dangerous environment of a 19th-century factory/mill where young children worked. What specific dangers or difficulties can you identify in this workplace that would make it a harsh environment for a child? (Hinge Question)"
       },
       "do_now": {
         "title": "Do Now: Recall",
@@ -291,6 +299,14 @@ export const unitData = {
           {
             "question": "What tragic event caused Henry Cort to lose his patents and die in poverty?",
             "answer": "His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds."
+          },
+          {
+            "question": "What was the primary cause of the English Civil War?",
+            "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+          },
+          {
+            "question": "What was the result of the Spanish Armada in 1588?",
+            "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
           }
         ]
       },
@@ -325,7 +341,7 @@ export const unitData = {
             {
               "type": "text",
               "qNum": 1,
-              "question": "Change & Continuity: What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
+              "question": "What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
               "model_answer": "While children worked hard in both systems (showing continuity), the main change was the scale of danger and strict discipline. In the factory system, the pace of work was dictated by fast, unguarded steam-powered machines in a deafening and polluted environment, which caused horrific injuries that did not happen at home."
             }
           ]
@@ -338,7 +354,7 @@ export const unitData = {
             {
               "type": "text",
               "qNum": 2,
-              "question": "Source Evaluation: How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
+              "question": "How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
               "model_answer": "The Sadler Report is highly useful because it is a primary source containing direct eyewitness testimony from real child workers like Matthew Crabtree. It provides specific details about the grueling 14-hour days and the physical abuse (being 'strapped') used by overseers to maintain discipline, giving a highly accurate insight into the brutal reality of factory conditions."
             }
           ]
@@ -351,7 +367,7 @@ export const unitData = {
             {
               "type": "text",
               "qNum": 3,
-              "question": "Causation: Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
+              "question": "Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
               "model_answer": "The correct chronological chain of causation is: B (London's population explodes) -> D (Massive demand for building materials is created) -> A (Railways are built to transport heavy goods) -> C (Fareham Reds are used to build the Royal Albert Hall)."
             }
           ]
@@ -364,7 +380,7 @@ export const unitData = {
             {
               "type": "text",
               "qNum": 4,
-              "question": "Source Comparison: Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
+              "question": "Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
               "model_answer": "A historian needs both because they provide different types of evidence. The Sadler Report provides the qualitative, emotional reality of the work (the pain, the beatings, the long hours), while the local Fareham Census provides quantitative, factual proof that this wasn't an isolated incident—it proves exactly how old the children were and that child labour was a widespread reality right across the country, even in rural Hampshire."
             }
           ]
@@ -377,7 +393,7 @@ export const unitData = {
             {
               "type": "text",
               "qNum": 5,
-              "question": "Extended Writing: Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
+              "question": "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
               "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
             }
           ]
@@ -385,9 +401,9 @@ export const unitData = {
       ],
       "sources": [
         {
-          "title": "Source A: Fareham Brickfields",
-          "src": "/images/fareham_brickfields.jpg",
-          "caption": "Workers at a traditional brickfield in Fareham in the 19th century."
+          "title": "Source A: Powerloom Weaving in 1835",
+          "src": "/images/19th_century_mill.jpg",
+          "caption": "A 19th-century engraving depicting child labour in an early industrial textile mill."
         }
       ],
       "exam_practice": {
@@ -449,18 +465,36 @@ export const unitData = {
             "Optimists think the domestic system was better, while Pessimists prefer the factory system."
           ]
         }
-      ]
+      ],
+      "learning_objectives": {
+        "overarching": "To explore: Was industrial work progress or punishment",
+        "scaffolded": [
+          "Understand the working conditions of the early Industrial Revolution with historical nuance.",
+          "Evaluate primary sources regarding child labour.",
+          "Analyse the 'Optimist vs. Pessimist' historical debate."
+        ]
+      }
     },
     {
       "id": "lesson_3",
-      "title": "Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London)",
+      "title": "Did industrialisation make British towns unlivable?",
       "teacher_notes": {
-        "primer": "This lesson focuses on: Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London). Students will explore the key events and concepts.",
+        "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
         "objectives": [
           {
-            "objective": "Understand the core themes of Did industrialisation make British towns unlivable? (Urbanisation, Cholera, Public Health; Case Study: Fareham Red Bricks built Portsmouth & London).",
-            "primer": "Guide students through the narrative, focusing on key historical shifts.",
-            "question": "What is the most significant takeaway from this lesson?"
+            "objective": "Analyse the contrast between imperial wealth and working-class squalor.",
+            "primer": "Use Source A (the corporate perspective of Fareham brick builders) to show students how the same local industry that built grand monuments also fueled rapid, unregulated slum expansion.",
+            "question": "Did the economic boom of the brickfields benefit everyone in society equally?"
+          },
+          {
+            "objective": "Evaluate the usefulness of contrasting primary sources.",
+            "primer": "Guide students to evaluate Source B (top-down, official/statistical) against Source C (bottom-up, personal/emotional) to understand why historians need a variety of evidence to uncover the truth.",
+            "question": "Why might a government report use different language to a letter written by a slum resident?"
+          },
+          {
+            "objective": "Understand the catalysts for public health reform.",
+            "primer": "Ensure students grasp how 'Miasma Theory' delayed progress, and how the physical reality of the 'Great Stink' finally forced the government to abandon 'laissez-faire' policies.",
+            "question": "Was it scientific discovery or political discomfort that finally triggered the building of London's sewers?"
           }
         ]
       },
@@ -469,65 +503,170 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall question from previous lesson.",
-            "answer": "A"
+            "question": "What are 'Fareham Reds'?",
+            "answer": "Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects."
+          },
+          {
+            "question": "Name one highly dangerous or physically demanding job a child might perform in a 19th-century textile mill or brickfield.",
+            "answer": "Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard."
+          },
+          {
+            "question": "Why did factory owners actively prefer to hire children rather than adults?",
+            "answer": "Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts."
+          },
+          {
+            "question": "Explain how Henry Cort's inventions at the Funtley Ironworks helped power the Industrial Revolution globally.",
+            "answer": "Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance."
+          },
+          {
+            "question": "Why do 'Optimist' and 'Pessimist' historians disagree about the impact of the Industrial Revolution on working-class families?",
+            "answer": "Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy."
           }
         ]
       },
+      "vocab": [
+        {
+          "term": "Urbanisation",
+          "definition": "The massive movement of people from the countryside into towns and cities, causing them to expand rapidly."
+        },
+        {
+          "term": "Laissez-faire",
+          "definition": "A government policy of 'leaving things alone' and not interfering in people's lives or business affairs."
+        },
+        {
+          "term": "Miasma Theory",
+          "definition": "The incorrect Victorian medical belief that diseases were caused and spread by breathing in bad, foul-smelling air."
+        },
+        {
+          "term": "Provenance",
+          "definition": "The origin of a historical source (who wrote it, when, why, and what type of source it is), used to judge its usefulness."
+        },
+        {
+          "term": "Public Health",
+          "definition": "The health of the population as a whole, managed by the government through regulations on sanitation, clean water, and disease prevention."
+        }
+      ],
       "narrative_blocks": [
         {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
+          "title": "The Façade of Empire",
+          "text": "During the 19th century, Britain's population boomed and millions flooded into cities. Construction exploded. To understand the scale of this, historians look at sources like Source B, adapted from an industrial directory for Victorian contractors (like Joseph Bull & Sons). This shows the 'façade' of the Empire: wealthy exteriors built by local Hampshire mud. But behind these glorious public buildings lay a very different reality for the working classes.",
+          "level_4": "In the 1800s, millions of people moved to cities. Construction companies used millions of 'Fareham Red' bricks to build amazing places like the Royal Albert Hall. Source B is a record from one of these companies. This made Britain look rich and powerful, but the poor workers who made the bricks were forced to live in terrible, crowded slums.",
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
-              "model": "Model answer placeholder."
+              "qNum": 1,
+              "question": "Conceptual Analysis: Based on Source B, what was the primary concern of the Victorian contractors when building 'cottages' for their workers?",
+              "model_answer": "Source B reveals that the contractors' primary concern was 'efficiency of labour'. They built cottages 'instantly adjacent' to the worksites not for the comfort of the workers, but to ensure they could extract the maximum amount of work from them to keep pace with the massive demand for Fareham bricks."
+            }
+          ],
+          "source": {
+            "type": "written",
+            "title": "Source B: The Unregulated Capitalism / Corporate Perspective",
+            "content": "\"The demand for the Fareham bricks remains unprecedentedly high, owing to their great durability under heavy pressure. Contracts have been secured for the building of the vast railway arches, the expanding dockyards at Portsmouth, and prestigious public buildings in the capital. To keep pace with the building of these modern towns, the clay pits must work without interruption, and cottages for the labourers must be raised instantly adjacent to the works to secure the utmost efficiency of labour.\"\n— Adapted from 19th-Century Southern Industrial and Brick-making Directory Records",
+            "provenance_clue": "This is a corporate record focused on business and profit. Notice how it describes the workers' \"cottages\" purely in terms of \"efficiency of labour\"."
+          }
+        },
+        {
+          "title": "The Official Investigation",
+          "text": "To house the exploding population, landlords packed workers into tiny 'back-to-back' houses sharing three walls, offering zero ventilation. Entire families lived in a single room with no plumbing, sharing a single outdoor toilet over a deep cesspit. We know about this squalor from official investigations, such as Source A, an 1842 government report by reformer Edwin Chadwick.",
+          "level_4": "Landlords built 'back-to-back' houses. These houses shared three walls, so there was no fresh air. Whole families squeezed into one room sharing an outdoor toilet. Human waste often leaked into the drinking water. We know this from Source A, an 1842 government report by Edwin Chadwick.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 2,
+              "question": "Language Analysis: Look at Source A. Why do you think Edwin Chadwick chose to compare the deaths in the slums to the deaths in a 'modern war'?",
+              "model_answer": "Chadwick used the comparison to war to shock a 'laissez-faire' government into action. By comparing the deaths from 'filth and bad ventilation' to military casualties, he translated a public health issue into a national security crisis, using formal, striking language to prove that doing nothing was killing more British citizens than foreign enemies."
+            }
+          ],
+          "source": {
+            "type": "written",
+            "title": "Source A: The Official, Top-Down Government Data",
+            "content": "\"The charcoal-burners, the brick-makers, and the miners are all exposed to severe atmospheric changes and filth... In the town districts, the crowded back-to-back dwellings are built with no ventilation, and the refuse of the houses is thrown into open streets. The annual loss of life from filth and bad ventilation is greater than the loss from death or wounds in any wars in which the country has been engaged in modern times.\"\n— Edwin Chadwick, Report on the Sanitary Conditions of the Labouring Population of Great Britain, 1842",
+            "provenance_clue": "Chadwick was a government official writing a formal report. Think about why he uses statistics and comparisons to \"modern wars\" to make his point."
+          }
+        },
+        {
+          "title": "The Raw Human Perspective",
+          "text": "While Chadwick's report provided official statistics, historians also need the raw, human perspective to fully understand the crisis. Source C is an authentic letter sent to The Times newspaper in 1849 by 54 desperate residents of a London slum during a deadly disease outbreak.",
+          "level_4": "Historians also need to hear from the poor people themselves. Source C is a letter sent to a newspaper in 1849 by 54 poor slum workers who were terrified of getting sick and dying.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 3,
+              "question": "Source Comparison: How does Source C provide a different historical perspective to Source B?",
+              "model_answer": "Source B provides a top-down, corporate perspective, focusing coldly on 'efficiency' and 'contracts' for building the empire. In stark contrast, Source C provides a bottom-up, working-class perspective. It is highly emotional and desperate ('living like pigs', 'left to die'), revealing the horrific human cost and lack of basic amenities that the 'efficient' contractors in Source B completely ignored."
+            }
+          ],
+          "source": {
+            "type": "written",
+            "title": "Source C: The Bottom-Up, Raw Human Perspective",
+            "content": "\"We live in muck and filth. We aint got no privies, no dust bins, no drains, no water-splies, and no sewers in the whole place... We are living like pigs, and it aint fair. We hope you will print this to let the great people know how we are left to die of the cholera. We are your regular readers, and we pray you to help us.\"\n— Letter to the Editor of The Times, signed by 54 residents of London slums, 1849",
+            "provenance_clue": "This is a desperate plea from the people actually living in the slums. Contrast their highly emotional, raw language with the cold, official language of Source A."
+          }
+        },
+        {
+          "title": "King Cholera and The Great Stink",
+          "text": "The ultimate consequence of this squalor was Cholera, a deadly waterborne disease. Initially, Victorian doctors believed in the 'Miasma Theory' (that bad smells caused disease), so they burned barrels of tar. In 1854, Dr. John Snow proved cholera was in the water. Despite this, the government maintained a 'laissez-faire' (do nothing) policy because improving sanitation was expensive. This changed during the blazing hot summer of 1858. The 'Great Stink' of raw sewage drying in the River Thames became so unbearable that politicians in Parliament had to soak their curtains in chemicals to mask the stench. The physical reality of the smell finally forced the government to abandon laissez-faire, funding engineer Joseph Bazalgette millions to build a massive underground brick sewer system.",
+          "level_4": "The dirty water caused a terrible disease called Cholera. Doctors believed in the 'Miasma Theory' (that bad smells caused disease). In 1854, Dr. John Snow proved cholera was actually in the dirty drinking water. But the government kept a 'laissez-faire' (do nothing) policy because sewers cost too much. In 1858, a hot summer caused the River Thames to dry up, creating 'The Great Stink' of raw sewage. The smell was so bad it reached Parliament. Politicians finally acted and paid Joseph Bazalgette to build huge underground brick sewers.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 4,
+              "question": "Turning Point: Why did it take the 'Great Stink' for the government to finally abandon its 'laissez-faire' policy?",
+              "model_answer": "The government maintained a laissez-faire policy because public health interventions were highly expensive, and they previously ignored scientific evidence like John Snow's discoveries. It took the 'Great Stink' to force change because the unbearable smell directly impacted the politicians inside the Houses of Parliament, making the crisis a personal discomfort they could no longer ignore."
+            }
+          ]
+        },
+        {
+          "title": "The Public Health Act and the Historians' Debate",
+          "text": "Following the construction of the sewers, Parliament passed the 1875 Public Health Act, finally forcing local councils to provide clean water and drainage. Today, historians debate the legacy of this era. 'Pessimist' historians argue that industrialisation was a catastrophe that subjected a whole generation to unlivable, deadly slums, pointing to the staggering cholera death tolls of the 1830s and 40s. Conversely, 'Optimist' historians argue that this crisis was a necessary growing pain. The rapid urbanisation forced the government to modernize and abandon laissez-faire; the immense wealth generated by the factories eventually paid for engineering marvels like Bazalgette's sewers and the laws that created the safe, sanitary cities we live in today.",
+          "level_4": "In 1875, a new law forced all councils to provide clean water and drains. Today, historians debate if the cities were good or bad. 'Pessimist' historians say the industrial towns were a deadly disaster that killed thousands with diseases like cholera. But 'Optimist' historians argue that without this harsh period, the government would never have been forced to build the amazing sewers and pass the laws that make our modern cities clean and safe today.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 5,
+              "question": "Extended Writing: Write a structured paragraph answering: 'To what extent did industrialisation make British towns unlivable?'",
+              "model_answer": "To a significant extent, the early phase of industrialisation made British towns unlivable due to rapid, unregulated expansion. 'Pessimist' historians correctly argue that the initial explosion of back-to-back housing and lack of sanitation turned towns into death traps, evidenced by Chadwick's reports (Source A) and the desperate letters from slum dwellers (Source C). However, 'Optimist' historians provide a vital counter-perspective: this unlivable crisis eventually forced the government to abandon 'laissez-faire' policies. The Great Stink compelled the construction of Bazalgette's sewers and the 1875 Public Health Act, meaning that while industrialisation initially poisoned the towns, it eventually provided the wealth and engineering to make them modern and sanitary."
             }
           ]
         }
       ],
-      "vocab": [
-        {
-          "term": "Urbanisation",
-          "definition": "The increase in the proportion of people living in towns and cities."
-        },
-        {
-          "term": "Cholera",
-          "definition": "A deadly waterborne disease that spread rapidly in overcrowded and unsanitary Victorian slums."
-        }
-      ],
       "sources": [
         {
-          "title": "Source A: A Victorian Slum",
+          "title": "Visual Hook: Over London by Rail (1872)",
           "src": "/images/victorian_slum.jpg",
-          "caption": "Overcrowded and dirty streets in a 19th-century British industrial town."
+          "caption": "An engraving by Gustave Doré depicting the overcrowded and polluted back-to-back housing of Victorian London, published in 1872."
         }
       ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why public health was so poor in early industrial towns.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: Public health was poor due to rapid urbanisation...",
-              "Sentence Starter: For example, the lack of proper sewage systems led to..."
-            ]
-          }
+      "learning_objectives": {
+        "overarching": "To explore: Did industrialisation make British towns unlivable",
+        "scaffolded": [
+          "Analyse the contrast between imperial wealth and working-class squalor.",
+          "Evaluate the usefulness of contrasting primary sources.",
+          "Understand the catalysts for public health reform."
         ]
       }
     },
     {
       "id": "lesson_4",
-      "title": "How was the British Empire built and sustained? (Trade, Raj in India, Naval supremacy; Case Study: Portsmouth Dockyard & Royal Navy)",
+      "title": "How was the British Empire built and sustained?",
       "teacher_notes": {
-        "primer": "This lesson focuses on: How was the British Empire built and sustained? (Trade, Raj in India, Naval supremacy; Case Study: Portsmouth Dockyard & Royal Navy). Students will explore the key events and concepts.",
+        "primer": "This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.",
         "objectives": [
           {
-            "objective": "Understand the core themes of How was the British Empire built and sustained? (Trade, Raj in India, Naval supremacy; Case Study: Portsmouth Dockyard & Royal Navy).",
-            "primer": "Guide students through the narrative, focusing on key historical shifts.",
-            "question": "What is the most significant takeaway from this lesson?"
+            "objective": "Understand the transition of imperial rule from private mercantilism to direct state control.",
+            "primer": "Guide pupils to analyze how the East India Company's search for market dominance systematically paved the way for the formal governance of the British Raj after 1857.",
+            "question": "Which factor was more vital to the expansion of British power in India: corporate wealth or state military intervention?"
+          },
+          {
+            "objective": "Evaluate how domestic industrial complexes sustained global naval supremacy.",
+            "primer": "Connect Portsmouth Dockyard's industrial output directly to the enforcement of the 'Two-Power Standard' globally, linking back to the heavy iron metallurgy mastered in Lesson 1.",
+            "question": "Could the British Empire have maintained global authority without the industrial capacity of its home dockyards?"
+          },
+          {
+            "objective": "Deconstruct primary source provenance to determine historical utility.",
+            "primer": "Train pupils to identify the hidden motives, institutional biases, and reliable insights within official military declarations and corporate petitions.",
+            "question": "Why does an author's target audience completely alter the usefulness of their written testimony?"
           }
         ]
       },
@@ -536,64 +675,132 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall question from previous lesson.",
-            "answer": "A"
+            "question": "Why did Victorian builders heavily rely on 'Fareham Red' bricks during the rapid urbanisation of the 19th century?",
+            "answer": "Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth."
+          },
+          {
+            "question": "How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?",
+            "answer": "It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation."
+          },
+          {
+            "question": "What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak in Soho?",
+            "answer": "He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells."
           }
         ]
       },
+      "visual_hook": {
+        "title": "HMS Warrior at Portsmouth",
+        "caption": "Launched in 1860, HMS Warrior was the world's first iron-hulled, steam-powered ironclad warship, representing the absolute peak of British industrial and naval supremacy.",
+        "query": "HMS Warrior 1860 ironclad Portsmouth"
+      },
+      "vocab": [
+        {
+          "term": "Mercantilism",
+          "definition": "An economic system focused on maximizing a nation's wealth through strictly controlled colonial trade, raw material extraction, and dominant merchant monopolies."
+        },
+        {
+          "term": "British Raj",
+          "definition": "The system of direct, formal British government rule over the Indian subcontinent established in the wake of the 1857 Rebellion."
+        },
+        {
+          "term": "Two-Power Standard",
+          "definition": "The strict British naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations."
+        },
+        {
+          "term": "Ironclad",
+          "definition": "A 19th-century warship protected by thick iron armor plating, representing the transition from wooden sail ships to steam-powered industrial navies."
+        },
+        {
+          "term": "Captive Market",
+          "definition": "A colony forced by law or military threat to trade exclusively with its ruling country, preventing local industries from competing."
+        }
+      ],
       "narrative_blocks": [
         {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
+          "title": "The Corporate Conquest: Merchandising and Monopoly",
+          "text": "The British Empire of the 19th century was the largest empire in human history, yet its grandest conquest did not begin with state military planning. Instead, it was executed by a private, profit-driven corporation: the East India Company (EIC). Founded in 1600 to control trade in precious spices, silks, indigo, and tea, the EIC transformed into an aggressive imperial powerhouse. To secure its commercial monopolies, the Company recruited its own private mercenary army, exploiting political divisions between local rulers. By systematically weaponizing its financial might, the EIC turned the Indian subcontinent into a captive market. This drove a ruthless economic cycle: India's rich fields produced raw cotton, which was shipped back to feed the brutal factories studied in Lesson 2. The finished textiles were then shipped back to Asia, flooding local markets and deliberately bankrupting India's domestic handloom weavers.",
+          "level_4": "The British Empire was not started by the government, but by a private business called the East India Company. This company wanted to make huge profits from spices, tea, and cotton. They built a massive private army to control trade routes. India became a 'captive market'. This meant Britain took cheap raw cotton from India, spun it in the dark British factories we studied in Lesson 2, and forced India to buy the expensive cloth back, destroying local Indian businesses.",
           "tasks": [
             {
-              "type": "text",
-              "text": "Task 1: Placeholder task.",
-              "model": "Model answer placeholder."
+              "type": "categorisation",
+              "qNum": 1,
+              "question": "Categorise the drivers of the East India Company's expansion in India into Economic, Military, or Political factors using structured bullet points.",
+              "model_answer": "* **Economic Factors:** The drive to secure complete monopolies over highly profitable commodities like tea, indigo, and spices; turning India into a captive market to feed British textile mills.\n* **Military Factors:** The recruitment of a massive private mercenary army consisting of European officers and local Sepoys to aggressively eliminate European rivals and enforce company rule.\n* **Political Factors:** Actively exploiting shifting rivalries between local rulers to destabilize regional power structures and install puppet rulers who answered to corporate directors."
+            }
+          ]
+        },
+        {
+          "title": "The Great Rebellion of 1857",
+          "text": "Corporate greed eventually triggered total collapse. The East India Company's rule was defined by aggressive economic extraction, cultural insensitivity, and racial discrimination. In May 1857, this systemic oppression triggered the Indian Rebellion (historically known as the Sepoy Mutiny). Indian soldiers within the Company's army turned on their British officers, sparking a bloody, year-long conflict across northern India. The British state intervened to brutally crush the uprising with horrific violence, but the catastrophe permanently shattered the EIC's credibility. Parliament realized that a private trading company could no longer be trusted to govern a subcontinent safely. In 1858, the Government of India Act formally abolished the East India Company and transferred total administrative control to the British Crown, establishing the British Raj.",
+          "level_4": "The people of India hated being ruled by a greedy company. In 1857, Indian soldiers revolted in a violent rebellion. The British state sent troops to brutally crush the uprising. However, Parliament realized a private business could no longer safely rule millions of people. In 1858, the government shut down the Company and took direct control of India, starting a period known as the British Raj.",
+          "source": {
+            "type": "written",
+            "title": "Source A: The Corporate Directive",
+            "content": "\"We must remind our officers that the primary purpose of our presence in India is the secure maintenance of trade. Any action by our military commanders that causes unnecessary alarm or religious outrage among the native troops risks disrupting our merchant traffic and damaging the financial returns of our shareholders in London.\"\n— Directors of the East India Company, April 1857",
+            "provenance_clue": "An official, confidential internal instruction sent from Company headquarters to military outposts right before the outbreak of the rebellion."
+          },
+          "tasks": [
+            {
+              "type": "provenance",
+              "qNum": 2,
+              "question": "Analyze the motive behind the EIC directive provided in the source. How does this corporate motive impact its usefulness for a historian investigating the causes of the 1857 Rebellion?",
+              "model_answer": "The motive of the EIC directors was to protect their financial profits and prevent shareholders from losing money due to civil unrest. This corporate motive makes the source highly useful for a historian because it proves that even on the brink of war, the company viewed India strictly as a financial asset rather than a nation requiring stable governance. It reveals that corporate anxiety over profit margins directly influenced their military management, which contributed to the systemic mismanagement that caused the rebellion."
+            }
+          ]
+        },
+        {
+          "title": "Sustaining Supremacy: The Portsmouth Industrial Complex",
+          "text": "Direct rule over distant millions required absolute control of the world's shipping lanes, a strategy known as naval supremacy. Following the Napoleonic Wars, the Royal Navy enforced the strict 'Two-Power Standard' to protect merchant networks and project imperial power. This global supremacy was physically manufactured and sustained right here in Hampshire, at the Portsmouth Dockyard. Throughout the 19th century, Portsmouth was transformed into the largest steam-powered industrial complex on earth. It was here that Britain abandoned wooden sailing ships and turned to steam-driven 'Ironclads'. These floating fortresses required massive technological synthesis: they utilized the advanced metallurgy pioneered by Henry Cort at Funtley (Lesson 1) for their armor plating, and were built using the very 'Fareham Red' bricks studied in Lesson 3 for the expanding dockyard basins. Thousands of local Hampshire tradesmen—shipwrights, smiths, and boiler-makers—worked grueling shifts to build the fleets that patrolled the world.",
+          "level_4": "To protect its global trade, Britain needed the largest navy in the world, a policy called naval supremacy. This global power was physically built and repaired at the Portsmouth Dockyard in Hampshire. Portsmouth became the largest factory complex on earth, moving away from wooden sailing ships to build massive, steam-powered 'Ironclads'. These modern ships used the tough iron developed by Henry Cort at Funtley and the strong Fareham bricks to expand the harbor basins.",
+          "tasks": [
+            {
+              "type": "significance",
+              "qNum": 3,
+              "question": "Explain the significance of Portsmouth Dockyard in maintaining Britain's global imperial supremacy during the 19th century.",
+              "model_answer": "Portsmouth Dockyard was of paramount significance because it functioned as the primary industrial engine for British naval power. Global empires cannot be sustained without a means to project force; Portsmouth provided the high-tech manufacturing capacity required to transition the navy into the industrial age. By producing cutting-edge ironclad warships, the dockyard physically enabled the enforcement of the Two-Power Standard, making Portsmouth the vital link between domestic industrialisation and global imperial domination."
+            }
+          ]
+        },
+        {
+          "title": "Voices from the Imperial Core: The Dockyard Reality",
+          "text": "While politicians in London championed the Navy as a glorious symbol of national pride, the reality for the industrial workforce in Hampshire was defined by exhausting toil and hazardous working conditions. The transition to iron-hulled engineering required a completely different class of hard manual labor, stripping away the traditional skills of wood craftsmen and replacing them with the raw, deafening power of the industrial forge. Historians must analyze working-class records to balance the grand strategic narratives of naval historians.",
+          "level_4": "The politicians in London celebrated the navy as a glorious symbol of British pride. However, for the normal working-class men in Hampshire, building these ships was an incredibly dangerous and exhausting job. Workers had to adapt to working with heavy iron plates and hot rivets, enduring long hours and dangerous conditions in the dockyards to build the warships.",
+          "source": {
+            "type": "written",
+            "title": "Source B: The Riveter's Letter",
+            "content": "\"The noise inside these iron hulls is enough to break a man's spirit. We swing heavy sledgehammers for twelve hours straight in the blistering heat of the slips, breathing the black smoke of the forges. Our skin is scarred by flying scales of red-hot iron. The masters talk of the glory of the fleet, but we know every plate on this Ironclad is paid for with the sweat and broken health of Hampshire men.\"\n— Arthur Vance, Portsmouth Dockyard Riveter, November 1861",
+            "provenance_clue": "A private letter written by a worker to his family, away from the watchful eyes of the dockyard overseers."
+          },
+          "tasks": [
+            {
+              "type": "provenance",
+              "qNum": 4,
+              "question": "Compare the perspective of the dockyard worker in the source with the official government policy of the 'Two-Power Standard'. How does the provenance of this letter affect its reliability for a historian studying the human cost of empire?",
+              "model_answer": "The worker's letter offers a stark contrast to official policy; while the government viewed the navy as a grand strategic tool for global commerce, the worker experienced it as an engine of physical destruction and intense labor. The provenance of this letter makes it highly reliable for investigating the human cost because it is a private, uncensored letter to family. Unlike official dockyard logs, the author has no motive to hide the grueling hours, extreme heat, or long-term health risks, providing an authentic account of the working-class exploitation required to build the imperial navy."
+            }
+          ]
+        },
+        {
+          "title": "The Decolonised Perspective: The Cost of Cotton",
+          "text": "To truly evaluate how the empire was sustained, historians must look beyond the dockyards of Hampshire and examine the devastating economic impact on the colonized populations. The British industrial economy required a continuous supply of cheap raw materials and an uncompetitive market to buy its factory outputs. This system altered the traditional lifestyles of millions. In India, local artisans who had spent generations producing world-class hand-woven textiles found themselves completely crushed by the aggressive influx of cheap, machine-made cotton goods produced in the industrial mills of northern England.",
+          "level_4": "To understand how the empire worked, we must look at the terrible impact it had on colonized people. British factories needed cheap materials and places to sell their goods. In India, local workers who made beautiful cloth by hand were completely ruined. British business laws flooded India with cheap machine-made clothes from England, making it impossible for local weavers to survive.",
+          "source": {
+            "type": "written",
+            "title": "Source C: The Weavers' Petition",
+            "content": "\"Our trade is entirely ruined. The cloth of England has flooded our markets, sold at a price we cannot compete with. For generations, our families have lived in comfort by our looms, but now our looms sit silent, and our children are reduced to starvation. We beg the government to place a duty on the clothing of England, or we shall perish utterly.\"\n— Weavers of the Dacca District, India, 1830",
+            "provenance_clue": "A formal petition written by native Indian textile workers to the British colonial authorities in Bengal."
+          },
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "qNum": 5,
+              "question": "Synthesis Assessment (8 Marks): 'The British Empire was built and sustained by technological progress rather than violence and exploitation.' To what extent do you agree with this interpretation? Use the IDEA framework and evidence from across the unit (including Henry Cort, factory work, and Portsmouth Dockyard) to support your argument.",
+              "model_answer": "It can be argued to a limited extent that technological progress built and sustained the British Empire, but a comprehensive historical view reveals that this progress was fundamentally dependent on violence and economic exploitation. \n\nOptimist historians often focus on the exceptional engineering progress that characterized the era. For example, the metallurgy pioneered by Henry Cort at Funtley (Lesson 1) and the industrial production of steam-powered ironclads at Portsmouth Dockyard represent undeniable technological advancements. These innovations allowed the Royal Navy to enforce global trade routes and construct a massive, interconnected network of shipping lanes and infrastructure. \n\nHowever, this progress did not exist in a vacuum; it was explicitly weaponized to exploit colonized populations. As the Dacca weavers' petition of 1830 demonstrates, Britain utilized its industrial dominance to systematically dismantle local economies. India was transformed into a captive market, forced to provide raw materials for British factories and buy back manufactured goods, causing widespread poverty and destitution. Furthermore, when these economic pressures led to resistance—such as the massive 1857 Indian Rebellion—the British state abandoned all rhetoric of peaceful modernization and deployed extreme military violence to re-establish control. \n\nUltimately, technology was merely the tool; the empire was entirely sustained by an exploitative economic machine. The wealth showcased in grand monuments like the Royal Albert Hall was bought at the direct expense of working-class families enduring hazardous conditions in Hampshire dockyards and colonized peoples suffering starvation abroad."
             }
           ]
         }
       ],
-      "video": [
-        {
-          "url": "https://www.youtube.com/watch?v=1VIe42pAhuA&t=22s",
-          "title": "Birth of Empire: The East India Company"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=oNWTXaOotEA&t=43s",
-          "title": "How did the British gain control of India?"
-        }
-      ],
-      "vocab": [
-        {
-          "term": "British Raj",
-          "definition": "The period of direct British rule over the Indian subcontinent from 1858 to 1947."
-        },
-        {
-          "term": "Naval Supremacy",
-          "definition": "Complete control of the seas by a country's navy, which allowed Britain to defend and expand its empire."
-        }
-      ],
-      "sources": [
-        {
-          "title": "Source A: Portsmouth Dockyard",
-          "src": "/images/portsmouth_dockyard.jpg",
-          "caption": "HMS Victory and other Royal Navy ships at Portsmouth Dockyard, the heart of British naval power."
-        }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain the role of the Royal Navy in sustaining the British Empire.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The Royal Navy sustained the empire by protecting trade routes...",
-              "Sentence Starter: For example, the dockyards at Portsmouth built ships that..."
-            ]
-          }
-        ]
-      }
+      "sources": []
     },
     {
       "id": "lesson_5",
@@ -615,6 +822,22 @@ export const unitData = {
           {
             "question": "Recall question from previous lesson.",
             "answer": "A"
+          },
+          {
+            "question": "What was the significance of the Battle of Hastings in 1066?",
+            "answer": "William the Conqueror defeated King Harold, leading to the Norman conquest of England."
+          },
+          {
+            "question": "What was the Black Death?",
+            "answer": "A devastating global epidemic of bubonic plague that struck Europe in the mid-1300s."
+          },
+          {
+            "question": "Who was Guy Fawkes?",
+            "answer": "A member of the Gunpowder Plot who attempted to blow up Parliament and King James I in 1605."
+          },
+          {
+            "question": "What was the Renaissance?",
+            "answer": "A period of 'rebirth' in arts, science, and culture that began in Italy in the 14th century."
           }
         ]
       },
@@ -660,6 +883,12 @@ export const unitData = {
             ]
           }
         ]
+      },
+      "learning_objectives": {
+        "overarching": "To explore: How did ordinary people fight for a voice? (Peterloo, Chartism, Trade Unions; Case Study: Hampshire Swing Riots)",
+        "scaffolded": [
+          "Understand the core themes of How did ordinary people fight for a voice? (Peterloo, Chartism, Trade Unions; Case Study: Hampshire Swing Riots)."
+        ]
       }
     },
     {
@@ -682,6 +911,22 @@ export const unitData = {
           {
             "question": "Recall question from previous lesson.",
             "answer": "A"
+          },
+          {
+            "question": "What was the significance of the Magna Carta signed in 1215?",
+            "answer": "It limited the power of the king and established that everyone is subject to the law."
+          },
+          {
+            "question": "Why did Henry VIII break away from the Catholic Church?",
+            "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
+          },
+          {
+            "question": "What was the primary cause of the English Civil War?",
+            "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+          },
+          {
+            "question": "What was the result of the Spanish Armada in 1588?",
+            "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
           }
         ]
       },
@@ -727,6 +972,12 @@ export const unitData = {
             ]
           }
         ]
+      },
+      "learning_objectives": {
+        "overarching": "To explore: How did the road to democracy expand? (Reform Acts 1832–1884, Secret Ballot; Case Study: Hampshire MPs & Pocket Boroughs)",
+        "scaffolded": [
+          "Understand the core themes of How did the road to democracy expand? (Reform Acts 1832–1884, Secret Ballot; Case Study: Hampshire MPs & Pocket Boroughs)."
+        ]
       }
     },
     {
@@ -749,6 +1000,22 @@ export const unitData = {
           {
             "question": "Recall question from previous lesson.",
             "answer": "A"
+          },
+          {
+            "question": "What was the significance of the Battle of Hastings in 1066?",
+            "answer": "William the Conqueror defeated King Harold, leading to the Norman conquest of England."
+          },
+          {
+            "question": "What was the Black Death?",
+            "answer": "A devastating global epidemic of bubonic plague that struck Europe in the mid-1300s."
+          },
+          {
+            "question": "Who was Guy Fawkes?",
+            "answer": "A member of the Gunpowder Plot who attempted to blow up Parliament and King James I in 1605."
+          },
+          {
+            "question": "What was the Renaissance?",
+            "answer": "A period of 'rebirth' in arts, science, and culture that began in Italy in the 14th century."
           }
         ]
       },
@@ -793,6 +1060,12 @@ export const unitData = {
               "Sentence Starter: However, others argue that over time, the working classes gained..."
             ]
           }
+        ]
+      },
+      "learning_objectives": {
+        "overarching": "To explore: Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)",
+        "scaffolded": [
+          "Understand the core themes of Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)."
         ]
       }
     }

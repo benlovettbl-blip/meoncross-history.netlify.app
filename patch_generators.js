@@ -1,28 +1,36 @@
 const fs = require('fs');
 
-function patchFile(filename) {
-    let code = fs.readFileSync(filename, 'utf8');
-    
-    // Patch 1: Remove 'Task X:' prefix permanently
-    if (!code.includes("typeof task.text === 'string'")) {
-        code = code.replace(
-            /block\.tasks\.forEach\(task => \{/,
-            "block.tasks.forEach(task => {\n              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\\s*\\d*:\\s*/i, '');\n              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\\s*\\d*:\\s*/i, '');"
-        );
-    }
-    
-    // Patch 2: Fix 'undefined' bug in generate_textbooks.js by ignoring drag_drop_timeline
-    if (filename === 'generate_textbooks.js') {
-        code = code.replace(
-            "if (task.type === 'vocab_match') {",
-            "if (task.type === 'vocab_match' || task.type === 'drag_drop_timeline') {"
-        );
-    }
+function patchGenerator(path) {
+  let content = fs.readFileSync(path, 'utf8');
+  
+  const targetStr = `
+          // Legacy support for single 'image' string`;
+          
+  const newStr = `
+          if (block.source) {
+            let sIdx = lesson.sources ? lesson.sources.length + idx : idx;
+            html += \`
+              <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
+                <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L\${lesson.globalIndex}_Source_\${sIdx}]]</span>
+                \${block.source.title ? \`<strong>\${badgeSource ? badgeSource(block.source.title) : block.source.title}</strong><br>\` : ''}
+                \${block.source.src ? \`<img src="\${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src, 2) : block.source.src}" alt="Source" style="max-width: 100%; max-height: 250px;">\` : ''}
+                \${block.source.content ? \`<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">\${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>\` : ''}
+                \${block.source.caption ? \`<div class="source-caption">\${block.source.caption}</div>\` : ''}
+                \${block.source.question ? \`<div style="margin-top: 15px; text-align: left;"><strong>Q\${block.source.qNum ? block.source.qNum + '.' : ''} \${block.source.question}\${block.source.page ? \` (See Textbook Page \${block.source.page})\` : ''}</strong></div>\` : ''}
+              </div>
+            \`;
+          }
 
-    fs.writeFileSync(filename, code);
-    console.log(`Patched ${filename}`);
+          // Legacy support for single 'image' string`;
+
+  if (content.includes(targetStr)) {
+    content = content.replace(targetStr, newStr);
+    fs.writeFileSync(path, content);
+    console.log(`Successfully updated ${path}!`);
+  } else {
+    console.log(`Target string not found in ${path}`);
+  }
 }
 
-patchFile('generate_workbooks.js');
-patchFile('generate_textbooks.js');
-patchFile('generate_pupil_workbooks.js');
+patchGenerator('generate_textbooks.js');
+patchGenerator('generate_workbooks.js');

@@ -244,67 +244,35 @@ allDirs.forEach(unitId => {
 
     let appendixData = [];
 
-    let trackerRows = '';
-    periodLessons.forEach((l, i) => {
-      let maxScore = 5;
-      if (l.do_now && l.do_now.items) maxScore = l.do_now.items.length;
-      
-      const isGeography = l.title && l.title.includes('Geography of the Middle East');
-      
-      if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
-      } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
-      }
-      for(let r=0; r<2; r++) {
-         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
-      }
+    let progressTrackerRows = '';
+    periodLessons.forEach((l) => {
+      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 8px 6px; font-weight:bold;">${l.title}</td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td></tr>`;
     });
-
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr style="height: 50px;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">Assessment: ${a.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 8px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td></tr>`;
       });
     }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
-      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
-      <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 30px; min-height: 95vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+      <h1 style="font-size: 28pt; margin-bottom: 5px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
+      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 16pt; margin-bottom: 15px; color: #334155; font-weight: 600; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
       
-      <div style="display: flex; flex-direction: row; justify-content: center; margin: 15px auto 30px auto; width: 80%; gap: 40px;">
+      <div style="display: flex; flex-direction: row; justify-content: center; margin: 10px auto 15px auto; width: 80%; gap: 40px;">
         <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Name: </div>
         <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Class: </div>
       </div>
-
-      <div style="margin-top: 20px; width: 100%; text-align: left; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Pupil Checklist Tracker</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 12pt;">
-          <thead>
-            <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Do Now</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Tasks</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Review</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 13%; text-align: center; font-weight: 600;">Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${trackerRows}
-          </tbody>
-        </table>
-      </div>
-    </div>
     `;
 
     if (unitData.cover_sources) {
       html += `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 15px auto 10px auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 10px auto;">
         ${unitData.cover_sources.map(src => {
           let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(src.image, 2) : `../..${src.image.startsWith('/') ? src.image : '/' + src.image}`;
           return `
           <div style="display: flex; gap: 10px; align-items: center;  padding-top: 5px; padding-bottom: 5px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <img src="${imgSrc}" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
+            <img src="${imgSrc}" style="width: 80px; height: 80px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
             <div style="text-align: left; flex: 1;">
               <strong style="display: block; font-size: 9pt; color: #1a237e; margin-bottom: 3px;">${src.title}</strong>
               <span style="font-size: 8pt; color: #475569; line-height: 1.2; display: block;">${src.description}</span>
@@ -317,35 +285,36 @@ allDirs.forEach(unitId => {
     } else if (unitData.hero_image) {
       let heroImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(unitData.hero_image, 2) : `../..${unitData.hero_image.startsWith('/') ? unitData.hero_image : '/' + unitData.hero_image}`;
       html += `
-      <div style="margin: 25px auto 10px auto; text-align: center; max-width: 85%;">
-        <img src="${heroImageSrc}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-        ${unitData.hero_caption ? `<p style="font-size: 11pt; color: #475569; margin-top: 15px; font-style: italic;">${unitData.hero_caption}</p>` : ''}
+      <div style="margin: 15px auto 10px auto; text-align: center; max-width: 85%;">
+        <img src="${heroImageSrc}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
+        ${unitData.hero_caption ? `<p style="font-size: 10pt; color: #475569; margin-top: 10px; font-style: italic;">${unitData.hero_caption}</p>` : ''}
       </div>
       `;
     }
 
     html += `
-    <!-- Tracker Table now on page 1 -->
-    <div style="margin: 15px 5% 0 5%; width: 90%;">
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9.5pt;">
-        <thead>
-          <tr style="background-color: #1a237e; color: white;">
-            <th style="border: 1px solid #333; padding: 12px 6px; width: 35%;">Progress & Assessment Tracker</th>
-            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Effort</th>
-            <th style="border: 1px solid #333; padding: 12px 6px; width: 10%; text-align: center;">Level</th>
-            <th style="border: 1px solid #333; padding: 12px 6px; width: 45%;">Teacher Comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${trackerRows}
-          <tr style=" font-weight: bold; height: 50px;">
-            <td style="border: 1px solid #333; padding: 12px 6px; text-align: right;">Final Unit Grade:</td>
-            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding: 12px 6px; background:#eee;"></td>
-            <td style="border: 1px solid #333; padding: 12px 6px;"></td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Progress Tracker injected into cover page -->
+      <div style="margin: 15px 5% 0 5%; width: 90%; flex-grow: 1;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <thead>
+            <tr style="background-color: #1a237e; color: white;">
+              <th style="border: 1px solid #333; padding: 10px 6px; width: 35%;">Progress & Assessment Tracker</th>
+              <th style="border: 1px solid #333; padding: 10px 6px; width: 10%; text-align: center;">Effort</th>
+              <th style="border: 1px solid #333; padding: 10px 6px; width: 10%; text-align: center;">Level</th>
+              <th style="border: 1px solid #333; padding: 10px 6px; width: 45%;">Teacher Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${progressTrackerRows}
+            <tr style=" font-weight: bold; height: 35px;">
+              <td style="border: 1px solid #333; padding: 10px 6px; text-align: right;">Final Unit Grade:</td>
+              <td style="border: 1px solid #333; padding: 10px 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 10px 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 10px 6px;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     `;
 
