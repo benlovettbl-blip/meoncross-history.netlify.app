@@ -190,37 +190,36 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:8px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
-      }
-      for(let r=0; r<2; r++) {
-         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:8px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:8px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:8px;"></td><td style="border:1px solid #cbd5e1; padding:8px;"></td></tr>`;
-      }
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
+             for(let r=0; r<1; r++) {
+         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:4px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">O</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
+        }      }
     });
 
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr><td style="border:1px solid #cbd5e1; padding:10px;">${a.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+        trackerRows += `<tr><td style="border:1px solid #cbd5e1; padding:5px;">${a.title}</td><td style="border:1px solid #cbd5e1; padding:5px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:5px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:5px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:5px;"></td><td style="border:1px solid #cbd5e1; padding:5px;"></td></tr>`;
       });
     }
 
     html += `
     <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
-      <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>
+      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
       
       <div style="margin-top: 15px; width: 100%; text-align: left; padding: 15px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
         <table style="width: 100%; border-collapse: collapse; font-size: 10pt;">
           <thead>
             <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
-              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
             </tr>
           </thead>
           <tbody>

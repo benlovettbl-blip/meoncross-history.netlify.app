@@ -1060,7 +1060,7 @@ export function initializeApp(unitData) {
     if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
       const pdfTextbookLink = document.createElement('a');
       pdfTextbookLink.className = 'lesson-link';
-      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book-open"></i> PDF Textbook';
+      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book"></i> Textbook & Reading Log';
       pdfTextbookLink.href = `/pdfs/${window.currentUnitId}_textbook.pdf`;
       pdfTextbookLink.target = '_blank';
       pdfTextbookLink.style.marginTop = '15px';
