@@ -791,10 +791,13 @@ allDirs.forEach(unitId => {
         } else if (lesson.gcse_task.sources) {
           html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
           let topicText = lesson.gcse_task.topic || '';
-          let isNarrative = topicText.toLowerCase().includes("write a narrative account");
-          if (isNarrative) {
+          let tLower = topicText.toLowerCase();
+          let isFullQuestion = tLower.includes("write a narrative account") || tLower.includes("explain one consequence") || tLower.includes("explain the importance") || tLower.includes("how useful") || tLower.includes("explain why") || tLower.includes("describe");
+          if (isFullQuestion) {
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
-            html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+            if (tLower.includes("write a narrative account")) {
+                html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+            }
           } else {
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
@@ -1051,8 +1054,9 @@ allDirs.forEach(unitId => {
                       });
                   } else if (lesson.gcse_task.topic) {
                       let topicText = lesson.gcse_task.topic || '';
-                      let isNarrative = topicText.toLowerCase().includes("write a narrative account");
-                      if (isNarrative) {
+                      let tLower = topicText.toLowerCase();
+                      let isFullQuestion = tLower.includes("write a narrative account") || tLower.includes("explain one consequence") || tLower.includes("explain the importance") || tLower.includes("how useful") || tLower.includes("explain why") || tLower.includes("describe");
+                      if (isFullQuestion) {
                           allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
                       } else {
                           allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
