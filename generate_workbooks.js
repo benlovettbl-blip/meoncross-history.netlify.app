@@ -701,7 +701,7 @@ allDirs.forEach(unitId => {
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask && unitId !== 'cme_new') {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
-      let defaultExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
+      let defaultExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'Exam Practice';
       html += `<h2 style="margin-top: 0;">${defaultExamTitle}</h2>`;
 
       const renderLines = (text) => {
@@ -779,7 +779,7 @@ allDirs.forEach(unitId => {
 
       if (lesson.gcse_task) {
         html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto !important; break-inside: auto !important;">`;
-        let defaultExamTitle2 = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
+        let defaultExamTitle2 = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'Exam Practice';
         html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">${defaultExamTitle2}</h2>`;
         
         if (lesson.gcse_task.tasks) {
@@ -1095,7 +1095,7 @@ allDirs.forEach(unitId => {
       
       if (allExamTasksHtml) {
           html += `<div style="page-break-before: always;">
-            <h2 style="font-size: 24pt; color: #1e3a8a; text-align: center; border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 30px;">GCSE Exam Practice: Question Bank</h2>
+            <h2 style="font-size: 24pt; color: #1e3a8a; text-align: center; border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 30px;">Exam Practice: Question Bank</h2>
             <p style="font-size: 12pt; text-align: center; margin-bottom: 30px; font-style: italic;">Choose an exam question from the bank below and answer it on the blank lined pages that follow.</p>
             ${allExamTasksHtml}
           </div>`;
