@@ -102,6 +102,26 @@ export const unitData = {
       "id": "lesson_0",
       "title": "KT1: Geography of the Middle East",
       "full_page_map": "/images/middle_east_map.png",
+      "sources": [
+        {
+          "title": "Map A: The Middle East",
+          "src": "/images/middle_east_map.png",
+          "caption": "A map showing the key countries of the Middle East region."
+        }
+      ],
+      "do_now": {
+        "type": "retrieval",
+        "items": [
+          {
+            "question": "What is meant by the term 'empire'?",
+            "answer": "A group of countries or territories controlled by a single ruler or state."
+          },
+          {
+            "question": "Why might a country want to expand its empire?",
+            "answer": "To gain resources, wealth, strategic military positions, and power."
+          }
+        ]
+      },
       "teacher_notes": {
         "primer": "Before diving into the historical narrative of the Middle East conflict, students must establish a foundational understanding of the region's geography. The complexities of borders, waterways, and contested territories (like the Sinai and Golan Heights) are critical for comprehending the stakes of the wars they will study.",
         "objectives": [

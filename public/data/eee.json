@@ -446,31 +446,11 @@
             "answer": 2
           }
         ],
-        "exam_practice": [
+        "sources": [
           {
-            "question": "\"Economic difficulties were the most significant challenge Elizabeth faced upon her accession in 1558.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- The royal debt\n- Elizabeth's claim to the throne\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "\"Elizabeth's government was completely dependent on the Privy Council.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- William Cecil\n- Parliament\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the role of the Justices of the Peace (JPs). (2 marks)\nDescribe one feature of the role of the Justices of the Peace (JPs). (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of Elizabethan England in 1558: society and government. (2 marks)\nDescribe one feature of Elizabethan England in 1558: society and government. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One feature of society was its rigid, hierarchical structure known as the \"Great Chain of Being\". At the top was the monarch, followed by the nobility and gentry, while the vast majority at the bottom were landless labourers, with everyone expected to accept their fixed place in God's ordered universe."
-          },
-          {
-            "question": "Explain why Elizabeth faced challenges at home and from abroad upon her accession in 1558. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- financial weaknesses\n- the French threat\n\nYou must also use information of your own.",
-            "model_answer": "Upon her accession in 1558, Elizabeth faced immediate **financial weaknesses** that severely threatened her survival. Her predecessor, Mary I, had left the crown deeply in debt, with a deficit of approximately £300,000. This was a crippling weakness because, in the 16th century, a monarch had to \"live of their own\" and pay for all administration and defence. This financial crisis meant Elizabeth could not afford to raise an army to defend her borders or pay off the high-interest loans (often 14%) owed to foreign bankers. Her lack of money made her look weak and encouraged both domestic rebels and foreign rivals to believe she could easily be overthrown, as she lacked the funds to defend her crown.\n\nSecondly, the **French threat** from abroad was a major challenge for the young queen. France was a powerful Catholic nation and England’s traditional enemy. Since Mary I’s reign, England had been involved in a disastrous war alongside Spain against France, which had resulted in the humiliating loss of Calais, England’s last foothold in Europe. Furthermore, France had secured a strong presence in Scotland through the 'Auld Alliance'. French troops were stationed on the northern border under Mary of Guise (mother of Mary, Queen of Scots). Elizabeth faced the terrifying prospect of a two-pronged Catholic invasion from France and Scotland, designed to depose her and replace her with Mary Stuart.\n\nFinally, Elizabeth’s challenge at home was compounded by the intense **problem of her legitimacy and gender**. Many English Catholics did not believe Elizabeth was the rightful queen. They did not recognise Henry VIII’s divorce from his first wife, Catherine of Aragon, meaning they viewed Henry’s marriage to Elizabeth’s mother, Anne Boleyn, as illegal and Elizabeth as illegitimate. Additionally, 16th-century society was highly patriarchal; female rulers were viewed as weak and unnatural, incapable of leading armies into battle. This prejudice created political instability, as her Privy Council immediately pressured her to marry to secure the succession, while her gender encouraged Catholic plotters to conspire against her from the very start of her reign."
+            "title": "Source A: The Religious Divide",
+            "src": "/images/religious_divide.jpg",
+            "caption": "Map showing the religious divisions in Europe around 1558."
           }
         ]
       },
@@ -785,21 +765,11 @@
             "answer": 0
           }
         ],
-        "exam_practice": [
+        "sources": [
           {
-            "question": "\"The religious settlement of 1559 successfully solved the problem of religion in England.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Catholic recusancy\n- Puritan opposition\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the role of the Church of England in early Elizabethan society. (2 marks)\nDescribe one feature of the role of the Church of England in early Elizabethan society. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One key feature was the enforcement of Elizabeth's religious laws and social control. For example, churchwardens and bishops conducted official \"visitations\" to inspect parishes, ensuring that all clergy took the oath of loyalty to the Queen and that the Protestant Book of Common Prayer was being strictly used."
-          },
-          {
-            "question": "Explain why Elizabeth's religious settlement was introduced in 1559. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- religious divisions\n- the French threat\n\nYou must also use information of your own.",
-            "model_answer": "Elizabeth introduced her religious settlement in 1559 primarily to heal the intense **religious divisions** that had fractured England. Following the reigns of Edward VI, who established a strict Protestant church, and Mary I, who violently restored Catholicism by burning almost 300 Protestants, England was deeply split. The north remained heavily Catholic, while London and the south-east were increasingly Protestant. Elizabeth recognised that a failure to find a compromise would likely spark a religious civil war. Consequently, she designed her \"Middle Way\" to pacify both sides: she kept traditional Catholic elements, such as highly decorated vestments and crucifixes to appease the Catholics, while introducing a Protestant Book of Common Prayer in English to satisfy Protestants. This compromise was essential to secure domestic peace.\n\nSecondly, Elizabeth was forced to introduce the religious settlement due to the immediate geopolitical **French threat**. At her accession in 1558, England was at war with France, and the French had strong influence in Scotland through the 'Auld Alliance'. Mary, Queen of Scots—a devout Catholic with a strong claim to the English throne—was married to the heir to the French throne. If Elizabeth had established a radical, aggressive Protestant church immediately, she risked provoking a joint invasion from Catholic France and Scotland. By establishing a compromise settlement and designating herself \"Supreme Governor\" rather than \"Supreme Head\" of the Church (appeasing the Pope and Catholic monarchs by not claiming spiritual headship), Elizabeth minimised the threat of foreign intervention while England was financially weak and militarily vulnerable.\n\nFinally, the settlement was introduced to firmly establish **Elizabeth’s personal royal authority** and reclaim control from Rome, a factor she achieved through her own political calculations. Under Mary I, the Pope’s authority over the English Church had been restored. Elizabeth needed to reclaim the crown’s power over religious matters and secure the loyalty of the clergy. The Act of Supremacy (1559) forced all public officials and clergy to swear an oath of loyalty to Elizabeth. This was a vital political tool because the Church of England was a massive engine of state power: priests delivered the Queen’s messages to the illiterate population every Sunday, ensuring social control and maintaining the 'Great Chain of Being'. The settlement was therefore introduced as much for political survival as it was for religious peace."
+            "title": "Source A: The Act of Supremacy",
+            "src": "/images/act_of_supremacy.jpg",
+            "caption": "A portrait of Elizabeth as Supreme Governor of the Church of England."
           }
         ]
       },
@@ -1109,21 +1079,11 @@
             "answer": 0
           }
         ],
-        "exam_practice": [
+        "sources": [
           {
-            "question": "‘The nature and extent of the Catholic challenge was a greater threat to Elizabeth's religious settlement than the Puritan challenge in the years 1559–69.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the role of the nobility\n- the nature and extent of the Puritan challenge\n\nYou must also use information of your own.",
-            "model_answer": "Elizabeth’s 1559 Religious Settlement faced challenges from both religious extremes. While **the nature and extent of the Puritan challenge** was highly vocal and disrupted the Church from within, the **Catholic challenge** was a far greater threat because it had the backing of the powerful northern **nobility** and foreign Catholic superpowers, making it a genuine threat to Elizabeth's survival.\n\nOn the one hand, the Catholic challenge posed an existential military and political threat, heavily supported by **the role of the nobility**. Many English nobles, particularly in the north, were devout Catholics who refused to accept the Protestant settlement. These Catholic nobles were highly dangerous because they commanded the feudal loyalty of thousands of tenants. This erupted into open rebellion in 1569 with the Revolt of the Northern Earls, where Catholic nobles marched south, captured Durham, and held Catholic Mass. Furthermore, the Catholic challenge was backed by foreign powers: the Pope excommunicated Elizabeth in 1570, while Spain’s King Philip II actively supported conspiracies to assassinate her, making the Catholic challenge a matter of national security and physical survival.\n\nOn the other hand, **the nature and extent of the Puritan challenge** was a persistent internal problem for the Church of England. Puritans were extreme Protestants who argued that Elizabeth’s settlement had not gone far enough, viewing Catholic elements like surplices (clerical robes) and crucifixes as sinful idols. This led to the Vestment Controversy in 1566, where the Archbishop of Canterbury ordered all priests to wear specific vestments; 37 London priests refused and were sacked. While this challenge was highly embarrassing and showed a lack of control, the Puritans never plotted to assassinate Elizabeth or overthrow her, because they knew that the alternative (a Catholic monarch like Mary, Queen of Scots) would be far worse for them.\n\nFurthermore, the Catholic threat was magnified by the passive resistance of **recusancy** among the wider population. Many wealthy Catholics became \"recusants,\" choosing to pay the 1-shilling fine for not attending Protestant services on Sundays. While Elizabeth deliberately kept this fine low to avoid creating Catholic martyrs, it showed that a large portion of her subjects rejected her spiritual authority as \"Supreme Governor\" of the Church. Additionally, from 1568 onwards, Catholic seminary priests began arriving in England from Douai in Flanders to secretly perform Catholic sacraments and keep the faith alive, creating a underground Catholic resistance that the government could not easily stamp out.\n\nIn conclusion, I strongly agree with the statement. The Puritan challenge was an ideological nuisance that disrupted the unity of the clergy, but it was never a threat to Elizabeth’s life or the stability of her crown. In contrast, the Catholic challenge, backed by the regional power of the northern **nobility**, the spiritual authority of the Papacy, and the military power of Spain, led to open rebellions and numerous assassination plots, making it a far greater threat to the Elizabethan state."
-          },
-          {
-            "question": "Explain why the Puritans challenged Elizabeth's religious settlement in the years 1559–69. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Vestments\n- The Crucifix controversy\n\nYou must also use information of your own.",
-            "model_answer": "The Puritans challenged the Religious Settlement because they believed it was an ungodly compromise that retained too many Catholic features. As strict, radical Protestants, they wanted a 'pure' church based entirely on the Bible, and were angry that Elizabeth's 1559 settlement included compromises to appease Catholics, such as the ambiguous wording in the Communion service.\n\nA specific reason for their challenge was the controversy over vestments. The Royal Injunctions ordered clergy to wear special vestments (the surplice). Puritans strongly objected to this, arguing that priests should wear simple, plain clothing, as elaborate vestments incorrectly suggested that priests were somehow magically closer to God than ordinary people. This led to a standoff in 1566 where 37 Puritan priests in London refused to wear them and were sacked.\n\nFinally, Puritans challenged the settlement over the use of crucifixes. Elizabeth wanted a crucifix in every church to maintain a familiar look for her Catholic subjects. However, Puritans viewed crucifixes as 'idols' and idolatry, which was strictly forbidden in the Bible. Some Puritan bishops threatened to resign rather than enforce the rule, forcing Elizabeth to back down as she could not afford to lose her most educated Protestant leaders."
-          },
-          {
-            "question": "Describe one feature of the Puritan challenge to the religious settlement. (2 marks)\nDescribe one feature of the Puritan challenge to the religious settlement. (2 marks)",
-            "hint": "Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "**Feature 1:**\nOne feature of the Puritan challenge was the Crucifix Controversy. (1)\nPuritan bishops threatened to resign because Elizabeth ordered a crucifix to be placed in every church, which Puritans viewed as sinful idolatry. (1)\n\n**Feature 2:**\nAnother feature was the Vestment Controversy of 1566. (1)\nMany Puritan priests refused to wear the special Catholic-style vestments ordered by Elizabeth, resulting in 37 London priests losing their jobs. (1)"
+            "title": "Source A: Papal Bull",
+            "src": "/images/papal_bull.jpg",
+            "caption": "Regnans in Excelsis, the 1570 Papal Bull excommunicating Elizabeth I."
           }
         ]
       },
@@ -1433,16 +1393,11 @@
             "answer": 0
           }
         ],
-        "exam_practice": [
+        "sources": [
           {
-            "question": "Describe one feature of the threat posed by Mary, Queen of Scots when she arrived in England in 1568. (2 marks)\nDescribe one feature of the threat posed by Mary, Queen of Scots when she arrived in England in 1568. (2 marks)",
-            "hint": "Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "**Feature 1:**\nOne feature of the threat posed by Mary was her strong claim to the English throne. (1)\nAs Henry VIII's great-niece, many English Catholics believed she was the legitimate queen instead of Elizabeth, who they viewed as illegitimate. (1)\n\n**Feature 2:**\nAnother feature was her presence as a figurehead for Catholic plots. (1)\nHer arrival in 1568 gave disgruntled English Catholics a viable alternative to rally around, significantly increasing the risk of domestic rebellion. (1)"
-          },
-          {
-            "question": "Explain why Mary, Queen of Scots' arrival in England in 1568 caused problems for Elizabeth. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Mary's claim to the English throne\n- The Catholic threat\n\nYou must also use information of your own.",
-            "model_answer": "Mary's arrival in 1568 caused problems primarily because she provided a viable Catholic alternative to Elizabeth's rule. Since the Pope and many English Catholics did not recognise Henry VIII's marriage to Anne Boleyn, they viewed Elizabeth as illegitimate and Mary as the rightful queen. Consequently, Mary immediately became a figurehead for Catholic plots, increasing the risk of rebellion.\n\nSecondly, Mary's arrival created an impossible diplomatic dilemma. If Elizabeth helped Mary regain the Scottish throne, she would anger the Scottish Protestant lords who were currently allied with England. If she handed Mary over to them, she would be endorsing the overthrow of a fellow anointed monarch. However, keeping her imprisoned in England meant she remained a constant focus for conspirators.\n\nFinally, the situation was worsened by the context of the recent 1559 Religious Settlement. Elizabeth's fragile religious peace was threatened by having a Catholic monarch on English soil, as it encouraged Catholic nobles, particularly in the North, to believe that a Catholic restoration was genuinely possible."
+            "title": "Source A: Mary Queen of Scots",
+            "src": "/images/mary_qos.jpg",
+            "caption": "A portrait of Mary, Queen of Scots, a Catholic claimant to the English throne."
           }
         ]
       },
@@ -1535,7 +1490,16 @@
             "Explain how Walsingham used spies to catch plotters."
           ]
         },
-        "vocab": [],
+        "vocab": [
+          {
+            "term": "Treason",
+            "definition": "The crime of betraying one's country, especially by attempting to kill or overthrow the sovereign."
+          },
+          {
+            "term": "Excommunication",
+            "definition": "The action of officially excluding someone from participation in the sacraments and services of the Christian Church."
+          }
+        ],
         "narrative_blocks": [
           {
             "theme_heading": "The Revolt of the Northern Earls (1569–70)",
@@ -1556,53 +1520,6 @@
           {
             "theme_heading": "The Big Picture",
             "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada."
-          }
-        ],
-        "exam_practice": [
-          {
-            "question": "Explain why the Northern Earls' Rebellion (1569-70) posed a significant danger to Elizabeth I. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Mary, Queen of Scots\n- Anglo-Spanish relations\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the Ridolfi Plot (1571). (2 marks)\nDescribe one feature of the Ridolfi Plot (1571). (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the Throckmorton Plot (1583). (2 marks)\nDescribe one feature of the Throckmorton Plot (1583). (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "\"The Northern Earls' Rebellion (1569) was a serious threat to Elizabeth.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Mary, Queen of Scots\n- Lack of foreign support\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Explain why the Babington Plot (1586) led to the execution of Mary, Queen of Scots. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Walsingham's spies\n- The Act for the Preservation of the Queen's Safety\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of Walsingham and the use of spies. (2 marks)\nDescribe one feature of Walsingham and the use of spies. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One feature was the interception and decoding of secret correspondence. Walsingham employed a specialist codebreaker named Thomas Phelippes to decipher letters sent by conspirators, which allowed the spy network to catch Mary, Queen of Scots, sending coded letters inside beer barrels to Anthony Babington in 1586."
-          },
-          {
-            "question": "‘Walsingham and the use of spies was the main reason for the significance of Mary Queen of Scots’ execution in 1587.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the Babington Plot\n- the Catholic challenge\n\nYou must also use information of your own.",
-            "model_answer": "**Sir Francis Walsingham's** intelligence network was undoubtedly a highly significant factor in bringing about the execution of Mary, Queen of Scots, but it was not the sole reason. While Walsingham provided the concrete legal proof of treason needed to justify executing an anointed monarch, the execution was ultimately caused by Mary's continuous, existential threat to Elizabeth’s throne, which was driven by her strong dynastic claim and the broader international Catholic threat.\n\nOn the one hand, Walsingham’s espionage was the immediate trigger for the execution because it successfully exposed **the Babington Plot** of 1586. Mary had been kept under house arrest in England for 18 years, during which Elizabeth had repeatedly refused to execute her due to her belief in the Divine Right of Kings. However, Walsingham used a double agent, Gilbert Gifford, to set up a secure letter-routing system using beer barrels. This was a trap; every letter sent between Anthony Babington and Mary Stuart was intercepted, copied, and decoded by Walsingham's cryptographer, Thomas Phelippes. When Mary wrote a letter explicitly approving the assassination of Elizabeth, Walsingham had the irrefutable evidence he needed. This letter provided the legal justification that forced Elizabeth's Privy Council to demand Mary's trial and subsequent execution in February 1587.\n\nOn the other hand, the wider **Catholic challenge** was a more fundamental, long-term cause of Mary's execution. As long as Mary lived, she was a constant figurehead for Catholic rebellion. Since the Pope had excommunicated Elizabeth in 1570, English Catholics were released from their allegiance to her, making any plot to replace Elizabeth with Mary a holy duty. Mary was directly involved in, or the inspiration for, the Revolt of the Northern Earls (1569), the Ridolfi Plot (1571), and the Throckmorton Plot (1583). The northern nobility, led by the Earls of Northumberland and Westmorland, rose in rebellion specifically to restore Catholicism and put Mary on the throne. It was this relentless, existential danger to the Protestant state—not just the spies' discovery of the letters—that convinced Elizabeth’s ministers that \"as long as there is life in her, there is hope in them.\"\n\nFurthermore, the execution was driven by the changing political attitudes of Elizabeth’s **Privy Council and Parliament**, who actively worked to force Elizabeth's hand. Following the Throckmorton Plot and the assassination of the Dutch Protestant leader William of Orange in 1584, Elizabeth’s advisors were terrified that she would be murdered next, leaving England to descend into Catholic chaos. To counter this, they drafted the Bond of Association (1584), which stated that if Elizabeth were assassinated, anyone who benefited from her death (i.e., Mary) would be executed. Parliament repeatedly petitioned Elizabeth to sign Mary’s death warrant, viewing her continued survival as a betrayal of her Protestant subjects. When the Babington Plot confirmed Mary’s treason, the Privy Council immediately pushed the death warrant through, even sending it to be carried out behind Elizabeth’s back once she had signed it.\n\nIn conclusion, I partially agree with the statement. Walsingham's use of spies was the decisive *catalyst* for the execution because his decryption of the Babington correspondence provided the absolute legal proof required to overcome Elizabeth's dynastic hesitation. However, the *primary* reason Mary was executed was her status as a permanent, living Catholic claimant. Had Mary not possessed a legitimate claim to the Tudor crown and the backing of Catholic Europe, the plots would not have had any chance of success, and her execution would not have been politically necessary."
-          },
-          {
-            "question": "‘Mary, Queen of Scots: her claim to the English throne was the main cause of the Revolt of the Northern Earls, 1569–70.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- religious divisions\n- the role of the nobility\n\nYou must also use information of your own.",
-            "model_answer": "The Revolt of the Northern Earls in 1569 was the first major domestic rebellion Elizabeth faced. While **Mary, Queen of Scots and her claim to the English throne** provided the vital Catholic alternative that made the rebellion possible, the revolt was actually caused by a combination of deep-rooted **religious divisions** and the northern nobility's anger at losing their traditional political power to Elizabeth's southern Protestant ministers.\n\nOn the one hand, Mary Stuart’s presence in England and her claim to the throne were central to the rebellion. When Mary fled Scotland and arrived in England in 1568, she became a natural focal point for Catholic hopes. The northern rebels, led by Thomas Percy (Earl of Northumberland) and Charles Neville (Earl of Westmorland), hatched a plan to marry Mary to Thomas Howard, the Duke of Norfolk (the premier Protestant noble in England). They believed that marrying Mary to Norfolk would secure her succession to the English throne, depose Elizabeth, and restore Catholicism. Mary’s royal blood and legitimate Tudor lineage provided the essential mechanism through which the northern earls hoped to legitimise their treasonous actions.\n\nOn the other hand, **religious divisions** were a more powerful motivator for the ordinary rebels who joined the uprising. The north of England had remained stubbornly Catholic despite Elizabeth’s 1559 Religious Settlement. Many northern Catholics resented Elizabeth’s Protestant laws and the removal of traditional Catholic practices. When the earls raised their standard in rebellion, their first public act was to march into Durham Cathedral, tear down the Protestant communion table, and hold a traditional Catholic Latin Mass. For the 4,600 ordinary soldiers who joined the rebel army, the revolt was a holy crusade to defend the Catholic faith against what they viewed as a heretical Protestant government in London.\n\nFurthermore, the revolt was heavily fueled by the grievances of **the northern nobility** regarding their loss of political power. Historically, the northern earls had ruled their lands like semi-independent monarchs, controlling local government and border defence. However, Elizabeth was determined to centralise her power. She systematically ignored the traditional Catholic nobility, appointing her own loyal, southern Protestant lords (such as James Pilkington as Bishop of Durham) to run northern affairs. Northumberland had been stripped of his lucrative role as Warden of the Middle Marches and lost custody of a valuable copper mine on his land. The rebellion was, therefore, a desperate attempt by the traditional nobility to reclaim their feudal rights and political influence from Elizabeth's upstart southern advisors, such as William Cecil.\n\nIn conclusion, I partially agree with the statement. Mary, Queen of Scots' claim to the throne was the indispensable *catalyst* for the rebellion because she represented the only viable Catholic successor to Elizabeth. However, the *primary* causes of the revolt were religious and political: the deep-rooted Catholic faith of the northern population, combined with the northern nobility's fury at being stripped of their traditional regional power by a centralising Protestant government. Without these deeper regional grievances, the earls would never have taken the immense risk of rising in rebellion."
-          },
-          {
-            "question": "Explain why Mary, Queen of Scots, was executed in 1587. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- the Babington Plot\n- the Privy Council\n\nYou must also use information of your own.",
-            "model_answer": "Mary, Queen of Scots was executed in 1587 primarily because of her direct involvement in **the Babington Plot** of 1586. For years, Elizabeth had resisted executing her cousin, but the Babington Plot provided the irrefutable evidence needed. Sir Francis Walsingham’s spy network intercepted coded letters sent between Mary and Anthony Babington. When Mary's letters were decoded, they revealed that she had explicitly approved of the plan to assassinate Elizabeth. This concrete evidence of treason meant that Mary could no longer be protected by her royal status, making her execution politically and legally necessary.\n\nSecondly, the relentless pressure from **the Privy Council** and Parliament played a massive role in her execution. Elizabeth’s ministers, led by William Cecil and Walsingham, had viewed Mary as an unacceptable danger to the Protestant state for almost two decades. Following the Throckmorton Plot (1583), the Privy Council had passed the Bond of Association, which legally bound them to execute anyone who would benefit from Elizabeth's murder. After the Babington Plot, the Council held a trial that found Mary guilty of treason. They continuously pressured Elizabeth to sign the death warrant, arguing that as long as Mary lived, Elizabeth’s life would always be in danger. When Elizabeth finally signed the warrant but hesitated to send it, the Privy Council met in secret and dispatched it without her permission to ensure the execution went ahead.\n\nFinally, the execution was caused by the broader, long-term **threat of a Spanish invasion**. By 1587, England and Spain were in an undeclared war in the Netherlands, and Philip II was actively preparing his Spanish Armada to invade England. The Privy Council knew that if the Spanish invaded while Mary was still alive in England, she would act as a powerful rallying point for English Catholic rebels, who would rise up to support the Spanish army. Executing Mary Stuart was a strategic military decision to destroy the Catholic alternative before the Armada arrived, leaving the Spanish with no legitimate Catholic monarch to put on the throne."
           }
         ],
         "quiz": [
@@ -1805,6 +1722,13 @@
               "De Quadra"
             ],
             "answer": 1
+          }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Northern Earls",
+            "src": "/images/northern_earls.jpg",
+            "caption": "An illustration of the rebellion of the Northern Earls in 1569."
           }
         ]
       },
@@ -2124,16 +2048,11 @@
             "answer": 0
           }
         ],
-        "exam_practice": [
+        "sources": [
           {
-            "question": "Explain why relations between England and Spain declined in the years 1568-1585. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Religious differences\n- Francis Drake's attacks on Spanish treasure\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "\"The threat from Catholics at home was more serious than the threat from Spain in the years 1569-1588.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Jesuit priests\n- The Netherlands\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
+            "title": "Source A: Philip II of Spain",
+            "src": "/images/philip_ii.jpg",
+            "caption": "A portrait of King Philip II of Spain, the most powerful monarch in Europe at the time."
           }
         ]
       },
@@ -2194,7 +2113,16 @@
             "Explain how Francis Drake's raid on Cadiz helped England."
           ]
         },
-        "vocab": [],
+        "vocab": [
+          {
+            "term": "Privateer",
+            "definition": "An armed ship owned and officered by private individuals holding a government commission and authorized for use in war, especially in the capture of enemy merchant shipping."
+          },
+          {
+            "term": "Treaty of Nonsuch",
+            "definition": "An agreement in 1585 in which Elizabeth I promised military support to the Dutch rebels fighting against Spain."
+          }
+        ],
         "narrative_blocks": [
           {
             "theme_heading": "Deteriorating Relations: Religion, Piracy, and the Genoese Loan",
@@ -2215,18 +2143,6 @@
           {
             "theme_heading": "The Big Picture",
             "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada."
-          }
-        ],
-        "exam_practice": [
-          {
-            "question": "Describe one feature of Drake and the raid on Cadiz: ‘Singeing the King of Spain’s beard’. (2 marks)\nDescribe one feature of Drake and the raid on Cadiz: ‘Singeing the King of Spain’s beard’. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One feature was the devastating destruction of Spanish naval shipping and supplies. Drake sailed directly into Cadiz harbour in 1587 and destroyed approximately 30 Spanish ships and thousands of seasoned wooden barrel staves, which successfully delayed the launch of the Spanish Armada by a full year."
-          },
-          {
-            "question": "‘The actions of Robert Dudley were the main reason for deteriorating relations with Spain in the years 1585–88.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- English direct involvement in the Netherlands\n- commercial rivalry\n\nYou must also use information of your own.",
-            "model_answer": "The outbreak of war between England and Spain in 1585 was the culmination of years of growing hostility. While **the actions of Robert Dudley** in the Netherlands deeply insulted King Philip II and worsened the diplomatic crisis, the primary cause of the war was the geopolitical reality of **English direct involvement in the Netherlands**, which was driven by religious solidarity and a long-standing **commercial rivalry** across the Atlantic.\n\nOn the one hand, Robert Dudley’s actions in the Netherlands significantly escalated tensions between 1585 and 1588. When Elizabeth sent Dudley (the Earl of Leicester) to the Netherlands in command of English troops, she instructed him to act cautiously and only defend the Dutch Protestant rebels. However, Dudley ignored her orders. In January 1586, he accepted the title of \"Governor-General of the Low Countries\" from the Dutch rebels. This was a catastrophic diplomatic blunder because it implied that Elizabeth was claiming sovereignty over territory that belonged to King Philip II. It infuriated Philip, convinced him that Elizabeth aimed to steal his empire, and made him commit fully to launching the Spanish Armada to overthrow her.\n\nOn the other hand, the deeper cause of the conflict was **English direct involvement in the Netherlands** through the signing of the Treaty of Nonsuch in 1585. Elizabeth had spent decades trying to avoid war with Spain, but when the Dutch Protestant rebel leader, William of Orange, was assassinated in 1584, the Dutch rebellion was on the verge of collapsing. If Spain crushed the Dutch, Philip II would control the entire English Channel coastline, providing Spain with a perfect launching pad for an invasion of England. Elizabeth was forced to sign the Treaty of Nonsuch, committing 7,000 English troops to actively fight the Spanish army under the Duke of Parma. This direct military intervention was essentially an open declaration of war, making the Armada conflict inevitable regardless of Dudley's subsequent mistakes.\n\nFurthermore, **commercial rivalry** in the New World had been poisoning Anglo-Spanish relations for decades. Under Spanish law, English merchants were forbidden from trading with Spain’s wealthy colonies in the Americas. English privateers, most notably Sir Francis Drake and [Key Individual: Sir John Hawkins], systematically ignored this ban. Drake spent the 1570s and 1580s raiding Spanish treasure ships and colonies, famously stealing £400,000 of Spanish silver during his circumnavigation. Instead of punishing Drake, Elizabeth knighted him on the deck of the *Golden Hind* in 1580. This state-sponsored piracy humiliated Philip II and hit Spain financially, causing Philip to conclude that he could only protect his treasure fleets by conquering England.\n\nFinally, **religious rivalry** acted as the underlying ideological foundation of the conflict. Philip II viewed himself as the global leader of the Counter-Reformation, dedicated to wiping out Protestantism across Europe. He viewed Elizabeth as a heretic who had illegally deposed Catholic authority. Philip had spent years supporting Catholic plots to assassinate Elizabeth (such as the Throckmorton Plot in 1583) and had signed the Treaty of Joinville with France in 1584 to create an anti-Protestant alliance. This religious crusade meant that Philip viewed war with England not just as a political dispute, but as a religious duty.\n\nIn conclusion, I disagree with the statement. Robert Dudley's actions were a significant diplomatic embarrassment that accelerated the timeline of the Spanish invasion. However, the *true* cause of the outbreak of war was Elizabeth's decision to sign the Treaty of Nonsuch and commit to **direct military involvement in the Netherlands**. This strategic decision, combined with decades of bitter **commercial rivalry** and state-sponsored piracy by Drake, made a military showdown with Spain entirely unavoidable."
           }
         ],
         "quiz": [
@@ -2410,6 +2326,13 @@
             ],
             "answer": 2
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Francis Drake",
+            "src": "/images/drake.jpg",
+            "caption": "Sir Francis Drake, an English privateer who raided Spanish ships."
+          }
         ]
       },
       {
@@ -2484,7 +2407,16 @@
             "Describe what happened after the Armada was defeated."
           ]
         },
-        "vocab": [],
+        "vocab": [
+          {
+            "term": "Armada",
+            "definition": "A fleet of warships."
+          },
+          {
+            "term": "Fireships",
+            "definition": "Ships deliberately set on fire and steered into an enemy fleet to destroy or scatter it."
+          }
+        ],
         "narrative_blocks": [
           {
             "theme_heading": "Why did Philip II launch the Armada?",
@@ -2505,18 +2437,6 @@
           {
             "theme_heading": "The Big Picture",
             "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever."
-          }
-        ],
-        "exam_practice": [
-          {
-            "question": "\"Spanish strategic errors were the primary cause of England's triumph over the Armada.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- The command of the Duke of Medina Sidonia\n- The deployment of fireships\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "\"English naval tactics were the main reason for the defeat of the Spanish Armada.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Fireships\n- The Duke of Medina Sidonia\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
           }
         ],
         "quiz": [
@@ -2720,6 +2640,13 @@
             ],
             "answer": 1
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Spanish Armada",
+            "src": "/images/spanish_armada.jpg",
+            "caption": "A painting of the Spanish Armada engaged in battle with the English fleet."
+          }
         ]
       },
       {
@@ -2785,7 +2712,16 @@
             "Explain why the theatre was popular and why some people hated it."
           ]
         },
-        "vocab": [],
+        "vocab": [
+          {
+            "term": "Grammar School",
+            "definition": "A school that taught boys Latin, Greek, and classical literature."
+          },
+          {
+            "term": "Pastimes",
+            "definition": "Activities that people do for enjoyment in their free time."
+          }
+        ],
         "narrative_blocks": [
           {
             "theme_heading": "The Purpose of Education",
@@ -2806,28 +2742,6 @@
           {
             "theme_heading": "The Big Picture",
             "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age."
-          }
-        ],
-        "exam_practice": [
-          {
-            "question": "Describe one feature of Elizabethan grammar schools. (2 marks)\nDescribe one feature of Elizabethan grammar schools. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of Elizabethan pastimes for the rich. (2 marks)\nDescribe one feature of Elizabethan pastimes for the rich. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the theatre in early Elizabethan England. (2 marks)\nDescribe one feature of the theatre in early Elizabethan England. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One key feature was that theatres were highly accessible to all social classes. The poorest \"groundlings\" could stand in the open pit for just one penny, while the wealthy sat in covered, elevated galleries."
-          },
-          {
-            "question": "‘The development of the theatre was the most significant change to leisure in early Elizabethan England.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- the groundlings\n- sport, pastimes and the theatre\n\nYou must also use information of your own.",
-            "model_answer": "Leisure in Elizabethan England experienced significant transformations during Elizabeth's reign. While the **development of the theatre** was a highly visible cultural shift that changed how different social classes interacted, it was not the only significant change; the persistent popularity of violent **spectator sports** and the rigid class divide in physical **pastimes** remained highly influential aspects of daily life.\n\nOn the one hand, the development of the theatre was a revolutionary change to leisure. Prior to Elizabeth's reign, acting was performed by travelling troupes, but the 1572 Vagabonds Act forced actors to seek noble patronage to avoid arrest. This led to the creation of permanent, purpose-built theatres outside London, such as the Globe and the Rose. Theatre became a unique social phenomenon because it was highly inclusive; the poorest **groundlings** stood in the open pit for just a penny, while the wealthy sat in the covered galleries. This made the theatre a vibrant space for social mixing and a powerful tool for political propaganda, as plays could reinforce themes of loyalty to the Queen, making it a highly significant cultural change.\n\nOn the other hand, traditional **sport and pastimes** remained the dominant form of leisure for the majority of the population and saw little structural change. Sports were strictly divided along class lines. The nobility enjoyed highly expensive, private activities such as Real Tennis, hawking, and fencing, which were used to display their wealth and physical prowess. In contrast, the lower classes played football—a highly violent game with few rules that often resulted in serious injury or death—and wrestled. These activities did not experience a \"golden age\" of development like the theatre; instead, they remained local, traditional, and unchanged throughout the period, serving as a point of social continuity.\n\nFurthermore, **spectator sports** such as bear-baiting and cock-fighting remained incredibly popular across all social classes. Large purpose-built arenas were constructed in London to hold these events, and even Queen Elizabeth herself was a keen spectator. These blood sports were a major part of the leisure industry, drawing huge crowds who placed large bets on the outcomes. The popularity of bear-baiting was so great that it actively rivalled the theatre, with theatres sometimes being closed on certain days to encourage people to attend the baiting arenas instead. This shows that for many Elizabethans, violent animal sports remained a more popular and significant form of entertainment than secular drama.\n\nIn conclusion, I partially agree with the statement. The development of the theatre was the most *revolutionary* change to leisure because it created a brand-new, commercial, and highly democratic cultural industry that had never existed before in England. However, it did not completely replace traditional leisure. For the vast majority of Elizabethans outside of London, traditional **sport and pastimes** and violent spectator sports like bear-baiting remained the primary, unchanging methods of entertainment, proving that the theatre's impact, while culturally massive, was largely concentrated in urban centres."
           }
         ],
         "quiz": [
@@ -3031,6 +2945,13 @@
             ],
             "answer": 3
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Elizabethan Theatre",
+            "src": "/images/theatre.jpg",
+            "caption": "A sketch of the Swan Theatre in London, showing the stage and audience galleries."
+          }
         ]
       },
       {
@@ -3120,28 +3041,6 @@
           }
         ],
         "vocab_cloze_text": "During the Elizabethan era, a rapidly growing population and the widespread practice of farming [Enclosure] pushed many rural laborers into desperate poverty. The government categorized the poor strictly: the elderly or sick were deemed the [Impotent Poor] and given relief funded by a local [Poor Rate] tax. Those who could work but couldn't find jobs were classed as the [Able-Bodied Poor] and sent to workhouses. Meanwhile, any wandering beggar looking for work was heavily punished and branded a criminal [Vagabond / Vagrant].",
-        "exam_practice": [
-          {
-            "question": "Describe one characteristic of poverty in early Elizabethan England. (2 marks)\nDescribe one characteristic of poverty in early Elizabethan England. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the poor rate in Elizabethan England. (2 marks)\nDescribe one feature of the poor rate in Elizabethan England. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Describe one feature of the 1572 Vagabonds Act. (2 marks)\nDescribe one feature of the 1572 Vagabonds Act. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "One feature was the introduction of severe physical punishments for vagrancy. Under the Act, any individual caught begging without a licence was to be whipped and had a hole burned through their right ear with a hot iron."
-          },
-          {
-            "question": "Explain why poverty increased in early Elizabethan England. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Population growth\n- Enclosure\n\nYou must also use information of your own.",
-            "model_answer": "Poverty increased significantly in Elizabethan England primarily due to population growth. The population rose from around 3 million in 1551 to over 4 million by 1601. This meant there was a greater demand for food, clothes, and housing, which drove up prices (inflation). At the same time, because there was a surplus of workers, wages fell, making it incredibly difficult for the poorest to afford basic necessities.\n\nSecondly, changes in farming practices, specifically enclosure, worsened the situation. Landlords began enclosing common land to farm profitable sheep instead of growing crops. This meant ordinary villagers lost their traditional rights to graze animals or gather firewood. Furthermore, sheep farming required far fewer labourers than growing crops, leading to massive rural unemployment and forcing many to become vagabonds travelling to towns in search of work.\n\nFinally, the collapse of traditional support systems contributed to the crisis. Before 1536, monasteries had provided food, shelter, and medical care for the poor. Following the Dissolution of the Monasteries under Henry VIII, this vital safety net disappeared, leaving the sick and elderly destitute and entirely reliant on inadequate local parish charity."
-          }
-        ],
         "narrative_blocks": [
           {
             "theme_heading": "The Causes of the Poverty Crisis",
@@ -3361,6 +3260,13 @@
             ],
             "answer": 0
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Poor Law",
+            "src": "/images/poor_law.jpg",
+            "caption": "An extract from the 1601 Elizabethan Poor Law outlining support for the destitute."
+          }
         ]
       },
       {
@@ -3443,18 +3349,6 @@
           {
             "term": "Roanoke",
             "definition": "An island off the coast of North America (modern-day North Carolina) where Walter Raleigh’s ill-fated colonies were established."
-          }
-        ],
-        "exam_practice": [
-          {
-            "question": "\"The voyages of exploration in Elizabeth's reign were primarily motivated by a desire for wealth.\"\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- Trade routes\n- Rivalry with Spain\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "Explain why Drake's circumnavigation of the globe (1577-1580) was significant. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Spanish treasure\n- Nova Albion\n\nYou must also use information of your own.",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
           }
         ],
         "narrative_blocks": [
@@ -3676,6 +3570,13 @@
             ],
             "answer": 3
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Golden Hind",
+            "src": "/images/golden_hind.jpg",
+            "caption": "A replica of the Golden Hind, the ship Francis Drake used to circumnavigate the globe."
+          }
         ]
       },
       {
@@ -3754,23 +3655,6 @@
           }
         ],
         "vocab_cloze_text": "In 1584, Elizabeth I granted Walter Raleigh a [Royal Charter] giving him exclusive rights to explore and colonize any lands not held by a Christian prince. Raleigh organized an ambitious expedition to establish a permanent colony in North America, naming the vast territory [Virginia] in honor of the 'Virgin Queen'. The settlers landed on [Roanoke] Island, but the colony was doomed by poor planning and increasingly hostile relations with the local [Algonquian] Native American tribes, leading to the mysterious disappearance of the colonists.",
-        "exam_practice": [
-          {
-            "question": "Describe one characteristic of the English attempts to colonise Virginia. (2 marks)\nDescribe one characteristic of the English attempts to colonise Virginia. (2 marks)",
-            "hint": "This is a 2-mark question. Remember the new Edexcel specification asks this as two separate 2-mark questions: 'Describe one feature...' twice. Identify a feature (1 mark) and add supporting detail (1 mark).",
-            "model_answer": "Model answers for this paper have not been provided yet. You can use NotebookLM to generate one."
-          },
-          {
-            "question": "‘The drive to expand trade was the main reason for the attempted colonisation of Virginia.’\nHow far do you agree? Explain your answer. (16 marks)",
-            "hint": "This is a 16-mark question.\n\nYou may use the following in your answer:\n- new technology\n- the significance of Raleigh\n\nYou must also use information of your own.",
-            "model_answer": "The attempted colonisation of Virginia in 1585 was driven by a complex mixture of economic, strategic, and political factors. While the **drive to expand trade** and break Spain’s commercial monopoly was a major economic motive, the strategic desire to establish a military outpost to attack Spain, combined with the personal ambition and organisation of **Sir Walter Raleigh**, were more critical in transforming these plans into an actual expedition.\n\nOn the one hand, the drive to expand trade was a highly significant cause of the colonisation attempt. Historically, England’s economy relied heavily on exporting woollen cloth to Europe through the port of Antwerp. However, when Spain crushed the Dutch Revolt, Antwerp was closed to English merchants, causing a major economic crisis. English merchants desperately needed to find new markets and raw materials. Virginia was believed to be rich in valuable resources, including timber, fur, and tobacco. By colonising North America, England hoped to establish self-sufficiency, import luxury goods directly without paying high Spanish taxes, and find new consumer markets for English wool, thereby reviving the nation's wealth.\n\nOn the other hand, the strategic, military motivation of creating a naval base against Spain was arguably more pressing. By 1585, England and Spain were on the brink of war. Elizabeth and her advisors knew that England could not match Spain's massive army, so they aimed to weaken Spain financially by attacking its silver-carrying treasure fleets sailing from the Americas. Virginia was located in a perfect strategic position: far enough north to be safe from Spanish bases in Florida, but close enough to the Caribbean to allow English privateers, such as Sir Francis Drake, to raid Spanish ships and then retreat safely to a secure English port to unload their stolen riches.\n\nFurthermore, the colonisation attempt would never have occurred without **the significance of Raleigh**. Raleigh was a wealthy courtier who was granted a royal patent by Queen Elizabeth in 1584 to explore and colonise \"heathen lands\". Raleigh acted as the essential organiser: he raised the vast sums of money needed by promoting the colony to investors, oversaw the building and outfitting of the ships, and carefully selected the colonists, including the mathematician Thomas Harriot to navigate and map the territory. Although Elizabeth refused to let Raleigh sail himself because she could not risk losing her favourite courtier, his political influence and financial backing were the engines behind the entire enterprise.\n\nFinally, the colonisation attempt was made possible by **new technology**. During Elizabeth's reign, ship design had progressed significantly: the development of the \"galleon\" provided English sailors with larger, faster, and more stable ships capable of surviving the treacherous Atlantic crossing while carrying heavy cannons and extensive supplies. This was supported by navigational advancements, including the widespread use of the magnetic compass, the astrolabe, and the quadrant, which allowed navigators to accurately calculate their latitude at sea. Without these technical breakthroughs, Raleigh's plans would have remained a physical impossibility.\n\nIn conclusion, I partially agree with the statement. The drive to expand trade provided the initial economic justification for the expedition, particularly after the collapse of the Antwerp cloth trade. However, the strategic need to establish a military naval base to disrupt Spanish shipping as war loomed was the primary geopolitical motivator. Raleigh's unique ability to secure investment and royal support was the practical mechanism that turned this strategic dream into reality."
-          },
-          {
-            "question": "Explain why the English attempts to colonise Virginia in the 1580s failed. (12 marks)",
-            "hint": "This is a 12-mark question.\n\nYou may use the following in your answer:\n- Native American resistance\n- Lack of supplies\n\nYou must also use information of your own.",
-            "model_answer": "The English attempts to colonise Virginia ultimately failed because of deteriorating relations with the Native American populations. Although initially welcoming, the Algonquian people, led by Chief Wingina, became increasingly hostile. This was because the English colonists, suffering from food shortages, constantly demanded food and resources, which angered the natives. Following violence and the spread of deadly European diseases, the colonists could no longer rely on the natives for survival, crippling the settlement.\n\nSecondly, a severe lack of supplies doomed the colony from the start. The voyage itself was disastrous; the flagship 'Tiger' hit a sandbank upon arrival in 1585, which ruined the majority of their food seeds and gunpowder. Because they arrived too late in the year to plant new crops, they immediately faced starvation and were utterly dependent on supply ships from England, which were dangerously delayed.\n\nFinally, the colonists themselves were poorly chosen for the harsh reality of building a settlement. Many were soldiers or wealthy gentlemen who expected to find instant gold, rather than farmers willing to do the grueling manual labour required to grow crops and build shelters. This lack of relevant skills meant the colony was never self-sufficient and collapsed under the harsh conditions."
-          }
-        ],
         "narrative_blocks": [
           {
             "theme_heading": "The Significance of Walter Raleigh",
@@ -3990,6 +3874,13 @@
             ],
             "answer": 0
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Roanoke Colony",
+            "src": "/images/roanoke.jpg",
+            "caption": "A map of the failed Roanoke colony in Virginia."
+          }
         ]
       }
     ],
@@ -4178,7 +4069,14 @@
         "name": "Chief Wingina",
         "group": "🌍 Sovereign Status: Indigenous Leadership",
         "bio": "The ruler (mandoac) of the local Algonquian tribe at Roanoke. While he did not fit into the European feudal hierarchy, he occupied the supreme position of political and military leadership within his own sovereign nation.",
-        "image": "/images/chief_wingina.jpg"
+        "image": "/images/chief_wingina.jpg",
+        "sources": [
+          {
+            "title": "Source A: Roanoke Colony",
+            "src": "/images/roanoke.jpg",
+            "caption": "A map of the failed Roanoke colony in Virginia."
+          }
+        ]
       }
     ]
   },

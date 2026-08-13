@@ -1364,14 +1364,9 @@ if (lesson.sources && lesson.sources.length > 0) {
                 <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
                   <div style="position: relative;">
                     <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" onclick="window.openModal(this.src)">
-                    ${source.caption ? `
-                      <button class="source-accordion-btn no-print" onclick="const panel = this.parentElement.nextElementSibling; panel.style.display = panel.style.display === 'none' ? 'block' : 'none';" title="Source Information" style="position: absolute; top: 10px; right: 10px; background: #10b981; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-info"></i>
-                      </button>
-                    ` : ''}
                   </div>
                   ${source.caption ? `
-                    <div class="source-info-panel" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; font-size: 0.95rem; color: #334155; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+                    <div class="source-info-panel" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; font-size: 0.95rem; color: #334155; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
                       <strong style="color: #0f172a; margin-bottom: 5px; display: block;">
                         <i class="fa-solid fa-circle-info" style="color: #10b981; margin-right: 5px;"></i>
                         About this source
@@ -2250,7 +2245,7 @@ if (lesson.pair_share) {
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                   <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
                   <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
-                </div>
+                 </div>
               </div>
             </div>
           </details>
@@ -2258,57 +2253,66 @@ if (lesson.pair_share) {
     }
 
     if (lesson.exam_practice) {
-      const ep = Array.isArray(lesson.exam_practice) ? lesson.exam_practice[0] : lesson.exam_practice; // Handle array or object
-      htmlPairShare += `
-        <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
-          <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Exam Practice: Historical Interpretations</h3>
-            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
-          </div>
-      `;
-      const renderQuestion = (q, qIdx) => `
-            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                ${q.question}
-                <span style="display: inline-flex; vertical-align: middle;">
-                  ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
-                </span>
-              </div>
-              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-              ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
-            </div>
-      `;
-
-      if (ep.questions && ep.questions.length > 0) {
-        let q2Index = ep.questions.findIndex(q => q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')));
-        if (q2Index !== -1) {
-           htmlPairShare += renderQuestion(ep.questions[q2Index], q2Index);
-        }
+      let epQuestions = [];
+      let epStimulus = [];
+      if (Array.isArray(lesson.exam_practice)) {
+        epQuestions = lesson.exam_practice;
+      } else {
+        epQuestions = lesson.exam_practice.questions || [];
+        epStimulus = lesson.exam_practice.stimulus || [];
       }
-      
-      if (ep.stimulus && ep.stimulus.length > 0) {
-        htmlPairShare += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
-        ep.stimulus.forEach((stim, sIdx) => {
-          htmlPairShare += `
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
-              <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
-              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
+
+      if (epQuestions.length > 0 || epStimulus.length > 0) {
+        htmlPairShare += `
+          <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
+            <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Exam Practice</h3>
+              <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
             </div>
-          `;
-        });
+        `;
+        const renderQuestion = (q, qIdx) => `
+              <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                  ${q.question}
+                  <span style="display: inline-flex; vertical-align: middle;">
+                    ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                  </span>
+                </div>
+                <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+                ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+              </div>
+        `;
+
+        if (epQuestions.length > 0) {
+          let q2Index = epQuestions.findIndex(q => q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')));
+          if (q2Index !== -1) {
+             htmlPairShare += renderQuestion(epQuestions[q2Index], q2Index);
+          }
+        }
+        
+        if (epStimulus.length > 0) {
+          htmlPairShare += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
+          epStimulus.forEach((stim, sIdx) => {
+            htmlPairShare += `
+              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
+                <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
+              </div>
+            `;
+          });
+          htmlPairShare += `</div>`;
+        }
+        
+        if (epQuestions.length > 0) {
+          epQuestions.forEach((q, qIdx) => {
+            let isQ2 = q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
+            if (!isQ2) {
+               htmlPairShare += renderQuestion(q, qIdx);
+            }
+          });
+        }
         htmlPairShare += `</div>`;
       }
-      
-      if (ep.questions && ep.questions.length > 0) {
-        ep.questions.forEach((q, qIdx) => {
-          let isQ2 = q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
-          if (!isQ2) {
-             htmlPairShare += renderQuestion(q, qIdx);
-          }
-        });
-      }
-      
-      htmlPairShare += `</div>`;
     }
 
     let deck = null;

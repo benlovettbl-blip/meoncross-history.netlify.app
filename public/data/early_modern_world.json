@@ -366,7 +366,21 @@
             "Sentence Starter: By contrast, Europe was relatively isolated because..."
           ],
           "lines": 15
-        }
+        },
+        "vocab": [
+          {
+            "term": "Silk Road",
+            "definition": "An ancient network of trade routes connecting East Asia to the Mediterranean and Europe."
+          },
+          {
+            "term": "Ming Dynasty",
+            "definition": "The ruling dynasty of China from 1368 to 1644, known for its wealth and technological advancements."
+          },
+          {
+            "term": "Ottoman Empire",
+            "definition": "A powerful Islamic empire that controlled the Middle East, North Africa, and Eastern Europe, acting as the gateway for trade."
+          }
+        ]
       },
       {
         "id": "lesson_2",

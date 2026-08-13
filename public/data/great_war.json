@@ -348,12 +348,12 @@
           }
         ],
         "primary_source": {
-          "title": "Source A: Map of the German Empire vs Modern Germany",
+          "title": "Source A: A map from 1871 showing the newly created German Empire compared to modern Germany.",
           "src": [
             "/images/german_empire_1871.png",
             "/images/modern_germany_map.png"
           ],
-          "caption": "A map showing the newly created German Empire in 1871 (left) compared to modern-day Germany (right).",
+          "caption": "This map illustrates the dramatic shift in European borders following the Franco-Prussian War in 1871. By uniting various independent German states into a single, massive German Empire under Prussian leadership, Otto von Bismarck completely altered the balance of power in Europe. This sudden creation of a massive, heavily armed, and highly industrialized powerhouse in the center of Europe deeply terrified its neighbors, setting the stage for future conflict.",
           "question": "Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
           "tasks": [
             {
@@ -365,6 +365,30 @@
               "type": "text",
               "text": "Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
               "model": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
+            }
+          ]
+        },
+        "vocab": [
+          {
+            "term": "Chancellor",
+            "definition": "The highest official of a monarch, often equivalent to a prime minister."
+          },
+          {
+            "term": "Blood and Iron",
+            "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
+          }
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
+                "Sentence Starter: For example, he modernized the Prussian army and used it to...",
+                "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
+              ]
             }
           ]
         }
@@ -381,20 +405,12 @@
         ],
         "vocab": [
           {
-            "term": "Alsace-Lorraine",
-            "definition": "A resource-rich border region taken by Germany from France in 1871."
+            "term": "Chancellor",
+            "definition": "The highest official of a monarch, often equivalent to a prime minister."
           },
           {
-            "term": "Ems Telegram",
-            "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
-          },
-          {
-            "term": "Reparations",
-            "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
-          },
-          {
-            "term": "Siege",
-            "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
+            "term": "Blood and Iron",
+            "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
           }
         ],
         "extended": {
@@ -438,9 +454,9 @@
           "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
         },
         "primary_source": {
-          "title": "Source A: Anton von Werner, 'The Proclamation of the German Empire at Versailles', painted in 1885.",
+          "title": "Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.",
           "src": "/assets/great_war_was_germany_unification.png",
-          "caption": "<strong>What is this source showing?</strong> This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
+          "caption": "This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
           "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
           "tasks": [
             {
@@ -809,7 +825,21 @@
               "Notre Dame Cathedral"
             ]
           }
-        ]
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
+                "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
+                "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "lesson_2",
@@ -894,9 +924,9 @@
           ]
         },
         "primary_source": {
-          "title": "Source A: John Tenniel, 'The Greedy Boy', a British political cartoon published in Punch Magazine, 1885.",
+          "title": "Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.",
           "src": "/assets/great_war_was_greedy_boy.png",
-          "caption": "<strong>What is this source showing?</strong> This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
+          "caption": "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
           "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
           "tasks": [
             {
@@ -1202,7 +1232,21 @@
               "It led to Britain abandoning its empire"
             ]
           }
-        ]
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
+                "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
+                "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "lesson_3",
@@ -1282,9 +1326,9 @@
           ]
         },
         "primary_source": {
-          "title": "Source A: Official technical blueprint showing the design and armament of HMS Dreadnought, published in 1906.",
+          "title": "Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.",
           "src": "/assets/great_war_was_dreadnought_blueprint.png",
-          "caption": "<strong>What is this source showing?</strong> This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
+          "caption": "This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
           "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
           "tasks": [
             {
@@ -1592,7 +1636,21 @@
               "It made them give up their empire"
             ]
           }
-        ]
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain why the naval race between Britain and Germany damaged their relations.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
+                "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
+                "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "lesson_4",
@@ -1678,9 +1736,9 @@
           ]
         },
         "primary_source": {
-          "title": "Source A: 'The Chain of Friendship', an American cartoon published in the Brooklyn Eagle, July 1914.",
+          "title": "Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.",
           "src": "/assets/great_war_was_military_matrix.png",
-          "caption": "<strong>What is this source showing?</strong> This cartoon shows how the complex web of alliances dragged all the European powers into war. Serbia is threatened by Austria, who is threatened by Russia, who is threatened by Germany, and so on.",
+          "caption": "This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.",
           "question": "Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
           "tasks": [
             {
@@ -1973,7 +2031,21 @@
               "Britain"
             ]
           }
-        ]
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
+                "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
+                "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "lesson_5",
@@ -2059,9 +2131,9 @@
           ]
         },
         "primary_source": {
-          "title": "Source A: Leonard Raven-Hill, 'The Boiling Point', a British political cartoon published in Punch Magazine, 1912.",
+          "title": "Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.",
           "src": "/assets/great_war_was_boiling_point.png",
-          "caption": "<strong>What is this source showing?</strong> This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
+          "caption": "This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
           "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
           "tasks": [
             {
@@ -2360,7 +2432,21 @@
               "Because Germany sank a British ship"
             ]
           }
-        ]
+        ],
+        "exam_practice": {
+          "questions": [
+            {
+              "type": "explain",
+              "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
+              "marks": 8,
+              "hints": [
+                "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
+                "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
+                "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
+              ]
+            }
+          ]
+        }
       }
     ],
     "quizPack": [

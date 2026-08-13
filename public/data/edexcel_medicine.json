@@ -987,6 +987,13 @@
             "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
             "title": "Medieval Medicine | Secondary History - Medicine Through Time"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Four Humours",
+            "src": "/images/four_humours.jpg",
+            "caption": "A medieval diagram showing the Theory of the Four Humours."
+          }
         ]
       },
       {
@@ -1647,6 +1654,13 @@
             "url": "https://era.org.uk/streaming-service-resource/3-medicine-women-and-society-history-file/",
             "title": "3 Medicine Women And Society History File"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Medieval Bloodletting",
+            "src": "/images/bloodletting.jpg",
+            "caption": "A manuscript illustration of a physician performing bloodletting."
+          }
         ]
       },
       {
@@ -2110,6 +2124,13 @@
           {
             "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-medieval-treatment-and-beliefs-on-the-cause-of-the-black-death/",
             "title": "Bbc Two A History Of Britain By Simon Schama Series 1 King Death Medieval Treatment And Beliefs On The Cause Of The Black Death"
+          }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Black Death",
+            "src": "/images/black_death.jpg",
+            "caption": "An illustration showing victims of the Black Death covered in buboes."
           }
         ]
       },
@@ -2585,6 +2606,13 @@
             "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-andreas-vesalius-the-muscle-men/",
             "title": "Bbc Four The Beauty Of Anatomy Andreas Vesalius The Muscle Men"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Printing Press",
+            "src": "/images/printing_press.jpg",
+            "caption": "An early printing press, which helped spread new medical ideas during the Renaissance."
+          }
         ]
       },
       {
@@ -3037,6 +3065,13 @@
           {
             "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
             "title": "Vesalius, ParÃ© and Harvey | Secondary History - Medicine Through Time"
+          }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Pare and Paracelsus",
+            "src": "/images/pare_treatment.jpg",
+            "caption": "Illustration of Ambroise Pare treating gunshot wounds with a soothing lotion instead of boiling oil."
           }
         ]
       },
@@ -3509,6 +3544,13 @@
             "url": "https://www.youtube.com/watch?v=LoeAVaM48Y0",
             "title": "WILLIAM HARVEY - The Theory of Blood Circulation"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Harvey on the Heart",
+            "src": "/images/harvey_veins.jpg",
+            "caption": "William Harvey demonstrating the circulation of blood and valves in the veins."
+          }
         ]
       },
       {
@@ -3978,6 +4020,13 @@
           {
             "url": "https://era.org.uk/streaming-service-resource/bbc-four-medical-mavericks-series-1-beating-infection-robert-koch-cholera/",
             "title": "Bbc Four Medical Mavericks Series 1 Beating Infection Robert Koch Cholera"
+          }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Pasteur in the Lab",
+            "src": "/images/pasteur_lab.jpg",
+            "caption": "Louis Pasteur working in his laboratory to prove Germ Theory."
           }
         ]
       },
@@ -4475,6 +4524,13 @@
             "url": "https://www.youtube.com/watch?v=7pjAH84f-c0",
             "title": "18th Century Medicine | Secondary History - Medicine Through Time"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Florence Nightingale",
+            "src": "/images/nightingale.jpg",
+            "caption": "Florence Nightingale tending to patients in the clean wards she established at Scutari."
+          }
         ]
       },
       {
@@ -4955,6 +5011,13 @@
             "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
             "title": "Chadwick and Snow | Secondary History - Medicine Through Time"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The Broad Street Pump",
+            "src": "/images/broad_street_pump.jpg",
+            "caption": "John Snow's map showing deaths centered around the Broad Street pump."
+          }
         ]
       },
       {
@@ -5416,6 +5479,13 @@
           {
             "url": "https://www.youtube.com/watch?v=my14ZuzjH5I",
             "title": "Modern Medicine | Secondary History - Medicine Through Time"
+          }
+        ],
+        "sources": [
+          {
+            "title": "Source A: DNA Structure",
+            "src": "/images/dna_structure.jpg",
+            "caption": "Watson and Crick with their model of the DNA double helix in 1953."
           }
         ]
       },
@@ -5917,6 +5987,13 @@
             "url": "https://era.org.uk/streaming-service-resource/5-grays-anatomy-the-beauty-of-anatomy/",
             "title": "5 Grays Anatomy The Beauty Of Anatomy"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: The NHS Established",
+            "src": "/images/nhs_established.jpg",
+            "caption": "A poster from 1948 advertising the establishment of the National Health Service."
+          }
         ]
       },
       {
@@ -6378,6 +6455,13 @@
             "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-discovery-of-penicillin-bbc-four/",
             "title": "Pain Pus And Poison The Search For Modern Medicine Discovery Of Penicillin Bbc Four"
           }
+        ],
+        "sources": [
+          {
+            "title": "Source A: Fleming and Penicillin",
+            "src": "/images/penicillin_mould.jpg",
+            "caption": "Alexander Fleming's original petri dish showing Penicillium mould killing staphylococci bacteria."
+          }
         ]
       },
       {
@@ -6828,7 +6912,14 @@
         "draw_tasks": {
           "title": "Government Anti-Smoking Campaign",
           "instructions": "Design a modern cigarette packet that complies with government regulations (plain packaging, graphic health warnings) to deter people from smoking."
-        }
+        },
+        "sources": [
+          {
+            "title": "Source A: Anti-Smoking Campaign",
+            "src": "/images/lung_cancer_campaign.jpg",
+            "caption": "A modern government health campaign warning about the dangers of smoking and lung cancer."
+          }
+        ]
       },
       {
         "id": "lesson_5_1",

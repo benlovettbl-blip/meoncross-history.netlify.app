@@ -983,7 +983,14 @@ export const unitData = {
           "title": "Medieval Medicine | Secondary History - Medicine Through Time"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: The Four Humours",
+          "src": "/images/four_humours.jpg",
+          "caption": "A medieval diagram showing the Theory of the Four Humours."
+        }
+      ]    },
     {
       "id": "lesson_1_2",
       "title": "KT1.2: How did Medieval people try to prevent and treat disease?",
@@ -1643,7 +1650,14 @@ export const unitData = {
           "title": "3 Medicine Women And Society History File"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Medieval Bloodletting",
+          "src": "/images/bloodletting.jpg",
+          "caption": "A manuscript illustration of a physician performing bloodletting."
+        }
+      ]    },
     {
       "id": "lesson_1_3",
       "title": "KT1.3: How did people respond to the Black Death?",
@@ -2107,7 +2121,14 @@ export const unitData = {
           "title": "Bbc Two A History Of Britain By Simon Schama Series 1 King Death Medieval Treatment And Beliefs On The Cause Of The Black Death"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: The Black Death",
+          "src": "/images/black_death.jpg",
+          "caption": "An illustration showing victims of the Black Death covered in buboes."
+        }
+      ]    },
     {
       "id": "lesson_2_1",
       "title": "KT2.1: Did the Renaissance change beliefs about the causes of illness?",
@@ -2581,7 +2602,14 @@ export const unitData = {
           "title": "Bbc Four The Beauty Of Anatomy Andreas Vesalius The Muscle Men"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: The Printing Press",
+          "src": "/images/printing_press.jpg",
+          "caption": "An early printing press, which helped spread new medical ideas during the Renaissance."
+        }
+      ]    },
     {
       "id": "lesson_2_2",
       "title": "KT2.2: Did treatments improve during the Renaissance?",
@@ -3034,7 +3062,14 @@ export const unitData = {
           "title": "Vesalius, ParÃ© and Harvey | Secondary History - Medicine Through Time"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Pare and Paracelsus",
+          "src": "/images/pare_treatment.jpg",
+          "caption": "Illustration of Ambroise Pare treating gunshot wounds with a soothing lotion instead of boiling oil."
+        }
+      ]    },
     {
       "id": "lesson_2_3",
       "title": "KT2.3: How significant were William Harvey and the Great Plague?",
@@ -3505,7 +3540,14 @@ export const unitData = {
           "title": "WILLIAM HARVEY - The Theory of Blood Circulation"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Harvey on the Heart",
+          "src": "/images/harvey_veins.jpg",
+          "caption": "William Harvey demonstrating the circulation of blood and valves in the veins."
+        }
+      ]    },
     {
       "id": "lesson_3_1",
       "title": "KT3.1: What breakthrough discoveries changed our understanding of disease causes?",
@@ -3975,7 +4017,14 @@ export const unitData = {
           "title": "Bbc Four Medical Mavericks Series 1 Beating Infection Robert Koch Cholera"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Pasteur in the Lab",
+          "src": "/images/pasteur_lab.jpg",
+          "caption": "Louis Pasteur working in his laboratory to prove Germ Theory."
+        }
+      ]    },
     {
       "id": "lesson_3_2",
       "title": "KT3.2: How did the Industrial Revolution transform prevention and treatment?",
@@ -4471,7 +4520,14 @@ export const unitData = {
           "title": "18th Century Medicine | Secondary History - Medicine Through Time"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Florence Nightingale",
+          "src": "/images/nightingale.jpg",
+          "caption": "Florence Nightingale tending to patients in the clean wards she established at Scutari."
+        }
+      ]    },
     {
       "id": "lesson_3_3",
       "title": "KT3.3: How significant were Edward Jenner and John Snow?",
@@ -4951,7 +5007,14 @@ export const unitData = {
           "title": "Chadwick and Snow | Secondary History - Medicine Through Time"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: The Broad Street Pump",
+          "src": "/images/broad_street_pump.jpg",
+          "caption": "John Snow's map showing deaths centered around the Broad Street pump."
+        }
+      ]    },
     {
       "id": "lesson_4_1",
       "title": "KT4.1: How have modern discoveries changed our understanding of illness?",
@@ -5413,7 +5476,14 @@ export const unitData = {
           "title": "Modern Medicine | Secondary History - Medicine Through Time"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: DNA Structure",
+          "src": "/images/dna_structure.jpg",
+          "caption": "Watson and Crick with their model of the DNA double helix in 1953."
+        }
+      ]    },
     {
       "id": "lesson_4_2",
       "title": "KT4.2: How have prevention and treatment advanced in the modern era?",
@@ -5913,7 +5983,14 @@ export const unitData = {
           "title": "5 Grays Anatomy The Beauty Of Anatomy"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: The NHS Established",
+          "src": "/images/nhs_established.jpg",
+          "caption": "A poster from 1948 advertising the establishment of the National Health Service."
+        }
+      ]    },
     {
       "id": "lesson_4_3",
       "title": "KT4.3: How was Penicillin discovered and mass-produced?",
@@ -6374,7 +6451,14 @@ export const unitData = {
           "title": "Pain Pus And Poison The Search For Modern Medicine Discovery Of Penicillin Bbc Four"
         }
       ]
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Fleming and Penicillin",
+          "src": "/images/penicillin_mould.jpg",
+          "caption": "Alexander Fleming's original petri dish showing Penicillium mould killing staphylococci bacteria."
+        }
+      ]    },
     {
       "id": "lesson_4_4",
       "title": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
@@ -6824,7 +6908,14 @@ export const unitData = {
         "title": "Government Anti-Smoking Campaign",
         "instructions": "Design a modern cigarette packet that complies with government regulations (plain packaging, graphic health warnings) to deter people from smoking."
       }
-    },
+,
+      "sources": [
+        {
+          "title": "Source A: Anti-Smoking Campaign",
+          "src": "/images/lung_cancer_campaign.jpg",
+          "caption": "A modern government health campaign warning about the dangers of smoking and lung cancer."
+        }
+      ]    },
     {
       "id": "lesson_5_1",
       "title": "KT5.1: What was the historical and medical context of the Western Front?",
