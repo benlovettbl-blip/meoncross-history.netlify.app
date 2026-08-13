@@ -693,18 +693,34 @@ allDirs.forEach(unitId => {
       html += `<h2 style="margin-top: 0;">${defaultExamTitle}</h2>`;
 
       const renderLines = (text) => {
-          if (text.includes("16 marks")) {
-              for(let i=0; i<42; i++) { html += `<div class="task-lines-large"></div>`; }
-          } else if (text.includes("12 marks") || text.includes("Explain why")) {
-              for(let i=0; i<22; i++) { html += `<div class="task-lines-large"></div>`; }
-          } else if (text.includes("8 marks")) {
-              for(let i=0; i<19; i++) { html += `<div class="task-lines-large"></div>`; }
-          } else if (text.includes("2 marks")) {
-              for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
-          } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
-              for(let i=0; i<4; i++) { html += `<div class="task-lines-large"></div>`; }
+          if (unitId === 'eee') {
+              if (text.includes("16 marks")) {
+                  for(let i=0; i<44; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("12 marks") || text.includes("Explain why")) {
+                  for(let i=0; i<22; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("8 marks")) {
+                  for(let i=0; i<16; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("2 marks")) {
+                  for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
+                  for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else {
+                  for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
+              }
           } else {
-              for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
+              if (text.includes("16 marks")) {
+                  for(let i=0; i<42; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("12 marks") || text.includes("Explain why")) {
+                  for(let i=0; i<22; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("8 marks")) {
+                  for(let i=0; i<19; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("2 marks")) {
+                  for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
+                  for(let i=0; i<4; i++) { html += `<div class="task-lines-large"></div>`; }
+              } else {
+                  for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
+              }
           }
       };
 
@@ -751,7 +767,7 @@ allDirs.forEach(unitId => {
       }
 
       if (lesson.gcse_task) {
-        html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;
+        html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto !important; break-inside: auto !important;">`;
         let defaultExamTitle2 = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
         html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">${defaultExamTitle2}</h2>`;
         
@@ -854,11 +870,19 @@ allDirs.forEach(unitId => {
 
         const renderQuestionLines = (qText) => {
             let lines = 8;
-            if (qText.includes("16 marks")) lines = 42;
-            else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 32;
-            else if (qText.includes("8 marks")) lines = 20;
-            else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 8;
-            else if (qText.includes("2 marks")) lines = 4;
+            if (unitId === 'eee') {
+                if (qText.includes("16 marks")) lines = 44;
+                else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 22;
+                else if (qText.includes("8 marks")) lines = 16;
+                else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 8;
+                else if (qText.includes("2 marks")) lines = 3;
+            } else {
+                if (qText.includes("16 marks")) lines = 42;
+                else if (qText.includes("12 marks") || qText.includes("Explain why")) lines = 32;
+                else if (qText.includes("8 marks")) lines = 20;
+                else if (qText.includes("4 marks") || qText.includes("Explain one way") || qText.includes("Explain one consequence") || qText.includes("difference") || qText.includes("Suggest one reason")) lines = 8;
+                else if (qText.includes("2 marks")) lines = 4;
+            }
             let lHtml = '';
             for(let i=0; i<lines; i++) { lHtml += `<div class="task-lines-large"></div>`; }
             return lHtml;
@@ -947,8 +971,8 @@ allDirs.forEach(unitId => {
       }
       html += `</div>`;
     }
-    // Inject General Notes Box
-    html += `<div style="">`;
+    // Inject General Notes Box and Grading Footer together to avoid orphaned footer
+    html += `<div style="page-break-inside: avoid;">`;
     html += `
       <div class="task-box" style="margin-bottom: 15px;   ">
         <h3 style="margin-top: 0; color: #334155;">Documentary / General Notes</h3>
@@ -964,7 +988,6 @@ allDirs.forEach(unitId => {
 
     // Inject Discreet Grading Footer for the Lesson
     html += `
-      <div style="margin-top: 10px;"></div>
       <div class="grading-footer">
         <div class="grading-boxes">
           <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
@@ -975,6 +998,7 @@ allDirs.forEach(unitId => {
         </div>
         <div>Teacher Comment: <span class="teacher-comment"></span></div>
       </div>
+    </div>
     `;
 
     if (lesson.full_page_map) {

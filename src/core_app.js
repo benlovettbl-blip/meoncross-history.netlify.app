@@ -1189,7 +1189,7 @@ export function initializeApp(unitData) {
     }
     
     if (lesson.exam_practice && Array.isArray(lesson.exam_practice)) {
-      extractedExamTasks.push(...lesson.exam_practice);
+      // Duplication removed: exam_practice is rendered directly below.
     }
 
     assignQuestionNumbers(lesson);
@@ -2266,14 +2266,14 @@ if (lesson.pair_share) {
         htmlPairShare += `
           <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
             <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
-              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Exam Practice</h3>
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
               <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
             </div>
         `;
         const renderQuestion = (q, qIdx) => `
               <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
                 <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                  ${q.question}
+                    ${formatQuestion(q.question)}
                   <span style="display: inline-flex; vertical-align: middle;">
                     ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
                   </span>

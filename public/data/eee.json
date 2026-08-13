@@ -159,35 +159,35 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Elizabethan society in 1558."
+            "question": "Describe one feature of Elizabethan society in 1558."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Elizabethan government in 1558."
+            "question": "Describe one feature of Elizabethan government in 1558."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the financial weaknesses Elizabeth faced upon her accession in 1558."
+            "question": "Describe one feature of the financial weaknesses Elizabeth faced upon her accession in 1558."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the French threat to England in 1558."
+            "question": "Describe one feature of the French threat to England in 1558."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Elizabeth's legitimacy was questioned when she became queen in 1558.\nStimulus: Her parents' marriage / Mary, Queen of Scots"
+            "question": "Explain why Elizabeth's legitimacy was questioned when she became queen in 1558.\nStimulus: Her parents' marriage / Mary, Queen of Scots"
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Elizabeth was reluctant to marry when she became queen.\nStimulus: Royal power / Foreign suitors"
+            "question": "Explain why Elizabeth was reluctant to marry when she became queen.\nStimulus: Royal power / Foreign suitors"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree?\nStimulus: Royal finances / The French threat"
+            "question": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree?\nStimulus: Royal finances / The French threat"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Financial weakness was Elizabeth’s main problem when she became queen in 1558.’ How far do you agree?\nStimulus: The Crown’s debt / Elizabeth’s legitimacy"
+            "question": "‘Financial weakness was Elizabeth’s main problem when she became queen in 1558.’ How far do you agree?\nStimulus: The Crown’s debt / Elizabeth’s legitimacy"
           }
         ],
         "vocab": [
@@ -536,27 +536,27 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Act of Supremacy (1559)."
+            "question": "Describe one feature of the Act of Supremacy (1559)."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Act of Uniformity (1559)."
+            "question": "Describe one feature of the Act of Uniformity (1559)."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the role of the Church of England in society."
+            "question": "Describe one feature of the role of the Church of England in society."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Royal Injunctions of 1559."
+            "question": "Describe one feature of the Royal Injunctions of 1559."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Elizabeth introduced a Religious Settlement in 1559.\nStimulus: Religious divisions in England / The 'Middle Way'"
+            "question": "Explain why Elizabeth introduced a Religious Settlement in 1559.\nStimulus: Religious divisions in England / The 'Middle Way'"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree?\nStimulus: The 'middle way' / Catholic rebels in England"
+            "question": "‘Elizabeth’s religious settlement was successful.’ How far do you agree?\nStimulus: The 'middle way' / Catholic rebels in England"
           }
         ],
         "vocab": [
@@ -881,27 +881,27 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Puritan challenge to the Religious Settlement."
+            "question": "Describe one feature of the Puritan challenge to the Religious Settlement."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Catholic challenge to the Religious Settlement."
+            "question": "Describe one feature of the Catholic challenge to the Religious Settlement."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of recusancy in early Elizabethan England."
+            "question": "Describe one feature of recusancy in early Elizabethan England."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why the Puritans challenged Elizabeth’s religious settlement.\nStimulus: Vestments / Crucifixes"
+            "question": "Explain why the Puritans challenged Elizabeth’s religious settlement.\nStimulus: Vestments / Crucifixes"
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why English Catholics challenged Elizabeth's religious settlement.\nStimulus: Papal authority / Catholic nobility"
+            "question": "Explain why English Catholics challenged Elizabeth's religious settlement.\nStimulus: Papal authority / Catholic nobility"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree?\nStimulus: Recusancy fines / The Puritan campaign against crucifixes"
+            "question": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree?\nStimulus: Recusancy fines / The Puritan campaign against crucifixes"
           }
         ],
         "vocab": [
@@ -1221,23 +1221,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Mary, Queen of Scots' claim to the English throne."
+            "question": "Describe one feature of Mary, Queen of Scots' claim to the English throne."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the relations between Elizabeth and Mary, Queen of Scots, in the years 1568–69."
+            "question": "Describe one feature of the relations between Elizabeth and Mary, Queen of Scots, in the years 1568–69."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Mary, Queen of Scots' arrival in England in 1568 created problems for Elizabeth.\nStimulus: Legitimacy / Catholic alternative"
+            "question": "Explain why Mary, Queen of Scots' arrival in England in 1568 created problems for Elizabeth.\nStimulus: Legitimacy / Catholic alternative"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Mary Queen of Scots was the greatest threat to Elizabeth’s rule.’ How far do you agree?\nStimulus: Catholic plots / Foreign intervention"
+            "question": "‘Mary Queen of Scots was the greatest threat to Elizabeth’s rule.’ How far do you agree?\nStimulus: Catholic plots / Foreign intervention"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree?\nStimulus: Elizabeth’s legitimacy / Plots"
+            "question": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree?\nStimulus: Elizabeth’s legitimacy / Plots"
           }
         ],
         "vocab": [
@@ -1601,39 +1601,39 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Revolt of the Northern Earls, 1569–70."
+            "question": "Describe one feature of the Revolt of the Northern Earls, 1569–70."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Ridolfi plot."
+            "question": "Describe one feature of the Ridolfi plot."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Throckmorton plot."
+            "question": "Describe one feature of the Throckmorton plot."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Babington plot."
+            "question": "Describe one feature of the Babington plot."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Sir Francis Walsingham’s use of spies."
+            "question": "Describe one feature of Sir Francis Walsingham’s use of spies."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why the Revolt of the Northern Earls took place in 1569.\nStimulus: Loss of political power / Religion"
+            "question": "Explain why the Revolt of the Northern Earls took place in 1569.\nStimulus: Loss of political power / Religion"
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Mary, Queen of Scots, was executed in 1587.\n[Aligned to Spec Topic] Stimulus: The Babington Plot / Sir Francis Walsingham"
+            "question": "Explain why Mary, Queen of Scots, was executed in 1587.\n[Aligned to Spec Topic] Stimulus: The Babington Plot / Sir Francis Walsingham"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The main reason for the failure of Catholic plots against Elizabeth was the work of Sir Francis Walsingham.’ How far do you agree?\nStimulus: Spies / Lack of foreign support"
+            "question": "‘The main reason for the failure of Catholic plots against Elizabeth was the work of Sir Francis Walsingham.’ How far do you agree?\nStimulus: Spies / Lack of foreign support"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569–86.’ How far do you agree?\nStimulus: Earl of Northumberland / Babington’s execution (1586)"
+            "question": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569–86.’ How far do you agree?\nStimulus: Earl of Northumberland / Babington’s execution (1586)"
           }
         ],
         "vocab": [
@@ -1931,23 +1931,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of English privateering in the New World."
+            "question": "Describe one feature of English privateering in the New World."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the religious rivalry between England and Spain."
+            "question": "Describe one feature of the religious rivalry between England and Spain."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Sir Francis Drake's activities in the Americas."
+            "question": "Describe one feature of Sir Francis Drake's activities in the Americas."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why relations between England and Spain became worse in the years 1569–88.\nStimulus: Catholic rebels in England / English trade in the Netherlands"
+            "question": "Explain why relations between England and Spain became worse in the years 1569–88.\nStimulus: Catholic rebels in England / English trade in the Netherlands"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Commercial rivalry was the main cause of the growing tension between England and Spain in the years 1570–88.’ How far do you agree?\nStimulus: Privateering / Religious differences"
+            "question": "‘Commercial rivalry was the main cause of the growing tension between England and Spain in the years 1570–88.’ How far do you agree?\nStimulus: Privateering / Religious differences"
           }
         ],
         "vocab": [
@@ -2284,23 +2284,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of English involvement in the Netherlands, 1585–88."
+            "question": "Describe one feature of English involvement in the Netherlands, 1585–88."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Drake’s raid on Cadiz in 1587."
+            "question": "Describe one feature of Drake’s raid on Cadiz in 1587."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Robert Dudley's actions in the Netherlands."
+            "question": "Describe one feature of Robert Dudley's actions in the Netherlands."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why Elizabeth signed the Treaty of Nonsuch in 1585.\nStimulus: The Netherlands / Dutch Protestant rebels"
+            "question": "Explain why Elizabeth signed the Treaty of Nonsuch in 1585.\nStimulus: The Netherlands / Dutch Protestant rebels"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Drake's raid on Cadiz was the most important reason for the delay of the Spanish Armada.’ How far do you agree?\nStimulus: Wooden barrel staves / Financial impact on Spain"
+            "question": "‘Drake's raid on Cadiz was the most important reason for the delay of the Spanish Armada.’ How far do you agree?\nStimulus: Wooden barrel staves / Financial impact on Spain"
           }
         ],
         "vocab": [
@@ -2600,23 +2600,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Spanish invasion plans for the Armada."
+            "question": "Describe one feature of the Spanish invasion plans for the Armada."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of English tactics used to defeat the Spanish Armada."
+            "question": "Describe one feature of English tactics used to defeat the Spanish Armada."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Battle of Gravelines."
+            "question": "Describe one feature of the Battle of Gravelines."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why the Spanish Armada was defeated in 1588.\nStimulus: Fireships / English ship design"
+            "question": "Explain why the Spanish Armada was defeated in 1588.\nStimulus: Fireships / English ship design"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The English defeated the Spanish Armada because of superior ship design and naval tactics.’ How far do you agree?\nStimulus: Long-range culverins / The 'Protestant Wind'"
+            "question": "‘The English defeated the Spanish Armada because of superior ship design and naval tactics.’ How far do you agree?\nStimulus: Long-range culverins / The 'Protestant Wind'"
           }
         ],
         "vocab": [
@@ -2927,31 +2927,31 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of education in Elizabethan Grammar Schools."
+            "question": "Describe one feature of education in Elizabethan Grammar Schools."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Elizabethan Petty Schools."
+            "question": "Describe one feature of Elizabethan Petty Schools."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Elizabethan theatre."
+            "question": "Describe one feature of the Elizabethan theatre."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Elizabethan sport and pastimes."
+            "question": "Describe one feature of Elizabethan sport and pastimes."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why there was an increase in the number of schools in early Elizabethan England.\nStimulus: Humanism / Growth of trade and business"
+            "question": "Explain why there was an increase in the number of schools in early Elizabethan England.\nStimulus: Humanism / Growth of trade and business"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The theatre was the most popular form of entertainment for all classes.’ How far do you agree?\nStimulus: The groundlings / Royal patronage"
+            "question": "‘The theatre was the most popular form of entertainment for all classes.’ How far do you agree?\nStimulus: The groundlings / Royal patronage"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘There was little change in education in Early Elizabethan England.’ How far do you agree?\nStimulus: Petty schools / Education for girls"
+            "question": "‘There was little change in education in Early Elizabethan England.’ How far do you agree?\nStimulus: Petty schools / Education for girls"
           }
         ],
         "vocab": [
@@ -3263,23 +3263,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the 1572 Vagabonds Act."
+            "question": "Describe one feature of the 1572 Vagabonds Act."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the 1576 Poor Relief Act."
+            "question": "Describe one feature of the 1576 Poor Relief Act."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the Houses of Correction."
+            "question": "Describe one feature of the Houses of Correction."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why there was an increase in poverty in the years 1558–88.\nStimulus: Unemployment / Bad harvests"
+            "question": "Explain why there was an increase in poverty in the years 1558–88.\nStimulus: Unemployment / Bad harvests"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘The main reason for the increase in poverty in the years 1558–88 was the increasing population of England.’ How far do you agree?\nStimulus: Demand for food / Enclosure and sheep farming"
+            "question": "‘The main reason for the increase in poverty in the years 1558–88 was the increasing population of England.’ How far do you agree?\nStimulus: Demand for food / Enclosure and sheep farming"
           }
         ],
         "vocab": [
@@ -3600,23 +3600,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Francis Drake’s circumnavigation of the globe."
+            "question": "Describe one feature of Francis Drake’s circumnavigation of the globe."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the impact of new technology on Elizabethan exploration."
+            "question": "Describe one feature of the impact of new technology on Elizabethan exploration."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why exploration by the English increased in the years 1558–88.\nStimulus: Navigational instruments / Drive to expand trade"
+            "question": "Explain why exploration by the English increased in the years 1558–88.\nStimulus: Navigational instruments / Drive to expand trade"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘New technology was the main reason why exploration by the English increased in the years 1558–88.’ How far do you agree?\nStimulus: Quadrant and astrolabe / Privateering profits"
+            "question": "‘New technology was the main reason why exploration by the English increased in the years 1558–88.’ How far do you agree?\nStimulus: Quadrant and astrolabe / Privateering profits"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Drake’s most significant achievement, in the years 1558–88, was his circumnavigation of the globe.’ How far do you agree?\nStimulus: The Golden Hind / Raid on Cadiz"
+            "question": "‘Drake’s most significant achievement, in the years 1558–88, was his circumnavigation of the globe.’ How far do you agree?\nStimulus: The Golden Hind / Raid on Cadiz"
           }
         ],
         "vocab": [
@@ -3925,23 +3925,23 @@
         "exam_practice": [
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of the failure of the first Virginia colony."
+            "question": "Describe one feature of the failure of the first Virginia colony."
           },
           {
             "type": "Feature (2 Marks)",
-            "text": "Describe one feature of Sir Walter Raleigh's role in the attempted colonisation of Virginia."
+            "question": "Describe one feature of Sir Walter Raleigh's role in the attempted colonisation of Virginia."
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why the first colony in Virginia failed.\nStimulus: Native Americans / Damage to The Tiger"
+            "question": "Explain why the first colony in Virginia failed.\nStimulus: Native Americans / Damage to The Tiger"
           },
           {
             "type": "Explain Why (12 Marks)",
-            "text": "Explain why there was an attempt to colonise Virginia in 1585.\nStimulus: Sir Walter Raleigh / New trade routes"
+            "question": "Explain why there was an attempt to colonise Virginia in 1585.\nStimulus: Sir Walter Raleigh / New trade routes"
           },
           {
             "type": "Judgment (16 Marks)",
-            "text": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree?\nStimulus: The choice of colonists / Lack of food supplies"
+            "question": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree?\nStimulus: The choice of colonists / Lack of food supplies"
           }
         ],
         "vocab": [

@@ -60,8 +60,13 @@ export function renderQuizZone(container, unitData) {
                 });
             }
             if (l.do_now && l.do_now.type === "questions") {
-                l.do_now.items.forEach(item => {
-                    addFlashcard(item.question, item.answer);
+                const items = l.do_now.items || l.do_now.tasks || [];
+                items.forEach(item => {
+                    const qText = item.question || item.q;
+                    const aText = item.answer || item.a;
+                    if (qText && aText) {
+                        addFlashcard(qText, aText);
+                    }
                 });
             }
             if (l.knowledge_check) {
