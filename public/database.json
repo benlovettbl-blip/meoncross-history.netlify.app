@@ -31410,6 +31410,14 @@
               }
             ]
           },
+          "learning_objectives": {
+            "overarching": "To understand the origins of the Industrial Revolution and the impact of Henry Cort.",
+            "scaffolded": [
+              "Describe the difference between the domestic system and the factory system.",
+              "Explain how Henry Cort solved the 'pig iron' crisis using the puddling process.",
+              "Evaluate the importance of Cort's geographical location versus his technological genius."
+            ]
+          },
           "do_now": {
             "title": "Do Now: Recall",
             "type": "questions",

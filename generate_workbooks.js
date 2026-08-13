@@ -146,8 +146,8 @@ allDirs.forEach(unitId => {
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
     .watermark { position: fixed; bottom: 10px; right: 10px; font-size: 8pt; color: #94a3b8; opacity: 0.6; font-family: 'Inter', sans-serif; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
-    th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
-    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 10px; padding-bottom: 10px; }
+    th {  color: white; padding-top: 6px; padding-bottom: 6px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
+    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 6px; padding-bottom: 6px; }
     tr:last-child td { border-bottom: none; }
     td:last-child, th:last-child { border-right: none; }
     tbody tr:nth-child(even) {  }
@@ -210,17 +210,17 @@ allDirs.forEach(unitId => {
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
       <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>
       
-      <div style="margin-top: 20px; width: 100%; text-align: left; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 12pt;">
+      <div style="margin-top: 15px; width: 100%; text-align: left; padding: 15px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 10pt;">
           <thead>
             <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
-              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 8px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
             </tr>
           </thead>
           <tbody>
