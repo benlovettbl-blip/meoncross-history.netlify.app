@@ -136,7 +136,7 @@ allDirs.forEach(unitId => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 15pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: avoid !important; }
+    .task-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 15px; margin-top: 15px; margin-bottom: 15px; width: 100%; page-break-inside: auto; }
@@ -160,7 +160,7 @@ allDirs.forEach(unitId => {
         img { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: avoid !important; }
+        .task-box { page-break-inside: auto; }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
@@ -190,37 +190,41 @@ allDirs.forEach(unitId => {
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:10px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #333; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:10px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #333; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:10px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
+      }
+      for(let r=0; r<3; r++) {
+         trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:10px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
       }
     });
 
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        trackerRows += `<tr><td style="border:1px solid #333; padding:10px;">${a.title}</td><td style="border:1px solid #333; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #333; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td><td style="border:1px solid #333; padding:10px;"></td></tr>`;
+        trackerRows += `<tr><td style="border:1px solid #cbd5e1; padding:10px;">${a.title}</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:10px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:10px;"></td><td style="border:1px solid #cbd5e1; padding:10px;"></td></tr>`;
       });
     }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center;">
-      <h1 style="font-size: 32pt; margin-bottom: 20px; color: #1e3a8a;">\${periodTitle}</h1>
-      <h2 style="font-size: 16pt; margin-bottom: 20px; color: #64748b; border: none;">\${unitData.title}</h2>
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
+      <h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>
       
-      <div style="margin-top: 30px; text-align: left; padding: 20px; border: 2px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc;">
-        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 13pt;">
+      <div style="margin-top: 20px; width: 100%; text-align: left; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 12pt;">
           <thead>
             <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 60%; text-align: left;">Lesson Title</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Do Now</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Tasks</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Review</th>
-              <th style="padding: 14px; border: 1px solid #cbd5e1; width: 10%; text-align: center;">Score</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 12px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
             </tr>
           </thead>
           <tbody>
-            \${trackerRows}
+            ${trackerRows}
           </tbody>
         </table>
       </div>
@@ -347,11 +351,19 @@ allDirs.forEach(unitId => {
         shuffledEvents.forEach((ev, idx) => {
           const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
           const m = margins[idx % margins.length];
-          html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
-                      <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
-                      <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
-                      <span style="font-size: 9pt;">${ev.detail || ''}</span>
-                   </div>`;
+          if (unitId === 'cme_new') {
+            html += `<div style="width: 32%; padding: 2px; margin-bottom: 5px; box-sizing: border-box; box-shadow: 2px 2px 0px #aaa;">
+                        <strong style="font-size: 8pt;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 8pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 7.5pt;">${ev.detail || ''}</span>
+                     </div>`;
+          } else {
+            html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
+                        <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 9pt;">${ev.detail || ''}</span>
+                     </div>`;
+          }
         });
         html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
 
@@ -687,7 +699,7 @@ allDirs.forEach(unitId => {
     }
 
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
-    if (hasExamTask) {
+    if (hasExamTask && unitId !== 'cme_new') {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
       let defaultExamTitle = ['water_and_sanitation', 'early_modern_world', 'change_1450_1750', 'industrialisation_and_empire', 'great_war', 'great_war_part2'].includes(unitId) ? 'Writing Practice' : 'GCSE Exam Practice';
       html += `<h2 style="margin-top: 0;">${defaultExamTitle}</h2>`;
@@ -705,19 +717,18 @@ allDirs.forEach(unitId => {
               } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
                   for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
               } else {
-                  for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
               }
           } else {
               if (text.includes("16 marks")) {
-                  for(let i=0; i<42; i++) { html += `<div class="task-lines-large"></div>`; }
+                  for(let i=0; i<38; i++) { html += `<div class="task-lines-large"></div>`; }
               } else if (text.includes("12 marks") || text.includes("Explain why")) {
-                  for(let i=0; i<22; i++) { html += `<div class="task-lines-large"></div>`; }
+                  for(let i=0; i<20; i++) { html += `<div class="task-lines-large"></div>`; }
               } else if (text.includes("8 marks")) {
-                  for(let i=0; i<19; i++) { html += `<div class="task-lines-large"></div>`; }
+                  for(let i=0; i<16; i++) { html += `<div class="task-lines-large"></div>`; }
               } else if (text.includes("2 marks")) {
                   for(let i=0; i<3; i++) { html += `<div class="task-lines-large"></div>`; }
               } else if (text.includes("4 marks") || text.includes("Explain one way") || text.includes("Explain one consequence")) {
-                  for(let i=0; i<4; i++) { html += `<div class="task-lines-large"></div>`; }
+                  for(let i=0; i<7; i++) { html += `<div class="task-lines-large"></div>`; }
               } else {
                   for(let i=0; i<8; i++) { html += `<div class="task-lines-large"></div>`; }
               }
@@ -1020,6 +1031,78 @@ allDirs.forEach(unitId => {
         appendixData.push({ title: lesson.title, videos: allVideos });
     }
   });
+
+  if (unitId === 'cme_new') {
+      let allExamTasksHtml = '';
+      periodLessons.forEach(lesson => {
+          let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+          if (hasExamTask) {
+              allExamTasksHtml += `<div style="margin-bottom: 25px; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; page-break-inside: avoid;">`;
+              allExamTasksHtml += `<h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 13pt;">From ${lesson.title}</h4>`;
+              
+              if (lesson.extended && lesson.extended.question) {
+                  allExamTasksHtml += `<div style="margin-bottom: 10px;"><strong>Q. ${formatText(lesson.extended.question)}</strong></div>`;
+              }
+              
+              if (lesson.gcse_task) {
+                  if (lesson.gcse_task.tasks) {
+                      lesson.gcse_task.tasks.forEach(task => {
+                          allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q${task.qNum ? task.qNum + '.' : ''} ${task.text}</strong></div>`;
+                      });
+                  } else if (lesson.gcse_task.topic) {
+                      let topicText = lesson.gcse_task.topic || '';
+                      let isNarrative = topicText.toLowerCase().includes("write a narrative account");
+                      if (isNarrative) {
+                          allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+                      } else {
+                          allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+                      }
+                      
+                      if (lesson.gcse_task.sources) {
+                          lesson.gcse_task.sources.forEach(srcObj => {
+                              if (srcObj.type !== 'visual') {
+                                  allExamTasksHtml += `<div style="margin-top: 10px; padding: 10px; border-left: 3px solid #ccc; font-style: italic; font-size: 11pt;"><strong>${srcObj.title}:</strong> ${srcObj.text}</div>`;
+                              }
+                          });
+                      }
+                  }
+              }
+              
+              if (lesson.exam_practice) {
+                  let epArray = lesson.exam_practice;
+                  if (!Array.isArray(lesson.exam_practice) && lesson.exam_practice.questions) {
+                      epArray = lesson.exam_practice.questions;
+                  }
+                  if (epArray && epArray.length > 0) {
+                      epArray.forEach((ep, index) => {
+                          let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
+                          if (ep.question.includes('marks)')) marksStr = '';
+                          allExamTasksHtml += `<div style="margin-top: 10px;"><strong>${index + 1}. ${formatText(ep.question)}${marksStr}</strong></div>`;
+                      });
+                  }
+              }
+              
+              allExamTasksHtml += `</div>`;
+          }
+      });
+      
+      if (allExamTasksHtml) {
+          html += `<div style="page-break-before: always;">
+            <h2 style="font-size: 24pt; color: #1e3a8a; text-align: center; border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; margin-bottom: 30px;">GCSE Exam Practice: Question Bank</h2>
+            <p style="font-size: 12pt; text-align: center; margin-bottom: 30px; font-style: italic;">Choose an exam question from the bank below and answer it on the blank lined pages that follow.</p>
+            ${allExamTasksHtml}
+          </div>`;
+          
+          for (let p = 0; p < 4; p++) {
+              html += `<div style="page-break-before: always; padding-top: 20px;">`;
+              html += `<h3 style="margin-top: 0; color: #64748b; margin-bottom: 20px;">Exam Practice Space (Page ${p+1})</h3>`;
+              for(let i=0; i<32; i++) {
+                  html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+          }
+      }
+  }
 
   if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
     html += `

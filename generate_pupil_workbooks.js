@@ -443,11 +443,19 @@ allDirs.forEach(unitId => {
         shuffledEvents.forEach((ev, idx) => {
           const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
           const m = margins[idx % margins.length];
-          html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
-                      <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
-                      <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
-                      <span style="font-size: 9pt;">${ev.detail || ''}</span>
-                   </div>`;
+          if (unitId === 'cme_new') {
+            html += `<div style="width: 31%; padding: 3px; box-sizing: border-box; ${m} box-shadow: 2px 2px 0px #aaa;">
+                        <strong style="font-size: 8pt;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 8pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 7.5pt;">${ev.detail || ''}</span>
+                     </div>`;
+          } else {
+            html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
+                        <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 9pt;">${ev.detail || ''}</span>
+                     </div>`;
+          }
         });
         html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
 

@@ -83,6 +83,7 @@ allDirs.forEach(unitId => {
   }
 
   unitData.lessons.forEach((lesson, lIdx) => {
+    lesson.globalIndex = lIdx;
     if (typeof sanitizeLessonData === 'function') sanitizeLessonData(lesson);
     
     const startMarker = pdfMarkers.find(m => m.marker === `L${lIdx}_Start`);
@@ -157,7 +158,7 @@ allDirs.forEach(unitId => {
     .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px;  }
     .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
     @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
-        img { max-width: 100% !important; object-fit: contain !important;  }
+        img:not([src$=".svg"]) { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
         .task-box { page-break-inside: auto; }
@@ -165,7 +166,7 @@ allDirs.forEach(unitId => {
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
       }
-      img { max-width: 100% !important; object-fit: contain !important;  }
+      img:not([src$=".svg"]) { max-width: 100% !important; object-fit: contain !important;  }
       .source-container {  }
     }
 </style>
@@ -253,7 +254,7 @@ allDirs.forEach(unitId => {
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     
-    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
     html += `<div style="margin-bottom: 10px;"></div>`;
     
     if (lesson.a4_map) {
@@ -442,7 +443,7 @@ allDirs.forEach(unitId => {
         if(source.src || source.caption || sourceContent) {
           html += `
             <div class="source-container" style="">
-              <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Source_${sIdx}]]</span>
+              <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
               ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
               ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
@@ -544,12 +545,12 @@ allDirs.forEach(unitId => {
             html += `<div class="task-box">`;
             block.tasks.forEach((task, tIdx) => {
               if (task.type === 'draw') {
-                 html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Task_${bIdx}_${tIdx}]]</span>Q${task.qNum}: ${task.text || task.question}</div>`;
+                 html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${task.qNum}: ${task.text || task.question}</div>`;
               } else {
                  if (task.type === 'vocab_match' || ((unitId === 'great_war' || unitId === 'great_war_part2') && task.type === 'drag_drop_timeline')) {
                     // Do nothing
                   } else {
-                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
+                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
                   }
                  let linesToDraw = 3;
                  let tText = (task.text || task.question || '').toLowerCase();
@@ -726,12 +727,16 @@ allDirs.forEach(unitId => {
       
       if (lesson.sources && lesson.sources.length > 0 && isGCSE) {
         html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
+        if (unitId === 'cme_new') {
+          html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-evenly;">`;
+        }
         lesson.sources.forEach((source, sIdx) => {
           let sourceContent = source.content || source.text;
           if(source.src || source.caption || sourceContent) {
+            let containerStyle = (unitId === 'cme_new') ? `style="flex: 1 1 45%; max-width: 48%; box-sizing: border-box; page-break-inside: avoid; border: 1px solid #ccc; padding: 10px; border-radius: 6px; box-shadow: 1px 1px 4px rgba(0,0,0,0.05); margin-bottom: 0;"` : `style=""`;
             html += `
-              <div class="source-container" style="">
-                <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lessonIndex}_Source_${sIdx}]]</span>
+              <div class="source-container" ${containerStyle}>
+                <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
                 ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
                 ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
@@ -741,6 +746,9 @@ allDirs.forEach(unitId => {
             `;
           }
         });
+        if (unitId === 'cme_new') {
+          html += `</div>`;
+        }
         html += `</div>`;
       }
 
