@@ -160,9 +160,9 @@ export const unitData = {
       ],
       "sources": [
         {
-          "title": "Source A: The Funtley Ironworks",
+          "title": "Source A: The Puddling Furnace",
           "src": "/images/funtley_ironworks.jpg",
-          "caption": "Henry Cort's ironworks in Funtley, Hampshire, where he pioneered the puddling process."
+          "caption": "A historical cross-section diagram of a puddling furnace, the revolutionary process Henry Cort pioneered at his Funtley ironworks in Hampshire."
         }
       ],
       "exam_practice": {

@@ -29,13 +29,19 @@ export function renderQuizZone(container, unitData) {
             };
 
             // For quizPack (structured quizzes)
-            if (l.quiz && Array.isArray(l.quiz)) {
-                l.quiz.forEach(q => {
+            const lessonQuiz = l.quiz || l.quiz_questions;
+            if (lessonQuiz && Array.isArray(lessonQuiz)) {
+                lessonQuiz.forEach(q => {
                     const qText = q.question || q.q;
                     if (qText === "Who is this historical figure?") {
                         portraitBank.push({ q: qText, a: q.options ? q.options[q.answer] : q.a, options: q.options, img: q.img, source: l.title });
                     } else {
-                        addQuestion(qText, q.options, q.options ? q.options[q.answer] : q.a, q.img);
+                        // Handle cases where the answer might be an index instead of text, and ensure robust option handling
+                        let answerText = q.a || q.answer;
+                        if (q.options && typeof q.answer === 'number') {
+                            answerText = q.options[q.answer];
+                        }
+                        addQuestion(qText, q.options, answerText, q.img);
                     }
                 });
             } 

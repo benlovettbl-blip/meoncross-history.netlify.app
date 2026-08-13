@@ -31389,14 +31389,24 @@
       "lessons": [
         {
           "id": "lesson_1",
-          "title": "What powered the Industrial Revolution? (Shift to steam/factories; Case Study: Henry Cort at Funtley Ironworks)",
+          "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
           "teacher_notes": {
-            "primer": "This lesson focuses on: What powered the Industrial Revolution? (Shift to steam/factories; Case Study: Henry Cort at Funtley Ironworks). Students will explore the key events and concepts.",
+            "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
             "objectives": [
               {
-                "objective": "Understand the core themes of What powered the Industrial Revolution? (Shift to steam/factories; Case Study: Henry Cort at Funtley Ironworks).",
-                "primer": "Guide students through the narrative, focusing on key historical shifts.",
-                "question": "What is the most significant takeaway from this lesson?"
+                "objective": "Understand the difference between the domestic system and the factory system.",
+                "primer": "Use the Core Narrative to explain how steam power freed manufacturing from being reliant on fast-flowing rivers.",
+                "question": "What was the main difference in how goods were made before and after the invention of steam power?"
+              },
+              {
+                "objective": "Explain the significance of Henry Cort's puddling and rolling processes.",
+                "primer": "Emphasize how Cort solved the 'pig iron' crisis by burning off carbon impurities, allowing Britain to stop importing expensive Swedish/Russian iron.",
+                "question": "Why was 'pig iron' a major problem for the Royal Navy, and how did the puddling process fix it?"
+              },
+              {
+                "objective": "Evaluate the importance of location versus innovation in Cort's success.",
+                "primer": "Guide students through the Paragraph Scaffold, helping them weigh the proximity of Portsmouth dockyards against his technological genius.",
+                "question": "Would Henry Cort's inventions have been as successful if he hadn't been located near Portsmouth?"
               }
             ]
           },
@@ -31405,20 +31415,92 @@
             "type": "questions",
             "items": [
               {
-                "question": "Recall question from previous lesson.",
-                "answer": "A"
+                "question": "What is meant by the term 'Divine Right of Kings'?",
+                "answer": "The belief that a monarch receives their right to rule directly from God."
+              },
+              {
+                "question": "Who became King after the English Civil War ended and Oliver Cromwell died?",
+                "answer": "Charles II (The Restoration)."
+              },
+              {
+                "question": "Why did the Gunpowder Plot of 1605 fail?",
+                "answer": "Guy Fawkes was discovered in the cellars with the gunpowder before it could be lit."
               }
             ]
           },
           "narrative_blocks": [
             {
-              "title": "Introduction",
-              "text": "Placeholder narrative.",
+              "title": "The Core Narrative",
+              "text": "Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and machines were powered by wind, horses, or water. However, the invention of the steam engine changed everything. Steam power allowed massive factories to be built anywhere, not just next to fast-flowing rivers. This shift from farming to mass factory production is known as the **Industrial Revolution**.\n\nTo build these new steam engines, factories, railways, and bridges, Britain needed one crucial material: **iron**.",
               "tasks": [
                 {
                   "type": "text",
-                  "text": "Task 1: Placeholder task.",
-                  "model": "Model answer placeholder."
+                  "qNum": 1,
+                  "text": "What was the \"domestic system\"?",
+                  "model": "The system before the Industrial Revolution where goods were made by hand in people's own homes."
+                }
+              ]
+            },
+            {
+              "title": "The Problem with British Iron",
+              "text": "In the early 1700s, British iron was of terrible quality. It was known as \"pig iron\"—it was brittle and snapped easily because it was full of impurities (carbon). If the Royal Navy wanted strong, flexible iron (known as \"wrought iron\") for its ship masts and cannons, it had to buy it from Sweden or Russia at a massive cost.",
+              "tasks": []
+            },
+            {
+              "title": "Local History Case Study: Henry Cort at Funtley Ironworks",
+              "text": "The man who solved this national crisis lived right here in Hampshire. Henry Cort was an ambitious navy agent who realized he could make a fortune if he could figure out how to mass-produce high-quality British iron. In 1775, he took over the **Funtley Ironworks** (just north of Fareham) because it was ideally located to supply the massive Royal Navy dockyards in nearby Portsmouth.\n\nAt Funtley, Cort invented two revolutionary processes in 1783 and 1784:\n\n1. **The Puddling Process:** He invented a new type of furnace where molten iron was stirred (or \"puddled\") with long iron rods to burn off carbon impurities.\n2. **The Rolling Mill:** Instead of hammering the iron into shape by hand, Cort passed the red-hot iron through heavy, grooved rollers to squeeze out the last impurities and shape it into rails and bars.",
+              "hinge_question": {
+                "qNum": "H1",
+                "question": "What was the primary purpose of the 'Puddling Process' invented by Cort?",
+                "options": [
+                  "To hammer the iron into shape by hand.",
+                  "To stir molten iron and burn off carbon impurities.",
+                  "To make iron brittle and easy to snap.",
+                  "To import iron from Sweden more efficiently."
+                ]
+              },
+              "tasks": [
+                {
+                  "type": "text",
+                  "qNum": 2,
+                  "text": "Why did Henry Cort decide to take over the Funtley Ironworks in 1775?",
+                  "model": "Because it was located near the Portsmouth dockyards, meaning he could easily sell iron to the Royal Navy."
+                },
+                {
+                  "type": "text",
+                  "qNum": 3,
+                  "text": "What two major inventions did Henry Cort patent at Funtley in the 1780s?",
+                  "model": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
+                }
+              ]
+            },
+            {
+              "title": "The Impact and the Tragedy",
+              "text": "Cort's inventions at Funtley changed the world. They allowed British iron production to multiply by 400% over the next twenty years, earning Cort the nickname \"the father of the iron trade.\" The rails for the new train networks and the iron for the ships that built the British Empire were made using Cort's methods.\n\nTragically, Cort did not die a wealthy hero. His business partner, Adam Jellicoe, had secretly stolen the money used to fund the Funtley Ironworks from the Royal Navy. When Jellicoe died, the government seized Cort's patents and ruined him. Cort died bankrupt and in poverty, but his local ingenuity powered a global empire.",
+              "tasks": [
+                {
+                  "type": "text",
+                  "qNum": 4,
+                  "text": "Why did Cort die in poverty despite his world-changing inventions?",
+                  "model": "His business partner, Adam Jellicoe, embezzled Navy funds to pay for the ironworks, causing the government to seize Cort's patents and ruin him financially."
+                },
+                {
+                  "type": "analysis",
+                  "qNum": 5,
+                  "text": "Why were Henry Cort's inventions so vital to the growth of the British Empire?",
+                  "model": "Before Cort, British iron was too brittle, and the country relied on expensive imports from Russia and Sweden. Cort's puddling and rolling processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron was essential for building the steam engines, railways, and naval ships that powered Britain's global dominance in the 19th century."
+                }
+              ]
+            },
+            {
+              "title": "Significance & Judgement",
+              "text": "When assessing why the Funtley Ironworks was so successful in kickstarting the Industrial Revolution's iron industry, historians debate whether it was purely a matter of geographical luck (being close to the massive Royal Navy dockyards at Portsmouth) or whether it was entirely down to Cort's technological genius.",
+              "tasks": [
+                {
+                  "type": "extended",
+                  "qNum": 6,
+                  "text": "Write a structured paragraph answering the following: \"To what extent was the proximity to the Portsmouth dockyards the most important factor in the success of the Funtley Ironworks?\"",
+                  "model": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
                 }
               ]
             }
@@ -31426,39 +31508,89 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-black-and-british-a-forgotten-history-moral-mission-mississippi-cotton/",
-              "title": "Black and British: Moral Mission (Mississippi Cotton)"
+              "title": "Black and British: Moral Mission (Mississippi Cotton)",
+              "duration": "10 mins 15 secs"
             }
           ],
           "vocab": [
             {
               "term": "Industrial Revolution",
-              "definition": "The transition to new manufacturing processes, moving from hand production to machines."
+              "definition": "The rapid transformation of Britain from an agricultural society to a modern industrial nation, driven by factories and steam power."
             },
             {
-              "term": "Steam Engine",
-              "definition": "An engine that uses the expansion or rapid condensation of steam to generate power, heavily used in early factories."
+              "term": "Pig Iron",
+              "definition": "Basic, impure iron that is brittle and snaps easily."
+            },
+            {
+              "term": "Wrought Iron",
+              "definition": "High-quality, purified iron that is tough, flexible, and can be shaped."
+            },
+            {
+              "term": "Puddling Process",
+              "definition": "Henry Cort's invention of stirring molten iron in a furnace to burn off impurities."
+            },
+            {
+              "term": "Rolling Mill",
+              "definition": "Cort's invention of passing hot iron through heavy grooved cylinders to shape it into useful bars and rails."
             }
           ],
           "sources": [
             {
-              "title": "Source A: The Funtley Ironworks",
+              "title": "Source A: The Puddling Furnace",
               "src": "/images/funtley_ironworks.jpg",
-              "caption": "Henry Cort's ironworks in Funtley, Hampshire, where he pioneered the puddling process."
+              "caption": "A historical cross-section diagram of a puddling furnace, the revolutionary process Henry Cort pioneered at his Funtley ironworks in Hampshire."
             }
           ],
           "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain the significance of steam power during the Industrial Revolution.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: Steam power was significant because...",
-                  "Sentence Starter: For example, factories no longer needed to be built next to rivers..."
-                ]
-              }
-            ]
-          }
+            "questions": []
+          },
+          "quiz_questions": [
+            {
+              "question": "Before the Industrial Revolution, how were most goods manufactured in Britain?",
+              "answer": "By hand in people's homes, known as the domestic system.",
+              "options": [
+                "By hand in people's homes, known as the domestic system.",
+                "By massive steam-powered machines in city factories.",
+                "They were imported entirely from factories in America."
+              ]
+            },
+            {
+              "question": "Why was British \"pig iron\" practically useless for building ships and bridges in the early 1700s?",
+              "answer": "It was full of carbon impurities, making it brittle and easy to snap.",
+              "options": [
+                "It was full of carbon impurities, making it brittle and easy to snap.",
+                "It was far too heavy to be transported by water.",
+                "It was too soft and melted easily in the sun."
+              ]
+            },
+            {
+              "question": "What did Henry Cort's \"Puddling Process\" involve?",
+              "answer": "Stirring molten iron with long rods in a furnace to burn off impurities.",
+              "options": [
+                "Stirring molten iron with long rods in a furnace to burn off impurities.",
+                "Hammering cold iron by hand until it flattened out.",
+                "Pouring liquid iron into molds to make cannonballs."
+              ]
+            },
+            {
+              "question": "Why did Henry Cort choose to locate his ironworks at Funtley, near Fareham?",
+              "answer": "Because it was perfectly located to supply the massive Royal Navy dockyards at Portsmouth.",
+              "options": [
+                "Because it was perfectly located to supply the massive Royal Navy dockyards at Portsmouth.",
+                "Because Fareham had the largest coal mines in the south of England.",
+                "Because the King ordered all factories to be built in Hampshire."
+              ]
+            },
+            {
+              "question": "What was the tragic outcome of Henry Cort's life?",
+              "answer": "He was ruined by his partner's financial scandal and died in poverty, despite his inventions changing the world.",
+              "options": [
+                "He was ruined by his partner's financial scandal and died in poverty, despite his inventions changing the world.",
+                "He became the richest man in Britain and bought the entire town of Fareham.",
+                "He was arrested for selling his iron secrets to the French Navy."
+              ]
+            }
+          ]
         },
         {
           "id": "lesson_2",
