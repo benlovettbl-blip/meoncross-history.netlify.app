@@ -95,6 +95,12 @@ export const unitData = {
               "qNum": 3,
               "text": "What two major inventions did Henry Cort patent at Funtley in the 1780s?",
               "model": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
+            },
+            {
+              "type": "analysis",
+              "qNum": 4,
+              "text": "Study Source A. How does the physical design of the puddling furnace show that Cort was trying to solve the problem of 'pig iron' impurities?",
+              "model": "The cross-section in Source A shows that the burning coal is kept separate from the melting iron. This prevented the carbon in the coal from mixing with the iron, allowing workers to 'puddle' (stir) the iron and burn off the remaining impurities, creating strong wrought iron."
             }
           ]
         },
@@ -130,6 +136,12 @@ export const unitData = {
                 "Conclusion: Ultimately, the most important factor was [geography/innovation] because..."
               ],
               "model": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
+            },
+            {
+              "type": "text",
+              "qNum": 8,
+              "text": "Chronology Challenge: Place the following in the correct causal order and write one sentence explaining how each led to the next: Watt's Steam Engine, The Domestic System, Cort's Puddling Furnace.",
+              "model": "1. The Domestic System (slow, hand-made production). 2. Watt's Steam Engine (allowed mass factory production anywhere, but required huge amounts of strong iron to build). 3. Cort's Puddling Furnace (invented to mass-produce the high-quality iron needed for the new steam engines and railways)."
             }
           ]
         }
@@ -171,7 +183,18 @@ export const unitData = {
         }
       ],
       "exam_practice": {
-        "questions": []
+        "questions": [
+          {
+            "type": "features",
+            "question": "Describe one feature of the domestic system.",
+            "marks": 2
+          },
+          {
+            "type": "features",
+            "question": "Describe one feature of Henry Cort's puddling process.",
+            "marks": 2
+          }
+        ]
       },
       "quiz_questions": [
         {
