@@ -54,14 +54,14 @@ export const unitData = {
       },
       "narrative_blocks": [
         {
-          "title": "The Core Narrative",
-          "text": "Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and machines were powered by wind, horses, or water. However, the invention of the steam engine changed everything. Steam power allowed massive factories to be built anywhere, not just next to fast-flowing rivers. This shift from farming to mass factory production is known as the **Industrial Revolution**.\n\nTo build these new steam engines, factories, railways, and bridges, Britain needed one crucial material: **iron**.",
+          "title": "What Powered the Revolution?",
+          "text": "Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
           "tasks": [
             {
               "type": "text",
               "qNum": 1,
-              "text": "What was the \"domestic system\"?",
-              "model": "The system before the Industrial Revolution where goods were made by hand in people's own homes."
+              "text": "Why was James Watt's improvement of the steam engine so significant for the location of factories?",
+              "model": "Before Watt's engine, factories had to be built next to fast-flowing rivers for water power. Watt's efficient steam engine allowed factories to be built anywhere, powered by coal."
             }
           ]
         },

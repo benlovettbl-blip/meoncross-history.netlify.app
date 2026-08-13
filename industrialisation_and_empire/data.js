@@ -118,12 +118,17 @@ export const unitData = {
         },
         {
           "title": "Significance & Judgement",
-          "text": "When assessing why the Funtley Ironworks was so successful in kickstarting the Industrial Revolution's iron industry, historians debate whether it was purely a matter of geographical luck (being close to the massive Royal Navy dockyards at Portsmouth) or whether it was entirely down to Cort's technological genius.",
+          "text": "When assessing why the Funtley Ironworks was so successful in kickstarting the Industrial Revolution's iron industry, historians debate two main factors:\n\n**1. Geographical Luck (Location):** Funtley was situated just a few miles from the Portsmouth Royal Navy dockyards. In the 18th century, before the invention of trains, transporting heavy iron overland was incredibly expensive. Being located right next door to the largest industrial buyer of iron in the world (the Royal Navy) meant Cort had a massive, guaranteed market for his goods. Geography provided the economic opportunity.\n\n**2. Technological Genius (Innovation):** However, location alone wasn't enough. The Royal Navy desperately needed *wrought* iron (flexible and strong) for its ships and cannons, not the brittle British *pig iron* that snapped easily. Without Cort's brilliant inventions—the Puddling Furnace to burn off impurities and the Rolling Mill to speed up shaping—he would have had nothing useful to sell to the Navy. Innovation provided the solution to a national crisis.\n\nHistorians must weigh these two factors to decide which was *more* important to his success.",
           "tasks": [
             {
               "type": "extended",
               "qNum": 6,
               "text": "Write a structured paragraph answering the following: \"To what extent was the proximity to the Portsmouth dockyards the most important factor in the success of the Funtley Ironworks?\"",
+              "hints": [
+                "Sentence Starter 1: On one hand, the location near Portsmouth dockyards was extremely important because...",
+                "Sentence Starter 2: However, it can be argued that Cort's technological genius was even more important because...",
+                "Conclusion: Ultimately, the most important factor was [geography/innovation] because..."
+              ],
               "model": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
             }
           ]
