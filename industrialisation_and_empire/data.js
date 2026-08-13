@@ -256,47 +256,131 @@ export const unitData = {
       "id": "lesson_2",
       "title": "Was industrial work progress or punishment? (Factory conditions, child labor; Case Study: Funtley Clay Pits & Fareham Brickfields)",
       "teacher_notes": {
-        "primer": "This lesson focuses on: Was industrial work progress or punishment? (Factory conditions, child labor; Case Study: Funtley Clay Pits & Fareham Brickfields). Students will explore the key events and concepts.",
+        "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
         "objectives": [
           {
-            "objective": "Understand the core themes of Was industrial work progress or punishment? (Factory conditions, child labor; Case Study: Funtley Clay Pits & Fareham Brickfields).",
-            "primer": "Guide students through the narrative, focusing on key historical shifts.",
-            "question": "What is the most significant takeaway from this lesson?"
+            "objective": "Understand the working conditions of the early Industrial Revolution with historical nuance.",
+            "primer": "Ensure students realise that pre-industrial life (the domestic system) was also grueling and reliant on child labour; the key change was the scale, strict discipline, and unique physical dangers of the factory system.",
+            "question": "Was the 'domestic system' a golden age of easy work before the factories arrived?"
+          },
+          {
+            "objective": "Evaluate primary sources regarding child labour.",
+            "primer": "Guide students to compare a qualitative national source (a government committee interview) with quantitative local evidence (a census return) to build a complete picture of child labour.",
+            "question": "How does a census return tell a different story to a personal interview?"
+          },
+          {
+            "objective": "Analyse the 'Optimist vs. Pessimist' historical debate.",
+            "primer": "Bridge the gap to GCSE by having students weigh two competing historical interpretations of industrialisation's overall impact on the working class.",
+            "question": "Can an event be a catastrophe for one generation but a triumph for the next?"
           }
-        ]
+        ],
+        "source_context": "The image provides a visual representation of a traditional 19th-century brickfield in Fareham, illustrating the physical environment where young children worked. What specific dangers or difficulties can you identify in this workplace that would make it a harsh environment for a child? (Hinge Question)"
       },
       "do_now": {
         "title": "Do Now: Recall",
         "type": "questions",
         "items": [
           {
-            "question": "Recall question from previous lesson.",
-            "answer": "A"
+            "question": "What two major iron-making processes did Henry Cort patent at the Funtley Ironworks in the 1780s?",
+            "answer": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
+          },
+          {
+            "question": "Why did Henry Cort specifically choose to locate his ironworks near Fareham?",
+            "answer": "Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth."
+          },
+          {
+            "question": "What tragic event caused Henry Cort to lose his patents and die in poverty?",
+            "answer": "His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds."
           }
         ]
       },
+      "vocab": [
+        {
+          "term": "Fareham Reds",
+          "definition": "Famous, high-quality red bricks manufactured in Fareham, Hampshire, which were highly sought after by Victorian architects."
+        },
+        {
+          "term": "Pug Mill",
+          "definition": "A large machine used for grinding and mixing clay to prepare it for brickmaking, often powered by horses or steam engines."
+        },
+        {
+          "term": "Primary Source",
+          "definition": "Evidence created at the time of the event being studied, such as a diary, a photograph, or a government census."
+        },
+        {
+          "term": "Historiography",
+          "definition": "The study of how different historians interpret the past, and how those interpretations change over time."
+        },
+        {
+          "term": "Factory Acts",
+          "definition": "A series of laws passed by Parliament in the 19th century to limit working hours and improve safety conditions, initially focusing on children."
+        }
+      ],
       "narrative_blocks": [
         {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
+          "title": "The Rise of the Machines (and the Domestic Reality)",
+          "text": "Before the 1700s, most goods were manufactured by hand in people's homes, known as the 'domestic system'. It is a common myth that this was a relaxed, golden age; in reality, working at home was backbreaking, poorly paid, and children worked long hours weaving or spinning. However, the transition to the 'factory system' completely transformed the scale and danger of British life.  As steam engines became more powerful, massive factories were built, causing rapid urbanisation. On a national level, this was incredible progress: Britain became the 'workshop of the world'. But for the workers, the reality was a brutal shock. The machines now dictated the pace of life. Shifts lasted 12 to 14 hours, six days a week. The noise was deafening, the air was polluted, and heavy machinery lacked safety guards, leading to horrific, unprecedented injuries.",
+          "level_4": "Before factories, people made things at home. This was still very hard work, and children had to help. But when steam engines were invented, huge factories were built.  Millions moved to cities to work. This made Britain very rich. However, factory work was completely different to working at home. People worked up to 14 hours a day. The factories were noisy, dirty, and very dangerous because fast machines had no safety guards.",
           "tasks": [
             {
               "type": "text",
-              "text": "Task 1: Placeholder task.",
-              "model": "Model answer placeholder."
+              "qNum": 1,
+              "question": "Change & Continuity: What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
+              "model_answer": "While children worked hard in both systems (showing continuity), the main change was the scale of danger and strict discipline. In the factory system, the pace of work was dictated by fast, unguarded steam-powered machines in a deafening and polluted environment, which caused horrific injuries that did not happen at home."
             }
           ]
-        }
-      ]
-,
-      "vocab": [
-        {
-          "term": "Child Labour",
-          "definition": "The use of children in industry or business, often in dangerous and harsh conditions."
         },
         {
-          "term": "Brickfields",
-          "definition": "Areas where bricks are made, often employing heavy manual labor."
+          "title": "The Stolen Childhoods (The Sadler Report)",
+          "text": "Factory and mine owners actively sought out child workers. Children were cheap (paid 10% of an adult's wage), easier to discipline, and small enough to crawl under moving machinery.  In 1832, Parliament sent Michael Sadler to investigate these conditions. His official report shocked the nation. One textile worker, Matthew Crabtree, was interviewed: 'I began work at eight years old... our common time was from six in the morning till half-past eight at night... we were frequently strapped [beaten] if we were too late or started to fall asleep.' The economic success of the early Industrial Revolution was largely built on the broken backs of these children.",
+          "level_4": "Factory owners loved hiring children because they were cheap to pay, easy to boss around, and small enough to fit under machines.  In 1832, a man named Michael Sadler investigated this for the government. He interviewed a boy named Matthew Crabtree, who said he started work at 8 years old, worked 14 hours a day, and was beaten with a strap if he fell asleep. The country's wealth was built on these children's suffering.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 2,
+              "question": "Source Evaluation: How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
+              "model_answer": "The Sadler Report is highly useful because it is a primary source containing direct eyewitness testimony from real child workers like Matthew Crabtree. It provides specific details about the grueling 14-hour days and the physical abuse (being 'strapped') used by overseers to maintain discipline, giving a highly accurate insight into the brutal reality of factory conditions."
+            }
+          ]
+        },
+        {
+          "title": "The Fareham Brick Boom",
+          "text": "The Industrial Revolution didn't just happen in northern cotton mills; it radically changed the landscape of Hampshire. As cities like London exploded in size, they desperately needed building materials. Fareham sat on a geological goldmine: deep deposits of high-quality clay. During the 19th century, the Funtley Clay Pits and Fareham Brickfields expanded massively. The unique clay produced a brilliant, vibrant red brick famously known as 'Fareham Reds'.  These bricks were so highly prized by Victorian architects that they were transported by the newly built railways to construct prestigious buildings in the British Empire, including the Royal Albert Hall in London. Fareham's local mud was literally building the modern world.",
+          "level_4": "The Industrial Revolution also changed Hampshire. Big cities like London needed bricks to build new houses and factories. Fareham had lots of special clay in the ground. When baked, this clay made beautiful red bricks known as 'Fareham Reds'.  These bricks were famous and were put on trains to London to build famous places like the Royal Albert Hall.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 3,
+              "question": "Causation: Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
+              "model_answer": "The correct chronological chain of causation is: B (London's population explodes) -> D (Massive demand for building materials is created) -> A (Railways are built to transport heavy goods) -> C (Fareham Reds are used to build the Royal Albert Hall)."
+            }
+          ]
+        },
+        {
+          "title": "Children of the Clay Pits (Local Evidence)",
+          "text": "While the Fareham Reds brought great wealth to the brickyard owners, the reality for the workers was grueling. In the Funtley brickfields, whole families worked together. Young boys and girls were employed as 'pug boys', driving the horses that turned the pug mills to crush the heavy clay.  Others worked as 'carriers', lugging wet clay, or as 'turners', walking up and down long outdoor drying hacks to manually flip thousands of heavy bricks so they dried evenly. We know this wasn't just happening in the north of England; if a historian looks at the 1881 Census returns for the Fareham area, they will find numerous local children, some as young as 10, officially listed with occupations like 'brickmaker's labourer' or 'pug boy', proving the local economy relied heavily on child exploitation.",
+          "level_4": "Making Fareham Red bricks was very hard work. Young children worked in the Funtley clay pits. Some led horses that crushed the clay in machines called pug mills.  Others carried heavy, wet clay or turned thousands of bricks by hand so they would dry. We know this is true because official government census records from 1881 show 10-year-old boys in Fareham listed as 'pug boys' and 'brick labourers'.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 4,
+              "question": "Source Comparison: Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
+              "model_answer": "A historian needs both because they provide different types of evidence. The Sadler Report provides the qualitative, emotional reality of the work (the pain, the beatings, the long hours), while the local Fareham Census provides quantitative, factual proof that this wasn't an isolated incident—it proves exactly how old the children were and that child labour was a widespread reality right across the country, even in rural Hampshire."
+            }
+          ]
+        },
+        {
+          "title": "Progress or Punishment? The Historians' Debate",
+          "text": "As the 19th century progressed, the horrific human cost disgusted the public, leading Parliament to pass 'Factory Acts' to restrict child labour and mandate schooling. But historians still fiercely debate the overall impact of the Industrial Revolution. 'Pessimist' historians (like E.P. Thompson) argue that industrialisation was a catastrophe that punished the working class, destroying their traditional way of life and exploiting children for decades. Conversely, 'Optimist' historians (like R.M. Hartwell) argue that while the initial transition was harsh, it ultimately represented massive progress; it created the wealth, medical advancements, and eventual higher wages that dramatically increased the life expectancy and standard of living for everyone in the 20th century.",
+          "level_4": "Eventually, the government passed laws called Factory Acts to stop very young children from working and force them to go to school. Today, historians still argue about whether factories were good or bad. 'Pessimist' historians say the factories were a disaster that cruelly punished poor people and children. 'Optimist' historians say that even though it was hard at first, the factories created the wealth and medicine that eventually gave everyone a much better and longer life.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 5,
+              "question": "Extended Writing: Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
+              "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
+            }
+          ]
         }
       ],
       "sources": [
@@ -310,15 +394,62 @@ export const unitData = {
         "questions": [
           {
             "type": "explain",
-            "question": "Explain why industrial work was often seen as a punishment for the working classes.",
+            "question": "Explain why child labour was so prevalent during the early Industrial Revolution.",
             "marks": 8,
             "hints": [
-              "Sentence Starter: Industrial work was harsh because...",
-              "Sentence Starter: For example, child workers faced..."
+              "Sentence Starter: One reason child labour was prevalent was because they were much cheaper to employ...",
+              "Sentence Starter: Furthermore, children were considered useful for specific jobs because..."
             ]
           }
         ]
-      }
+      },
+      "quiz_questions": [
+        {
+          "question": "Why did factory owners prefer to hire children during the early Industrial Revolution?",
+          "answer": "They were cheap, easy to discipline, and small enough to fit under machines.",
+          "options": [
+            "They were cheap, easy to discipline, and small enough to fit under machines.",
+            "They were stronger and could work longer hours than adults.",
+            "It was illegal to employ adults in factories before 1850."
+          ]
+        },
+        {
+          "question": "What did the 1832 Sadler Report investigate?",
+          "answer": "The working conditions and hours of children in factories.",
+          "options": [
+            "The working conditions and hours of children in factories.",
+            "The quality of Fareham Red bricks being sent to London.",
+            "The amount of coal being produced in northern mines."
+          ]
+        },
+        {
+          "question": "What were young boys known as when they led horses that crushed clay in the Fareham brickfields?",
+          "answer": "Pug boys",
+          "options": [
+            "Pug boys",
+            "Clay carriers",
+            "Brick turners"
+          ]
+        },
+        {
+          "question": "What type of historical source is the 1881 Fareham Census?",
+          "answer": "A quantitative primary source showing the factual reality of child labour.",
+          "options": [
+            "A quantitative primary source showing the factual reality of child labour.",
+            "A secondary source written by a modern historian.",
+            "A qualitative interview describing feelings and emotions."
+          ]
+        },
+        {
+          "question": "What is the key difference between 'Optimist' and 'Pessimist' historians regarding the Industrial Revolution?",
+          "answer": "Optimists believe it ultimately led to progress and wealth, while Pessimists believe it was a catastrophe that exploited the working class.",
+          "options": [
+            "Optimists believe it ultimately led to progress and wealth, while Pessimists believe it was a catastrophe that exploited the working class.",
+            "Optimists believe all factory owners were kind, while Pessimists believe they were all evil.",
+            "Optimists think the domestic system was better, while Pessimists prefer the factory system."
+          ]
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -355,8 +486,7 @@ export const unitData = {
             }
           ]
         }
-      ]
-,
+      ],
       "vocab": [
         {
           "term": "Urbanisation",
@@ -433,8 +563,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=oNWTXaOotEA&t=43s",
           "title": "How did the British gain control of India?"
         }
-      ]
-,
+      ],
       "vocab": [
         {
           "term": "British Raj",
@@ -501,8 +630,7 @@ export const unitData = {
             }
           ]
         }
-      ]
-,
+      ],
       "vocab": [
         {
           "term": "Chartism",
@@ -569,8 +697,7 @@ export const unitData = {
             }
           ]
         }
-      ]
-,
+      ],
       "vocab": [
         {
           "term": "Reform Acts",
@@ -637,8 +764,7 @@ export const unitData = {
             }
           ]
         }
-      ]
-,
+      ],
       "vocab": [
         {
           "term": "Synthesis",
