@@ -6981,8 +6981,8 @@ window.renderCipherRoom = function() {
         </p>
         
         <div style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
-          <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Exam Question (Describe 2 Features):</span>
-          <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--text-main); line-height: 1.4;">"Describe two features of Walsingham's use of spies."</h4>
+          <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Exam Question (Describe 1 Feature):</span>
+          <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--text-main); line-height: 1.4;">"Describe one feature of Walsingham's use of spies."</h4>
         </div>
         
         <div class="scaffold-group">
@@ -7323,7 +7323,7 @@ window.restartArmadaGame = function() {
 };
 
 // ==========================================
-// DESCRIBE TWO FEATURES TABOO GENERATOR
+// DESCRIBE ONE FEATURE TABOO GENERATOR
 // ==========================================
 
 const tabooGeneratorCards = [
