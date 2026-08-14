@@ -196,6 +196,12 @@ export const unitData = {
           "title": "Source A: The Puddling Furnace",
           "src": "/images/funtley_ironworks.jpg",
           "caption": "A historical cross-section diagram of a puddling furnace, the revolutionary process Henry Cort pioneered at his Funtley ironworks in Hampshire."
+        },
+        {
+          "title": "Hampshire Administrative Map (1832)",
+          "caption": "An authentic 1832 map showing the county of Hampshire.",
+          "src": "/images/map_hampshire_1832.png",
+          "hinge_question": "How does the geography of Hampshire, particularly its access to the coast and rivers, help explain why industrial sites like Funtley Ironworks were so successful?"
         }
       ],
       "exam_practice": {
@@ -811,7 +817,14 @@ export const unitData = {
         {
           "title": "HMS Warrior at Portsmouth",
           "caption": "Launched in 1860, HMS Warrior was the world's first iron-hulled, steam-powered ironclad warship, representing the absolute peak of British industrial and naval supremacy.",
-          "src": "/images/hms_warrior.jpg"
+          "src": "/images/hms_warrior.jpg",
+          "hinge_question": "How does the construction of HMS Warrior reflect the direct link between local Hampshire industry (iron/bricks) and global British power?"
+        },
+        {
+          "title": "Walter Crane's Imperial Federation Map (1886)",
+          "caption": "A classic high-Victorian map showing the extent of the British Empire colored in red.",
+          "src": "/images/map_empire_1886.jpg",
+          "hinge_question": "Look at the sheer scale of the territories colored pink/red. Why was maintaining a 'Two-Power Standard' navy absolutely vital to sustaining this global network?"
         }
       ],
       "quiz": [
@@ -1146,7 +1159,8 @@ export const unitData = {
             "type": "written",
             "title": "Source B: The Demands of the Chartist Leader",
             "content": "\"We look upon the franchise [vote] as our right, and as the only tool by which we can remove our heavy economic burdens. We are starved by unjust laws; our children are worked to death in your factories; our wages are stripped by taxes. Give us the vote, and we shall send men to Parliament who will dismantle this machinery of oppression and replace it with laws of justice.\"\n— William Lovett, Chartist Leader, May 1838",
-            "provenance_clue": "An excerpt from the preamble of the People's Charter, published publicly to organize millions of working-class supporters across the nation's industrial hubs."
+            "provenance_clue": "An excerpt from the preamble of the People's Charter, published publicly to organize millions of working-class supporters across the nation's industrial hubs.",
+            "hinge_question": "Why would the sheer size and organization of this working-class crowd terrify the ruling aristocratic elite?"
           },
           "tasks": [
             {
@@ -1175,7 +1189,8 @@ export const unitData = {
         {
           "title": "The Chartist Mass Demonstration at Kennington Common, 1848",
           "caption": "A historic photograph capturing thousands of Chartist protestors gathering in London to present their third massive petition to Parliament, demanding democratic rights.",
-          "src": "/images/chartist_demo.jpg"
+          "src": "/images/chartist_demo.jpg",
+          "hinge_question": "Why would the sheer size and organization of this working-class crowd terrify the ruling aristocratic elite?"
         }
       ],
       "quiz": [
@@ -1427,6 +1442,12 @@ export const unitData = {
           "title": "The First Secret Ballot, 1872",
           "caption": "A Victorian illustration showing a man casting a vote in a newly designed private wooden booth, fundamentally changing British elections forever by removing public intimidation.",
           "src": "/images/secret_ballot.jpg"
+        },
+        {
+          "title": "Parliamentary Representation Map of England & Wales (1832)",
+          "caption": "An authentic map showing the distribution of MPs before the Reform Act.",
+          "src": "/images/map_rotten_boroughs.jpg",
+          "hinge_question": "Based on this map, why would the rapidly growing industrial cities in the North feel completely betrayed by the pre-1832 electoral system?"
         }
       ],
       "vocab": [
@@ -1473,7 +1494,8 @@ export const unitData = {
             "type": "image",
             "src": "/images/old_rotten_tree.jpg",
             "caption": "A famous political cartoon titled 'The Old Rotten Tree'. It shows a dead, decaying tree with branches labeled with the names of Rotten Boroughs (like 'Newtown' and 'Old Sarum'). Wealthy politicians sit comfortably in the dead branches like vultures, while angry reformers chop at the trunk with axes labeled 'Reform'.",
-            "provenance_clue": "A mass-produced satirical cartoon printed in a cheap radical newspaper, designed to be understood by working-class people who could not read complex political essays."
+            "provenance_clue": "A mass-produced satirical cartoon printed in a cheap radical newspaper, designed to be understood by working-class people who could not read complex political essays.",
+            "hinge_question": "What is the artist suggesting about the 'Rotten Borough' system by depicting it as a dead, decaying tree filled with greedy cormorants?"
           },
           "tasks": [
             {
@@ -1791,7 +1813,8 @@ export const unitData = {
         {
           "title": "Capital and Labour: The Two Faces of Victorian Britain",
           "caption": "A classic 1843 satirical illustration from Punch magazine juxtaposing the extreme opulence, luxury, and technological triumph of the upper classes directly above the dark, exhausting, and impoverished reality of the working-class laborers who built that wealth.",
-          "src": "/images/capital_labour.jpg"
+          "src": "/images/capital_labour.jpg",
+          "hinge_question": "How does the artist use vertical space (top vs. bottom) to summarize the 'Optimist vs. Pessimist' debate of the 19th century?"
         }
       ],
       "vocab": [
