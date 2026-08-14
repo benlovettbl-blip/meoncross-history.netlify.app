@@ -310,7 +310,7 @@ allDirs.forEach(unitId => {
       if (renderImages) {
           imgTags = srcs.map(src => {
             let resolved = typeof resolveAssetPath === 'function' ? resolveAssetPath(src, 2) : `../..${src.startsWith('/') ? src : '/' + src}`;
-            const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 100%; max-height: 450px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);' : 'max-width: 100%; max-height: 350px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
+            const style = lesson.primary_source.custom_style || (srcs.length > 1 ? 'max-width: 48%; max-height: 350px; object-fit: contain; display: inline-block; margin: 0 1%; vertical-align: top; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); page-break-inside: avoid;' : 'max-width: 100%; max-height: 350px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
             return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
           }).join(' ');
       }

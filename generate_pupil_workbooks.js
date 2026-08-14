@@ -246,7 +246,7 @@ allDirs.forEach(unitId => {
 
     let progressTrackerRows = '';
     periodLessons.forEach((l) => {
-      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
+      progressTrackerRows += `<tr style="background-color: #f1f5f9; height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
     });
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {

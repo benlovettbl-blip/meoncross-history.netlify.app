@@ -17,7 +17,7 @@ export const unitData = {
   "title": "KS3: Causes of the Great War",
   "homepage_background": "/assets/somme_trench_1916.jpg",
   "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
-  "cover_image": "/assets/great_war_Naval-race-1909.jpg",
+  "cover_image": "/images/great_war_cover.jpg",
   "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
   "printable_workbooks": [
     {
@@ -345,6 +345,20 @@ export const unitData = {
         {
           "title": "4. Crowning a Kaiser in the Enemy's Palace",
           "text": "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later."
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
+              "hints": [
+                "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
+                "Sentence Starter: For example, he modernized the Prussian army and used it to...",
+                "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
+              ]
+            }
+          ]
         }
       ],
       "primary_source": {
@@ -377,21 +391,7 @@ export const unitData = {
           "term": "Blood and Iron",
           "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
-              "Sentence Starter: For example, he modernized the Prussian army and used it to...",
-              "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_1",
@@ -622,6 +622,20 @@ export const unitData = {
           "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
           "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
           "theme_heading": "Wilhelm Undoes Bismarck"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
+              "hints": [
+                "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
+                "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
+                "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
+              ]
+            }
+          ]
         }
       ],
       "quiz": [
@@ -825,21 +839,7 @@ export const unitData = {
             "Notre Dame Cathedral"
           ]
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
-              "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
-              "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1119,6 +1119,20 @@ export const unitData = {
           "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
           "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
           "theme_heading": "Europe's"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
+              "hints": [
+                "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
+                "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
+                "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
+              ]
+            }
+          ]
         }
       ],
       "quiz": [
@@ -1232,21 +1246,7 @@ export const unitData = {
             "It led to Britain abandoning its empire"
           ]
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
-              "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
-              "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_3",
@@ -1523,6 +1523,20 @@ export const unitData = {
             }
           ],
           "theme_heading": "Dreadnought Arms"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why the naval race between Britain and Germany damaged their relations.",
+              "hints": [
+                "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
+                "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
+                "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
+              ]
+            }
+          ]
         }
       ],
       "quiz": [
@@ -1636,21 +1650,7 @@ export const unitData = {
             "It made them give up their empire"
           ]
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why the naval race between Britain and Germany damaged their relations.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
-              "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
-              "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_4",
@@ -1899,8 +1899,7 @@ export const unitData = {
             {
               "type": "extended_writing",
               "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. <br><br><em>Use the <abbr title=\"Identify, Describe, Explain, Analyse\">IDEA framework</abbr> to structure your response.</em>",
-              "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war.",
-              "marks": 8
+              "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
             }
           ],
           "theme_heading": "Europe's Industrial War Machine"
@@ -1919,6 +1918,20 @@ export const unitData = {
           "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
           "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
           "theme_heading": "Germany's Calculated War"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
+              "hints": [
+                "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
+                "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
+                "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
+              ]
+            }
+          ]
         }
       ],
       "quiz": [
@@ -2032,21 +2045,7 @@ export const unitData = {
             "Britain"
           ]
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
-              "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
-              "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_5",
@@ -2317,6 +2316,20 @@ export const unitData = {
           "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
           "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
           "theme_heading": "Dominoes"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
+              "hints": [
+                "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
+                "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
+                "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
+              ]
+            }
+          ]
         }
       ],
       "quiz": [
@@ -2430,21 +2443,7 @@ export const unitData = {
             "Because Germany sank a British ship"
           ]
         }
-      ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
-              "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
-              "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
   "quizPack": [
