@@ -1748,14 +1748,24 @@ export const unitData = {
     },
     {
       "id": "lesson_7",
-      "title": "Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)",
+      "title": "Who truly benefited from 19th-century transformation?",
       "teacher_notes": {
-        "primer": "This lesson focuses on: Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation). Students will explore the key events and concepts.",
+        "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
         "objectives": [
           {
-            "objective": "Understand the core themes of Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation).",
-            "primer": "Guide students through the narrative, focusing on key historical shifts.",
-            "question": "What is the most significant takeaway from this lesson?"
+            "objective": "Synthesize unit-wide knowledge to evaluate historical progress versus exploitation.",
+            "primer": "Train pupils to categorize and cross-reference evidence from prior lessons, linking technological milestones directly to their socio-economic consequences.",
+            "question": "Can an historical era be categorized as an era of progress if the advancements were built on systemic exploitation?"
+          },
+          {
+            "objective": "Deconstruct the Optimist and Pessimist historiographical debate.",
+            "primer": "Equip students with the analytical vocabulary required to structure a multi-perspective synthesis essay, moving past one-sided descriptions into high-level evaluative judgments.",
+            "question": "How do historians use the exact same factual database to arrive at completely opposing historical interpretations?"
+          },
+          {
+            "objective": "Structure a rigorous 16-mark historical essay using balanced thematic analysis.",
+            "primer": "Scaffold the construction of an analytical essay, ensuring pupils lead with a clear thesis statement, deploy precise evidence, and maintain a sustained line of judgment through to the conclusion.",
+            "question": "What distinguishes an informative essay that merely describes facts from an analytical essay that sustains an historical argument?"
           }
         ]
       },
@@ -1764,76 +1774,334 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "Recall question from previous lesson.",
-            "answer": "A"
+            "question": "What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?",
+            "answer": "A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs."
           },
           {
-            "question": "What was the significance of the Battle of Hastings in 1066?",
-            "answer": "William the Conqueror defeated King Harold, leading to the Norman conquest of England."
+            "question": "How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?",
+            "answer": "The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion."
           },
           {
-            "question": "What was the Black Death?",
-            "answer": "A devastating global epidemic of bubonic plague that struck Europe in the mid-1300s."
-          },
-          {
-            "question": "Who was Guy Fawkes?",
-            "answer": "A member of the Gunpowder Plot who attempted to blow up Parliament and King James I in 1605."
-          },
-          {
-            "question": "What was the Renaissance?",
-            "answer": "A period of 'rebirth' in arts, science, and culture that began in Italy in the 14th century."
+            "question": "Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?",
+            "answer": "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
           }
         ]
       },
-      "narrative_blocks": [
+      "sources": [
         {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "text",
-              "text": "Task 1: Placeholder task.",
-              "model": "Model answer placeholder."
-            }
-          ]
+          "title": "Capital and Labour: The Two Faces of Victorian Britain",
+          "caption": "A classic 1843 satirical illustration from Punch magazine juxtaposing the extreme opulence, luxury, and technological triumph of the upper classes directly above the dark, exhausting, and impoverished reality of the working-class laborers who built that wealth.",
+          "src": "/images/capital_labour.jpg"
         }
       ],
       "vocab": [
         {
           "term": "Synthesis",
-          "definition": "The combination of ideas to form a theory or system."
+          "definition": "The act of combining different ideas, data points, and historical interpretations into a single, cohesive, and balanced argument."
         },
         {
-          "term": "Exploitation",
-          "definition": "The action or fact of treating someone unfairly in order to benefit from their work."
-        }
-      ],
-      "sources": [
+          "term": "Historiographical Debate",
+          "definition": "The ongoing disagreement between different schools of historians regarding how a specific past event or era should be interpreted."
+        },
         {
-          "title": "Source A: The Two Nations",
-          "src": "/images/two_nations.jpg",
-          "caption": "An illustration showing the stark divide between the rich industrialists and the poor working classes in Victorian Britain."
+          "term": "Façade",
+          "definition": "An outward appearance or deceptive exterior that hides a very different, often unpleasant, reality beneath it."
+        },
+        {
+          "term": "Oligarchy",
+          "definition": "A small group of wealthy, privileged people who hold absolute control over a country or organization."
+        },
+        {
+          "term": "Concession",
+          "definition": "Something granted or yielded by a group in power, often reluctantly, in response to intense political pressure or demands."
         }
       ],
-      "exam_practice": {
-        "questions": [
-          {
-            "type": "explain",
-            "question": "Explain why historians disagree about who benefited most from the Industrial Revolution.",
-            "marks": 8,
-            "hints": [
-              "Sentence Starter: Some historians argue the wealthy industrialists benefited most because...",
-              "Sentence Starter: However, others argue that over time, the working classes gained..."
-            ]
-          }
-        ]
-      },
-      "learning_objectives": {
-        "overarching": "To explore: Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)",
-        "scaffolded": [
-          "Understand the core themes of Who party truly benefited from 19th-century transformation? (Synthesis essay balancing economic growth vs. exploitation)."
-        ]
-      }
+      "narrative_blocks": [
+        {
+          "title": "The Optimist View: Industrial Triumph and Imperial Grandeur",
+          "text": "When assessing the 19th century, 'Optimist' or traditional historians argue that this era was a period of unmatched national progress and global triumph. From this perspective, the Industrial Revolution was an economic engine that transformed Britain into the 'workshop of the world'. This progress was driven by immense local breakthroughs. Henry Cort's revolutionary puddling and rolling processes at the Funtley Ironworks (Lesson 1) allowed Britain to mass-produce cheap, high-quality wrought iron. This iron physically built the railways, factories, and the cutting-edge ironclad warships of the Royal Navy, such as HMS Warrior (Lesson 4). Simultaneously, the deep clay deposits of Hampshire fueled a massive construction boom. Firms like Joseph Bull & Sons used millions of durable 'Fareham Red' bricks (Lesson 3) to build the expanding dockyards of Portsmouth and the grand monuments of the capital, like London's Royal Albert Hall. To the Optimists, the generation of this immense industrial wealth and global naval supremacy represents a golden age that eventually lifted the standard of living for the entire nation.",
+          "level_4": "Optimist historians argue that the 1800s were a time of great progress and wealth. They point to amazing inventions like Henry Cort's iron process at Funtley, which made the high-quality iron used to build trains and massive warships like HMS Warrior. They also point to Fareham's brick industry, which produced millions of famous 'Fareham Reds' to build the Portsmouth dockyards and London's Royal Albert Hall. To these historians, this industrial boom made Britain the richest and most advanced nation on earth.",
+          "tasks": [
+            {
+              "type": "categorisation",
+              "qNum": 1,
+              "question": "Categorise the following list of historical facts into either 'Evidence of National Progress & Wealth' (The Optimist View) or 'Evidence of Working-Class / Colonial Exploitation' (The Pessimist View) by writing them under the correct headings:\n1. Henry Cort's puddling process increases iron production by 400%.\n2. The 1881 Fareham Census records 10-year-old boys working as 'pug boys' in clay pits.\n3. Indian handloom weavers are forced into starvation by English 'captive market' trade laws.\n4. Fareham Red bricks are selected to construct the Royal Albert Hall in London.\n5. Edwin Chadwick records that deaths from filth and overcrowding in industrial towns outnumber casualties in modern wars.\n6. HMS Warrior enforces the 'Two-Power Standard' globally, protecting merchant shipping lanes.",
+              "model_answer": "### Evidence of National Progress & Wealth (Optimist View)\n* **Fact 1:** Henry Cort's puddling process increases iron production by 400%.\n* **Fact 4:** Fareham Red bricks are selected to construct the Royal Albert Hall in London.\n* **Fact 6:** HMS Warrior enforces the 'Two-Power Standard' globally, protecting merchant shipping lanes.\n\n### Evidence of Working-Class / Colonial Exploitation (Pessimist View)\n* **Fact 2:** The 1881 Fareham Census records 10-year-old boys working as 'pug boys' in clay pits.\n* **Fact 3:** Indian handloom weavers are forced into starvation by English 'captive market' trade laws.\n* **Fact 5:** Edwin Chadwick records that deaths from filth and overcrowding in industrial towns outnumber casualties in modern wars."
+            }
+          ]
+        },
+        {
+          "title": "The Pessimist View: Squalor, Sabotage, and Slavery",
+          "text": "Conversely, 'Pessimist' or revisionist historians argue that Britain's grand imperial wealth was merely a glittering façade that masked horrific human misery. They emphasize that the working classes and colonized populations paid a devastating price for this progress. Nationally, child labor was systematically exploited in textile mills and coal mines (Lesson 2). Locally, the 1881 Census proves that young children were working 14-hour days barefoot in the freezing mud of the Funtley clay pits to manufacture those famous Fareham bricks. In towns like Portsmouth and London, workers were packed into cheap, unventilated 'back-to-back' houses where overflowing cesspits contaminated the drinking water, causing catastrophic cholera outbreaks (Lesson 3). Edwin Chadwick's 1842 report explicitly proved that the slums were deadlier than war. This misery was replicated abroad: the East India Company violently conquered India and established a 'captive market' that intentionally bankrupted local Indian weavers to enrich British mill owners (Lesson 4). To the Pessimists, this misery explains why working people were driven to desperate resistance—from the violent machine-breaking of the Hampshire Swing Riots (1830) to the massive political campaigns of the Chartists (Lesson 5).",
+          "level_4": "Pessimist historians argue that Britain's wealth was built on cruelty and suffering. They highlight how poor children were exploited, working 14-hour days in dangerous factories, or working barefoot in the cold mud of the Funtley clay pits. In cities like Portsmouth and London, workers lived in crowded, filthy 'back-to-back' slums with no clean water, causing deadly outbreaks of cholera. Abroad, the British Empire used military force to exploit colonies like India, ruining local businesses. This extreme misery is why workers fought back through the violent Swing Riots and the Chartist protests.",
+          "tasks": [
+            {
+              "type": "paragraph_drafting",
+              "qNum": 2,
+              "question": "Using the Point, Evidence, Explanation (P.E.E.) framework, write a high-quality paragraph arguing that the working classes paid the physical price for Britain's industrial and imperial progress.",
+              "model_answer": "**Point:** The working classes paid a devastating physical and human price to fuel Britain's industrial and imperial wealth. \n\n**Evidence:** For example, while famous 'Fareham Red' bricks were used to build grand imperial monuments like the Royal Albert Hall, official local evidence like the 1881 Census reveals that children as young as ten were forced to work barefoot as 'pug boys' and brick turners for 14 hours a day in the freezing mud of the Funtley clay pits. Furthermore, Edwin Chadwick's 1842 report proved that workers in industrial towns were packed into unventilated back-to-back slums where filth and contaminated water caused deadly cholera outbreaks, making the slums deadlier than modern warfare. \n\n**Explanation:** This proves that the progress celebrated by the wealthy elite was entirely dependent on the exploitation of the poor. The stunning infrastructure of the British Empire was not a reflection of national well-being, but was physically bought through the shortened lives, broken health, and hazardous labor of working-class families."
+            }
+          ]
+        },
+        {
+          "title": "The Strategic Retreat: Elite Fear and Concession",
+          "text": "The final element of the 19th-century transformation is the battle for political democracy (Lesson 6). Traditional narratives often suggest that Britain naturally and peacefully evolved into a fair democracy because its leaders valued liberty. However, critical historians argue that the expansion of the vote was a series of calculated, strategic retreats by a panicked ruling class. The wealthy elite who controlled Parliament had zero desire to share power with the working masses, whom they openly viewed as violent and ignorant. Political rights were only conceded when the elite feared that a total violent revolution was imminent. The Great Reform Act of 1832 was passed to ally the wealthy middle classes with the establishment, splitting the reform movement and leaving the working class betrayed. The Secret Ballot Act of 1872 and the expansion of the franchise in 1867 and 1884 were passed because movements like Chartism proved that the working class had developed the numbers and organizational sophistication to overthrow the state if their constitutional demands were ignored completely.",
+          "level_4": "Some people think Britain became a democracy because rich leaders wanted to be fair. However, history shows that the ruling class only gave people the right to vote because they were terrified of a violent revolution. Laws like the 1832 Great Reform Act and the 1872 Secret Ballot Act were passed to calm down angry workers after events like the Swing Riots and Chartist rallies. Political power was never gifted out of kindness; it was won by ordinary people making the elite too afraid to say no.",
+          "tasks": [
+            {
+              "type": "text",
+              "qNum": 3,
+              "question": "Historical Reasoning: Explain why it is historically inaccurate to argue that the British ruling class expanded the right to vote out of a belief in fairness and equality.",
+              "model_answer": "It is inaccurate because primary evidence proves the ruling elite deeply feared and despised the working classes, viewing them as violent and incapable of governance, as seen in MP Robert Lowe's 1866 speech. Legislation like the 1832 Great Reform Act and the 1872 Secret Ballot Act were strategic concessions passed out of fear of revolution, not fairness. The elite only expanded the franchise to pacify mass movements like Chartism and protect their own property from being overthrown by a working-class revolt."
+            }
+          ]
+        },
+        {
+          "title": "Structuring the Synthesis Essay",
+          "text": "To successfully answer the core question of this unit, you must organize your evidence into a rigorous, balanced essay structure. Your essay must move away from simply listing facts and instead sustain a clear historical argument from start to finish. Use the following four-part structural framework to plan your response:\n\n1. **Introduction:** Define the key terms of the question, outline the 'Optimist vs. Pessimist' debate, and state your clear thesis (your main argument showing who benefited most).\n2. **Thematic Paragraph 1 (The Scale of Progress):** Explore the massive wealth and technological advancement generated by industrialisation and naval supremacy (e.g., Cort's iron, Fareham bricks, HMS Warrior).\n3. **Thematic Paragraph 2 (The Human Cost):** Contrast that wealth with the systemic exploitation and unlivable squalor suffered by the domestic working classes and colonized populations (e.g., child labor at Funtley, cholera, Indian weavers).\n4. **Thematic Paragraph 3 (The Battle for Power):** Analyze how political power changed, demonstrating that democracy was fought for through movements like Chartism rather than freely given.\n5. **Conclusion:** Summarize your main points and deliver your definitive judgment, answering *who truly benefited*.",
+          "level_4": "To write a great history essay, you cannot just list facts. You must build a balanced argument using a clear structure. Start with an Introduction that states your main answer. Write a paragraph on the immense wealth and progress of the era (The Optimists). Write a paragraph on the horrific suffering of the workers and colonies (The Pessimists). Write a paragraph on how ordinary people fought to win the vote. End with a Conclusion that summarizes your final historical judgment.",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "qNum": 4,
+              "question": "Capstone Essay (16 Marks): 'The transformation of 19th-century Britain was a triumph of progress that benefited the entire nation.' To what extent do you agree with this interpretation? Write a comprehensive, balanced synthesis essay utilizing evidence from across the entire unit.",
+              "model_answer": "The transformation of nineteenth-century Britain was a complex process that fundamentally reshaped the nation's economy, global standing, and political landscape. Traditional or 'Optimist' historians have long interpreted this era as a triumph of progress that ultimately advanced the standard of living for the entire population. However, a rigorous examination of the evidence reveals that this interpretation is deeply flawed. While industrialisation and imperialism generated unprecedented wealth and global dominance, this progress was entirely dependent upon the severe exploitation of the domestic working class and colonized populations. Therefore, the transformation of the nineteenth century was not a collective national triumph, but an unequal victory where the wealthy elite benefited exponentially at the direct physical and economic expense of the poor.\n\nOn one hand, it is undeniable that the nineteenth century represented an era of spectacular technological and industrial progress, generating vast wealth. As 'Optimist' historians highlight, Britain truly became the 'workshop of the world'. This structural progress was driven by remarkable local innovation, such as the metallurgy pioneered by Henry Cort at the Funtley Ironworks. Cort’s puddling and rolling processes allowed Britain to mass-produce high-quality wrought iron on an unprecedented scale, providing the material necessary to build the national railway network, heavy machinery, and the global fleets of the Royal Navy. This naval supremacy was physically manufactured at massive industrial hubs like Portsmouth Dockyard, where advanced warships like HMS Warrior were constructed to enforce the 'Two-Power Standard' and protect global merchant trade. Simultaneously, local resources like the Funtley clay pits boomed, producing millions of highly durable 'Fareham Red' bricks that constructed the infrastructure of Portsmouth and grand imperial monuments like London's Royal Albert Hall. To the ruling elite and the growing middle classes, this immense economic expansion and global power represented absolute national progress.\n\nHowever, this glittering façade of imperial grandeur completely masked a dark and destructive reality for the ordinary people whose labor sustained it. 'Pessimist' historians correctly argue that the working class paid for this wealth with their health, safety, and lives. Nationally, the factory system subjected families to exhausting 14-hour shifts in toxic, unprotected environments. Locally, the 1881 Fareham Census provides quantitative proof that child labor was a vital element of the local economy, recording children as young as ten working as 'pug boys' and brick turners barefoot in the freezing mud of the Funtley brickfields. Furthermore, rapid, unregulated urbanisation turned growing industrial towns into death traps. Workers in Portsmouth and London were crammed into unventilated back-to-back slums where overflowing cesspits routinely contaminated the shared water supply, resulting in devastating waterborne cholera outbreaks. This squalor was so severe that Edwin Chadwick's 1842 government report calculated that deaths from filth and overcrowding outnumbered military casualties in modern wars. This pattern of aggressive extraction was replicated globally; the East India Company used its private military force to subjugate India, establishing a captive market that intentionally flooded the continent with cheap British textiles, systematically bankrupting millions of native Indian weavers. Thus, for the vast majority of people under British rule, the transformation felt like an intense punishment rather than progress.\n\nThis severe socio-economic imbalance explains why ordinary people were forced to launch organized political campaigns to fight for a democratic voice. The political transformation of the nineteenth century proves that democracy was not a benevolent gift from a progressive ruling class, but a series of forced concessions. Terrified by outbreaks of working-class desperation—such as the violent machine-breaking of the 1830 Hampshire Swing Riots—the aristocratic oligarchy passed the 1832 Great Reform Act. However, this act deliberately excluded the working class, granting the franchise only to middle-class property owners to divide the reform movement. This betrayal sparked the rise of Chartism, the first mass working-class political movement. Through the People's Charter, ordinary people demanded structural reforms like universal male suffrage and the secret ballot to protect voters from landlord intimidation. Although Parliament repeatedly rejected their massive petitions, the constant threat of working-class revolution eventually forced the elite to retreat, passing the 1872 Secret Ballot Act and expanding the vote in 1867 and 1884. This political struggle proves that the working class had to fight fiercely to secure even a fraction of the benefits of the modern state.\n\nIn conclusion, the interpretation that the transformation of nineteenth-century Britain was a triumph that benefited the entire nation is largely unsustainable. While the era achieved staggering progress in metallurgy, construction, and global naval power, the benefits of these achievements were concentrated almost exclusively in the hands of wealthy industrialists, elite landowners, and the growing middle class. In stark contrast, the ordinary working men, women, and children of places like Funtley and Portsmouth, alongside millions of colonized subjects in India, were systematically exploited to fuel this economic engine. The unlivable squalor of the slums, the physical destruction of child labor, and the necessity of mass movements like Chartism prove that the majority of the population experienced the era as a period of profound hardship. Ultimately, the 19th century transformed Britain into a global superpower, but it was a triumph built entirely on the broken health and political exclusion of the working class."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Which historical perspective argues that 19th-century Britain experienced unmatched national progress?",
+          "options": [
+            "The Optimist View",
+            "The Pessimist View",
+            "The Marxist View",
+            "The Traditional View"
+          ],
+          "answer": "The Optimist View"
+        },
+        {
+          "question": "What local Hampshire industrialist revolutionized iron production with the puddling process?",
+          "options": [
+            "Henry Cort",
+            "Isambard Kingdom Brunel",
+            "George Stephenson",
+            "Edwin Chadwick"
+          ],
+          "answer": "Henry Cort"
+        },
+        {
+          "question": "How much did Henry Cort's puddling process increase iron production?",
+          "options": [
+            "400%",
+            "100%",
+            "50%",
+            "1000%"
+          ],
+          "answer": "400%"
+        },
+        {
+          "question": "What famous London monument was built using 'Fareham Red' bricks?",
+          "options": [
+            "The Royal Albert Hall",
+            "The Tower of London",
+            "Buckingham Palace",
+            "St. Paul's Cathedral"
+          ],
+          "answer": "The Royal Albert Hall"
+        },
+        {
+          "question": "What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?",
+          "options": [
+            "HMS Warrior",
+            "HMS Victory",
+            "HMS Dreadnought",
+            "HMS Beagle"
+          ],
+          "answer": "HMS Warrior"
+        },
+        {
+          "question": "Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?",
+          "options": [
+            "The Pessimist View",
+            "The Optimist View",
+            "The Capitalist View",
+            "The Whig View"
+          ],
+          "answer": "The Pessimist View"
+        },
+        {
+          "question": "According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?",
+          "options": [
+            "Pug boys",
+            "Chimney sweeps",
+            "Piecers",
+            "Trappers"
+          ],
+          "answer": "Pug boys"
+        },
+        {
+          "question": "How long were the typical working shifts for child laborers in the Funtley brickfields?",
+          "options": [
+            "14 hours",
+            "8 hours",
+            "10 hours",
+            "18 hours"
+          ],
+          "answer": "14 hours"
+        },
+        {
+          "question": "What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?",
+          "options": [
+            "Cholera",
+            "Smallpox",
+            "Tuberculosis",
+            "Typhoid"
+          ],
+          "answer": "Cholera"
+        },
+        {
+          "question": "Who published an 1842 report proving that slums were deadlier than modern wars?",
+          "options": [
+            "Edwin Chadwick",
+            "Lord Shaftesbury",
+            "Charles Dickens",
+            "Henry Cort"
+          ],
+          "answer": "Edwin Chadwick"
+        },
+        {
+          "question": "How did the East India Company violently destroy the local Indian textile economy?",
+          "options": [
+            "By establishing a 'captive market' that flooded India with cheap British goods",
+            "By burning down all Indian textile mills",
+            "By blocking all global trade routes to India",
+            "By paying Indian weavers double their standard wages"
+          ],
+          "answer": "By establishing a 'captive market' that flooded India with cheap British goods"
+        },
+        {
+          "question": "What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?",
+          "options": [
+            "The Swing Riots",
+            "The Luddite Rebellions",
+            "The Chartism Rallies",
+            "The Funtley Strike"
+          ],
+          "answer": "The Swing Riots"
+        },
+        {
+          "question": "Why do critical historians argue the 1832 Great Reform Act was passed?",
+          "options": [
+            "Out of elite fear of violent revolution",
+            "Because the elite believed in equality",
+            "To give the working class political power",
+            "To abolish the monarchy"
+          ],
+          "answer": "Out of elite fear of violent revolution"
+        },
+        {
+          "question": "Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?",
+          "options": [
+            "The working class",
+            "The middle class",
+            "The aristocracy",
+            "Industrial factory owners"
+          ],
+          "answer": "The working class"
+        },
+        {
+          "question": "What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?",
+          "options": [
+            "Chartism",
+            "Suffragettes",
+            "Trade Unionism",
+            "The Swing Rioters"
+          ],
+          "answer": "Chartism"
+        },
+        {
+          "question": "Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?",
+          "options": [
+            "The Secret Ballot Act",
+            "The Great Reform Act",
+            "The Factory Act",
+            "The Representation of the People Act"
+          ],
+          "answer": "The Secret Ballot Act"
+        },
+        {
+          "question": "In historical writing, what does 'synthesis' mean?",
+          "options": [
+            "Combining different data points and interpretations into a balanced argument",
+            "Listing historical facts in chronological order",
+            "Writing from a purely biased perspective",
+            "Ignoring evidence that contradicts your main point"
+          ],
+          "answer": "Combining different data points and interpretations into a balanced argument"
+        },
+        {
+          "question": "What was a 'Rotten Borough' in the pre-reform British electoral system?",
+          "options": [
+            "A voting district with virtually no population that still sent two MPs to Parliament",
+            "A corrupt town council that stole tax money",
+            "An industrial city with massive populations but zero MPs",
+            "A district that only allowed the working class to vote"
+          ],
+          "answer": "A voting district with virtually no population that still sent two MPs to Parliament"
+        },
+        {
+          "question": "Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?",
+          "options": [
+            "Newtown on the Isle of Wight",
+            "Fareham",
+            "Portsmouth",
+            "Winchester"
+          ],
+          "answer": "Newtown on the Isle of Wight"
+        },
+        {
+          "question": "What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?",
+          "options": [
+            "19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects",
+            "19th-century progress benefited every social class equally and peacefully",
+            "19th-century wealth was generated entirely without the use of child labor or colonialism",
+            "19th-century political reform was a gift willingly handed down by a progressive aristocracy"
+          ],
+          "answer": "19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects"
+        },
+        {
+          "question": "What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?",
+          "options": [
+            "A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.",
+            "Incorrect Option A",
+            "Incorrect Option B",
+            "Incorrect Option C"
+          ],
+          "answer": "A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs."
+        },
+        {
+          "question": "How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?",
+          "options": [
+            "The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.",
+            "Incorrect Option A",
+            "Incorrect Option B",
+            "Incorrect Option C"
+          ],
+          "answer": "The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion."
+        },
+        {
+          "question": "Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?",
+          "options": [
+            "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.",
+            "Incorrect Option A",
+            "Incorrect Option B",
+            "Incorrect Option C"
+          ],
+          "answer": "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
+        }
+      ]
     }
   ]
 };
