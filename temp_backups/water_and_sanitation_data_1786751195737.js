@@ -95,7 +95,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Identify how Iron Age communities managed their waste.",
-              "model_answer": "Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.",
+              "model": "Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.",
               "starter": "Iron Age communities managed their waste by...",
               "clue": "Think about population density and why simple methods worked when people were spread out."
             }
@@ -109,7 +109,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Describe the purpose of Roman conduits and aqueducts.",
-              "model_answer": "Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.",
+              "model": "Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.",
               "starter": "The purpose of Roman conduits and aqueducts was to...",
               "clue": "Think about the scale of engineering and moving water using gravity."
             },
@@ -129,7 +129,7 @@ export const unitData = {
           "image": "/assets/water_local_fishbourne.jpg",
           "tasks": [
             {
-              "type": "short_answer",
+              "type": "text",
               "text": "Based on what you have learned about Roman sanitation, why do you think a wealthy palace like Fishbourne would have its own private bathhouse and hypocaust system, while ordinary Romano-British people did not?"
             },
             {
@@ -152,7 +152,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain how bathhouses and latrines improved public health in Roman towns.",
-              "model_answer": "They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.",
+              "model": "They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.",
               "starter": "Bathhouses and latrines improved public health because...",
               "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
             },
@@ -175,7 +175,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Evaluate the impact of the Roman withdrawal on Britain's sanitation.",
-              "model_answer": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
+              "model": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
               "starter": "The Roman withdrawal significantly impacted sanitation because...",
               "clue": "Consider what happened to the pipes and sewers when the engineers left."
             }
@@ -335,7 +335,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Identify the main method of waste disposal in medieval villages like Wharram Percy.",
-              "model_answer": "They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.",
+              "model": "They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.",
               "starter": "The main method of waste disposal in medieval villages was...",
               "clue": "Think about why rural density prevented disease from spreading."
             }
@@ -349,7 +349,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Describe the sanitation facilities found in medieval monasteries like Canterbury Priory.",
-              "model_answer": "Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.",
+              "model": "Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.",
               "starter": "Medieval monasteries had sanitation facilities such as...",
               "clue": "Look at the Canterbury blueprints and who paid for the pipes."
             },
@@ -369,7 +369,7 @@ export const unitData = {
           "image": "/assets/water_local_titchfield.jpg",
           "tasks": [
             {
-              "type": "short_answer",
+              "type": "text",
               "text": "How does the water management system at Titchfield Abbey support the idea that monasteries were much healthier places to live than Medieval towns?"
             }
           ],
@@ -384,7 +384,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain why overcrowded medieval towns faced a filtration crisis.",
-              "model_answer": "Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.",
+              "model": "Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.",
               "starter": "Overcrowded medieval towns faced a filtration crisis because...",
               "clue": "Consider how high density impacted shared wells and rivers."
             }
@@ -398,7 +398,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain the role of gongfermers in medieval towns.",
-              "model_answer": "Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.",
+              "model": "Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.",
               "starter": "The role of gongfermers was to...",
               "clue": "Think about what happened when cesspits overflowed and why they worked at night."
             }
@@ -412,7 +412,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Evaluate the significance of Edward III's cleanliness mandate in 1349.",
-              "model_answer": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
+              "model": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
               "starter": "Edward III's cleanliness mandate was significant because...",
               "clue": "Look at his 1357 letter to the Mayor of London."
             }
@@ -576,7 +576,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Identify who invented the first flushing water closet.",
-              "model_answer": "He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.",
+              "model": "He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.",
               "starter": "The first flushing water closet was invented by...",
               "clue": "Think about why an invention is useless without a network (water & sewers)."
             },
@@ -599,7 +599,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Describe the purpose of the New River project in 1613.",
-              "model_answer": "It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.",
+              "model": "It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.",
               "starter": "The purpose of the New River project was to...",
               "clue": "Consider the distance the water traveled and how it was distributed."
             }
@@ -610,7 +610,7 @@ export const unitData = {
           "image": "/assets/water_local_southsea.jpg",
           "tasks": [
             {
-              "type": "short_answer",
+              "type": "text",
               "text": "If you lived in the overcrowded, walled town of Tudor Portsmouth, what risks would you face from the lack of proper sewers and overflowing cesspits?"
             }
           ],
@@ -625,7 +625,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain what Samuel Pepys' diary reveals about Early Modern privies.",
-              "model_answer": "It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.",
+              "model": "It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.",
               "starter": "Samuel Pepys' diary reveals that Early Modern privies...",
               "clue": "Think about what he found in his cellar on October 20, 1660."
             }
@@ -639,7 +639,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Evaluate the effectiveness of Early Modern water sellers for public health.",
-              "model_answer": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
+              "model": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
               "starter": "Early Modern water sellers were only partially effective because...",
               "clue": "Think about who bought their water and where they got it from."
             }
@@ -803,7 +803,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Identify two effects of the industrial population surge on factory towns.",
-              "model_answer": "It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.",
+              "model": "It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.",
               "starter": "Two effects of the industrial population surge were...",
               "clue": "Think about the shift from 6 million to 21 million people."
             }
@@ -817,7 +817,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Describe the living conditions in industrial back-to-back housing.",
-              "model_answer": "They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.",
+              "model": "They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.",
               "starter": "Living conditions in industrial back-to-back housing were...",
               "clue": "Consider how landlords built cheap housing for factory workers."
             }
@@ -828,7 +828,7 @@ export const unitData = {
           "image": "/assets/water_local_cholera.jpg",
           "tasks": [
             {
-              "type": "short_answer",
+              "type": "text",
               "text": "Why did rapid population growth in places like Portsea make the 1849 cholera outbreak so devastating for the local community?"
             }
           ],
@@ -843,7 +843,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain how the cholera epidemics forced the government to act.",
-              "model_answer": "They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.",
+              "model": "They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.",
               "starter": "The cholera epidemics forced the government to act by...",
               "clue": "Think about the rapid, terrifying nature of cholera deaths."
             },
@@ -866,7 +866,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Evaluate the significance of Edwin Chadwick's 1842 report.",
-              "model_answer": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
+              "model": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
               "starter": "Edwin Chadwick's 1842 report was significant because...",
               "clue": "Think about the evidence he gathered on the working class."
             }
@@ -1030,7 +1030,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Identify what John Snow's Broad Street map proved about cholera.",
-              "model_answer": "It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.",
+              "model": "It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.",
               "starter": "John Snow's Broad Street map proved that...",
               "clue": "Consider how he used geography and data to locate the infection."
             }
@@ -1044,7 +1044,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Describe the impact of the Great Stink on Parliament in 1858.",
-              "model_answer": "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
+              "model": "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
               "starter": "The Great Stink impacted Parliament by...",
               "clue": "Think about why the smell of the Thames affected the politicians personally."
             }
@@ -1055,7 +1055,7 @@ export const unitData = {
           "image": "/assets/water_local_eastney.jpg",
           "tasks": [
             {
-              "type": "short_answer",
+              "type": "text",
               "text": "How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?"
             }
           ],
@@ -1070,7 +1070,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain how Joseph Bazalgette's sewer system solved London's waste problem.",
-              "model_answer": "It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.",
+              "model": "It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.",
               "starter": "Joseph Bazalgette's sewer system solved the problem by...",
               "clue": "Think about how it moved waste out of the city and where it sent it."
             },
@@ -1093,7 +1093,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Explain the link between Louis Pasteur's Germ Theory and sanitation.",
-              "model_answer": "It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.",
+              "model": "It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.",
               "starter": "Louis Pasteur's Germ Theory linked to sanitation because...",
               "clue": "Think about how this disproved miasma theory permanently."
             }
@@ -1107,7 +1107,7 @@ export const unitData = {
             {
               "type": "written",
               "text": "Evaluate the significance of the 1875 Public Health Act for modern sanitation.",
-              "model_answer": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
+              "model": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
               "starter": "The Public Health Act of 1875 was significant because...",
               "clue": "Think about the transition from voluntary hygiene to mandatory laws."
             }
@@ -1892,7 +1892,7 @@ export const unitData = {
           "provenance_clue": "Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?"
         }
       ],
-      "model_answer": "<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\\\"color: #0284c7;\\\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\\\"color: #9333ea;\\\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\\\"color: #16a34a;\\\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\\\"color: #0284c7;\\\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\\\"color: #9333ea;\\\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\\\"color: #16a34a;\\\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>"
+      "model": "<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\\\"color: #0284c7;\\\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\\\"color: #9333ea;\\\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\\\"color: #16a34a;\\\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\\\"color: #0284c7;\\\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\\\"color: #9333ea;\\\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\\\"color: #16a34a;\\\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>"
     }
   ],
   "key_individuals": [

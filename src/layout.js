@@ -75,48 +75,64 @@ export function bindEvents() {
       return idxA - idxB;
     });
 
-    const renderLink = (unit) => {
-      const link = document.createElement('div');
-      link.className = 'nav-item';
-      link.style.cursor = 'pointer';
-      link.style.display = 'flex';
-      link.style.alignItems = 'center';
-      link.style.gap = '8px';
-      link.style.padding = '8px 16px';
-      link.style.borderRadius = '6px';
-      link.style.margin = '0 8px 4px 8px';
-      link.style.color = 'rgba(255,255,255,0.85)';
+    const renderAccordionGroup = (title, unitList, defaultOpen = false) => {
+      if (unitList.length === 0) return;
       
-      link.addEventListener('mouseenter', () => {
-        link.style.background = 'rgba(255,255,255,0.1)';
-        link.style.color = '#fff';
+      const header = document.createElement('div');
+      header.innerHTML = `<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600; display: flex; align-items: center; justify-content: space-between;"><span style="flex-grow: 1;">${title}</span><i class="fa-solid fa-chevron-${defaultOpen ? 'up' : 'down'}" style="transition: transform 0.2s; font-size: 0.7rem;"></i></span>`;
+      header.style.margin = '10px 16px 8px';
+      header.style.cursor = 'pointer';
+      
+      const content = document.createElement('div');
+      content.style.display = defaultOpen ? 'block' : 'none';
+      content.style.transition = 'all 0.3s ease';
+      
+      header.addEventListener('click', () => {
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        const icon = header.querySelector('i');
+        if (isOpen) {
+          icon.classList.remove('fa-chevron-up');
+          icon.classList.add('fa-chevron-down');
+        } else {
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-up');
+        }
       });
-      link.addEventListener('mouseleave', () => {
-        link.style.background = 'transparent';
+      
+      sidebarUnitsContainer.appendChild(header);
+      sidebarUnitsContainer.appendChild(content);
+      
+      unitList.forEach(unit => {
+        const link = document.createElement('div');
+        link.className = 'nav-item';
+        link.style.cursor = 'pointer';
+        link.style.display = 'flex';
+        link.style.alignItems = 'center';
+        link.style.gap = '8px';
+        link.style.padding = '8px 16px';
+        link.style.borderRadius = '6px';
+        link.style.margin = '0 8px 4px 8px';
         link.style.color = 'rgba(255,255,255,0.85)';
-      });
+        
+        link.addEventListener('mouseenter', () => {
+          link.style.background = 'rgba(255,255,255,0.1)';
+          link.style.color = '#fff';
+        });
+        link.addEventListener('mouseleave', () => {
+          link.style.background = 'transparent';
+          link.style.color = 'rgba(255,255,255,0.85)';
+        });
 
-      link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title}</span>`;
-      link.addEventListener('click', () => {
-        if (window.launchSubApp) window.launchSubApp(unit.id);
+        link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title}</span>`;
+        link.addEventListener('click', () => {
+          if (window.launchSubApp) window.launchSubApp(unit.id);
+        });
+        content.appendChild(link);
       });
-      sidebarUnitsContainer.appendChild(link);
     };
 
-    if (ks3Units.length > 0) {
-      const ks3Header = document.createElement('div');
-      ks3Header.innerHTML = '<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600;">Key Stage 3</span>';
-      ks3Header.style.margin = '10px 16px 8px';
-      sidebarUnitsContainer.appendChild(ks3Header);
-      ks3Units.forEach(renderLink);
-    }
-    
-    if (ks4Units.length > 0) {
-      const ks4Header = document.createElement('div');
-      ks4Header.innerHTML = '<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600;">Key Stage 4</span>';
-      ks4Header.style.margin = '15px 16px 8px';
-      sidebarUnitsContainer.appendChild(ks4Header);
-      ks4Units.forEach(renderLink);
-    }
+    renderAccordionGroup('Key Stage 3', ks3Units, true);
+    renderAccordionGroup('Key Stage 4', ks4Units, false);
   }
 }

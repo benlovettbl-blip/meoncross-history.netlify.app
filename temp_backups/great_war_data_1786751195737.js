@@ -306,7 +306,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
-              "model_answer": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
+              "model": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
             }
           ]
         },
@@ -317,7 +317,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
-              "model_answer": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
+              "model": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
             },
             {
               "type": "drag_drop_timeline",
@@ -371,14 +371,14 @@ export const unitData = {
         "question": "Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
         "tasks": [
           {
-            "type": "short_answer",
+            "type": "text",
             "text": "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
-            "model_answer": "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War."
+            "model": "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War."
           },
           {
-            "type": "short_answer",
+            "type": "text",
             "text": "Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
-            "model_answer": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
+            "model": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
           }
         ]
       },
@@ -415,7 +415,7 @@ export const unitData = {
       ],
       "extended": {
         "question": "Evaluate how the change in leadership from Bismarck to [Key Individual: Kaiser Wilhelm II] fundamentally altered Germany's strategic position in Europe.",
-        "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
+        "model": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
       },
       "do_now": {
         "type": "timeline",
@@ -462,15 +462,15 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
-            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
             "type": "draw",
             "text": "Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
-            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
           }
         ],
-        "model_answer": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
+        "model": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
       },
       "flashcards": [
         {
@@ -516,7 +516,7 @@ export const unitData = {
           }
         ],
         "topic": "the reasons for French hatred of Germany after 1871",
-        "model_answer": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
+        "model": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
       },
       "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
       "learning_objectives": {
@@ -561,7 +561,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer.",
-              "model_answer": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
+              "model": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
             }
           ]
         },
@@ -572,7 +572,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.",
-              "model_answer": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
+              "model": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
             }
           ],
           "theme_heading": "Ems Telegram Provokes War"
@@ -584,7 +584,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.",
-              "model_answer": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
+              "model": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
             }
           ],
           "theme_heading": "Prussia'"
@@ -596,7 +596,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.",
-              "model_answer": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
+              "model": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
             }
           ],
           "theme_heading": "France's Humiliation"
@@ -608,7 +608,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace.",
-              "model_answer": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
+              "model": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
             }
           ],
           "theme_heading": "Bismarck'"
@@ -876,7 +876,7 @@ export const unitData = {
       ],
       "extended": {
         "question": "Explain why Kaiser Wilhelm's strategy of testing the Entente Cordiale during the Moroccan Crises was a massive strategic failure for Germany.",
-        "model_answer": "Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany."
+        "model": "Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany."
       },
       "do_now": {
         "type": "questions",
@@ -932,20 +932,20 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.",
-            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
             "type": "draw",
             "text": "Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.",
-            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
             "type": "draw",
             "text": "Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word \"obstacle\" or \"encirclement\" in your answer.",
-            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+            "model": "A detailed historical explanation using specific chronology and evidence from the lesson."
           }
         ],
-        "model_answer": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire."
+        "model": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire."
       },
       "flashcards": [
         {
@@ -991,7 +991,7 @@ export const unitData = {
           }
         ],
         "topic": "the impact of Weltpolitik on international relations",
-        "model_answer": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany's aggressive desire for a larger empire.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
+        "model": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany's aggressive desire for a larger empire.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
       },
       "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
       "learning_objectives": {
@@ -1061,7 +1061,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power.",
-              "model_answer": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
+              "model": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
             }
           ],
           "theme_heading": "Imperialism's Global"
@@ -1073,7 +1073,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871?",
-              "model_answer": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
+              "model": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
             }
           ],
           "theme_heading": "Empires"
@@ -1090,12 +1090,12 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain.",
-              "model_answer": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
+              "model": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
             },
             {
               "type": "comprehension",
               "text": "What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany?",
-              "model_answer": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
+              "model": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
             }
           ],
           "theme_heading": "German Ambition Alarms"
@@ -1278,7 +1278,7 @@ export const unitData = {
       ],
       "extended": {
         "question": "How did the invention of the HMS Dreadnought ironically endanger British naval supremacy despite being a British invention?",
-        "model_answer": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
+        "model": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
       },
       "do_now": {
         "type": "questions",
@@ -1334,10 +1334,10 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
-            "model_answer": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
+            "model": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
           }
         ],
-        "model_answer": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete."
+        "model": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete."
       },
       "flashcards": [
         {
@@ -1383,7 +1383,7 @@ export const unitData = {
           }
         ],
         "topic": "the effects of the Anglo-German naval arms race",
-        "model_answer": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
+        "model": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
       },
       "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
       "learning_objectives": {
@@ -1453,7 +1453,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy.",
-              "model_answer": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
+              "model": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
             }
           ],
           "theme_heading": "British Naval Dominance"
@@ -1465,17 +1465,17 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct.",
-              "model_answer": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
+              "model": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
             },
             {
               "type": "comprehension",
               "text": "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet.",
-              "model_answer": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
+              "model": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
             },
             {
               "type": "comprehension",
               "text": "Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany.",
-              "model_answer": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
+              "model": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
             }
           ],
           "theme_heading": "Germany's Naval Challenge"
@@ -1492,7 +1492,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships.",
-              "model_answer": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
+              "model": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
             }
           ],
           "theme_heading": "Naval Arms Race Begins"
@@ -1519,7 +1519,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo.",
-              "model_answer": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
+              "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
             }
           ],
           "theme_heading": "Dreadnought Arms"
@@ -1688,7 +1688,7 @@ export const unitData = {
       ],
       "extended": {
         "question": "Was the 'Blank Check' a reckless mistake by the Kaiser, or a calculated move by the German military to trigger a necessary war? Use historical reasoning to justify your stance.",
-        "model_answer": "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late."
+        "model": "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late."
       },
       "do_now": {
         "type": "questions",
@@ -1744,15 +1744,15 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Identify which figure represents Germany and explain how you know.",
-            "model_answer": "The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia."
+            "model": "The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia."
           },
           {
             "type": "written",
             "text": "Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.",
-            "model_answer": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
+            "model": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
           }
         ],
-        "model_answer": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war."
+        "model": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war."
       },
       "flashcards": [
         {
@@ -1798,7 +1798,7 @@ export const unitData = {
           }
         ],
         "topic": "the threat posed by Serbia to Austria-Hungary",
-        "model_answer": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
+        "model": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
       },
       "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
       "learning_objectives": {
@@ -1865,12 +1865,12 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907.",
-              "model_answer": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
+              "model": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
             },
             {
               "type": "comprehension",
               "text": "Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war.",
-              "model_answer": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
+              "model": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
             }
           ],
           "theme_heading": "Europe's Two Alliances"
@@ -1882,7 +1882,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable.",
-              "model_answer": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
+              "model": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
             }
           ],
           "theme_heading": "German Fears and War Plans"
@@ -1894,12 +1894,12 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization.",
-              "model_answer": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
+              "model": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
             },
             {
               "type": "extended_writing",
               "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. <br><br><em>Use the <abbr title=\"Identify, Describe, Explain, Analyse\">IDEA framework</abbr> to structure your response.</em>",
-              "model_answer": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
+              "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
             }
           ],
           "theme_heading": "Europe's Industrial War Machine"
@@ -2139,15 +2139,15 @@ export const unitData = {
           {
             "type": "draw",
             "text": "Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.",
-            "model_answer": "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')"
+            "model": "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')"
           },
           {
             "type": "draw",
             "text": "Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.",
-            "model_answer": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
+            "model": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
           }
         ],
-        "model_answer": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war."
+        "model": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war."
       },
       "flashcards": [
         {
@@ -2193,7 +2193,7 @@ export const unitData = {
           }
         ],
         "topic": "the causes of the outbreak of World War I",
-        "model_answer": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
+        "model": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
       },
       "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
       "learning_objectives": {
@@ -2239,7 +2239,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire.",
-              "model_answer": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
+              "model": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
             }
           ],
           "theme_heading": "Empire's Serbian"
@@ -2256,7 +2256,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke.",
-              "model_answer": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
+              "model": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
             }
           ],
           "theme_heading": "A Fateful Wrong Turn"
@@ -2273,7 +2273,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war.",
-              "model_answer": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
+              "model": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
             }
           ],
           "theme_heading": "War Erupts Globally"
@@ -2290,7 +2290,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis?",
-              "model_answer": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
+              "model": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
             }
           ],
           "theme_heading": "Cousins' Failed Peace"
@@ -2302,7 +2302,7 @@ export const unitData = {
             {
               "type": "comprehension",
               "text": "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914.",
-              "model_answer": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
+              "model": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
             }
           ],
           "theme_heading": "Military Control Unleashes"

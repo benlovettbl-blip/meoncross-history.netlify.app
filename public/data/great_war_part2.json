@@ -225,6 +225,21 @@
                 "model": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
               }
             ]
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain why so many young British men eagerly volunteered for the army in 1914.",
+                "hints": [
+                  "Sentence Starter: Many young men volunteered because they were influenced by government propaganda...",
+                  "Sentence Starter: For example, posters like Lord Kitchener's \"Your Country Needs You\" used...",
+                  "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "quiz": [
@@ -279,20 +294,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain why so many young British men eagerly volunteered for the army in 1914.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: Many young men volunteered because they were influenced by government propaganda...",
-                "Sentence Starter: For example, posters like Lord Kitchener's \"Your Country Needs You\" used...",
-                "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
-              ]
-            }
-          ]
-        },
         "video": [
           {
             "type": "era",
@@ -463,6 +464,21 @@
                 "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
               }
             ]
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain why the conditions in the trenches were so difficult for soldiers.",
+                "hints": [
+                  "Sentence Starter: The conditions were difficult because of the constant threat of disease...",
+                  "Sentence Starter: For example, many soldiers suffered from trench foot due to...",
+                  "Sentence Starter: This resulted in a high number of casualties before battles even began..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "key_vocabulary": [
@@ -531,20 +547,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain why the conditions in the trenches were so difficult for soldiers.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: The conditions were difficult because of the constant threat of disease...",
-                "Sentence Starter: For example, many soldiers suffered from trench foot due to...",
-                "Sentence Starter: This resulted in a high number of casualties before battles even began..."
-              ]
-            }
-          ]
-        },
         "vocab": [
           {
             "term": "Attrition",
@@ -768,6 +770,21 @@
             ],
             "image": "/images/gw_indian_army.jpg",
             "image_alt": "Another view of British Indian Army soldiers deployed to the European theater. Their presence thousands of miles from home serves as undeniable proof that this was a truly global conflict, not just a 'European' civil war."
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain why the contribution of Empire troops was so important to the British war effort.",
+                "hints": [
+                  "Sentence Starter: Empire troops were important because they provided vital manpower...",
+                  "Sentence Starter: For example, Indian soldiers fought in major battles such as...",
+                  "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "quiz": [
@@ -822,20 +839,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain why the contribution of Empire troops was so important to the British war effort.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: Empire troops were important because they provided vital manpower...",
-                "Sentence Starter: For example, Indian soldiers fought in major battles such as...",
-                "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
-              ]
-            }
-          ]
-        },
         "video": [
           {
             "type": "era",
@@ -1013,6 +1016,21 @@
             ],
             "image": "/images/gw_munitionettes.jpg",
             "image_alt": "Female munitions workers ('Canary Girls') producing highly explosive artillery shells. Handling toxic TNT powder turned their skin yellow and hair green, and carried the constant, terrifying risk of massive factory explosions."
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain how the Defence of the Realm Act (DORA) changed everyday life in Britain.",
+                "hints": [
+                  "Sentence Starter: DORA changed everyday life by giving the government unprecedented control...",
+                  "Sentence Starter: For example, the government introduced censorship and rationing to...",
+                  "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "quiz": [
@@ -1067,20 +1085,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain how the Defence of the Realm Act (DORA) changed everyday life in Britain.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: DORA changed everyday life by giving the government unprecedented control...",
-                "Sentence Starter: For example, the government introduced censorship and rationing to...",
-                "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
-              ]
-            }
-          ]
-        },
         "video": [
           {
             "type": "era",
@@ -1242,6 +1246,21 @@
             ],
             "image": "/images/gw_versailles_cartoon.jpg",
             "image_alt": "A German political cartoon reflecting the intense national anger over the Treaty of Versailles. It depicts Germany as a victim being marched to the guillotine by vengeful Allied leaders, perfectly capturing the German view of the treaty as an unfair 'Diktat' (dictated peace)."
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
+                "hints": [
+                  "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
+                  "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
+                  "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "quiz": [
@@ -1296,20 +1315,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
-                "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
-                "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
-              ]
-            }
-          ]
-        },
         "video": [
           {
             "type": "era",
@@ -1456,6 +1461,21 @@
                 "model": "Teacher Note: These are open-ended masterclass extension tasks."
               }
             ]
+          },
+          {
+            "title": "Consolidation Task",
+            "tasks": [
+              {
+                "type": "extended_writing",
+                "question": "Explain the impact of the First World War on local communities like Stubbington.",
+                "hints": [
+                  "Sentence Starter: The war impacted local communities heavily through the loss of a generation of young men...",
+                  "Sentence Starter: For example, the use of \"Pals Battalions\" meant that a single battle could...",
+                  "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
+                ],
+                "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+              }
+            ]
           }
         ],
         "quiz": [
@@ -1510,20 +1530,6 @@
             ]
           }
         ],
-        "exam_practice": {
-          "questions": [
-            {
-              "type": "explain",
-              "question": "Explain the impact of the First World War on local communities like Stubbington.",
-              "marks": 8,
-              "hints": [
-                "Sentence Starter: The war impacted local communities heavily through the loss of a generation of young men...",
-                "Sentence Starter: For example, the use of \"Pals Battalions\" meant that a single battle could...",
-                "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
-              ]
-            }
-          ]
-        },
         "video": [
           {
             "type": "era",

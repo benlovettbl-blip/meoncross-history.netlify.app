@@ -293,24 +293,27 @@ allDirs.forEach(unitId => {
     }
 
     html += `
-      <!-- Progress Tracker injected into cover page -->
-      <div style="margin: 15px 5% 0 5%; width: 90%; flex-grow: 1;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+    </div>
+    
+    <div class="tracker-page" style="page-break-after: always; padding: 20px;">
+      <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 25px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">Progress & Assessment Tracker</h3>
+      <div style="width: 100%; display: flex; justify-content: center;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 11pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
           <thead>
             <tr style="background-color: #1a237e; color: white;">
-              <th style="border: 1px solid #333; padding: 6px; width: 35%;">Progress & Assessment Tracker</th>
-              <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Effort</th>
-              <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Level</th>
-              <th style="border: 1px solid #333; padding: 6px; width: 45%;">Teacher Comments</th>
+              <th style="border: 1px solid #333; padding: 10px; width: 35%;">Lesson / Assessment Title</th>
+              <th style="border: 1px solid #333; padding: 10px; width: 10%; text-align: center;">Effort</th>
+              <th style="border: 1px solid #333; padding: 10px; width: 10%; text-align: center;">Level</th>
+              <th style="border: 1px solid #333; padding: 10px; width: 45%;">Teacher Comments</th>
             </tr>
           </thead>
           <tbody>
             ${progressTrackerRows}
-            <tr style=" font-weight: bold; height: 35px;">
-              <td style="border: 1px solid #333; padding: 6px; text-align: right;">Final Unit Grade:</td>
-              <td style="border: 1px solid #333; padding: 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 6px;"></td>
+            <tr style=" font-weight: bold; height: 45px;">
+              <td style="border: 1px solid #333; padding: 10px; text-align: right;">Final Unit Grade:</td>
+              <td style="border: 1px solid #333; padding: 10px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 10px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 10px;"></td>
             </tr>
           </tbody>
         </table>

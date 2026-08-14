@@ -1,4 +1,78 @@
 {
+  "australia": {
+    "data": {
+      "title": "KS3: History of Australia",
+      "homepage_background": "",
+      "enquiry": "",
+      "cover_image": "",
+      "cover_caption": "",
+      "printable_workbooks": [],
+      "key_individuals": [],
+      "debatePrompts": [],
+      "lessons": []
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
+  },
   "cme_new": {
     "data": {
       "title": "Paper 2: Conflict in the Middle East, 1945-1995",
@@ -7197,6 +7271,80 @@
       }
     ]
   },
+  "cold_war": {
+    "data": {
+      "title": "KS3: The Cold War",
+      "homepage_background": "",
+      "enquiry": "",
+      "cover_image": "",
+      "cover_caption": "",
+      "printable_workbooks": [],
+      "key_individuals": [],
+      "debatePrompts": [],
+      "lessons": []
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
+  },
   "early_modern_world": {
     "data": {
       "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
@@ -7410,7 +7558,6 @@
               "tasks": [
                 {
                   "type": "multiple_choice",
-                  "text": "Knowledge Check: Review the events of 1450.",
                   "questions": [
                     {
                       "q": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
@@ -7430,7 +7577,8 @@
                         "Europeans had stronger armies than the Ming Emperor"
                       ]
                     }
-                  ]
+                  ],
+                  "question": "Knowledge Check: Review the events of 1450."
                 }
               ]
             },
@@ -7440,8 +7588,8 @@
               "tasks": [
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin.",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin."
                 }
               ]
             },
@@ -7460,7 +7608,7 @@
               "source_letter": "C",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
                   "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
                 }
@@ -7474,8 +7622,7 @@
               "title": "Analyzing Source D",
               "image": "/images/benin_bronze.jpg",
               "image_alt": "16th-Century Benin Bronze Plaque",
-              "source_letter": "D",
-              "tasks": []
+              "source_letter": "D"
             },
             {
               "title": "Analyzing the Evidence: The Wealth of West Africa",
@@ -7501,8 +7648,7 @@
             {
               "title": "Examining the Evidence",
               "image": "/images/silk_road.jpg",
-              "image_alt": "Map of the Silk Road Trade Routes",
-              "tasks": []
+              "image_alt": "Map of the Silk Road Trade Routes"
             },
             {
               "title": "Historical Interpretations: The Eurocentric Myth",
@@ -7510,14 +7656,13 @@
               "tasks": [
                 {
                   "type": "think_pair_share",
-                  "text": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
-                  "model": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+                  "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+                  "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
                 }
               ]
             },
             {
-              "title": "Lesson Reflection",
-              "tasks": []
+              "title": "Lesson Reflection"
             },
             {
               "title": "Side Quest: The English Peasant's Pottage",
@@ -7717,8 +7862,8 @@
               "tasks": [
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships.",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
                 }
               ]
             },
@@ -7730,8 +7875,7 @@
               "title": "Analyzing Source B",
               "image": "/images/martin_luther_portrait.jpg",
               "image_alt": "Portrait of Martin Luther (1529)",
-              "source_letter": "B",
-              "tasks": []
+              "source_letter": "B"
             },
             {
               "title": "Macro-History: The New World Monopoly & Privateers",
@@ -7744,7 +7888,7 @@
               "source_letter": "C",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?",
                   "model_answer": "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly."
                 },
@@ -7806,8 +7950,7 @@
               ]
             },
             {
-              "title": "Lesson Reflection",
-              "tasks": []
+              "title": "Lesson Reflection"
             },
             {
               "title": "Side Quest: The Horrors of Scurvy",
@@ -7820,13 +7963,13 @@
                 },
                 {
                   "type": "sorting",
-                  "text": "Number these events from 1 to 4 in the order they happened.",
                   "events": [
                     "The Spanish Armada is defeated by the English fleet and bad weather.",
                     "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
                     "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
                     "The Pope splits the 'New World' between Spain and Portugal."
-                  ]
+                  ],
+                  "question": "Number these events from 1 to 4 in the order they happened."
                 }
               ],
               "source_letter": "F"
@@ -8132,8 +8275,8 @@
                 },
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses.",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
                 }
               ]
             },
@@ -8167,11 +8310,6 @@
               ]
             },
             {
-              "title": "Vocabulary Check: Building Empires",
-              "text": "Understanding how the British Empire was built requires some specific historical vocabulary.",
-              "tasks": []
-            },
-            {
               "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
               "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>"
             },
@@ -8200,8 +8338,7 @@
               ]
             },
             {
-              "title": "Lesson Reflection",
-              "tasks": []
+              "title": "Lesson Reflection"
             },
             {
               "title": "Side Quest: The Invasion of the Pigs",
@@ -8555,10 +8692,10 @@
               "text": "It is time to synthesize your understanding of the ideological and physical battles of the English Civil War.",
               "tasks": [
                 {
-                  "type": "extended",
-                  "text": "Lesson Reflection: Was the English Civil War a true revolution that gave power to the people, or just a transfer of power from the King to wealthy Parliamentarians?",
-                  "model": "A strong answer should explain how the Divine Right of Kings was destroyed, but note that radical groups like the Diggers were crushed, meaning true power just shifted to wealthy merchants and landowners rather than ordinary people.",
-                  "starter": "Some historians argue that the true revolution was the shift of power away from the King towards..."
+                  "type": "extended_writing",
+                  "starter": "Some historians argue that the true revolution was the shift of power away from the King towards...",
+                  "question": "Lesson Reflection: Was the English Civil War a true revolution that gave power to the people, or just a transfer of power from the King to wealthy Parliamentarians? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+                  "model_answer": "The English Civil War was not a true revolution for the ordinary people, but rather a transfer of power to the wealthy elites. While it is true that the execution of King Charles I destroyed the 'Divine Right of Kings', the new system did not empower the working classes. Radical democratic groups like the Diggers and Levellers were violently crushed by Oliver Cromwell's New Model Army. Ultimately, true political power merely shifted from the absolute monarchy to wealthy merchants and Parliamentarian landowners, leaving the agrarian and industrial working classes just as disenfranchised as before."
                 }
               ]
             }
@@ -8838,7 +8975,7 @@
               "source_letter": "E",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
                   "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
                   "text": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
@@ -8857,8 +8994,7 @@
               ]
             },
             {
-              "title": "Lesson Reflection",
-              "tasks": []
+              "title": "Lesson Reflection"
             }
           ],
           "quiz": [
@@ -9079,8 +9215,8 @@
                 },
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point.",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point."
                 }
               ]
             },
@@ -9095,7 +9231,7 @@
               "source_letter": "B",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?",
                   "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.",
                   "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
@@ -9134,26 +9270,25 @@
               "text": "To understand how slavery shaped modern Britain, conduct a real-world historical investigation using the Centre for the Study of the Legacies of British Slavery at University College London (UCL).<br><br><div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px; font-family: monospace;\">  <h3 style=\"margin-top: 0; color: #38bdf8;\">🖥️ STUDENT RESEARCH INSTRUCTIONS</h3>  <ol style=\"margin-bottom: 20px; line-height: 1.6;\">    <li>Open your web browser and navigate to the <strong>UCL Legacies of British Slavery Database</strong> (ucl.ac.uk/lbs).</li>    <li>Click on <strong>\"Search the Database\"</strong> and select <strong>\"Commercial & Financial Legacies\"</strong> or search by <strong>Geographic Location</strong> (e.g., Bristol, Liverpool, London).</li>  </ol>  <div style=\"background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; color: #10b981; border: 1px solid #334155;\">    [Visit ucl.ac.uk/lbs] ──► [Search Your Region] ──► [Trace Local Wealth]  </div>  <h3 style=\"margin-top: 25px; color: #f472b6;\">📋 INVESTIGATION WORKSHEET</h3>  <ul style=\"line-height: 1.6;\">    <li><strong>Task A:</strong> Identify one individual/family who claimed compensation in 1833. Record their name, the number of enslaved people they 'owned', and the payout received.</li>    <li><strong>Task B:</strong> Investigate what happened to that wealth. Was it invested in local British buildings, railways, artwork, or bank stocks?</li>    <li><strong>Task C:</strong> Write a 150-word summary evaluating how your local area directly benefited from Atlantic plantation economies.</li>  </ul></div>",
               "tasks": [
                 {
-                  "type": "extended",
-                  "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here:",
+                  "type": "extended_writing",
+                  "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here: Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
                   "lines": 20
                 }
               ]
             },
             {
               "title": "Plenary Check",
-              "text": "Let's review the mechanics of the Transatlantic Slave Trade.",
-              "tasks": []
+              "text": "Let's review the mechanics of the Transatlantic Slave Trade."
             },
             {
               "title": "Lesson Reflection",
               "text": "It is time to synthesize your understanding of the mechanics of the Transatlantic slave trade.",
               "tasks": [
                 {
-                  "type": "extended",
-                  "text": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society?",
-                  "model": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits.",
-                  "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because..."
+                  "type": "extended_writing",
+                  "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because...",
+                  "question": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+                  "model_answer": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits."
                 }
               ]
             }
@@ -9409,8 +9544,8 @@
                 },
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British."
                 }
               ],
               "images": [
@@ -9474,13 +9609,12 @@
               "source_letter": "D",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
                   "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
                 },
                 {
                   "type": "matching",
-                  "text": "Match the aspects of the Stono Rebellion to their correct historical descriptions.",
                   "pairs": [
                     {
                       "left": "The Cause",
@@ -9494,7 +9628,8 @@
                       "left": "The Consequence",
                       "right": "The British planters passed the brutal Negro Act of 1740, heavily restricting movement, assembly, and education."
                     }
-                  ]
+                  ],
+                  "question": "Match the aspects of the Stono Rebellion to their correct historical descriptions."
                 }
               ]
             },
@@ -9530,10 +9665,10 @@
               "text": "It is time to synthesize your understanding of how enslaved Africans resisted the Transatlantic Slave Trade.",
               "tasks": [
                 {
-                  "type": "extended",
-                  "text": "Lesson Reflection: Why is it historically inaccurate and damaging to claim that the abolition of the slave trade was purely the result of benevolent white politicians like William Wilberforce?",
-                  "model": "A strong answer should explain that this 'white savior' narrative ignores the centuries of relentless resistance by enslaved people themselves (both covert sabotage and overt rebellions like Stono), as well as the economic factors (like the declining profitability of sugar) that historians like Eric Williams argue were the true catalysts for abolition.",
-                  "starter": "The 'white savior' narrative is historically inaccurate because it ignores the actions of..."
+                  "type": "extended_writing",
+                  "starter": "The 'white savior' narrative is historically inaccurate because it ignores the actions of...",
+                  "question": "Lesson Reflection: Why is it historically inaccurate and damaging to claim that the abolition of the slave trade was purely the result of benevolent white politicians like William Wilberforce? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+                  "model_answer": "A strong answer should explain that this 'white savior' narrative ignores the centuries of relentless resistance by enslaved people themselves (both covert sabotage and overt rebellions like Stono), as well as the economic factors (like the declining profitability of sugar) that historians like Eric Williams argue were the true catalysts for abolition."
                 }
               ]
             },
@@ -9545,7 +9680,7 @@
               "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
                   "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
                 },
@@ -9930,7 +10065,6 @@
             {
               "title": "Micro-History: The Contrast of London Bridge (1750)",
               "text": "In October 1750, a French aristocrat named Pierre-Jean Grosley stood on London Bridge and looked out over the River Thames.<br><br>To his right, he saw a forest of wooden masts belonging to over 1,000 merchant ships. These vessels had arrived from Canton, Calcutta, Barbados, and Virginia, packed with tea, silk, raw sugar, and tobacco. Nearby stood the <strong>Bank of England</strong> and the <strong>Royal Exchange</strong>, where stockbrokers traded paper credit, fire insurance, and national debt using complex mathematics that stunned the rest of Europe. London was the financial beating heart of a global, capitalist empire.<br><br>Then Grosley walked off the bridge and turned into the narrow alleys of St. Giles.<br><br>Within five minutes, the scent of expensive Indian spices was replaced by the stench of open sewage, rotting garbage, and cheap gin. He passed desperate mothers pouring raw grain spirit down the throats of crying infants to quiet them. In these slums, 50% of children died before the age of five. Medical care still relied on bloodletting with leeches, public executions at Tyburn Tree drew crowds of 30,000 howling spectators, and women had zero legal rights, remaining the legal property of their husbands.<br><br>Grosley was left with a baffling paradox: <strong>Was Britain in 1750 a hyper-modern global superpower, or a brutal, unequal medieval society wearing a wig?</strong>",
-              "tasks": [],
               "images": [
                 {
                   "image": "/images/early_mod_l6_banner.jpg",
@@ -9971,8 +10105,8 @@
               "tasks": [
                 {
                   "type": "drawing",
-                  "text": "Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).",
-                  "lines": 10
+                  "lines": 10,
+                  "question": "Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains)."
                 }
               ]
             },
@@ -9983,7 +10117,7 @@
               "source_letter": "B",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.",
                   "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
                   "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
@@ -10022,7 +10156,7 @@
               "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
               "tasks": [
                 {
-                  "type": "analysis",
+                  "type": "source_analysis",
                   "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
                   "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
                 }
@@ -10031,8 +10165,7 @@
             },
             {
               "title": "Historiographical Debate: 'The First Modern Society'?",
-              "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: ]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: ]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A:  (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B:  (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>",
-              "tasks": []
+              "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: ]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: ]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A:  (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B:  (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>"
             },
             {
               "title": "Synthesis Essay Planning Task",
@@ -10040,17 +10173,16 @@
               "tasks": [
                 {
                   "type": "table_planner",
-                  "text": "Assessment Planner: Structure your argument before you write your final essay.",
                   "columns": [
                     "Point (Your claim)",
                     "Evidence (Historical facts)",
                     "Explanation (Why this matters)"
                   ],
-                  "rows": 3
+                  "rows": 3,
+                  "question": "Assessment Planner: Structure your argument before you write your final essay."
                 },
                 {
                   "type": "spectrum_mapper",
-                  "text": "Map these historical realities onto the spectrum below to plan your argument.",
                   "labels": [
                     "Deeply Traditional (Un-Modern)",
                     "Highly Modern"
@@ -10087,18 +10219,17 @@
                       "desc": "Millions of humans treated as property for profit."
                     }
                   ],
-                  "model": "<div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;\">  <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center;\">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style=\"text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;\">Use this matrix to structure your paragraphs.</p>  <table style=\"width: 100%; border-collapse: collapse; font-size: 0.95rem;\">    <thead>      <tr style=\"background: #334155;\">        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;\">Paragraph</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Core Argument</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>1. Introduction</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Define \"modernity\", state your thesis line, and address limitations.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">\"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional...\"</td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>2. Modern Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Bank of England (1694), Parliament, Global Trade. <br><em>\"On one hand, Britain appeared hyper-modern by 1750 because...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>3. Traditional Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Chattel Slavery, Bloody Code, Women's Rights. <br><em>\"However, beneath this modern surface lay deeply un-modern realities, such as...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>4. Conclusion</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Nuanced overall judgment.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\"><em>\"Therefore, rather than being a fully modern state, 1750 Britain was best described as...\"</em></td>      </tr>    </tbody>  </table></div>"
+                  "question": "Map these historical realities onto the spectrum below to plan your argument.",
+                  "model_answer": "<div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;\">  <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center;\">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style=\"text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;\">Use this matrix to structure your paragraphs.</p>  <table style=\"width: 100%; border-collapse: collapse; font-size: 0.95rem;\">    <thead>      <tr style=\"background: #334155;\">        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;\">Paragraph</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Core Argument</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>1. Introduction</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Define \"modernity\", state your thesis line, and address limitations.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">\"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional...\"</td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>2. Modern Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Bank of England (1694), Parliament, Global Trade. <br><em>\"On one hand, Britain appeared hyper-modern by 1750 because...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>3. Traditional Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Chattel Slavery, Bloody Code, Women's Rights. <br><em>\"However, beneath this modern surface lay deeply un-modern realities, such as...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>4. Conclusion</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Nuanced overall judgment.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\"><em>\"Therefore, rather than being a fully modern state, 1750 Britain was best described as...\"</em></td>      </tr>    </tbody>  </table></div>"
                 }
               ]
             },
             {
-              "title": "Lesson Reflection",
-              "tasks": []
+              "title": "Lesson Reflection"
             },
             {
               "title": "Urban Poverty: The Mudlarks of London",
               "text": "<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>",
-              "tasks": [],
               "source_letter": "F"
             }
           ],
@@ -26190,7 +26321,7 @@
       "title": "KS3: Causes of the Great War",
       "homepage_background": "/assets/somme_trench_1916.jpg",
       "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
-      "cover_image": "/assets/great_war_Naval-race-1909.jpg",
+      "cover_image": "/images/great_war_cover.jpg",
       "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
       "printable_workbooks": [
         {
@@ -26477,7 +26608,7 @@
               "text": "In 1862, a brilliant and fiercely conservative nobleman named Otto von Bismarck was appointed Chancellor of Prussia. Bismarck had a clear and single-minded goal: to exclude Austria from German affairs once and for all and unite the remaining German states under Prussian leadership.\n\nBismarck despised the slow, democratic methods of speeches and parliaments. In his very first speech as Chancellor, he warned the Prussian parliament of his plans:\n\n> *\"Germany is not looking to Prussia’s liberalism, but to her power... The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**.\"*\n\nBy \"blood,\" Bismarck meant the lives of soldiers; by \"iron,\" he meant the advanced technology of Prussia’s military machine, including its modern railways, artillery, and rapid-firing guns. From the mid-nineteenth century, Prussia built up a massive, exceptionally well-trained, and highly disciplined army. Bismarck was ready to unleash it.",
               "tasks": [
                 {
-                  "type": "text",
+                  "type": "comprehension",
                   "text": "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
                   "model": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
                 }
@@ -26488,7 +26619,7 @@
               "text": "To unite Germany, Bismarck orchestrated three short, decisive wars over a seven-year period:\n\n*   **War 1: The Danish War (1864):** Prussia teamed up with Austria to quickly defeat Denmark in a dispute over territory, showing off their military coordination.\n*   **War 2: The Austro-Prussian War (1866):** Bismarck turned on his former ally, Austria. The modernized Prussian army crushed the Austrian forces in just seven weeks. Following this defeat, Austria was completely excluded from German affairs, leaving Prussia as the undisputed leader of the German states.\n*   **War 3: The Franco-Prussian War (1870–1871):** To convince the southern German states (who were wary of Prussian dominance) to join his new union, Bismarck needed a common enemy. He cleverly provoked a war with France. The Prussian military machine invaded France, totally destroyed the French armies, and captured the French Emperor.",
               "tasks": [
                 {
-                  "type": "text",
+                  "type": "comprehension",
                   "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
                   "model": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
                 },
@@ -26510,13 +26641,28 @@
                       "text": "France (1870)"
                     }
                   ],
-                  "secret_code": "BISMARCK1871"
+                  "secret_code": "BISMARCK1871",
+                  "question": "Interactive Task: The Three Wars of Unification"
                 }
               ]
             },
             {
               "title": "4. Crowning a Kaiser in the Enemy's Palace",
               "text": "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later."
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
+                  "hints": [
+                    "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
+                    "Sentence Starter: For example, he modernized the Prussian army and used it to...",
+                    "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
+                  ]
+                }
+              ]
             }
           ],
           "primary_source": {
@@ -26549,21 +26695,7 @@
               "term": "Blood and Iron",
               "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
-                  "Sentence Starter: For example, he modernized the Prussian army and used it to...",
-                  "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "lesson_1",
@@ -26731,7 +26863,7 @@
               "level_4": "There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer.",
                   "model": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
                 }
@@ -26742,7 +26874,7 @@
               "level_4": "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.",
                   "model": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
                 }
@@ -26754,7 +26886,7 @@
               "level_4": "Prussia's military strategy relied on two distinct advantages. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.",
                   "model": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
                 }
@@ -26766,7 +26898,7 @@
               "level_4": "The war permanently transformed the balance of power. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.",
                   "model": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
                 }
@@ -26778,7 +26910,7 @@
               "level_4": "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace.",
                   "model": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
                 }
@@ -26794,6 +26926,20 @@
               "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
               "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
               "theme_heading": "Wilhelm Undoes Bismarck"
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
+                  "hints": [
+                    "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
+                    "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
+                    "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
+                  ]
+                }
+              ]
             }
           ],
           "quiz": [
@@ -26997,21 +27143,7 @@
                 "Notre Dame Cathedral"
               ]
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
-                  "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
-                  "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "lesson_2",
@@ -27231,7 +27363,7 @@
               "level_4": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power.",
                   "model": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
                 }
@@ -27243,7 +27375,7 @@
               "level_4": "Great Britain possessed the vastest overseas empire in human history. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871?",
                   "model": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
                 }
@@ -27260,12 +27392,12 @@
               "level_4": "Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain.",
                   "model": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
                 },
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany?",
                   "model": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
                 }
@@ -27291,6 +27423,20 @@
               "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
               "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
               "theme_heading": "Europe's"
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
+                  "hints": [
+                    "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
+                    "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
+                    "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
+                  ]
+                }
+              ]
             }
           ],
           "quiz": [
@@ -27404,21 +27550,7 @@
                 "It led to Britain abandoning its empire"
               ]
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
-                  "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
-                  "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "lesson_3",
@@ -27623,7 +27755,7 @@
               "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy.",
                   "model": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
                 }
@@ -27635,17 +27767,17 @@
               "level_4": "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct.",
                   "model": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
                 },
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet.",
                   "model": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
                 },
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany.",
                   "model": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
                 }
@@ -27662,7 +27794,7 @@
               "level_4": "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships.",
                   "model": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
                 }
@@ -27689,12 +27821,26 @@
               "level_4": "Germany recognized the opportunity immediately. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo.",
                   "model": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
                 }
               ],
               "theme_heading": "Dreadnought Arms"
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the naval race between Britain and Germany damaged their relations.",
+                  "hints": [
+                    "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
+                    "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
+                    "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
+                  ]
+                }
+              ]
             }
           ],
           "quiz": [
@@ -27808,21 +27954,7 @@
                 "It made them give up their empire"
               ]
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the naval race between Britain and Germany damaged their relations.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
-                  "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
-                  "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "lesson_4",
@@ -28035,12 +28167,12 @@
               "level_4": "By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907.",
                   "model": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
                 },
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war.",
                   "model": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
                 }
@@ -28052,7 +28184,7 @@
               "level_4": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable.",
                   "model": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
                 }
@@ -28064,13 +28196,13 @@
               "level_4": "Concurrently, the nature of war was becoming highly industrialization-driven. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization.",
                   "model": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
                 },
                 {
-                  "type": "written",
-                  "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power.",
+                  "type": "extended_writing",
+                  "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. <br><br><em>Use the <abbr title=\"Identify, Describe, Explain, Analyse\">IDEA framework</abbr> to structure your response.</em>",
                   "model": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
                 }
               ],
@@ -28090,6 +28222,20 @@
               "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
               "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
               "theme_heading": "Germany's Calculated War"
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
+                  "hints": [
+                    "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
+                    "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
+                    "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
+                  ]
+                }
+              ]
             }
           ],
           "quiz": [
@@ -28203,21 +28349,7 @@
                 "Britain"
               ]
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
-                  "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
-                  "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "lesson_5",
@@ -28400,9 +28532,6 @@
           "vocab_cloze_text": "The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war.",
           "narrative_blocks": [
             {
-              "text": "**The July Crisis: Inevitable or Preventable?**\n\n"
-            },
-            {
               "text": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
               "level_4": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
               "theme_heading": "Balkans Ignite Conflict"
@@ -28412,7 +28541,7 @@
               "level_4": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire.",
                   "model": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
                 }
@@ -28429,7 +28558,7 @@
               "level_4": "The initial assassination attempts failed completely. Realizing the error, the drivers stopped and attempted to reverse.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke.",
                   "model": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
                 }
@@ -28446,7 +28575,7 @@
               "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war.",
                   "model": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
                 }
@@ -28463,7 +28592,7 @@
               "level_4": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis?",
                   "model": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
                 }
@@ -28475,7 +28604,7 @@
               "level_4": "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
               "tasks": [
                 {
-                  "type": "written",
+                  "type": "comprehension",
                   "text": "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914.",
                   "model": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
                 }
@@ -28491,6 +28620,20 @@
               "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
               "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
               "theme_heading": "Dominoes"
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
+                  "hints": [
+                    "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
+                    "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
+                    "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
+                  ]
+                }
+              ]
             }
           ],
           "quiz": [
@@ -28604,21 +28747,7 @@
                 "Because Germany sank a British ship"
               ]
             }
-          ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
-                  "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
-                  "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
-                ]
-              }
-            ]
-          }
+          ]
         }
       ],
       "quizPack": [
@@ -29743,6 +29872,21 @@
                   "model": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
                 }
               ]
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why so many young British men eagerly volunteered for the army in 1914.",
+                  "hints": [
+                    "Sentence Starter: Many young men volunteered because they were influenced by government propaganda...",
+                    "Sentence Starter: For example, posters like Lord Kitchener's \"Your Country Needs You\" used...",
+                    "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -29797,20 +29941,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why so many young British men eagerly volunteered for the army in 1914.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: Many young men volunteered because they were influenced by government propaganda...",
-                  "Sentence Starter: For example, posters like Lord Kitchener's \"Your Country Needs You\" used...",
-                  "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
-                ]
-              }
-            ]
-          },
           "video": [
             {
               "type": "era",
@@ -29981,6 +30111,21 @@
                   "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
                 }
               ]
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the conditions in the trenches were so difficult for soldiers.",
+                  "hints": [
+                    "Sentence Starter: The conditions were difficult because of the constant threat of disease...",
+                    "Sentence Starter: For example, many soldiers suffered from trench foot due to...",
+                    "Sentence Starter: This resulted in a high number of casualties before battles even began..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "key_vocabulary": [
@@ -30049,20 +30194,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the conditions in the trenches were so difficult for soldiers.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The conditions were difficult because of the constant threat of disease...",
-                  "Sentence Starter: For example, many soldiers suffered from trench foot due to...",
-                  "Sentence Starter: This resulted in a high number of casualties before battles even began..."
-                ]
-              }
-            ]
-          },
           "vocab": [
             {
               "term": "Attrition",
@@ -30286,6 +30417,21 @@
               ],
               "image": "/images/gw_indian_army.jpg",
               "image_alt": "Another view of British Indian Army soldiers deployed to the European theater. Their presence thousands of miles from home serves as undeniable proof that this was a truly global conflict, not just a 'European' civil war."
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the contribution of Empire troops was so important to the British war effort.",
+                  "hints": [
+                    "Sentence Starter: Empire troops were important because they provided vital manpower...",
+                    "Sentence Starter: For example, Indian soldiers fought in major battles such as...",
+                    "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -30340,20 +30486,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the contribution of Empire troops was so important to the British war effort.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: Empire troops were important because they provided vital manpower...",
-                  "Sentence Starter: For example, Indian soldiers fought in major battles such as...",
-                  "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
-                ]
-              }
-            ]
-          },
           "video": [
             {
               "type": "era",
@@ -30531,6 +30663,21 @@
               ],
               "image": "/images/gw_munitionettes.jpg",
               "image_alt": "Female munitions workers ('Canary Girls') producing highly explosive artillery shells. Handling toxic TNT powder turned their skin yellow and hair green, and carried the constant, terrifying risk of massive factory explosions."
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain how the Defence of the Realm Act (DORA) changed everyday life in Britain.",
+                  "hints": [
+                    "Sentence Starter: DORA changed everyday life by giving the government unprecedented control...",
+                    "Sentence Starter: For example, the government introduced censorship and rationing to...",
+                    "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -30585,20 +30732,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain how the Defence of the Realm Act (DORA) changed everyday life in Britain.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: DORA changed everyday life by giving the government unprecedented control...",
-                  "Sentence Starter: For example, the government introduced censorship and rationing to...",
-                  "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
-                ]
-              }
-            ]
-          },
           "video": [
             {
               "type": "era",
@@ -30760,6 +30893,21 @@
               ],
               "image": "/images/gw_versailles_cartoon.jpg",
               "image_alt": "A German political cartoon reflecting the intense national anger over the Treaty of Versailles. It depicts Germany as a victim being marched to the guillotine by vengeful Allied leaders, perfectly capturing the German view of the treaty as an unfair 'Diktat' (dictated peace)."
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
+                  "hints": [
+                    "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
+                    "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
+                    "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -30814,20 +30962,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
-                  "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
-                  "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
-                ]
-              }
-            ]
-          },
           "video": [
             {
               "type": "era",
@@ -30974,6 +31108,21 @@
                   "model": "Teacher Note: These are open-ended masterclass extension tasks."
                 }
               ]
+            },
+            {
+              "title": "Consolidation Task",
+              "tasks": [
+                {
+                  "type": "extended_writing",
+                  "question": "Explain the impact of the First World War on local communities like Stubbington.",
+                  "hints": [
+                    "Sentence Starter: The war impacted local communities heavily through the loss of a generation of young men...",
+                    "Sentence Starter: For example, the use of \"Pals Battalions\" meant that a single battle could...",
+                    "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
+                  ],
+                  "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -31028,20 +31177,6 @@
               ]
             }
           ],
-          "exam_practice": {
-            "questions": [
-              {
-                "type": "explain",
-                "question": "Explain the impact of the First World War on local communities like Stubbington.",
-                "marks": 8,
-                "hints": [
-                  "Sentence Starter: The war impacted local communities heavily through the loss of a generation of young men...",
-                  "Sentence Starter: For example, the use of \"Pals Battalions\" meant that a single battle could...",
-                  "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
-                ]
-              }
-            ]
-          },
           "video": [
             {
               "type": "era",
@@ -31376,7 +31511,7 @@
   "industrialisation_and_empire": {
     "data": {
       "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
-      "homepage_background": "/images/bg_great_war.jpg",
+      "homepage_background": "/images/imperial_federation_map.jpg",
       "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
       "cover_image": "/images/imperial_federation_map.jpg",
       "cover_caption": "Industrialisation, Empire, and Power.",
@@ -33923,6 +34058,81 @@
       }
     ]
   },
+  "the_shoah": {
+    "data": {
+      "title": "KS3: The Shoah",
+      "unit_primer": "This unit covers the history of the Shoah. Teachers must ensure that the IHRA working definition of antisemitism is used as the foundational framework for all discussions and materials.",
+      "homepage_background": "",
+      "enquiry": "",
+      "cover_image": "",
+      "cover_caption": "",
+      "printable_workbooks": [],
+      "key_individuals": [],
+      "debatePrompts": [],
+      "lessons": []
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
+  },
   "water_and_sanitation": {
     "data": {
       "debatePrompts": [
@@ -33967,24 +34177,24 @@
             "type": "questions",
             "items": [
               {
-                "question": "PAST TOPIC: What is a primary source?",
-                "answer": "A piece of evidence created at the time of the event being studied (e.g., a diary, photograph, or artefact)."
+                "question": "What does AD stand for in historical dates?",
+                "answer": "Anno Domini (the year of our Lord)."
               },
               {
-                "question": "PAST TOPIC: What is a secondary source?",
-                "answer": "A piece of evidence created after the event by someone who was not there (e.g., a modern history book)."
+                "question": "What century is the year 1066 in?",
+                "answer": "The 11th Century."
               },
               {
-                "question": "PAST TOPIC: What does 'chronological order' mean?",
-                "answer": "Arranging events in the order in which they happened in time, from earliest to most recent."
+                "question": "Which ancient empire conquered Britain and built Hadrian's Wall?",
+                "answer": "The Romans."
               },
               {
-                "question": "PAST TOPIC: What century is the year 1854 in?",
-                "answer": "The 19th Century."
+                "question": "What does the word 'Sanitation' mean?",
+                "answer": "Conditions relating to public health, especially clean drinking water and sewage disposal."
               },
               {
-                "question": "PAST TOPIC: What is the difference between BC and AD (or BCE and CE)?",
-                "answer": "BC (Before Christ) refers to years before the birth of Jesus, while AD (Anno Domini) refers to years after. The numbers in BC count backwards, while AD count forwards."
+                "question": "What is a primary source?",
+                "answer": "Evidence that was created at the time of the event."
               }
             ]
           },
@@ -33999,27 +34209,19 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+            "primer": "This lesson contrasts the highly advanced public health engineering of the Roman Empire with the primitive living conditions of native Britons. The goal is to show students that historical progress is not a straight line upwards.",
             "objectives": [
               {
-                "objective": "Identify the key features of this topic.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+                "objective": "Understand the scale of Roman public health engineering.",
+                "primer": "Use the narrative on aqueducts and bathhouses to emphasize the sheer volume of water the Romans moved using only gravity.",
+                "question": "How did the Romans manage to keep the water flowing constantly into their forts?"
               },
               {
-                "objective": "Explain the core concepts and historical context.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Evaluate the overall significance.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Analyze a primary source related to the lesson theme.",
-                "primer": "Guide students through a visual analysis of the primary source.",
-                "question": "Looking at this communal latrine, how does it challenge our modern ideas of privacy and hygiene compared to Roman priorities of engineering?"
+                "objective": "Explain why the Romans prioritized public health.",
+                "primer": "Link their infrastructure back to military efficiency; sick soldiers cannot fight.",
+                "question": "Why was it crucial for the Roman army to keep its forts clean and hygienic?"
               }
-            ],
-            "source_context": "This visual source provides students with direct evidence regarding Lesson 1: Prehistoric and Roman Sanitati.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How does this source demonstrate both the advancements and limitations of Roman public health?**"
+            ]
           },
           "narrative_blocks": [
             {
@@ -34215,44 +34417,24 @@
             "type": "questions",
             "items": [
               {
-                "question": "What was the main feature of Iron Age Settlements & Cesspits?",
-                "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
+                "question": "How did the Romans transport massive amounts of fresh water?",
+                "answer": "Aqueducts."
               },
               {
-                "question": "How did Roman Conduits & Water Supply impact society?",
-                "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
+                "question": "What did the Romans use to flush their public toilets?",
+                "answer": "Running water from the aqueducts and bathhouses."
               },
               {
-                "question": "Identify one major problem with The Roman Withdrawal.",
-                "answer": "The advanced centralized sanitation infrastructure was abandoned, causing public hygiene to decline back into primitive, localized methods."
+                "question": "Why did the Roman army need to stay healthy?",
+                "answer": "To march and fight efficiently across the Empire."
               },
               {
-                "question": "Why were Iron Age cesspits safe?",
-                "answer": "Because populations were small and spread out."
+                "question": "What did the Romans build in their forts to treat sick soldiers?",
+                "answer": "Hospitals (Valetudinariums)."
               },
               {
-                "question": "How did the Romans move water?",
-                "answer": "Using gravity through stone conduits over many miles."
-              },
-              {
-                "question": "What were Roman latrines?",
-                "answer": "Communal public toilets flushed continuously by running water."
-              },
-              {
-                "question": "What happened to sanitation when the Romans left?",
-                "answer": "The systems collapsed and towns reverted to primitive methods."
-              },
-              {
-                "question": "Did Iron Age people pollute their water?",
-                "answer": "No, they intentionally dug cesspits far from their drinking water."
-              },
-              {
-                "question": "Why was flowing water important to Romans?",
-                "answer": "They believed it was vital for keeping society healthy and clean."
-              },
-              {
-                "question": "What is a conduit?",
-                "answer": "A channel or pipe for conveying water."
+                "question": "Did the Romans understand bacteria?",
+                "answer": "No, they just knew bad smells or swamps were linked to illness."
               }
             ]
           },
@@ -34267,27 +34449,19 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+            "primer": "This lesson explores the dramatic regression in public health following the collapse of the Roman Empire. However, ensure students understand the nuance: while towns were filthy, monasteries retained some Roman hygiene practices because cleanliness was linked to godliness.",
             "objectives": [
               {
-                "objective": "Identify the key features of this topic.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+                "objective": "Describe the hazards of a medieval town.",
+                "primer": "Focus on the lack of zoning (butchers next to houses) and the leaking of cesspits into water supplies.",
+                "question": "Why were medieval drinking wells so dangerous?"
               },
               {
-                "objective": "Explain the core concepts and historical context.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Evaluate the overall significance.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Analyze a primary source related to the lesson theme.",
-                "primer": "Guide students through a visual analysis of the primary source.",
-                "question": "If most ordinary Medieval towns lacked complex plumbing, why do you think monasteries like Canterbury Cathedral invested so heavily in advanced water systems?"
+                "objective": "Explain why monasteries were healthier than towns.",
+                "primer": "Direct students to the section on monks building their own advanced water pipes.",
+                "question": "Why did monks believe it was their religious duty to stay clean?"
               }
-            ],
-            "source_context": "This visual source provides students with direct evidence regarding Lesson 2: Medieval Sanitation and The Ch.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?**"
+            ]
           },
           "narrative_blocks": [
             {
@@ -34484,44 +34658,24 @@
             "type": "questions",
             "items": [
               {
-                "question": "What was the main feature of Peasant Cesspits?",
-                "answer": "Simple garden outhouses dug over earth holes. Safe in low-density rural villages like Wharram Percy, but highly problematic in crowded towns."
-              },
-              {
-                "question": "How did Monastic luxury (Canterbury Priory) impact society?",
-                "answer": "It showcased advanced water engineering (lead pipes, color-coded fresh and waste water lines) funded by wealthy, organized Christian orders."
-              },
-              {
-                "question": "Identify one major problem with Gongfermers and night-work.",
-                "answer": "It was a dangerous, filthy task limited to nighttime, which only temporarily cleared overflowing urban cesspits without solving the lack of permanent sewers."
+                "question": "Why were medieval towns dangerous for public health?",
+                "answer": "They were overcrowded, with cesspits leaking into drinking wells."
               },
               {
                 "question": "What was a Gongfermer?",
                 "answer": "A medieval worker who cleared human waste from cesspits at night."
               },
               {
-                "question": "Why did medieval monks build water systems?",
+                "question": "Why did medieval monks build clean water systems?",
                 "answer": "They believed cleanliness brought them closer to God."
               },
               {
-                "question": "What did Edward III order in 1357?",
+                "question": "What is a cesspit?",
+                "answer": "A pit for the disposal of liquid waste and sewage."
+              },
+              {
+                "question": "What did King Edward III order in 1357?",
                 "answer": "The removal of filth from London's streets to prevent sickness."
-              },
-              {
-                "question": "Why were medieval towns dangerous for health?",
-                "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
-              },
-              {
-                "question": "How did the Romans keep forts clean?",
-                "answer": "Using deep sewers flushed continuously with running water."
-              },
-              {
-                "question": "How did water sellers make money?",
-                "answer": "By selling barrels of river water to townspeople."
-              },
-              {
-                "question": "What is Miasma?",
-                "answer": "A bad smell previously thought to cause disease."
               }
             ]
           },
@@ -34536,27 +34690,19 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+            "primer": "This lesson covers the Early Modern period, highlighting how rapid population growth in towns exacerbated the filth. It introduces the concept of technological failure due to lacking infrastructure (the flushing toilet).",
             "objectives": [
               {
-                "objective": "Identify the key features of this topic.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+                "objective": "Understand the impact of early modern urbanization.",
+                "primer": "Highlight how the growing population outpaced the ability to dispose of waste, leading to 'gongfermers' dumping waste in rivers.",
+                "question": "Why did the rivers in early modern towns become open sewers?"
               },
               {
-                "objective": "Explain the core concepts and historical context.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Evaluate the overall significance.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Analyze a primary source related to the lesson theme.",
-                "primer": "Guide students through a visual analysis of the primary source.",
-                "question": "Harington invented a working flushing toilet in 1596, yet it wasn't widely adopted for another 250 years. What crucial piece of town infrastructure was missing that made his invention useless for the average person?"
+                "objective": "Analyze the failure of Harington's flushing toilet.",
+                "primer": "Use this to teach students that an invention is useless without the supporting infrastructure (sewers).",
+                "question": "Why did Harington's flushing toilet fail to catch on for 250 years?"
               }
-            ],
-            "source_context": "This visual source provides students with direct evidence regarding Lesson 3: Early Modern Filth and Cesspit.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?**"
+            ]
           },
           "narrative_blocks": [
             {
@@ -34736,35 +34882,29 @@
           "id": "lesson_4",
           "title": "How did the Industrial Revolution lead to a public health crisis?",
           "do_now": {
-            "type": "timeline",
-            "events": [
+            "type": "questions",
+            "items": [
               {
-                "year": "1750",
-                "title": "Rural Britain",
-                "detail": "Most of the population lives and works in the countryside."
+                "question": "Why did rivers in early modern towns become open sewers?",
+                "answer": "Population growth outpaced the ability to dispose of waste."
               },
               {
-                "year": "1780s",
-                "title": "First Factories",
-                "detail": "Steam-powered textile mills begin mass production."
+                "question": "Who invented a working flushing toilet in 1596?",
+                "answer": "John Harington."
               },
               {
-                "year": "1800-1850",
-                "title": "Rapid Urbanisation",
-                "detail": "Millions migrate to industrial towns looking for work."
+                "question": "Why did Harington's flushing toilet fail to catch on for 250 years?",
+                "answer": "There were no underground sewers to connect it to."
               },
               {
-                "year": "1831",
-                "title": "First Cholera Epidemic",
-                "detail": "Cholera arrives in Britain, killing thousands."
+                "question": "What does 'urbanisation' mean?",
+                "answer": "The increase in the proportion of people living in towns and cities."
               },
               {
-                "year": "1842",
-                "title": "Chadwick's Report",
-                "detail": "[Key Individual: Edwin Chadwick] publishes his damning report on sanitary conditions."
+                "question": "How did early modern townspeople get their drinking water?",
+                "answer": "Buying it from water sellers or sharing local pumps."
               }
-            ],
-            "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
+            ]
           },
           "gcse_task": null,
           "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
@@ -34777,27 +34917,19 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+            "primer": "This lesson tackles the public health catastrophe caused by the Industrial Revolution. It challenges the 'Miasma' theory by studying Dr. John Snow's brilliant use of data mapping to prove cholera was waterborne.",
             "objectives": [
               {
-                "objective": "Identify the key features of this topic.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+                "objective": "Describe the squalor of industrial towns.",
+                "primer": "Use the narrative on back-to-back housing to show how extreme overcrowding created perfect conditions for disease.",
+                "question": "Why did the rapid building of factories lead to a housing crisis?"
               },
               {
-                "objective": "Explain the core concepts and historical context.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Evaluate the overall significance.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Analyze a primary source related to the lesson theme.",
-                "primer": "Guide students through a visual analysis of the primary source.",
-                "question": "How does this map prove that cholera was waterborne, rather than airborne (miasma), simply by looking at the location of the black bars?"
+                "objective": "Explain how Dr. Snow disproved the Miasma theory.",
+                "primer": "Walk students through the Broad Street pump map, showing how the clustering of deaths around a single well proved the water was the source.",
+                "question": "How did Dr. Snow's map prove cholera was waterborne rather than airborne?"
               }
-            ],
-            "source_context": "This visual source provides students with direct evidence regarding Lesson 4: The Industrial Revolution and .... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?**"
+            ]
           },
           "narrative_blocks": [
             {
@@ -34980,44 +35112,24 @@
             "type": "questions",
             "items": [
               {
-                "question": "What was the main feature of Iron Age Settlements & Cesspits?",
-                "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
-              },
-              {
-                "question": "How did Roman Conduits & Water Supply impact society?",
-                "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
-              },
-              {
-                "question": "What was a Gongfermer?",
-                "answer": "A medieval worker who cleared human waste from cesspits at night."
-              },
-              {
-                "question": "Why did medieval monks build water systems?",
-                "answer": "They believed cleanliness brought them closer to God."
-              },
-              {
-                "question": "What did Edward III order in 1357?",
-                "answer": "The removal of filth from London's streets to prevent sickness."
-              },
-              {
-                "question": "Why were medieval towns dangerous for health?",
-                "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
+                "question": "What was the 'laissez-faire' attitude?",
+                "answer": "The government's belief that it shouldn't interfere in people's daily lives or public health."
               },
               {
                 "question": "What terrifying waterborne disease first struck Britain in 1831?",
                 "answer": "Cholera."
               },
               {
-                "question": "What scientific theory did doctors wrongly believe caused disease before 1860?",
+                "question": "What scientific theory did doctors wrongly believe caused disease?",
                 "answer": "Miasma Theory (bad smells)."
+              },
+              {
+                "question": "How did Dr. John Snow prove cholera was waterborne?",
+                "answer": "By mapping the deaths around the Broad Street water pump."
               },
               {
                 "question": "Who published a damning report on sanitary conditions in 1842?",
                 "answer": "Edwin Chadwick."
-              },
-              {
-                "question": "What was the 'laissez-faire' attitude?",
-                "answer": "The government's belief that it should not interfere in public health or people's daily lives."
               }
             ]
           },
@@ -35032,27 +35144,19 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+            "primer": "This lesson serves as the climax of the unit. The 'Great Stink' forced the government to abandon its 'laissez-faire' attitude, leading to Bazalgette's monumental sewer system which permanently solved the crisis.",
             "objectives": [
               {
-                "objective": "Identify the key features of this topic.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+                "objective": "Understand the catalyst of the Great Stink.",
+                "primer": "Explain that the government only acted when the smell of the Thames directly halted Parliament.",
+                "question": "Why did Parliament suddenly care about public health in 1858?"
               },
               {
-                "objective": "Explain the core concepts and historical context.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Evaluate the overall significance.",
-                "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-              },
-              {
-                "objective": "Analyze a primary source related to the lesson theme.",
-                "primer": "Guide students through a visual analysis of the primary source.",
-                "question": "Given the immense cost and labor required to build these sewers, what does it tell us about the political impact of the 'Great Stink' on the government?"
+                "objective": "Evaluate the significance of Bazalgette's sewers.",
+                "primer": "Emphasize that this was one of the largest engineering projects in history and the end of 'laissez-faire'.",
+                "question": "What does the sheer scale of Bazalgette's brick sewers tell us about the change in government attitude?"
               }
-            ],
-            "source_context": "This visual source provides students with direct evidence regarding Lesson 5: The Great Stink and Modern Sew.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?**"
+            ]
           },
           "narrative_blocks": [
             {

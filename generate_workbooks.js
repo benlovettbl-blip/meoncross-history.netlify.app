@@ -209,17 +209,24 @@ allDirs.forEach(unitId => {
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
       ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
       
-      <div style="margin-top: 15px; width: 100%; text-align: left; padding: 15px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 15px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 10pt;">
+      <div style="display: flex; flex-direction: row; justify-content: center; margin: 20px auto; width: 80%; gap: 40px;">
+        <div style="flex: 2; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; font-weight: 600; font-size: 16pt; text-align: left; color: #1e3a8a;">Name: </div>
+        <div style="flex: 1; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; font-weight: 600; font-size: 16pt; text-align: left; color: #1e3a8a;">Class: </div>
+      </div>
+    </div>
+    
+    <div class="tracker-page" style="page-break-after: always; padding: 20px;">
+      <div style="width: 100%; text-align: left; padding: 20px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 25px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
+        <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
           <thead>
             <tr style="background-color: #1e3a8a; color: white;">
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
-              <th style="padding: 4px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 45%; text-align: left; font-weight: 600;">Lesson Title / Exam Task</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Page</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Do Now</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Tasks</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Review</th>
+              <th style="padding: 10px; border: 1px solid #94a3b8; width: 11%; text-align: center; font-weight: 600;">Score</th>
             </tr>
           </thead>
           <tbody>

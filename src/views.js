@@ -103,12 +103,12 @@ export function renderDashboard() {
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer;" onclick="if(${isUnlocked}) { window.launchSubApp('${unit.id}'); } else { window.launchSubApp('${unit.id}'); }">
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
-        <div style="position: relative; z-index: 2; padding: 0;">
+        <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
           <div class="module-header" style="margin-bottom: 8px;">
           </div>
-          <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="display: flex; gap: 14px; align-items: flex-start; flex-grow: 1;">
             <div style="flex-grow: 1; min-width: 0;">
-              <h4 style="margin: 0 0 4px 0; font-size: 1.1rem; font-weight: 700; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">${displayTitle}</h4>
+              <h4 style="margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 600; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">${displayTitle}</h4>
               <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: 0.9;">${displayDesc}</p>
             </div>
           </div>

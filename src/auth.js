@@ -33,7 +33,7 @@ export function initAuth() {
 export function setMockUser(yearGroup) {
   const mockUser = {
     username: "student@history-app.local",
-    name: "Mr Lovett's History Hub Student",
+    name: "Student",
     yearGroup: yearGroup, // 'Year 7', 'Year 8', 'Year 9', 'GCSE'
     tenant: "history-app.local"
   };
