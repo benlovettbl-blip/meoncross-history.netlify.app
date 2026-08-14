@@ -1008,7 +1008,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    if (window.currentUnitId !== 'early_modern_world') {
+    if (window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire') {
       const examPracticeLink = document.createElement('a');
       examPracticeLink.className = 'lesson-link';
       examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
