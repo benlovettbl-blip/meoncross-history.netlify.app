@@ -2,6 +2,8 @@ export const unitData = {
   "title": "KS3: The Great War (1914-1919)",
   "homepage_background": "/images/stubbington_memorial_1.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
+  "cover_image": "/images/bg_great_war_part2.jpg",
+  "cover_caption": "The cover image displays two powerful historical sources that bookend the First World War: on the left, an illustration of the assassination of Archduke Franz Ferdinand in Sarajevo (the spark that ignited the conflict in 1914), and on the right, the official Treaty of Versailles document (the controversial peace settlement signed in 1919).",
   "hero_image": "/images/stubbington_memorial_1.jpg",
   "hero_caption": "The Stubbington War Memorial, built in 1922 over the village pump on the green. Designed by the mother of the only woman commemorated, its unique wooden shelter stands as a powerful and poignant local reminder of the devastating human cost of the conflict on tight-knit communities.",
   "printable_workbooks": [
