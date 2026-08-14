@@ -684,7 +684,9 @@ allDirs.forEach(unitId => {
                   }
                  let linesToDraw = 3;
                  let tText = (task.text || task.question || '').toLowerCase();
-                 if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
+                 if (task.type === 'extended_writing') {
+                    linesToDraw = 18;
+                 } else if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
                     linesToDraw = 6;
                  }
                  for(let i=0; i<linesToDraw; i++) {
