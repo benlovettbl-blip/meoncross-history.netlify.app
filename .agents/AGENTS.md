@@ -94,3 +94,7 @@ Before pushing any code to GitHub or triggering a Netlify deployment, you MUST a
 
 ## Automatic Visual Source Inspection
 Whenever you fetch, download, or add a new visual source (image) to a lesson, you MUST automatically use your iew_file tool to visually inspect the downloaded image. You must verify that the image content perfectly matches the intended historical subject, caption, and alt text. If the image is incorrect, you must re-fetch a correct image or update the descriptive text to accurately reflect the source (e.g., specifying if it is a painting rather than a photograph). This must be done proactively before completing the task.
+
+
+## No AI Images
+STRICT RULE: Do NOT generate or use AI images (e.g., via generate_image tool) for any historical content, curriculum data, or cover images. You MUST ONLY use authentic, historical photographs or primary source illustrations. This app is for educational purposes and strictly forbids AI-generated historical imagery.
