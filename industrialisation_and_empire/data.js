@@ -1056,7 +1056,7 @@ export const unitData = {
       "visual_hook": {
         "title": "The Indian Rebellion (1857)",
         "caption": "A depiction of the violent uprising against East India Company rule.",
-        "src": "",
+        "src": "/images/sepoy_mutiny_1857.png",
         "hinge_question": "What details in this image suggest a complete breakdown of colonial authority?"
       },
       "do_now": {
@@ -1075,13 +1075,279 @@ export const unitData = {
       },
       "narrative_blocks": [
         {
-          "title": "Content Pending",
-          "content": "Waiting for LLM generation of the narrative content..."
+          "title": "A War for Liberation",
+          "content": "While ordinary people in Great Britain fought for a voice through domestic resistance like the machine-breaking Swing Riots or the peaceful gathering at Peterloo, colonial resistance abroad took on a far more violent and structural dimension. In the summer of 1857, the British Empire faced its greatest existential crisis of the nineteenth century. The Indian subcontinent, a vast landmass of diverse cultures, languages, and kingdoms, erupted in a massive, coordinated rebellion against its rulers. This was not a localized riot over winter wages, but a full-scale war for liberation executed by colonized people who actively weaponized their military training to reclaim their agency from a foreign occupier."
+        },
+        {
+          "title": "The Enfield Cartridge Catalyst",
+          "content": "The spark that ignited this explosive rebellion is often attributed to a single, culturally tone-deaf military innovation: the Enfield rifle. In early 1857, rumors spread like wildfire among the *sepoys*—the native Indian soldiers who made up over eighty percent of the East India Company’s (EIC) military forces—that the new paper ammunition cartridges were greased with a mixture of beef and pork fat. To load the rifle, soldiers had to bite the top off the cartridge. For Hindu soldiers, who revere the cow, and Muslim soldiers, for whom the pig is strictly forbidden, this was viewed as a deliberate, malicious plot to destroy their religious purity."
+        },
+        {
+          "title": "Systemic Resentment and Annexation",
+          "content": "However, modern historians emphasize that the cartridges were merely the catalyst; the true cause was a deep-seated, systemic resentment toward the East India Company’s decades of exploitation. Under aggressive policies like the 'Doctrine of Lapse,' the EIC had executed ruthless land grabs, annexing independent Indian kingdoms whenever a native ruler died without a direct male heir. This political greed, combined with heavy taxation on local farmers, the destruction of domestic textile industries, and an increasing wave of Christian missionary activity, convinced many Indians that the British were determined to systematically dismantle their ancient civilization, economy, and religions."
+        },
+        {
+          "title": "From Mutiny to National War",
+          "content": "The outbreak of violence began in earnest on May 10, 1857, at the military outpost of Meerut. Refusing to use the contaminated cartridges, a group of sepoys mutinied, turned their weapons on their British officers, and marched directly to the historic capital of Delhi. There, they declared the elderly Mughal Emperor, Bahadur Shah Zafar, as the true leader of India, instantly transforming a localized military mutiny into a unified, national war of independence. The rebellion spread rapidly across northern and central India, led by iconic figures of resistance such as Rani Lakshmibai, the Queen of Jhansi, who famously fought on horseback to protect her kingdom from corporate annexation. For months, the British lost total control of vast territories, trapped in besieged fortresses while Indian rebels successfully asserted their political and military agency."
+        },
+        {
+          "title": "Industrialized Brutality and Reprisal",
+          "content": "The British reprisal, when it finally came, was defined by an uncompromising, industrialized brutality that completely shattered any illusion of Britain as a 'civilizing' force. Fueled by sensationalized media reports of British civilian deaths, the state deployed the full might of its military apparatus to execute a campaign of mass terror. British forces marched through Indian villages, executing not just mutinous soldiers but thousands of ordinary civilians, burning entire communities to the ground. In an act of psychological warfare designed to deny victims traditional religious funerals, rebel leaders were bound to the mouths of cannons and blown apart."
+        },
+        {
+          "title": "The Birth of the British Raj",
+          "content": "The immediate consequence of this catastrophic conflict was the complete destruction of the entity that had triggered it. In 1858, recognizing that a private, profit-driven corporation could no longer safely govern a subcontinent, the British Parliament passed the Government of India Act. The East India Company was formally abolished, and its vast territories were transferred directly to the British Crown, establishing the era of the **British Raj**. Queen Victoria was declared Empress of India, signaling to the world that while the initial rebellion had been crushed by overwhelming violence, the empire had been forced to completely restructure itself because the colonized population had dared to strike back."
         }
       ],
       "sources": [],
-      "quiz": [],
-      "vocab": [],
+      "quiz": [
+        {
+          "question": "In what year did the massive Indian Rebellion against the British Empire begin?",
+          "options": [
+            "1857",
+            "1832",
+            "1807",
+            "1886"
+          ],
+          "answer": "1857"
+        },
+        {
+          "question": "What military innovation served as the immediate catalyst for the 1857 rebellion?",
+          "options": [
+            "The Enfield rifle",
+            "The Maxim gun",
+            "The Gatling gun",
+            "The ironclad ship"
+          ],
+          "answer": "The Enfield rifle"
+        },
+        {
+          "question": "Why did the new Enfield rifle cartridges cause such outrage among the sepoys?",
+          "options": [
+            "They were rumored to be greased with beef and pork fat",
+            "They were too heavy to carry",
+            "They misfired frequently",
+            "They were made in Britain instead of India"
+          ],
+          "answer": "They were rumored to be greased with beef and pork fat"
+        },
+        {
+          "question": "What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?",
+          "options": [
+            "Over 80%",
+            "Around 50%",
+            "Less than 20%",
+            "Almost 100%"
+          ],
+          "answer": "Over 80%"
+        },
+        {
+          "question": "What was the East India Company's 'Doctrine of Lapse'?",
+          "options": [
+            "A policy to annex independent Indian kingdoms if a ruler died without a direct male heir",
+            "A law banning Indian textiles from being sold",
+            "A rule forcing sepoys to serve overseas",
+            "A trade agreement with the Mughal Emperor"
+          ],
+          "answer": "A policy to annex independent Indian kingdoms if a ruler died without a direct male heir"
+        },
+        {
+          "question": "Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?",
+          "options": [
+            "Heavy taxation, land grabs, and destruction of the textile industry",
+            "Lack of British funding for Indian schools",
+            "The building of too many railways",
+            "The British refusal to trade with India"
+          ],
+          "answer": "Heavy taxation, land grabs, and destruction of the textile industry"
+        },
+        {
+          "question": "Where did the outbreak of violence begin in earnest on May 10, 1857?",
+          "options": [
+            "Meerut",
+            "Delhi",
+            "Lucknow",
+            "Calcutta"
+          ],
+          "answer": "Meerut"
+        },
+        {
+          "question": "Who did the mutinying sepoys declare as the true leader of India?",
+          "options": [
+            "The elderly Mughal Emperor, Bahadur Shah Zafar",
+            "The Queen of Jhansi",
+            "Queen Victoria",
+            "The Governor-General of the EIC"
+          ],
+          "answer": "The elderly Mughal Emperor, Bahadur Shah Zafar"
+        },
+        {
+          "question": "Who was Rani Lakshmibai?",
+          "options": [
+            "The Queen of Jhansi who famously fought on horseback against the British",
+            "The first Empress of India",
+            "A leader of the East India Company",
+            "A British missionary"
+          ],
+          "answer": "The Queen of Jhansi who famously fought on horseback against the British"
+        },
+        {
+          "question": "How did the British forces respond to the rebellion?",
+          "options": [
+            "With uncompromising, industrialized brutality and a campaign of mass terror",
+            "With peaceful negotiations and political reform",
+            "By immediately abandoning India",
+            "By paying the sepoys higher wages"
+          ],
+          "answer": "With uncompromising, industrialized brutality and a campaign of mass terror"
+        },
+        {
+          "question": "What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?",
+          "options": [
+            "Binding them to the mouths of cannons and blowing them apart",
+            "Exiling them to Australia",
+            "Public hanging in London",
+            "Imprisonment in the Tower of London"
+          ],
+          "answer": "Binding them to the mouths of cannons and blowing them apart"
+        },
+        {
+          "question": "Why were rebels blown from cannons instead of hanged?",
+          "options": [
+            "To deliberately deny the victims traditional religious funerals",
+            "Because the British ran out of rope",
+            "To save time",
+            "Because it was considered more humane"
+          ],
+          "answer": "To deliberately deny the victims traditional religious funerals"
+        },
+        {
+          "question": "What was the most significant political consequence of the 1857 Rebellion?",
+          "options": [
+            "The East India Company was abolished and the British Crown took direct control of India",
+            "India was immediately granted full independence",
+            "The EIC was given more power to rule India",
+            "The British banned all Indian soldiers from serving in the military"
+          ],
+          "answer": "The East India Company was abolished and the British Crown took direct control of India"
+        },
+        {
+          "question": "Which 1858 law formalized the British government's direct rule over India?",
+          "options": [
+            "The Government of India Act",
+            "The Great Reform Act",
+            "The Secret Ballot Act",
+            "The Doctrine of Lapse"
+          ],
+          "answer": "The Government of India Act"
+        },
+        {
+          "question": "The era of direct British Crown rule in India is known as what?",
+          "options": [
+            "The British Raj",
+            "The EIC Era",
+            "The Imperial Federation",
+            "The Mughal Empire"
+          ],
+          "answer": "The British Raj"
+        },
+        {
+          "question": "Who was declared Empress of India after the rebellion was crushed?",
+          "options": [
+            "Queen Victoria",
+            "Queen Elizabeth I",
+            "Rani Lakshmibai",
+            "Mary Queen of Scots"
+          ],
+          "answer": "Queen Victoria"
+        },
+        {
+          "question": "How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?",
+          "options": [
+            "It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking",
+            "It was completely peaceful",
+            "It was supported by the aristocratic elite",
+            "It aimed to lower the price of bread"
+          ],
+          "answer": "It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking"
+        },
+        {
+          "question": "Why did Christian missionary activity in India contribute to the rebellion?",
+          "options": [
+            "It convinced many Indians that the British were determined to systematically dismantle their ancient religions",
+            "The missionaries were heavily armed",
+            "The missionaries forced Indians to work in factories",
+            "The missionaries stole all the agricultural land"
+          ],
+          "answer": "It convinced many Indians that the British were determined to systematically dismantle their ancient religions"
+        },
+        {
+          "question": "What did the rebellion shatter regarding the British public's view of their empire?",
+          "options": [
+            "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects",
+            "The belief that the Navy was invincible",
+            "The idea that trade was profitable",
+            "The concept of parliamentary democracy"
+          ],
+          "answer": "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects"
+        },
+        {
+          "question": "Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?",
+          "options": [
+            "Pig",
+            "Cow",
+            "Horse",
+            "Sheep"
+          ],
+          "answer": "Pig"
+        },
+        {
+          "question": "What was the East India Company?",
+          "options": [
+            "A massive British trading corporation that essentially ruled India.",
+            "Incorrect Option A",
+            "Incorrect Option B",
+            "Incorrect Option C"
+          ],
+          "answer": "A massive British trading corporation that essentially ruled India."
+        },
+        {
+          "question": "How did the EIC destroy the Indian textile industry?",
+          "options": [
+            "By flooding the 'captive market' with cheap British machine-made cloth.",
+            "Incorrect Option A",
+            "Incorrect Option B",
+            "Incorrect Option C"
+          ],
+          "answer": "By flooding the 'captive market' with cheap British machine-made cloth."
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Sepoy",
+          "definition": "A native Indian soldier serving in the army of the British East India Company."
+        },
+        {
+          "term": "Doctrine of Lapse",
+          "definition": "A highly controversial British policy to annex independent Indian kingdoms if a native ruler died without a direct male heir."
+        },
+        {
+          "term": "British Raj",
+          "definition": "The period of direct British Crown rule over the Indian subcontinent from 1858 to 1947."
+        },
+        {
+          "term": "Mutiny",
+          "definition": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
+        },
+        {
+          "term": "East India Company (EIC)",
+          "definition": "A massive, powerful British trading corporation that effectively ruled large parts of India until it was abolished in 1858."
+        },
+        {
+          "term": "Rani Lakshmibai",
+          "definition": "The Queen of Jhansi and a leading iconic figure of the 1857 Indian Rebellion who fought against British corporate annexation."
+        }
+      ],
       "task": {
         "type": "source_analysis",
         "title": "Evaluating Colonial Resistance",
