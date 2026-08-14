@@ -274,8 +274,7 @@ export const unitData = {
           "title": "Analyzing Source D",
           "image": "/images/benin_bronze.jpg",
           "image_alt": "16th-Century Benin Bronze Plaque",
-          "source_letter": "D",
-          "tasks": []
+          "source_letter": "D"
         },
         {
           "title": "Analyzing the Evidence: The Wealth of West Africa",
@@ -301,8 +300,7 @@ export const unitData = {
         {
           "title": "Examining the Evidence",
           "image": "/images/silk_road.jpg",
-          "image_alt": "Map of the Silk Road Trade Routes",
-          "tasks": []
+          "image_alt": "Map of the Silk Road Trade Routes"
         },
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
@@ -316,8 +314,7 @@ export const unitData = {
           ]
         },
         {
-          "title": "Lesson Reflection",
-          "tasks": []
+          "title": "Lesson Reflection"
         },
         {
           "title": "Side Quest: The English Peasant's Pottage",
@@ -530,8 +527,7 @@ export const unitData = {
           "title": "Analyzing Source B",
           "image": "/images/martin_luther_portrait.jpg",
           "image_alt": "Portrait of Martin Luther (1529)",
-          "source_letter": "B",
-          "tasks": []
+          "source_letter": "B"
         },
         {
           "title": "Macro-History: The New World Monopoly & Privateers",
@@ -606,8 +602,7 @@ export const unitData = {
           ]
         },
         {
-          "title": "Lesson Reflection",
-          "tasks": []
+          "title": "Lesson Reflection"
         },
         {
           "title": "Side Quest: The Horrors of Scurvy",
@@ -967,11 +962,6 @@ export const unitData = {
           ]
         },
         {
-          "title": "Vocabulary Check: Building Empires",
-          "text": "Understanding how the British Empire was built requires some specific historical vocabulary.",
-          "tasks": []
-        },
-        {
           "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
           "text": "Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>"
         },
@@ -1000,8 +990,7 @@ export const unitData = {
           ]
         },
         {
-          "title": "Lesson Reflection",
-          "tasks": []
+          "title": "Lesson Reflection"
         },
         {
           "title": "Side Quest: The Invasion of the Pigs",
@@ -1657,8 +1646,7 @@ export const unitData = {
           ]
         },
         {
-          "title": "Lesson Reflection",
-          "tasks": []
+          "title": "Lesson Reflection"
         }
       ],
       "quiz": [
@@ -1942,8 +1930,7 @@ export const unitData = {
         },
         {
           "title": "Plenary Check",
-          "text": "Let's review the mechanics of the Transatlantic Slave Trade.",
-          "tasks": []
+          "text": "Let's review the mechanics of the Transatlantic Slave Trade."
         },
         {
           "title": "Lesson Reflection",
@@ -2730,7 +2717,6 @@ export const unitData = {
         {
           "title": "Micro-History: The Contrast of London Bridge (1750)",
           "text": "In October 1750, a French aristocrat named Pierre-Jean Grosley stood on London Bridge and looked out over the River Thames.<br><br>To his right, he saw a forest of wooden masts belonging to over 1,000 merchant ships. These vessels had arrived from Canton, Calcutta, Barbados, and Virginia, packed with tea, silk, raw sugar, and tobacco. Nearby stood the <strong>Bank of England</strong> and the <strong>Royal Exchange</strong>, where stockbrokers traded paper credit, fire insurance, and national debt using complex mathematics that stunned the rest of Europe. London was the financial beating heart of a global, capitalist empire.<br><br>Then Grosley walked off the bridge and turned into the narrow alleys of St. Giles.<br><br>Within five minutes, the scent of expensive Indian spices was replaced by the stench of open sewage, rotting garbage, and cheap gin. He passed desperate mothers pouring raw grain spirit down the throats of crying infants to quiet them. In these slums, 50% of children died before the age of five. Medical care still relied on bloodletting with leeches, public executions at Tyburn Tree drew crowds of 30,000 howling spectators, and women had zero legal rights, remaining the legal property of their husbands.<br><br>Grosley was left with a baffling paradox: <strong>Was Britain in 1750 a hyper-modern global superpower, or a brutal, unequal medieval society wearing a wig?</strong>",
-          "tasks": [],
           "images": [
             {
               "image": "/images/early_mod_l6_banner.jpg",
@@ -2831,8 +2817,7 @@ export const unitData = {
         },
         {
           "title": "Historiographical Debate: 'The First Modern Society'?",
-          "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: ]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: ]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A:  (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B:  (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>",
-          "tasks": []
+          "text": "<div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"histBtn1\" onclick=\"document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;\">Interpretation A: ]</button>        <button id=\"histBtn2\" onclick=\"document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';\" style=\"flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;\">Interpretation B: ]</button>    </div>    <div id=\"hist1\" style=\"padding: 25px; display: block; background: #f0f9ff;\">        <h4 style=\"margin-top: 0; color: #1e40af;\">Historian Perspective A:  (1990)</h4>        <p><em>\"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress.\"</em></p>    </div>    <div id=\"hist2\" style=\"padding: 25px; display: none; background: #fff7ed;\">        <h4 style=\"margin-top: 0; color: #b45309;\">Historian Perspective B:  (1985)</h4>        <p><em>\"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty.\"</em></p>    </div></div>"
         },
         {
           "title": "Synthesis Essay Planning Task",
@@ -2892,13 +2877,11 @@ export const unitData = {
           ]
         },
         {
-          "title": "Lesson Reflection",
-          "tasks": []
+          "title": "Lesson Reflection"
         },
         {
           "title": "Urban Poverty: The Mudlarks of London",
           "text": "<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>",
-          "tasks": [],
           "source_letter": "F"
         }
       ],
