@@ -75,17 +75,17 @@
             "text": "Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 1,
                 "text": "Why was James Watt's improvement of the steam engine so significant for the location of factories?",
-                "model": "Before Watt's engine, factories had to be built next to fast-flowing rivers for water power. Watt's efficient steam engine allowed factories to be built anywhere, powered by coal."
+                "model_answer": "Before Watt's engine, factories had to be built next to fast-flowing rivers for water power. Watt's efficient steam engine allowed factories to be built anywhere, powered by coal."
               }
             ]
           },
           {
             "title": "The Problem with British Iron",
             "text": "In the early 1700s, British iron was of terrible quality. It was known as \"pig iron\"—it was brittle and snapped easily because it was full of impurities (carbon). If the Royal Navy wanted strong, flexible iron (known as \"wrought iron\") for its ship masts and cannons, it had to buy it from Sweden or Russia at a massive cost.",
-            "tasks": []
+            "tasks": null
           },
           {
             "title": "Local History Case Study: Henry Cort at Funtley Ironworks",
@@ -102,22 +102,22 @@
             },
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 2,
                 "text": "Why did Henry Cort decide to take over the Funtley Ironworks in 1775?",
-                "model": "Because it was located near the Portsmouth dockyards, meaning he could easily sell iron to the Royal Navy."
+                "model_answer": "Because it was located near the Portsmouth dockyards, meaning he could easily sell iron to the Royal Navy."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 3,
                 "text": "What two major inventions did Henry Cort patent at Funtley in the 1780s?",
-                "model": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
+                "model_answer": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
               },
               {
                 "type": "analysis",
                 "qNum": 4,
                 "text": "Study Source A. How does the physical design of the puddling furnace show that Cort was trying to solve the problem of 'pig iron' impurities?",
-                "model": "The cross-section in Source A shows that the burning coal is kept separate from the melting iron. This prevented the carbon in the coal from mixing with the iron, allowing workers to 'puddle' (stir) the iron and burn off the remaining impurities, creating strong wrought iron."
+                "model_answer": "The cross-section in Source A shows that the burning coal is kept separate from the melting iron. This prevented the carbon in the coal from mixing with the iron, allowing workers to 'puddle' (stir) the iron and burn off the remaining impurities, creating strong wrought iron."
               }
             ]
           },
@@ -126,16 +126,16 @@
             "text": "Cort's inventions at Funtley changed the world. They allowed British iron production to multiply by 400% over the next twenty years, earning Cort the nickname \"the father of the iron trade.\" The rails for the new train networks and the iron for the ships that built the British Empire were made using Cort's methods.\n\nTragically, Cort did not die a wealthy hero. His business partner, Adam Jellicoe, had secretly stolen the money used to fund the Funtley Ironworks from the Royal Navy. When Jellicoe died, the government seized Cort's patents and ruined him. Cort died bankrupt and in poverty, but his local ingenuity powered a global empire.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 4,
                 "text": "Why did Cort die in poverty despite his world-changing inventions?",
-                "model": "His business partner, Adam Jellicoe, embezzled Navy funds to pay for the ironworks, causing the government to seize Cort's patents and ruin him financially."
+                "model_answer": "His business partner, Adam Jellicoe, embezzled Navy funds to pay for the ironworks, causing the government to seize Cort's patents and ruin him financially."
               },
               {
                 "type": "analysis",
                 "qNum": 5,
                 "text": "Why were Henry Cort's inventions so vital to the growth of the British Empire?",
-                "model": "Before Cort, British iron was too brittle, and the country relied on expensive imports from Russia and Sweden. Cort's puddling and rolling processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron was essential for building the steam engines, railways, and naval ships that powered Britain's global dominance in the 19th century."
+                "model_answer": "Before Cort, British iron was too brittle, and the country relied on expensive imports from Russia and Sweden. Cort's puddling and rolling processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron was essential for building the steam engines, railways, and naval ships that powered Britain's global dominance in the 19th century."
               }
             ]
           },
@@ -152,13 +152,13 @@
                   "Sentence Starter 2: However, it can be argued that Cort's technological genius was even more important because...",
                   "Conclusion: Ultimately, the most important factor was [geography/innovation] because..."
                 ],
-                "model": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
+                "model_answer": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 8,
                 "text": "Chronology Challenge: Place the following in the correct causal order and write one sentence explaining how each led to the next: Watt's Steam Engine, The Domestic System, Cort's Puddling Furnace.",
-                "model": "1. The Domestic System (slow, hand-made production). 2. Watt's Steam Engine (allowed mass factory production anywhere, but required huge amounts of strong iron to build). 3. Cort's Puddling Furnace (invented to mass-produce the high-quality iron needed for the new steam engines and railways)."
+                "model_answer": "1. The Domestic System (slow, hand-made production). 2. Watt's Steam Engine (allowed mass factory production anywhere, but required huge amounts of strong iron to build). 3. Cort's Puddling Furnace (invented to mass-produce the high-quality iron needed for the new steam engines and railways)."
               }
             ]
           },
@@ -351,7 +351,7 @@
             "level_4": "Before factories, people made things at home. This was still very hard work, and children had to help. But when steam engines were invented, huge factories were built.  Millions moved to cities to work. This made Britain very rich. However, factory work was completely different to working at home. People worked up to 14 hours a day. The factories were noisy, dirty, and very dangerous because fast machines had no safety guards.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 1,
                 "question": "What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
                 "model_answer": "While children worked hard in both systems (showing continuity), the main change was the scale of danger and strict discipline. In the factory system, the pace of work was dictated by fast, unguarded steam-powered machines in a deafening and polluted environment, which caused horrific injuries that did not happen at home."
@@ -364,7 +364,7 @@
             "level_4": "Factory owners loved hiring children because they were cheap to pay, easy to boss around, and small enough to fit under machines.  In 1832, a man named Michael Sadler investigated this for the government. He interviewed a boy named Matthew Crabtree, who said he started work at 8 years old, worked 14 hours a day, and was beaten with a strap if he fell asleep. The country's wealth was built on these children's suffering.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 2,
                 "question": "How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
                 "model_answer": "The Sadler Report is highly useful because it is a primary source containing direct eyewitness testimony from real child workers like Matthew Crabtree. It provides specific details about the grueling 14-hour days and the physical abuse (being 'strapped') used by overseers to maintain discipline, giving a highly accurate insight into the brutal reality of factory conditions."
@@ -377,7 +377,7 @@
             "level_4": "The Industrial Revolution also changed Hampshire. Big cities like London needed bricks to build new houses and factories. Fareham had lots of special clay in the ground. When baked, this clay made beautiful red bricks known as 'Fareham Reds'.  These bricks were famous and were put on trains to London to build famous places like the Royal Albert Hall.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 3,
                 "question": "Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
                 "model_answer": "The correct chronological chain of causation is: B (London's population explodes) -> D (Massive demand for building materials is created) -> A (Railways are built to transport heavy goods) -> C (Fareham Reds are used to build the Royal Albert Hall)."
@@ -390,7 +390,7 @@
             "level_4": "Making Fareham Red bricks was very hard work. Young children worked in the Funtley clay pits. Some led horses that crushed the clay in machines called pug mills.  Others carried heavy, wet clay or turned thousands of bricks by hand so they would dry. We know this is true because official government census records from 1881 show 10-year-old boys in Fareham listed as 'pug boys' and 'brick labourers'.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 4,
                 "question": "Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
                 "model_answer": "A historian needs both because they provide different types of evidence. The Sadler Report provides the qualitative, emotional reality of the work (the pain, the beatings, the long hours), while the local Fareham Census provides quantitative, factual proof that this wasn't an isolated incident—it proves exactly how old the children were and that child labour was a widespread reality right across the country, even in rural Hampshire."
@@ -403,7 +403,7 @@
             "level_4": "Eventually, the government passed laws called Factory Acts to stop very young children from working and force them to go to school. Today, historians still argue about whether factories were good or bad. 'Pessimist' historians say the factories were a disaster that cruelly punished poor people and children. 'Optimist' historians say that even though it was hard at first, the factories created the wealth and medicine that eventually gave everyone a much better and longer life.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 5,
                 "question": "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
                 "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
@@ -565,7 +565,7 @@
             "level_4": "In the 1800s, millions of people moved to cities. Construction companies used millions of 'Fareham Red' bricks to build amazing places like the Royal Albert Hall. Source B is a record from one of these companies. This made Britain look rich and powerful, but the poor workers who made the bricks were forced to live in terrible, crowded slums.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 1,
                 "question": "Conceptual Analysis: Based on Source B, what was the primary concern of the Victorian contractors when building 'cottages' for their workers?",
                 "model_answer": "Source B reveals that the contractors' primary concern was 'efficiency of labour'. They built cottages 'instantly adjacent' to the worksites not for the comfort of the workers, but to ensure they could extract the maximum amount of work from them to keep pace with the massive demand for Fareham bricks."
@@ -584,7 +584,7 @@
             "level_4": "Landlords built 'back-to-back' houses. These houses shared three walls, so there was no fresh air. Whole families squeezed into one room sharing an outdoor toilet. Human waste often leaked into the drinking water. We know this from Source A, an 1842 government report by Edwin Chadwick.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 2,
                 "question": "Language Analysis: Look at Source A. Why do you think Edwin Chadwick chose to compare the deaths in the slums to the deaths in a 'modern war'?",
                 "model_answer": "Chadwick used the comparison to war to shock a 'laissez-faire' government into action. By comparing the deaths from 'filth and bad ventilation' to military casualties, he translated a public health issue into a national security crisis, using formal, striking language to prove that doing nothing was killing more British citizens than foreign enemies."
@@ -603,7 +603,7 @@
             "level_4": "Historians also need to hear from the poor people themselves. Source C is a letter sent to a newspaper in 1849 by 54 poor slum workers who were terrified of getting sick and dying.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 3,
                 "question": "Source Comparison: How does Source C provide a different historical perspective to Source B?",
                 "model_answer": "Source B provides a top-down, corporate perspective, focusing coldly on 'efficiency' and 'contracts' for building the empire. In stark contrast, Source C provides a bottom-up, working-class perspective. It is highly emotional and desperate ('living like pigs', 'left to die'), revealing the horrific human cost and lack of basic amenities that the 'efficient' contractors in Source B completely ignored."
@@ -622,7 +622,7 @@
             "level_4": "The dirty water caused a terrible disease called Cholera. Doctors believed in the 'Miasma Theory' (that bad smells caused disease). In 1854, Dr. John Snow proved cholera was actually in the dirty drinking water. But the government kept a 'laissez-faire' (do nothing) policy because sewers cost too much. In 1858, a hot summer caused the River Thames to dry up, creating 'The Great Stink' of raw sewage. The smell was so bad it reached Parliament. Politicians finally acted and paid Joseph Bazalgette to build huge underground brick sewers.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 4,
                 "question": "Turning Point: Why did it take the 'Great Stink' for the government to finally abandon its 'laissez-faire' policy?",
                 "model_answer": "The government maintained a laissez-faire policy because public health interventions were highly expensive, and they previously ignored scientific evidence like John Snow's discoveries. It took the 'Great Stink' to force change because the unbearable smell directly impacted the politicians inside the Houses of Parliament, making the crisis a personal discomfort they could no longer ignore."
@@ -635,7 +635,7 @@
             "level_4": "In 1875, a new law forced all councils to provide clean water and drains. Today, historians debate if the cities were good or bad. 'Pessimist' historians say the industrial towns were a deadly disaster that killed thousands with diseases like cholera. But 'Optimist' historians argue that without this harsh period, the government would never have been forced to build the amazing sewers and pass the laws that make our modern cities clean and safe today.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 5,
                 "question": "Extended Writing: Write a structured paragraph answering: 'To what extent did industrialisation make British towns unlivable?'",
                 "model_answer": "To a significant extent, the early phase of industrialisation made British towns unlivable due to rapid, unregulated expansion. 'Pessimist' historians correctly argue that the initial explosion of back-to-back housing and lack of sanitation turned towns into death traps, evidenced by Chadwick's reports (Source A) and the desperate letters from slum dwellers (Source C). However, 'Optimist' historians provide a vital counter-perspective: this unlivable crisis eventually forced the government to abandon 'laissez-faire' policies. The Great Stink compelled the construction of Bazalgette's sewers and the 1875 Public Health Act, meaning that while industrialisation initially poisoned the towns, it eventually provided the wealth and engineering to make them modern and sanitary."
@@ -1498,7 +1498,7 @@
             "level_4": "After the riots, workers tried a new plan: forming Trade Unions so they could stick together to ask for better pay. In 1834, six farm workers in Tolpuddle formed a group. To stop them, the government used an old law about secret oaths to arrest them. These 'Tolpuddle Martyrs' were sent away to Australia for seven years. This cruel punishment shocked the country, leading to massive protests until the government pardoned them.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 3,
                 "question": "Why did the British government use an obscure law about 'secret oaths' to convict the Tolpuddle Martyrs in 1834?",
                 "model_answer": "The government used the obscure 1797 law on secret oaths because forming a trade union was not technically illegal in 1834. Desperate to crush organized labor combinations before they spread across the country, the magistrates used the technicality of the secret loyalty oath sworn by the members to hand down a severe sentence of transportation as a deterrent."
@@ -2230,7 +2230,7 @@
             "level_4": "Some people think Britain became a democracy because rich leaders wanted to be fair. However, history shows that the ruling class only gave people the right to vote because they were terrified of a violent revolution. Laws like the 1832 Great Reform Act and the 1872 Secret Ballot Act were passed to calm down angry workers after events like the Swing Riots and Chartist rallies. Political power was never gifted out of kindness; it was won by ordinary people making the elite too afraid to say no.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "qNum": 3,
                 "question": "Historical Reasoning: Explain why it is historically inaccurate to argue that the British ruling class expanded the right to vote out of a belief in fairness and equality.",
                 "model_answer": "It is inaccurate because primary evidence proves the ruling elite deeply feared and despised the working classes, viewing them as violent and incapable of governance, as seen in MP Robert Lowe's 1866 speech. Legislation like the 1832 Great Reform Act and the 1872 Secret Ballot Act were strategic concessions passed out of fear of revolution, not fairness. The elite only expanded the franchise to pacify mass movements like Chartism and protect their own property from being overthrown by a working-class revolt."

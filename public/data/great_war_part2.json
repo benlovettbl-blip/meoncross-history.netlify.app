@@ -140,14 +140,14 @@
             "text": "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark.\n\n<strong>The Arms Race and Imperial Rivalry</strong><br>\nTo understand why Europe was so tense by 1914, we must look at the intense military and imperial competition between the Great Powers. A massive naval arms race was triggered in 1906 when Britain launched the <em>HMS Dreadnought</em>. This revolutionary battleship was heavily armoured with steel 28 cm thick, carried a crew of 800 sailors, and possessed huge guns that could blow up enemy ships from 32 km away. This made all older ships instantly obsolete. A frantic race began: between 1906 and 1914, Britain built 29 Dreadnoughts while Germany built 17.<br><br>Tensions were further pushed to breaking point by imperial clashes in North Africa. During the Second Moroccan Crisis in 1911, Germany sent the gunboat <em>SMS Panther</em> to the port of Agadir to aggressively challenge French control of the region, deeply alarming the British navy.\n\n<br><br><strong>The July Days: The Countdown to War</strong><br>\nThe assassination of Archduke Franz Ferdinand on 28 June 1914 triggered a rapid chain reaction known as the 'July Days'. On 23 July, Austria-Hungary sent a strict list of demands to Serbia, including a demand to let Austrian officials run the assassination inquiry. When Serbia refused this demand to protect its independence, Austria-Hungary declared war on 28 July. The alliance system then activated like clockwork: Germany warned Russia not to intervene, and when Russia mobilised its army, Germany declared war on Russia on 1 August. On 3 August, Germany declared war on France, and on 4 August, Britain declared war on Germany after German troops invaded neutral Belgium.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What was the 'spark' that triggered the outbreak of the First World War in 1914?",
-                "model": "The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914."
+                "model_answer": "The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why did Great Britain desperately need volunteers to fight when war was declared?",
-                "model": "Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
+                "model_answer": "Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
               }
             ],
             "image": "/images/gw_alliance_map.jpg",
@@ -158,14 +158,14 @@
             "text": "To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in \"Pals Battalions.\" <div class=\"local-history-spotlight\"><strong>Local History: The Pompey Pals</strong><br>For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally with overwhelming enthusiasm. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the \"Pompey Pals\". Men who had grown up on the same streets, worked in the same dockyards, and supported the same football teams now trained together, sharing tents and rations before crossing the Channel to France.<br><br>Tragically, the fatal flaw of the Pals Battalions was that industrialized slaughter could wipe out the male population of entire streets in a single afternoon. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went \"over the top\" near the River Ancre. Facing heavily fortified German machine guns, 457 of them became casualties (killed, wounded, or missing) in a single day. The devastating news arrived in Portsmouth via telegraph, shattering local families and leaving a deep, enduring scar on the community.</div>",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Who were the 'Pompey Pals'?",
-                "model": "The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914."
+                "model_answer": "The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What happened to the 1st Pompey Pals on September 3, 1916?",
-                "model": "During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community."
+                "model_answer": "During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community."
               }
             ],
             "image": "/images/gw_gavrilo_princip.jpg",
@@ -177,7 +177,7 @@
             "tasks": [
               {
                 "text": "Describe one feature of the European Alliance System in 1914. (2 marks)",
-                "model": "One feature of the European Alliance System was that it split Europe into two rival armed camps. For example, the Triple Entente allied Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy, meaning any small conflict could pull all major powers into war."
+                "model_answer": "One feature of the European Alliance System was that it split Europe into two rival armed camps. For example, the Triple Entente allied Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy, meaning any small conflict could pull all major powers into war."
               }
             ],
             "image": "/images/gw_women_say_go.jpg",
@@ -191,7 +191,7 @@
             "tasks": [
               {
                 "text": "How does Jessie Pope use the metaphor of a 'game' to manipulate young men into joining the army? What reality is she deliberately hiding?",
-                "model": "Pope compares war to a 'red crashing game' (like rugby) to make it sound exciting, physical, and like a team sport. She manipulates young men by implying that joining the army is just playing a fun game with their 'lads'. She deliberately hides the horrific reality of industrialized slaughter, machine guns, and death, because if she told the truth, nobody would volunteer."
+                "model_answer": "Pope compares war to a 'red crashing game' (like rugby) to make it sound exciting, physical, and like a team sport. She manipulates young men by implying that joining the army is just playing a fun game with their 'lads'. She deliberately hides the horrific reality of industrialized slaughter, machine guns, and death, because if she told the truth, nobody would volunteer."
               }
             ]
           },
@@ -200,29 +200,29 @@
             "text": "<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be \"over by Christmas.\"</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this \"gullible volunteer\" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany's invasion of \"Brave Little Belgium\" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Study Source A and Source B. Which method of recruitment do you think was more effective in convincing a 16-year-old boy to lie about his age and enlist: the official government poster, or the threat of a white feather? Explain your reasoning.",
-                "model": "The white feather was likely more effective because it weaponized direct, personal social shame. While the poster appealed to a sense of national duty, a 16-year-old boy would be terrified of being humiliated in public by women in his own community, making the peer pressure impossible to ignore."
+                "model_answer": "The white feather was likely more effective because it weaponized direct, personal social shame. While the poster appealed to a sense of national duty, a 16-year-old boy would be terrified of being humiliated in public by women in his own community, making the peer pressure impossible to ignore."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Categorize the following reasons for enlistment into \"Push Factors\" (negative things driving them away from home) and \"Pull Factors\" (positive things attracting them to the army): <em>The threat of receiving a white feather, the promise of a shilling a day, grinding poverty at home, defending 'Brave Little Belgium', government propaganda.</em>",
-                "model": "Push Factors = Threat of a white feather, grinding poverty at home.<br><br>Pull Factors = A shilling a day, defending Belgium, government propaganda."
+                "model_answer": "Push Factors = Threat of a white feather, grinding poverty at home.<br><br>Pull Factors = A shilling a day, defending Belgium, government propaganda."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "How does historian Catriona Pennell's view of WWI volunteers differ from the traditional view?",
-                "model": "While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium."
+                "model_answer": "While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Explain what historian Gary Sheffield means when he suggests volunteers were motivated by \"economic pragmatism.\"",
-                "model": "Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
+                "model_answer": "Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Write a structured paragraph answering the following: <em>\"To what extent was government propaganda the most important reason for the mass enlistment of 1914?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While state propaganda created the initial momentum, economic reality and local community ties were more decisive...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Pompey Pals, a shilling a day, white feathers...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the alternative historian's view (<em>However, as historian Catriona Pennell argues, it would be reductive to ignore the genuine moral outrage over...</em>)</li><li><strong>Evaluation:</strong> Conclude by weighing the factors against each other to form a final historical judgment.</li></ul>",
-                "model": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
+                "model_answer": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
               }
             ]
           },
@@ -389,9 +389,24 @@
             "text": "By late 1914, the hope of a quick war vanished. Both sides dug a vast, unbroken network of defensive trenches stretching from the English Channel to the Swiss border, creating the stagnant deadlock of the Western Front. Life in these trenches was defined by extreme physical hardship and constant danger. Soldiers lived in subterranean dirt channels, constantly exposed to freezing mud, torrential rain, and waterlogged ground. This relentless dampness caused \"trench foot\"—a painful medical condition where a soldier's feet began to rot inside wet boots. Trenches also overflowed with rotting organic waste and human debris, attracting millions of disease-carrying black rats and lice, while the air was frequently poisoned by chlorine or mustard gas.<br><br><strong>Attrition and New Technologies</strong><br>\nWhen the rapid movement of 1914 broke down into the deadlock of the trenches, military leaders were forced to rely on a strategy of <strong>attrition</strong>—the brutal process of gradually destroying or weakening the enemy by attacking them continuously until they ran out of men and supplies.<br><br>To break the stalemate, new and highly dangerous technologies were deployed. In 1914, aircraft were incredibly fragile, constructed merely of wood and thick cloth held together by piano wire. Pilots flew in completely open cockpits without parachutes, relying entirely on thick gloves, layers of warm clothes, and leather helmets to stop themselves from freezing to death in the air.<br><br>This horrific reality of industrialized warfare became the backdrop for one of the greatest military debates in British history: the competence of its high command. On July 1, 1916, General Douglas Haig launched the Battle of the Somme to relieve pressure on the French army at Verdun. Believing that a week-long artillery bombardment had completely shattered the German defensive wire and dugouts, Haig ordered British troops to march slowly across No Man's Land in neat, orderly rows while carrying heavy equipment packs.<br><br>The result was an absolute slaughter. German defenders, who had safely survived the bombardment in deep, concrete-reinforced underground bunkers, emerged with machine guns the moment the shelling stopped. On the first day of the Somme alone, the British Army suffered 57,470 casualties, including 19,240 deaths—the bloodiest single day in British military history.<br><br>This disaster led to two sharply contrasting historical interpretations of General Haig. For decades, popular history portrayed Haig as a foolish, outdated \"donkey\" leading brave, patriotic \"lions\" to useless slaughter—a view heavily supported by wartime politicians and famous war poets. However, modern revisionist historians offer a different interpretation. They argue that Haig faced an unprecedented technological challenge, forced to fight a massive, industrialized war with no prior template. They point out that he eventually adapted his tactics to utilize tanks, creeping artillery barrages, and coordinated aircraft to secure the final Allied victory in 1918. Whether Haig was a callous butcher or a determined strategist remains a central question for historians.",
             "tasks": [
               {
-                "type": "text",
-                "text": "Why did the Western Front become a stagnant deadlock by the winter of 1914? 2. Describe two physical challenges soldiers faced inside the Western Front trenches. 3. Why did General Douglas Haig believe the infantry could easily walk across No Man's Land on July 1, 1916? 4. What were the British casualty figures for the first day of the Battle of the Somme?",
-                "model": "Both the Allied and German armies dug massive, defensive trench networks that neither side could easily penetrate.<br><br>Q2. Soldiers faced freezing mud that caused trench foot and massive infestations of disease-carrying black rats and lice.<br><br>Q3. Haig believed his troops could walk across safely because a week-long artillery bombardment was assumed to have destroyed the German defenses.<br><br>Q4. 57,470 casualties on the first day, including 19,240 deaths."
+                "type": "short_answer",
+                "question": "Why did the Western Front become a stagnant deadlock by the winter of 1914?",
+                "model_answer": "Both the Allied and German armies dug massive, defensive trench networks that neither side could easily penetrate."
+              },
+              {
+                "type": "short_answer",
+                "question": "Describe two physical challenges soldiers faced inside the Western Front trenches.",
+                "model_answer": "Soldiers faced freezing mud that caused trench foot and massive infestations of disease-carrying black rats and lice."
+              },
+              {
+                "type": "short_answer",
+                "question": "Why did General Douglas Haig believe the infantry could easily walk across No Man's Land on July 1, 1916?",
+                "model_answer": "Haig believed his troops could walk across safely because a week-long artillery bombardment was assumed to have destroyed the German defenses."
+              },
+              {
+                "type": "short_answer",
+                "question": "What were the British casualty figures for the first day of the Battle of the Somme?",
+                "model_answer": "57,470 casualties on the first day, including 19,240 deaths."
               }
             ],
             "image": "/images/gw_flooded_trench.jpg",
@@ -402,9 +417,19 @@
             "text": "Soldiers on the Western Front lived in a subterranean world of mud, fear, and disease. <br><br><strong>Physical Hardships</strong><br>The trenches were frequently flooded with freezing, foul-smelling water. Men often stood waist-deep in mud for days, leading to a horrifying fungal infection called <em>Trench Foot</em>. If left untreated, the foot would turn black and gangrenous, requiring amputation. Giant, disease-carrying black rats—some the size of cats—fed on unburied corpses and swarmed the dugouts. Lice infested the soldiers' clothing, causing 'Trench Fever', a disease characterized by high fever and severe joint pain.<br><br><strong>New Weapons of Terror</strong><br>Beyond the disease, the trenches offered no safety from the industrialized weapons of 1914. Artillery bombardments could last for weeks, firing millions of explosive shells that caused devastating shrapnel wounds and buried men alive. The psychological toll of this constant, deafening bombardment led to a new psychiatric condition called 'Shell Shock' (now known as PTSD). Furthermore, 1915 saw the introduction of poison gas (chlorine, phosgene, and mustard gas). Mustard gas was particularly feared; it was heavier than air, sinking into the bottom of trenches, and caused agonizing internal and external blisters, blinding its victims and destroying their lungs.",
             "tasks": [
               {
-                "type": "text",
-                "text": "**Causation:** Why did the deep, concrete-reinforced bunkers built by the German army cause the British offensive on the Somme to fail? 6. **Historical Interpretations:** Explain why popular history books might refer to British soldiers as \"Lions led by Donkeys\" during the First World War. 7. **The <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA</abbr> Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
-                "model": "The deep bunkers protected German soldiers from the heavy artillery. Once the bombardment stopped, they emerged unharmed with machine guns.<br><br>Q6. Ordinary soldiers were incredibly brave (\"lions\"), but commanded by outdated, uncaring generals (\"donkeys\") who repeated failed tactics.<br><br>Q7. I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
+                "type": "short_answer",
+                "question": "**Causation:** Why did the deep, concrete-reinforced bunkers built by the German army cause the British offensive on the Somme to fail?",
+                "model_answer": "The deep bunkers protected German soldiers from the heavy artillery. Once the bombardment stopped, they emerged unharmed with machine guns."
+              },
+              {
+                "type": "short_answer",
+                "question": "**Historical Interpretations:** Explain why popular history books might refer to British soldiers as \"Lions led by Donkeys\" during the First World War.",
+                "model_answer": "Ordinary soldiers were incredibly brave (\"lions\"), but commanded by outdated, uncaring generals (\"donkeys\") who repeated failed tactics."
+              },
+              {
+                "type": "extended_writing",
+                "question": "**The <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA</abbr> Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
+                "model_answer": "I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
               }
             ],
             "image": "/images/gw_trench_diagram.jpg",
@@ -415,9 +440,9 @@
             "text": "To truly understand the conditions, we must read the words of the men who survived them.<br><br><strong>Source C: Extract from the diary of Private Arthur Savage (1915)</strong><br><em>\"The mud was so deep and thick that if you slipped off the duckboards, you would sink up to your waist. I saw men drown in that mud. The rats were as big as cats, and they were completely fearless. They would run across your face while you tried to sleep. But the worst was the smell—a mixture of cordite, chloride of lime, and the sweet, sickly stench of death that never left your nostrils.\"</em>",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "1a. Describe one feature of early military aircraft. (2 marks)<br>1b. Describe one feature of trench warfare. (2 marks)",
-                "model": "1a. One feature of early military aircraft was how fragile they were. For example, they were constructed merely of wood and thick cloth held together by piano wire.<br><br>1b. One feature of trench warfare was the horrific conditions soldiers endured. For example, the constant mud and water in the trenches led to thousands of men suffering from \"Trench Foot\", which often required amputation."
+                "model_answer": "1a. One feature of early military aircraft was how fragile they were. For example, they were constructed merely of wood and thick cloth held together by piano wire.<br><br>1b. One feature of trench warfare was the horrific conditions soldiers endured. For example, the constant mud and water in the trenches led to thousands of men suffering from \"Trench Foot\", which often required amputation."
               }
             ],
             "image": "/images/gw_flooded_trench.jpg",
@@ -431,7 +456,7 @@
             "tasks": [
               {
                 "text": "How does Wilfred Owen's description of a gas attack completely destroy the message of Jessie Pope's 'Who's for the Game?'",
-                "model": "Owen's visceral description of a man 'drowning' and 'floundering' in mustard gas exposes the horrific reality of modern warfare. It destroys Pope's argument by showing that war is not a fun rugby game, and that telling children it is 'sweet and fitting to die for one's country' is an 'old Lie'."
+                "model_answer": "Owen's visceral description of a man 'drowning' and 'floundering' in mustard gas exposes the horrific reality of modern warfare. It destroys Pope's argument by showing that war is not a fun rugby game, and that telling children it is 'sweet and fitting to die for one's country' is an 'old Lie'."
               }
             ]
           },
@@ -440,28 +465,28 @@
             "text": "Research tasks for independent study.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Study Source A. Why should a historian exercise caution when using the memoirs of a former politician like David Lloyd George to evaluate General Haig's competence?",
-                "model": "Politicians often write memoirs after events to protect their own reputations and shift blame away from themselves. Since Lloyd George clashed with military leaders, his memoirs may exaggerate the stupidity of the generals to avoid political responsibility for the war's high human cost."
+                "model_answer": "Politicians often write memoirs after events to protect their own reputations and shift blame away from themselves. Since Lloyd George clashed with military leaders, his memoirs may exaggerate the stupidity of the generals to avoid political responsibility for the war's high human cost."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "How useful is Source C for a historian studying the physical conditions of trench warfare? Use the source's content and its provenance (who wrote it and when) in your answer.",
                 "provenance_clue": "Hint: Think about who Private Savage is, when he is writing this, and what specific sensory details he includes.",
-                "model": "Source C is highly useful because it is a primary eyewitness account written by a soldier who actually lived in the trenches in 1915. The content provides specific, visceral details about the physical conditions, such as the fatal depth of the mud and the 'fearless' rats. Because it is a personal diary, it is likely an honest reflection of his daily survival rather than government propaganda, making it a reliable and highly valuable source for historians."
+                "model_answer": "Source C is highly useful because it is a primary eyewitness account written by a soldier who actually lived in the trenches in 1915. The content provides specific, visceral details about the physical conditions, such as the fatal depth of the mud and the 'fearless' rats. Because it is a personal diary, it is likely an honest reflection of his daily survival rather than government propaganda, making it a reliable and highly valuable source for historians."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Open your browser and search for the **\"1916 Battle of the Somme cinema film\"**. Research how British audiences reacted when this real, uncensored footage of the front line was shown in local cinemas in 1916. Write down their reactions. 10. Look up **\"WWI whale oil trench foot prevention\"**. Write a brief paragraph explaining the strict daily foot care routines officers forced soldiers to perform to maintain army health in wet conditions. 11. Search for **\"General Haig modern revisionist defense\"**. Find and write down one argument made by a modern historian defending Haig's overall strategy on the Western Front.",
-                "model": "Student independent research based on specific prompts."
+                "model_answer": "Student independent research based on specific prompts."
               },
               {
                 "text": "Study Source A (the photograph of the flooded trench).<br><br>How useful is Source A for an inquiry into the conditions on the Western Front? (8 marks)",
-                "model": "Source A is highly useful because it is a contemporary photograph providing visual evidence of the horrific, water-logged conditions soldiers endured, which directly caused trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line."
+                "model_answer": "Source A is highly useful because it is a contemporary photograph providing visual evidence of the horrific, water-logged conditions soldiers endured, which directly caused trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line."
               },
               {
                 "text": "Study Interpretation 1 (a historian writing in 2014 stating: 'The British high command callously ignored the horrific conditions of the mud').<br><br>How far do you agree with Interpretation 1 about the attitude of the high command? Explain your answer. (16 marks + 4 SPaG)",
-                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
+                "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
               }
             ]
           },
@@ -693,24 +718,24 @@
             "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>[Key Individual: Khudadad Khan]</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "How many men did the British Indian Army contribute to the First World War?",
-                "model": "Over 1.5 million men."
+                "model_answer": "Over 1.5 million men."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What crucial role did Indian troops play on the Western Front in late 1914?",
-                "model": "Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres."
+                "model_answer": "Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What was the British West Indies Regiment (BWIR), and how many men served in it?",
-                "model": "It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving."
+                "model_answer": "It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why did soldiers of the BWIR mutiny in Taranto, Italy, in 1918?",
-                "model": "They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
+                "model_answer": "They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
               }
             ],
             "image": "/images/gw_indian_army.jpg",
@@ -722,7 +747,7 @@
             "tasks": [
               {
                 "text": "Describe one feature of the British Empire's contribution to the First World War. (2 marks)",
-                "model": "One feature of the Empire's contribution was the immense manpower provided. For example, over 1.5 million men from the British Indian Army fought across multiple theaters, including the Western Front and Mesopotamia."
+                "model_answer": "One feature of the Empire's contribution was the immense manpower provided. For example, over 1.5 million men from the British Indian Army fought across multiple theaters, including the Western Front and Mesopotamia."
               }
             ],
             "image": "/images/gw_bwir.jpg",
@@ -736,7 +761,7 @@
             "tasks": [
               {
                 "text": "Why do you think the 140,000 men of the Chinese Labour Corps were deliberately left out of the victory parades and historical memory?",
-                "model": "They were likely erased due to racism and the desire to portray the victory as a heroic triumph of white British and European soldiers. Admitting that the British army heavily relied on 140,000 Chinese laborers to survive would undermine the imperial racial hierarchy of the time."
+                "model_answer": "They were likely erased due to racism and the desire to portray the victory as a heroic triumph of white British and European soldiers. Admitting that the British army heavily relied on 140,000 Chinese laborers to survive would undermine the imperial racial hierarchy of the time."
               }
             ]
           },
@@ -746,26 +771,26 @@
             "tasks": [
               {
                 "text": "Study Source A (the photograph of the British Indian Army).<br><br>How useful is Source A for an inquiry into the global nature of the First World War? (8 marks)",
-                "model": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. However, it is limited because it only shows one specific regiment at one moment in time."
+                "model_answer": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. However, it is limited because it only shows one specific regiment at one moment in time."
               },
               {
                 "text": "Study Interpretation 2 (David Olusoga's text arguing that the contribution of imperial troops was deliberately marginalized in post-war memory to preserve racial hierarchies).<br><br>How far do you agree with Interpretation 2 about the memory of the Empire's contribution? Explain your answer. (16 marks + 4 SPaG)",
-                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree by noting how post-war memorials and dominant narratives heavily focused on white British soldiers (e.g., the 'Tommies'), often leaving colonial troops out of the popular national memory.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that there are large monuments, such as the India Gate, dedicated to colonial troops, so they were not entirely erased.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on Olusoga's view."
+                "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree by noting how post-war memorials and dominant narratives heavily focused on white British soldiers (e.g., the 'Tommies'), often leaving colonial troops out of the popular national memory.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that there are large monuments, such as the India Gate, dedicated to colonial troops, so they were not entirely erased.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on Olusoga's view."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Write a structured paragraph answering the following: <em>\"To what extent was the First World War a 'global' rather than a 'European' conflict?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>Although the most famous battles took place in Europe, the war was fundamentally a global conflict because...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>1.5 million Indian troops, the BWIR, fighting in Mesopotamia and East Africa, the Taranto mutiny...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge why the European view exists (<em>However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties...</em>)</li><li><strong>Evaluation:</strong> Conclude by using Olusoga's concept of \"historical amnesia\" to explain why remembering the global contribution is essential to understanding the true reality of the war.</li></ul>",
-                "model": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
+                "model_answer": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why might mid-20th-century textbooks (Interpretation 1) have ignored the story of Khudadad Khan and the Taranto Mutiny?",
-                "model": "Textbooks likely ignored these stories because they focused on a Eurocentric narrative of white British suffering and victory, reflecting the societal racism and imperial attitudes of the mid-20th century."
+                "model_answer": "Textbooks likely ignored these stories because they focused on a Eurocentric narrative of white British suffering and victory, reflecting the societal racism and imperial attitudes of the mid-20th century."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "According to Interpretation 2, why did the British Empire deliberately construct the narrative of a 'white man's war'?",
-                "model": "Interpretation 2 argues this was deliberate 'historical amnesia' designed to preserve the racial hierarchy of the Empire. Acknowledging that non-white troops were essential to saving the British Empire would have undermined the myth of white supremacy that justified colonial rule."
+                "model_answer": "Interpretation 2 argues this was deliberate 'historical amnesia' designed to preserve the racial hierarchy of the Empire. Acknowledging that non-white troops were essential to saving the British Empire would have undermined the myth of white supremacy that justified colonial rule."
               }
             ],
             "image": "/images/gw_indian_army.jpg",
@@ -948,24 +973,24 @@
             "text": "To win a total war of industrial survival, the British government realized it needed complete control over the civilian population. In August 1914, Parliament passed the <strong>Defence of the Realm Act (DORA)</strong>, granting the government sweeping, unprecedented powers over the daily lives of British citizens.<br><br><strong>Controlling the Home Front</strong><br>DORA allowed the government to bypass Parliament and issue direct orders. The rules ranged from the deadly serious to the bizarrely specific. Under DORA, it became illegal to fly a kite, light a bonfire, or feed wild animals, as these could potentially signal enemy zeppelins or waste valuable food. British Summer Time (Daylight Savings) was introduced to maximize factory working hours. Crucially, pub opening hours were strictly limited and alcohol was watered down, as the government feared that drunk munitions workers would slow down shell production.<br><br>DORA also introduced extreme censorship. The government controlled the newspapers, heavily censoring reports of British defeats and casualty numbers to maintain civilian morale. Letters written by soldiers at the front were read by officers, who used black markers to cross out any details about military locations, horrific trench conditions, or low morale before they could be sent home to families.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What does the term \"Total War\" mean?",
-                "model": "A conflict where a country mobilizes all of its citizens, industries, and resources, making the home front just as vital as the battlefield."
+                "model_answer": "A conflict where a country mobilizes all of its citizens, industries, and resources, making the home front just as vital as the battlefield."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What was the Defense of the Realm Act (DORA)?",
-                "model": "An emergency law passed in August 1914 giving the government sweeping powers over the public, such as censoring personal letters and cutting pub hours to keep workers sober."
+                "model_answer": "An emergency law passed in August 1914 giving the government sweeping powers over the public, such as censoring personal letters and cutting pub hours to keep workers sober."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why did the British government introduce conscription in January 1916?",
-                "model": "Because voluntary enlistment had collapsed due to massive casualties on the Western Front, leaving the army short of fresh soldiers."
+                "model_answer": "Because voluntary enlistment had collapsed due to massive casualties on the Western Front, leaving the army short of fresh soldiers."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why were women working at depots like Priddy's Hard nicknamed \"Canary Girls\"?",
-                "model": "Because handling toxic TNT explosive powder turned their skin bright yellow and their hair ginger-green."
+                "model_answer": "Because handling toxic TNT explosive powder turned their skin bright yellow and their hair ginger-green."
               }
             ],
             "image": "/images/gw_women_say_go.jpg",
@@ -977,16 +1002,16 @@
             "tasks": [
               {
                 "text": "Study Source A (the painting of the Munitionettes).<br><br>How useful is Source A for an inquiry into the impact of the war on women? (8 marks)",
-                "model": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
+                "model_answer": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
               },
               {
                 "text": "Study Interpretation 1 (Arthur Marwick's text arguing that the war permanently liberated women).<br><br>How far do you agree with Interpretation 1 about the impact of the war on women? Explain your answer. (16 marks + 4 SPaG)",
-                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Marwick by arguing that women gained financial independence, left domestic service, and proved they could do 'men's work', leading to the 1918 Representation of the People Act.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by pointing out that this 'liberation' was temporary; many women were forced out of these factories when the men returned in 1919, and the 1918 Act only gave the vote to women over 30 who met property qualifications.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on whether the war was a genuine turning point for women."
+                "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Marwick by arguing that women gained financial independence, left domestic service, and proved they could do 'men's work', leading to the 1918 Representation of the People Act.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by pointing out that this 'liberation' was temporary; many women were forced out of these factories when the men returned in 1919, and the 1918 Act only gave the vote to women over 30 who met property qualifications.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on whether the war was a genuine turning point for women."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Write a structured paragraph answering the following: <em>\"To what extent did the First World War lead to a permanent change in the social status of British women?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Canary Girls, TNT, 800,000 workers, 1918 Representation of the People Act...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the optimistic view (<em>Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths...</em>)</li><li><strong>Evaluation:</strong> Conclude using Braybon's revisionist perspective to explain why the changes were mostly an illusion (women were fired in 1919 and the young factory workers did not get the vote).</li></ul>",
-                "model": "While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited. The conscription crisis meant that over 800,000 women were mobilized for the war effort, working as 'Canary Girls' handling dangerous TNT in places like Priddy's Hard. In 1918, the Representation of the People Act finally granted some women the vote. Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths of female weakness by proving women could do heavy industrial labor. However, this optimistic view is flawed. Using Braybon's revisionist perspective, the changes were mostly an illusion driven by national necessity; women were paid less than men and were fired immediately in 1919 to make way for returning soldiers. Furthermore, the 1918 vote was restricted to older, middle-class women, completely ignoring the young, working-class Munitionettes who actually risked their lives, proving the war did not permanently liberate the women who fought on the home front."
+                "model_answer": "While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited. The conscription crisis meant that over 800,000 women were mobilized for the war effort, working as 'Canary Girls' handling dangerous TNT in places like Priddy's Hard. In 1918, the Representation of the People Act finally granted some women the vote. Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths of female weakness by proving women could do heavy industrial labor. However, this optimistic view is flawed. Using Braybon's revisionist perspective, the changes were mostly an illusion driven by national necessity; women were paid less than men and were fired immediately in 1919 to make way for returning soldiers. Furthermore, the 1918 vote was restricted to older, middle-class women, completely ignoring the young, working-class Munitionettes who actually risked their lives, proving the war did not permanently liberate the women who fought on the home front."
               }
             ],
             "image": "/images/gw_munitionettes.jpg",
@@ -1000,7 +1025,7 @@
             "tasks": [
               {
                 "text": "Many people in 1916 believed Conscientious Objectors were cowards. How could you argue that it actually took immense bravery to be a 'Conchie'?",
-                "model": "It took immense bravery because they knew they would face total social isolation, public hatred, and harsh imprisonment. Standing up to the entire British government and society for your deeply held moral beliefs, even when threatened with execution, requires a different kind of courage than fighting in a trench."
+                "model_answer": "It took immense bravery because they knew they would face total social isolation, public hatred, and harsh imprisonment. Standing up to the entire British government and society for your deeply held moral beliefs, even when threatened with execution, requires a different kind of courage than fighting in a trench."
               }
             ]
           },
@@ -1009,9 +1034,9 @@
             "text": "The government realized that controlling information was just as important as producing weapons.<br><br><strong>Source D: A censored letter home from the Somme (1916)</strong><br><em>\"Dear Mother, We are currently stationed at [CENSORED]. The weather is terrible, and the [CENSORED] is up to our knees. We lost [CENSORED] men yesterday during the push toward [CENSORED]. Don't worry about me, I am keeping my head down.\"</em>",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Looking at Source D, why did the British government use DORA to mandate the strict censorship of soldiers' letters home? (Give two specific reasons).",
-                "model": "Firstly, the government censored locations and troop movements so that if the mail was intercepted by German spies, they would not gain any tactical military advantage. Secondly, they censored casualty numbers and descriptions of the horrific conditions to protect civilian morale on the Home Front, preventing families from realizing the true scale of the slaughter and turning against the war effort."
+                "model_answer": "Firstly, the government censored locations and troop movements so that if the mail was intercepted by German spies, they would not gain any tactical military advantage. Secondly, they censored casualty numbers and descriptions of the horrific conditions to protect civilian morale on the Home Front, preventing families from realizing the true scale of the slaughter and turning against the war effort."
               }
             ],
             "image": "/images/gw_munitionettes.jpg",
@@ -1190,19 +1215,19 @@
             "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>[Key Individual: Georges Clemenceau] (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>[Key Individual: Woodrow Wilson] (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "What was the \"Armistice\" of November 11, 1918?",
-                "model": "It was an agreement between Germany and the Allies to stop fighting, bringing an end to active combat."
+                "model_answer": "It was an agreement between Germany and the Allies to stop fighting, bringing an end to active combat."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Identify three military restrictions placed on Germany by the Treaty of Versailles.",
-                "model": "The army was cut to 100,000 men, the navy was banned from having submarines, and the air force was completely abolished."
+                "model_answer": "The army was cut to 100,000 men, the navy was banned from having submarines, and the air force was completely abolished."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why did the German people refer to the Treaty of Versailles as a \"Diktat\"?",
-                "model": "Because Germany was excluded from the peace negotiations and was forced to sign the final document under threat of invasion."
+                "model_answer": "Because Germany was excluded from the peace negotiations and was forced to sign the final document under threat of invasion."
               }
             ],
             "image": "/images/gw_big_three_versailles.jpg",
@@ -1214,17 +1239,17 @@
             "tasks": [
               {
                 "text": "Describe one feature of the military restrictions placed on Germany by the Treaty of Versailles. (2 marks)",
-                "model": "One feature of the military restrictions was that they left Germany virtually defenseless. For example, the German army was limited to just 100,000 men and they were banned from having submarines or an air force."
+                "model_answer": "One feature of the military restrictions was that they left Germany virtually defenseless. For example, the German army was limited to just 100,000 men and they were banned from having submarines or an air force."
               },
               {
                 "text": "Study Interpretation 1 (John Maynard Keynes arguing the economic reparations were too harsh and would ruin Europe).<br><br>How far do you agree with Interpretation 1 about the Treaty of Versailles? Explain your answer. (16 marks + 4 SPaG)",
-                "model": "<strong>Paragraph 1 (Agree):</strong> You could agree with Keynes by discussing the massive £6.6 billion reparations figure, which crippled the German economy and arguably paved the way for future instability.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing the Treaty was actually quite lenient compared to what Germany did to Russia at the Treaty of Brest-Litovsk, and that France needed the reparations to rebuild its destroyed country.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on the fairness of the treaty."
+                "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Keynes by discussing the massive £6.6 billion reparations figure, which crippled the German economy and arguably paved the way for future instability.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing the Treaty was actually quite lenient compared to what Germany did to Russia at the Treaty of Brest-Litovsk, and that France needed the reparations to rebuild its destroyed country.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on the fairness of the treaty."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Write a structured paragraph answering the following: <em>\"To what extent was the Treaty of Versailles an unfair settlement that guaranteed a future war?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Article 231, £6.6 billion in reparations, 100,000 men...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the traditional view (<em>Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy would lead to disaster...</em>)</li><li><strong>Evaluation:</strong> Conclude by using MacMillan's revisionist perspective to explain why the treaty's failure might have been more about enforcement than the actual terms.</li></ul>",
                 "starter": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...",
-                "model": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
+                "model_answer": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
               }
             ],
             "image": "/images/gw_versailles_cartoon.jpg",
@@ -1236,12 +1261,12 @@
             "tasks": [
               {
                 "text": "Study Source A (the political cartoon).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
-                "model": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
+                "model_answer": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "How does the German political cartoon (Source E) reflect the German public's attitude toward the Treaty of Versailles? Refer specifically to the concept of the 'Diktat' and the Big Three.",
-                "model": "The cartoon reflects the intense anger and feeling of victimization in Germany. By showing the German man stripped of his clothes, it symbolizes how the Treaty stripped Germany of its territory, military, and wealth (the £6.6 billion reparations). The guillotine blade held by Clemenceau shows that Germans viewed the Treaty not as a peace settlement, but as a deliberate execution of their nation. It highlights their view of the Treaty as an unfair 'Diktat' forced upon them by the vengeful Big Three."
+                "model_answer": "The cartoon reflects the intense anger and feeling of victimization in Germany. By showing the German man stripped of his clothes, it symbolizes how the Treaty stripped Germany of its territory, military, and wealth (the £6.6 billion reparations). The guillotine blade held by Clemenceau shows that Germans viewed the Treaty not as a peace settlement, but as a deliberate execution of their nation. It highlights their view of the Treaty as an unfair 'Diktat' forced upon them by the vengeful Big Three."
               }
             ],
             "image": "/images/gw_versailles_cartoon.jpg",
@@ -1420,14 +1445,14 @@
             "text": "To look at the wooden shelter in the centre of Stubbington's village green today, you might think it is just a quiet place to sit. But if you look up at the timber beams under its roof, you will find 67 names carved into the wood. These are the names of the young people from Stubbington and Hill Head who went off to fight in the First World War and never returned.<br><br>For a small, rural village, the war was not a distant political event—it was a devastating local tragedy that tore through families, streets, and schoolrooms. Behind every name on that memorial is a shattered family.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Where was the Stubbington War Memorial erected in 1922?",
-                "model": "It was built on the Village Green, covering the local village pump."
+                "model_answer": "It was built on the Village Green, covering the local village pump."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "How many local names from Stubbington and Hill Head are carved into the memorial?",
-                "model": "There are 67 names carved into the memorial."
+                "model_answer": "There are 67 names carved into the memorial."
               }
             ],
             "image": "/images/stubbington_memorial_1.jpg",
@@ -1438,9 +1463,9 @@
             "text": "Of all the families in the parish, none paid a heavier price than the Lowrys. William and Annie Lowry lived in a grand house called Manor Way Grange. They had three sons, all of whom went off to fight. Not one of them came home.<br><br><strong>William \"Harper\" Lowry (25)</strong>, a brilliant Cambridge student, joined the Indian Army. On 4th June 1915, he was killed leading a desperate charge up a narrow ravine at Gallipoli under intense Turkish machine-gun fire. His body was never found.<br><br><strong>Cyril \"Patrick\" Lowry (20)</strong> joined the West Yorkshire Regiment. In a heartbreaking twist of fate, he served in the exact same battalion commanded by his older brother, Eric. On 25th March 1918, Patrick was killed in action during a massive German offensive near the Somme—in full view of his own brother. His body was never recovered.<br><br><strong>Auriol \"Eric\" Lowry (25)</strong>, the highly decorated middle brother, had survived the heartbreak of seeing his younger brother die. An exceptionally brave leader who won the DSO and Military Cross, his time ran out just weeks before the war ended. On 23rd September 1918, he was hit by a machine-gun bullet and died in his runner's arms.<br><br>Devastated by the loss of all three sons, their father built the Lowry Memorial Hall in Lee-on-the-Solent to ensure his boys would never be forgotten.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Why is the story of the three Lowry brothers historically significant when studying the impact of the First World War?",
-                "model": "The loss of the Lowry brothers is significant because it highlights the concentrated grief experienced by individual families. It shows how the war didn't just cause random casualties, but often wiped out multiple siblings from the same household, devastating local family structures."
+                "model_answer": "The loss of the Lowry brothers is significant because it highlights the concentrated grief experienced by individual families. It shows how the war didn't just cause random casualties, but often wiped out multiple siblings from the same household, devastating local family structures."
               }
             ],
             "image": "/images/gw_death_plaque.jpg",
@@ -1451,14 +1476,14 @@
             "text": "Among the list of fallen soldiers on the village green, one name stands out as different: <strong>Nita Madeline King</strong>. She is the <em>only woman</em> commemorated on the Stubbington War Memorial.<br><br>Nita (29) wanted to do her part and volunteered for the Queen Mary's Army Auxiliary Corps (QMAAC). She was sent to Wimereux in France, a massive, high-pressure hospital centre for thousands of wounded soldiers. But the enemy in Wimereux was not just bullets—it was disease. In the crowded military hospitals, Nita contracted cerebrospinal meningitis and died on 25th May 1917. Following her death, her grieving mother, Lydia, became the primary force behind building the Stubbington War Memorial, donating a fortune (£200) to ensure the village had a beautiful wooden shelter.<br><br><strong>The Father Who Carved His Son's Name</strong><br>Arthur Tribbeck, a local carpenter, was chosen by the village to build the wooden shelter with his own hands. Tragically, as he constructed it, he had to prepare the timber to hold the name of his own son, <strong>Harold Tribbeck</strong>. Harold had bravely refused to have his leg amputated after a terrible wound in 1918, and died of gangrene aged just 21.",
             "tasks": [
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "Write a structured paragraph answering the following: <em>\"To what extent do local war memorials provide a more accurate picture of the First World War than military statistics?\"</em>",
-                "model": "While military statistics show the global scale of the war, local war memorials are essential for revealing the true human cost. Factual evidence, such as the tragic loss of the three Lowry brothers or a carpenter having to carve his own son's name into the memorial, highlights the devastating emotional blow to a tight-knit community. However, looking only at one village's memorial does not explain why the war was won or lost on a tactical level. Ultimately, while statistics are necessary to understand the vast scope of the conflict, combining them with micro-histories gives historians the most complete picture by fostering historical empathy."
+                "model_answer": "While military statistics show the global scale of the war, local war memorials are essential for revealing the true human cost. Factual evidence, such as the tragic loss of the three Lowry brothers or a carpenter having to carve his own son's name into the memorial, highlights the devastating emotional blow to a tight-knit community. However, looking only at one village's memorial does not explain why the war was won or lost on a tactical level. Ultimately, while statistics are necessary to understand the vast scope of the conflict, combining them with micro-histories gives historians the most complete picture by fostering historical empathy."
               },
               {
-                "type": "text",
+                "type": "short_answer",
                 "text": "<em>Instructions: Choose one of the five historical investigation tasks below. Use the provided web links and your source packs to uncover the hidden realities of the Stubbington fallen.</em><br><br><strong>Path 1: The 1911 Census (Bringing the Names to Life)</strong><br>War memorials only give us names and initials. To understand what the village actually lost, we need to see who these men were before the war.<br><ul><li><strong>Your Task:</strong> Using the provided 1911 Census records for the Lowry family, find out the following: How old were the brothers? What were their jobs? Who else lived in the house? Write a short paragraph explaining how reading the census changes the way you look at the names on the memorial.</li><li><strong>Scaffolding Tip:</strong> Look closely at the \"Occupation\" column. Were they farm laborers, shop workers, or tradesmen? Think about how their sudden absence would impact the village's daily life and economy.</li><li><strong>Helpful Link:</strong> <a href='https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/' target='_blank'>The National Archives: 1911 Census Guide</a></li></ul><br><strong>Path 2: Mapping the Tragedy</strong><br>During the war, entire streets could be plunged into mourning in a single day.<br><ul><li><strong>Your Task:</strong> Select ten names from the Stubbington memorial. Using the Commonwealth War Graves Commission website to find their home addresses, plot them on a historical map of Fareham/Stubbington from the 1910s.</li><li><strong>Scaffolding Tip:</strong> Do you notice any clusters? Are there multiple casualties on the same street? Write a sentence explaining what it would have felt like to be a postman delivering telegrams on that street in 1916.</li><li><strong>Helpful Link:</strong> <a href='https://maps.nls.uk/geo/explore/side-by-side/' target='_blank'>National Library of Scotland: Side-by-Side Historic Maps</a></li></ul><br><strong>Path 3: Decoding the Commonwealth War Graves (CWGC)</strong><br>Historians use death records like detective clues to figure out where and how men fought.<br><ul><li><strong>Your Task:</strong> Search for the Lowry brothers on the CWGC database. Look at their date of death and the name of the cemetery or memorial where they are listed (e.g., the Thiepval Memorial or the Menin Gate).</li><li><strong>Scaffolding Tip:</strong> If a soldier died in July 1916 and is listed on the Thiepval Memorial, they almost certainly died at the Battle of the Somme. If they died in late 1917 near Ypres, it was likely Passchendaele. Write down which major battles the Stubbington men were caught in based on your findings.</li><li><strong>Helpful Link:</strong> <a href='https://www.cwgc.org/' target='_blank'>Commonwealth War Graves Commission Database</a></li></ul><br><strong>Path 4: Evaluating the Memorial Design</strong><br>Most towns built statues of soldiers with rifles or giant stone crosses. Stubbington built a wooden shelter over a water pump.<br><ul><li><strong>Your Task:</strong> Write a visual analysis of the Stubbington War Memorial. Why do you think the designer (a grieving mother) chose a water pump shelter rather than a glorifying statue of a soldier?</li><li><strong>Scaffolding Tip:</strong> Think about what a water pump represents (community, life, civilian utility) versus a soldier statue (combat, glory, military). What does this tell us about how the local community wanted to remember their dead?</li></ul><br><strong>Path 5: The Missing Voices (Historiography)</strong><br>War memorials only record the dead, meaning the \"visible\" history often masks the invisible trauma of the survivors.<br><ul><li><strong>Your Task:</strong> Challenge yourself to consider who is <em>not</em> on the memorial. Are there men from Stubbington who survived but returned with severe shell shock or missing limbs?</li><li><strong>Scaffolding Tip:</strong> Write a short paragraph explaining why relying solely on a war memorial might give a historian an incomplete picture of how the war actually impacted a village like Stubbington.</li></ul>",
-                "model": "Teacher Note: These are open-ended masterclass extension tasks."
+                "model_answer": "Teacher Note: These are open-ended masterclass extension tasks."
               }
             ]
           },
@@ -1580,7 +1605,7 @@
             "tasks": [
               {
                 "text": "1a. Describe one feature of the Home Front during the First World War. (2 marks)<br>1b. Describe one feature of the Treaty of Versailles. (2 marks)",
-                "model": "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
+                "model_answer": "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
               }
             ]
           },
@@ -1591,7 +1616,7 @@
             "tasks": [
               {
                 "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
-                "model": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
+                "model_answer": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
               }
             ]
           },
@@ -1600,7 +1625,7 @@
             "tasks": [
               {
                 "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
-                "model": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
+                "model_answer": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
               }
             ]
           }

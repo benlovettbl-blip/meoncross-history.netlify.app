@@ -199,9 +199,9 @@ export const unitData = {
       },
       "do_now": {
         "title": "Do Now: Connecting the Sources",
-        "type": "text",
+        "type": "short_answer",
         "text": "Look at the four historical sources depicted on the front cover of this workbook. What connections can you make between them, and what do they suggest about the balance of global power before 1450?",
-        "model": "Students should identify that the sources show powerful, wealthy non-European empires dominating trade and military power, suggesting that Europe was not the center of global power in 1450."
+        "model_answer": "Students should identify that the sources show powerful, wealthy non-European empires dominating trade and military power, suggesting that Europe was not the center of global power in 1450."
       },
       "narrative_blocks": [
         {

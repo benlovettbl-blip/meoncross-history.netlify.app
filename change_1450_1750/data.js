@@ -42,9 +42,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
@@ -81,9 +81,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
@@ -120,9 +120,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
@@ -159,9 +159,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
@@ -198,9 +198,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
@@ -237,9 +237,9 @@ export const unitData = {
                     "text": "Placeholder narrative.",
                     "tasks": [
                         {
-                            "type": "text",
+                            "type": "short_answer",
                             "text": "Task 1: Placeholder task.",
-                            "model": "Model answer placeholder."
+                            "model_answer": "Model answer placeholder."
                         }
                     ]
                 }
