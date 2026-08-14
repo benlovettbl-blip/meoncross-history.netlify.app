@@ -41,24 +41,24 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "PAST TOPIC: What is a primary source?",
-            "answer": "A piece of evidence created at the time of the event being studied (e.g., a diary, photograph, or artefact)."
+            "question": "What does the 'M' in MAIN stand for regarding the causes of WWI?",
+            "answer": "Militarism (the build-up of armies and weapons)."
           },
           {
-            "question": "PAST TOPIC: What is a secondary source?",
-            "answer": "A piece of evidence created after the event by someone who was not there (e.g., a modern history book)."
+            "question": "Which countries made up the Triple Entente?",
+            "answer": "Britain, France, and Russia."
           },
           {
-            "question": "PAST TOPIC: What does 'chronological order' mean?",
-            "answer": "Arranging events in the order in which they happened in time, from earliest to most recent."
+            "question": "Who was assassinated in Sarajevo in 1914?",
+            "answer": "Archduke Franz Ferdinand."
           },
           {
-            "question": "PAST TOPIC: What century is the year 1854 in?",
-            "answer": "The 19th Century."
+            "question": "Which plan did Germany use to try and quickly defeat France?",
+            "answer": "The Schlieffen Plan."
           },
           {
-            "question": "PAST TOPIC: What is the difference between BC and AD (or BCE and CE)?",
-            "answer": "BC (Before Christ) refers to years before the birth of Jesus, while AD (Anno Domini) refers to years after. The numbers in BC count backwards, while AD count forwards."
+            "question": "Why did Britain declare war on Germany?",
+            "answer": "Because Germany invaded neutral Belgium."
           }
         ]
       },
@@ -73,27 +73,19 @@ export const unitData = {
         ]
       },
       "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "primer": "This lesson contrasts the highly advanced public health engineering of the Roman Empire with the primitive living conditions of native Britons. The goal is to show students that historical progress is not a straight line upwards.",
         "objectives": [
           {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+            "objective": "Understand the scale of Roman public health engineering.",
+            "primer": "Use the narrative on aqueducts and bathhouses to emphasize the sheer volume of water the Romans moved using only gravity.",
+            "question": "How did the Romans manage to keep the water flowing constantly into their forts?"
           },
           {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Analyze a primary source related to the lesson theme.",
-            "primer": "Guide students through a visual analysis of the primary source.",
-            "question": "Looking at this communal latrine, how does it challenge our modern ideas of privacy and hygiene compared to Roman priorities of engineering?"
+            "objective": "Explain why the Romans prioritized public health.",
+            "primer": "Link their infrastructure back to military efficiency; sick soldiers cannot fight.",
+            "question": "Why was it crucial for the Roman army to keep its forts clean and hygienic?"
           }
-        ],
-        "source_context": "This visual source provides students with direct evidence regarding Lesson 1: Prehistoric and Roman Sanitati.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How does this source demonstrate both the advancements and limitations of Roman public health?**"
+        ]
       },
       "narrative_blocks": [
         {
@@ -289,44 +281,24 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "What was the main feature of Iron Age Settlements & Cesspits?",
-            "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
+            "question": "What was 'Trench Foot'?",
+            "answer": "A painful condition caused by standing in cold water and mud for long periods."
           },
           {
-            "question": "How did Roman Conduits & Water Supply impact society?",
-            "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
+            "question": "What pest infested the trenches in their millions?",
+            "answer": "Brown rats."
           },
           {
-            "question": "Identify one major problem with The Roman Withdrawal.",
-            "answer": "The advanced centralized sanitation infrastructure was abandoned, causing public hygiene to decline back into primitive, localized methods."
+            "question": "What was 'No Man's Land'?",
+            "answer": "The deadly strip of land between the opposing frontline trenches."
           },
           {
-            "question": "Why were Iron Age cesspits safe?",
-            "answer": "Because populations were small and spread out."
+            "question": "Which weapon caused the majority of casualties in WWI?",
+            "answer": "Artillery (heavy explosive shells)."
           },
           {
-            "question": "How did the Romans move water?",
-            "answer": "Using gravity through stone conduits over many miles."
-          },
-          {
-            "question": "What were Roman latrines?",
-            "answer": "Communal public toilets flushed continuously by running water."
-          },
-          {
-            "question": "What happened to sanitation when the Romans left?",
-            "answer": "The systems collapsed and towns reverted to primitive methods."
-          },
-          {
-            "question": "Did Iron Age people pollute their water?",
-            "answer": "No, they intentionally dug cesspits far from their drinking water."
-          },
-          {
-            "question": "Why was flowing water important to Romans?",
-            "answer": "They believed it was vital for keeping society healthy and clean."
-          },
-          {
-            "question": "What is a conduit?",
-            "answer": "A channel or pipe for conveying water."
+            "question": "When did the Battle of the Somme begin?",
+            "answer": "July 1st, 1916."
           }
         ]
       },
@@ -341,27 +313,19 @@ export const unitData = {
         ]
       },
       "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "primer": "This lesson explores the dramatic regression in public health following the collapse of the Roman Empire. However, ensure students understand the nuance: while towns were filthy, monasteries retained some Roman hygiene practices because cleanliness was linked to godliness.",
         "objectives": [
           {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+            "objective": "Describe the hazards of a medieval town.",
+            "primer": "Focus on the lack of zoning (butchers next to houses) and the leaking of cesspits into water supplies.",
+            "question": "Why were medieval drinking wells so dangerous?"
           },
           {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Analyze a primary source related to the lesson theme.",
-            "primer": "Guide students through a visual analysis of the primary source.",
-            "question": "If most ordinary Medieval towns lacked complex plumbing, why do you think monasteries like Canterbury Cathedral invested so heavily in advanced water systems?"
+            "objective": "Explain why monasteries were healthier than towns.",
+            "primer": "Direct students to the section on monks building their own advanced water pipes.",
+            "question": "Why did monks believe it was their religious duty to stay clean?"
           }
-        ],
-        "source_context": "This visual source provides students with direct evidence regarding Lesson 2: Medieval Sanitation and The Ch.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?**"
+        ]
       },
       "narrative_blocks": [
         {
@@ -558,44 +522,24 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "What was the main feature of Peasant Cesspits?",
-            "answer": "Simple garden outhouses dug over earth holes. Safe in low-density rural villages like Wharram Percy, but highly problematic in crowded towns."
+            "question": "What was the East India Company?",
+            "answer": "A powerful British trading company that controlled half the world's trade and ruled much of India."
           },
           {
-            "question": "How did Monastic luxury (Canterbury Priory) impact society?",
-            "answer": "It showcased advanced water engineering (lead pipes, color-coded fresh and waste water lines) funded by wealthy, organized Christian orders."
+            "question": "Which luxury goods were imported from India?",
+            "answer": "Cotton, tea, and spices."
           },
           {
-            "question": "Identify one major problem with Gongfermers and night-work.",
-            "answer": "It was a dangerous, filthy task limited to nighttime, which only temporarily cleared overflowing urban cesspits without solving the lack of permanent sewers."
+            "question": "What is colonialism?",
+            "answer": "When one country takes political control over another country to exploit it economically."
           },
           {
-            "question": "What was a Gongfermer?",
-            "answer": "A medieval worker who cleared human waste from cesspits at night."
+            "question": "What was the 'Middle Passage'?",
+            "answer": "The brutal journey of enslaved Africans across the Atlantic Ocean."
           },
           {
-            "question": "Why did medieval monks build water systems?",
-            "answer": "They believed cleanliness brought them closer to God."
-          },
-          {
-            "question": "What did Edward III order in 1357?",
-            "answer": "The removal of filth from London's streets to prevent sickness."
-          },
-          {
-            "question": "Why were medieval towns dangerous for health?",
-            "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
-          },
-          {
-            "question": "How did the Romans keep forts clean?",
-            "answer": "Using deep sewers flushed continuously with running water."
-          },
-          {
-            "question": "How did water sellers make money?",
-            "answer": "By selling barrels of river water to townspeople."
-          },
-          {
-            "question": "What is Miasma?",
-            "answer": "A bad smell previously thought to cause disease."
+            "question": "Where did Britain establish a penal colony in 1788?",
+            "answer": "Australia (Botany Bay)."
           }
         ]
       },
@@ -610,27 +554,19 @@ export const unitData = {
         ]
       },
       "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "primer": "This lesson covers the Early Modern period, highlighting how rapid population growth in towns exacerbated the filth. It introduces the concept of technological failure due to lacking infrastructure (the flushing toilet).",
         "objectives": [
           {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+            "objective": "Understand the impact of early modern urbanization.",
+            "primer": "Highlight how the growing population outpaced the ability to dispose of waste, leading to 'gongfermers' dumping waste in rivers.",
+            "question": "Why did the rivers in early modern towns become open sewers?"
           },
           {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Analyze a primary source related to the lesson theme.",
-            "primer": "Guide students through a visual analysis of the primary source.",
-            "question": "Harington invented a working flushing toilet in 1596, yet it wasn't widely adopted for another 250 years. What crucial piece of town infrastructure was missing that made his invention useless for the average person?"
+            "objective": "Analyze the failure of Harington's flushing toilet.",
+            "primer": "Use this to teach students that an invention is useless without the supporting infrastructure (sewers).",
+            "question": "Why did Harington's flushing toilet fail to catch on for 250 years?"
           }
-        ],
-        "source_context": "This visual source provides students with direct evidence regarding Lesson 3: Early Modern Filth and Cesspit.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?**"
+        ]
       },
       "narrative_blocks": [
         {
@@ -810,35 +746,29 @@ export const unitData = {
       "id": "lesson_4",
       "title": "How did the Industrial Revolution lead to a public health crisis?",
       "do_now": {
-        "type": "timeline",
-        "events": [
+        "type": "questions",
+        "items": [
           {
-            "year": "1750",
-            "title": "Rural Britain",
-            "detail": "Most of the population lives and works in the countryside."
+            "question": "Who invented the Water Frame?",
+            "answer": "Richard Arkwright."
           },
           {
-            "year": "1780s",
-            "title": "First Factories",
-            "detail": "Steam-powered textile mills begin mass production."
+            "question": "What powered the first factories?",
+            "answer": "Water wheels (rivers), and later steam engines."
           },
           {
-            "year": "1800-1850",
-            "title": "Rapid Urbanisation",
-            "detail": "Millions migrate to industrial towns looking for work."
+            "question": "Why did factory owners prefer employing children?",
+            "answer": "They were cheap, easily controlled, and small enough to crawl under machines."
           },
           {
-            "year": "1831",
-            "title": "First Cholera Epidemic",
-            "detail": "Cholera arrives in Britain, killing thousands."
+            "question": "What were 'back-to-back' houses?",
+            "answer": "Cheaply built, cramped terraced houses for factory workers that shared walls and had no ventilation."
           },
           {
-            "year": "1842",
-            "title": "Chadwick's Report",
-            "detail": "[Key Individual: Edwin Chadwick] publishes his damning report on sanitary conditions."
+            "question": "What did the 1833 Factory Act do?",
+            "answer": "It banned the employment of children under 9 in textile factories."
           }
-        ],
-        "prediction_question": "Predict: Why do you think disease spread so quickly in the newly built industrial towns?"
+        ]
       },
       "gcse_task": null,
       "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
@@ -851,27 +781,19 @@ export const unitData = {
         ]
       },
       "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "primer": "This lesson tackles the public health catastrophe caused by the Industrial Revolution. It challenges the 'Miasma' theory by studying Dr. John Snow's brilliant use of data mapping to prove cholera was waterborne.",
         "objectives": [
           {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+            "objective": "Describe the squalor of industrial towns.",
+            "primer": "Use the narrative on back-to-back housing to show how extreme overcrowding created perfect conditions for disease.",
+            "question": "Why did the rapid building of factories lead to a housing crisis?"
           },
           {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Analyze a primary source related to the lesson theme.",
-            "primer": "Guide students through a visual analysis of the primary source.",
-            "question": "How does this map prove that cholera was waterborne, rather than airborne (miasma), simply by looking at the location of the black bars?"
+            "objective": "Explain how Dr. Snow disproved the Miasma theory.",
+            "primer": "Walk students through the Broad Street pump map, showing how the clustering of deaths around a single well proved the water was the source.",
+            "question": "How did Dr. Snow's map prove cholera was waterborne rather than airborne?"
           }
-        ],
-        "source_context": "This visual source provides students with direct evidence regarding Lesson 4: The Industrial Revolution and .... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?**"
+        ]
       },
       "narrative_blocks": [
         {
@@ -1054,44 +976,24 @@ export const unitData = {
         "type": "questions",
         "items": [
           {
-            "question": "What was the main feature of Iron Age Settlements & Cesspits?",
-            "answer": "Farming roundhouses built near natural water sources with simple, temporary earth cesspits located away from drinking water."
+            "question": "What was D.O.R.A.?",
+            "answer": "The Defence of the Realm Act, which gave the government sweeping powers over daily life."
           },
           {
-            "question": "How did Roman Conduits & Water Supply impact society?",
-            "answer": "They brought massive quantities of clean spring water over miles using gravity, powering public bathhouses, fountains, and flushing latrines."
+            "question": "Why was rationing introduced in 1918?",
+            "answer": "Because German U-boats were sinking British supply ships."
           },
           {
-            "question": "What was a Gongfermer?",
-            "answer": "A medieval worker who cleared human waste from cesspits at night."
+            "question": "What dangerous job did many women do during WWI?",
+            "answer": "Working in munitions factories making artillery shells."
           },
           {
-            "question": "Why did medieval monks build water systems?",
-            "answer": "They believed cleanliness brought them closer to God."
+            "question": "What were the 'Canaries'?",
+            "answer": "Women whose skin turned yellow from TNT poisoning in the factories."
           },
           {
-            "question": "What did Edward III order in 1357?",
-            "answer": "The removal of filth from London's streets to prevent sickness."
-          },
-          {
-            "question": "Why were medieval towns dangerous for health?",
-            "answer": "Overcrowding caused cesspits to leak into shared drinking wells."
-          },
-          {
-            "question": "What terrifying waterborne disease first struck Britain in 1831?",
-            "answer": "Cholera."
-          },
-          {
-            "question": "What scientific theory did doctors wrongly believe caused disease before 1860?",
-            "answer": "Miasma Theory (bad smells)."
-          },
-          {
-            "question": "Who published a damning report on sanitary conditions in 1842?",
-            "answer": "Edwin Chadwick."
-          },
-          {
-            "question": "What was the 'laissez-faire' attitude?",
-            "answer": "The government's belief that it should not interfere in public health or people's daily lives."
+            "question": "When did the First World War end?",
+            "answer": "November 11th, 1918."
           }
         ]
       },
@@ -1106,27 +1008,19 @@ export const unitData = {
         ]
       },
       "teacher_notes": {
-        "primer": "Teacher primer for this lesson has not been added yet. Use the breakdown below to guide your teaching.",
+        "primer": "This lesson serves as the climax of the unit. The 'Great Stink' forced the government to abandon its 'laissez-faire' attitude, leading to Bazalgette's monumental sewer system which permanently solved the crisis.",
         "objectives": [
           {
-            "objective": "Identify the key features of this topic.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
+            "objective": "Understand the catalyst of the Great Stink.",
+            "primer": "Explain that the government only acted when the smell of the Thames directly halted Parliament.",
+            "question": "Why did Parliament suddenly care about public health in 1858?"
           },
           {
-            "objective": "Explain the core concepts and historical context.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Evaluate the overall significance.",
-            "primer": "Teacher notes for this specific objective have not been added yet. Ensure you guide the students to the relevant paragraph in the narrative."
-          },
-          {
-            "objective": "Analyze a primary source related to the lesson theme.",
-            "primer": "Guide students through a visual analysis of the primary source.",
-            "question": "Given the immense cost and labor required to build these sewers, what does it tell us about the political impact of the 'Great Stink' on the government?"
+            "objective": "Evaluate the significance of Bazalgette's sewers.",
+            "primer": "Emphasize that this was one of the largest engineering projects in history and the end of 'laissez-faire'.",
+            "question": "What does the sheer scale of Bazalgette's brick sewers tell us about the change in government attitude?"
           }
-        ],
-        "source_context": "This visual source provides students with direct evidence regarding Lesson 5: The Great Stink and Modern Sew.... Ask students to closely analyze the details and consider its broader context within the history of public health. **Hinge Question: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?**"
+        ]
       },
       "narrative_blocks": [
         {
