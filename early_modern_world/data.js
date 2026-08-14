@@ -210,7 +210,6 @@ export const unitData = {
           "tasks": [
             {
               "type": "multiple_choice",
-              "text": "Knowledge Check: Review the events of 1450.",
               "questions": [
                 {
                   "q": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
@@ -230,7 +229,8 @@ export const unitData = {
                     "Europeans had stronger armies than the Ming Emperor"
                   ]
                 }
-              ]
+              ],
+              "question": "Knowledge Check: Review the events of 1450."
             }
           ]
         },
@@ -240,8 +240,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "drawing",
-              "text": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin.",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin."
             }
           ]
         },
@@ -260,7 +260,7 @@ export const unitData = {
           "source_letter": "C",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
               "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
             }
@@ -310,8 +310,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "think_pair_share",
-              "text": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
-              "model": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+              "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+              "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
             }
           ]
         },
@@ -517,8 +517,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "drawing",
-              "text": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships.",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
             }
           ]
         },
@@ -544,7 +544,7 @@ export const unitData = {
           "source_letter": "C",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?",
               "model_answer": "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly."
             },
@@ -620,14 +620,14 @@ export const unitData = {
             },
             {
               "type": "sorting",
-              "text": "Number these events from 1 to 4 in the order they happened.",
               "events": [
                 "The Spanish Armada is defeated by the English fleet and bad weather.",
                 "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
                 "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
                 "The Pope splits the 'New World' between Spain and Portugal."
-              ]
-            },
+              ],
+              "question": "Number these events from 1 to 4 in the order they happened."
+            }
           ],
           "source_letter": "F"
         }
@@ -932,8 +932,8 @@ export const unitData = {
             },
             {
               "type": "drawing",
-              "text": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses.",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
             }
           ]
         },
@@ -1355,10 +1355,10 @@ export const unitData = {
           "text": "It is time to synthesize your understanding of the ideological and physical battles of the English Civil War.",
           "tasks": [
             {
-              "type": "extended",
-              "text": "Lesson Reflection: Was the English Civil War a true revolution that gave power to the people, or just a transfer of power from the King to wealthy Parliamentarians?",
-              "model": "A strong answer should explain how the Divine Right of Kings was destroyed, but note that radical groups like the Diggers were crushed, meaning true power just shifted to wealthy merchants and landowners rather than ordinary people.",
-              "starter": "Some historians argue that the true revolution was the shift of power away from the King towards..."
+              "type": "extended_writing",
+              "starter": "Some historians argue that the true revolution was the shift of power away from the King towards...",
+              "question": "Lesson Reflection: Was the English Civil War a true revolution that gave power to the people, or just a transfer of power from the King to wealthy Parliamentarians? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+              "model_answer": "The English Civil War was not a true revolution for the ordinary people, but rather a transfer of power to the wealthy elites. While it is true that the execution of King Charles I destroyed the 'Divine Right of Kings', the new system did not empower the working classes. Radical democratic groups like the Diggers and Levellers were violently crushed by Oliver Cromwell's New Model Army. Ultimately, true political power merely shifted from the absolute monarchy to wealthy merchants and Parliamentarian landowners, leaving the agrarian and industrial working classes just as disenfranchised as before."
             }
           ]
         }
@@ -1638,7 +1638,7 @@ export const unitData = {
           "source_letter": "E",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
               "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
               "text": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
@@ -1879,8 +1879,8 @@ export const unitData = {
             },
             {
               "type": "drawing",
-              "text": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point.",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point."
             }
           ]
         },
@@ -1895,7 +1895,7 @@ export const unitData = {
           "source_letter": "B",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?",
               "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.",
               "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
@@ -1934,8 +1934,8 @@ export const unitData = {
           "text": "To understand how slavery shaped modern Britain, conduct a real-world historical investigation using the Centre for the Study of the Legacies of British Slavery at University College London (UCL).<br><br><div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px; font-family: monospace;\">  <h3 style=\"margin-top: 0; color: #38bdf8;\">🖥️ STUDENT RESEARCH INSTRUCTIONS</h3>  <ol style=\"margin-bottom: 20px; line-height: 1.6;\">    <li>Open your web browser and navigate to the <strong>UCL Legacies of British Slavery Database</strong> (ucl.ac.uk/lbs).</li>    <li>Click on <strong>\"Search the Database\"</strong> and select <strong>\"Commercial & Financial Legacies\"</strong> or search by <strong>Geographic Location</strong> (e.g., Bristol, Liverpool, London).</li>  </ol>  <div style=\"background: #0f172a; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; color: #10b981; border: 1px solid #334155;\">    [Visit ucl.ac.uk/lbs] ──► [Search Your Region] ──► [Trace Local Wealth]  </div>  <h3 style=\"margin-top: 25px; color: #f472b6;\">📋 INVESTIGATION WORKSHEET</h3>  <ul style=\"line-height: 1.6;\">    <li><strong>Task A:</strong> Identify one individual/family who claimed compensation in 1833. Record their name, the number of enslaved people they 'owned', and the payout received.</li>    <li><strong>Task B:</strong> Investigate what happened to that wealth. Was it invested in local British buildings, railways, artwork, or bank stocks?</li>    <li><strong>Task C:</strong> Write a 150-word summary evaluating how your local area directly benefited from Atlantic plantation economies.</li>  </ul></div>",
           "tasks": [
             {
-              "type": "extended",
-              "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here:",
+              "type": "extended_writing",
+              "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here: Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
               "lines": 20
             }
           ]
@@ -1950,10 +1950,10 @@ export const unitData = {
           "text": "It is time to synthesize your understanding of the mechanics of the Transatlantic slave trade.",
           "tasks": [
             {
-              "type": "extended",
-              "text": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society?",
-              "model": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits.",
-              "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because..."
+              "type": "extended_writing",
+              "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because...",
+              "question": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+              "model_answer": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits."
             }
           ]
         }
@@ -2209,8 +2209,8 @@ export const unitData = {
             },
             {
               "type": "drawing",
-              "text": "Drawing Task: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British."
             }
           ],
           "images": [
@@ -2274,13 +2274,12 @@ export const unitData = {
           "source_letter": "D",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
               "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
             },
             {
               "type": "matching",
-              "text": "Match the aspects of the Stono Rebellion to their correct historical descriptions.",
               "pairs": [
                 {
                   "left": "The Cause",
@@ -2294,7 +2293,8 @@ export const unitData = {
                   "left": "The Consequence",
                   "right": "The British planters passed the brutal Negro Act of 1740, heavily restricting movement, assembly, and education."
                 }
-              ]
+              ],
+              "question": "Match the aspects of the Stono Rebellion to their correct historical descriptions."
             }
           ]
         },
@@ -2330,10 +2330,10 @@ export const unitData = {
           "text": "It is time to synthesize your understanding of how enslaved Africans resisted the Transatlantic Slave Trade.",
           "tasks": [
             {
-              "type": "extended",
-              "text": "Lesson Reflection: Why is it historically inaccurate and damaging to claim that the abolition of the slave trade was purely the result of benevolent white politicians like William Wilberforce?",
-              "model": "A strong answer should explain that this 'white savior' narrative ignores the centuries of relentless resistance by enslaved people themselves (both covert sabotage and overt rebellions like Stono), as well as the economic factors (like the declining profitability of sugar) that historians like Eric Williams argue were the true catalysts for abolition.",
-              "starter": "The 'white savior' narrative is historically inaccurate because it ignores the actions of..."
+              "type": "extended_writing",
+              "starter": "The 'white savior' narrative is historically inaccurate because it ignores the actions of...",
+              "question": "Lesson Reflection: Why is it historically inaccurate and damaging to claim that the abolition of the slave trade was purely the result of benevolent white politicians like William Wilberforce? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+              "model_answer": "A strong answer should explain that this 'white savior' narrative ignores the centuries of relentless resistance by enslaved people themselves (both covert sabotage and overt rebellions like Stono), as well as the economic factors (like the declining profitability of sugar) that historians like Eric Williams argue were the true catalysts for abolition."
             }
           ]
         },
@@ -2345,7 +2345,7 @@ export const unitData = {
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
               "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
             },
@@ -2771,8 +2771,8 @@ export const unitData = {
           "tasks": [
             {
               "type": "drawing",
-              "text": "Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).",
-              "lines": 10
+              "lines": 10,
+              "question": "Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains)."
             }
           ]
         },
@@ -2783,7 +2783,7 @@ export const unitData = {
           "source_letter": "B",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.",
               "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
               "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
@@ -2822,7 +2822,7 @@ export const unitData = {
           "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
           "tasks": [
             {
-              "type": "analysis",
+              "type": "source_analysis",
               "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
               "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
             }
@@ -2840,17 +2840,16 @@ export const unitData = {
           "tasks": [
             {
               "type": "table_planner",
-              "text": "Assessment Planner: Structure your argument before you write your final essay.",
               "columns": [
                 "Point (Your claim)",
                 "Evidence (Historical facts)",
                 "Explanation (Why this matters)"
               ],
-              "rows": 3
+              "rows": 3,
+              "question": "Assessment Planner: Structure your argument before you write your final essay."
             },
             {
               "type": "spectrum_mapper",
-              "text": "Map these historical realities onto the spectrum below to plan your argument.",
               "labels": [
                 "Deeply Traditional (Un-Modern)",
                 "Highly Modern"
@@ -2887,7 +2886,8 @@ export const unitData = {
                   "desc": "Millions of humans treated as property for profit."
                 }
               ],
-              "model": "<div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;\">  <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center;\">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style=\"text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;\">Use this matrix to structure your paragraphs.</p>  <table style=\"width: 100%; border-collapse: collapse; font-size: 0.95rem;\">    <thead>      <tr style=\"background: #334155;\">        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;\">Paragraph</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Core Argument</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>1. Introduction</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Define \"modernity\", state your thesis line, and address limitations.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">\"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional...\"</td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>2. Modern Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Bank of England (1694), Parliament, Global Trade. <br><em>\"On one hand, Britain appeared hyper-modern by 1750 because...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>3. Traditional Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Chattel Slavery, Bloody Code, Women's Rights. <br><em>\"However, beneath this modern surface lay deeply un-modern realities, such as...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>4. Conclusion</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Nuanced overall judgment.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\"><em>\"Therefore, rather than being a fully modern state, 1750 Britain was best described as...\"</em></td>      </tr>    </tbody>  </table></div>"
+              "question": "Map these historical realities onto the spectrum below to plan your argument.",
+              "model_answer": "<div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;\">  <h3 style=\"margin-top: 0; color: #38bdf8; text-align: center;\">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style=\"text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;\">Use this matrix to structure your paragraphs.</p>  <table style=\"width: 100%; border-collapse: collapse; font-size: 0.95rem;\">    <thead>      <tr style=\"background: #334155;\">        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;\">Paragraph</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Core Argument</th>        <th style=\"padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;\">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>1. Introduction</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Define \"modernity\", state your thesis line, and address limitations.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">\"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional...\"</td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>2. Modern Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Bank of England (1694), Parliament, Global Trade. <br><em>\"On one hand, Britain appeared hyper-modern by 1750 because...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>3. Traditional Aspects</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\">Chattel Slavery, Bloody Code, Women's Rights. <br><em>\"However, beneath this modern surface lay deeply un-modern realities, such as...\"</em></td>      </tr>      <tr>        <td style=\"padding: 12px; border: 1px solid #475569; background: #0f172a;\"><strong>4. Conclusion</strong></td>        <td style=\"padding: 12px; border: 1px solid #475569;\">Nuanced overall judgment.</td>        <td style=\"padding: 12px; border: 1px solid #475569; color: #cbd5e1;\"><em>\"Therefore, rather than being a fully modern state, 1750 Britain was best described as...\"</em></td>      </tr>    </tbody>  </table></div>"
             }
           ]
         },
