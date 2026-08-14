@@ -255,7 +255,7 @@ allDirs.forEach(unitId => {
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
     
-    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
+    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: auto; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
     html += `<div style="margin-bottom: 10px;"></div>`;
     
     if (lesson.a4_map) {

@@ -246,20 +246,20 @@ allDirs.forEach(unitId => {
 
     let progressTrackerRows = '';
     periodLessons.forEach((l) => {
-      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 8px 6px; font-weight:bold;">${l.title}</td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td></tr>`;
+      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
     });
     if (unitData.assessments) {
       unitData.assessments.forEach(a => {
-        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 8px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td><td style="border: 1px solid #333; padding: 8px 6px;"></td></tr>`;
+        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
       });
     }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 30px; min-height: 95vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 15px; min-height: auto; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
       <h1 style="font-size: 28pt; margin-bottom: 5px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
-      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 16pt; margin-bottom: 15px; color: #334155; font-weight: 600; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
+      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 16pt; margin-bottom: 5px; color: #334155; font-weight: 600; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 5px;"></div>'}
       
-      <div style="display: flex; flex-direction: row; justify-content: center; margin: 10px auto 15px auto; width: 80%; gap: 40px;">
+      <div style="display: flex; flex-direction: row; justify-content: center; margin: 10px auto 10px auto; width: 80%; gap: 40px;">
         <div style="flex: 2; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Name: </div>
         <div style="flex: 1; border-bottom: 1px solid #000; padding-bottom: 5px; font-weight: 500; font-size: 14pt; text-align: left;">Class: </div>
       </div>
@@ -298,19 +298,19 @@ allDirs.forEach(unitId => {
         <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 9pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
           <thead>
             <tr style="background-color: #1a237e; color: white;">
-              <th style="border: 1px solid #333; padding: 10px 6px; width: 35%;">Progress & Assessment Tracker</th>
-              <th style="border: 1px solid #333; padding: 10px 6px; width: 10%; text-align: center;">Effort</th>
-              <th style="border: 1px solid #333; padding: 10px 6px; width: 10%; text-align: center;">Level</th>
-              <th style="border: 1px solid #333; padding: 10px 6px; width: 45%;">Teacher Comments</th>
+              <th style="border: 1px solid #333; padding: 6px; width: 35%;">Progress & Assessment Tracker</th>
+              <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Effort</th>
+              <th style="border: 1px solid #333; padding: 6px; width: 10%; text-align: center;">Level</th>
+              <th style="border: 1px solid #333; padding: 6px; width: 45%;">Teacher Comments</th>
             </tr>
           </thead>
           <tbody>
             ${progressTrackerRows}
             <tr style=" font-weight: bold; height: 35px;">
-              <td style="border: 1px solid #333; padding: 10px 6px; text-align: right;">Final Unit Grade:</td>
-              <td style="border: 1px solid #333; padding: 10px 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 10px 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 10px 6px;"></td>
+              <td style="border: 1px solid #333; padding: 6px; text-align: right;">Final Unit Grade:</td>
+              <td style="border: 1px solid #333; padding: 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 6px;"></td>
             </tr>
           </tbody>
         </table>
