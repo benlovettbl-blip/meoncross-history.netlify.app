@@ -205,7 +205,7 @@ allDirs.forEach(unitId => {
     }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; min-height: 90vh; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
       ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
       
