@@ -160,6 +160,11 @@ export const unitData = {
               "model": "1. The Domestic System (slow, hand-made production). 2. Watt's Steam Engine (allowed mass factory production anywhere, but required huge amounts of strong iron to build). 3. Cort's Puddling Furnace (invented to mass-produce the high-quality iron needed for the new steam engines and railways)."
             }
           ]
+        },
+        {
+          "title": "Historical Controversy: Where Did the Money Come From?",
+          "content": "Building massive ironworks like Funtley and funding the broader Industrial Revolution required unimaginable amounts of capital. Modern historians emphasize that this sudden wealth was intrinsically tied to the profits of the 18th-century Transatlantic Slave Trade. Although Britain abolished the trade in 1807 and slavery itself in 1833, the industrial economy was kickstarted by the immense wealth extracted from enslaved labor on Caribbean sugar plantations, and continued to rely on slave-picked American cotton.",
+          "is_controversy": true
         }
       ],
       "video": [
@@ -1032,6 +1037,60 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
+      "title": "How did the Empire strike back? The 1857 Indian Rebellion",
+      "teacher_notes": {
+        "primer": "This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.",
+        "objectives": [
+          {
+            "objective": "Understand the deep-rooted causes of the 1857 Indian Rebellion.",
+            "primer": "Guide pupils to look beyond the immediate catalyst of the greased cartridges to the systemic disrespect and land grabs by the East India Company.",
+            "question": "Was the rebellion simply a religious mutiny, or a broader war for independence?"
+          },
+          {
+            "objective": "Analyse the brutal response of the British state.",
+            "primer": "Examine the disproportionate violence used by the British to suppress the rebellion, comparing it to the domestic response to Chartism.",
+            "question": "Why did the British state react with such extreme violence in India compared to domestic unrest?"
+          }
+        ]
+      },
+      "visual_hook": {
+        "title": "The Indian Rebellion (1857)",
+        "caption": "A depiction of the violent uprising against East India Company rule.",
+        "src": "",
+        "hinge_question": "What details in this image suggest a complete breakdown of colonial authority?"
+      },
+      "do_now": {
+        "title": "Recall: The East India Company",
+        "type": "recall",
+        "items": [
+          {
+            "question": "What was the East India Company?",
+            "answer": "A massive British trading corporation that essentially ruled India."
+          },
+          {
+            "question": "How did the EIC destroy the Indian textile industry?",
+            "answer": "By flooding the 'captive market' with cheap British machine-made cloth."
+          }
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "title": "Content Pending",
+          "content": "Waiting for LLM generation of the narrative content..."
+        }
+      ],
+      "sources": [],
+      "quiz": [],
+      "vocab": [],
+      "task": {
+        "type": "source_analysis",
+        "title": "Evaluating Colonial Resistance",
+        "instructions": "Analyze the sources to evaluate the nature of the 1857 rebellion.",
+        "questions": []
+      }
+    },
+    {
+      "id": "lesson_6",
       "title": "How did ordinary people fight for a voice?",
       "teacher_notes": {
         "primer": "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
@@ -1397,7 +1456,7 @@ export const unitData = {
       ]
     },
     {
-      "id": "lesson_6",
+      "id": "lesson_7",
       "title": "How did the road to democracy expand?",
       "teacher_notes": {
         "primer": "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
@@ -1769,7 +1828,7 @@ export const unitData = {
       ]
     },
     {
-      "id": "lesson_7",
+      "id": "lesson_8",
       "title": "Who truly benefited from 19th-century transformation?",
       "teacher_notes": {
         "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
@@ -1840,6 +1899,10 @@ export const unitData = {
         }
       ],
       "narrative_blocks": [
+        {
+          "title": "Advanced Historiography: Silences and Entanglements",
+          "content": "When evaluating the impact of the 19th century, top-tier historians use two key concepts. First, **'Silences in the Archive'**: official reports (like Chadwick's) or industrial statistics often deliberately ignore or 'silence' the voices of the colonized (like Indian weavers) and marginalized (like working-class women or enslaved people whose labor funded the factories). Second, **'Entangled History'**: the Empire wasn't a simple binary of good vs. evil. Domestic British workers were ruthlessly oppressed at home, yet many participated in and benefited from colonial exploitation abroad, highlighting an 'entangled' system of collaboration and coercion."
+        },
         {
           "title": "The Optimist View: Industrial Triumph and Imperial Grandeur",
           "text": "When assessing the 19th century, 'Optimist' or traditional historians argue that this era was a period of unmatched national progress and global triumph. From this perspective, the Industrial Revolution was an economic engine that transformed Britain into the 'workshop of the world'. This progress was driven by immense local breakthroughs. Henry Cort's revolutionary puddling and rolling processes at the Funtley Ironworks (Lesson 1) allowed Britain to mass-produce cheap, high-quality wrought iron. This iron physically built the railways, factories, and the cutting-edge ironclad warships of the Royal Navy, such as HMS Warrior (Lesson 4). Simultaneously, the deep clay deposits of Hampshire fueled a massive construction boom. Firms like Joseph Bull & Sons used millions of durable 'Fareham Red' bricks (Lesson 3) to build the expanding dockyards of Portsmouth and the grand monuments of the capital, like London's Royal Albert Hall. To the Optimists, the generation of this immense industrial wealth and global naval supremacy represents a golden age that eventually lifted the standard of living for the entire nation.",
