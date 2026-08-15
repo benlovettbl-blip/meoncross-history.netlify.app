@@ -3,23 +3,8 @@ const path = require('path');
 
 const dataPath = path.join(__dirname, 'eee', 'data.js');
 
-let code = fs.readFileSync(dataPath, 'utf8');
-
-// Use a regex to extract the JSON object string
-const match = code.match(/export const unitData = (\{[\s\S]+\});/);
-
-if (!match) {
-    console.error("Could not find unitData object in data.js");
-    process.exit(1);
-}
-
-let data;
-try {
-    data = new Function(`return ${match[1]}`)();
-} catch (e) {
-    console.error("Failed to parse unitData:", e);
-    process.exit(1);
-}
+const { unitData } = require('./eee/data.js');
+let data = unitData;
 
 const doNows = {
     "lesson_1_1": [
@@ -171,14 +156,20 @@ const doNows = {
 data.lessons.forEach(lesson => {
     if (doNows[lesson.id]) {
         lesson.do_now = {
-            type: "retrieval",
-            questions: doNows[lesson.id]
+            type: "questions",
+            title: "Recall & Retrieval",
+            instructions: "Answer these questions in full sentences.",
+            items: doNows[lesson.id]
         };
     }
 });
 
-const updatedCode = \`export const unitData = \${JSON.stringify(data, null, 4)};\n\`;
-code = code.replace(/export const unitData = \\{[\\s\\S]+\\};/, updatedCode.trim());
-fs.writeFileSync(dataPath, code, 'utf8');
+const updatedCode = `const unitData = ${JSON.stringify(data, null, 2)};
+
+if (typeof module !== 'undefined') {
+  module.exports = { unitData };
+}
+`;
+fs.writeFileSync(dataPath, updatedCode, 'utf8');
 
 console.log("Successfully updated eee/data.js with 10-question 'Do Now' tasks.");

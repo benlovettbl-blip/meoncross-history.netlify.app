@@ -108,23 +108,49 @@
         "title": "KT1.1: The situation on Elizabeth’s accession, 1558",
         "enquiry": "From crippling debt to looming foreign invasions: How did a young, inexperienced, and contested queen secure a divided and vulnerable England in 1558?",
         "do_now": {
-          "type": "retrieval",
-          "questions": [
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "question": "Recall: What vital English territory was lost to France in 1559 under the Treaty of Cateau-Cambrésis?",
-              "answer": "Calais"
+              "question": "What did William Harvey discover?",
+              "answer": "The circulation of blood."
             },
             {
-              "question": "Define: Queen Regnant",
-              "answer": "A queen who rules in her own right with actual power, rather than just being the wife of a king."
+              "question": "In what year did the Black Death arrive in England?",
+              "answer": "1348."
             },
             {
-              "question": "Explain: Why was the 'Auld Alliance' viewed as a direct geographical threat to Elizabethan England?",
-              "answer": "It was an alliance between France and Scotland, meaning French Catholic troops could be stationed in Scotland on England's northern border."
+              "question": "What did Edward Jenner discover?",
+              "answer": "The smallpox vaccine (1796)."
             },
             {
-              "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about why Catholics viewed Elizabeth as an illegitimate monarch.",
-              "answer": "Verbal response required."
+              "question": "Who published the Germ Theory in 1861?",
+              "answer": "Louis Pasteur."
+            },
+            {
+              "question": "What was 'miasma'?",
+              "answer": "The medieval belief that bad air or smells caused disease."
+            },
+            {
+              "question": "Who was Elizabeth I's father?",
+              "answer": "King Henry VIII."
+            },
+            {
+              "question": "What was the Reformation?",
+              "answer": "A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism."
+            },
+            {
+              "question": "Who was the monarch immediately before Elizabeth?",
+              "answer": "Her half-sister, Mary I."
+            },
+            {
+              "question": "What religion was Mary I?",
+              "answer": "Strictly Catholic."
+            },
+            {
+              "question": "What was the 'Great Chain of Being'?",
+              "answer": "A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top."
             }
           ]
         },
@@ -493,23 +519,49 @@
         "title": "KT1.2: The 'settlement' of religion, 1559",
         "enquiry": "How did Elizabeth I attempt to unite a religiously fractured England in 1559, and why did her 'Middle Way' immediately provoke outrage from both Puritans and Catholics?",
         "do_now": {
-          "type": "retrieval",
-          "questions": [
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "question": "Recall: What vital English territory was lost to France in 1559 under the Treaty of Cateau-Cambrésis?",
-              "answer": "Calais"
+              "question": "What year did Elizabeth I become Queen?",
+              "answer": "1558."
             },
             {
-              "question": "Define: Queen Regnant",
-              "answer": "A queen who rules in her own right with actual power, rather than just being the wife of a king."
+              "question": "How much debt did Mary I leave to Elizabeth?",
+              "answer": "£300,000."
             },
             {
-              "question": "Explain: Why was the 'Auld Alliance' viewed as a direct geographical threat to Elizabethan England?",
-              "answer": "It was an alliance between France and Scotland, meaning French Catholic troops could be stationed in Scotland on England's northern border."
+              "question": "Which French city did England lose in 1559 under the Treaty of Cateau-Cambrésis?",
+              "answer": "Calais."
             },
             {
-              "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the financial weaknesses Elizabeth inherited in 1558.",
-              "answer": "Verbal response required. Students should mention the £300,000 debt, the Antwerp Exchange, inflation from debasement, and the sale of Crown lands by Mary I."
+              "question": "What was a 'Queen Regnant'?",
+              "answer": "A queen who ruled in her own right with actual power, not just the wife of a king."
+            },
+            {
+              "question": "Who was Elizabeth's mother?",
+              "answer": "Anne Boleyn."
+            },
+            {
+              "question": "Why was Elizabeth's legitimacy questioned by Catholics?",
+              "answer": "The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes."
+            },
+            {
+              "question": "What was the 'Auld Alliance'?",
+              "answer": "An alliance between Catholic France and Scotland."
+            },
+            {
+              "question": "What did Florence Nightingale improve?",
+              "answer": "Hospital hygiene and nursing standards (during the Crimean War)."
+            },
+            {
+              "question": "Who discovered Penicillin by accident?",
+              "answer": "Alexander Fleming."
+            },
+            {
+              "question": "What is a 'magic bullet'?",
+              "answer": "A chemical that targets and kills specific germs without harming the body."
             }
           ]
         },
@@ -838,23 +890,49 @@
         "title": "KT1.3: Challenge to the religious settlement",
         "enquiry": "Why did Elizabeth's 'Middle Way' face such fierce opposition, and why did the Catholic threat ultimately eclipse the Puritan grumblings?",
         "do_now": {
-          "type": "retrieval",
-          "questions": [
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "question": "Recall: What year was the Religious Settlement passed?",
-              "answer": "1559"
+              "question": "What two Acts made up Elizabeth's Religious Settlement of 1559?",
+              "answer": "The Act of Supremacy and the Act of Uniformity."
             },
             {
-              "question": "Define: Recusant",
-              "answer": "Catholics who actively refused to attend the new Church of England services and were punished with financial fines."
+              "question": "What title did Elizabeth take in the Act of Supremacy?",
+              "answer": "Supreme Governor of the Church of England."
             },
             {
-              "question": "Explain: Why was the 'Act of Supremacy' carefully worded to make Elizabeth the 'Supreme Governor' instead of 'Supreme Head'?",
-              "answer": "To appease Catholics who believed only the Pope could be the supreme head of the Church."
+              "question": "What was the Act of Uniformity?",
+              "answer": "It established the appearance of churches and the form of services they had to hold."
             },
             {
-              "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about why the Church of England was essential for social control.",
-              "answer": "Verbal response required. Students should mention Church courts, moral policing, visitations, and preaching loyalty to the Queen."
+              "question": "What was the Book of Common Prayer?",
+              "answer": "A set prayer book in English that had to be used in all churches."
+            },
+            {
+              "question": "Who were the Puritans?",
+              "answer": "Extreme Protestants who wanted to 'purify' the church of all Catholic traces."
+            },
+            {
+              "question": "What were the Royal Injunctions?",
+              "answer": "Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy)."
+            },
+            {
+              "question": "How much debt did Mary I leave to Elizabeth?",
+              "answer": "£300,000."
+            },
+            {
+              "question": "Which French city did England lose in 1559?",
+              "answer": "Calais."
+            },
+            {
+              "question": "What year did the Black Death arrive in England?",
+              "answer": "1348."
+            },
+            {
+              "question": "Who published the Germ Theory in 1861?",
+              "answer": "Louis Pasteur."
             }
           ]
         },
@@ -1178,23 +1256,49 @@
         "title": "KT1.4: The problem of Mary, Queen of Scots",
         "enquiry": "Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?",
         "do_now": {
-          "type": "retrieval",
-          "questions": [
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "question": "Recall: What was the main flashpoint of the Vestment Controversy in 1566?",
-              "answer": "Puritan priests refused to wear the required surplice (clerical robes)."
+              "question": "What was the 'Crucifix Controversy'?",
+              "answer": "Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops."
             },
             {
-              "question": "Define: The Counter-Reformation",
-              "answer": "An aggressive campaign by the Catholic Church across Europe to root out heresy and reverse Protestantism."
+              "question": "What was the 'Vestment Controversy'?",
+              "answer": "Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth."
             },
             {
-              "question": "Explain: What did the 1570 Papal Bull explicitly instruct English Catholics to do?",
-              "answer": "It absolved them of their loyalty to Elizabeth and declared it was no longer a sin to rebel against her."
+              "question": "Who was the Pope that excommunicated Elizabeth in 1570?",
+              "answer": "Pope Pius V."
             },
             {
-              "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the Revolt of the Northern Earls (1569).",
-              "answer": "Verbal response required. Students should mention the leaders (Northumberland/Westmorland), the goal to depose Elizabeth, and the storming of Durham Cathedral."
+              "question": "What was the Papal Bull of 1570?",
+              "answer": "A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her."
+            },
+            {
+              "question": "Why did the Dutch Revolt matter to Elizabeth?",
+              "answer": "She feared a massive Spanish army directly across the Channel in the Netherlands."
+            },
+            {
+              "question": "What title did Elizabeth take in the Act of Supremacy?",
+              "answer": "Supreme Governor."
+            },
+            {
+              "question": "What was the Book of Common Prayer?",
+              "answer": "The mandatory English prayer book for all church services."
+            },
+            {
+              "question": "Who were the Puritans?",
+              "answer": "Extreme Protestants who hated all Catholic decoration and ritual."
+            },
+            {
+              "question": "What was a 'Queen Regnant'?",
+              "answer": "A ruling queen with actual power."
+            },
+            {
+              "question": "What did Edward Jenner discover?",
+              "answer": "The smallpox vaccine."
             }
           ]
         },
@@ -1515,22 +1619,48 @@
         "enquiry": "Why did English Catholics continually plot to assassinate Elizabeth between 1569 and 1586, and how did Walsingham’s ruthless spy network ultimately lead to the execution of Mary, Queen of Scots?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "In what year did Mary, Queen of Scots cross the border and arrive in England?",
-              "a": "1568"
+              "question": "Why did Mary, Queen of Scots flee to England in 1568?",
+              "answer": "Following a rebellion by Scottish nobles who forced her to abdicate."
             },
             {
-              "q": "What is a 'recusant'?",
-              "a": "A Catholic who refused to attend the new Protestant Church of England services"
+              "question": "What was Elizabeth's immediate reaction to Mary's arrival?",
+              "answer": "She imprisoned her in the north to prevent her from rallying English Catholics."
             },
             {
-              "q": "How did the 1559 Religious Settlement attempt to find a \"middle way\"?",
-              "a": "It established Protestant doctrine but allowed some traditional Catholic practices to remain"
+              "question": "Why was Mary, Queen of Scots a massive threat to Elizabeth?",
+              "answer": "She had a strong, legitimate claim to the English throne and was Catholic."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the reasons for the Puritan Choir's opposition to the Elizabethan Church."
+              "question": "What was the Casket Letters affair?",
+              "answer": "Letters allegedly proving Mary was involved in the murder of her husband, Lord Darnley."
+            },
+            {
+              "question": "What was the Papal Bull of 1570?",
+              "answer": "The Pope's decree excommunicating Elizabeth."
+            },
+            {
+              "question": "What was the 'Crucifix Controversy'?",
+              "answer": "A Puritan protest against Elizabeth's demand for crucifixes in churches."
+            },
+            {
+              "question": "What were the Royal Injunctions?",
+              "answer": "Rules enforcing the Religious Settlement on the clergy."
+            },
+            {
+              "question": "How much debt did Elizabeth inherit?",
+              "answer": "£300,000."
+            },
+            {
+              "question": "What was the 'Auld Alliance'?",
+              "answer": "The Catholic alliance between France and Scotland."
+            },
+            {
+              "question": "What did William Harvey discover?",
+              "answer": "The circulation of blood."
             }
           ]
         },
@@ -1883,23 +2013,49 @@
         "title": "KT2.2: Relations with Spain",
         "enquiry": "Why did the 'Cold War' between England and Spain ultimately erupt into the launch of the Spanish Armada in 1588, and how did Elizabeth survive the greatest military threat of her reign?",
         "do_now": {
-          "type": "retrieval",
-          "questions": [
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "question": "Recall: In what year was Mary, Queen of Scots executed at Fotheringhay Castle?",
-              "answer": "1587"
+              "question": "What was the Revolt of the Northern Earls (1569)?",
+              "answer": "A Catholic rebellion led by the Earls of Northumberland and Westmorland to depose Elizabeth."
             },
             {
-              "question": "Define: What is an 'agent provocateur'?",
-              "answer": "An agent who encourages others to commit a crime or treason in order to trap them."
+              "question": "What was the Ridolfi Plot (1571)?",
+              "answer": "A plot to assassinate Elizabeth and replace her with Mary, backed by Spanish troops."
             },
             {
-              "question": "Explain: How did the 1570 Papal Bull impact Philip II's view of his duty towards Elizabeth?",
-              "answer": "It officially declared Elizabeth a heretic and illegitimate, providing religious justification and duty for Philip to overthrow her."
+              "question": "What was the Throckmorton Plot (1583)?",
+              "answer": "A French Catholic plot backed by Spain to invade England and free Mary."
             },
             {
-              "question": "15 Second Challenge: Try to speak for 15 seconds non-stop about the Babington Plot.",
-              "answer": "Verbal response required."
+              "question": "What was the Babington Plot (1586)?",
+              "answer": "A plot to assassinate Elizabeth; Mary's coded letters approving the plot were intercepted."
+            },
+            {
+              "question": "Who was Francis Walsingham?",
+              "answer": "Elizabeth's spymaster who uncovered the plots against her using ciphers and spies."
+            },
+            {
+              "question": "Why did Mary, Queen of Scots flee to England in 1568?",
+              "answer": "She was overthrown by Scottish nobles."
+            },
+            {
+              "question": "What was the Casket Letters affair?",
+              "answer": "Letters claiming Mary killed her husband."
+            },
+            {
+              "question": "Who was the Pope that excommunicated Elizabeth in 1570?",
+              "answer": "Pope Pius V."
+            },
+            {
+              "question": "What was the Act of Uniformity?",
+              "answer": "The 1559 law setting out how church services must look and sound."
+            },
+            {
+              "question": "Who published the Germ Theory?",
+              "answer": "Louis Pasteur."
             }
           ]
         },
@@ -2230,22 +2386,48 @@
         "enquiry": "Why did the 'Cold War' between England and Spain finally escalate into open military conflict in 1585, and how did Robert Dudley's campaign in the Netherlands and Francis Drake's raid on Cadiz shape the coming war?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "In what year was Francis Drake knighted on the deck of the *Golden Hind*?",
-              "a": "1581"
+              "question": "Why was Philip II of Spain angry with Elizabeth?",
+              "answer": "She rejected his marriage proposal, turned England Protestant, and supported Dutch rebels."
             },
             {
-              "q": "What is a 'privateer'?",
-              "a": "A private ship owner authorised by their government to attack and capture enemy ships"
+              "question": "What was a 'privateer'?",
+              "answer": "An armed private ship licensed by the government to attack and rob enemy ships."
             },
             {
-              "q": "How did the 1584 Bond of Association respond to the Throckmorton Plot?",
-              "a": "It stated that if Elizabeth were assassinated, Mary, Queen of Scots would be executed"
+              "question": "Which famous English privateer constantly raided Spanish treasure ships?",
+              "answer": "Sir Francis Drake."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the reasons why English Catholics became an increasing threat after 1570."
+              "question": "What was the Treaty of Nonsuch (1585)?",
+              "answer": "Elizabeth officially agreed to send an English army to help the Dutch rebels fight Spain."
+            },
+            {
+              "question": "How much gold did Drake capture from the Spanish ship Cacafuego?",
+              "answer": "£140,000."
+            },
+            {
+              "question": "Who was Francis Walsingham?",
+              "answer": "Elizabeth's Secretary of State and spymaster."
+            },
+            {
+              "question": "What was the Babington Plot (1586)?",
+              "answer": "The final plot that led to Mary, Queen of Scots' execution."
+            },
+            {
+              "question": "What was the Revolt of the Northern Earls (1569)?",
+              "answer": "The only major rebellion on English soil against Elizabeth, led by Catholic nobles."
+            },
+            {
+              "question": "Why was Mary, Queen of Scots a threat?",
+              "answer": "She was a Catholic figurehead with a strong claim to the throne."
+            },
+            {
+              "question": "What was the 'Vestment Controversy'?",
+              "answer": "Puritan priests refusing to wear Catholic-style robes."
             }
           ]
         },
@@ -2531,22 +2713,48 @@
         "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "In what year did Elizabeth sign the Treaty of Nonsuch?",
-              "a": "1585"
+              "question": "What did Drake do in Cadiz in 1587?",
+              "answer": "He launched a surprise attack on the Spanish fleet, destroying 30 ships and delaying the Armada."
             },
             {
-              "q": "What is a 'galleon'?",
-              "a": "A large sailing ship used especially by the Spanish for war and commerce"
+              "question": "What phrase did Drake use to describe his attack on Cadiz?",
+              "answer": "'Singeing the King of Spain's beard.'"
             },
             {
-              "q": "How did Francis Drake’s 1587 raid on Cadiz specifically impact Spanish food and water supplies?",
-              "a": "He destroyed thousands of seasoned wooden barrel staves, causing the food to rot in new wood"
+              "question": "When was Mary, Queen of Scots executed?",
+              "answer": "February 1587."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the execution of Mary, Queen of Scots."
+              "question": "How did Mary's execution affect relations with Spain?",
+              "answer": "It gave Philip II the final moral justification he needed to launch the Armada."
+            },
+            {
+              "question": "What was the Treaty of Nonsuch (1585)?",
+              "answer": "Elizabeth's agreement to send troops to support the Dutch Protestant rebels."
+            },
+            {
+              "question": "Which English privateer constantly raided Spanish ships?",
+              "answer": "Sir Francis Drake."
+            },
+            {
+              "question": "What was the Throckmorton Plot (1583)?",
+              "answer": "A plot for a French invasion backed by Spanish money."
+            },
+            {
+              "question": "Why did Mary, Queen of Scots flee to England?",
+              "answer": "She was forced to abdicate by Scottish lords."
+            },
+            {
+              "question": "What title did Elizabeth take in the Act of Supremacy?",
+              "answer": "Supreme Governor."
+            },
+            {
+              "question": "How much debt did Elizabeth inherit in 1558?",
+              "answer": "£300,000."
             }
           ]
         },
@@ -2867,22 +3075,48 @@
         "enquiry": "How did education and leisure activities reflect the strict social hierarchy of Elizabethan England, and why did the theatre emerge as such a revolutionary—and controversial—cultural phenomenon?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
-              "a": "The Duke of Medina Sidonia"
+              "question": "Who led the Spanish Armada?",
+              "answer": "The Duke of Medina Sidonia."
             },
             {
-              "q": "What were 'Dutch flyboats'?",
-              "a": "Small, fast Dutch rebel ships that blockaded the Duke of Parma"
+              "question": "What was the Armada's plan?",
+              "answer": "To sail to the Netherlands, pick up the Duke of Parma's army, and transport them to invade England."
             },
             {
-              "q": "How did the 1584 Treaty of Joinville act as a political motivation for the Armada?",
-              "a": "It united France and Spain, leaving England isolated and pushing Philip to attack"
+              "question": "What tactic did the English use to break the Spanish defensive formation at Calais?",
+              "answer": "They sent burning fireships into the Spanish fleet."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the English use of fireships at Calais."
+              "question": "What was the decisive sea battle of the Armada called?",
+              "answer": "The Battle of Gravelines."
+            },
+            {
+              "question": "What role did the weather play in defeating the Armada?",
+              "answer": "Strong winds (the 'Protestant Wind') blew the Spanish ships north around Scotland, destroying dozens on the rocks."
+            },
+            {
+              "question": "What did Drake do in Cadiz in 1587?",
+              "answer": "He attacked the Spanish fleet, destroying ships and supplies."
+            },
+            {
+              "question": "When was Mary, Queen of Scots executed?",
+              "answer": "1587."
+            },
+            {
+              "question": "What was the Treaty of Nonsuch?",
+              "answer": "An alliance between England and Dutch Protestant rebels."
+            },
+            {
+              "question": "Who was Francis Walsingham?",
+              "answer": "Elizabeth's spymaster."
+            },
+            {
+              "question": "What was the Book of Common Prayer?",
+              "answer": "The mandatory Protestant prayer book introduced in 1559."
             }
           ]
         },
@@ -3202,22 +3436,48 @@
         "enquiry": "Why did poverty and vagabondage explode into a national crisis during Elizabeth’s reign, and what forced the government to completely change its strategy from brutal punishment to national welfare?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "What was the name of the inexperienced Spanish commander who led the 1588 Armada?",
-              "a": "Duke of Medina Sidonia"
+              "question": "Name two types of schools in Elizabethan England.",
+              "answer": "Petty schools (for young children) and Grammar schools (for older boys of the middling sorts)."
             },
             {
-              "q": "What does the term 'Humanism' mean in the context of Elizabethan education?",
-              "a": "A philosophical movement focused on learning, logic, and producing well-rounded scholars instead of just religious study."
+              "question": "What was a typical subject studied at Grammar school?",
+              "answer": "Latin or Greek."
             },
             {
-              "q": "Why were the Puritans so fiercely opposed to the theatre?",
-              "a": "They believed it encouraged sinful behaviour, drunkenness, and distracted people from prayer."
+              "question": "What was a popular cruel animal sport during this period?",
+              "answer": "Bear-baiting or bull-baiting."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the education of an Elizabethan girl."
+              "question": "Name one famous Elizabethan theatre.",
+              "answer": "The Globe, The Theatre, or The Rose."
+            },
+            {
+              "question": "Were women allowed to act on the Elizabethan stage?",
+              "answer": "No, all female roles were played by young boys."
+            },
+            {
+              "question": "Who led the Spanish Armada?",
+              "answer": "The Duke of Medina Sidonia."
+            },
+            {
+              "question": "What was the Battle of Gravelines?",
+              "answer": "The major battle where English ships heavily damaged the Armada."
+            },
+            {
+              "question": "What phrase did Drake use to describe his attack on Cadiz?",
+              "answer": "'Singeing the King of Spain's beard.'"
+            },
+            {
+              "question": "What was the Babington Plot (1586)?",
+              "answer": "The final plot that proved Mary's guilt via coded letters."
+            },
+            {
+              "question": "What was the 'Great Chain of Being'?",
+              "answer": "The Tudor belief in a strict, God-given social hierarchy."
             }
           ]
         },
@@ -3539,22 +3799,48 @@
         "enquiry": "Why did the Elizabethan era become an 'Age of Discovery', and why did Walter Raleigh’s ambitious dream of a New World colony end in disaster?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "What compulsory local tax was introduced by the 1572 Vagabonds Act?",
-              "a": "The Poor Rate"
+              "question": "What was a 'vagrant' or 'vagabond'?",
+              "answer": "A homeless person who wandered from place to place looking for work, heavily feared by the authorities."
             },
             {
-              "q": "What was an 'Able-Bodied Poor' person?",
-              "a": "An unemployed person physically capable of working, often viewed with intense suspicion by Tudors as lazy or dangerous."
+              "question": "What were the 'deserving poor'?",
+              "answer": "Those who were too old, young, or ill to work and deserved help."
             },
             {
-              "q": "How did the agricultural practice of enclosure contribute to the poverty crisis?",
-              "a": "Landlords fenced off land for sheep farming, which required far fewer workers than crop farming, leading to mass evictions and rural unemployment."
+              "question": "What were the 'idle poor'?",
+              "answer": "Those who were fit to work but couldn't find a job, often seen as lazy criminals."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the Puritan opposition to the Elizabethan theatre."
+              "question": "What was the 1572 Vagabonds Act?",
+              "answer": "A harsh law where vagabonds could be whipped and have a hole burned through their ear."
+            },
+            {
+              "question": "What caused poverty to rise in this period?",
+              "answer": "Population growth, bad harvests, and the enclosure of farming land for sheep."
+            },
+            {
+              "question": "What was a typical subject studied at a Grammar school?",
+              "answer": "Latin."
+            },
+            {
+              "question": "Were women allowed to act on stage?",
+              "answer": "No, boys played female roles."
+            },
+            {
+              "question": "What tactic did the English use to break the Spanish formation at Calais?",
+              "answer": "Fireships."
+            },
+            {
+              "question": "What was a 'privateer'?",
+              "answer": "A state-licensed pirate."
+            },
+            {
+              "question": "What was the Act of Supremacy?",
+              "answer": "The law that made Elizabeth Supreme Governor of the Church."
             }
           ]
         },
@@ -3871,22 +4157,48 @@
         "enquiry": "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
         "do_now": {
           "type": "questions",
-          "tasks": [
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
+          "items": [
             {
-              "q": "How much Spanish treasure did Francis Drake capture during his circumnavigation?",
-              "a": "£400,000"
+              "question": "Why did English sailors explore the world?",
+              "answer": "To expand trade, bypass Spanish monopolies, and find new trade routes."
             },
             {
-              "q": "What was the purpose of an 'astrolabe'?",
-              "a": "It was a navigational instrument used by sailors to determine their latitude by the position of the stars."
+              "question": "What new technology helped Elizabethan exploration?",
+              "answer": "Astrolabes for navigation, better maps, and more agile ships like galleons."
             },
             {
-              "q": "Why was the 1576 Poor Relief Act considered a turning point in government attitudes to poverty?",
-              "a": "It finally recognised that some able-bodied people genuinely wanted to work but couldn't, providing them with raw materials instead of just brutal punishment."
+              "question": "Who was the first Englishman to circumnavigate the globe (1577-1580)?",
+              "answer": "Sir Francis Drake."
             },
             {
-              "q": "15 Second Challenge",
-              "a": "Try to speak for 15 seconds non-stop about the Battle of Gravelines."
+              "question": "Who did Elizabeth give a patent to colonize North America in 1584?",
+              "answer": "Sir Walter Raleigh."
+            },
+            {
+              "question": "Why did the first Roanoke settlement (1585) fail?",
+              "answer": "Due to food shortages and conflict with Native Americans."
+            },
+            {
+              "question": "What happened to the second Roanoke settlement (1587)?",
+              "answer": "It became the 'Lost Colony'; when a supply ship returned in 1590, everyone had vanished."
+            },
+            {
+              "question": "What caused poverty to rise in the Elizabethan period?",
+              "answer": "Population growth and bad harvests."
+            },
+            {
+              "question": "What was the 1572 Vagabonds Act?",
+              "answer": "A law punishing vagrants with whipping and ear-burning."
+            },
+            {
+              "question": "Who led the Spanish Armada?",
+              "answer": "The Duke of Medina Sidonia."
+            },
+            {
+              "question": "What was the Ridolfi Plot (1571)?",
+              "answer": "An assassination plot against Elizabeth backed by Spanish troops."
             }
           ]
         },

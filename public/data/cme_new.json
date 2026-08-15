@@ -111,15 +111,49 @@
           }
         ],
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "What is meant by the term 'empire'?",
+              "question": "What does 'empire' mean?",
               "answer": "A group of countries or territories controlled by a single ruler or state."
             },
             {
-              "question": "Why might a country want to expand its empire?",
-              "answer": "To gain resources, wealth, strategic military positions, and power."
+              "question": "What does 'colony' mean?",
+              "answer": "A country or area under the political control of another country."
+            },
+            {
+              "question": "In what year did the First World War end?",
+              "answer": "1918."
+            },
+            {
+              "question": "What does 'mandate' mean in an international context?",
+              "answer": "An official order or commission given by the League of Nations to govern a territory."
+            },
+            {
+              "question": "What was the League of Nations?",
+              "answer": "An international organization formed after WW1 to promote peace and prevent war."
+            },
+            {
+              "question": "What does 'assassination' mean?",
+              "answer": "The murder of a prominent person, often for political reasons."
+            },
+            {
+              "question": "What is a 'dictatorship'?",
+              "answer": "A country ruled by a single leader with total power."
+            },
+            {
+              "question": "What is a 'republic'?",
+              "answer": "A country without a monarch."
+            },
+            {
+              "question": "What does 'nationalism' mean?",
+              "answer": "A strong identification with one's own nation and support for its interests."
+            },
+            {
+              "question": "What is 'propaganda'?",
+              "answer": "Biased or misleading information used to promote a political cause."
             }
           ]
         },
@@ -387,18 +421,49 @@
           "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
         },
         "do_now": {
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"/units/cme_new/assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
-              "answer": ". He promised British support for a 'national home' for the Jewish people in Palestine."
+              "question": "Why did Britain refer the Palestine issue to the UN in 1947?",
+              "answer": "Due to the rising cost and the violence of the Jewish insurgency."
             },
             {
-              "question": "How many Jewish people were systematically murdered during the Holocaust (1939-1945)?",
-              "answer": "6 million."
+              "question": "What did the UN Special Committee on Palestine (UNSCOP) recommend?",
+              "answer": "The partition of Palestine into separate Jewish and Arab states."
             },
             {
-              "question": "At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?",
-              "answer": "They were stuck in European Displaced Persons (DP) camps, seeking a new home."
+              "question": "How did the Arab Higher Committee respond to the UN Partition Plan?",
+              "answer": "They rejected it completely."
+            },
+            {
+              "question": "What was the significance of the attack on Deir Yassin in April 1948?",
+              "answer": "It led to a mass exodus of Palestinian Arabs out of fear."
+            },
+            {
+              "question": "When did David Ben-Gurion officially declare the creation of the State of Israel?",
+              "answer": "14 May 1948."
+            },
+            {
+              "question": "What does 'empire' mean?",
+              "answer": "Countries controlled by a single ruler."
+            },
+            {
+              "question": "What does 'mandate' mean?",
+              "answer": "A commission given by the League of Nations to govern a territory."
+            },
+            {
+              "question": "What was the League of Nations?",
+              "answer": "An international peace organization formed after WW1."
+            },
+            {
+              "question": "In what year did WW1 end?",
+              "answer": "1918."
+            },
+            {
+              "question": "What does 'nationalism' mean?",
+              "answer": "Strong identification with one's own nation."
             }
           ]
         },
@@ -777,46 +842,49 @@
         ],
         "vocab_cloze_text": "Following the 1948–49 Arab-Israeli War, the borders of the new Jewish state were defined by the [Green Line], separating Israel from its Arab neighbors. To deal with the massive influx of displaced Palestinians, the United Nations established [UNRWA] to provide essential relief and refugee camps. Meanwhile, Israel passed the [Law of Return], granting any Jew the right to immigrate and become a citizen, even as Palestinian [Fedayeen] began launching cross-border guerrilla raids to fight for their lost homeland.",
         "do_now": {
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "In what month and year did the British Mandate officially end and the State of Israel get declared?",
-              "answer": "May 1948 (specifically 14 May 1948)."
+              "question": "What was the 1948-49 Arab-Israeli War?",
+              "answer": "The invasion of Israel by surrounding Arab nations immediately after it declared independence."
             },
             {
-              "question": "Which extreme Jewish paramilitary group carried out the bombing of the King David Hotel in July 1946?",
-              "answer": "The Irgun (led by Menachem Begin)."
+              "question": "Which Arab nations invaded Israel in 1948?",
+              "answer": "Egypt, Syria, Transjordan, Lebanon, and Iraq."
             },
             {
-              "question": "What was the name of the British Foreign Secretary who ultimately decided to hand the Palestine Mandate over to the United Nations in 1947?",
-              "answer": "Ernest Bevin."
+              "question": "Why did the Israelis ultimately win the 1948-49 war?",
+              "answer": "They were highly motivated, secured weapons from Czechoslovakia, and the Arab armies were uncoordinated."
             },
             {
-              "question": "Under UN Resolution 181 (the 1947 Partition Plan), what percentage of Palestine was allocated to the proposed Jewish state, and what was to be the status of Jerusalem?",
-              "answer": "The Jewish state was allocated 55% of the land, while Jerusalem was designated as an international zone (corpus separatum) under direct UN administration."
+              "question": "What was the impact of the war on Israel's borders?",
+              "answer": "Israel gained 21% more territory than the UN Partition Plan had given them."
             },
             {
-              "question": "Give two reasons why the Arab League and Palestinian leaders rejected UN Resolution 181.",
-              "answer": "1. They argued the UN had no legal authority to partition a land against the democratic wishes of its majority Arab population. 2. The plan was grossly unfair, allocating 55% of Palestine to the Jewish minority, who made up only one-third of the population."
+              "question": "What was the Nakba?",
+              "answer": "The 'Catastrophe'—the expulsion and flight of approx. 700,000 Palestinian Arabs."
             },
             {
-              "question": "What was 'Plan Dalet' (Plan D), implemented by the Haganah in March 1948, and why is it a subject of intense historical debate?",
-              "answer": "Plan D was a military strategy to secure the borders of the future Jewish state. It is debated because Israeli historians view it as a defensive strategy, whereas Palestinian historians argue it was an offensive blueprint for ethnic cleansing."
+              "question": "When did David Ben-Gurion declare the State of Israel?",
+              "answer": "14 May 1948."
             },
             {
-              "question": "Name the five sovereign Arab states that launched a coordinated invasion of Israel on 15 May 1948.",
-              "answer": "Egypt, Syria, Jordan (Transjordan), Lebanon, and Iraq."
+              "question": "What did UNSCOP recommend in 1947?",
+              "answer": "The partition of Palestine into two states."
             },
             {
-              "question": "Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor.",
-              "answer": "Israel used the 30-day truce to unify its forces under the IDF and import massive quantities of modern weaponry from Czechoslovakia, neutralizing the Arabs' initial material superiority."
+              "question": "Why did Britain refer the issue to the UN?",
+              "answer": "Violence and cost of the mandate."
             },
             {
-              "question": "Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight.",
-              "answer": "The massacre of over 100 Arab villagers was sensationalized by Arab radio, which backfired and triggered widespread panic among Arab civilians, causing hundreds of thousands to flee."
+              "question": "What was the attack on Deir Yassin?",
+              "answer": "A massacre that caused mass Arab panic and flight."
             },
             {
-              "question": "In a narrative account of the end of the British Mandate, how would you link the bombing of the King David Hotel to UN Resolution 181?",
-              "answer": "The bombing (1946) demonstrated to the British public that policing the Mandate was too costly, leading directly to Britain referring the problem to the UN in 1947, which proposed partition under Resolution 181."
+              "question": "What does 'colony' mean?",
+              "answer": "A country controlled by another."
             }
           ]
         },
@@ -1321,46 +1389,49 @@
         ],
         "vocab_cloze_text": "Driven by the ideology of [Pan-Arabism],  sought to modernize Egypt. Following the [Czech Arms Deal], the West refused to fund his dam project. In retaliation, Nasser announced the [Nationalisation] of the Suez Canal. This led to the secret [Protocol of Sèvres] where Israel, Britain, and France invaded Egypt. The conflict ended with the deployment of [UNEF] peacekeepers in the Sinai.",
         "do_now": {
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "What is the historical name given to the 1949 armistice line that established Israel's borders after its victory in the first Arab-Israeli War?",
-              "answer": "The \"Green Line\"."
+              "question": "What was the Law of Return (1950)?",
+              "answer": "An Israeli law granting every Jew in the world the right to immigrate to Israel."
             },
             {
-              "question": "Which neighbouring Arab country occupied and annexed the West Bank and East Jerusalem following the 1948–49 war?",
-              "answer": "Transjordan (which renamed itself Jordan in 1949)."
+              "question": "Which Arab nation took control of the West Bank after 1949?",
+              "answer": "Transjordan (Jordan)."
             },
             {
-              "question": "What Arabic term, meaning \"The Catastrophe,\" do Palestinians use to describe the 1948–49 war and its immediate consequences?",
-              "answer": "al-Nakba."
+              "question": "Which Arab nation took control of the Gaza Strip after 1949?",
+              "answer": "Egypt."
             },
             {
-              "question": "Approximately how many Palestinian Arabs became refugees as a result of the 1948–49 war, and what agency was set up by the UN in December 1949 to support them?",
-              "answer": "Over 700,000 Palestinian Arabs became refugees. The UN set up the United Nations Relief and Works Agency (UNRWA) to manage the camps."
+              "question": "How did Arab states treat the Palestinian refugees?",
+              "answer": "They largely kept them in squalid refugee camps and refused to integrate them."
             },
             {
-              "question": "Give one reason why Israel strictly denied Palestinian refugees the \"right of return,\" and one reason why Arab host states (except Jordan) refused to permanently integrate these refugees.",
-              "answer": "Israel denied it to preserve a Jewish demographic majority. Arab host states kept refugees in camps to maintain moral pressure on Israel."
+              "question": "What were the 'fedayeen'?",
+              "answer": "Palestinian guerrilla fighters who launched raids into Israel from neighboring Arab states."
             },
             {
-              "question": "Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950.",
-              "answer": "1. Granted every Jew automatic citizenship, doubling the population. 2. Provided massive labor and military conscripts to defend vulnerable borders."
+              "question": "What was the 1948-49 Arab-Israeli War?",
+              "answer": "The first major conflict following Israel's creation."
             },
             {
-              "question": "What was the value of the vital economic grant given to Israel by the US government in 1949, and what was the further amount provided by 1960?",
-              "answer": "A $100 million grant in 1949 and a further $200 million by 1960."
+              "question": "Why did Israel win in 1949?",
+              "answer": "Better organization, motivation, and weapons."
             },
             {
-              "question": "Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice.",
-              "answer": "1. Closed the Suez Canal to Israeli vessels. 2. Blockaded the Straits of Tiran to choke trade through Eilat."
+              "question": "What was the Nakba?",
+              "answer": "The Palestinian refugee crisis (approx. 700,000 people)."
             },
             {
-              "question": "What were the Fedayeen, and how did Israel's official reprisal policy under David Ben-Gurion attempt to deal with them?",
-              "answer": "Fedayeen were Palestinian guerrillas operating from Gaza. Ben-Gurion responded with disproportionate IDF reprisal attacks against Egyptian outposts."
+              "question": "What did UNSCOP recommend in 1947?",
+              "answer": "Partition into a Jewish and Arab state."
             },
             {
-              "question": "Write an analytical sentence linking the 1948-49 Arab-Israeli War to the creation of the Israeli Defence Forces (IDF).",
-              "answer": "Because Israel had suffered 6,000 casualties during its war of survival, David Ben-Gurion unified all independent paramilitaries into the IDF in May 1948 to guarantee a professional defense force."
+              "question": "When was the State of Israel created?",
+              "answer": "14 May 1948."
             }
           ]
         },
@@ -1693,27 +1764,49 @@
         "id": "lesson_4",
         "title": "KT2.1: The Six Day War, 1967",
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "Who became the President of Egypt in 1954 and positioned himself as the leading champion of Pan-Arabism?",
-              "answer": "Colonel Gamal Abdel Nasser."
+              "question": "Who became President of Egypt in 1954?",
+              "answer": "Gamal Abdel Nasser."
             },
             {
-              "question": "What was the name of the highly secret agreement signed in October 1956 where Britain, France, and Israel planned the tripartite invasion of Egypt?",
-              "answer": "The Protocol of Sèvres."
+              "question": "Why did Nasser nationalize the Suez Canal in 1956?",
+              "answer": "To pay for the Aswan High Dam after the US and UK withdrew their funding."
             },
             {
-              "question": "Explain the immediate cause behind Nasser’s decision to nationalise the Suez Canal Company on 26 July 1956.",
-              "answer": "Nasser nationalised the canal to use its £35 million annual toll revenues to directly fund his pride project, the Aswan High Dam, after the USA and Great Britain abruptly withdrew their joint offer of financial loans."
+              "question": "Which three countries secretly conspired to attack Egypt during the Suez Crisis?",
+              "answer": "Israel, Britain, and France (The Sèvres Protocol)."
             },
             {
-              "question": "What was the 1955 Gaza Raid, and why was it a turning point for Egyptian defense policy?",
-              "answer": "The Gaza Raid was a massive Israeli reprisal attack in February 1955 that killed 38 Egyptian soldiers. It humiliated Nasser and proved to him that his military was too weakly equipped, prompting him to look to the Soviet bloc for advanced weaponry."
+              "question": "What was Israel's role in the Suez plan?",
+              "answer": "To invade the Sinai Peninsula, giving Britain and France an excuse to 'intervene'."
             },
             {
-              "question": "How did Nasser successfully bypass Western weapons restrictions in September 1955 to rearm Egypt?",
-              "answer": "Nasser signed the Czech Arms Deal. Under this agreement, Czechoslovakia supplied Egypt with a massive modern arsenal, including 200 MiG-15 jet fighters, 300 tanks, and heavy artillery."
+              "question": "Why did Britain and France humiliate themselves in the Suez Crisis?",
+              "answer": "The USA forced them to withdraw by threatening economic ruin."
+            },
+            {
+              "question": "What was the Law of Return (1950)?",
+              "answer": "A law allowing any Jew to immigrate to Israel."
+            },
+            {
+              "question": "Who controlled the West Bank between 1949 and 1967?",
+              "answer": "Jordan."
+            },
+            {
+              "question": "What were the 'fedayeen'?",
+              "answer": "Palestinian guerrilla fighters."
+            },
+            {
+              "question": "What was the Nakba?",
+              "answer": "The mass displacement of Palestinians in 1948."
+            },
+            {
+              "question": "Why did Israel win the 1948-49 war?",
+              "answer": "Arab disunity and superior Israeli organization/arms."
             }
           ]
         },
@@ -2227,47 +2320,49 @@
           ]
         },
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "What major political organization was established at the Cairo Conference in January 1964 with the backing of the Arab League, and what was its primary objective?",
-              "answer": "The Palestine Liberation Organisation (PLO) was established. Its primary objective was to unite various Palestinian resistance groups under a single political umbrella to reclaim the lost homeland."
+              "question": "What was the PLO (Palestine Liberation Organization) created in 1964?",
+              "answer": "An umbrella organization aiming to destroy Israel and create a Palestinian state."
             },
             {
-              "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"/units/cme_new/assets/card_arafat.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this leader, and what organisation did he take over in 1969?</span></div>",
-              "answer": "Yasser Arafat. He became the Chairman of the Palestine Liberation Organisation (PLO)."
+              "question": "Who became the chairman of the PLO in 1969?",
+              "answer": "Yasser Arafat."
             },
             {
-              "question": "Explain how disputes over water resources between Israel and Syria in the mid-1960s contributed to rising regional tensions.",
-              "answer": "Israel completed its National Water Carrier to divert water from the Sea of Galilee. In response, Arab states drafted the Headwater Diversion Plan to divert the Dan and Banias rivers. This led to cross-border skirmishes where Israeli tanks and artillery fired on Syrian workers to destroy their heavy machinery."
+              "question": "What triggered the Six Day War in 1967?",
+              "answer": "Nasser expelled UN peacekeepers from Sinai and blockaded the Straits of Tiran."
             },
             {
-              "question": "What was the Samu Raid of November 1966, and how did it affect King Hussein of Jordan's position?",
-              "answer": "The Samu Raid was a massive Israeli reprisal attack in the West Bank after a Fatah landmine killed three Israeli policemen. Over 600 IDF troops entered the village of Samu, destroying dozens of homes and clashing with the Jordanian military, leaving 15 Jordanian soldiers dead. It humiliated King Hussein and prompted him to order national mobilization."
+              "question": "How did Israel win the Six Day War so quickly?",
+              "answer": "They launched a devastating pre-emptive air strike, destroying the Egyptian air force on the ground."
             },
             {
-              "question": "What major air battle occurred on 7 April 1967, and how did it affect Syrian military morale?",
-              "answer": "Syrian artillery on the Golan Heights fired on Israeli tractors in the demilitarized zone, leading to a massive aerial dogfight over Damascus in which the Israeli air force shot down six Syrian Soviet-built MiG-21 jet fighters. This humiliated Syria and increased the pressure to retaliate."
+              "question": "What territories did Israel capture in the Six Day War?",
+              "answer": "The Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights."
             },
             {
-              "question": "How did the Soviet Union act as a catalyst for the May 1967 crisis?",
-              "answer": "On 13 May 1967, the USSR gave Egyptian President Nasser a false intelligence report claiming Israel was massing ten brigades on the Syrian border for an imminent invasion. This placed Nasser under immense pressure to act to honor his defense pact with Syria."
+              "question": "Why did Nasser nationalize the Suez Canal?",
+              "answer": "To fund the Aswan High Dam."
             },
             {
-              "question": "Detail three specific actions taken by Gamal Abdel Nasser in May 1967 that Israel considered a direct casus belli (act of war).",
-              "answer": "1. Mobilizing his army into the demilitarized Sinai Peninsula. 2. Demanding the immediate withdrawal of UN peacekeepers (UNEF) from the border. 3. Closing the Straits of Tiran to Israeli and Israel-bound shipping, choking Israel's southern port of Eilat."
+              "question": "Which three nations attacked Egypt in 1956?",
+              "answer": "Israel, Britain, and France."
             },
             {
-              "question": "What was Operation Focus, launched on 5 June 1967, and why was it so critical to the outcome of the war?",
-              "answer": "It was a pre-emptive Israeli air strike that flew low to evade Egyptian radar, catching the Egyptian air force on the ground. Within three hours, Israel destroyed 309 of Egypt's 340 combat aircraft on the tarmac, securing absolute air superiority, which allowed Israeli ground forces to advance without fear of aerial attack."
+              "question": "Why did Britain and France withdraw from Suez?",
+              "answer": "Massive financial pressure from the USA."
             },
             {
-              "question": "List the territories captured by Israel during the Six Day War and identify the nation from which each was taken.",
-              "answer": "Sinai Peninsula and the Gaza Strip from Egypt. The West Bank and East Jerusalem from Jordan. The Golan Heights from Syria."
+              "question": "What was the Law of Return?",
+              "answer": "Israel's law allowing Jewish immigration."
             },
             {
-              "question": "Write an analytical sentence linking the May 1967 Crisis to the ultimate outcome of the Six Day War.",
-              "answer": "Because Nasser closed the Straits of Tiran and signed a mutual defense pact with Jordan in May 1967, Israel launched a pre-emptive air strike on 5 June 1967 that destroyed Arab air capabilities on the ground, enabling a lightning ground campaign that expanded Israeli territory to three times its pre-war size."
+              "question": "Who controlled the Gaza Strip between 1949 and 1967?",
+              "answer": "Egypt."
             }
           ]
         },
@@ -2708,47 +2803,49 @@
           ]
         },
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "What major United Nations Security Council Resolution was passed on 22 November 1967 to establish the guiding principles of a 'land for peace' formula?",
-              "answer": "UN Resolution 242."
+              "question": "What was UN Resolution 242 (1967)?",
+              "answer": "A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition."
             },
             {
-              "question": "Name the radical, Marxist-leaning Palestinian group founded by George Habash that pioneered international aviation terrorism in the early 1970s.",
-              "answer": "The Popular Front for the Liberation of Palestine (PFLP)."
+              "question": "Why was the Yom Kippur War (1973) launched?",
+              "answer": "Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967."
             },
             {
-              "question": "Explain how a translation discrepancy in the wording of UN Resolution 242 created a loophole that hindered its implementation.",
-              "answer": "The English text called for a withdrawal from 'territories occupied,' allowing Israel to retain some land for secure borders. The French translation demanded a withdrawal from 'the territories' (all of them), which Arab states demanded."
+              "question": "Why was Israel caught off guard in 1973?",
+              "answer": "It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements."
             },
             {
-              "question": "What Arabic term refers to the Arab League Summit of August 1967, and what were the famous declarations issued there?",
-              "answer": "The Khartoum Conference. The Arab states issued the 'Three Nos': No peace, No recognition, and No negotiations with Israel."
+              "question": "What was the oil weapon used during the Yom Kippur War?",
+              "answer": "Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis."
             },
             {
-              "question": "What was the immediate result of the Dawson's Field hijackings of September 1970 for the PLO's position in Jordan?",
-              "answer": "The hijackings severely embarrassed King Hussein of Jordan, prompting him to order his army to crush and forcibly expel the PLO from the country during 'Black September'."
+              "question": "Who won the Yom Kippur War militarily?",
+              "answer": "Israel eventually repelled the attacks, but suffered heavy casualties."
             },
             {
-              "question": "To which country did the PLO relocate its central headquarters after its expulsion from Jordan in 1970–71?",
-              "answer": "Lebanon."
+              "question": "Who became chairman of the PLO in 1969?",
+              "answer": "Yasser Arafat."
             },
             {
-              "question": "Describe the events of the Munich Olympics of September 1972 and state how Israel's Prime Minister Golda Meir responded.",
-              "answer": "The 'Black September' group took nine Israeli athletes hostage (killing two immediately), resulting in the deaths of all 11 during a failed rescue attempt. In response, Prime Minister Meir launched 'Operation Wrath of God' to assassinate the planners globally."
+              "question": "What territories did Israel capture in 1967?",
+              "answer": "Sinai, Gaza, West Bank, Golan Heights."
             },
             {
-              "question": "How did Israel's capture of the Golan Heights, the West Bank, the Gaza Strip, and the Sinai Peninsula in 1967 initially improve its military security?",
-              "answer": "These territories acted as strategic military buffer zones: keeping Egyptian forces far from the heartland, creating a defensible border along the Jordan, and preventing Syrian shelling of Galilee."
+              "question": "How did Israel win the Six Day War?",
+              "answer": "A massive pre-emptive air strike."
             },
             {
-              "question": "Why did the PLO reject UN Resolution 242?",
-              "answer": "Because it treated the Palestinian population merely as a 'refugee problem' rather than a nation with a right to self-determination."
+              "question": "Why did Nasser blockade the Straits of Tiran in 1967?",
+              "answer": "To choke off Israel's southern trade route."
             },
             {
-              "question": "Write an analytical sentence linking the outcome of the Six Day War to the rise of international Palestinian terrorism.",
-              "answer": "Because the devastating defeat of Arab armies in 1967 proved they could not destroy Israel, disillusioned Palestinian nationalists turned to grassroots armed groups like the PFLP, which launched high-profile terror attacks to force the issue onto the global stage."
+              "question": "Who forced Britain and France out of Suez in 1956?",
+              "answer": "The USA."
             }
           ]
         },
@@ -3343,47 +3440,49 @@
           "source_context": "These two sources show a dramatic pivot in Middle Eastern history. The Yom Kippur War image (Source 1) reminds us that Israel, often perceived as militarily invincible after 1967, was caught completely off-guard and suffered heavy early losses, shattering their sense of security. Contrast this with the Camp David Accords (Source 2), showing Begin, Carter, and Sadat. Sadat’s willingness to make peace cost him his life (he was assassinated in 1981), making this handshake one of the bravest and most consequential moments of 20th-century diplomacy. **Hinge Question:** Why might the initial shock of the Yom Kippur War have made Israel more willing to sign the Camp David Accords?"
         },
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "Who succeeded Gamal Abdel Nasser as President of Egypt following his death in September 1970?",
-              "answer": "Anwar Sadat."
+              "question": "What was the significance of Anwar Sadat visiting Jerusalem in 1977?",
+              "answer": "He was the first Arab leader to officially visit Israel, opening the door for peace."
             },
             {
-              "question": "On which major Jewish holy day did Egypt and Syria launch their coordinated surprise attack in October 1973?",
-              "answer": "Yom Kippur (the Day of Atonement)."
+              "question": "What were the Camp David Accords (1978)?",
+              "answer": "A peace framework brokered by US President Jimmy Carter between Egypt and Israel."
             },
             {
-              "question": "What was the name of the massive sand-wall fortification built by Israel along the east bank of the Suez Canal that Egyptian forces successfully overran?",
-              "answer": "The Bar Lev Line."
+              "question": "What was the 1979 Egypt-Israel Peace Treaty?",
+              "answer": "Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula."
             },
             {
-              "question": "Which global organisation, dominated by Arab oil-producing countries, implemented the 'oil weapon' in October 1973 to pressure Western nations?",
-              "answer": "OPEC (Organization of the Petroleum Exporting Countries)."
+              "question": "How did the Arab world react to Sadat's peace treaty?",
+              "answer": "They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated."
             },
             {
-              "question": "What was the static, attrition-based conflict along the Suez Canal from 1969 to 1970 called, and which superpower provided Egypt with 15,000 advisors and SAM-3 missiles during it?",
-              "answer": "The War of Attrition. The Soviet Union (USSR) provided the advisors and missiles."
+              "question": "What was the PLO's strategy in the 1970s?",
+              "answer": "They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention."
             },
             {
-              "question": "Why did Anwar Sadat make the dramatic decision to expel 15,000 Soviet military advisors from Egypt in July 1972?",
-              "answer": "He was frustrated by Soviet reluctance to supply offensive weaponry and calculated that expelling them would please the United States, hoping Washington would then pressure Israel into returning the Sinai Peninsula."
+              "question": "Why did Egypt and Syria attack in 1973?",
+              "answer": "To reclaim land lost in 1967."
             },
             {
-              "question": "Explain how the US military airlift, known as Operation Nickel Grass, influenced the course of the Yom Kippur War.",
-              "answer": "It replaced Israel’s heavy initial losses of tanks, jets, and ammunition. This vital logistical support allowed the IDF to stabilize their defense lines, launch a counter-offensive, and encircle Egypt's Third Army."
+              "question": "What was the 'oil weapon' (OPEC embargo)?",
+              "answer": "Arab nations cutting oil supplies to punish Israel's allies."
             },
             {
-              "question": "What were the two primary targets of Egypt's maritime blockade established in the years immediately following the 1949 armistice?",
-              "answer": "Egypt blocked the Suez Canal to all Israel-bound cargo and established a naval blockade at the Straits of Tiran to choke off Israeli trade through its southern port of Eilat."
+              "question": "What was UN Resolution 242?",
+              "answer": "The 'Land for Peace' formula."
             },
             {
-              "question": "Explain the two key economic effects of the OPEC 'oil weapon' on Western nations supporting Israel in late 1973.",
-              "answer": "OPEC placed a total oil embargo on the US and Western nations. This caused a severe global energy crisis (fuel shortages) and quadrupled the price of oil from $3 to $12 a barrel, triggering massive inflation."
+              "question": "What territory did Israel capture from Syria in 1967?",
+              "answer": "The Golan Heights."
             },
             {
-              "question": "Write an analytical sentence linking the outcome of the Yom Kippur War to the emergence of diplomatic negotiations in the mid-1970s.",
-              "answer": "Because the Yom Kippur War ended in a costly military stalemate that shattered the myth of Israeli invincibility and triggered a global oil crisis, superpowers realized military force had its limits, paving the way for 'shuttle diplomacy'."
+              "question": "Who was the leader of the PLO?",
+              "answer": "Yasser Arafat."
             }
           ]
         },
@@ -3807,47 +3906,49 @@
           "source_context": "The imagery of the First Intifada (1987) was revolutionary. Unlike previous Arab-Israeli wars fought by traditional armies, the Intifada was a grassroots uprising characterized by stone-throwing youths (often teenagers and children) confronting heavily armed Israeli soldiers. This 'David vs. Goliath' reversal of optics severely damaged Israel's international reputation and generated widespread global sympathy for the Palestinian struggle for self-determination. **Hinge Question:** Why was the 'David vs. Goliath' optics of the Intifada so damaging to Israel's international standing?"
         },
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "Who was the US Secretary of State who pioneered the stage-by-step mediation strategy known as 'shuttle diplomacy' following the 1973 Yom Kippur War?",
-              "answer": "Henry Kissinger."
+              "question": "Why did Israel invade Lebanon in 1982?",
+              "answer": "To destroy PLO bases in southern Lebanon that were attacking northern Israel."
             },
             {
-              "question": "In what month and year did Egypt officially reopen the Suez Canal to international shipping, exactly eight years to the day after its closure?",
-              "answer": "June 1975 (specifically 5 June 1975)."
+              "question": "What were the Sabra and Shatila massacres?",
+              "answer": "Christian militias massacred Palestinian refugees while the Israeli army stood by."
             },
             {
-              "question": "Explain how the 1973 Oil Crisis acted as a direct catalyst for the United States to become heavily involved in Middle Eastern diplomacy.",
-              "answer": "The Arab OPEC oil embargo caused severe inflation and fuel shortages in the West. This economic shock forced the US to actively stabilize the region to secure its energy supply and limit growing Soviet influence."
+              "question": "What was the First Intifada (1987)?",
+              "answer": "A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza."
             },
             {
-              "question": "Which right-wing, revisionist Zionist leader won the May 1977 Israeli election, ending nearly thirty years of Labor Party dominance?",
-              "answer": "Menachem Begin."
+              "question": "What methods were used during the First Intifada?",
+              "answer": "Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers."
             },
             {
-              "question": "Explain how Anwar Sadat’s historic visit to Jerusalem in November 1977 broke a decades-long Arab diplomatic taboo.",
-              "answer": "By traveling directly to Jerusalem and addressing the Israeli Knesset, Sadat broke the Arab League's 'Three Nos'. He offered Israel full diplomatic recognition and permanent peace in exchange for a complete withdrawal from occupied territories."
+              "question": "What was the political impact of the First Intifada?",
+              "answer": "It severely damaged Israel's international reputation and pressured them into negotiations."
             },
             {
-              "question": "Name the two distinct framework agreements that comprised the Camp David Accords signed on 17 September 1978.",
-              "answer": "1. 'A Framework for Peace in the Middle East' (autonomy for West Bank/Gaza). 2. 'Framework for the Conclusion of a Peace Treaty between Egypt and Israel' (bilateral peace and Sinai withdrawal)."
+              "question": "What was the 1979 Egypt-Israel Peace Treaty?",
+              "answer": "Israel returned the Sinai in exchange for peace."
             },
             {
-              "question": "Detail the primary bilateral terms of the Treaty of Washington signed on 26 March 1979.",
-              "answer": "Israel agreed to a phased, complete withdrawal from the Sinai Peninsula. In return, Egypt officially recognized Israel’s right to exist, demilitarized the Sinai, and guaranteed free passage through the Suez Canal."
+              "question": "Who brokered the Camp David Accords?",
+              "answer": "US President Jimmy Carter."
             },
             {
-              "question": "How did the wider Arab world react to Egypt signing a separate peace treaty with Israel in 1979?",
-              "answer": "The Arab world viewed Sadat as a traitor who abandoned the Palestinian cause. The Arab League expelled Egypt, suspended all economic aid, and relocated its headquarters to Tunis."
+              "question": "Why was Anwar Sadat assassinated?",
+              "answer": "For making peace with Israel."
             },
             {
-              "question": "Explain the domestic backlash and political fallout that both Anwar Sadat and Menachem Begin faced within their own countries after signing the peace agreements.",
-              "answer": "Sadat was assassinated in 1981 by radical Islamic militants in the Egyptian military. Begin faced intense condemnation from Likud hardliners and Gush Emunim settlers for dismantling Jewish settlements in Sinai."
+              "question": "What happened at the 1972 Munich Olympics?",
+              "answer": "Palestinian terrorists took Israeli athletes hostage and murdered them."
             },
             {
-              "question": "Using a relative clause and an analytical linking phrase, write a single sentence showing how the 1973 Oil Crisis historically connected to the Treaty of Washington (1979).",
-              "answer": "The 1973 Oil Crisis, which devastated Western economies through quadrupled oil prices, forced the United States to prioritize Middle Eastern stability, leading directly to their extensive mediation at Camp David and the 1979 Treaty of Washington."
+              "question": "Why was the Yom Kippur War launched?",
+              "answer": "To regain territories lost in 1967."
             }
           ]
         },
@@ -4303,47 +4404,49 @@
           ]
         },
         "do_now": {
-          "type": "retrieval",
+          "type": "questions",
+          "title": "Recall & Retrieval",
+          "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "What was the famous metaphor Yasser Arafat used in his historic 1974 address to the United Nations General Assembly?",
-              "answer": "Arafat famously stated that he came bearing both an \"olive branch\" (diplomacy) and a \"freedom fighter's gun\" (armed struggle)."
+              "question": "What were the Oslo Accords (1993)?",
+              "answer": "A historic peace agreement where the PLO recognized Israel, and Israel agreed to limited Palestinian self-rule."
             },
             {
-              "question": "What major diplomatic status did the UN General Assembly award the PLO under Resolution 3236 following Arafat's speech?",
-              "answer": "The PLO was granted permanent Observer Status at the United Nations, officially recognizing it as the representative of the Palestinian people."
+              "question": "What was the Palestinian Authority (PA)?",
+              "answer": "The new governing body created by Oslo to administer parts of the West Bank and Gaza."
             },
             {
-              "question": "Why did the PLO choose to relocate its central headquarters and fighters to Lebanon after being expelled from Jordan in 1970–71?",
-              "answer": "Lebanon was an ideal sanctuary because its central government was exceptionally weak and politically fractured, and it already hosted over 400,000 Palestinian refugees."
+              "question": "Why was Israeli Prime Minister Yitzhak Rabin assassinated in 1995?",
+              "answer": "He was murdered by a right-wing Israeli extremist who opposed giving land to the Palestinians."
             },
             {
-              "question": "What was 'Fatahland,' and how did its existence affect northern Israeli security?",
-              "answer": "'Fatahland' was the name given to southern Lebanon, where the PLO established a 'state-within-a-state.' From here, guerrillas launched Katyusha rockets into northern Israel."
+              "question": "Why did the peace process stall after 1995?",
+              "answer": "Continued violence by Hamas, the expansion of Israeli settlements, and Rabin's assassination."
             },
             {
-              "question": "Explain the short-term trigger that Ariel Sharon used as a pretext to launch the June 1982 invasion of Lebanon.",
-              "answer": "The immediate trigger was the attempted assassination of Shlomo Argov, the Israeli ambassador to Great Britain, by the extremist Abu Nidal Organization."
+              "question": "What was the fundamental flaw of the Oslo Accords?",
+              "answer": "It delayed solving the hardest issues (Jerusalem, refugees, borders) for a later date."
             },
             {
-              "question": "Following the Siege of Beirut in August 1982, where were Yasser Arafat and the PLO leadership evacuated to under international supervision?",
-              "answer": "They were evacuated by ship to Tunis, Tunisia, relocating their headquarters 2,400 kilometers away from Israel's borders."
+              "question": "What was the First Intifada (1987)?",
+              "answer": "A massive Palestinian uprising against Israeli occupation."
             },
             {
-              "question": "Why did the Israeli Kahan Commission (1983) find Defense Minister Ariel Sharon 'indirectly responsible' for the Sabra and Shatila massacre?",
-              "answer": "The commission concluded Sharon was indirectly responsible because he authorized Christian Phalangist militias to enter the camps despite clear warnings of revenge."
+              "question": "Why did Israel invade Lebanon in 1982?",
+              "answer": "To destroy the PLO."
             },
             {
-              "question": "What spontaneous event in December 1987 served as the immediate catalyst for the outbreak of the First Palestinian Intifada?",
-              "answer": "An Israeli military transport vehicle collided with a civilian car in Gaza, killing four Palestinian workers, sparking spontaneous demonstrations."
+              "question": "What were the Camp David Accords (1978)?",
+              "answer": "The peace framework between Israel and Egypt."
             },
             {
-              "question": "Describe the civilian tactics of the First Intifada and explain why Yitzhak Rabin's military response backfired internationally.",
-              "answer": "It relied on civil disobedience and street violence (throwing stones). Rabin's 'Iron Fist' policy backfired because TV news broadcasted soldiers using heavy force against children, shifting global sympathy."
+              "question": "What land did Israel agree to return in 1979?",
+              "answer": "The Sinai Peninsula."
             },
             {
-              "question": "Write an analytical sentence linking the First Palestinian Intifada to the emergence of Hamas.",
-              "answer": "Because the spontaneous grassroots uprising of the First Intifada challenged the Tunis-based PLO leadership, it directly enabled the establishment of Hamas in 1987 as a radical Islamist rival."
+              "question": "Who was Yasser Arafat?",
+              "answer": "The Chairman of the PLO."
             }
           ]
         },
