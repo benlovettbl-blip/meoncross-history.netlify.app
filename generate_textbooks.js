@@ -230,7 +230,7 @@ allDirs.forEach(unitId => {
                 Lesson ${i + 1}: ${l.title.replace(/Lesson \d+:\s*/i, '')}
               </td>
               <td style="padding: 10px 0; border-bottom: 1px dashed #cbd5e1; font-size: 13pt; color: #1e3a8a; font-weight: bold; text-align: right; width: 15%;">
-                ${l.startPage ? `Page ${l.startPage}` : '---'}
+                ${l.startPage ? `Page ${l.startPage}` : ''}
               </td>
             </tr>
           `).join('')}

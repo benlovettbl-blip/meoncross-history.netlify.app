@@ -239,7 +239,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=adsPqcpEg0o\\&t=2s",
           "title": "Pre-IDF Brigades: Haganah, Irgun and Lechi | History of Israel Explained | Unpacked",
           "duration": "13 mins 54 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> In what year was the Haganah established, and what was the Hebrew name for its official policy of restraint?</li><li><strong>Explain:</strong> Explain how the British military operation known as 'Black Sabbath' led directly to the Haganah approving the Irgun's plan to bomb the King David Hotel.</li><li><strong>Challenge:</strong> The narrator frequently uses modern slang and informal language (such as describing [Key Individual: Golda Meir] as 'Cutthroat Golda' or referring to the United Resistance Movement as 'Zionist kumbaya'). Analyze how this informal tone affects the viewer's understanding of the severe historical events being discussed.</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> In what year was the Haganah established, and what was the Hebrew name for its official policy of restraint?</li><li><strong>Explain:</strong> Explain how the British military operation known as 'Black Sabbath' led directly to the Haganah approving the Irgun's plan to bomb the King David Hotel.</li><li><strong>Challenge:</strong> The narrator frequently uses modern slang and informal language (such as describing  as 'Cutthroat Golda' or referring to the United Resistance Movement as 'Zionist kumbaya'). Analyze how this informal tone affects the viewer's understanding of the severe historical events being discussed.</li></ol>",
           "model_answer": "<ol><li><strong>Recall:</strong> The Haganah was established in 1921, and its policy of restraint was called <em>Havlagah</em>.</li><li><strong>Explain:</strong> During 'Black Sabbath', British soldiers searched Jewish communities and confiscated important documents. Haganah leaders feared these documents contained incriminating evidence linking mainstream leaders (like Ben-Gurion and Meir) to illegal militia activities. Consequently, the Haganah gave approval to the Irgun to bomb the King David Hotel—where the British headquarters were based—in an effort to destroy those documents.</li><li><strong>Challenge:</strong> The narrator's informal tone and use of modern slang make complex political history engaging and accessible for a younger audience. However, using lighthearted language to describe events involving political assassinations, terrorism, and civil conflict risks downplaying the intense violence, moral dilemmas, and deadly consequences experienced by people at the time.</li></ol>"
         },
         {
@@ -295,15 +295,15 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=EcEHjwSBixU",
           "title": "Ben-Gurion - One Place, One People",
           "duration": "22 mins 38 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> According to the opening minutes of the transcript, which empire was ruling Palestine when [Key Individual: David Ben-Gurion] first arrived there?</li><li><strong>Explain:</strong> Explain the cause-and-consequence relationship between Jewish immigration during/after World War II and Britain's decision to withdraw from Palestine in 1947.</li><li><strong>Challenge:</strong> Analyze the language used by the narrator to describe Ben-Gurion's leadership (for example, phrases like <em>\"almost frightening single-minded determination\"</em> and <em>\"manipulating power\"</em>). How does this choice of language shape the viewer's perspective of Ben-Gurion as a historical figure?</li></ol>",
-          "model_answer": "<ol><li><strong>Recall:</strong> Palestine was ruled by the <strong>Turks</strong> (the Ottoman Empire) when [Key Individual: David Ben-Gurion] first arrived.</li><li><strong>Explain:</strong> The Nazi persecution and Holocaust created a flood of Jewish refugees seeking safety in Palestine. When Britain tried to curb immigration to appease Arab allies, Ben-Gurion championed illegal immigration and active resistance. Britain was forced into the uncomfortable role of intercepting refugee ships and returning survivors to camps in Cyprus. The resulting international outcry, combined with armed resistance in Palestine, made Britain's position untenable, leading them to concede defeat and announce their withdrawal in early 1947.</li><li><strong>Challenge:</strong> The narrator uses language that portrays Ben-Gurion as a pragmatic, tough, and relentless operator rather than just an idealist. Phrases such as <em>\"student of power\"</em>, <em>\"frightening single-minded determination\"</em>, and <em>\"manipulating power\"</em> suggest a ruthless political focus where everything else was secondary to achieving a Jewish state. This shapes the viewer's perspective to see him as a formidable, autocratic, yet effective strategist who knew how to exploit international crises to secure national survival.</li></ol>"
+          "viewing_task": "<ol><li><strong>Recall:</strong> According to the opening minutes of the transcript, which empire was ruling Palestine when  first arrived there?</li><li><strong>Explain:</strong> Explain the cause-and-consequence relationship between Jewish immigration during/after World War II and Britain's decision to withdraw from Palestine in 1947.</li><li><strong>Challenge:</strong> Analyze the language used by the narrator to describe Ben-Gurion's leadership (for example, phrases like <em>\"almost frightening single-minded determination\"</em> and <em>\"manipulating power\"</em>). How does this choice of language shape the viewer's perspective of Ben-Gurion as a historical figure?</li></ol>",
+          "model_answer": "<ol><li><strong>Recall:</strong> Palestine was ruled by the <strong>Turks</strong> (the Ottoman Empire) when  first arrived.</li><li><strong>Explain:</strong> The Nazi persecution and Holocaust created a flood of Jewish refugees seeking safety in Palestine. When Britain tried to curb immigration to appease Arab allies, Ben-Gurion championed illegal immigration and active resistance. Britain was forced into the uncomfortable role of intercepting refugee ships and returning survivors to camps in Cyprus. The resulting international outcry, combined with armed resistance in Palestine, made Britain's position untenable, leading them to concede defeat and announce their withdrawal in early 1947.</li><li><strong>Challenge:</strong> The narrator uses language that portrays Ben-Gurion as a pragmatic, tough, and relentless operator rather than just an idealist. Phrases such as <em>\"student of power\"</em>, <em>\"frightening single-minded determination\"</em>, and <em>\"manipulating power\"</em> suggest a ruthless political focus where everything else was secondary to achieving a Jewish state. This shapes the viewer's perspective to see him as a formidable, autocratic, yet effective strategist who knew how to exploit international crises to secure national survival.</li></ol>"
         },
         {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=y0wlOTilVIA",
           "title": "A brief history of US support for Israel",
           "duration": "7 mins 41 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> How many minutes after the declaration of the foundation of the state of Israel in May 1948 did the United States officially recognize it?</li><li><strong>Explain:</strong> Explain the cause-and-effect relationship between President [Key Individual: Jimmy Carter]’s actions during the Camp David talks and his political career.</li><li><strong>Challenge:</strong> Analyze the perspective of the narrator in the conclusion of the transcript. What specific language is used to critique the US-Israel relationship?</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> How many minutes after the declaration of the foundation of the state of Israel in May 1948 did the United States officially recognize it?</li><li><strong>Explain:</strong> Explain the cause-and-effect relationship between President ’s actions during the Camp David talks and his political career.</li><li><strong>Challenge:</strong> Analyze the perspective of the narrator in the conclusion of the transcript. What specific language is used to critique the US-Israel relationship?</li></ol>",
           "model_answer": "<ol><li>The United States recognized Israel just 11 minutes after the declaration of the foundation of the state in May 1948.</li><li>President Carter advocated for full autonomy for Palestine during the Camp David negotiations. Consequently, the Israel Lobby withdrew its support from Carter, which the transcript notes may have cost him his re-election as president.</li><li>The narrator takes a critical perspective toward long-standing American foreign policy. They describe US support as \"unconditional\" and highlight that it is increasingly \"viewed as irrational\" because of the \"burden and disadvantage it causes for US foreign policy.\"</li></ol>"
         },
         {
@@ -349,13 +349,13 @@ export const unitData = {
         {
           "title": "David Ben-Gurion declaring Independence (1948)",
           "src": "/units/cme_new/assets/cme_david_ben_gurion__d597_087_.jpg",
-          "caption": "[Key Individual: David Ben-Gurion] declaring the establishment of the State of Israel on May 14, 1948.",
+          "caption": " declaring the establishment of the State of Israel on May 14, 1948.",
           "teacher_notes": {
             "primer": "Discuss the immediate political and military consequences of this declaration.",
             "objectives": [
               {
                 "objective": "Describe the key events of the Arab-Israeli war (1948–49).",
-                "primer": "Note the portraits of [Key Individual: Theodor Herzl] in the background to connect to early Zionism.",
+                "primer": "Note the portraits of  in the background to connect to early Zionism.",
                 "question": "What does this source reveal about the Zionist fulfillment of a Jewish state?"
               }
             ]
@@ -389,7 +389,7 @@ export const unitData = {
         "items": [
           {
             "question": "<div style=\"display: flex; align-items: center; gap: 15px;\"><img src=\"/units/cme_new/assets/card_balfour.png\" style=\"width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;\"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div>",
-            "answer": "[Key Individual: Arthur Balfour]. He promised British support for a 'national home' for the Jewish people in Palestine."
+            "answer": ". He promised British support for a 'national home' for the Jewish people in Palestine."
           },
           {
             "question": "How many Jewish people were systematically murdered during the Holocaust (1939-1945)?",
@@ -502,7 +502,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. In October 1945, the moderate militia (the Haganah) joined forces with extreme paramilitary splinter groups—the Irgun (led by [Key Individual: Menachem Begin]) and the Lehi (also known as the Stern Gang). Together, they launched a coordinated, violent campaign known as the Jewish Insurgency to force a British withdrawal. While the moderate Haganah focused primarily on organizing illegal immigration (such as bringing Holocaust survivors on ships like the SS Exodus), the Irgun and Lehi targeted British military infrastructure. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
+          "text": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. In October 1945, the moderate militia (the Haganah) joined forces with extreme paramilitary splinter groups—the Irgun (led by ) and the Lehi (also known as the Stern Gang). Together, they launched a coordinated, violent campaign known as the Jewish Insurgency to force a British withdrawal. While the moderate Haganah focused primarily on organizing illegal immigration (such as bringing Holocaust survivors on ships like the SS Exodus), the Irgun and Lehi targeted British military infrastructure. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
           "level_4": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
           "tasks": [
             {
@@ -923,12 +923,12 @@ export const unitData = {
           ]
         },
         {
-          "text": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. The young country had to fund a massive military defense budget, build housing for hundreds of thousands of destitute immigrants arriving under the Law of Return, and survive a total economic boycott implemented by the Arab League, which banned all trade with Israel and penalised foreign companies that did business with the Jewish state. In this precarious position, direct financial and political aid from the United States was absolutely critical to Israel's survival. President [Key Individual: Harry Truman], driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
-          "level_4": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. President [Key Individual: Harry Truman], driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
+          "text": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. The young country had to fund a massive military defense budget, build housing for hundreds of thousands of destitute immigrants arriving under the Law of Return, and survive a total economic boycott implemented by the Arab League, which banned all trade with Israel and penalised foreign companies that did business with the Jewish state. In this precarious position, direct financial and political aid from the United States was absolutely critical to Israel's survival. President , driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
+          "level_4": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. President , driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
           "tasks": [
             {
               "type": "written",
-              "text": "Why did President [Key Individual: Harry Truman] authorise massive emergency loans and grants to Israel in its early years? (P7)",
+              "text": "Why did President  authorise massive emergency loans and grants to Israel in its early years? (P7)",
               "model": "Truman was driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, providing critical financial and political aid to help Israel survive a severe economic crisis and an Arab League boycott."
             }
           ]
@@ -950,7 +950,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. This created a violent, escalating border war that kept the region on the brink of conflict. This border tension escalated dramatically in July 1952, when the corrupt and pro-Western King Farouk of Egypt was overthrown in a military coup by the Free Officers Movement. This coup eventually brought the charismatic and fiercely anti-Western Colonel [Key Individual: Gamal Abdel Nasser] to power in Egypt. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
+          "text": "To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. This created a violent, escalating border war that kept the region on the brink of conflict. This border tension escalated dramatically in July 1952, when the corrupt and pro-Western King Farouk of Egypt was overthrown in a military coup by the Free Officers Movement. This coup eventually brought the charismatic and fiercely anti-Western Colonel  to power in Egypt. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
           "level_4": "To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
           "tasks": [
             {
@@ -1217,10 +1217,10 @@ export const unitData = {
         {
           "question": "Which Israeli Prime Minister warned against the buildup of Egyptian military forces?",
           "options": [
-            "[Key Individual: Golda Meir]",
+            "",
             "David Ben-Gurion",
-            "[Key Individual: Menachem Begin]",
-            "[Key Individual: Yitzhak Rabin]"
+            "",
+            ""
           ],
           "answer": 1
         },
@@ -1275,7 +1275,7 @@ export const unitData = {
           "answer": 1
         },
         {
-          "question": "What was a significant outcome of the Suez Crisis for [Key Individual: Gamal Abdel Nasser]?",
+          "question": "What was a significant outcome of the Suez Crisis for ?",
           "options": [
             "He was forced into exile in Saudi Arabia",
             "He emerged as a hero of the Arab world for standing up to imperialism",
@@ -1318,7 +1318,7 @@ export const unitData = {
           "definition": "The United Nations Emergency Force, deployed in 1956 to act as a buffer between Israel and Egypt in the Sinai Desert."
         }
       ],
-      "vocab_cloze_text": "Driven by the ideology of [Pan-Arabism], [Key Individual: Gamal Abdel Nasser] sought to modernize Egypt. Following the [Czech Arms Deal], the West refused to fund his dam project. In retaliation, Nasser announced the [Nationalisation] of the Suez Canal. This led to the secret [Protocol of Sèvres] where Israel, Britain, and France invaded Egypt. The conflict ended with the deployment of [UNEF] peacekeepers in the Sinai.",
+      "vocab_cloze_text": "Driven by the ideology of [Pan-Arabism],  sought to modernize Egypt. Following the [Czech Arms Deal], the West refused to fund his dam project. In retaliation, Nasser announced the [Nationalisation] of the Suez Canal. This led to the secret [Protocol of Sèvres] where Israel, Britain, and France invaded Egypt. The conflict ended with the deployment of [UNEF] peacekeepers in the Sinai.",
       "do_now": {
         "items": [
           {
@@ -1467,7 +1467,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "The nationalisation of the Suez Canal outraged Great Britain and France. British Prime Minister [Key Individual: Anthony Eden] viewed Nasser as a dangerous dictator who threatened Europe’s vital oil supply line. Behind the scenes, Britain and France colluded with Israel to plan a military intervention to overthrow Nasser and retake the canal. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
+          "text": "The nationalisation of the Suez Canal outraged Great Britain and France. British Prime Minister  viewed Nasser as a dangerous dictator who threatened Europe’s vital oil supply line. Behind the scenes, Britain and France colluded with Israel to plan a military intervention to overthrow Nasser and retake the canal. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
           "level_4": "The nationalisation of the Suez Canal outraged Great Britain and France. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
           "tasks": [
             {
@@ -1548,7 +1548,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=fwRFhmcfHgg",
           "title": "The Brink of War: Suez Crisis: (1/2)",
           "duration": "14 mins 4 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> According to the video, how many miles did the opening of the Suez Canal cut off the voyage between Europe and Asia, and which government bought Egypt's 44% share in the canal in 1875?</li><li><strong>Explain:</strong> Explain the chain of events that led from Israel's raid on Gaza to the US and Britain withdrawing their financial support for the Aswan High Dam.</li><li><strong>Challenge:</strong> Analyze the language used by British Prime Minister [Key Individual: Anthony Eden] when he described Nasser as having his <em>\"thumb on our neck\"</em> and compared him to <em>\"another Hitler or Mussolini\"</em>. What does this reveal about British imperial perspective and Eden's motivations during the crisis?</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> According to the video, how many miles did the opening of the Suez Canal cut off the voyage between Europe and Asia, and which government bought Egypt's 44% share in the canal in 1875?</li><li><strong>Explain:</strong> Explain the chain of events that led from Israel's raid on Gaza to the US and Britain withdrawing their financial support for the Aswan High Dam.</li><li><strong>Challenge:</strong> Analyze the language used by British Prime Minister  when he described Nasser as having his <em>\"thumb on our neck\"</em> and compared him to <em>\"another Hitler or Mussolini\"</em>. What does this reveal about British imperial perspective and Eden's motivations during the crisis?</li></ol>",
           "model_answer": "<ol><li><strong>Recall Answer:</strong> The Suez Canal cut 5,000 miles off the journey from Europe to Asia. In 1875, the British government bought the 44% share from the Egyptian ruler, Khedive Ismail Pasha.</li><li><strong>Explain Answer:</strong> Following the Israeli military attack on Gaza that killed 38 Egyptian soldiers, President Nasser was determined to modernise Egypt's army. Because the US refused to sell him weapons, Nasser turned to the Soviet-aligned Communist Czechoslovakia to purchase arms and established diplomatic relations with Communist China. Angered by these Cold War alliances with communist nations, the US and Britain retaliated by withdrawing their financial offer to help build the Aswan High Dam.</li><li><strong>Challenge Answer:</strong> Eden’s metaphor of Nasser having his <em>\"thumb on our neck\"</em> reflects Britain's deep vulnerability and economic reliance on Middle Eastern oil traveling through the canal, framing the canal's control as a matter of survival. Comparing Nasser to Hitler and Mussolini relies on the memory of 1930s 'appeasement' to justify military intervention, framing anti-colonial nationalism as fascist aggression. This exaggerates the threat posed by Nasser and highlights Eden's refusal to accept Britain's declining imperial power in the post-WWII era.</li></ol>"
         },
         {
@@ -1626,7 +1626,7 @@ export const unitData = {
         {
           "title": "Anthony Eden",
           "src": "/units/cme_new/assets/cme_georges_bidault__anthony_eden_and_john_foster_dulles__cropped_.jpg",
-          "caption": "British Prime Minister [Key Individual: Anthony Eden] (center), whose career was ruined by the failure of the Suez intervention.",
+          "caption": "British Prime Minister  (center), whose career was ruined by the failure of the Suez intervention.",
           "teacher_notes": {
             "primer": "Discuss the decline of British imperial power in the Middle East.",
             "objectives": [
@@ -1723,7 +1723,7 @@ export const unitData = {
         },
         {
           "term": "Fatah",
-          "definition": "A radical guerrilla movement founded by [Key Individual: Yasser Arafat] that believed in using irregular armed resistance to liberate Palestine."
+          "definition": "A radical guerrilla movement founded by  that believed in using irregular armed resistance to liberate Palestine."
         },
         {
           "term": "Pre-emptive Strike",
@@ -1771,11 +1771,11 @@ export const unitData = {
         },
         {
           "term": "Fatah",
-          "definition": "Palestinian guerrilla group founded in 1959 by [Key Individual: Yasser Arafat], became dominant military faction in the PLO."
+          "definition": "Palestinian guerrilla group founded in 1959 by , became dominant military faction in the PLO."
         },
         {
           "term": "Samu Raid",
-          "definition": "Massive Israeli reprisal attack in the West Bank in 1966 that humiliated Jordan's [Key Individual: King Hussein]."
+          "definition": "Massive Israeli reprisal attack in the West Bank in 1966 that humiliated Jordan's ."
         },
         {
           "term": "Operation Focus",
@@ -1805,7 +1805,7 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "Alongside this diplomatic development, a radical guerrilla movement called Fatah (founded in 1959 by [Key Individual: Yasser Arafat]) began to dominate Palestinian military activity. Unlike older Arab politicians who relied on conventional state-to-state warfare, Fatah believed that only a grassroots, irregular guerrilla war could liberate Palestine. At the Cairo Conference, tensions also flared over a vital shared resource: water. Israel had completed its massive National Water Carrier engineering project to divert fresh water from the Sea of Galilee south to irrigate the Negev Desert. Viewing this as an act of aggression, Arab leaders at the conference agreed to divert the headwaters of the River Jordan (specifically the Dan and Banias rivers) inside Syria and Lebanon to starve Israel of water.",
+          "text": "Alongside this diplomatic development, a radical guerrilla movement called Fatah (founded in 1959 by ) began to dominate Palestinian military activity. Unlike older Arab politicians who relied on conventional state-to-state warfare, Fatah believed that only a grassroots, irregular guerrilla war could liberate Palestine. At the Cairo Conference, tensions also flared over a vital shared resource: water. Israel had completed its massive National Water Carrier engineering project to divert fresh water from the Sea of Galilee south to irrigate the Negev Desert. Viewing this as an act of aggression, Arab leaders at the conference agreed to divert the headwaters of the River Jordan (specifically the Dan and Banias rivers) inside Syria and Lebanon to starve Israel of water.",
           "level_4": "Alongside this diplomatic development, a radical guerrilla movement called Fatah (founded in 1959 by Yasser Arafat) began to dominate Palestinian military activity. Viewing this as an act of aggression, Arab leaders at the conference agreed to divert the headwaters of the River Jordan (specifically the Dan and Banias rivers) inside Syria and Lebanon to starve Israel of water.",
           "tasks": [
             {
@@ -1837,7 +1837,7 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "The Samu Raid (November 1966): After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. On 13 November 1966, 600 IDF troops backed by tanks swept into the Jordanian village of Samu, dynamiting dozens of homes and clashing with the Jordanian military, leaving 15 Jordanian soldiers dead. The raid deeply embarrassed [Key Individual: King Hussein] of Jordan, who publicly accused President Nasser of hiding behind UN peacekeepers instead of helping defend his Arab allies. The Air Clash of 7 April 1967: Skirmishes on the Syrian border erupted into full-scale combat when Syrian artillery on the Golan Heights began bombarding Israeli tractors farming in the demilitarised zone. The Israeli air force responded aggressively. In a dramatic aerial dogfight over Damascus, Israeli fighter jets shot down six Syrian Soviet-built MiG-21 jets in a single afternoon. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.",
+          "text": "The Samu Raid (November 1966): After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. On 13 November 1966, 600 IDF troops backed by tanks swept into the Jordanian village of Samu, dynamiting dozens of homes and clashing with the Jordanian military, leaving 15 Jordanian soldiers dead. The raid deeply embarrassed  of Jordan, who publicly accused President Nasser of hiding behind UN peacekeepers instead of helping defend his Arab allies. The Air Clash of 7 April 1967: Skirmishes on the Syrian border erupted into full-scale combat when Syrian artillery on the Golan Heights began bombarding Israeli tractors farming in the demilitarised zone. The Israeli air force responded aggressively. In a dramatic aerial dogfight over Damascus, Israeli fighter jets shot down six Syrian Soviet-built MiG-21 jets in a single afternoon. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.",
           "level_4": "The Samu Raid (November 1966): After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.",
           "tasks": [
             {
@@ -1848,7 +1848,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">\n  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>\n  <ul style=\"line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;\">\n    <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>\n    <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>\n    <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>\n    <li><strong>23 May</strong> &rarr; <em>Maritime Blockade:</em> Egypt closes the Straits of Tiran, choking Israel's port of Eilat.</li>\n    <li><strong>30 May</strong> &rarr; <em>Encirclement:</em> [Key Individual: King Hussein] of Jordan signs a joint defence pact with Egypt.</li>\n  </ul>\n</div>",
+          "text": "<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">\n  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>\n  <ul style=\"line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;\">\n    <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>\n    <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>\n    <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>\n    <li><strong>23 May</strong> &rarr; <em>Maritime Blockade:</em> Egypt closes the Straits of Tiran, choking Israel's port of Eilat.</li>\n    <li><strong>30 May</strong> &rarr; <em>Encirclement:</em>  of Jordan signs a joint defence pact with Egypt.</li>\n  </ul>\n</div>",
           "level_4": "<div style=\"background-color: #f8f9fa; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px;\">\n  <h3 style=\"margin-top: 0; color: #333; text-align: center;\">THE MAY 1967 CASCADE: CHRONOLOGY OF CRISIS</h3>\n  <ul style=\"line-height: 1.6; margin-bottom: 0; list-style-type: none; padding-left: 0;\">\n    <li><strong>13 May</strong> &rarr; <em>Soviet Misinformation:</em> USSR falsely tells Nasser Israel is massing troops on Syria.</li>\n    <li><strong>15 May</strong> &rarr; <em>Egyptian Mobilization:</em> Nasser puts army on alert, moves troops into Sinai.</li>\n    <li><strong>16 May</strong> &rarr; <em>UN Out:</em> Nasser orders UN peacekeepers (UNEF) to evacuate the border buffer.</li>\n    <li><strong>23 May</strong> &rarr; <em>Maritime Blockade:</em> Egypt closes the Straits of Tiran, choking Israel's port of Eilat.</li>\n    <li><strong>30 May</strong> &rarr; <em>Encirclement:</em> King Hussein of Jordan signs a joint defence pact with Egypt.</li>\n  </ul>\n</div>",
           "tasks": []
         },
@@ -1875,8 +1875,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "The Jordan-Egypt Defence Pact (30 May): To Israel’s horror, King Hussein of Jordan flew to Cairo and signed a mutual defence treaty with Nasser, placing the Jordanian army under the command of an Egyptian general. Israel now faced a fully coordinated military encirclement on three fronts by armies openly calling for its destruction. Believing an Arab invasion was imminent, the newly formed Israeli National Unity Government—including war hero [Key Individual: Moshe Dayan] as Defense Minister—decided to launch a pre-emptive strike to secure its survival.",
-          "level_4": "The Jordan-Egypt Defence Pact (30 May): To Israel’s horror, King Hussein of Jordan flew to Cairo and signed a mutual defence treaty with Nasser, placing the Jordanian army under the command of an Egyptian general. Believing an Arab invasion was imminent, the newly formed Israeli National Unity Government—including war hero [Key Individual: Moshe Dayan] as Defense Minister—decided to launch a pre-emptive strike to secure its survival.",
+          "text": "The Jordan-Egypt Defence Pact (30 May): To Israel’s horror, King Hussein of Jordan flew to Cairo and signed a mutual defence treaty with Nasser, placing the Jordanian army under the command of an Egyptian general. Israel now faced a fully coordinated military encirclement on three fronts by armies openly calling for its destruction. Believing an Arab invasion was imminent, the newly formed Israeli National Unity Government—including war hero  as Defense Minister—decided to launch a pre-emptive strike to secure its survival.",
+          "level_4": "The Jordan-Egypt Defence Pact (30 May): To Israel’s horror, King Hussein of Jordan flew to Cairo and signed a mutual defence treaty with Nasser, placing the Jordanian army under the command of an Egyptian general. Believing an Arab invasion was imminent, the newly formed Israeli National Unity Government—including war hero  as Defense Minister—decided to launch a pre-emptive strike to secure its survival.",
           "tasks": []
         },
         {
@@ -1901,8 +1901,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "The Land War: The Lightning Conquests. With the skies secured, the IDF launched a highly coordinated, three-front blitzkrieg that redrew the map of the Middle East in just six days. The Southern Front (Egypt): Israeli tank divisions led by General [Key Individual: Ariel Sharon] raced across the Sinai Desert, routing the Egyptian forces and advancing all the way to the east bank of the Suez Canal, capturing the entire Sinai Peninsula and the Gaza Strip.",
-          "level_4": "The Land War: The Lightning Conquests. The Southern Front (Egypt): Israeli tank divisions led by General [Key Individual: Ariel Sharon] raced across the Sinai Desert, routing the Egyptian forces and advancing all the way to the east bank of the Suez Canal, capturing the entire Sinai Peninsula and the Gaza Strip.",
+          "text": "The Land War: The Lightning Conquests. With the skies secured, the IDF launched a highly coordinated, three-front blitzkrieg that redrew the map of the Middle East in just six days. The Southern Front (Egypt): Israeli tank divisions led by General  raced across the Sinai Desert, routing the Egyptian forces and advancing all the way to the east bank of the Suez Canal, capturing the entire Sinai Peninsula and the Gaza Strip.",
+          "level_4": "The Land War: The Lightning Conquests. The Southern Front (Egypt): Israeli tank divisions led by General  raced across the Sinai Desert, routing the Egyptian forces and advancing all the way to the east bank of the Suez Canal, capturing the entire Sinai Peninsula and the Gaza Strip.",
           "tasks": [
             {
               "type": "written",
@@ -2445,7 +2445,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "In response, Israeli Prime Minister [Key Individual: Golda Meir] ordered the IDF to launch heavy bombing raids against PLO camps in Lebanon and Syria. More significantly, she authorized the Mossad to launch \"Operation Wrath of God\"—a highly secretive, global assassination campaign that hunted down and killed the key planners of the Munich massacre across Europe and the Middle East.",
+          "text": "In response, Israeli Prime Minister  ordered the IDF to launch heavy bombing raids against PLO camps in Lebanon and Syria. More significantly, she authorized the Mossad to launch \"Operation Wrath of God\"—a highly secretive, global assassination campaign that hunted down and killed the key planners of the Munich massacre across Europe and the Middle East.",
           "level_4": "In response, Israeli Prime Minister Golda Meir ordered the IDF to launch heavy bombing raids against PLO camps in Lebanon and Syria. More significantly, she authorized the Mossad to launch \"Operation Wrath of God\"—a highly secretive, global assassination campaign that hunted down and killed the key planners of the Munich massacre across Europe and the Middle East.",
           "tasks": [
             {
@@ -2612,7 +2612,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=s7zFGaUPGUA",
           "title": "Resolution 242",
           "duration": "9 mins 3 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> Which 1917 historical document is mentioned near the beginning of the video as having previously referred to Palestinians merely as the \"non-Jewish communities of Palestine\"?</li><li><strong>Explain:</strong> Explain how the omission of the word \"the\" before \"territories\" in the English text of Resolution 242 influenced Israeli government policy under Prime Minister [Key Individual: Menachem Begin].</li><li><strong>Challenge:</strong> Early in the video, the narrator describes Resolution 242 as <em>\"masterful in its use of diplomatic language and ambiguity.\"</em> Analyze what the narrator means by this, and evaluate whether the video presents this diplomatic ambiguity as a positive achievement or a fundamental flaw.</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> Which 1917 historical document is mentioned near the beginning of the video as having previously referred to Palestinians merely as the \"non-Jewish communities of Palestine\"?</li><li><strong>Explain:</strong> Explain how the omission of the word \"the\" before \"territories\" in the English text of Resolution 242 influenced Israeli government policy under Prime Minister .</li><li><strong>Challenge:</strong> Early in the video, the narrator describes Resolution 242 as <em>\"masterful in its use of diplomatic language and ambiguity.\"</em> Analyze what the narrator means by this, and evaluate whether the video presents this diplomatic ambiguity as a positive achievement or a fundamental flaw.</li></ol>",
           "model_answer": "<ol><li><strong>Recall:</strong> The Balfour Declaration.</li><li><strong>Explain:</strong> Because the official English text stated Israel should withdraw from \"territories occupied\" rather than \"<em>the</em> territories occupied\", Israel argued it was not required to return <em>all</em> captured land. After returning the Sinai Peninsula to Egypt, Prime Minister Begin claimed Israel had satisfied Resolution 242. This justified Israel retaining the Golan Heights, West Bank, and East Jerusalem, allowing Begin to annex land and build settlements to create \"facts on the ground.\"</li><li><strong>Challenge:</strong> The narrator means that the resolution was cleverly drafted using vague language so that both opposing sides (Israelis and Arab states) could accept it without compromising their core positions. While \"masterful\" implies high diplomatic skill in achieving a consensus at the UN, the video ultimately presents this ambiguity as a flaw in practice. The deliberate vagueness created conflicting legal interpretations, allowing Israel to retain key territories while Palestinians felt denied full justice, rendering the resolution a source of endless debate rather than a definitive solution for peace.</li></ol>"
         },
         {
@@ -2824,12 +2824,12 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "Nasser was succeeded by his relatively unknown and underestimated Vice President, [Key Individual: Anwar Sadat]. Sadat inherited a country on the brink of political and economic collapse. Egypt's economy was severely damaged by the continuous military mobilization, the Suez Canal was closed (depriving Egypt of vital transit toll revenues), and millions of displaced civilians had fled the devastated cities along the canal zone. Sadat realized that to rebuild Egypt’s economy and send home his one million mobilized soldiers, he desperately needed to secure the return of the Sinai Peninsula and reopen the Suez Canal.",
-          "level_4": "Nasser was succeeded by his relatively unknown and underestimated Vice President, [Key Individual: Anwar Sadat]. Sadat realized that to rebuild Egypt’s economy and send home his one million mobilized soldiers, he desperately needed to secure the return of the Sinai Peninsula and reopen the Suez Canal.",
+          "text": "Nasser was succeeded by his relatively unknown and underestimated Vice President, . Sadat inherited a country on the brink of political and economic collapse. Egypt's economy was severely damaged by the continuous military mobilization, the Suez Canal was closed (depriving Egypt of vital transit toll revenues), and millions of displaced civilians had fled the devastated cities along the canal zone. Sadat realized that to rebuild Egypt’s economy and send home his one million mobilized soldiers, he desperately needed to secure the return of the Sinai Peninsula and reopen the Suez Canal.",
+          "level_4": "Nasser was succeeded by his relatively unknown and underestimated Vice President, . Sadat realized that to rebuild Egypt’s economy and send home his one million mobilized soldiers, he desperately needed to secure the return of the Sinai Peninsula and reopen the Suez Canal.",
           "tasks": [
             {
               "type": "written",
-              "text": "Why did [Key Individual: Anwar Sadat] believe he desperately needed to secure the return of the Sinai Peninsula? (P5)",
+              "text": "Why did  believe he desperately needed to secure the return of the Sinai Peninsula? (P5)",
               "model": "Sadat needed to return the Sinai and reopen the Suez Canal to revive Egypt's collapsing economy and send home his one million mobilized soldiers, who were straining the country's resources."
             }
           ]
@@ -2909,7 +2909,7 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "On the Southern Front, the conflict escalated into a massive superpower proxy war. To replace Israel’s heavy losses, US President Richard Nixon authorized Operation Nickel Grass on 12 October—a massive, direct military airlift of advanced American weapons, tanks, and ammunition that arrived in Israel on 15 October. Simultaneously, the Soviet Union launched an equally massive arms resupply to Egypt and Syria. Utilizing their newly arrived equipment, Israeli tank divisions led by General [Key Individual: Ariel Sharon] exploited a gap between Egypt's Second and Third Armies. The IDF crossed the Suez Canal onto the Egyptian mainland, destroying Soviet-bloc SAM missile sites and completely encircling Egypt's Third Army in the Sinai Desert.",
+          "text": "On the Southern Front, the conflict escalated into a massive superpower proxy war. To replace Israel’s heavy losses, US President Richard Nixon authorized Operation Nickel Grass on 12 October—a massive, direct military airlift of advanced American weapons, tanks, and ammunition that arrived in Israel on 15 October. Simultaneously, the Soviet Union launched an equally massive arms resupply to Egypt and Syria. Utilizing their newly arrived equipment, Israeli tank divisions led by General  exploited a gap between Egypt's Second and Third Armies. The IDF crossed the Suez Canal onto the Egyptian mainland, destroying Soviet-bloc SAM missile sites and completely encircling Egypt's Third Army in the Sinai Desert.",
           "level_4": "On the Southern Front, the conflict escalated into a massive superpower proxy war. The IDF crossed the Suez Canal onto the Egyptian mainland, destroying Soviet-bloc SAM missile sites and completely encircling Egypt's Third Army in the Sinai Desert.",
           "tasks": [
             {
@@ -2941,7 +2941,7 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\"><caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">THE SIGNIFICANCE OF THE YOM KIPPUR WAR</caption><thead><tr style=\"background-color: #e9ecef;\"><th style=\"padding: 10px; border: 1px solid #ddd;\">For Egypt</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For the Peace Road</th></tr></thead><tbody><tr><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Sadat restored Egyptian honor and proved the Bar Lev Line was not invincible.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Golda Meir and [Key Individual: Moshe Dayan] resigned due to immense public anger over initial war failures.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Proved military force had limits; forced US into exhaustive \"shuttle diplomacy\".</td></tr></tbody></table>",
+          "text": "<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\"><caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">THE SIGNIFICANCE OF THE YOM KIPPUR WAR</caption><thead><tr style=\"background-color: #e9ecef;\"><th style=\"padding: 10px; border: 1px solid #ddd;\">For Egypt</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For the Peace Road</th></tr></thead><tbody><tr><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Sadat restored Egyptian honor and proved the Bar Lev Line was not invincible.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Golda Meir and  resigned due to immense public anger over initial war failures.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Proved military force had limits; forced US into exhaustive \"shuttle diplomacy\".</td></tr></tbody></table>",
           "level_4": "<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\"><caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">THE SIGNIFICANCE OF THE YOM KIPPUR WAR</caption><thead><tr style=\"background-color: #e9ecef;\"><th style=\"padding: 10px; border: 1px solid #ddd;\">For Egypt</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th><th style=\"padding: 10px; border: 1px solid #ddd;\">For the Peace Road</th></tr></thead><tbody><tr><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Sadat restored Egyptian honor and proved the Bar Lev Line was not invincible.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Golda Meir and Moshe Dayan resigned due to immense public anger over initial war failures.</td><td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Proved military force had limits; forced US into exhaustive \"shuttle diplomacy\".</td></tr></tbody></table>",
           "tasks": [
             {
@@ -3098,7 +3098,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=Qzl1tWoPQnU",
           "title": "Israel at War: 1973 | 5 Minute Videos | PragerU",
           "duration": "5 mins 52 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> On what exact date and at what time did the air raid sirens begin to blare in Israel at the start of the video?</li><li><strong>Explain:</strong> Explain how US Secretary of State [Key Individual: Henry Kissinger]'s response to Prime Minister Golda Meir's request for a preemptive strike impacted Israel's military position at the beginning of the war.</li><li><strong>Challenge:</strong> Analyze the tone and language used by the narrator to describe the Israeli military's recovery (e.g., \"audacious plan\", \"military feat\"). How does the video's framing influence the viewer's perspective on Israel's actions?</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> On what exact date and at what time did the air raid sirens begin to blare in Israel at the start of the video?</li><li><strong>Explain:</strong> Explain how US Secretary of State 's response to Prime Minister Golda Meir's request for a preemptive strike impacted Israel's military position at the beginning of the war.</li><li><strong>Challenge:</strong> Analyze the tone and language used by the narrator to describe the Israeli military's recovery (e.g., \"audacious plan\", \"military feat\"). How does the video's framing influence the viewer's perspective on Israel's actions?</li></ol>",
           "model_answer": "<ol><li>The air raid sirens began to blare on <strong>October 6, 1973, at precisely 2:00 p.m.</strong></li><li>Kissinger refused to support an Israeli preemptive strike because he believed Israel would be viewed as the aggressor if they attacked first. As a result, Israel hesitated, which allowed Egyptian and Syrian forces to break through Israeli defenses early on and cost Israel heavily in casualties and territory before they could effectively mobilize.</li><li>The narrator uses heroic and admiring language to frame the Israeli counter-offensive, describing General Sharon's strategy as an \"audacious plan\" and the final outcome as a \"military feat still studied at West Point.\" This language focuses on Israeli tactical brilliance and resilience, presenting Israel as a triumphant underdog that successfully overcame a tragic surprise attack, while downplaying the ultimate strategic gains made by Egypt.</li></ol>"
         },
         {
@@ -3131,7 +3131,7 @@ export const unitData = {
           "title": "The Yom Kippur War: How Israel Turned the Tide (Part 2) | History of Israel Explained | Unpacked",
           "duration": "9 mins 58 secs",
           "viewing_task": "<ol><li><strong>Recall:</strong> According to the video, what secret action did King Hussein of Jordan take prior to the Egyptian-Syrian surprise attack to try to prevent the war from starting?</li><li><strong>Explain:</strong> Explain the cause-and-effect relationship between Israel placing its nuclear weapons on alert and President Nixon ordering 'Operation Nickel Grass'.</li><li><strong>Challenge:</strong> The narrator claims that despite a military win, <em>\"for Israel this certainly did not feel like a victory.\"</em> Analyze how the narrator uses contrasting perspectives and language to explain why Egypt gained political and psychological success from the conflict.</li></ol>",
-          "model_answer": "<ol><li><strong>Recall:</strong> King Hussein of Jordan secretly warned Israel about the upcoming coordinated surprise attack by Egypt and Syria, hoping Israel would take pre-emptive action to stop the war before it began.</li><li><strong>Explain:</strong> When US intelligence learned on October 9th that a desperate Israel had placed its nuclear weapons on standby, President Nixon and [Key Individual: Henry Kissinger] feared a nuclear escalation that could drag the US and USSR into World War III. To prevent Israel from resorting to nuclear weapons out of desperation, Nixon immediately ordered \"Operation Nickel Grass\" to resupply Israel with conventional arms, tanks, and ammunition.</li><li><strong>Challenge:</strong> The narrator contrasts military metrics with psychological impact. While Israel won militarily with fewer casualties, the loss of nearly 3,000 soldiers deeply traumatized its small population and shattered the myth of IDF invincibility. Conversely, the narrator uses language focused on political restoration (\"national dignity\", \"honour\", \"shaking off the humiliation of 1967\") to show that Egypt achieved a moral victory by pushing Israel to the brink, which ultimately forced Israel into peace negotiations and the return of the Sinai Peninsula.</li></ol>"
+          "model_answer": "<ol><li><strong>Recall:</strong> King Hussein of Jordan secretly warned Israel about the upcoming coordinated surprise attack by Egypt and Syria, hoping Israel would take pre-emptive action to stop the war before it began.</li><li><strong>Explain:</strong> When US intelligence learned on October 9th that a desperate Israel had placed its nuclear weapons on standby, President Nixon and  feared a nuclear escalation that could drag the US and USSR into World War III. To prevent Israel from resorting to nuclear weapons out of desperation, Nixon immediately ordered \"Operation Nickel Grass\" to resupply Israel with conventional arms, tanks, and ammunition.</li><li><strong>Challenge:</strong> The narrator contrasts military metrics with psychological impact. While Israel won militarily with fewer casualties, the loss of nearly 3,000 soldiers deeply traumatized its small population and shattered the myth of IDF invincibility. Conversely, the narrator uses language focused on political restoration (\"national dignity\", \"honour\", \"shaking off the humiliation of 1967\") to show that Egypt achieved a moral victory by pushing Israel to the brink, which ultimately forced Israel into peace negotiations and the return of the Sinai Peninsula.</li></ol>"
         },
         {
           "type": "youtube",
@@ -3234,7 +3234,7 @@ export const unitData = {
           "options": [
             "Richard Nixon",
             "Gerald Ford",
-            "[Key Individual: Jimmy Carter]",
+            "",
             "Ronald Reagan"
           ],
           "answer": 2
@@ -3264,7 +3264,7 @@ export const unitData = {
           "options": [
             "Richard Nixon",
             "Gerald Ford",
-            "[Key Individual: Jimmy Carter]",
+            "",
             "Ronald Reagan"
           ],
           "answer": 2
@@ -3285,7 +3285,7 @@ export const unitData = {
             "David Ben-Gurion",
             "Golda Meir",
             "Menachem Begin",
-            "[Key Individual: Yitzhak Rabin]"
+            ""
           ],
           "answer": 2
         },
@@ -3393,7 +3393,7 @@ export const unitData = {
         },
         {
           "term": "Shuttle Diplomacy",
-          "definition": "[Key Individual: Henry Kissinger]'s mediation technique of flying continuously between hostile capitals to broker military disengagement treaties."
+          "definition": "'s mediation technique of flying continuously between hostile capitals to broker military disengagement treaties."
         },
         {
           "term": "Likud",
@@ -3900,7 +3900,7 @@ export const unitData = {
         },
         {
           "term": "Iron Fist Policy",
-          "definition": "[Key Individual: Yitzhak Rabin]'s severe military response to the First Intifada, utilizing tear gas, rubber bullets, and mass arrests to 'break the bones' of demonstrators."
+          "definition": "'s severe military response to the First Intifada, utilizing tear gas, rubber bullets, and mass arrests to 'break the bones' of demonstrators."
         }
       ],
       "narrative_blocks": [
@@ -4201,7 +4201,7 @@ export const unitData = {
         {
           "title": "Israeli Response to the Intifada",
           "src": "/units/cme_new/assets/card_shamir.png",
-          "caption": "Israeli Prime Minister [Key Individual: Yitzhak Shamir], who implemented a harsh 'Iron Fist' policy in response to the Intifada.",
+          "caption": "Israeli Prime Minister , who implemented a harsh 'Iron Fist' policy in response to the Intifada.",
           "teacher_notes": {
             "primer": "Explain the damage to Israel's international reputation caused by televised military crackdowns.",
             "objectives": [
@@ -4431,7 +4431,7 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "The collapse of the USSR was a devastating blow to the PLO, which lost its primary funding and diplomatic backing. Over 200,000 Soviet Jews migrated to Israel, leading to the expansion of Jewish settlements in the West Bank and displacing Palestinian workers. Arafat realized he had to secure a deal immediately. The end of the Cold War also meant the US emerged as the sole global superpower and used its leverage, threatening to withhold a $10 billion loan guarantee, to force Israel's Prime Minister [Key Individual: Yitzhak Shamir] to negotiate. In August 1990, Iraqi dictator Saddam Hussein invaded Kuwait, triggering the 1991 Gulf War. Arafat made the disastrous decision to publicly support Saddam Hussein.",
+          "text": "The collapse of the USSR was a devastating blow to the PLO, which lost its primary funding and diplomatic backing. Over 200,000 Soviet Jews migrated to Israel, leading to the expansion of Jewish settlements in the West Bank and displacing Palestinian workers. Arafat realized he had to secure a deal immediately. The end of the Cold War also meant the US emerged as the sole global superpower and used its leverage, threatening to withhold a $10 billion loan guarantee, to force Israel's Prime Minister  to negotiate. In August 1990, Iraqi dictator Saddam Hussein invaded Kuwait, triggering the 1991 Gulf War. Arafat made the disastrous decision to publicly support Saddam Hussein.",
           "level_4": "The collapse of the USSR was a devastating blow to the PLO, which lost its primary funding and diplomatic backing. Arafat made the disastrous decision to publicly support Saddam Hussein.",
           "tasks": [
             {
@@ -4463,8 +4463,8 @@ export const unitData = {
           "tasks": []
         },
         {
-          "text": "The urgency intensified in April 1993 when Hamas launched its first suicide car bombing. This convinced Rabin that Arafat’s PLO was a moderate alternative. The secret negotiations produced the historic Oslo I Accords, signed on the White House lawn on 13 September 1993. Arafat renounced terrorism and recognized Israel, while Rabin recognized the PLO. An interim Palestinian National Authority (PNA) was established to govern Gaza and Jericho. In October 1994, Israel and Jordan signed a formal Treaty of Peace. King Hussein approached Rabin because Jordan was suffering economically after the Gulf War. US President [Key Individual: Bill Clinton] promised to cancel Jordan's massive debts if it normalized relations.",
-          "level_4": "The urgency intensified in April 1993 when Hamas launched its first suicide car bombing. US President [Key Individual: Bill Clinton] promised to cancel Jordan's massive debts if it normalized relations.",
+          "text": "The urgency intensified in April 1993 when Hamas launched its first suicide car bombing. This convinced Rabin that Arafat’s PLO was a moderate alternative. The secret negotiations produced the historic Oslo I Accords, signed on the White House lawn on 13 September 1993. Arafat renounced terrorism and recognized Israel, while Rabin recognized the PLO. An interim Palestinian National Authority (PNA) was established to govern Gaza and Jericho. In October 1994, Israel and Jordan signed a formal Treaty of Peace. King Hussein approached Rabin because Jordan was suffering economically after the Gulf War. US President  promised to cancel Jordan's massive debts if it normalized relations.",
+          "level_4": "The urgency intensified in April 1993 when Hamas launched its first suicide car bombing. US President  promised to cancel Jordan's massive debts if it normalized relations.",
           "tasks": [
             {
               "type": "written",
@@ -4596,7 +4596,7 @@ export const unitData = {
         {
           "question": "Which Israeli Prime Minister shook hands with Yasser Arafat on the White House lawn in 1993?",
           "options": [
-            "[Key Individual: Benjamin Netanyahu]",
+            "",
             "Ariel Sharon",
             "Yitzhak Rabin",
             "Menachem Begin"
@@ -4752,7 +4752,7 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=nhOeVObkc7o",
           "title": "Why Did Israel Refrain from Retaliating against Iraq in 1991?",
           "duration": "2 mins 19 secs",
-          "viewing_task": "<ol><li><strong>Recall:</strong> Which two Arab states are mentioned near the start of the report as being part of the international coalition fighting against Iraq?</li><li><strong>Explain:</strong> Explain the cause-and-effect relationship between Iraq firing Scud missiles at Israel and the United States pressuring Prime Minister [Key Individual: Yitzhak Shamir] not to retaliate.</li><li><strong>Challenge:</strong> How does the reporter use language—such as describing 1991 Scud missiles as \"never an existential threat\" compared to a future Iranian nuclear bomb—to shape the perspective on potential future Israeli military actions?</li></ol>",
+          "viewing_task": "<ol><li><strong>Recall:</strong> Which two Arab states are mentioned near the start of the report as being part of the international coalition fighting against Iraq?</li><li><strong>Explain:</strong> Explain the cause-and-effect relationship between Iraq firing Scud missiles at Israel and the United States pressuring Prime Minister  not to retaliate.</li><li><strong>Challenge:</strong> How does the reporter use language—such as describing 1991 Scud missiles as \"never an existential threat\" compared to a future Iranian nuclear bomb—to shape the perspective on potential future Israeli military actions?</li></ol>",
           "model_answer": "<ol><li><strong>Recall:</strong> Syria and Saudi Arabia.</li><li><strong>Explain:</strong> Iraq fired Scud missiles at Israel hoping Israel would retaliate. Iraq believed an Israeli response would cause Arab nations in the international coalition to pull out, thereby breaking the coalition apart. As a consequence, the US put strong diplomatic pressure on Prime Minister Shamir to refrain from striking back, ensuring the anti-Iraq coalition remained intact to successfully push Iraq out of Kuwait.</li><li><strong>Challenge:</strong> The reporter minimizes the 1991 crisis by calling the Scuds \"never an existential threat,\" while framing a potential Iranian nuclear weapon as a far greater danger. This language creates a tone of urgency and suggests that while diplomatic restraint was the correct choice in 1991, Israel may be fully justified in taking unilateral military action against Iran in the future regardless of legal or diplomatic consequences.</li></ol>"
         },
         {
@@ -4768,7 +4768,7 @@ export const unitData = {
         {
           "title": "The Oslo Handshake (1993)",
           "src": "/units/cme_new/assets/yitzhak_rabin.jpg",
-          "caption": "Yitzhak Rabin, Yasser Arafat, and [Key Individual: Bill Clinton] sealing the Oslo I Accord on the White House lawn.",
+          "caption": "Yitzhak Rabin, Yasser Arafat, and  sealing the Oslo I Accord on the White House lawn.",
           "teacher_notes": {
             "primer": "Highlight the mutual recognition: PLO recognized Israel's right to exist, Israel recognized the PLO.",
             "objectives": [

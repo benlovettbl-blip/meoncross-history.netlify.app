@@ -256,15 +256,20 @@ export const unitData = {
         {
           "title": "Analyzing Source C",
           "image": "/images/ottoman_1453.jpg",
-          "image_alt": "Fresco of the Siege of Constantinople (1537)",
+          "image_alt": "Source A: Fresco of the Siege of Constantinople (1537)",
           "source_letter": "C",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+              "question": "Study Source A. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
               "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
+            },
+            {
+              "question": "Study Source A (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+              "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
             }
-          ]
+          ],
+          "image_caption": "Source A: Fresco of the Siege of Constantinople (1537)"
         },
         {
           "title": "West Africa: Kingdoms of Gold and Brass",
@@ -273,8 +278,15 @@ export const unitData = {
         {
           "title": "Analyzing Source D",
           "image": "/images/benin_bronze.jpg",
-          "image_alt": "16th-Century Benin Bronze Plaque",
-          "source_letter": "D"
+          "image_alt": "Source B: 16th-Century Benin Bronze Plaque",
+          "source_letter": "D",
+          "image_caption": "Source B: 16th-Century Benin Bronze Plaque",
+          "tasks": [
+            {
+              "question": "Study Source B (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+              "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
+            }
+          ]
         },
         {
           "title": "Analyzing the Evidence: The Wealth of West Africa",
@@ -283,7 +295,7 @@ export const unitData = {
         {
           "title": "Analyzing Source E",
           "image": "/images/mansa_musa_catalan.jpg",
-          "image_alt": "Catalan Atlas (1375) - Mansa Musa",
+          "image_alt": "Source C: Catalan Atlas (1375) - Mansa Musa",
           "source_letter": "E",
           "tasks": [
             {
@@ -291,7 +303,8 @@ export const unitData = {
               "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
               "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
             }
-          ]
+          ],
+          "image_caption": "Source C: Catalan Atlas (1375) - Mansa Musa"
         },
         {
           "title": "The Silk Road & Ming China: The World's Industrial Engine",
@@ -300,7 +313,8 @@ export const unitData = {
         {
           "title": "Examining the Evidence",
           "image": "/images/silk_road.jpg",
-          "image_alt": "Map of the Silk Road Trade Routes"
+          "image_alt": "Source D: Map of the Silk Road Trade Routes",
+          "image_caption": "Source D: Map of the Silk Road Trade Routes"
         },
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
@@ -510,14 +524,19 @@ export const unitData = {
         {
           "title": "Examining the Evidence",
           "image": "/images/global_mercator.jpg",
-          "image_alt": "Portrait of Gerardus Mercator (1574)",
+          "image_alt": "Source A: Portrait of Gerardus Mercator (1574)",
           "tasks": [
             {
               "type": "drawing",
               "lines": 10,
               "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
+            },
+            {
+              "question": "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+              "model_answer": "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires."
             }
-          ]
+          ],
+          "image_caption": "Source A: Portrait of Gerardus Mercator (1574)"
         },
         {
           "title": "Macro-History: The Reformation (1517)",
@@ -526,8 +545,9 @@ export const unitData = {
         {
           "title": "Analyzing Source B",
           "image": "/images/martin_luther_portrait.jpg",
-          "image_alt": "Portrait of Martin Luther (1529)",
-          "source_letter": "B"
+          "image_alt": "Source B: Portrait of Martin Luther (1529)",
+          "source_letter": "B",
+          "image_caption": "Source B: Portrait of Martin Luther (1529)"
         },
         {
           "title": "Macro-History: The New World Monopoly & Privateers",
@@ -536,7 +556,7 @@ export const unitData = {
         {
           "title": "Analyzing Source C",
           "image": "/images/tordesillas_map.png",
-          "image_alt": "Map of the Treaty of Tordesillas (1494)",
+          "image_alt": "Source C: Map of the Treaty of Tordesillas (1494)",
           "source_letter": "C",
           "tasks": [
             {
@@ -549,7 +569,8 @@ export const unitData = {
               "question": "How did Queen Elizabeth I use privateers as a strategic tool against Spain?",
               "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
             }
-          ]
+          ],
+          "image_caption": "Source C: Map of the Treaty of Tordesillas (1494)"
         },
         {
           "title": "The Climax: The Spanish Armada (1588)",
@@ -580,15 +601,20 @@ export const unitData = {
         {
           "title": "Analyzing Source F",
           "image": "/images/armada_portrait.jpg",
-          "image_alt": "The Armada Portrait of Queen Elizabeth I (c. 1588)",
+          "image_alt": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)",
           "source_letter": "F",
           "tasks": [
             {
               "type": "analysis",
               "question": "What message was the artist of the Armada Portrait trying to convey about England's future?",
               "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
+            },
+            {
+              "question": "Study Source D (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
+              "model_answer": "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy."
             }
-          ]
+          ],
+          "image_caption": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)"
         },
         {
           "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
@@ -918,7 +944,7 @@ export const unitData = {
         {
           "title": "Examining the Evidence",
           "image": "/images/sir_thomas_roe.jpg",
-          "image_alt": "Sir Thomas Roe at the Mughal Court (1615)",
+          "image_alt": "Source A: Sir Thomas Roe at the Mughal Court (1615)",
           "tasks": [
             {
               "type": "analysis",
@@ -929,8 +955,13 @@ export const unitData = {
               "type": "drawing",
               "lines": 10,
               "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
+            },
+            {
+              "question": "Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
+              "model_answer": "The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court."
             }
-          ]
+          ],
+          "image_caption": "Source A: Sir Thomas Roe at the Mughal Court (1615)"
         },
         {
           "title": "Justifying Empire: Religion vs. Profit",
@@ -951,15 +982,16 @@ export const unitData = {
         {
           "title": "Analyzing Source F",
           "image": "/images/global_canton.jpg",
-          "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
+          "image_alt": "Source B: View of the Thirteen Factories in Canton (c. 1800)",
           "source_letter": "F",
           "tasks": [
             {
               "type": "comprehension",
-              "question": "Based on Source F, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+              "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
               "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
             }
-          ]
+          ],
+          "image_caption": "Source B: View of the Thirteen Factories in Canton (c. 1800)"
         },
         {
           "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
@@ -968,7 +1000,7 @@ export const unitData = {
         {
           "title": "Analyzing Source D",
           "image": "/images/jamestown_fort.jpg",
-          "image_alt": "Plan of James Fort in Virginia (1607)",
+          "image_alt": "Source C: Plan of James Fort in Virginia (1607)",
           "source_letter": "D",
           "tasks": [
             {
@@ -976,7 +1008,8 @@ export const unitData = {
               "question": "What does the design of the Jamestown Fort suggest about the relationship between the English settlers and the local indigenous population?",
               "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
             }
-          ]
+          ],
+          "image_caption": "Source C: Plan of James Fort in Virginia (1607)"
         },
         {
           "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
@@ -1605,7 +1638,7 @@ export const unitData = {
         {
           "title": "Analyzing Source A",
           "image": "/images/royal_exchange_courtyard.jpg",
-          "image_alt": "The Royal Exchange, London (1644)",
+          "image_alt": "Source A: The Royal Exchange, London (1644)",
           "source_letter": "A",
           "tasks": [
             {
@@ -1614,7 +1647,8 @@ export const unitData = {
               "model_answer": "The River Thames became choked with a 'forest of wooden ship masts' from global trading vessels, and the city saw the rise of grand financial institutions like the Royal Exchange.",
               "text": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?"
             }
-          ]
+          ],
+          "image_caption": "Source A: The Royal Exchange, London (1644)"
         },
         {
           "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
@@ -1623,16 +1657,21 @@ export const unitData = {
         {
           "title": "Analyzing Source E",
           "image": "/images/great_seal_1651.png",
-          "image_alt": "The Great Seal of the Commonwealth of England (1651)",
+          "image_alt": "Source B: The Great Seal of the Commonwealth of England (1651)",
           "source_letter": "E",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+              "question": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
               "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
-              "text": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
+              "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
+            },
+            {
+              "question": "Study Source B (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+              "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
             }
-          ]
+          ],
+          "image_caption": "Source B: The Great Seal of the Commonwealth of England (1651)"
         },
         {
           "title": "Historical Interpretations: Who Was the Real Winner?",
@@ -1847,7 +1886,7 @@ export const unitData = {
         {
           "title": "Analyzing Source A",
           "image": "/images/cape_coast_castle.jpg",
-          "image_alt": "Cape Coast Castle, a European slave fort on the Gold Coast",
+          "image_alt": "Source A: Cape Coast Castle, a European slave fort on the Gold Coast",
           "source_letter": "A",
           "tasks": [
             {
@@ -1870,7 +1909,8 @@ export const unitData = {
               "lines": 10,
               "question": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point."
             }
-          ]
+          ],
+          "image_caption": "Source A: Cape Coast Castle, a European slave fort on the Gold Coast"
         },
         {
           "title": "Macro-History: The Triangular Machinery of Exploitation",
@@ -1879,7 +1919,7 @@ export const unitData = {
         {
           "title": "Analyzing Source B",
           "image": "/images/triangular_trade.png",
-          "image_alt": "Diagram of the Triangular Trade",
+          "image_alt": "Source B: Diagram of the Triangular Trade",
           "source_letter": "B",
           "tasks": [
             {
@@ -1888,7 +1928,8 @@ export const unitData = {
               "model_answer": "European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.",
               "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
             }
-          ]
+          ],
+          "image_caption": "Source B: Diagram of the Triangular Trade"
         },
         {
           "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
@@ -1897,7 +1938,7 @@ export const unitData = {
         {
           "title": "Analyzing Source C",
           "image": "/images/plantation.jpg",
-          "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
+          "image_alt": "Source C: A Cuban sugar plantation, showing the scale of the operation",
           "source_letter": "C",
           "tasks": [
             {
@@ -1915,7 +1956,8 @@ export const unitData = {
               "question": "Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?",
               "model_answer": "Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it."
             }
-          ]
+          ],
+          "image_caption": "Source C: A Cuban sugar plantation, showing the scale of the operation"
         },
         {
           "title": "Digital Research Task: The Legacies of British Slavery",
@@ -2236,11 +2278,11 @@ export const unitData = {
         {
           "title": "Examining the Evidence",
           "image": "/images/equiano.jpg",
-          "image_alt": "Portrait of Olaudah Equiano (1789)",
+          "image_alt": "Source A: Portrait of Olaudah Equiano (1789)",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Inferring Motive (Source B): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
+              "question": "Inferring Motive (Source A): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?",
               "model_answer": "Jumping overboard was a powerful act of resistance because it was a total rejection of their commodification; by taking their own lives, they reclaimed control over their own bodies and actively destroyed the 'property' and profits of the slave traders."
             },
             {
@@ -2248,7 +2290,8 @@ export const unitData = {
               "question": "Evaluating Significance (Equiano's Portrait & Source A): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?",
               "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
             }
-          ]
+          ],
+          "image_caption": "Source A: Portrait of Olaudah Equiano (1789)"
         },
         {
           "title": "Case Study: The Stono Rebellion (1739)",
@@ -2257,12 +2300,12 @@ export const unitData = {
         {
           "title": "Analyzing Source D",
           "image": "/images/stono_rebellion_map.png",
-          "image_alt": "Map of the Stono Rebellion route (1739)",
+          "image_alt": "Source B: Map of the Stono Rebellion route (1739)",
           "source_letter": "D",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
+              "question": "Based on the geography in Source B, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
               "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
             },
             {
@@ -2283,7 +2326,8 @@ export const unitData = {
               ],
               "question": "Match the aspects of the Stono Rebellion to their correct historical descriptions."
             }
-          ]
+          ],
+          "image_caption": "Source B: Map of the Stono Rebellion route (1739)"
         },
         {
           "title": "Historical Debates: What Truly Destroyed Slavery?",
@@ -2292,12 +2336,12 @@ export const unitData = {
         {
           "title": "Analyzing Source F",
           "image": "/images/william_wilberforce.jpg",
-          "image_alt": "Portrait of , a British politician and abolitionist",
+          "image_alt": "Source C: Portrait of , a British politician and abolitionist",
           "source_letter": "F",
           "tasks": [
             {
               "type": "think_pair_share",
-              "question": "Compare Source F with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source F when trying to understand how and why the slave trade was eventually abolished?",
+              "question": "Compare Source C with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
               "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
             },
             {
@@ -2309,8 +2353,13 @@ export const unitData = {
               "type": "comprehension",
               "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
               "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
+            },
+            {
+              "question": "Study Source C (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
+              "model_answer": "Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade."
             }
-          ]
+          ],
+          "image_caption": "Source C: Portrait of , a British politician and abolitionist"
         },
         {
           "title": "Lesson Reflection",
@@ -2327,13 +2376,13 @@ export const unitData = {
         {
           "title": "Side Quest: Obeah and Botanical Warfare",
           "image": "/images/sidequest_cassava.jpg",
-          "image_alt": "18th-century botanical illustration of the Cassava root",
+          "image_alt": "Source D: 18th-century botanical illustration of the Cassava root",
           "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
+              "question": "Study Source D. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
               "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
             },
             {
@@ -2342,7 +2391,7 @@ export const unitData = {
               "model_answer": "It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat."
             }
           ],
-          "image_caption": "A botanical illustration of the cassava plant. Enslaved people frequently used their deep botanical knowledge of toxic plants to quietly poison their enslavers.",
+          "image_caption": "Source D: 18th-century botanical illustration of the Cassava root",
           "source_letter": "E"
         }
       ],
@@ -2741,7 +2790,7 @@ export const unitData = {
         {
           "title": "Analyzing Source A",
           "image": "/images/global_britannia.jpg",
-          "image_alt": "The East Offering its Riches to Britannia (1778)",
+          "image_alt": "Source A: The East Offering its Riches to Britannia (1778)",
           "source_letter": "A",
           "tasks": [
             {
@@ -2749,7 +2798,8 @@ export const unitData = {
               "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
               "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
             }
-          ]
+          ],
+          "image_caption": "Source A: The East Offering its Riches to Britannia (1778)"
         },
         {
           "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
@@ -2765,7 +2815,7 @@ export const unitData = {
         {
           "title": "Analyzing Source B",
           "image": "/images/royal_exchange_courtyard.jpg",
-          "image_alt": "The Royal Exchange, London (1644)",
+          "image_alt": "Source B: The Royal Exchange, London (1644)",
           "source_letter": "B",
           "tasks": [
             {
@@ -2774,7 +2824,8 @@ export const unitData = {
               "model_answer": "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
               "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
             }
-          ]
+          ],
+          "image_caption": "Source B: The Royal Exchange, London (1644)"
         },
         {
           "title": "Primary Source Analysis: The Dual Reality",
@@ -2803,13 +2854,13 @@ export const unitData = {
         {
           "title": "Urban Sprawl: Mapping 18th-Century London",
           "image": "/images/rocque_map.jpg",
-          "image_alt": "John Rocque's Map of London (1746)",
+          "image_alt": "Source C: John Rocque's Map of London (1746)",
           "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
-          "image_caption": "A detail from John Rocque's highly accurate 1746 Map of London. It highlights the rapid urban sprawl and the complex network of turnpike roads required to supply the massive, booming population of the capital during the early Industrial Revolution.",
+          "image_caption": "Source C: John Rocque's Map of London (1746)",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+              "question": "How does the density and infrastructure of London shown in Source C (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
               "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
             }
           ],

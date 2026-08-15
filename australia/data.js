@@ -15,7 +15,7 @@ export const unitData = {
   ],
   "specification_file": "/data/great_war_overview.json",
   "title": "KS3: History of Australia",
-  "homepage_background": "/assets/somme_trench_1916.jpg",
+  "homepage_background": "",
   "enquiry": "",
   "cover_image": "",
   "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",

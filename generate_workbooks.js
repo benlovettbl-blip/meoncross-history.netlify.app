@@ -183,16 +183,16 @@ allDirs.forEach(unitId => {
     let appendixData = [];
 
     let trackerRows = '';
-    periodLessons.forEach(l => {
+    periodLessons.forEach((l, i) => {
       let maxScore = 5;
       if (l.do_now && l.do_now.items) maxScore = l.do_now.items.length;
       
       const isGeography = l.title && l.title.includes('Geography of the Middle East');
       
       if (isGeography) {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em; ">N/A</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
       } else {
-        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
+        trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #cbd5e1; padding:4px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;">${l.startPage || ''}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; font-size: 0.9em;">/ ${maxScore}</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">〇</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
              for(let r=0; r<1; r++) {
          trackerRows += `<tr style="background-color: #ffffff;"><td style="border:1px solid #cbd5e1; padding:4px; color:#94a3b8; font-style:italic;">Exam Question:</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center;"></td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; background:#eee;">N/A</td><td style="border:1px solid #cbd5e1; padding:4px; text-align:center; color:#ccc;">O</td><td style="border:1px solid #cbd5e1; padding:4px;"></td><td style="border:1px solid #cbd5e1; padding:4px;"></td></tr>`;
         }      }

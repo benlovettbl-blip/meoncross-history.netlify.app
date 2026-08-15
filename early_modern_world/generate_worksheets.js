@@ -46,10 +46,10 @@ let html = `<!DOCTYPE html>
 `;
 
   let trackerRows = '';
-  periodLessons.forEach(l => {
+  periodLessons.forEach((l, i) => {
     let maxScore = 5;
     if (l.do_now && l.do_now.items) maxScore = l.do_now.items.length;
-    trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">Do Now: / ${maxScore}</td><td style="border:1px solid #333; padding:6px; width:60px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
+    trackerRows += `<tr style="background-color: #f1f5f9;"><td style="border:1px solid #333; padding:6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border:1px solid #333; padding:6px; text-align:center; font-size: 0.9em;">Do Now: / ${maxScore}</td><td style="border:1px solid #333; padding:6px; width:60px;"></td><td style="border:1px solid #333; padding:6px;"></td></tr>`;
     
     const addExamRow = (qText) => {
       if (!qText) return;

@@ -149,8 +149,9 @@ export const unitData = {
               "model_answer": "Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
             }
           ],
-          "image": "/images/gw_alliance_map.jpg",
-          "image_alt": "A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war."
+          "image": "/images/gw_alliance_map.png",
+          "image_alt": "Source A: A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war.",
+          "image_caption": "Source A: A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war."
         },
         {
           "title": "Local History: The Pompey Pals",
@@ -168,7 +169,8 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_gavrilo_princip.jpg",
-          "image_alt": "A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War."
+          "image_alt": "Source B: A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War.",
+          "image_caption": "Source B: A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War."
         },
         {
           "title": "Source Spotlight: Propaganda & Peer Pressure",
@@ -177,22 +179,32 @@ export const unitData = {
             {
               "text": "Describe one feature of the European Alliance System in 1914. (2 marks)",
               "model_answer": "One feature of the European Alliance System was that it split Europe into two rival armed camps. For example, the Triple Entente allied Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy, meaning any small conflict could pull all major powers into war."
+            },
+            {
+              "question": "Study Source C (the \"Women of Britain Say GO!\" poster). How does this piece of propaganda attempt to emotionally manipulate young men into volunteering?",
+              "model_answer": "The poster attempts to manipulate men by implying that their mothers, sisters, and wives expected them to fight. It leverages traditional concepts of masculinity and intense peer pressure, suggesting that staying at home while women watch them leave would be deeply shameful."
             }
           ],
           "image": "/images/gw_women_say_go.jpg",
-          "image_alt": "The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity."
+          "image_alt": "Source C: The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity.",
+          "image_caption": "Source C: The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity."
         },
         {
           "title": "Poetry as Propaganda: Jessie Pope",
           "text": "Propaganda wasn't just found on posters; it was printed in popular newspapers in the form of jingoistic poetry. <strong>Jessie Pope</strong> was one of the most famous pro-war poets of 1914. Her poem <em>'Who's for the Game?'</em> was specifically written to pressure young men into enlisting by comparing the war to a friendly game of rugby.<br><br><blockquote><em>Who's for the game, the biggest that's played,<br>The red crashing game of a fight?<br>Who'll grip and tackle the job unafraid?<br>And who thinks he'd rather sit tight?...<br>Come along, lads—But you'll come on all right—<br>For there's only one course to pursue,<br>Your country is up to her neck in a fight,<br>And she's looking and calling for you.</em></blockquote><br>Pope's poetry weaponized masculinity, essentially calling anyone who didn't enlist a coward who 'thought he'd rather sit tight'.",
           "image": "/images/gw_jessie_pope.jpg",
-          "image_alt": "A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.",
+          "image_alt": "Source D: A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.",
           "tasks": [
             {
               "text": "How does Jessie Pope use the metaphor of a 'game' to manipulate young men into joining the army? What reality is she deliberately hiding?",
               "model_answer": "Pope compares war to a 'red crashing game' (like rugby) to make it sound exciting, physical, and like a team sport. She manipulates young men by implying that joining the army is just playing a fun game with their 'lads'. She deliberately hides the horrific reality of industrialized slaughter, machine guns, and death, because if she told the truth, nobody would volunteer."
+            },
+            {
+              "question": "Study Source D (the photograph of Jessie Pope). Why might frontline soldiers, such as Wilfred Owen, have fiercely criticized the patriotic poetry produced by writers like Pope?",
+              "model_answer": "Frontline soldiers criticized writers like Jessie Pope because her aggressive, jingoistic poetry promoted romantic illusions of war. To soldiers suffering the horrific, gritty realities of trench warfare, her simplistic verses felt deeply insulting and disconnected from the true trauma they were enduring."
             }
-          ]
+          ],
+          "image_caption": "Source D: A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen."
         },
         {
           "title": "Historical Interpretations: Why did they go?",
@@ -238,7 +250,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -279,7 +292,7 @@ export const unitData = {
             "Lord Horatio Kitchener",
             "Winston Churchill",
             "Douglas Haig",
-            "[Key Individual: David Lloyd George]"
+            "David Lloyd George"
           ]
         },
         {
@@ -307,7 +320,7 @@ export const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/",
           "title": "Y is for Your Country Needs You | WWI A-Z",
           "duration": "3 mins",
-          "viewing_task": "How was [Key Individual: Lord Kitchener]'s famous poster used to drum up initial excitement for the war?",
+          "viewing_task": "How was Lord Kitchener's famous poster used to drum up initial excitement for the war?",
           "model_answer": "The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty."
         },
         {
@@ -409,7 +422,8 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_flooded_trench.jpg",
-          "image_alt": "British soldiers standing knee-deep in a flooded trench during the Battle of Passchendaele (1917). The horrific mud not only caused trench foot but was so deep and thick that exhausted men and pack animals frequently drowned in it."
+          "image_alt": "Source A: British soldiers standing knee-deep in a flooded trench during the Battle of Passchendaele (1917). The horrific mud not only caused trench foot but was so deep and thick that exhausted men and pack animals frequently drowned in it.",
+          "image_caption": "Source A: British soldiers standing knee-deep in a flooded trench during the Battle of Passchendaele (1917). The horrific mud not only caused trench foot but was so deep and thick that exhausted men and pack animals frequently drowned in it."
         },
         {
           "title": "Contemporary Source Evidence",
@@ -429,10 +443,15 @@ export const unitData = {
               "type": "extended_writing",
               "question": "**The <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA</abbr> Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
               "model_answer": "I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
+            },
+            {
+              "question": "Study Source B. Look closely at the zig-zag pattern of the trench system. What was the practical military purpose of digging trenches in this complex shape?",
+              "model_answer": "Trenches were deliberately dug in a zig-zag pattern rather than a straight line to prevent an enemy soldier who jumped into the trench from firing their weapon straight down the entire line. It also helped contain the blast radius of artillery shells landing inside the trench."
             }
           ],
           "image": "/images/gw_trench_diagram.jpg",
-          "image_alt": "An aerial reconnaissance photograph showing the complex, zig-zag pattern of a frontline trench system. Trenches were deliberately dug in this pattern so that if an enemy soldier jumped in, they could not fire their weapon straight down the entire line."
+          "image_alt": "Source B: An aerial reconnaissance photograph showing the complex, zig-zag pattern of a frontline trench system. Trenches were deliberately dug in this pattern so that if an enemy soldier jumped in, they could not fire their weapon straight down the entire line.",
+          "image_caption": "Source B: An aerial reconnaissance photograph showing the complex, zig-zag pattern of a frontline trench system. Trenches were deliberately dug in this pattern so that if an enemy soldier jumped in, they could not fire their weapon straight down the entire line."
         },
         {
           "title": "Source Spotlight: Eyewitness in the Mud",
@@ -445,29 +464,30 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_flooded_trench.jpg",
-          "image_alt": "Soldiers standing waist-deep in freezing, stagnant water in a frontline trench. These appalling conditions led to rampant diseases like trench foot, while the constant presence of corpses attracted swarms of black rats and lice."
+          "image_alt": "Source C: Soldiers standing waist-deep in freezing, stagnant water in a frontline trench. These appalling conditions led to rampant diseases like trench foot, while the constant presence of corpses attracted swarms of black rats and lice.",
+          "image_caption": "Source C: Soldiers standing waist-deep in freezing, stagnant water in a frontline trench. These appalling conditions led to rampant diseases like trench foot, while the constant presence of corpses attracted swarms of black rats and lice."
         },
         {
           "title": "The Brutal Reality: Wilfred Owen",
-          "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>[Key Individual: Wilfred Owen]</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
+          "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>Wilfred Owen</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
           "image": "/images/gw_wilfred_owen.jpg",
-          "image_alt": "A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope.",
+          "image_alt": "Source D: A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope.",
           "tasks": [
             {
               "text": "How does Wilfred Owen's description of a gas attack completely destroy the message of Jessie Pope's 'Who's for the Game?'",
               "model_answer": "Owen's visceral description of a man 'drowning' and 'floundering' in mustard gas exposes the horrific reality of modern warfare. It destroys Pope's argument by showing that war is not a fun rugby game, and that telling children it is 'sweet and fitting to die for one's country' is an 'old Lie'."
+            },
+            {
+              "question": "Study Source D (the portrait of Wilfred Owen). How did the poetry of soldiers like Owen fundamentally differ from the propaganda that was common at the start of the war?",
+              "model_answer": "Unlike early propaganda which glorified the conflict, Owen's poetry was brutally realistic. It focused on the trauma, suffering, and shell shock experienced on the Western Front, effectively shattering the romantic illusions of war."
             }
-          ]
+          ],
+          "image_caption": "Source D: A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope."
         },
         {
           "title": "Extension & Local History Task",
           "text": "Research tasks for independent study.",
           "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Study Source A. Why should a historian exercise caution when using the memoirs of a former politician like David Lloyd George to evaluate General Haig's competence?",
-              "model_answer": "Politicians often write memoirs after events to protect their own reputations and shift blame away from themselves. Since Lloyd George clashed with military leaders, his memoirs may exaggerate the stupidity of the generals to avoid political responsibility for the war's high human cost."
-            },
             {
               "type": "short_answer",
               "text": "How useful is Source C for a historian studying the physical conditions of trench warfare? Use the source's content and its provenance (who wrote it and when) in your answer.",
@@ -502,7 +522,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "key_vocabulary": [
@@ -714,7 +735,7 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
-          "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>[Key Individual: Khudadad Khan]</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
+          "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>Khudadad Khan</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
           "tasks": [
             {
               "type": "short_answer",
@@ -738,7 +759,8 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_indian_army.jpg",
-          "image_alt": "British Indian Army soldiers serving on the Western Front in late 1914. Over 1.5 million men from the Indian subcontinent fought for the British Empire, providing crucial manpower that prevented the British lines from collapsing under the early German advance."
+          "image_alt": "Source A: British Indian Army soldiers serving on the Western Front in late 1914. Over 1.5 million men from the Indian subcontinent fought for the British Empire, providing crucial manpower that prevented the British lines from collapsing under the early German advance.",
+          "image_caption": "Source A: British Indian Army soldiers serving on the Western Front in late 1914. Over 1.5 million men from the Indian subcontinent fought for the British Empire, providing crucial manpower that prevented the British lines from collapsing under the early German advance."
         },
         {
           "title": "The Historians' Debate: How is the war remembered?",
@@ -747,22 +769,32 @@ export const unitData = {
             {
               "text": "Describe one feature of the British Empire's contribution to the First World War. (2 marks)",
               "model_answer": "One feature of the Empire's contribution was the immense manpower provided. For example, over 1.5 million men from the British Indian Army fought across multiple theaters, including the Western Front and Mesopotamia."
+            },
+            {
+              "question": "Q5. Study Source B and read the text on Racial Hierarchy. How does the impression given by the photograph contrast with the reality described in the text?",
+              "model_answer": "The Photograph's Impression: Shows soldiers posed in full uniform holding rifles, giving the visual impression of an active, respected, front-line combat unit.\n\nThe Reality in the Text: Most BWIR soldiers were stripped of combat roles and relegated to dangerous manual labor (e.g., digging trenches, carrying ammunition, burying the dead), alongside facing unequal pay, denied promotions, and segregated facilities."
             }
           ],
           "image": "/images/gw_bwir.jpg",
-          "image_alt": "Soldiers of the British West Indies Regiment (BWIR) in camp. Over 15,000 volunteers from the Caribbean served. Despite their eagerness to fight, systemic racism meant they were frequently barred from combat roles and forced into grueling manual labor under heavy fire."
+          "image_alt": "Source B: Soldiers of the British West Indies Regiment (BWIR) in camp. Over 15,000 volunteers from the Caribbean served. Despite their eagerness to fight, systemic racism meant they were frequently barred from combat roles and forced into grueling manual labor under heavy fire.",
+          "image_caption": "Source B: Soldiers of the British West Indies Regiment (BWIR) in camp. Over 15,000 volunteers from the Caribbean served. Despite their eagerness to fight, systemic racism meant they were frequently barred from combat roles and forced into grueling manual labor under heavy fire."
         },
         {
           "title": "Fringes of History: The Chinese Labour Corps",
           "text": "While millions of imperial soldiers fought on the front lines, the war effort relied equally on a massive, forgotten workforce. In 1916, facing critical manpower shortages, Britain recruited the <strong>Chinese Labour Corps (CLC)</strong>. Over 140,000 Chinese men were brought to the Western Front to do the grueling, dangerous manual labor required to keep the war machine running.<br><br>The CLC dug trenches, repaired roads under artillery fire, unloaded millions of tons of supplies at the docks, and were given the horrific task of clearing the battlefields and burying the rotting dead. Despite their essential contribution (without which the British Army could not have functioned), they were treated abysmally. They were kept in segregated camps behind barbed wire and paid a fraction of white soldiers' wages. Most tragically, when the war was won, the Chinese Labour Corps were deliberately <em>erased</em> from history. They were not invited to the Allied Victory Parade in London, and their massive contribution was ignored by historians for decades.",
           "image": "/images/gw_clc.jpg",
-          "image_alt": "Members of the Chinese Labour Corps (CLC) clearing battlefield debris. Facing severe manpower shortages, Britain recruited over 140,000 Chinese workers for highly dangerous manual labor. They were paid a fraction of white soldiers' wages and deliberately excluded from victory parades.",
+          "image_alt": "Source C: Members of the Chinese Labour Corps (CLC) clearing battlefield debris. Facing severe manpower shortages, Britain recruited over 140,000 Chinese workers for highly dangerous manual labor. They were paid a fraction of white soldiers' wages and deliberately excluded from victory parades.",
           "tasks": [
             {
               "text": "Why do you think the 140,000 men of the Chinese Labour Corps were deliberately left out of the victory parades and historical memory?",
               "model_answer": "They were likely erased due to racism and the desire to portray the victory as a heroic triumph of white British and European soldiers. Admitting that the British army heavily relied on 140,000 Chinese laborers to survive would undermine the imperial racial hierarchy of the time."
+            },
+            {
+              "question": "Study Source C (Members of the Chinese Labour Corps). Why was the recruitment of the CLC critical to the British war effort, and how were they treated in return?",
+              "model_answer": "The CLC was critical because Britain faced severe manpower shortages and needed workers for highly dangerous manual labor on the battlefield. In return for their vital work, they were paid only a fraction of white soldiers' wages and were deliberately excluded from post-war victory parades."
             }
-          ]
+          ],
+          "image_caption": "Source C: Members of the Chinese Labour Corps (CLC) clearing battlefield debris. Facing severe manpower shortages, Britain recruited over 140,000 Chinese workers for highly dangerous manual labor. They were paid a fraction of white soldiers' wages and deliberately excluded from victory parades."
         },
         {
           "title": "Source Spotlight: A 'White Man's War'?",
@@ -791,9 +823,7 @@ export const unitData = {
               "text": "According to Interpretation 2, why did the British Empire deliberately construct the narrative of a 'white man's war'?",
               "model_answer": "Interpretation 2 argues this was deliberate 'historical amnesia' designed to preserve the racial hierarchy of the Empire. Acknowledging that non-white troops were essential to saving the British Empire would have undermined the myth of white supremacy that justified colonial rule."
             }
-          ],
-          "image": "/images/gw_indian_army.jpg",
-          "image_alt": "Another view of British Indian Army soldiers deployed to the European theater. Their presence thousands of miles from home serves as undeniable proof that this was a truly global conflict, not just a 'European' civil war."
+          ]
         },
         {
           "title": "Consolidation Task",
@@ -808,7 +838,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -993,14 +1024,15 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_women_say_go.jpg",
-          "image_alt": "The 'Women of Britain Say GO!' propaganda poster (1915). Before conscription was introduced in 1916, the government relied entirely on voluntary enlistment, using emotional blackmail and the powerful influence of women to shame men into joining the army."
+          "image_alt": "Source A: The 'Women of Britain Say GO!' propaganda poster (1915). Before conscription was introduced in 1916, the government relied entirely on voluntary enlistment, using emotional blackmail and the powerful influence of women to shame men into joining the army.",
+          "image_caption": "Source A: The 'Women of Britain Say GO!' propaganda poster (1915). Before conscription was introduced in 1916, the government relied entirely on voluntary enlistment, using emotional blackmail and the powerful influence of women to shame men into joining the army."
         },
         {
           "title": "The Historians' Debate: Did the war liberate women?",
           "text": "<strong>The 'Canaries' and Total War</strong><br>With millions of men fighting overseas, the British economy faced collapse. The solution was the mass mobilization of women into the workforce. Over a million women took up jobs previously reserved exclusively for men—driving buses, working on farms (the Women's Land Army), and crucially, manufacturing weapons.<br><br>These female munitions workers were affectionately known as the \"Canaries.\" They worked long, exhausting shifts packing highly explosive TNT into artillery shells. The toxic chemicals turned their skin and hair a bright yellowish-orange (hence the nickname). The work was exceptionally dangerous; toxic jaundice caused liver failure, and accidental explosions were a constant threat. In 1917, the Silvertown munitions factory in London exploded, killing 73 people and destroying hundreds of homes. Despite the extreme danger and the toxic health effects, the Canaries produced over 80% of the weapons and shells used by the British Army, proving that women were entirely capable of performing heavy industrial labor.<br><br>Read the two contrasting interpretations below to understand how modern historians debate the impact of the war on women.<br><br><blockquote><strong>Interpretation 1: The Optimistic View</strong><br><em>\"The First World War was a massive engine of social change. By proving that women could successfully perform heavy industrial labor in the munitions factories, it shattered Victorian myths of female frailty. This undeniable contribution permanently altered the social status of women and was the direct cause of them finally winning the right to vote in 1918.\"</em><br>— <em>Adapted from Arthur Marwick, The Deluge (1965)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The idea that the war 'liberated' women is largely a myth. The changes were a temporary illusion driven by national emergency. Women were still paid significantly less than men, and the moment the war ended in 1918, they were unceremoniously fired to make way for returning soldiers. Furthermore, the 1918 voting act completely ignored the young, working-class 'Canary Girls' who had actually risked their lives.\"</em><br>— <em>Adapted from Gail Braybon, Women Workers in the First World War (1981)</em></blockquote>",
           "tasks": [
             {
-              "text": "Study Source A (the painting of the Munitionettes).<br><br>How useful is Source A for an inquiry into the impact of the war on women? (8 marks)",
+              "text": "Study Source B (the painting of the Munitionettes).<br><br>How useful is Source B for an inquiry into the impact of the war on women? (8 marks)",
               "model_answer": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
             },
             {
@@ -1014,19 +1046,25 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "A vivid painting depicting 'Munitionettes' working in a massive British armaments factory. With millions of men fighting overseas, the government relied on over 900,000 women to manufacture the vital artillery shells needed for the war effort, a key element of 'Total War'."
+          "image_alt": "Source B: A vivid painting depicting 'Munitionettes' working in a massive British armaments factory. With millions of men fighting overseas, the government relied on over 900,000 women to manufacture the vital artillery shells needed for the war effort, a key element of 'Total War'.",
+          "image_caption": "Source B: A vivid painting depicting 'Munitionettes' working in a massive British armaments factory. With millions of men fighting overseas, the government relied on over 900,000 women to manufacture the vital artillery shells needed for the war effort, a key element of 'Total War'."
         },
         {
           "title": "Fringes of History: Conscientious Objectors",
           "text": "When conscription (forced military service) was introduced in 1916, not everyone agreed to fight. Around 16,000 men refused to join the army on moral or religious grounds. They were known as <strong>Conscientious Objectors (or 'Conchies')</strong>.<br><br>Their treatment on the Home Front was brutal. They were widely viewed as cowards and traitors by the public and government. While some were allowed to do non-combat roles like driving ambulances under fire (which took immense bravery), absolutists who refused to contribute to the war effort in any way were thrown into harsh civilian prisons, where they faced solitary confinement, starvation diets, and forced labor. Some were even shipped to the front lines in France, court-martialed for refusing orders, and sentenced to be \"Shot at Dawn\" (though these death sentences were later commuted to 10 years in prison). Today, they are remembered for their bravery in standing up for their beliefs, commemorated by a special memorial at the National Memorial Arboretum.",
           "image": "/images/gw_arboretum.jpg",
-          "image_alt": "The 'Shot at Dawn' Memorial, commemorating the 306 British and Commonwealth soldiers executed by firing squad for cowardice or desertion. Modern historians recognize that many of these men were actually suffering from severe, undiagnosed shell shock (PTSD).",
+          "image_alt": "Source C: The 'Shot at Dawn' Memorial, commemorating the 306 British and Commonwealth soldiers executed by firing squad for cowardice or desertion. Modern historians recognize that many of these men were actually suffering from severe, undiagnosed shell shock (PTSD).",
           "tasks": [
             {
               "text": "Many people in 1916 believed Conscientious Objectors were cowards. How could you argue that it actually took immense bravery to be a 'Conchie'?",
               "model_answer": "It took immense bravery because they knew they would face total social isolation, public hatred, and harsh imprisonment. Standing up to the entire British government and society for your deeply held moral beliefs, even when threatened with execution, requires a different kind of courage than fighting in a trench."
+            },
+            {
+              "question": "Study Source C (The 'Shot at Dawn' Memorial). Based on modern historical understanding, why is the execution of these 306 soldiers considered a tragic injustice?",
+              "model_answer": "Modern historians recognize that many of the soldiers executed for \"cowardice\" or \"desertion\" were not cowards, but were actually suffering from severe, undiagnosed shell shock (PTSD) caused by the horrors of trench warfare."
             }
-          ]
+          ],
+          "image_caption": "Source C: The 'Shot at Dawn' Memorial, commemorating the 306 British and Commonwealth soldiers executed by firing squad for cowardice or desertion. Modern historians recognize that many of these men were actually suffering from severe, undiagnosed shell shock (PTSD)."
         },
         {
           "title": "Source Spotlight: Censorship and Control",
@@ -1037,9 +1075,7 @@ export const unitData = {
               "text": "Looking at Source D, why did the British government use DORA to mandate the strict censorship of soldiers' letters home? (Give two specific reasons).",
               "model_answer": "Firstly, the government censored locations and troop movements so that if the mail was intercepted by German spies, they would not gain any tactical military advantage. Secondly, they censored casualty numbers and descriptions of the horrific conditions to protect civilian morale on the Home Front, preventing families from realizing the true scale of the slaughter and turning against the war effort."
             }
-          ],
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "Female munitions workers ('Canary Girls') producing highly explosive artillery shells. Handling toxic TNT powder turned their skin yellow and hair green, and carried the constant, terrifying risk of massive factory explosions."
+          ]
         },
         {
           "title": "Consolidation Task",
@@ -1054,7 +1090,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -1211,7 +1248,7 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
-          "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>[Key Individual: Georges Clemenceau] (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>[Key Individual: Woodrow Wilson] (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
+          "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>Georges Clemenceau (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>Woodrow Wilson (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
           "tasks": [
             {
               "type": "short_answer",
@@ -1230,7 +1267,8 @@ export const unitData = {
             }
           ],
           "image": "/images/gw_big_three_versailles.jpg",
-          "image_alt": "The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands."
+          "image_alt": "Source A: The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands.",
+          "image_caption": "Source A: The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands."
         },
         {
           "title": "The Historians' Debate: A Doomed Peace?",
@@ -1249,27 +1287,30 @@ export const unitData = {
               "text": "Write a structured paragraph answering the following: <em>\"To what extent was the Treaty of Versailles an unfair settlement that guaranteed a future war?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Article 231, £6.6 billion in reparations, 100,000 men...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the traditional view (<em>Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy would lead to disaster...</em>)</li><li><strong>Evaluation:</strong> Conclude by using MacMillan's revisionist perspective to explain why the treaty's failure might have been more about enforcement than the actual terms.</li></ul>",
               "starter": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...",
               "model_answer": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
+            },
+            {
+              "question": "Study Source B (the 1919 political cartoon). What is the cartoonist suggesting about the long-term consequences of the Treaty of Versailles?",
+              "model_answer": "By depicting a weeping child labeled \"1940 Class\", the cartoonist is suggesting that the extremely harsh terms of the treaty would fail to secure lasting peace, and would instead inevitably spark another devastating world war when that child reached fighting age."
             }
           ],
           "image": "/images/gw_versailles_cartoon.jpg",
-          "image_alt": "A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up."
+          "image_alt": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up.",
+          "image_caption": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up."
         },
         {
           "title": "Source Spotlight: German Reaction",
-          "text": "The German public was shocked and outraged by the severity of the Treaty. They had believed Wilson's fair 'Fourteen Points' would be the basis for peace.<br><br><strong>Source E: A German political cartoon published in 1919</strong><br><em>The cartoon shows a German man stripped to his underwear. Standing around him are Clemenceau, Wilson, and Lloyd George. Clemenceau holds a giant guillotine blade labeled 'Versailles'. The caption reads: 'When we have taken everything else, we will take your life.'</em>",
+          "text": "The German public was shocked and outraged by the severity of the Treaty. They had believed Wilson's fair 'Fourteen Points' would be the basis for peace.<br><br><strong>Source A: A photograph of the Allied leaders at the Versailles conference (1919)</strong><br><em>The photograph shows the leaders who held the fate of Germany in their hands. Clemenceau demanded harsh punishment, Wilson wanted an idealistic peace, and Lloyd George sought a middle ground.</em>",
           "tasks": [
             {
-              "text": "Study Source A (the political cartoon).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
+              "text": "Study Source A (the photograph of the Big Four).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
               "model_answer": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
             },
             {
               "type": "short_answer",
-              "text": "How does the German political cartoon (Source E) reflect the German public's attitude toward the Treaty of Versailles? Refer specifically to the concept of the 'Diktat' and the Big Three.",
-              "model_answer": "The cartoon reflects the intense anger and feeling of victimization in Germany. By showing the German man stripped of his clothes, it symbolizes how the Treaty stripped Germany of its territory, military, and wealth (the £6.6 billion reparations). The guillotine blade held by Clemenceau shows that Germans viewed the Treaty not as a peace settlement, but as a deliberate execution of their nation. It highlights their view of the Treaty as an unfair 'Diktat' forced upon them by the vengeful Big Three."
+              "text": "How does the photograph of the Allied leaders (Source A) reflect the power dynamic at the Treaty of Versailles? Refer specifically to the concept of the 'Diktat'.",
+              "model_answer": "The photograph shows the Big Four leaders who held complete power over Germany's fate. Because Germany was not invited to negotiate, they viewed the resulting treaty as a 'Diktat' (a dictated peace). The leaders pictured—especially Clemenceau—forced severe terms upon a defenseless Germany, reinforcing the feeling of victimization and intense national anger."
             }
-          ],
-          "image": "/images/gw_versailles_cartoon.jpg",
-          "image_alt": "A German political cartoon reflecting the intense national anger over the Treaty of Versailles. It depicts Germany as a victim being marched to the guillotine by vengeful Allied leaders, perfectly capturing the German view of the treaty as an unfair 'Diktat' (dictated peace)."
+          ]
         },
         {
           "title": "Consolidation Task",
@@ -1284,7 +1325,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -1452,10 +1494,15 @@ export const unitData = {
               "type": "short_answer",
               "text": "How many local names from Stubbington and Hill Head are carved into the memorial?",
               "model_answer": "There are 67 names carved into the memorial."
+            },
+            {
+              "question": "Study Source A (the Stubbington War Memorial). Why are local memorials like this crucial for a historian studying the human cost of the First World War?",
+              "model_answer": "Local memorials are crucial because they ground the massive, abstract casualty statistics into tangible local reality. Seeing 67 names from a single, tight-knit rural village demonstrates how deeply the \"Lost Generation\" devastated everyday communities."
             }
           ],
           "image": "/images/stubbington_memorial_1.jpg",
-          "image_alt": "The wooden Stubbington War Memorial, uniquely designed as a shelter over the village pump in 1922. It bears the names of 67 local men who died, serving as a powerful, everyday reminder of the devastating human cost inflicted on tight-knit local communities."
+          "image_alt": "Source A: The wooden Stubbington War Memorial, uniquely designed as a shelter over the village pump in 1922. It bears the names of 67 local men who died, serving as a powerful, everyday reminder of the devastating human cost inflicted on tight-knit local communities.",
+          "image_caption": "Source A: The wooden Stubbington War Memorial, uniquely designed as a shelter over the village pump in 1922. It bears the names of 67 local men who died, serving as a powerful, everyday reminder of the devastating human cost inflicted on tight-knit local communities."
         },
         {
           "title": "The Tragedy of the Lowry Brothers",
@@ -1465,10 +1512,15 @@ export const unitData = {
               "type": "short_answer",
               "text": "Why is the story of the three Lowry brothers historically significant when studying the impact of the First World War?",
               "model_answer": "The loss of the Lowry brothers is significant because it highlights the concentrated grief experienced by individual families. It shows how the war didn't just cause random casualties, but often wiped out multiple siblings from the same household, devastating local family structures."
+            },
+            {
+              "question": "Study Source B (the \"Dead Man's Penny\"). What does this source tell us about how the British government attempted to console grieving families, and why might it have felt inadequate?",
+              "model_answer": "The government sent these bronze plaques and a simple scroll to the families of fallen soldiers to formally acknowledge their sacrifice. However, for many grieving parents, this small piece of metal felt tragically inadequate compared to the loss of their child's life."
             }
           ],
           "image": "/images/gw_death_plaque.jpg",
-          "image_alt": "A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice."
+          "image_alt": "Source B: A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice.",
+          "image_caption": "Source B: A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice."
         },
         {
           "title": "Nita Madeline King & A Father's Grief",
@@ -1499,7 +1551,8 @@ export const unitData = {
               ],
               "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -1611,13 +1664,14 @@ export const unitData = {
         {
           "text": "Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
           "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.",
+          "image_alt": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.",
           "tasks": [
             {
               "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
               "model_answer": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
             }
-          ]
+          ],
+          "image_caption": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote."
         },
         {
           "text": "Study Interpretation 1. <em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",

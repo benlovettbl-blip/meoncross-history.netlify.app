@@ -114,7 +114,6 @@ export const unitData = {
               "clue": "Think about the scale of engineering and moving water using gravity."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?",
               "text": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?"
             }
@@ -133,17 +132,17 @@ export const unitData = {
               "text": "Based on what you have learned about Roman sanitation, why do you think a wealthy palace like Fishbourne would have its own private bathhouse and hypocaust system, while ordinary Romano-British people did not?"
             },
             {
-              "type": "think_pair_share",
               "question": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?",
+              "model_answer": "Fishbourne Roman Palace contains extensive remains of private bathhouses and underfloor heating (hypocausts), proving that wealthy elite Romans spent vast sums of money to ensure their personal hygiene and comfort.",
               "text": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?"
             }
           ],
           "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href='https://sussexpast.co.uk/attraction/fishbourne-roman-palace/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>",
           "level_4": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href='https://sussexpast.co.uk/attraction/fishbourne-roman-palace/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>",
           "theme_heading": "Fishbourne: Roman Luxury Palace",
-          "image_alt": "Source D: Fishbourne Roman Palace",
+          "image_alt": "Source B: Fishbourne Roman Palace",
           "caption": "<strong>What is this source showing?</strong> This is a modern photograph of the excavated remains of Fishbourne Roman Palace, the largest residential Roman building discovered in Britain. It features incredibly well-preserved mosaics and the remains of a sophisticated hypocaust underfloor heating system, demonstrating the extreme luxury and sanitation enjoyed by elite Romans.",
-          "source_letter": "D"
+          "source_letter": "B"
         },
         {
           "text": "In Roman Britain, this water supplied grand public bathhouses, such as the famous complex at Bearsden. Bathhouses were bustling social spaces where citizens exercised, relaxed, and washed themselves by walking in sequence through cold rooms, warm rooms, and steaming hot chambers. Clean water also constantly flushed through communal public toilets, known as latrines. At Housesteads Fort on Hadrian's Wall, soldiers sat side-by-side on stone benches built over deep, stone-lined channels. A continuous stream of water beneath the seats swept human waste directly into underground sewers, keeping the fort clean and preventing the spread of deadly diseases. To wipe themselves, Roman soldiers used a wet sponge attached to the end of a shared wooden stick.\n<br><br><div style=\"background: #fefce8; border: 1px solid #fde047; padding: 20px; border-radius: 8px; margin: 15px 0;\"><strong>Source C: Seneca the Younger on Roman Bathhouses (c. AD 62)</strong><br><em>This is an extract from a letter by the Roman philosopher Seneca the Younger, complaining about the intense noise and activity of a Roman bathhouse he lived above. It shows that baths were busy, social hubs, not just places for quiet hygiene. <br><br>\"I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.\"</em></div>",
@@ -157,16 +156,16 @@ export const unitData = {
               "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?",
+              "model_answer": "Seneca reveals that Roman bathhouses were incredibly noisy and chaotic. They were not just for washing, but served as busy social hubs where people exercised, argued, bought food from vendors, and conducted business.",
               "text": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?"
             }
           ],
           "theme_heading": "Roman Water and Hygiene",
           "image": "/assets/water_and_sanitation_seneca.jpg",
-          "image_alt": "Source B: Seneca the Younger (c. 4 BC – AD 65)",
-          "caption": "[Key Individual: Seneca the Younger] (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
-          "source_letter": "B"
+          "image_alt": "Source C: Seneca the Younger (c. 4 BC – AD 65)",
+          "caption": " (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
+          "source_letter": "C"
         },
         {
           "text": "When the Roman legions finally withdrew from Britain around AD 410 to defend their crumbling empire, they left behind their advanced engineering. Without Roman authorities and engineers to maintain the aqueducts, sewers, and bathhouses, the systems quickly fell into ruin. Local Britons did not possess the technical knowledge, wealth, or centralized government needed to repair them. As a result, Britain's sanitation slipped back into primitive patterns, and it would take well over a thousand years before towns enjoyed clean running water and public sewers again.",
@@ -269,7 +268,7 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
-        "text": "<strong>[Key Individual: Simon Schama]</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
+        "text": "<strong></strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
         "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
         "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
       }
@@ -354,7 +353,6 @@ export const unitData = {
               "clue": "Look at the Canterbury blueprints and who paid for the pipes."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?",
               "text": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?"
             }
@@ -550,7 +548,7 @@ export const unitData = {
         "scaffolded": [
           "Describe the sanitation problems in growing Tudor and Stuart towns.",
           "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
-          "Evaluate how [Key Individual: Samuel Pepys]'s diary reveals the reality of Early Modern sanitation."
+          "Evaluate how 's diary reveals the reality of Early Modern sanitation."
         ]
       },
       "teacher_notes": {
@@ -581,19 +579,18 @@ export const unitData = {
               "clue": "Think about why an invention is useless without a network (water & sewers)."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?",
               "text": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?"
             }
           ],
           "theme_heading": "Harington",
           "image": "/assets/water_and_sanitation_harington_toilet.jpg",
-          "image_alt": "Source A: [Key Individual: Sir John Harington]'s flushing toilet design (1596)",
+          "image_alt": "Source A: 's flushing toilet design (1596)",
           "caption": "<strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harington, a godson of Queen Elizabeth I. It illustrates his invention: the first modern flushing water closet, which he called the 'Ajax'. It featured a flush valve to release water and a wash-down design to empty the bowl.",
           "source_letter": "A"
         },
         {
-          "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named [Key Individual: Sir Hugh Myddelton] successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
+          "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named  successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
           "level_4": "In 1613, the New River was opened, a massive engineering project that brought fresh spring water from Hertfordshire over 38 miles directly into North London using gravity. This project provided London with a clean water supply to feed the houses of wealthy subscribers through wooden pipes.",
           "tasks": [
             {
@@ -694,7 +691,7 @@ export const unitData = {
             "Sir John Harington",
             "Samuel Pepys",
             "King Charles I",
-            "[Key Individual: Joseph Bazalgette]"
+            ""
           ],
           "answer": 1
         }
@@ -848,14 +845,13 @@ export const unitData = {
               "clue": "Think about the rapid, terrifying nature of cholera deaths."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
               "text": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?"
             }
           ],
           "theme_heading": "Britain's First Cholera",
           "image": "/assets/water_and_sanitation_snow_cholera_map.jpg",
-          "image_alt": "Source A: Dr. [Key Individual: John Snow]'s Cholera Map of Soho (1854)",
+          "image_alt": "Source A: Dr. 's Cholera Map of Soho (1854)",
           "caption": "<strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during the devastating 1854 cholera outbreak in Soho, London. Each black bar on the map represents a death from cholera at that specific address. Snow noticed that the deaths clustered tightly around one specific public water pump on Broad Street.",
           "source_letter": "A"
         },
@@ -1059,7 +1055,7 @@ export const unitData = {
               "text": "How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?"
             }
           ],
-          "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by [Key Individual: Sir Frederick Bramwell], these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+          "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by , these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
           "level_4": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
           "theme_heading": "Portsmouth's Victorian Clean"
         },
@@ -1075,7 +1071,6 @@ export const unitData = {
               "clue": "Think about how it moved waste out of the city and where it sent it."
             },
             {
-              "type": "think_pair_share",
               "question": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?",
               "text": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?"
             }

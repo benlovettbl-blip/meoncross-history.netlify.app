@@ -358,7 +358,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "primary_source": {
@@ -414,7 +415,7 @@ export const unitData = {
         }
       ],
       "extended": {
-        "question": "Evaluate how the change in leadership from Bismarck to [Key Individual: Kaiser Wilhelm II] fundamentally altered Germany's strategic position in Europe.",
+        "question": "Evaluate how the change in leadership from Bismarck to  fundamentally altered Germany's strategic position in Europe.",
         "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
       },
       "do_now": {
@@ -635,7 +636,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -706,7 +708,7 @@ export const unitData = {
             "Kaiser Wilhelm II",
             "Kaiser Wilhelm I",
             "Franz Joseph",
-            "[Key Individual: Tsar Nicholas II]"
+            ""
           ]
         },
         {
@@ -1132,7 +1134,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -1536,7 +1539,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -1931,7 +1935,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
@@ -2209,7 +2214,7 @@ export const unitData = {
         "objectives": [
           {
             "objective": "Identify the events of 28 June 1914.",
-            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and [Key Individual: Gavrilo Princip] seizing the unexpected opportunity.",
+            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and  seizing the unexpected opportunity.",
             "question": "What was the single biggest piece of 'bad luck' that allowed Gavrilo Princip to assassinate the Archduke?"
           },
           {
@@ -2329,7 +2334,8 @@ export const unitData = {
                 "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
               ]
             }
-          ]
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [

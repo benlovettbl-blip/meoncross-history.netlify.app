@@ -59,7 +59,7 @@ export async function auditUnit(unitId) {
 
             // 4. Check for orphaned tiny text blocks
             // If a block has no title, no tasks, no image, no video, no HTML formatting, and very short text, it might be an orphaned fragment.
-            const hasMedia = block.image_url || block.video_id || block.youtube_url;
+            const hasMedia = block.image_url || block.image || block.video_id || block.youtube_url;
             const hasTasks = block.tasks && block.tasks.length > 0;
             const textContent = block.text || '';
             
@@ -68,6 +68,32 @@ export async function auditUnit(unitId) {
                  if (!textContent.includes('<h') && !textContent.includes('<strong>')) {
                      warnings.push(`[SUSPICIOUS FRAGMENT] ${loc}: Very short text block with no media or tasks. Is this an orphaned fragment? Text: "${textContent.substring(0, 30)}..."`);
                  }
+            }
+
+            // 5. Check for source mismatches (tasks asking about a 'Source X' that isn't labelled)
+            if (hasTasks) {
+                block.tasks.forEach((t, tIdx) => {
+                    const taskText = t.q || t.question || t.text || '';
+                    const sourceMatch = taskText.match(/Source [A-Z]/g);
+                    if (sourceMatch) {
+                        sourceMatch.forEach(src => {
+                            // Verify this exact source exists SOMEWHERE in the current lesson
+                            let sourceFoundInLesson = false;
+                            lesson.narrative_blocks.forEach(b => {
+                                const bAlt = b.image_alt || '';
+                                const bTitle = b.title || '';
+                                const bText = b.text || '';
+                                if (bText.includes(src) || bAlt.includes(src) || bTitle.includes(src)) {
+                                    sourceFoundInLesson = true;
+                                }
+                            });
+                            
+                            if (!sourceFoundInLesson) {
+                                warnings.push(`[SOURCE MISMATCH] ${loc} -> Task ${tIdx}: Task references '${src}', but this source label is missing from the entire lesson.`);
+                            }
+                        });
+                    }
+                });
             }
         });
     });
