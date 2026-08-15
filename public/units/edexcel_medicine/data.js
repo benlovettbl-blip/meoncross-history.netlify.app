@@ -545,7 +545,7 @@ export const unitData = {
             "options": [
               "Public health refers to the health of the population as a whole, especially as monitored and regulated by the state or government.",
               "He proved that Galen had made over 300 mistakes because Galen had dissected animals, not humans (e.g., the human jawbone is one bone, not two).",
-              ".",
+              "Alexander Fleming.",
               "Identifying the genes responsible for a disease is only the first step; creating gene therapies to fix or replace them is vastly more complex."
             ]
           },
@@ -563,7 +563,7 @@ export const unitData = {
             "question": "Why was the Catholic Church so powerful in the Middle Ages?",
             "answer": "The Church was the central authority in Medieval Europe, controlling education, the copying of books, and holding immense spiritual and political power.",
             "options": [
-              "An English physician known as the 'English ', who believed in closely observing symptoms rather than relying on ancient books.",
+              "An English physician known as the 'English Hippocrates', who believed in closely observing symptoms rather than relying on ancient books.",
               "He mapped out cholera deaths in Soho and traced them all to a single infected water pump on Broad Street, proving it wasn't caused by miasma.",
               "The Church was the central authority in Medieval Europe, controlling education, the copying of books, and holding immense spiritual and political power.",
               "Hippocrates."
@@ -622,7 +622,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "Hippocrates",
           "hinge_question": {
             "text": "Why did the Church promote the work of the ancient Roman doctor Galen?",
             "options": [
@@ -652,7 +652,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "Claudius Galen",
           "theme_heading": "Galen: Medical Pioneer"
         },
         {
@@ -668,7 +668,7 @@ export const unitData = {
             "The Church",
             "Galen"
           ],
-          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">The primary reason why ideas about the cause of disease remained completely unchanged in the medieval period was the overwhelming institutional and religious influence of the <strong>Catholic Church</strong>. In medieval Europe, the Church controlled education and held a strict monopoly over book production, with monks painstakingly copying medical manuscripts by hand in monastic libraries. The Church taught that all events on Earth, including illness and health, were controlled directly by God. Disease was widely explained as a punishment sent by God for sinful behaviour, or as a test of an individual's religious faith (as depicted in the biblical story of Satan infecting Job with boils). Because this religious explanation was almost universally accepted and provided a complete, comforting worldview, there was very little motivation for physicians or ordinary people to seek out alternative, scientific explanations. Furthermore, any independent-minded scholars who attempted to challenge Church dogma or conduct original medical research were heavily suppressed; for example, when the 13th-century scientist  suggested that doctors should carry out their own experiments, he was promptly imprisoned by Church leaders.</p><p style=\"margin-bottom: 1.5rem;\">Another major factor that prevented change in medieval medical ideas was the unquestioned authority of the ancient Roman doctor Claudius <strong>Galen</strong>, whose teachings were actively promoted by the Church. Although Galen had lived in the 2nd century AD, his extensive medical writings remained the absolute basis of all university-trained physicians' education for over a thousand years. The Church chose to preserve and promote Galen's texts because his writings suggested that the human body was so complex and perfectly balanced that it must have been designed by a single, purposeful \"creator\". This matched Christian creation theology perfectly. Consequently, physicians trained at medieval universities (which were themselves set up and run by the bishops) spent between seven and ten years reading and memorising Galen's theories rather than treating actual patients. Under Galen's <strong>Theory of the Four Humours</strong> and <strong>Theory of Opposites</strong>, all illness was explained as an internal imbalance of blood, phlegm, yellow bile, and black bile. Questioning Galen's books was seen as a sign of intellectual incompetence or even religious heresy, meaning physicians actively twisted physical evidence to fit ancient texts rather than developing new medical theories.</p><p style=\"margin-bottom: 1.5rem;\">Finally, the lack of scientific technology and physical evidence made it practically impossible for medieval people to develop new ideas about the cause of disease. Without microscopes, which would not be developed until centuries later, the existence of microscopic pathogens was completely undiscovered. This meant that medieval people had no empirical way of observing bacteria, leaving them with no viable alternative to the Theory of the Four Humours. In addition, the Church strongly discouraged the practice of human dissection, teaching that the human body had to be buried whole for the soul to enter heaven. This prevented physicians from examining real human anatomy to challenge Galen's existing errors. When dissections did occasionally take place in universities, they were not used to make new discoveries; instead, a physician sat high up reading aloud from Galen's texts while an assistant dissected the body, simply to demonstrate to students that Galen was correct. As a result of this lack of technology and practical observation, medieval ideas about disease causes remained entirely stagnant.</p>"
+          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">The primary reason why ideas about the cause of disease remained completely unchanged in the medieval period was the overwhelming institutional and religious influence of the <strong>Catholic Church</strong>. In medieval Europe, the Church controlled education and held a strict monopoly over book production, with monks painstakingly copying medical manuscripts by hand in monastic libraries. The Church taught that all events on Earth, including illness and health, were controlled directly by God. Disease was widely explained as a punishment sent by God for sinful behaviour, or as a test of an individual's religious faith (as depicted in the biblical story of Satan infecting Job with boils). Because this religious explanation was almost universally accepted and provided a complete, comforting worldview, there was very little motivation for physicians or ordinary people to seek out alternative, scientific explanations. Furthermore, any independent-minded scholars who attempted to challenge Church dogma or conduct original medical research were heavily suppressed; for example, when the 13th-century scientist Roger Bacon suggested that doctors should carry out their own experiments, he was promptly imprisoned by Church leaders.</p><p style=\"margin-bottom: 1.5rem;\">Another major factor that prevented change in medieval medical ideas was the unquestioned authority of the ancient Roman doctor Claudius <strong>Galen</strong>, whose teachings were actively promoted by the Church. Although Galen had lived in the 2nd century AD, his extensive medical writings remained the absolute basis of all university-trained physicians' education for over a thousand years. The Church chose to preserve and promote Galen's texts because his writings suggested that the human body was so complex and perfectly balanced that it must have been designed by a single, purposeful \"creator\". This matched Christian creation theology perfectly. Consequently, physicians trained at medieval universities (which were themselves set up and run by the bishops) spent between seven and ten years reading and memorising Galen's theories rather than treating actual patients. Under Galen's <strong>Theory of the Four Humours</strong> and <strong>Theory of Opposites</strong>, all illness was explained as an internal imbalance of blood, phlegm, yellow bile, and black bile. Questioning Galen's books was seen as a sign of intellectual incompetence or even religious heresy, meaning physicians actively twisted physical evidence to fit ancient texts rather than developing new medical theories.</p><p style=\"margin-bottom: 1.5rem;\">Finally, the lack of scientific technology and physical evidence made it practically impossible for medieval people to develop new ideas about the cause of disease. Without microscopes, which would not be developed until centuries later, the existence of microscopic pathogens was completely undiscovered. This meant that medieval people had no empirical way of observing bacteria, leaving them with no viable alternative to the Theory of the Four Humours. In addition, the Church strongly discouraged the practice of human dissection, teaching that the human body had to be buried whole for the soul to enter heaven. This prevented physicians from examining real human anatomy to challenge Galen's existing errors. When dissections did occasionally take place in universities, they were not used to make new discoveries; instead, a physician sat high up reading aloud from Galen's texts while an assistant dissected the body, simply to demonstrate to students that Galen was correct. As a result of this lack of technology and practical observation, medieval ideas about disease causes remained entirely stagnant.</p>"
         }
       ],
       "ai_revision_pack": {
@@ -1708,7 +1708,7 @@ export const unitData = {
             "answer": "People who whipped themselves in public to show God they were sorry for their sins, hoping to avoid disease.",
             "options": [
               "Identifying the genes responsible for a disease is only the first step; creating gene therapies to fix or replace them is vastly more complex.",
-              ".",
+              "John Snow.",
               "Very little; blood transfusions were not yet possible, and his discovery did not help explain the cause of disease.",
               "People who whipped themselves in public to show God they were sorry for their sins, hoping to avoid disease."
             ]
@@ -1810,7 +1810,7 @@ export const unitData = {
             "The Four Humours",
             "The Black Death"
           ],
-          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">To a large extent, I agree with the statement that medical care and treatment were ineffective during the medieval period because medical knowledge was heavily based on the flawed anatomical and physiological ideas of . However, other factors-specifically the pervasive belief in religious and supernatural causes of illness, the lack of scientific technology, and the nature of medieval care providers-were equally responsible for making medieval medicine ineffective.</p><p style=\"margin-bottom: 1.5rem;\">On the one hand, Galen's theories were a primary cause of ineffective medical treatments because they locked physicians into a scientifically incorrect framework of diagnosis and therapy. Medical training in medieval universities was entirely based on memorising Galen's texts, which promoted the <strong>Theory of the Four Humours</strong>. Physicians believed that all illnesses were caused by an internal imbalance of blood, phlegm, yellow bile, and black bile. Consequently, the standard treatments they prescribed consisted of severe purging and <strong>bloodletting</strong> (via venesection, cupping, or leeching) to restore humoural balance. When patients were subjected to these treatments, particularly during severe illnesses, the loss of blood and fluids actually weakened their immune systems, often hastening their deaths. Furthermore, Galen's <strong>Theory of Opposites</strong> led to treating symptoms rather than the underlying disease; for example, a cold was treated with hot peppers and a fever with cold cucumbers, which had no clinical impact on the root infection. Because university degrees mandated the absolute study of Galen and discouraged independent clinical research, physicians were unable to develop new, effective treatments.</p><p style=\"margin-bottom: 1.5rem;\">On the other hand, the cataclysmic outbreak of the <strong>Black Death</strong> in 1348 demonstrated that medieval medical care was also highly ineffective because of powerful supernatural and religious beliefs. Because the Catholic Church dominated all aspects of medieval thought, the most popular explanation for the plague was that God had sent it as a punishment for the sins of mankind. This led to entirely religious and ineffective responses; people flocked to churches to pray, fasted, went on pilgrimages to holy shrines, or joined groups of flagellants who publicly whipped themselves to beg for God's forgiveness. These actions not only failed to cure the sick, but the crowded religious gatherings and the open wounds of flagellants actually accelerated the physical spread of the plague. Additionally, physicians consulted <strong>astrology</strong> (blaming an unusual alignment of Mars, Jupiter, and Saturn in 1345) to time their humoural treatments. These non-Galenic, spiritual explanations completely prevented people from seeking rational, biological causes for the epidemic.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, the general ineffectiveness of medieval care was exacerbated by a complete lack of scientific technology. Without microscopes, it was impossible for medieval people to discover the true cause of the Black Death-the *Yersinia pestis* bacterium carried by fleas on rats. Instead, they relied on the <strong>miasma theory</strong> (the belief that bad, smelly air caused illness). To prevent breathing in the \"pestilential air,\" people carried sweet-smelling herbs called posies, lit street fires, or avoided bathing because they believed warm water opened the skin's pores to corrupt air. Because they lacked the technology to identify the true biological vectors of disease, even their most rational attempts at environmental sanitation and local quarantine were severely limited and largely ineffective.</p><p style=\"margin-bottom: 1.5rem;\">Finally, socio-economic factors meant that the elite, Galenic medical care provided by physicians was completely inaccessible to the vast majority of the population who were poor. Peasants who fell ill relied instead on <strong>herbal remedies</strong> provided by local apothecaries or female family members in the home. Interestingly, these home-based treatments were sometimes *more* effective than the expensive physician's Galenic bleeding, as wise women and apothecaries used ingredients like honey and garlic, which modern science has proved possess natural antibacterial properties. This suggests that it was specifically the university-trained physicians' rigid adherence to Galenic theory that made \"professional\" care so dangerous and ineffective.</p><p style=\"margin-bottom: 1.5rem;\">In conclusion, I agree that Galen's ideas were a major cause of ineffective medical treatment, as his humoural theories led directly to physically harmful treatments like bloodletting and purging. However, Galen's ideas only remained so dominant because of the institutional power of the <strong>Catholic Church</strong>, which controlled medical universities, banned human dissection, and imprisoned anyone who challenged classical authority. Therefore, the primary and overarching reason for the ineffectiveness of medieval medical care was the institutional control of the Church, which successfully locked medical knowledge in a stagnant, pre-scientific state.</p>",
+          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">To a large extent, I agree with the statement that medical care and treatment were ineffective during the medieval period because medical knowledge was heavily based on the flawed anatomical and physiological ideas of Claudius Galen. However, other factors-specifically the pervasive belief in religious and supernatural causes of illness, the lack of scientific technology, and the nature of medieval care providers-were equally responsible for making medieval medicine ineffective.</p><p style=\"margin-bottom: 1.5rem;\">On the one hand, Galen's theories were a primary cause of ineffective medical treatments because they locked physicians into a scientifically incorrect framework of diagnosis and therapy. Medical training in medieval universities was entirely based on memorising Galen's texts, which promoted the <strong>Theory of the Four Humours</strong>. Physicians believed that all illnesses were caused by an internal imbalance of blood, phlegm, yellow bile, and black bile. Consequently, the standard treatments they prescribed consisted of severe purging and <strong>bloodletting</strong> (via venesection, cupping, or leeching) to restore humoural balance. When patients were subjected to these treatments, particularly during severe illnesses, the loss of blood and fluids actually weakened their immune systems, often hastening their deaths. Furthermore, Galen's <strong>Theory of Opposites</strong> led to treating symptoms rather than the underlying disease; for example, a cold was treated with hot peppers and a fever with cold cucumbers, which had no clinical impact on the root infection. Because university degrees mandated the absolute study of Galen and discouraged independent clinical research, physicians were unable to develop new, effective treatments.</p><p style=\"margin-bottom: 1.5rem;\">On the other hand, the cataclysmic outbreak of the <strong>Black Death</strong> in 1348 demonstrated that medieval medical care was also highly ineffective because of powerful supernatural and religious beliefs. Because the Catholic Church dominated all aspects of medieval thought, the most popular explanation for the plague was that God had sent it as a punishment for the sins of mankind. This led to entirely religious and ineffective responses; people flocked to churches to pray, fasted, went on pilgrimages to holy shrines, or joined groups of flagellants who publicly whipped themselves to beg for God's forgiveness. These actions not only failed to cure the sick, but the crowded religious gatherings and the open wounds of flagellants actually accelerated the physical spread of the plague. Additionally, physicians consulted <strong>astrology</strong> (blaming an unusual alignment of Mars, Jupiter, and Saturn in 1345) to time their humoural treatments. These non-Galenic, spiritual explanations completely prevented people from seeking rational, biological causes for the epidemic.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, the general ineffectiveness of medieval care was exacerbated by a complete lack of scientific technology. Without microscopes, it was impossible for medieval people to discover the true cause of the Black Death-the *Yersinia pestis* bacterium carried by fleas on rats. Instead, they relied on the <strong>miasma theory</strong> (the belief that bad, smelly air caused illness). To prevent breathing in the \"pestilential air,\" people carried sweet-smelling herbs called posies, lit street fires, or avoided bathing because they believed warm water opened the skin's pores to corrupt air. Because they lacked the technology to identify the true biological vectors of disease, even their most rational attempts at environmental sanitation and local quarantine were severely limited and largely ineffective.</p><p style=\"margin-bottom: 1.5rem;\">Finally, socio-economic factors meant that the elite, Galenic medical care provided by physicians was completely inaccessible to the vast majority of the population who were poor. Peasants who fell ill relied instead on <strong>herbal remedies</strong> provided by local apothecaries or female family members in the home. Interestingly, these home-based treatments were sometimes *more* effective than the expensive physician's Galenic bleeding, as wise women and apothecaries used ingredients like honey and garlic, which modern science has proved possess natural antibacterial properties. This suggests that it was specifically the university-trained physicians' rigid adherence to Galenic theory that made \"professional\" care so dangerous and ineffective.</p><p style=\"margin-bottom: 1.5rem;\">In conclusion, I agree that Galen's ideas were a major cause of ineffective medical treatment, as his humoural theories led directly to physically harmful treatments like bloodletting and purging. However, Galen's ideas only remained so dominant because of the institutional power of the <strong>Catholic Church</strong>, which controlled medical universities, banned human dissection, and imprisoned anyone who challenged classical authority. Therefore, the primary and overarching reason for the ineffectiveness of medieval medical care was the institutional control of the Church, which successfully locked medical knowledge in a stagnant, pre-scientific state.</p>",
           "model": "**To a moderate extent, I agree that the reliance on Claudius Galen's ideas was the primary cause of ineffective medical care and treatment in the Middle Ages.** Because Galen's unscientific physiological models were treated as absolute facts, medieval treatments were logically designed to target incorrect internal causes, often resulting in harmful clinical practices like bloodletting. However, Galen's authority was merely a symptom of a much larger, structural root cause: **the Catholic Church's absolute control over education**, which actively outlawed scientific dissection and exploration, combined with a **complete lack of microscopic diagnostic technology**.\n\n**On the one hand, medical care was heavily undermined because physicians based their treatments on Galen's unscientific ideas, particularly the Theory of Opposites.** Galen had expanded Hippocrates' Theory of the Four Humours by teaching that an excess or deficiency of blood, phlegm, yellow bile, or black bile caused all illnesses. Under the **Theory of Opposites**, Galen taught that a humoural imbalance should be treated with its opposite quality-for instance, treating a cold, wet fever with \"hot\" pepper or dry wine. Because Galen lacked correct knowledge of human anatomy-relying on the dissection of pigs and apes rather than humans-his writings contained major errors. However, medieval physicians accepted his texts as infallible. **Consequently**, when treating sick patients, they targeted incorrect humoural causes. This led directly to the near-universal practice of **bloodletting** (phlebotomy via cutting a vein or applying leeches) and purging. Rather than helping, draining blood from critically ill, infected, or elderly patients severely weakened their immune systems and often directly accelerated their deaths, proving that relying on Galen made clinical medicine highly dangerous.\n\n**On the other hand, the primary reason why these unscientific ideas remained dominant was because the medieval Catholic Church used its immense institutional power to freeze medical progress.** The Church strictly controlled the universities, libraries, and the copying of medical manuscripts. Because Galen's anatomical writings argued that the human body was so incredibly complex and purposeful that it must have been designed by a single \"Creator,\" his ideas aligned perfectly with Christian creation theology. **Consequently**, the Church declared Galen's texts infallible and banned human **dissection** for scientific research, believing that the physical body had to be buried whole to allow the soul to go to heaven. In rare academic demonstrations, the body of an executed criminal was dissected by an untrained assistant while the university professor sat far away, reading Galen's words aloud strictly to prove the book was correct. If an anatomical detail on the table contradicted the text, the professor would claim the body itself was deformed rather than questioning Galen. This religious monopoly completely blocked any progress.\n\n**Furthermore, medical care was ineffective due to the spiritual function of medieval hospitals and a complete lack of diagnostic technology.** Run by monks and nuns, the **1,100 charity hospitals** in England by 1500 did not aim to provide medical cures. Instead, their primary focus was on **spiritual care and hospitality**-providing the poor, travelers, and the elderly with shelter, clean sheets, and hot meals while preparing their souls for the afterlife. Patients suffering from highly infectious diseases (such as leprosy or the plague) or terminal illnesses were strictly excluded to prevent the spread of infection. Additionally, in an era before the invention of powerful microscopes, it was physically impossible to see microscopic bacteria or prove that pathogens caused infections. This lack of technology left medieval people with no alternative but to rely on other unscientific, non-Galenic ideas, such as believing that God sent the Black Death in 1348 as a punishment for sin or that bad air (miasma) corrupted the body's humours.\n\n**In conclusion, I only agree to a moderate extent that Galen was the main cause of ineffective medical care.** While it is true that humoural treatments like the **Theory of Opposites** were clinically harmful and biologically useless, Galen's ideas did not survive on their merit. The true root cause of medical stagnation was the institutional authority of the **Church**, which used its control over libraries and education to ban human dissection and prosecute free-thinkers. Without the intellectual freedom to experiment, and lacking the microscope technology required to discover microbes, medieval medicine was structurally doomed to remain ineffective."
         }
       ],
@@ -1959,7 +1959,7 @@ export const unitData = {
           "options": [
             "Hippocrates",
             "Guy de Chauliac",
-            "",
+            "Thomas Sydenham",
             "Harvey Cushing"
           ],
           "answer": 1
@@ -2060,7 +2060,7 @@ export const unitData = {
             "Because those actions were strictly banned by the Catholic Church as heresy",
             "Because those specific administrative preventions occurred only during the 1665 Great Plague",
             "Because those techniques were only developed after the creation of the NHS in 1948",
-            "Because those actions were invented by  during the Crimean War"
+            "Because those actions were invented by Florence Nightingale during the Crimean War"
           ],
           "answer": 1
         },
@@ -2224,10 +2224,10 @@ export const unitData = {
       "guided_reading": [],
       "narrative_blocks": [
         {
-          "text": "**The Medical Renaissance Begins**\n\nDuring the Renaissance, there was a revival of learning and a new desire to question old ideas. The invention of the printing press in 1440 meant that books could be copied quickly and cheaply, reducing the Church's control over information. At the same time, the Royal Society was founded in 1660 to promote scientific experiments and share new discoveries across Europe.\n\nOne of the biggest changes was in anatomy.  began dissecting human bodies himself and proved that Galen had made over 300 mistakes (because Galen had only dissected animals). Vesalius published his highly accurate anatomy book, 'The Fabric of the Human Body', in 1543. However, despite these breakthroughs in anatomy, people still didn't know what caused disease, and the theory of the Four Humours remained widely believed."
+          "text": "**The Medical Renaissance Begins**\n\nDuring the Renaissance, there was a revival of learning and a new desire to question old ideas. The invention of the printing press in 1440 meant that books could be copied quickly and cheaply, reducing the Church's control over information. At the same time, the Royal Society was founded in 1660 to promote scientific experiments and share new discoveries across Europe.\n\nOne of the biggest changes was in anatomy. Andreas Vesalius began dissecting human bodies himself and proved that Galen had made over 300 mistakes (because Galen had only dissected animals). Vesalius published his highly accurate anatomy book, 'The Fabric of the Human Body', in 1543. However, despite these breakthroughs in anatomy, people still didn't know what caused disease, and the theory of the Four Humours remained widely believed."
         },
         {
-          "text": "",
+          "text": "Andreas Vesalius",
           "theme_heading": "Vesali"
         },
         {
@@ -2262,7 +2262,7 @@ export const unitData = {
           }
         },
         {
-          "text": "",
+          "text": "Thomas Sydenham",
           "theme_heading": "Thomas Sydenham: Pioneer"
         },
         {
@@ -2639,7 +2639,7 @@ export const unitData = {
             "question": "What was the Renaissance?",
             "answer": "A period of 'rebirth' in art, science, and learning, beginning in the 15th century, which encouraged challenging old ideas.",
             "options": [
-              ".",
+              "Louis Pasteur.",
               "The Ancient Greeks or Ancient Romans.",
               "Chloroform (1847).",
               "A period of 'rebirth' in art, science, and learning, beginning in the 15th century, which encouraged challenging old ideas."
@@ -2758,7 +2758,7 @@ export const unitData = {
             "Andreas Vesalius",
             "The printing press"
           ],
-          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">The primary driver of rapid anatomical progress in this period was the groundbreaking methodology of <strong>Andreas Vesalius</strong>. In the Middle Ages, medical training was strictly theoretical, based on memorizing the ancient works of Galen and Hippocrates. When dissections did occur, the university physician sat high up, reading Galen's texts aloud while an untrained assistant took the body apart simply to demonstrate that the ancient books were correct. In stark contrast, Vesalius insisted on a hands-on approach, performing human dissections himself and closely observing human bodies rather than animals. By publishing *On the Fabric of the Human Body* (*De Humani Corporis Fabrica*) in 1543, he proved that Galen had made over <strong>200 errors</strong> in human anatomy. Vesalius disproved major Galenic theories by demonstrating that the human jawbone consists of one bone rather than two, and that the heart's septum has no invisible holes for blood flow. This empirical, evidence-based approach made the study of anatomy highly fashionable and established dissection as a central part of university medical training, inspiring a generation of \"microbe hunters\" and anatomists to carry out their own investigations.</p><p style=\"margin-bottom: 1.5rem;\">This rapid progress was heavily accelerated by the invention of the <strong>printing press</strong> in c.1440, which took anatomical information out of isolated libraries and spread it globally. Previously, handwritten anatomical scrolls were incredibly rare, expensive, and lacked accurate illustrations, meaning new physical discoveries could not be shared. The printing press allowed Vesalius's *Fabrica* to be mass-produced cheaply and distributed widely to medical students across Europe. Crucially, the press allowed the inclusion of Vesalius's highly detailed anatomical woodcuts. These accurate drawings were widely copied and distributed as \"fugitive sheets\"-anatomical prints with layered paper flaps that students could lift to inspect the layers of muscle and internal organs-making precise anatomical knowledge highly accessible.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, the declining authority of the <strong>Christian Church</strong> and the rise of <strong>humanism</strong> removed the legal and social barriers that had historically blocked anatomical discovery. In the medieval period, the Church strongly discouraged dissection, arguing that the human body had to be buried whole for the soul to enter heaven. During the Renaissance, however, the growth of a more secular society and Protestantism reduced the Church's ability to suppress scientific enquiry, leading universities (such as Cambridge and Padua) to legalize human dissection of deceased criminals. This combination of hands-on observation, cheap printing, and institutional freedom allowed anatomists to build directly on Vesalius's work. This culminated in <strong>'s</strong> 1628 discovery of the <strong>circulation of the blood</strong>, where he used human dissection and experimental observation to prove that the heart acts as a pump, permanently disproving Galen's ancient claim that blood was manufactured in the liver.</p>",
+          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">The primary driver of rapid anatomical progress in this period was the groundbreaking methodology of <strong>Andreas Vesalius</strong>. In the Middle Ages, medical training was strictly theoretical, based on memorizing the ancient works of Galen and Hippocrates. When dissections did occur, the university physician sat high up, reading Galen's texts aloud while an untrained assistant took the body apart simply to demonstrate that the ancient books were correct. In stark contrast, Vesalius insisted on a hands-on approach, performing human dissections himself and closely observing human bodies rather than animals. By publishing *On the Fabric of the Human Body* (*De Humani Corporis Fabrica*) in 1543, he proved that Galen had made over <strong>200 errors</strong> in human anatomy. Vesalius disproved major Galenic theories by demonstrating that the human jawbone consists of one bone rather than two, and that the heart's septum has no invisible holes for blood flow. This empirical, evidence-based approach made the study of anatomy highly fashionable and established dissection as a central part of university medical training, inspiring a generation of \"microbe hunters\" and anatomists to carry out their own investigations.</p><p style=\"margin-bottom: 1.5rem;\">This rapid progress was heavily accelerated by the invention of the <strong>printing press</strong> in c.1440, which took anatomical information out of isolated libraries and spread it globally. Previously, handwritten anatomical scrolls were incredibly rare, expensive, and lacked accurate illustrations, meaning new physical discoveries could not be shared. The printing press allowed Vesalius's *Fabrica* to be mass-produced cheaply and distributed widely to medical students across Europe. Crucially, the press allowed the inclusion of Vesalius's highly detailed anatomical woodcuts. These accurate drawings were widely copied and distributed as \"fugitive sheets\"-anatomical prints with layered paper flaps that students could lift to inspect the layers of muscle and internal organs-making precise anatomical knowledge highly accessible.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, the declining authority of the <strong>Christian Church</strong> and the rise of <strong>humanism</strong> removed the legal and social barriers that had historically blocked anatomical discovery. In the medieval period, the Church strongly discouraged dissection, arguing that the human body had to be buried whole for the soul to enter heaven. During the Renaissance, however, the growth of a more secular society and Protestantism reduced the Church's ability to suppress scientific enquiry, leading universities (such as Cambridge and Padua) to legalize human dissection of deceased criminals. This combination of hands-on observation, cheap printing, and institutional freedom allowed anatomists to build directly on Vesalius's work. This culminated in <strong>William Harvey's</strong> 1628 discovery of the <strong>circulation of the blood</strong>, where he used human dissection and experimental observation to prove that the heart acts as a pump, permanently disproving Galen's ancient claim that blood was manufactured in the liver.</p>",
           "model": "The rapid progress in anatomical knowledge during the Medical Renaissance was driven primarily by the work of **Andreas Vesalius**, who transformed anatomy from a passive study of ancient books into an active, observational science. Vesalius rejected the traditional medieval practice where a professor read Galen's texts aloud from a high chair while an untrained barber-surgeon dissected a body below. Instead, Vesalius carried out the dissections himself, closely observing the physical structures of the human body. **Consequently**, Vesalius was able to test Galen's classical claims and identify **over 200 anatomical errors**-including disproving Galen's assertions that the human lower jaw consists of two bones (it is one) and that the liver has five lobes (it has two). **This led directly to** the publication of ***De Humani Corporis Fabrica* (1543)**, which provided medical students across Europe with an incredibly detailed and correct structural map of the human skeleton, muscles, and organs, permanently shattering the belief that Galen's writings were infallible.<br><br>This individual progress was made possible by the widespread adoption of **human dissection** as an essential scientific discipline in medical education. During the medieval period, the Church prohibited dissection, forcing students to rely on Galen's animal-based dissections of pigs and apes. During the Renaissance, however, the decline of religious censorship and the rise of secular universities meant that local authorities began supplying the bodies of executed criminals to medical schools. **This meant that** physicians and students could directly observe real human tissues, muscles, and blood vessels first-hand. **As a result of this direct observation**, surgeons began to understand the true complexity of human anatomy, which laid the necessary clinical foundation for future surgical and physiological breakthroughs.<br><br>Furthermore, this rapid progress was accelerated by **advances in printing technology and artistic realism**. Vesalius recognized that his textual corrections of Galen would have limited impact without precise visual evidence, so he collaborated with professional Italian artists to create highly detailed, lifelike anatomical drawings. By utilizing Gutenberg's newly invented **printing press**, he mass-produced the *Fabrica* with standardized, identical illustrations. **This meant that** medical schools across Europe no longer had to rely on imaginative or distorted hand-drawn diagrams; they could purchase identical copies of Vesalius's work or use layered **\"fugitive sheets\"** with paper flaps to study the correct placement of internal organs. **As a result**, this integration of artistic realism and mass-production technology allowed correct anatomical knowledge to spread rapidly to thousands of physicians, permanently raising the standards of medical education."
         }
       ],
@@ -2953,7 +2953,7 @@ export const unitData = {
             "Immediate inoculation using cowpox matter",
             "The 'red cure,' which involved drinking red wine, eating red foods, and wearing red clothing",
             "A direct injection of the magic bullet Salvarsan 606",
-            "Continuous irrigation of the skin rashes using 's carbolic acid spray"
+            "Continuous irrigation of the skin rashes using Joseph Lister's carbolic acid spray"
           ],
           "answer": 1
         },
@@ -3067,7 +3067,7 @@ export const unitData = {
         {
           "title": "Source A: Pare and Paracelsus",
           "src": "/images/pare_treatment.jpg",
-          "caption": "Illustration of Ambroise Pare treating gunshot wounds with a soothing lotion instead of boiling oil."
+          "caption": "A contemporary portrait of Ambroise Paré, the famous Renaissance surgeon who revolutionized the treatment of gunshot wounds."
         }
       ]    },
     {
@@ -3168,7 +3168,7 @@ export const unitData = {
           "text": "**William Harvey and the Great Plague**\n\nIn 1628, William Harvey made one of the most important discoveries in medical history: he proved that blood circulates around the body, pumped by the heart. He completely destroyed Galen's theory that blood was constantly being made in the liver and burned up by the muscles. Harvey proved this by dissecting cold-blooded animals and experimenting on human veins.\n\nHowever, in 1665, the Great Plague struck London, proving that while anatomical knowledge had improved, prevention of disease had not. People still blamed miasma and the planets, though local governments did take stronger action this time. The Mayor of London ordered victims to be locked in their houses with a red cross painted on the door, and banned public gatherings. Yet, just like in 1348, the true cause (fleas on rats) remained unknown."
         },
         {
-          "text": "",
+          "text": "William Harvey",
           "theme_heading": "Harvey's"
         },
         {
@@ -3552,7 +3552,7 @@ export const unitData = {
       "id": "lesson_3_1",
       "title": "KT3.1: What breakthrough discoveries changed our understanding of disease causes?",
       "enquiry_question": "KT3.1: What breakthrough discoveries changed our understanding of disease causes?",
-      "hook_text": "In the 18th and 19th centuries, the Industrial Revolution created overcrowded, dirty cities, making epidemic diseases a massive threat. While scientists had finally discarded ancient beliefs like the Four Humours, they incorrectly assumed that rotting dirt created the germs they could now see under microscopes. However, the brilliant experiments of Louis Pasteur and  finally solved the mystery of illness, moving medicine into a truly scientific era.",
+      "hook_text": "In the 18th and 19th centuries, the Industrial Revolution created overcrowded, dirty cities, making epidemic diseases a massive threat. While scientists had finally discarded ancient beliefs like the Four Humours, they incorrectly assumed that rotting dirt created the germs they could now see under microscopes. However, the brilliant experiments of Louis Pasteur and Robert Koch finally solved the mystery of illness, moving medicine into a truly scientific era.",
       "teacher_notes": {
         "primer": "The pedagogical goal of this lesson is to enable students to analyze the shift from spontaneous generation to germ theory, evaluating why this breakthrough was a fundamental turning point in medicine while recognizing the social and institutional factors that inhibited its immediate acceptance in Britain.",
         "objectives": [
@@ -3644,11 +3644,11 @@ export const unitData = {
           "text": "**The Germ Theory**\n\nFor centuries, people believed in 'Spontaneous Generation'-the idea that rotting matter naturally created maggots and microbes. In 1861, a French chemist named Louis Pasteur published his brilliant 'Germ Theory'. By conducting experiments with swan-necked flasks, he proved that microbes in the air were causing decay, completely destroying the theory of spontaneous generation.\n\nA German doctor, Robert Koch, then took Pasteur's work a massive step further. Koch discovered how to stain and grow bacteria in a petri dish, and successfully identified the specific microbes that caused tuberculosis (1882) and cholera (1883). Koch's work was revolutionary because it proved that specific diseases were caused by specific microbes, earning him the title of the 'Father of Bacteriology'."
         },
         {
-          "text": "",
+          "text": "Louis Pasteur",
           "theme_heading": "Louis Pasteur:"
         },
         {
-          "text": "",
+          "text": "Robert Koch",
           "theme_heading": "Koch's Medical Breakthroughs"
         },
         {
@@ -3698,7 +3698,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "John Snow",
           "theme_heading": "John Snow's"
         }
       ],
@@ -3711,7 +3711,7 @@ export const unitData = {
             "Spontaneous Generation",
             "Robert Koch"
           ],
-          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">To a very large extent, I agree with the statement that Louis Pasteur's publication of the <strong>Germ Theory in 1861</strong> was the most significant turning point in understanding the causes of disease. For over two thousand years, medicine was held back by unscientific, symptom-based explanations such as the Theory of the Four Humours and miasma. By proving that microscopic organisms in the air cause decay, Pasteur provided the essential scientific paradigm shift that eventually destroyed these ancient superstitions. However, while Pasteur's discovery was the theoretical foundation of modern medicine, its practical impact was slow to develop. It required the rigorous laboratory methodology of <strong>Robert Koch</strong> to identify specific disease-causing microbes and overcome deep-seated professional resistance in Britain.</p><p style=\"margin-bottom: 1.5rem;\">On the one hand, Pasteur's 1861 Germ Theory represents the single greatest turning point because it permanently disproved the long-held theory of <strong>Spontaneous Generation</strong>. Before Pasteur, scientists believed that decay naturally occurred first and somehow created microbes as a byproduct. Through his elegant <strong>swan-neck flask experiments</strong>, Pasteur proved that sterile liquids remained completely fresh if airborne microbes were physically blocked from entering. He then made the massive intellectual leap to theorize that if microbes could turn wine sour, they could also cause disease inside the human body. This theoretical breakthrough was the master key that unlocked all subsequent medical progress. It validated earlier, unexplained observations, providing the scientific \"why\" behind 's 1796 smallpox vaccine and John Snow's 1854 demonstration that cholera was water-borne. Without Pasteur's overarching theory, medicine would have remained a collection of unlinked, trial-and-error observations.</p><p style=\"margin-bottom: 1.5rem;\">On the other hand, the transition from Spontaneous Generation to Germ Theory was extremely slow, meaning Pasteur's work was not an overnight revolution. Pasteur was a French chemist, not a physician, and his early research focused on wine, vinegar, and silkworms. Consequently, the conservative British medical establishment heavily resisted his ideas. Dr. Henry Bastian, one of the most powerful and highly respected doctors in Victorian Britain, actively promoted Spontaneous Generation until his death in 1915. Bastian published influential papers in the *British Medical Journal* in 1875 arguing that because transparent bacteria exist \"habitually\" in healthy throats and intestines, it was \"almost inconceivable\" that they caused disease. Because microscopes in the 1860s could show a massive, undifferentiated army of microbes in a single drop of blood, doctors had no practical way to prove which specific germ caused which specific illness, leaving Pasteur's theory as a highly disputed abstract concept.</p><p style=\"margin-bottom: 1.5rem;\">This diagnostic block was solved by the German doctor <strong>Robert Koch</strong>, whose systematic laboratory techniques turned Pasteur's theory into a practical medical science. Koch developed an innovative method of growing \"pure\" cultures of bacteria using <strong>agar jelly in a petri dish</strong> and began staining transparent microbes with <strong>industrial dyes</strong> (turning them pink or purple) so they stood out clearly under improved microscope lenses. In <strong>1882</strong>, Koch isolated the specific bacterium causing <strong>tuberculosis (TB)</strong>, the biggest killer in Victorian Britain, followed by the cholera microbe in <strong>1883</strong>. By publishing his <strong>four hypotheses</strong> in 1882-establishing a strict scientific checklist to prove a specific microbe caused a specific disease-Koch enabled a global generation of \"microbe hunters\" to identify the pathogens for typhoid, diphtheria, and pneumonia. Koch's work shifted medicine from treating vague symptoms to targeted bacteriological diagnosis.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, one must consider that important breakthroughs in understanding disease causes occurred before Germ Theory was even published, notably through <strong>John Snow's 1854 Soho cholera investigation</strong>. By mapping cholera deaths around the Broad Street pump and conducting his \"Grand Experiment\" comparing different water companies, Snow proved cholera was water-borne rather than airborne miasma. Snow achieved this turning point through brilliant empirical observation, long before Pasteur's microscope work. However, because Snow lacked the biological proof of *why* dirty water killed, the General Board of Health rejected his findings in 1855, clinging to miasma theory. It was only when Pasteur's Germ Theory emerged, and Koch later isolated the water-borne cholera bacillus in India in 1884, that Snow's work was fully understood and accepted.</p><p style=\"margin-bottom: 1.5rem;\">In conclusion, while Robert Koch's practical microbiology was essential for clinical diagnosis, and John Snow's mapping pioneered epidemiological observation, both were ultimately dependent on Louis Pasteur's theoretical framework. Robert Koch's brilliant discoveries were a direct expansion of Pasteur's principles; without the 1861 Germ Theory, Koch would not have known what to look for on his agar plates. Pasteur's publication was the fundamental turning point because it permanently altered the direction of medical science, replacing centuries of supernatural and humoural guesswork with a solid, evidence-based, and correct understanding of biological causation.</p>"
+          "model_answer": "<p style=\"margin-bottom: 1.5rem;\">To a very large extent, I agree with the statement that Louis Pasteur's publication of the <strong>Germ Theory in 1861</strong> was the most significant turning point in understanding the causes of disease. For over two thousand years, medicine was held back by unscientific, symptom-based explanations such as the Theory of the Four Humours and miasma. By proving that microscopic organisms in the air cause decay, Pasteur provided the essential scientific paradigm shift that eventually destroyed these ancient superstitions. However, while Pasteur's discovery was the theoretical foundation of modern medicine, its practical impact was slow to develop. It required the rigorous laboratory methodology of <strong>Robert Koch</strong> to identify specific disease-causing microbes and overcome deep-seated professional resistance in Britain.</p><p style=\"margin-bottom: 1.5rem;\">On the one hand, Pasteur's 1861 Germ Theory represents the single greatest turning point because it permanently disproved the long-held theory of <strong>Spontaneous Generation</strong>. Before Pasteur, scientists believed that decay naturally occurred first and somehow created microbes as a byproduct. Through his elegant <strong>swan-neck flask experiments</strong>, Pasteur proved that sterile liquids remained completely fresh if airborne microbes were physically blocked from entering. He then made the massive intellectual leap to theorize that if microbes could turn wine sour, they could also cause disease inside the human body. This theoretical breakthrough was the master key that unlocked all subsequent medical progress. It validated earlier, unexplained observations, providing the scientific \"why\" behind Edward Jenner's 1796 smallpox vaccine and John Snow's 1854 demonstration that cholera was water-borne. Without Pasteur's overarching theory, medicine would have remained a collection of unlinked, trial-and-error observations.</p><p style=\"margin-bottom: 1.5rem;\">On the other hand, the transition from Spontaneous Generation to Germ Theory was extremely slow, meaning Pasteur's work was not an overnight revolution. Pasteur was a French chemist, not a physician, and his early research focused on wine, vinegar, and silkworms. Consequently, the conservative British medical establishment heavily resisted his ideas. Dr. Henry Bastian, one of the most powerful and highly respected doctors in Victorian Britain, actively promoted Spontaneous Generation until his death in 1915. Bastian published influential papers in the *British Medical Journal* in 1875 arguing that because transparent bacteria exist \"habitually\" in healthy throats and intestines, it was \"almost inconceivable\" that they caused disease. Because microscopes in the 1860s could show a massive, undifferentiated army of microbes in a single drop of blood, doctors had no practical way to prove which specific germ caused which specific illness, leaving Pasteur's theory as a highly disputed abstract concept.</p><p style=\"margin-bottom: 1.5rem;\">This diagnostic block was solved by the German doctor <strong>Robert Koch</strong>, whose systematic laboratory techniques turned Pasteur's theory into a practical medical science. Koch developed an innovative method of growing \"pure\" cultures of bacteria using <strong>agar jelly in a petri dish</strong> and began staining transparent microbes with <strong>industrial dyes</strong> (turning them pink or purple) so they stood out clearly under improved microscope lenses. In <strong>1882</strong>, Koch isolated the specific bacterium causing <strong>tuberculosis (TB)</strong>, the biggest killer in Victorian Britain, followed by the cholera microbe in <strong>1883</strong>. By publishing his <strong>four hypotheses</strong> in 1882-establishing a strict scientific checklist to prove a specific microbe caused a specific disease-Koch enabled a global generation of \"microbe hunters\" to identify the pathogens for typhoid, diphtheria, and pneumonia. Koch's work shifted medicine from treating vague symptoms to targeted bacteriological diagnosis.</p><p style=\"margin-bottom: 1.5rem;\">Furthermore, one must consider that important breakthroughs in understanding disease causes occurred before Germ Theory was even published, notably through <strong>John Snow's 1854 Soho cholera investigation</strong>. By mapping cholera deaths around the Broad Street pump and conducting his \"Grand Experiment\" comparing different water companies, Snow proved cholera was water-borne rather than airborne miasma. Snow achieved this turning point through brilliant empirical observation, long before Pasteur's microscope work. However, because Snow lacked the biological proof of *why* dirty water killed, the General Board of Health rejected his findings in 1855, clinging to miasma theory. It was only when Pasteur's Germ Theory emerged, and Koch later isolated the water-borne cholera bacillus in India in 1884, that Snow's work was fully understood and accepted.</p><p style=\"margin-bottom: 1.5rem;\">In conclusion, while Robert Koch's practical microbiology was essential for clinical diagnosis, and John Snow's mapping pioneered epidemiological observation, both were ultimately dependent on Louis Pasteur's theoretical framework. Robert Koch's brilliant discoveries were a direct expansion of Pasteur's principles; without the 1861 Germ Theory, Koch would not have known what to look for on his agar plates. Pasteur's publication was the fundamental turning point because it permanently altered the direction of medical science, replacing centuries of supernatural and humoural guesswork with a solid, evidence-based, and correct understanding of biological causation.</p>"
         }
       ],
       "ai_revision_pack": {
@@ -3911,7 +3911,7 @@ export const unitData = {
         {
           "question": "Which British surgeon was among the first to read Louis Pasteur's 1861 Germ Theory and apply its principles to solve the problem of infection in surgery?",
           "options": [
-            "",
+            "James Simpson",
             "John Snow",
             "Joseph Lister",
             "Thomas Sydenham"
@@ -4128,11 +4128,11 @@ export const unitData = {
           "text": "**Surgery in the Industrial Era**\n\nIn the early 1800s, surgery was horrific. Surgeons had to work incredibly fast because there was no pain relief, and patients often died from shock. Furthermore, operating theatres were filthy, meaning patients who survived the pain almost always died from post-operative infections like gangrene.\n\nThis changed drastically with two major discoveries. In 1847, James Simpson discovered Chloroform, providing the first effective anaesthetic that completely knocked patients out. Then, in 1865, Joseph Lister read Pasteur's Germ Theory and realized that microbes were causing surgical infections. He began using Carbolic Acid spray to kill germs in the operating theatre (antiseptic surgery), which caused death rates to plummet from 46% to just 15%."
         },
         {
-          "text": "",
+          "text": "James Simpson",
           "theme_heading": "Meet James Simpson"
         },
         {
-          "text": "",
+          "text": "Joseph Lister",
           "theme_heading": "Joseph Lister's Legacy"
         },
         {
@@ -4157,7 +4157,7 @@ export const unitData = {
           }
         },
         {
-          "text": "",
+          "text": "Florence Nightingale",
           "theme_heading": "Nightingale"
         },
         {
@@ -4181,7 +4181,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "Edward Jenner",
           "theme_heading": "Jenner's Vaccine Breakthrough"
         },
         {
@@ -4434,7 +4434,7 @@ export const unitData = {
           "answer": 1
         },
         {
-          "question": "How did 's 1842 Report on the Sanitary Conditions of the Labouring Population help pave the way for public health reform?",
+          "question": "How did Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population help pave the way for public health reform?",
           "options": [
             "It proved that microscopic germs caused cholera.",
             "It argued that living in filth and disease caused early deaths and cost the government money, suggesting that cleaning up cities would save taxpayer funds.",
@@ -5100,14 +5100,14 @@ export const unitData = {
       "guided_reading": [],
       "narrative_blocks": [
         {
-          "text": "**DNA and Modern Genetics**\n\nBy 1900, doctors knew that microbes caused infectious diseases, but they still couldn't explain hereditary diseases like Haemophilia. In 1953, James Watson and Francis Crick, using X-ray photographs taken by , discovered the double-helix structure of DNA. This was a monumental breakthrough because it proved how genetic information was passed from parents to children.\n\nIn 1990, scientists launched the Human Genome Project, an international effort to map every single gene in the human body. By 2000, they had successfully mapped the entire genome. This incredible achievement allowed scientists to identify the specific genes responsible for diseases like breast cancer and cystic fibrosis, opening the door to genetic screening and personalized medicine."
+          "text": "**DNA and Modern Genetics**\n\nBy 1900, doctors knew that microbes caused infectious diseases, but they still couldn't explain hereditary diseases like Haemophilia. In 1953, James Watson and Francis Crick, using X-ray photographs taken by Rosalind Franklin, discovered the double-helix structure of DNA. This was a monumental breakthrough because it proved how genetic information was passed from parents to children.\n\nIn 1990, scientists launched the Human Genome Project, an international effort to map every single gene in the human body. By 2000, they had successfully mapped the entire genome. This incredible achievement allowed scientists to identify the specific genes responsible for diseases like breast cancer and cystic fibrosis, opening the door to genetic screening and personalized medicine."
         },
         {
-          "text": "",
+          "text": "James Watson & Francis Crick",
           "theme_heading": "Watson and Crick: DNA Pioneers"
         },
         {
-          "text": "",
+          "text": "Rosalind Franklin",
           "theme_heading": "Meet Rosalind Franklin"
         },
         {
@@ -5494,7 +5494,7 @@ export const unitData = {
         "objectives": [
           {
             "objective": "Explain how scientific and technological developments led to the creation of magic bullets and antibiotics.",
-            "primer": "Teach the chronology of chemical cures. Explain 's systematic testing of arsenic compounds to discover Salvarsan 606 (1909) for syphilis, 's discovery of Prontosil (1932), and how these paved the way for the mass production of penicillin during WWII.",
+            "primer": "Teach the chronology of chemical cures. Explain Paul Ehrlich's systematic testing of arsenic compounds to discover Salvarsan 606 (1909) for syphilis, Gerhard Domagk's discovery of Prontosil (1932), and how these paved the way for the mass production of penicillin during WWII.",
             "question": "What is the key scientific difference between an antiseptic like carbolic acid and a magic bullet like Salvarsan 606?"
           },
           {
@@ -5573,18 +5573,18 @@ export const unitData = {
       "guided_reading": [],
       "narrative_blocks": [
         {
-          "text": "**High-Tech Diagnostics and Magic Bullets**\n\nIn the 20th century, diagnosing illness shifted from observing external symptoms to looking inside the body. 's work with radiation led to the widespread use of X-rays, while modern technology introduced Ultrasound, MRI, and CT scans. Doctors no longer had to cut a patient open to see what was wrong.\n\nTreatment also evolved rapidly. In 1909, Paul Ehrlich discovered Salvarsan 606, the first 'Magic Bullet'-a chemical compound that targeted and killed the specific bacteria causing syphilis without harming the rest of the body. Later, in 1932, Gerhard Domagk discovered the second magic bullet, Prontosil, which cured blood poisoning. These synthetic chemicals marked the beginning of modern pharmaceutical treatments."
+          "text": "**High-Tech Diagnostics and Magic Bullets**\n\nIn the 20th century, diagnosing illness shifted from observing external symptoms to looking inside the body. Marie Curie's work with radiation led to the widespread use of X-rays, while modern technology introduced Ultrasound, MRI, and CT scans. Doctors no longer had to cut a patient open to see what was wrong.\n\nTreatment also evolved rapidly. In 1909, Paul Ehrlich discovered Salvarsan 606, the first 'Magic Bullet'-a chemical compound that targeted and killed the specific bacteria causing syphilis without harming the rest of the body. Later, in 1932, Gerhard Domagk discovered the second magic bullet, Prontosil, which cured blood poisoning. These synthetic chemicals marked the beginning of modern pharmaceutical treatments."
         },
         {
-          "text": "",
+          "text": "Marie Curie",
           "theme_heading": "Marie Curie's Legacy"
         },
         {
-          "text": "",
+          "text": "Paul Ehrlich",
           "theme_heading": "Ehrlich's"
         },
         {
-          "text": "",
+          "text": "Gerhard Domagk",
           "theme_heading": "Gerhard Domagk'"
         },
         {
@@ -5609,11 +5609,11 @@ export const unitData = {
           }
         },
         {
-          "text": "",
+          "text": "Alexander Fleming",
           "theme_heading": "Fleming's Penicillin"
         },
         {
-          "text": "",
+          "text": "Howard Florey & Ernst Chain",
           "theme_heading": "Penicillin's Key Developers"
         },
         {
@@ -6275,7 +6275,7 @@ export const unitData = {
         {
           "question": "Which two scientists revived Alexander Fleming's neglected 1929 paper on penicillin in 1938, and where were they based?",
           "options": [
-            "Paul Ehrlich and ; in Berlin, Germany",
+            "Paul Ehrlich and Sahachiro Hata; in Berlin, Germany",
             "Howard Florey and Ernst Chain; at Oxford University",
             "James Watson and Francis Crick; at Cambridge University",
             "Alexander Fleming and Gerhard Domagk; at St Mary's Hospital, London"
@@ -7022,8 +7022,8 @@ export const unitData = {
         ]
       },
       "fun_facts": [
-        "1895: The year  discovered x-rays, allowing doctors to diagnose internal injuries without surgery.",
-        "1901: The year  discovered different blood groups, which successfully stopped patients from rejecting transfused blood.",
+        "1895: The year Wilhelm Roentgen discovered x-rays, allowing doctors to diagnose internal injuries without surgery.",
+        "1901: The year Karl Landsteiner discovered different blood groups, which successfully stopped patients from rejecting transfused blood.",
         "Aseptic Surgery: The practice of ensuring no germs enter the operating theatre in the first place, achieved through steam-sterilisation (autoclaves), rubber gloves, and surgical gowns."
       ],
       "guided_reading": [],
@@ -7052,7 +7052,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "Wilhelm Roentgen",
           "theme_heading": "Wilhelm Roentgen Introduced"
         },
         {
@@ -7082,7 +7082,7 @@ export const unitData = {
           }
         },
         {
-          "text": "",
+          "text": "Karl Landsteiner",
           "theme_heading": "Discovering Blood Types"
         }
       ],
@@ -7938,7 +7938,7 @@ export const unitData = {
             "question": "Why did the manured soil of Flanders make shrapnel wounds far more likely to develop gas gangrene than bullet wounds?"
           }
         ],
-        "source_context": "A key primary source for this lesson is the diary entry of American surgeon  from April 1915, describing the aftermath of the first German chlorine gas attack at the Second Battle of Ypres. Cushing recorded the agonizing sight of soldiers suffocating as their lungs filled with fluid, noting the terrifying novelty of chemical weapons that left medical staff completely helpless. **If British medical staff had developed advanced aseptic operating theatres in peacetime, why did the chemical mechanics of chlorine gas attacks and the biological reality of manured trench mud leave frontline doctors temporarily powerless to save lives in 1915?**\n\nLook at Source A. **If a student were analyzing this source for utility, what limitations might they find regarding its provenance?**"
+        "source_context": "A key primary source for this lesson is the diary entry of American surgeon Dr. Harvey Cushing from April 1915, describing the aftermath of the first German chlorine gas attack at the Second Battle of Ypres. Cushing recorded the agonizing sight of soldiers suffocating as their lungs filled with fluid, noting the terrifying novelty of chemical weapons that left medical staff completely helpless. **If British medical staff had developed advanced aseptic operating theatres in peacetime, why did the chemical mechanics of chlorine gas attacks and the biological reality of manured trench mud leave frontline doctors temporarily powerless to save lives in 1915?**\n\nLook at Source A. **If a student were analyzing this source for utility, what limitations might they find regarding its provenance?**"
       },
       "flashcards": [
         {
@@ -8441,7 +8441,7 @@ export const unitData = {
             "question": "In what practical ways did the volunteer ambulance drivers of the FANY assist the RAMC on the Western Front?"
           }
         ],
-        "source_context": "A crucial primary source for this lesson is an extract from 's 1919 autobiography 'Fanny Goes to War', or a photograph showing FANY volunteers driving motorized ambulances in the Calais region in 1915. This source highlights both the physical dangers faced by female volunteers on the Western Front and the initial institutional resistance they had to overcome, as the British Army initially refused to deploy female drivers. **If motorized transport and rapid evacuation were clinically proven to be the single most effective way to prevent fatal gangrene, why did the British military high command initially refuse to utilize the FANY's motorized ambulance convoys, relying instead on horse-drawn wagons driven by men?**"
+        "source_context": "A crucial primary source for this lesson is an extract from Pat Beauchamp's 1919 autobiography 'Fanny Goes to War', or a photograph showing FANY volunteers driving motorized ambulances in the Calais region in 1915. This source highlights both the physical dangers faced by female volunteers on the Western Front and the initial institutional resistance they had to overcome, as the British Army initially refused to deploy female drivers. **If motorized transport and rapid evacuation were clinically proven to be the single most effective way to prevent fatal gangrene, why did the British military high command initially refuse to utilize the FANY's motorized ambulance convoys, relying instead on horse-drawn wagons driven by men?**"
       },
       "flashcards": [
         {
@@ -9056,16 +9056,16 @@ export const unitData = {
       },
       "fun_facts": [
         "82%: The dramatically increased survival rate for soldiers with compound leg fractures after the Thomas Splint was introduced in late 1915.",
-        "1917: The year  established the world's first 'blood depot' (blood bank) before the Battle of Cambrai.",
+        "1917: The year Oswald Hope Robertson established the world's first 'blood depot' (blood bank) before the Battle of Cambrai.",
         "Debridement: The rapid surgical technique of cutting away dead, damaged, and infected tissue from around a wound to prevent the spread of gas gangrene."
       ],
       "guided_reading": [],
       "narrative_blocks": [
         {
-          "text": "**Medical Advances on the Western Front**\n\nThe sheer volume of casualties on the Western Front forced doctors to innovate rapidly. One of the greatest breakthroughs was the Thomas Splint, a metal frame designed by . Before 1915, 80% of soldiers with broken femurs died from shock or bleeding. The Thomas Splint kept the leg perfectly still during transport, increasing the survival rate to an incredible 82%.\n\nAnother major advance was in blood transfusions. At the start of the war, transfusions had to be done arm-to-arm. However, in 1915, Richard Lewisohn discovered that adding sodium citrate to blood stopped it from clotting, allowing it to be stored on ice. This led to the creation of the first blood banks at the Battle of Cambrai in 1917, allowing surgeons to treat shock and perform complex surgeries."
+          "text": "**Medical Advances on the Western Front**\n\nThe sheer volume of casualties on the Western Front forced doctors to innovate rapidly. One of the greatest breakthroughs was the Thomas Splint, a metal frame designed by Hugh Owen Thomas. Before 1915, 80% of soldiers with broken femurs died from shock or bleeding. The Thomas Splint kept the leg perfectly still during transport, increasing the survival rate to an incredible 82%.\n\nAnother major advance was in blood transfusions. At the start of the war, transfusions had to be done arm-to-arm. However, in 1915, Richard Lewisohn discovered that adding sodium citrate to blood stopped it from clotting, allowing it to be stored on ice. This led to the creation of the first blood banks at the Battle of Cambrai in 1917, allowing surgeons to treat shock and perform complex surgeries."
         },
         {
-          "text": "",
+          "text": "Hugh Owen Thomas",
           "theme_heading": "Hugh Owen Thomas"
         },
         {
@@ -9120,7 +9120,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "",
+          "text": "Oswald Hope Robertson",
           "theme_heading": "Oswald Hope"
         }
       ],
@@ -9384,7 +9384,7 @@ export const unitData = {
           "question": "Which American doctor utilized these chemical discoveries to establish the world's first 'blood depot' (blood bank) before the Battle of Cambrai in 1917?",
           "options": [
             "Hugh Owen Thomas",
-            "",
+            "Harold Gillies",
             "Oswald Hope Robertson",
             "Alexander Fleming"
           ],
