@@ -168,6 +168,63 @@
       margin-bottom: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+    
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--secondary);
+    }
+    .transcript-text {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-family: 'Playfair Display', serif;
+      color: #1e293b;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f8fafc;
+      border-left: 4px solid var(--accent);
+    }
+    .btn-transcript {
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-transcript:hover {
+      background: #fde68a;
+    }
   </style>
 </head>
 <body>
@@ -223,6 +280,14 @@
           <tr><td colspan="8" class="loader"><i class="fa-solid fa-circle-notch fa-spin"></i></td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="transcriptModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="margin-top:0; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-scroll"></i> Old Bailey Transcript</h2>
+      <div class="transcript-text" id="transcriptContent"></div>
     </div>
   </div>
 
@@ -296,10 +361,11 @@
       displayData.forEach(c => {
         const sexClass = c.sex === 'F' ? 'female' : '';
         const notesHtml = c.notes ? `<span class="notes-tooltip" data-notes="${c.notes.replace(/"/g, '&quot;')}"><i class="fa-solid fa-circle-info"></i> View</span>` : '<span style="color:#cbd5e1">-</span>';
+        const transcriptHtml = c.transcript ? `<button class="btn-transcript" onclick="openTranscript(${encodeURIComponent(JSON.stringify(c.transcript))})"><i class="fa-solid fa-scroll"></i> Transcript</button>` : '';
         
         html += `
           <tr>
-            <td style="font-weight: 500;">${c.lastName ? c.lastName.toUpperCase() : ''}, ${c.firstName}</td>
+            <td style="font-weight: 500;">${c.lastName ? c.lastName.toUpperCase() : ''}, ${c.firstName} ${transcriptHtml}</td>
             <td><span class="badge ${sexClass}">${c.sex === 'F' ? 'Female' : (c.sex === 'M' ? 'Male' : '?')}</span></td>
             <td>${c.age}</td>
             <td>${c.crime || '-'}</td>
@@ -317,6 +383,21 @@
 
       tbody.innerHTML = html;
     }
+
+    function openTranscript(encodedTranscript) {
+      const transcript = JSON.parse(decodeURIComponent(encodedTranscript));
+      document.getElementById('transcriptContent').textContent = transcript;
+      document.getElementById('transcriptModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('transcriptModal').style.display = 'none';
+    }
+    
+    // Close modal on outside click
+    document.getElementById('transcriptModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
   </script>
 </body>
 </html>

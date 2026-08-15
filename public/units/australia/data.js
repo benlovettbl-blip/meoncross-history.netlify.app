@@ -376,6 +376,39 @@ const unitData = {
           "type": "narrative",
           "theme_heading": "3. Hard Labour and the Struggle for Survival",
           "text": "The first year of the Sydney settlement was an intense struggle for survival. The colonists faced immediate starvation because the sandy soil around Sydney Cove was poor, the local climate was completely unfamiliar, and there were almost no skilled farmers, blacksmiths, or carpenters among the convicts. To prevent a total collapse and preserve order, Governor Phillip took the radical step of ordering that all food supplies be rationed completely equally between the officers, soldiers, and convicts.<br><br>To build the colony from scratch, every convict was forced into grueling [Hard labour]. During the day, they felled massive trees, cleared dense bush, grew food, and quarried sandstone blocks to construct the first barracks. Convicts who refused to work, stole food, or committed other offenses were severely punished. Many were sent to join a 'road gang'—forced to work day after day with their legs locked in heavy iron chains, breaking stones and shoveling earth to build Australia's first roads. Despite this brutal regime, by the 1820s, this forced manual labor had successfully transformed the wild bushland of Sydney into a thriving, highly profitable colonial port."
+        },
+        {
+          "type": "interactive_map",
+          "maps": [
+            {
+              "id": "map-portsmouth",
+              "year": "May 1787",
+              "label": "Departure",
+              "src": "/images/portsmouth_map.jpg",
+              "caption": "The First Fleet departs from Portsmouth, England. 11 ships carrying over 1,400 people face an immense 15,000-mile journey into the unknown."
+            },
+            {
+              "id": "map-tenerife",
+              "year": "Aug 1787",
+              "label": "Tenerife & Rio",
+              "src": "/images/tenerife_map.jpg",
+              "caption": "The fleet stops at Tenerife and Rio de Janeiro to restock fresh water, meat, and citrus fruits. Scurvy is kept at bay, but the stifling tropical heat makes the cramped convict decks unbearable."
+            },
+            {
+              "id": "map-cape",
+              "year": "Nov 1787",
+              "label": "Cape of Good Hope",
+              "src": "/images/cape_of_good_hope_map.jpg",
+              "caption": "The final resupply stop. Governor Phillip loads the ships with cows, sheep, and seeds to ensure the new colony will survive. They now face the brutal, freezing storms of the roaring forties."
+            },
+            {
+              "id": "map-botanybay",
+              "year": "Jan 1788",
+              "label": "Botany Bay",
+              "src": "/images/botany_bay_map.jpg",
+              "caption": "After eight long months, the First Fleet arrives at Botany Bay. Finding it unsuitable, they quickly sail slightly north to establish the settlement at Sydney Cove."
+            }
+          ]
         }
       ],
       "quiz": [
@@ -433,7 +466,7 @@ const unitData = {
         {
           "type": "source_analysis",
           "title": "Numeracy Task: Analyzing the First Fleet Crime Data",
-          "instructions": "Look at the raw data extracted from the First Fleet database regarding the top 5 crimes committed by the 780 convicts, and answer the questions below.",
+          "instructions": "Look at the raw data extracted from the First Fleet database regarding the top 5 crimes committed by the 780 convicts, and answer the questions below. <br><br><b><a href=\"convict_search.html\" target=\"_blank\" style=\"color:#0284c7;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Launch Interactive Convict Search</a></b>",
           "source_context": "Top 5 Crimes of the First Fleet:\n1. Stealing clothing (115 convicts)\n2. Burglary (83 convicts)\n3. Assault and highway robbery (58 convicts)\n4. Stealing material (23 convicts)\n5. Stealing cash (22 convicts)",
           "questions": [
             {
@@ -495,22 +528,22 @@ const unitData = {
       "title": "Encounters with the Indigenous Peoples",
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
-        "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official humanitarian rhetoric and the brutal realities of smallpox epidemics, systemic land dispossession, and documented frontier massacres. Crucially, they will analyze Aboriginal agency through the armed guerrilla warfare of the warrior Pemulwuy and the macabre British colonial trade in human 'specimens' driven by Sir Joseph Banks.",
+        "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
         "objectives": [
           {
-            "objective": "Contrast the humanitarian intentions of King George III's official 1788 instructions with the actual practices of physical and ecological dispossession committed by British settlers.",
-            "primer": "Guide students to analyze the wording of Source A ('live in amity and kindness') and contrast it with historical accounts of land clearing, fencing of ancient trackways, and the Myall Creek Massacre.",
-            "question": "If the British government officially declared it a punishable crime to harm Aboriginal Australians, why did local settlers feel justified in shooting them on sight?"
+            "objective": "Understand the impact of European diseases on the Aboriginal population.",
+            "primer": "Discuss the 1789 smallpox epidemic, noting how it devastated communities like the Cadigal.",
+            "question": "Why were European diseases like smallpox so deadly to the Aboriginal populations?"
           },
           {
-            "objective": "Explain the devastating impacts of European diseases and environmental changes on the Aboriginal way of life, with a specific focus on the Eora nation around Sydney.",
-            "primer": "Detail the path of the 1789 smallpox epidemic and how the introduction of hoofed livestock (sheep and cattle) destroyed the native plants and water sources essential to the Indigenous diet.",
-            "question": "How did the simple introduction of sheep and cattle represent a form of environmental warfare against the Eora nation?"
+            "objective": "Analyze the resistance of Aboriginal leaders like Pemulwuy.",
+            "primer": "Highlight Pemulwuy's 12-year guerrilla war against the British settlers.",
+            "question": "How does Pemulwuy's resistance challenge the myth that Aboriginal people passively accepted colonization?"
           },
           {
-            "objective": "Evaluate the role of Eora warrior Pemulwuy in leading armed resistance, and analyze the colonial collection of Aboriginal human remains for British scientific institutions.",
-            "primer": "Teach the history of Pemulwuy's twelve-year guerrilla war (1790-1802). Discuss how Sir Joseph Banks pressured colonial Governors to ship him Aboriginal skulls, culminating in Pemulwuy's decapitation.",
-            "question": "What does the shipping of Pemulwuy's head in a spirit cask to Sir Joseph Banks in 1802 reveal about how British scientific elites viewed Aboriginal people?"
+            "objective": "Examine the Myall Creek Massacre as an example of frontier violence.",
+            "primer": "Explain the events of 1838 and the significance of the subsequent trials.",
+            "question": "Why was the Myall Creek Massacre trial a turning point, even though frontier violence continued?"
           }
         ]
       },
@@ -520,148 +553,75 @@ const unitData = {
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
-            "question": "Why did the American War of Independence in 1776 force the British government to find a new penal colony in Australia?",
-            "answer": "The American War of Independence meant the newly independent United States refused to accept any more British convicts, creating an overcrowding crisis in British gaols and on river hulks that forced the government to look to Australia as a new transportation destination."
+            "question": "What was the name of the Polynesian navigator who sailed with Captain Cook on the Endeavour?",
+            "answer": "Tupaia was the highly skilled Polynesian navigator who guided Captain Cook."
           },
           {
-            "question": "Explain how Tupaia navigated the Endeavour across 3,000 miles of ocean without any European instruments.",
-            "answer": "Tupaia used traditional Polynesian star navigation, reading the positions of the stars, the path of the sun, bird flight patterns, cloud formations, and the unique vibrations of ocean currents to navigate."
-          },
-          {
-            "question": "What radical rationing system did Governor Arthur Phillip introduce during the First Fleet's first year of starvation at Sydney Cove in 1788?",
-            "answer": "Governor Phillip ordered that all food supplies in the colony be rationed completely equally among all officers, marines, and convicts to prevent starvation and maintain order."
+            "question": "What was the primary reason the British government established a penal colony at Botany Bay in 1788?",
+            "answer": "The British established the penal colony to relieve heavily overcrowded prisons and hulks after the loss of the American colonies."
           }
         ]
       },
       "vocab": [
         {
-          "term": "Amity",
-          "definition": "Friendship and peaceful harmony between nations or groups of people."
+          "term": "Frontier",
+          "definition": "The extreme limit of settled land beyond which lies wilderness; in Australia, the expanding line of British settlement."
+        },
+        {
+          "term": "Guerrilla Warfare",
+          "definition": "A form of irregular warfare in which small groups use military tactics like ambushes and raids."
         },
         {
           "term": "Dispossession",
-          "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
+          "definition": "The action of depriving someone of land, property, or other possessions."
         },
         {
-          "term": "Eora",
-          "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
-        },
-        {
-          "term": "Pemulwuy",
-          "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
-        },
-        {
-          "term": "Smallpox",
-          "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
-        },
-        {
-          "term": "Spiritual",
-          "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
+          "term": "Massacre",
+          "definition": "The deliberate and brutal slaughter of a large number of people."
         }
       ],
-      "vocab_cloze_text": "Although King George III ordered his subjects to live in [Amity] and kindness with the local inhabitants, the reality of British settlement was a brutal story of [Dispossession]. The local [Eora] people shouted 'Warra warra' to tell them to go away, but the settlers cleared ancient hunting grounds for sheep. Even worse, European diseases like [Smallpox] swept through tribes, killing thousands. In response to this destruction, brave warriors like [Pemulwuy] led a fierce [Spiritual] and physical resistance, fighting to protect their sacred country from the invaders.",
-      "flashcards": [
-        {
-          "term": "Amity",
-          "definition": "Friendship and peaceful harmony between nations or groups of people."
-        },
-        {
-          "term": "Dispossession",
-          "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
-        },
-        {
-          "term": "Eora",
-          "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
-        },
-        {
-          "term": "Pemulwuy",
-          "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
-        },
-        {
-          "term": "Smallpox",
-          "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
-        },
-        {
-          "term": "Spiritual",
-          "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
-        }
-      ],
-      "sources": [
-        {
-          "id": "source_d",
-          "type": "written",
-          "title": "Watkin Tench on Pemulwuy",
-          "caption": "Source D: An extract from the journal of Watkin Tench, a British marine officer, describing the Aboriginal resistance leader Pemulwuy.",
-          "text": "\"Pemulwuy was a man of the woods, a bold, independent, and active character... He had been a most active enemy to the settlers, and had speared several of them... He was a formidable foe, and the terror of the colony.\"",
-          "source_context": "Watkin Tench's journal provides a firsthand account of the brutal frontier conflicts that erupted as British colonists expanded into Aboriginal lands. This source shatters the myth of a peaceful settlement and highlights the fierce resistance led by figures like Pemulwuy. **Hinge Question: How does this description of Pemulwuy completely contradict the British legal justification of 'Terra Nullius'?**"
-        }
-      ],
+      "vocab_cloze_text": "As the British [Frontier] expanded, Aboriginal communities faced devastating [Dispossession] from their ancestral lands. While some leaders like Pemulwuy fought back using [Guerrilla Warfare], many innocent people were killed in brutal events like the Myall Creek [Massacre].",
+      "flashcards": [],
+      "sources": [],
       "narrative_blocks": [
         {
           "type": "narrative",
-          "theme_heading": "1. The Myth of Terra Nullius and Aboriginal Land Management",
-          "text": "When the British arrived in 1788, Australia was home to over 300,000 Aboriginal people divided into hundreds of distinct tribes, speaking different languages and living on ancestral lands they had occupied for at least 65,000 years. The Eora nation was the traditional custodian of the coastal region around Sydney Cove. The British settlers, viewing the land through a European lens, saw no stone houses, no fences, and no intensive crop-farming. They concluded that the Aboriginal people were primitive wanderers who had no legal claim to the land.<br><br>This cultural ignorance birthed the legal myth of 'Terra Nullius' (nobody's land), which the British government used to claim sole ownership of the entire continent. In reality, Aboriginal Australians had managed the landscape with immense sophistication for millennia. They used 'firestick farming'—highly controlled seasonal burning—to clear undergrowth, encourage new grass that attracted game, and prevent catastrophic bushfires. In river systems, they constructed elaborate stone canals up to a mile and a half long to manage waterways and cultivate massive eel fisheries. For Aboriginal people, land was not real estate to be bought and sold; it was a deeply [Spiritual] entity. Taking their land was not just a loss of property; it was a form of spiritual death."
+          "theme_heading": "The Illusion of Amity",
+          "text": "Before the First Fleet departed, King George III explicitly instructed Governor Arthur Phillip to 'endeavour by every possible means to open an intercourse with the natives, and to conciliate their affections.' The official policy was one of 'amity and kindness.' However, this completely ignored the reality that the British were arriving to permanently occupy land that had been inhabited by Aboriginal Australians for over 60,000 years. The concept of 'terra nullius' (nobody's land) meant the British legally pretended the Indigenous owners did not exist, setting the stage for inevitable conflict."
         },
         {
           "type": "narrative",
-          "theme_heading": "2. Disease, Dispossession, and the Myall Creek Massacre",
-          "text": "Before the First Fleet left England, King George III issued official instructions to Governor Arthur Phillip, commanding him to protect the native populations and live in [Amity] and kindness with them, declaring that anyone who cruelly destroyed them should be punished. However, as British settlement expanded, this official policy collapsed completely. The most immediate devastation came from invisible invaders: European diseases. In 1789, a catastrophic epidemic of [Smallpox] swept through the Eora nation. Having no natural immunity, up to half of the coastal Aboriginal population died within a single year, leaving the shorelines littered with unburied bodies.<br><br>As free settlers took over the interior, they cut down native forests, built fences across ancient pathways, and drove away native animals to make way for vast herds of cows and sheep. This ecological destruction cut off the Aboriginal food and water supplies, forcing them to hunt the settlers' livestock to survive. The resulting 'frontier wars' were incredibly brutal. In Tasmania in the 1820s, Governor George Arthur tried to restore order by nailing posters to trees promising equal justice, yet local settlers were permitted to hunt and shoot Tasmanian Aboriginal people like vermin, resulting in a near-total genocide. Similarly, in 1838 at the Myall Creek Massacre, a group of eleven armed white stockmen rounded up twenty-eight unarmed Aboriginal men, women, and children, slaughtered them with muskets and swords, and burned their bodies on a massive pyre."
+          "theme_heading": "The Smallpox Epidemic of 1789",
+          "text": "The most immediate and catastrophic impact of the British arrival was not guns, but disease. In 1789, a horrifying outbreak of smallpox swept through the Aboriginal communities around Sydney Cove. Having been isolated from the rest of the world for millennia, the Indigenous population had zero natural immunity. The results were apocalyptic. It is estimated that up to 70% of the local Cadigal and surrounding populations died within months. Families were destroyed, and ancient knowledge, traditions, and social structures were severely disrupted, leaving the survivors deeply vulnerable to the expanding colony."
         },
         {
           "type": "narrative",
-          "theme_heading": "3. Pemulwuy and the Dark Trade in Human Specimens",
-          "text": "Aboriginal Australians did not accept this invasion passively. From 1790 onwards, a formidable Eora warrior named Pemulwuy led a sophisticated, twelve-year guerrilla war of resistance against the British. Pemulwuy organized raids on government crop farms, destroyed settlers' crops, killed imported livestock to cripple the colonial economy, and attacked armed patrols with spears. In December 1790, Pemulwuy fatally speared Governor Phillip's favorite gamekeeper. In retaliation, Governor Phillip ordered Watkin Tench to lead a punitive military expedition of over fifty armed men carrying hatchets to capture Pemulwuy and bring back his head, alongside the heads of ten other warriors. However, Pemulwuy's warriors easily evaded the heavy, insect-ravaged British troops in the bush, forcing Phillip to write to London apologizing that he could not send back a head.<br><br>The hunt for Pemulwuy was fueled by a dark, scientific demand in Britain. Sir Joseph Banks, the celebrated botanist who had sailed with Captain Cook, used his immense political influence in London to demand that Australian governors send him 'human specimens'—specifically Aboriginal skulls and bones—to distribute to European museums and scientists. In 1802, Pemulwuy was finally shot and killed by British settlers. His head was severed from his body and preserved in a cask of spirits. It was shipped to England as a personal gift from Governor Philip Gidley King to Sir Joseph Banks. Customs officers in England discovered the head during a routine inspection of the spirits cask, causing a brief local newspaper scandal, before Banks quietly deposited his 'trophy' into the museum of his close friend, the surgeon John Hunter."
-        }
-      ],
-      "quiz": [
-        {
-          "question": "What legal myth did the British use to justify taking over the entire continent of Australia?",
-          "options": [
-            "Terra Nullius (nobody's land)",
-            "The Divine Right of Kings",
-            "The Treaty of Tordesillas",
-            "The Magna Carta"
-          ],
-          "answer": 0
+          "theme_heading": "Pemulwuy and the Hawkesbury River War",
+          "text": "Despite the devastating impact of disease, Aboriginal resistance was fierce and highly organized. The most famous resistance leader was Pemulwuy, a Bidjigal man. From 1790 to 1802, Pemulwuy led a brilliant campaign of guerrilla warfare against the British settlers who were stealing their hunting grounds along the Hawkesbury River. He burned crops, raided farms, and speared livestock, repeatedly outsmarting the British military. He survived multiple bullet wounds, leading his people to believe he was invincible. Tragically, in 1802, he was finally shot and killed. In a grim reflection of colonial attitudes, his head was severed and sent to London to join the dark collection of human skulls maintained by Sir Joseph Banks, the botanist from Cook's Endeavour voyage."
         },
         {
-          "question": "What percentage of the Eora Aboriginal population was killed by the smallpox epidemic of 1789?",
-          "options": [
-            "Up to 50% (half of the population)",
-            "Less than 5%",
-            "Exactly 100%",
-            "Around 10%"
-          ],
-          "answer": 0
-        },
-        {
-          "question": "To which British scientist was the severed head of the resistance leader Pemulwuy sent in 1802?",
-          "options": [
-            "Sir Joseph Banks",
-            "Captain James Cook",
-            "Arthur Bowes Smyth",
-            "Gregory Blaxland"
-          ],
-          "answer": 0
+          "type": "narrative",
+          "theme_heading": "The Myall Creek Massacre (1838)",
+          "text": "As the frontier pushed further inland, the violence became increasingly brutal. One of the most infamous atrocities occurred in 1838 at Myall Creek in New South Wales. A group of eleven heavily armed stockmen (mostly ex-convicts) rode into a camp of peaceful Weraerai people. Without provocation, they rounded up 28 unarmed elders, women, and children, tied them together, and systematically slaughtered them with swords and pistols, later burning the bodies. What made Myall Creek historically significant was not just the horrific violence, but that the perpetrators were actually arrested, tried, and seven were hanged. This was the first time in Australian history that white men were executed for the murder of Aboriginal people. However, it did not stop the frontier violence; it merely forced it underground, leading settlers to use poisoned flour rather than guns to avoid arrest."
         }
       ],
       "tasks": [
         {
-          "type": "comprehension",
-          "title": "Analysing Frontier Violence and Resistance",
-          "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
-          "questions": [
+          "type": "questions",
+          "title": "Comprehension & Analysis",
+          "instructions": "Answer the following questions based on the narrative above.",
+          "items": [
             {
-              "q": "Why was the British legal concept of 'Terra Nullius' historically inaccurate when applied to Aboriginal Australia?",
-              "a": "Terra Nullius was historically inaccurate because Australia was inhabited by over 300,000 Aboriginal people who had managed and occupied the land for at least 65,000 years. They were not aimless wanderers; they used sophisticated land management techniques such as seasonal 'firestick farming' to cultivate parklands and prevent bushfires, and built elaborate stone canals up to a mile and a half long to manage water systems and run freshwater eel fisheries."
+              "question": "How did the legal concept of 'terra nullius' contradict King George III's instructions for 'amity and kindness'?",
+              "answer": "Terra nullius meant the British legally treated the land as empty and uninhabited, which made true 'amity' impossible because it involved the complete denial of Aboriginal ownership and existence, leading inevitably to dispossession."
             },
             {
-              "q": "Explain how the introduction of British sheep and cattle farming physically devastated the traditional Aboriginal way of life.",
-              "a": "The introduction of sheep and cattle farming physically devastated the Aboriginal way of life because settlers cleared native forests and erected fences across ancient Aboriginal pathways, blocking access to sacred sites. The heavy hooves of the livestock trampled native vegetation, destroyed wild food sources, and polluted shallow waterholes, leaving the Indigenous populations facing starvation and forced to hunt settlers' livestock to survive."
+              "question": "Explain how the 1789 smallpox epidemic weakened Aboriginal resistance.",
+              "answer": "Smallpox killed up to 70% of local populations, which not only devastated their numbers but also destroyed families, social structures, and ancient knowledge, making coordinated resistance much harder."
             },
             {
-              "q": "How did Sir Joseph Banks's scientific interests contribute to the violence of the frontier wars in Australia?",
-              "a": "Sir Joseph Banks's scientific interests directly contributed to frontier violence because he used his massive influence in London to demand that the Governors of Australia send him 'human specimens' (skulls and skeletal remains) for European museums. This created a macabre incentive where colonial officials and settlers hunted and decapitated Aboriginal people—including resistance leaders like Pemulwuy—to curry favor with Banks, turning scientific collecting into a driver of frontier slaughter."
+              "question": "Why is the Myall Creek Massacre considered a turning point in Australian colonial history?",
+              "answer": "It was a turning point because it was the first time white men were successfully prosecuted and executed for the murder of Aboriginal people, although it tragically caused future frontier violence to be carried out more secretly."
             }
           ]
         }
@@ -670,24 +630,24 @@ const unitData = {
     {
       "id": "lesson_1_4",
       "title": "From Penal Colony to Settlement",
-      "enquiry": "How did Australia transform from a remote prison colony into a prosperous free settlement?",
+      "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
-        "primer": "This lesson traces the rapid economic and demographic expansion of the Australian colony from a struggling prison outpost to a wealthy, self-governing settlement of free citizens. Students will study the achievements of early farmers like James Ruse, analyze the immense financial impacts of Merino wool and Pacific whaling, and explore how the 1851 Gold Rush and the arrival of thousands of free immigrants—including a massive Chinese workforce—ended the system of convict transportation.",
+        "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
         "objectives": [
           {
-            "objective": "Explain the significance of James Ruse's farming experiments at Rose Hill in proving the colony's agricultural viability.",
-            "primer": "Detail Ruse's method of clearing bush, burning timber to enrich sandy soil with ash, and achieving self-sufficiency by 1791 to show how he paved the way for free settlers.",
-            "question": "Why was a single freed convict's successful crop at Rose Hill in 1791 a major turning point for the survival of the entire British colony?"
+            "objective": "Explain the role of the wool industry in making the colony economically viable.",
+            "primer": "Discuss John Macarthur and the introduction of Merino sheep.",
+            "question": "Why was the wool industry critical to Australia's early economic survival?"
           },
           {
-            "objective": "Analyse how Gregory Blaxland's crossing of the Blue Mountains in 1813 unlocked the interior of the continent for the Merino sheep industry.",
-            "primer": "Explain the introduction of Spanish Merino sheep in 1797 and how crossing the geographic barrier of the Blue Mountains established Bathurst and drove massive wool exports.",
-            "question": "How did the geographic crossing of the Blue Mountains in 1813 transform Australia's economic relationship with industrial factories in Britain?"
+            "objective": "Analyze the impact of the 1850s gold rushes on Australian society.",
+            "primer": "Highlight the massive influx of free immigrants and the end of transportation.",
+            "question": "How did the discovery of gold change the global perception of Australia?"
           },
           {
-            "objective": "Evaluate how the discovery of gold in 1851 and the subsequent influx of Chinese and European miners brought about the end of convict transportation.",
-            "primer": "Discuss Edward Hargreaves' gold discovery and analyze why the British government had to stop transportation when the destination became a highly desirable land of wealth.",
-            "question": "Why does a country stop sending criminals to a prison colony once that colony is discovered to have massive gold reserves?"
+            "objective": "Examine the experiences and treatment of Chinese gold miners.",
+            "primer": "Discuss the racism, taxes, and riots directed at Chinese immigrants.",
+            "question": "Why were Chinese miners targeted by European diggers and colonial governments?"
           }
         ]
       },
@@ -697,153 +657,75 @@ const unitData = {
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
-            "question": "What was the name of the Eora resistance leader who fatally speared Governor Phillip's gamekeeper and led a twelve-year guerrilla war?",
-            "answer": "Pemulwuy was the courageous Eora resistance leader who fought the British from 1790 until 1802."
+            "question": "Who was the Bidjigal leader that waged a 12-year guerrilla war against the British settlers?",
+            "answer": "Pemulwuy was the famous resistance leader who fought the British until 1802."
           },
           {
-            "question": "How did the Gweagal warriors view the landing of Captain Cook's men at Botany Bay in 1770?",
-            "answer": "They viewed it as an unauthorized invasion of their sovereign territory, and they threw stones and spears to fulfill their sacred spiritual duty to protect their ancestral lands from uninvited strangers."
-          },
-          {
-            "question": "Identify two European diseases that devastated Aboriginal populations because they had no natural immunity.",
-            "answer": "Smallpox and influenza were two devastating European diseases brought by the convict ships that wiped out thousands of Aboriginal Australians."
+            "question": "Why is the Myall Creek Massacre historically significant?",
+            "answer": "It was the first time white settlers were arrested, tried, and executed for the murder of Aboriginal people."
           }
         ]
       },
       "vocab": [
         {
-          "term": "Blue Mountains",
-          "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
-        },
-        {
-          "term": "Free settlers",
-          "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
-        },
-        {
-          "term": "Gold prospector",
-          "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
+          "term": "Squatter",
+          "definition": "A settler who occupied a large tract of Crown land in order to graze livestock, often without legal title initially."
         },
         {
           "term": "Merino",
-          "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
+          "definition": "A breed of sheep highly prized for its fine, soft wool, which became the backbone of the Australian economy."
         },
         {
-          "term": "Self-sufficient",
-          "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
+          "term": "Immigrant",
+          "definition": "A person who comes to live permanently in a foreign country."
         },
         {
-          "term": "Whaling industry",
-          "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
+          "term": "Xenophobia",
+          "definition": "Dislike of or prejudice against people from other countries."
         }
       ],
-      "vocab_cloze_text": "By the early 1800s, Australia was changing rapidly. Freed convicts like James Ruse proved that individuals could become [Self-sufficient] farmers. The introduction of Spanish [Merino] sheep brought massive profits, driving sheep farmers to cross the rugged [Blue Mountains] in search of grazing land. Meanwhile, the [Whaling industry] turned Sydney into a busy port. The biggest change occurred in 1851 when a [Gold prospector] named Edward Hargreaves discovered gold, triggering a massive gold rush of [Free settlers] and ending transportation forever.",
-      "flashcards": [
-        {
-          "term": "Blue Mountains",
-          "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
-        },
-        {
-          "term": "Free settlers",
-          "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
-        },
-        {
-          "term": "Gold prospector",
-          "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
-        },
-        {
-          "term": "Merino",
-          "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
-        },
-        {
-          "term": "Self-sufficient",
-          "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
-        },
-        {
-          "term": "Whaling industry",
-          "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
-        }
-      ],
-      "sources": [
-        {
-          "id": "source_e",
-          "type": "visual",
-          "title": "The Australian Gold Rush",
-          "caption": "Source E: An 1852 illustration showing prospectors panning for gold during the Australian gold rushes.",
-          "url": "/images/gold_rush.jpg",
-          "source_context": "The discovery of gold in 1851 fundamentally transformed Australia's economy and demographics. It triggered a massive influx of free immigrants from Europe, America, and China, shifting the colony's identity from a penal settlement to a wealthy, multicultural frontier. **Hinge Question: How would the sudden prospect of immense wealth on the goldfields undermine the entire purpose of a 'penal colony'?**"
-        }
-      ],
+      "vocab_cloze_text": "The early Australian economy relied heavily on the [Merino] sheep industry, driven by wealthy [Squatter] farmers. Later, the gold rushes attracted thousands of every type of [Immigrant], though the sudden arrival of Chinese miners sparked intense [Xenophobia] and racist legislation.",
+      "flashcards": [],
+      "sources": [],
       "narrative_blocks": [
         {
           "type": "narrative",
-          "theme_heading": "1. James Ruse and the Proof of Agricultural Survival",
-          "text": "In November 1788, a freed convict named James Ruse, who had completed his sentence for burglary, was given a small, clearing plot of land inland from Sydney Cove at a place named Rose Hill (later Parramatta). Governor Arthur Phillip was desperate to find out if the colony could survive without receiving constant, expensive food shipments from Britain. Ruse worked the land with exceptional grit. Lacking horses or heavy metal ploughs, he used simple hand tools to clear the dense timber, burned the felled trees to enrich the poor, sandy soil with wood ash, and carefully hoed the earth to sow wheat.<br><br>His experiment was a complete triumph. By 1791, Ruse proved that he could support himself and his wife Perry, becoming completely [Self-sufficient]. He was officially recorded as Australia's first successful free farmer. His success proved to the British government that the colony could survive, prompting the first waves of voluntary free immigrants to leave Britain's crowded cities to establish their own farms in the young colony."
+          "theme_heading": "Riding on the Sheep's Back",
+          "text": "For its first few decades, New South Wales was an expensive burden on the British taxpayer. It was essentially a massive outdoor prison that struggled to feed itself. This changed with the introduction of the Merino sheep by wealthy landowners like John Macarthur. The dry Australian climate was perfectly suited to sheep farming, and the seemingly endless tracts of land allowed for massive flocks. Enterprising men known as 'squatters' pushed far beyond the official boundaries of settlement, claiming vast areas of Aboriginal land to graze their sheep. By the 1830s, Australia was exporting millions of pounds of high-quality wool to feed the ravenous textile mills of the British Industrial Revolution. The colony was finally profitable."
         },
         {
           "type": "narrative",
-          "theme_heading": "2. Spanish Merino Sheep and the Crossing of the Blue Mountains",
-          "text": "While basic crops kept the settlers alive, it was wool that made the colony incredibly wealthy. A small flock of English sheep had arrived with the First Fleet, but they did not survive the damp coastal climate. The turning point came in 1797, when twenty-six Spanish [Merino] sheep arrived in Sydney on a supply ship from South Africa. Merino sheep were world-famous for producing exceptionally soft, thick, and highly valuable wool. They flourished in the dry Australian pastures, and sheep farmers quickly realized they could make massive fortunes exporting raw wool back to the mechanized textile mills of industrial northern England.<br><br>However, by 1810, the flat grasslands surrounding Sydney were exhausted by drought and insect plagues. Expansion was blocked to the west by a formidable geographic barrier: the high, rugged, and heavily forested [Blue Mountains]. For twenty-five years, explorers had failed to cross them. In 1813, a determined farmer named Gregory Blaxland, alongside two friends and three convicts, set off on a new route. By following the high mountain ridges rather than the deep valleys, they became the first Europeans to successfully cross the range. Beyond the peaks, they discovered vast, highly fertile grazing lands. By 1820, over 114 sheep farmers had crossed the mountains, establishing Australia's first inland agricultural town at Bathurst in 1815 and driving a massive expansion of the wool trade."
+          "theme_heading": "The Gold Rushes of 1851",
+          "text": "If wool made Australia profitable, gold made it incredibly wealthy. In 1851, payable gold was discovered near Bathurst, New South Wales, and shortly after, massive fields were found in Victoria. The news sparked a global frenzy. Almost overnight, the image of Australia shifted from a dreaded, miserable convict prison to a land of unlimited opportunity. Between 1851 and 1860, the population of Australia nearly tripled, surging from 430,000 to over 1.1 million. Free immigrants flooded in from Britain, America, Europe, and Asia. This massive influx of free, ambitious people effectively ended the transportation of convicts to the eastern colonies, as the British government realized they could no longer punish criminals by sending them to a land where people were becoming millionaires."
         },
         {
           "type": "narrative",
-          "theme_heading": "3. The Whaling Industry and the Rise of Port Sydney",
-          "text": "At the same time, the [Whaling industry] was transforming Sydney Cove from a remote penal outpost into a thriving, busy international trading port. In late eighteenth-century Britain, the Industrial Revolution was in full swing, creating a massive commercial demand for whale oil. This oil was essential to lubricate the heavy steam-powered machines in northern factories and to fill the public streetlamps that illuminated Britain's expanding cities.<br><br>In 1791, a fleet of private whaling ships had been contracted to transport convicts to Sydney. Once their human cargo was unloaded, the captains sailed into the South Pacific to hunt whales, using Sydney as their base of operations. The whalers melted down the whale blubber on board and exported barrels of high-grade machine-lubricating oil back to London, bringing immense profits to the colony. At its peak between 1820 and 1850, over 1,300 professional whalers worked out of Sydney Harbour each year, generating the capital and trading links that allowed Australia to thrive economically."
+          "theme_heading": "The Chinese Experience on the Goldfields",
+          "text": "Among the hundreds of thousands of immigrants were over 40,000 miners from China. Fleeing poverty and conflict in their homeland, they came seeking 'New Gold Mountain.' Chinese miners were highly organised, hard-working, and often succeeded in finding gold in claims that European miners had abandoned. However, their success, combined with their different language, dress, and customs (such as wearing their hair in a traditional queue), made them targets of intense xenophobia and racism. European miners frequently harassed and attacked them, culminating in violent events like the 1857 Buckland River riot and the 1861 Lambing Flat riots, where Chinese camps were burned and miners were brutally beaten."
         },
         {
           "type": "narrative",
-          "theme_heading": "4. The 1851 Gold Rush and the End of Transportation",
-          "text": "The final and most dramatic transformation of Australia occurred in February 1851, when a experienced [Gold prospector] named Edward Hargreaves discovered specks of 'payable gold' in a river near Bathurst, 250 kilometers west of Sydney. This discovery triggered a massive, frenzied gold rush. Within months, thousands of local workers abandoned their regular jobs in Sydney, and ships carrying over 100,000 voluntary immigrants from Great Britain, America, and continental Europe arrived in Australia to find fortune.<br><br>This gold rush included a massive wave of Chinese migration. By 1861, over 38,000 Chinese immigrants had sailed to Australia, referring to the country as 'Xin Jin Shan' (the New Gold Mountain). Working in high-yield districts like Lambing Flat and Braidwood, the Chinese miners were highly disciplined and invented new techniques, such as using 'cradles' to wash larger amounts of gravel, though they faced severe racial resentment and violent riots from white miners. This sudden, immense mineral wealth brought an immediate end to the convict system. The British government realized that transportation was meant to be a terrifying, deterrent punishment for criminals. If a convicted thief could serve their sentence and immediately become a wealthy gold digger in a prosperous land, transportation no longer worked as a punishment. Convict transportation to New South Wales was stopped in 1851, transforming Australia permanently into a democratic nation of free citizens."
-        }
-      ],
-      "quiz": [
-        {
-          "question": "Who was the freed convict who became Australia's first successful self-sufficient farmer at Rose Hill in 1791?",
-          "options": [
-            "James Ruse",
-            "Edward Hargreaves",
-            "Gregory Blaxland",
-            "Arthur Bowes Smyth"
-          ],
-          "answer": 0
-        },
-        {
-          "question": "What geographical barrier was successfully crossed by Gregory Blaxland in 1813, unlocking the interior of Australia?",
-          "options": [
-            "The Blue Mountains",
-            "The Great Dividing Range",
-            "The River Meon",
-            "The Outback Desert"
-          ],
-          "answer": 0
-        },
-        {
-          "question": "How did Chinese gold miners refer to Australia during the 1851 gold rush?",
-          "options": [
-            "Xin Jin Shan (New Gold Mountain)",
-            "Londinium",
-            "Terra Nullius",
-            "Lundenwic"
-          ],
-          "answer": 0
+          "theme_heading": "Racist Legislation and the Foundation of a Nation",
+          "text": "Rather than protecting the Chinese miners, the colonial governments responded to the riots by passing discriminatory laws aimed at keeping them out. Victoria implemented an unfair '£10 poll tax' on every Chinese person entering the colony (a massive sum at the time), and restricted the number of Chinese passengers a ship could carry. To avoid the tax, thousands of Chinese immigrants were dropped off in South Australia and forced to walk over 400 kilometers across the harsh outback to reach the Victorian goldfields. This anti-Chinese sentiment laid the dark, racist foundations for the 'White Australia Policy' that would be enacted when Australia officially became a federated nation in 1901."
         }
       ],
       "tasks": [
         {
-          "type": "comprehension",
-          "title": "Investigating Australia's Economic Transition",
-          "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
-          "questions": [
+          "type": "questions",
+          "title": "Comprehension & Analysis",
+          "instructions": "Answer the following questions based on the narrative above.",
+          "items": [
             {
-              "q": "How did James Ruse manage to grow successful crops on the poor soil of Rose Hill in 1788?",
-              "a": "James Ruse grew successful crops by clearing the dense native timber with simple hand tools, burning the fallen trees directly on the ground to enrich the poor, sandy soil with the nutrient-rich wood ash, and manually hoeing the earth to sow wheat, which proved the colony's agricultural viability."
+              "question": "How did the wool industry change the relationship between the Australian colony and the British Empire?",
+              "answer": "The wool industry transformed Australia from an expensive, burdensome penal colony into a highly profitable asset that supplied crucial raw materials to Britain's industrial textile mills."
             },
             {
-              "q": "Explain why Gregory Blaxland's mountain crossing of 1813 was highly significant for the Merino wool industry.",
-              "a": "Blaxland's crossing of the Blue Mountains was highly significant because it unlocked the vast, fertile grazing pastures of the interior (Bathurst plains). This solved the crisis of soil exhaustion and drought in Sydney's coastal strip, allowing the Spanish Merino wool industry to expand inland and generate massive export profits."
+              "question": "Why did the discovery of gold lead to the end of convict transportation to eastern Australia?",
+              "answer": "Gold changed Australia's reputation from a place of punishment to a place of wealth and opportunity; the British government realised that sending criminals to a goldfield was no longer a deterrent."
             },
             {
-              "q": "Why did the British government decide to permanently end the transportation of convicts to Australia in 1851?",
-              "a": "The government ended transportation because the 1851 gold rush made Australia a highly desirable destination of immense wealth. Because convicts who finished their sentences could easily become wealthy gold prospectors, transportation lost its power as a terrifying, deterrent punishment for criminals in Britain."
+              "question": "Explain two ways in which Chinese immigrants were discriminated against during the gold rushes.",
+              "answer": "Chinese immigrants faced severe discrimination through physical violence (such as the Lambing Flat riots where their camps were destroyed) and through racist legislation (like the unfair £10 poll tax designed to stop them from entering Victoria)."
             }
           ]
         }
