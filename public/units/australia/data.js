@@ -352,6 +352,27 @@ const unitData = {
           "text": "In May 1787, the First Fleet—a group of eleven ships carrying approximately 1,400 people, including 750 convicts, marines, and sailors—departed Portsmouth under the command of Captain Arthur Phillip, who was appointed as the colony's first [Governor]. After an arduous, eight-month voyage, the fleet reached Botany Bay in January 1788. Phillip quickly realized the bay was too shallow and open to heavy winds, so he sailed slightly north to Port Jackson, establishing the settlement of Sydney Cove on January 26, 1788.<br><br>The arrival was marked by extreme physical and social chaos. On Wednesday, February 6, 1788, the female convicts were finally brought ashore from their transport ships. Arthur Bowes Smyth, a naval surgeon aboard the Lady Penrhyn (the ship carrying the majority of the female convicts), kept a highly detailed, eyewitness journal of that day. He recorded that as the women landed, a violent, terrifying tropical thunderstorm struck Sydney Cove, splitting a massive tree in the center of the camp and killing several sheep. Smyth described scenes of absolute riot and heavy drinking as sailors and male convicts broke into the women's tents. Bowes Smyth's journals are invaluable to historians today because they provide a rare, human face to the female convicts, recording their actual names, ages, trades, and personal struggles during the settlement's birth."
         },
         {
+          "type": "historical_spotlight",
+          "title": "First Fleet Profiles: Who Were the Convicts?",
+          "profiles": [
+            {
+              "name": "John Hudson",
+              "subtitle": "The Youngest Convict (Age 13)",
+              "details": "John Hudson was a chimney sweep described at his trial as 'a boy 11 years old'. He was transported for seven years on the Friendship for stealing. He was so small he was forced to share a tiny sleeping space on the ship. Once in Sydney, he received 50 lashes for being out of his hut after 9pm."
+            },
+            {
+              "name": "Elizabeth Beckford",
+              "subtitle": "The Oldest Convict (Age 70)",
+              "details": "Elizabeth Beckford was an elderly servant from London. She was sentenced to seven years transportation on the Lady Penrhyn for the petty crime of stealing cheese. She was 70 years old at the time of her trial and died shortly after."
+            },
+            {
+              "name": "Elizabeth Fowles",
+              "subtitle": "Unusual Crime",
+              "details": "Elizabeth was transported on the Lady Penrhyn. Her crime? Stealing clothing and killing a hen. For this, she spent seven years in exile. In the colony, she repeatedly rebelled, receiving 75 lashes for killing another hen, and 50 lashes for stealing clothing."
+            }
+          ]
+        },
+        {
           "type": "narrative",
           "theme_heading": "3. Hard Labour and the Struggle for Survival",
           "text": "The first year of the Sydney settlement was an intense struggle for survival. The colonists faced immediate starvation because the sandy soil around Sydney Cove was poor, the local climate was completely unfamiliar, and there were almost no skilled farmers, blacksmiths, or carpenters among the convicts. To prevent a total collapse and preserve order, Governor Phillip took the radical step of ordering that all food supplies be rationed completely equally between the officers, soldiers, and convicts.<br><br>To build the colony from scratch, every convict was forced into grueling [Hard labour]. During the day, they felled massive trees, cleared dense bush, grew food, and quarried sandstone blocks to construct the first barracks. Convicts who refused to work, stole food, or committed other offenses were severely punished. Many were sent to join a 'road gang'—forced to work day after day with their legs locked in heavy iron chains, breaking stones and shoveling earth to build Australia's first roads. Despite this brutal regime, by the 1820s, this forced manual labor had successfully transformed the wild bushland of Sydney into a thriving, highly profitable colonial port."
@@ -406,6 +427,22 @@ const unitData = {
             {
               "q": "Describe the types of physical work convicts were forced to perform to construct the new settlement of Sydney.",
               "a": "Convicts were forced to perform hard physical labor, which included felling trees, clearing dense bush, cultivating soil, quarrying sandstone, and building barracks. Difficult convicts were placed in chain-bound 'road gangs' where they spent their days breaking stones and shoveling earth to construct the colony's first transport networks."
+            }
+          ]
+        },
+        {
+          "type": "source_analysis",
+          "title": "Numeracy Task: Analyzing the First Fleet Crime Data",
+          "instructions": "Look at the raw data extracted from the First Fleet database regarding the top 5 crimes committed by the 780 convicts, and answer the questions below.",
+          "source_context": "Top 5 Crimes of the First Fleet:\n1. Stealing clothing (115 convicts)\n2. Burglary (83 convicts)\n3. Assault and highway robbery (58 convicts)\n4. Stealing material (23 convicts)\n5. Stealing cash (22 convicts)",
+          "questions": [
+            {
+              "q": "How many convicts in total were transported for the top two crimes (stealing clothing and burglary)?",
+              "a": "A total of 198 convicts were transported for the top two crimes (115 for stealing clothing and 83 for burglary)."
+            },
+            {
+              "q": "What does the high number of convicts transported for 'stealing clothing' and 'stealing material' suggest about the social conditions and poverty in 18th-century Britain?",
+              "a": "It suggests that extreme poverty was widespread in 18th-century Britain. People were so desperate that they risked the severe punishment of being transported across the world just to steal basic necessities like clothing and raw materials to survive or sell."
             }
           ]
         }
