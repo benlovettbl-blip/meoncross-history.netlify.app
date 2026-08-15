@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mastery Pack: KT1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-dark: #121212;
@@ -58,12 +58,13 @@
             align-items: center;
             text-align: center;
             position: relative;
+            background-image: url('/assets/cme_new_kt1_cover.png'); background-size: cover; background-position: center;
         }
         .cover::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+            background: rgba(0,0,0,0.65);
             z-index: 1;
         }
         .cover-content {
@@ -75,30 +76,45 @@
             height: 100%;
         }
         .cover h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             font-size: 4rem;
-            color: var(--brand-red);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
             margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
         }
         .cover h2 {
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
             font-size: 1.5rem;
-            color: #ddd;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
             margin-top: 0;
             margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .cover-bottom {
             margin-top: auto;
             text-align: left;
-            border-top: 2px solid var(--brand-red);
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
             width: 80%;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
         }
         .cover-bottom p {
             font-family: 'Outfit', sans-serif;
@@ -278,13 +294,14 @@
     <!-- Cover Page -->
     <div class="page cover page-break">
         <div class="cover-content">
-            <h1 style="font-size: 3rem; line-height: 1.2;">THE PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945-1995 DOSSIER:<br>KT1</h1>
-            <h2>53 Crucial Questions. Complete Knowledge Mastery.</h2>
+            <h1>Paper 2: Conflict in the Middle East, 1945-1995</h1>
+            <h2>"How and why was the state of Israel established?"</h2>
+            <h3>Mastery Pack: KT1</h3>
             
             <div class="cover-bottom">
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
-                <p><strong>Target:</strong> Total Recall</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #bbb;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+                <p><strong>Target:</strong> Total Recall of 70 Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
             </div>
         </div>
     </div>
@@ -314,7 +331,7 @@
     <!-- Question Grids -->
     
     <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
-        <h2>KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949</h2>
+        <h2>KT1: Geography of the Middle East</h2>
         <table>
             <thead>
                 <tr>
@@ -330,7 +347,7 @@
             
                 <tr>
                     <td class="col-qnum">1</td>
-                    <td class="col-question">What was the 'dual obligation' placed on Britain under the League of Nations Mandate?</td>
+                    <td class="col-question">What does 'empire' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -339,7 +356,7 @@
                 
                 <tr>
                     <td class="col-qnum">2</td>
-                    <td class="col-question">Which tragic event on 22 July 1946 broke British morale and accelerated their withdrawal from Palestine?</td>
+                    <td class="col-question">What does 'colony' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -348,7 +365,7 @@
                 
                 <tr>
                     <td class="col-qnum">3</td>
-                    <td class="col-question">What did UN Resolution 181 (The Partition Plan) propose in November 1947?</td>
+                    <td class="col-question">In what year did the First World War end?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -357,7 +374,7 @@
                 
                 <tr>
                     <td class="col-qnum">4</td>
-                    <td class="col-question">How did the 30-day UN truce in June 1948 give Israel a decisive advantage?</td>
+                    <td class="col-question">What does 'mandate' mean in an international context?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -366,7 +383,7 @@
                 
                 <tr>
                     <td class="col-qnum">5</td>
-                    <td class="col-question">Why did Britain refer the Palestine issue to the United Nations in 1947?</td>
+                    <td class="col-question">What was the League of Nations?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -375,7 +392,7 @@
                 
                 <tr>
                     <td class="col-qnum">6</td>
-                    <td class="col-question">What did the UN Special Committee on Palestine (UNSCOP) recommend in 1947?</td>
+                    <td class="col-question">What does 'assassination' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -384,7 +401,7 @@
                 
                 <tr>
                     <td class="col-qnum">7</td>
-                    <td class="col-question">How did the Arab Higher Committee respond to the UN Partition Plan?</td>
+                    <td class="col-question">What is a 'dictatorship'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -393,7 +410,7 @@
                 
                 <tr>
                     <td class="col-qnum">8</td>
-                    <td class="col-question">What was the significance of the attack on Deir Yassin in April 1948?</td>
+                    <td class="col-question">What is a 'republic'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -402,7 +419,7 @@
                 
                 <tr>
                     <td class="col-qnum">9</td>
-                    <td class="col-question">When did David Ben-Gurion officially declare the creation of the State of Israel?</td>
+                    <td class="col-question">What does 'nationalism' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -411,7 +428,7 @@
                 
                 <tr>
                     <td class="col-qnum">10</td>
-                    <td class="col-question">Which of these groups carried out the bombing of the King David Hotel in 1946?</td>
+                    <td class="col-question">What is 'propaganda'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -420,7 +437,7 @@
                 
                 <tr>
                     <td class="col-qnum">11</td>
-                    <td class="col-question"><div style="display: flex; align-items: center; gap: 15px;"><img src="/units/cme_new/assets/card_balfour.png" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;"> <span>Who is this historical figure, and what did he controversially promise in 1917?</span></div></td>
+                    <td class="col-question">What was the 'dual obligation' placed on Britain under the League of Nations Mandate?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -429,7 +446,7 @@
                 
                 <tr>
                     <td class="col-qnum">12</td>
-                    <td class="col-question">How many Jewish people were systematically murdered during the Holocaust (1939-1945)?</td>
+                    <td class="col-question">Which tragic event on 22 July 1946 broke British morale and accelerated their withdrawal from Palestine?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -438,7 +455,7 @@
                 
                 <tr>
                     <td class="col-qnum">13</td>
-                    <td class="col-question">At the end of WWII in 1945, what happened to hundreds of thousands of Jewish survivors?</td>
+                    <td class="col-question">What did UN Resolution 181 (The Partition Plan) propose in November 1947?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -447,7 +464,7 @@
                 
                 <tr>
                     <td class="col-qnum">14</td>
-                    <td class="col-question">What was the purpose of the 1950 Law of Return?</td>
+                    <td class="col-question">How did the 30-day UN truce in June 1948 give Israel a decisive advantage?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -456,7 +473,7 @@
                 
                 <tr>
                     <td class="col-qnum">15</td>
-                    <td class="col-question">Who were the Fedayeen?</td>
+                    <td class="col-question">Why did Britain refer the Palestine issue to the United Nations in 1947?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -465,7 +482,7 @@
                 
                 <tr>
                     <td class="col-qnum">16</td>
-                    <td class="col-question">Why did Israel launch a reprisal against Qibya in 1953?</td>
+                    <td class="col-question">What did the UN Special Committee on Palestine (UNSCOP) recommend in 1947?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -474,7 +491,7 @@
                 
                 <tr>
                     <td class="col-qnum">17</td>
-                    <td class="col-question">What was a major consequence of the 1948-49 Arab-Israeli War for the Palestinian Arabs?</td>
+                    <td class="col-question">How did the Arab Higher Committee respond to the UN Partition Plan?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -483,7 +500,7 @@
                 
                 <tr>
                     <td class="col-qnum">18</td>
-                    <td class="col-question">Which Arab nation took control of the West Bank after the 1948-49 war?</td>
+                    <td class="col-question">What was the significance of the attack on Deir Yassin in April 1948?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -492,7 +509,7 @@
                 
                 <tr>
                     <td class="col-qnum">19</td>
-                    <td class="col-question">What was the Law of Return passed by Israel in 1950?</td>
+                    <td class="col-question">When did David Ben-Gurion officially declare the creation of the State of Israel?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -501,7 +518,213 @@
                 
                 <tr>
                     <td class="col-qnum">20</td>
+                    <td class="col-question">Which of these groups carried out the bombing of the King David Hotel in 1946?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">Why did Britain refer the Palestine issue to the UN in 1947?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">What did the UN Special Committee on Palestine (UNSCOP) recommend?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">How did the Arab Higher Committee respond to the UN Partition Plan?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">What was the significance of the attack on Deir Yassin in April 1948?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">When did David Ben-Gurion officially declare the creation of the State of Israel?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">What does 'empire' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">What does 'mandate' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">What was the League of Nations?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">In what year did WW1 end?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">What does 'nationalism' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">What was the purpose of the 1950 Law of Return?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">Who were the Fedayeen?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">Why did Israel launch a reprisal against Qibya in 1953?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">What was a major consequence of the 1948-49 Arab-Israeli War for the Palestinian Arabs?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">Which Arab nation took control of the West Bank after the 1948-49 war?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">What was the Law of Return passed by Israel in 1950?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">37</td>
                     <td class="col-question">How did the Israeli government handle the abandoned properties of Palestinian refugees?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">38</td>
+                    <td class="col-question">Which territory was occupied by Egypt following the 1948-49 War?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">39</td>
+                    <td class="col-question">Why did many Arab nations refuse to sign formal peace treaties with Israel after 1949?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">40</td>
+                    <td class="col-question">How did the demographics of Israel change rapidly in the early 1950s?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -535,8 +758,8 @@
             <tbody>
             
                 <tr>
-                    <td class="col-qnum">21</td>
-                    <td class="col-question">Which territory was occupied by Egypt following the 1948-49 War?</td>
+                    <td class="col-qnum">41</td>
+                    <td class="col-question">What was the 1948-49 Arab-Israeli War?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -544,8 +767,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">22</td>
-                    <td class="col-question">Why did many Arab nations refuse to sign formal peace treaties with Israel after 1949?</td>
+                    <td class="col-qnum">42</td>
+                    <td class="col-question">Which Arab nations invaded Israel in 1948?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -553,8 +776,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">23</td>
-                    <td class="col-question">How did the demographics of Israel change rapidly in the early 1950s?</td>
+                    <td class="col-qnum">43</td>
+                    <td class="col-question">Why did the Israelis ultimately win the 1948-49 war?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -562,8 +785,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">24</td>
-                    <td class="col-question">In what month and year did the British Mandate officially end and the State of Israel get declared?</td>
+                    <td class="col-qnum">44</td>
+                    <td class="col-question">What was the impact of the war on Israel's borders?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -571,8 +794,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">25</td>
-                    <td class="col-question">Which extreme Jewish paramilitary group carried out the bombing of the King David Hotel in July 1946?</td>
+                    <td class="col-qnum">45</td>
+                    <td class="col-question">What was the Nakba?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -580,8 +803,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">26</td>
-                    <td class="col-question">What was the name of the British Foreign Secretary who ultimately decided to hand the Palestine Mandate over to the United Nations in 1947?</td>
+                    <td class="col-qnum">46</td>
+                    <td class="col-question">When did David Ben-Gurion declare the State of Israel?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -589,8 +812,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">27</td>
-                    <td class="col-question">Under UN Resolution 181 (the 1947 Partition Plan), what percentage of Palestine was allocated to the proposed Jewish state, and what was to be the status of Jerusalem?</td>
+                    <td class="col-qnum">47</td>
+                    <td class="col-question">What did UNSCOP recommend in 1947?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -598,8 +821,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">28</td>
-                    <td class="col-question">Give two reasons why the Arab League and Palestinian leaders rejected UN Resolution 181.</td>
+                    <td class="col-qnum">48</td>
+                    <td class="col-question">Why did Britain refer the issue to the UN?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -607,8 +830,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">29</td>
-                    <td class="col-question">What was 'Plan Dalet' (Plan D), implemented by the Haganah in March 1948, and why is it a subject of intense historical debate?</td>
+                    <td class="col-qnum">49</td>
+                    <td class="col-question">What was the attack on Deir Yassin?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -616,8 +839,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">30</td>
-                    <td class="col-question">Name the five sovereign Arab states that launched a coordinated invasion of Israel on 15 May 1948.</td>
+                    <td class="col-qnum">50</td>
+                    <td class="col-question">What does 'colony' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -625,34 +848,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">31</td>
-                    <td class="col-question">Explain how the first UN-brokered truce (starting 11 June 1948) changed the military balance of the 1948 War in Israel's favor.</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">32</td>
-                    <td class="col-question">Explain the significance of the Deir Yassin massacre (April 1948) for the subsequent Palestinian flight.</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">33</td>
-                    <td class="col-question">In a narrative account of the end of the British Mandate, how would you link the bombing of the King David Hotel to UN Resolution 181?</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">34</td>
+                    <td class="col-qnum">51</td>
                     <td class="col-question">What was a major cause of increased tension between Israel and its neighbors from 1955 to 1963?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -661,7 +857,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">35</td>
+                    <td class="col-qnum">52</td>
                     <td class="col-question">Which country became a major supplier of arms to Egypt in 1955?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -670,7 +866,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">36</td>
+                    <td class="col-qnum">53</td>
                     <td class="col-question">Which Israeli Prime Minister warned against the buildup of Egyptian military forces?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -679,7 +875,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">37</td>
+                    <td class="col-qnum">54</td>
                     <td class="col-question">Why did the US and Britain withdraw funding for the Aswan High Dam in 1956?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -688,7 +884,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">38</td>
+                    <td class="col-qnum">55</td>
                     <td class="col-question">How did President Nasser respond to the withdrawal of Aswan Dam funding?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -697,7 +893,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">39</td>
+                    <td class="col-qnum">56</td>
                     <td class="col-question">What was the 'Protocol of Sèvres'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -706,8 +902,35 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">40</td>
+                    <td class="col-qnum">57</td>
                     <td class="col-question">Why did Britain and France want to overthrow Nasser during the Suez Crisis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">58</td>
+                    <td class="col-question">What role did the United Nations play at the end of the Suez Crisis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">59</td>
+                    <td class="col-question">What was a significant outcome of the Suez Crisis for ?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">60</td>
+                    <td class="col-question">How did the United States react to the Anglo-French-Israeli invasion of Egypt in 1956?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -741,8 +964,8 @@
             <tbody>
             
                 <tr>
-                    <td class="col-qnum">41</td>
-                    <td class="col-question">What role did the United Nations play at the end of the Suez Crisis?</td>
+                    <td class="col-qnum">61</td>
+                    <td class="col-question">What was the Law of Return (1950)?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -750,8 +973,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">42</td>
-                    <td class="col-question">What was a significant outcome of the Suez Crisis for Gamal Abdel Nasser?</td>
+                    <td class="col-qnum">62</td>
+                    <td class="col-question">Which Arab nation took control of the West Bank after 1949?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -759,8 +982,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">43</td>
-                    <td class="col-question">How did the United States react to the Anglo-French-Israeli invasion of Egypt in 1956?</td>
+                    <td class="col-qnum">63</td>
+                    <td class="col-question">Which Arab nation took control of the Gaza Strip after 1949?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -768,8 +991,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">44</td>
-                    <td class="col-question">What is the historical name given to the 1949 armistice line that established Israel's borders after its victory in the first Arab-Israeli War?</td>
+                    <td class="col-qnum">64</td>
+                    <td class="col-question">How did Arab states treat the Palestinian refugees?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -777,8 +1000,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">45</td>
-                    <td class="col-question">Which neighbouring Arab country occupied and annexed the West Bank and East Jerusalem following the 1948–49 war?</td>
+                    <td class="col-qnum">65</td>
+                    <td class="col-question">What were the 'fedayeen'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -786,8 +1009,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">46</td>
-                    <td class="col-question">What Arabic term, meaning "The Catastrophe," do Palestinians use to describe the 1948–49 war and its immediate consequences?</td>
+                    <td class="col-qnum">66</td>
+                    <td class="col-question">What was the 1948-49 Arab-Israeli War?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -795,8 +1018,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">47</td>
-                    <td class="col-question">Approximately how many Palestinian Arabs became refugees as a result of the 1948–49 war, and what agency was set up by the UN in December 1949 to support them?</td>
+                    <td class="col-qnum">67</td>
+                    <td class="col-question">Why did Israel win in 1949?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -804,8 +1027,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">48</td>
-                    <td class="col-question">Give one reason why Israel strictly denied Palestinian refugees the "right of return," and one reason why Arab host states (except Jordan) refused to permanently integrate these refugees.</td>
+                    <td class="col-qnum">68</td>
+                    <td class="col-question">What was the Nakba?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -813,8 +1036,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">49</td>
-                    <td class="col-question">Explain the twofold significance of the Law of Return, passed by the Israeli Knesset in July 1950.</td>
+                    <td class="col-qnum">69</td>
+                    <td class="col-question">What did UNSCOP recommend in 1947?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -822,35 +1045,8 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">50</td>
-                    <td class="col-question">What was the value of the vital economic grant given to Israel by the US government in 1949, and what was the further amount provided by 1960?</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">51</td>
-                    <td class="col-question">Describe the two primary ways Egypt chose to economically choke the State of Israel in the years immediately following the 1949 armistice.</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">52</td>
-                    <td class="col-question">What were the Fedayeen, and how did Israel's official reprisal policy under David Ben-Gurion attempt to deal with them?</td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-rag"><div class="rag-checkbox"></div></td>
-                    <td class="col-notes"></td>
-                </tr>
-                
-                <tr>
-                    <td class="col-qnum">53</td>
-                    <td class="col-question">Write an analytical sentence linking the 1948-49 Arab-Israeli War to the creation of the Israeli Defence Forces (IDF).</td>
+                    <td class="col-qnum">70</td>
+                    <td class="col-question">When was the State of Israel created?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -874,205 +1070,205 @@
         <div class="vault-content">
             <h1>THE VAULT</h1>
             <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
-        <div class="answer-list"><h3>KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949</h3>
+        <div class="answer-list"><h3>KT1: Geography of the Middle East</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">To build a Jewish national home while protecting Arab civil rights</div>
+                    <div class="answer-text">A group of countries or territories controlled by a single ruler or state.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The bombing of the King David Hotel</div>
+                    <div class="answer-text">A country or area under the political control of another country.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Splitting Palestine into 55% Jewish land and 45% Arab land</div>
+                    <div class="answer-text">1918.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">It allowed them to unify the IDF and import modern weapons from Czechoslovakia</div>
+                    <div class="answer-text">An official order or commission given by the League of Nations to govern a territory.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">The rising cost and violence of the Jewish insurgency</div>
+                    <div class="answer-text">An international organization formed after WW1 to promote peace and prevent war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The partition of Palestine into separate Jewish and Arab states</div>
+                    <div class="answer-text">The murder of a prominent person, often for political reasons.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">They rejected it completely and declared a general strike</div>
+                    <div class="answer-text">A country ruled by a single leader with total power.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">It led to the mass exodus of Palestinian Arabs out of fear</div>
+                    <div class="answer-text">A country without a monarch.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">14 May 1948</div>
+                    <div class="answer-text">A strong identification with one's own nation and support for its interests.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Irgun</div>
+                    <div class="answer-text">Biased or misleading information used to promote a political cause.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Arthur Balfour. He promised British support for a 'national home' for the Jewish people in Palestine.</div>
+                    <div class="answer-text">To build a Jewish national home while protecting Arab civil rights</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">6 million.</div>
+                    <div class="answer-text">The bombing of the King David Hotel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">They were stuck in European Displaced Persons (DP) camps, seeking a new home.</div>
+                    <div class="answer-text">Splitting Palestine into 55% Jewish land and 45% Arab land</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">To guarantee every Jew the right to immigrate to Israel</div>
+                    <div class="answer-text">It allowed them to unify the IDF and import modern weapons from Czechoslovakia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Palestinian militant groups launching cross-border raids</div>
+                    <div class="answer-text">The rising cost and violence of the Jewish insurgency</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">In retaliation for a Fedayeen grenade attack</div>
+                    <div class="answer-text">The partition of Palestine into separate Jewish and Arab states</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Approximately 700,000 became refugees (the Nakba)</div>
+                    <div class="answer-text">They rejected it completely and declared a general strike</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">Transjordan (Jordan)</div>
+                    <div class="answer-text">It led to the mass exodus of Palestinian Arabs out of fear</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">A law granting every Jew in the world the right to immigrate to Israel</div>
+                    <div class="answer-text">14 May 1948</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">They were expropriated by the state and given to Jewish immigrants</div>
+                    <div class="answer-text">The Irgun</div>
                 </div>
-                </div><div class="answer-list"><h3>KT1.2: The Aftermath of the 1948–49 War</h3>
+                </div><div class="answer-list"><h3>KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">The Gaza Strip</div>
+                    <div class="answer-text">Due to the rising cost and the violence of the Jewish insurgency.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">They refused to formally recognize the existence of the State of Israel</div>
+                    <div class="answer-text">The partition of Palestine into separate Jewish and Arab states.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">A massive influx of Jewish refugees from Arab nations and Holocaust survivors</div>
+                    <div class="answer-text">They rejected it completely.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">May 1948 (specifically 14 May 1948).</div>
+                    <div class="answer-text">It led to a mass exodus of Palestinian Arabs out of fear.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">The Irgun (led by Menachem Begin).</div>
+                    <div class="answer-text">14 May 1948.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Ernest Bevin.</div>
+                    <div class="answer-text">Countries controlled by a single ruler.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">The Jewish state was allocated 55% of the land, while Jerusalem was designated as an international zone (corpus separatum) under direct UN administration.</div>
+                    <div class="answer-text">A commission given by the League of Nations to govern a territory.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">1. They argued the UN had no legal authority to partition a land against the democratic wishes of its majority Arab population. 2. The plan was grossly unfair, allocating 55% of Palestine to the Jewish minority, who made up only one-third of the population.</div>
+                    <div class="answer-text">An international peace organization formed after WW1.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Plan D was a military strategy to secure the borders of the future Jewish state. It is debated because Israeli historians view it as a defensive strategy, whereas Palestinian historians argue it was an offensive blueprint for ethnic cleansing.</div>
+                    <div class="answer-text">1918.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Egypt, Syria, Jordan (Transjordan), Lebanon, and Iraq.</div>
+                    <div class="answer-text">Strong identification with one's own nation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Israel used the 30-day truce to unify its forces under the IDF and import massive quantities of modern weaponry from Czechoslovakia, neutralizing the Arabs' initial material superiority.</div>
+                    <div class="answer-text">To guarantee every Jew the right to immigrate to Israel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The massacre of over 100 Arab villagers was sensationalized by Arab radio, which backfired and triggered widespread panic among Arab civilians, causing hundreds of thousands to flee.</div>
+                    <div class="answer-text">Palestinian militant groups launching cross-border raids</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">The bombing (1946) demonstrated to the British public that policing the Mandate was too costly, leading directly to Britain referring the problem to the UN in 1947, which proposed partition under Resolution 181.</div>
+                    <div class="answer-text">In retaliation for a Fedayeen grenade attack</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The Cold War arms race in the Middle East</div>
+                    <div class="answer-text">Approximately 700,000 became refugees (the Nakba)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Czechoslovakia (Soviet bloc)</div>
+                    <div class="answer-text">Transjordan (Jordan)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">David Ben-Gurion</div>
+                    <div class="answer-text">A law granting every Jew in the world the right to immigrate to Israel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Nasser signed a major arms deal with Czechoslovakia (Soviet Bloc)</div>
+                    <div class="answer-text">They were expropriated by the state and given to Jewish immigrants</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">He nationalised the Suez Canal</div>
+                    <div class="answer-text">The Gaza Strip</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">A secret agreement between Britain, France, and Israel to invade Egypt</div>
+                    <div class="answer-text">They refused to formally recognize the existence of the State of Israel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Because Nasser had nationalised the canal and threatened their imperial interests</div>
+                    <div class="answer-text">A massive influx of Jewish refugees from Arab nations and Holocaust survivors</div>
                 </div>
                 </div>
         </div>
@@ -1080,70 +1276,155 @@
     <div class="page vault-page page-break vault-bg">
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
-                <div class="answer-list"><h3>KT1.3: Increased Tension, 1955–1963</h3>
+                <div class="answer-list"><h3>KT1.2: The Aftermath of the 1948–49 War</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">It deployed the first UN Emergency Force (UNEF) to the Sinai to keep peace</div>
+                    <div class="answer-text">The invasion of Israel by surrounding Arab nations immediately after it declared independence.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">He emerged as a hero of the Arab world for standing up to imperialism</div>
+                    <div class="answer-text">Egypt, Syria, Transjordan, Lebanon, and Iraq.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">They were furious and used economic pressure to force a withdrawal</div>
+                    <div class="answer-text">They were highly motivated, secured weapons from Czechoslovakia, and the Arab armies were uncoordinated.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">The "Green Line".</div>
+                    <div class="answer-text">Israel gained 21% more territory than the UN Partition Plan had given them.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Transjordan (which renamed itself Jordan in 1949).</div>
+                    <div class="answer-text">The 'Catastrophe'—the expulsion and flight of approx. 700,000 Palestinian Arabs.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">al-Nakba.</div>
+                    <div class="answer-text">14 May 1948.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Over 700,000 Palestinian Arabs became refugees. The UN set up the United Nations Relief and Works Agency (UNRWA) to manage the camps.</div>
+                    <div class="answer-text">The partition of Palestine into two states.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Israel denied it to preserve a Jewish demographic majority. Arab host states kept refugees in camps to maintain moral pressure on Israel.</div>
+                    <div class="answer-text">Violence and cost of the mandate.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">1. Granted every Jew automatic citizenship, doubling the population. 2. Provided massive labor and military conscripts to defend vulnerable borders.</div>
+                    <div class="answer-text">A massacre that caused mass Arab panic and flight.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">A $100 million grant in 1949 and a further $200 million by 1960.</div>
+                    <div class="answer-text">A country controlled by another.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">1. Closed the Suez Canal to Israeli vessels. 2. Blockaded the Straits of Tiran to choke trade through Eilat.</div>
+                    <div class="answer-text">The Cold War arms race in the Middle East</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Fedayeen were Palestinian guerrillas operating from Gaza. Ben-Gurion responded with disproportionate IDF reprisal attacks against Egyptian outposts.</div>
+                    <div class="answer-text">Czechoslovakia (Soviet bloc)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Because Israel had suffered 6,000 casualties during its war of survival, David Ben-Gurion unified all independent paramilitaries into the IDF in May 1948 to guarantee a professional defense force.</div>
+                    <div class="answer-text">David Ben-Gurion</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">54.</div>
+                    <div class="answer-text">Nasser signed a major arms deal with Czechoslovakia (Soviet Bloc)</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">55.</div>
+                    <div class="answer-text">He nationalised the Suez Canal</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">56.</div>
+                    <div class="answer-text">A secret agreement between Britain, France, and Israel to invade Egypt</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">57.</div>
+                    <div class="answer-text">Because Nasser had nationalised the canal and threatened their imperial interests</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">58.</div>
+                    <div class="answer-text">It deployed the first UN Emergency Force (UNEF) to the Sinai to keep peace</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">59.</div>
+                    <div class="answer-text">He emerged as a hero of the Arab world for standing up to imperialism</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">60.</div>
+                    <div class="answer-text">They were furious and used economic pressure to force a withdrawal</div>
+                </div>
+                </div><div class="answer-list"><h3>KT1.3: Increased Tension, 1955–1963</h3>
+                <div class="answer-item">
+                    <div class="answer-num">61.</div>
+                    <div class="answer-text">An Israeli law granting every Jew in the world the right to immigrate to Israel.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">62.</div>
+                    <div class="answer-text">Transjordan (Jordan).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">63.</div>
+                    <div class="answer-text">Egypt.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">64.</div>
+                    <div class="answer-text">They largely kept them in squalid refugee camps and refused to integrate them.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">65.</div>
+                    <div class="answer-text">Palestinian guerrilla fighters who launched raids into Israel from neighboring Arab states.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">66.</div>
+                    <div class="answer-text">The first major conflict following Israel's creation.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">67.</div>
+                    <div class="answer-text">Better organization, motivation, and weapons.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">68.</div>
+                    <div class="answer-text">The Palestinian refugee crisis (approx. 700,000 people).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">69.</div>
+                    <div class="answer-text">Partition into a Jewish and Arab state.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">70.</div>
+                    <div class="answer-text">14 May 1948.</div>
                 </div>
                 </div>
         </div>
@@ -1152,14 +1433,14 @@
     <!-- Tracker Page -->
     <div class="page tracker-page">
         <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 53 questions.</p>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 70 questions.</p>
         
         <table class="tracker-table">
             <thead>
                 <tr>
                     <th class="col-attempt">Attempt</th>
                     <th class="col-date">Date</th>
-                    <th class="col-score">Score (/53)</th>
+                    <th class="col-score">Score (/70)</th>
                     <th class="col-sig">Parent/Guardian Signature</th>
                     <th class="col-target">Target for Next Time</th>
                 </tr>

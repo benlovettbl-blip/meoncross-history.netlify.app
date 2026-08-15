@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
   "cover_image": "/images/east_offering.jpg",
@@ -7,6 +7,11 @@ export const unitData = {
       "title": "Unit Workbook",
       "url": "workbook.html",
       "id": "full"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/early_modern_world_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "timeline": [

@@ -18,13 +18,14 @@ export async function auditUnit(unitId) {
     let unitData;
     try {
         const module = await import(`file:///${unitPath.replace(/\\/g, '/')}`);
-        unitData = module.unitData;
+        unitData = module.unitData || module.default;
     } catch (e) {
         console.error(`❌ Failed to parse data.js for ${unitId}:`, e.message);
         return false;
     }
 
     let warnings = [];
+    console.log(`Auditing unit: ${unitId}`);
 
     unitData.lessons.forEach((lesson, lIdx) => {
         if (!lesson.narrative_blocks) return;

@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "title": "KS3: The Great War (1914-1919)",
   "homepage_background": "/images/stubbington_memorial_1.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
@@ -10,6 +10,11 @@ export const unitData = {
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/great_war_part2_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "debatePrompts": [

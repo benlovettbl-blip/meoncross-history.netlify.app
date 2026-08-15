@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "debatePrompts": [
     {
       "title": "Roman Public Health",
@@ -23,6 +23,11 @@ export const unitData = {
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/water_and_sanitation_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "lessons": [
@@ -218,7 +223,7 @@ export const unitData = {
           "answer": 3
         },
         {
-          "question": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+          "question": "Where did Roman soldiers sit side-by-side over water-flushed latrine channels?",
           "options": [
             "Silchester farming roundhouse village",
             "Bearsden public bathing sequence",
@@ -1218,7 +1223,7 @@ export const unitData = {
       ]
     },
     {
-      "q": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+      "q": "Where did Roman soldiers sit side-by-side over water-flushed latrine channels?",
       "a": "Housesteads Fort on Hadrian's Wall",
       "options": [
         "Housesteads Fort on Hadrian's Wall",

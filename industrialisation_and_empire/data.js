@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
   "homepage_background": "/images/imperial_federation_map.jpg",
   "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
@@ -8,6 +8,11 @@ export const unitData = {
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/industrialisation_and_empire_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "lessons": [

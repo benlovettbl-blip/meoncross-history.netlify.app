@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "debatePrompts": [
     {
       "title": "Bismarck & Unification",
@@ -23,6 +23,11 @@ export const unitData = {
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/cold_war_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "lessons": [],

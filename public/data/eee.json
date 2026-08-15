@@ -27,17 +27,23 @@
       {
         "id": "KT1",
         "title": "Key Topic 1: Queen, government and religion, 1558-69",
-        "prefix": "lesson_1_"
+        "prefix": "lesson_1_",
+        "image": "/assets/placeholder_cover.jpg",
+        "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?"
       },
       {
         "id": "KT2",
         "title": "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88",
-        "prefix": "lesson_2_"
+        "prefix": "lesson_2_",
+        "image": "/assets/placeholder_cover.jpg",
+        "enquiry": "Why did plots and foreign threats push Elizabeth towards war?"
       },
       {
         "id": "KT3",
         "title": "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88",
-        "prefix": "lesson_3_"
+        "prefix": "lesson_3_",
+        "image": "/assets/placeholder_cover.jpg",
+        "enquiry": "What was life like during the Elizabethan Golden Age?"
       }
     ],
     "printable_workbooks": [

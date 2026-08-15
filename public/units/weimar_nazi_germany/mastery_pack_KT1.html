@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mastery Pack: Key Topic 1: The Weimar Republic</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-dark: #121212;
@@ -58,12 +58,13 @@
             align-items: center;
             text-align: center;
             position: relative;
+            background-image: url('/images/weimar_kt1_cover.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+            background: rgba(0,0,0,0.65);
             z-index: 1;
         }
         .cover-content {
@@ -75,30 +76,45 @@
             height: 100%;
         }
         .cover h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             font-size: 4rem;
-            color: var(--brand-red);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
             margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
         }
         .cover h2 {
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
             font-size: 1.5rem;
-            color: #ddd;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
             margin-top: 0;
             margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .cover-bottom {
             margin-top: auto;
             text-align: left;
-            border-top: 2px solid var(--brand-red);
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
             width: 80%;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
         }
         .cover-bottom p {
             font-family: 'Outfit', sans-serif;
@@ -278,13 +294,14 @@
     <!-- Cover Page -->
     <div class="page cover page-break">
         <div class="cover-content">
-            <h1 style="font-size: 3rem; line-height: 1.2;">THE PAPER 3: WEIMAR AND NAZI GERMANY, 1918-39 DOSSIER:<br>KEY TOPIC 1: THE WEIMAR REPUBLIC</h1>
-            <h2>84 Crucial Questions. Complete Knowledge Mastery.</h2>
+            <h1>Paper 3: Weimar and Nazi Germany, 1918-39</h1>
+            <h2>"To what extent did the Weimar Republic recover from its early crises?"</h2>
+            <h3>Mastery Pack: KEY TOPIC 1: THE WEIMAR REPUBLIC</h3>
             
             <div class="cover-bottom">
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
-                <p><strong>Target:</strong> Total Recall</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #bbb;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+                <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
             </div>
         </div>
     </div>
@@ -536,7 +553,7 @@
             
                 <tr>
                     <td class="col-qnum">21</td>
-                    <td class="col-question">List the ways in which a major conflict like the First World War might weaken a country's government and economy.</td>
+                    <td class="col-question">What was the Triple Entente in the First World War?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -545,7 +562,7 @@
                 
                 <tr>
                     <td class="col-qnum">22</td>
-                    <td class="col-question">Define: What is an 'autocracy', and who held this absolute power in Germany before 1918?</td>
+                    <td class="col-question">What was the Triple Alliance?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -554,7 +571,7 @@
                 
                 <tr>
                     <td class="col-qnum">23</td>
-                    <td class="col-question">Recall: What were the typical beliefs and policies of extreme left-wing and right-wing political groups in the early 20th century?</td>
+                    <td class="col-question">What is a 'dictatorship'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -563,7 +580,7 @@
                 
                 <tr>
                     <td class="col-qnum">24</td>
-                    <td class="col-question">15 Second Challenge: Try to speak for 15 seconds non-stop about what you already know regarding Germany's defeat in the First World War.</td>
+                    <td class="col-question">What is a 'democracy'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -572,7 +589,7 @@
                 
                 <tr>
                     <td class="col-qnum">25</td>
-                    <td class="col-question">On what exact date was the Treaty of Versailles signed?</td>
+                    <td class="col-question">What does 'abdicate' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -581,7 +598,7 @@
                 
                 <tr>
                     <td class="col-qnum">26</td>
-                    <td class="col-question">What was Article 231 of the Treaty of Versailles?</td>
+                    <td class="col-question">What is a 'republic'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -590,7 +607,7 @@
                 
                 <tr>
                     <td class="col-qnum">27</td>
-                    <td class="col-question">How much was Germany ordered to pay in reparations in 1921?</td>
+                    <td class="col-question">What does 'inflation' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -599,7 +616,7 @@
                 
                 <tr>
                     <td class="col-qnum">28</td>
-                    <td class="col-question">Under the Treaty, what was the maximum number of soldiers allowed in the German army?</td>
+                    <td class="col-question">What is an 'armistice'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -608,7 +625,7 @@
                 
                 <tr>
                     <td class="col-qnum">29</td>
-                    <td class="col-question">What German term was used to describe the Treaty of Versailles, meaning a 'dictated peace'?</td>
+                    <td class="col-question">What does 'mutiny' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -617,7 +634,7 @@
                 
                 <tr>
                     <td class="col-qnum">30</td>
-                    <td class="col-question">Who were the two main leaders of the Spartacist League?</td>
+                    <td class="col-question">In what year did the First World War begin?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -626,7 +643,7 @@
                 
                 <tr>
                     <td class="col-qnum">31</td>
-                    <td class="col-question">What political ideology did the Spartacists follow?</td>
+                    <td class="col-question">On what exact date was the Treaty of Versailles signed?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -635,7 +652,7 @@
                 
                 <tr>
                     <td class="col-qnum">32</td>
-                    <td class="col-question">In what month and year did the Spartacist Uprising take place?</td>
+                    <td class="col-question">What was Article 231 of the Treaty of Versailles?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -644,7 +661,7 @@
                 
                 <tr>
                     <td class="col-qnum">33</td>
-                    <td class="col-question">Who did Chancellor Ebert use to violently crush the Spartacist Uprising?</td>
+                    <td class="col-question">How much was Germany ordered to pay in reparations in 1921?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -653,7 +670,7 @@
                 
                 <tr>
                     <td class="col-qnum">34</td>
-                    <td class="col-question">Who were the Freikorps?</td>
+                    <td class="col-question">Under the Treaty, what was the maximum number of soldiers allowed in the German army?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -662,7 +679,7 @@
                 
                 <tr>
                     <td class="col-qnum">35</td>
-                    <td class="col-question">In what month and year did the Kapp Putsch take place?</td>
+                    <td class="col-question">What German term was used to describe the Treaty of Versailles, meaning a 'dictated peace'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -671,7 +688,7 @@
                 
                 <tr>
                     <td class="col-qnum">36</td>
-                    <td class="col-question">Why did the Kapp Putsch begin?</td>
+                    <td class="col-question">Who were the two main leaders of the Spartacist League?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -680,7 +697,7 @@
                 
                 <tr>
                     <td class="col-qnum">37</td>
-                    <td class="col-question">Why did the regular German army refuse to stop the Kapp Putsch?</td>
+                    <td class="col-question">What political ideology did the Spartacists follow?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -689,7 +706,7 @@
                 
                 <tr>
                     <td class="col-qnum">38</td>
-                    <td class="col-question">How did the Weimar government successfully defeat the Kapp Putsch?</td>
+                    <td class="col-question">In what month and year did the Spartacist Uprising take place?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -698,7 +715,7 @@
                 
                 <tr>
                     <td class="col-qnum">39</td>
-                    <td class="col-question">Why did French and Belgian troops invade the Ruhr in January 1923?</td>
+                    <td class="col-question">Who did Chancellor Ebert use to violently crush the Spartacist Uprising?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -707,7 +724,7 @@
                 
                 <tr>
                     <td class="col-qnum">40</td>
-                    <td class="col-question">What non-violent tactic did the German government order the Ruhr workers to use against the French?</td>
+                    <td class="col-question">Who were the Freikorps?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -742,7 +759,7 @@
             
                 <tr>
                     <td class="col-qnum">41</td>
-                    <td class="col-question">Why did the invasion of the Ruhr directly lead to hyperinflation?</td>
+                    <td class="col-question">In what month and year did the Kapp Putsch take place?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -751,7 +768,7 @@
                 
                 <tr>
                     <td class="col-qnum">42</td>
-                    <td class="col-question">By November 1923, how much did a single loaf of bread cost in Germany?</td>
+                    <td class="col-question">Why did the Kapp Putsch begin?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -760,7 +777,7 @@
                 
                 <tr>
                     <td class="col-qnum">43</td>
-                    <td class="col-question">Which specific social class was hit the hardest by hyperinflation, and why?</td>
+                    <td class="col-question">Why did the regular German army refuse to stop the Kapp Putsch?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -769,7 +786,7 @@
                 
                 <tr>
                     <td class="col-qnum">44</td>
-                    <td class="col-question">Name one group of people who actually benefited (were 'winners') during the hyperinflation crisis.</td>
+                    <td class="col-question">How did the Weimar government successfully defeat the Kapp Putsch?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -778,7 +795,7 @@
                 
                 <tr>
                     <td class="col-qnum">45</td>
-                    <td class="col-question">Who became Chancellor in August 1923 and is widely credited with saving the Weimar Republic?</td>
+                    <td class="col-question">Why did French and Belgian troops invade the Ruhr in January 1923?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -787,7 +804,7 @@
                 
                 <tr>
                     <td class="col-qnum">46</td>
-                    <td class="col-question">What was the name of the temporary currency introduced by Stresemann in November 1923?</td>
+                    <td class="col-question">What non-violent tactic did the German government order the Ruhr workers to use against the French?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -796,7 +813,7 @@
                 
                 <tr>
                     <td class="col-qnum">47</td>
-                    <td class="col-question">What was the Rentenmark tied to in order to restore public confidence in its value?</td>
+                    <td class="col-question">Why did the invasion of the Ruhr directly lead to hyperinflation?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -805,7 +822,7 @@
                 
                 <tr>
                     <td class="col-qnum">48</td>
-                    <td class="col-question">What permanent, gold-backed currency replaced the temporary one in 1924?</td>
+                    <td class="col-question">By November 1923, how much did a single loaf of bread cost in Germany?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -814,7 +831,7 @@
                 
                 <tr>
                     <td class="col-qnum">49</td>
-                    <td class="col-question">In what year was the Dawes Plan agreed?</td>
+                    <td class="col-question">Which specific social class was hit the hardest by hyperinflation, and why?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -823,7 +840,7 @@
                 
                 <tr>
                     <td class="col-qnum">50</td>
-                    <td class="col-question">Under the Dawes Plan, which country agreed to loan Germany 800 million gold marks?</td>
+                    <td class="col-question">Name one group of people who actually benefited (were 'winners') during the hyperinflation crisis.</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -832,7 +849,7 @@
                 
                 <tr>
                     <td class="col-qnum">51</td>
-                    <td class="col-question">What was the primary economic danger of the Dawes Plan for the Weimar Republic?</td>
+                    <td class="col-question">When did the First World War end?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -841,7 +858,7 @@
                 
                 <tr>
                     <td class="col-qnum">52</td>
-                    <td class="col-question">What was the name of the 1929 economic plan that reduced total reparations?</td>
+                    <td class="col-question">Who was the Kaiser of Germany during WW1?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -850,7 +867,7 @@
                 
                 <tr>
                     <td class="col-qnum">53</td>
-                    <td class="col-question">How much was the reparations bill reduced to under the Young Plan?</td>
+                    <td class="col-question">Why did the Kaiser abdicate?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -859,7 +876,7 @@
                 
                 <tr>
                     <td class="col-qnum">54</td>
-                    <td class="col-question">What diplomatic treaty did Germany sign in 1925, agreeing to its new western borders?</td>
+                    <td class="col-question">What was the 'stab in the back' myth (Dolchstoßlegende)?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -868,7 +885,7 @@
                 
                 <tr>
                     <td class="col-qnum">55</td>
-                    <td class="col-question">Why was the Locarno Pact viewed so differently by Germans compared to the Treaty of Versailles?</td>
+                    <td class="col-question">Who were the 'November Criminals'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -877,7 +894,7 @@
                 
                 <tr>
                     <td class="col-qnum">56</td>
-                    <td class="col-question">In what year was Germany allowed to join the League of Nations?</td>
+                    <td class="col-question">What is a 'democracy'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -886,7 +903,7 @@
                 
                 <tr>
                     <td class="col-qnum">57</td>
-                    <td class="col-question">What position was Germany given within the League of Nations to show it was a 'great power' again?</td>
+                    <td class="col-question">What is a 'republic'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -895,7 +912,7 @@
                 
                 <tr>
                     <td class="col-qnum">58</td>
-                    <td class="col-question">What was the Kellogg-Briand Pact of 1928?</td>
+                    <td class="col-question">What does 'mutiny' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -904,7 +921,7 @@
                 
                 <tr>
                     <td class="col-qnum">59</td>
-                    <td class="col-question">How many seats did the Nazi Party win in the 1928 Reichstag election, highlighting the drop in extremist support?</td>
+                    <td class="col-question">What was the Triple Entente?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -913,7 +930,7 @@
                 
                 <tr>
                     <td class="col-qnum">60</td>
-                    <td class="col-question">Who was elected as President of the Weimar Republic in 1925 following the death of Friedrich Ebert?</td>
+                    <td class="col-question">What does 'abdicate' mean?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -948,7 +965,7 @@
             
                 <tr>
                     <td class="col-qnum">61</td>
-                    <td class="col-question">Which two groups in German society did not experience prosperity during the Golden Age?</td>
+                    <td class="col-question">Who became Chancellor in August 1923 and is widely credited with saving the Weimar Republic?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -957,7 +974,7 @@
                 
                 <tr>
                     <td class="col-qnum">62</td>
-                    <td class="col-question">During the 'Golden Age', what was the lowest number of unemployed people in Germany, showing underlying economic weakness?</td>
+                    <td class="col-question">What was the name of the temporary currency introduced by Stresemann in November 1923?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -966,7 +983,7 @@
                 
                 <tr>
                     <td class="col-qnum">63</td>
-                    <td class="col-question">What was Stresemann's famous quote warning about the fragility of the German economy?</td>
+                    <td class="col-question">What was the Rentenmark tied to in order to restore public confidence in its value?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -975,7 +992,7 @@
                 
                 <tr>
                     <td class="col-qnum">64</td>
-                    <td class="col-question">What major global economic event happened in October 1929, just weeks after Stresemann died?</td>
+                    <td class="col-question">What permanent, gold-backed currency replaced the temporary one in 1924?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -984,7 +1001,7 @@
                 
                 <tr>
                     <td class="col-qnum">65</td>
-                    <td class="col-question">By what percentage did 'real wages' for German workers rise between 1925 and 1928?</td>
+                    <td class="col-question">In what year was the Dawes Plan agreed?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -993,7 +1010,7 @@
                 
                 <tr>
                     <td class="col-qnum">66</td>
-                    <td class="col-question">What major welfare law was passed in 1927 to protect workers?</td>
+                    <td class="col-question">Under the Dawes Plan, which country agreed to loan Germany 800 million gold marks?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1002,7 +1019,7 @@
                 
                 <tr>
                     <td class="col-qnum">67</td>
-                    <td class="col-question">What percentage of a worker's wage was deducted to fund the 1927 Unemployment Insurance Act?</td>
+                    <td class="col-question">What was the primary economic danger of the Dawes Plan for the Weimar Republic?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1011,7 +1028,7 @@
                 
                 <tr>
                     <td class="col-qnum">68</td>
-                    <td class="col-question">How many new homes were built between 1925 and 1929 to solve the housing crisis?</td>
+                    <td class="col-question">What was the name of the 1929 economic plan that reduced total reparations?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1020,7 +1037,7 @@
                 
                 <tr>
                     <td class="col-qnum">69</td>
-                    <td class="col-question">Which specific clause in the Weimar Constitution guaranteed women equal rights with men?</td>
+                    <td class="col-question">How much was the reparations bill reduced to under the Young Plan?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1029,7 +1046,7 @@
                 
                 <tr>
                     <td class="col-qnum">70</td>
-                    <td class="col-question">How many female deputies were in the Reichstag by 1926?</td>
+                    <td class="col-question">What diplomatic treaty did Germany sign in 1925, agreeing to its new western borders?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1038,7 +1055,7 @@
                 
                 <tr>
                     <td class="col-qnum">71</td>
-                    <td class="col-question">What insulting term was used by traditionalists to describe married women who held jobs?</td>
+                    <td class="col-question">Why was the Locarno Pact viewed so differently by Germans compared to the Treaty of Versailles?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1047,7 +1064,7 @@
                 
                 <tr>
                     <td class="col-qnum">72</td>
-                    <td class="col-question">By 1933, how many female teachers were there in Germany?</td>
+                    <td class="col-question">In what year was Germany allowed to join the League of Nations?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1056,7 +1073,7 @@
                 
                 <tr>
                     <td class="col-qnum">73</td>
-                    <td class="col-question">What term was used by the media to describe young, independent, fashion-conscious women in the 1920s?</td>
+                    <td class="col-question">What position was Germany given within the League of Nations to show it was a 'great power' again?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1065,7 +1082,7 @@
                 
                 <tr>
                     <td class="col-qnum">74</td>
-                    <td class="col-question">Give two reasons why a cultural explosion occurred in 1920s Germany.</td>
+                    <td class="col-question">What was the Kellogg-Briand Pact of 1928?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1074,7 +1091,7 @@
                 
                 <tr>
                     <td class="col-qnum">75</td>
-                    <td class="col-question">What was the name of the new movement in art that painted the gritty reality of everyday German life?</td>
+                    <td class="col-question">How many seats did the Nazi Party win in the 1928 Reichstag election, highlighting the drop in extremist support?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1083,7 +1100,7 @@
                 
                 <tr>
                     <td class="col-qnum">76</td>
-                    <td class="col-question">Name two famous German artists associated with the New Objectivity movement.</td>
+                    <td class="col-question">Who was elected as President of the Weimar Republic in 1925 following the death of Friedrich Ebert?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1092,7 +1109,7 @@
                 
                 <tr>
                     <td class="col-qnum">77</td>
-                    <td class="col-question">What was the name of the revolutionary school of design and architecture founded in Weimar Germany?</td>
+                    <td class="col-question">Which two groups in German society did not experience prosperity during the Golden Age?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1101,7 +1118,7 @@
                 
                 <tr>
                     <td class="col-qnum">78</td>
-                    <td class="col-question">Who was the founder of the Bauhaus movement?</td>
+                    <td class="col-question">During the 'Golden Age', what was the lowest number of unemployed people in Germany, showing underlying economic weakness?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1110,7 +1127,7 @@
                 
                 <tr>
                     <td class="col-qnum">79</td>
-                    <td class="col-question">What was the guiding principle or slogan of the Bauhaus school?</td>
+                    <td class="col-question">What was Stresemann's famous quote warning about the fragility of the German economy?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1119,7 +1136,213 @@
                 
                 <tr>
                     <td class="col-qnum">80</td>
-                    <td class="col-question">Who directed the groundbreaking 1927 science-fiction film Metropolis?</td>
+                    <td class="col-question">What major global economic event happened in October 1929, just weeks after Stresemann died?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.3: The Recovery of the Republic, 1924–1929</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">81</td>
+                    <td class="col-question">What was the Weimar Constitution?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">82</td>
+                    <td class="col-question">What was Proportional Representation (PR)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">83</td>
+                    <td class="col-question">Why was Proportional Representation a weakness?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">84</td>
+                    <td class="col-question">What was Article 48?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">85</td>
+                    <td class="col-question">Who was the first President of the Weimar Republic?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">86</td>
+                    <td class="col-question">What was the 'stab in the back' myth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">87</td>
+                    <td class="col-question">Who were the 'November Criminals'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">88</td>
+                    <td class="col-question">When did WW1 end?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">89</td>
+                    <td class="col-question">What is an 'armistice'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">90</td>
+                    <td class="col-question">What does 'inflation' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">91</td>
+                    <td class="col-question">By what percentage did 'real wages' for German workers rise between 1925 and 1928?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">92</td>
+                    <td class="col-question">What major welfare law was passed in 1927 to protect workers?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">93</td>
+                    <td class="col-question">What percentage of a worker's wage was deducted to fund the 1927 Unemployment Insurance Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">94</td>
+                    <td class="col-question">How many new homes were built between 1925 and 1929 to solve the housing crisis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">95</td>
+                    <td class="col-question">Which specific clause in the Weimar Constitution guaranteed women equal rights with men?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">96</td>
+                    <td class="col-question">How many female deputies were in the Reichstag by 1926?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">97</td>
+                    <td class="col-question">What insulting term was used by traditionalists to describe married women who held jobs?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">98</td>
+                    <td class="col-question">By 1933, how many female teachers were there in Germany?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">99</td>
+                    <td class="col-question">What term was used by the media to describe young, independent, fashion-conscious women in the 1920s?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">100</td>
+                    <td class="col-question">Give two reasons why a cultural explosion occurred in 1920s Germany.</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1153,7 +1376,61 @@
             <tbody>
             
                 <tr>
-                    <td class="col-qnum">81</td>
+                    <td class="col-qnum">101</td>
+                    <td class="col-question">What was the name of the new movement in art that painted the gritty reality of everyday German life?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">102</td>
+                    <td class="col-question">Name two famous German artists associated with the New Objectivity movement.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">103</td>
+                    <td class="col-question">What was the name of the revolutionary school of design and architecture founded in Weimar Germany?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">104</td>
+                    <td class="col-question">Who was the founder of the Bauhaus movement?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">105</td>
+                    <td class="col-question">What was the guiding principle or slogan of the Bauhaus school?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">106</td>
+                    <td class="col-question">Who directed the groundbreaking 1927 science-fiction film Metropolis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">107</td>
                     <td class="col-question">Which German actress became a global film superstar during the Weimar era?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1162,7 +1439,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">82</td>
+                    <td class="col-qnum">108</td>
                     <td class="col-question">Why did right-wing groups and the Nazi Party despise the cultural changes of the 1920s?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1171,7 +1448,7 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">83</td>
+                    <td class="col-qnum">109</td>
                     <td class="col-question">Why did extreme left-wing groups (Communists) criticise the cultural explosion?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1180,8 +1457,98 @@
                 </tr>
                 
                 <tr>
-                    <td class="col-qnum">84</td>
+                    <td class="col-qnum">110</td>
                     <td class="col-question">Which social class deeply resented the improvements made for the working classes because they had not recovered their own lost savings?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">111</td>
+                    <td class="col-question">Which treaty punished Germany after WW1?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">112</td>
+                    <td class="col-question">How much was Germany forced to pay in reparations?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">113</td>
+                    <td class="col-question">What was Article 231?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">114</td>
+                    <td class="col-question">How was the German army restricted by the Treaty?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">115</td>
+                    <td class="col-question">What happened to the Rhineland?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">116</td>
+                    <td class="col-question">What was Proportional Representation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">117</td>
+                    <td class="col-question">What was Article 48?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">118</td>
+                    <td class="col-question">Who were the November Criminals?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">119</td>
+                    <td class="col-question">Who was Friedrich Ebert?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">120</td>
+                    <td class="col-question">What is a 'dictatorship'?</td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
                     <td class="col-rag"><div class="rag-checkbox"></div></td>
@@ -1308,102 +1675,102 @@
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">A major conflict drains government finances through massive war debts and printing money (causing inflation). It destroys the workforce due to high casualties, and blockades cause civilian starvation. This widespread misery destroys public faith in the government, often triggering strikes, mutinies, and political revolutions.</div>
+                    <div class="answer-text">An alliance between Britain, France, and Russia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">An autocracy is a system of government where one person has absolute, unchecked power. Before 1918, this power in Germany was held by Kaiser Wilhelm II, who could make laws and control the army without needing the parliament's approval.</div>
+                    <div class="answer-text">An alliance between Germany, Austria-Hungary, and Italy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Extreme left-wing groups (like Communists) believed in violent revolution to overthrow capitalism and create a society where wealth and property were shared equally. Extreme right-wing groups (like Nationalists/Fascists) believed in strong authoritarian leadership, extreme patriotism, a powerful military, and the destruction of communism.</div>
+                    <div class="answer-text">A country ruled by a single leader with total power.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Students should mention: the Allied naval blockade causing starvation, the failure of the final German spring offensive in 1918, the entry of the USA into the war with fresh troops, the Kiel Mutiny, and the ultimate surrender on 11 November 1918.</div>
+                    <div class="answer-text">A system where the government is elected by the people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">28 June 1919</div>
+                    <div class="answer-text">When a monarch steps down from the throne.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">The War Guilt Clause, forcing Germany to accept total blame for the war</div>
+                    <div class="answer-text">A country without a monarch, usually led by an elected president.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">£6.6 billion</div>
+                    <div class="answer-text">The general increase in prices and fall in the purchasing value of money.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">100,000 men</div>
+                    <div class="answer-text">A formal agreement to stop fighting; a truce.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Diktat</div>
+                    <div class="answer-text">An open rebellion against the proper authorities, especially by soldiers or sailors.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Rosa Luxemburg and Karl Liebknecht</div>
+                    <div class="answer-text">1914.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Extreme Left-wing (Communism)</div>
+                    <div class="answer-text">28 June 1919</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">January 1919</div>
+                    <div class="answer-text">The War Guilt Clause, forcing Germany to accept total blame for the war</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">The Freikorps</div>
+                    <div class="answer-text">£6.6 billion</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">Right-wing private armies made up of demobilised ex-soldiers</div>
+                    <div class="answer-text">100,000 men</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">March 1920</div>
+                    <div class="answer-text">Diktat</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">The government tried to disband Freikorps units to comply with the Treaty of Versailles limits</div>
+                    <div class="answer-text">Rosa Luxemburg and Karl Liebknecht</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Because they sympathised with the right-wing rebels</div>
+                    <div class="answer-text">Extreme Left-wing (Communism)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">They called on the workers of Berlin to launch a General Strike</div>
+                    <div class="answer-text">January 1919</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Because Germany had failed to pay its scheduled reparations</div>
+                    <div class="answer-text">The Freikorps</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Passive Resistance</div>
+                    <div class="answer-text">Right-wing private armies made up of demobilised ex-soldiers</div>
                 </div>
                 </div>
         </div>
@@ -1414,202 +1781,202 @@
                 <div class="answer-list"><h3>KT1.2: Early Challenges to the Republic, 1919–1923</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">The government printed massive amounts of unbacked paper money to pay the striking workers</div>
+                    <div class="answer-text">March 1920</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">201 billion marks</div>
+                    <div class="answer-text">The government tried to disband Freikorps units to comply with the Treaty of Versailles limits</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">The middle classes, because their life savings and fixed pensions became completely worthless</div>
+                    <div class="answer-text">Because they sympathised with the right-wing rebels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">People with debts or mortgages</div>
+                    <div class="answer-text">They called on the workers of Berlin to launch a General Strike</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Gustav Stresemann</div>
+                    <div class="answer-text">Because Germany had failed to pay its scheduled reparations</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The Rentenmark</div>
+                    <div class="answer-text">Passive Resistance</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">German property / agricultural and industrial land values</div>
+                    <div class="answer-text">The government printed massive amounts of unbacked paper money to pay the striking workers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">The Reichsmark</div>
+                    <div class="answer-text">201 billion marks</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">1924</div>
+                    <div class="answer-text">The middle classes, because their life savings and fixed pensions became completely worthless</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">The USA</div>
+                    <div class="answer-text">People with debts or mortgages</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">It made the entire German economy reliant on American loans</div>
+                    <div class="answer-text">11 November 1918.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">The Young Plan</div>
+                    <div class="answer-text">Kaiser Wilhelm II.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">From £6.6 billion to £2 billion</div>
+                    <div class="answer-text">Germany was losing the war, there were food shortages, and sailors mutinied at Kiel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The Locarno Pact</div>
+                    <div class="answer-text">The false belief that the German army was betrayed by socialist and Jewish politicians.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Germany was treated as an equal negotiating partner, not dictated to</div>
+                    <div class="answer-text">The nickname given by right-wing Germans to the politicians who signed the Armistice.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">1926</div>
+                    <div class="answer-text">A system where the government is elected by the people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">A seat on the League of Nations Council</div>
+                    <div class="answer-text">A country without a monarch.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">An international agreement signed by 65 countries to resolve conflicts peacefully rather than using war</div>
+                    <div class="answer-text">A rebellion by soldiers or sailors.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">12 seats</div>
+                    <div class="answer-text">The alliance of Britain, France, and Russia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Paul von Hindenburg</div>
+                    <div class="answer-text">To step down from the throne.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT1.3: The Recovery of the Republic, 1924–1929</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">Farmers and the middle classes who had lost their savings in 1923</div>
+                    <div class="answer-text">Gustav Stresemann</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Unemployment never fell below 1.3 million</div>
+                    <div class="answer-text">The Rentenmark</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">"Germany is dancing on a volcano."</div>
+                    <div class="answer-text">German property / agricultural and industrial land values</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">The Wall Street Crash</div>
+                    <div class="answer-text">The Reichsmark</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">25%</div>
+                    <div class="answer-text">1924</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">The Unemployment Insurance Act</div>
+                    <div class="answer-text">The USA</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">3%</div>
+                    <div class="answer-text">It made the entire German economy reliant on American loans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Over 100,000</div>
+                    <div class="answer-text">The Young Plan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Article 109</div>
+                    <div class="answer-text">From £6.6 billion to £2 billion</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">32</div>
+                    <div class="answer-text">The Locarno Pact</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Double-earners</div>
+                    <div class="answer-text">Germany was treated as an equal negotiating partner, not dictated to</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">100,000</div>
+                    <div class="answer-text">1926</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">The 'New Woman' (Neue Frau)</div>
+                    <div class="answer-text">A seat on the League of Nations Council</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">The removal of pre-war censorship and economic recovery providing funding</div>
+                    <div class="answer-text">An international agreement signed by 65 countries to resolve conflicts peacefully rather than using war</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">New Objectivity (Neue Sachlichkeit)</div>
+                    <div class="answer-text">12 seats</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">George Grosz and Otto Dix</div>
+                    <div class="answer-text">Paul von Hindenburg</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">The Bauhaus</div>
+                    <div class="answer-text">Farmers and the middle classes who had lost their savings in 1923</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Walter Gropius</div>
+                    <div class="answer-text">Unemployment never fell below 1.3 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">"Art and Technology - a new unity"</div>
+                    <div class="answer-text">"Germany is dancing on a volcano."</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Fritz Lang</div>
+                    <div class="answer-text">The Wall Street Crash</div>
                 </div>
                 </div>
         </div>
@@ -1617,25 +1984,205 @@
     <div class="page vault-page page-break vault-bg">
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
-                <div class="answer-list"><h3>KT1.4: Changes in Society, 1924–1929</h3>
+                <div class="answer-list"><h3>KT1.3: The Recovery of the Republic, 1924–1929</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Marlene Dietrich</div>
+                    <div class="answer-text">The set of rules for how Germany would be governed as a democratic republic.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">They believed the new culture was immoral, un-German, and undermined traditional family values</div>
+                    <div class="answer-text">An electoral system where the percentage of votes equals the percentage of seats in the Reichstag.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">They felt it was an extravagant waste of money when poor workers were still struggling to survive</div>
+                    <div class="answer-text">It led to dozens of tiny parties and weak coalition governments.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
+                    <div class="answer-text">It allowed the President to make laws without the Reichstag in an emergency.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">85.</div>
+                    <div class="answer-text">Friedrich Ebert.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">86.</div>
+                    <div class="answer-text">The belief that Germany was betrayed by politicians, not defeated in battle.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">87.</div>
+                    <div class="answer-text">The politicians who signed the Armistice.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">88.</div>
+                    <div class="answer-text">1918.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">89.</div>
+                    <div class="answer-text">An agreement to stop fighting.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">90.</div>
+                    <div class="answer-text">Prices rising rapidly.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">91.</div>
+                    <div class="answer-text">25%</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">92.</div>
+                    <div class="answer-text">The Unemployment Insurance Act</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">93.</div>
+                    <div class="answer-text">3%</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">94.</div>
+                    <div class="answer-text">Over 100,000</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">95.</div>
+                    <div class="answer-text">Article 109</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">96.</div>
+                    <div class="answer-text">32</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">97.</div>
+                    <div class="answer-text">Double-earners</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">98.</div>
+                    <div class="answer-text">100,000</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">99.</div>
+                    <div class="answer-text">The 'New Woman' (Neue Frau)</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">100.</div>
+                    <div class="answer-text">The removal of pre-war censorship and economic recovery providing funding</div>
+                </div>
+                </div><div class="answer-list"><h3>KT1.4: Changes in Society, 1924–1929</h3>
+                <div class="answer-item">
+                    <div class="answer-num">101.</div>
+                    <div class="answer-text">New Objectivity (Neue Sachlichkeit)</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">102.</div>
+                    <div class="answer-text">George Grosz and Otto Dix</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">103.</div>
+                    <div class="answer-text">The Bauhaus</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">104.</div>
+                    <div class="answer-text">Walter Gropius</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">105.</div>
+                    <div class="answer-text">"Art and Technology - a new unity"</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">106.</div>
+                    <div class="answer-text">Fritz Lang</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">107.</div>
+                    <div class="answer-text">Marlene Dietrich</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">108.</div>
+                    <div class="answer-text">They believed the new culture was immoral, un-German, and undermined traditional family values</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">109.</div>
+                    <div class="answer-text">They felt it was an extravagant waste of money when poor workers were still struggling to survive</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">110.</div>
                     <div class="answer-text">The middle classes</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">111.</div>
+                    <div class="answer-text">The Treaty of Versailles (1919).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">112.</div>
+                    <div class="answer-text">£6.6 billion.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">113.</div>
+                    <div class="answer-text">The 'War Guilt Clause', forcing Germany to accept full blame for starting the war.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">114.</div>
+                    <div class="answer-text">Limited to 100,000 men, no air force, no submarines, and 6 battleships.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">115.</div>
+                    <div class="answer-text">It was demilitarised (no German troops allowed).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">116.</div>
+                    <div class="answer-text">An electoral system leading to weak coalition governments.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">117.</div>
+                    <div class="answer-text">The President's emergency decree power.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">118.</div>
+                    <div class="answer-text">The politicians who signed the 1918 Armistice.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">119.</div>
+                    <div class="answer-text">The first President of the Weimar Republic.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">120.</div>
+                    <div class="answer-text">Rule by a single leader with total power.</div>
                 </div>
                 </div>
         </div>
@@ -1644,14 +2191,14 @@
     <!-- Tracker Page -->
     <div class="page tracker-page">
         <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 84 questions.</p>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 120 questions.</p>
         
         <table class="tracker-table">
             <thead>
                 <tr>
                     <th class="col-attempt">Attempt</th>
                     <th class="col-date">Date</th>
-                    <th class="col-score">Score (/84)</th>
+                    <th class="col-score">Score (/120)</th>
                     <th class="col-sig">Parent/Guardian Signature</th>
                     <th class="col-target">Target for Next Time</th>
                 </tr>

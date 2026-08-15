@@ -8,6 +8,11 @@
         "title": "Unit Workbook",
         "url": "workbook.html",
         "id": "full"
+      },
+      {
+        "title": "Mastery Pack",
+        "url": "../../pdfs/early_modern_world_mastery_pack_full.pdf",
+        "icon": "fa-brain"
       }
     ],
     "timeline": [

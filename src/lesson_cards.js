@@ -158,10 +158,15 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       unitData.printable_workbooks.forEach(wb => {
         const wbUrl = currentUnitId ? `/units/${currentUnitId}/${wb.url}` : wb.url;
+        const icon = wb.icon || 'fa-book-open';
+        const isMastery = wb.title.includes('Mastery') || wb.url.includes('mastery_pack');
+        const color = isMastery ? '#d32f2f' : '#3b82f6';
+        const bg = isMastery ? '#fff0f2' : '#f8fafc';
+        
         lessonsHTML += `
-          <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed #3b82f6; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${wbUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-             <i class="fa-solid fa-book-open" style="font-size: 1.5rem; color: #3b82f6; margin-bottom: 10px;"></i>
-             <h3 style="margin: 0; color: #334155; font-size: 1.1rem;">${wb.title}</h3>
+          <div class="homepage-lesson-card" style="background: ${bg}; border: 2px dashed ${color}; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${wbUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='${bg}'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+             <i class="fa-solid ${icon}" style="font-size: 1.5rem; color: ${color}; margin-bottom: 10px;"></i>
+             <h3 style="margin: 0; color: ${color}; font-size: 1.1rem;">${wb.title}</h3>
           </div>
         `;
       });

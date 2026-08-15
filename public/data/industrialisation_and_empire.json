@@ -9,6 +9,11 @@
       {
         "title": "Unit Workbook",
         "url": "workbook.html"
+      },
+      {
+        "title": "Mastery Pack",
+        "url": "../../pdfs/industrialisation_and_empire_mastery_pack_full.pdf",
+        "icon": "fa-brain"
       }
     ],
     "lessons": [

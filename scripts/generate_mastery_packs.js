@@ -24,7 +24,8 @@ for (const unitId of units) {
     
     // Naive parsing: strip imports and exports
     let jsonStr = rawData.replace(/import .*?;\n/g, '');
-    jsonStr = jsonStr.replace(/export const unitData = |export default |export const gwData = /g, '').trim();
+    jsonStr = jsonStr.replace(/if\s*\(\s*typeof\s*module\s*!==\s*['"]undefined['"]\s*\)\s*\{[\s\S]*?;\s*\n?\}/g, '');
+    jsonStr = jsonStr.replace(/export const unitData = |export default |export const gwData = |const unitData = |module\.exports = /g, '').trim();
     if (jsonStr.endsWith(';')) jsonStr = jsonStr.slice(0, -1);
     
     let unit;
@@ -32,12 +33,17 @@ for (const unitId of units) {
       let mock_exams = {};
       unit = eval('(' + jsonStr + ')');
     } catch (e) {
-      console.warn(`Could not parse data for unit ${unitId}. Skipping mastery pack generation.`);
+      console.warn(`Could not parse data for unit ${unitId}: ${e.message}. Skipping mastery pack generation.`);
       continue;
     }
 
-    // Only process units that have workbooks configured (periods)
-    if (!unit.workbooks || !unit.lessons) continue;
+    // Only process units that have lessons
+    if (!unit.lessons) continue;
+
+    // If unit has no workbooks (KS3), create a default one
+    if (!unit.workbooks) {
+        unit.workbooks = [{ id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' }];
+    }
 
     for (const wb of unit.workbooks) {
         // Collect 80 questions (or as many as available) from the lessons for this Key Topic
@@ -101,13 +107,43 @@ for (const unitId of units) {
             pages.push({ title: currentLessonTitle, questions: currentPage });
         }
 
+        // Handle background image for cover
+        let bgImage = '';
+        if (wb.image) {
+            bgImage = wb.image;
+        } else if (unit.homepage_background) {
+            bgImage = unit.homepage_background;
+        } else if (unit.cover_image) {
+            bgImage = unit.cover_image;
+        }
+        
+        // Convert absolute web paths to relative paths for Puppeteer local file loading
+        if (bgImage && bgImage.startsWith('/units/')) {
+            const parts = bgImage.split('/');
+            // /units/water_and_sanitation/assets/foo.png -> ./assets/foo.png
+            bgImage = './' + parts.slice(3).join('/');
+        } else if (bgImage && bgImage.startsWith('/data/')) {
+             bgImage = '../..' + bgImage;
+        } else if (bgImage && bgImage.startsWith('images/')) {
+             bgImage = '../../' + bgImage;
+        } else if (bgImage && bgImage.startsWith('assets/')) {
+             bgImage = '../../' + bgImage;
+        }
+
+        let enquiryText = '';
+        if (wb.enquiry) {
+            enquiryText = wb.enquiry;
+        } else if (unit.enquiry) {
+            enquiryText = unit.enquiry;
+        }
+
         // Build the HTML
         let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Mastery Pack: ${wb.title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-dark: #121212;
@@ -162,12 +198,13 @@ for (const unitId of units) {
             align-items: center;
             text-align: center;
             position: relative;
+            ${bgImage ? `background-image: url('${bgImage}'); background-size: cover; background-position: center;` : ''}
         }
         .cover::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%);
+            background: ${bgImage ? 'rgba(0,0,0,0.65)' : 'linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(0,0,0,0.8) 100%)'};
             z-index: 1;
         }
         .cover-content {
@@ -179,30 +216,45 @@ for (const unitId of units) {
             height: 100%;
         }
         .cover h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             font-size: 4rem;
-            color: var(--brand-red);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
             margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
         }
         .cover h2 {
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
             font-size: 1.5rem;
-            color: #ddd;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
             margin-top: 0;
             margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .cover-bottom {
             margin-top: auto;
             text-align: left;
-            border-top: 2px solid var(--brand-red);
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
             width: 80%;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
         }
         .cover-bottom p {
             font-family: 'Outfit', sans-serif;
@@ -382,13 +434,14 @@ for (const unitId of units) {
     <!-- Cover Page -->
     <div class="page cover page-break">
         <div class="cover-content">
-            <h1 style="font-size: 3rem; line-height: 1.2;">THE ${unit.title.toUpperCase()} DOSSIER:<br>${wb.title.toUpperCase()}</h1>
-            <h2>${questions.length} Crucial Questions. Complete Knowledge Mastery.</h2>
+            <h1>${unit.title}</h1>
+            ${enquiryText ? `<h2>"${enquiryText}"</h2>` : ''}
+            <h3>Mastery Pack: ${wb.title.toUpperCase()}</h3>
             
             <div class="cover-bottom">
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
-                <p><strong>Target:</strong> Total Recall</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #bbb;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+                <p><strong>Target:</strong> Total Recall of ${questions.length} Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-export const unitData = {
+module.exports = {
   "debatePrompts": [
     {
       "title": "Bismarck & Unification",
@@ -23,6 +23,11 @@ export const unitData = {
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
+    },
+    {
+      "title": "Mastery Pack",
+      "url": "../../pdfs/great_war_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "lessons": [
@@ -415,7 +420,7 @@ export const unitData = {
         }
       ],
       "extended": {
-        "question": "Evaluate how the change in leadership from Bismarck to  fundamentally altered Germany's strategic position in Europe.",
+        "question": "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
         "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
       },
       "do_now": {
@@ -708,7 +713,7 @@ export const unitData = {
             "Kaiser Wilhelm II",
             "Kaiser Wilhelm I",
             "Franz Joseph",
-            ""
+            "Tsar Nicholas II"
           ]
         },
         {
@@ -2214,7 +2219,7 @@ export const unitData = {
         "objectives": [
           {
             "objective": "Identify the events of 28 June 1914.",
-            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and  seizing the unexpected opportunity.",
+            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and Gavrilo Princip seizing the unexpected opportunity.",
             "question": "What was the single biggest piece of 'bad luck' that allowed Gavrilo Princip to assassinate the Archduke?"
           },
           {

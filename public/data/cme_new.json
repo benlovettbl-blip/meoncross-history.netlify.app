@@ -43,19 +43,22 @@
         "id": "KT1",
         "title": "KT1",
         "image": "/assets/cme_new_kt1_cover.png",
-        "prefix": "KT1"
+        "prefix": "KT1",
+        "enquiry": "How and why was the state of Israel established?"
       },
       {
         "id": "KT2",
         "title": "KT2",
         "image": "/assets/cme_new_yom_kippur_crossing.png",
-        "prefix": "KT2"
+        "prefix": "KT2",
+        "enquiry": "What drove the major conflicts in the Middle East from 1967-1973?"
       },
       {
         "id": "KT3",
         "title": "KT3",
         "image": "/assets/cme_new_camp_david_accords.png",
-        "prefix": "KT3"
+        "prefix": "KT3",
+        "enquiry": "Why has lasting peace in the Middle East been so difficult to achieve?"
       }
     ],
     "groupings": [

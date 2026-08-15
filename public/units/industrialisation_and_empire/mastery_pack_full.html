@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Pack: Complete Unit Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-image: url('/images/imperial_federation_map.jpg'); background-size: cover; background-position: center;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
+            margin-top: 0;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            border-bottom: 4px solid var(--brand-red);
+            padding-bottom: 10px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-red);
+            margin-top: 30px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 15px; height: 15px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1px solid #888;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto;
+            border: 2px dashed var(--brand-red);
+            padding: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .debrief h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 30px;
+            flex-shrink: 0;
+        }
+        .answer-text {
+            font-weight: 600;
+        }
+
+        /* Tracker Page */
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 10%; }
+        .col-date { width: 15%; }
+        .col-score { width: 15%; }
+        .col-sig { width: 30%; }
+        .col-target { width: 30%; }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1>KS3: Industrialisation, Empire, and Power (1750–1900)</h1>
+            <h2>"Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?"</h2>
+            <h3>Mastery Pack: COMPLETE UNIT MASTERY</h3>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall of 134 Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">What is meant by the term 'Divine Right of Kings'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">Who became King after the English Civil War ended and Oliver Cromwell died?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">Why did the Gunpowder Plot of 1605 fail?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">What was the significance of the Magna Carta signed in 1215?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">Why did Henry VIII break away from the Catholic Church?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">What two major iron-making processes did Henry Cort patent at the Funtley Ironworks in the 1780s?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">Why did Henry Cort specifically choose to locate his ironworks near Fareham?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">What tragic event caused Henry Cort to lose his patents and die in poverty?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">What was the primary cause of the English Civil War?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">What was the result of the Spanish Armada in 1588?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">What are 'Fareham Reds'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">Name one highly dangerous or physically demanding job a child might perform in a 19th-century textile mill or brickfield.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">Why did factory owners actively prefer to hire children rather than adults?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">Explain how Henry Cort's inventions at the Funtley Ironworks helped power the Industrial Revolution globally.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">Why do 'Optimist' and 'Pessimist' historians disagree about the impact of the Industrial Revolution on working-class families?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">Why did Victorian builders heavily rely on 'Fareham Red' bricks during 19th-century urbanisation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">What was the original purpose of the East India Company when it was founded in 1600?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">How did the East India Company secure its commercial monopolies in India?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>How was the British Empire built and sustained?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">What does it mean that the East India Company turned India into a 'captive market'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">How did British textile mills affect India's domestic handloom weavers?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">What event was triggered in May 1857 by the East India Company's systemic oppression?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">What was the consequence of the 1857 Rebellion for the East India Company?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">What was the 'Two-Power Standard'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">What does 'Mercantilism' mean in the context of the British Empire?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">What did the Dacca weavers' petition in 1830 beg the British government to do?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">What do 'Optimist' historians typically argue about the British Empire's use of technology?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">Why did Victorian builders heavily rely on 'Fareham Red' bricks during the rapid urbanisation of the 19th century?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">37</td>
+                    <td class="col-question">How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">38</td>
+                    <td class="col-question">What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak in Soho?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">39</td>
+                    <td class="col-question">In what year did the massive Indian Rebellion against the British Empire begin?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">40</td>
+                    <td class="col-question">What military innovation served as the immediate catalyst for the 1857 rebellion?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>How did the Empire strike back? The 1857 Indian Rebellion</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">41</td>
+                    <td class="col-question">Why did the new Enfield rifle cartridges cause such outrage among the sepoys?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">42</td>
+                    <td class="col-question">What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">43</td>
+                    <td class="col-question">What was the East India Company's 'Doctrine of Lapse'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">44</td>
+                    <td class="col-question">Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">45</td>
+                    <td class="col-question">Where did the outbreak of violence begin in earnest on May 10, 1857?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">46</td>
+                    <td class="col-question">Who did the mutinying sepoys declare as the true leader of India?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">47</td>
+                    <td class="col-question">Who was Rani Lakshmibai?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">48</td>
+                    <td class="col-question">How did the British forces respond to the rebellion?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">49</td>
+                    <td class="col-question">What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">50</td>
+                    <td class="col-question">Why were rebels blown from cannons instead of hanged?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">51</td>
+                    <td class="col-question">What was the most significant political consequence of the 1857 Rebellion?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">52</td>
+                    <td class="col-question">Which 1858 law formalized the British government's direct rule over India?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">53</td>
+                    <td class="col-question">The era of direct British Crown rule in India is known as what?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">54</td>
+                    <td class="col-question">Who was declared Empress of India after the rebellion was crushed?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">55</td>
+                    <td class="col-question">How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">56</td>
+                    <td class="col-question">Why did Christian missionary activity in India contribute to the rebellion?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">57</td>
+                    <td class="col-question">What did the rebellion shatter regarding the British public's view of their empire?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">58</td>
+                    <td class="col-question">Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">59</td>
+                    <td class="col-question">What was the East India Company?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">60</td>
+                    <td class="col-question">How did the EIC destroy the Indian textile industry?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>How did the Empire strike back? The 1857 Indian Rebellion</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">61</td>
+                    <td class="col-question">What was the East India Company?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">62</td>
+                    <td class="col-question">How did the EIC destroy the Indian textile industry?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">63</td>
+                    <td class="col-question">What private corporate entity controlled British commercial and military interests in India until 1858?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">64</td>
+                    <td class="col-question">What was the 'Two-Power Standard' followed by the British government in the 19th century?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">65</td>
+                    <td class="col-question">How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">66</td>
+                    <td class="col-question">In the early 19th century, who completely controlled the British Parliament?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">67</td>
+                    <td class="col-question">What did the 60,000 peaceful protestors at St Peter's Field in Manchester demand in August 1819?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">68</td>
+                    <td class="col-question">How did the state respond to the peaceful gathering at St Peter's Field in 1819?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">69</td>
+                    <td class="col-question">Why did radicals ironically name the tragic 1819 event the 'Peterloo Massacre'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">70</td>
+                    <td class="col-question">What technological change caused winter unemployment and starvation for agricultural laborers in 1830?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">71</td>
+                    <td class="col-question">What was the name of the violent agrarian uprising in southern England in 1830?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">72</td>
+                    <td class="col-question">Who was 'Captain Swing'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">73</td>
+                    <td class="col-question">How did the government punish the Hampshire workers involved in the 1830 riots?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">74</td>
+                    <td class="col-question">What strategy did working-class men explore after realizing violent property destruction resulted in execution or exile?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">75</td>
+                    <td class="col-question">Why did the six agricultural laborers in Tolpuddle form a friendly society in 1834?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">76</td>
+                    <td class="col-question">What obscure 1797 law did the government use to arrest the Tolpuddle Martyrs?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">77</td>
+                    <td class="col-question">What was the initial sentence given to the Tolpuddle Martyrs?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">78</td>
+                    <td class="col-question">By 1838, what did working-class leaders realize was the only way to permanently change factory conditions and low wages?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">79</td>
+                    <td class="col-question">What was the name of the first mass working-class democratic movement in British history launched in 1838?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">80</td>
+                    <td class="col-question">Which of the following was NOT one of the six core demands of the People's Charter?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>How did ordinary people fight for a voice?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">81</td>
+                    <td class="col-question">What action did the Chartists take to pressure Parliament into accepting their demands?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">82</td>
+                    <td class="col-question">Although Parliament rejected all the Chartist petitions at the time, what was the movement's long-term legacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">83</td>
+                    <td class="col-question">What private corporate entity controlled British commercial and military interests in India until its formal abolition in 1858?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">84</td>
+                    <td class="col-question">What was the 'Two-Power Standard' followed by the British government in the 19th century?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">85</td>
+                    <td class="col-question">How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">86</td>
+                    <td class="col-question">What was the 1819 Peterloo Massacre?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">87</td>
+                    <td class="col-question">Which of the following was one of the core demands made by the Chartists in the 'People's Charter'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">88</td>
+                    <td class="col-question">Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">89</td>
+                    <td class="col-question">Before 1832, who was allowed to vote in British elections?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">90</td>
+                    <td class="col-question">What was a 'Rotten Borough' before 1832?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">91</td>
+                    <td class="col-question">What was Newtown on the Isle of Wight a famous example of before 1832?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">92</td>
+                    <td class="col-question">What was a 'Pocket Borough'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">93</td>
+                    <td class="col-question">Why did the government finally pass the Great Reform Act in 1832?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">94</td>
+                    <td class="col-question">Which of the following was a key change made by the 1832 Great Reform Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">95</td>
+                    <td class="col-question">Who was granted the right to vote by the 1832 Great Reform Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">96</td>
+                    <td class="col-question">How did the working classes react to the 1832 Great Reform Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">97</td>
+                    <td class="col-question">Before 1872, how did a man cast his vote in an election?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">98</td>
+                    <td class="col-question">Why was the system of public voting before 1872 so unfair to working-class men?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">99</td>
+                    <td class="col-question">What did the 1872 Secret Ballot Act require voters to do?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">100</td>
+                    <td class="col-question">What was the immediate consequence of the 1872 Secret Ballot Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>How did the road to democracy expand?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">101</td>
+                    <td class="col-question">Which group of people was given the vote by the 1867 Second Reform Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">102</td>
+                    <td class="col-question">What did the 1884 Third Reform Act achieve?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">103</td>
+                    <td class="col-question">Why did Conservative politicians like Benjamin Disraeli eventually expand the vote to the working classes in 1867?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">104</td>
+                    <td class="col-question">Based on MP Robert Lowe's 1866 speech, what was the underlying fear that wealthy elites had about expanding democracy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">105</td>
+                    <td class="col-question">By 1884, approximately what percentage of adult men in Britain had a secure, private vote?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">106</td>
+                    <td class="col-question">What was the 1819 Peterloo Massacre?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">107</td>
+                    <td class="col-question">Name two of the six core demands made by the Chartists in the 'People's Charter'.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">108</td>
+                    <td class="col-question">Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">109</td>
+                    <td class="col-question">Which historical perspective argues that 19th-century Britain experienced unmatched national progress?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">110</td>
+                    <td class="col-question">What local Hampshire industrialist revolutionized iron production with the puddling process?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">111</td>
+                    <td class="col-question">How much did Henry Cort's puddling process increase iron production?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">112</td>
+                    <td class="col-question">What famous London monument was built using 'Fareham Red' bricks?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">113</td>
+                    <td class="col-question">What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">114</td>
+                    <td class="col-question">Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">115</td>
+                    <td class="col-question">According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">116</td>
+                    <td class="col-question">How long were the typical working shifts for child laborers in the Funtley brickfields?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">117</td>
+                    <td class="col-question">What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">118</td>
+                    <td class="col-question">Who published an 1842 report proving that slums were deadlier than modern wars?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">119</td>
+                    <td class="col-question">How did the East India Company violently destroy the local Indian textile economy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">120</td>
+                    <td class="col-question">What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>Who truly benefited from 19th-century transformation?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">121</td>
+                    <td class="col-question">Why do critical historians argue the 1832 Great Reform Act was passed?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">122</td>
+                    <td class="col-question">Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">123</td>
+                    <td class="col-question">What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">124</td>
+                    <td class="col-question">Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">125</td>
+                    <td class="col-question">In historical writing, what does 'synthesis' mean?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">126</td>
+                    <td class="col-question">What was a 'Rotten Borough' in the pre-reform British electoral system?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">127</td>
+                    <td class="col-question">Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">128</td>
+                    <td class="col-question">What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">129</td>
+                    <td class="col-question">What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">130</td>
+                    <td class="col-question">How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">131</td>
+                    <td class="col-question">Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">132</td>
+                    <td class="col-question">What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">133</td>
+                    <td class="col-question">How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">134</td>
+                    <td class="col-question">Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+            <h1>THE VAULT</h1>
+            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+        <div class="answer-list"><h3>What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text">The belief that a monarch receives their right to rule directly from God.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text">Charles II (The Restoration).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text">Guy Fawkes was discovered in the cellars with the gunpowder before it could be lit.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text">It limited the power of the king and established that everyone is subject to the law.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text">To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text">The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text">Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text">His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text">A power struggle between King Charles I and Parliament over how the country should be ruled.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text">The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text">Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text">Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text">Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text">Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text">Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                </div><div class="answer-list"><h3>How was the British Empire built and sustained?</h3>
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">26.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">27.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">28.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">29.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">30.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">31.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">32.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">33.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">34.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">35.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">36.</div>
+                    <div class="answer-text">Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">37.</div>
+                    <div class="answer-text">It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">38.</div>
+                    <div class="answer-text">He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">39.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">40.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>How did the Empire strike back? The 1857 Indian Rebellion</h3>
+                <div class="answer-item">
+                    <div class="answer-num">41.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">42.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">43.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">44.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">45.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">46.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">47.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">48.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">49.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">50.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">51.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">52.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">53.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">54.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">55.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">56.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">57.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">58.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">59.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">60.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">61.</div>
+                    <div class="answer-text">A massive British trading corporation that essentially ruled India.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">62.</div>
+                    <div class="answer-text">By flooding the 'captive market' with cheap British machine-made cloth.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">63.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">64.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">65.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">66.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">67.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">68.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">69.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">70.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">71.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">72.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">73.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">74.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">75.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">76.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">77.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">78.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">79.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">80.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>How did ordinary people fight for a voice?</h3>
+                <div class="answer-item">
+                    <div class="answer-num">81.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">82.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">83.</div>
+                    <div class="answer-text">The East India Company (EIC).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">84.</div>
+                    <div class="answer-text">A naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations in the world.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">85.</div>
+                    <div class="answer-text">The dockyard functioned as a massive steam-powered industrial complex where thousands of workers manufactured advanced, iron-hulled 'Ironclad' warships.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">86.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">87.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">88.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">89.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">90.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">91.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">92.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">93.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">94.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">95.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">96.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">97.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">98.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">99.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">100.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                </div><div class="answer-list"><h3>How did the road to democracy expand?</h3>
+                <div class="answer-item">
+                    <div class="answer-num">101.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">102.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">103.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">104.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">105.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">106.</div>
+                    <div class="answer-text">An event in Manchester where local magistrates sent armed cavalry to charge into a crowd of 60,000 peaceful working-class protesters demanding parliamentary reform, resulting in 18 deaths.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">107.</div>
+                    <div class="answer-text">Universal male suffrage (all men get the vote), secret ballots, no property qualifications for MPs, salaries for MPs, equal electoral districts, and annual Parliaments.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">108.</div>
+                    <div class="answer-text">They were facing starvation wages and winter unemployment caused by the introduction of mechanical threshing machines, leading them to break machines and burn hayricks in protest.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">109.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">110.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">111.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">112.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">113.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">114.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">115.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">116.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">117.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">118.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">119.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">120.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>Who truly benefited from 19th-century transformation?</h3>
+                <div class="answer-item">
+                    <div class="answer-num">121.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">122.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">123.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">124.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">125.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">126.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">127.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">128.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">129.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">130.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">131.</div>
+                    <div class="answer-text">undefined</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">132.</div>
+                    <div class="answer-text">A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">133.</div>
+                    <div class="answer-text">The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">134.</div>
+                    <div class="answer-text">Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 134 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/134)</th>
+                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        </div>
+    </div>
+
+</body>
+</html>
+        

@@ -25,9 +25,765 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/australia_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "lesson_1_1",
+          "title": "A Map of the British Empire in 1886",
+          "enquiry": "What does the Imperial Federation map tell us about British attitudes to the Empire in 1886?",
+          "teacher_notes": {
+            "primer": "This lesson introduces students to the vast extent of the British Empire at its height in 1886. By analyzing Walter Crane's famous 'Imperial Federation' map, students will learn to evaluate positive, negative, and mixed interpretations of empire and discover how the mapmaker's socialist beliefs influenced his work.",
+            "objectives": [
+              {
+                "objective": "Analyze the geographical extent of the British Empire in 1886 and identify how the map makes Britain appear more central and powerful.",
+                "primer": "Show the map on-screen as large as possible. Ask students to locate Britain and the pink-shaded colonies, discussing why certain cartographic choices were made.",
+                "question": "Why do you think the mapmaker colored the British colonies pink and placed Britannia sitting on top of the world at the center?"
+              },
+              {
+                "objective": "Explain how Walter Crane's socialist beliefs are represented in the map's illustrations of colonial workers.",
+                "primer": "Guide students to look closely at the margins of the map, identifying figures like the Indian man carrying cotton and Atlas with 'Human Labour' on his sash.",
+                "question": "How does the inclusion of Atlas carrying the world with 'Human Labour' on his sash challenge the idea that the empire was a purely positive civilising mission?"
+              }
+            ]
+          },
+          "do_now": {
+            "type": "questions",
+            "title": "Recall & Retrieval",
+            "instructions": "Answer these questions in full sentences.",
+            "items": [
+              {
+                "question": "What was the main cash crop involved in the transatlantic slave trade that brought immense wealth to Britain in the 17th and 18th centuries?",
+                "answer": "Sugar was the primary cash crop that drove the transatlantic slave trade and generated vast wealth for British traders and plantation owners."
+              },
+              {
+                "question": "Which Tudor queen granted royal charters to Elizabethan adventurers like Sir Walter Raleigh to explore and claim lands in the Americas?",
+                "answer": "Queen Elizabeth I granted royal charters to adventurers to establish the earliest English claims in the Americas."
+              }
+            ]
+          },
+          "vocab": [
+            {
+              "term": "Colonial",
+              "definition": "People or countries within a colony—in this case, countries which were part of the British Empire."
+            },
+            {
+              "term": "Empire",
+              "definition": "A group of nations or territories ruled over by a single ruling power or country."
+            },
+            {
+              "term": "Federation",
+              "definition": "A union of several states or colonies under a central government, but maintaining some local independence."
+            },
+            {
+              "term": "Fraternity",
+              "definition": "A group of people or nations joined together for a common purpose or mutual support."
+            },
+            {
+              "term": "Labour",
+              "definition": "Hard physical work, often referring to the working class whose effort built the wealth of the empire."
+            },
+            {
+              "term": "Socialist",
+              "definition": "Someone who believes that a country's wealth and resources should be shared more equally among all citizens."
+            }
+          ],
+          "vocab_cloze_text": "In 1886, the Colonial and Indian Exhibition in London celebrated the global [Empire] at its height. A famous souvenir map showcased a grand [Federation] of territories, emphasizing [Fraternity] and freedom under British rule. However, the mapmaker, Walter Crane, was a [Socialist] who wanted to draw attention to the back-breaking [Labour] of [Colonial] workers who actually built and sustained this massive network of wealth.",
+          "flashcards": [
+            {
+              "term": "Colonial",
+              "definition": "People or countries within a colony—in this case, countries which were part of the British Empire."
+            },
+            {
+              "term": "Empire",
+              "definition": "A group of nations or territories ruled over by a single ruling power or country."
+            },
+            {
+              "term": "Federation",
+              "definition": "A union of several states or colonies under a central government, but maintaining some local independence."
+            },
+            {
+              "term": "Fraternity",
+              "definition": "A group of people or nations joined together for a common purpose or mutual support."
+            },
+            {
+              "term": "Labour",
+              "definition": "Hard physical work, often referring to the working class whose effort built the wealth of the empire."
+            },
+            {
+              "term": "Socialist",
+              "definition": "Someone who believes that a country's wealth and resources should be shared more equally among all citizens."
+            }
+          ],
+          "sources": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "1. The Height of the British Empire in 1886",
+              "text": "In 1886, the Colonial and Indian Exhibition was held in London to showcase and celebrate the vast power of the British Empire. As a souvenir for the exhibition, a remarkable map titled the 'Imperial Federation Map' was produced. By this period, the British Empire had become the biggest empire the world had ever known, eventually growing to cover over 25% of the globe.<br><br>The map used distinct visual techniques to shape public attitudes. British colonies were shaded in a bright pink color, and an inset map of the world in 1786 was included in the corner to highlight a century of rapid imperial expansion. Furthermore, blue shipping lines crisscrossed the oceans, showing how Britain dominated international trade and sat at the very center of global commerce, while the figure of Britannia was depicted sitting proudly on top of the world."
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "2. The Socialist Mapmaker: Walter Crane's Secret Critique",
+              "text": "While the map appeared to be a grand celebration of imperial glory, its illustrator, Walter Crane, was a dedicated socialist. Crane was highly critical of the empire, believing that its immense wealth was built entirely on the exploitation and hard work of others.<br><br>To express his political views, Crane hid subtle details in the margins of the map. He illustrated an Indian man struggling under a heavy bale of cotton and a Chinese worker performing manual labour. Most significantly, at the bottom of the map, he drew Atlas holding up the world. On Atlas's sash, Crane wrote the words 'Human Labour,' sending a clear message to the viewers: the entire weight of the British Empire was carried on the backs of the global working class, rather than being a natural or noble 'civilising mission'."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "What percentage of the globe was covered by the British Empire at its peak by 1886?",
+              "options": [
+                "Over 25%",
+                "Around 10%",
+                "Exactly 50%",
+                "Less than 5%"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Who is the female personification of Britain shown sitting on top of the world on the 1886 map?",
+              "options": [
+                "Queen Victoria",
+                "Britannia",
+                "Atlas",
+                "Lady Liberty"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did the mapmaker Walter Crane include illustrations of struggling colonial workers on a map meant to celebrate the empire?",
+              "options": [
+                "Because he was a socialist who wanted to show that the empire was built on the labour of exploited workers",
+                "Because he wanted to show that colonial workers were lazy and needed British rule",
+                "Because the British government ordered him to show how workers were paid high wages",
+                "Because he ran out of space and had to doodle in the margins"
+              ],
+              "answer": 0
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "title": "Analysing the 1886 Imperial Federation Map",
+              "instructions": "Examine the narrative and answer the following questions in full sentences.",
+              "questions": [
+                {
+                  "q": "Why did the map's creators include an inset map of the world from 1786 in the top-right corner?",
+                  "a": "The inset map from 1786 was included to show contrast and prove how much the British Empire had expanded over the previous 100 years, reinforcing the idea of inevitable progress and growth."
+                },
+                {
+                  "q": "Explain the significance of the words 'Human Labour' written on the sash of Atlas at the bottom of the map.",
+                  "a": "The words 'Human Labour' on Atlas's sash are significant because they show the mapmaker Walter Crane's belief that the entire empire and its wealth did not rest on British nobility, but was instead supported by the back-breaking physical work of ordinary labourers and colonial subjects."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson_1_2",
+          "title": "Claiming Australia",
+          "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
+          "teacher_notes": {
+            "primer": "This lesson explores the landing of Captain James Cook at Botany Bay in 1770. It challenges traditional progress narratives by introducing the secret government orders, the critical navigational contributions of the Polynesian star navigator Tupaia, and the defensive perspective of the Gweagal Aboriginal people.",
+            "objectives": [
+              {
+                "objective": "Explain the dual purpose of James Cook's voyage, distinguishing between the public scientific mission and the secret government orders.",
+                "primer": "Explain that while the voyage was publicly funded by the Royal Society to observe the transit of Venus, Cook carried secret instructions to locate and claim the 'Great Southern Land'.",
+                "question": "Why would the British government keep its plans to claim territory in the South Pacific a secret from other European powers?"
+              },
+              {
+                "objective": "Analyze the first encounter at Botany Bay from both the British perspective and the defensive perspective of the Gweagal people.",
+                "primer": "Contrast Cook's journal entries describing a 'native attack' with the Gweagal's spiritual duty to protect their ancestral lands from uninvited strangers.",
+                "question": "How does the Gweagal action of throwing rocks and spears change in meaning when we view it as a legal and spiritual duty to protect their home, rather than a mindless attack?"
+              }
+            ]
+          },
+          "do_now": {
+            "type": "questions",
+            "title": "Recall & Retrieval",
+            "instructions": "Answer these questions in full sentences.",
+            "items": [
+              {
+                "question": "Which British socialist illustrator designed the famous 1886 Imperial Federation Map as an exhibition souvenir?",
+                "answer": "Walter Crane designed the 1886 map as a souvenir for the Colonial and Indian Exhibition."
+              },
+              {
+                "question": "What did Walter Crane write on Atlas's sash to show that the empire's wealth was built on the working class?",
+                "answer": "He wrote 'Human Labour' on Atlas's sash to show that the empire was supported by the working class."
+              }
+            ]
+          },
+          "vocab": [
+            {
+              "term": "Ancestors",
+              "definition": "The people that we are descended from, who lived in a territory before us."
+            },
+            {
+              "term": "Botany Bay",
+              "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
+            },
+            {
+              "term": "Colony",
+              "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
+            },
+            {
+              "term": "Gweagal",
+              "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
+            },
+            {
+              "term": "Navigator",
+              "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
+            },
+            {
+              "term": "Royal Society",
+              "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
+            }
+          ],
+          "vocab_cloze_text": "In August 1768, Captain James Cook set sail on the Endeavour, funded by the [Royal Society] to observe the stars. In April 1770, the ship arrived on the east coast of Australia at a place they named [Botany Bay]. Here, they had a tense first meeting with the [Gweagal] people, whose [Ancestors] had lived on that coastline for thousands of years. Cook eventually sailed north and claimed the land as a British [Colony] called New South Wales, guided along the way by a master Polynesian [Navigator] named Tupaia.",
+          "flashcards": [
+            {
+              "term": "Ancestors",
+              "definition": "The people that we are descended from, who lived in a territory before us."
+            },
+            {
+              "term": "Botany Bay",
+              "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
+            },
+            {
+              "term": "Colony",
+              "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
+            },
+            {
+              "term": "Gweagal",
+              "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
+            },
+            {
+              "term": "Navigator",
+              "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
+            },
+            {
+              "term": "Royal Society",
+              "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
+            }
+          ],
+          "sources": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "1. The Dual Mission of the Endeavour",
+              "text": "In August 1768, Lieutenant James Cook set sail from Plymouth, England, on a ship named the Endeavour. This voyage would alter global history forever. Publicly, the journey was funded as a peaceful mission of scientific discovery. On board were nine scientists from the [Royal Society], led by the wealthy botanist Sir Joseph Banks. Their official task was to travel to the South Pacific island of Tahiti to observe the transit of the planet Venus across the Sun, which would help scientists calculate the exact distance between the Earth and the Sun.<br><br>However, scientific curiosity was not the only motive. Cook carried a packet of secret instructions from the British government. These private orders commanded him to sail further south after the scientific observations were complete, search for a rumored 'Great Southern Land,' and claim any inhabited or uninhabited territory he found in the name of King George III."
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "2. The Landing at Botany Bay and the Gweagal Encounter",
+              "text": "In April 1770, the Endeavour reached the eastern coast of Australia. Although Dutch explorers had mapped parts of the western coast in the seventeenth century, they had never claimed it. Cook's crew found a sheltered bay to anchor the ship. As they prepared to row ashore, two men armed with spears and shields stepped onto the beach to block their path. These men belonged to the Gweagal clan of the Dharawal Aboriginal nation, whose ancestors had inhabited the region for at least 65,000 years.<br><br>From the Gweagal perspective, it was their strict spiritual duty to protect their ancestral lands and spirits from unauthorized strangers. When the British ignored their warnings, a Gweagal warrior threw a stone. Cook's men responded by firing warning muskets, and when a spear was thrown in return, they shot and wounded one of the warriors. The British spent a week exploring, collecting thousands of unknown plants that led them to name the area 'Botany Bay'. Before leaving, Cook sailed further north to an island he named 'Possession Island', where he raised the Union Jack and claimed the entire eastern coast as British territory, naming it 'New South Wales'."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "What was the official, public purpose of Captain Cook's 1768 voyage on the Endeavour?",
+              "options": [
+                "To observe the transit of Venus across the Sun",
+                "To transport convicts to a new prison colony",
+                "To wage war against the Spanish Empire",
+                "To search for gold mines in South America"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What name did Captain Cook give to the eastern coast of Australia after claiming it for Britain?",
+              "options": [
+                "New South Wales",
+                "Queensland",
+                "Van Diemen's Land",
+                "Victoria"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Who was Tupaia, the crucial figure who joined Cook's voyage in 1769?",
+              "options": [
+                "A master Polynesian star navigator and high priest who guided the Endeavour",
+                "The governor of Britain's first colony in Australia",
+                "A Gweagal warrior who led the resistance at Botany Bay",
+                "A British scientist who discovered over a thousand new plants"
+              ],
+              "answer": 0
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "title": "The Meeting of Two Worlds at Botany Bay",
+              "instructions": "Read the narrative block and complete the following questions in full sentences.",
+              "questions": [
+                {
+                  "q": "Explain the difference between the public scientific mission of the Endeavour and its secret government instructions.",
+                  "a": "The public mission of the Endeavour was scientific: to observe the transit of Venus across the sun and record new plants and animals. The secret instructions were political and imperial: to search for the Great Southern Land and claim it as territory for the British Empire."
+                },
+                {
+                  "q": "Why did the Gweagal Aboriginal men try to prevent the British from landing on their beaches in 1770?",
+                  "a": "The Gweagal men tried to prevent the British from landing because they believed it was their spiritual and legal duty to protect their ancestral lands and sacred sites from uninvited strangers who did not have permission to be there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson_1_3",
+          "title": "Creating a Convict Colony",
+          "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
+          "teacher_notes": {
+            "primer": "This lesson covers the establishment of the first penal colony in Sydney Harbour in 1788 under Captain Arthur Phillip. It explores the background of the transportation system, the impact of the American War of Independence, the overcrowding of prison hulks, and the harsh realities of convict labor in the first year of settlement.",
+            "objectives": [
+              {
+                "objective": "Explain how the American War of Independence created a prison crisis in Britain that led directly to the decision to colonize Australia.",
+                "primer": "Explain that after losing the American colonies in 1776, Britain could no longer transport convicts there, leading to overcrowded prison 'hulks' and the eventual choice of Botany Bay as a new penal settlement.",
+                "question": "How did a political revolution in America in 1776 directly affect the lives of petty criminals in London ten years later?"
+              },
+              {
+                "objective": "Describe the challenges faced by Captain Arthur Phillip and the convicts during their first year in Sydney Harbour.",
+                "primer": "Detail the issues of poor soil, lack of farming skills, and the strict rationing system Phillip introduced to prevent starvation.",
+                "question": "Why would a governor decide to ration food equally between guards and prisoners during a starvation crisis, and how did this decision ensure the colony's survival?"
+              }
+            ]
+          },
+          "do_now": {
+            "type": "questions",
+            "title": "Recall & Retrieval",
+            "instructions": "Answer these questions in full sentences.",
+            "items": [
+              {
+                "question": "In what year did Captain James Cook land at Botany Bay on the East Coast of Australia?",
+                "answer": "Captain Cook landed at Botany Bay in April 1770."
+              },
+              {
+                "question": "What was the name of the Polynesian high priest and master navigator who guided the Endeavour through the Pacific?",
+                "answer": "Tupaia was the master Polynesian star navigator who guided the Endeavour."
+              }
+            ]
+          },
+          "vocab": [
+            {
+              "term": "Convict",
+              "definition": "A person found guilty of a crime and sentenced by a court of law."
+            },
+            {
+              "term": "Governor",
+              "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
+            },
+            {
+              "term": "Hard Labour",
+              "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
+            },
+            {
+              "term": "Hulk",
+              "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
+            },
+            {
+              "term": "Transportation",
+              "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
+            },
+            {
+              "term": "Sydney Harbour",
+              "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
+            }
+          ],
+          "vocab_cloze_text": "After the loss of the American colonies, British prisons became dangerously overcrowded. The government's temporary solution was to lock prisoners inside decaying [Hulk] ships along the south coast. To solve this crisis permanently, the government revived the policy of [Transportation], sending a fleet of eleven ships under the command of [Governor] Arthur Phillip. In January 1788, the fleet landed at [Sydney Harbour] to establish a penal colony. Here, every [Convict] faced years of grueling [Hard Labour] clearing forests and building roads.",
+          "flashcards": [
+            {
+              "term": "Convict",
+              "definition": "A person found guilty of a crime and sentenced by a court of law."
+            },
+            {
+              "term": "Governor",
+              "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
+            },
+            {
+              "term": "Hard Labour",
+              "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
+            },
+            {
+              "term": "Hulk",
+              "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
+            },
+            {
+              "term": "Transportation",
+              "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
+            },
+            {
+              "term": "Sydney Harbour",
+              "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
+            }
+          ],
+          "sources": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "1. The American War and the British Prison Crisis",
+              "text": "For decades, the British government had used the Transportation Act of 1717 to send thousands of convicts to work as manual laborers on tobacco plantations in the American colonies. However, in 1776, the American colonies declared their independence from Britain. This political revolution brought a sudden end to the system, causing a severe 'gaol crisis' in Britain.<br><br>With overcrowded prisons, the government's temporary solution was to house convicts on 'hulks'—old, decaying warships moored in the rivers and harbors along the English coast. These hulks were disease-ridden, dark, and highly insecure. As conditions rapidly deteriorated and prisoners began dying of typhus, the British government decided in August 1786 to establish a new penal colony on the other side of the world at Botany Bay, Australia. They believed the threat of being sent to a wild, unknown land would deter criminals at home, while providing a cheap source of labor to build a new British outpost."
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "2. Captain Arthur Phillip and the Survival of Sydney Cove",
+              "text": "In May 1787, the First Fleet of eleven ships carrying approximately 1,400 people—including 750 convicts, marines, and officers—left Portsmouth under the command of Captain Arthur Phillip. After an arduous eight-month voyage, they arrived at Botany Bay in January 1788. Finding the bay open and unsuitable, Phillip sailed slightly north to Port Jackson, establishing the settlement of Sydney Cove on January 26, 1788.<br><br>The first year of the colony was an intense struggle for survival. The land was water-scarce, the soil was sandy and poor, and there were very few skilled farmers or carpenters among the convicts. Starvation loomed constantly. To prevent a total collapse, Governor Phillip took the radical step of ordering that all food supplies be rationed completely equally between the officers, soldiers, and convicts. Phillip's firm leadership, combined with the forced [Hard Labour] of convicts who felled trees, quarried stone, and built barracks, slowly transformed the wild bushland into a permanent, functional settlement."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "Which historical event in 1776 forced Britain to stop sending its convicts to America?",
+              "options": [
+                "The American War of Independence",
+                "The French Revolution",
+                "The Battle of Waterloo",
+                "The Great Fire of London"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What were 'hulks' in eighteenth-century Britain?",
+              "options": [
+                "Old, decaying warships used as floating, overcrowded prisons",
+                "Steam-powered machines used in cotton factories",
+                "Special heavy wagons used to transport sheep",
+                "Aboriginal stone tools used for hunting"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "How did Governor Arthur Phillip prevent the first fleet settlers and convicts from starving in 1788?",
+              "options": [
+                "He ordered that food be rationed completely equally between convicts and guards",
+                "He sent all the convicts back to Britain on the ships",
+                "He forced the Gweagal people to provide them with food",
+                "He imported luxury foods exclusively for the officers"
+              ],
+              "answer": 0
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "title": "Establishing the Penal Colony",
+              "instructions": "Answer these questions in full sentences based on the text.",
+              "questions": [
+                {
+                  "q": "How did the American War of Independence lead to the creation of a British convict colony in Australia?",
+                  "a": "The American War of Independence in 1776 meant the newly independent United States would no longer accept British convicts. This created an overcrowding crisis in British prisons and on floating hulks, forcing the government to find a new transportation destination, which became Botany Bay."
+                },
+                {
+                  "q": "Identify three major physical challenges the First Fleet faced during their first year in Sydney.",
+                  "a": "The First Fleet faced three major challenges: a complete lack of skilled farmers and tradesmen, poor and infertile soil surrounding Sydney Cove, and an unfamiliar, harsh climate that made growing traditional European crops extremely difficult."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson_1_4",
+          "title": "Encounters with the Indigenous Peoples",
+          "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
+          "teacher_notes": {
+            "primer": "This lesson examines the devastating impact of British colonization on Aboriginal Australians. It contrasts King George III's official policy of 'amity and kindness' with the realities of smallpox epidemics, land dispossession, frontier massacres (like Myall Creek), and the armed resistance led by warriors like Pemulwuy.",
+            "objectives": [
+              {
+                "objective": "Contrast the official British policy of 'amity and kindness' with the violent realities of land theft and frontier massacres.",
+                "primer": "Contrast King George III's official 1788 instructions to Governor Phillip with the historical evidence of the Myall Creek Massacre and the black wars in Tasmania.",
+                "question": "If the King of England officially ordered that Aboriginal people should not be harmed, why did British settlers feel free to shoot them on sight?"
+              },
+              {
+                "objective": "Explain how the introduction of sheep farming and European diseases devastated the Aboriginal way of life.",
+                "primer": "Explain the impact of smallpox, which wiped out thousands of Eora people, and how clearing forests and fencing ancient tracks for livestock destroyed traditional hunting grounds.",
+                "question": "How does the introduction of European sheep and cows represent a form of environmental destruction for the Aboriginal tribes?"
+              }
+            ]
+          },
+          "do_now": {
+            "type": "questions",
+            "title": "Recall & Retrieval",
+            "instructions": "Answer these questions in full sentences.",
+            "items": [
+              {
+                "question": "In what year did Captain Arthur Phillip and the First Fleet land in Sydney Harbour?",
+                "answer": "The First Fleet landed in Sydney Harbour in January 1788."
+              },
+              {
+                "question": "Why did the British government use old warships called 'hulks' to hold prisoners in the late 18th century?",
+                "answer": "They used hulks as temporary floating prisons because British gaols became dangerously overcrowded after transportation to America stopped in 1776."
+              }
+            ]
+          },
+          "vocab": [
+            {
+              "term": "Amity",
+              "definition": "Friendship and peaceful harmony between nations or groups of people."
+            },
+            {
+              "term": "Dispossession",
+              "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
+            },
+            {
+              "term": "Eora",
+              "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
+            },
+            {
+              "term": "Pemulwuy",
+              "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
+            },
+            {
+              "term": "Smallpox",
+              "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
+            },
+            {
+              "term": "Spiritual",
+              "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
+            }
+          ],
+          "vocab_cloze_text": "Although King George III ordered his subjects to live in [Amity] and kindness with the local inhabitants, the reality of British settlement was a brutal story of [Dispossession]. The local [Eora] people shouted 'Warra warra' to tell them to go away, but the settlers cleared ancient hunting grounds for sheep. Even worse, European diseases like [Smallpox] swept through tribes, killing thousands. In response to this destruction, brave warriors like [Pemulwuy] led a fierce [Spiritual] and physical resistance, fighting to protect their sacred country from the invaders.",
+          "flashcards": [
+            {
+              "term": "Amity",
+              "definition": "Friendship and peaceful harmony between nations or groups of people."
+            },
+            {
+              "term": "Dispossession",
+              "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
+            },
+            {
+              "term": "Eora",
+              "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
+            },
+            {
+              "term": "Pemulwuy",
+              "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
+            },
+            {
+              "term": "Smallpox",
+              "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
+            },
+            {
+              "term": "Spiritual",
+              "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
+            }
+          ],
+          "sources": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "1. The Clash of Two Cultures and the Myth of 'Terra Nullius'",
+              "text": "When the British arrived in 1788, Australia was inhabited by over 300,000 Aboriginal people divided into hundreds of distinct tribes, each with its own language and ancestral territory. The local clan around Sydney Cove was the [Eora] nation. Aboriginal culture was deeply [Spiritual] and intrinsically tied to the land. They successfully managed the landscape for over 65,000 years through complex practices like 'firestick farming' (controlled burning to encourage vegetation and trap game) and stone canal fisheries.<br><br>Because the Aboriginal people did not build permanent brick houses, erect fences, or use money, the British regarded them as 'primitive' wanderers who did not own the land. This gave rise to the legal myth of 'Terra Nullius' (nobody's land), which the British used to justify taking over ancient tribal territories. When the Eora first saw the British ships landing, they shouted 'Warra warra'—meaning 'Go away'—making their opposition to the invasion clear from the very beginning."
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "2. The Reality of British Dispossession and Frontier Resistance",
+              "text": "Before leaving England, King George III had given Governor Arthur Phillip official orders to treat the native population with [Amity] and kindness, making it a crime to harm them. However, as the colony expanded, this policy completely failed. The British brought deadly European diseases, particularly [Smallpox], to which Aboriginal people had no immunity, wiping out up to half of the Eora population in a single year. Furthermore, settlers cut down forests, built fences across ancient trackways, and drove out native animals to graze sheep and cattle, cutting off Indigenous food sources.<br><br>Far from being passive victims, Aboriginal people launched a fierce, coordinated frontier resistance. A courageous Eora warrior named [Pemulwuy] led a twelve-year guerrilla war against the British, launching raids on government farms and throwing spears at armed soldiers. When the British resisted, they faced terrible violence. In Tasmania in the 1820s, a brutal war broke out where the governor ordered posters nailed to trees claiming equality under the law, yet settlers were permitted to shoot Tasmanian Aboriginal people on sight, leading to near-total genocide of the island's original population."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "What did the Eora people shout at the British when they first saw them landing in 1788?",
+              "options": [
+                "'Warra warra'—meaning 'Go away'",
+                "'Welcome'—offering them food",
+                "'Gold'—pointing toward the mountains",
+                "'Halt'—demanding to see their passports"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Which deadly European disease brought by British ships wiped out thousands of Aboriginal Australians?",
+              "options": [
+                "Smallpox",
+                "Cholera",
+                "Trench Foot",
+                "Scurvy"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Who was Pemulwuy in Australian history?",
+              "options": [
+                "A courageous Eora warrior who led a twelve-year guerrilla resistance against the British",
+                "The first governor of the penal colony of Sydney",
+                "The Polynesian navigator who mapped Botany Bay",
+                "The British scientist who collected skulls for Sir Joseph Banks"
+              ],
+              "answer": 0
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "title": "The Reality of Frontier Colonisation",
+              "instructions": "Answer these questions in full sentences based on the text.",
+              "questions": [
+                {
+                  "q": "How did the British justify taking over Aboriginal land, and what was the myth of 'Terra Nullius'?",
+                  "a": "The British justified taking the land because they did not see fences, permanent brick houses, or intensive agriculture, viewing the Aboriginals as primitive. They used the legal myth of 'Terra Nullius' (nobody's land) to claim that because the land was not officially owned or cultivated in a European way, it was free for the taking."
+                },
+                {
+                  "q": "Explain the difference between King George III's official policy of 'amity and kindness' and the actual treatment of Aboriginal people in Tasmania.",
+                  "a": "King George III's official policy was for settlers to live in peace and friendship with the native people, punishing anyone who harmed them. In reality, in places like Tasmania, British settlers and soldiers launched brutal wars, hunting and shooting Aboriginal people on sight, resulting in a near-total genocide."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson_1_5",
+          "title": "From Penal Colony to Settlement",
+          "enquiry": "How did Australia transform from a remote prison colony into a prosperous free settlement?",
+          "teacher_notes": {
+            "primer": "This lesson traces the economic and social transition of Australia from a struggling penal colony to a thriving free settlement. It covers the rise of sheep farming (Merino wool), the international whaling industry, the dramatic discovery of gold in 1851, and how this wealth ended the system of convict transportation.",
+            "objectives": [
+              {
+                "objective": "Explain how the introduction of Merino sheep and the whaling industry allowed the young Australian colony to generate immense profits.",
+                "primer": "Explain that Spanish Merino sheep flourished in the climate, and whalers used Sydney as a vital port to export machine-lubricating oil back to industrial Britain.",
+                "question": "Why would a British factory owner in Leeds be highly dependent on the survival of sheep farmers and whalers in remote Sydney?"
+              },
+              {
+                "objective": "Analyse how the discovery of gold in 1851 led to a massive population boom and the ultimate end of convict transportation.",
+                "primer": "Explain Edward Hargreaves' discovery and argue that once poor migrants could make a fortune digging for gold, transportation could no longer function as a terrifying punishment.",
+                "question": "Why did the British government decide to stop sending convicts to Australia after Edward Hargreaves found gold in New South Wales?"
+              }
+            ]
+          },
+          "do_now": {
+            "type": "questions",
+            "title": "Recall & Retrieval",
+            "instructions": "Answer these questions in full sentences.",
+            "items": [
+              {
+                "question": "What was the name of the famous Eora warrior who led a guerrilla war against British settlements in the Sydney basin?",
+                "answer": "Pemulwuy was the famous Eora warrior who led the guerrilla resistance."
+              },
+              {
+                "question": "What legal myth did the British use to claim that they had the right to occupy Aboriginal land because it was 'nobody's land'?",
+                "answer": "They used the legal myth of 'Terra Nullius' to claim the land belonged to nobody."
+              }
+            ]
+          },
+          "vocab": [
+            {
+              "term": "Free Settlers",
+              "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
+            },
+            {
+              "term": "Gold Prospector",
+              "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
+            },
+            {
+              "term": "Merino",
+              "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
+            },
+            {
+              "term": "Whaling",
+              "definition": "Hunting for whales to be used for their blubber to make machine-lubricating and lamp oil."
+            },
+            {
+              "term": "Self-Sufficient",
+              "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
+            },
+            {
+              "term": "Blue Mountains",
+              "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
+            }
+          ],
+          "vocab_cloze_text": "By the early 1800s, Australia was changing rapidly. Freed convicts like James Ruse proved that individuals could become [Self-Sufficient] farmers. The introduction of Spanish [Merino] sheep brought massive profits, driving sheep farmers to cross the rugged [Blue Mountains] in search of grazing land. Meanwhile, the [Whaling] industry turned Sydney into a busy port. The biggest change occurred in 1851 when a [Gold Prospector] named Edward Hargreaves discovered gold, triggering a massive gold rush of [Free Settlers] and ending transportation forever.",
+          "flashcards": [
+            {
+              "term": "Free Settlers",
+              "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
+            },
+            {
+              "term": "Gold Prospector",
+              "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
+            },
+            {
+              "term": "Merino",
+              "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
+            },
+            {
+              "term": "Whaling",
+              "definition": "Hunting for whales to be used for their blubber to make machine-lubricating and lamp oil."
+            },
+            {
+              "term": "Self-Sufficient",
+              "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
+            },
+            {
+              "term": "Blue Mountains",
+              "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
+            }
+          ],
+          "sources": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "1. James Ruse, Merino Sheep, and the Crossing of the Blue Mountains",
+              "text": "In November 1788, a freed convict named James Ruse was given a small plot of land inland from Sydney at Rose Hill. By clearing the land, burning timber to enrich the soil, and farming with immense grit, Ruse proved within three years that he could be completely [Self-Sufficient]. He became Australia's first successful free farmer, proving that the colony could survive. In the years that followed, thousands of voluntary migrants chose to leave Britain to establish their own farms.<br><br>While basic crops kept the colony alive, it was wool that made it rich. In 1797, 26 Spanish [Merino] sheep, highly famous for the superb quality and thickness of their wool, arrived in Sydney on a supply ship. They flourished in the dry climate, generating massive profits. However, by 1810, drought and soil exhaustion made farming around Sydney difficult. In 1813, a farmer named Gregory Blaxland and two friends became the first Europeans to cross the formidable [Blue Mountains] to the west. Beyond the peaks, they discovered vast, rich grazing lands, prompting a massive inland expansion that led to the founding of Australia's first inland town, Bathurst, in 1815."
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "2. Whaling, the 1851 Gold Rush, and the End of Transportation",
+              "text": "At the same time, the [Whaling] industry was transforming the colony's economy. In industrial Britain, there was a massive demand for whale oil to light city streetlamps and lubricate factory machinery. Whaling ships that carried convicts to Sydney stayed in the Pacific to hunt, turning Sydney into a booming international trading port. The peak of this boom occurred between 1820 and 1850, bringing hundreds of free workers and vital wealth to the young colony.<br><br>The final transformation of Australia occurred in February 1851, when a [Gold Prospector] named Edward Hargreaves discovered specks of gold in a river near Bathurst. This triggered Australia's first massive gold rush. Thousands of free immigrants from Britain, America, and China flooded into the colony to make their fortunes. This sudden mineral wealth brought an end to convict transportation. The British government realized that if a convicted criminal who served their sentence could easily become a wealthy gold digger, transportation to Australia could no longer serve as a terrifying punishment. Transportation to New South Wales was stopped in 1851, transforming Australia into a land of free, democratic citizens."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "Who was James Ruse in early Australian colonial history?",
+              "options": [
+                "A freed convict who became the colony's first self-sufficient farmer at Rose Hill",
+                "The British captain who discovered gold in the Blue Mountains",
+                "A Gweagal warrior who worked as a guide for Arthur Phillip",
+                "The surgeon aboard the First Fleet who drew the first emu"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why were Spanish Merino sheep so valuable to the early Australian economy?",
+              "options": [
+                "They produced exceptional quantities of high-quality wool that generated massive profits",
+                "They were used by whalers to detect whales in the ocean",
+                "They were highly resistant to the local smallpox epidemic",
+                "They were used to pull heavy carts across the Blue Mountains"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why did the discovery of gold in 1851 bring an end to the transportation of British convicts?",
+              "options": [
+                "Because being sent to a land of gold and opportunities was no longer seen as a terrifying punishment",
+                "Because the gold mines destroyed all the prisons in Sydney",
+                "Because the convicts used the gold to buy their own freedom",
+                "Because King George III declared that gold digging was an illegal activity"
+              ],
+              "answer": 0
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "title": "The Economic Boom of Australia",
+              "instructions": "Answer the following questions in full sentences based on the text.",
+              "questions": [
+                {
+                  "q": "How did Gregory Blaxland's crossing of the Blue Mountains in 1813 help the sheep farming industry grow?",
+                  "a": "Crossing the Blue Mountains in 1813 allowed Gregory Blaxland to discover vast, rich grazing lands to the west of Sydney, which solved the problems of drought and soil exhaustion in the coastal settlement and allowed the Merino sheep farming industry to expand rapidly inland."
+                },
+                {
+                  "q": "Explain how the whaling industry and the gold rush helped transform Australia from a prison into a colony of free settlers.",
+                  "a": "The whaling industry brought vital money and international trade to Sydney's port, attracting free workers. Later, the 1851 gold rush drew thousands of voluntary migrants seeking fortune, which made Australia highly prosperous and forced the British government to end convict transportation because it was no longer a deterrent punishment."
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "quizPack": [
         {
           "q": "In what year did the Franco-Prussian War end?",
@@ -876,19 +1632,22 @@
           "id": "KT1",
           "title": "KT1",
           "image": "/assets/cme_new_kt1_cover.png",
-          "prefix": "KT1"
+          "prefix": "KT1",
+          "enquiry": "How and why was the state of Israel established?"
         },
         {
           "id": "KT2",
           "title": "KT2",
           "image": "/assets/cme_new_yom_kippur_crossing.png",
-          "prefix": "KT2"
+          "prefix": "KT2",
+          "enquiry": "What drove the major conflicts in the Middle East from 1967-1973?"
         },
         {
           "id": "KT3",
           "title": "KT3",
           "image": "/assets/cme_new_camp_david_accords.png",
-          "prefix": "KT3"
+          "prefix": "KT3",
+          "enquiry": "Why has lasting peace in the Middle East been so difficult to achieve?"
         }
       ],
       "groupings": [
@@ -8158,6 +8917,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/cold_war_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "lessons": [],
@@ -8974,6 +9738,11 @@
           "title": "Unit Workbook",
           "url": "workbook.html",
           "id": "full"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/early_modern_world_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "timeline": [
@@ -13651,27 +14420,37 @@
         {
           "id": "medieval",
           "title": "Medieval",
-          "prefix": "lesson_1_"
+          "prefix": "lesson_1_",
+          "image": "/assets/banners/medieval_pano_1784551792993.png",
+          "enquiry": "How much did medicine really change in Medieval England?"
         },
         {
           "id": "renaissance",
           "title": "Renaissance",
-          "prefix": "lesson_2_"
+          "prefix": "lesson_2_",
+          "image": "/assets/banners/renaissance_pano_1784551804068.png",
+          "enquiry": "Why did the Medical Renaissance have so little impact on everyday treatments?"
         },
         {
           "id": "18th_19th",
           "title": "18th & 19th C",
-          "prefix": "lesson_3_"
+          "prefix": "lesson_3_",
+          "image": "/assets/banners/industrial_pano_1784551813599.png",
+          "enquiry": "How did the Industrial Revolution transform the understanding and prevention of disease?"
         },
         {
           "id": "modern",
           "title": "Modern",
-          "prefix": "lesson_4_"
+          "prefix": "lesson_4_",
+          "image": "/assets/banners/modern_pano_1784551822373.png",
+          "enquiry": "How did technology and government intervention revolutionize 20th-century medicine?"
         },
         {
           "id": "western_front",
           "title": "Western Front",
-          "prefix": "lesson_5_"
+          "prefix": "lesson_5_",
+          "image": "/assets/banners/western_front_pano_1784551831887.png",
+          "enquiry": "How did the horrific conditions of trench warfare drive rapid medical innovation?"
         }
       ],
       "groupings": [
@@ -24308,17 +25087,23 @@
         {
           "id": "KT1",
           "title": "Key Topic 1: Queen, government and religion, 1558-69",
-          "prefix": "lesson_1_"
+          "prefix": "lesson_1_",
+          "image": "/assets/placeholder_cover.jpg",
+          "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?"
         },
         {
           "id": "KT2",
           "title": "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88",
-          "prefix": "lesson_2_"
+          "prefix": "lesson_2_",
+          "image": "/assets/placeholder_cover.jpg",
+          "enquiry": "Why did plots and foreign threats push Elizabeth towards war?"
         },
         {
           "id": "KT3",
           "title": "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88",
-          "prefix": "lesson_3_"
+          "prefix": "lesson_3_",
+          "image": "/assets/placeholder_cover.jpg",
+          "enquiry": "What was life like during the Elizabethan Golden Age?"
         }
       ],
       "printable_workbooks": [
@@ -29085,6 +29870,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/great_war_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "lessons": [
@@ -29477,7 +30267,7 @@
             }
           ],
           "extended": {
-            "question": "Evaluate how the change in leadership from Bismarck to  fundamentally altered Germany's strategic position in Europe.",
+            "question": "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
             "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
           },
           "do_now": {
@@ -29770,7 +30560,7 @@
                 "Kaiser Wilhelm II",
                 "Kaiser Wilhelm I",
                 "Franz Joseph",
-                ""
+                "Tsar Nicholas II"
               ]
             },
             {
@@ -31276,7 +32066,7 @@
             "objectives": [
               {
                 "objective": "Identify the events of 28 June 1914.",
-                "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and  seizing the unexpected opportunity.",
+                "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and Gavrilo Princip seizing the unexpected opportunity.",
                 "question": "What was the single biggest piece of 'bad luck' that allowed Gavrilo Princip to assassinate the Archduke?"
               },
               {
@@ -32422,6 +33212,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/great_war_part2_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "debatePrompts": [
@@ -32704,7 +33499,7 @@
                 "Lord Horatio Kitchener",
                 "Winston Churchill",
                 "Douglas Haig",
-                ""
+                "David Lloyd George"
               ]
             },
             {
@@ -32732,7 +33527,7 @@
               "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/",
               "title": "Y is for Your Country Needs You | WWI A-Z",
               "duration": "3 mins",
-              "viewing_task": "How was 's famous poster used to drum up initial excitement for the war?",
+              "viewing_task": "How was Lord Kitchener's famous poster used to drum up initial excitement for the war?",
               "model_answer": "The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty."
             },
             {
@@ -32881,7 +33676,7 @@
             },
             {
               "title": "The Brutal Reality: Wilfred Owen",
-              "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong></strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
+              "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>Wilfred Owen</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
               "image": "/images/gw_wilfred_owen.jpg",
               "image_alt": "Source D: A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope.",
               "tasks": [
@@ -33147,7 +33942,7 @@
           "narrative_blocks": [
             {
               "title": "The Core Narrative",
-              "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong></strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
+              "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>Khudadad Khan</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
               "tasks": [
                 {
                   "type": "short_answer",
@@ -33660,7 +34455,7 @@
           "narrative_blocks": [
             {
               "title": "The Core Narrative",
-              "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong> (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong> (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
+              "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>Georges Clemenceau (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>Woodrow Wilson (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
               "tasks": [
                 {
                   "type": "short_answer",
@@ -34362,6 +35157,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/industrialisation_and_empire_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "lessons": [
@@ -36928,6 +37728,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/the_shoah_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "lessons": [],
@@ -37760,6 +38565,11 @@
         {
           "title": "Unit Workbook",
           "url": "workbook.html"
+        },
+        {
+          "title": "Mastery Pack",
+          "url": "../../pdfs/water_and_sanitation_mastery_pack_full.pdf",
+          "icon": "fa-brain"
         }
       ],
       "lessons": [
@@ -37901,7 +38711,7 @@
               "theme_heading": "Roman Water and Hygiene",
               "image": "/assets/water_and_sanitation_seneca.jpg",
               "image_alt": "Source C: Seneca the Younger (c. 4 BC – AD 65)",
-              "caption": " (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
+              "caption": "Seneca the Younger (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
               "source_letter": "C"
             },
             {
@@ -37955,7 +38765,7 @@
               "answer": 3
             },
             {
-              "question": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+              "question": "Where did Roman soldiers sit side-by-side over water-flushed latrine channels?",
               "options": [
                 "Silchester farming roundhouse village",
                 "Bearsden public bathing sequence",
@@ -38005,7 +38815,7 @@
           },
           "historians_corner": {
             "title": "Historian's Corner",
-            "text": "<strong></strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
+            "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
             "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
             "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
           }
@@ -38285,7 +39095,7 @@
             "scaffolded": [
               "Describe the sanitation problems in growing Tudor and Stuart towns.",
               "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
-              "Evaluate how 's diary reveals the reality of Early Modern sanitation."
+              "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation."
             ]
           },
           "teacher_notes": {
@@ -38322,12 +39132,12 @@
               ],
               "theme_heading": "Harington",
               "image": "/assets/water_and_sanitation_harington_toilet.jpg",
-              "image_alt": "Source A: 's flushing toilet design (1596)",
+              "image_alt": "Source A: Sir John Harington's flushing toilet design (1596)",
               "caption": "<strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harington, a godson of Queen Elizabeth I. It illustrates his invention: the first modern flushing water closet, which he called the 'Ajax'. It featured a flush valve to release water and a wash-down design to empty the bowl.",
               "source_letter": "A"
             },
             {
-              "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named  successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
+              "text": "However, monumental strides were being made in supplying the capital with fresh water. In 1613, a wealthy goldsmith and entrepreneur named Sir Hugh Myddelton successfully completed the 'New River' project. This was a colossal, highly ambitious engineering feat that involved digging an artificial waterway to bring fresh, clean spring water from Hertfordshire across 38 miles of countryside directly into North London. Relying entirely on gravity, the New River transformed the city's water infrastructure. It provided London with a relatively clean and reliable water supply to feed the houses of wealthy subscribers through an extensive network of hollowed-out wooden pipes laid beneath the city streets, vastly improving living standards for those who could afford the subscription fee.",
               "level_4": "In 1613, the New River was opened, a massive engineering project that brought fresh spring water from Hertfordshire over 38 miles directly into North London using gravity. This project provided London with a clean water supply to feed the houses of wealthy subscribers through wooden pipes.",
               "tasks": [
                 {
@@ -38428,7 +39238,7 @@
                 "Sir John Harington",
                 "Samuel Pepys",
                 "King Charles I",
-                ""
+                "Joseph Bazalgette"
               ],
               "answer": 1
             }
@@ -38588,7 +39398,7 @@
               ],
               "theme_heading": "Britain's First Cholera",
               "image": "/assets/water_and_sanitation_snow_cholera_map.jpg",
-              "image_alt": "Source A: Dr. 's Cholera Map of Soho (1854)",
+              "image_alt": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
               "caption": "<strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during the devastating 1854 cholera outbreak in Soho, London. Each black bar on the map represents a death from cholera at that specific address. Snow noticed that the deaths clustered tightly around one specific public water pump on Broad Street.",
               "source_letter": "A"
             },
@@ -38792,7 +39602,7 @@
                   "text": "How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?"
                 }
               ],
-              "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by , these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+              "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
               "level_4": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
               "theme_heading": "Portsmouth's Victorian Clean"
             },
@@ -38955,7 +39765,7 @@
           ]
         },
         {
-          "q": "Where sat Roman soldiers side-by-side over water-flushed latrine channels?",
+          "q": "Where did Roman soldiers sit side-by-side over water-flushed latrine channels?",
           "a": "Housesteads Fort on Hadrian's Wall",
           "options": [
             "Housesteads Fort on Hadrian's Wall",
@@ -39796,25 +40606,29 @@
           "id": "KT1",
           "title": "Key Topic 1: The Weimar Republic",
           "image": "/images/weimar_kt1_cover.jpg",
-          "prefix": "lesson_1_"
+          "prefix": "lesson_1_",
+          "enquiry": "To what extent did the Weimar Republic recover from its early crises?"
         },
         {
           "id": "KT2",
           "title": "Key Topic 2: Hitler's Rise to Power, 1919-33",
           "image": "/images/weimar_kt2_cover.jpg",
-          "prefix": "lesson_2_"
+          "prefix": "lesson_2_",
+          "enquiry": "How did a tiny obscure political group transform?"
         },
         {
           "id": "KT3",
           "title": "Key Topic 3: Nazi Control and Dictatorship",
           "image": "/images/weimar_kt3_cover.jpg",
-          "prefix": "lesson_3_"
+          "prefix": "lesson_3_",
+          "enquiry": "From chains to absolute control"
         },
         {
           "id": "KT4",
           "title": "Key Topic 4: Life in Nazi Germany, 1933–39",
           "image": "/images/weimar_kt4_cover.jpg",
-          "prefix": "lesson_4_"
+          "prefix": "lesson_4_",
+          "enquiry": "Did life improve under the Nazis?"
         }
       ],
       "printable_workbooks": [

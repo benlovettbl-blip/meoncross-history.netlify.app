@@ -12,25 +12,29 @@
         "id": "KT1",
         "title": "Key Topic 1: The Weimar Republic",
         "image": "/images/weimar_kt1_cover.jpg",
-        "prefix": "lesson_1_"
+        "prefix": "lesson_1_",
+        "enquiry": "To what extent did the Weimar Republic recover from its early crises?"
       },
       {
         "id": "KT2",
         "title": "Key Topic 2: Hitler's Rise to Power, 1919-33",
         "image": "/images/weimar_kt2_cover.jpg",
-        "prefix": "lesson_2_"
+        "prefix": "lesson_2_",
+        "enquiry": "How did a tiny obscure political group transform?"
       },
       {
         "id": "KT3",
         "title": "Key Topic 3: Nazi Control and Dictatorship",
         "image": "/images/weimar_kt3_cover.jpg",
-        "prefix": "lesson_3_"
+        "prefix": "lesson_3_",
+        "enquiry": "From chains to absolute control"
       },
       {
         "id": "KT4",
         "title": "Key Topic 4: Life in Nazi Germany, 1933–39",
         "image": "/images/weimar_kt4_cover.jpg",
-        "prefix": "lesson_4_"
+        "prefix": "lesson_4_",
+        "enquiry": "Did life improve under the Nazis?"
       }
     ],
     "printable_workbooks": [
