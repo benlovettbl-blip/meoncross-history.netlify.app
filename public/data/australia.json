@@ -215,6 +215,24 @@
               }
             ]
           }
+        ],
+        "video": {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=Up94ItsNm2U",
+          "title": "Tupaia's Endeavour | Official Trailer | DocPlay",
+          "duration": "2 mins 19 secs",
+          "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+          "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+        },
+        "extra_videos": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=i2nziqeKY-c",
+            "title": "Sir David Attenborough on Joseph Banks",
+            "duration": "2 mins 8 secs",
+            "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+            "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+          }
         ]
       },
       {
@@ -391,6 +409,48 @@
                 "a": "Convicts were forced to perform hard physical labor, which included felling trees, clearing dense bush, cultivating soil, quarrying sandstone, and building barracks. Difficult convicts were placed in chain-bound 'road gangs' where they spent their days breaking stones and shoveling earth to construct the colony's first transport networks."
               }
             ]
+          }
+        ],
+        "video": {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=M7O-6PDQp0A",
+          "title": "Child Convicts of Australia – Chapter 1: Transportation and the First Fleet",
+          "duration": "3 mins 41 secs",
+          "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+          "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+        },
+        "extra_videos": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=5OWGbZJCn1k",
+            "title": "Child Convicts of Australia – Chapter 2: A Day in the Life",
+            "duration": "3 mins 8 secs",
+            "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+            "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=nbaF5FBI2nE",
+            "title": "Short History of Convict Australia (Full Episode)",
+            "duration": "50 mins 59 secs",
+            "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+            "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=dwfYMI-buKY",
+            "title": "Life on Board the First Colonising Ships to South Australia",
+            "duration": "4 mins 54 secs",
+            "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+            "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=gVQg_Sb1e1Q",
+            "title": "Governor Arthur Phillip and the Eora [HD]",
+            "duration": "9 mins 48 secs",
+            "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
+            "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
           }
         ]
       },
