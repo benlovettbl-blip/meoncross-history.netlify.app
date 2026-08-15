@@ -31,684 +31,728 @@ const unitData = {
     }
   ],
   "lessons": [
-  {
-    "id": "lesson_1_1",
-    "title": "Claiming Australia",
-    "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
-    "teacher_notes": {
-      "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
-      "objectives": [
-        {
-          "objective": "Explain the dual purpose of James Cook's voyage, contrasting the public scientific mission with the secret government orders to claim territory.",
-          "primer": "Instruct students on how the public transit of Venus observation masked private instructions from the Admiralty to locate and claim the Great Southern Land for King George III.",
-          "question": "How does discovering that Captain Cook carried secret instructions change our understanding of his voyage from a purely scientific mission to an imperial one?"
-        },
-        {
-          "objective": "Analyse the indispensable navigational and diplomatic contributions of the Polynesian high priest and master star navigator, Tupaia.",
-          "primer": "Focus heavily on Tupaia's mental map of 3,000 miles of ocean, his mastery of non-instrument star navigation, and his role as a translator with the Māori.",
-          "question": "Can we historically define Cook's voyage as a 'discovery' of Pacific islands if he was actively guided there by Tupaia, who already knew exactly where they were?"
-        },
-        {
-          "objective": "Evaluate the first encounter at Botany Bay in 1770 from both the British perspective and the defensive spiritual perspective of the Gweagal people.",
-          "primer": "Contrast Cook's journal entry of a native 'attack' with the Gweagal's tribal duty to protect their ancestral lands from uninvited strangers.",
-          "question": "Why did the Gweagal warriors throw rocks and spears at the British, and how did this reflect their spiritual laws rather than simple hostility?"
-        }
-      ]
-    },
-    "do_now": {
-      "type": "questions",
-      "title": "Recall & Retrieval",
-      "instructions": "Answer these questions in full sentences.",
-      "items": [
-        {
-          "question": "What cash crop drove the transatlantic slave trade and brought immense wealth to British traders and plantation owners in the seventeenth century?",
-          "answer": "Sugar was the primary cash crop that drove the transatlantic slave trade and generated massive wealth for British traders and plantation owners."
-        },
-        {
-          "question": "Which Tudor queen granted royal charters to English adventurers like Sir Walter Raleigh to explore and claim lands in the Americas in the 1580s?",
-          "answer": "Queen Elizabeth I granted royal charters to adventurers like Sir Walter Raleigh to establish the earliest English claims in the Americas."
-        },
-        {
-          "question": "What dramatic population shift occurred in Great Britain between 1750 and 1850 as a direct result of the Industrial Revolution?",
-          "answer": "The Industrial Revolution caused a massive wave of urbanization, as millions of rural families migrated from the countryside to find work in rapidly expanding factory towns and coal mines."
-        }
-      ]
-    },
-    "vocab": [
-      {
-        "term": "Ancestors",
-        "definition": "The people that we are descended from, who lived in a territory before us."
-      },
-      {
-        "term": "Botany Bay",
-        "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
-      },
-      {
-        "term": "Colony",
-        "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
-      },
-      {
-        "term": "Gweagal",
-        "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
-      },
-      {
-        "term": "Navigator",
-        "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
-      },
-      {
-        "term": "Royal Society",
-        "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
-      }
-    ],
-    "vocab_cloze_text": "In August 1768, Captain James Cook set sail on the Endeavour, funded by the [Royal Society] to observe the stars. In April 1770, the ship arrived on the east coast of Australia at a place they named [Botany Bay]. Here, they had a tense first meeting with the [Gweagal] people, whose [Ancestors] had lived on that coastline for thousands of years. Cook eventually sailed north and claimed the land as a British [Colony] called New South Wales, guided along the way by a master Polynesian [Navigator] named Tupaia.",
-    "flashcards": [
-      {
-        "term": "Ancestors",
-        "definition": "The people that we are descended from, who lived in a territory before us."
-      },
-      {
-        "term": "Botany Bay",
-        "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
-      },
-      {
-        "term": "Colony",
-        "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
-      },
-      {
-        "term": "Gweagal",
-        "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
-      },
-      {
-        "term": "Navigator",
-        "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
-      },
-      {
-        "term": "Royal Society",
-        "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
-      }
-    ],
-    "sources": [],
-    "narrative_blocks": [
-      {
-        "type": "narrative",
-        "theme_heading": "1. The Dual Mission of the Endeavour",
-        "text": "In August 1768, Lieutenant James Cook, an officer in the British Navy, left Plymouth on his ship, the Endeavour. This voyage was destined to change global history. Publicly, the journey was funded and framed as a peaceful mission of scientific discovery. On board were nine scientists from the prestigious [Royal Society], led by the wealthy and influential young botanist Sir Joseph Banks. Their official, public task was to travel to the South Pacific island of Tahiti to observe the transit of the planet Venus across the Sun. By timing this event from different parts of the world, scientists hoped to calculate the exact distance between the Earth and the Sun.<br><br>However, scientific curiosity was only a cover story. Cook also carried a packet of secret instructions from the British Admiralty. These private orders commanded him that once the scientific observations in Tahiti were complete, he was to sail further south into the uncharted waters of the Pacific to search for a rumored, massive landmass known as the 'Great Southern Land.' If he located this land, he was ordered to map its coastline, record its resources, and claim it for the British Crown before other rival European nations, like France or Spain, could do so."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "2. Tupaia: The Indispensable Star Navigator",
-        "text": "While British history books have celebrated Captain Cook's navigational genius for centuries, the survival and success of the Endeavour relied heavily on an extraordinary Indigenous figure: Tupaia. Joining the ship in Tahiti in 1769 at the urging of Joseph Banks, Tupaia was a high priest and master star navigator from the island of Ra'iatea. While Cook possessed state-of-the-art European maritime instruments like sextants, compasses, and marine clocks, he had no charts or understanding of the vast, complex, and dangerous Pacific reefs.<br><br>Tupaia possessed an exceptional, complex mental map spanning over 3,000 miles of ocean. He navigated using ancient, highly sophisticated Polynesian star navigation techniques. Without any mechanical tools, Tupaia could determine the ship's exact position by reading the stars, the path of the sun, bird flight patterns, cloud formations, and the unique temperature and vibration of ocean currents. Furthermore, Tupaia was a brilliant diplomat. As the only person on board who could speak languages closely related to the Pacific islanders, he served as a translator when the Endeavour reached New Zealand. He communicated directly with the Māori, defusing highly dangerous misunderstandings and preventing what would have been catastrophic colonial massacres. Despite saving the lives of the crew and creating a detailed chart of the islands, Tupaia's pivotal role was written out of mainstream history for over 250 years, leaving his story largely 'invisible.'"
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "3. The Landing at Botany Bay and the Gweagal Encounter",
-        "text": "In April 1770, the Endeavour sailed up the eastern coast of Australia. Although Dutch explorers had mapped parts of the western coast in the seventeenth century, they had never claimed ownership of the land. When Cook's crew located a sheltered bay and rowed toward the shore, they were met by two Gweagal Aboriginal men of the Dharawal nation armed with spears and shields. The Gweagal's ancestors had lived in harmony with that land for over 65,000 years.<br><br>From the spiritual and legal perspective of the Gweagal, it was their sacred duty to protect their ancestral country from uninvited strangers who did not have permission to be there. Cook wrote in his journal that when one of the Gweagal men threw a rock to warn them away, the British fired a warning musket. When the warriors stood their ground and a spear was thrown, the British fired two more times with buckshot, wounding one of the Gweagal men in the leg. Cook framed this in his records as an unprovoked attack by 'natives' on peaceful explorers, completely ignoring that the British were armed invaders. The Endeavour stayed in the bay for a week. Sir Joseph Banks and his scientists were so amazed by the thousands of unknown botanical specimens they collected that they named the place 'Botany Bay.' In May, Cook sailed north to an island he named 'Possession Island,' where he raised the Union Jack and claimed the entire eastern coast for Britain, naming it 'New South Wales' under the legal fiction of 'Terra Nullius' (nobody's land)."
-      }
-    ],
-    "quiz": [
-      {
-        "question": "What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?",
-        "options": [
-          "To locate and claim the 'Great Southern Land' for the British Empire",
-          "To transport convicts to a new prison in Sydney",
-          "To wage a surprise naval war against Spanish colonies",
-          "To find a shorter trade route to India through the Arctic"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?",
-        "options": [
-          "He used a French marine chronometer and paper charts",
-          "He read the stars, bird flight patterns, and ocean currents",
-          "He followed a compass provided by Sir Joseph Banks",
-          "He used a Spanish sextant to calculate the sun's angle"
-        ],
-        "answer": 1
-      },
-      {
-        "question": "Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?",
-        "options": [
-          "They wanted to capture the British ship to steal its iron",
-          "They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers",
-          "They had been ordered to attack by French traders",
-          "They believed the British were gods who needed to be sacrificed"
-        ],
-        "answer": 1
-      }
-    ],
-    "tasks": [
-      {
-        "type": "comprehension",
-        "title": "Uncovering the True Story of James Cook's Landing",
-        "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
-        "questions": [
+    {
+      "id": "lesson_1_1",
+      "title": "Claiming Australia",
+      "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
+      "teacher_notes": {
+        "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
+        "objectives": [
           {
-            "q": "Explain the dual purpose of James Cook’s 1768 voyage on the Endeavour, identifying both the public and private motives.",
-            "a": "The public, official motive of Captain Cook's voyage was scientific: funded by the Royal Society, he was sent to Tahiti to observe the transit of Venus across the sun to help calculate the distance between the Earth and the Sun. The private, secret motive was political and imperial: Cook carried hidden orders from the British Admiralty commanding him to sail south to find the rumored 'Great Southern Land' and claim it for King George III before rival European powers could."
+            "objective": "Explain the dual purpose of James Cook's voyage, contrasting the public scientific mission with the secret government orders to claim territory.",
+            "primer": "Instruct students on how the public transit of Venus observation masked private instructions from the Admiralty to locate and claim the Great Southern Land for King George III.",
+            "question": "How does discovering that Captain Cook carried secret instructions change our understanding of his voyage from a purely scientific mission to an imperial one?"
           },
           {
-            "q": "How does Tupaia's contribution challenge the traditional historical narrative that James Cook 'discovered' the Pacific islands?",
-            "a": "Tupaia's contribution challenges the traditional 'discovery' narrative because he was a master star navigator who possessed a vast mental map of over 3,000 miles of ocean. Since Tupaia used his indigenous environmental skills to guide the Endeavour and translate with the Māori, Cook did not 'discover' these lands; rather, he was guided to inhabited territories by an indigenous navigator who already knew exactly where they were."
+            "objective": "Analyse the indispensable navigational and diplomatic contributions of the Polynesian high priest and master star navigator, Tupaia.",
+            "primer": "Focus heavily on Tupaia's mental map of 3,000 miles of ocean, his mastery of non-instrument star navigation, and his role as a translator with the Māori.",
+            "question": "Can we historically define Cook's voyage as a 'discovery' of Pacific islands if he was actively guided there by Tupaia, who already knew exactly where they were?"
           },
           {
-            "q": "Contrast the British view of the Botany Bay landing with the perspective of the Gweagal Aboriginal people.",
-            "a": "The British viewed the landing as a peaceful scientific exploration where they had to defend themselves from a hostile and unprovoked attack by 'natives.' In contrast, the Gweagal people viewed the landing as an unauthorized invasion of their sovereign territory, and they threw stones and spears as part of their sacred, spiritual, and legal duty to protect their ancestral land and spirits from uninvited strangers."
+            "objective": "Evaluate the first encounter at Botany Bay in 1770 from both the British perspective and the defensive spiritual perspective of the Gweagal people.",
+            "primer": "Contrast Cook's journal entry of a native 'attack' with the Gweagal's tribal duty to protect their ancestral lands from uninvited strangers.",
+            "question": "Why did the Gweagal warriors throw rocks and spears at the British, and how did this reflect their spiritual laws rather than simple hostility?"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "lesson_1_2",
-    "title": "Creating a Convict Colony",
-    "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
-    "teacher_notes": {
-      "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
-      "objectives": [
-        {
-          "objective": "Explain how the loss of the American colonies in 1776 directly caused a prison crisis in Britain that led to the system of transportation.",
-          "primer": "Guide students to construct a causal flow diagram linking the American War of Independence, the overcrowding of river 'hulks', and the eventual decision to settle Botany Bay.",
-          "question": "How did a political war fought in America in 1776 directly decide the fate of a petty thief in London ten years later?"
-        },
-        {
-          "objective": "Describe the physical and environmental challenges faced by Captain Arthur Phillip and the convicts during their first year at Sydney Cove.",
-          "primer": "Discuss the lack of skilled farmers, the infertile sandy soil of Sydney Cove, and how Phillip's introduction of equal food rationing prevented starvation.",
-          "question": "Why was the decision to share food completely equally between guards and convicts a highly radical and necessary act for survival?"
-        },
-        {
-          "objective": "Analyse the work and social conditions of the convicts, contrasting general labor with the punishments of the chain road gangs.",
-          "primer": "Detail the daily routines of clearing forests, quarrying stone, and the extreme punishments of the iron-shackled road gangs used to build infrastructure.",
-          "question": "Based on their daily tasks, was the First Fleet a simple prison ship or was it a 'colony-building kit' designed to expand the British Empire?"
-        }
-      ]
-    },
-    "do_now": {
-      "type": "questions",
-      "title": "Recall & Retrieval",
-      "instructions": "Answer these questions in full sentences.",
-      "items": [
-        {
-          "question": "What was the secret reason the British Admiralty gave Captain Cook private instructions to explore the South Pacific?",
-          "answer": "The secret reason was to search for the rumored 'Great Southern Land' and claim it as a British colony before other European nations could."
-        },
-        {
-          "question": "Who was the master Polynesian star navigator and high priest who used his mental map of the ocean to guide the Endeavour?",
-          "answer": "Tupaia was the Polynesian high priest and master navigator who guided Captain Cook."
-        },
-        {
-          "question": "What did the Gweagal Aboriginal warriors throw at Captain Cook's men during their first meeting at Botany Bay in 1770?",
-          "answer": "They threw rocks and wooden spears to warn the British away and protect their ancestral lands."
-        }
-      ]
-    },
-    "vocab": [
-      {
-        "term": "Convict",
-        "definition": "A person found guilty of a crime and sentenced by a court of law."
       },
-      {
-        "term": "Governor",
-        "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
-      },
-      {
-        "term": "Hard labour",
-        "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
-      },
-      {
-        "term": "Hulk",
-        "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
-      },
-      {
-        "term": "Transportation",
-        "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
-      },
-      {
-        "term": "Sydney Harbour",
-        "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
-      }
-    ],
-    "vocab_cloze_text": "After the loss of the American colonies, British prisons became dangerously overcrowded. The government's temporary solution was to lock prisoners inside decaying [Hulk] ships along the south coast. To solve this crisis permanently, the government revived the policy of [Transportation], sending a fleet of eleven ships under the command of [Governor] Arthur Phillip. In January 1788, the fleet landed at [Sydney Harbour] to establish a penal colony. Here, every [Convict] faced years of grueling [Hard labour] clearing forests and building roads.",
-    "flashcards": [
-      {
-        "term": "Convict",
-        "definition": "A person found guilty of a crime and sentenced by a court of law."
-      },
-      {
-        "term": "Governor",
-        "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
-      },
-      {
-        "term": "Hard labour",
-        "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
-      },
-      {
-        "term": "Hulk",
-        "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
-      },
-      {
-        "term": "Transportation",
-        "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
-      },
-      {
-        "term": "Sydney Harbour",
-        "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
-      }
-    ],
-    "sources": [],
-    "narrative_blocks": [
-      {
-        "type": "narrative",
-        "theme_heading": "1. The American Revolution and the Gaol Crisis",
-        "text": "During the eighteenth century, the British legal system relied heavily on the Transportation Act of 1717 to deal with criminals. Under this system, the courts sentenced thousands of petty thieves to be sent to Britain's colonies in North America, where their labor was sold to tobacco plantation owners. However, in 1776, the American colonies declared their independence from Great Britain. This political revolution meant that sending British criminals to America was no longer possible, creating a severe and immediate prison crisis back in Britain.<br><br>British gaols quickly became dangerously overcrowded. To cope with this, the government passed the Hulks Act of 1776, which allowed them to lock prisoners inside 'hulks'—old, decommissioned warships moored in southern English ports like Portsmouth and Plymouth. These floating prisons were horrific: they were dark, suffocatingly hot, filthy, and disease-ridden, with thousands of prisoners dying of typhus and cholera. As public panic rose over the disease and frequent prison escapes, the British government realized they needed a permanent, distant alternative. In August 1786, they decided to establish a new penal colony on the eastern coast of Australia, which Captain Cook had claimed eighteen years earlier."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "2. The First Fleet and the Ordeal of the Lady Penrhyn",
-        "text": "In May 1787, the First Fleet—a group of eleven ships carrying approximately 1,400 people, including 750 convicts, marines, and sailors—departed Portsmouth under the command of Captain Arthur Phillip, who was appointed as the colony's first [Governor]. After an arduous, eight-month voyage, the fleet reached Botany Bay in January 1788. Phillip quickly realized the bay was too shallow and open to heavy winds, so he sailed slightly north to Port Jackson, establishing the settlement of Sydney Cove on January 26, 1788.<br><br>The arrival was marked by extreme physical and social chaos. On Wednesday, February 6, 1788, the female convicts were finally brought ashore from their transport ships. Arthur Bowes Smyth, a naval surgeon aboard the Lady Penrhyn (the ship carrying the majority of the female convicts), kept a highly detailed, eyewitness journal of that day. He recorded that as the women landed, a violent, terrifying tropical thunderstorm struck Sydney Cove, splitting a massive tree in the center of the camp and killing several sheep. Smyth described scenes of absolute riot and heavy drinking as sailors and male convicts broke into the women's tents. Bowes Smyth's journals are invaluable to historians today because they provide a rare, human face to the female convicts, recording their actual names, ages, trades, and personal struggles during the settlement's birth."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "3. Hard Labour and the Struggle for Survival",
-        "text": "The first year of the Sydney settlement was an intense struggle for survival. The colonists faced immediate starvation because the sandy soil around Sydney Cove was poor, the local climate was completely unfamiliar, and there were almost no skilled farmers, blacksmiths, or carpenters among the convicts. To prevent a total collapse and preserve order, Governor Phillip took the radical step of ordering that all food supplies be rationed completely equally between the officers, soldiers, and convicts.<br><br>To build the colony from scratch, every convict was forced into grueling [Hard labour]. During the day, they felled massive trees, cleared dense bush, grew food, and quarried sandstone blocks to construct the first barracks. Convicts who refused to work, stole food, or committed other offenses were severely punished. Many were sent to join a 'road gang'—forced to work day after day with their legs locked in heavy iron chains, breaking stones and shoveling earth to build Australia's first roads. Despite this brutal regime, by the 1820s, this forced manual labor had successfully transformed the wild bushland of Sydney into a thriving, highly profitable colonial port."
-      }
-    ],
-    "quiz": [
-      {
-        "question": "Why was the British government forced to stop transporting convicts to North America in 1776?",
-        "options": [
-          "The American colonies declared their independence from Britain",
-          "A massive plague of smallpox closed all American ports",
-          "The King of England decided that transportation was too cruel",
-          "The French navy destroyed all of Britain's transport ships"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?",
-        "options": [
-          "Sir Joseph Banks",
-          "Arthur Bowes Smyth",
-          "Gregory Blaxland",
-          "Edward Hargreaves"
-        ],
-        "answer": 1
-      },
-      {
-        "question": "What punishment was given to difficult convicts who committed further crimes in the Sydney colony?",
-        "options": [
-          "They were immediately sent back to England on storeships",
-          "They were forced to join road gangs and break stones in leg chains",
-          "They were sent to live with the local Eora Aboriginal tribes",
-          "They were forced to work as wig makers for the Governor"
-        ],
-        "answer": 1
-      }
-    ],
-    "tasks": [
-      {
-        "type": "comprehension",
-        "title": "Investigating the Survival of the Penal Colony",
-        "instructions": "Answer the following questions in full sentences using the detailed facts from the text.",
-        "questions": [
+      "do_now": {
+        "type": "questions",
+        "title": "Recall & Retrieval",
+        "instructions": "Answer these questions in full sentences.",
+        "items": [
           {
-            "q": "Explain why the British government decided to create a penal colony in Australia in 1787, rather than continuing to use prison hulks.",
-            "a": "The British government was forced to find a new location because the American War of Independence ended transportation to America. Their temporary solution of locking convicts in decommissioned warship 'hulks' along the English coast failed because the ships became dangerously overcrowded, disease-ridden, and insecure, leading to high death rates from typhus and public fear of escapes."
+            "question": "What cash crop drove the transatlantic slave trade and brought immense wealth to British traders and plantation owners in the seventeenth century?",
+            "answer": "Sugar was the primary cash crop that drove the transatlantic slave trade and generated massive wealth for British traders and plantation owners."
           },
           {
-            "q": "How did Governor Arthur Phillip secure the survival of the Sydney Cove colony during its first year of starvation?",
-            "a": "Governor Phillip secured the colony's survival by taking the radical step of ordering that all food supplies be rationed completely equally among all officers, marines, and convicts. This prevented rebellion and ensured that the workforce had enough basic nutrition to continue their hard labour."
+            "question": "Which Tudor queen granted royal charters to English adventurers like Sir Walter Raleigh to explore and claim lands in the Americas in the 1580s?",
+            "answer": "Queen Elizabeth I granted royal charters to adventurers like Sir Walter Raleigh to establish the earliest English claims in the Americas."
           },
           {
-            "q": "Describe the types of physical work convicts were forced to perform to construct the new settlement of Sydney.",
-            "a": "Convicts were forced to perform hard physical labor, which included felling trees, clearing dense bush, cultivating soil, quarrying sandstone, and building barracks. Difficult convicts were placed in chain-bound 'road gangs' where they spent their days breaking stones and shoveling earth to construct the colony's first transport networks."
+            "question": "What dramatic population shift occurred in Great Britain between 1750 and 1850 as a direct result of the Industrial Revolution?",
+            "answer": "The Industrial Revolution caused a massive wave of urbanization, as millions of rural families migrated from the countryside to find work in rapidly expanding factory towns and coal mines."
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "lesson_1_3",
-    "title": "Encounters with the Indigenous Peoples",
-    "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
-    "teacher_notes": {
-      "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official humanitarian rhetoric and the brutal realities of smallpox epidemics, systemic land dispossession, and documented frontier massacres. Crucially, they will analyze Aboriginal agency through the armed guerrilla warfare of the warrior Pemulwuy and the macabre British colonial trade in human 'specimens' driven by Sir Joseph Banks.",
-      "objectives": [
+      },
+      "vocab": [
         {
-          "objective": "Contrast the humanitarian intentions of King George III's official 1788 instructions with the actual practices of physical and ecological dispossession committed by British settlers.",
-          "primer": "Guide students to analyze the wording of Source A ('live in amity and kindness') and contrast it with historical accounts of land clearing, fencing of ancient trackways, and the Myall Creek Massacre.",
-          "question": "If the British government officially declared it a punishable crime to harm Aboriginal Australians, why did local settlers feel justified in shooting them on sight?"
+          "term": "Ancestors",
+          "definition": "The people that we are descended from, who lived in a territory before us."
         },
         {
-          "objective": "Explain the devastating impacts of European diseases and environmental changes on the Aboriginal way of life, with a specific focus on the Eora nation around Sydney.",
-          "primer": "Detail the path of the 1789 smallpox epidemic and how the introduction of hoofed livestock (sheep and cattle) destroyed the native plants and water sources essential to the Indigenous diet.",
-          "question": "How did the simple introduction of sheep and cattle represent a form of environmental warfare against the Eora nation?"
+          "term": "Botany Bay",
+          "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
         },
         {
-          "objective": "Evaluate the role of Eora warrior Pemulwuy in leading armed resistance, and analyze the colonial collection of Aboriginal human remains for British scientific institutions.",
-          "primer": "Teach the history of Pemulwuy's twelve-year guerrilla war (1790-1802). Discuss how Sir Joseph Banks pressured colonial Governors to ship him Aboriginal skulls, culminating in Pemulwuy's decapitation.",
-          "question": "What does the shipping of Pemulwuy's head in a spirit cask to Sir Joseph Banks in 1802 reveal about how British scientific elites viewed Aboriginal people?"
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
+        },
+        {
+          "term": "Gweagal",
+          "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
+        },
+        {
+          "term": "Navigator",
+          "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
+        },
+        {
+          "term": "Royal Society",
+          "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
+        }
+      ],
+      "vocab_cloze_text": "In August 1768, Captain James Cook set sail on the Endeavour, funded by the [Royal Society] to observe the stars. In April 1770, the ship arrived on the east coast of Australia at a place they named [Botany Bay]. Here, they had a tense first meeting with the [Gweagal] people, whose [Ancestors] had lived on that coastline for thousands of years. Cook eventually sailed north and claimed the land as a British [Colony] called New South Wales, guided along the way by a master Polynesian [Navigator] named Tupaia.",
+      "flashcards": [
+        {
+          "term": "Ancestors",
+          "definition": "The people that we are descended from, who lived in a territory before us."
+        },
+        {
+          "term": "Botany Bay",
+          "definition": "An area on the east coast of Australia where Captain Cook landed, named after the huge number of plant specimens found there by scientists."
+        },
+        {
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country, typically occupied by settlers from that country."
+        },
+        {
+          "term": "Gweagal",
+          "definition": "The specific Aboriginal Australian group who first encountered Captain Cook on the beaches of Botany Bay in 1770."
+        },
+        {
+          "term": "Navigator",
+          "definition": "A person who directs the route or course of a ship or aircraft using maps, stars, and specialized tools."
+        },
+        {
+          "term": "Royal Society",
+          "definition": "A prestigious British scientific academy established in 1660 that funded Captain Cook's initial expedition."
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_a",
+          "type": "visual",
+          "title": "A Portrait of Captain James Cook",
+          "caption": "Source A: A portrait of Captain James Cook, painted by Nathaniel Dance-Holland in 1776.",
+          "url": "/images/james_cook.jpg",
+          "source_context": "This portrait of Captain Cook was painted after his return from the South Pacific. It presents him as an authoritative and heroic British naval officer. When analyzing this image, consider how European artists constructed the image of 'the explorer' to convey imperial power and scientific mastery. **Hinge Question: How does this portrait's depiction of Cook contrast with the reality of his dependence on Indigenous navigators like Tupaia?**"
+        },
+        {
+          "id": "source_b",
+          "type": "written",
+          "title": "Secret Instructions to Captain Cook",
+          "caption": "Source B: Extract from the Secret Instructions issued to Captain James Cook by the British Admiralty, 1768.",
+          "text": "\"You are also with the Consent of the Natives to take possession of Convenient Situations in the Country in the Name of the King of Great Britain; or, if you find the Country uninhabited take Possession for His Majesty by setting up Proper Marks and Inscriptions, as first discoverers and possessors.\"",
+          "source_context": "These secret orders contradict the public narrative that the Endeavour was purely on a scientific mission to observe the Transit of Venus. It explicitly reveals the imperial motives of the British government. **Hinge Question: Why would the British government feel the need to keep these instructions a 'secret' from rival European nations and the general public?**"
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "1. The Dual Mission of the Endeavour",
+          "text": "In August 1768, Lieutenant James Cook, an officer in the British Navy, left Plymouth on his ship, the Endeavour. This voyage was destined to change global history. Publicly, the journey was funded and framed as a peaceful mission of scientific discovery. On board were nine scientists from the prestigious [Royal Society], led by the wealthy and influential young botanist Sir Joseph Banks. Their official, public task was to travel to the South Pacific island of Tahiti to observe the transit of the planet Venus across the Sun. By timing this event from different parts of the world, scientists hoped to calculate the exact distance between the Earth and the Sun.<br><br>However, scientific curiosity was only a cover story. Cook also carried a packet of secret instructions from the British Admiralty. These private orders commanded him that once the scientific observations in Tahiti were complete, he was to sail further south into the uncharted waters of the Pacific to search for a rumored, massive landmass known as the 'Great Southern Land.' If he located this land, he was ordered to map its coastline, record its resources, and claim it for the British Crown before other rival European nations, like France or Spain, could do so."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "2. Tupaia: The Indispensable Star Navigator",
+          "text": "While British history books have celebrated Captain Cook's navigational genius for centuries, the survival and success of the Endeavour relied heavily on an extraordinary Indigenous figure: Tupaia. Joining the ship in Tahiti in 1769 at the urging of Joseph Banks, Tupaia was a high priest and master star navigator from the island of Ra'iatea. While Cook possessed state-of-the-art European maritime instruments like sextants, compasses, and marine clocks, he had no charts or understanding of the vast, complex, and dangerous Pacific reefs.<br><br>Tupaia possessed an exceptional, complex mental map spanning over 3,000 miles of ocean. He navigated using ancient, highly sophisticated Polynesian star navigation techniques. Without any mechanical tools, Tupaia could determine the ship's exact position by reading the stars, the path of the sun, bird flight patterns, cloud formations, and the unique temperature and vibration of ocean currents. Furthermore, Tupaia was a brilliant diplomat. As the only person on board who could speak languages closely related to the Pacific islanders, he served as a translator when the Endeavour reached New Zealand. He communicated directly with the Māori, defusing highly dangerous misunderstandings and preventing what would have been catastrophic colonial massacres. Despite saving the lives of the crew and creating a detailed chart of the islands, Tupaia's pivotal role was written out of mainstream history for over 250 years, leaving his story largely 'invisible.'"
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "3. The Landing at Botany Bay and the Gweagal Encounter",
+          "text": "In April 1770, the Endeavour sailed up the eastern coast of Australia. Although Dutch explorers had mapped parts of the western coast in the seventeenth century, they had never claimed ownership of the land. When Cook's crew located a sheltered bay and rowed toward the shore, they were met by two Gweagal Aboriginal men of the Dharawal nation armed with spears and shields. The Gweagal's ancestors had lived in harmony with that land for over 65,000 years.<br><br>From the spiritual and legal perspective of the Gweagal, it was their sacred duty to protect their ancestral country from uninvited strangers who did not have permission to be there. Cook wrote in his journal that when one of the Gweagal men threw a rock to warn them away, the British fired a warning musket. When the warriors stood their ground and a spear was thrown, the British fired two more times with buckshot, wounding one of the Gweagal men in the leg. Cook framed this in his records as an unprovoked attack by 'natives' on peaceful explorers, completely ignoring that the British were armed invaders. The Endeavour stayed in the bay for a week. Sir Joseph Banks and his scientists were so amazed by the thousands of unknown botanical specimens they collected that they named the place 'Botany Bay.' In May, Cook sailed north to an island he named 'Possession Island,' where he raised the Union Jack and claimed the entire eastern coast for Britain, naming it 'New South Wales' under the legal fiction of 'Terra Nullius' (nobody's land)."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?",
+          "options": [
+            "To locate and claim the 'Great Southern Land' for the British Empire",
+            "To transport convicts to a new prison in Sydney",
+            "To wage a surprise naval war against Spanish colonies",
+            "To find a shorter trade route to India through the Arctic"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?",
+          "options": [
+            "He used a French marine chronometer and paper charts",
+            "He read the stars, bird flight patterns, and ocean currents",
+            "He followed a compass provided by Sir Joseph Banks",
+            "He used a Spanish sextant to calculate the sun's angle"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?",
+          "options": [
+            "They wanted to capture the British ship to steal its iron",
+            "They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers",
+            "They had been ordered to attack by French traders",
+            "They believed the British were gods who needed to be sacrificed"
+          ],
+          "answer": 1
+        }
+      ],
+      "tasks": [
+        {
+          "type": "comprehension",
+          "title": "Uncovering the True Story of James Cook's Landing",
+          "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
+          "questions": [
+            {
+              "q": "Explain the dual purpose of James Cook’s 1768 voyage on the Endeavour, identifying both the public and private motives.",
+              "a": "The public, official motive of Captain Cook's voyage was scientific: funded by the Royal Society, he was sent to Tahiti to observe the transit of Venus across the sun to help calculate the distance between the Earth and the Sun. The private, secret motive was political and imperial: Cook carried hidden orders from the British Admiralty commanding him to sail south to find the rumored 'Great Southern Land' and claim it for King George III before rival European powers could."
+            },
+            {
+              "q": "How does Tupaia's contribution challenge the traditional historical narrative that James Cook 'discovered' the Pacific islands?",
+              "a": "Tupaia's contribution challenges the traditional 'discovery' narrative because he was a master star navigator who possessed a vast mental map of over 3,000 miles of ocean. Since Tupaia used his indigenous environmental skills to guide the Endeavour and translate with the Māori, Cook did not 'discover' these lands; rather, he was guided to inhabited territories by an indigenous navigator who already knew exactly where they were."
+            },
+            {
+              "q": "Contrast the British view of the Botany Bay landing with the perspective of the Gweagal Aboriginal people.",
+              "a": "The British viewed the landing as a peaceful scientific exploration where they had to defend themselves from a hostile and unprovoked attack by 'natives.' In contrast, the Gweagal people viewed the landing as an unauthorized invasion of their sovereign territory, and they threw stones and spears as part of their sacred, spiritual, and legal duty to protect their ancestral land and spirits from uninvited strangers."
+            }
+          ]
         }
       ]
     },
-    "do_now": {
-      "type": "questions",
-      "title": "Recall & Retrieval",
-      "instructions": "Answer these questions in full sentences.",
-      "items": [
-        {
-          "question": "Why did the American War of Independence in 1776 force the British government to find a new penal colony in Australia?",
-          "answer": "The American War of Independence meant the newly independent United States refused to accept any more British convicts, creating an overcrowding crisis in British gaols and on river hulks that forced the government to look to Australia as a new transportation destination."
-        },
-        {
-          "question": "Explain how Tupaia navigated the Endeavour across 3,000 miles of ocean without any European instruments.",
-          "answer": "Tupaia used traditional Polynesian star navigation, reading the positions of the stars, the path of the sun, bird flight patterns, cloud formations, and the unique vibrations of ocean currents to navigate."
-        },
-        {
-          "question": "What radical rationing system did Governor Arthur Phillip introduce during the First Fleet's first year of starvation at Sydney Cove in 1788?",
-          "answer": "Governor Phillip ordered that all food supplies in the colony be rationed completely equally among all officers, marines, and convicts to prevent starvation and maintain order."
-        }
-      ]
-    },
-    "vocab": [
-      {
-        "term": "Amity",
-        "definition": "Friendship and peaceful harmony between nations or groups of people."
-      },
-      {
-        "term": "Dispossession",
-        "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
-      },
-      {
-        "term": "Eora",
-        "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
-      },
-      {
-        "term": "Pemulwuy",
-        "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
-      },
-      {
-        "term": "Smallpox",
-        "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
-      },
-      {
-        "term": "Spiritual",
-        "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
-      }
-    ],
-    "vocab_cloze_text": "Although King George III ordered his subjects to live in [Amity] and kindness with the local inhabitants, the reality of British settlement was a brutal story of [Dispossession]. The local [Eora] people shouted 'Warra warra' to tell them to go away, but the settlers cleared ancient hunting grounds for sheep. Even worse, European diseases like [Smallpox] swept through tribes, killing thousands. In response to this destruction, brave warriors like [Pemulwuy] led a fierce [Spiritual] and physical resistance, fighting to protect their sacred country from the invaders.",
-    "flashcards": [
-      {
-        "term": "Amity",
-        "definition": "Friendship and peaceful harmony between nations or groups of people."
-      },
-      {
-        "term": "Dispossession",
-        "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
-      },
-      {
-        "term": "Eora",
-        "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
-      },
-      {
-        "term": "Pemulwuy",
-        "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
-      },
-      {
-        "term": "Smallpox",
-        "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
-      },
-      {
-        "term": "Spiritual",
-        "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
-      }
-    ],
-    "sources": [],
-    "narrative_blocks": [
-      {
-        "type": "narrative",
-        "theme_heading": "1. The Myth of Terra Nullius and Aboriginal Land Management",
-        "text": "When the British arrived in 1788, Australia was home to over 300,000 Aboriginal people divided into hundreds of distinct tribes, speaking different languages and living on ancestral lands they had occupied for at least 65,000 years. The Eora nation was the traditional custodian of the coastal region around Sydney Cove. The British settlers, viewing the land through a European lens, saw no stone houses, no fences, and no intensive crop-farming. They concluded that the Aboriginal people were primitive wanderers who had no legal claim to the land.<br><br>This cultural ignorance birthed the legal myth of 'Terra Nullius' (nobody's land), which the British government used to claim sole ownership of the entire continent. In reality, Aboriginal Australians had managed the landscape with immense sophistication for millennia. They used 'firestick farming'—highly controlled seasonal burning—to clear undergrowth, encourage new grass that attracted game, and prevent catastrophic bushfires. In river systems, they constructed elaborate stone canals up to a mile and a half long to manage waterways and cultivate massive eel fisheries. For Aboriginal people, land was not real estate to be bought and sold; it was a deeply [Spiritual] entity. Taking their land was not just a loss of property; it was a form of spiritual death."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "2. Disease, Dispossession, and the Myall Creek Massacre",
-        "text": "Before the First Fleet left England, King George III issued official instructions to Governor Arthur Phillip, commanding him to protect the native populations and live in [Amity] and kindness with them, declaring that anyone who cruelly destroyed them should be punished. However, as British settlement expanded, this official policy collapsed completely. The most immediate devastation came from invisible invaders: European diseases. In 1789, a catastrophic epidemic of [Smallpox] swept through the Eora nation. Having no natural immunity, up to half of the coastal Aboriginal population died within a single year, leaving the shorelines littered with unburied bodies.<br><br>As free settlers took over the interior, they cut down native forests, built fences across ancient pathways, and drove away native animals to make way for vast herds of cows and sheep. This ecological destruction cut off the Aboriginal food and water supplies, forcing them to hunt the settlers' livestock to survive. The resulting 'frontier wars' were incredibly brutal. In Tasmania in the 1820s, Governor George Arthur tried to restore order by nailing posters to trees promising equal justice, yet local settlers were permitted to hunt and shoot Tasmanian Aboriginal people like vermin, resulting in a near-total genocide. Similarly, in 1838 at the Myall Creek Massacre, a group of eleven armed white stockmen rounded up twenty-eight unarmed Aboriginal men, women, and children, slaughtered them with muskets and swords, and burned their bodies on a massive pyre."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "3. Pemulwuy and the Dark Trade in Human Specimens",
-        "text": "Aboriginal Australians did not accept this invasion passively. From 1790 onwards, a formidable Eora warrior named Pemulwuy led a sophisticated, twelve-year guerrilla war of resistance against the British. Pemulwuy organized raids on government crop farms, destroyed settlers' crops, killed imported livestock to cripple the colonial economy, and attacked armed patrols with spears. In December 1790, Pemulwuy fatally speared Governor Phillip's favorite gamekeeper. In retaliation, Governor Phillip ordered Watkin Tench to lead a punitive military expedition of over fifty armed men carrying hatchets to capture Pemulwuy and bring back his head, alongside the heads of ten other warriors. However, Pemulwuy's warriors easily evaded the heavy, insect-ravaged British troops in the bush, forcing Phillip to write to London apologizing that he could not send back a head.<br><br>The hunt for Pemulwuy was fueled by a dark, scientific demand in Britain. Sir Joseph Banks, the celebrated botanist who had sailed with Captain Cook, used his immense political influence in London to demand that Australian governors send him 'human specimens'—specifically Aboriginal skulls and bones—to distribute to European museums and scientists. In 1802, Pemulwuy was finally shot and killed by British settlers. His head was severed from his body and preserved in a cask of spirits. It was shipped to England as a personal gift from Governor Philip Gidley King to Sir Joseph Banks. Customs officers in England discovered the head during a routine inspection of the spirits cask, causing a brief local newspaper scandal, before Banks quietly deposited his 'trophy' into the museum of his close friend, the surgeon John Hunter."
-      }
-    ],
-    "quiz": [
-      {
-        "question": "What legal myth did the British use to justify taking over the entire continent of Australia?",
-        "options": [
-          "Terra Nullius (nobody's land)",
-          "The Divine Right of Kings",
-          "The Treaty of Tordesillas",
-          "The Magna Carta"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "What percentage of the Eora Aboriginal population was killed by the smallpox epidemic of 1789?",
-        "options": [
-          "Up to 50% (half of the population)",
-          "Less than 5%",
-          "Exactly 100%",
-          "Around 10%"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "To which British scientist was the severed head of the resistance leader Pemulwuy sent in 1802?",
-        "options": [
-          "Sir Joseph Banks",
-          "Captain James Cook",
-          "Arthur Bowes Smyth",
-          "Gregory Blaxland"
-        ],
-        "answer": 0
-      }
-    ],
-    "tasks": [
-      {
-        "type": "comprehension",
-        "title": "Analysing Frontier Violence and Resistance",
-        "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
-        "questions": [
+    {
+      "id": "lesson_1_2",
+      "title": "Creating a Convict Colony",
+      "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
+      "teacher_notes": {
+        "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
+        "objectives": [
           {
-            "q": "Why was the British legal concept of 'Terra Nullius' historically inaccurate when applied to Aboriginal Australia?",
-            "a": "Terra Nullius was historically inaccurate because Australia was inhabited by over 300,000 Aboriginal people who had managed and occupied the land for at least 65,000 years. They were not aimless wanderers; they used sophisticated land management techniques such as seasonal 'firestick farming' to cultivate parklands and prevent bushfires, and built elaborate stone canals up to a mile and a half long to manage water systems and run freshwater eel fisheries."
+            "objective": "Explain how the loss of the American colonies in 1776 directly caused a prison crisis in Britain that led to the system of transportation.",
+            "primer": "Guide students to construct a causal flow diagram linking the American War of Independence, the overcrowding of river 'hulks', and the eventual decision to settle Botany Bay.",
+            "question": "How did a political war fought in America in 1776 directly decide the fate of a petty thief in London ten years later?"
           },
           {
-            "q": "Explain how the introduction of British sheep and cattle farming physically devastated the traditional Aboriginal way of life.",
-            "a": "The introduction of sheep and cattle farming physically devastated the Aboriginal way of life because settlers cleared native forests and erected fences across ancient Aboriginal pathways, blocking access to sacred sites. The heavy hooves of the livestock trampled native vegetation, destroyed wild food sources, and polluted shallow waterholes, leaving the Indigenous populations facing starvation and forced to hunt settlers' livestock to survive."
+            "objective": "Describe the physical and environmental challenges faced by Captain Arthur Phillip and the convicts during their first year at Sydney Cove.",
+            "primer": "Discuss the lack of skilled farmers, the infertile sandy soil of Sydney Cove, and how Phillip's introduction of equal food rationing prevented starvation.",
+            "question": "Why was the decision to share food completely equally between guards and convicts a highly radical and necessary act for survival?"
           },
           {
-            "q": "How did Sir Joseph Banks's scientific interests contribute to the violence of the frontier wars in Australia?",
-            "a": "Sir Joseph Banks's scientific interests directly contributed to frontier violence because he used his massive influence in London to demand that the Governors of Australia send him 'human specimens' (skulls and skeletal remains) for European museums. This created a macabre incentive where colonial officials and settlers hunted and decapitated Aboriginal people—including resistance leaders like Pemulwuy—to curry favor with Banks, turning scientific collecting into a driver of frontier slaughter."
+            "objective": "Analyse the work and social conditions of the convicts, contrasting general labor with the punishments of the chain road gangs.",
+            "primer": "Detail the daily routines of clearing forests, quarrying stone, and the extreme punishments of the iron-shackled road gangs used to build infrastructure.",
+            "question": "Based on their daily tasks, was the First Fleet a simple prison ship or was it a 'colony-building kit' designed to expand the British Empire?"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "lesson_1_4",
-    "title": "From Penal Colony to Settlement",
-    "enquiry": "How did Australia transform from a remote prison colony into a prosperous free settlement?",
-    "teacher_notes": {
-      "primer": "This lesson traces the rapid economic and demographic expansion of the Australian colony from a struggling prison outpost to a wealthy, self-governing settlement of free citizens. Students will study the achievements of early farmers like James Ruse, analyze the immense financial impacts of Merino wool and Pacific whaling, and explore how the 1851 Gold Rush and the arrival of thousands of free immigrants—including a massive Chinese workforce—ended the system of convict transportation.",
-      "objectives": [
-        {
-          "objective": "Explain the significance of James Ruse's farming experiments at Rose Hill in proving the colony's agricultural viability.",
-          "primer": "Detail Ruse's method of clearing bush, burning timber to enrich sandy soil with ash, and achieving self-sufficiency by 1791 to show how he paved the way for free settlers.",
-          "question": "Why was a single freed convict's successful crop at Rose Hill in 1791 a major turning point for the survival of the entire British colony?"
-        },
-        {
-          "objective": "Analyse how Gregory Blaxland's crossing of the Blue Mountains in 1813 unlocked the interior of the continent for the Merino sheep industry.",
-          "primer": "Explain the introduction of Spanish Merino sheep in 1797 and how crossing the geographic barrier of the Blue Mountains established Bathurst and drove massive wool exports.",
-          "question": "How did the geographic crossing of the Blue Mountains in 1813 transform Australia's economic relationship with industrial factories in Britain?"
-        },
-        {
-          "objective": "Evaluate how the discovery of gold in 1851 and the subsequent influx of Chinese and European miners brought about the end of convict transportation.",
-          "primer": "Discuss Edward Hargreaves' gold discovery and analyze why the British government had to stop transportation when the destination became a highly desirable land of wealth.",
-          "question": "Why does a country stop sending criminals to a prison colony once that colony is discovered to have massive gold reserves?"
-        }
-      ]
-    },
-    "do_now": {
-      "type": "questions",
-      "title": "Recall & Retrieval",
-      "instructions": "Answer these questions in full sentences.",
-      "items": [
-        {
-          "question": "What was the name of the Eora resistance leader who fatally speared Governor Phillip's gamekeeper and led a twelve-year guerrilla war?",
-          "answer": "Pemulwuy was the courageous Eora resistance leader who fought the British from 1790 until 1802."
-        },
-        {
-          "question": "How did the Gweagal warriors view the landing of Captain Cook's men at Botany Bay in 1770?",
-          "answer": "They viewed it as an unauthorized invasion of their sovereign territory, and they threw stones and spears to fulfill their sacred spiritual duty to protect their ancestral lands from uninvited strangers."
-        },
-        {
-          "question": "Identify two European diseases that devastated Aboriginal populations because they had no natural immunity.",
-          "answer": "Smallpox and influenza were two devastating European diseases brought by the convict ships that wiped out thousands of Aboriginal Australians."
-        }
-      ]
-    },
-    "vocab": [
-      {
-        "term": "Blue Mountains",
-        "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
       },
-      {
-        "term": "Free settlers",
-        "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
-      },
-      {
-        "term": "Gold prospector",
-        "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
-      },
-      {
-        "term": "Merino",
-        "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
-      },
-      {
-        "term": "Self-sufficient",
-        "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
-      },
-      {
-        "term": "Whaling industry",
-        "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
-      }
-    ],
-    "vocab_cloze_text": "By the early 1800s, Australia was changing rapidly. Freed convicts like James Ruse proved that individuals could become [Self-sufficient] farmers. The introduction of Spanish [Merino] sheep brought massive profits, driving sheep farmers to cross the rugged [Blue Mountains] in search of grazing land. Meanwhile, the [Whaling industry] turned Sydney into a busy port. The biggest change occurred in 1851 when a [Gold prospector] named Edward Hargreaves discovered gold, triggering a massive gold rush of [Free settlers] and ending transportation forever.",
-    "flashcards": [
-      {
-        "term": "Blue Mountains",
-        "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
-      },
-      {
-        "term": "Free settlers",
-        "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
-      },
-      {
-        "term": "Gold prospector",
-        "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
-      },
-      {
-        "term": "Merino",
-        "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
-      },
-      {
-        "term": "Self-sufficient",
-        "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
-      },
-      {
-        "term": "Whaling industry",
-        "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
-      }
-    ],
-    "sources": [],
-    "narrative_blocks": [
-      {
-        "type": "narrative",
-        "theme_heading": "1. James Ruse and the Proof of Agricultural Survival",
-        "text": "In November 1788, a freed convict named James Ruse, who had completed his sentence for burglary, was given a small, clearing plot of land inland from Sydney Cove at a place named Rose Hill (later Parramatta). Governor Arthur Phillip was desperate to find out if the colony could survive without receiving constant, expensive food shipments from Britain. Ruse worked the land with exceptional grit. Lacking horses or heavy metal ploughs, he used simple hand tools to clear the dense timber, burned the felled trees to enrich the poor, sandy soil with wood ash, and carefully hoed the earth to sow wheat.<br><br>His experiment was a complete triumph. By 1791, Ruse proved that he could support himself and his wife Perry, becoming completely [Self-sufficient]. He was officially recorded as Australia's first successful free farmer. His success proved to the British government that the colony could survive, prompting the first waves of voluntary free immigrants to leave Britain's crowded cities to establish their own farms in the young colony."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "2. Spanish Merino Sheep and the Crossing of the Blue Mountains",
-        "text": "While basic crops kept the settlers alive, it was wool that made the colony incredibly wealthy. A small flock of English sheep had arrived with the First Fleet, but they did not survive the damp coastal climate. The turning point came in 1797, when twenty-six Spanish [Merino] sheep arrived in Sydney on a supply ship from South Africa. Merino sheep were world-famous for producing exceptionally soft, thick, and highly valuable wool. They flourished in the dry Australian pastures, and sheep farmers quickly realized they could make massive fortunes exporting raw wool back to the mechanized textile mills of industrial northern England.<br><br>However, by 1810, the flat grasslands surrounding Sydney were exhausted by drought and insect plagues. Expansion was blocked to the west by a formidable geographic barrier: the high, rugged, and heavily forested [Blue Mountains]. For twenty-five years, explorers had failed to cross them. In 1813, a determined farmer named Gregory Blaxland, alongside two friends and three convicts, set off on a new route. By following the high mountain ridges rather than the deep valleys, they became the first Europeans to successfully cross the range. Beyond the peaks, they discovered vast, highly fertile grazing lands. By 1820, over 114 sheep farmers had crossed the mountains, establishing Australia's first inland agricultural town at Bathurst in 1815 and driving a massive expansion of the wool trade."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "3. The Whaling Industry and the Rise of Port Sydney",
-        "text": "At the same time, the [Whaling industry] was transforming Sydney Cove from a remote penal outpost into a thriving, busy international trading port. In late eighteenth-century Britain, the Industrial Revolution was in full swing, creating a massive commercial demand for whale oil. This oil was essential to lubricate the heavy steam-powered machines in northern factories and to fill the public streetlamps that illuminated Britain's expanding cities.<br><br>In 1791, a fleet of private whaling ships had been contracted to transport convicts to Sydney. Once their human cargo was unloaded, the captains sailed into the South Pacific to hunt whales, using Sydney as their base of operations. The whalers melted down the whale blubber on board and exported barrels of high-grade machine-lubricating oil back to London, bringing immense profits to the colony. At its peak between 1820 and 1850, over 1,300 professional whalers worked out of Sydney Harbour each year, generating the capital and trading links that allowed Australia to thrive economically."
-      },
-      {
-        "type": "narrative",
-        "theme_heading": "4. The 1851 Gold Rush and the End of Transportation",
-        "text": "The final and most dramatic transformation of Australia occurred in February 1851, when a experienced [Gold prospector] named Edward Hargreaves discovered specks of 'payable gold' in a river near Bathurst, 250 kilometers west of Sydney. This discovery triggered a massive, frenzied gold rush. Within months, thousands of local workers abandoned their regular jobs in Sydney, and ships carrying over 100,000 voluntary immigrants from Great Britain, America, and continental Europe arrived in Australia to find fortune.<br><br>This gold rush included a massive wave of Chinese migration. By 1861, over 38,000 Chinese immigrants had sailed to Australia, referring to the country as 'Xin Jin Shan' (the New Gold Mountain). Working in high-yield districts like Lambing Flat and Braidwood, the Chinese miners were highly disciplined and invented new techniques, such as using 'cradles' to wash larger amounts of gravel, though they faced severe racial resentment and violent riots from white miners. This sudden, immense mineral wealth brought an immediate end to the convict system. The British government realized that transportation was meant to be a terrifying, deterrent punishment for criminals. If a convicted thief could serve their sentence and immediately become a wealthy gold digger in a prosperous land, transportation no longer worked as a punishment. Convict transportation to New South Wales was stopped in 1851, transforming Australia permanently into a democratic nation of free citizens."
-      }
-    ],
-    "quiz": [
-      {
-        "question": "Who was the freed convict who became Australia's first successful self-sufficient farmer at Rose Hill in 1791?",
-        "options": [
-          "James Ruse",
-          "Edward Hargreaves",
-          "Gregory Blaxland",
-          "Arthur Bowes Smyth"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "What geographical barrier was successfully crossed by Gregory Blaxland in 1813, unlocking the interior of Australia?",
-        "options": [
-          "The Blue Mountains",
-          "The Great Dividing Range",
-          "The River Meon",
-          "The Outback Desert"
-        ],
-        "answer": 0
-      },
-      {
-        "question": "How did Chinese gold miners refer to Australia during the 1851 gold rush?",
-        "options": [
-          "Xin Jin Shan (New Gold Mountain)",
-          "Londinium",
-          "Terra Nullius",
-          "Lundenwic"
-        ],
-        "answer": 0
-      }
-    ],
-    "tasks": [
-      {
-        "type": "comprehension",
-        "title": "Investigating Australia's Economic Transition",
-        "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
-        "questions": [
+      "do_now": {
+        "type": "questions",
+        "title": "Recall & Retrieval",
+        "instructions": "Answer these questions in full sentences.",
+        "items": [
           {
-            "q": "How did James Ruse manage to grow successful crops on the poor soil of Rose Hill in 1788?",
-            "a": "James Ruse grew successful crops by clearing the dense native timber with simple hand tools, burning the fallen trees directly on the ground to enrich the poor, sandy soil with the nutrient-rich wood ash, and manually hoeing the earth to sow wheat, which proved the colony's agricultural viability."
+            "question": "What was the secret reason the British Admiralty gave Captain Cook private instructions to explore the South Pacific?",
+            "answer": "The secret reason was to search for the rumored 'Great Southern Land' and claim it as a British colony before other European nations could."
           },
           {
-            "q": "Explain why Gregory Blaxland's mountain crossing of 1813 was highly significant for the Merino wool industry.",
-            "a": "Blaxland's crossing of the Blue Mountains was highly significant because it unlocked the vast, fertile grazing pastures of the interior (Bathurst plains). This solved the crisis of soil exhaustion and drought in Sydney's coastal strip, allowing the Spanish Merino wool industry to expand inland and generate massive export profits."
+            "question": "Who was the master Polynesian star navigator and high priest who used his mental map of the ocean to guide the Endeavour?",
+            "answer": "Tupaia was the Polynesian high priest and master navigator who guided Captain Cook."
           },
           {
-            "q": "Why did the British government decide to permanently end the transportation of convicts to Australia in 1851?",
-            "a": "The government ended transportation because the 1851 gold rush made Australia a highly desirable destination of immense wealth. Because convicts who finished their sentences could easily become wealthy gold prospectors, transportation lost its power as a terrifying, deterrent punishment for criminals in Britain."
+            "question": "What did the Gweagal Aboriginal warriors throw at Captain Cook's men during their first meeting at Botany Bay in 1770?",
+            "answer": "They threw rocks and wooden spears to warn the British away and protect their ancestral lands."
           }
         ]
-      }
-    ]
-  }
-],
+      },
+      "vocab": [
+        {
+          "term": "Convict",
+          "definition": "A person found guilty of a crime and sentenced by a court of law."
+        },
+        {
+          "term": "Governor",
+          "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
+        },
+        {
+          "term": "Hard labour",
+          "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
+        },
+        {
+          "term": "Hulk",
+          "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
+        },
+        {
+          "term": "Transportation",
+          "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
+        },
+        {
+          "term": "Sydney Harbour",
+          "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
+        }
+      ],
+      "vocab_cloze_text": "After the loss of the American colonies, British prisons became dangerously overcrowded. The government's temporary solution was to lock prisoners inside decaying [Hulk] ships along the south coast. To solve this crisis permanently, the government revived the policy of [Transportation], sending a fleet of eleven ships under the command of [Governor] Arthur Phillip. In January 1788, the fleet landed at [Sydney Harbour] to establish a penal colony. Here, every [Convict] faced years of grueling [Hard labour] clearing forests and building roads.",
+      "flashcards": [
+        {
+          "term": "Convict",
+          "definition": "A person found guilty of a crime and sentenced by a court of law."
+        },
+        {
+          "term": "Governor",
+          "definition": "The official appointed to govern a town, colony, or territory on behalf of a monarch or government."
+        },
+        {
+          "term": "Hard labour",
+          "definition": "Heavy physical work, such as quarrying stone or felling trees, carried out as a punishment."
+        },
+        {
+          "term": "Hulk",
+          "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded temporary prison."
+        },
+        {
+          "term": "Transportation",
+          "definition": "System for taking prison convicts to spend years away from home in a distant land as a punishment."
+        },
+        {
+          "term": "Sydney Harbour",
+          "definition": "The deep, natural harbor where Captain Arthur Phillip established the first British settlement in January 1788."
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_c",
+          "type": "visual",
+          "title": "Prison Hulks on the Thames",
+          "caption": "Source C: An 1806 sketch by Edward William Cooke depicting prison hulks moored in the Thames.",
+          "url": "/images/prison_hulks.jpg",
+          "source_context": "After the American War of Independence, Britain could no longer transport convicts to America. Consequently, obsolete warships were converted into floating prisons called 'hulks'. These hulks were dangerously overcrowded, riddled with disease, and served as temporary holding pens until the First Fleet was established. **Hinge Question: What does the use of these rotting hulks suggest about the British government's attitude towards crime and poverty in the late 18th century?**"
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "1. The American Revolution and the Gaol Crisis",
+          "text": "During the eighteenth century, the British legal system relied heavily on the Transportation Act of 1717 to deal with criminals. Under this system, the courts sentenced thousands of petty thieves to be sent to Britain's colonies in North America, where their labor was sold to tobacco plantation owners. However, in 1776, the American colonies declared their independence from Great Britain. This political revolution meant that sending British criminals to America was no longer possible, creating a severe and immediate prison crisis back in Britain.<br><br>British gaols quickly became dangerously overcrowded. To cope with this, the government passed the Hulks Act of 1776, which allowed them to lock prisoners inside 'hulks'—old, decommissioned warships moored in southern English ports like Portsmouth and Plymouth. These floating prisons were horrific: they were dark, suffocatingly hot, filthy, and disease-ridden, with thousands of prisoners dying of typhus and cholera. As public panic rose over the disease and frequent prison escapes, the British government realized they needed a permanent, distant alternative. In August 1786, they decided to establish a new penal colony on the eastern coast of Australia, which Captain Cook had claimed eighteen years earlier."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "2. The First Fleet and the Ordeal of the Lady Penrhyn",
+          "text": "In May 1787, the First Fleet—a group of eleven ships carrying approximately 1,400 people, including 750 convicts, marines, and sailors—departed Portsmouth under the command of Captain Arthur Phillip, who was appointed as the colony's first [Governor]. After an arduous, eight-month voyage, the fleet reached Botany Bay in January 1788. Phillip quickly realized the bay was too shallow and open to heavy winds, so he sailed slightly north to Port Jackson, establishing the settlement of Sydney Cove on January 26, 1788.<br><br>The arrival was marked by extreme physical and social chaos. On Wednesday, February 6, 1788, the female convicts were finally brought ashore from their transport ships. Arthur Bowes Smyth, a naval surgeon aboard the Lady Penrhyn (the ship carrying the majority of the female convicts), kept a highly detailed, eyewitness journal of that day. He recorded that as the women landed, a violent, terrifying tropical thunderstorm struck Sydney Cove, splitting a massive tree in the center of the camp and killing several sheep. Smyth described scenes of absolute riot and heavy drinking as sailors and male convicts broke into the women's tents. Bowes Smyth's journals are invaluable to historians today because they provide a rare, human face to the female convicts, recording their actual names, ages, trades, and personal struggles during the settlement's birth."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "3. Hard Labour and the Struggle for Survival",
+          "text": "The first year of the Sydney settlement was an intense struggle for survival. The colonists faced immediate starvation because the sandy soil around Sydney Cove was poor, the local climate was completely unfamiliar, and there were almost no skilled farmers, blacksmiths, or carpenters among the convicts. To prevent a total collapse and preserve order, Governor Phillip took the radical step of ordering that all food supplies be rationed completely equally between the officers, soldiers, and convicts.<br><br>To build the colony from scratch, every convict was forced into grueling [Hard labour]. During the day, they felled massive trees, cleared dense bush, grew food, and quarried sandstone blocks to construct the first barracks. Convicts who refused to work, stole food, or committed other offenses were severely punished. Many were sent to join a 'road gang'—forced to work day after day with their legs locked in heavy iron chains, breaking stones and shoveling earth to build Australia's first roads. Despite this brutal regime, by the 1820s, this forced manual labor had successfully transformed the wild bushland of Sydney into a thriving, highly profitable colonial port."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Why was the British government forced to stop transporting convicts to North America in 1776?",
+          "options": [
+            "The American colonies declared their independence from Britain",
+            "A massive plague of smallpox closed all American ports",
+            "The King of England decided that transportation was too cruel",
+            "The French navy destroyed all of Britain's transport ships"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?",
+          "options": [
+            "Sir Joseph Banks",
+            "Arthur Bowes Smyth",
+            "Gregory Blaxland",
+            "Edward Hargreaves"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What punishment was given to difficult convicts who committed further crimes in the Sydney colony?",
+          "options": [
+            "They were immediately sent back to England on storeships",
+            "They were forced to join road gangs and break stones in leg chains",
+            "They were sent to live with the local Eora Aboriginal tribes",
+            "They were forced to work as wig makers for the Governor"
+          ],
+          "answer": 1
+        }
+      ],
+      "tasks": [
+        {
+          "type": "comprehension",
+          "title": "Investigating the Survival of the Penal Colony",
+          "instructions": "Answer the following questions in full sentences using the detailed facts from the text.",
+          "questions": [
+            {
+              "q": "Explain why the British government decided to create a penal colony in Australia in 1787, rather than continuing to use prison hulks.",
+              "a": "The British government was forced to find a new location because the American War of Independence ended transportation to America. Their temporary solution of locking convicts in decommissioned warship 'hulks' along the English coast failed because the ships became dangerously overcrowded, disease-ridden, and insecure, leading to high death rates from typhus and public fear of escapes."
+            },
+            {
+              "q": "How did Governor Arthur Phillip secure the survival of the Sydney Cove colony during its first year of starvation?",
+              "a": "Governor Phillip secured the colony's survival by taking the radical step of ordering that all food supplies be rationed completely equally among all officers, marines, and convicts. This prevented rebellion and ensured that the workforce had enough basic nutrition to continue their hard labour."
+            },
+            {
+              "q": "Describe the types of physical work convicts were forced to perform to construct the new settlement of Sydney.",
+              "a": "Convicts were forced to perform hard physical labor, which included felling trees, clearing dense bush, cultivating soil, quarrying sandstone, and building barracks. Difficult convicts were placed in chain-bound 'road gangs' where they spent their days breaking stones and shoveling earth to construct the colony's first transport networks."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_1_3",
+      "title": "Encounters with the Indigenous Peoples",
+      "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
+      "teacher_notes": {
+        "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official humanitarian rhetoric and the brutal realities of smallpox epidemics, systemic land dispossession, and documented frontier massacres. Crucially, they will analyze Aboriginal agency through the armed guerrilla warfare of the warrior Pemulwuy and the macabre British colonial trade in human 'specimens' driven by Sir Joseph Banks.",
+        "objectives": [
+          {
+            "objective": "Contrast the humanitarian intentions of King George III's official 1788 instructions with the actual practices of physical and ecological dispossession committed by British settlers.",
+            "primer": "Guide students to analyze the wording of Source A ('live in amity and kindness') and contrast it with historical accounts of land clearing, fencing of ancient trackways, and the Myall Creek Massacre.",
+            "question": "If the British government officially declared it a punishable crime to harm Aboriginal Australians, why did local settlers feel justified in shooting them on sight?"
+          },
+          {
+            "objective": "Explain the devastating impacts of European diseases and environmental changes on the Aboriginal way of life, with a specific focus on the Eora nation around Sydney.",
+            "primer": "Detail the path of the 1789 smallpox epidemic and how the introduction of hoofed livestock (sheep and cattle) destroyed the native plants and water sources essential to the Indigenous diet.",
+            "question": "How did the simple introduction of sheep and cattle represent a form of environmental warfare against the Eora nation?"
+          },
+          {
+            "objective": "Evaluate the role of Eora warrior Pemulwuy in leading armed resistance, and analyze the colonial collection of Aboriginal human remains for British scientific institutions.",
+            "primer": "Teach the history of Pemulwuy's twelve-year guerrilla war (1790-1802). Discuss how Sir Joseph Banks pressured colonial Governors to ship him Aboriginal skulls, culminating in Pemulwuy's decapitation.",
+            "question": "What does the shipping of Pemulwuy's head in a spirit cask to Sir Joseph Banks in 1802 reveal about how British scientific elites viewed Aboriginal people?"
+          }
+        ]
+      },
+      "do_now": {
+        "type": "questions",
+        "title": "Recall & Retrieval",
+        "instructions": "Answer these questions in full sentences.",
+        "items": [
+          {
+            "question": "Why did the American War of Independence in 1776 force the British government to find a new penal colony in Australia?",
+            "answer": "The American War of Independence meant the newly independent United States refused to accept any more British convicts, creating an overcrowding crisis in British gaols and on river hulks that forced the government to look to Australia as a new transportation destination."
+          },
+          {
+            "question": "Explain how Tupaia navigated the Endeavour across 3,000 miles of ocean without any European instruments.",
+            "answer": "Tupaia used traditional Polynesian star navigation, reading the positions of the stars, the path of the sun, bird flight patterns, cloud formations, and the unique vibrations of ocean currents to navigate."
+          },
+          {
+            "question": "What radical rationing system did Governor Arthur Phillip introduce during the First Fleet's first year of starvation at Sydney Cove in 1788?",
+            "answer": "Governor Phillip ordered that all food supplies in the colony be rationed completely equally among all officers, marines, and convicts to prevent starvation and maintain order."
+          }
+        ]
+      },
+      "vocab": [
+        {
+          "term": "Amity",
+          "definition": "Friendship and peaceful harmony between nations or groups of people."
+        },
+        {
+          "term": "Dispossession",
+          "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
+        },
+        {
+          "term": "Eora",
+          "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
+        },
+        {
+          "term": "Pemulwuy",
+          "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
+        },
+        {
+          "term": "Smallpox",
+          "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
+        },
+        {
+          "term": "Spiritual",
+          "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
+        }
+      ],
+      "vocab_cloze_text": "Although King George III ordered his subjects to live in [Amity] and kindness with the local inhabitants, the reality of British settlement was a brutal story of [Dispossession]. The local [Eora] people shouted 'Warra warra' to tell them to go away, but the settlers cleared ancient hunting grounds for sheep. Even worse, European diseases like [Smallpox] swept through tribes, killing thousands. In response to this destruction, brave warriors like [Pemulwuy] led a fierce [Spiritual] and physical resistance, fighting to protect their sacred country from the invaders.",
+      "flashcards": [
+        {
+          "term": "Amity",
+          "definition": "Friendship and peaceful harmony between nations or groups of people."
+        },
+        {
+          "term": "Dispossession",
+          "definition": "The action of taking land, property, or ancient territory away from its original inhabitants."
+        },
+        {
+          "term": "Eora",
+          "definition": "The Aboriginal Australian nation inhabiting the coastal region around Sydney where the British first settled."
+        },
+        {
+          "term": "Pemulwuy",
+          "definition": "A courageous Eora warrior and resistance leader who waged a twelve-year guerrilla war against British settlers."
+        },
+        {
+          "term": "Smallpox",
+          "definition": "A highly contagious, deadly European viral disease brought by British ships that devastated Indigenous populations."
+        },
+        {
+          "term": "Spiritual",
+          "definition": "Relating to deep cultural beliefs, connection to ancestors, and the sacred forces of nature rather than physical property."
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_d",
+          "type": "written",
+          "title": "Watkin Tench on Pemulwuy",
+          "caption": "Source D: An extract from the journal of Watkin Tench, a British marine officer, describing the Aboriginal resistance leader Pemulwuy.",
+          "text": "\"Pemulwuy was a man of the woods, a bold, independent, and active character... He had been a most active enemy to the settlers, and had speared several of them... He was a formidable foe, and the terror of the colony.\"",
+          "source_context": "Watkin Tench's journal provides a firsthand account of the brutal frontier conflicts that erupted as British colonists expanded into Aboriginal lands. This source shatters the myth of a peaceful settlement and highlights the fierce resistance led by figures like Pemulwuy. **Hinge Question: How does this description of Pemulwuy completely contradict the British legal justification of 'Terra Nullius'?**"
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "1. The Myth of Terra Nullius and Aboriginal Land Management",
+          "text": "When the British arrived in 1788, Australia was home to over 300,000 Aboriginal people divided into hundreds of distinct tribes, speaking different languages and living on ancestral lands they had occupied for at least 65,000 years. The Eora nation was the traditional custodian of the coastal region around Sydney Cove. The British settlers, viewing the land through a European lens, saw no stone houses, no fences, and no intensive crop-farming. They concluded that the Aboriginal people were primitive wanderers who had no legal claim to the land.<br><br>This cultural ignorance birthed the legal myth of 'Terra Nullius' (nobody's land), which the British government used to claim sole ownership of the entire continent. In reality, Aboriginal Australians had managed the landscape with immense sophistication for millennia. They used 'firestick farming'—highly controlled seasonal burning—to clear undergrowth, encourage new grass that attracted game, and prevent catastrophic bushfires. In river systems, they constructed elaborate stone canals up to a mile and a half long to manage waterways and cultivate massive eel fisheries. For Aboriginal people, land was not real estate to be bought and sold; it was a deeply [Spiritual] entity. Taking their land was not just a loss of property; it was a form of spiritual death."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "2. Disease, Dispossession, and the Myall Creek Massacre",
+          "text": "Before the First Fleet left England, King George III issued official instructions to Governor Arthur Phillip, commanding him to protect the native populations and live in [Amity] and kindness with them, declaring that anyone who cruelly destroyed them should be punished. However, as British settlement expanded, this official policy collapsed completely. The most immediate devastation came from invisible invaders: European diseases. In 1789, a catastrophic epidemic of [Smallpox] swept through the Eora nation. Having no natural immunity, up to half of the coastal Aboriginal population died within a single year, leaving the shorelines littered with unburied bodies.<br><br>As free settlers took over the interior, they cut down native forests, built fences across ancient pathways, and drove away native animals to make way for vast herds of cows and sheep. This ecological destruction cut off the Aboriginal food and water supplies, forcing them to hunt the settlers' livestock to survive. The resulting 'frontier wars' were incredibly brutal. In Tasmania in the 1820s, Governor George Arthur tried to restore order by nailing posters to trees promising equal justice, yet local settlers were permitted to hunt and shoot Tasmanian Aboriginal people like vermin, resulting in a near-total genocide. Similarly, in 1838 at the Myall Creek Massacre, a group of eleven armed white stockmen rounded up twenty-eight unarmed Aboriginal men, women, and children, slaughtered them with muskets and swords, and burned their bodies on a massive pyre."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "3. Pemulwuy and the Dark Trade in Human Specimens",
+          "text": "Aboriginal Australians did not accept this invasion passively. From 1790 onwards, a formidable Eora warrior named Pemulwuy led a sophisticated, twelve-year guerrilla war of resistance against the British. Pemulwuy organized raids on government crop farms, destroyed settlers' crops, killed imported livestock to cripple the colonial economy, and attacked armed patrols with spears. In December 1790, Pemulwuy fatally speared Governor Phillip's favorite gamekeeper. In retaliation, Governor Phillip ordered Watkin Tench to lead a punitive military expedition of over fifty armed men carrying hatchets to capture Pemulwuy and bring back his head, alongside the heads of ten other warriors. However, Pemulwuy's warriors easily evaded the heavy, insect-ravaged British troops in the bush, forcing Phillip to write to London apologizing that he could not send back a head.<br><br>The hunt for Pemulwuy was fueled by a dark, scientific demand in Britain. Sir Joseph Banks, the celebrated botanist who had sailed with Captain Cook, used his immense political influence in London to demand that Australian governors send him 'human specimens'—specifically Aboriginal skulls and bones—to distribute to European museums and scientists. In 1802, Pemulwuy was finally shot and killed by British settlers. His head was severed from his body and preserved in a cask of spirits. It was shipped to England as a personal gift from Governor Philip Gidley King to Sir Joseph Banks. Customs officers in England discovered the head during a routine inspection of the spirits cask, causing a brief local newspaper scandal, before Banks quietly deposited his 'trophy' into the museum of his close friend, the surgeon John Hunter."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What legal myth did the British use to justify taking over the entire continent of Australia?",
+          "options": [
+            "Terra Nullius (nobody's land)",
+            "The Divine Right of Kings",
+            "The Treaty of Tordesillas",
+            "The Magna Carta"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What percentage of the Eora Aboriginal population was killed by the smallpox epidemic of 1789?",
+          "options": [
+            "Up to 50% (half of the population)",
+            "Less than 5%",
+            "Exactly 100%",
+            "Around 10%"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "To which British scientist was the severed head of the resistance leader Pemulwuy sent in 1802?",
+          "options": [
+            "Sir Joseph Banks",
+            "Captain James Cook",
+            "Arthur Bowes Smyth",
+            "Gregory Blaxland"
+          ],
+          "answer": 0
+        }
+      ],
+      "tasks": [
+        {
+          "type": "comprehension",
+          "title": "Analysing Frontier Violence and Resistance",
+          "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
+          "questions": [
+            {
+              "q": "Why was the British legal concept of 'Terra Nullius' historically inaccurate when applied to Aboriginal Australia?",
+              "a": "Terra Nullius was historically inaccurate because Australia was inhabited by over 300,000 Aboriginal people who had managed and occupied the land for at least 65,000 years. They were not aimless wanderers; they used sophisticated land management techniques such as seasonal 'firestick farming' to cultivate parklands and prevent bushfires, and built elaborate stone canals up to a mile and a half long to manage water systems and run freshwater eel fisheries."
+            },
+            {
+              "q": "Explain how the introduction of British sheep and cattle farming physically devastated the traditional Aboriginal way of life.",
+              "a": "The introduction of sheep and cattle farming physically devastated the Aboriginal way of life because settlers cleared native forests and erected fences across ancient Aboriginal pathways, blocking access to sacred sites. The heavy hooves of the livestock trampled native vegetation, destroyed wild food sources, and polluted shallow waterholes, leaving the Indigenous populations facing starvation and forced to hunt settlers' livestock to survive."
+            },
+            {
+              "q": "How did Sir Joseph Banks's scientific interests contribute to the violence of the frontier wars in Australia?",
+              "a": "Sir Joseph Banks's scientific interests directly contributed to frontier violence because he used his massive influence in London to demand that the Governors of Australia send him 'human specimens' (skulls and skeletal remains) for European museums. This created a macabre incentive where colonial officials and settlers hunted and decapitated Aboriginal people—including resistance leaders like Pemulwuy—to curry favor with Banks, turning scientific collecting into a driver of frontier slaughter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_1_4",
+      "title": "From Penal Colony to Settlement",
+      "enquiry": "How did Australia transform from a remote prison colony into a prosperous free settlement?",
+      "teacher_notes": {
+        "primer": "This lesson traces the rapid economic and demographic expansion of the Australian colony from a struggling prison outpost to a wealthy, self-governing settlement of free citizens. Students will study the achievements of early farmers like James Ruse, analyze the immense financial impacts of Merino wool and Pacific whaling, and explore how the 1851 Gold Rush and the arrival of thousands of free immigrants—including a massive Chinese workforce—ended the system of convict transportation.",
+        "objectives": [
+          {
+            "objective": "Explain the significance of James Ruse's farming experiments at Rose Hill in proving the colony's agricultural viability.",
+            "primer": "Detail Ruse's method of clearing bush, burning timber to enrich sandy soil with ash, and achieving self-sufficiency by 1791 to show how he paved the way for free settlers.",
+            "question": "Why was a single freed convict's successful crop at Rose Hill in 1791 a major turning point for the survival of the entire British colony?"
+          },
+          {
+            "objective": "Analyse how Gregory Blaxland's crossing of the Blue Mountains in 1813 unlocked the interior of the continent for the Merino sheep industry.",
+            "primer": "Explain the introduction of Spanish Merino sheep in 1797 and how crossing the geographic barrier of the Blue Mountains established Bathurst and drove massive wool exports.",
+            "question": "How did the geographic crossing of the Blue Mountains in 1813 transform Australia's economic relationship with industrial factories in Britain?"
+          },
+          {
+            "objective": "Evaluate how the discovery of gold in 1851 and the subsequent influx of Chinese and European miners brought about the end of convict transportation.",
+            "primer": "Discuss Edward Hargreaves' gold discovery and analyze why the British government had to stop transportation when the destination became a highly desirable land of wealth.",
+            "question": "Why does a country stop sending criminals to a prison colony once that colony is discovered to have massive gold reserves?"
+          }
+        ]
+      },
+      "do_now": {
+        "type": "questions",
+        "title": "Recall & Retrieval",
+        "instructions": "Answer these questions in full sentences.",
+        "items": [
+          {
+            "question": "What was the name of the Eora resistance leader who fatally speared Governor Phillip's gamekeeper and led a twelve-year guerrilla war?",
+            "answer": "Pemulwuy was the courageous Eora resistance leader who fought the British from 1790 until 1802."
+          },
+          {
+            "question": "How did the Gweagal warriors view the landing of Captain Cook's men at Botany Bay in 1770?",
+            "answer": "They viewed it as an unauthorized invasion of their sovereign territory, and they threw stones and spears to fulfill their sacred spiritual duty to protect their ancestral lands from uninvited strangers."
+          },
+          {
+            "question": "Identify two European diseases that devastated Aboriginal populations because they had no natural immunity.",
+            "answer": "Smallpox and influenza were two devastating European diseases brought by the convict ships that wiped out thousands of Aboriginal Australians."
+          }
+        ]
+      },
+      "vocab": [
+        {
+          "term": "Blue Mountains",
+          "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
+        },
+        {
+          "term": "Free settlers",
+          "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
+        },
+        {
+          "term": "Gold prospector",
+          "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
+        },
+        {
+          "term": "Merino",
+          "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
+        },
+        {
+          "term": "Self-sufficient",
+          "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
+        },
+        {
+          "term": "Whaling industry",
+          "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
+        }
+      ],
+      "vocab_cloze_text": "By the early 1800s, Australia was changing rapidly. Freed convicts like James Ruse proved that individuals could become [Self-sufficient] farmers. The introduction of Spanish [Merino] sheep brought massive profits, driving sheep farmers to cross the rugged [Blue Mountains] in search of grazing land. Meanwhile, the [Whaling industry] turned Sydney into a busy port. The biggest change occurred in 1851 when a [Gold prospector] named Edward Hargreaves discovered gold, triggering a massive gold rush of [Free settlers] and ending transportation forever.",
+      "flashcards": [
+        {
+          "term": "Blue Mountains",
+          "definition": "The high, rugged mountain range to the west of Sydney that blocked early British expansion until they were crossed in 1813."
+        },
+        {
+          "term": "Free settlers",
+          "definition": "People living in a colony able to live where and how they chose—they were no longer convicts."
+        },
+        {
+          "term": "Gold prospector",
+          "definition": "Someone looking for deposits of gold, panning or digging in riverbeds."
+        },
+        {
+          "term": "Merino",
+          "definition": "A highly prized breed of Spanish sheep famous for producing large quantities of exceptionally soft, high-quality wool."
+        },
+        {
+          "term": "Self-sufficient",
+          "definition": "Being able to grow or produce enough food and resources to survive without relying on external help."
+        },
+        {
+          "term": "Whaling industry",
+          "definition": "The highly profitable commercial hunting of whales for their blubber, which was melted down to make machine-lubricating oil."
+        }
+      ],
+      "sources": [
+        {
+          "id": "source_e",
+          "type": "visual",
+          "title": "The Australian Gold Rush",
+          "caption": "Source E: An 1852 illustration showing prospectors panning for gold during the Australian gold rushes.",
+          "url": "/images/gold_rush.jpg",
+          "source_context": "The discovery of gold in 1851 fundamentally transformed Australia's economy and demographics. It triggered a massive influx of free immigrants from Europe, America, and China, shifting the colony's identity from a penal settlement to a wealthy, multicultural frontier. **Hinge Question: How would the sudden prospect of immense wealth on the goldfields undermine the entire purpose of a 'penal colony'?**"
+        }
+      ],
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "1. James Ruse and the Proof of Agricultural Survival",
+          "text": "In November 1788, a freed convict named James Ruse, who had completed his sentence for burglary, was given a small, clearing plot of land inland from Sydney Cove at a place named Rose Hill (later Parramatta). Governor Arthur Phillip was desperate to find out if the colony could survive without receiving constant, expensive food shipments from Britain. Ruse worked the land with exceptional grit. Lacking horses or heavy metal ploughs, he used simple hand tools to clear the dense timber, burned the felled trees to enrich the poor, sandy soil with wood ash, and carefully hoed the earth to sow wheat.<br><br>His experiment was a complete triumph. By 1791, Ruse proved that he could support himself and his wife Perry, becoming completely [Self-sufficient]. He was officially recorded as Australia's first successful free farmer. His success proved to the British government that the colony could survive, prompting the first waves of voluntary free immigrants to leave Britain's crowded cities to establish their own farms in the young colony."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "2. Spanish Merino Sheep and the Crossing of the Blue Mountains",
+          "text": "While basic crops kept the settlers alive, it was wool that made the colony incredibly wealthy. A small flock of English sheep had arrived with the First Fleet, but they did not survive the damp coastal climate. The turning point came in 1797, when twenty-six Spanish [Merino] sheep arrived in Sydney on a supply ship from South Africa. Merino sheep were world-famous for producing exceptionally soft, thick, and highly valuable wool. They flourished in the dry Australian pastures, and sheep farmers quickly realized they could make massive fortunes exporting raw wool back to the mechanized textile mills of industrial northern England.<br><br>However, by 1810, the flat grasslands surrounding Sydney were exhausted by drought and insect plagues. Expansion was blocked to the west by a formidable geographic barrier: the high, rugged, and heavily forested [Blue Mountains]. For twenty-five years, explorers had failed to cross them. In 1813, a determined farmer named Gregory Blaxland, alongside two friends and three convicts, set off on a new route. By following the high mountain ridges rather than the deep valleys, they became the first Europeans to successfully cross the range. Beyond the peaks, they discovered vast, highly fertile grazing lands. By 1820, over 114 sheep farmers had crossed the mountains, establishing Australia's first inland agricultural town at Bathurst in 1815 and driving a massive expansion of the wool trade."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "3. The Whaling Industry and the Rise of Port Sydney",
+          "text": "At the same time, the [Whaling industry] was transforming Sydney Cove from a remote penal outpost into a thriving, busy international trading port. In late eighteenth-century Britain, the Industrial Revolution was in full swing, creating a massive commercial demand for whale oil. This oil was essential to lubricate the heavy steam-powered machines in northern factories and to fill the public streetlamps that illuminated Britain's expanding cities.<br><br>In 1791, a fleet of private whaling ships had been contracted to transport convicts to Sydney. Once their human cargo was unloaded, the captains sailed into the South Pacific to hunt whales, using Sydney as their base of operations. The whalers melted down the whale blubber on board and exported barrels of high-grade machine-lubricating oil back to London, bringing immense profits to the colony. At its peak between 1820 and 1850, over 1,300 professional whalers worked out of Sydney Harbour each year, generating the capital and trading links that allowed Australia to thrive economically."
+        },
+        {
+          "type": "narrative",
+          "theme_heading": "4. The 1851 Gold Rush and the End of Transportation",
+          "text": "The final and most dramatic transformation of Australia occurred in February 1851, when a experienced [Gold prospector] named Edward Hargreaves discovered specks of 'payable gold' in a river near Bathurst, 250 kilometers west of Sydney. This discovery triggered a massive, frenzied gold rush. Within months, thousands of local workers abandoned their regular jobs in Sydney, and ships carrying over 100,000 voluntary immigrants from Great Britain, America, and continental Europe arrived in Australia to find fortune.<br><br>This gold rush included a massive wave of Chinese migration. By 1861, over 38,000 Chinese immigrants had sailed to Australia, referring to the country as 'Xin Jin Shan' (the New Gold Mountain). Working in high-yield districts like Lambing Flat and Braidwood, the Chinese miners were highly disciplined and invented new techniques, such as using 'cradles' to wash larger amounts of gravel, though they faced severe racial resentment and violent riots from white miners. This sudden, immense mineral wealth brought an immediate end to the convict system. The British government realized that transportation was meant to be a terrifying, deterrent punishment for criminals. If a convicted thief could serve their sentence and immediately become a wealthy gold digger in a prosperous land, transportation no longer worked as a punishment. Convict transportation to New South Wales was stopped in 1851, transforming Australia permanently into a democratic nation of free citizens."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Who was the freed convict who became Australia's first successful self-sufficient farmer at Rose Hill in 1791?",
+          "options": [
+            "James Ruse",
+            "Edward Hargreaves",
+            "Gregory Blaxland",
+            "Arthur Bowes Smyth"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What geographical barrier was successfully crossed by Gregory Blaxland in 1813, unlocking the interior of Australia?",
+          "options": [
+            "The Blue Mountains",
+            "The Great Dividing Range",
+            "The River Meon",
+            "The Outback Desert"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How did Chinese gold miners refer to Australia during the 1851 gold rush?",
+          "options": [
+            "Xin Jin Shan (New Gold Mountain)",
+            "Londinium",
+            "Terra Nullius",
+            "Lundenwic"
+          ],
+          "answer": 0
+        }
+      ],
+      "tasks": [
+        {
+          "type": "comprehension",
+          "title": "Investigating Australia's Economic Transition",
+          "instructions": "Answer the following questions in highly detailed, full sentences based on the historical narrative.",
+          "questions": [
+            {
+              "q": "How did James Ruse manage to grow successful crops on the poor soil of Rose Hill in 1788?",
+              "a": "James Ruse grew successful crops by clearing the dense native timber with simple hand tools, burning the fallen trees directly on the ground to enrich the poor, sandy soil with the nutrient-rich wood ash, and manually hoeing the earth to sow wheat, which proved the colony's agricultural viability."
+            },
+            {
+              "q": "Explain why Gregory Blaxland's mountain crossing of 1813 was highly significant for the Merino wool industry.",
+              "a": "Blaxland's crossing of the Blue Mountains was highly significant because it unlocked the vast, fertile grazing pastures of the interior (Bathurst plains). This solved the crisis of soil exhaustion and drought in Sydney's coastal strip, allowing the Spanish Merino wool industry to expand inland and generate massive export profits."
+            },
+            {
+              "q": "Why did the British government decide to permanently end the transportation of convicts to Australia in 1851?",
+              "a": "The government ended transportation because the 1851 gold rush made Australia a highly desirable destination of immense wealth. Because convicts who finished their sentences could easily become wealthy gold prospectors, transportation lost its power as a terrifying, deterrent punishment for criminals in Britain."
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "quizPack": [
     {
       "q": "In what year did the Franco-Prussian War end?",
@@ -1450,6 +1494,7 @@ const unitData = {
   ],
   "assessments": []
 };
+
 if (typeof module !== 'undefined') {
   module.exports = { unitData };
 }
