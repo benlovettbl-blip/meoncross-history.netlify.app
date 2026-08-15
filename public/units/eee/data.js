@@ -1280,7 +1280,7 @@ export const unitData = {
                 {
                     "type": "narrative",
                     "theme_heading": "1. A Rival Queen: Mary's Claim to the Throne",
-                    "text": "To understand the threat Mary posed, one must look at her royal bloodline. Mary, Queen of Scots (Mary Stuart) was Elizabeth’s second cousin. She was the great-granddaughter of King Henry VII of England. Because Elizabeth had no children and had not named an heir, Mary was the direct and obvious next-in-line to the English throne.<br><br>However, to many English Catholics, Mary was not just the heir; she was the rightful Queen of England <em>already</em>. Devout Catholics had never accepted Henry VIII’s divorce from his first wife, Catherine of Aragon. Therefore, they believed his second marriage to Anne Boleyn (Elizabeth’s mother) was completely invalid. In their eyes, Elizabeth was illegitimate and had no legal right to wear the crown. Mary, on the other hand, was born in wedlock, possessed a flawless royal pedigree, and most importantly, was a staunch Catholic. Furthermore, she had powerful international connections, having briefly been the Queen of France through her marriage to King ."
+                    "text": "To understand the threat Mary posed, one must look at her royal bloodline. Mary, Queen of Scots (Mary Stuart) was Elizabeth’s second cousin. She was the great-granddaughter of King Henry VII of England. Because Elizabeth had no children and had not named an heir, Mary was the direct and obvious next-in-line to the English throne.<br><br>However, to many English Catholics, Mary was not just the heir; she was the rightful Queen of England <em>already</em>. Devout Catholics had never accepted Henry VIII’s divorce from his first wife, Catherine of Aragon. Therefore, they believed his second marriage to Anne Boleyn (Elizabeth’s mother) was completely invalid. In their eyes, Elizabeth was illegitimate and had no legal right to wear the crown. Mary, on the other hand, was born in wedlock, possessed a flawless royal pedigree, and most importantly, was a staunch Catholic. Furthermore, she had powerful international connections, having briefly been the Queen of France through her marriage to King Francis II."
                 },
                 {
                     "type": "narrative",
@@ -1313,7 +1313,7 @@ export const unitData = {
                     "question": "From which English King did Mary derive her claim to the throne?",
                     "options": [
                         "King Henry VII",
-                        "",
+                        "King Henry VIII",
                         "King Edward VI",
                         "King Richard III"
                     ],
@@ -1354,7 +1354,7 @@ export const unitData = {
                     "options": [
                         "The Earl of Bothwell",
                         "Lord Darnley",
-                        "",
+                        "Sir Francis Walsingham",
                         "William Cecil"
                     ],
                     "answer": 0
@@ -1556,7 +1556,7 @@ export const unitData = {
                     "title": "Elizabeth I's Secret Agents",
                     "duration": "45 mins 0 secs",
                     "viewing_task": "Describe the methods used by Francis Walsingham's spy network to protect the Queen.",
-                    "model_answer": "Walsingham used a vast network of informers, double agents, and codebreakers (like ). He intercepted letters, used torture to extract confessions, and employed agents provocateurs to draw out conspirators."
+                    "model_answer": "Walsingham used a vast network of informers, double agents, and codebreakers (like Thomas Phelippes). He intercepted letters, used torture to extract confessions, and employed agents provocateurs to draw out conspirators."
                 }
             ],
             "teacher_notes": {
@@ -1574,7 +1574,7 @@ export const unitData = {
                     },
                     {
                         "objective": "Evaluate the methods used by Sir Francis Walsingham and his use of spies to uncover treason.",
-                        "primer": "Focus on the use of ciphers, code-breakers like Thomas Phelippes, and agents provocateurs like .",
+                        "primer": "Focus on the use of ciphers, code-breakers like Thomas Phelippes, and agents provocateurs like Gilbert Gifford.",
                         "question": "What term is used for spies, like Gilbert Gifford, who secretly encourage others to commit treason?"
                     },
                     {
@@ -1648,15 +1648,15 @@ export const unitData = {
             "narrative_blocks": [
                 {
                     "theme_heading": "The Revolt of the Northern Earls (1569–70)",
-                    "text": "The arrival of Mary, Queen of Scots in England in 1568 provided disgruntled English Catholics with a figurehead. This tension exploded a year later when the Earl of Northumberland (Thomas Percy) and the Earl of Westmorland (Charles Neville) led a major military uprising. Their motives were heavily mixed. Religiously, they resented Elizabeth’s settlement and the appointment of the radical Protestant  as Bishop of Durham. Politically, the earls were furious at losing their traditional northern influence to Protestant 'new men' like William Cecil, John Forster, and Robert Dudley.\n\nThe rebels successfully captured Durham Cathedral, celebrating a traditional Catholic Mass. Their goal was to depose Elizabeth, marry Mary to the Duke of Norfolk, and restore Catholicism. However, the revolt failed miserably. Its defeat was a *catalyst for* brutal government reprisals; Elizabeth executed 450 rebels to set a terrifying example."
+                    "text": "The arrival of Mary, Queen of Scots in England in 1568 provided disgruntled English Catholics with a figurehead. This tension exploded a year later when the Earl of Northumberland (Thomas Percy) and the Earl of Westmorland (Charles Neville) led a major military uprising. Their motives were heavily mixed. Religiously, they resented Elizabeth’s settlement and the appointment of the radical Protestant James Pilkington as Bishop of Durham. Politically, the earls were furious at losing their traditional northern influence to Protestant 'new men' like William Cecil, John Forster, and Robert Dudley.\n\nThe rebels successfully captured Durham Cathedral, celebrating a traditional Catholic Mass. Their goal was to depose Elizabeth, marry Mary to the Duke of Norfolk, and restore Catholicism. However, the revolt failed miserably. Its defeat was a *catalyst for* brutal government reprisals; Elizabeth executed 450 rebels to set a terrifying example."
                 },
                 {
                     "theme_heading": "Excommunication and the Catholic Plots",
-                    "text": "Following the 1570 Papal Bull excommunicating Elizabeth, the government began to monitor Catholics much more severely. In **1581**, strict new laws were passed: families could be heavily fined for sheltering secret priests, and it became high treason to convert anyone to Catholicism. Against this tense backdrop, subsequent plots were able to attract widespread Catholic support at home and abroad.\n\n* **The Ridolfi Plot (1571):** Organised by , an Italian banker and Papal spy. The plan involved murdering Elizabeth and launching a massive Spanish invasion from the Netherlands using 10,000 troops led by . William Cecil uncovered the plot, which led directly to the execution of the Duke of Norfolk in 1572.\n* **The Throckmorton Plot (1583):** This plot planned for the French Duke of Guise to invade England, funded by Philip II of Spain and the Pope.  acted as the vital go-between for Mary, Queen of Scots. Walsingham's spies discovered papers at Throckmorton's house containing a list of Catholic sympathisers, proving the terrifying reality of the \"enemy within\". Throckmorton was tortured and executed in 1584, and the plot *exacerbated* government paranoia, leading to the Bond of Association and the expulsion of the Spanish Ambassador, Mendoza."
+                    "text": "Following the 1570 Papal Bull excommunicating Elizabeth, the government began to monitor Catholics much more severely. In **1581**, strict new laws were passed: families could be heavily fined for sheltering secret priests, and it became high treason to convert anyone to Catholicism. Against this tense backdrop, subsequent plots were able to attract widespread Catholic support at home and abroad.\n\n* **The Ridolfi Plot (1571):** Organised by Roberto Ridolfi, an Italian banker and Papal spy. The plan involved murdering Elizabeth and launching a massive Spanish invasion from the Netherlands using 10,000 troops led by The Duke of Alba. William Cecil uncovered the plot, which led directly to the execution of the Duke of Norfolk in 1572.\n* **The Throckmorton Plot (1583):** This plot planned for the French Duke of Guise to invade England, funded by Philip II of Spain and the Pope. Francis Throckmorton acted as the vital go-between for Mary, Queen of Scots. Walsingham's spies discovered papers at Throckmorton's house containing a list of Catholic sympathisers, proving the terrifying reality of the \"enemy within\". Throckmorton was tortured and executed in 1584, and the plot *exacerbated* government paranoia, leading to the Bond of Association and the expulsion of the Spanish Ambassador, Mendoza."
                 },
                 {
                     "theme_heading": "The Babington Plot and Walsingham’s Spies",
-                    "text": "Elizabeth survived these relentless threats largely due to her 'Spymaster', Sir Francis Walsingham. He built a formidable intelligence network, employing paid informants in every major town and spies abroad in France, Spain, and Italy. Walsingham routinely used ciphers for correspondence and hired expert code-breakers, like Thomas Phelippes, to decipher enemy messages. He also utilised **agents provocateurs**, such as Gilbert Gifford, who actively encouraged plotters to communicate with Mary so they could be trapped.\n\nThis system triumphed during the **Babington Plot (1586)**.  wrote directly to Mary detailing a plot to murder Elizabeth and invade with . Walsingham intercepted the letters, finding irrefutable evidence of Mary's direct approval of the assassination. Babington was hanged, drawn, and quartered."
+                    "text": "Elizabeth survived these relentless threats largely due to her 'Spymaster', Sir Francis Walsingham. He built a formidable intelligence network, employing paid informants in every major town and spies abroad in France, Spain, and Italy. Walsingham routinely used ciphers for correspondence and hired expert code-breakers, like Thomas Phelippes, to decipher enemy messages. He also utilised **agents provocateurs**, such as Gilbert Gifford, who actively encouraged plotters to communicate with Mary so they could be trapped.\n\nThis system triumphed during the **Babington Plot (1586)**. Anthony Babington wrote directly to Mary detailing a plot to murder Elizabeth and invade with The Duke of Guise. Walsingham intercepted the letters, finding irrefutable evidence of Mary's direct approval of the assassination. Babington was hanged, drawn, and quartered."
                 },
                 {
                     "theme_heading": "The Execution of Mary, Queen of Scots (1587)",
@@ -1741,10 +1741,10 @@ export const unitData = {
                 {
                     "question": "Which foreign commander was supposed to lead 10,000 Spanish troops during the Ridolfi Plot?",
                     "options": [
-                        "",
+                        "The Duke of Parma",
                         "The Duke of Alba",
                         "Don John of Austria",
-                        ""
+                        "The Duke of Medina Sidonia"
                     ],
                     "answer": 1
                 },
@@ -1990,7 +1990,7 @@ export const unitData = {
                 {
                     "type": "narrative",
                     "theme_heading": "1. Religious, Political, and Commercial Rivalry",
-                    "text": "By the 1580s, relations between England and Spain had severely deteriorated. At the heart of this was religion.  was a devout, fanatical Catholic who saw it as his holy duty to destroy Protestantism across Europe. Tensions were deeply fuelled by Philip II’s desire to return England to Catholicism. He had already backed the Ridolfi, Throckmorton, and Babington plots to overthrow Elizabeth.<br><br>However, money was equally important. Spain controlled the incredibly lucrative New World (the Americas) and strictly forbade other nations from trading there. In response, Elizabeth secretly hired <strong>privateers</strong>, such as  and John Hawkins, to raid Spanish ports and steal from their treasure fleets. During his circumnavigation of the globe (1577–80), Drake captured roughly £400,000 worth of Spanish silver. When Elizabeth publicly knighted Drake upon his return, Philip was furious, viewing it as Elizabeth openly celebrating a common thief."
+                    "text": "By the 1580s, relations between England and Spain had severely deteriorated. At the heart of this was religion. King Philip II of Spain was a devout, fanatical Catholic who saw it as his holy duty to destroy Protestantism across Europe. Tensions were deeply fuelled by Philip II’s desire to return England to Catholicism. He had already backed the Ridolfi, Throckmorton, and Babington plots to overthrow Elizabeth.<br><br>However, money was equally important. Spain controlled the incredibly lucrative New World (the Americas) and strictly forbade other nations from trading there. In response, Elizabeth secretly hired <strong>privateers</strong>, such as Sir Francis Drake and John Hawkins, to raid Spanish ports and steal from their treasure fleets. During his circumnavigation of the globe (1577–80), Drake captured roughly £400,000 worth of Spanish silver. When Elizabeth publicly knighted Drake upon his return, Philip was furious, viewing it as Elizabeth openly celebrating a common thief."
                 },
                 {
                     "type": "narrative",
@@ -2039,7 +2039,7 @@ export const unitData = {
                     "options": [
                         "Sir Francis Drake",
                         "John Hawkins",
-                        "",
+                        "Sir Walter Raleigh",
                         "Martin Frobisher"
                     ],
                     "answer": 0
@@ -3577,7 +3577,7 @@ export const unitData = {
                     },
                     {
                         "objective": "Evaluate the intersecting reasons for the catastrophic failure of the Virginia colonies, weighing poor planning against Native American resistance and the Spanish war.",
-                        "primer": "Discuss the ruin of the Tiger's supplies, the aggressive leadership of Ralph Lane, 's retaliation, and how the Armada prevented resupply.",
+                        "primer": "Discuss the ruin of the Tiger's supplies, the aggressive leadership of Ralph Lane, Chief Wingina's retaliation, and how the Armada prevented resupply.",
                         "question": "Which Native American Chief turned against the English and attacked the colony?"
                     }
                 ]
@@ -3818,7 +3818,7 @@ export const unitData = {
                 {
                     "question": "Who was the leader of the 1587 expedition who returned to England for supplies?",
                     "options": [
-                        "",
+                        "Thomas Harriot",
                         "Ralph Lane",
                         "John White",
                         "Walter Raleigh"
