@@ -1031,7 +1031,7 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
-      "title": "Lesson 5: End of Unit Assessment",
+      "title": "End of Unit Assessment",
       "banner": "/images/sydney_cove.jpg",
       "banner_position": "center",
       "enquiry": "How did New South Wales develop, and how should we assess its history?",
