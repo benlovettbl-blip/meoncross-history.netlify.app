@@ -2,7 +2,7 @@ export const unitData = {
   "specification_file": "",
   "title": "KS3: History of Australia",
   "homepage_background": "",
-  "enquiry": "",
+  "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
   "cover_image": "/images/prison_hulks.jpg",
   "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
   "printable_workbooks": [
