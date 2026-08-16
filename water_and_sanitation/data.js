@@ -68,27 +68,23 @@ module.exports = {
         ]
       },
       "gcse_task": null,
-      "learning_objective": "To understand the impact of Prehistoric and Roman Sanitation on public health.",
-      "learning_objectives": {
-        "overarching": "To understand prehistoric and Roman Sanitation",
-        "scaffolded": [
-          "Describe the simple, practical sanitation methods used by Iron Age Britons.",
-          "Explain how Roman engineers introduced revolutionary sanitation technology.",
-          "Evaluate the significance of Roman bathhouses and latrines for public health."
-        ]
-      },
       "teacher_notes": {
         "primer": "This lesson contrasts the highly advanced public health engineering of the Roman Empire with the primitive living conditions of native Britons. The goal is to show students that historical progress is not a straight line upwards.",
         "objectives": [
           {
-            "objective": "Understand the scale of Roman public health engineering.",
+            "objective": "Describe the simple, practical sanitation methods used by Iron Age Britons.",
             "primer": "Use the narrative on aqueducts and bathhouses to emphasize the sheer volume of water the Romans moved using only gravity.",
             "question": "How did the Romans manage to keep the water flowing constantly into their forts?"
           },
           {
-            "objective": "Explain why the Romans prioritized public health.",
+            "objective": "Explain how Roman engineers introduced revolutionary sanitation technology.",
             "primer": "Link their infrastructure back to military efficiency; sick soldiers cannot fight.",
             "question": "Why was it crucial for the Roman army to keep its forts clean and hygienic?"
+          },
+          {
+            "objective": "Evaluate the significance of Roman bathhouses and latrines for public health.",
+            "primer": "Discuss this objective using the lesson narrative.",
+            "question": "What is the key takeaway for this objective?"
           }
         ]
       },
@@ -307,27 +303,23 @@ module.exports = {
         ]
       },
       "gcse_task": null,
-      "learning_objective": "To understand the impact of Medieval Sanitation and The Church on public health.",
-      "learning_objectives": {
-        "overarching": "To understand medieval Sanitation and The Church",
-        "scaffolded": [
-          "Describe the simple cesspits used by peasants in rural Medieval villages.",
-          "Explain why Medieval monasteries built complex water systems.",
-          "Evaluate the role of gongfermers and night-work in medieval towns."
-        ]
-      },
       "teacher_notes": {
         "primer": "This lesson explores the dramatic regression in public health following the collapse of the Roman Empire. However, ensure students understand the nuance: while towns were filthy, monasteries retained some Roman hygiene practices because cleanliness was linked to godliness.",
         "objectives": [
           {
-            "objective": "Describe the hazards of a medieval town.",
+            "objective": "Describe the simple cesspits used by peasants in rural Medieval villages.",
             "primer": "Focus on the lack of zoning (butchers next to houses) and the leaking of cesspits into water supplies.",
             "question": "Why were medieval drinking wells so dangerous?"
           },
           {
-            "objective": "Explain why monasteries were healthier than towns.",
+            "objective": "Explain why Medieval monasteries built complex water systems.",
             "primer": "Direct students to the section on monks building their own advanced water pipes.",
             "question": "Why did monks believe it was their religious duty to stay clean?"
+          },
+          {
+            "objective": "Evaluate the role of gongfermers and night-work in medieval towns.",
+            "primer": "Discuss this objective using the lesson narrative.",
+            "question": "What is the key takeaway for this objective?"
           }
         ]
       },
@@ -547,27 +539,23 @@ module.exports = {
         ]
       },
       "gcse_task": null,
-      "learning_objective": "To understand the impact of Early Modern Filth and Cesspits on public health.",
-      "learning_objectives": {
-        "overarching": "To understand early Modern Filth and Cesspits",
-        "scaffolded": [
-          "Describe the sanitation problems in growing Tudor and Stuart towns.",
-          "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
-          "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation."
-        ]
-      },
       "teacher_notes": {
         "primer": "This lesson covers the Early Modern period, highlighting how rapid population growth in towns exacerbated the filth. It introduces the concept of technological failure due to lacking infrastructure (the flushing toilet).",
         "objectives": [
           {
-            "objective": "Understand the impact of early modern urbanization.",
+            "objective": "Describe the sanitation problems in growing Tudor and Stuart towns.",
             "primer": "Highlight how the growing population outpaced the ability to dispose of waste, leading to 'gongfermers' dumping waste in rivers.",
             "question": "Why did the rivers in early modern towns become open sewers?"
           },
           {
-            "objective": "Analyze the failure of Harington's flushing toilet.",
+            "objective": "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
             "primer": "Use this to teach students that an invention is useless without the supporting infrastructure (sewers).",
             "question": "Why did Harington's flushing toilet fail to catch on for 250 years?"
+          },
+          {
+            "objective": "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation.",
+            "primer": "Discuss this objective using the lesson narrative.",
+            "question": "What is the key takeaway for this objective?"
           }
         ]
       },
@@ -773,27 +761,23 @@ module.exports = {
         ]
       },
       "gcse_task": null,
-      "learning_objective": "To understand the impact of The Industrial Revolution and Public Health on public health.",
-      "learning_objectives": {
-        "overarching": "To understand the Industrial Revolution and Public Health",
-        "scaffolded": [
-          "Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.",
-          "Explain how Edwin Chadwick argued for public health reform in his 1842 report.",
-          "Evaluate Dr. John Snow's discovery that cholera was waterborne."
-        ]
-      },
       "teacher_notes": {
         "primer": "This lesson tackles the public health catastrophe caused by the Industrial Revolution. It challenges the 'Miasma' theory by studying Dr. John Snow's brilliant use of data mapping to prove cholera was waterborne.",
         "objectives": [
           {
-            "objective": "Describe the squalor of industrial towns.",
+            "objective": "Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.",
             "primer": "Use the narrative on back-to-back housing to show how extreme overcrowding created perfect conditions for disease.",
             "question": "Why did the rapid building of factories lead to a housing crisis?"
           },
           {
-            "objective": "Explain how Dr. Snow disproved the Miasma theory.",
+            "objective": "Explain how Edwin Chadwick argued for public health reform in his 1842 report.",
             "primer": "Walk students through the Broad Street pump map, showing how the clustering of deaths around a single well proved the water was the source.",
             "question": "How did Dr. Snow's map prove cholera was waterborne rather than airborne?"
+          },
+          {
+            "objective": "Evaluate Dr. John Snow's discovery that cholera was waterborne.",
+            "primer": "Discuss this objective using the lesson narrative.",
+            "question": "What is the key takeaway for this objective?"
           }
         ]
       },
@@ -999,27 +983,23 @@ module.exports = {
         ]
       },
       "gcse_task": null,
-      "learning_objective": "To understand the impact of The Great Stink and Modern Sewers on public health.",
-      "learning_objectives": {
-        "overarching": "To understand the Great Stink and Modern Sewers",
-        "scaffolded": [
-          "Describe the events of the Great Stink in 1858.",
-          "Explain how Joseph Bazalgette's sewer system transformed London.",
-          "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease."
-        ]
-      },
       "teacher_notes": {
         "primer": "This lesson serves as the climax of the unit. The 'Great Stink' forced the government to abandon its 'laissez-faire' attitude, leading to Bazalgette's monumental sewer system which permanently solved the crisis.",
         "objectives": [
           {
-            "objective": "Understand the catalyst of the Great Stink.",
+            "objective": "Describe the events of the Great Stink in 1858.",
             "primer": "Explain that the government only acted when the smell of the Thames directly halted Parliament.",
             "question": "Why did Parliament suddenly care about public health in 1858?"
           },
           {
-            "objective": "Evaluate the significance of Bazalgette's sewers.",
+            "objective": "Explain how Joseph Bazalgette's sewer system transformed London.",
             "primer": "Emphasize that this was one of the largest engineering projects in history and the end of 'laissez-faire'.",
             "question": "What does the sheer scale of Bazalgette's brick sewers tell us about the change in government attitude?"
+          },
+          {
+            "objective": "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease.",
+            "primer": "Discuss this objective using the lesson narrative.",
+            "question": "What is the key takeaway for this objective?"
           }
         ]
       },
