@@ -62,22 +62,22 @@ export function renderDashboard() {
   `;
 
   const units = getUnits();
-  const ks3Order = ['water_and_sanitation', 'great_war', 'early_modern_world', 'industrialisation_and_empire', 'great_war_part2'];
-  const ks3Units = units.filter(u => (u.title || '').includes('KS3:')).sort((a, b) => {
-    let idxA = ks3Order.indexOf(a.id);
-    let idxB = ks3Order.indexOf(b.id);
-    if (idxA === -1) idxA = 999;
-    if (idxB === -1) idxB = 999;
-    return idxA - idxB;
-  });
-  const ks4Order = ['edexcel_medicine', 'cme_new', 'eee', 'weimar_nazi_germany'];
-  const ks4Units = units.filter(u => !(u.title || '').includes('KS3:')).sort((a, b) => {
-    let idxA = ks4Order.indexOf(a.id);
-    let idxB = ks4Order.indexOf(b.id);
-    if (idxA === -1) idxA = 999;
-    if (idxB === -1) idxB = 999;
-    return idxA - idxB;
-  });
+  
+  // Year 7 Grouping
+  const y7Order = ['medieval_england', 'early_modern_world', 'crown_parliament_revolution', 'water_and_sanitation'];
+  const y7Units = units.filter(u => y7Order.includes(u.id)).sort((a, b) => y7Order.indexOf(a.id) - y7Order.indexOf(b.id));
+
+  // Year 8 Grouping
+  const y8Order = ['industrialisation_and_empire', 'australia'];
+  const y8Units = units.filter(u => y8Order.includes(u.id)).sort((a, b) => y8Order.indexOf(a.id) - y8Order.indexOf(b.id));
+
+  // Year 9 Grouping
+  const y9Order = ['great_war', 'great_war_part2', 'second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
+  const y9Units = units.filter(u => y9Order.includes(u.id)).sort((a, b) => y9Order.indexOf(a.id) - y9Order.indexOf(b.id));
+
+  // KS4 (GCSE) Grouping
+  const ks4Order = ['edexcel_medicine', 'eee', 'cme_new', 'weimar_nazi_germany'];
+  const ks4Units = units.filter(u => ks4Order.includes(u.id)).sort((a, b) => ks4Order.indexOf(a.id) - ks4Order.indexOf(b.id));
 
   const renderUnitCard = (unit, index) => {
     const isUnlocked = true; // Unlocked all topics for developer/admin preview
@@ -123,18 +123,36 @@ export function renderDashboard() {
     `;
   };
 
-  if (ks3Units.length > 0) {
+  if (y7Units.length > 0) {
     html += `
-      <h3 class="section-title" style="margin-top: 2rem;">Key Stage 3</h3>
+      <h3 class="section-title" style="margin-top: 2rem;">Year 7 (1066 - c.1700)</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
-    ks3Units.forEach(renderUnitCard);
+    y7Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (y8Units.length > 0) {
+    html += `
+      <h3 class="section-title">Year 8 (c.1700 - 1900)</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    y8Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (y9Units.length > 0) {
+    html += `
+      <h3 class="section-title">Year 9 (20th Century & Modern World)</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    y9Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
   if (ks4Units.length > 0) {
     html += `
-      <h3 class="section-title">Key Stage 4</h3>
+      <h3 class="section-title">GCSE (Years 10 & 11)</h3>
       <div class="modules-grid">
     `;
     ks4Units.forEach(renderUnitCard);
