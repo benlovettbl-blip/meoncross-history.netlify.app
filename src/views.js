@@ -64,11 +64,11 @@ export function renderDashboard() {
   const units = getUnits();
   
   // Year 7 Grouping
-  const y7Order = ['medieval_england', 'early_modern_world', 'crown_parliament_revolution', 'water_and_sanitation'];
+  const y7Order = ['water_and_sanitation', 'medieval_england', 'early_modern_world'];
   const y7Units = units.filter(u => y7Order.includes(u.id)).sort((a, b) => y7Order.indexOf(a.id) - y7Order.indexOf(b.id));
 
   // Year 8 Grouping
-  const y8Order = ['industrialisation_and_empire', 'australia'];
+  const y8Order = ['crown_parliament_revolution', 'industrialisation_and_empire', 'australia'];
   const y8Units = units.filter(u => y8Order.includes(u.id)).sort((a, b) => y8Order.indexOf(a.id) - y8Order.indexOf(b.id));
 
   // Year 9 Grouping
