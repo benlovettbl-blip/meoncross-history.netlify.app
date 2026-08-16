@@ -1834,7 +1834,7 @@ export const unitData = {
     {
       "name": "Sir Joseph Banks",
       "group": "Explorers & Navigators",
-      "image": "/images/default_person.jpg",
+      "image": "/images/joseph_banks.jpg",
       "title": "Lead Botanist on the Endeavour",
       "bio": "A wealthy and highly influential British botanist who funded and led the scientific expedition on the Endeavour. He collected thousands of unknown plant species at Botany Bay and was a major advocate for establishing a penal colony in Australia.",
       "key_achievements": [
@@ -1858,7 +1858,7 @@ export const unitData = {
     {
       "name": "Governor Arthur Phillip",
       "group": "Colonial Figures",
-      "image": "/images/default_person.jpg",
+      "image": "/images/arthur_phillip.jpg",
       "title": "First Governor of New South Wales",
       "bio": "The commander of the First Fleet and the first Governor of the penal colony. He was responsible for ensuring the survival of the settlement at Sydney Cove by enforcing strict rationing and forced manual labor.",
       "key_achievements": [
@@ -1870,7 +1870,7 @@ export const unitData = {
     {
       "name": "Arthur Bowes Smyth",
       "group": "Colonial Figures",
-      "image": "/images/default_person.jpg",
+      "image": "/images/arthur_bowes_smyth.jpg",
       "title": "Naval Surgeon of the First Fleet",
       "bio": "A naval surgeon aboard the Lady Penrhyn, the ship carrying the majority of the female convicts. He kept a highly detailed eyewitness journal that provides invaluable historical insights into the lives and struggles of the first female convicts.",
       "key_achievements": [
@@ -1894,7 +1894,7 @@ export const unitData = {
     {
       "name": "Bennelong",
       "group": "First Nations Leaders",
-      "image": "/images/default_person.jpg",
+      "image": "/images/bennelong.jpg",
       "title": "Senior Wangal Leader",
       "bio": "A senior Eora man who was kidnapped by the British to act as an intermediary. He navigated the complex clash of two cultures, becoming the first Aboriginal Australian to travel to England, and wrote the earliest known letter in English by an Indigenous person.",
       "key_achievements": [
@@ -1906,7 +1906,7 @@ export const unitData = {
     {
       "name": "Pemulwuy",
       "group": "First Nations Leaders",
-      "image": "/images/default_person.jpg",
+      "image": "/images/pemulwuy.jpg",
       "title": "Bidjigal Resistance Leader",
       "bio": "A fierce Bidjigal warrior who refused to accept British colonization. He waged a highly organized, 12-year guerrilla war against British expansion in the Sydney region, leading attacks on farms and military outposts to defend his homeland.",
       "key_achievements": [
@@ -1918,7 +1918,7 @@ export const unitData = {
     {
       "name": "William Barak",
       "group": "First Nations Leaders",
-      "image": "/images/default_person.jpg",
+      "image": "/images/william_barak.jpg",
       "title": "Wurundjeri Leader and Activist",
       "bio": "A Wurundjeri leader who led a sophisticated political campaign in the late 19th century to protect the Coranderrk Aboriginal Station. He fought against the 'Board for the Protection of Aborigines', demanding land rights and self-determination for his people.",
       "key_achievements": [

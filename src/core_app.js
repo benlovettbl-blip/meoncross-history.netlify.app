@@ -916,7 +916,8 @@ export function initializeApp(unitData) {
       navContainer.appendChild(homeLink);
 
       // Lesson Tabs
-      if (unitData.lessons && unitData.lessons.length > 0) {
+      const isKS3 = unitData.title && unitData.title.includes('KS3');
+      if (!isKS3 && unitData.lessons && unitData.lessons.length > 0) {
         unitData.lessons.forEach((lesson, index) => {
           const lessonLink = document.createElement('a');
           lessonLink.className = 'lesson-link';
@@ -1161,7 +1162,8 @@ export function initializeApp(unitData) {
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         // Try to activate the corresponding sidebar link
         const links = document.querySelectorAll('.lesson-link');
-        if (links.length > index + 1) { // +1 because the first link is Unit Homepage
+        const isKS3 = unitData.title && unitData.title.includes('KS3');
+        if (!isKS3 && links.length > index + 1) { // +1 because the first link is Unit Homepage
             links[index + 1].classList.add('active');
         }
         renderLesson(unitData.lessons[index]);
