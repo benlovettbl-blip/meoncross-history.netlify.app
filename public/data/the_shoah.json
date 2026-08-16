@@ -1,778 +1,203 @@
 {
   "data": {
-    "debatePrompts": [
-      {
-        "title": "Bismarck & Unification",
-        "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
-      },
-      {
-        "title": "The Scramble for Africa",
-        "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
-      },
-      {
-        "title": "The Alliance System",
-        "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
-      }
-    ],
-    "specification_file": "/data/great_war_overview.json",
+    "id": "the_shoah",
     "title": "KS3: The Shoah",
-    "unit_primer": "This unit covers the history of the Shoah. Teachers must ensure that the IHRA working definition of antisemitism is used as the foundational framework for all discussions and materials.",
-    "homepage_background": "",
-    "enquiry": "",
-    "cover_image": "",
-    "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
-    "printable_workbooks": [
+    "enquiry": "KS3: The Shoah",
+    "lessons": [
       {
-        "title": "Unit Workbook",
-        "url": "workbook.html"
+        "title": "Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
       },
       {
-        "title": "Mastery Pack",
-        "url": "../../pdfs/the_shoah_mastery_pack_full.pdf",
-        "icon": "fa-brain"
+        "title": "1933–1939: How were German Jews progressively stripped of citizenship and rights?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of 1933–1939: How were German Jews progressively stripped of citizenship and rights?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for 1933–1939: How were German Jews progressively stripped of citizenship and rights?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
+      },
+      {
+        "title": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
+      },
+      {
+        "title": "The 'Final Solution': How did the death camps operate as industrialised extermination?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of The 'Final Solution': How did the death camps operate as industrialised extermination?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for The 'Final Solution': How did the death camps operate as industrialised extermination?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
+      },
+      {
+        "title": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
+      },
+      {
+        "title": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
+      },
+      {
+        "title": "Assessment: The Shoah Enquiry",
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Assessment: The Shoah Enquiry",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for Assessment: The Shoah Enquiry",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": []
       }
     ],
-    "lessons": [],
-    "quizPack": [
-      {
-        "q": "In what year did the Franco-Prussian War end?",
-        "a": "1871",
-        "options": [
-          "1871",
-          "1882",
-          "1914",
-          "1890"
-        ],
-        "id": "gw_q1"
-      },
-      {
-        "q": "Which wealthy region did Germany take from France in 1871?",
-        "a": "Alsace-Lorraine",
-        "options": [
-          "Alsace-Lorraine",
-          "The Rhineland",
-          "The Sudetenland",
-          "The Ruhr Valley"
-        ],
-        "id": "gw_q2"
-      },
-      {
-        "q": "What was the French desire for revenge called?",
-        "a": "Revanche",
-        "options": [
-          "Revanche",
-          "Weltpolitik",
-          "Encirclement",
-          "Pan-Slavism"
-        ],
-        "id": "gw_q3"
-      },
-      {
-        "q": "Who was the German Chancellor that unified Germany?",
-        "a": "Otto von Bismarck",
-        "options": [
-          "Otto von Bismarck",
-          "Kaiser Wilhelm II",
-          "Count Leo von Caprivi",
-          "Theobald von Bethmann-Hollweg"
-        ],
-        "id": "gw_q4"
-      },
-      {
-        "q": "What was Bismarck's greatest strategic fear?",
-        "a": "A war on two fronts (Encirclement)",
-        "options": [
-          "A war on two fronts (Encirclement)",
-          "A British naval blockade",
-          "An uprising by the working class",
-          "The collapse of Austria-Hungary"
-        ],
-        "id": "gw_q5"
-      },
-      {
-        "q": "Which two countries did Bismarck fear would ally against Germany?",
-        "a": "France and Russia",
-        "options": [
-          "France and Russia",
-          "Britain and France",
-          "Russia and Austria-Hungary",
-          "Britain and Russia"
-        ],
-        "id": "gw_q6"
-      },
-      {
-        "q": "What was the secret 1887 agreement between Germany and Russia?",
-        "a": "The Reinsurance Treaty",
-        "options": [
-          "The Reinsurance Treaty",
-          "The Entente Cordiale",
-          "The Dual Alliance",
-          "The Treaty of London"
-        ],
-        "id": "gw_q7"
-      },
-      {
-        "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
-        "a": "Kaiser Wilhelm II",
-        "options": [
-          "Kaiser Wilhelm II",
-          "Kaiser Wilhelm I",
-          "Archduke Franz Ferdinand",
-          "Tsar Nicholas II"
-        ],
-        "id": "gw_q8"
-      },
-      {
-        "q": "What was Wilhelm II's aggressive global policy called?",
-        "a": "Weltpolitik (World Policy)",
-        "options": [
-          "Weltpolitik (World Policy)",
-          "Realpolitik",
-          "Lebensraum",
-          "Splendid Isolation"
-        ],
-        "id": "gw_q9"
-      },
-      {
-        "q": "What previous policy of Bismarck's focused on European peace?",
-        "a": "Realpolitik",
-        "options": [
-          "Realpolitik",
-          "Weltpolitik (World Policy)",
-          "Mitteleuropa",
-          "Pan-Slavism"
-        ],
-        "id": "gw_q10"
-      },
-      {
-        "q": "What agreement did Britain and France sign in 1904?",
-        "a": "The Entente Cordiale",
-        "options": [
-          "The Entente Cordiale",
-          "The Triple Entente",
-          "The Treaty of Versailles",
-          "The Reinsurance Treaty"
-        ],
-        "id": "gw_q11"
-      },
-      {
-        "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
-        "a": "Morocco",
-        "options": [
-          "Morocco",
-          "Egypt",
-          "South Africa",
-          "Sudan"
-        ],
-        "id": "gw_q12"
-      },
-      {
-        "q": "What was the result of the First Moroccan (Tangier) Crisis?",
-        "a": "Britain and France grew closer, isolating Germany",
-        "options": [
-          "Britain and France grew closer, isolating Germany",
-          "Germany gained control of Morocco",
-          "The Entente Cordiale was dissolved",
-          "Russia declared war on Germany"
-        ],
-        "id": "gw_q13"
-      },
-      {
-        "q": "What name was given to Germany's aggressive threat of military force?",
-        "a": "Gunboat Diplomacy",
-        "options": [
-          "Gunboat Diplomacy",
-          "Dollar Diplomacy",
-          "Appeasement",
-          "Risk Theory"
-        ],
-        "id": "gw_q14"
-      },
-      {
-        "q": "What was the name of the German gunboat sent to Agadir in 1911?",
-        "a": "SMS Panther",
-        "options": [
-          "SMS Panther",
-          "HMS Dreadnought",
-          "SMS Emden",
-          "SMS Bismarck"
-        ],
-        "id": "gw_q15"
-      },
-      {
-        "q": "What was the British policy requiring their navy to be larger than the next two combined?",
-        "a": "The Two-Power Standard",
-        "options": [
-          "The Two-Power Standard",
-          "The Risk Theory",
-          "The Imperial Defense Act",
-          "The Continental Commitment"
-        ],
-        "id": "gw_q16"
-      },
-      {
-        "q": "What revolutionary British battleship was launched in 1906?",
-        "a": "HMS Dreadnought",
-        "options": [
-          "HMS Dreadnought",
-          "HMS Victory",
-          "HMS Invincible",
-          "HMS Iron Duke"
-        ],
-        "id": "gw_q17"
-      },
-      {
-        "q": "Why did the Dreadnought ironically threaten British supremacy?",
-        "a": "It made all older ships obsolete, resetting the naval race",
-        "options": [
-          "It made all older ships obsolete, resetting the naval race",
-          "It was too expensive to build more than one",
-          "It was easily destroyed by German U-Boats",
-          "Its guns could not hit moving targets"
-        ],
-        "id": "gw_q18"
-      },
-      {
-        "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
-        "a": "Splendid Isolation",
-        "options": [
-          "Splendid Isolation",
-          "The Two-Power Standard",
-          "Balance of Power",
-          "Appeasement"
-        ],
-        "id": "gw_q19"
-      },
-      {
-        "q": "What was German Admiral Tirpitz's naval strategy called?",
-        "a": "Risk Theory",
-        "options": [
-          "Risk Theory",
-          "The Schlieffen Plan",
-          "Weltpolitik",
-          "Unrestricted Submarine Warfare"
-        ],
-        "id": "gw_q20"
-      },
-      {
-        "q": "What volatile region was known as the 'Powder Keg of Europe'?",
-        "a": "The Balkans",
-        "options": [
-          "The Balkans",
-          "The Rhineland",
-          "The Middle East",
-          "The Caucasus"
-        ],
-        "id": "gw_q21"
-      },
-      {
-        "q": "What declining multi-ethnic empire dominated the northern Balkans?",
-        "a": "The Austro-Hungarian Empire",
-        "options": [
-          "The Austro-Hungarian Empire",
-          "The Ottoman Empire",
-          "The Russian Empire",
-          "The British Empire"
-        ],
-        "id": "gw_q22"
-      },
-      {
-        "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
-        "a": "The Ottoman Empire",
-        "options": [
-          "The Ottoman Empire",
-          "The Austro-Hungarian Empire",
-          "The Russian Empire",
-          "The German Empire"
-        ],
-        "id": "gw_q23"
-      },
-      {
-        "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
-        "a": "Serbia",
-        "options": [
-          "Serbia",
-          "Bosnia",
-          "Croatia",
-          "Bulgaria"
-        ],
-        "id": "gw_q24"
-      },
-      {
-        "q": "Which region did Austria-Hungary formally annex in 1908?",
-        "a": "Bosnia",
-        "options": [
-          "Bosnia",
-          "Serbia",
-          "Romania",
-          "Albania"
-        ],
-        "id": "gw_q25"
-      },
-      {
-        "q": "Which major power considered itself the protector of the Slavic people?",
-        "a": "Russia",
-        "options": [
-          "Russia",
-          "Germany",
-          "France",
-          "Britain"
-        ],
-        "id": "gw_q26"
-      },
-      {
-        "q": "Who was the heir to the Austro-Hungarian throne?",
-        "a": "Archduke Franz Ferdinand",
-        "options": [
-          "Archduke Franz Ferdinand",
-          "Emperor Franz Joseph",
-          "Kaiser Wilhelm II",
-          "Tsar Nicholas II"
-        ],
-        "id": "gw_q27"
-      },
-      {
-        "q": "In which city was the Archduke assassinated?",
-        "a": "Sarajevo",
-        "options": [
-          "Sarajevo",
-          "Belgrade",
-          "Vienna",
-          "Berlin"
-        ],
-        "id": "gw_q28"
-      },
-      {
-        "q": "On what date was the Archduke assassinated?",
-        "a": "June 28, 1914",
-        "options": [
-          "June 28, 1914",
-          "July 23, 1914",
-          "August 4, 1914",
-          "November 11, 1918"
-        ],
-        "id": "gw_q29"
-      },
-      {
-        "q": "Who assassinated the Archduke?",
-        "a": "Gavrilo Princip",
-        "options": [
-          "Gavrilo Princip",
-          "Nedeljko Čabrinović",
-          "Dragutin Dimitrijević",
-          "Leon Trotsky"
-        ],
-        "id": "gw_q30"
-      },
-      {
-        "q": "What secret Serbian society did the assassin belong to?",
-        "a": "The Black Hand",
-        "options": [
-          "The Black Hand",
-          "The White Rose",
-          "The Young Turks",
-          "The Bolsheviks"
-        ],
-        "id": "gw_q31"
-      },
-      {
-        "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
-        "a": "The 'Blank Check'",
-        "options": [
-          "The 'Blank Check'",
-          "The Reinsurance Treaty",
-          "The Entente Cordiale",
-          "The Ultimatum"
-        ],
-        "id": "gw_q32"
-      },
-      {
-        "q": "What is the month of diplomatic failures after the assassination called?",
-        "a": "The July Crisis",
-        "options": [
-          "The July Crisis",
-          "The Sarajevo Crisis",
-          "The Balkan Wars",
-          "The Blank Check Incident"
-        ],
-        "id": "gw_q33"
-      },
-      {
-        "q": "What did Austria-Hungary issue to Serbia on July 23?",
-        "a": "An ultimatum",
-        "options": [
-          "An ultimatum",
-          "A declaration of war",
-          "A peace treaty",
-          "A demand for reparations"
-        ],
-        "id": "gw_q34"
-      },
-      {
-        "q": "Which country began mobilizing its army to protect Serbia?",
-        "a": "Russia",
-        "options": [
-          "Russia",
-          "France",
-          "Britain",
-          "Germany"
-        ],
-        "id": "gw_q35"
-      },
-      {
-        "q": "What was the name of Germany's military strategy for a two-front war?",
-        "a": "The Schlieffen Plan",
-        "options": [
-          "The Schlieffen Plan",
-          "The Risk Theory",
-          "Plan XVII",
-          "The Bismarck Strategy"
-        ],
-        "id": "gw_q36"
-      },
-      {
-        "q": "Which neutral country did Germany invade to attack France?",
-        "a": "Belgium",
-        "options": [
-          "Belgium",
-          "Switzerland",
-          "The Netherlands",
-          "Luxembourg"
-        ],
-        "id": "gw_q37"
-      },
-      {
-        "q": "Which country declared war on Germany due to the invasion of Belgium?",
-        "a": "Britain",
-        "options": [
-          "Britain",
-          "Russia",
-          "Italy",
-          "The United States"
-        ],
-        "id": "gw_q38"
-      },
-      {
-        "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
-        "a": "The Triple Alliance",
-        "options": [
-          "The Triple Alliance",
-          "The Triple Entente",
-          "The Central Powers",
-          "The League of Three Emperors"
-        ],
-        "id": "gw_q39"
-      },
-      {
-        "q": "What was the alliance of Britain, France, and Russia called?",
-        "a": "The Triple Entente",
-        "options": [
-          "The Triple Entente",
-          "The Triple Alliance",
-          "The Allied Powers",
-          "The Grand Alliance"
-        ],
-        "id": "gw_q40"
-      },
-      {
-        "q": "What treaty ended the First World War in 1919?",
-        "a": "The Treaty of Versailles",
-        "options": [
-          "The Treaty of Versailles",
-          "The Treaty of Brest-Litovsk",
-          "The Treaty of Trianon",
-          "The Congress of Vienna"
-        ],
-        "id": "gw_q41"
-      },
-      {
-        "q": "Which clause forced Germany to accept full responsibility for the war?",
-        "a": "Article 231 (War Guilt Clause)",
-        "options": [
-          "Article 231 (War Guilt Clause)",
-          "Article 48",
-          "The Blank Check",
-          "The Reparations Clause"
-        ],
-        "id": "gw_q42"
-      },
-      {
-        "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
-        "a": "Preventative War",
-        "options": [
-          "Preventative War",
-          "Total War",
-          "War of Attrition",
-          "Proxy War"
-        ],
-        "id": "gw_q43"
-      },
-      {
-        "q": "Which historian famously argued Germany planned a war of aggression?",
-        "a": "Fritz Fischer",
-        "options": [
-          "Fritz Fischer",
-          "Margaret MacMillan",
-          "A.J.P. Taylor",
-          "Christopher Clark"
-        ],
-        "id": "gw_q44"
-      },
-      {
-        "q": "Which historian argued the nations blundered into war due to rigid alliances?",
-        "a": "Margaret MacMillan",
-        "options": [
-          "Margaret MacMillan",
-          "Fritz Fischer",
-          "Ian Kershaw",
-          "Richard Evans"
-        ],
-        "id": "gw_q45"
-      },
-      {
-        "q": "What was the 'quarantine line' of new states created after WWI called?",
-        "a": "Cordon Sanitaire",
-        "options": [
-          "Cordon Sanitaire",
-          "The Iron Curtain",
-          "The Maginot Line",
-          "Mitteleuropa"
-        ],
-        "id": "gw_q46"
-      },
-      {
-        "q": "Name one new state created by the Treaty of Versailles.",
-        "a": "Poland",
-        "options": [
-          "Poland",
-          "Serbia",
-          "Bulgaria",
-          "Romania"
-        ],
-        "id": "gw_q47"
-      },
-      {
-        "q": "What European power was completely dismantled by the peace treaties?",
-        "a": "The Austro-Hungarian Empire",
-        "options": [
-          "The Austro-Hungarian Empire",
-          "The German Empire",
-          "The British Empire",
-          "The Russian Empire"
-        ],
-        "id": "gw_q48"
-      },
-      {
-        "q": "What ideological threat did the Allies want to separate from Germany after the war?",
-        "a": "Soviet Communism",
-        "options": [
-          "Soviet Communism",
-          "Fascism",
-          "Anarchism",
-          "Imperialism"
-        ],
-        "id": "gw_q49"
-      },
-      {
-        "q": "Which country did Germany invade on 3 August 1914?",
-        "a": "Belgium",
-        "options": [
-          "Belgium",
-          "France",
-          "Russia",
-          "Serbia"
-        ],
-        "id": "gw_q50"
-      }
-    ],
-    "glossary": [
-      {
-        "term": "Alsace-Lorraine",
-        "definition": "A resource-rich border region taken by Germany from France in 1871."
-      },
-      {
-        "term": "Ems Telegram",
-        "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
-      },
-      {
-        "term": "Reparations",
-        "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
-      },
-      {
-        "term": "Siege",
-        "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
-      },
-      {
-        "term": "Imperialism",
-        "definition": "A policy of extending a country's power and influence through diplomacy or military force."
-      },
-      {
-        "term": "Scramble for Africa",
-        "definition": "The rapid invasion, annexation, and division of African territory by European powers."
-      },
-      {
-        "term": "Empire",
-        "definition": "An extensive group of states or countries ruled over by a single supreme authority."
-      },
-      {
-        "term": "Colony",
-        "definition": "A country or area under the full or partial political control of another country."
-      },
-      {
-        "term": "Dreadnought",
-        "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
-      },
-      {
-        "term": "Arms Race",
-        "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
-      },
-      {
-        "term": "Two-Power Standard",
-        "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
-      },
-      {
-        "term": "Naval Supremacy",
-        "definition": "Having the most powerful and dominant navy in the world."
-      },
-      {
-        "term": "Triple Entente",
-        "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
-      },
-      {
-        "term": "Triple Alliance",
-        "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
-      },
-      {
-        "term": "Reinsurance Treaty",
-        "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
-      },
-      {
-        "term": "Encirclement",
-        "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
-      },
-      {
-        "term": "Assassination",
-        "definition": "The murder of a prominent person, often a political leader or ruler."
-      },
-      {
-        "term": "Black Hand",
-        "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
-      },
-      {
-        "term": "Ultimatum",
-        "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
-      },
-      {
-        "term": "Mobilisation",
-        "definition": "The action of a country or its government preparing and organizing troops for active service."
-      }
-    ],
-    "key_individuals": [
-      {
-        "id": "wilhelm",
-        "name": "Kaiser Wilhelm II",
-        "role": "Emperor of Germany",
-        "image": "/assets/great_war_card_wilhelm.png",
-        "bio": "The impulsive and militaristic ruler of Germany whose aggressive 'Weltpolitik' foreign policy alienated Britain, France, and Russia, setting the stage for the Great War."
-      },
-      {
-        "id": "princip",
-        "name": "Gavrilo Princip",
-        "role": "Serbian Nationalist",
-        "image": "/assets/great_war_card_princip.png",
-        "bio": "A member of the Black Hand secret society who assassinated Archduke Franz Ferdinand in Sarajevo, providing the spark that ignited the July Crisis and World War I."
-      },
-      {
-        "id": "nicholas",
-        "name": "Tsar Nicholas II",
-        "role": "Emperor of Russia",
-        "image": "/assets/great_war_card_nicholas.png",
-        "bio": "The autocratic ruler of Russia who mobilized his vast army to defend Serbia against Austria-Hungary, triggering Germany's mobilization and the activation of the Schlieffen Plan."
-      }
-    ],
-    "guided_reading": [
-      {
-        "lesson_index": 0,
-        "book_title": "The Sleepwalkers: How Europe Went to War in 1914",
-        "author": "Christopher Clark",
-        "cover_image": "/assets/great_war_clark_cover.png",
-        "author_context": "Christopher Clark is an acclaimed Australian historian. In 'The Sleepwalkers' (2012), he argues that the outbreak of World War I was not a premeditated crime by one single nation, but a tragic, complex failure of diplomacy where European leaders 'sleepwalked' into disaster without fully understanding the consequences.",
-        "extract": "The protagonists of 1914 were sleepwalkers, watchful but unseeing, haunted by dreams, yet blind to the reality of the horror they were about to bring into the world. For decades, the narrative of the Great War's outbreak has often focused on a single villain, usually pointing the finger of blame squarely at the German Empire. However, to truly understand the catastrophe, one must look at the entire continent of Europe—a continent caught in a rigid and paranoid web of its own making.\n\nIn the years leading up to 1914, Europe was dominated by a complex system of alliances. Originally designed as defensive measures to ensure peace through mutual protection, these agreements slowly morphed into dangerous tripwires. The Triple Entente, linking Britain, France, and Russia, stood in tense opposition to the Triple Alliance of Germany, Austria-Hungary, and Italy. Instead of feeling secure, the great powers felt entirely encircled and deeply suspicious of one another. The Franco-Prussian War of 1870 had left a bitter legacy; France was obsessed with regaining the lost territories of Alsace and Lorraine, while a newly unified Germany was determined to assert its dominance on the world stage.\n\nAmidst this atmosphere of mutual distrust, the military establishments across Europe grew vastly in size and influence. An unprecedented arms race took hold, most notably the fierce naval rivalry between Britain and Germany. Every nation began drafting intricate, inflexible mobilization plans. The most famous of these, the German Schlieffen Plan, dictated that in the event of war with Russia, Germany must rapidly strike and defeat France first to avoid a two-front war. Such plans meant that once the order to mobilize was given, the military timetables would take control, leaving politicians and diplomats entirely powerless to stop the descent into violence.\n\nThe spark that ignited this powder keg occurred in the volatile Balkan peninsula. The Austro-Hungarian Empire, a sprawling and multi-ethnic state, was terrified by the rise of Serbian nationalism on its southern border. When Archduke Franz Ferdinand was assassinated in Sarajevo on June 28, 1914, by a Bosnian Serb nationalist, the authorities in Vienna saw a perfect pretext to crush Serbia once and for all. They were emboldened by the infamous 'Blank Cheque' from their ally Germany, which promised unconditional support.\n\nYet, even after the assassination, a general European war was not inevitable. The ensuing July Crisis was a masterclass in diplomatic blundering, miscalculation, and brinkmanship. Leaders sent ambiguous messages, ambassadors failed to communicate their governments' true intentions, and monarchs desperately exchanged telegrams trying to preserve the peace while simultaneously signing mobilization orders. They were all playing a high-stakes game of bluff, assuming the other side would eventually back down.\n\nWhen Russia chose to mobilize its massive army in defense of its Slavic ally, Serbia, the fatal clockwork mechanism of the alliance system was triggered. Germany, bound by the rigid logic of the Schlieffen Plan, declared war on Russia and immediately invaded neutral Belgium to strike at France. This violation of Belgian neutrality finally brought the British Empire into the fray. \n\nIn the end, the outbreak of the First World War was not a premeditated crime planned in a single capital, but a tragic, collective failure. The statesmen of Europe were men who prided themselves on their rationality and diplomatic skill. Yet, gripped by fear, bound by rigid alliances, and overwhelmed by the speed of events, they sleepwalked past every opportunity to halt the crisis. They plunged their nations into a conflict of unprecedented scale and industrial slaughter, a war that would sweep away empires, redraw the map of the world, and cast a long, dark shadow over the rest of the twentieth century.",
-        "audio_file": "/assets/great_war_reading_gw_l0.mp3",
-        "questions": [
-          "What metaphor does the author use in the opening paragraph to describe the European leaders of 1914?",
-          "According to the text, why did defensive alliances like the Triple Entente and Triple Alliance actually make the great powers feel less secure?",
-          "How did the existence of inflexible military strategies, such as the Schlieffen Plan, affect the power of politicians and diplomats during the July Crisis?"
-        ],
-        "hinge_question": "If the European leaders were truly just 'sleepwalkers' who didn't want war, does that mean they are innocent of causing it? Why or why not?",
-        "is_adapted": true
-      },
-      {
-        "lesson_index": 1,
-        "book_title": "Heart of Darkness",
-        "author": "Joseph Conrad",
-        "cover_image": "/assets/great_war_conrad_cover.png",
-        "author_context": "Joseph Conrad was a Polish-British author who worked as a sailor for many years. His 1899 novella 'Heart of Darkness' was based on his own horrifying experiences captaining a steamboat on the Congo River. It is a searing critique of the brutality, greed, and moral corruption of European imperialism in Africa.",
-        "extract": "The conquest of the earth, which mostly means the taking it away from those who have a different complexion or slightly flatter noses than ourselves, is not a pretty thing when you look into it too much. What redeems it is the idea only. An idea at the back of it; not a sentimental pretence but an idea; and an unselfish belief in the idea—something you can set up, and bow down before, and offer a sacrifice to...\n\nI left in a French steamer, and she called in every blamed port they have out there, for, as far as I could see, the sole purpose of landing soldiers and custom-house officers. I watched the coast. Watching a coast as it slips by the ship is like thinking about an enigma. There it is before you—smiling, frowning, inviting, grand, mean, insipid, or savage, and always mute with an air of whispering, 'Come and find out.' This one was almost featureless, as if still in the making, with an aspect of monotonous grimness. The edge of a colossal jungle, so dark-green as to be almost black, fringed with white surf, ran straight, like a ruled line, far, far away along a blue sea whose glitter was blurred by a creeping mist. The sun was fierce, the land seemed to glisten and drip with steam.\n\nNow and then a boat from the shore gave one a momentary contact with reality. It was paddled by black fellows. You could see from afar the white of their eyeballs glistening. They shouted, sang; their bodies streamed with perspiration; they had faces like grotesque masks—these chaps; but they had bone, muscle, a wild vitality, an intense energy of movement, that was as natural and true as the surf along their coast. They wanted no excuse for being there. They were a great comfort to look at. \n\nFor a time I would feel I belonged still to a world of straightforward facts; but the feeling would not last long. Something would turn up to scare it away. Once, I remember, we came upon a man-of-war anchored off the coast. There wasn't even a shed there, and she was shelling the bush. It appears the French had one of their wars going on thereabouts. Her ensign dropped limp like a rag; the muzzles of the long six-inch guns stuck out all over the low hull; the greasy, slimy swell swung her up lazily and let her down, swaying her thin masts. In the empty immensity of earth, sky, and water, there she was, incomprehensible, firing into a continent. Pop, would go one of the six-inch guns; a small flame would dart and vanish, a little white smoke would disappear, a tiny projectile would give a feeble screech—and nothing happened. Nothing could happen. There was a touch of insanity in the proceeding, a sense of lugubrious drollery in the sight; and it was not dissipated by somebody on board assuring me earnestly there was a camp of natives—he called them enemies!—hidden out of sight somewhere.\n\nWe gave her her letters (I heard the men in that lonely ship were dying of fever at the rate of three a day) and went on. We called at some more places with farcical names, where the merry dance of death and trade goes on in a still and earthy atmosphere as of an overheated catacomb; all along the formless coast bordered by dangerous surf, as if Nature herself had tried to ward off intruders; in and out of rivers, streams of death in life, whose banks were rotting into mud, whose waters, thickened into slime, invaded the contorted mangroves, that seemed to writhe at us in the extremity of an impotent despair.",
-        "audio_file": "/assets/great_war_reading_gw_l1.mp3",
-        "questions": [
-          "According to Conrad, what does the 'conquest of the earth' really involve?",
-          "How does the author describe the true motivations of the imperialists?",
-          "Why do you think this text was considered highly controversial when it was published in 1899?"
-        ],
-        "is_adapted": false,
-        "hinge_question": "How does Conrad use the image of the French warship 'firing into a continent' to expose the absurdity and violence of the 'civilizing mission' in Africa?"
-      },
-      {
-        "lesson_index": 2,
-        "book_title": "The Riddle of the Sands",
-        "author": "Erskine Childers",
-        "cover_image": "/assets/great_war_childers_cover.png",
-        "author_context": "Erskine Childers was a British author and sailor. Published in 1903, 'The Riddle of the Sands' is considered the first modern spy novel. It fueled British paranoia about a surprise German naval invasion, perfectly capturing the intense public anxiety surrounding the Anglo-German naval arms race.",
-        "extract": "It was a glorious, breezy morning, and the waters of the Frisian coast danced and sparkled in the brilliant sunshine. We had brought the 'Dulcibella' through the tricky channels behind the islands, navigating the intricate maze of sandbanks that guarded the German shore. To the casual observer, we were merely a pair of eccentric English yachtsmen indulging in a late summer cruise among the desolate, mud-strewn estuaries of the North Sea. But beneath the facade of our holiday, a dark and terrifying suspicion had taken root in our minds—a suspicion that had driven us into these treacherous, shifting waters.\n\nAs we dropped anchor in a narrow, desolate gut behind the island of Memmert, Davies stood by the mast, sweeping the horizon with his binoculars. The coastline here was a bleak, monotonous stretch of flat sand and grey water, seemingly devoid of human life. Yet, it was precisely this desolate emptiness that made it so perfect for a secret of such colossal magnitude. For weeks, we had been piecing together a puzzle made of innocuous clues: a tugboat operating where it had no business being, a mysterious salvage operation that recovered nothing, and the relentless, almost obsessive secrecy of a certain Herr Dollmann, an Englishman turned traitor in the service of the Kaiser.\n\n'Look there,' Davies said quietly, handing me the glasses and pointing towards the mainland. 'Just past the spit of sand. Do you see it?'\n\nI squinted through the lenses. At first, there was nothing but the grey blur of the tidal flats. Then, as my eyes adjusted, I saw them. Not fishing boats, not merchantmen, but long, low shapes moving with mechanical precision through a dredged channel that did not exist on any of our Admiralty charts. They were lighters—massive, flat-bottomed barges designed for carrying troops and heavy equipment. There were dozens of them, moored in a hidden basin, sheltered from the open sea and completely invisible from the standard shipping lanes.\n\nThe blood ran cold in my veins as the pieces of the terrible puzzle finally snapped into place. This was no innocent coastal defense project. The German Empire, cramped within its landlocked borders and burning with imperial ambition, was not merely building a High Seas Fleet to challenge our dreadnoughts in open battle. They were preparing something far more insidious, something that struck directly at the heart of our island security.\n\nBehind the barrier of these Frisian islands, protected by the shifting sands and the treacherous tides, a vast, secret invasion force was being assembled. These hidden channels, newly deepened by relentless dredging, were designed to allow a flotilla of troop-carrying barges to slip out into the North Sea under the cover of darkness or a thick sea fog. They would bypass the mighty guns of the Royal Navy and strike a sudden, paralyzing blow on the unprotected eastern shores of England. \n\nWe were sitting in the very nerve center of a meticulously organized naval conspiracy. The Kaiser's Germany was preparing to leap the moat. We alone held the secret, and our tiny, fragile yacht was the only thing standing between the oblivious British public and a sudden, catastrophic war. The riddle of the sands had been solved, but the true terror of what it meant for the future of our nation was only just beginning.",
-        "audio_file": "/assets/great_war_reading_gw_l2.mp3",
-        "questions": [
-          "What secret threat did the narrator believe they had discovered?",
-          "According to the extract, why was the German Empire building its fleet?",
-          "How would reading a popular thriller like this have affected the British public's attitude toward Germany?"
-        ],
-        "is_adapted": false,
-        "hinge_question": "If 'The Riddle of the Sands' was a fictional novel, why do you think it caused such real-world panic and paranoia among the British public regarding the German Navy?"
-      },
-      {
-        "lesson_index": 3,
-        "book_title": "The Guns of August",
-        "author": "Barbara W. Tuchman",
-        "cover_image": "/assets/great_war_tuchman_cover.png",
-        "author_context": "Barbara W. Tuchman was an American historian who won the Pulitzer Prize for 'The Guns of August' (1962). The book masterfully details the political calculations, military plans, and sheer arrogance of the Great Powers in the fateful month of August 1914 as the alliance system dragged them all into war.",
-        "extract": "The nations of Europe in the summer of 1914 were bound together by a series of treaties that were ostensibly designed for mutual defense. The theory behind these grand alliances was deterrence: if every major power was allied with another, the cost of aggression would be too high, and peace would be preserved. However, in reality, these treaties functioned not as safety nets, but as highly sensitive tripwires. The continent had become a rigid, inflexible machine, where a single spark could ignite the entire mechanism and drag millions into an unavoidable conflict. \n\nWhen the Archduke Franz Ferdinand was assassinated in the dusty streets of Sarajevo, the first of these tripwires was snapped. Austria-Hungary, determined to crush the irritating threat of Serbian nationalism, looked to its powerful ally, Germany, for support. The German Kaiser issued the infamous 'blank cheque,' a promise of unconditional backing that emboldened the Austrians to issue an ultimatum they knew Serbia could never fully accept. The localized crisis in the Balkans immediately began to pull the great powers into its gravitational vortex. \n\nRussia, presenting itself as the traditional protector of the Slavic people, felt compelled to stand by Serbia. But Russia’s vast size was its greatest weakness; its army was massive but agonizingly slow to gather. To have any hope of fighting effectively, the Russian Tsar had to order mobilization immediately, long before diplomacy had run its course. Once the Tsar gave the order, the fatal clockwork of the alliance system took over. \n\nMobilization in 1914 was not merely the calling up of reserves; it was an irrevocable step toward war. It meant the requisitioning of thousands of trains, the locking down of national borders, and the execution of highly detailed, down-to-the-minute railway timetables. For Germany, Russian mobilization triggered a terrifying strategic nightmare. Wedged between a hostile Russia to the east and a vengeful France to the west, the German military had devised the Schlieffen Plan. This plan dictated that Germany must immediately attack and defeat France in a lightning campaign of six weeks before the lumbering Russian army could reach the German borders. \n\nTherefore, when Russia mobilized, Germany could not wait. The German high command, terrified of fighting a two-front war, informed the civilian government that military necessity must now dictate political action. They declared war on Russia, but, bound by the rigid logic of the Schlieffen Plan, their armies immediately marched in the opposite direction—invading neutral Belgium to strike at France. \n\nThis violation of Belgian neutrality was the final tripwire. It outraged British public opinion and compelled the British Empire, tied to France and Russia by the Triple Entente, to declare war on Germany. In a matter of days, the entire continent had been plunged into disaster. The diplomats and politicians, who had spent the month of July sending frantic telegrams and attempting to bluff their way to victory, suddenly found themselves entirely powerless. The moment the mobilization orders were signed, control was handed over to the generals and their railway timetables. The statesmen of Europe had built a machine of alliances they believed would keep the peace, but once the gears started turning, it proved to be a machine of industrial slaughter that none of them could stop.",
-        "audio_file": "/assets/great_war_reading_gw_l3.mp3",
-        "questions": [
-          "Why does the author describe the defensive alliances as 'tripwires'?",
-          "What metaphor is used to describe the outbreak of the war?",
-          "According to the text, why were the diplomats unable to stop the war once it started?"
-        ],
-        "is_adapted": true,
-        "hinge_question": "How did the sheer speed and rigid timing of military mobilization plans like the Schlieffen Plan make a diplomatic solution almost impossible during the July Crisis?"
-      },
-      {
-        "lesson_index": 4,
-        "book_title": "All Quiet on the Western Front",
-        "author": "Erich Maria Remarque",
-        "cover_image": "/assets/great_war_all_quiet_cover.png",
-        "author_context": "Erich Maria Remarque was a German veteran of World War I. His 1929 novel 'All Quiet on the Western Front' became a defining anti-war masterpiece, detailing the extreme physical and mental trauma of the trenches, and the profound disillusionment of a generation. It was so powerful that it was later banned and burned by the Nazi regime.",
-        "extract": "We were eighteen years old, and we had only just begun to love life and the world; and we had to shoot it to pieces. Before the war, our lives were filled with the ordinary concerns of youth—school, parents, hobbies, and the vague, distant promises of the future. But all of that was swept away in a sudden, overwhelming tide of national fervor. The older generation, the men who sat comfortably in their armchairs and read the newspapers, told us it was our glorious duty to defend the Fatherland. They spoke of the Fatherland as if it were a beautiful, fragile thing that required our immediate sacrifice, and we, in our naive enthusiasm, believed them.\n\nThe most persuasive of these voices belonged to our schoolmaster, Kantorek. He was a small, stern man who used to glare at us through his spectacles, pacing in front of the chalkboard. During drill-time, Kantorek gave us long, impassioned lectures about the honor of wearing the uniform and the sacred duty of the German soldier. He spoke of heroism and glory with such conviction that the whole of our class went, under his shepherding, straight to the District Commandant and volunteered. I can see him now, his voice trembling with emotion as he asked, 'Won't you join up, Comrades?' \n\nWe were all at once terribly earnest. We marched out of the school gates feeling like men, ready to shoulder the destiny of the empire. No one had the vaguest idea what we were actually in for. The word 'war' was an abstract concept to us, a glorious adventure gleaned from history books and patriotic poetry. We pictured cavalry charges, gleaming medals, and a swift, victorious return home before the leaves fell from the trees. Kantorek called us the 'Iron Youth,' a phrase that made us stand a little taller and puff out our chests, completely unaware of the grim irony it would soon hold. \n\nIt was only when we reached the training camps, and later the muddy, rat-infested trenches of the Western Front, that the glittering facade of duty and glory was violently stripped away. The first bombardment showed us our mistake, and under it the world as they had taught it to us broke in pieces. We realized that the authority of our teachers and parents, the people who were supposed to guide us into the world, was a lie. They had sent us out into a storm of steel with high-sounding words, but they had no conception of the reality of modern, industrial slaughter. \n\nOut here in the mud, nobody cared about the 'Fatherland' or the grand political arguments of the Kaiser. We fought simply to survive, driven by instinct and a desperate loyalty to the men standing next to us in the trench. We had become a wasteland. The older men might have wives, children, and occupations to return to, a solid foundation built before the war. But for us, the young men of eighteen, the war was our only education. We were a generation of men who, even though they may have escaped shells, were destroyed by the war.",
-        "audio_file": "/assets/great_war_reading_gw_l4.mp3",
-        "questions": [
-          "Who was Kantorek, and what did he persuade the entire class to do?",
-          "How did the adults, like teachers, use the idea of 'duty' or 'comradeship' to pressure young men?",
-          "How does this extract help explain the incredible surge of Nationalism and volunteering at the outbreak of the war?"
-        ],
-        "is_adapted": true,
-        "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
-      }
-    ],
-    "assessments": []
+    "key_individuals": [],
+    "terminology": [],
+    "workbooks": [],
+    "specification_file": ""
   },
   "biographies": [
     {
