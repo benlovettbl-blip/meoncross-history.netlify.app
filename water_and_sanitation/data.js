@@ -1996,6 +1996,5 @@ module.exports = {
       "image": "/images/pepys.jpg",
       "bio": "Kept a detailed diary during the 1660s, documenting the filthy conditions of London and the Great Plague of 1665."
     }
-  ],
-  "cover_image": "/assets/water_and_sanitation_was_industrial_street.png"
+  ]
 };
