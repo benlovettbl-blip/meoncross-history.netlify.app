@@ -913,7 +913,22 @@ export function initializeApp(unitData) {
       renderHomepage();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    navContainer.appendChild(homeLink);
+      navContainer.appendChild(homeLink);
+
+      // Lesson Tabs
+      if (unitData.lessons && unitData.lessons.length > 0) {
+        unitData.lessons.forEach((lesson, index) => {
+          const lessonLink = document.createElement('a');
+          lessonLink.className = 'lesson-link';
+          // Use lesson prefix with number
+          lessonLink.innerHTML = `<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Lesson ${index + 1}`;
+          lessonLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.renderLessonByIndex(index);
+          });
+          navContainer.appendChild(lessonLink);
+        });
+      }
 
 
 
@@ -1008,7 +1023,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    if (window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire') {
+    if (window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const examPracticeLink = document.createElement('a');
       examPracticeLink.className = 'lesson-link';
       examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
@@ -1045,7 +1060,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire') {
+    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
@@ -1244,10 +1259,11 @@ export function initializeApp(unitData) {
         </div>
       </div>
     `;
+    let bannerPosition = lesson.banner_position || 'center';
     
     // Full-Bleed Hero Image
     html += `
-      <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') center/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
           <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonPrefix}</span>
@@ -1319,6 +1335,18 @@ export function initializeApp(unitData) {
       };
 
 
+    let studentObjectivesHtml = '';
+    if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object' && lesson.teacher_notes.objectives) {
+      studentObjectivesHtml = `
+        <div class="learning-objectives-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 20px; border-radius: 6px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <h4 style="margin-top: 0; color: #1e3a8a; font-size: 1.15rem; margin-bottom: 15px;"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Learning Objectives</h4>
+          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.5;">
+            ${lesson.teacher_notes.objectives.map(obj => `<li style="margin-bottom: 8px;">${obj.objective}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
     if (lesson.teacher_notes) {
       let notesHtml = '';
       if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
@@ -1345,11 +1373,15 @@ export function initializeApp(unitData) {
       }
 
       html += `
+        ${studentObjectivesHtml}
         <div class="teacher-note">
           <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
           ${notesHtml}
         </div>
       `;
+    } else {
+      // If no teacher notes but we somehow had objectives elsewhere (fallback)
+      html += studentObjectivesHtml;
     }
 
           
@@ -1933,11 +1965,19 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
 
              blockSourceHtml = `
               <div class="gcse-source-container" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
-                ${block.source.title ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
+                ${block.source.caption ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.caption}
+                </h4>` : (block.source.title ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
                   <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
                   ${block.source.title}
-                </h4>` : ''}
+                </h4>` : '')}
                 ${sourceContentHtml}
+                ${block.source.source_context ? `
+                  <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+                    <strong>Historical Context:</strong> ${block.source.source_context}
+                  </div>
+                ` : ''}
                 ${block.source.provenance_clue ? `
                   <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
                     <strong style="color: #166534; display: block; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Provenance Clue:</strong>
@@ -2025,12 +2065,32 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
         if (block.tasks && block.tasks.length > 0) {
           extrasHtml += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
           block.tasks.forEach((task, tIdx) => {
-             if (task.type === 'drag_drop_timeline') {
+             if (task.type === 'convict_game') {
+              const gameId = `convict-game-emb-${index}-${tIdx}`;
+              extrasHtml += `<div id="${gameId}" style="margin-bottom: 20px;"></div>`;
+              window.postRenderHooks.push(() => {
+                import('./convict_game.js').then(mod => {
+                   mod.initConvictGame(document.getElementById(gameId), task);
+                });
+              });
+              return;
+            }
+            if (task.type === 'drag_drop_timeline') {
                const timelineId = `dd-timeline-emb-${index}-${tIdx}`;
                extrasHtml += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
                window.postRenderHooks.push(() => {
                  import('./drag_drop_timeline.js').then(mod => {
                     mod.initDragDropTimeline(document.getElementById(timelineId), task);
+                 });
+               });
+               return;
+             }
+             if (task.type === 'interactive_map') {
+               const mapId = `interactive-map-emb-${index}-${tIdx}`;
+               extrasHtml += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./interactive_map.js').then(mod => {
+                    mod.initInteractiveMap(document.getElementById(mapId), task);
                  });
                });
                return;
@@ -2190,6 +2250,16 @@ if (lesson.tasks) {
             window.postRenderHooks.push(() => {
               import('./drag_drop_timeline.js').then(mod => {
                  mod.initDragDropTimeline(document.getElementById(timelineId), task);
+              });
+            });
+            return;
+          }
+          if (task.type === 'interactive_map') {
+            const mapId = `interactive-map-lesson-${tIdx}`;
+            htmlTasks += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('./interactive_map.js').then(mod => {
+                 mod.initInteractiveMap(document.getElementById(mapId), task);
               });
             });
             return;
