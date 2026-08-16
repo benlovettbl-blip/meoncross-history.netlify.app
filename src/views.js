@@ -63,17 +63,13 @@ export function renderDashboard() {
 
   const units = getUnits();
   
-  // Year 7 Grouping
-  const y7Order = ['water_and_sanitation', 'medieval_england', 'early_modern_world'];
-  const y7Units = units.filter(u => y7Order.includes(u.id)).sort((a, b) => y7Order.indexOf(a.id) - y7Order.indexOf(b.id));
-
-  // Year 8 Grouping
-  const y8Order = ['crown_parliament_revolution', 'industrialisation_and_empire', 'australia'];
-  const y8Units = units.filter(u => y8Order.includes(u.id)).sort((a, b) => y8Order.indexOf(a.id) - y8Order.indexOf(b.id));
-
-  // Year 9 Grouping
-  const y9Order = ['great_war', 'great_war_part2', 'second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
-  const y9Units = units.filter(u => y9Order.includes(u.id)).sort((a, b) => y9Order.indexOf(a.id) - y9Order.indexOf(b.id));
+  // Combined KS3 Grouping (maintaining sorted order)
+  const ks3Order = [
+    'water_and_sanitation', 'medieval_england', 'early_modern_world',
+    'crown_parliament_revolution', 'industrialisation_and_empire', 'australia',
+    'great_war', 'great_war_part2', 'second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'
+  ];
+  const ks3Units = units.filter(u => ks3Order.includes(u.id)).sort((a, b) => ks3Order.indexOf(a.id) - ks3Order.indexOf(b.id));
 
   // KS4 (GCSE) Grouping
   const ks4Order = ['edexcel_medicine', 'eee', 'cme_new', 'weimar_nazi_germany'];
@@ -123,30 +119,12 @@ export function renderDashboard() {
     `;
   };
 
-  if (y7Units.length > 0) {
+  if (ks3Units.length > 0) {
     html += `
-      <h3 class="section-title" style="margin-top: 2rem;">Year 7 (1066 - c.1700)</h3>
+      <h3 class="section-title" style="margin-top: 2rem;">Key Stage 3</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
-    y7Units.forEach(renderUnitCard);
-    html += `</div>`;
-  }
-
-  if (y8Units.length > 0) {
-    html += `
-      <h3 class="section-title">Year 8 (c.1700 - 1900)</h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
-    `;
-    y8Units.forEach(renderUnitCard);
-    html += `</div>`;
-  }
-
-  if (y9Units.length > 0) {
-    html += `
-      <h3 class="section-title">Year 9 (20th Century & Modern World)</h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
-    `;
-    y9Units.forEach(renderUnitCard);
+    ks3Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
