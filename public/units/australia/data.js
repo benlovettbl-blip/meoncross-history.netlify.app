@@ -1846,7 +1846,7 @@ export const unitData = {
     {
       "name": "Tupaia",
       "group": "Explorers & Navigators",
-      "image": "/images/default_person.jpg",
+      "image": "/images/default_person.svg",
       "title": "Polynesian Star Navigator",
       "bio": "A master Polynesian star navigator and high priest from Ra'iatea. He possessed a vast mental map of the Pacific Ocean and guided the Endeavour through treacherous waters. He also served as a crucial translator with the Māori in New Zealand.",
       "key_achievements": [
@@ -1882,7 +1882,7 @@ export const unitData = {
     {
       "name": "John Macarthur",
       "group": "Colonial Figures",
-      "image": "/images/default_person.jpg",
+      "image": "/images/john_macarthur.jpg",
       "title": "Pioneer of the Wool Industry",
       "bio": "A wealthy British army officer and landowner who introduced Merino sheep to Australia. He played a pivotal role in transforming New South Wales from an expensive penal colony into a highly profitable exporter of wool.",
       "key_achievements": [
