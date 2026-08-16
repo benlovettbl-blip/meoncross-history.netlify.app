@@ -120,13 +120,13 @@ module.exports = {
             }
           ],
           "theme_heading": "Roman Water Transforms Britain",
-          "image": "/assets/water_and_sanitation_roman_latrine.jpg",
+          "image": "assets/roman_latrine.jpg",
           "image_alt": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
           "caption": "<strong>What is this source showing?</strong> This is a well-preserved example of a Roman communal latrine block. Notice the stone seating with holes positioned over a deep channel where running water continuously flushed waste away. Below the seats is a shallower gutter that carried clean water, used by the Romans to wet a communal sponge-on-a-stick (xylospongium) for wiping.",
           "source_letter": "A"
         },
         {
-          "image": "/assets/water_local_fishbourne.jpg",
+          "image": "/images/fishbourne.jpg",
           "tasks": [
             {
               "type": "short_answer",
@@ -163,7 +163,7 @@ module.exports = {
             }
           ],
           "theme_heading": "Roman Water and Hygiene",
-          "image": "/assets/water_and_sanitation_seneca.jpg",
+          "image": "assets/seneca.jpg",
           "image_alt": "Source C: Seneca the Younger (c. 4 BC – AD 65)",
           "caption": "Seneca the Younger (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
           "source_letter": "C"
@@ -355,13 +355,13 @@ module.exports = {
             }
           ],
           "theme_heading": "Monastic Cleanliness and Hygiene",
-          "image": "/assets/water_and_sanitation_canterbury_waterworks.jpg",
+          "image": "assets/canterbury_waterworks.jpg",
           "image_alt": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
           "caption": "<strong>What is this source showing?</strong> This extraordinary map, drawn around 1165, shows the complex water system built for the monks of Christ Church Priory in Canterbury. It details pipes drawing fresh water from springs outside the city walls, directing it to a settling tank, and then routing it through the monastery to washbasins, the kitchen, and finally flushing the latrines.",
           "source_letter": "A"
         },
         {
-          "image": "/assets/water_local_titchfield.jpg",
+          "image": "/images/titchfield.jpg",
           "tasks": [
             {
               "type": "short_answer",
@@ -577,7 +577,7 @@ module.exports = {
             }
           ],
           "theme_heading": "Harington",
-          "image": "/assets/water_and_sanitation_harington_toilet.jpg",
+          "image": "assets/harington_toilet.jpg",
           "image_alt": "Source A: Sir John Harington's flushing toilet design (1596)",
           "caption": "<strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harington, a godson of Queen Elizabeth I. It illustrates his invention: the first modern flushing water closet, which he called the 'Ajax'. It featured a flush valve to release water and a wash-down design to empty the bowl.",
           "source_letter": "A"
@@ -597,7 +597,7 @@ module.exports = {
           "theme_heading": "London's New Water Architecture"
         },
         {
-          "image": "/assets/water_local_southsea.jpg",
+          "image": "/images/placeholder.jpg",
           "tasks": [
             {
               "type": "short_answer",
@@ -811,7 +811,7 @@ module.exports = {
           "theme_heading": "Squalid Urban Living"
         },
         {
-          "image": "/assets/water_local_cholera.jpg",
+          "image": "/images/fareham_chimney.png",
           "tasks": [
             {
               "type": "short_answer",
@@ -839,7 +839,7 @@ module.exports = {
             }
           ],
           "theme_heading": "Britain's First Cholera",
-          "image": "/assets/water_and_sanitation_snow_cholera_map.jpg",
+          "image": "assets/snow_cholera_map.jpg",
           "image_alt": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
           "caption": "<strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during the devastating 1854 cholera outbreak in Soho, London. Each black bar on the map represents a death from cholera at that specific address. Snow noticed that the deaths clustered tightly around one specific public water pump on Broad Street.",
           "source_letter": "A"
@@ -1033,7 +1033,7 @@ module.exports = {
           "theme_heading": "The Great Stink Forces Action"
         },
         {
-          "image": "/assets/water_local_eastney.jpg",
+          "image": "/images/eastney.jpg",
           "tasks": [
             {
               "type": "short_answer",
@@ -1061,7 +1061,7 @@ module.exports = {
             }
           ],
           "theme_heading": "Bazalgette",
-          "image": "/assets/water_and_sanitation_bazalgette_sewer.jpg",
+          "image": "assets/bazalgette_sewer.jpg",
           "image_alt": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
           "caption": "<strong>What is this source showing?</strong> This photograph captures the colossal engineering effort required to build the London sewer system in the 1860s. Designed by Joseph Bazalgette, the project involved constructing 82 miles of massive enclosed brick intercepting sewers and 1,100 miles of street sewers to stop sewage from flowing directly into the River Thames.",
           "source_letter": "A"
@@ -1698,7 +1698,7 @@ module.exports = {
       "lesson_index": 0,
       "book_title": "Pompeii",
       "author": "Robert Harris",
-      "cover_image": "/assets/water_and_sanitation_pompeii_cover.png",
+      "cover_image": "assets/pompeii_cover.png",
       "author_context": "Robert Harris is a bestselling English novelist. His 2003 novel 'Pompeii' is meticulously researched, drawing on the archaeological record and the writings of Pliny the Younger to recreate the days leading up to the eruption of Mount Vesuvius in AD 79. Harris focuses extensively on the incredible engineering of the Aqua Augusta.",
       "is_adapted": true,
       "extract": "The aquarius stood on the deck of the liburnian as it cut across the Bay of Naples. The water levels in the great reservoir, the Piscina Mirabilis, had dropped significantly overnight. It was not a breach; it was something far worse. The ground itself, he realised with a sinking feeling, was swelling upwards, tilting the aqueduct off its gradient and choking the flow of life to the towns. \n\nFor a Roman engineer, the Aqua Augusta was not merely a channel of water; it was the lifeblood of civilization in the Campanian region. This colossal aqueduct, a marvel of imperial engineering, snaked its way across the landscape for over sixty miles. It gathered the pure, cold mountain springs and delivered them with relentless precision to a quarter of a million people living in nine separate towns, including Neapolis and the bustling port of Puteoli. The system relied entirely on gravity, calculated down to the smallest fraction of an inch, maintaining a steady downward slope no matter the terrain.\n\nWhen the aqueduct functioned perfectly, it was invisible, an unthinking miracle that allowed the wealthy to luxuriate in their private baths, the public fountains to run endlessly, and the naval fleet stationed at Misenum to remain supplied with fresh drinking water. But now, the unthinkable had happened. The flow had been disrupted. The aquarius, Attilius, knew that if the water stopped for even a few days in the height of the oppressive August heat, the social order of the entire region would begin to unravel. Without the continuous flushing of the public latrines and the steady supply to the street basins, disease and panic would quickly follow.\n\nThe silence of the dry channels was deafening. The disruption was occurring somewhere along the slopes of Vesuvius, the great looming mountain that dominated the skyline. Attilius had spent his life studying the behavior of water, mastering the intricate mathematics required to bend nature to the will of Rome. Yet, he was entirely unprepared for the sheer, terrifying power of the earth itself. The ground beneath their feet was unstable, shivering with subtle tremors that went largely unnoticed by the wealthy patricians partying in their coastal villas.\n\nAs they approached the mainland, the oppressive heat seemed to thicken. The air smelled faintly of sulfur, a warning sign written in the very atmosphere that something deep beneath the earth's crust was awakening. The failure of the Aqua Augusta was not a simple engineering fault; it was the first symptom of a geological catastrophe that would soon wipe the bustling towns of Pompeii and Herculaneum from the face of the earth. For now, however, it was merely an urgent logistical crisis, a puzzle of blocked tunnels and shifting gradients that required immediate attention to prevent the collapse of the local water supply. He needed to organize a team of slaves, gather the lead piping and cement, and ride into the scorching foothills before the entire region realized their taps had run dry.",
@@ -1710,7 +1710,7 @@ module.exports = {
       "lesson_index": 1,
       "book_title": "The Time Traveler's Guide to Medieval England",
       "author": "Ian Mortimer",
-      "cover_image": "/assets/water_and_sanitation_mortimer_cover.png",
+      "cover_image": "assets/mortimer_cover.png",
       "author_context": "Ian Mortimer is a British historian who pioneered the 'Time Traveler's Guide' approach to history. Rather than writing dry academic texts about dates and kings, he writes in the second person ('you'), immersing the reader in the visceral, sensory reality of living in the past.",
       "is_adapted": true,
       "extract": "You walk down the narrow, unpaved street of a bustling fourteenth-century English town, your boots sinking into a thick, foul-smelling mud. The air is heavy with an eye-watering stench of woodsmoke, rotting vegetables, and raw sewage. A sudden splash alerts you—someone has just emptied their chamber pot from a second-story window directly into the open gutter running down the centre of the street. Pigs root enthusiastically through the muck, undisturbed by the noise, while a pack of stray dogs fights over a discarded butcher’s bone.\n\nWelcome to medieval urban life. To the modern time traveler, the most shocking aspect of the medieval town is not the architecture or the clothing, but the overwhelming assault on the senses, particularly the smell. There is no municipal waste collection, no underground sewer system, and certainly no concept of germ theory. The streets act as open drains. When it rains heavily, the filth is somewhat washed down towards the nearest river or stream. When it is dry, the waste simply bakes in the sun, creating an environment ripe for disease.\n\nThe local butcher shops are a primary source of this filth. In many towns, butchers slaughter animals right in the streets or in their backyards, tossing the offal, blood, and unwanted entrails into the public ditches. The tanners, whose vital trade produces the leather needed for shoes, belts, and saddles, use vats of dog feces and urine to soften the animal hides, creating an odor so foul that their workshops are often banished to the outskirts of the town by royal decree.\n\nYet, it is a mistake to think that medieval people enjoy living in squalor. They simply lack the infrastructure and the scientific understanding to manage the waste generated by large, dense populations. In fact, many town councils try desperately to pass bylaws to keep the streets clean. There are fines for leaving dung heaps outside your door, and repeated attempts to force butchers to dispose of their waste outside the town walls. Some wealthier citizens even pay scavengers—men who drive carts through the streets—to carry away the worst of the refuse.\n\nDespite these efforts, the sheer volume of human and animal waste is overwhelming. The water supply is constantly at risk of contamination. While some towns have access to pure water from covered conduits or deep wells, many poor residents are forced to draw their drinking water from the same river into which the town’s sewage and industrial waste flows. It is a precarious balance, a society constantly teetering on the edge of devastating epidemics, unaware of the microscopic killers breeding in the filth beneath their feet.",
@@ -1722,7 +1722,7 @@ module.exports = {
       "lesson_index": 2,
       "book_title": "The Diary of Samuel Pepys",
       "author": "Samuel Pepys",
-      "cover_image": "/assets/water_and_sanitation_pepys_cover.png",
+      "cover_image": "assets/pepys_cover.png",
       "author_context": "Samuel Pepys was a wealthy naval administrator and Member of Parliament in 17th-century London. His private diary, written in shorthand, provides one of the most famous and unfiltered primary source accounts of the English Restoration period, including the Great Plague and the Great Fire of London.",
       "is_adapted": false,
       "extract": "20th October 1660. I woke up this morning, and upon rising to go to the office, I found to my great dismay that I could not easily cross my own cellar. The floor was entirely submerged under a foul, foul-smelling brown liquid. My neighbor, Sir Anthony, had recently instructed his workmen to dig a new vault for his house of office [privy], and they had somehow breached the dividing wall between our properties. The contents of his vast cesspit had simply overflowed, spilling completely into my basement. \n\nI was forced to step carefully over the mess, lifting my breeches, my nose smarting from the incredible stench of human excrement that now filled my entire house. It is a most terrible inconvenience, and I immediately sent my boy to Sir Anthony’s house to demand that he send his nightmen around tonight to empty the pit and scour my cellar floor. But in truth, such things are a common hazard of living in this great, crowded city, where every man’s filth is buried but a few feet beneath the floorboards.\n\n22nd October 1660. The nightmen finally arrived near midnight, their carts clattering noisily over the cobblestones. They are a rough sort, reeking of their trade, carrying their large wooden tubs and long ladles. I watched them briefly from the window as they descended into the cellar by lantern light, plunging their tools into the thick mire. The smell that wafted up into the street was overpowering, forcing me to close the shutters tightly. They worked through the early hours of the morning, carrying tub after tub of the night-soil out to their carts, before driving it away to the laystalls on the edge of the city, where it shall sit rotting until the farmers buy it for manure.\n\nIt cost Sir Anthony a pretty penny to have the men work through the night, and he has apologized profusely for the breach in the wall. The cellar has been washed down with vinegar, though the dampness and the faint odor of the disaster still linger in the wood. It makes a man pause and think on the vast quantity of such filth that lies hidden just beneath our feet across the whole of London. Without the nightmen and their carts, we should all drown in it within a month. I am thankful the business is concluded, and I pray the masons build a thicker wall for his new vault.",
@@ -1734,7 +1734,7 @@ module.exports = {
       "lesson_index": 3,
       "book_title": "Bleak House",
       "author": "Charles Dickens",
-      "cover_image": "/assets/water_and_sanitation_dickens_cover.png",
+      "cover_image": "assets/dickens_cover.png",
       "author_context": "Charles Dickens was a wildly popular 19th-century Victorian novelist and a fierce social critic. Having experienced poverty in his own childhood, he used his novels to expose the horrific living conditions, child labor, and deep inequality of the Industrial Revolution.",
       "is_adapted": false,
       "extract": "Jo lives—that is to say, Jo has not yet died—in a ruinous place, known to the like of him by the name of Tom-all-Alone's. It is a black, dilapidated street, avoided by all decent people; where the crazy houses were seized upon, when their decay was far advanced, by some bold vagrants, who, after establishing their own possession, took to letting them out in lodgings. Now, these tumbling tenements contain, by night, a swarm of misery. As, on the ruined human wretch, vermin parasites appear, so, these ruined shelters have bred a crowd of foul existence that crawls in and out of gaps in walls and boards; and coils itself to sleep, in maggot numbers, where the rain drips in.\n\nThis desirable property is in Chancery, of course. It would be an insult to the discernment of any man with half an eye, to tell him so. Whether \"Tom\" is the popular representative of the original plaintiff or defendant in Jarndyce and Jarndyce; or, whether Tom lived here when the suit had laid the street waste, all alone, until other settlers came to join him; or, whether the traditional title is a comprehensive name for a retreat cut off from honest company and put out of the pale of hope; perhaps nobody knows. Certainly, Jo don't know.\n\nBut Tom-all-Alone's is a terrible place. It is a street of perishing blind houses, with their eyes stoned out; without a pane of glass, without so much as a window-frame, with the bare blank shutters tumbling from their hinges and falling asunder; the apathetic ruins of what once were homes. Here, the refuse of the city is cast, and here the heavy, sickening stench of the cesspools and the stagnant, black water of the open gutters mixes with the smoke and the fog, creating an atmosphere so thick and poisonous that it catches in the throat.\n\nTwice, lately, there has been a crash and a cloud of dust, like the springing of a mine, in Tom-all-Alone's; and, each time, a house has fallen. These accidents have made a paragraph in the newspapers, and have filled a bed or two in the nearest hospital. The gaps remain, and there are not wanting pale ghosts of torn wall-papers, architectural wainscoting, and mysterious staircases, to remind the passer-by of the human life that once was sheltered there. But the people who live in Tom-all-Alone's have no time for ghosts. They are too busy fighting for the scraps of food, the ragged corners of shelter, and the very air they breathe, in this rotting monument to the indifference of the great, prosperous city that surrounds them.",
@@ -1746,7 +1746,7 @@ module.exports = {
       "lesson_index": 4,
       "book_title": "Letter to The Times on the Condition of the Thames",
       "author": "Michael Faraday",
-      "cover_image": "/assets/water_and_sanitation_faraday_cover.png",
+      "cover_image": "assets/faraday_cover.png",
       "author_context": "Michael Faraday was one of the greatest scientists of the 19th century, famous for his discoveries in electromagnetism. In 1855, disgusted by the state of the river, he wrote this famous open letter to The Times newspaper, forcing politicians to confront the horrific reality of the Great Stink.",
       "is_adapted": false,
       "extract": "To the Editor of the Times.\n\nSir, — I traversed this day by steam-boat the space between London and Hungerford Bridges between half-past one and two o'clock; it was low water, and I think the tide must have been near the turn. The appearance and the smell of the water forced themselves at once on my attention. The whole of the river was an opaque pale brown fluid. In order to test the degree of opacity, I tore up some white cards into pieces, moistened them so as to make them sink easily below the surface, and then dropped some of these pieces into the water at every pier the boat came to; before they had sunk an inch below the surface they were indistinguishable, though the sun shone brightly at the time.\n\nWhen the pieces fell edgeways the lower part was hidden from sight before the upper part was under water. This happened at St. Paul's Wharf, Blackfriars Bridge, Temple Pier, Southwark Bridge, and everywhere else. I was able to test it at Hungerford Bridge also, and the result was exactly the same. The water was so thick with suspended matter that it could not be seen through for the depth of a single inch!\n\nThe smell was very bad, and common to the whole of the water; it was the same as that which now comes up from the gully-holes in the streets; the whole river was for the time a real sewer. Having just returned from out of the country air, I was, perhaps, more feelingly alive to it than others; but I do not think it possible for any man of normal senses to have travelled upon the river without being profoundly disgusted and alarmed.\n\nI have thought it a duty to record these facts, that they may be brought to the attention of those who exercise power or have responsibility in relation to the condition of our river. There is nothing figurative in the words I have employed, or any approach to exaggeration; they are the simple confession of the truth. If there be sufficient authority to remove a putrescent pond from the neighbourhood of a few simple dwellings, surely the river which flows for so many miles through London ought not to be allowed to become a fermenting sewer. \n\nThe condition in which I saw the Thames may perhaps be considered as exceptional, but it ought to be an impossible state, instead of being, as it is, the normal and everyday condition of this great waterway. If we neglect this subject, we cannot expect to do so with impunity; nor ought we to be surprised if, ere many years are over, a hot season give us sad proof of the folly of our carelessness.\n\nI am, Sir, your obedient servant, \nM. FARADAY. \nRoyal Institution, July 7.",
@@ -1880,7 +1880,7 @@ module.exports = {
       "id": "seneca",
       "name": "Seneca the Younger",
       "role": "Roman Philosopher",
-      "image": "/assets/water_and_sanitation_seneca.jpg",
+      "image": "assets/seneca.jpg",
       "bio": "A Roman philosopher who famously complained about the intense noise and activity of Roman bathhouses in 62 AD."
     },
     {
@@ -1894,7 +1894,7 @@ module.exports = {
       "id": "snow",
       "name": "John Snow",
       "role": "Physician",
-      "image": "/assets/john_snow.jpg",
+      "image": "assets/john_snow.jpg",
       "bio": "Proved that cholera was waterborne by mapping the 1854 Broad Street outbreak and removing the pump handle."
     },
     {
