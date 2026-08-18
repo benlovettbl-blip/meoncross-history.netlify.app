@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Pack: Key Topic 1: Queen, government and religion, 1558-69</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-image: url('/assets/placeholder_cover.jpg'); background-size: cover; background-position: center;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
+            margin-top: 0;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            border-bottom: 4px solid var(--brand-red);
+            padding-bottom: 10px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-red);
+            margin-top: 30px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 15px; height: 15px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1px solid #888;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto;
+            border: 2px dashed var(--brand-red);
+            padding: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .debrief h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 30px;
+            flex-shrink: 0;
+        }
+        .answer-text {
+            font-weight: 600;
+        }
+
+        /* Tracker Page */
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 10%; }
+        .col-date { width: 15%; }
+        .col-score { width: 15%; }
+        .col-sig { width: 30%; }
+        .col-target { width: 30%; }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1>Paper 2: Early Elizabethan England, 1558-88</h1>
+            <h2>"From religious division to the Armada: How did Elizabeth secure her throne?"</h2>
+            <h3>Mastery Pack: KEY TOPIC 1: QUEEN, GOVERNMENT AND RELIGION, 1558-69</h3>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.1: The situation on Elizabeth’s accession, 1558</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">How old was Elizabeth when she ascended to the throne in 1558?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">What phrase describes the rigid social hierarchy of Elizabethan England where everyone 'knew their place'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">What percentage of the Elizabethan population lived in the countryside?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">What system did the monarch use to maintain control by rewarding loyalty with land, titles, and monopolies?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">Roughly how many trusted nobles and advisers made up the Privy Council?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">Who was Elizabeth's most important minister and Secretary of State?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">How many times was Parliament called during Elizabeth's entire reign?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">Why did the Pope view Elizabeth as illegitimate?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">What term was used to describe a female ruler with actual power, rather than just a figurehead?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">Why was Elizabeth reluctant to marry?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">How much debt did Elizabeth inherit in 1558?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">What was the Crown's annual revenue when Elizabeth became queen?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">How much money was owed to the Antwerp Exchange?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">What interest rate did the foreign moneylenders at the Antwerp Exchange charge?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">What economic process implemented by previous monarchs caused massive inflation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">How did Elizabeth remarkably clear the Crown's debt by 1574?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">What 1559 treaty ended the war with France and surrendered Calais?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">What was the name of the traditional alliance between France and Scotland?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">Which Catholic monarch had a strong claim to the English throne and was married to the French heir?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">What 1564 treaty did Elizabeth sign to avoid further war with France by permanently recognising their claim to Calais?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.1: The situation on Elizabeth’s accession, 1558</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">What did William Harvey discover?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">In what year did the Black Death arrive in England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">What did Edward Jenner discover?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">Who published the Germ Theory in 1861?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">What was 'miasma'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">Who was Elizabeth I's father?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">What was the Reformation?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">Who was the monarch immediately before Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">What religion was Mary I?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">What was the 'Great Chain of Being'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">What year did Elizabeth introduce her Religious Settlement?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">What term is used to describe Elizabeth's political compromise to satisfy both Protestants and Catholics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">Which specific Act made Elizabeth the 'Supreme Governor' rather than the 'Supreme Head' of the Church?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">Which Act dictated that the English Book of Common Prayer must be used in all churches?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">What were the strict instructions issued by William Cecil detailing exactly how to worship and govern the Church called?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">Aside from religious services, name one crucial social function of the parish church.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">37</td>
+                    <td class="col-question">What specific legal system did the Church run to handle moral crimes, marriage, slander, and wills?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">38</td>
+                    <td class="col-question">What term describes the official inspections carried out by bishops every three to four years to check on the clergy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">39</td>
+                    <td class="col-question">Who were the radical Protestants that wanted to eradicate all Catholic "superstitions" from the Church?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">40</td>
+                    <td class="col-question">Which Catholic item did Puritans demand be removed from churches, leading to a major controversy where Elizabeth backed down?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.2: The 'settlement' of religion, 1559</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">41</td>
+                    <td class="col-question">What was the name of the document issued by the Archbishop of Canterbury in 1566 to enforce traditional clerical robes?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">42</td>
+                    <td class="col-question">How many Puritan priests in London were dismissed for refusing to wear the mandated vestments?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">43</td>
+                    <td class="col-question">What term describes Catholics who actively refused to attend the new Protestant Church services?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">44</td>
+                    <td class="col-question">In what year did the Pope explicitly order English Catholics not to attend the new Church of England services?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">45</td>
+                    <td class="col-question">Why did Elizabeth initially instruct authorities to turn a blind eye to minor Catholic disobedience?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">46</td>
+                    <td class="col-question">Which Catholic figurehead arrived in England in 1568, giving disgruntled Catholics a legitimate rival to rally around?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">47</td>
+                    <td class="col-question">What severe action did the Pope take against Elizabeth in 1570?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">48</td>
+                    <td class="col-question">How did the 1570 excommunication change the behaviour of English Catholics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">49</td>
+                    <td class="col-question">Which two Catholic superpowers were officially encouraged by the Pope to sponsor plots against Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">50</td>
+                    <td class="col-question">Why was the Catholic challenge ultimately more dangerous to Elizabeth than the Puritan challenge?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">51</td>
+                    <td class="col-question">What year did Elizabeth I become Queen?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">52</td>
+                    <td class="col-question">How much debt did Mary I leave to Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">53</td>
+                    <td class="col-question">Which French city did England lose in 1559 under the Treaty of Cateau-Cambrésis?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">54</td>
+                    <td class="col-question">What was a 'Queen Regnant'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">55</td>
+                    <td class="col-question">Who was Elizabeth's mother?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">56</td>
+                    <td class="col-question">Why was Elizabeth's legitimacy questioned by Catholics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">57</td>
+                    <td class="col-question">What was the 'Auld Alliance'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">58</td>
+                    <td class="col-question">What did Florence Nightingale improve?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">59</td>
+                    <td class="col-question">Who discovered Penicillin by accident?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">60</td>
+                    <td class="col-question">What is a 'magic bullet'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.3: Challenge to the religious settlement</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">61</td>
+                    <td class="col-question">What was the main objection of the Puritans regarding the 1559 Religious Settlement?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">62</td>
+                    <td class="col-question">What objects did Puritans demand be removed from churches because they viewed them as superstitious idols?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">63</td>
+                    <td class="col-question">Why did Elizabeth back down during the Crucifix Controversy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">64</td>
+                    <td class="col-question">What controversy in 1566 involved Puritans refusing to wear special clerical robes (surplices)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">65</td>
+                    <td class="col-question">What was the name of the guidelines issued by the Archbishop of Canterbury in 1566 to enforce priestly clothing?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">66</td>
+                    <td class="col-question">How many London priests were dismissed for refusing to wear the mandated vestments?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">67</td>
+                    <td class="col-question">Who was the ultimate authority for Catholics, making their loyalty to Elizabeth suspect?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">68</td>
+                    <td class="col-question">What term describes Catholics who actively refused to attend the new Protestant Church of England services?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">69</td>
+                    <td class="col-question">In which region of England was traditional Catholic support and noble resistance the strongest?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">70</td>
+                    <td class="col-question">Why did Elizabeth initially avoid strictly enforcing recusancy fines against Catholics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">71</td>
+                    <td class="col-question">What major domestic Catholic rebellion occurred in 1569?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">72</td>
+                    <td class="col-question">What was the Catholic Church's Europe-wide campaign to reverse the Protestant Reformation called?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">73</td>
+                    <td class="col-question">What instruction did the Pope give to English Catholics in 1566?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">74</td>
+                    <td class="col-question">What catastrophic action did Pope Pius V take against Elizabeth in 1570?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">75</td>
+                    <td class="col-question">What did the 1570 Papal Bull explicitly tell English Catholics?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">76</td>
+                    <td class="col-question">Which Catholic figurehead fled to England in 1568, becoming the focus of plots against Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">77</td>
+                    <td class="col-question">Which two major European superpowers posed a direct military threat to Protestant England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">78</td>
+                    <td class="col-question">Where was the Catholic seminary located that trained priests to be secretly sent into England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">79</td>
+                    <td class="col-question">Name one prominent Puritan leader who actively opposed the Elizabethan settlement.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">80</td>
+                    <td class="col-question">Why was the Catholic challenge considered vastly more dangerous than the Puritan challenge?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.3: Challenge to the religious settlement</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">81</td>
+                    <td class="col-question">What two Acts made up Elizabeth's Religious Settlement of 1559?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">82</td>
+                    <td class="col-question">What title did Elizabeth take in the Act of Supremacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">83</td>
+                    <td class="col-question">What was the Act of Uniformity?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">84</td>
+                    <td class="col-question">What was the Book of Common Prayer?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">85</td>
+                    <td class="col-question">Who were the Puritans?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">86</td>
+                    <td class="col-question">What were the Royal Injunctions?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">87</td>
+                    <td class="col-question">How much debt did Mary I leave to Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">88</td>
+                    <td class="col-question">Which French city did England lose in 1559?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">89</td>
+                    <td class="col-question">What year did the Black Death arrive in England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">90</td>
+                    <td class="col-question">Who published the Germ Theory in 1861?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">91</td>
+                    <td class="col-question">How was Mary, Queen of Scots related to Elizabeth I?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">92</td>
+                    <td class="col-question">From which English King did Mary derive her claim to the throne?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">93</td>
+                    <td class="col-question">Why did many Catholics believe Elizabeth was illegitimate?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">94</td>
+                    <td class="col-question">Which country was Mary briefly the Queen of before returning to Scotland?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">95</td>
+                    <td class="col-question">What was the name of Mary's second husband, who was murdered in 1567?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">96</td>
+                    <td class="col-question">Who was the prime suspect in the murder, whom Mary subsequently married?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">97</td>
+                    <td class="col-question">What did the Scottish Protestant lords force Mary to do after capturing her in 1567?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">98</td>
+                    <td class="col-question">In whose favour was Mary forced to abdicate?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">99</td>
+                    <td class="col-question">In what year did Mary flee Scotland and arrive in England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">100</td>
+                    <td class="col-question">Why did Elizabeth refuse to help Mary regain her throne by force?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT1.4: The problem of Mary, Queen of Scots</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">101</td>
+                    <td class="col-question">Why was Elizabeth reluctant to hand Mary over to the Scottish lords for punishment?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">102</td>
+                    <td class="col-question">Why couldn't Elizabeth simply allow Mary to travel to France or Spain?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">103</td>
+                    <td class="col-question">What was the name of the legal inquiry set up by Elizabeth to investigate Mary?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">104</td>
+                    <td class="col-question">What evidence was produced by the Scottish lords to try and prove Mary's guilt?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">105</td>
+                    <td class="col-question">What did the Casket Letters allegedly contain?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">106</td>
+                    <td class="col-question">What was Mary's defence against the letters?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">107</td>
+                    <td class="col-question">What was Elizabeth's final verdict regarding Mary's guilt?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">108</td>
+                    <td class="col-question">What was the immediate outcome for Mary following the inquiry?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">109</td>
+                    <td class="col-question">Why was keeping Mary in England a massive risk for Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">110</td>
+                    <td class="col-question">What major uprising occurred in England just one year after Mary's arrival?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">111</td>
+                    <td class="col-question">What was the 'Crucifix Controversy'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">112</td>
+                    <td class="col-question">What was the 'Vestment Controversy'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">113</td>
+                    <td class="col-question">Who was the Pope that excommunicated Elizabeth in 1570?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">114</td>
+                    <td class="col-question">What was the Papal Bull of 1570?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">115</td>
+                    <td class="col-question">Why did the Dutch Revolt matter to Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">116</td>
+                    <td class="col-question">What title did Elizabeth take in the Act of Supremacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">117</td>
+                    <td class="col-question">What was the Book of Common Prayer?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">118</td>
+                    <td class="col-question">Who were the Puritans?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">119</td>
+                    <td class="col-question">What was a 'Queen Regnant'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">120</td>
+                    <td class="col-question">What did Edward Jenner discover?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+            <h1>THE VAULT</h1>
+            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+        <div class="answer-list"><h3>KT1.1: The situation on Elizabeth’s accession, 1558</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text">21</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text">The Great Chain of Being</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text">90%</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text">Patronage</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text">19</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text">William Cecil</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text">Nine times</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text">He refused to recognise Henry VIII's marriage to Anne Boleyn</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text">Queen Regnant</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text">Her husband would be expected to govern the country, reducing her power</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text">£300,000</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text">£286,667</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text">£100,000</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text">14%</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text">Debasement of the coinage</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text">She cut household expenses by half and sold Crown lands</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text">Treaty of Cateau-Cambrésis</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text">The Auld Alliance</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text">Mary, Queen of Scots</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text">Peace of Troyes</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text">The circulation of blood.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text">1348.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text">The smallpox vaccine (1796).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text">Louis Pasteur.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text">The medieval belief that bad air or smells caused disease.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">26.</div>
+                    <div class="answer-text">King Henry VIII.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">27.</div>
+                    <div class="answer-text">A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">28.</div>
+                    <div class="answer-text">Her half-sister, Mary I.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">29.</div>
+                    <div class="answer-text">Strictly Catholic.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">30.</div>
+                    <div class="answer-text">A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">31.</div>
+                    <div class="answer-text">1559</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">32.</div>
+                    <div class="answer-text">The 'Middle Way'</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">33.</div>
+                    <div class="answer-text">The Act of Supremacy</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">34.</div>
+                    <div class="answer-text">The Act of Uniformity</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">35.</div>
+                    <div class="answer-text">The Royal Injunctions</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">36.</div>
+                    <div class="answer-text">Providing charity for the poor / enforcing social control</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">37.</div>
+                    <div class="answer-text">Church courts</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">38.</div>
+                    <div class="answer-text">Visitations</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">39.</div>
+                    <div class="answer-text">Puritans</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">40.</div>
+                    <div class="answer-text">Crucifixes</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>KT1.2: The 'settlement' of religion, 1559</h3>
+                <div class="answer-item">
+                    <div class="answer-num">41.</div>
+                    <div class="answer-text">The Book of Advertisements</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">42.</div>
+                    <div class="answer-text">37</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">43.</div>
+                    <div class="answer-text">Recusants</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">44.</div>
+                    <div class="answer-text">1566</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">45.</div>
+                    <div class="answer-text">She actively avoided creating Catholic martyrs</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">46.</div>
+                    <div class="answer-text">Mary, Queen of Scots</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">47.</div>
+                    <div class="answer-text">He excommunicated her</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">48.</div>
+                    <div class="answer-text">It absolved them of their loyalty to the Queen / weaponised them into treason</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">49.</div>
+                    <div class="answer-text">Spain and France</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">50.</div>
+                    <div class="answer-text">Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">51.</div>
+                    <div class="answer-text">1558.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">52.</div>
+                    <div class="answer-text">£300,000.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">53.</div>
+                    <div class="answer-text">Calais.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">54.</div>
+                    <div class="answer-text">A queen who ruled in her own right with actual power, not just the wife of a king.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">55.</div>
+                    <div class="answer-text">Anne Boleyn.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">56.</div>
+                    <div class="answer-text">The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">57.</div>
+                    <div class="answer-text">An alliance between Catholic France and Scotland.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">58.</div>
+                    <div class="answer-text">Hospital hygiene and nursing standards (during the Crimean War).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">59.</div>
+                    <div class="answer-text">Alexander Fleming.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">60.</div>
+                    <div class="answer-text">A chemical that targets and kills specific germs without harming the body.</div>
+                </div>
+                </div><div class="answer-list"><h3>KT1.3: Challenge to the religious settlement</h3>
+                <div class="answer-item">
+                    <div class="answer-num">61.</div>
+                    <div class="answer-text">They believed it kept too many Catholic elements and wanted to 'purify' the Church</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">62.</div>
+                    <div class="answer-text">Crucifixes</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">63.</div>
+                    <div class="answer-text">Several powerful Puritan bishops threatened to resign</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">64.</div>
+                    <div class="answer-text">The Vestment Controversy</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">65.</div>
+                    <div class="answer-text">The Book of Advertisements</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">66.</div>
+                    <div class="answer-text">37</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">67.</div>
+                    <div class="answer-text">The Pope</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">68.</div>
+                    <div class="answer-text">Recusants</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">69.</div>
+                    <div class="answer-text">The North / North-West</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">70.</div>
+                    <div class="answer-text">She did not want to create Catholic martyrs or provoke a rebellion</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">71.</div>
+                    <div class="answer-text">The Revolt of the Northern Earls</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">72.</div>
+                    <div class="answer-text">The Counter-Reformation</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">73.</div>
+                    <div class="answer-text">Not to attend Church of England services</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">74.</div>
+                    <div class="answer-text">He excommunicated her / issued a Papal Bull</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">75.</div>
+                    <div class="answer-text">That it was no longer a sin to rebel against her and they were absolved of their loyalty</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">76.</div>
+                    <div class="answer-text">Mary, Queen of Scots</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">77.</div>
+                    <div class="answer-text">Spain and France</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">78.</div>
+                    <div class="answer-text">Douai, in the Netherlands</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">79.</div>
+                    <div class="answer-text">John Foxe / Thomas Cartwright</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">80.</div>
+                    <div class="answer-text">Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>KT1.3: Challenge to the religious settlement</h3>
+                <div class="answer-item">
+                    <div class="answer-num">81.</div>
+                    <div class="answer-text">The Act of Supremacy and the Act of Uniformity.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">82.</div>
+                    <div class="answer-text">Supreme Governor of the Church of England.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">83.</div>
+                    <div class="answer-text">It established the appearance of churches and the form of services they had to hold.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">84.</div>
+                    <div class="answer-text">A set prayer book in English that had to be used in all churches.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">85.</div>
+                    <div class="answer-text">Extreme Protestants who wanted to 'purify' the church of all Catholic traces.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">86.</div>
+                    <div class="answer-text">Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">87.</div>
+                    <div class="answer-text">£300,000.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">88.</div>
+                    <div class="answer-text">Calais.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">89.</div>
+                    <div class="answer-text">1348.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">90.</div>
+                    <div class="answer-text">Louis Pasteur.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">91.</div>
+                    <div class="answer-text">She was her second cousin</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">92.</div>
+                    <div class="answer-text">King Henry VII</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">93.</div>
+                    <div class="answer-text">They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">94.</div>
+                    <div class="answer-text">France</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">95.</div>
+                    <div class="answer-text">Lord Darnley</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">96.</div>
+                    <div class="answer-text">The Earl of Bothwell</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">97.</div>
+                    <div class="answer-text">Abdicate the throne</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">98.</div>
+                    <div class="answer-text">Her infant son, James VI</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">99.</div>
+                    <div class="answer-text">1568</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">100.</div>
+                    <div class="answer-text">It would anger the friendly Protestant Scottish lords and ruin relations with Scotland</div>
+                </div>
+                </div><div class="answer-list"><h3>KT1.4: The problem of Mary, Queen of Scots</h3>
+                <div class="answer-item">
+                    <div class="answer-num">101.</div>
+                    <div class="answer-text">She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">102.</div>
+                    <div class="answer-text">She feared Mary would raise a foreign Catholic army to invade England</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">103.</div>
+                    <div class="answer-text">The Conference of York / Westminster</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">104.</div>
+                    <div class="answer-text">The 'Casket Letters'</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">105.</div>
+                    <div class="answer-text">Letters and poems plotting Darnley's murder</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">106.</div>
+                    <div class="answer-text">She claimed they were forged and that a court couldn't try an anointed queen</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">107.</div>
+                    <div class="answer-text">She stated that her guilt was "not proven" / neither guilty nor innocent</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">108.</div>
+                    <div class="answer-text">She was kept in strict captivity in England</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">109.</div>
+                    <div class="answer-text">It made Mary a focal point for English Catholics and plotters to rally around</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">110.</div>
+                    <div class="answer-text">The Revolt of the Northern Earls in 1569</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">111.</div>
+                    <div class="answer-text">Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">112.</div>
+                    <div class="answer-text">Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">113.</div>
+                    <div class="answer-text">Pope Pius V.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">114.</div>
+                    <div class="answer-text">A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">115.</div>
+                    <div class="answer-text">She feared a massive Spanish army directly across the Channel in the Netherlands.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">116.</div>
+                    <div class="answer-text">Supreme Governor.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">117.</div>
+                    <div class="answer-text">The mandatory English prayer book for all church services.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">118.</div>
+                    <div class="answer-text">Extreme Protestants who hated all Catholic decoration and ritual.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">119.</div>
+                    <div class="answer-text">A ruling queen with actual power.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">120.</div>
+                    <div class="answer-text">The smallpox vaccine.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 120 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/120)</th>
+                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        </div>
+    </div>
+
+</body>
+</html>
+        

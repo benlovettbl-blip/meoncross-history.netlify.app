@@ -1,0 +1,99 @@
+{
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+  "sections": [
+    {
+      "id": "section-a",
+      "title": "Section A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+      "topics": [
+        {
+          "title": "1. The Context of the British Sector of the Western Front",
+          "points": [
+            "**Key Battles and Locations:** The theatre of war in Flanders and northern France, specifically understanding the Ypres salient, the Somme, Arras and Cambrai.",
+            "**The Trench System:** Its organisation and construction, including frontline, support, reserve and communication trenches.",
+            "**Terrain and Transport:** The nature of the terrain (e.g. deep mud, craters) and how this created massive problems for transport and communications infrastructure when moving the wounded."
+          ]
+        },
+        {
+          "title": "2. Conditions Requiring Medical Treatment",
+          "points": [
+            "**Trench Illnesses:** Ill health arising from the trench environment, specifically Trench Foot, Trench Fever and Shell Shock (NYD.N).",
+            "**Weapons and Wounds:** The nature of wounds caused by rifles and high explosives. The specific problems caused by shrapnel, the high rate of wound infection (such as gas gangrene from the heavily manured soil) and the increased number of head injuries.",
+            "**Gas Attacks:** The effects of different types of poison gas (Chlorine, Phosgene and Mustard gas)."
+          ]
+        },
+        {
+          "title": "3. Medical Treatment and the Chain of Evacuation",
+          "points": [
+            "**Medical Personnel:** The work of the Royal Army Medical Corps (RAMC) and nursing volunteers like the First Aid Nursing Yeomanry (FANY).",
+            "**Transporting the Wounded:** The roles of stretcher-bearers, horse-drawn ambulances, motor ambulances, and ambulance trains/barges.",
+            "**The Chain of Evacuation:** The specific stages of treatment, including: Regimental Aid Posts (RAP), Field Ambulances and Dressing Stations (ADS/MDS), Casualty Clearing Stations (CCS), Base Hospitals.",
+            "**Specific Facilities:** The fully equipped underground hospital built in the tunnels at Arras."
+          ]
+        },
+        {
+          "title": "4. Medical Advances",
+          "points": [
+            "**The Significance of the Western Front for Experiments in Surgery and Medicine:** New techniques in the treatment of wounds and infection (such as the Carrel-Dakin method and debridement/excision).",
+            "The Thomas splint.",
+            "The use of mobile X-ray units.",
+            "The creation of a blood bank for the Battle of Cambrai."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-b",
+      "title": "Section B: Medicine in Britain, c1250–present",
+      "topics": [
+        {
+          "title": "Unit 1: Medicine in Medieval England, c1250–c1500",
+          "points": [
+            "**Ideas about the Cause of Disease and Illness:** Supernatural and religious explanations of the cause of disease.",
+            "Rational explanations: the Theory of the Four Humours and the miasma theory.",
+            "The continuing influence in England of Galen.",
+            "**Approaches to Prevention and Treatment:** Connection with ideas about disease: religious actions, bloodletting and purging, purifying the air.",
+            "Traditional approaches to treatment and care: the role of the physician, apothecary and barber surgeon; the role of hospitals, care within the community and at home, including the use of herbal remedies.",
+            "**Case Study:** Dealing with the Black Death, 1348–49: approaches to treatment and attempts to prevent its spread."
+          ]
+        },
+        {
+          "title": "Unit 2: The Medical Renaissance in England, c1500–c1700",
+          "points": [
+            "**Ideas about the Cause of Disease and Illness:** Continuity and change in explanations of the cause of disease and illness.",
+            "A scientific approach, including the work of Thomas Sydenham in improving diagnosis.",
+            "The influence of the printing press and the work of the Royal Society on the transmission of ideas.",
+            "**Approaches to Prevention and Treatment:** Continuity in treatments, the changing role of hospitals, and the work of apothecaries and surgeons.",
+            "Discoveries in anatomy: the work of Andreas Vesalius and William Harvey.",
+            "**Case Study:** Dealing with the Great Plague in London, 1665: approaches to treatment and attempts to prevent its spread."
+          ]
+        },
+        {
+          "title": "Unit 3: Medicine in 18th & 19th Century Britain, c1700–c1900",
+          "points": [
+            "**Ideas about the Cause of Disease and Illness:** Explanations of the cause of disease and illness: the influence of the Enlightenment and spontaneous generation.",
+            "Louis Pasteur’s Germ Theory and its impact.",
+            "Robert Koch’s work on microbes.",
+            "**Approaches to Prevention and Treatment:** The development of hospitals, the work of Florence Nightingale.",
+            "The development of anaesthetics (James Simpson) and antiseptics (Joseph Lister).",
+            "Edward Jenner and the development of the first smallpox vaccination.",
+            "The Public Health Act 1875.",
+            "**Case Study:** Dealing with Cholera in London, 1854: John Snow’s work on the Broad Street pump and its significance."
+          ]
+        },
+        {
+          "title": "Unit 4: Medicine in Modern Britain, c1900–present",
+          "points": [
+            "**Ideas about the Cause of Disease and Illness:** Advances in understanding the causes of illness and disease: the influence of genetic and lifestyle factors on health.",
+            "Improvements in diagnosis: the impact of the availability of blood tests, scans and monitors.",
+            "**Approaches to Prevention and Treatment:** The extent of change in care and treatment.",
+            "The impact of the NHS and science and technology: improved access to care; advances in medicines, including magic bullets and antibiotics; high-tech medical and surgical treatment in hospitals.",
+            "New approaches to prevention: mass vaccinations and government lifestyle campaigns.",
+            "**Case Study:** Key individuals: Fleming, Florey and Chain’s development of penicillin.",
+            "The fight against lung cancer in the twenty-first century: the use of science and technology in diagnosis and treatment; government action."
+          ]
+        }
+      ]
+    }
+  ]
+}

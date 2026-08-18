@@ -431,35 +431,35 @@ export const unitData = {
       "id": "medieval",
       "title": "Medieval",
       "prefix": "lesson_1_",
-      "image": "/assets/banners/medieval_pano_1784551792993.png",
+      "image": "assets/medieval_pano_1784551792993.png",
       "enquiry": "How much did medicine really change in Medieval England?"
     },
     {
       "id": "renaissance",
       "title": "Renaissance",
       "prefix": "lesson_2_",
-      "image": "/assets/banners/renaissance_pano_1784551804068.png",
+      "image": "assets/renaissance_pano_1784551804068.png",
       "enquiry": "Why did the Medical Renaissance have so little impact on everyday treatments?"
     },
     {
       "id": "18th_19th",
       "title": "18th & 19th C",
       "prefix": "lesson_3_",
-      "image": "/assets/banners/industrial_pano_1784551813599.png",
+      "image": "assets/industrial_pano_1784551813599.png",
       "enquiry": "How did the Industrial Revolution transform the understanding and prevention of disease?"
     },
     {
       "id": "modern",
       "title": "Modern",
       "prefix": "lesson_4_",
-      "image": "/assets/banners/modern_pano_1784551822373.png",
+      "image": "assets/modern_pano_1784551822373.png",
       "enquiry": "How did technology and government intervention revolutionize 20th-century medicine?"
     },
     {
       "id": "western_front",
       "title": "Western Front",
       "prefix": "lesson_5_",
-      "image": "/assets/banners/western_front_pano_1784551831887.png",
+      "image": "assets/western_front_pano_1784551831887.png",
       "enquiry": "How did the horrific conditions of trench warfare drive rapid medical innovation?"
     }
   ],
@@ -4038,7 +4038,7 @@ export const unitData = {
       ],
       "ai_revision_pack": {
         "images": [
-          "/assets/infographics/KT3.1 18th & 19th Century c1700-c1900 - Causes of Illness/The Germ Revolution History Timeline.png"
+          "assets/The Germ Revolution History Timeline.png"
         ],
         "videos": [],
         "documents": []
