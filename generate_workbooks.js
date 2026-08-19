@@ -1162,7 +1162,43 @@ allDirs.forEach(unitId => {
 
   const genDate = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
   html += `<div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: ${genDate} | Unit: ${unitId}</div>`;
-  html += `</body></html>`;
+  html += `<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
+    function replaceLines(className) {
+      const lines = document.querySelectorAll('.' + className);
+      if (lines.length === 0) return;
+      let group = [];
+      lines.forEach((line, i) => {
+        group.push(line);
+        const next = lines[i + 1];
+        if (!next || line.nextElementSibling !== next) {
+          const wrapper = document.createElement('textarea');
+          wrapper.className = 'interactive-textarea';
+          wrapper.style.width = '100%';
+          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
+          wrapper.style.border = '2px dashed #94a3b8';
+          wrapper.style.borderRadius = '6px';
+          wrapper.style.padding = '12px';
+          wrapper.style.boxSizing = 'border-box';
+          wrapper.style.fontFamily = 'Outfit, sans-serif';
+          wrapper.style.fontSize = '1.1rem';
+          wrapper.style.resize = 'vertical';
+          wrapper.style.marginTop = group[0].style.marginTop || '10px';
+          wrapper.style.marginBottom = '10px';
+          wrapper.style.background = '#f8fafc';
+          wrapper.placeholder = 'Type your answer here...';
+          group[0].parentNode.insertBefore(wrapper, group[0]);
+          group.forEach(l => l.remove());
+          group = [];
+        }
+      });
+    }
+    replaceLines('task-lines');
+    replaceLines('task-lines-large');
+    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
+  });
+</script></body></html>`;
   
   html = html.replace(/src="\/units\//g, 'src="../../units/');
   html = html.replace(/src="\/images\//g, 'src="../../images/');

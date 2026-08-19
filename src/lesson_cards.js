@@ -88,7 +88,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           </div>
         </div>
       `;
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
+      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
       
       let foundAny = false;
       unitData.lessons.forEach((lesson, index) => {
@@ -103,21 +103,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         }
       });
       
-      // ADD WORKBOOK FOR THIS PERIOD
-      lessonsHTML += `
-        <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${p.border}; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/units/${currentUnitId}/workbook_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-           <i class="fa-solid fa-book-open" style="font-size: 1.2rem; color: ${p.border}; margin-bottom: 6px;"></i>
-           <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">Workbook: ${p.title}</h3>
-        </div>
-      `;
-      
-      // ADD MASTERY PACK FOR THIS PERIOD
-      lessonsHTML += `
-        <div class="homepage-lesson-card" style="background: #fff0f2; border: 2px dashed #d32f2f; border-radius: 8px; padding: 12px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('/units/${currentUnitId}/mastery_pack_${p.id}.html', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fff0f2'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-           <i class="fa-solid fa-shield-halved" style="font-size: 1.2rem; color: #d32f2f; margin-bottom: 6px;"></i>
-           <h3 style="margin: 0; color: #d32f2f; font-size: 0.9rem;">Mastery Pack: ${p.title}</h3>
-        </div>
-      `;
 
       if (!foundAny) {
          lessonsHTML += `<p style="color: #64748b; font-style: italic; margin-left: 10px;">No lessons found for this period.</p>`;
@@ -125,7 +110,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '</div>';
     });
   } else {
-    lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
+    lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
     unitData.lessons.forEach((lesson, index) => {
         lessonsHTML += `
           <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${index})">
@@ -139,7 +124,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
 
     if (unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0) {
       lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Mock Exams</h2>';
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       unitData.mock_exams.forEach(mock => {
         const mockUrl = currentUnitId ? `/units/${currentUnitId}/${mock.url}` : mock.url;
         lessonsHTML += `

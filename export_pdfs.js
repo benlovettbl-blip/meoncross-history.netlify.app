@@ -5,6 +5,7 @@ const path = require('path');
 require('./generate_workbooks.js');
 require('./generate_textbooks.js');
 require('./generate_pupil_workbooks.js');
+require('./generate_timelines.js');
 
 const publicDir = path.join(__dirname, 'public');
 const pdfsDir = path.join(__dirname, 'public', 'pdfs');

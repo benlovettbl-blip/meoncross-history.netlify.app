@@ -915,21 +915,7 @@ export function initializeApp(unitData) {
     });
       navContainer.appendChild(homeLink);
 
-      // Lesson Tabs
-      const isKS3 = unitData.title && unitData.title.includes('KS3');
-      if (!isKS3 && unitData.lessons && unitData.lessons.length > 0) {
-        unitData.lessons.forEach((lesson, index) => {
-          const lessonLink = document.createElement('a');
-          lessonLink.className = 'lesson-link';
-          // Use lesson prefix with number
-          lessonLink.innerHTML = `<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Lesson ${index + 1}`;
-          lessonLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.renderLessonByIndex(index);
-          });
-          navContainer.appendChild(lessonLink);
-        });
-      }
+
 
 
 
@@ -1072,26 +1058,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(cheatSheetLink);
     }
 
-    // Always show PDF Textbook and Workbook links
-    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
-      const pdfTextbookLink = document.createElement('a');
-      pdfTextbookLink.className = 'lesson-link';
-      pdfTextbookLink.innerHTML = '<i class="fa-solid fa-book"></i> Printable PDF Textbook';
-      pdfTextbookLink.href = `/pdfs/${window.currentUnitId}_textbook.pdf`;
-      pdfTextbookLink.target = '_blank';
-      pdfTextbookLink.style.marginTop = '15px';
-      pdfTextbookLink.style.color = '#3b82f6';
-      navContainer.appendChild(pdfTextbookLink);
 
-      const pupilWorkbookLink = document.createElement('a');
-      pupilWorkbookLink.className = 'lesson-link';
-      pupilWorkbookLink.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Printable PDF Workbook';
-      pupilWorkbookLink.href = `/pdfs/${window.currentUnitId}_pupil_workbook.pdf`;
-      pupilWorkbookLink.target = '_blank';
-      pupilWorkbookLink.style.marginTop = '15px';
-      pupilWorkbookLink.style.color = '#8b5cf6';
-      navContainer.appendChild(pupilWorkbookLink);
-    }
 
     // Attach Pupil Workbooks dynamically as a single Zone
     if (unitData.workbooks && unitData.workbooks.length > 0) {
@@ -2191,7 +2158,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              if (task.type === 'drawing') {
                extrasHtml += `<div style="margin-bottom: 20px; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed #f59e0b; text-align:center;">
                  <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> Drawing Task</h4>
-                 <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text}</p>
+                 <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text || task.question}</p>
                  <div style="margin:20px auto; width:80%; height:200px; background:white; border:1px solid #d1d5db; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-style:italic;">
                    [Draw your response in your workbook]
                  </div>

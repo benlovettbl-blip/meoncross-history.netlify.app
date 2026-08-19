@@ -48,6 +48,14 @@ export function renderWorkbooksZone(container, unitData) {
     return window.currentUnitId ? `/units/${window.currentUnitId}/${filename}` : filename;
   };
 
+  if (unitData.timeline && unitData.timeline.length > 0) {
+    const timelineItems = [{
+      title: 'Full Unit Timeline',
+      url: window.currentUnitId ? `/pdfs/${window.currentUnitId}_timeline.pdf` : `/pdfs/unknown_timeline.pdf`
+    }];
+    html += renderSection('Printable Timelines', 'fa-clock-rotate-left', 'A chronological overview of all key events in this unit, formatted for easy printing and revision.', '#14b8a6', timelineItems);
+  }
+
   if (unitData.workbooks && unitData.workbooks.length > 0) {
     const isSplit = unitData.workbooks[0].name !== 'full';
     
@@ -80,7 +88,23 @@ export function renderWorkbooksZone(container, unitData) {
         title: wb.title || wb.name,
         url: getHtmlUrl(wb.name || wb.id)
       }));
-      html += renderSection('Interactive Web Workbooks', 'fa-laptop-code', 'Interactive HTML versions of the Pupil Workbooks that can be opened directly in the browser.', '#10b981', webItems);
+      html += renderSection('Interactive Web Workbooks', 'fa-laptop-code', 'Designed for laptops and Chromebooks. Click to open and type your answers directly onto the screen.', '#10b981', webItems);
+    }
+
+    // 5. Mastery Pack PDFs
+    const masteryPdfItems = unitData.workbooks.map(wb => ({
+      title: wb.title || wb.name,
+      url: window.currentUnitId ? `/pdfs/${window.currentUnitId}_mastery_pack_${wb.name || wb.id}.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}.pdf`
+    }));
+    html += renderSection('Mastery Pack PDFs', 'fa-shield-halved', 'Comprehensive revision and mastery tasks designed to test deep knowledge retrieval.', '#d32f2f', masteryPdfItems);
+
+    // 6. Interactive Web Mastery Packs
+    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
+      const masteryWebItems = unitData.workbooks.map(wb => ({
+        title: wb.title || wb.name,
+        url: window.currentUnitId ? `/units/${window.currentUnitId}/mastery_pack_${wb.name || wb.id}.html` : `mastery_pack_${wb.name || wb.id}.html`
+      }));
+      html += renderSection('Interactive Web Mastery Packs', 'fa-laptop-file', 'Designed for laptops and Chromebooks. Click to open and type your answers directly onto the screen.', '#e11d48', masteryWebItems);
     }
 
   }
