@@ -1944,13 +1944,13 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
                 ${sourceContentHtml}
                 ${block.source.source_context ? `
                   <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                    <strong>Historical Context:</strong> ${block.source.source_context}
+                    <strong>Historical Context:</strong> ${window.formatBold(block.source.source_context)}
                   </div>
                 ` : ''}
                 ${block.source.provenance_clue ? `
                   <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
                     <strong style="color: #166534; display: block; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Provenance Clue:</strong>
-                    <span style="color: #15803d; font-size: 0.95rem;">${block.source.provenance_clue}</span>
+                    <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(block.source.provenance_clue)}</span>
                   </div>
                 ` : ''}
                 ${block.source.question ? `<div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
