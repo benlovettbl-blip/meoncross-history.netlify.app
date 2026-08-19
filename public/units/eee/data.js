@@ -16,7 +16,7 @@ const unitData = {
   "specification_file": "/data/eee_overview.json",
   "title": "Paper 2: Early Elizabethan England, 1558-88",
   "subtitle": "",
-  "homepage_background": "assets/elizabeth_i.jpg",
+  "homepage_background": "/images/armada_portrait.jpg",
   "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "desc": "Paper 2",
