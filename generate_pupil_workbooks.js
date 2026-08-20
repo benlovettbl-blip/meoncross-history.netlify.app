@@ -456,6 +456,23 @@ allDirs.forEach(unitId => {
           html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
         }
         html += `</div>`;
+      } else if (lesson.do_now.type === "timeline") {
+        html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px; page-break-inside: avoid;">
+                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Domino Flowchart"}</h3>
+                   </div>
+                   <p style="font-size: 9.5pt; font-style: italic; margin-bottom: 15px;">${lesson.do_now.text || "Draw arrows connecting the events in the correct chronological and causal order."}</p>
+                   <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 10px;">`;
+        
+        let shuffledEvents = [...lesson.do_now.events].sort(() => Math.random() - 0.5);
+        shuffledEvents.forEach(ev => {
+          let rot = (Math.random() * 6) - 3;
+          html += `<div style="border: 2px solid #334155; padding: 10px; border-radius: 6px; background-color: #f8fafc; font-weight: bold; font-size: 9pt; width: 40%; text-align: center; transform: rotate(${rot}deg); box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">${ev}</div>`;
+        });
+        
+        html += `</div>
+                 <div style="height: 40px;"></div>
+                 </div>`;
       } else if (lesson.do_now.type === "questions" || lesson.do_now.type === "retrieval" || (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))) {
         let items = lesson.do_now.items || lesson.do_now.questions;
         let maxScore = items ? items.length : 5;
@@ -635,7 +652,31 @@ allDirs.forEach(unitId => {
                  html += `</div>`;
                  return;
               }
-              if (task.type === 'matching') {
+              
+              if (task.type === 'physician_game') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}${task.page ? ` [p. ${task.page}]` : ''}</h4>`;
+                 html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+                 html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+                 html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+                 html += `<tbody>`;
+                 const patients = [
+                   { name: "William", symptoms: "High fever, shivering, and large, painful black swellings (buboes) in his armpits." },
+                   { name: "Agnes", symptoms: "Coughing up blood, severe chest pain, and struggling to breathe." },
+                   { name: "John", symptoms: "Fingers and toes have turned completely black. High fever and vomiting." },
+                   { name: "Thomas", symptoms: "A runny nose, a mild cough, and feeling a bit tired." }
+                 ];
+                 patients.forEach(p => {
+                    html += `<tr>
+                      <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
+                      <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
+                      <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
+                    </tr>`;
+                 });
+                 html += `</tbody></table></div>`;
+                 return;
+              }
+if (task.type === 'matching') {
                  html += `<div class="task-box">`;
                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}${task.page ? ` [p. ${task.page}]` : ''}</h4>`;
                  html += `<table style="width:100%; border:none;"><tbody>`;
@@ -855,7 +896,31 @@ allDirs.forEach(unitId => {
              html += `</div>`;
              return;
         }
-        if (task.type === 'matching') {
+        
+              if (task.type === 'physician_game') {
+                 html += `<div class="task-box">`;
+                 html += `<h4 style="margin-top: 0;">Q${task.qNum || ''} ${task.text}${task.page ? ` [p. ${task.page}]` : ''}</h4>`;
+                 html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+                 html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+                 html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+                 html += `<tbody>`;
+                 const patients = [
+                   { name: "William", symptoms: "High fever, shivering, and large, painful black swellings (buboes) in his armpits." },
+                   { name: "Agnes", symptoms: "Coughing up blood, severe chest pain, and struggling to breathe." },
+                   { name: "John", symptoms: "Fingers and toes have turned completely black. High fever and vomiting." },
+                   { name: "Thomas", symptoms: "A runny nose, a mild cough, and feeling a bit tired." }
+                 ];
+                 patients.forEach(p => {
+                    html += `<tr>
+                      <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
+                      <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
+                      <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
+                    </tr>`;
+                 });
+                 html += `</tbody></table></div>`;
+                 return;
+              }
+if (task.type === 'matching') {
              html += `<div class="task-box">`;
              html += `<h4 style="margin-top: 0;">Q${task.qNum || (tIdx + 1)} ${task.text}</h4>`;
              html += `<table style="width:100%; border:none;"><tbody>`;

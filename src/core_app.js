@@ -1010,7 +1010,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    if (window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+    if (window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const examPracticeLink = document.createElement('a');
       examPracticeLink.className = 'lesson-link';
       examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
@@ -1047,7 +1047,7 @@ export function initializeApp(unitData) {
     navContainer.appendChild(quizPackLink);
 
     
-    if (window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+    if (window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
@@ -2040,6 +2040,16 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
               window.postRenderHooks.push(() => {
                 import('./convict_game.js').then(mod => {
                    mod.initConvictGame(document.getElementById(gameId), task);
+                });
+              });
+              return;
+            }
+            if (task.type === 'physician_game') {
+              const gameId = `physician-game-emb-${index}-${tIdx}`;
+              extrasHtml += `<div id="${gameId}" style="margin-bottom: 20px;"></div>`;
+              window.postRenderHooks.push(() => {
+                import('./physician_game.js').then(mod => {
+                   mod.initPhysicianGame(document.getElementById(gameId), task);
                 });
               });
               return;

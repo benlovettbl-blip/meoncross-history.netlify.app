@@ -1,20 +1,33 @@
 const fs = require('fs');
-let code = fs.readFileSync('great_war/data.js', 'utf8');
+let code = fs.readFileSync('c:/Projects/meoncross-history.netlify.app/medieval_england/data.js', 'utf8');
+code = code.replace(/"doom_painting"/g, '"/images/doom_painting.jpg"');
+code = code.replace(/"bosworth_field"/g, '"/images/bosworth_battle.jpg"');
+code = code.replace(/\/images\/lancaster_rose\.png/g, '/images/lancaster_rose.svg');
+code = code.replace(/\/images\/york_rose\.png/g, '/images/york_rose.svg');
 
-code = code.replace(
-  'A British political cartoon from 1897 showing Kaiser Wilhelm II',
-  "'The Greedy Boy', a British political cartoon published in 1885 showing German Chancellor Otto von Bismarck"
-);
+// Let's also add tasks to Lesson 5 for the missing sources
+const data = JSON.parse(code.replace('export const unitData = ', '').replace(/;\s*$/, ''));
+const l5 = data.lessons[4];
+const churchBlock = l5.narrative_blocks.find(b => b.title.includes('Parish Church'));
+if (churchBlock && churchBlock.tasks) {
+  if (!churchBlock.tasks.find(t => t.instruction && t.instruction.includes('Source A'))) {
+    churchBlock.tasks.push({
+      "type": "short_answer",
+      "question": "Task: Look at Source A (The Medieval Church Interior). List three different activities taking place in the church other than praying.",
+      "model_answer": "In Source A, you can see people trading goods, socialising/talking with their neighbours, and walking their dogs."
+    });
+  }
+}
+const doomBlock = l5.narrative_blocks.find(b => b.title.includes('Doom Paintings'));
+if (doomBlock && doomBlock.tasks) {
+  if (!doomBlock.tasks.find(t => t.instruction && t.instruction.includes('Source C'))) {
+    doomBlock.tasks.push({
+      "type": "short_answer",
+      "question": "Task: Look at Source C (The Chaldon Doom Painting). Describe two terrifying things happening to the sinners in the bottom half of the painting.",
+      "model_answer": "In the bottom half of Source C, sinners are being dragged into the jaws of a giant monster (Hellmouth) and demons are stabbing and torturing them with pitchforks."
+    });
+  }
+}
 
-code = code.replace(
-  'the cartoon depicts Kaiser Wilhelm II greedily grabbing the globe, mocking his desire for global domination.',
-  'the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany\\'s aggressive desire for a larger empire.'
-);
-
-code = code.replace(
-  'showing the expansion of Serbia after 1913',
-  'showing the borders of Serbia and the Austro-Hungarian Empire in 1914'
-);
-
-fs.writeFileSync('great_war/data.js', code);
-console.log('Fixed data.js');
+fs.writeFileSync('c:/Projects/meoncross-history.netlify.app/medieval_england/data.js', 'export const unitData = ' + JSON.stringify(data, null, 2) + ';\n');
+console.log('Fixed links and added missing tasks');
