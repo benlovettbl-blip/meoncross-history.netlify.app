@@ -796,7 +796,7 @@ export function initializeApp(unitData) {
         
 
         
-        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>
+        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">${unitData.type === 'trip' ? 'Tour Itinerary' : 'Key Topic Lessons'}</h2>
         ${lessonsHTML}
         
 
@@ -913,12 +913,44 @@ export function initializeApp(unitData) {
       renderHomepage();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-      navContainer.appendChild(homeLink);
+    navContainer.appendChild(homeLink);
 
-
-
-
-
+    // Live Photo Feed Tab (Trips only)
+    if (unitData.key_info && unitData.key_info.live_album_url) {
+      const liveLink = document.createElement('a');
+      liveLink.className = 'lesson-link';
+      liveLink.innerHTML = '<i class="fa-solid fa-camera-retro" style="margin-right: 8px;"></i> Live Photo Feed';
+      liveLink.style.background = 'rgba(239, 68, 68, 0.1)';
+      liveLink.style.borderLeft = '3px solid #ef4444';
+      liveLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        liveLink.classList.add('active');
+        
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = `
+          <div class="welcome-banner" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+            <div>
+              <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Live Photo Feed</h1>
+              <p class="welcome-subtitle" style="color: #cbd5e1; font-size: 1.15rem; margin: 0;">Follow the trip in real-time as teachers upload photos from Belgium!</p>
+            </div>
+          </div>
+          <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-top: 30px;">
+            <i class="fa-brands fa-google" style="font-size: 4rem; color: #3b82f6; margin-bottom: 20px;"></i>
+            <h2 style="color: #1e293b; margin-top: 0;">Google Photos Shared Album</h2>
+            <p style="color: #475569; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto;">
+              We are using a shared Google Photos album to securely share photos with parents back home. 
+              Whenever our staff find a 4G signal, new photos of the pupils will automatically appear here!
+            </p>
+            <a href="${unitData.key_info.live_album_url}" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 30px;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Album
+            </a>
+          </div>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(liveLink);
+    }
     // Exam Specification Tab
     if (unitData.specification_file) {
       const specLink = document.createElement('a');
@@ -1181,6 +1213,7 @@ export function initializeApp(unitData) {
     
     // Tabs container logic
     let heroImage = lesson.banner || window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+    const isTrip = window.currentUnitData && window.currentUnitData.type === 'trip';
     let lessonPrefix = 'Lesson';
     let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
     
@@ -1190,7 +1223,9 @@ export function initializeApp(unitData) {
       else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
     }
 
-    if (ktMatch) {
+    if (isTrip && lesson.id && lesson.id.startsWith('day_')) {
+      lessonPrefix = `Day ${lesson.id.split('_')[1]}`;
+    } else if (ktMatch) {
       lessonPrefix = `KT ${ktMatch[1]}`;
     } else if (lesson.id && lesson.id.startsWith('lesson_')) {
       const parts = lesson.id.split('_');
@@ -1223,8 +1258,8 @@ export function initializeApp(unitData) {
           ${stickyHeaderText}
         </h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
-          <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
-          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
+          ${isTrip ? (window.currentUnitData && window.currentUnitData.key_info ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="openKeyInfoModal()"><i class="fa-solid fa-circle-info"></i> Key Info</button>` : '') : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
         </div>
       </div>
     `;
@@ -1341,16 +1376,20 @@ export function initializeApp(unitData) {
         notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
       }
 
-      html += `
-        ${studentObjectivesHtml}
-        <div class="teacher-note">
-          <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
-          ${notesHtml}
-        </div>
-      `;
+      if (!isTrip) {
+        html += `
+          ${studentObjectivesHtml}
+          <div class="teacher-note">
+            <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+            ${notesHtml}
+          </div>
+        `;
+      }
     } else {
       // If no teacher notes but we somehow had objectives elsewhere (fallback)
-      html += studentObjectivesHtml;
+      if (!isTrip) {
+        html += studentObjectivesHtml;
+      }
     }
 
           
@@ -1506,28 +1545,58 @@ if (lesson.primary_source) {
       }
       
       
-if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
-      htmlDoNow += `
-        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
-            <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-              <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
-              <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
-            </summary>
-            <div style="padding: 20px;">
-              <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
-      `;
-      lesson.do_now.events.forEach((ev, idx) => {
+    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      if (isTrip) {
         htmlDoNow += `
-          <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
-            <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
-            <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
-            <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
-            ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+              <div style="padding: 20px;">
+                <div style="margin-bottom: 20px; font-size: 1.2rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+        `;
+        lesson.do_now.events.forEach((ev, idx) => {
+          htmlDoNow += `
+            <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+              <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;"><i class="fa-regular fa-clock" style="margin-right: 6px;"></i>${ev.year}</div>
+              <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+              <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+              ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+            </div>
+          `;
+        });
+        htmlDoNow += `</div></div></div>`;
+        
+        // Add Map Container
+        htmlDoNow += `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px;">
+            <div style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem; color: #1e293b;">
+              <i class="fa-solid fa-map-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Interactive Trip Map
+            </div>
+            <div id="trip-map-container" style="height: 500px; width: 100%;"></div>
           </div>
         `;
-      });
-      htmlDoNow += `</div></div></details>`;
+      } else {
+        htmlDoNow += `
+          <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+              <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+                <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
+                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+              </summary>
+              <div style="padding: 20px;">
+                <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+        `;
+        lesson.do_now.events.forEach((ev, idx) => {
+          htmlDoNow += `
+            <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+              <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
+              <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+              <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+              ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+            </div>
+          `;
+        });
+        htmlDoNow += `</div></div></details>`;
+      }
     } else if (lesson.do_now && lesson.do_now.items) {
       try {
         const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
@@ -2323,7 +2392,10 @@ if (lesson.pair_share) {
               <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 1. Think</div>
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fa-solid fa-brain"></i> 1. Think</span>
+                    <button onclick="startTPSTimer(this, 60)" style="background: #10b981; color: white; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock"></i> 60s</button>
+                  </div>
                   <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
                 </div>
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -2505,7 +2577,9 @@ if (lesson.pair_share) {
       const isEarlyModern = (unitId === 'early_modern_world');
       let isGCSE = (unitId === 'weimar_nazi_germany' || unitId === 'cme_new');
 
-      if (isEarlyModern) {
+      if (isTrip) {
+          html += htmlNarrative + htmlDoNow + htmlPrimary + htmlSources1 + htmlPairShare + htmlHistorian + htmlTasks;
+      } else if (isEarlyModern) {
           html += htmlDoNow + htmlPrimary + (isGCSE ? '' : htmlSources1) + htmlNarrative + htmlPairShare + htmlHistorian + htmlTasks;
       } else {
           html += (isGCSE ? '' : htmlSources1) + htmlPrimary + htmlDoNow + htmlNarrative + htmlTasks + htmlHistorian + htmlPairShare;
@@ -2700,13 +2774,13 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;
       
       if (currentIndex > 0) {
-        html += `<button class="btn btn-secondary" onclick="window.renderLessonByIndex(${currentIndex - 1})"><i class="fa-solid fa-arrow-left"></i> Previous Lesson</button>`;
+        html += `<button class="btn btn-secondary" onclick="window.renderLessonByIndex(${currentIndex - 1})"><i class="fa-solid fa-arrow-left"></i> Previous ${isTrip ? 'Day' : 'Lesson'}</button>`;
       } else {
         html += `<div></div>`;
       }
       
       if (currentIndex < unitData.lessons.length - 1) {
-        html += `<button class="btn btn-primary" onclick="window.renderLessonByIndex(${currentIndex + 1})">Next Lesson <i class="fa-solid fa-arrow-right"></i></button>`;
+        html += `<button class="btn btn-primary" onclick="window.renderLessonByIndex(${currentIndex + 1})">Next ${isTrip ? 'Day' : 'Lesson'} <i class="fa-solid fa-arrow-right"></i></button>`;
       } else {
         html += `<div></div>`;
       }
@@ -2733,6 +2807,58 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       if (window.postRenderHooks) {
         window.postRenderHooks.forEach(hook => hook());
         window.postRenderHooks = [];
+      }
+      
+      // Initialize Trip Map
+      const mapContainer = document.getElementById('trip-map-container');
+      if (mapContainer && window.L && lesson.do_now && lesson.do_now.type === 'timeline') {
+        const eventsWithLoc = lesson.do_now.events.filter(e => e.lat && e.lng);
+        if (eventsWithLoc.length > 0) {
+          const map = L.map('trip-map-container');
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '© OpenStreetMap contributors'
+          }).addTo(map);
+          
+          const markers = [];
+          eventsWithLoc.forEach(ev => {
+            const marker = L.marker([ev.lat, ev.lng]).addTo(map);
+            let popupContent = `<strong>${ev.year} - ${ev.title}</strong><br>${ev.detail}`;
+            
+            if (unitData.local_heroes) {
+              const heroes = unitData.local_heroes.filter(h => ev.title.includes(h.cemetery) || ev.detail.includes(h.cemetery) || (h.cemetery.includes("Menin Gate") && ev.title.includes("Menin Gate")));
+              if (heroes.length > 0) {
+                popupContent += `<div style="margin-top: 15px; border: 2px solid #ef4444; border-radius: 8px; padding: 10px; background: #fef2f2;">
+                  <h4 style="margin: 0 0 5px 0; color: #991b1b;"><i class="fa-solid fa-ribbon"></i> Local Connection</h4>`;
+                heroes.forEach(h => {
+                  popupContent += `<p style="margin: 0 0 5px 0; font-size: 0.9em; color: #7f1d1d;"><strong>${h.name}</strong> (${h.age}) - ${h.regiment}<br><em>${h.connection}</em><br>${h.story}</p>`;
+                });
+                popupContent += `</div>`;
+              }
+            }
+
+            if (ev.youtube_id) {
+              popupContent += `<div style="margin-top: 10px;"><iframe width="100%" height="150" src="https://www.youtube.com/embed/${ev.youtube_id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 4px;"></iframe></div>`;
+            }
+            marker.bindPopup(popupContent, { minWidth: 250 });
+            markers.push(marker);
+          });
+          
+          if (markers.length > 0) {
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.2));
+            
+            // Draw Polyline connecting pins
+            const latlngs = eventsWithLoc.map(ev => [ev.lat, ev.lng]);
+            L.polyline(latlngs, {
+              color: '#ef4444',
+              weight: 4,
+              opacity: 0.7,
+              dashArray: '10, 10',
+              lineJoin: 'round'
+            }).addTo(map);
+          }
+        }
       }
     }, 100); 
   }
@@ -3217,6 +3343,35 @@ window.injectDebateModalIfNeeded = function() {
     </div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.openKeyInfoModal = function() {
+  const info = window.currentUnitData && window.currentUnitData.key_info;
+  if (!info) return;
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.style.display = 'flex';
+  overlay.innerHTML = `
+    <div class="modal-content" style="max-width: 500px; padding: 30px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
+      <h3 style="margin-top:0; color: #1e293b; font-size: 1.5rem; margin-bottom: 20px;"><i class="fa-solid fa-circle-info" style="color:#ef4444; margin-right:10px;"></i> Key Trip Information</h3>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-phone" style="width:20px; color:#64748b;"></i> Emergency Contact</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.emergency_contact}</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-hotel" style="width:20px; color:#64748b;"></i> Accommodation</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.hotel}</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 25px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-bus" style="width:20px; color:#64748b;"></i> Transport Provider</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.coach}</p>
+      </div>
+      <div style="text-align: right;">
+        <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
 };
 
 window.openDebateModal = function() {
@@ -3820,6 +3975,29 @@ window.openGallery = function(encodedData, startIndex) {
 
     updateImage();
     document.body.appendChild(modal);
+  };
+
+  window.startTPSTimer = function(btn, seconds) {
+    if (btn.timerInterval) return;
+    btn.originalHTML = btn.innerHTML;
+    let timeLeft = seconds;
+    btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+    btn.style.background = '#ef4444';
+    
+    btn.timerInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(btn.timerInterval);
+        btn.timerInterval = null;
+        btn.innerHTML = '<i class="fa-regular fa-bell"></i> Time!';
+        setTimeout(() => {
+          btn.innerHTML = btn.originalHTML;
+          btn.style.background = '#10b981';
+        }, 4000);
+      } else {
+        btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+      }
+    }, 1000);
   };
 
   
