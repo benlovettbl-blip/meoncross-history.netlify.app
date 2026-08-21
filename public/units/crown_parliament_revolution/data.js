@@ -28,6 +28,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why was religious division so volatile during James I's reign?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -55,6 +61,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who was more responsible for the outbreak of the Civil War in 1642: Charles I or Parliament?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -82,6 +94,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the English Civil War divide families and communities?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -109,6 +127,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was executing Charles I an act of justice or an act of treason?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -136,6 +160,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was Oliver Cromwell a champion of liberty or a military dictator?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -163,6 +193,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the Glorious Revolution permanently change the British monarchy?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -190,6 +226,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who held ultimate power in 17th-century Britain by 1689?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     }
   ],

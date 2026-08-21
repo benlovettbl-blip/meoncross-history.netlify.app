@@ -58,7 +58,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which technological change between 1450 and 1750 had the biggest global impact?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2",
@@ -102,7 +108,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the Reformation shift the balance of power in Europe?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3",
@@ -146,7 +158,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Scientific Revolution truly a 'revolution' or a slow evolution?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_4",
@@ -190,7 +208,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did the Enlightenment ultimately cause the political revolutions of the 18th century?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_5",
@@ -234,7 +258,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did global trade transform daily life in Europe by 1750?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_6",
@@ -278,7 +308,13 @@ module.exports = {
             }
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who were the 'winners' and 'losers' of the period 1450-1750?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ]
 };

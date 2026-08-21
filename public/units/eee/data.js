@@ -27,21 +27,21 @@ const unitData = {
       "id": "KT1",
       "title": "Key Topic 1: Queen, government and religion, 1558-69",
       "prefix": "lesson_1_",
-      "image": "/assets/placeholder_cover.jpg",
+      "image": "/images/placeholder_cover.jpg",
       "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?"
     },
     {
       "id": "KT2",
       "title": "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88",
       "prefix": "lesson_2_",
-      "image": "/assets/placeholder_cover.jpg",
+      "image": "/images/placeholder_cover.jpg",
       "enquiry": "Why did plots and foreign threats push Elizabeth towards war?"
     },
     {
       "id": "KT3",
       "title": "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88",
       "prefix": "lesson_3_",
-      "image": "/assets/placeholder_cover.jpg",
+      "image": "/images/placeholder_cover.jpg",
       "enquiry": "What was life like during the Elizabethan Golden Age?"
     }
   ],
@@ -518,7 +518,13 @@ const unitData = {
           "src": "/images/religious_divide.jpg",
           "caption": "Map showing the religious divisions in Europe around 1558."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was Elizabeth's most urgent problem in 1558?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1_2",
@@ -890,7 +896,13 @@ const unitData = {
           "src": "/images/act_of_supremacy.jpg",
           "caption": "A portrait of Elizabeth as Supreme Governor of the Church of England."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did the 1559 Religious Settlement actually solve the religious crisis?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1_3",
@@ -1257,7 +1269,13 @@ const unitData = {
           "src": "/images/papal_bull.jpg",
           "caption": "Regnans in Excelsis, the 1570 Papal Bull excommunicating Elizabeth I."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Were the Puritans a serious threat to Elizabeth's rule?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1_4",
@@ -1620,7 +1638,13 @@ const unitData = {
           "src": "/images/mary_qos.jpg",
           "caption": "A portrait of Mary, Queen of Scots, a Catholic claimant to the English throne."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why was Mary, Queen of Scots, such a unique problem for Elizabeth?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_1",
@@ -2016,7 +2040,13 @@ const unitData = {
           "src": "/images/northern_earls.jpg",
           "caption": "An illustration of the rebellion of the Northern Earls in 1569."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which plot posed the greatest danger to Elizabeth's life?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_2",
@@ -2389,7 +2419,13 @@ const unitData = {
           "src": "/images/philip_ii.jpg",
           "caption": "A portrait of King Philip II of Spain, the most powerful monarch in Europe at the time."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did relations with Spain deteriorate so badly by the 1580s?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_3",
@@ -2717,7 +2753,13 @@ const unitData = {
           "src": "/images/drake.jpg",
           "caption": "Sir Francis Drake, an English privateer who raided Spanish ships."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the outbreak of war with Spain in 1585 inevitable?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_4",
@@ -3080,7 +3122,13 @@ const unitData = {
           "src": "/images/spanish_armada.jpg",
           "caption": "A painting of the Spanish Armada engaged in battle with the English fleet."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the Spanish Armada fail?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_1",
@@ -3442,7 +3490,13 @@ const unitData = {
           "src": "/images/theatre.jpg",
           "caption": "A sketch of the Swan Theatre in London, showing the stage and audience galleries."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did Elizabethan education improve society or simply reinforce class divisions?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_2",
@@ -3806,7 +3860,13 @@ const unitData = {
           "src": "/images/poor_law.jpg",
           "caption": "An extract from the 1601 Elizabethan Poor Law outlining support for the destitute."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did poverty increase so rapidly during Elizabeth's reign?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_3",
@@ -4165,7 +4225,13 @@ const unitData = {
           "src": "/images/golden_hind.jpg",
           "caption": "A replica of the Golden Hind, the ship Francis Drake used to circumnavigate the globe."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the main motivation for Elizabethan exploration?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_4",
@@ -4518,7 +4584,13 @@ const unitData = {
           "src": "/images/roanoke.jpg",
           "caption": "A map of the failed Roanoke colony in Virginia."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the Roanoke colony fail?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ],
   "key_individuals": [
@@ -4670,7 +4742,7 @@ const unitData = {
       "name": "James Pilkington",
       "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
       "bio": "The Protestant Bishop of Durham appointed by Elizabeth.",
-      "image": ""
+      "image": "/"
     },
     {
       "name": "Thomas Harriot",
@@ -4682,25 +4754,25 @@ const unitData = {
       "name": "Thomas Phelippes",
       "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
       "bio": "Walsingham’s chief cryptographer and codebreaker.",
-      "image": ""
+      "image": "/"
     },
     {
       "name": "Gilbert Gifford",
       "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
       "bio": "A Catholic priest who acted as Walsingham’s agent provocateur during the Babington Plot.",
-      "image": ""
+      "image": "/"
     },
     {
       "name": "Edmund Campion",
       "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
       "bio": "Highly educated Jesuit missionary priest executed for treason.",
-      "image": ""
+      "image": "/"
     },
     {
       "name": "Roberto Ridolfi",
       "group": "⚖️ Tier 5: The \"Middling Sort\" (Wealthy Merchants & Bankers)",
       "bio": "An Italian banker based in London who used his financial networks to organize the Ridolfi Plot in 1571.",
-      "image": ""
+      "image": "/"
     },
     {
       "name": "Chief Wingina",

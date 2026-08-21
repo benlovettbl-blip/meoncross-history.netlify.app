@@ -28,7 +28,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did centuries of European anti-Semitism make the Holocaust inevitable?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "1933–1939: How were German Jews progressively stripped of citizenship and rights?",
@@ -55,7 +61,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did so few people protest the gradual stripping of Jewish rights between 1933 and 1939?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
@@ -82,7 +94,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the invasion of the Soviet Union change the nature of the persecution?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "The 'Final Solution': How did the death camps operate as industrialised extermination?",
@@ -109,7 +127,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the Nazis shift from shooting to the industrialized extermination of the death camps?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
@@ -136,7 +160,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why is it so important to highlight acts of resistance and rescue during the Holocaust?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
@@ -163,7 +193,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: What is the most important lesson we can learn from survivor testimony?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Assessment: The Shoah Enquiry",
@@ -190,7 +226,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Can a tragedy on the scale of the Shoah ever happen again?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ],
   "key_individuals": [],

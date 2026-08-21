@@ -566,7 +566,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-the-end-of-ww1/",
           "title": "Bbc Two Nazis A Warning From History Helped Into Power The End Of Ww1"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Weimar Republic doomed from the start?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1_2",
@@ -1033,6 +1039,12 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 1 that the Treaty of Versailles was an exceptionally crippling blow that fundamentally undermined the Weimar Republic from its birth. However, Interpretation 2 offers a crucial nuance by highlighting the role of psychological refusal and propaganda, which amplified the treaty's negative impact.</p><p>Interpretation 1's argument that the treaty was an 'act of economic plunder' that 'crippled' the Republic is strongly supported by historical evidence. The reparations bill of £6.6 billion, coupled with the loss of 13% of Germany's territory, including vital industrial regions like the Saar and Alsace-Lorraine, severely hampered Germany's economic recovery. This economic strain directly contributed to the hyperinflation crisis of 1923, when the government's inability to pay reparations led to the French occupation of the Ruhr and a catastrophic collapse of the currency. This economic instability alienated the middle class, whose savings were wiped out, and made the democratic government appear weak and ineffective, thus 'dooming the Weimar economy to constant instability' as Interpretation 1 suggests.</p><p>Furthermore, Interpretation 1 correctly identifies the profound psychological and political damage caused by the treaty. The 'Diktat' nature of the peace, the 'war guilt' clause (Article 231), and the severe military restrictions were perceived as a national humiliation. Source B, from the Deutsche Zeitung, vividly captures this immediate outrage, describing the treaty as 'disgraceful' and an attack on 'national honor'. This sentiment was ruthlessly exploited by right-wing groups, who propagated the 'stab-in-the-back' myth, as seen in Source C. This myth, blaming 'cowardly civilian politicians' for Germany's defeat and the treaty, 'permanently linked the democratic government with national humiliation and defeat' in the minds of many voters, making it incredibly difficult for the Republic to gain legitimacy and stability.</p><p>However, Interpretation 2 provides a valuable counter-argument by suggesting the treaty was 'far more manageable than right-wing propaganda suggested'. Historians point out that Germany retained significant industrial potential, particularly in the Ruhr and Silesia, and that the reparations were later renegotiated through the Dawes Plan (1924) and Young Plan (1929), demonstrating that they were not entirely 'unpayable'. Indeed, for a period, Germany received more in US loans than it paid in reparations. Moreover, the treaty was arguably less harsh than the Treaty of Brest-Litovsk, which Germany imposed on Russia in 1918. This suggests that the objective economic terms, while severe, might not have been inherently 'crippling' in the long term, had there been a different political will.</p><p>Interpretation 2's emphasis on the 'psychological refusal of the German public and the conservative elites to accept that they had been militarily defeated' is also crucial. The 'stab-in-the-back' myth was a deliberate fabrication by figures like Ludendorff and Hindenburg, designed to deflect blame from the military. This refusal to accept reality, coupled with the constant 'right-wing propaganda' (as exemplified by Sources B and C), created an environment of deep resentment and hostility towards the Republic. This internal political agitation, rather than solely the treaty's physical terms, arguably posed the 'true threat' to the Republic's stability, as it prevented any genuine acceptance of the new democratic order and provided fertile ground for extremist movements.</p><p>In conclusion, while the Treaty of Versailles was undoubtedly a harsh settlement that imposed significant economic and psychological burdens on Germany, I largely agree with Interpretation 1 that it was a 'crippling blow'. The sheer scale of reparations, territorial losses, and national humiliation created immense challenges that the young Republic struggled to overcome. However, Interpretation 2 rightly points out that the *response* to the treaty – the deliberate political exploitation and the widespread refusal to accept defeat – significantly exacerbated these challenges. The treaty provided the ammunition, but the internal political forces within Germany, driven by a refusal to accept responsibility, fired the gun that ultimately undermined the Weimar Republic.</p>"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which was the greater threat to the Republic: the extreme Left (Spartacists) or the extreme Right (Kapp)?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -1480,7 +1492,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
           "title": "6 Making Germany Pay History File (Start at 15:00)"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was Stresemann's recovery a true Golden Age or just a mirage?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1_4",
@@ -1916,6 +1934,12 @@ const unitData = {
             "model": "<p>I largely agree with Interpretation 1 that the Weimar era brought significant social and political liberation for German women, particularly in urban centres, but I also acknowledge the important caveats raised by Interpretation 2 regarding the limitations and backlash against these changes. Interpretation 1 correctly highlights the foundational legal changes and new opportunities that emerged, which were genuinely transformative for many.</p><p>My agreement with Interpretation 1 is strongly supported by historical context. The Weimar Constitution was indeed groundbreaking, granting women universal suffrage in 1918, a right many other European nations had yet to adopt. This led to women actively participating in politics, with high representation in the Reichstag, as mentioned in Interpretation 1. Furthermore, the economic recovery of the mid-1920s, fueled by the Dawes Plan and American loans, created new white-collar job opportunities in offices, shops, and factories. This allowed a generation of women to achieve greater financial independence, challenging the traditional role of women solely as housewives and mothers. Source B, from a progressive women's magazine, perfectly encapsulates this spirit, describing women cutting their hair short, wearing fashionable clothes, and enjoying leisure independently, rejecting 'the old, conservative domestic role.' This 'New Woman' became a powerful symbol of modernity and liberation, especially in cities like Berlin, where cultural experimentation flourished, and women were visible in public life, enjoying new freedoms in fashion, entertainment, and social interaction, including access to birth control and greater sexual freedom.</p><p>However, Interpretation 2 provides a crucial counter-perspective that tempers the extent of this 'liberation.' It argues that the 'New Woman' was an 'urban myth' and that the reality for the 'vast majority' of German women was far less liberated. This is also supported by historical context. Despite constitutional equality, women often faced lower wages than men for the same work, and many remained in low-paid, unskilled agricultural or domestic service, particularly outside the major cities. The traditional family structure and conservative values remained deeply ingrained, especially in rural and religious communities. Source C, from a conservative Protestant group, vividly illustrates the 'massive, hostile traditionalist backlash' against these changes, expressing 'deep concern' about women abandoning 'sacred domestic duties' for 'aimless office work and immoral leisure.' This backlash was a significant factor in the political instability of the Republic, as right-wing groups exploited these moral anxieties to portray Weimar democracy as decadent and un-German. For many working-class women, the 'freedom' often meant working long hours in factories or as domestic servants, with little real improvement in their quality of life or social status.</p><p>In conclusion, while Interpretation 1 accurately identifies the significant legal, political, and social advancements for women in Weimar Germany, particularly for those in urban, middle-class environments, Interpretation 2 rightly points out the limitations of this liberation. The 'New Woman' was a powerful symbol and a reality for some, but it did not represent the universal experience of all German women. The changes were profound but also deeply polarizing, leading to a strong conservative reaction that ultimately contributed to the Republic's fragility. Therefore, I agree with Interpretation 1 in principle, but with the crucial understanding that the liberation was not universal and was met with considerable resistance, making the overall picture more complex and nuanced.</p>"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did the changes in society (1924-1929) benefit all Germans equally?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -2336,7 +2360,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-stormtroopers/",
           "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Stormtroopers"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the Nazi Party appeal to people in the early 1920s?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_2",
@@ -2740,7 +2770,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-beer-hall-putsch/",
           "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Beer Hall Putsch"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Munich Putsch a total failure for Hitler?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_3",
@@ -3132,7 +3168,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-sa-and-the-appeal-of-the-nazis-bbc-two/",
           "title": "Rise Of The Nazis The Sa And The Appeal Of The Nazis Bbc Two"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did Nazi support surge after 1929?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2_4",
@@ -3558,7 +3600,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-mein-kampf-channel-4/",
           "title": "Hitlers Rise The Colour Films Mein Kampf Channel 4"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did Hitler seize power or was it handed to him?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_1",
@@ -3974,7 +4022,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-rise-of-the-dictatorship-bbc-two/",
           "title": "Rise Of The Nazis Rise Of The Dictatorship Bbc Two"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which event was more crucial in creating the dictatorship: the Reichstag Fire or the Enabling Act?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_2",
@@ -4404,7 +4458,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-creation-of-the-gestapo-bbc-two/",
           "title": "Rise Of The Nazis The Creation Of The Gestapo Bbc Two"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why was the Gestapo so terrifying despite being relatively small?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_3",
@@ -4819,7 +4879,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/great-continental-railway-journeys-nazi-olympic-games-of-1936-bbc-two/",
           "title": "Great Continental Railway Journeys Nazi Olympic Games Of 1936 Bbc Two"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was Goebbels' propaganda or Himmler's terror more effective in controlling Germany?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3_4",
@@ -5241,7 +5307,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-fighting-to-the-end-internal-criticism/",
           "title": "Bbc Two Nazis A Warning From History Fighting To The End Internal Criticism"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why was there so little resistance to the Nazi regime?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_4_1",
@@ -5650,6 +5722,12 @@ const unitData = {
             "model": "<p>I strongly agree with Interpretation 2's assertion that Nazi policies towards women were ultimately an &quot;ideological failure that collapsed under economic necessity.&quot; While the regime initially pursued its domestic ideals with some success, the overriding demands of rearmament and the war economy forced a pragmatic reversal that fundamentally undermined their stated goals.</p><p>Interpretation 2 argues that &quot;the demands of secret rearmament and conscription from 1936 onwards created severe labor shortages&quot; and that &quot;the state had to completely abandon its domestic ideal, pulling millions of women back into grueling industrial and agricultural work.&quot; This view is powerfully supported by Source C, a secret Social Democratic report from 1938, which explicitly states that &quot;the Nazi claims that women belong in the home are a complete joke&quot; and details how &quot;the textile and arms factories are facing a catastrophic labor shortage.&quot; Source C further highlights that the government was &quot;actively recruiting married women back into the workforce, offering them cash incentives,&quot; a direct contradiction of earlier policies. My own knowledge confirms this: Hermann Goering's Four Year Plan, launched in 1936, prioritised rearmament and self-sufficiency, leading to a massive expansion of industry and a corresponding demand for labour. As men were conscripted into the Wehrmacht or moved into heavy industry, women were increasingly needed to fill the gaps. The number of women in employment, which had initially fallen, rose significantly from 1937 onwards, reaching nearly 14.6 million by 1939. The introduction of a 'Duty Year' (Pflichtjahr) in 1938, requiring all unmarried women under 25 to complete a year of service on a farm or in a household, further demonstrates the state's desperate need for female labour, regardless of its earlier ideological pronouncements.</p><p>However, it is important to acknowledge the initial validity of Interpretation 1, which suggests that &quot;Nazi policies towards women successfully realized their domestic and racial ideals&quot; and that &quot;the majority of women conformed willingly, returning to traditional domestic roles.&quot; In the early years of the regime (1933-1936), policies like the Law for the Encouragement of Marriage (1933), which offered loans to women who left work, and the Mother's Cross medal, did lead to an initial decline in female employment and a rise in the birth rate. Source B, a speech by Gertrude Scholtz-Klink in 1934, perfectly encapsulates this early ideological push, describing women's &quot;glorious, sacred task&quot; in the home and their pride in leaving &quot;aimless office jobs.&quot; Many women, particularly those from conservative or rural backgrounds, may have genuinely welcomed the return to more traditional roles after the perceived social changes of the Weimar Republic. The propaganda was initially effective in shaping public perception and encouraging conformity to the domestic ideal.</p><p>Nevertheless, the long-term trajectory clearly aligns with Interpretation 2. While the Nazis initially achieved some success in promoting their domestic ideals, these were ultimately unsustainable in the face of economic realities. The regime's pragmatic need for labour to fuel its rearmament drive and prepare for war forced it to abandon its ideological purity. The shift from encouraging women out of the workforce to actively recruiting them back in, often into demanding industrial roles, represents a fundamental failure of the initial ideological vision. Therefore, while Interpretation 1 accurately describes the initial aims and some early successes, Interpretation 2 provides a more accurate overall assessment of the ultimate outcome and the overriding influence of economic necessity on Nazi policies towards women by 1939.</p>"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did Nazi policies towards women succeed in their goals?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -6069,7 +6147,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-2-german-youth/",
           "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 2 German Youth"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Were the Hitler Youth effective in controlling the young?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_4_3",
@@ -6538,7 +6622,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/",
           "title": "2 Life In Hitlers Germany History File"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did living standards really improve for workers under the Nazis?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_4_4",
@@ -7015,7 +7105,13 @@ const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/my-family-the-holocaust-and-me-the-aftermath-of-kristallnacht-bbc-one/",
           "title": "My Family The Holocaust And Me The Aftermath Of Kristallnacht Bbc One"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the Nazis justify the persecution of minorities?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ],
   "key_individuals": [
@@ -7282,7 +7378,7 @@ const unitData = {
       "group": "Key Topic 4",
       "name": "Anna Lehnkering",
       "bio": "A disabled teenager who struggled in school and was sent to an institution. She was forcibly sterilized by the Nazis at age 19 under the Sterilisation Law and later murdered under the T4 Euthanasia Programme, representing the thousands of victims of Nazi eugenics.",
-      "image": ""
+      "image": "/"
     },
     {
       "group": "Key Topic 4",
@@ -7337,7 +7433,7 @@ const unitData = {
       "actions": "<ul><li>Author of the definitive biography of Adolf Hitler.</li><li>Explored the 'structuralist' view of how Nazi power actually functioned day-to-day.</li></ul>",
       "achievements": "Focus: The 'Hitler Myth' & Structuralism",
       "group": "Historians",
-      "image": "/images/individuals/ian_kershaw.jpg"
+      "image": "/images/ian_kershaw.jpg"
     },
     {
       "name": "Prof. Richard J. Evans",
@@ -7346,7 +7442,7 @@ const unitData = {
       "actions": "<ul><li>Wrote 'The Coming of the Third Reich', 'The Third Reich in Power', and 'The Third Reich at War'.</li><li>Acted as an expert witness in the David Irving Holocaust denial trial.</li></ul>",
       "achievements": "Focus: Comprehensive analysis of Nazi Germany",
       "group": "Historians",
-      "image": "/images/individuals/richard_evans.jpg"
+      "image": "/images/richard_evans.jpg"
     },
     {
       "name": "Prof. Mary Fulbrook",
@@ -7355,7 +7451,7 @@ const unitData = {
       "actions": "<ul><li>Author of 'Dissonant Lives: Generations and Violence Through the German Dictatorships'.</li><li>Explored the complex nature of 'complicity' among ordinary citizens.</li></ul>",
       "achievements": "Focus: 'Alltagsgeschichte' (Everyday History) & Complicity",
       "group": "Historians",
-      "image": "/images/individuals/mary_fulbrook.jpg"
+      "image": "/images/mary_fulbrook.jpg"
     }
   ],
   "mock_exams": [

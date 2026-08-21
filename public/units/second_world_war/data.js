@@ -28,6 +28,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did Britain and France finally declare war in September 1939?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -55,6 +61,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was Dunkirk a victory or a defeat?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -82,6 +94,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which event in 1941 was more significant: Barbarossa or Pearl Harbor?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -109,6 +127,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who contributed more to the Home Front: women workers or civil defence?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -136,6 +160,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Which was the most decisive turning point: Stalingrad, El Alamein, or D-Day?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -163,6 +193,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the atomic bomb dropped to defeat Japan or to intimidate the USSR?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -190,6 +226,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the main reason the Allies won the Second World War?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     }
   ],

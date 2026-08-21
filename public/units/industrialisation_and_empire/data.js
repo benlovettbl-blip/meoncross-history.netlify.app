@@ -275,7 +275,13 @@ module.exports = {
             "He was arrested for selling his iron secrets to the French Navy."
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the most important factor that powered the Industrial Revolution?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2",
@@ -490,6 +496,12 @@ module.exports = {
           "Evaluate primary sources regarding child labour.",
           "Analyse the 'Optimist vs. Pessimist' historical debate."
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was factory work progress or punishment?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -662,6 +674,12 @@ module.exports = {
           "Evaluate the usefulness of contrasting primary sources.",
           "Understand the catalysts for public health reform."
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did industrialisation make British towns unlivable?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -1039,7 +1057,13 @@ module.exports = {
           ],
           "answer": "That innovations like ironclads and railways created a massive, interconnected network of global trade and progress."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the British Empire built on trade or violence?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_5",
@@ -1388,6 +1412,12 @@ module.exports = {
         "title": "Evaluating Colonial Resistance",
         "instructions": "Analyze the sources to evaluate the nature of the 1857 rebellion.",
         "questions": []
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the primary cause of the 1857 Indian Rebellion?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -1754,7 +1784,13 @@ module.exports = {
           ],
           "answer": "By 1928, five of its six democratic demands had slowly become the law of the land."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Were the Luddites and Chartists successful in fighting for a voice?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_7",
@@ -2126,7 +2162,13 @@ module.exports = {
           ],
           "answer": "60%"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the government eventually expand the right to vote?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_8",
@@ -2488,7 +2530,13 @@ module.exports = {
           ],
           "answer": "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who truly benefited the most from the 19th-century transformation?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ]
 };
