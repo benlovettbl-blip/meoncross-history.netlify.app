@@ -1988,6 +1988,10 @@ module.exports = {
               "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because...",
               "question": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
               "model_answer": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }

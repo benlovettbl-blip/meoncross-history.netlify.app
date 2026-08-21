@@ -679,6 +679,10 @@ export const unitData = {
               "type": "written",
               "text": "Explain the conflicting historical views regarding the displacement of over 700,000 Palestinians during the 1948 war. (P9)",
               "model": "Traditional Israeli historians argued that Palestinians fled voluntarily on the orders of Arab leaders. However, Palestinian historians and 'New Historians' have demonstrated that the vast majority were systematically driven out through deliberate military expulsions and the terror of massacres like Deir Yassin, resulting in the Nakba."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -1032,6 +1036,10 @@ export const unitData = {
             {
               "text": "Explain one consequence of the territorial changes following the 1948–49 Arab-Israeli war. (4 marks)",
               "model": "One consequence of the territorial changes following the 1948–49 Arab-Israeli War was the permanent displacement of the Palestinian Arab population and the creation of a massive refugee crisis. Prior to the war, the UN Partition Plan had allocated 45% of the land to a proposed Arab state; however, Israel's military victory expanded its borders to cover 79% of mandate Palestine, while Jordan occupied and annexed the West Bank and Egypt took control of the Gaza Strip.\n\nAs a direct result of these territorial changes, over 700,000 Palestinian Arabs lost their homes and became stateless refugees. They were forced to resettle in squalid, overcrowded refugee camps managed by UNRWA in the Gaza Strip, West Bank, Jordan, and Lebanon, where they were denied the \"right of return\" by Israel, cementing a permanent humanitarian crisis that remains unresolved."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -1611,6 +1619,10 @@ export const unitData = {
             {
               "text": "Explain one consequence of the nationalisation of the Suez Canal in 1956. (4 marks)",
               "model": "One consequence of the nationalisation of the Suez Canal in 1956 was the secret military collusion between Great Britain, France, and Israel, which led directly to the Suez Crisis. Following Nasser’s seizure of the canal to fund his Aswan High Dam project, Britain and France, who were the primary shareholders, feared their vital oil supply lines were threatened by a hostile Egyptian nationalist leader.\n\nAs a result, they signed the secret Protocol of Sèvres with Israel, planning a tripartite military invasion where Israel would attack Sinai, providing a pretext for Anglo-French troops to land at Port Said to \"protect\" the canal. This consequence escalated border tensions into a major regional war on 29 October 1956, bringing the Cold War superpowers directly into the Middle Eastern conflict."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -2025,6 +2037,10 @@ export const unitData = {
               "type": "narrative_account",
               "model": "<p>The May 1967 crisis began with false intelligence provided by the <strong>Soviet Union</strong> on 13 May, which warned Egyptian President Nasser that Israel was massing ten military brigades on the Syrian border for an imminent invasion. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Consequently</mark>, Nasser reacted by taking immediate military action, mobilizing the Egyptian army on 15 May and marching his troops into the demilitarised <strong>Sinai Peninsula</strong>.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This aggressive move was quickly followed by</mark> Nasser’s order on 16 May forcing the United Nations Emergency Force (<strong>UNEF</strong>) peacekeepers to withdraw from the border. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">With tensions already at a fever pitch, Nasser escalated the crisis further</mark> on 23 May by reoccupying Sharm el-Sheikh and ordering the closure of the <strong>Straits of Tiran</strong> to all Israeli shipping, a move Israel considered a formal <em>casus belli</em>.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This economic threat was compounded</mark> on 30 May when <strong>King Hussein of Jordan</strong> flew to Cairo to sign a joint defense pact. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This final step convinced the Israeli Cabinet that</mark> a coordinated, three-front Arab invasion was imminent. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This sequence of events culminated</mark> on the morning of 5 June 1967, when Israel launched its pre-emptive air strike, <strong>Operation Focus</strong>, destroying the Egyptian air force on the ground and initiating the Six Day War.</p>",
               "text": "Write a narrative account analysing the key events of the May 1967 crisis that led to the outbreak of the Six Day War. (8 marks)"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -2550,6 +2566,10 @@ export const unitData = {
               "text": "Write a narrative account analysing the key developments in the Palestinian issue in the years 1970–72. (8 marks)",
               "type": "narrative_account",
               "model": "<p>The escalation of Palestinian militant activity began in September 1970, when the <strong>Popular Front for the Liberation of Palestine (PFLP)</strong> launched a campaign of international aviation terrorism by hijacking commercial airliners and blowing them up at <strong>Dawson’s Field</strong> in Jordan. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This event acted as the immediate trigger</mark> for the 'Black September' crisis, prompting <strong>King Hussein</strong> to launch an all-out offensive that successfully crushed the militias and expelled the PLO from Jordan by July 1971.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a direct consequence of this expulsion</mark>, the PLO relocated its headquarters to <strong>Lebanon</strong>, establishing a new military base in the south. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Seeking revenge for their defeat in Jordan</mark> and desperate for global recognition, a radical PLO splinter group calling itself 'Black September' was formed. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This development culminated in</mark> the <strong>Munich Olympics attack</strong> in September 1972, where terrorists took Israeli athletes hostage, resulting in the deaths of 11 Israeli team members during a failed West German rescue attempt.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Ultimately, this tragic event drew</mark> widespread international condemnation of Palestinian tactics but forced the Palestinian issue onto the global diplomatic stage. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">In response to the Munich massacre</mark>, Israeli Prime Minister <strong>Golda Meir</strong> authorized a severe reprisal policy, launching <strong>'Operation Wrath of God'</strong>—a targeted global assassination campaign to hunt down the conspirators—which locked both sides into a violent shadow war.</p>"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3048,6 +3068,10 @@ export const unitData = {
               "text": "Write a narrative account analysing the key developments of the Yom Kippur War (1973) and its aftermath. (8 marks)",
               "type": "narrative_account",
               "model": "<p>The Yom Kippur War began on <strong>6 October 1973</strong>, when Egypt and Syria launched a coordinated surprise attack on the holiest day in the Jewish calendar. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Because the country was at a complete standstill</mark>, Israeli military mobilization was severely delayed, allowing Egyptian troops to easily overrun the outer sand fortifications of the <strong>Bar Lev Line</strong> while Syrian forces seized the <strong>Golan Heights</strong>.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This critical initial breakthrough prompted</mark> the United States to launch a massive military airlift on 12 October to resupply the heavily depleted Israeli forces. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a direct result of this American military support</mark>, the IDF successfully launched a decisive counter-offensive, driving Syrian forces back and enabling <strong>General Ariel Sharon’s tank divisions</strong> to cross the Suez Canal to encircle Egypt’s Third Army.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">With Egypt facing complete military collapse, the crisis escalated</mark> into a dangerous Cold War confrontation as the Soviet Union threatened to deploy troops, forcing the US to place its military on nuclear alert. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">To pressure the West into restraining Israel</mark>, Arab members of <strong>OPEC</strong> implemented the 'oil weapon' by placing a total oil embargo on nations supporting Israel. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Ultimately, this economic pressure forced</mark> the United States to compel Israel to agree to a UN ceasefire on <strong>25 October 1973</strong>. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">The long-term consequence of this conflict</mark> was a profound psychological shift: it shattered the myth of Israeli invincibility and paved the way for 'shuttle diplomacy'.</p>"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3630,6 +3654,10 @@ export const unitData = {
               "text": "Explain one consequence of the 1973 Oil Crisis for diplomatic negotiations in the Middle East. (4 marks)",
               "type": "consequence",
               "model": "<p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">One consequence of</mark> the 1973 Oil Crisis was that it forced the United States to abandon its policy of indifference and actively intervene as a neutral mediator to negotiate peace in the Middle East. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Following the Yom Kippur War</mark>, Arab members of <strong>OPEC</strong> implemented an oil embargo and quadrupled oil prices from $3 to $12 a barrel to punish the West for supporting Israel, plunging the US economy into severe inflation and high unemployment.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">As a direct consequence of this economic shock</mark>, US Secretary of State <strong>Henry Kissinger</strong> launched a tireless campaign of <strong>'shuttle diplomacy'</strong>. Kissinger flew continuously between Middle Eastern capitals to broker military disengagement treaties (<strong>Sinai I and II</strong>), which successfully eased regional tensions and directly led to Egypt reopening the strategically vital <strong>Suez Canal</strong> in June 1975.</p>"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -4143,6 +4171,10 @@ export const unitData = {
               "text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970–82. (8 marks)",
               "type": "narrative_account",
               "model": "<p>Following their crushing military defeat and subsequent expulsion from Jordan during the Black September civil war of 1970, <strong>the PLO relocated their central headquarters to Lebanon</strong>. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This relocation was highly significant because</mark> Lebanon's weak central government and its large population of 400,000 Palestinian refugees allowed <strong>Yasser Arafat</strong> to establish a powerful \"state-within-a-state\" in southern Lebanon, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">which became widely known as \"Fatahland\"</mark>. From these secure bases, Fatah launched frequent rocket attacks and sabotage raids into northern Israel, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">deeply threatening</mark> Israeli security and provoking a cycle of violent border reprisals.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This escalating border conflict reached a critical turning point</mark> in March 1978, when a Fatah commando unit conducted the <strong>Coastal Road Massacre</strong>, killing 37 Israeli civilians. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">In direct response to this atrocity</mark>, Israel launched <strong>Operation Litani</strong>, occupying southern Lebanon up to the Litani River. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">Although Israel subsequently withdrew under UN pressure</mark>, the deployment of <strong>UNIFIL</strong> peacekeepers failed to halt the violence. The conflict was pushed to a final crisis on 3 June 1982, when the attempted assassination of <strong>Shlomo Argov</strong>, the Israeli ambassador in London, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">provided the immediate pretext for Defense Minister Ariel Sharon to launch a full-scale invasion</mark>.</p><p><mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This invasion, codenamed Operation Peace for Galilee, quickly escalated</mark> as IDF armored divisions bypassed UN lines, defeated Syrian forces, and completely encircled the capital city of West Beirut. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">The resulting two-month Siege of West Beirut was highly important because</mark> the intense military and diplomatic pressure forced the PLO to surrender. <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">This sequence of events culminated in late August 1982</mark>, when Yasser Arafat and over 14,000 PLO fighters were evacuated by a multinational force to <strong>Tunis, Tunisia</strong>, <mark style=\"background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; color: #854d0e;\">leaving</mark> the PLO geographically isolated 2,400 kilometers away from Israel's borders.</p>"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -4634,6 +4666,10 @@ export const unitData = {
               "type": "written",
               "text": "Explain why the Oslo Accords were considered 'fundamentally ambiguous' and structurally flawed. (12 marks) (P17)",
               "model": "The Accords intentionally delayed resolving the most difficult 'permanent status' issues, such as final borders, Jerusalem, refugees, and settlements. This created a dangerous vacuum of uncertainty and extreme distrust among hardliners on both sides, who felt their core demands were being ignored or betrayed."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
