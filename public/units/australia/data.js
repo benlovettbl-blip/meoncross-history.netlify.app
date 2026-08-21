@@ -827,10 +827,6 @@ export const unitData = {
             {
               "type": "convict_game",
               "question": "Play the Old Bailey Convict Game"
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
