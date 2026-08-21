@@ -108,6 +108,10 @@ export const unitData = {
                 "The English army rushes south but is defeated by the Normans at the Battle of Hastings."
               ],
               "model_answer": "Edward dies -> Harold crowned -> Hardrada invades -> Stamford Bridge -> Wind changes -> Hastings"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Which of the three claimants do you think had the strongest legal claim to the throne of England, and why?"
             }
           ]
         }
@@ -531,6 +535,10 @@ export const unitData = {
               "type": "extended_writing",
               "question": "Task 5: Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
               "model_answer": "I believe terror (the Harrying of the North) was the most effective method because it completely broke the will of the English people to resist. While castles provided defensive bases and the Domesday Book provided administrative control, it was the catastrophic famine and mass death caused by the Harrying that permanently ended the threat of large-scale rebellion."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Did William conquer England using fear, or using organisation? Which was more important?"
             }
           ]
         }
@@ -896,6 +904,10 @@ export const unitData = {
               "type": "creative_writing",
               "instruction": "Task 2: Eyewitness Report. Look closely at the manuscript illumination of Becket's murder. Imagine you are a terrified monk hiding behind the pillars of Canterbury Cathedral on 29 December 1170. Write a short eyewitness report describing the horrifying scene as the four knights attack the Archbishop.",
               "model_answer": "I was hiding in the shadows of the cathedral when the four knights burst in, their swords drawn. The Archbishop stood bravely before the altar. I watched in horror as Reginald FitzUrse struck the first blow. The knights hacked at Becket until his skull was split open, his blood spilling onto the sacred floor. It was a nightmare of screaming and clashing steel."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: If you were King Henry II, would you have appointed your best friend as Archbishop, or a deeply religious monk?"
             }
           ]
         }
@@ -1268,6 +1280,10 @@ export const unitData = {
               "question": "Task 3: The Trial of King John (Interpretation)\nDivide your answer into two parts:\n1. You are King John's defense lawyer. Write a short paragraph defending his actions, explaining why the heavy taxes were necessary.\n2. Now, act as the Barons' prosecutor. Write a response arguing why his actions were tyrannical and justified the Magna Carta.",
               "model_answer": "As King John's defense lawyer, I argue that the heavy scutage taxes were an absolute necessity to protect the realm and win back our crucial lands in Normandy. As the Barons' prosecutor, I argue that John's behavior was completely tyrannical; he acted above the law, extorted his own lords, and broke the feudal contract.",
               "lines": 12
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Do you think the Magna Carta was about freedom for all people, or just the barons protecting their own wealth?"
             }
           ]
         }
@@ -1667,6 +1683,10 @@ export const unitData = {
               "lines": 8,
               "question": "Task: Sketch your own terrifying Doom Painting monster (Hellmouth or demon) that would have scared medieval peasants into obeying the Church.",
               "model_answer": "Students should draw a grotesque monster or demon, demonstrating an understanding of how fear of Hell was used to control the peasant population."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Why was the Church able to take a tenth (tithe) of a peasant's crops when they were already starving?"
             }
           ],
           "text": "Medieval peasants lived in a highly superstitious world. They believed that God was directly responsible for everything in their lives, from healing the sick and sending good harvests to punishing sins with plagues and famines. Above all, they believed that Heaven and Hell were real, physical places, and that their souls would spend eternity in one of them after death. <br><br>Because almost no peasants could read or write, and the church services (the Mass) were conducted entirely in <strong>Latin</strong>, the Church used visual aids to teach its messages. The most powerful of these was the <strong>Doom Painting</strong>. Painted in bright, terrifying colours on the walls of the church, these murals showed a vivid picture of the Day of Judgment. <br><br>Typically, a Doom Painting showed Christ judging souls . In the centre, a ladder stretched from Earth, with souls trying to climb to Heaven at the top, where angels welcomed them . Below, terrifying demons with pitchforks were shown dragging sinners into the burning, torturous fires of Hell . These paintings played on the peasants' deepest fears, delivering a simple and clear warning: obey the Church, confess your sins to the priest, pay your tithes, or face eternal agony."
@@ -1953,6 +1973,10 @@ export const unitData = {
               "question": "Task 3: The Plague Doctor's Diary (Empathetic Writing)\nWrite a diary entry as a physician in 1348. Explain the horrifying symptoms you are witnessing in your patients, the 'cures' you are attempting to use (such as bloodletting or carrying sweet-smelling herbs), and why you believe they are failing due to your lack of germ theory.",
               "model_answer": "Diary Entry, August 1348: The pestilence has arrived and it is terrifying. My patients are developing agonizing, dark buboes in their armpits and coughing up blood. I have tried bleeding them to balance their humours, and I carry sweet herbs to ward off the miasma, but nothing works because we do not understand the invisible poison causing this tragedy.",
               "lines": 10
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: If you were a peasant who survived the Black Death, how would your attitude towards the local lord and the Church change?"
             }
           ]
         }
@@ -2308,6 +2332,10 @@ export const unitData = {
               "question": "Task 3: Create a 5-step chronological flow diagram showing the key events of the Peasants' Revolt from the initial march on London to the execution of the rebel leaders.",
               "model_answer": "[Step 1: Wat Tyler and rebel bands from Kent and Essex march on London, burning manorial rolls and tax records along the route.]\n↓\n[Step 2: The rebels enter London, destroy John of Gaunt's Savoy Palace, and storm the Tower of London to execute Archbishop Simon Sudbury.]\n↓\n[Step 3: King Richard II meets Wat Tyler at Smithfield, where Tyler is attacked and mortally wounded by the Mayor of London, William Walworth.]\n↓\n[Step 4: Richard II boldly defuses the furious crowd by promising to be their leader and granting charters ending serfdom, convincing the peasants to go home.]\n↓\n[Step 5: Richard II revokes all charters, sends troops into the countryside to crush resistance, and executes Wat Tyler, John Ball, and other rebel leaders.]",
               "lines": 5
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Did the Peasants' Revolt achieve anything, or was it a complete failure?"
             }
           ]
         }
@@ -2677,7 +2705,13 @@ export const unitData = {
             "source_context": "Mancini was in London in 1483 and recorded the rumors and panic surrounding the sudden confinement and disappearance of Edward IV's young sons in the Tower of London.",
             "provenance_clue": "Mancini was an independent Italian observer with no personal political stake in the English royal succession, making his contemporary observations about public panic and the princes' confinement highly reliable, although he could only report on rumours of their deaths rather than direct proof."
           },
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "instruction": "Task 2: CLASSROOM ROLE-PLAY: The Trial of Richard III. \nYour teacher will divide the class. You will either be the Prosecution (arguing Richard murdered the Princes in the Tower to secure his throne) or the Defense (arguing it is Tudor propaganda and there is no bodies or proof). Prepare your opening arguments. Use the evidence from the narrative to build your case.",
+              "model_answer": "Prosecution: Richard had the motive. The Princes were the only thing stopping him from being King. Once they went into the Tower, they were never seen again! \nDefense: This is Tudor fake news! There were no bodies found during his lifetime. Henry Tudor had just as much motive to kill them because they had a stronger claim to the throne than he did!"
+            }
+          ],
           "text": "In April 1483, King Edward IV died suddenly at the age of 41, leaving behind a widow, Elizabeth Woodville, and a twelve-year-old heir, <strong>Edward V</strong>. Because the new king was too young to rule alone, Edward IV's brother, <strong>Richard, Duke of Gloucester</strong>, was appointed Lord Protector. Richard was a loyal and highly capable commander who had ruled the north of England exceptionally well, earning the absolute trust of his brother.<br><br>To secure his grip on power, Richard acted ruthlessly. He intercepted the young king on his journey to London, arrested his maternal uncle Anthony Woodville, and placed Edward V in the secure royal apartments of the <strong>Tower of London</strong>. Soon after, the king's nine-year-old brother, Richard, Duke of York, was sent to join him. In June 1483, events turned nasty when a sermon was preached in London claiming that Edward IV's marriage had been invalid because of a secret pre-contract with Lady Eleanor Butler. This meant Edward's children were illegitimate and Edward V could not be King. Richard accepted a petition from the nobility, ordered Anthony Woodville's execution at Pontefract Castle, and was officially crowned as <strong>King Richard III</strong> alongside Queen Anne on 6 July 1483. Meanwhile, the two young princes inside the Tower were seen playing behind the window bars less and less often, until they vanished completely. Rumours spread like wildfire that Richard had ordered his nephews to be violently murdered in their beds to secure his grip on the throne."
         },
         {
@@ -3047,6 +3081,10 @@ export const unitData = {
               "type": "extended_writing",
               "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
               "model_answer": "Initially, royal power was absolute. William the Conqueror established total control after 1066 using brutal military force, such as the Harrying of the North, and built motte and bailey castles to intimidate the Anglo-Saxons. He also surveyed the entire country with the Domesday Book in 1086 to maximize taxation.\n\nHowever, royal power weakened over time due to challenges from the Church and the barons. King Henry II suffered a massive blow to his authority after the murder of Thomas Becket, and King John severely damaged the reputation of the monarchy by overtaxing his lords. In 1215, the barons rebelled and forced him to seal Magna Carta, a crucial turning point because it established that the King was no longer above the law.\n\nFurthermore, royal power completely collapsed in the later medieval period. The Peasants' Revolt of 1381 proved that even the lowest classes could organize massive armies to threaten the King. Finally, during the Wars of the Roses (1455-1485), the crown was violently usurped back and forth between rival nobles, proving that medieval monarchs had lost the absolute control established by William the Conqueror."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on everything we have studied, what was the most effective way for a medieval monarch to keep their power?"
             }
           ]
         }

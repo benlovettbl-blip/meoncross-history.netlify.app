@@ -210,6 +210,11 @@
                   "type": "comprehension",
                   "question": "Why did the Gweagal Aboriginal men try to block the British from landing at Botany Bay?",
                   "text": ""
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Why does the story of the Gweagal resistance at Botany Bay challenge the old, traditional idea that Australia was 'peacefully settled'?",
+                  "text": ""
                 }
               ],
               "source": {
@@ -518,6 +523,12 @@
                   "type": "comprehension",
                   "question": "How did Governor Arthur Phillip's radical decision to ration food equally ensure the survival of the colony?",
                   "model": "By giving equal rations to both officers and convicts, he prevented mass starvation and mutiny, ensuring everyone had just enough energy to keep working."
+                },
+                {
+                  "qNum": 5,
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: If you were an officer in the First Fleet, why might you be angry that Governor Phillip gave you the exact same food ration as a convict?",
+                  "model": "Officers were used to strict British class divisions. Being forced to eat the same meager rations as 'criminals' would have felt incredibly insulting and degrading to their elite status."
                 }
               ]
             },
@@ -561,6 +572,11 @@
                 {
                   "type": "comprehension",
                   "question": "Look at the database profile of John Hudson. How does his story challenge the idea that the First Fleet was filled with hardened, dangerous adult criminals?",
+                  "text": ""
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Look at the database profile of Esther Abrahams. In what ways did the brutal system of transportation inadvertently give some convicts the chance at a completely new life?",
                   "text": ""
                 }
               ]
@@ -813,6 +829,10 @@
                 {
                   "type": "convict_game",
                   "question": "Play the Old Bailey Convict Game"
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -968,6 +988,11 @@
                   "type": "comprehension",
                   "question": "How did the discovery of gold by Edward Hargreaves in 1851 permanently change the population of Australia?",
                   "text": ""
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Once poor migrants realized they could make a fortune digging for gold in Australia, why was it impossible for the British government to continue using transportation as a terrifying punishment?",
+                  "text": ""
                 }
               ],
               "source": {
@@ -1091,6 +1116,11 @@
                 {
                   "question": "Scaffolding: Paragraph Structure",
                   "model": "Use this structure to ensure a balanced argument:\n\n*   **Introduction:** Briefly outline the two sides of the debate and state your overall opinion.\n*   **Paragraph 1 (Agree):** Explain the \"triumph\" (e.g., surviving starvation, building a rich wool industry, the gold rush).\n*   **Paragraph 2 (Disagree):** Explain the tragedy (e.g., Terra Nullius, disease, frontier violence, theft of land from First Nations peoples).\n*   **Conclusion:** Weigh up the evidence. Which side is stronger? Did the 'progress' justify the human cost?"
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on all the evidence you have studied in this unit, do you personally believe the colonization of Australia was a triumph or a tragedy? Why?",
+                  "model": "It was an economic triumph for the British settlers, but a devastating tragedy for the Aboriginal people whose land and lives were stolen."
                 }
               ]
             },
@@ -10161,7 +10191,13 @@
             {
               "title": "Historical Interpretations: The Eurocentric Myth",
               "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: ]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+                  "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+                }
+              ]
             },
             {
               "title": "Lesson Reflection"
@@ -10470,6 +10506,11 @@
               "title": "Side Quest: The Horrors of Scurvy",
               "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
               "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
+                  "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
+                },
                 {
                   "type": "sorting",
                   "events": [
@@ -10845,7 +10886,13 @@
             {
               "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
               "text": "<blockquote><strong>Historian Perspective A: ]] (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: ]] (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "How do Perspective A and Perspective B disagree on the origins of the British Empire?",
+                  "model_answer": "Perspective A argues the Empire was an \"accidental\" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible."
+                }
+              ]
             },
             {
               "title": "Lesson Reflection"
@@ -11156,6 +11203,11 @@
               "title": "Investigating Power: The King vs. The Merchants",
               "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong></strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by </strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: ’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
               "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?",
+                  "model_answer": "Source B gives an official, ideological reason for victory, claiming Parliament was defending the laws of the land against a 'tyrannical' King. Source C reveals the hidden economic truth: Parliament won because of immense wealth generated by Barbados sugar, stating directly that without it, the 'New Model Army would starve for want of pay'."
+                },
                 {
                   "type": "source_analysis",
                   "question": "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?",
@@ -11496,7 +11548,13 @@
             {
               "title": "Historical Interpretations: Who Was the Real Winner?",
               "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong></strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View (]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though  returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View (]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
+                  "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
+                }
+              ]
             },
             {
               "title": "Lesson Reflection"
@@ -11797,6 +11855,10 @@
                   "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because...",
                   "question": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
                   "model_answer": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -12153,6 +12215,16 @@
               "image_alt": "Source C: Portrait of , a British politician and abolitionist",
               "source_letter": "F",
               "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Compare Source C with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
+                  "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
+                  "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
+                },
                 {
                   "type": "comprehension",
                   "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
@@ -12634,7 +12706,13 @@
             {
               "title": "Primary Source Analysis: The Dual Reality",
               "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source C: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote>",
-              "tasks": [],
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?",
+                  "model_answer": "The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums."
+                }
+              ],
               "source_letter": "C"
             },
             {
@@ -14773,7 +14851,12 @@
             },
             {
               "text": "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -15298,7 +15381,12 @@
             },
             {
               "text": "**Caring for the Sick: Hospitals and the Home**\n\nThe vast majority of sick people were cared for at home by female family members who mixed herbal remedies and grew healing plants in their gardens.\n\nHospitals were run by the Church (staffed by monks and nuns). They offered 'hospitality' to travellers and the elderly, focusing on a clean environment, rest, and a good diet.\n\nInfectious and terminal patients were usually rejected from these hospitals because prayer and penance could do nothing for them. Because hospitals focused purely on \"care, not cure\" and relied on prayer rather than doctors, they offered no real medical advancement or effective treatment for severe diseases.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -15989,6 +16077,10 @@
                   "type": "written",
                   "text": "Evaluate the impact of the Black Death on medieval society.",
                   "model": "It had a massive impact, killing roughly one-third of the population. However, it did not lead to medical progress, as people continued to blame God and the planets instead of investigating the true cause."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "hinge_question": {
@@ -16525,6 +16617,10 @@
                   "type": "written",
                   "text": "Evaluate the extent to which the Renaissance changed beliefs about the causes of illness.",
                   "model": "While the Renaissance revolutionized anatomy through Vesalius, it completely failed to change beliefs about the causes of illness. Without microscopes, bacteria couldn't be seen, so people still believed in miasma and the Four Humours."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -17038,6 +17134,10 @@
                   "type": "written",
                   "text": "To what extent did the 'New World' improve medical treatments?",
                   "model": "It had a minor but positive impact. While the vast majority of treatments remained medieval, the discovery of new herbs like Cinchona bark provided the first effective treatment for specific diseases like malaria."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -17552,6 +17652,10 @@
                   "type": "written",
                   "text": "Evaluate the short-term significance of Harvey's discovery.",
                   "model": "In the short term, Harvey's discovery was highly insignificant. Doctors could not use the knowledge to cure any diseases, blood transfusions were still impossible, and many doctors refused to believe him because it contradicted Galen."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -18075,7 +18179,12 @@
             {
               "text": "John Snow",
               "theme_heading": "John Snow's",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -18607,6 +18716,10 @@
                   "type": "written",
                   "text": "To what extent did Simpson's discovery of Chloroform immediately improve surgery?",
                   "model": "While Chloroform solved the problem of pain, it actually made surgery more dangerous in the short term. Surgeons performed longer, more complex internal operations, which massively increased the rate of fatal infections until Lister introduced antiseptics."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -19123,7 +19236,12 @@
             },
             {
               "text": "**John Snow and the Broad Street Pump**\n\nJohn Snow, a highly respected London surgeon, noticed that cholera affected the gut rather than the lungs, making him doubt the miasma theory.\n\nWhen a massive outbreak hit Soho in August 1854, Snow mapped all the local deaths and proved they were clustered around a single water pump on Broad Street.\n\nHe famously removed the handle from the pump, and the local cholera outbreak stopped immediately. It was later discovered that a leaking cesspit had cracked and was pouring raw sewage directly into the well. Snow's brilliantly logical investigation provided the first undeniable, practical evidence that cholera was water-borne, placing massive pressure on the government to finally build a clean, modern sewer system for London.",
-              "tasks": [],
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ],
               "hinge_question": {
                 "text": "How did John Snow prove that cholera was a waterborne disease in 1854, long before the discovery of germs?",
                 "options": [
@@ -19665,6 +19783,10 @@
                   "type": "written",
                   "text": "Evaluate the impact of the discovery of DNA on modern medicine.",
                   "model": "The discovery of DNA was incredibly impactful because it explained genetic illnesses for the first time. By mapping the genome, scientists can now identify genes responsible for diseases like breast cancer, opening the door to genetic screening and personalized medicine."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -20201,6 +20323,10 @@
                   "type": "written",
                   "text": "To what extent did the discovery of Magic Bullets revolutionize treatment?",
                   "model": "They revolutionized treatment completely. Before 1909, doctors could prevent diseases with vaccines but had no chemical cures for bacterial infections. Magic Bullets proved that synthetic antibodies could be manufactured to destroy specific germs, launching the modern pharmaceutical industry."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -20718,6 +20844,10 @@
                   "type": "written",
                   "text": "Evaluate the role of World War II in the mass production of Penicillin.",
                   "model": "World War II was the crucial catalyst for mass production. Because of the desperate need to treat wounded soldiers on D-Day, the US Government provided the massive funding and factory infrastructure required to produce the drug on an industrial scale, saving millions of lives."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "hinge_question": {
@@ -21231,6 +21361,10 @@
                   "type": "written",
                   "text": "Evaluate the effectiveness of government legislation in reducing smoking.",
                   "model": "Government legislation has been highly effective. By passing strict laws like the 2007 ban on smoking in public places and the 2015 plain packaging laws, combined with heavy taxation, they have successfully forced a massive behavioral change and reduced smoking rates."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "hinge_question": {
@@ -21768,7 +21902,12 @@
             {
               "text": "Karl Landsteiner",
               "theme_heading": "Discovering Blood Types",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -22300,6 +22439,10 @@
                   "type": "written",
                   "text": "Evaluate the effectiveness of military discipline in preventing environmental illnesses.",
                   "model": "Military discipline was highly effective in preventing these illnesses. By ordering soldiers to change socks twice a day, rub whale oil on their feet, and enforcing strict hygiene regimes in bathhouses, the army managed to significantly reduce cases of Trench Foot and Trench Fever."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "hinge_question": {
@@ -22865,7 +23008,12 @@
             },
             {
               "text": "**The Terror of Poison Gas**\n\nChlorine gas was first used by the Germans at the Second Battle of Ypres (April 1915), causing victims to slowly suffocate as their lungs filled with fluid. Before gas masks were officially issued in July 1915, soldiers urinated on cotton pads and pressed them to their faces to neutralise the chemical.\n\nPhosgene was introduced later in 1915; it was faster-acting and more deadly, capable of killing an exposed person within two days.\n\nMustard gas (1917) was an odourless gas that caused severe internal and external blistering and could burn the skin straight through clothing. Although poison gas was a terrifying psychological weapon, the rapid development of effective gas masks meant it was actually the cause of under 5% of British deaths (around 6,000 soldiers), making it far less lethal than artillery fire.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -23409,7 +23557,12 @@
             },
             {
               "text": "**The Underground Hospital at Arras**\n\nIn 1916, British and Commonwealth troops linked existing chalk tunnels and quarries beneath the town of Arras.\n\nThey created a massive underground town that included a fully functioning hospital (nicknamed Thompson's Cave) within 800m of tunnels.\n\nIt contained 700 spaces for stretchers to be used as beds, operating theatres, rest stations, a mortuary, and was supplied with electricity and piped water. The underground hospital at Arras was highly significant because it functioned as a fully equipped medical facility incredibly close to the frontline, while remaining completely safe from enemy artillery bombardment.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -23974,7 +24127,12 @@
             {
               "text": "Oswald Hope Robertson",
               "theme_heading": "Oswald Hope",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -25434,7 +25592,12 @@
               "type": "narrative",
               "theme_heading": "5. The Big Picture: A Crisis of Interconnected Threats",
               "text": "Ultimately, the crisis of 1558 was so severe because Elizabeth’s problems did not exist in isolation; they actively magnified each other. Her gender and contested legitimacy directly emboldened foreign enemies like France, who championed Mary, Queen of Scots’ rival claim to the throne. Simultaneously, the Crown’s crippling £300,000 debt meant Elizabeth lacked the financial muscle to raise an army to defend against the Auld Alliance on her northern border. She was a vulnerable target with no money to buy a shield. Consequently, Elizabeth was forced to rely on extreme political caution, the strategic advice of her Privy Council, and careful public relations just to survive her first few years in power.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -25806,7 +25969,12 @@
               "type": "narrative",
               "theme_heading": "5. The Big Picture: From Compromise to Treason",
               "text": "Elizabeth’s Religious Settlement was a brilliant piece of initial statecraft; by creating a broad, ambiguous 'Middle Way', she successfully avoided an immediate civil war in 1559. She used the Church not just for prayer, but as a vast, nationwide network of social control, utilising Church courts and parish priests to enforce loyalty. However, theology is notoriously difficult to compromise on. The Puritans remained a persistent, irritating thorn in her side regarding the day-to-day running of the Church. Conversely, the Catholic threat morphed from quiet disobedience into outright treason. Once the Pope excommunicated Elizabeth and Mary, Queen of Scots crossed the border, religion became inextricably linked to national security and foreign invasion.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -26173,7 +26341,12 @@
               "type": "narrative",
               "theme_heading": "4. Summary: The Escalation of Religious Threats",
               "text": "While Elizabeth’s Religious Settlement of 1559 successfully established a state church and prevented immediate civil war, it fundamentally failed to create a united nation. The settlement inadvertently forced Elizabeth to fight a two-front religious battle. From within her own ranks, Puritans fiercely challenged her authority over church doctrine and dress (such as the Crucifix and Vestment controversies), highlighting deep Protestant divisions. Yet, the Puritan threat remained relatively benign because they would never conspire against a Protestant queen. Conversely, the Catholic challenge rapidly mutated from passive domestic recusancy into an existential geopolitical crisis. The combination of the 1569 Northern Earls' rebellion, the 1570 Papal excommunication, and the arrival of Mary, Queen of Scots, fused local religious discontent with the vast military might of foreign Catholic superpowers like Spain and France. This transformed the Catholic challenge from a matter of private faith into a direct, treasonous threat to Elizabeth's crown and life.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -26536,7 +26709,12 @@
               "type": "narrative",
               "theme_heading": "4. Summary: The Captive Threat",
               "text": "Mary, Queen of Scots, was the most significant domestic and dynastic problem Elizabeth faced in her early reign. With her impeccable Tudor bloodline and strict adherence to the Catholic faith, Mary represented everything Elizabeth was not—a legitimate, Catholic alternative for the English throne. When Mary’s scandalous personal life and the murder of Lord Darnley resulted in her forced abdication and flight to England in 1568, she inadvertently transferred Scotland’s instability directly onto English soil. Elizabeth’s decision to hold Mary in comfortable but heavily guarded captivity following the inconclusive 'Casket Letters' inquiry was a necessary short-term compromise. However, it had severe long-term consequences. By keeping her Catholic rival locked up in England, Elizabeth inadvertently provided a figurehead for the very rebellions and plots she was trying to avoid, starting immediately with the Revolt of the Northern Earls in 1569.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -26932,7 +27110,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -27305,7 +27488,12 @@
               "type": "narrative",
               "theme_heading": "5. Summary: The Big Picture",
               "text": "The launch of the Spanish Armada was the inevitable climax of decades of simmering tension. What began as privateering raids in the New World and secret funding of Dutch rebels morphed into a fight for survival. Philip II’s plan required perfect timing and communication between his naval fleet and land army—a fatal flaw the English expertly exploited. The defeat of the Armada in 1588 was a monumental triumph for Elizabeth. It did not instantly end the war with Spain, but it provided a massive propaganda victory, 'proving' to the world that God favoured Protestant England, and it secured Elizabeth's legacy as a warrior queen.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -27653,7 +27841,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -27996,7 +28189,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -28358,7 +28556,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -28722,7 +28925,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "The Elizabethan era completely transformed how England dealt with poverty. The demographic explosion and the greed of enclosure destroyed the traditional, rural way of life, forcing thousands onto the road as vagabonds. Fear of these 'masterless men' initially led to brutal, violent legislation. However, the sheer scale of the crisis forced Elizabeth’s government to undergo a profound ideological shift. By introducing a compulsory Poor Rate in 1572 and actively providing raw materials for the unemployed in 1576, Elizabeth’s government laid the very first, tentative foundations of a national welfare state—not out of modern compassion, but out of a desperate, pragmatic need to maintain social order and prevent rebellion.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -29081,7 +29289,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "The Elizabethan era was the turbulent dawn of the British Empire. Forced outward by the collapse of European trade, English sailors utilised cutting-edge technology and galleon designs to project English power across the globe. While Drake’s circumnavigation was a dazzling financial and propaganda triumph that enraged Spain, Raleigh’s Virginia campaigns offered a brutal reality check. The failures at Roanoke proved that creating an empire required more than just the piracy of privateers; it required careful logistical planning, farming expertise, and sustainable diplomacy. These harsh lessons, however, laid the essential foundations for the successful Jamestown colony established shortly after Elizabeth's death in 1607.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -29434,7 +29647,12 @@
             {
               "theme_heading": "The Big Picture",
               "text": "Raleigh’s ambitious dream of a New World empire ended in complete failure. The colonies collapsed due to a lethal intersection of terrible luck (the grounding of *The Tiger*), poor leadership (Lane's aggression), a lack of farming expertise, and the overarching shadow of the Anglo-Spanish war. However, Raleigh’s failure was highly significant because it provided the ultimate blueprint for future success. It proved that private funding was not enough and that successful colonisation required massive, state-backed investment and a focus on sustainable farming rather than aggressive military conquest. These harsh lessons laid the foundation for the successful establishment of Jamestown shortly after Elizabeth's death.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -30287,6 +30505,10 @@
                     "Sentence Starter: For example, he modernized the Prussian army and used it to...",
                     "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -30565,6 +30787,10 @@
                     "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
                     "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -31063,6 +31289,10 @@
                     "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
                     "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -31468,6 +31698,10 @@
                     "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
                     "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -31864,6 +32098,10 @@
                     "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
                     "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -32263,6 +32501,10 @@
                     "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
                     "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
                   ]
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -33534,6 +33776,10 @@
                     "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -33806,6 +34052,10 @@
                     "Sentence Starter: This resulted in a high number of casualties before battles even began..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -34122,6 +34372,10 @@
                     "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -34374,6 +34628,10 @@
                     "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -34609,6 +34867,10 @@
                     "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -34835,6 +35097,10 @@
                     "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
                   ],
                   "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"
@@ -34964,6 +35230,10 @@
                 {
                   "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
                   "model_answer": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -35397,7 +35667,12 @@
               "title": "Historical Controversy: Where Did the Money Come From?",
               "text": "Building massive ironworks like Funtley and funding the broader Industrial Revolution required unimaginable amounts of capital. Modern historians emphasize that this sudden wealth was intrinsically tied to the profits of the 18th-century Transatlantic Slave Trade. Although Britain abolished the trade in 1807 and slavery itself in 1833, the industrial economy was kickstarted by the immense wealth extracted from enslaved labor on Caribbean sugar plantations, and continued to rely on slave-picked American cotton.",
               "is_controversy": true,
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "video": [
@@ -35639,6 +35914,10 @@
                   "qNum": 5,
                   "question": "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
                   "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -35871,6 +36150,10 @@
                   "qNum": 5,
                   "question": "Extended Writing: Write a structured paragraph answering: 'To what extent did industrialisation make British towns unlivable?'",
                   "model_answer": "To a significant extent, the early phase of industrialisation made British towns unlivable due to rapid, unregulated expansion. 'Pessimist' historians correctly argue that the initial explosion of back-to-back housing and lack of sanitation turned towns into death traps, evidenced by Chadwick's reports (Source A) and the desperate letters from slum dwellers (Source C). However, 'Optimist' historians provide a vital counter-perspective: this unlivable crisis eventually forced the government to abandon 'laissez-faire' policies. The Great Stink compelled the construction of Bazalgette's sewers and the 1875 Public Health Act, meaning that while industrialisation initially poisoned the towns, it eventually provided the wealth and engineering to make them modern and sanitary."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -36047,6 +36330,10 @@
                   "qNum": 5,
                   "question": "Synthesis Assessment (8 Marks): 'The British Empire was built and sustained by technological progress rather than violence and exploitation.' To what extent do you agree with this interpretation? Use the <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> and evidence from across the unit (including Henry Cort, factory work, and Portsmouth Dockyard) to support your argument.",
                   "model_answer": "It can be argued to a limited extent that technological progress built and sustained the British Empire, but a comprehensive historical view reveals that this progress was fundamentally dependent on violence and economic exploitation. \n\nOptimist historians often focus on the exceptional engineering progress that characterized the era. For example, the metallurgy pioneered by Henry Cort at Funtley (Lesson 1) and the industrial production of steam-powered ironclads at Portsmouth Dockyard represent undeniable technological advancements. These innovations allowed the Royal Navy to enforce global trade routes and construct a massive, interconnected network of shipping lanes and infrastructure. \n\nHowever, this progress did not exist in a vacuum; it was explicitly weaponized to exploit colonized populations. As the Dacca weavers' petition of 1830 demonstrates, Britain utilized its industrial dominance to systematically dismantle local economies. India was transformed into a captive market, forced to provide raw materials for British factories and buy back manufactured goods, causing widespread poverty and destitution. Furthermore, when these economic pressures led to resistance—such as the massive 1857 Indian Rebellion—the British state abandoned all rhetoric of peaceful modernization and deployed extreme military violence to re-establish control. \n\nUltimately, technology was merely the tool; the empire was entirely sustained by an exploitative economic machine. The wealth showcased in grand monuments like the Royal Albert Hall was bought at the direct expense of working-class families enduring hazardous conditions in Hampshire dockyards and colonized peoples suffering starvation abroad."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -36358,7 +36645,12 @@
             {
               "title": "The Birth of the British Raj",
               "text": "The immediate consequence of this catastrophic conflict was the complete destruction of the entity that had triggered it. In 1858, recognizing that a private, profit-driven corporation could no longer safely govern a subcontinent, the British Parliament passed the Government of India Act. The East India Company was formally abolished, and its vast territories were transferred directly to the British Crown, establishing the era of the **British Raj**. Queen Victoria was declared Empress of India, signaling to the world that while the initial rebellion had been crushed by overwhelming violence, the empire had been forced to completely restructure itself because the colonized population had dared to strike back.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "sources": [],
@@ -36768,6 +37060,10 @@
                   "qNum": 5,
                   "question": "Synthesis Assessment (8 Marks): 'The violent machine-breaking of the Swing Riots posed a far greater threat to the British establishment than the political campaigning of the Chartists.' To what extent do you agree with this interpretation? Use evidence from across the lesson to support your argument.",
                   "model_answer": "It can be argued to a certain extent that the violent machine-breaking of the 1830 Swing Riots posed an immediate physical threat to the property of the ruling class, but a comprehensive historical analysis reveals that the political campaigning of the Chartists posed a far more dangerous, structural threat to the existence of the British establishment.\n\nOn one hand, the Swing Riots represented a terrifying breakdown of law and order across rural England, including Hampshire. The targeted destruction of mechanical threshing machines, anonymous 'Captain Swing' arson attacks, and physical intimidation of wealthy landowners directly threatened the immediate agricultural wealth of the ruling elite. The extreme violence of the state's response—deploying troops, hanging ringleaders at Winchester, and exiling hundreds to Australia via transportation—proves that the government viewed this localized property destruction as an active, urgent emergency that required immediate military suppression.\n\nHowever, the threat posed by the Swing Riots was inherently limited because it was uncoordinated, focused entirely on short-term economic relief (destroying machines and securing two shillings a day), and did not challenge the state's right to rule. Conversely, Chartism posed a profound, existential threat to the entire British political structure. Instead of breaking local machinery, the Chartists organized millions of urban industrial workers into a unified, national movement demanding constitutional reform. Their demands, such as universal male suffrage and secret ballots, directly threatened to strip the wealthy landowning elite of their political monopoly in Parliament. Furthermore, by collecting millions of signatures on petitions and threatening a general strike, Chartism proved that the working class had developed the organizational sophistication to potentially overthrow the government.\n\nUltimately, while the Swing Riots threatened the property of individual landowners, Chartism threatened the political survival of the establishment itself. The Swing Riots were a localized reaction to starvation, but Chartism was a revolutionary political alternative that eventually forced the elite to slowly democratize the nation over the next century."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -37148,6 +37444,10 @@
                   "qNum": 5,
                   "question": "Synthesis Assessment: To what extent was Britain a fully functioning democracy by the end of 1884? Use evidence from across the lesson to support your judgment.",
                   "model_answer": "By 1884, Britain was only a partial democracy; while it had made immense progress in dismantling aristocratic corruption, it remained fundamentally incomplete. \n\nOn one hand, the progress toward democracy since the unreformed era was highly significant. The egregious corruption of 'Pocket Boroughs' like Newtown in Hampshire had been abolished by the 1832 Act, giving industrial cities a voice. Furthermore, the 1867 and 1884 Acts successfully expanded the franchise to urban and rural working-class men. Crucially, the 1872 Secret Ballot Act ensured this franchise functioned democratically, as men could finally vote without the threat of intimidation or eviction from their employers. These milestones transformed Britain from an elite oligarchy into a representative state for the majority of men.\n\nHowever, it is impossible to call Britain a 'fully functioning democracy' by 1884 because the system still relied on vast, systemic exclusion. The franchise was still tied to property qualifications, meaning the absolute poorest men in society remained legally barred from political participation. Most severely, 100% of the female population was disenfranchised based purely on gender. Because a true democracy requires universal representation for all citizens, the Britain of 1884 can only be categorized as an evolving, incomplete democracy that had laid the structural groundwork for the universal suffrage battles of the 20th century."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -37480,6 +37780,10 @@
                   "qNum": 4,
                   "question": "Capstone Essay (16 Marks): 'The transformation of 19th-century Britain was a triumph of progress that benefited the entire nation.' To what extent do you agree with this interpretation? Write a comprehensive, balanced synthesis essay utilizing evidence from across the entire unit.",
                   "model_answer": "The transformation of nineteenth-century Britain was a complex process that fundamentally reshaped the nation's economy, global standing, and political landscape. Traditional or 'Optimist' historians have long interpreted this era as a triumph of progress that ultimately advanced the standard of living for the entire population. However, a rigorous examination of the evidence reveals that this interpretation is deeply flawed. While industrialisation and imperialism generated unprecedented wealth and global dominance, this progress was entirely dependent upon the severe exploitation of the domestic working class and colonized populations. Therefore, the transformation of the nineteenth century was not a collective national triumph, but an unequal victory where the wealthy elite benefited exponentially at the direct physical and economic expense of the poor.\n\nOn one hand, it is undeniable that the nineteenth century represented an era of spectacular technological and industrial progress, generating vast wealth. As 'Optimist' historians highlight, Britain truly became the 'workshop of the world'. This structural progress was driven by remarkable local innovation, such as the metallurgy pioneered by Henry Cort at the Funtley Ironworks. Cort’s puddling and rolling processes allowed Britain to mass-produce high-quality wrought iron on an unprecedented scale, providing the material necessary to build the national railway network, heavy machinery, and the global fleets of the Royal Navy. This naval supremacy was physically manufactured at massive industrial hubs like Portsmouth Dockyard, where advanced warships like HMS Warrior were constructed to enforce the 'Two-Power Standard' and protect global merchant trade. Simultaneously, local resources like the Funtley clay pits boomed, producing millions of highly durable 'Fareham Red' bricks that constructed the infrastructure of Portsmouth and grand imperial monuments like London's Royal Albert Hall. To the ruling elite and the growing middle classes, this immense economic expansion and global power represented absolute national progress.\n\nHowever, this glittering façade of imperial grandeur completely masked a dark and destructive reality for the ordinary people whose labor sustained it. 'Pessimist' historians correctly argue that the working class paid for this wealth with their health, safety, and lives. Nationally, the factory system subjected families to exhausting 14-hour shifts in toxic, unprotected environments. Locally, the 1881 Fareham Census provides quantitative proof that child labor was a vital element of the local economy, recording children as young as ten working as 'pug boys' and brick turners barefoot in the freezing mud of the Funtley brickfields. Furthermore, rapid, unregulated urbanisation turned growing industrial towns into death traps. Workers in Portsmouth and London were crammed into unventilated back-to-back slums where overflowing cesspits routinely contaminated the shared water supply, resulting in devastating waterborne cholera outbreaks. This squalor was so severe that Edwin Chadwick's 1842 government report calculated that deaths from filth and overcrowding outnumbered military casualties in modern wars. This pattern of aggressive extraction was replicated globally; the East India Company used its private military force to subjugate India, establishing a captive market that intentionally flooded the continent with cheap British textiles, systematically bankrupting millions of native Indian weavers. Thus, for the vast majority of people under British rule, the transformation felt like an intense punishment rather than progress.\n\nThis severe socio-economic imbalance explains why ordinary people were forced to launch organized political campaigns to fight for a democratic voice. The political transformation of the nineteenth century proves that democracy was not a benevolent gift from a progressive ruling class, but a series of forced concessions. Terrified by outbreaks of working-class desperation—such as the violent machine-breaking of the 1830 Hampshire Swing Riots—the aristocratic oligarchy passed the 1832 Great Reform Act. However, this act deliberately excluded the working class, granting the franchise only to middle-class property owners to divide the reform movement. This betrayal sparked the rise of Chartism, the first mass working-class political movement. Through the People's Charter, ordinary people demanded structural reforms like universal male suffrage and the secret ballot to protect voters from landlord intimidation. Although Parliament repeatedly rejected their massive petitions, the constant threat of working-class revolution eventually forced the elite to retreat, passing the 1872 Secret Ballot Act and expanding the vote in 1867 and 1884. This political struggle proves that the working class had to fight fiercely to secure even a fraction of the benefits of the modern state.\n\nIn conclusion, the interpretation that the transformation of nineteenth-century Britain was a triumph that benefited the entire nation is largely unsustainable. While the era achieved staggering progress in metallurgy, construction, and global naval power, the benefits of these achievements were concentrated almost exclusively in the hands of wealthy industrialists, elite landowners, and the growing middle class. In stark contrast, the ordinary working men, women, and children of places like Funtley and Portsmouth, alongside millions of colonized subjects in India, were systematically exploited to fuel this economic engine. The unlivable squalor of the slums, the physical destruction of child labor, and the necessity of mass movements like Chartism prove that the majority of the population experienced the era as a period of profound hardship. Ultimately, the 19th century transformed Britain into a global superpower, but it was a triumph built entirely on the broken health and political exclusion of the working class."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ]
             }
@@ -37892,6 +38196,10 @@
                     "The English army rushes south but is defeated by the Normans at the Battle of Hastings."
                   ],
                   "model_answer": "Edward dies -> Harold crowned -> Hardrada invades -> Stamford Bridge -> Wind changes -> Hastings"
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Which of the three claimants do you think had the strongest legal claim to the throne of England, and why?"
                 }
               ]
             }
@@ -38315,6 +38623,10 @@
                   "type": "extended_writing",
                   "question": "Task 5: Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
                   "model_answer": "I believe terror (the Harrying of the North) was the most effective method because it completely broke the will of the English people to resist. While castles provided defensive bases and the Domesday Book provided administrative control, it was the catastrophic famine and mass death caused by the Harrying that permanently ended the threat of large-scale rebellion."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Did William conquer England using fear, or using organisation? Which was more important?"
                 }
               ]
             }
@@ -38680,6 +38992,10 @@
                   "type": "creative_writing",
                   "instruction": "Task 2: Eyewitness Report. Look closely at the manuscript illumination of Becket's murder. Imagine you are a terrified monk hiding behind the pillars of Canterbury Cathedral on 29 December 1170. Write a short eyewitness report describing the horrifying scene as the four knights attack the Archbishop.",
                   "model_answer": "I was hiding in the shadows of the cathedral when the four knights burst in, their swords drawn. The Archbishop stood bravely before the altar. I watched in horror as Reginald FitzUrse struck the first blow. The knights hacked at Becket until his skull was split open, his blood spilling onto the sacred floor. It was a nightmare of screaming and clashing steel."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: If you were King Henry II, would you have appointed your best friend as Archbishop, or a deeply religious monk?"
                 }
               ]
             }
@@ -39052,6 +39368,10 @@
                   "question": "Task 3: The Trial of King John (Interpretation)\nDivide your answer into two parts:\n1. You are King John's defense lawyer. Write a short paragraph defending his actions, explaining why the heavy taxes were necessary.\n2. Now, act as the Barons' prosecutor. Write a response arguing why his actions were tyrannical and justified the Magna Carta.",
                   "model_answer": "As King John's defense lawyer, I argue that the heavy scutage taxes were an absolute necessity to protect the realm and win back our crucial lands in Normandy. As the Barons' prosecutor, I argue that John's behavior was completely tyrannical; he acted above the law, extorted his own lords, and broke the feudal contract.",
                   "lines": 12
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Do you think the Magna Carta was about freedom for all people, or just the barons protecting their own wealth?"
                 }
               ]
             }
@@ -39451,6 +39771,10 @@
                   "lines": 8,
                   "question": "Task: Sketch your own terrifying Doom Painting monster (Hellmouth or demon) that would have scared medieval peasants into obeying the Church.",
                   "model_answer": "Students should draw a grotesque monster or demon, demonstrating an understanding of how fear of Hell was used to control the peasant population."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Why was the Church able to take a tenth (tithe) of a peasant's crops when they were already starving?"
                 }
               ],
               "text": "Medieval peasants lived in a highly superstitious world. They believed that God was directly responsible for everything in their lives, from healing the sick and sending good harvests to punishing sins with plagues and famines. Above all, they believed that Heaven and Hell were real, physical places, and that their souls would spend eternity in one of them after death. <br><br>Because almost no peasants could read or write, and the church services (the Mass) were conducted entirely in <strong>Latin</strong>, the Church used visual aids to teach its messages. The most powerful of these was the <strong>Doom Painting</strong>. Painted in bright, terrifying colours on the walls of the church, these murals showed a vivid picture of the Day of Judgment. <br><br>Typically, a Doom Painting showed Christ judging souls . In the centre, a ladder stretched from Earth, with souls trying to climb to Heaven at the top, where angels welcomed them . Below, terrifying demons with pitchforks were shown dragging sinners into the burning, torturous fires of Hell . These paintings played on the peasants' deepest fears, delivering a simple and clear warning: obey the Church, confess your sins to the priest, pay your tithes, or face eternal agony."
@@ -39737,6 +40061,10 @@
                   "question": "Task 3: The Plague Doctor's Diary (Empathetic Writing)\nWrite a diary entry as a physician in 1348. Explain the horrifying symptoms you are witnessing in your patients, the 'cures' you are attempting to use (such as bloodletting or carrying sweet-smelling herbs), and why you believe they are failing due to your lack of germ theory.",
                   "model_answer": "Diary Entry, August 1348: The pestilence has arrived and it is terrifying. My patients are developing agonizing, dark buboes in their armpits and coughing up blood. I have tried bleeding them to balance their humours, and I carry sweet herbs to ward off the miasma, but nothing works because we do not understand the invisible poison causing this tragedy.",
                   "lines": 10
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: If you were a peasant who survived the Black Death, how would your attitude towards the local lord and the Church change?"
                 }
               ]
             }
@@ -40092,6 +40420,10 @@
                   "question": "Task 3: Create a 5-step chronological flow diagram showing the key events of the Peasants' Revolt from the initial march on London to the execution of the rebel leaders.",
                   "model_answer": "[Step 1: Wat Tyler and rebel bands from Kent and Essex march on London, burning manorial rolls and tax records along the route.]\n↓\n[Step 2: The rebels enter London, destroy John of Gaunt's Savoy Palace, and storm the Tower of London to execute Archbishop Simon Sudbury.]\n↓\n[Step 3: King Richard II meets Wat Tyler at Smithfield, where Tyler is attacked and mortally wounded by the Mayor of London, William Walworth.]\n↓\n[Step 4: Richard II boldly defuses the furious crowd by promising to be their leader and granting charters ending serfdom, convincing the peasants to go home.]\n↓\n[Step 5: Richard II revokes all charters, sends troops into the countryside to crush resistance, and executes Wat Tyler, John Ball, and other rebel leaders.]",
                   "lines": 5
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Did the Peasants' Revolt achieve anything, or was it a complete failure?"
                 }
               ]
             }
@@ -40461,7 +40793,13 @@
                 "source_context": "Mancini was in London in 1483 and recorded the rumors and panic surrounding the sudden confinement and disappearance of Edward IV's young sons in the Tower of London.",
                 "provenance_clue": "Mancini was an independent Italian observer with no personal political stake in the English royal succession, making his contemporary observations about public panic and the princes' confinement highly reliable, although he could only report on rumours of their deaths rather than direct proof."
               },
-              "tasks": [],
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "instruction": "Task 2: CLASSROOM ROLE-PLAY: The Trial of Richard III. \nYour teacher will divide the class. You will either be the Prosecution (arguing Richard murdered the Princes in the Tower to secure his throne) or the Defense (arguing it is Tudor propaganda and there is no bodies or proof). Prepare your opening arguments. Use the evidence from the narrative to build your case.",
+                  "model_answer": "Prosecution: Richard had the motive. The Princes were the only thing stopping him from being King. Once they went into the Tower, they were never seen again! \nDefense: This is Tudor fake news! There were no bodies found during his lifetime. Henry Tudor had just as much motive to kill them because they had a stronger claim to the throne than he did!"
+                }
+              ],
               "text": "In April 1483, King Edward IV died suddenly at the age of 41, leaving behind a widow, Elizabeth Woodville, and a twelve-year-old heir, <strong>Edward V</strong>. Because the new king was too young to rule alone, Edward IV's brother, <strong>Richard, Duke of Gloucester</strong>, was appointed Lord Protector. Richard was a loyal and highly capable commander who had ruled the north of England exceptionally well, earning the absolute trust of his brother.<br><br>To secure his grip on power, Richard acted ruthlessly. He intercepted the young king on his journey to London, arrested his maternal uncle Anthony Woodville, and placed Edward V in the secure royal apartments of the <strong>Tower of London</strong>. Soon after, the king's nine-year-old brother, Richard, Duke of York, was sent to join him. In June 1483, events turned nasty when a sermon was preached in London claiming that Edward IV's marriage had been invalid because of a secret pre-contract with Lady Eleanor Butler. This meant Edward's children were illegitimate and Edward V could not be King. Richard accepted a petition from the nobility, ordered Anthony Woodville's execution at Pontefract Castle, and was officially crowned as <strong>King Richard III</strong> alongside Queen Anne on 6 July 1483. Meanwhile, the two young princes inside the Tower were seen playing behind the window bars less and less often, until they vanished completely. Rumours spread like wildfire that Richard had ordered his nephews to be violently murdered in their beds to secure his grip on the throne."
             },
             {
@@ -40831,6 +41169,10 @@
                   "type": "extended_writing",
                   "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
                   "model_answer": "Initially, royal power was absolute. William the Conqueror established total control after 1066 using brutal military force, such as the Harrying of the North, and built motte and bailey castles to intimidate the Anglo-Saxons. He also surveyed the entire country with the Domesday Book in 1086 to maximize taxation.\n\nHowever, royal power weakened over time due to challenges from the Church and the barons. King Henry II suffered a massive blow to his authority after the murder of Thomas Becket, and King John severely damaged the reputation of the monarchy by overtaxing his lords. In 1215, the barons rebelled and forced him to seal Magna Carta, a crucial turning point because it established that the King was no longer above the law.\n\nFurthermore, royal power completely collapsed in the later medieval period. The Peasants' Revolt of 1381 proved that even the lowest classes could organize massive armies to threaten the King. Finally, during the Wars of the Roses (1455-1485), the crown was violently usurped back and forth between rival nobles, proving that medieval monarchs had lost the absolute control established by William the Conqueror."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on everything we have studied, what was the most effective way for a medieval monarch to keep their power?"
                 }
               ]
             }
@@ -41903,6 +42245,10 @@
                   "model_answer": "It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.",
                   "starter": "The Roman withdrawal significantly impacted sanitation because...",
                   "clue": "Consider what happened to the pipes and sewers when the engineers left."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "theme_heading": "Roman Departure, British Decline"
@@ -42135,6 +42481,10 @@
                   "model_answer": "It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.",
                   "starter": "Edward III's cleanliness mandate was significant because...",
                   "clue": "Look at his 1357 letter to the Mayor of London."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "theme_heading": "Royal Order on Cleanliness"
@@ -42357,6 +42707,10 @@
                   "model_answer": "They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.",
                   "starter": "Early Modern water sellers were only partially effective because...",
                   "clue": "Think about who bought their water and where they got it from."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "theme_heading": "London's Water Works"
@@ -42579,6 +42933,10 @@
                   "model_answer": "It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.",
                   "starter": "Edwin Chadwick's 1842 report was significant because...",
                   "clue": "Think about the evidence he gathered on the working class."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "theme_heading": "Chadwick's"
@@ -42815,6 +43173,10 @@
                   "model_answer": "It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.",
                   "starter": "The Public Health Act of 1875 was significant because...",
                   "clue": "Think about the transition from voluntary hygiene to mandatory laws."
+                },
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
                 }
               ],
               "theme_heading": "Government Protects Public Health"
@@ -44029,7 +44391,12 @@
               "type": "narrative",
               "theme_heading": "5. Evaluating the Constitution: A Flawed Masterpiece?",
               "text": "On paper, the Weimar Constitution was one of the most progressive and democratic documents in the world. However, to a historian, it is clear that this document contained fatal structural flaws that would leave the Republic vulnerable to total collapse.<br><br><table style='width: 100%; border-collapse: collapse; margin-top: 15px;'><thead><tr><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Strengths (Highly Democratic)</th><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Weaknesses (Fatal Flaws)</th></tr></thead><tbody><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Universal Suffrage:</strong> It was incredibly forward-thinking. Women received the vote on the same terms as men, and the voting age was reduced from 25 to 21 (and later 20), making it more democratic than Britain at the time.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Proportional Representation (PR):</strong> Because every 60,000 votes guaranteed one seat, tiny extremist parties easily gained a voice in the Reichstag.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Checks and Balances:</strong> No single person or group could hold too much power. The President, Chancellor, and Reichstag all kept each other in check.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Coalition Governments:</strong> PR made it mathematically almost impossible for one party to win a majority. Parties had to join together to form weak 'coalitions' that constantly argued and frequently collapsed during crises.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Local Power:</strong> The 18 <em>Länder</em> (local regions) retained control over key local services like the police, courts, and education, ensuring power was not heavily centralised in Berlin.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Article 48:</strong> The 'suicide clause'. In an emergency, the President could suspend the Constitution and pass laws by decree, bypassing the Reichstag entirely. It provided a legal backdoor to dictatorship.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Rights of the Individual:</strong> Freedom of speech, religion, and the press were legally guaranteed for all German citizens.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Undemocratic Foundations:</strong> The Republic was built on compromise and imposed upon a military, judiciary, and civil service that largely despised democracy and longed for the Kaiser.</td></tr></tbody></table>",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -44507,7 +44874,12 @@
               "type": "narrative",
               "theme_heading": "5. The Crisis of 1923: Hyperinflation",
               "text": "Passive resistance created an apocalyptic economic crisis. The government was suddenly deprived of the wealth generated by the Ruhr, yet it still had to pay the wages of the striking workers. The government's solution was disastrous: they simply printed more paper money.<br><br>Printing unbacked money completely destroyed its value, triggering <strong>Hyperinflation</strong>. Prices spiralled out of control daily, then hourly. A loaf of bread that cost 0.6 marks in 1918 cost 201 billion marks by November 1923. Workers had to be paid twice a day and carried their wages in wheelbarrows before prices went up again.<br><br><strong>The Winners and Losers of Hyperinflation:</strong><ul><li><strong>The Losers:</strong> The middle classes were devastated. Anyone with savings in the bank, fixed pensions, or fixed incomes saw their life's wealth wiped out overnight.</li><li><strong>The Winners:</strong> Anyone with loans or mortgages could pay off their debts with worthless paper money. Farmers benefited because the food they produced could be sold at highly inflated prices. Foreigners in Germany with foreign currency (like the US Dollar) could suddenly afford to buy businesses and property for a fraction of their real value.</li></ul>By late 1923, the Republic was humiliated, bankrupt, and seemingly on the brink of total collapse.<br><br><strong>The 'Inflation King' and the Munich Putsch</strong><br>While hyperinflation destroyed the middle classes, a few wealthy industrialists thrived. Figures like <strong>Hugo Stinnes</strong>—who became known as the 'Inflation King'—used worthless paper money to buy up bankrupt businesses and cheap industrial land, vastly expanding his empire. However, the sheer chaos of 1923 had one final political consequence. In November 1923, believing the Republic was on the verge of total collapse, a relatively unknown right-wing extremist named <strong>Adolf Hitler</strong> and his Nazi Party attempted to seize power in Bavaria in an event known as the <strong>Munich Putsch</strong>.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -44948,7 +45320,12 @@
               "type": "narrative",
               "theme_heading": "5. Evaluation: Dancing on a Volcano?",
               "text": "Between 1924 and 1929, Germany experienced a 'Golden Age'. Politically, the Republic stabilised. Moderate parties dominated the Reichstag, and extreme parties lost support (the Nazis won just 12 seats in the 1928 election). However, a historian must recognize the fatal flaws hiding beneath the surface:<br><br><ul><li><strong>The Quicksand Economy:</strong> Germany's entire recovery was dependent on short-term American loans. If the USA demanded their money back, the German economy would instantly collapse.</li><li><strong>The Losers of the Golden Age:</strong> Unemployment remained a persistent problem, never dropping below 1.3 million. Furthermore, farmers suffered from plummeting food prices, and the middle classes never got back the life savings they lost in 1923.</li></ul><br>Shortly before his sudden death in October 1929, Stresemann himself issued a dark warning: <em>\"The economic position is only flourishing on the surface. Germany is in fact dancing on a volcano.\"</em>",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -45390,7 +45767,12 @@
               "type": "narrative",
               "theme_heading": "4. Evaluation: A Deeply Divided Nation",
               "text": "To a top-level historian, the cultural 'Golden Age' was actually a source of severe weakness for the Republic because it deeply divided the nation.<br><br><ul><li><strong>Left-wing opposition:</strong> The Communists believed government funding for the arts was an extravagant waste of money when ordinary working people were still struggling to buy food.</li><li><strong>Right-wing opposition:</strong> Nationalists, traditionalists, and the Nazi Party were horrified. They believed the new art, the cabaret clubs, and the 'New Woman' were immoral, un-German, and destroying traditional family values. This cultural divide handed the Nazis powerful propaganda weapons to attack the Republic.</li></ul><br><strong>Opposition from the Churches</strong><br>The cultural explosion was not just attacked by political extremists; it faced fierce backlash from Germany's religious institutions. Both the <strong>Catholic and Protestant Churches</strong> actively campaigned against the 'New Woman', the cabaret clubs, and the open acceptance of homosexuality in Berlin. Church leaders believed that the Weimar Republic was leading Germany into a state of moral decline and aggressively urged their followers to reject this new, liberal culture in favour of traditional family values.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -45805,7 +46187,12 @@
             {
               "theme_heading": "Deeper Evaluation: A Regional Fringe Group",
               "text": "While the creation of the 25-Point Programme, the newspaper, and the SA showed incredible organisation, it is vital to keep the early Nazi Party in perspective. By the end of 1922, they were still fundamentally a regional phenomenon contained within Bavaria. They had roughly 20,000 members, but outside of Munich, they were largely unknown. They did not hold a single seat in the national Reichstag. They had built the machinery for a national movement, but they were not yet a serious threat to the Weimar Republic's existence.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -46407,7 +46794,12 @@
             {
               "text": "Despite having over 100,000 highly disciplined members by 1928, the Nazis were an electoral failure, winning just 12 seats (2.6% of the vote) in the 1928 Reichstag elections.\n\nThe primary reason for this failure was Gustav Stresemann. The Weimar Republic was experiencing an economic 'Golden Age'. Hyperinflation was over, American Dawes Plan loans were flowing in, and in 1925, the German people had elected the conservative war hero Paul von Hindenburg as President. With the country feeling stable and proud, voters simply ignored the extreme politics of the Nazi Party.\n\nHowever, the Nazis were highly adaptable. Realising that industrial workers were voting for the Communists or Social Democrats, the Nazis shifted their propaganda. They began heavily targeting **farmers** (who were suffering from plummeting food prices) and the **lower-middle classes** (the *Mittelstand*, who had never recovered from hyperinflation). While they failed to win power in 1928, the Nazis had built a highly organised, national political machine just waiting for the next major crisis to strike.",
               "heading": "6. Shifting Propaganda and Electoral Failure",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "utility_starters": {
@@ -46803,7 +47195,12 @@
             {
               "text": "The growth of the Nazi Party was not just about brilliant posters; it was deeply rooted in violence and **negative cohesion**.\n\nBy 1932, the SA had grown to 400,000 members. Germany’s streets were erupting into open warfare as the SA fought brutal battles against the communist private army, the *Rotfrontkämpferbund*. Dozens of people were killed in political street fights.\n\nParadoxically, the Nazis used this violence to their advantage. They deliberately started the fights with the communists, but then used their highly disciplined, uniformed SA marches to present themselves to the middle classes as the only party capable of restoring order. Millions of middle-class voters ultimately voted for the Nazis not because they fully supported Hitler’s extreme racial views, but because of *negative cohesion*—they shared Hitler's hatred of the Weimar Republic and his absolute determination to crush the communists.",
               "heading": "5. Advanced Analysis: The SA and Negative Cohesion",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "utility_starters": {
@@ -47201,7 +47598,12 @@
             {
               "text": "On **30 January 1933**, President Hindenburg officially appointed Adolf Hitler as Chancellor of Germany.\n\nTo a modern historian, it seems unbelievable that the conservative elites would hand power to a violent extremist. However, they believed they had trapped Hitler in a political cage. Out of a Cabinet of 12 ministers, Hindenburg and Papen allowed **only two other Nazis** (Wilhelm Frick and Hermann Göring); the rest were traditional conservatives.\n\nThe elites severely underestimated Hitler, viewing him as an uneducated political amateur they could easily manipulate to crush the communists. Papen famously boasted to a friend: *\"We have framed him... in two months we will have pushed Hitler into a corner so hard that he'll be squeaking.\"* They believed they were hiring Hitler as their puppet; in reality, they had just handed him the keys to the Republic.",
               "heading": "5. Advanced Analysis: The Fatal Miscalculation",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "utility_starters": {
@@ -47633,7 +48035,12 @@
             {
               "heading": "The Death of Hindenburg and the Army Oath (August 1934)",
               "text": "On **2 August 1934**, President Hindenburg died at the age of 86. Within hours, Hitler declared himself **Führer** (Supreme Leader), officially combining the roles of Chancellor and President.<br><br>On the exact same day, the entire German army swore a new **Oath of Allegiance**. Crucially, they did not swear to protect Germany or the constitution; they swore unconditional obedience to the person of *Adolf Hitler*. To cement this, Hitler held a public plebiscite (referendum) in mid-August; 90% of German voters agreed with his new powers. With the army firmly on his side, and the SA broken, Hitler’s totalitarian dictatorship was complete.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "utility_starters": {
@@ -47861,7 +48268,12 @@
             },
             {
               "text": "**5. Controlling the Churches: The Protestants**\nThe Protestant churches were heavily divided. Hitler united the pro-Nazi Protestants into a single **Reich Church**, led by Ludwig Müller (the 'Reich Bishop'). Its members called themselves 'German Christians'. They wore Nazi uniforms, hung swastikas inside their churches, and demanded that the Old Testament of the Bible be banned because of its Jewish origins.\n\nIn disgust, a brave First World War U-boat commander turned pastor named Martin Niemöller set up the **Pastors' Emergency League (PEL)**, which evolved into the rival **Confessional Church** in 1934. Over 6,000 Protestant pastors joined Niemöller, alongside theologians like Dietrich Bonhoeffer (who secretly trained illegal pastors), in preaching against Nazi interference in religion. The Nazis responded with brutal force: Niemöller was arrested in 1937 and eventually sent to Sachsenhausen concentration camp, and hundreds of his pastors were imprisoned.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -48284,7 +48696,12 @@
             },
             {
               "text": "**5. Controlling Culture and the Arts**\nHitler fancied himself an artist, and he believed that culture should reflect the heroic, traditional values of the German race. In September 1933, the **Reich Chamber of Culture** was set up. If you wanted to publish a book, sell a painting, or play in an orchestra, you 'had' to be a member. Jews and political opponents were banned.\n\n* **Art:** Modern, abstract art was despised by Hitler and banned as ***Entartete Kunst*** (Degenerate Art). In 1937, the Nazis held a massive 'Degenerate Art Exhibition' in Munich, where banned paintings were hung crookedly and surrounded by insulting graffiti to encourage the public to mock them. Instead, the Nazis promoted heroic, realistic paintings of muscular Aryan soldiers and fertile peasant women.\n* **Architecture:** Hitler favoured monumental, neoclassical architecture (huge stone buildings with classical pillars). Albert Speer designed buildings that were deliberately massive to make the individual feel small and the State feel eternal.\n* **Music:** Jewish composers (like Mendelssohn) were completely banned. American Jazz was outlawed because it was seen as \"black music\". Instead, Germans were encouraged to listen to traditional German composers like **Richard Wagner** and Beethoven.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -48706,7 +49123,12 @@
             },
             {
               "text": "**5. The Nazi Reaction to Youth Opposition**\nBefore the outbreak of war in 1939, the Nazi response to these youth groups was relatively lenient. The Gestapo would occasionally break up Swing Youth dances, confiscate record players, or arrest Edelweiss Pirates, shave their heads, and give them a severe beating before releasing them. The Nazis did not want to send thousands of young, healthy Aryans to concentration camps. '(Note: This would change drastically during WWII, when youth opposition became more political and the Nazi punishments became lethal).'",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -49125,7 +49547,12 @@
             },
             {
               "text": "**5. Employment: The Great Contradiction**\nThis is a crucial analytical point. The Nazis 'wanted' women out of the workplace, but their own economic and military goals made this impossible.\n\n* **Initial Removals (1933–1936):** Women were forced out of professional careers. In 1933, female doctors, civil servants, and teachers were sacked. In 1936, women were banned from being judges or serving on juries.\n* **The Reversal (1937–1939):** In 1936, Hermann Göring introduced the **Four Year Plan** to secretly rearm Germany for war. This created a massive labor shortage in factories as men joined the army. By 1937, the Nazis were forced to abandon their ideology. They needed women back in the factories. They abolished the marriage loan requirement that women had to quit work, and introduced a \"compulsory duty year\" requiring women to work in agriculture or industry.\n* **The Result:** Nazi employment policy towards women was an ideological failure. Despite spending years telling women to stay at home, the number of women in employment actually **rose** from 11.6 million in 1933 to 14.6 million in 1939.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -49534,7 +49961,12 @@
             },
             {
               "text": "**5. Success or Failure? (Grade 9 Analysis)**\n* **The Success:** Initially, the youth movements were highly successful and popular. Young people enjoyed the camping, sports, and the sense of power it gave them over their parents. In 1936, the **Hitler Youth Law** made it state policy, and in 1939, a Second Hitler Youth Law made membership strictly compulsory. By 1939, membership stood at around **8 million**.\n* **The Failure:** However, by the late 1930s, the system was beginning to crack. As the Hitler Youth became strictly compulsory, it became less about fun and more about boring military drill and endless political speeches. This resentment directly fueled the rise of opposition groups like the **Edelweiss Pirates** and the **Swing Youth**, proving that indoctrination was never 100% successful.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -49957,7 +50389,12 @@
             },
             {
               "text": "**5. Winners and Losers: Did Living Standards Improve?**\nThe idea that everyone was better off under the Nazis is a myth. \n* **The Winners (Big Business & Farmers):** Giant monopolies like IG Farben and Krupp made fortunes from government rearmament contracts. Farmers benefited initially from the 'Reich Entailed Farm Law' (1933), which protected their land from being seized for debt (though it also meant they couldn't sell it). \n* **The Losers (Small Businesses & Workers):** Small businesses ('Mittelstand') were squeezed out by big department stores and high taxes; roughly 20% went bankrupt. For the average worker, the working week increased from 43 hours in 1933 to 49 hours in 1939. Because the government prioritized military spending ('Guns over Butter') and Ersatz goods were expensive to produce, the price of basic groceries rose faster than wages. **Conclusion:** Workers had job security, but their purchasing power (real wages) fell compared to the Weimar era.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [
@@ -50422,7 +50859,12 @@
             },
             {
               "text": "**Phase 4: State-Sponsored Violence & Forced Emigration (1938–1939)**\n* **Kristallnacht (9/10 November 1938):** A Jewish teenager assassinated a minor German diplomat in Paris. Joseph Goebbels (trying to win Hitler's favour) used this to orchestrate a nationwide pogrom. \n    * 'The Damage:' Over 800 shops were destroyed, 191 synagogues burned, and 91 Jewish people murdered. 30,000 Jewish men were sent to concentration camps. \n    * Secret 'Sopade' and Gestapo reports revealed that many ordinary Germans were disgusted by Kristallnacht. This was not always out of sympathy for the Jews, but because the German public hated public disorder and the wasteful destruction of property. \n* **The Aftermath:** The Nazis fined the Jewish community **1 billion marks** for the damage. \n* **The Shift in Policy (1939):** Realising public violence was unpopular, persecution became highly bureaucratic. In January 1939, Reinhard Heydrich was put in charge of the **Reich Office for Jewish Emigration** to systematically force Jewish people out of Germany by confiscating all their wealth in exchange for exit visas.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+                }
+              ]
             }
           ],
           "quiz": [

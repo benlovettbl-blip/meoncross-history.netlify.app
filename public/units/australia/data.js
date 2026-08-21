@@ -208,6 +208,11 @@ export const unitData = {
               "type": "comprehension",
               "question": "Why did the Gweagal Aboriginal men try to block the British from landing at Botany Bay?",
               "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Why does the story of the Gweagal resistance at Botany Bay challenge the old, traditional idea that Australia was 'peacefully settled'?",
+              "text": ""
             }
           ],
           "source": {
@@ -516,6 +521,12 @@ export const unitData = {
               "type": "comprehension",
               "question": "How did Governor Arthur Phillip's radical decision to ration food equally ensure the survival of the colony?",
               "model": "By giving equal rations to both officers and convicts, he prevented mass starvation and mutiny, ensuring everyone had just enough energy to keep working."
+            },
+            {
+              "qNum": 5,
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: If you were an officer in the First Fleet, why might you be angry that Governor Phillip gave you the exact same food ration as a convict?",
+              "model": "Officers were used to strict British class divisions. Being forced to eat the same meager rations as 'criminals' would have felt incredibly insulting and degrading to their elite status."
             }
           ]
         },
@@ -559,6 +570,11 @@ export const unitData = {
             {
               "type": "comprehension",
               "question": "Look at the database profile of John Hudson. How does his story challenge the idea that the First Fleet was filled with hardened, dangerous adult criminals?",
+              "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Look at the database profile of Esther Abrahams. In what ways did the brutal system of transportation inadvertently give some convicts the chance at a completely new life?",
               "text": ""
             }
           ]
@@ -811,6 +827,10 @@ export const unitData = {
             {
               "type": "convict_game",
               "question": "Play the Old Bailey Convict Game"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -966,6 +986,11 @@ export const unitData = {
               "type": "comprehension",
               "question": "How did the discovery of gold by Edward Hargreaves in 1851 permanently change the population of Australia?",
               "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Once poor migrants realized they could make a fortune digging for gold in Australia, why was it impossible for the British government to continue using transportation as a terrifying punishment?",
+              "text": ""
             }
           ],
           "source": {
@@ -1089,6 +1114,11 @@ export const unitData = {
             {
               "question": "Scaffolding: Paragraph Structure",
               "model": "Use this structure to ensure a balanced argument:\n\n*   **Introduction:** Briefly outline the two sides of the debate and state your overall opinion.\n*   **Paragraph 1 (Agree):** Explain the \"triumph\" (e.g., surviving starvation, building a rich wool industry, the gold rush).\n*   **Paragraph 2 (Disagree):** Explain the tragedy (e.g., Terra Nullius, disease, frontier violence, theft of land from First Nations peoples).\n*   **Conclusion:** Weigh up the evidence. Which side is stronger? Did the 'progress' justify the human cost?"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on all the evidence you have studied in this unit, do you personally believe the colonization of Australia was a triumph or a tragedy? Why?",
+              "model": "It was an economic triumph for the British settlers, but a devastating tragedy for the Aboriginal people whose land and lives were stolen."
             }
           ]
         },

@@ -324,7 +324,13 @@ module.exports = {
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
           "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: ]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+              "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+            }
+          ]
         },
         {
           "title": "Lesson Reflection"
@@ -633,6 +639,11 @@ module.exports = {
           "title": "Side Quest: The Horrors of Scurvy",
           "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
           "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
+              "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
+            },
             {
               "type": "sorting",
               "events": [
@@ -1008,7 +1019,13 @@ module.exports = {
         {
           "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
           "text": "<blockquote><strong>Historian Perspective A: ]] (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: ]] (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "How do Perspective A and Perspective B disagree on the origins of the British Empire?",
+              "model_answer": "Perspective A argues the Empire was an \"accidental\" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible."
+            }
+          ]
         },
         {
           "title": "Lesson Reflection"
@@ -1319,6 +1336,11 @@ module.exports = {
           "title": "Investigating Power: The King vs. The Merchants",
           "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong></strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by </strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: ’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?",
+              "model_answer": "Source B gives an official, ideological reason for victory, claiming Parliament was defending the laws of the land against a 'tyrannical' King. Source C reveals the hidden economic truth: Parliament won because of immense wealth generated by Barbados sugar, stating directly that without it, the 'New Model Army would starve for want of pay'."
+            },
             {
               "type": "source_analysis",
               "question": "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?",
@@ -1659,7 +1681,13 @@ module.exports = {
         {
           "title": "Historical Interpretations: Who Was the Real Winner?",
           "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong></strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View (]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though  returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View (]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
+              "model_answer": "Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics."
+            }
+          ]
         },
         {
           "title": "Lesson Reflection"
@@ -1960,6 +1988,10 @@ module.exports = {
               "starter": "The barbaric 'death camp' model of the sugar plantations challenges the idea of a 'civilized' Britain because...",
               "question": "Lesson Reflection: How did the reality of the Transatlantic Slave Trade and the brutal 'death camp' model of the Caribbean sugar plantations challenge the idea that 18th-century Britain was a 'modern', enlightened, and civilized society? Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
               "model_answer": "A strong answer should contrast the wealth and apparent civilization of London's financial hubs with the barbaric, industrialized violence that produced that wealth, noting how absentee landlords willingly ignored the brutality to secure their profits."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -2316,6 +2348,16 @@ module.exports = {
           "image_alt": "Source C: Portrait of , a British politician and abolitionist",
           "source_letter": "F",
           "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Compare Source C with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
+              "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "What is the 'White Savior Narrative' in the context of the slave trade?",
+              "model_answer": "The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce."
+            },
             {
               "type": "comprehension",
               "question": "According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?",
@@ -2797,7 +2839,13 @@ module.exports = {
         {
           "title": "Primary Source Analysis: The Dual Reality",
           "text": "Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source C: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>\"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent.\"</em></blockquote>",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?",
+              "model_answer": "The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums."
+            }
+          ],
           "source_letter": "C"
         },
         {
