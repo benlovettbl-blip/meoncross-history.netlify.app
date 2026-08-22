@@ -431,35 +431,35 @@ export const unitData = {
       "id": "medieval",
       "title": "Medieval",
       "prefix": "lesson_1_",
-      "image": "assets/medieval_pano_1784551792993.png",
+      "image": "/units/edexcel_medicine/assets/medieval_pano_1784551792993.png",
       "enquiry": "How much did medicine really change in Medieval England?"
     },
     {
       "id": "renaissance",
       "title": "Renaissance",
       "prefix": "lesson_2_",
-      "image": "assets/renaissance_pano_1784551804068.png",
+      "image": "/units/edexcel_medicine/assets/renaissance_pano_1784551804068.png",
       "enquiry": "Why did the Medical Renaissance have so little impact on everyday treatments?"
     },
     {
       "id": "18th_19th",
       "title": "18th & 19th C",
       "prefix": "lesson_3_",
-      "image": "assets/industrial_pano_1784551813599.png",
+      "image": "/units/edexcel_medicine/assets/industrial_pano_1784551813599.png",
       "enquiry": "How did the Industrial Revolution transform the understanding and prevention of disease?"
     },
     {
       "id": "modern",
       "title": "Modern",
       "prefix": "lesson_4_",
-      "image": "assets/modern_pano_1784551822373.png",
+      "image": "/units/edexcel_medicine/assets/modern_pano_1784551822373.png",
       "enquiry": "How did technology and government intervention revolutionize 20th-century medicine?"
     },
     {
       "id": "western_front",
       "title": "Western Front",
       "prefix": "lesson_5_",
-      "image": "assets/western_front_pano_1784551831887.png",
+      "image": "/units/edexcel_medicine/assets/western_front_pano_1784551831887.png",
       "enquiry": "How did the horrific conditions of trench warfare drive rapid medical innovation?"
     }
   ],
@@ -721,7 +721,12 @@ export const unitData = {
         },
         {
           "text": "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -1246,7 +1251,12 @@ export const unitData = {
         },
         {
           "text": "**Caring for the Sick: Hospitals and the Home**\n\nThe vast majority of sick people were cared for at home by female family members who mixed herbal remedies and grew healing plants in their gardens.\n\nHospitals were run by the Church (staffed by monks and nuns). They offered 'hospitality' to travellers and the elderly, focusing on a clean environment, rest, and a good diet.\n\nInfectious and terminal patients were usually rejected from these hospitals because prayer and penance could do nothing for them. Because hospitals focused purely on \"care, not cure\" and relied on prayer rather than doctors, they offered no real medical advancement or effective treatment for severe diseases.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -1937,6 +1947,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the impact of the Black Death on medieval society.",
               "model": "It had a massive impact, killing roughly one-third of the population. However, it did not lead to medical progress, as people continued to blame God and the planets instead of investigating the true cause."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -2473,6 +2487,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the extent to which the Renaissance changed beliefs about the causes of illness.",
               "model": "While the Renaissance revolutionized anatomy through Vesalius, it completely failed to change beliefs about the causes of illness. Without microscopes, bacteria couldn't be seen, so people still believed in miasma and the Four Humours."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -2986,6 +3004,10 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did the 'New World' improve medical treatments?",
               "model": "It had a minor but positive impact. While the vast majority of treatments remained medieval, the discovery of new herbs like Cinchona bark provided the first effective treatment for specific diseases like malaria."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3500,6 +3522,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the short-term significance of Harvey's discovery.",
               "model": "In the short term, Harvey's discovery was highly insignificant. Doctors could not use the knowledge to cure any diseases, blood transfusions were still impossible, and many doctors refused to believe him because it contradicted Galen."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -4023,7 +4049,12 @@ export const unitData = {
         {
           "text": "John Snow",
           "theme_heading": "John Snow's",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -4555,6 +4586,10 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did Simpson's discovery of Chloroform immediately improve surgery?",
               "model": "While Chloroform solved the problem of pain, it actually made surgery more dangerous in the short term. Surgeons performed longer, more complex internal operations, which massively increased the rate of fatal infections until Lister introduced antiseptics."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -5071,7 +5106,12 @@ export const unitData = {
         },
         {
           "text": "**John Snow and the Broad Street Pump**\n\nJohn Snow, a highly respected London surgeon, noticed that cholera affected the gut rather than the lungs, making him doubt the miasma theory.\n\nWhen a massive outbreak hit Soho in August 1854, Snow mapped all the local deaths and proved they were clustered around a single water pump on Broad Street.\n\nHe famously removed the handle from the pump, and the local cholera outbreak stopped immediately. It was later discovered that a leaking cesspit had cracked and was pouring raw sewage directly into the well. Snow's brilliantly logical investigation provided the first undeniable, practical evidence that cholera was water-borne, placing massive pressure on the government to finally build a clean, modern sewer system for London.",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ],
           "hinge_question": {
             "text": "How did John Snow prove that cholera was a waterborne disease in 1854, long before the discovery of germs?",
             "options": [
@@ -5613,6 +5653,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the impact of the discovery of DNA on modern medicine.",
               "model": "The discovery of DNA was incredibly impactful because it explained genetic illnesses for the first time. By mapping the genome, scientists can now identify genes responsible for diseases like breast cancer, opening the door to genetic screening and personalized medicine."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -6149,6 +6193,10 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did the discovery of Magic Bullets revolutionize treatment?",
               "model": "They revolutionized treatment completely. Before 1909, doctors could prevent diseases with vaccines but had no chemical cures for bacterial infections. Magic Bullets proved that synthetic antibodies could be manufactured to destroy specific germs, launching the modern pharmaceutical industry."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -6666,6 +6714,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the role of World War II in the mass production of Penicillin.",
               "model": "World War II was the crucial catalyst for mass production. Because of the desperate need to treat wounded soldiers on D-Day, the US Government provided the massive funding and factory infrastructure required to produce the drug on an industrial scale, saving millions of lives."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -7179,6 +7231,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the effectiveness of government legislation in reducing smoking.",
               "model": "Government legislation has been highly effective. By passing strict laws like the 2007 ban on smoking in public places and the 2015 plain packaging laws, combined with heavy taxation, they have successfully forced a massive behavioral change and reduced smoking rates."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -7716,7 +7772,12 @@ export const unitData = {
         {
           "text": "Karl Landsteiner",
           "theme_heading": "Discovering Blood Types",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -8248,6 +8309,10 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the effectiveness of military discipline in preventing environmental illnesses.",
               "model": "Military discipline was highly effective in preventing these illnesses. By ordering soldiers to change socks twice a day, rub whale oil on their feet, and enforcing strict hygiene regimes in bathhouses, the army managed to significantly reduce cases of Trench Foot and Trench Fever."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -8813,7 +8878,12 @@ export const unitData = {
         },
         {
           "text": "**The Terror of Poison Gas**\n\nChlorine gas was first used by the Germans at the Second Battle of Ypres (April 1915), causing victims to slowly suffocate as their lungs filled with fluid. Before gas masks were officially issued in July 1915, soldiers urinated on cotton pads and pressed them to their faces to neutralise the chemical.\n\nPhosgene was introduced later in 1915; it was faster-acting and more deadly, capable of killing an exposed person within two days.\n\nMustard gas (1917) was an odourless gas that caused severe internal and external blistering and could burn the skin straight through clothing. Although poison gas was a terrifying psychological weapon, the rapid development of effective gas masks meant it was actually the cause of under 5% of British deaths (around 6,000 soldiers), making it far less lethal than artillery fire.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -9357,7 +9427,12 @@ export const unitData = {
         },
         {
           "text": "**The Underground Hospital at Arras**\n\nIn 1916, British and Commonwealth troops linked existing chalk tunnels and quarries beneath the town of Arras.\n\nThey created a massive underground town that included a fully functioning hospital (nicknamed Thompson's Cave) within 800m of tunnels.\n\nIt contained 700 spaces for stretchers to be used as beds, operating theatres, rest stations, a mortuary, and was supplied with electricity and piped water. The underground hospital at Arras was highly significant because it functioned as a fully equipped medical facility incredibly close to the frontline, while remaining completely safe from enemy artillery bombardment.",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -9922,7 +9997,12 @@ export const unitData = {
         {
           "text": "Oswald Hope Robertson",
           "theme_heading": "Oswald Hope",
-          "tasks": []
+          "tasks": [
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
+            }
+          ]
         }
       ],
       "exam_practice": [
@@ -10406,7 +10486,7 @@ export const unitData = {
       "name": "John Snow",
       "role": "Surgeon and Epidemiologist",
       "bio": "A pioneering British surgeon who proved that cholera was a waterborne disease. During the 1854 Soho outbreak, he mapped out the deaths and traced the source to a contaminated public water pump on Broad Street, famously removing its handle to stop the epidemic.",
-      "image_url": "assets/john_snow.jpg",
+      "image_url": "/assets/john_snow.jpg",
       "actions": "Mapped cholera deaths around the Broad Street pump in Soho during the 1854 outbreak, proving that fatalities were clustered around a single water source; removed the pump handle.",
       "achievements": "Proved that cholera was a water-borne disease, permanently disproving the dominant theory of miasma.",
       "limitations": "Because Germ Theory had not yet been published, he could not provide the microscopic biological proof of what was actually in the water causing the cholera. Consequently, the government was extremely slow to act, taking over twenty years to pass the compulsory 1875 Public Health Act to clean up urban water supplies."
@@ -10694,7 +10774,7 @@ export const unitData = {
       "title": "John Snow's Broad Street Pump mapping",
       "description": "Snow proves that cholera is spread by contaminated water rather than miasma, though the government is slow to listen.",
       "category": "Public Health",
-      "image": "assets/john_snow.jpg",
+      "image": "/assets/john_snow.jpg",
       "image_caption": "John Snow",
       "key_topic": "KT3: 18th & 19th Century (c1700-1900)"
     },

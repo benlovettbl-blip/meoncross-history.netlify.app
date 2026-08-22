@@ -55,6 +55,9 @@ allDirs.forEach(unitId => {
   }
   
   if (startIndex === -1) {
+    startIndex = dataContent.indexOf('module.exports = {') !== -1 ? dataContent.indexOf('module.exports = {') + 17 : -1;
+  }
+  if (startIndex === -1) {
     console.log(`Skipping workbook generation for ${unitId} (unsupported data format).`);
     return;
   }

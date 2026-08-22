@@ -397,7 +397,13 @@ module.exports = {
           "term": "Blood and Iron",
           "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the German Empire created 'from below' by the people or 'from above' by military force?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_1",
@@ -405,7 +411,7 @@ module.exports = {
       "sources": [
         {
           "title": "Map A: Alsace-Lorraine Border Region (1871)",
-          "src": "assets/alsace_lorraine_simple_map.svg",
+          "src": "/units/great_war/assets/alsace_lorraine_simple_map.svg",
           "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
         }
       ],
@@ -461,7 +467,7 @@ module.exports = {
       },
       "primary_source": {
         "title": "Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.",
-        "src": "assets/was_germany_unification.png",
+        "src": "/units/great_war/assets/was_germany_unification.png",
         "caption": "This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
         "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
         "tasks": [
@@ -854,12 +860,12 @@ module.exports = {
       "sources": [
         {
           "title": "Map A: Partition of Africa (1914)",
-          "src": "assets/map_lesson2.png",
+          "src": "/units/great_war/assets/map_lesson2.png",
           "caption": ""
         },
         {
           "title": "Map B: The Global Imperial Lanes",
-          "src": "assets/map_lesson2_b.png",
+          "src": "/units/great_war/assets/map_lesson2_b.png",
           "caption": ""
         }
       ],
@@ -932,7 +938,7 @@ module.exports = {
       },
       "primary_source": {
         "title": "Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.",
-        "src": "assets/was_greedy_boy.png",
+        "src": "/units/great_war/assets/was_greedy_boy.png",
         "caption": "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
         "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
         "tasks": [
@@ -988,7 +994,7 @@ module.exports = {
         "sources": [
           {
             "type": "visual",
-            "src": "assets/was_greedy_boy.png",
+            "src": "/units/great_war/assets/was_greedy_boy.png",
             "title": "Source A: Source A: 'The Greedy Boy', a British political cartoon published in 1885 showing German Chancellor Otto von Bismarck."
           },
           {
@@ -1262,7 +1268,7 @@ module.exports = {
       "sources": [
         {
           "title": "Map A: The North Sea & Naval Chokepoints",
-          "src": "assets/map_lesson3.png",
+          "src": "/units/great_war/assets/map_lesson3.png",
           "caption": ""
         }
       ],
@@ -1335,7 +1341,7 @@ module.exports = {
       },
       "primary_source": {
         "title": "Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.",
-        "src": "assets/was_dreadnought_blueprint.png",
+        "src": "/units/great_war/assets/was_dreadnought_blueprint.png",
         "caption": "This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
         "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
         "tasks": [
@@ -1381,7 +1387,7 @@ module.exports = {
         "sources": [
           {
             "type": "visual",
-            "src": "assets/was_dreadnought_blueprint.png",
+            "src": "/units/great_war/assets/was_dreadnought_blueprint.png",
             "title": "Source A: Official technical blueprint of HMS Dreadnought, 1906."
           },
           {
@@ -1667,12 +1673,12 @@ module.exports = {
       "sources": [
         {
           "title": "Diagram A: The Alliance System (1914)",
-          "src": "assets/alliance_system.svg",
+          "src": "/units/great_war/assets/alliance_system.svg",
           "caption": "The complex web of treaties that dragged Europe into a global war."
         },
         {
           "title": "Map A: European Military Alliance Blocs (1914)",
-          "src": "assets/map_lesson4.png",
+          "src": "/units/great_war/assets/map_lesson4.png",
           "caption": "",
           "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
         }
@@ -1746,7 +1752,7 @@ module.exports = {
       },
       "primary_source": {
         "title": "Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.",
-        "src": "assets/was_military_matrix.png",
+        "src": "/units/great_war/assets/was_military_matrix.png",
         "caption": "This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.",
         "question": "Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
         "tasks": [
@@ -1797,7 +1803,7 @@ module.exports = {
         "sources": [
           {
             "type": "visual",
-            "src": "assets/balkans_1914_simple_map.png",
+            "src": "/units/great_war/assets/balkans_1914_simple_map.png",
             "title": "Source A: Map of the Balkans showing the borders of Serbia and the Austro-Hungarian Empire in 1914."
           },
           {
@@ -2063,17 +2069,17 @@ module.exports = {
       "sources": [
         {
           "title": "Diagram A: The July Crisis Domino Effect",
-          "src": "assets/july_crisis.svg",
+          "src": "/units/great_war/assets/july_crisis.svg",
           "caption": "How a single assassination in the Balkans escalated into a world war within a month."
         },
         {
           "title": "Map A: The Balkan Peninsula (1914)",
-          "src": "assets/balkans_1914_simple_map.png",
+          "src": "/units/great_war/assets/balkans_1914_simple_map.png",
           "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914."
         },
         {
           "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
-          "src": "assets/map_sarajevo_route.jpg",
+          "src": "/units/great_war/assets/map_sarajevo_route.jpg",
           "caption": ""
         }
       ],
@@ -2142,7 +2148,7 @@ module.exports = {
       },
       "primary_source": {
         "title": "Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.",
-        "src": "assets/was_boiling_point.png",
+        "src": "/units/great_war/assets/was_boiling_point.png",
         "caption": "This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
         "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
         "tasks": [
@@ -2193,7 +2199,7 @@ module.exports = {
         "sources": [
           {
             "type": "visual",
-            "src": "assets/was_boiling_point.png",
+            "src": "/units/great_war/assets/was_boiling_point.png",
             "title": "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912."
           },
           {
@@ -3096,21 +3102,21 @@ module.exports = {
       "id": "wilhelm",
       "name": "Kaiser Wilhelm II",
       "role": "Emperor of Germany",
-      "image": "assets/card_wilhelm.png",
+      "image": "/units/great_war/assets/card_wilhelm.png",
       "bio": "The impulsive and militaristic ruler of Germany whose aggressive 'Weltpolitik' foreign policy alienated Britain, France, and Russia, setting the stage for the Great War."
     },
     {
       "id": "princip",
       "name": "Gavrilo Princip",
       "role": "Serbian Nationalist",
-      "image": "assets/card_princip.png",
+      "image": "/units/great_war/assets/card_princip.png",
       "bio": "A member of the Black Hand secret society who assassinated Archduke Franz Ferdinand in Sarajevo, providing the spark that ignited the July Crisis and World War I."
     },
     {
       "id": "nicholas",
       "name": "Tsar Nicholas II",
       "role": "Emperor of Russia",
-      "image": "assets/card_nicholas.png",
+      "image": "/units/great_war/assets/card_nicholas.png",
       "bio": "The autocratic ruler of Russia who mobilized his vast army to defend Serbia against Austria-Hungary, triggering Germany's mobilization and the activation of the Schlieffen Plan."
     }
   ],

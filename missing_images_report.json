@@ -1,0 +1,202 @@
+[
+  {
+    "unit": "australia",
+    "context": "root.lessons[4].banner",
+    "src": "/images/sydney_cove.jpg"
+  },
+  {
+    "unit": "early_modern_world",
+    "context": "root.geographical_locations[5].image",
+    "src": "/images/locations/calicut.jpg"
+  },
+  {
+    "unit": "edexcel_medicine",
+    "context": "root.workbooks[0].image",
+    "src": "/assets/medieval_pano_1784551792993.png"
+  },
+  {
+    "unit": "edexcel_medicine",
+    "context": "root.workbooks[1].image",
+    "src": "/assets/renaissance_pano_1784551804068.png"
+  },
+  {
+    "unit": "edexcel_medicine",
+    "context": "root.workbooks[2].image",
+    "src": "/assets/industrial_pano_1784551813599.png"
+  },
+  {
+    "unit": "edexcel_medicine",
+    "context": "root.workbooks[3].image",
+    "src": "/assets/modern_pano_1784551822373.png"
+  },
+  {
+    "unit": "edexcel_medicine",
+    "context": "root.workbooks[4].image",
+    "src": "/assets/western_front_pano_1784551831887.png"
+  },
+  {
+    "unit": "eee",
+    "context": "root.workbooks[0].image",
+    "src": "/assets/placeholder_cover.jpg"
+  },
+  {
+    "unit": "eee",
+    "context": "root.workbooks[1].image",
+    "src": "/assets/placeholder_cover.jpg"
+  },
+  {
+    "unit": "eee",
+    "context": "root.workbooks[2].image",
+    "src": "/assets/placeholder_cover.jpg"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[1].sources[0].src",
+    "src": "/assets/alsace_lorraine_simple_map.svg"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[1].primary_source.src",
+    "src": "/assets/was_germany_unification.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[2].sources[0].src",
+    "src": "/assets/map_lesson2.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[2].sources[1].src",
+    "src": "/assets/map_lesson2_b.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[2].primary_source.src",
+    "src": "/assets/was_greedy_boy.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[2].gcse_task.sources[0].src",
+    "src": "/assets/was_greedy_boy.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[3].sources[0].src",
+    "src": "/assets/map_lesson3.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[3].primary_source.src",
+    "src": "/assets/was_dreadnought_blueprint.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[3].gcse_task.sources[0].src",
+    "src": "/assets/was_dreadnought_blueprint.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[4].sources[0].src",
+    "src": "/assets/alliance_system.svg"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[4].sources[1].src",
+    "src": "/assets/map_lesson4.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[4].primary_source.src",
+    "src": "/assets/was_military_matrix.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[4].gcse_task.sources[0].src",
+    "src": "/assets/balkans_1914_simple_map.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[5].sources[0].src",
+    "src": "/assets/july_crisis.svg"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[5].sources[1].src",
+    "src": "/assets/balkans_1914_simple_map.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[5].sources[2].src",
+    "src": "/assets/map_sarajevo_route.jpg"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[5].primary_source.src",
+    "src": "/assets/was_boiling_point.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.lessons[5].gcse_task.sources[0].src",
+    "src": "/assets/was_boiling_point.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.key_individuals[0].image",
+    "src": "/assets/card_wilhelm.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.key_individuals[1].image",
+    "src": "/assets/card_princip.png"
+  },
+  {
+    "unit": "great_war",
+    "context": "root.key_individuals[2].image",
+    "src": "/assets/card_nicholas.png"
+  },
+  {
+    "unit": "medieval_england",
+    "context": "root.lessons[7].narrative_blocks[0].images[0].src",
+    "src": "/images/lancaster_rose.svg"
+  },
+  {
+    "unit": "medieval_england",
+    "context": "root.lessons[7].narrative_blocks[0].images[1].src",
+    "src": "/images/york_rose.svg"
+  },
+  {
+    "unit": "water_and_sanitation",
+    "context": "root.lessons[0].narrative_blocks[3].image",
+    "src": "/assets/seneca.jpg"
+  },
+  {
+    "unit": "water_and_sanitation",
+    "context": "root.lessons[3].narrative_blocks[2].image",
+    "src": "/images/fareham_chimney.png"
+  },
+  {
+    "unit": "water_and_sanitation",
+    "context": "root.key_individuals[0].image",
+    "src": "/assets/seneca.jpg"
+  },
+  {
+    "unit": "weimar_nazi_germany",
+    "context": "root.lessons[7].teacher_notes.source_context.image",
+    "src": "/images/papen_hitler_cartoon.jpg"
+  },
+  {
+    "unit": "weimar_nazi_germany",
+    "context": "root.key_individuals[48].image",
+    "src": "/images/individuals/ian_kershaw.jpg"
+  },
+  {
+    "unit": "weimar_nazi_germany",
+    "context": "root.key_individuals[49].image",
+    "src": "/images/individuals/richard_evans.jpg"
+  },
+  {
+    "unit": "weimar_nazi_germany",
+    "context": "root.key_individuals[50].image",
+    "src": "/images/individuals/mary_fulbrook.jpg"
+  }
+]

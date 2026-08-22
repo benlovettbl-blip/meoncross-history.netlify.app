@@ -258,6 +258,10 @@ export const unitData = {
               "type": "comprehension",
               "question": "How did Captain Cook use the myth of 'Terra Nullius' to justify claiming the entire eastern coast for Britain?",
               "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -566,6 +570,10 @@ export const unitData = {
               "type": "comprehension",
               "question": "Look at the database profile of John Hudson. How does his story challenge the idea that the First Fleet was filled with hardened, dangerous adult criminals?",
               "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -823,6 +831,10 @@ export const unitData = {
             {
               "type": "convict_game",
               "question": "Play the Old Bailey Convict Game"
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -1019,6 +1031,10 @@ export const unitData = {
               "type": "comprehension",
               "question": "How did the colonial governments respond to the anti-Chinese riots on the goldfields?",
               "text": ""
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -1124,6 +1140,10 @@ export const unitData = {
             {
               "question": "Scaffolding: Curator's Checklist",
               "model": "Before you submit your exhibition, check that you have:\n\n1. Chosen exactly 5 distinct artefacts (e.g., a convict leg-iron, a Merino sheep fleece, a letter from Bennelong).\n2. Ensured at least 2 artefacts represent the First Nations perspective.\n3. Ensured at least 2 artefacts represent the British/convict perspective.\n4. Written a short paragraph for *each* artefact explaining why it is historically significant."
+            },
+            {
+              "type": "think_pair_share",
+              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }

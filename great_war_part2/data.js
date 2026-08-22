@@ -336,7 +336,13 @@ module.exports = {
           "viewing_task": "Explain what a 'Pals Battalion' was and why it was an effective recruitment tactic.",
           "model_answer": "A Pals Battalion allowed groups of friends, neighbors, and workmates to join up and serve together. It was effective because men didn't want to be left behind while all their friends went off to fight."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why were young men so eager to enlist in 1914?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2",
@@ -636,7 +642,13 @@ module.exports = {
           "viewing_task": "Watch the students examine the genuine gas mask. Why were gas attacks so terrifying for the soldiers?",
           "model_answer": "Gas attacks were terrifying because the gas (like chlorine or mustard gas) would blind them and destroy their lungs from the inside, causing a slow and agonizing death if they didn't get their clumsy masks on in time."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did British generals deserve the title 'Lions led by Donkeys'?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_3",
@@ -916,7 +928,13 @@ module.exports = {
           "viewing_task": "How did the wider British Empire contribute to the war effort?",
           "model_answer": "Millions of men from across the British Empire, including India, Australia, Canada, and Africa, provided vital combat troops, laborers, and essential resources that allowed Britain to continue fighting."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why has the contribution of Empire troops often been forgotten?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_4",
@@ -1168,7 +1186,13 @@ module.exports = {
           "viewing_task": "Explain why the government was forced to introduce conscription in 1916.",
           "model_answer": "The initial rush of volunteers had dried up by 1915, and due to massive casualties on the Western Front, the government had to force men to join the army (conscription) to keep the military functioning."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the Defence of the Realm Act (DORA) change the relationship between the citizen and the state?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_5",
@@ -1403,7 +1427,13 @@ module.exports = {
           "viewing_task": "How did the German public react to the peace terms?",
           "model_answer": "They were deeply bitter and felt betrayed, viewing the treaty as a 'Diktat' (a dictated peace) that humiliated their nation and stripped them of their dignity."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did the Treaty of Versailles solve the problems of 1914 or create the nightmares of 1939?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_6",
@@ -1629,7 +1659,13 @@ module.exports = {
           "viewing_task": "Why was the national act of remembrance established on November 11th?",
           "model_answer": "It was established to mark the exact date and time the Armistice was signed in 1918 (the 11th hour of the 11th day of the 11th month), ensuring the country never forgets the sacrifice of the dead."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did the loss of a generation impact small communities like Stubbington?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_7",
@@ -1742,6 +1778,12 @@ module.exports = {
       ],
       "teacher_notes": {
         "source_context": "The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?"
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the most significant turning point of the Great War?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     }
   ],

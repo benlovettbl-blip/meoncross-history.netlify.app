@@ -76,7 +76,7 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "What Powered the Revolution?",
-          "text": "Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
+          "text": "Before Britain could build an industrial empire, it needed political and financial stability. This was achieved during the Glorious Revolution of 1688, when Parliament deposed the Catholic King James II and invited William of Orange to rule, on the strict condition that he sign the Bill of Rights (1689). This permanently shifted ultimate power from the Crown to Parliament, creating a Constitutional Monarchy. With this new political stability, Parliament established the Bank of England in 1694, providing the secure financial foundations that would soon fund massive factories, railways, and a globe-spanning empire.<br><br>Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
           "tasks": [
             {
               "type": "short_answer",
@@ -275,7 +275,13 @@ module.exports = {
             "He was arrested for selling his iron secrets to the French Navy."
           ]
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the most important factor that powered the Industrial Revolution?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_2",
@@ -490,6 +496,12 @@ module.exports = {
           "Evaluate primary sources regarding child labour.",
           "Analyse the 'Optimist vs. Pessimist' historical debate."
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was factory work progress or punishment?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -662,6 +674,12 @@ module.exports = {
           "Evaluate the usefulness of contrasting primary sources.",
           "Understand the catalysts for public health reform."
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did industrialisation make British towns unlivable?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -1039,7 +1057,13 @@ module.exports = {
           ],
           "answer": "That innovations like ironclads and railways created a massive, interconnected network of global trade and progress."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the British Empire built on trade or violence?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_5",
@@ -1388,6 +1412,12 @@ module.exports = {
         "title": "Evaluating Colonial Resistance",
         "instructions": "Analyze the sources to evaluate the nature of the 1857 rebellion.",
         "questions": []
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: What was the primary cause of the 1857 Indian Rebellion?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -1754,7 +1784,13 @@ module.exports = {
           ],
           "answer": "By 1928, five of its six democratic demands had slowly become the law of the land."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Were the Luddites and Chartists successful in fighting for a voice?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_7",
@@ -2126,7 +2162,13 @@ module.exports = {
           ],
           "answer": "60%"
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the government eventually expand the right to vote?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "id": "lesson_8",
@@ -2488,7 +2530,13 @@ module.exports = {
           ],
           "answer": "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
         }
-      ]
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who truly benefited the most from the 19th-century transformation?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ]
 };

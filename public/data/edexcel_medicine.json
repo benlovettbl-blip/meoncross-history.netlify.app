@@ -432,35 +432,35 @@
         "id": "medieval",
         "title": "Medieval",
         "prefix": "lesson_1_",
-        "image": "assets/medieval_pano_1784551792993.png",
+        "image": "/units/edexcel_medicine/assets/medieval_pano_1784551792993.png",
         "enquiry": "How much did medicine really change in Medieval England?"
       },
       {
         "id": "renaissance",
         "title": "Renaissance",
         "prefix": "lesson_2_",
-        "image": "assets/renaissance_pano_1784551804068.png",
+        "image": "/units/edexcel_medicine/assets/renaissance_pano_1784551804068.png",
         "enquiry": "Why did the Medical Renaissance have so little impact on everyday treatments?"
       },
       {
         "id": "18th_19th",
         "title": "18th & 19th C",
         "prefix": "lesson_3_",
-        "image": "assets/industrial_pano_1784551813599.png",
+        "image": "/units/edexcel_medicine/assets/industrial_pano_1784551813599.png",
         "enquiry": "How did the Industrial Revolution transform the understanding and prevention of disease?"
       },
       {
         "id": "modern",
         "title": "Modern",
         "prefix": "lesson_4_",
-        "image": "assets/modern_pano_1784551822373.png",
+        "image": "/units/edexcel_medicine/assets/modern_pano_1784551822373.png",
         "enquiry": "How did technology and government intervention revolutionize 20th-century medicine?"
       },
       {
         "id": "western_front",
         "title": "Western Front",
         "prefix": "lesson_5_",
-        "image": "assets/western_front_pano_1784551831887.png",
+        "image": "/units/edexcel_medicine/assets/western_front_pano_1784551831887.png",
         "enquiry": "How did the horrific conditions of trench warfare drive rapid medical innovation?"
       }
     ],
@@ -10407,7 +10407,7 @@
         "name": "John Snow",
         "role": "Surgeon and Epidemiologist",
         "bio": "A pioneering British surgeon who proved that cholera was a waterborne disease. During the 1854 Soho outbreak, he mapped out the deaths and traced the source to a contaminated public water pump on Broad Street, famously removing its handle to stop the epidemic.",
-        "image_url": "assets/john_snow.jpg",
+        "image_url": "/assets/john_snow.jpg",
         "actions": "Mapped cholera deaths around the Broad Street pump in Soho during the 1854 outbreak, proving that fatalities were clustered around a single water source; removed the pump handle.",
         "achievements": "Proved that cholera was a water-borne disease, permanently disproving the dominant theory of miasma.",
         "limitations": "Because Germ Theory had not yet been published, he could not provide the microscopic biological proof of what was actually in the water causing the cholera. Consequently, the government was extremely slow to act, taking over twenty years to pass the compulsory 1875 Public Health Act to clean up urban water supplies."
@@ -10695,7 +10695,7 @@
         "title": "John Snow's Broad Street Pump mapping",
         "description": "Snow proves that cholera is spread by contaminated water rather than miasma, though the government is slow to listen.",
         "category": "Public Health",
-        "image": "assets/john_snow.jpg",
+        "image": "/assets/john_snow.jpg",
         "image_caption": "John Snow",
         "key_topic": "KT3: 18th & 19th Century (c1700-1900)"
       },

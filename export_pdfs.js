@@ -19,9 +19,15 @@ if (!fs.existsSync(pdfsDir)){
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   
-  const unit = process.argv[2] || 'early_modern_world';
+  const unitArg = process.argv[2] || 'early_modern_world';
   const targetFile = process.argv[3];
-  console.log('Starting PDF export for ' + unit + '...');
+  
+  const units = unitArg === 'all' 
+    ? fs.readdirSync(path.join(publicDir, 'units')).filter(f => fs.statSync(path.join(publicDir, 'units', f)).isDirectory()) 
+    : [unitArg];
+
+  for (const unit of units) {
+    console.log('Starting PDF export for ' + unit + '...');
   const unitDir = path.join(publicDir, 'units', unit);
   if (fs.existsSync(unitDir)) {
     let files = fs.readdirSync(unitDir).filter(f => f.endsWith('.html'));
@@ -47,6 +53,8 @@ if (!fs.existsSync(pdfsDir)){
     }
   }
 
+  }
+  
   await browser.close();
-  console.log('PDF generation for ' + unit + ' complete!');
+  console.log('PDF generation complete!');
 })();

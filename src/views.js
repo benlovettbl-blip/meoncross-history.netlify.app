@@ -66,7 +66,7 @@ export function renderDashboard() {
   // Combined KS3 Grouping (maintaining sorted order)
   const ks3Order = [
     'water_and_sanitation', 'medieval_england', 'early_modern_world',
-    'crown_parliament_revolution', 'industrialisation_and_empire', 'australia',
+    'industrialisation_and_empire', 'australia',
     'great_war', 'great_war_part2', 'second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'
   ];
   const ks3Units = units.filter(u => ks3Order.includes(u.id)).sort((a, b) => ks3Order.indexOf(a.id) - ks3Order.indexOf(b.id));
@@ -74,6 +74,10 @@ export function renderDashboard() {
   // KS4 (GCSE) Grouping
   const ks4Order = ['edexcel_medicine', 'eee', 'cme_new', 'weimar_nazi_germany'];
   const ks4Units = units.filter(u => ks4Order.includes(u.id)).sort((a, b) => ks4Order.indexOf(a.id) - ks4Order.indexOf(b.id));
+
+  // Trips & Tours Grouping
+  const tripOrder = ['trip_ypres'];
+  const tripUnits = units.filter(u => tripOrder.includes(u.id)).sort((a, b) => tripOrder.indexOf(a.id) - tripOrder.indexOf(b.id));
 
   const renderUnitCard = (unit, index) => {
     const isUnlocked = true; // Unlocked all topics for developer/admin preview
@@ -119,9 +123,39 @@ export function renderDashboard() {
     `;
   };
 
+  if (tripUnits.length > 0) {
+    tripUnits.forEach((unit, index) => {
+      const imageUrl = unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
+      const title = "Featured Battlefield Tour: Ypres & The Salient";
+      
+      html += `
+        <div class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 2.5rem; margin-bottom: 2.5rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="flex: 2; min-width: 300px; padding: 40px 50px; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary, #1e3a8a); margin: 0 0 12px 0; line-height: 1.2;">${title}</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary, #475569); margin: 0 0 25px 0; max-width: 90%; line-height: 1.6;">
+              ${unit.desc || unit.enquiry_question || unit.enquiry || 'Join us on our historical expedition to the Western Front. Explore the trenches, honor the fallen, and understand the realities of WW1.'}
+            </p>
+            <div style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
+              <span style="background: rgba(59, 130, 246, 0.1); color: #2563eb; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-calendar-days"></i> 1st-4th Oct 2026</span>
+              <span style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
+              <span style="background: rgba(245, 158, 11, 0.1); color: #d97706; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
+              <span style="background: rgba(139, 92, 246, 0.1); color: #7c3aed; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
+            </div>
+            <div>
+              <button class="btn btn-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" onclick="window.launchSubApp('${unit.id}')" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                <i class="fa-solid fa-compass" style="margin-right: 8px;"></i> Launch Tour App
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1; min-width: 300px; min-height: 350px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 4px solid var(--primary, #1e3a8a);"></div>
+        </div>
+      `;
+    });
+  }
+
   if (ks3Units.length > 0) {
     html += `
-      <h3 class="section-title" style="margin-top: 2rem;">Key Stage 3</h3>
+      <h3 class="section-title">Key Stage 3</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     ks3Units.forEach(renderUnitCard);
@@ -134,6 +168,32 @@ export function renderDashboard() {
       <div class="modules-grid">
     `;
     ks4Units.forEach(renderUnitCard);
+    
+    // Legacy USA App Card
+    html += `
+      <div class="module-card" style="animation-delay: 0.5s; cursor: pointer;" onclick="window.open('https://edexcelgcsehistoryusa.netlify.app/', '_blank')">
+        <div class="module-card-img" style="background-image: url('/images/mlk_washington.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 4rem;">
+            <i class="fa-solid fa-flag-usa"></i>
+        </div>
+        <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
+          <div class="module-header" style="margin-bottom: 8px;">
+          </div>
+          <div style="display: flex; gap: 14px; align-items: flex-start; flex-grow: 1;">
+            <div style="flex-grow: 1; min-width: 0;">
+              <h4 style="margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 600; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">USA 1954–75 (Legacy App)</h4>
+              <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: 0.9;">Conflict at Home and Abroad (Legacy access for current Year 11s)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
+          <button class="btn btn-sm btn-primary w-full">
+            <i class="fa-solid fa-external-link-alt"></i> Open Legacy App
+          </button>
+        </div>
+      </div>
+    `;
+    
     html += `</div>`;
   }
 

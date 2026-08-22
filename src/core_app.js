@@ -781,25 +781,75 @@ export function initializeApp(unitData) {
 
 
 
-    contentArea.innerHTML = `
-      <div style="text-align: center; padding-bottom: 50px;">
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
-        <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
-          ${unitData.title}
-        </h2>
-        
-        ${renderCoverSourcesHTML(unitData, getAssetUrl)}
-        
-        
-        ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
-        
-        
+    let topSectionHTML = '';
+    
+    if (unitData.type === 'trip') {
+      const coverImage = unitData.cover_image ? getAssetUrl(unitData.cover_image) : '';
+      
+      let prepLessonIndex = -1;
+      let prepLesson = null;
+      if (unitData.lessons) {
+        unitData.lessons.forEach((l, i) => {
+          if (l.id === 'day_0') {
+            prepLessonIndex = i;
+            prepLesson = l;
+          }
+        });
+      }
 
+      topSectionHTML = `
+        <div style="display: flex; flex-wrap: wrap; text-align: left; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 40px;">
+          <!-- Left Column -->
+          <div style="flex: 1.2; min-width: 300px; padding: 40px;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin: 0 0 10px 0; line-height: 1.1;">
+              ${unitData.title || 'Featured Battlefield Tour'}
+            </h1>
+            <h2 style="font-size: 1.3rem; color: #64748b; font-weight: 400; margin: 0 0 30px 0;">
+              ${unitData.enquiry_question || unitData.enquiry || 'Join the expedition'}
+            </h2>
+            
+            ${prepLesson ? `
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 25px; margin-top: 20px;">
+              <h3 style="margin: 0 0 10px 0; color: #334155; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-suitcase-rolling" style="color: #f59e0b;"></i> Final Preparations
+              </h3>
+              <p style="margin: 0 0 15px 0; color: #475569; font-size: 0.95rem;">
+                ${prepLesson.enquiry || 'What to Pack & Logistics'}
+              </p>
+              <button class="btn btn-primary" onclick="window.renderLessonByIndex(${prepLessonIndex})" style="background: #2563eb; color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 6px rgba(37,99,235,0.2);" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                View Prep Pack
+              </button>
+            </div>
+            ` : ''}
+          </div>
+          
+          <!-- Right Column -->
+          <div style="flex: 1; min-width: 300px; padding: 20px;">
+             <div style="width: 100%; height: 100%; min-height: 300px; background-image: url('${coverImage}'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);"></div>
+          </div>
+        </div>
+      `;
+    } else {
+      topSectionHTML = `
+        <div style="text-align: center; padding-bottom: 50px;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+          <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+            ${unitData.title}
+          </h2>
+          
+          ${renderCoverSourcesHTML(unitData, getAssetUrl)}
+          
+          ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+        </div>
+      `;
+    }
+
+    contentArea.innerHTML = `
+      <div>
+        ${topSectionHTML}
         
         <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">${unitData.type === 'trip' ? 'Tour Itinerary' : 'Key Topic Lessons'}</h2>
         ${lessonsHTML}
-        
-
       </div>
     `;
 
@@ -951,6 +1001,56 @@ export function initializeApp(unitData) {
       });
       navContainer.appendChild(liveLink);
     }
+
+    // The Fallen / Local Heroes Sidebar Accordion (Trips only)
+    if (unitData.type === 'trip') {
+      const heroes = [];
+      unitData.lessons.forEach((lesson, index) => {
+        if (lesson.id && lesson.id.startsWith('hero_')) heroes.push({ lesson, index });
+      });
+      if (heroes.length > 0) {
+        const heroesHeader = document.createElement('a');
+        heroesHeader.className = 'lesson-link';
+        heroesHeader.innerHTML = '<div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><div style="color:#991b1b;"><i class="fa-solid fa-ribbon" style="margin-right: 8px;"></i> The Fallen</div><i class="fa-solid fa-chevron-down" style="font-size:0.8em; opacity:0.6;"></i></div>';
+        heroesHeader.href = '#';
+        heroesHeader.style.background = 'rgba(153, 27, 27, 0.05)';
+        heroesHeader.style.borderLeft = '3px solid #991b1b';
+        
+        const list = document.createElement('div');
+        list.style.display = 'none';
+        list.style.flexDirection = 'column';
+        
+        heroesHeader.onclick = (e) => {
+          e.preventDefault();
+          list.style.display = list.style.display === 'none' ? 'flex' : 'none';
+          const iconEl = heroesHeader.querySelector('.fa-chevron-down, .fa-chevron-up');
+          if (iconEl) iconEl.className = list.style.display === 'none' ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+        };
+
+        heroes.forEach(h => {
+          const subLink = document.createElement('a');
+          subLink.className = 'lesson-link sub-link';
+          subLink.innerHTML = '<i class="fa-solid fa-user" style="margin-right: 8px; opacity:0.7;"></i>' + h.lesson.title;
+          subLink.style.paddingLeft = '2.5rem';
+          subLink.style.fontSize = '0.9em';
+          subLink.style.borderLeft = '2px solid #ef4444';
+          subLink.style.background = 'rgba(0,0,0,0.02)';
+          subLink.style.marginBottom = '2px';
+          
+          subLink.onclick = (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+            subLink.classList.add('active');
+            window.renderLessonByIndex(h.index);
+          };
+          list.appendChild(subLink);
+        });
+        
+        navContainer.appendChild(heroesHeader);
+        navContainer.appendChild(list);
+      }
+    }
+    
     // Exam Specification Tab
     if (unitData.specification_file) {
       const specLink = document.createElement('a');
@@ -973,7 +1073,7 @@ export function initializeApp(unitData) {
 
     
     // Exam Masterclass Guide Tab - ONLY for KS4 units
-    if (!unitData.title || !unitData.title.includes('KS3')) {
+    if (unitData.type !== 'trip' && (!unitData.title || !unitData.title.includes('KS3'))) {
       const guideLink = document.createElement('a');
       guideLink.className = 'lesson-link';
       guideLink.innerHTML = '<i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Exam Masterclass Guide';
@@ -1042,7 +1142,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(grLink);
     }
 
-    if (window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+    if (unitData.type !== 'trip' && window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const examPracticeLink = document.createElement('a');
       examPracticeLink.className = 'lesson-link';
       examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
@@ -1060,26 +1160,28 @@ export function initializeApp(unitData) {
       navContainer.appendChild(examPracticeLink);
     }
 
-    const quizPackLink = document.createElement('a');
-    quizPackLink.id = 'quiz-zone-link';
-    quizPackLink.className = 'lesson-link';
-    quizPackLink.innerHTML = '<i class="fa-solid fa-layer-group"></i> Interactive Revision Hub';
-    quizPackLink.style.marginTop = '15px';
-    quizPackLink.style.color = '#34d399'; // Emerald-400
-    quizPackLink.style.cursor = 'pointer';
-    quizPackLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-      quizPackLink.classList.add('active');
-      const contentArea = document.getElementById('content-area');
-      contentArea.innerHTML = '';
-      renderQuizZone(contentArea, unitData);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    navContainer.appendChild(quizPackLink);
+    if (unitData.type !== 'trip') {
+      const quizPackLink = document.createElement('a');
+      quizPackLink.id = 'quiz-zone-link';
+      quizPackLink.className = 'lesson-link';
+      quizPackLink.innerHTML = '<i class="fa-solid fa-layer-group"></i> Interactive Revision Hub';
+      quizPackLink.style.marginTop = '15px';
+      quizPackLink.style.color = '#34d399'; // Emerald-400
+      quizPackLink.style.cursor = 'pointer';
+      quizPackLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        quizPackLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        renderQuizZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(quizPackLink);
+    }
 
     
-    if (window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+    if (unitData.type !== 'trip' && window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const cheatSheetLink = document.createElement('a');
       cheatSheetLink.className = 'lesson-link';
       cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
@@ -1093,7 +1195,7 @@ export function initializeApp(unitData) {
 
 
     // Attach Pupil Workbooks dynamically as a single Zone
-    if (unitData.workbooks && unitData.workbooks.length > 0) {
+    if (unitData.type !== 'trip' && unitData.workbooks && unitData.workbooks.length > 0) {
       const wbLink = document.createElement('a');
       wbLink.className = 'lesson-link';
       wbLink.innerHTML = `<i class="fa-solid fa-print"></i> Print & PDF Hub`;
@@ -1566,14 +1668,17 @@ if (lesson.primary_source) {
         htmlDoNow += `</div></div></div>`;
         
         // Add Map Container
-        htmlDoNow += `
-          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px;">
-            <div style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem; color: #1e293b;">
-              <i class="fa-solid fa-map-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Interactive Trip Map
+        const eventsWithLoc = lesson.do_now.events.filter(e => e.lat && e.lng);
+        if (eventsWithLoc.length > 0) {
+          htmlDoNow += `
+            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px;">
+              <div style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem; color: #1e293b;">
+                <i class="fa-solid fa-map-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Interactive Trip Map
+              </div>
+              <div id="trip-map-container" style="height: 500px; width: 100%;"></div>
             </div>
-            <div id="trip-map-container" style="height: 500px; width: 100%;"></div>
-          </div>
-        `;
+          `;
+        }
       } else {
         htmlDoNow += `
           <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
@@ -2729,7 +2834,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       html += gcseHtml;
     }
 
-    if (lesson.quiz && lesson.quiz.length > 0) {
+    if (lesson.quiz && lesson.quiz.length > 0 && unitData.type !== 'trip') {
       window.currentQuizData = lesson.quiz.map(q => {
       if (!q.options && q.distractors && q.distractors.length > 0) {
         let opts = [q.answer || q.a, ...q.distractors];
@@ -2848,15 +2953,17 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
             const group = new L.featureGroup(markers);
             map.fitBounds(group.getBounds().pad(0.2));
             
-            // Draw Polyline connecting pins
-            const latlngs = eventsWithLoc.map(ev => [ev.lat, ev.lng]);
-            L.polyline(latlngs, {
-              color: '#ef4444',
-              weight: 4,
-              opacity: 0.7,
-              dashArray: '10, 10',
-              lineJoin: 'round'
-            }).addTo(map);
+            // Draw Polyline connecting pins if not a local hero lesson
+            if (!lesson.id || !lesson.id.startsWith('hero_')) {
+              const latlngs = eventsWithLoc.map(ev => [ev.lat, ev.lng]);
+              L.polyline(latlngs, {
+                color: '#ef4444',
+                weight: 4,
+                opacity: 0.7,
+                dashArray: '10, 10',
+                lineJoin: 'round'
+              }).addTo(map);
+            }
           }
         }
       }

@@ -121,8 +121,8 @@
               }
             ],
             "theme_heading": "Roman Water Transforms Britain",
-            "image": "assets/roman_latrine.jpg",
-            "image_alt": "Source A: Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
+            "image": "/assets/roman_latrine.jpg",
+            "image_alt": "Roman communal latrines at Housesteads Fort (Hadrian's Wall)",
             "caption": "<strong>What is this source showing?</strong> This is a well-preserved example of a Roman communal latrine block. Notice the stone seating with holes positioned over a deep channel where running water continuously flushed waste away. Below the seats is a shallower gutter that carried clean water, used by the Romans to wet a communal sponge-on-a-stick (xylospongium) for wiping.",
             "source_letter": "A"
           },
@@ -142,7 +142,7 @@
             "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href='https://sussexpast.co.uk/attraction/fishbourne-roman-palace/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>",
             "level_4": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href='https://sussexpast.co.uk/attraction/fishbourne-roman-palace/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>",
             "theme_heading": "Fishbourne: Roman Luxury Palace",
-            "image_alt": "Source B: Fishbourne Roman Palace",
+            "image_alt": "Fishbourne Roman Palace",
             "caption": "<strong>What is this source showing?</strong> This is a modern photograph of the excavated remains of Fishbourne Roman Palace, the largest residential Roman building discovered in Britain. It features incredibly well-preserved mosaics and the remains of a sophisticated hypocaust underfloor heating system, demonstrating the extreme luxury and sanitation enjoyed by elite Romans.",
             "source_letter": "B"
           },
@@ -164,8 +164,8 @@
               }
             ],
             "theme_heading": "Roman Water and Hygiene",
-            "image": "assets/seneca.jpg",
-            "image_alt": "Source C: Seneca the Younger (c. 4 BC – AD 65)",
+            "image": "/units/water_and_sanitation/assets/seneca.jpg",
+            "image_alt": "Seneca the Younger (c. 4 BC – AD 65)",
             "caption": "Seneca the Younger (c. 4 BC – AD 65) was a prominent Roman Stoic philosopher, statesman, and dramatist, famously serving as tutor and advisor to the notorious Emperor Nero. As one of the most prolific writers of his age, Seneca produced numerous essays, letters, and tragedies that offer historians a fascinating window into the realities of daily life, morality, and politics in 1st-century Rome. His vivid, first-hand accounts—such as his complaints about the deafening noise of the public bathhouses—provide invaluable contemporary evidence for what it was actually like to live in a bustling Roman city.",
             "source_letter": "C"
           },
@@ -356,8 +356,8 @@
               }
             ],
             "theme_heading": "Monastic Cleanliness and Hygiene",
-            "image": "assets/canterbury_waterworks.jpg",
-            "image_alt": "Source A: The Canterbury Cathedral Waterworks Plan (c. 1165)",
+            "image": "/assets/canterbury_waterworks.jpg",
+            "image_alt": "The Canterbury Cathedral Waterworks Plan (c. 1165)",
             "caption": "<strong>What is this source showing?</strong> This extraordinary map, drawn around 1165, shows the complex water system built for the monks of Christ Church Priory in Canterbury. It details pipes drawing fresh water from springs outside the city walls, directing it to a settling tank, and then routing it through the monastery to washbasins, the kitchen, and finally flushing the latrines.",
             "source_letter": "A"
           },
@@ -578,8 +578,8 @@
               }
             ],
             "theme_heading": "Harington",
-            "image": "assets/harington_toilet.jpg",
-            "image_alt": "Source A: Sir John Harington's flushing toilet design (1596)",
+            "image": "/assets/harington_toilet.jpg",
+            "image_alt": "Sir John Harington's flushing toilet design (1596)",
             "caption": "<strong>What is this source showing?</strong> This diagram is from a 1596 pamphlet by Sir John Harington, a godson of Queen Elizabeth I. It illustrates his invention: the first modern flushing water closet, which he called the 'Ajax'. It featured a flush valve to release water and a wash-down design to empty the bowl.",
             "source_letter": "A"
           },
@@ -812,7 +812,7 @@
             "theme_heading": "Squalid Urban Living"
           },
           {
-            "image": "/images/fareham_chimney.png",
+            "image": "/assets/fareham_chimney.png",
             "tasks": [
               {
                 "type": "short_answer",
@@ -840,8 +840,8 @@
               }
             ],
             "theme_heading": "Britain's First Cholera",
-            "image": "assets/snow_cholera_map.jpg",
-            "image_alt": "Source A: Dr. John Snow's Cholera Map of Soho (1854)",
+            "image": "/assets/snow_cholera_map.jpg",
+            "image_alt": "Dr. John Snow's Cholera Map of Soho (1854)",
             "caption": "<strong>What is this source showing?</strong> This famous map was created by Dr. John Snow during the devastating 1854 cholera outbreak in Soho, London. Each black bar on the map represents a death from cholera at that specific address. Snow noticed that the deaths clustered tightly around one specific public water pump on Broad Street.",
             "source_letter": "A"
           },
@@ -1062,8 +1062,8 @@
               }
             ],
             "theme_heading": "Bazalgette",
-            "image": "assets/bazalgette_sewer.jpg",
-            "image_alt": "Source A: Construction of Joseph Bazalgette's intercepting sewers",
+            "image": "/assets/bazalgette_sewer.jpg",
+            "image_alt": "Construction of Joseph Bazalgette's intercepting sewers",
             "caption": "<strong>What is this source showing?</strong> This photograph captures the colossal engineering effort required to build the London sewer system in the 1860s. Designed by Joseph Bazalgette, the project involved constructing 82 miles of massive enclosed brick intercepting sewers and 1,100 miles of street sewers to stop sewage from flowing directly into the River Thames.",
             "source_letter": "A"
           },
@@ -1881,7 +1881,7 @@
         "id": "seneca",
         "name": "Seneca the Younger",
         "role": "Roman Philosopher",
-        "image": "assets/seneca.jpg",
+        "image": "/units/water_and_sanitation/assets/seneca.jpg",
         "bio": "A Roman philosopher who famously complained about the intense noise and activity of Roman bathhouses in 62 AD."
       },
       {
@@ -1895,7 +1895,7 @@
         "id": "snow",
         "name": "John Snow",
         "role": "Physician",
-        "image": "assets/john_snow.jpg",
+        "image": "/assets/john_snow.jpg",
         "bio": "Proved that cholera was waterborne by mapping the 1854 Broad Street outbreak and removing the pump handle."
       },
       {

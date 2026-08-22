@@ -160,7 +160,7 @@ if (!unitId) {
 
       
       // 5. PDF Textbook and Workbook Tabs
-      {
+      if (unitData.type !== 'trip') {
         const renderLink = (title, icon, subtitle, url, isSubLink = false) => {
           const link = document.createElement('a');
           link.className = 'lesson-link' + (isSubLink ? ' sub-link' : '');
@@ -218,12 +218,43 @@ if (!unitId) {
           sidebarNav.appendChild(container);
         };
 
-
+        if (unitData.workbooks && unitData.workbooks.length > 0) {
+            renderDropdown('Textbook PDFs', 'fa-book-open', 'Reading material only', 'textbook');
+            renderDropdown('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks', 'workbook');
+            renderDropdown('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only', 'pupil_workbook');
+        } else {
+            sidebarNav.appendChild(renderLink('Textbook PDF', 'fa-book-open', 'Reading material only', '/pdfs/' + unitId + '_textbook.pdf'));
+            sidebarNav.appendChild(renderLink('Guided Workbook PDF', 'fa-pencil', 'Reading + Writing tasks', '/pdfs/' + unitId + '_workbook.pdf'));
+            sidebarNav.appendChild(renderLink('Pupil Workbook PDF', 'fa-user-pen', 'Writing tasks only', '/pdfs/' + unitId + '_pupil_workbook.pdf'));
+        }
       }
 
 
 
     }
+  }
+
+  // Remembrance Visual Theme (Trips Only)
+  if (unitData.type === 'trip') {
+    const themeStyles = document.createElement('style');
+    themeStyles.innerHTML = `
+      :root {
+        --primary: #7f1d1d !important;
+        --secondary: #991b1b !important;
+        --accent: #dc2626 !important;
+        --gold: #d4af37 !important;
+        --light-bg: #fdfaf6 !important;
+      }
+      body {
+        background-color: #faf8f5 !important;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E") !important;
+      }
+      h1, h2, h3, h4, .hero-title {
+        font-family: 'Playfair Display', serif !important;
+      }
+      .lesson-banner { border-bottom: 5px solid var(--primary) !important; }
+    `;
+    document.head.appendChild(themeStyles);
   }
 
   // Remove the loading curtain

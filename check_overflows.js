@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
   await page.setViewport({ width: 1600, height: 1200 });
   
   const unitId = process.argv[2] || 'water_and_sanitation';
-  const LOCAL_URL = `http://localhost:3005/unit.html?id=${unitId}`;
+  const LOCAL_URL = `http://localhost:3003/unit.html?id=${unitId}`;
   
   console.log(`Navigating to ${LOCAL_URL}...`);
   await page.goto(LOCAL_URL, { waitUntil: 'networkidle0', timeout: 60000 });

@@ -28,6 +28,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Were the Suffragists or Suffragettes more effective in securing the vote?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -55,6 +61,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the experience of total war lead directly to the creation of the Welfare State?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -82,6 +94,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was Britain welcoming to the Windrush Generation?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -109,6 +127,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Bristol Bus Boycott a turning point for British civil rights?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -136,6 +160,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: How did nuclear paranoia shape British popular culture?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     },
     {
@@ -163,6 +193,12 @@ export const unitData = {
             "question": "What is the most significant consequence of the events studied today?"
           }
         ]
+      },
+      "pair_share": {
+        "prompt": "Discuss with your partner: Has British identity transformed completely since 1945?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
       }
     }
   ],

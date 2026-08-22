@@ -1,242 +1,651 @@
-const unitData = {
-  "title": "KS3: The Great War (1914-1919)",
-  "homepage_background": "/images/stubbington_memorial_1.jpg",
-  "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
-  "cover_image": "/images/bg_great_war_part2.jpg",
-  "cover_caption": "The cover image displays two powerful historical sources that bookend the First World War: on the left, an illustration of the assassination of Archduke Franz Ferdinand in Sarajevo (the spark that ignited the conflict in 1914), and on the right, the official Treaty of Versailles document (the controversial peace settlement signed in 1919).",
-  "hero_image": "/images/stubbington_memorial_1.jpg",
-  "hero_caption": "The Stubbington War Memorial, built in 1922 over the village pump on the green. Designed by the mother of the only woman commemorated, its unique wooden shelter stands as a powerful and poignant local reminder of the devastating human cost of the conflict on tight-knit communities.",
+module.exports = {
+  "debatePrompts": [
+    {
+      "title": "Bismarck & Unification",
+      "prompt": "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?"
+    },
+    {
+      "title": "The Scramble for Africa",
+      "prompt": "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises."
+    },
+    {
+      "title": "The Alliance System",
+      "prompt": "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?"
+    }
+  ],
+  "specification_file": "/data/great_war_overview.json",
+  "title": "KS3: Causes of the Great War",
+  "homepage_background": "assets/somme_trench_1916.jpg",
+  "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
+  "cover_image": "/images/great_war_cover.jpg",
+  "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
   "printable_workbooks": [
     {
       "title": "Unit Workbook",
       "url": "workbook.html"
-    }
-  ],
-  "debatePrompts": [
-    {
-      "title": "Lions Led By Donkeys?",
-      "prompt": "<strong>Debate:</strong> Were British generals like Sir Douglas Haig incompetent butchers who threw lives away at the Somme, or did they adapt as best as they could to a new, industrial type of war?"
     },
     {
-      "title": "A Truly Global War?",
-      "prompt": "<strong>Debate:</strong> Was World War I truly a 'World' war, or was it just a European civil war that unfairly dragged in colonial subjects from India and Africa against their will?"
-    },
-    {
-      "title": "The Treaty of Versailles",
-      "prompt": "<strong>Roleplay:</strong> You are French Prime Minister Georges Clemenceau in 1919. Explain to Woodrow Wilson why Germany must be utterly crushed, disarmed, and punished financially for the devastation of the war."
+      "title": "Mastery Pack",
+      "url": "../../pdfs/great_war_mastery_pack_full.pdf",
+      "icon": "fa-brain"
     }
   ],
   "lessons": [
     {
-      "id": "lesson_1",
-      "title": "Why were young men so desperate to join the slaughter of 1914?",
+      "id": "lesson_0",
+      "title": "How was the German Empire created in 1871?",
+      "a4_map": [
+        "/images/german_empire_1871.png",
+        "/images/modern_germany_map.png"
+      ],
       "teacher_notes": {
-        "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
+        "primer": "This lesson introduces students to the unification of Germany. Before understanding the alliance systems or the arms race, students must grasp the geographical and political shockwave caused by a unified, militaristic German Empire suddenly dominating Central Europe.",
         "objectives": [
           {
-            "objective": "Understand the short-term and long-term causes of WWI.",
-            "primer": "Guide students through the distinction between the trigger event and the underlying alliance structures.",
-            "question": "What was the spark that ignited the alliance system?"
+            "objective": "Understand how Otto von Bismarck used 'blood and iron' to unify the German states.",
+            "primer": "Focus on the 'Otto von Bismarck and Blood and Iron' narrative block. Emphasize that he preferred military force over democratic speeches.",
+            "question": "What did Bismarck mean by 'blood and iron' and how did this differ from democratic methods?"
           },
           {
-            "objective": "Empathize with the young men volunteering in 1914.",
-            "primer": "Discuss the 'Pals' Battalions' and why propaganda was so effective.",
-            "question": "Why did young men think volunteering was a good idea in 1914?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson (such as the map of alliances and the recruitment posters) highlight the two phases of the outbreak: the geopolitical trap of the alliance system, and the psychological manipulation of the British public. The propaganda posters in particular reveal how the government ruthlessly leveraged gender roles and peer pressure to feed the war machine. **Hinge Question:** Look closely at the 'Women of Britain Say GO!' poster; why was emotional blackmail considered more effective than simply ordering men to fight in 1914?"
-      },
-      "do_now": {
-        "title": "Do Now: Recall",
-        "type": "quiz",
-        "questions": [
-          {
-            "question": "Which of these was a long-term cause of WWI?",
-            "options": [
-              "The Alliance System",
-              "The assassination of Archduke Franz Ferdinand",
-              "The Schlieffen Plan failing",
-              "The Treaty of Versailles"
-            ],
-            "answer": 0,
-            "explanation": "The alliance system had divided Europe into two armed camps over decades."
+            "objective": "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
+            "primer": "Focus on the 'Crowning a Kaiser' section and the taking of Alsace-Lorraine. Use the maps to show the massive new empire in the center of Europe.",
+            "question": "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?"
           }
         ]
       },
-      "enquiry": "Why were young men so desperate to join the slaughter of 1914?",
-      "vocab": [
+      "do_now": {
+        "title": "Do Now: Geography of Europe",
+        "type": "mixed",
+        "items": [
+          {
+            "question": "Name two major powers in Europe in 1870.",
+            "answer": "France and Russia"
+          },
+          {
+            "question": "What is an empire?",
+            "answer": "A large group of states or countries ruled by a single monarch (emperor)."
+          },
+          {
+            "question": "Why is having a strong army important for a country surrounded by others?",
+            "answer": "To defend against attacks from multiple sides (a two-front war)."
+          },
+          {
+            "question": "Define the term 'Balance of Power'.",
+            "answer": "A situation in which nations of the world have roughly equal power, preventing any one nation from dominating."
+          }
+        ]
+      },
+      "quiz": [
         {
-          "term": "Conscription",
-          "definition": "A compulsory law forcing citizens of a country to enlist in the armed forces."
+          "q": "How many independent states existed in Central Europe before 1871?",
+          "a": "39",
+          "options": [
+            "39",
+            "300",
+            "15",
+            "50"
+          ]
         },
         {
-          "term": "Pals Battalions",
-          "definition": "Special British Army units raised during WWI that allowed friends, neighbors, and co-workers to enlist and serve together."
+          "q": "Which state was the most powerful among the German states before 1871?",
+          "a": "Prussia",
+          "options": [
+            "Prussia",
+            "Bavaria",
+            "Saxony",
+            "Austria"
+          ]
         },
         {
-          "term": "Propaganda",
-          "definition": "Biased or misleading information publicized by a government to promote a political cause or encourage patriotism."
+          "q": "Who became the Prime Minister of Prussia in 1862?",
+          "a": "Otto von Bismarck",
+          "options": [
+            "Otto von Bismarck",
+            "Wilhelm I",
+            "Frederick the Great",
+            "Klemens von Metternich"
+          ]
         },
         {
-          "term": "Historiography",
-          "definition": "The study of how historians' interpretations of past events change over time."
+          "q": "What was Bismarck's famous phrase for how Germany would be unified?",
+          "a": "Blood and iron",
+          "options": [
+            "Blood and iron",
+            "Peace and diplomacy",
+            "Gold and silver",
+            "Speeches and majority decisions"
+          ]
         },
         {
-          "term": "Pragmatism",
-          "definition": "Making decisions based on practical, real-world realities (like needing a steady wage) rather than romance or emotion."
+          "q": "What did 'blood and iron' mean in Bismarck's approach?",
+          "a": "Warfare and military strength",
+          "options": [
+            "Warfare and military strength",
+            "Industrial factories only",
+            "Democratic votes",
+            "Peaceful treaties"
+          ]
+        },
+        {
+          "q": "Which three countries did Prussia defeat to unify Germany?",
+          "a": "Denmark, Austria, France",
+          "options": [
+            "Denmark, Austria, France",
+            "Britain, Russia, France",
+            "Italy, Austria, Spain",
+            "Sweden, Denmark, Russia"
+          ]
+        },
+        {
+          "q": "In what year did the Franco-Prussian War begin?",
+          "a": "1870",
+          "options": [
+            "1870",
+            "1864",
+            "1866",
+            "1914"
+          ]
+        },
+        {
+          "q": "Where was the King of Prussia proclaimed the first German Emperor?",
+          "a": "Palace of Versailles",
+          "options": [
+            "Palace of Versailles",
+            "Reichstag in Berlin",
+            "Schönbrunn Palace",
+            "Tower of London"
+          ]
+        },
+        {
+          "q": "When was the German Empire officially created?",
+          "a": "18 January 1871",
+          "options": [
+            "18 January 1871",
+            "1 September 1870",
+            "28 June 1914",
+            "11 November 1918"
+          ]
+        },
+        {
+          "q": "Which valuable French territory did Germany seize in 1871?",
+          "a": "Alsace-Lorraine",
+          "options": [
+            "Alsace-Lorraine",
+            "Normandy",
+            "Brittany",
+            "Burgundy"
+          ]
+        },
+        {
+          "q": "What was the economic union created by Prussia in 1834 called?",
+          "a": "Zollverein",
+          "options": [
+            "Zollverein",
+            "Reichstag",
+            "Kaiserreich",
+            "Wehrmacht"
+          ]
+        },
+        {
+          "q": "Which major German-speaking power was deliberately excluded from the Zollverein?",
+          "a": "Austria",
+          "options": [
+            "Austria",
+            "Bavaria",
+            "Saxony",
+            "Hanover"
+          ]
+        },
+        {
+          "q": "What was the German term for the new German Empire?",
+          "a": "Kaiserreich",
+          "options": [
+            "Kaiserreich",
+            "Lebensraum",
+            "Blitzkrieg",
+            "Reichstag"
+          ]
+        },
+        {
+          "q": "How long did it take the Prussian army to crush Austria in 1866?",
+          "a": "Seven weeks",
+          "options": [
+            "Seven weeks",
+            "Four years",
+            "Two months",
+            "One year"
+          ]
+        },
+        {
+          "q": "Who was the first Emperor (Kaiser) of the newly unified Germany?",
+          "a": "Wilhelm I",
+          "options": [
+            "Wilhelm I",
+            "Wilhelm II",
+            "Otto von Bismarck",
+            "Frederick III"
+          ]
+        },
+        {
+          "q": "Why did Bismarck provoke a war with France in 1870?",
+          "a": "To unite the southern German states with the north",
+          "options": [
+            "To unite the southern German states with the north",
+            "To steal French gold",
+            "To impress the British",
+            "Because France attacked first"
+          ]
+        },
+        {
+          "q": "Which French Emperor was captured by the Prussian military?",
+          "a": "Napoleon III",
+          "options": [
+            "Napoleon III",
+            "Louis XIV",
+            "Napoleon Bonaparte",
+            "Charles de Gaulle"
+          ]
+        },
+        {
+          "q": "What natural resources was Alsace-Lorraine rich in?",
+          "a": "Coal and iron",
+          "options": [
+            "Coal and iron",
+            "Gold and silver",
+            "Oil and gas",
+            "Timber and wheat"
+          ]
+        },
+        {
+          "q": "What long-term effect did the taking of Alsace-Lorraine have?",
+          "a": "It created long-term rivalry and hatred between France and Germany",
+          "options": [
+            "It created long-term rivalry and hatred between France and Germany",
+            "It made France and Germany permanent allies",
+            "It caused the collapse of the British Empire",
+            "It led directly to the Russian Revolution"
+          ]
+        },
+        {
+          "q": "Why was the unification of Germany a shock to the balance of power in Europe?",
+          "a": "A massive, powerful, militaristic state suddenly appeared in the center of Europe",
+          "options": [
+            "A massive, powerful, militaristic state suddenly appeared in the center of Europe",
+            "Germany was very weak and needed protecting",
+            "It meant Europe was now entirely peaceful",
+            "Britain lost its navy"
+          ]
         }
       ],
-      "flashcards": [
+      "video": [
         {
-          "question": "What was the main reason the British military had to rely on volunteers in August 1914?",
-          "options": [
-            "Britain had no conscription law and possessed a small professional army.",
-            "Parliament ran out of money to pay soldiers.",
-            "The King banned the use of regular soldiers."
-          ],
-          "answer": 0
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=-PAEmgYv0DE",
+          "title": "German Unification and Empire - History in 5 Minutes",
+          "duration": "5 mins 21 secs",
+          "viewing_task": "Note down the key steps Bismarck took to unify the German states and create the Empire.",
+          "model_answer": "Bismarck used a policy of 'blood and iron' to strengthen the Prussian military. He orchestrated three strategic wars: defeating Denmark (1864), crushing Austria (1866) to establish undisputed Prussian dominance, and finally provoking a war with France (1870-1871) to rally the independent southern German states into joining the new German Empire."
         },
         {
-          "question": "Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?",
-          "options": [
-            "The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).",
-            "The Stubbington Guards.",
-            "Kitchener's Fareham Conscripts."
-          ],
-          "answer": 0
-        },
-        {
-          "question": "Which statement best explains why white feathers were such a powerful recruitment tool?",
-          "options": [
-            "They weaponized social shame and humiliation within close-knit local communities.",
-            "They carried legal force and resulted in a heavy fine.",
-            "They were official government warnings that a man was about to be arrested."
-          ],
-          "answer": 0
-        },
-        {
-          "question": "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
-          "options": [
-            "The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.",
-            "They were tricked by romanticized stories of quick, glorious victories.",
-            "They were promised free houses in London after the war ended."
-          ],
-          "answer": 0
-        },
-        {
-          "question": "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
-          "options": [
-            "The desire to protect international law and civilization after Germany invaded neutral Belgium.",
-            "The need to escape the boring, repetitive work of the textile mills.",
-            "The fear of being fired by an employer who demanded they join."
-          ],
-          "answer": 0
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=o_PKusG7NFs",
+          "title": "\"The Great War\" 1 | What Made Germany So Successful Before World War 1?",
+          "duration": "23 mins 7 secs",
+          "viewing_task": "Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.",
+          "model_answer": "Germany was highly successful because of its rapidly growing population, heavily industrialized economy (becoming Europe's leading producer of steel and chemicals), massive and well-disciplined army, and advanced education system."
         }
       ],
       "narrative_blocks": [
         {
-          "title": "The Spark & The Stampede",
-          "text": "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark.\n\n<strong>The Arms Race and Imperial Rivalry</strong><br>\nTo understand why Europe was so tense by 1914, we must look at the intense military and imperial competition between the Great Powers. A massive naval arms race was triggered in 1906 when Britain launched the <em>HMS Dreadnought</em>. This revolutionary battleship was heavily armoured with steel 28 cm thick, carried a crew of 800 sailors, and possessed huge guns that could blow up enemy ships from 32 km away. This made all older ships instantly obsolete. A frantic race began: between 1906 and 1914, Britain built 29 Dreadnoughts while Germany built 17.<br><br>Tensions were further pushed to breaking point by imperial clashes in North Africa. During the Second Moroccan Crisis in 1911, Germany sent the gunboat <em>SMS Panther</em> to the port of Agadir to aggressively challenge French control of the region, deeply alarming the British navy.\n\n<br><br><strong>The July Days: The Countdown to War</strong><br>\nThe assassination of Archduke Franz Ferdinand on 28 June 1914 triggered a rapid chain reaction known as the 'July Days'. On 23 July, Austria-Hungary sent a strict list of demands to Serbia, including a demand to let Austrian officials run the assassination inquiry. When Serbia refused this demand to protect its independence, Austria-Hungary declared war on 28 July. The alliance system then activated like clockwork: Germany warned Russia not to intervene, and when Russia mobilised its army, Germany declared war on Russia on 1 August. On 3 August, Germany declared war on France, and on 4 August, Britain declared war on Germany after German troops invaded neutral Belgium.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "What was the 'spark' that triggered the outbreak of the First World War in 1914?",
-              "model_answer": "The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why did Great Britain desperately need volunteers to fight when war was declared?",
-              "model_answer": "Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war."
-            }
-          ],
-          "image": "/images/gw_alliance_map.jpg",
-          "image_alt": "A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war."
+          "title": "Briefing (GCSE Taster!)",
+          "text": "Today, Germany is one of the most powerful and successful industrial countries in Europe. But if you looked at a map of Europe in 1800, you would not find a country called \"Germany\" at all. Instead, you would see a messy patchwork of hundreds of small, independent states. In this lesson, you will discover the remarkable story of how a brilliant, ruthless statesman used \"blood and iron\" to crush his neighbours, unite these states, and create a brand-new superpower that would completely change the history of the world."
         },
         {
-          "title": "Local History: The Pompey Pals",
-          "text": "To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in \"Pals Battalions.\" <div class=\"local-history-spotlight\"><strong>Local History: The Pompey Pals</strong><br>For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally with overwhelming enthusiasm. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the \"Pompey Pals\". Men who had grown up on the same streets, worked in the same dockyards, and supported the same football teams now trained together, sharing tents and rations before crossing the Channel to France.<br><br>Tragically, the fatal flaw of the Pals Battalions was that industrialized slaughter could wipe out the male population of entire streets in a single afternoon. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went \"over the top\" near the River Ancre. Facing heavily fortified German machine guns, 457 of them became casualties (killed, wounded, or missing) in a single day. The devastating news arrived in Portsmouth via telegraph, shattering local families and leaving a deep, enduring scar on the community.</div>",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Who were the 'Pompey Pals'?",
-              "model_answer": "The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914."
-            },
-            {
-              "type": "short_answer",
-              "text": "What happened to the 1st Pompey Pals on September 3, 1916?",
-              "model_answer": "During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community."
-            }
-          ],
-          "image": "/images/gw_gavrilo_princip.jpg",
-          "image_alt": "A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War."
+          "title": "1. The Chessboard of 39 States",
+          "text": "At the start of the 19th century, the German-speaking people were divided. In 1800, there were around 400 separate states making up what was known as the Holy Roman Empire, each with its own independent ruler. Following the Napoleonic Wars, these states were simplified and reduced to 39 states, forming a loose grouping known as the German Confederation in 1815.\n\nWithin this Confederation, the two largest and most powerful states—the Catholic empire of Austria and the militaristic kingdom of Prussia—constantly competed with each other for leadership.\n\nIn 1834, Prussia gained a massive economic advantage by setting up a free-trade customs union called the *Zollverein*. By removing internal customs barriers while keeping taxes on foreign imports, the *Zollverein* bound the smaller German states economically to Prussia while deliberately excluding Austria. Prussia had won the first round of the battle for dominance."
         },
         {
-          "title": "Source Spotlight: Propaganda & Peer Pressure",
-          "text": "The British government needed millions of men, and they used every psychological trick available to get them. <br><br><strong>Source A: 'Women of Britain Say GO!' Poster (1915)</strong><br>This famous propaganda poster featured women and children looking out of a window as soldiers marched away. It was designed to weaponize guilt and masculinity, implying that real men protected women and children, and that women wanted their men to fight.<br><br><strong>Source B: The White Feather Campaign</strong><br>If official propaganda didn't work, social peer pressure often did. Admiral Charles Fitzgerald founded the 'Order of the White Feather' in 1914. He encouraged women to hand out white feathers—a traditional symbol of cowardice—to any young man seen out of uniform in public. This weaponized social shame. Many teenage boys, terrified of being humiliated in front of their friends or girlfriends, lied about their age to escape the shame, joining the army at just 15 or 16 years old.",
+          "title": "2. Otto von Bismarck and \"Blood and Iron\"",
+          "text": "In 1862, a brilliant and fiercely conservative nobleman named Otto von Bismarck was appointed Chancellor of Prussia. Bismarck had a clear and single-minded goal: to exclude Austria from German affairs once and for all and unite the remaining German states under Prussian leadership.\n\nBismarck despised the slow, democratic methods of speeches and parliaments. In his very first speech as Chancellor, he warned the Prussian parliament of his plans:\n\n> *\"Germany is not looking to Prussia’s liberalism, but to her power... The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**.\"*\n\nBy \"blood,\" Bismarck meant the lives of soldiers; by \"iron,\" he meant the advanced technology of Prussia’s military machine, including its modern railways, artillery, and rapid-firing guns. From the mid-nineteenth century, Prussia built up a massive, exceptionally well-trained, and highly disciplined army. Bismarck was ready to unleash it.",
           "tasks": [
             {
-              "text": "Describe one feature of the European Alliance System in 1914. (2 marks)",
-              "model_answer": "One feature of the European Alliance System was that it split Europe into two rival armed camps. For example, the Triple Entente allied Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy, meaning any small conflict could pull all major powers into war."
-            }
-          ],
-          "image": "/images/gw_women_say_go.jpg",
-          "image_alt": "The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity."
-        },
-        {
-          "title": "Poetry as Propaganda: Jessie Pope",
-          "text": "Propaganda wasn't just found on posters; it was printed in popular newspapers in the form of jingoistic poetry. <strong>Jessie Pope</strong> was one of the most famous pro-war poets of 1914. Her poem <em>'Who's for the Game?'</em> was specifically written to pressure young men into enlisting by comparing the war to a friendly game of rugby.<br><br><blockquote><em>Who's for the game, the biggest that's played,<br>The red crashing game of a fight?<br>Who'll grip and tackle the job unafraid?<br>And who thinks he'd rather sit tight?...<br>Come along, lads—But you'll come on all right—<br>For there's only one course to pursue,<br>Your country is up to her neck in a fight,<br>And she's looking and calling for you.</em></blockquote><br>Pope's poetry weaponized masculinity, essentially calling anyone who didn't enlist a coward who 'thought he'd rather sit tight'.",
-          "image": "/images/gw_jessie_pope.jpg",
-          "image_alt": "A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.",
-          "tasks": [
-            {
-              "text": "How does Jessie Pope use the metaphor of a 'game' to manipulate young men into joining the army? What reality is she deliberately hiding?",
-              "model_answer": "Pope compares war to a 'red crashing game' (like rugby) to make it sound exciting, physical, and like a team sport. She manipulates young men by implying that joining the army is just playing a fun game with their 'lads'. She deliberately hides the horrific reality of industrialized slaughter, machine guns, and death, because if she told the truth, nobody would volunteer."
+              "type": "comprehension",
+              "text": "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
+              "model_answer": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
             }
           ]
         },
         {
-          "title": "Historical Interpretations: Why did they go?",
-          "text": "<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be \"over by Christmas.\"</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this \"gullible volunteer\" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany's invasion of \"Brave Little Belgium\" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>",
+          "title": "3. The Three Wars of Unification",
+          "text": "To unite Germany, Bismarck orchestrated three short, decisive wars over a seven-year period:\n\n*   **War 1: The Danish War (1864):** Prussia teamed up with Austria to quickly defeat Denmark in a dispute over territory, showing off their military coordination.\n*   **War 2: The Austro-Prussian War (1866):** Bismarck turned on his former ally, Austria. The modernized Prussian army crushed the Austrian forces in just seven weeks. Following this defeat, Austria was completely excluded from German affairs, leaving Prussia as the undisputed leader of the German states.\n*   **War 3: The Franco-Prussian War (1870–1871):** To convince the southern German states (who were wary of Prussian dominance) to join his new union, Bismarck needed a common enemy. He cleverly provoked a war with France. The Prussian military machine invaded France, totally destroyed the French armies, and captured the French Emperor.",
           "tasks": [
             {
-              "type": "short_answer",
-              "text": "Study Source A and Source B. Which method of recruitment do you think was more effective in convincing a 16-year-old boy to lie about his age and enlist: the official government poster, or the threat of a white feather? Explain your reasoning.",
-              "model_answer": "The white feather was likely more effective because it weaponized direct, personal social shame. While the poster appealed to a sense of national duty, a 16-year-old boy would be terrified of being humiliated in public by women in his own community, making the peer pressure impossible to ignore."
+              "type": "comprehension",
+              "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
+              "model_answer": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
             },
             {
-              "type": "short_answer",
-              "text": "Categorize the following reasons for enlistment into \"Push Factors\" (negative things driving them away from home) and \"Pull Factors\" (positive things attracting them to the army): <em>The threat of receiving a white feather, the promise of a shilling a day, grinding poverty at home, defending 'Brave Little Belgium', government propaganda.</em>",
-              "model_answer": "Push Factors = Threat of a white feather, grinding poverty at home.<br><br>Pull Factors = A shilling a day, defending Belgium, government propaganda."
-            },
-            {
-              "type": "short_answer",
-              "text": "How does historian Catriona Pennell's view of WWI volunteers differ from the traditional view?",
-              "model_answer": "While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium."
-            },
-            {
-              "type": "short_answer",
-              "text": "Explain what historian Gary Sheffield means when he suggests volunteers were motivated by \"economic pragmatism.\"",
-              "model_answer": "Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
-            },
-            {
-              "type": "short_answer",
-              "text": "Write a structured paragraph answering the following: <em>\"To what extent was government propaganda the most important reason for the mass enlistment of 1914?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While state propaganda created the initial momentum, economic reality and local community ties were more decisive...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Pompey Pals, a shilling a day, white feathers...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the alternative historian's view (<em>However, as historian Catriona Pennell argues, it would be reductive to ignore the genuine moral outrage over...</em>)</li><li><strong>Evaluation:</strong> Conclude by weighing the factors against each other to form a final historical judgment.</li></ul>",
-              "model_answer": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
+              "type": "drag_drop_timeline",
+              "title": "Interactive Task: The Three Wars of Unification",
+              "instruction": "Drag the three wars into the correct chronological order to reveal the secret code.",
+              "items": [
+                {
+                  "id": "w1",
+                  "text": "Denmark (1864)"
+                },
+                {
+                  "id": "w2",
+                  "text": "Austria (1866)"
+                },
+                {
+                  "id": "w3",
+                  "text": "France (1870)"
+                }
+              ],
+              "secret_code": "BISMARCK1871",
+              "question": "Interactive Task: The Three Wars of Unification"
             }
           ]
+        },
+        {
+          "title": "4. Crowning a Kaiser in the Enemy's Palace",
+          "text": "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later."
         },
         {
           "title": "Consolidation Task",
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain why so many young British men eagerly volunteered for the army in 1914.",
+              "question": "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
               "hints": [
-                "Sentence Starter: Many young men volunteered because they were influenced by government propaganda...",
-                "Sentence Starter: For example, posters like Lord Kitchener's \"Your Country Needs You\" used...",
-                "Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
+                "Sentence Starter: For example, he modernized the Prussian army and used it to...",
+                "Sentence Starter: This resulted in a unified German Empire that was built on military victories over..."
+              ]
+            }
+          ],
+          "text": "<h3>Consolidation Task</h3>"
+        }
+      ],
+      "primary_source": {
+        "title": "Source A: A map from 1871 showing the newly created German Empire compared to modern Germany.",
+        "src": [
+          "/images/german_empire_1871.png",
+          "/images/modern_germany_map.png"
+        ],
+        "caption": "This map illustrates the dramatic shift in European borders following the Franco-Prussian War in 1871. By uniting various independent German states into a single, massive German Empire under Prussian leadership, Otto von Bismarck completely altered the balance of power in Europe. This sudden creation of a massive, heavily armed, and highly industrialized powerhouse in the center of Europe deeply terrified its neighbors, setting the stage for future conflict.",
+        "question": "Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
+        "tasks": [
+          {
+            "type": "short_answer",
+            "text": "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
+            "model_answer": "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War."
+          },
+          {
+            "type": "short_answer",
+            "text": "Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
+            "model_answer": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
+          }
+        ]
+      },
+      "vocab": [
+        {
+          "term": "Chancellor",
+          "definition": "The highest official of a monarch, often equivalent to a prime minister."
+        },
+        {
+          "term": "Blood and Iron",
+          "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the German Empire created 'from below' by the people or 'from above' by military force?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
+    },
+    {
+      "id": "lesson_1",
+      "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
+      "sources": [
+        {
+          "title": "Map A: Alsace-Lorraine Border Region (1871)",
+          "src": "/units/great_war/assets/alsace_lorraine_simple_map.svg",
+          "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Chancellor",
+          "definition": "The highest official of a monarch, often equivalent to a prime minister."
+        },
+        {
+          "term": "Blood and Iron",
+          "definition": "Bismarck's policy of using warfare and military strength to achieve German unification."
+        }
+      ],
+      "extended": {
+        "question": "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
+        "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
+      },
+      "do_now": {
+        "type": "timeline",
+        "events": [
+          {
+            "year": "1871",
+            "title": "The Unification of Germany",
+            "detail": "The Franco-Prussian War",
+            "img": "assets/was_germany_unification.png"
+          },
+          {
+            "year": "1897",
+            "title": "Imperial Rivalries",
+            "detail": "The Place in the Sun speech",
+            "img": "assets/was_greedy_boy.png"
+          },
+          {
+            "year": "1906",
+            "title": "The Naval Arms Race",
+            "detail": "The Launch of HMS Dreadnought",
+            "img": "assets/was_dreadnought_blueprint.png"
+          },
+          {
+            "year": "1907",
+            "title": "Encirclement & Alliances",
+            "detail": "The Triple Entente System",
+            "img": "assets/was_military_matrix.png"
+          },
+          {
+            "year": "June 1914",
+            "title": "The Spark in Sarajevo",
+            "detail": "The Assassination of the Archduke",
+            "img": "assets/was_boiling_point.png"
+          }
+        ],
+        "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
+      },
+      "primary_source": {
+        "title": "Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.",
+        "src": "/units/great_war/assets/was_germany_unification.png",
+        "caption": "This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
+        "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
+            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
+            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          }
+        ],
+        "model_answer": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
+      },
+      "flashcards": [
+        {
+          "term": "Alsace-Lorraine",
+          "definition": "A resource-rich border region taken by Germany from France in 1871."
+        },
+        {
+          "term": "Ems Telegram",
+          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
+        },
+        {
+          "term": "Reparations",
+          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
+        },
+        {
+          "term": "Siege",
+          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Of the three penalties forced upon France in the 1871 treaty (loss of land, 5 billion franc fine, German occupation), which do you think caused the most bitter resentment, and why?",
+        "think": "Jot down your choice and one strong reason to support it.",
+        "pair": "Take turns explaining your choice. If you disagree, try to convince your partner!",
+        "share": "Be ready to report your partner's best point to the class."
+      },
+      "historians_corner": {
+        "title": "The 'Master Planner' Debate",
+        "text": "Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
+        "stretch_question": "How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?",
+        "stretch_model": "Traditional historians argue Bismarck provoked France deliberately to unite Germany. However, Taylor challenges this by suggesting Bismarck didn't have a grand masterplan; instead, he was just incredibly skilled at reacting to events (like the Spanish succession crisis) and twisting them to Germany's advantage at the last minute."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "written",
+            "text": "“We must never forget the humiliation of 1871. The German Empire was proclaimed in our own Palace of Versailles, tearing away the bleeding wounds of Alsace and Lorraine. They have stolen our iron and our factories, and forced us to pay a crushing ransom of 5 billion francs. Every French child must grow up with one single thought: to rebuild our army and take back what was stolen from the motherland.”",
+            "title": "Source A: Adapted from a French school textbook, published in Paris, 1885."
+          },
+          {
+            "type": "written",
+            "text": "“France will never forgive us for taking Alsace-Lorraine. The peace we have forced upon them has left a bitter resentment that will not fade. We must accept that a French war of revenge is a certainty in the future. Therefore, our entire diplomatic focus must be to ensure she never finds an ally to help her take it back. As long as France remains diplomatically isolated, particularly from Russia, Germany will remain secure.”",
+            "title": "Source B: Adapted from a private letter written by German Chancellor Otto von Bismarck to a fellow diplomat, 1872."
+          }
+        ],
+        "topic": "the reasons for French hatred of Germany after 1871",
+        "model_answer": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
+      },
+      "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
+      "learning_objectives": {
+        "overarching": "To evaluate why the Franco-Prussian War created long-term hatred.",
+        "scaffolded": [
+          "Identify the penalties forced upon France in 1871.",
+          "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+          "Evaluate the long-term impact on European relations."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal of this lesson is to understand the long-term diplomatic impact of the Franco-Prussian War. The narrative goes beyond just the events of 1871. It focuses on the resulting *revanche* (French desire for revenge) and Bismarck's subsequent need to isolate France through a web of alliances. Ensure students understand that this single conflict permanently poisoned European relations, forcing the creation of the rigid alliance systems that ultimately dragged Europe into World War I.",
+        "objectives": [
+          {
+            "objective": "Identify the penalties forced upon France in 1871.",
+            "primer": "Direct students to paragraph 4. The text explicitly lists the penalties out in a clear, easy-to-spot sentence: 'The peace treaty forced three severe penalties upon France...' Because these key penalties are bolded in the text, it is a highly accessible recall task for a 14-year-old.",
+            "question": "If you were a French citizen in 1871, which of the three penalties (losing land, paying 5 billion francs, or hosting an enemy army) would make you the most angry, and why?"
+          },
+          {
+            "objective": "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+            "primer": "Focus on paragraph 2 as a chronological mini-story. Explain to students how Bismarck took a friendly message, 'carefully edited and shortened the text,' and made it look like the Prussian King had 'explicitly insulted the French government.'",
+            "question": "Bismarck didn't actually lie in the Ems Telegram; he just deleted parts of it to change the tone. Why is editing the truth sometimes more dangerous than a flat-out lie?"
+          },
+          {
+            "objective": "Evaluate the long-term impact on European relations.",
+            "primer": "This requires higher-order thinking. The final two paragraphs explicitly guide students through this. Point out that Bismarck's 'greatest fear' was a two-front war, so he spent 20 years 'weaving a complex, dizzying web of alliances.'",
+            "question": "Bismarck created alliances to keep Germany safe, but how did these secret treaties actually make a future European war much more dangerous?"
+          }
+        ],
+        "source_context": "In the 1871 Franco-Prussian War, the newly formed German Empire conquered the French territories of Alsace and Lorraine. Proclaiming the German Empire inside the French royal palace of Versailles was a calculated humiliation. This fueled a burning French desire for revanche (revenge) that poisoned European diplomacy for decades. **Hinge Question:** Why might the location of this coronation guarantee future conflict between France and Germany?"
+      },
+      "vocab_cloze_text": "In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].",
+      "narrative_blocks": [
+        {
+          "text": "**Bismarck vs. Wilhelm: A Clash of Strategy**\n\nFollowing the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power\"specifically Russia\"which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.\n\nHowever, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded."
+        },
+        {
+          "theme_heading": "A Fragmented Germany",
+          "text": "There was no country called Germany until 1871. Instead, central Europe was a fragmented collection of independent small states loosely joined only by language and local customs. The most powerful, heavily militaristic state among them was the northern kingdom of Prussia. Desiring to unite these states, Prussia's brilliant, ruthless Chancellor Otto von Bismarck first grouped the northern states into the <strong>North German Confederation</strong>. To complete his dream of a single, mighty empire, Bismarck desperately needed the independent southern German states to unite with the north. He realized that nothing would unite these separate states faster than a shared national enemy.",
+          "level_4": "There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer.",
+              "model_answer": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
+            }
+          ]
+        },
+        {
+          "text": "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck carefully edited and shortened the text of this message—now famously known as the <strong>Ems Telegram</strong>—before releasing it to the international press. The edited text read as though the Prussian King had explicitly insulted the French government. Horrified at this public blow to their national pride, France predictably declared war on 19 July 1870. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+          "level_4": "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.",
+              "model_answer": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
+            }
+          ],
+          "theme_heading": "Ems Telegram Provokes War"
+        },
+        {
+          "text": "Prussia's military strategy relied on two distinct advantages. First, they utilized an <strong>advanced railway network</strong> to mobilise and deploy 500,000 highly trained troops with astonishing speed. Second, they equipped their forces with <strong>Krupp steel artillery</strong>, which fired much faster and further than French guns. The smaller French force of 180,000 was completely caught off guard. During the terrible Siege of Metz, the best French troops were entirely surrounded. When the remaining French forces attempted to break the lines at the Battle of Sedan on 1 September, they suffered 17,000 casualties and over 21,000 soldiers were captured—including the French Emperor Napoleon III. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
+          "level_4": "Prussia's military strategy relied on two distinct advantages. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.",
+              "model_answer": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
+            }
+          ],
+          "theme_heading": "Prussia'"
+        },
+        {
+          "text": "The war permanently transformed the balance of power. In a final, agonizing humiliation for France, the German Empire was officially proclaimed inside the Hall of Mirrors at the Palace of Versailles—the historic home of French royalty. The peace treaty forced three severe penalties upon France: it ceded the strategic industrial border provinces of <strong>Alsace-Lorraine</strong>, was forced to pay a crushing war fine of <strong>5 billion francs</strong> over five years, and was forced to <strong>host a German occupation army</strong>. This deep humiliation shattered French national pride and planted a bitter seed of resentment. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.",
+          "level_4": "The war permanently transformed the balance of power. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.",
+              "model_answer": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
+            }
+          ],
+          "theme_heading": "France's Humiliation"
+        },
+        {
+          "text": "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
+          "level_4": "Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating \"two-front war\" if conflict ever broke out.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace.",
+              "model_answer": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
+            }
+          ],
+          "theme_heading": "Bismarck'"
+        },
+        {
+          "text": "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
+          "level_4": "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
+          "theme_heading": "Bismarck's Alliance Web"
+        },
+        {
+          "text": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
+          "level_4": "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
+          "theme_heading": "Wilhelm Undoes Bismarck"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
+              "hints": [
+                "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
+                "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
+                "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
+              ]
             }
           ],
           "text": "<h3>Consolidation Task</h3>"
@@ -244,571 +653,902 @@ const unitData = {
       ],
       "quiz": [
         {
-          "q": "What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?",
-          "a": "HMS Dreadnought",
+          "q": "Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?",
+          "a": "Otto von Bismarck",
           "options": [
-            "HMS Dreadnought",
-            "SMS Panther",
-            "RMS Lusitania",
-            "HMS Victory"
+            "Otto von Bismarck",
+            "Kaiser Wilhelm II",
+            "Count von Schlieffen",
+            "Napoleon III"
           ]
         },
         {
-          "q": "Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?",
-          "a": "The Black Hand",
+          "q": "Which telegram did Bismarck edit to provoke France into war?",
+          "a": "Ems Telegram",
           "options": [
-            "The Black Hand",
-            "The White Rose",
-            "The Red Baron",
-            "The Balkan Brotherhood"
+            "Ems Telegram",
+            "Zimmermann Telegram",
+            "Blank Cheque",
+            "Versailles Dispatch"
           ]
         },
         {
-          "q": "Which European empire declared war on Serbia first during the July Days?",
-          "a": "Austria-Hungary",
+          "q": "In what year did the Franco-Prussian War break out?",
+          "a": "1870",
           "options": [
+            "1870",
+            "1871",
+            "1890",
+            "1914"
+          ]
+        },
+        {
+          "q": "Which two provinces were taken from France in the peace settlement?",
+          "a": "Alsace and Lorraine",
+          "options": [
+            "Alsace and Lorraine",
+            "Ruhr and Saar",
+            "Normandy and Brittany",
+            "Rhineland and Bavaria"
+          ]
+        },
+        {
+          "q": "Where was the German Empire proclaimed in 1871, humiliating the French?",
+          "a": "Palace of Versailles",
+          "options": [
+            "Palace of Versailles",
+            "Reichstag Building",
+            "Notre Dame",
+            "Berlin Palace"
+          ]
+        },
+        {
+          "q": "What was the size of the war indemnity France was forced to pay?",
+          "a": "5 billion francs",
+          "options": [
+            "5 billion francs",
+            "1 billion marks",
+            "6.6 billion pounds",
+            "132 billion gold marks"
+          ]
+        },
+        {
+          "q": "Who became the new German Emperor in 1888 and dismissed Bismarck?",
+          "a": "Kaiser Wilhelm II",
+          "options": [
+            "Kaiser Wilhelm II",
+            "Kaiser Wilhelm I",
+            "Franz Joseph",
+            "Tsar Nicholas II"
+          ]
+        },
+        {
+          "q": "What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?",
+          "a": "Reinsurance Treaty",
+          "options": [
+            "Reinsurance Treaty",
+            "Treaty of London",
+            "Dual Alliance",
+            "Treaty of Frankfurt"
+          ]
+        },
+        {
+          "q": "Which country allied with Russia in 1894 after Bismarck's dismissal?",
+          "a": "France",
+          "options": [
+            "France",
+            "Britain",
             "Austria-Hungary",
-            "Germany",
-            "Russia",
-            "Great Britain"
+            "Italy"
           ]
         },
         {
-          "q": "Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?",
-          "a": "Lord Horatio Kitchener",
+          "q": "What was Germany's greatest fear that drove its military planning?",
+          "a": "A two-front war",
           "options": [
-            "Lord Horatio Kitchener",
-            "Winston Churchill",
-            "Douglas Haig",
-            "[Key Individual: David Lloyd George]"
+            "A two-front war",
+            "A naval blockade",
+            "An Italian invasion",
+            "A socialist revolution"
           ]
         },
         {
-          "q": "What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?",
-          "a": "Pals Battalions",
+          "q": "What was the name of the German military plan created to defeat France quickly?",
+          "a": "Schlieffen Plan",
           "options": [
-            "Pals Battalions",
-            "Buddy Brigades",
-            "Mates Regiments",
-            "Comrade Companies"
+            "Schlieffen Plan",
+            "Plan XVII",
+            "Bismarck Plan",
+            "Moltke Offensive"
           ]
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-a-is-for-archduke-franz-ferdinand-bbc-two/",
-          "title": "A is for Archduke Franz Ferdinand | WWI A-Z",
-          "duration": "2 mins 30 secs",
-          "viewing_task": "Watch this quick summary and note down exactly how the assassination in Sarajevo triggered the outbreak of war.",
-          "model_answer": "The assassination of Archduke Franz Ferdinand by Gavrilo Princip caused Austria-Hungary to declare war on Serbia, which dragged in Russia, Germany, and eventually Britain due to the alliance system."
         },
         {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/",
-          "title": "Y is for Your Country Needs You | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "How was [Key Individual: Lord Kitchener]'s famous poster used to drum up initial excitement for the war?",
-          "model_answer": "The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty."
+          "q": "Which French leader was captured at the Battle of Sedan?",
+          "a": "Napoleon III",
+          "options": [
+            "Napoleon III",
+            "Georges Clemenceau",
+            "Louis XVI",
+            "Charles de Gaulle"
+          ]
         },
         {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-b-is-for-battalions-bbc-two/",
-          "title": "B is for Battalions | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "Explain what a 'Pals Battalion' was and why it was an effective recruitment tactic.",
-          "model_answer": "A Pals Battalion allowed groups of friends, neighbors, and workmates to join up and serve together. It was effective because men didn't want to be left behind while all their friends went off to fight."
+          "q": "What was the primary goal of Bismarck in defeating France?",
+          "a": "To unify the southern German states with the north",
+          "options": [
+            "To unify the southern German states with the north",
+            "To steal French gold",
+            "To crown himself Emperor",
+            "To conquer Paris permanently"
+          ]
+        },
+        {
+          "q": "Which French territory was annexed by Germany, creating lasting resentment?",
+          "a": "Alsace-Lorraine",
+          "options": [
+            "Alsace-Lorraine",
+            "Normandy",
+            "Burgundy",
+            "The Rhineland"
+          ]
+        },
+        {
+          "q": "Who was the Prussian King that was crowned German Emperor?",
+          "a": "Wilhelm I",
+          "options": [
+            "Wilhelm I",
+            "Wilhelm II",
+            "Frederick the Great",
+            "Bismarck"
+          ]
+        },
+        {
+          "q": "What event did Bismarck use to trick France into declaring war?",
+          "a": "Editing the Ems Telegram",
+          "options": [
+            "Editing the Ems Telegram",
+            "Assassinating a French minister",
+            "Invading a border town",
+            "Sinking a French ship"
+          ]
+        },
+        {
+          "q": "What happened to Napoleon III at the Battle of Sedan?",
+          "a": "He was captured along with his army",
+          "options": [
+            "He was captured along with his army",
+            "He was killed in combat",
+            "He successfully escaped to Britain",
+            "He defeated the Prussians"
+          ]
+        },
+        {
+          "q": "What treaty formally ended the Franco-Prussian War?",
+          "a": "Treaty of Frankfurt",
+          "options": [
+            "Treaty of Frankfurt",
+            "Treaty of Versailles",
+            "Treaty of Paris",
+            "Treaty of Berlin"
+          ]
+        },
+        {
+          "q": "Why did Bismarck fear a French alliance with Russia?",
+          "a": "It would force Germany into a two-front war",
+          "options": [
+            "It would force Germany into a two-front war",
+            "Russia had a stronger navy",
+            "France would buy Russian weapons",
+            "It would stop German trade"
+          ]
+        },
+        {
+          "q": "Where exactly was the new German Empire proclaimed?",
+          "a": "The Hall of Mirrors at Versailles",
+          "options": [
+            "The Hall of Mirrors at Versailles",
+            "The Louvre",
+            "The Reichstag in Berlin",
+            "Notre Dame Cathedral"
+          ]
         }
       ]
     },
     {
       "id": "lesson_2",
-      "title": "Did British generals make the horror of trench warfare worse?",
-      "teacher_notes": {
-        "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
-        "objectives": [
-          {
-            "objective": "Analyze the conditions of trench warfare.",
-            "primer": "Focus on the 'Core Narrative' section describing life in the trenches. Emphasize the physical hardships like trench foot, rats, and gas attacks.",
-            "question": "What evidence shows that trenches were unlivable?"
-          },
-          {
-            "objective": "Evaluate historical interpretations of General Haig.",
-            "primer": "Contrast the 'Butcher of the Somme' interpretation with modern defensive arguments. Discuss how the failure of the initial bombardment led to massive casualties on the first day of the Somme.",
-            "question": "Was General Haig a 'butcher' or a product of his time?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson (photographs of flooded trenches and portraits of war poets) provide a stark, undeniable contrast to the romanticized propaganda of 1914. They offer raw, objective evidence of the horrifying conditions of industrialized warfare and the physical degradation of the soldiers. **Hinge Question:** Look at the photograph of the flooded trench; how does this environment completely contradict the promises made by recruiters and poets like Jessie Pope?"
+      "title": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+      "sources": [
+        {
+          "title": "Map A: Partition of Africa (1914)",
+          "src": "/units/great_war/assets/map_lesson2.png",
+          "caption": ""
+        },
+        {
+          "title": "Map B: The Global Imperial Lanes",
+          "src": "/units/great_war/assets/map_lesson2_b.png",
+          "caption": ""
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+        },
+        {
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+        },
+        {
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+        },
+        {
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country."
+        }
+      ],
+      "extended": {
+        "question": "Explain why Kaiser Wilhelm's strategy of testing the Entente Cordiale during the Moroccan Crises was a massive strategic failure for Germany.",
+        "model_answer": "Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany."
       },
       "do_now": {
-        "title": "Do Now: Retrieval Grid",
-        "type": "grid",
+        "type": "questions",
         "items": [
           {
-            "question": "What name was given to WWI units made up of local friends, neighbors, and colleagues who enlisted together?",
-            "answer": "Pals Battalions.",
-            "points": 1,
-            "category": "Lesson 1 Recall"
+            "question": "1. Who was the first Emperor of the newly unified Germany in 1871?",
+            "answer": "Kaiser Wilhelm I"
           },
           {
-            "question": "Why did Britain have to rely entirely on voluntary enlistment when war was declared in August 1914?",
-            "answer": "Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.",
-            "points": 1,
-            "category": "Lesson 1 Recall"
+            "question": "2. Which brilliant Chancellor united the German states?",
+            "answer": "Otto von Bismarck"
           },
           {
-            "question": "What medieval sanitation workers were hired to clear overflowing town cesspits exclusively at night?",
-            "answer": "Gongfermers.",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "3. Which country was humiliatingly defeated in the Franco-Prussian War?",
+            "answer": "France"
           },
           {
-            "question": "What scientific theory did Victorian doctors believe in before Louis Pasteur proved Germ Theory in 1860?",
-            "answer": "Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "4. What strategic border territory did Germany take in 1871?",
+            "answer": "Alsace-Lorraine"
           },
           {
-            "question": "What is the difference between a primary source and a secondary source?",
-            "answer": "A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "5. What is the French word for their desire for revenge?",
+            "answer": "Revanche"
           },
           {
-            "question": "Why must historians avoid the concept of \"presentism\" when studying past historical periods?",
-            "answer": "Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "6. Explain how Bismarck used the Ems Telegram to trap France into a war.",
+            "answer": "He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride."
+          },
+          {
+            "question": "7. Detail the two military advantages the Prussian army possessed.",
+            "answer": "Advanced railway networks for rapid mobilization and superior Krupp steel artillery."
+          },
+          {
+            "question": "8. Why was the location of the German Empire's proclamation so humiliating for France?",
+            "answer": "It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty."
+          },
+          {
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "answer": "To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war."
+          },
+          {
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
+            "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
       },
-      "enquiry": "Did British generals make the horror of trench warfare worse?",
+      "primary_source": {
+        "title": "Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.",
+        "src": "/units/great_war/assets/was_greedy_boy.png",
+        "caption": "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
+        "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.",
+            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.",
+            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          },
+          {
+            "type": "draw",
+            "text": "Contrast how British politicians and German politicians viewed Germany's right to acquire an empire. Use the word \"obstacle\" or \"encirclement\" in your answer.",
+            "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+          }
+        ],
+        "model_answer": "The 'greedy boy' posture suggests Germany's aggressive and insatiable appetite for colonial expansion. By showing Bismarck grabbing large pieces of the 'pudding' (representing Africa and New Guinea), the cartoon highlights British anxieties that Germany's imperial ambitions were directly threatening Britain's established dominance as a global empire."
+      },
+      "flashcards": [
+        {
+          "term": "Imperialism",
+          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+        },
+        {
+          "term": "Scramble for Africa",
+          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+        },
+        {
+          "term": "Empire",
+          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+        },
+        {
+          "term": "Colony",
+          "definition": "A country or area under the full or partial political control of another country."
+        }
+      ],
+      "pair_share": {
+        "prompt": "If you were a British politician in 1897, would you view Kaiser Wilhelm's 'Place in the Sun' speech as a direct threat, or just a young leader showing off? Why?",
+        "think": "Jot down your view and one piece of evidence.",
+        "pair": "Discuss your views. Did your partner point out anything you missed?",
+        "share": "Be ready to share whether your partner changed your mind."
+      },
+      "historians_corner": {
+        "title": "The Primat der Innenpolitik",
+        "text": "Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
+        "stretch_question": "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
+        "stretch_model": "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/units/great_war/assets/was_greedy_boy.png",
+            "title": "Source A: Source A: 'The Greedy Boy', a British political cartoon published in 1885 showing German Chancellor Otto von Bismarck."
+          },
+          {
+            "type": "written",
+            "text": "“We do not want to put anyone in the shade, but we too demand our place in the sun.”",
+            "title": "Source B: Speech by German Foreign Minister Bernhard von Bülow to the Reichstag, 1897."
+          }
+        ],
+        "topic": "the impact of Weltpolitik on international relations",
+        "model_answer": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany's aggressive desire for a larger empire.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
+      },
+      "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
+      "learning_objectives": {
+        "overarching": "To evaluate why the scramble for colonies turned empires into rivals.",
+        "scaffolded": [
+          "Identify the main European colonial powers and their territories.",
+          "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+          "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal of this lesson is to evaluate why the scramble for colonies turned empires into rivals. Ensure students understand that this wasn't just about claiming land; it was an economic race for raw materials and a strategic naval race. The Moroccan Crises serve as the key case study of how Germany's aggressive attempts to break up the British-French alliance actually pushed them closer together.",
+        "objectives": [
+          {
+            "objective": "Identify the main European colonial powers and their territories.",
+            "primer": "Direct students to paragraphs 1, 2, and 4. Have them identify Britain (largest empire, open sea routes, Suez Canal), France (North/West Africa), and Germany's late entry (Cameroons, East Africa).",
+            "question": "If you were the British Prime Minister looking at a map, why would Germany suddenly claiming colonies in Africa make you incredibly nervous about your own empire?"
+          },
+          {
+            "objective": "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+            "primer": "Focus on paragraph 3 and 4. Emphasize that Germany wasn't just claiming land; they were building a 'massive battle fleet' to defend it, which directly threatened Britain's naval supremacy and survival as an island nation.",
+            "question": "Germany claimed they had a 'legitimate right to historical greatness.' Why did Britain see this exact same ambition as an aggressive threat?"
+          },
+          {
+            "objective": "Evaluate the impact of the Moroccan Crises on the Entente Cordiale.",
+            "primer": "Read paragraphs 5, 6, and 7 as a story of a gamble gone wrong. The Kaiser tried to break the friendship between Britain and France by causing a crisis in Morocco. The key takeaway is that his 'gunboat diplomacy' backfired, pushing Britain and France into a 'much tighter military partnership.'",
+            "question": "Kaiser Wilhelm gambled that Britain wouldn't risk war to help France in Morocco. Why did his gamble actually make the alliance against Germany much stronger?"
+          }
+        ],
+        "source_context": "This cartoon references the 1884-85 Berlin Conference where Bismarck helped orchestrate the \"Scramble for Africa\". Britain, long the dominant global empire, felt deeply threatened by Germany's sudden, aggressive expansion into Africa and the Pacific (Weltpolitik), fearing it would disrupt their economic dominance. **Hinge Question:** How does this cartoon reflect the fundamental cause of the Anglo-German naval race?"
+      },
+      "vocab_cloze_text": "In the late 19th century, European powers engaged in a [Scramble for Africa]. This fierce [Imperialism] was driven by a desire for raw materials and global prestige. Every major power wanted to build a vast overseas [Empire] by taking control of another [Colony].",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=0SEgckAL-xc",
+          "title": "Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm",
+          "duration": "26 mins 6 secs",
+          "viewing_task": "Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.",
+          "model_answer": "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=efV3uZqc3so",
+          "title": "80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I",
+          "duration": "12 mins 49 secs",
+          "viewing_task": "Note down how the industrial revolution pushed European nations to scramble for African colonies.",
+          "model_answer": "The industrial revolution required massive amounts of raw materials and new markets. The Scramble for Africa allowed European powers to extract resources cheaply and sell manufactured goods back, rapidly increasing imperial wealth and military power."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=DduN1cU2p9U",
+          "title": "What was the 'Scramble for Africa'? - BBC What's New",
+          "duration": "3 mins 0 secs",
+          "viewing_task": "Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.",
+          "model_answer": "At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted."
+        }
+      ],
       "narrative_blocks": [
         {
-          "title": "The Core Narrative",
-          "text": "By late 1914, the hope of a quick war vanished. Both sides dug a vast, unbroken network of defensive trenches stretching from the English Channel to the Swiss border, creating the stagnant deadlock of the Western Front. Life in these trenches was defined by extreme physical hardship and constant danger. Soldiers lived in subterranean dirt channels, constantly exposed to freezing mud, torrential rain, and waterlogged ground. This relentless dampness caused \"trench foot\"—a painful medical condition where a soldier's feet began to rot inside wet boots. Trenches also overflowed with rotting organic waste and human debris, attracting millions of disease-carrying black rats and lice, while the air was frequently poisoned by chlorine or mustard gas.<br><br><strong>Attrition and New Technologies</strong><br>\nWhen the rapid movement of 1914 broke down into the deadlock of the trenches, military leaders were forced to rely on a strategy of <strong>attrition</strong>—the brutal process of gradually destroying or weakening the enemy by attacking them continuously until they ran out of men and supplies.<br><br>To break the stalemate, new and highly dangerous technologies were deployed. In 1914, aircraft were incredibly fragile, constructed merely of wood and thick cloth held together by piano wire. Pilots flew in completely open cockpits without parachutes, relying entirely on thick gloves, layers of warm clothes, and leather helmets to stop themselves from freezing to death in the air.<br><br>This horrific reality of industrialized warfare became the backdrop for one of the greatest military debates in British history: the competence of its high command. On July 1, 1916, General Douglas Haig launched the Battle of the Somme to relieve pressure on the French army at Verdun. Believing that a week-long artillery bombardment had completely shattered the German defensive wire and dugouts, Haig ordered British troops to march slowly across No Man's Land in neat, orderly rows while carrying heavy equipment packs.<br><br>The result was an absolute slaughter. German defenders, who had safely survived the bombardment in deep, concrete-reinforced underground bunkers, emerged with machine guns the moment the shelling stopped. On the first day of the Somme alone, the British Army suffered 57,470 casualties, including 19,240 deaths—the bloodiest single day in British military history.<br><br>This disaster led to two sharply contrasting historical interpretations of General Haig. For decades, popular history portrayed Haig as a foolish, outdated \"donkey\" leading brave, patriotic \"lions\" to useless slaughter—a view heavily supported by wartime politicians and famous war poets. However, modern revisionist historians offer a different interpretation. They argue that Haig faced an unprecedented technological challenge, forced to fight a massive, industrialized war with no prior template. They point out that he eventually adapted his tactics to utilize tanks, creeping artillery barrages, and coordinated aircraft to secure the final Allied victory in 1918. Whether Haig was a callous butcher or a determined strategist remains a central question for historians.",
+          "text": "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership."
+        },
+        {
+          "text": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Colonies had become vital status symbols of industrial wealth and global importance. Each territory provided cheap raw materials to feed the factories of the ruling nation, while simultaneously serving as locked-down markets to purchase the home country's manufactured goods. This race had been formalized at the <strong>1884 Berlin Conference</strong>, where European leaders partitioned Africa among themselves without consulting any Africans. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
+          "level_4": "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
           "tasks": [
             {
-              "type": "short_answer",
-              "question": "Why did the Western Front become a stagnant deadlock by the winter of 1914?",
-              "model_answer": "Both the Allied and German armies dug massive, defensive trench networks that neither side could easily penetrate."
-            },
-            {
-              "type": "short_answer",
-              "question": "Describe two physical challenges soldiers faced inside the Western Front trenches.",
-              "model_answer": "Soldiers faced freezing mud that caused trench foot and massive infestations of disease-carrying black rats and lice."
-            },
-            {
-              "type": "short_answer",
-              "question": "Why did General Douglas Haig believe the infantry could easily walk across No Man's Land on July 1, 1916?",
-              "model_answer": "Haig believed his troops could walk across safely because a week-long artillery bombardment was assumed to have destroyed the German defenses."
-            },
-            {
-              "type": "short_answer",
-              "question": "What were the British casualty figures for the first day of the Battle of the Somme?",
-              "model_answer": "57,470 casualties on the first day, including 19,240 deaths."
+              "type": "comprehension",
+              "text": "Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power.",
+              "model_answer": "Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods."
             }
           ],
-          "image": "/images/gw_flooded_trench.jpg",
-          "image_alt": "British soldiers standing knee-deep in a flooded trench during the Battle of Passchendaele (1917). The horrific mud not only caused trench foot but was so deep and thick that exhausted men and pack animals frequently drowned in it."
+          "theme_heading": "Imperialism's Global"
         },
         {
-          "title": "Contemporary Source Evidence",
-          "text": "Soldiers on the Western Front lived in a subterranean world of mud, fear, and disease. <br><br><strong>Physical Hardships</strong><br>The trenches were frequently flooded with freezing, foul-smelling water. Men often stood waist-deep in mud for days, leading to a horrifying fungal infection called <em>Trench Foot</em>. If left untreated, the foot would turn black and gangrenous, requiring amputation. Giant, disease-carrying black rats—some the size of cats—fed on unburied corpses and swarmed the dugouts. Lice infested the soldiers' clothing, causing 'Trench Fever', a disease characterized by high fever and severe joint pain.<br><br><strong>New Weapons of Terror</strong><br>Beyond the disease, the trenches offered no safety from the industrialized weapons of 1914. Artillery bombardments could last for weeks, firing millions of explosive shells that caused devastating shrapnel wounds and buried men alive. The psychological toll of this constant, deafening bombardment led to a new psychiatric condition called 'Shell Shock' (now known as PTSD). Furthermore, 1915 saw the introduction of poison gas (chlorine, phosgene, and mustard gas). Mustard gas was particularly feared; it was heavier than air, sinking into the bottom of trenches, and caused agonizing internal and external blisters, blinding its victims and destroying their lungs.",
+          "text": "Great Britain possessed the vastest overseas empire in human history. Because Great Britain was an island nation, its entire imperial network relied heavily on open sea routes. Thousands of British merchant ships sailed the oceans daily, and the Royal Navy was given absolute priority to keep these global sea lanes clear of foreign rivals. Crucially, Britain controlled the <strong>Suez Canal</strong> in Egypt to secure its vital shipping lanes to India. Any challenge to this naval dominance was viewed by British politicians as a direct threat to the survival of the British Empire. France held the second-largest empire, focusing heavily on territories in North and West Africa. Having suffered the bitter humiliation of losing Alsace-Lorraine to Germany in 1871, French politicians fiercely guarded their colonies to protect their remaining international reputation. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.",
+          "level_4": "Great Britain possessed the vastest overseas empire in human history. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.",
           "tasks": [
             {
-              "type": "short_answer",
-              "question": "**Causation:** Why did the deep, concrete-reinforced bunkers built by the German army cause the British offensive on the Somme to fail?",
-              "model_answer": "The deep bunkers protected German soldiers from the heavy artillery. Once the bombardment stopped, they emerged unharmed with machine guns."
-            },
-            {
-              "type": "short_answer",
-              "question": "**Historical Interpretations:** Explain why popular history books might refer to British soldiers as \"Lions led by Donkeys\" during the First World War.",
-              "model_answer": "Ordinary soldiers were incredibly brave (\"lions\"), but commanded by outdated, uncaring generals (\"donkeys\") who repeated failed tactics."
-            },
-            {
-              "type": "extended_writing",
-              "question": "**The <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA</abbr> Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
-              "model_answer": "I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
+              "type": "comprehension",
+              "text": "Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871?",
+              "model_answer": "After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had."
             }
           ],
-          "image": "/images/gw_trench_diagram.jpg",
-          "image_alt": "An aerial reconnaissance photograph showing the complex, zig-zag pattern of a frontline trench system. Trenches were deliberately dug in this pattern so that if an enemy soldier jumped in, they could not fire their weapon straight down the entire line."
+          "theme_heading": "Empires"
         },
         {
-          "title": "Source Spotlight: Eyewitness in the Mud",
-          "text": "To truly understand the conditions, we must read the words of the men who survived them.<br><br><strong>Source C: Extract from the diary of Private Arthur Savage (1915)</strong><br><em>\"The mud was so deep and thick that if you slipped off the duckboards, you would sink up to your waist. I saw men drown in that mud. The rats were as big as cats, and they were completely fearless. They would run across your face while you tried to sleep. But the worst was the smell—a mixture of cordite, chloride of lime, and the sweet, sickly stench of death that never left your nostrils.\"</em>",
+          "text": "The entire geopolitical landscape destabilized when Germany entered the race. Having only unified in 1871, Germany was a new nation right in the middle of Europe, but its industry was growing rapidly. The ambitious German Kaiser Wilhelm II and his politicians wanted Germany to match the global influence of Britain and France. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own \"place in the sun\".",
+          "level_4": "The entire geopolitical landscape destabilized when Germany entered the race. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own \"place in the sun\".",
+          "theme_heading": "Germany's Global"
+        },
+        {
+          "text": "Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. This aggressive push led to direct clashes. In 1911, the <strong>Agadir Crisis</strong> erupted when Germany sent a gunboat, the <strong>SMS Panther</strong>, to the Moroccan port of <strong>Agadir</strong> in an attempt to challenge French influence. The standoff ended when Germany recognized <strong>France</strong> as the protector of Morocco in exchange for minor territories in the Congo. To hold and defend this new empire, German politicians announced plans to construct a massive battle fleet. This move deeply alarmed Great Britain. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.",
+          "level_4": "Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.",
           "tasks": [
             {
-              "type": "short_answer",
-              "text": "1a. Describe one feature of early military aircraft. (2 marks)<br>1b. Describe one feature of trench warfare. (2 marks)",
-              "model_answer": "1a. One feature of early military aircraft was how fragile they were. For example, they were constructed merely of wood and thick cloth held together by piano wire.<br><br>1b. One feature of trench warfare was the horrific conditions soldiers endured. For example, the constant mud and water in the trenches led to thousands of men suffering from \"Trench Foot\", which often required amputation."
+              "type": "comprehension",
+              "text": "Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain.",
+              "model_answer": "Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire."
+            },
+            {
+              "type": "comprehension",
+              "text": "What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a \"place in the sun\" for Germany?",
+              "model_answer": "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland."
             }
           ],
-          "image": "/images/gw_flooded_trench.jpg",
-          "image_alt": "Soldiers standing waist-deep in freezing, stagnant water in a frontline trench. These appalling conditions led to rampant diseases like trench foot, while the constant presence of corpses attracted swarms of black rats and lice."
+          "theme_heading": "German Ambition Alarms"
         },
         {
-          "title": "The Brutal Reality: Wilfred Owen",
-          "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>[Key Individual: Wilfred Owen]</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
-          "image": "/images/gw_wilfred_owen.jpg",
-          "image_alt": "A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope.",
-          "tasks": [
-            {
-              "text": "How does Wilfred Owen's description of a gas attack completely destroy the message of Jessie Pope's 'Who's for the Game?'",
-              "model_answer": "Owen's visceral description of a man 'drowning' and 'floundering' in mustard gas exposes the horrific reality of modern warfare. It destroys Pope's argument by showing that war is not a fun rugby game, and that telling children it is 'sweet and fitting to die for one's country' is an 'old Lie'."
-            }
-          ]
+          "text": "In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. Kaiser Wilhelm II of Germany was furious; he believed this friendship was designed to encircle Germany. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.",
+          "level_4": "In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.",
+          "theme_heading": "Germany Tests New Alliance"
         },
         {
-          "title": "Extension & Local History Task",
-          "text": "Research tasks for independent study.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Study Source A. Why should a historian exercise caution when using the memoirs of a former politician like David Lloyd George to evaluate General Haig's competence?",
-              "model_answer": "Politicians often write memoirs after events to protect their own reputations and shift blame away from themselves. Since Lloyd George clashed with military leaders, his memoirs may exaggerate the stupidity of the generals to avoid political responsibility for the war's high human cost."
-            },
-            {
-              "type": "short_answer",
-              "text": "How useful is Source C for a historian studying the physical conditions of trench warfare? Use the source's content and its provenance (who wrote it and when) in your answer.",
-              "provenance_clue": "Hint: Think about who Private Savage is, when he is writing this, and what specific sensory details he includes.",
-              "model_answer": "Source C is highly useful because it is a primary eyewitness account written by a soldier who actually lived in the trenches in 1915. The content provides specific, visceral details about the physical conditions, such as the fatal depth of the mud and the 'fearless' rats. Because it is a personal diary, it is likely an honest reflection of his daily survival rather than government propaganda, making it a reliable and highly valuable source for historians."
-            },
-            {
-              "type": "short_answer",
-              "text": "Open your browser and search for the **\"1916 Battle of the Somme cinema film\"**. Research how British audiences reacted when this real, uncensored footage of the front line was shown in local cinemas in 1916. Write down their reactions. 10. Look up **\"WWI whale oil trench foot prevention\"**. Write a brief paragraph explaining the strict daily foot care routines officers forced soldiers to perform to maintain army health in wet conditions. 11. Search for **\"General Haig modern revisionist defense\"**. Find and write down one argument made by a modern historian defending Haig's overall strategy on the Western Front.",
-              "model_answer": "Student independent research based on specific prompts."
-            },
-            {
-              "text": "Study Source A (the photograph of the flooded trench).<br><br>How useful is Source A for an inquiry into the conditions on the Western Front? (8 marks)",
-              "model_answer": "Source A is highly useful because it is a contemporary photograph providing visual evidence of the horrific, water-logged conditions soldiers endured, which directly caused trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line."
-            },
-            {
-              "text": "Study Interpretation 1 (a historian writing in 2014 stating: 'The British high command callously ignored the horrific conditions of the mud').<br><br>How far do you agree with Interpretation 1 about the attitude of the high command? Explain your answer. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
-            }
-          ]
+          "text": "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.",
+          "level_4": "In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.",
+          "theme_heading": "Kaiser'"
+        },
+        {
+          "text": "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          "level_4": "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          "theme_heading": "Kaiser'"
+        },
+        {
+          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
+          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/alliance_system.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The European Alliance System (1914)\"></div>",
+          "theme_heading": "Europe's"
         },
         {
           "title": "Consolidation Task",
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain why the conditions in the trenches were so difficult for soldiers.",
+              "question": "Explain how the 'Scramble for Africa' increased tension between European powers.",
               "hints": [
-                "Sentence Starter: The conditions were difficult because of the constant threat of disease...",
-                "Sentence Starter: For example, many soldiers suffered from trench foot due to...",
-                "Sentence Starter: This resulted in a high number of casualties before battles even began..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                "Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...",
+                "Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...",
+                "Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their..."
+              ]
             }
           ],
           "text": "<h3>Consolidation Task</h3>"
         }
       ],
-      "key_vocabulary": [
-        {
-          "term": "No Man's Land",
-          "definition": "The desolate, heavily cratered, and wire-strewn territory situated between the opposing front-line trenches."
-        },
-        {
-          "term": "Trench Foot",
-          "definition": "A painful medical condition caused by prolonged exposure of the feet to cold, damp, and unsanitary conditions, often leading to severe infection and gangrene."
-        },
-        {
-          "term": "Revisionist Historian",
-          "definition": "A historian who re-examines traditional historical interpretations in light of new evidence, perspectives, or analytical methods."
-        }
-      ],
       "quiz": [
         {
-          "q": "What was the main cause of the medical condition known as \"trench foot\" during WWI?",
-          "a": "Prolonged exposure to freezing, wet, and unsanitary mud inside boots.",
+          "q": "What term describes the rapid colonization of Africa by European powers in the late 19th century?",
+          "a": "The Scramble for Africa",
           "options": [
-            "Prolonged exposure to freezing, wet, and unsanitary mud inside boots.",
-            "Inhaling poisonous gas clouds without wearing a mask.",
-            "Bites from disease-carrying black rats and lice.",
-            "Being shot in the foot by an enemy sniper."
+            "The Scramble for Africa",
+            "The Great Game",
+            "Manifest Destiny",
+            "The African Partition"
           ]
         },
         {
-          "q": "Why did the British artillery bombardment fail to destroy German defenses before the Somme offensive?",
-          "a": "German soldiers survived safely inside deep, concrete-reinforced underground bunkers.",
+          "q": "Which German leader famously stated that Germany wanted its 'place in the sun'?",
+          "a": "Kaiser Wilhelm II",
           "options": [
-            "German soldiers survived safely inside deep, concrete-reinforced underground bunkers.",
-            "The British artillery fired in the wrong direction due to poor maps.",
-            "The German army used giant electric magnets to deflect the shells.",
-            "The British simply ran out of ammunition."
+            "Kaiser Wilhelm II",
+            "Otto von Bismarck",
+            "Adolf Hitler",
+            "Paul von Hindenburg"
           ]
         },
         {
-          "q": "On which date did the infamous first day of the Battle of the Somme occur?",
-          "a": "July 1, 1916",
+          "q": "In which year did the First Moroccan Crisis occur?",
+          "a": "1905",
           "options": [
-            "July 1, 1916",
-            "August 4, 1914",
-            "November 11, 1918",
-            "June 28, 1914"
+            "1905",
+            "1911",
+            "1898",
+            "1914"
           ]
         },
         {
-          "q": "What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?",
-          "a": "Lions led by Donkeys",
+          "q": "What was the purpose of the 1884 Berlin Conference?",
+          "a": "To regulate European colonization and trade in Africa",
           "options": [
-            "Lions led by Donkeys",
-            "The Kitchener Stampede",
-            "The Silent Front",
-            "The Grand Illusion"
+            "To regulate European colonization and trade in Africa",
+            "To form a military alliance against Britain",
+            "To ban slavery worldwide",
+            "To divide Asia among European powers"
           ]
         },
         {
-          "q": "How did modern \"revisionist\" historians change the historical debate surrounding General Douglas Haig?",
-          "a": "They argued he was a determined leader who successfully learned how to win an unprecedented modern war.",
+          "q": "Which European power controlled the largest empire in Africa by 1914?",
+          "a": "Britain",
           "options": [
-            "They argued he was a determined leader who successfully learned how to win an unprecedented modern war.",
-            "They proved that he never actually visited the Western Front during the war.",
-            "They discovered that he was secretly a double agent working for the German Empire.",
-            "They claimed he deliberately tried to lose the war to help France."
+            "Britain",
+            "France",
+            "Germany",
+            "Belgium"
           ]
-        }
-      ],
-      "vocab": [
-        {
-          "term": "Attrition",
-          "definition": "A military strategy aiming to win a war by wearing down the enemy to the point of collapse through continuous losses in men and materials."
         },
         {
-          "term": "Artillery",
-          "definition": "Large-caliber, heavy guns used in warfare on land, responsible for the vast majority of casualties during the First World War."
+          "q": "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
+          "a": "He wanted Germany to have a global empire like Britain and France",
+          "options": [
+            "He wanted Germany to have a global empire like Britain and France",
+            "He wanted a holiday home in Africa",
+            "He wanted to conquer South America",
+            "He wanted to control the Mediterranean Sea"
+          ]
         },
         {
-          "term": "No Man's Land",
-          "definition": "The unoccupied, highly dangerous terrain between the front lines of two opposing armies, often filled with barbed wire and craters."
+          "q": "What happened during the First Moroccan Crisis (1905)?",
+          "a": "The Kaiser visited Tangier and declared support for Moroccan independence",
+          "options": [
+            "The Kaiser visited Tangier and declared support for Moroccan independence",
+            "Germany invaded Morocco",
+            "France surrendered Morocco to Britain",
+            "The local sultan defeated the French army"
+          ]
         },
         {
-          "term": "Trench Foot",
-          "definition": "A painful condition of the feet caused by prolonged exposure to cold water and mud, common in the flooded trenches of the Western Front."
+          "q": "What was the main result of the Algeciras Conference (1906)?",
+          "a": "Germany was humiliated and France was given control of Moroccan police",
+          "options": [
+            "Germany was humiliated and France was given control of Moroccan police",
+            "Germany gained full control of Morocco",
+            "Morocco became fully independent",
+            "Britain took over Morocco"
+          ]
         },
         {
-          "term": "Causation",
-          "definition": "The action of causing something; in history, it is the skill of identifying the underlying reasons why a specific event occurred."
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-t-is-for-trenches-bbc-two/",
-          "title": "T is for Trenches | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "Describe three terrible conditions soldiers faced while living in the trenches.",
-          "model_answer": "Soldiers faced deep, freezing mud, infestations of giant rats, and the constant threat of diseases like trench foot caused by standing in water for days."
+          "q": "What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?",
+          "a": "Germany sent the gunboat Panther to the port of Agadir",
+          "options": [
+            "Germany sent the gunboat Panther to the port of Agadir",
+            "France declared war on Germany",
+            "Britain blockaded the Moroccan coast",
+            "Moroccans attacked German tourists"
+          ]
         },
         {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-g-is-for-gas-bbc-two/",
-          "title": "G is for Gas | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "Watch the students examine the genuine gas mask. Why were gas attacks so terrifying for the soldiers?",
-          "model_answer": "Gas attacks were terrifying because the gas (like chlorine or mustard gas) would blind them and destroy their lungs from the inside, causing a slow and agonizing death if they didn't get their clumsy masks on in time."
+          "q": "How did the Agadir Crisis end?",
+          "a": "Germany backed down after being given a small strip of the Congo",
+          "options": [
+            "Germany backed down after being given a small strip of the Congo",
+            "Germany successfully conquered Morocco",
+            "Britain declared war on Germany",
+            "France was forced to leave Africa"
+          ]
+        },
+        {
+          "q": "What effect did the Moroccan Crises have on Anglo-French relations?",
+          "a": "It pushed Britain and France closer together in a strong alliance",
+          "options": [
+            "It pushed Britain and France closer together in a strong alliance",
+            "It caused a war between them",
+            "It made Britain ally with Germany instead",
+            "It led to Britain abandoning its empire"
+          ]
         }
       ]
     },
     {
       "id": "lesson_3",
-      "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
-      "teacher_notes": {
-        "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
-        "objectives": [
-          {
-            "objective": "Recognize the global nature of the conflict.",
-            "primer": "Highlight that over a million Indian, Caribbean, and African troops fought.",
-            "question": "Why is WWI often incorrectly remembered as a 'white man's war'?"
-          },
-          {
-            "objective": "Understand the racial barriers faced by colonial troops.",
-            "primer": "Discuss the treatment and post-war legacy of imperial soldiers.",
-            "question": "How were colonial troops treated differently than British soldiers?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson (photographs of the British Indian Army, the BWIR, and the Chinese Labour Corps) serve as undeniable, photographic proof of the massive contribution of non-white imperial subjects to the Allied victory. They challenge the traditional Eurocentric narrative by highlighting that without the manpower and sacrifice of the global empire, the British army would likely have collapsed. **Hinge Question:** Look at the photograph of the Chinese Labour Corps; why do you think these men were deliberately excluded from the post-war victory parades in London?"
+      "title": "Why did a battleship building contest destroy Anglo-German relations?",
+      "sources": [
+        {
+          "title": "Map A: The North Sea & Naval Chokepoints",
+          "src": "/units/great_war/assets/map_lesson3.png",
+          "caption": ""
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Dreadnought",
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+        },
+        {
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+        },
+        {
+          "term": "Two-Power Standard",
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+        },
+        {
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
+        }
+      ],
+      "extended": {
+        "question": "How did the invention of the HMS Dreadnought ironically endanger British naval supremacy despite being a British invention?",
+        "model_answer": "The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain."
       },
       "do_now": {
-        "title": "Do Now: Recall",
-        "type": "mixed",
+        "type": "questions",
         "items": [
           {
-            "question": "What was the main tactical problem at the Battle of the Somme? (A) The artillery barrage failed to destroy the barbed wire., B) The soldiers ran away., C) The tanks broke down completely., D) The French refused to fight.)",
-            "answer": "The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire."
+            "question": "1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "answer": "Weltpolitik (World Policy)"
+          },
+          {
+            "question": "2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
+          },
+          {
+            "question": "3. Why was the Franco-Russian Alliance a strategic disaster for Germany?",
+            "answer": "It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war."
+          },
+          {
+            "question": "4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
+          },
+          {
+            "question": "5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
+            "answer": "Britain realized it could no longer defend its empire alone and sought European allies."
+          },
+          {
+            "question": "6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
+            "answer": "His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance."
+          },
+          {
+            "question": "7. Who dismissed Otto von Bismarck in 1890?",
+            "answer": "Kaiser Wilhelm II"
+          },
+          {
+            "question": "8. What strategic territory did Germany take from France in 1871?",
+            "answer": "Alsace-Lorraine"
+          },
+          {
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "answer": "To keep France diplomatically isolated so they could never start a revenge war."
+          },
+          {
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
+            "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
       },
-      "enquiry": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
-      "vocab": [
-        {
-          "term": "Eurocentric",
-          "definition": "Focusing on European culture or history to the exclusion of a wider view of the world."
-        },
-        {
-          "term": "British West Indies Regiment (BWIR)",
-          "definition": "A military unit of the British Army formed during WWI, made up of volunteers from British colonies in the Caribbean."
-        },
-        {
-          "term": "Racial Hierarchy",
-          "definition": "A system of stratification that privileges one racial group over others (e.g., placing white British officers at the top)."
-        },
-        {
-          "term": "Historical Amnesia",
-          "definition": "The collective forgetting or intentional erasing of specific events or groups of people from a society's history."
-        },
-        {
-          "term": "Mutiny",
-          "definition": "An open rebellion against the proper authorities, especially by soldiers or sailors against their officers."
-        }
-      ],
+      "primary_source": {
+        "title": "Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.",
+        "src": "/units/great_war/assets/was_dreadnought_blueprint.png",
+        "caption": "This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
+        "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
+            "model_answer": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
+          }
+        ],
+        "model_answer": "The HMS Dreadnought rendered older navies obsolete because of its revolutionary design: it was significantly faster and equipped entirely with massive, long-range guns ('all-big-gun' armament). This meant it could outrun and outgun any existing battleship, effectively resetting the naval balance of power to zero and forcing other nations to build their own dreadnoughts to compete."
+      },
       "flashcards": [
         {
-          "question": "Which imperial force contributed over 1.5 million men to the British war effort, fighting in places like Ypres and Mesopotamia?",
-          "options": [
-            "The British Indian Army",
-            "The British West Indies Regiment",
-            "The Australian and New Zealand Army Corps (ANZAC)"
-          ],
-          "answer": 0
+          "term": "Dreadnought",
+          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
         },
         {
-          "question": "Why were many black soldiers in the British West Indies Regiment (BWIR) angry about their treatment?",
-          "options": [
-            "They were stripped of combat roles, paid less, and forced into dangerous manual labor.",
-            "They were forced to fight on the front lines without any weapons.",
-            "They were forced to return to the Caribbean before the war ended."
-          ],
-          "answer": 0
+          "term": "Arms Race",
+          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
         },
         {
-          "question": "What happened in Taranto, Italy, in 1918?",
-          "options": [
-            "Soldiers of the BWIR mutinied in protest against systemic racism and degrading conditions.",
-            "The British Army officially apologized for its racist policies.",
-            "Indian troops broke through the German lines and ended the war."
-          ],
-          "answer": 0
+          "term": "Two-Power Standard",
+          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
         },
         {
-          "question": "What does historian David Olusoga mean when he discusses 'historical amnesia' regarding WWI?",
-          "options": [
-            "The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.",
-            "The fact that soldiers who suffered from shell shock lost their memories.",
-            "The failure of the British government to keep accurate records of casualties."
-          ],
-          "answer": 0
+          "term": "Naval Supremacy",
+          "definition": "Having the most powerful and dominant navy in the world."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Who do you think was more to blame for the naval arms race: Germany for building a fleet they didn't strictly need, or Britain for refusing to share control of the seas?",
+        "think": "Decide who is more to blame and write down your main reason.",
+        "pair": "Debate your choice with your partner. Try to find a weakness in their argument.",
+        "share": "Be ready to summarize the strongest argument you heard."
+      },
+      "historians_corner": {
+        "title": "The Anglo-German Antagonism",
+        "text": "Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
+        "stretch_question": "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
+        "stretch_model": "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/units/great_war/assets/was_dreadnought_blueprint.png",
+            "title": "Source A: Official technical blueprint of HMS Dreadnought, 1906."
+          },
+          {
+            "type": "written",
+            "text": "“We want eight, and we won't wait!”",
+            "title": "Source B: Popular British political slogan chanted by the public in 1909."
+          }
+        ],
+        "topic": "the effects of the Anglo-German naval arms race",
+        "model_answer": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
+      },
+      "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
+      "learning_objectives": {
+        "overarching": "To analyze how the naval arms race heightened tensions between Britain and Germany.",
+        "scaffolded": [
+          "Identify the significance of the HMS Dreadnought.",
+          "Explain the concept of the Two-Power Standard and Risk Theory.",
+          "Analyze how naval competition fed mutual suspicion."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal is to analyze how the naval arms race heightened tensions between Britain and Germany. The key concept here is the 'security dilemma': Britain built ships to feel safe, which made Germany feel unsafe, so Germany built ships, which made Britain feel unsafe. The HMS Dreadnought is the central turning point in this escalation.",
+        "objectives": [
+          {
+            "objective": "Identify the significance of the HMS Dreadnought.",
+            "primer": "Point students to paragraph 4 and 7. The HMS Dreadnought was so advanced it rendered all existing battleships 'obsolete overnight.' This is the crucial point to emphasize: it wiped out Britain's massive head start.",
+            "question": "The HMS Dreadnought was a triumph of British engineering, but why did launching it actually help Germany in the short term?"
+          },
+          {
+            "objective": "Explain the concept of the Two-Power Standard and Risk Theory.",
+            "primer": "Focus on paragraph 1 (Two-Power Standard) and paragraph 2 (Tirpitz's Navy Laws). Ensure students understand that Britain needed its navy to be bigger than the next two combined to survive, while Germany built its navy specifically to challenge that dominance.",
+            "question": "If you were a German citizen listening to Admiral Tirpitz, why might you feel it was perfectly fair and justified for Germany to build a massive navy?"
+          },
+          {
+            "objective": "Analyze how naval competition fed mutual suspicion.",
+            "primer": "Bring their attention to paragraph 8. The race was no longer about total ships, but about Dreadnoughts. This created a 'desperate scramble' that consumed the budgets and politics of both nations, destroying any trust between them.",
+            "question": "How does a massive arms race make war more likely, even if neither country originally planned to actually attack the other?"
+          }
+        ],
+        "source_context": "Launched in 1906, HMS Dreadnought was so heavily armored and carried such massive guns that it instantly made every older battleship in the world obsolete. Ironically, while intended to secure British naval supremacy, it effectively reset the naval arms race to zero, allowing Germany to start building their own Dreadnoughts on an equal footing. **Hinge Question:** Why did the launch of a single ship effectively reset the global balance of naval power?"
+      },
+      "vocab_cloze_text": "Britain's traditional [Naval Supremacy] was challenged when Germany began a rapid naval buildup. This sparked a fierce [Arms Race] between the two nations. Britain relied on the [Two-Power Standard] to maintain a massive fleet, but the invention of the heavily-armed [Dreadnought] battleship reset the competition.",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=-osfjjJuY6U",
+          "title": "Anglo-German Dreadnought Arms Race - Anything you can build I can build better!",
+          "duration": "32 mins 1 sec",
+          "viewing_task": "Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.",
+          "model_answer": "The Dreadnought made all older ships obsolete, effectively resetting the naval race to zero. This gave Germany a realistic chance to challenge British naval supremacy from scratch, escalating tensions as both sides scrambled to out-build each other."
         },
         {
-          "question": "Which term best describes a historical narrative (like Interpretation 1) that focuses almost exclusively on white, European experiences while ignoring the rest of the world?",
-          "options": [
-            "Eurocentric",
-            "Pragmatic",
-            "Revisionist"
-          ],
-          "answer": 0
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=yryey5NVODs",
+          "title": "14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law",
+          "duration": "2 mins 35 secs",
+          "viewing_task": "Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.",
+          "model_answer": "The Second German Naval Law ordered a massive expansion of the German fleet. Britain viewed this as a direct threat to its naval supremacy and survival, as it relied entirely on controlling the seas to protect its global empire and trade routes."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=qmYJUYwsZqY",
+          "title": "67. Anglo-German Relations",
+          "duration": "52 mins 22 secs",
+          "viewing_task": "Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.",
+          "model_answer": "Public opinion in both countries was whipped up by nationalist groups like the German Navy League and the British press. This turned the naval rivalry from a government policy into a fierce matter of national pride and paranoia."
         }
       ],
       "narrative_blocks": [
         {
-          "title": "The Core Narrative",
-          "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>[Key Individual: Khudadad Khan]</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "How many men did the British Indian Army contribute to the First World War?",
-              "model_answer": "Over 1.5 million men."
-            },
-            {
-              "type": "short_answer",
-              "text": "What crucial role did Indian troops play on the Western Front in late 1914?",
-              "model_answer": "Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres."
-            },
-            {
-              "type": "short_answer",
-              "text": "What was the British West Indies Regiment (BWIR), and how many men served in it?",
-              "model_answer": "It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why did soldiers of the BWIR mutiny in Taranto, Italy, in 1918?",
-              "model_answer": "They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
-            }
-          ],
-          "image": "/images/gw_indian_army.jpg",
-          "image_alt": "British Indian Army soldiers serving on the Western Front in late 1914. Over 1.5 million men from the Indian subcontinent fought for the British Empire, providing crucial manpower that prevented the British lines from collapsing under the early German advance."
+          "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
         },
         {
-          "title": "The Historians' Debate: How is the war remembered?",
-          "text": "<strong>Racial Hierarchy and Discrimination</strong><br>Despite their immense sacrifices, soldiers of color faced systemic racism and a strict imperial racial hierarchy. The British War Office was deeply uncomfortable with the idea of non-white troops fighting and killing European armies. Consequently, many black soldiers, particularly in the BWIR, were stripped of their combat roles and reassigned to dangerous, degrading manual labor—digging trenches, carrying ammunition, and burying the dead under heavy artillery fire.<br><br>Black soldiers were paid less than their white counterparts, were barred from being promoted to commissioned officers, and were often denied access to the same canteens and hospitals. The tension reached breaking point in December 1918. BWIR soldiers in Taranto, Italy, mutinied over these exact degrading conditions. They were forced to clean the latrines of white Italian soldiers and were denied the pay rise that had been granted to white British troops. The mutiny was suppressed, the ringleaders were imprisoned, and the BWIR was rapidly disbanded, their contributions swept under the rug.",
+          "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+          "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
           "tasks": [
             {
-              "text": "Describe one feature of the British Empire's contribution to the First World War. (2 marks)",
-              "model_answer": "One feature of the Empire's contribution was the immense manpower provided. For example, over 1.5 million men from the British Indian Army fought across multiple theaters, including the Western Front and Mesopotamia."
+              "type": "comprehension",
+              "text": "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy.",
+              "model_answer": "The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire."
             }
           ],
-          "image": "/images/gw_bwir.jpg",
-          "image_alt": "Soldiers of the British West Indies Regiment (BWIR) in camp. Over 15,000 volunteers from the Caribbean served. Despite their eagerness to fight, systemic racism meant they were frequently barred from combat roles and forced into grueling manual labor under heavy fire."
+          "theme_heading": "British Naval Dominance"
         },
         {
-          "title": "Fringes of History: The Chinese Labour Corps",
-          "text": "While millions of imperial soldiers fought on the front lines, the war effort relied equally on a massive, forgotten workforce. In 1916, facing critical manpower shortages, Britain recruited the <strong>Chinese Labour Corps (CLC)</strong>. Over 140,000 Chinese men were brought to the Western Front to do the grueling, dangerous manual labor required to keep the war machine running.<br><br>The CLC dug trenches, repaired roads under artillery fire, unloaded millions of tons of supplies at the docks, and were given the horrific task of clearing the battlefields and burying the rotting dead. Despite their essential contribution (without which the British Army could not have functioned), they were treated abysmally. They were kept in segregated camps behind barbed wire and paid a fraction of white soldiers' wages. Most tragically, when the war was won, the Chinese Labour Corps were deliberately <em>erased</em> from history. They were not invited to the Allied Victory Parade in London, and their massive contribution was ignored by historians for decades.",
-          "image": "/images/gw_clc.jpg",
-          "image_alt": "Members of the Chinese Labour Corps (CLC) clearing battlefield debris. Facing severe manpower shortages, Britain recruited over 140,000 Chinese workers for highly dangerous manual labor. They were paid a fraction of white soldiers' wages and deliberately excluded from victory parades.",
+          "text": "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. The Kaiser believed that if Germany was ever to become a true world power, it had to explicitly challenge the global dominance of the British fleet. In 1898 and 1900, the German government passed the historic German Navy Laws, which ordered the rapid construction of a massive fleet, including 19 battleships in the first law and an additional 38 in the second. To back this policy, the German naval chief, Admiral Tirpitz, established the Navy League. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
+          "level_4": "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
           "tasks": [
             {
-              "text": "Why do you think the 140,000 men of the Chinese Labour Corps were deliberately left out of the victory parades and historical memory?",
-              "model_answer": "They were likely erased due to racism and the desire to portray the victory as a heroic triumph of white British and European soldiers. Admitting that the British army heavily relied on 140,000 Chinese laborers to survive would undermine the imperial racial hierarchy of the time."
-            }
-          ]
-        },
-        {
-          "title": "Source Spotlight: A 'White Man's War'?",
-          "text": "For decades, the popular memory of the First World War was heavily Eurocentric—dominated by images of white British soldiers in the mud of the Western Front. Read the two contrasting interpretations below to understand how modern historians are challenging this narrative.<br><br><blockquote><strong>Interpretation 1: The Traditional (Eurocentric) Focus</strong><br><em>\"The Great War was a European tragedy, fought on the muddy fields of Flanders and the plains of France. It was here, in the brutal stalemate of the trenches, that the British soldier endured the ultimate test of endurance and secured the victory of the civilized world.\"</em><br>— <em>Adapted from the typical narrative focus of mid-20th-century British school textbooks</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Modern Global View</strong><br><em>\"The First World War was a truly global conflict... Yet in the decades that followed, the presence of hundreds of thousands of black and Asian soldiers was subtly marginalized. This historical amnesia was no accident. The narrative of a 'white man’s war' was constructed to preserve the racial hierarchy of the Empire.\"</em><br>— <em>Adapted from David Olusoga, The World's War (2014)</em></blockquote>",
-          "tasks": [
-            {
-              "text": "Study Source A (the photograph of the British Indian Army).<br><br>How useful is Source A for an inquiry into the global nature of the First World War? (8 marks)",
-              "model_answer": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. However, it is limited because it only shows one specific regiment at one moment in time."
+              "type": "comprehension",
+              "text": "Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct.",
+              "model_answer": "The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second."
             },
             {
-              "text": "Study Interpretation 2 (David Olusoga's text arguing that the contribution of imperial troops was deliberately marginalized in post-war memory to preserve racial hierarchies).<br><br>How far do you agree with Interpretation 2 about the memory of the Empire's contribution? Explain your answer. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree by noting how post-war memorials and dominant narratives heavily focused on white British soldiers (e.g., the 'Tommies'), often leaving colonial troops out of the popular national memory.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that there are large monuments, such as the India Gate, dedicated to colonial troops, so they were not entirely erased.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on Olusoga's view."
+              "type": "comprehension",
+              "text": "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet.",
+              "model_answer": "Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens."
             },
             {
-              "type": "short_answer",
-              "text": "Write a structured paragraph answering the following: <em>\"To what extent was the First World War a 'global' rather than a 'European' conflict?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>Although the most famous battles took place in Europe, the war was fundamentally a global conflict because...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>1.5 million Indian troops, the BWIR, fighting in Mesopotamia and East Africa, the Taranto mutiny...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge why the European view exists (<em>However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties...</em>)</li><li><strong>Evaluation:</strong> Conclude by using Olusoga's concept of \"historical amnesia\" to explain why remembering the global contribution is essential to understanding the true reality of the war.</li></ul>",
-              "model_answer": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why might mid-20th-century textbooks (Interpretation 1) have ignored the story of Khudadad Khan and the Taranto Mutiny?",
-              "model_answer": "Textbooks likely ignored these stories because they focused on a Eurocentric narrative of white British suffering and victory, reflecting the societal racism and imperial attitudes of the mid-20th century."
-            },
-            {
-              "type": "short_answer",
-              "text": "According to Interpretation 2, why did the British Empire deliberately construct the narrative of a 'white man's war'?",
-              "model_answer": "Interpretation 2 argues this was deliberate 'historical amnesia' designed to preserve the racial hierarchy of the Empire. Acknowledging that non-white troops were essential to saving the British Empire would have undermined the myth of white supremacy that justified colonial rule."
+              "type": "comprehension",
+              "text": "Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany.",
+              "model_answer": "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'."
             }
           ],
-          "image": "/images/gw_indian_army.jpg",
-          "image_alt": "Another view of British Indian Army soldiers deployed to the European theater. Their presence thousands of miles from home serves as undeniable proof that this was a truly global conflict, not just a 'European' civil war."
+          "theme_heading": "Germany's Naval Challenge"
+        },
+        {
+          "text": "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
+          "level_4": "British politicians were profoundly alarmed by Germany's actions. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
+          "theme_heading": "British Fear German Navy"
+        },
+        {
+          "text": "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. Launched in 1906, this vessel was so advanced in its speed, armor plating, and long-range rotating turrets that every existing battleship on earth was rendered instantly obsolete overnight. Rather than stopping the competition, HMS <em>Dreadnought</em> inadvertently reset the score to zero, giving Germany a chance to compete on equal terms. Germany immediately responded by manufacturing its own version of the battleship, the <em>SMS Rheinland</em>. The naval arms race was officially underway, with both nations building more and more of these massive, expensive weapons. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
+          "level_4": "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships.",
+              "model_answer": "The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete."
+            }
+          ],
+          "theme_heading": "Naval Arms Race Begins"
+        },
+        {
+          "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong></strong> in Scotland, while the German High Seas Fleet was based at <strong></strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong></strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+          "level_4": "This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+          "theme_heading": "Naval Standoff Prepar"
+        },
+        {
+          "text": "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. Germany, despite passing ambitious Naval Laws under Admiral von Tirpitz, was struggling to catch up. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
+          "level_4": "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
+          "theme_heading": "Naval Power Shift"
+        },
+        {
+          "text": "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
+          "level_4": "The HMS Dreadnought was a technological marvel. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
+          "theme_heading": "Naval Revolution'"
+        },
+        {
+          "text": "Germany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          "level_4": "Germany recognized the opportunity immediately. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo.",
+              "model_answer": "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain."
+            }
+          ],
+          "theme_heading": "Dreadnought Arms"
         },
         {
           "title": "Consolidation Task",
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain why the contribution of Empire troops was so important to the British war effort.",
+              "question": "Explain why the naval race between Britain and Germany damaged their relations.",
               "hints": [
-                "Sentence Starter: Empire troops were important because they provided vital manpower...",
-                "Sentence Starter: For example, Indian soldiers fought in major battles such as...",
-                "Sentence Starter: This resulted in Britain being able to maintain its strength on multiple fronts..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                "Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...",
+                "Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...",
+                "Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for..."
+              ]
             }
           ],
           "text": "<h3>Consolidation Task</h3>"
@@ -816,246 +1556,395 @@ const unitData = {
       ],
       "quiz": [
         {
-          "q": "Approximately how many men from the British Empire and its dominions served in the First World War?",
-          "a": "3 million",
+          "q": "What revolutionary British battleship was launched in 1906?",
+          "a": "HMS Dreadnought",
           "options": [
-            "3 million",
-            "500,000",
-            "10 million",
-            "100,000"
+            "HMS Dreadnought",
+            "HMS Victory",
+            "HMS Belfast",
+            "HMS Invincible"
           ]
         },
         {
-          "q": "Which imperial army sent over 1.5 million men to fight in the war?",
-          "a": "The British Indian Army",
+          "q": "Which German Admiral was in charge of expanding the German Navy?",
+          "a": "Admiral von Tirpitz",
           "options": [
-            "The British Indian Army",
-            "The Canadian Army",
-            "The Australian Imperial Force",
-            "The South African Defence Force"
+            "Admiral von Tirpitz",
+            "Admiral Scheer",
+            "Admiral Hipper",
+            "Kaiser Wilhelm II"
           ]
         },
         {
-          "q": "Which battle featured troops from Australia and New Zealand (ANZACs) fighting a devastating campaign against the Ottoman Empire?",
-          "a": "Gallipoli",
+          "q": "What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?",
+          "a": "Two-Power Standard",
           "options": [
-            "Gallipoli",
-            "The Somme",
-            "Passchendaele",
-            "Verdun"
+            "Two-Power Standard",
+            "Splendid Isolation",
+            "Naval Supremacy Act",
+            "Dreadnought Rule"
           ]
         },
         {
-          "q": "In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?",
-          "a": "Taranto, Italy",
+          "q": "Why was the HMS Dreadnought completely revolutionary?",
+          "a": "It was faster, heavier armored, and had all 'big-guns'",
           "options": [
-            "Taranto, Italy",
-            "Ypres, Belgium",
-            "Cairo, Egypt",
-            "London, England"
+            "It was faster, heavier armored, and had all 'big-guns'",
+            "It was the first submarine",
+            "It could launch airplanes",
+            "It was completely invisible to radar"
           ]
         },
         {
-          "q": "Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?",
-          "a": "They were largely forgotten and excluded from events like the London Victory Parade.",
+          "q": "What was the consequence of the Dreadnought's launch?",
+          "a": "It made all older battleships instantly obsolete, resetting the naval race",
           "options": [
-            "They were largely forgotten and excluded from events like the London Victory Parade.",
-            "They were given the highest honors and led the parades.",
-            "They were granted immediate independence for their home countries.",
-            "They were all given British citizenship and land."
+            "It made all older battleships instantly obsolete, resetting the naval race",
+            "Germany immediately surrendered",
+            "Britain stopped building ships",
+            "France allied with Germany"
           ]
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
-          "title": "The Battle of Tanga | The World's War",
-          "duration": "5 mins",
-          "viewing_task": "Note down the vital contributions made by African and colonial troops during the Battle of Tanga.",
-          "model_answer": "African and colonial troops did much of the fighting and heavy lifting in the East African campaign, completely shattering the myth that WW1 was only fought by white European soldiers in France."
         },
         {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-e-is-for-empire-bbc-two/",
-          "title": "E is for Empire | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "How did the wider British Empire contribute to the war effort?",
-          "model_answer": "Millions of men from across the British Empire, including India, Australia, Canada, and Africa, provided vital combat troops, laborers, and essential resources that allowed Britain to continue fighting."
+          "q": "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
+          "a": "Building a navy large enough that Britain wouldn't risk fighting it",
+          "options": [
+            "Building a navy large enough that Britain wouldn't risk fighting it",
+            "Attacking Britain immediately",
+            "Building only submarines",
+            "Refusing to build any ships to avoid angering Britain"
+          ]
+        },
+        {
+          "q": "What slogan did the British public chant in 1909 to demand more ships?",
+          "a": "'We want eight and we won't wait!'",
+          "options": [
+            "'We want eight and we won't wait!'",
+            "'Rule Britannia!'",
+            "'Sink the Kaiser!'",
+            "'More dreadnoughts now!'"
+          ]
+        },
+        {
+          "q": "Why did Britain feel so threatened by the German naval expansion?",
+          "a": "Britain is an island and relied entirely on its navy for survival and trade",
+          "options": [
+            "Britain is an island and relied entirely on its navy for survival and trade",
+            "They were worried Germany would steal their ships",
+            "They wanted to attack Germany",
+            "They had no army at all"
+          ]
+        },
+        {
+          "q": "What laws were passed in Germany to fund their massive naval buildup?",
+          "a": "The Naval Laws of 1898 and 1900",
+          "options": [
+            "The Naval Laws of 1898 and 1900",
+            "The Shipyard Acts",
+            "The Tirpitz Decrees",
+            "The Imperial Fleet Bills"
+          ]
+        },
+        {
+          "q": "By 1914, who had won the naval race?",
+          "a": "Britain, with 29 dreadnoughts to Germany's 17",
+          "options": [
+            "Britain, with 29 dreadnoughts to Germany's 17",
+            "Germany, with 30 dreadnoughts to Britain's 10",
+            "They had exactly the same number",
+            "France overtook both of them"
+          ]
+        },
+        {
+          "q": "How did the naval race affect British foreign policy?",
+          "a": "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+          "options": [
+            "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+            "It made them ally with Germany",
+            "It caused them to declare war on America",
+            "It made them give up their empire"
+          ]
         }
       ]
     },
     {
       "id": "lesson_4",
-      "title": "How did a war fought miles away completely control daily life in Britain?",
-      "teacher_notes": {
-        "primer": "Examine how the concept of 'Total War' completely transformed the British home front, focusing on government control, conscription, and the complex, often temporary, shifts in women's social status.",
-        "objectives": [
-          {
-            "objective": "Understand the concept of 'Total War' and government control.",
-            "primer": "Explain the Defense of the Realm Act (DORA) and the shift to conscription.",
-            "question": "Why did the British government feel it was necessary to water down beer and censor letters?"
-          },
-          {
-            "objective": "Analyze the changing social status and experiences of women.",
-            "primer": "Discuss the Canary Girls of Priddy's Hard and contrast the differing historical interpretations of their liberation.",
-            "question": "Did the First World War permanently liberate British women, or was it a temporary illusion driven by wartime necessity?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson highlight the concept of 'Total War' on the home front. Images of 'Munitionettes' demonstrate how women were mobilized into dangerous industrial roles, shattering traditional gender norms, while the 'Shot at Dawn' memorial forces us to confront the brutal military discipline imposed on traumatized soldiers. **Hinge Question:** Look at the painting of the Munitionettes; how does this image prove that the First World War was won in the factories just as much as in the trenches?"
+      "title": "Did the Alliance System protect Europe or guarantee a global war?",
+      "sources": [
+        {
+          "title": "Diagram A: The Alliance System (1914)",
+          "src": "/units/great_war/assets/alliance_system.svg",
+          "caption": "The complex web of treaties that dragged Europe into a global war."
+        },
+        {
+          "title": "Map A: European Military Alliance Blocs (1914)",
+          "src": "/units/great_war/assets/map_lesson4.png",
+          "caption": "",
+          "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+        },
+        {
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+        },
+        {
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
+        },
+        {
+          "term": "Encirclement",
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+        }
+      ],
+      "extended": {
+        "question": "Was the 'Blank Check' a reckless mistake by the Kaiser, or a calculated move by the German military to trigger a necessary war? Use historical reasoning to justify your stance.",
+        "model_answer": "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late."
       },
       "do_now": {
-        "title": "Do Now: Retrieval Grid",
-        "type": "grid",
+        "type": "questions",
         "items": [
           {
-            "question": "How many Indian soldiers volunteered to serve the British Empire during the First World War?",
-            "answer": "Over 1.5 million Indian soldiers volunteered.",
-            "points": 1,
-            "category": "Lesson 3 Recall"
+            "question": "1. What revolutionary British battleship was launched in 1906?",
+            "answer": "HMS Dreadnought"
           },
           {
-            "question": "What was the cause and outcome of the Taranto Mutiny in December 1918?",
-            "answer": "It was caused by the racist treatment, poor conditions, and forced manual labor of the British West Indies Regiment. It fueled early movements for Caribbean independence.",
-            "points": 1,
-            "category": "Lesson 3 Recall"
+            "question": "2. What was the 'Two-Power Standard'?",
+            "answer": "A British policy stating their navy must be as large as the next two rival navies combined."
           },
           {
-            "question": "Why did the rapid population growth of industrial towns like Leeds and Manchester cause a severe sanitation crisis in the 19th century?",
-            "answer": "Because towns grew too quickly without building regulations, leading to overcrowded back-to-back houses and overflowing shared cesspits.",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "3. Why did Germany feel it needed a massive high seas fleet?",
+            "answer": "To protect their growing global trade and forcefully assert their status as a top-tier world power."
           },
           {
-            "question": "What landmark British law in 1875 finally forced local councils to take legal responsibility for providing clean water and sewer systems?",
-            "answer": "The Public Health Act of 1875.",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "4. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
-            "question": "Why should a historian be cautious when using a politician's post-war memoirs to judge a general's military competence?",
-            "answer": "Because politicians often write memoirs to defend their own decisions, protect their historical reputation, and shift blame for costly military failures onto others.",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "5. What was the popular British slogan chanted by the public in 1909?",
+            "answer": "We want eight, and we won't wait!"
           },
           {
-            "question": "Explain the difference between \"Causation\" and \"Consequence\" in history.",
-            "answer": "Causation refers to the factors or reasons that make an event happen, while Consequence refers to the effects, outcomes, or impacts that result from that event.",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "6. Why did Britain feel their survival depended on massive naval supremacy?",
+            "answer": "As an island nation, Britain relied on the sea to import food and defend its global empire."
+          },
+          {
+            "question": "7. How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
+          },
+          {
+            "question": "8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "answer": "Weltpolitik (World Policy)"
+          },
+          {
+            "question": "9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
+          },
+          {
+            "question": "10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           }
         ]
       },
-      "enquiry": "How did a war fought miles away completely control daily life in Britain?",
-      "vocab": [
+      "primary_source": {
+        "title": "Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.",
+        "src": "/units/great_war/assets/was_military_matrix.png",
+        "caption": "This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.",
+        "question": "Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
+        "tasks": [
+          {
+            "type": "draw",
+            "text": "Task 1: Identify which figure represents Germany and explain how you know.",
+            "model_answer": "The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia."
+          },
+          {
+            "type": "written",
+            "text": "Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.",
+            "model_answer": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
+          }
+        ],
+        "model_answer": "The intertwined hands and figures demonstrate how the alliance system acted as a deadly chain reaction. It suggests that if one smaller nation (like Serbia) is attacked, its larger allies (like Russia) are bound by treaties to defend it. This pulls in the attacker's allies (like Germany), guaranteeing that a localized conflict in the Balkans would instantly escalate into a massive, continent-wide war."
+      },
+      "flashcards": [
         {
-          "term": "Total War",
-          "definition": "A conflict in which a nation mobilizes all of its resources, industries, and civilian population to support the war effort."
+          "term": "Triple Entente",
+          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
         },
         {
-          "term": "Defense of the Realm Act (DORA)",
-          "definition": "An emergency British law passed in August 1914 that gave the government sweeping powers to control daily life."
+          "term": "Triple Alliance",
+          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
         },
         {
-          "term": "Conscientious Objector",
-          "definition": "A person who refuses to serve in the armed forces or fight in a conflict due to moral, ethical, or religious objections."
+          "term": "Reinsurance Treaty",
+          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
         },
         {
-          "term": "Conscription",
-          "definition": "A compulsory law forcing citizens to enlist in the armed forces."
+          "term": "Encirclement",
+          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Imagine you are an ordinary Serbian citizen in 1908. Why would Austria-Hungary's aggressive takeover of Bosnia make you feel personally threatened?",
+        "think": "Write down how you would feel and why.",
+        "pair": "Share your perspective with your partner.",
+        "share": "Be prepared to share an interesting insight from your discussion."
+      },
+      "historians_corner": {
+        "title": "The 'Powder Keg' Inevitability",
+        "text": "Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.",
+        "stretch_question": "Do you agree with Richard Evans that war was \"inevitable\" in the Balkans, or could diplomacy have dismantled the \"doomsday machine\"?",
+        "stretch_model": "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/units/great_war/assets/balkans_1914_simple_map.png",
+            "title": "Source A: Map of the Balkans showing the borders of Serbia and the Austro-Hungarian Empire in 1914."
+          },
+          {
+            "type": "written",
+            "text": "“Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”",
+            "title": "Source B: Diary entry of the Austro-Hungarian Chief of Staff, Conrad von Hötzendorf, 1913."
+          }
+        ],
+        "topic": "the threat posed by Serbia to Austria-Hungary",
+        "model_answer": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
+      },
+      "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
+      "learning_objectives": {
+        "overarching": "To evaluate whether the alliance system provided security or created a dangerous threat.",
+        "scaffolded": [
+          "Identify the members of the Triple Alliance and the Triple Entente.",
+          "Explain why countries felt the need to form secret defensive treaties.",
+          "Evaluate how the alliance system could drag all of Europe into a regional conflict."
+        ]
+      },
+      "teacher_notes": {
+        "primer": "The overarching goal is to evaluate whether the alliance system provided security or created a dangerous threat. Students need to grasp the tragic irony of the alliances: they were built to act as a deterrent to stop wars, but they acted as a conveyor belt that dragged everyone into a global conflict once a local crisis broke out.",
+        "objectives": [
+          {
+            "objective": "Identify the members of the Triple Alliance and the Triple Entente.",
+            "primer": "This is a direct recall task from paragraph 2. Ensure they correctly identify the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Great Britain, France, Russia).",
+            "question": "Looking at a map of Europe, what is Germany's biggest geographic nightmare when facing the Triple Entente?"
+          },
+          {
+            "objective": "Explain why countries felt the need to form secret defensive treaties.",
+            "primer": "Focus on paragraph 1 and 3. The initial goal was deterrence—the logic that no one would attack a country if it meant fighting a whole alliance. However, as paragraph 3 shows, it bred 'intense suspicion and paranoia' instead.",
+            "question": "The alliances were designed to be purely defensive to keep countries safe. Why did they end up doing the exact opposite?"
+          },
+          {
+            "objective": "Evaluate how the alliance system could drag all of Europe into a regional conflict.",
+            "primer": "Focus on paragraphs 5 and 7. The 'Blank Check' is the perfect example. Because of the alliance system, Germany felt forced to back Austria unconditionally, which guaranteed a local Balkan crisis would explode into a continental war.",
+            "question": "Do you think Kaiser Wilhelm II gave Austria the 'Blank Check' because he actually wanted a world war, or because he felt trapped by the alliance system?"
+          }
+        ],
+        "source_context": "This cartoon perfectly illustrates how the alliance system functioned as a 'doomsday machine'. A localized dispute in the Balkans quickly cascaded into a global conflict because each nation was bound to protect its ally. **Hinge Question:** How does this cartoon demonstrate the inherent danger of mutual defense treaties?"
+      },
+      "vocab_cloze_text": "Bismarck feared a two-front war and created the [Reinsurance Treaty] to keep Russia friendly. However, after his dismissal, Germany faced a nightmare scenario: [Encirclement] by hostile powers. Europe split into two armed camps: the [Triple Entente] (Britain, France, Russia) and the [Triple Alliance] (Germany, Austria-Hungary, Italy).",
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=f11CKYB2FCA",
+          "title": "Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3",
+          "duration": "9 mins 47 secs",
+          "viewing_task": "Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.",
+          "model_answer": "The alliance system was formed as countries sought security in an increasingly competitive Europe. The secret, defensive nature of these treaties was intended as a deterrent, but instead bred intense suspicion and paranoia, turning Europe into two armed camps."
         },
         {
-          "term": "Priddy's Hard",
-          "definition": "A major Royal Navy armaments depot in Gosport where local women worked filling shells and handling explosives during the war."
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=dYrofaDfMKI",
+          "title": "Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3",
+          "duration": "7 mins 37 secs",
+          "viewing_task": "Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.",
+          "model_answer": "The alliance system acted like a 'doomsday machine'. Because nations were strictly bound to protect their allies, the local dispute between Austria-Hungary and Serbia quickly dragged all the major European powers into a global conflict."
         }
       ],
       "narrative_blocks": [
         {
-          "title": "The Core Narrative",
-          "text": "To win a total war of industrial survival, the British government realized it needed complete control over the civilian population. In August 1914, Parliament passed the <strong>Defence of the Realm Act (DORA)</strong>, granting the government sweeping, unprecedented powers over the daily lives of British citizens.<br><br><strong>Controlling the Home Front</strong><br>DORA allowed the government to bypass Parliament and issue direct orders. The rules ranged from the deadly serious to the bizarrely specific. Under DORA, it became illegal to fly a kite, light a bonfire, or feed wild animals, as these could potentially signal enemy zeppelins or waste valuable food. British Summer Time (Daylight Savings) was introduced to maximize factory working hours. Crucially, pub opening hours were strictly limited and alcohol was watered down, as the government feared that drunk munitions workers would slow down shell production.<br><br>DORA also introduced extreme censorship. The government controlled the newspapers, heavily censoring reports of British defeats and casualty numbers to maintain civilian morale. Letters written by soldiers at the front were read by officers, who used black markers to cross out any details about military locations, horrific trench conditions, or low morale before they could be sent home to families.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "What does the term \"Total War\" mean?",
-              "model_answer": "A conflict where a country mobilizes all of its citizens, industries, and resources, making the home front just as vital as the battlefield."
-            },
-            {
-              "type": "short_answer",
-              "text": "What was the Defense of the Realm Act (DORA)?",
-              "model_answer": "An emergency law passed in August 1914 giving the government sweeping powers over the public, such as censoring personal letters and cutting pub hours to keep workers sober."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why did the British government introduce conscription in January 1916?",
-              "model_answer": "Because voluntary enlistment had collapsed due to massive casualties on the Western Front, leaving the army short of fresh soldiers."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why were women working at depots like Priddy's Hard nicknamed \"Canary Girls\"?",
-              "model_answer": "Because handling toxic TNT explosive powder turned their skin bright yellow and their hair ginger-green."
-            }
-          ],
-          "image": "/images/gw_women_say_go.jpg",
-          "image_alt": "The 'Women of Britain Say GO!' propaganda poster (1915). Before conscription was introduced in 1916, the government relied entirely on voluntary enlistment, using emotional blackmail and the powerful influence of women to shame men into joining the army."
+          "text": "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict."
         },
         {
-          "title": "The Historians' Debate: Did the war liberate women?",
-          "text": "<strong>The 'Canaries' and Total War</strong><br>With millions of men fighting overseas, the British economy faced collapse. The solution was the mass mobilization of women into the workforce. Over a million women took up jobs previously reserved exclusively for men—driving buses, working on farms (the Women's Land Army), and crucially, manufacturing weapons.<br><br>These female munitions workers were affectionately known as the \"Canaries.\" They worked long, exhausting shifts packing highly explosive TNT into artillery shells. The toxic chemicals turned their skin and hair a bright yellowish-orange (hence the nickname). The work was exceptionally dangerous; toxic jaundice caused liver failure, and accidental explosions were a constant threat. In 1917, the Silvertown munitions factory in London exploded, killing 73 people and destroying hundreds of homes. Despite the extreme danger and the toxic health effects, the Canaries produced over 80% of the weapons and shells used by the British Army, proving that women were entirely capable of performing heavy industrial labor.<br><br>Read the two contrasting interpretations below to understand how modern historians debate the impact of the war on women.<br><br><blockquote><strong>Interpretation 1: The Optimistic View</strong><br><em>\"The First World War was a massive engine of social change. By proving that women could successfully perform heavy industrial labor in the munitions factories, it shattered Victorian myths of female frailty. This undeniable contribution permanently altered the social status of women and was the direct cause of them finally winning the right to vote in 1918.\"</em><br>— <em>Adapted from Arthur Marwick, The Deluge (1965)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The idea that the war 'liberated' women is largely a myth. The changes were a temporary illusion driven by national emergency. Women were still paid significantly less than men, and the moment the war ended in 1918, they were unceremoniously fired to make way for returning soldiers. Furthermore, the 1918 voting act completely ignored the young, working-class 'Canary Girls' who had actually risked their lives.\"</em><br>— <em>Adapted from Gail Braybon, Women Workers in the First World War (1981)</em></blockquote>",
-          "tasks": [
-            {
-              "text": "Study Source A (the painting of the Munitionettes).<br><br>How useful is Source A for an inquiry into the impact of the war on women? (8 marks)",
-              "model_answer": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
-            },
-            {
-              "text": "Study Interpretation 1 (Arthur Marwick's text arguing that the war permanently liberated women).<br><br>How far do you agree with Interpretation 1 about the impact of the war on women? Explain your answer. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Marwick by arguing that women gained financial independence, left domestic service, and proved they could do 'men's work', leading to the 1918 Representation of the People Act.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by pointing out that this 'liberation' was temporary; many women were forced out of these factories when the men returned in 1919, and the 1918 Act only gave the vote to women over 30 who met property qualifications.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on whether the war was a genuine turning point for women."
-            },
-            {
-              "type": "short_answer",
-              "text": "Write a structured paragraph answering the following: <em>\"To what extent did the First World War lead to a permanent change in the social status of British women?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Canary Girls, TNT, 800,000 workers, 1918 Representation of the People Act...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the optimistic view (<em>Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths...</em>)</li><li><strong>Evaluation:</strong> Conclude using Braybon's revisionist perspective to explain why the changes were mostly an illusion (women were fired in 1919 and the young factory workers did not get the vote).</li></ul>",
-              "model_answer": "While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited. The conscription crisis meant that over 800,000 women were mobilized for the war effort, working as 'Canary Girls' handling dangerous TNT in places like Priddy's Hard. In 1918, the Representation of the People Act finally granted some women the vote. Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths of female weakness by proving women could do heavy industrial labor. However, this optimistic view is flawed. Using Braybon's revisionist perspective, the changes were mostly an illusion driven by national necessity; women were paid less than men and were fired immediately in 1919 to make way for returning soldiers. Furthermore, the 1918 vote was restricted to older, middle-class women, completely ignoring the young, working-class Munitionettes who actually risked their lives, proving the war did not permanently liberate the women who fought on the home front."
-            }
-          ],
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "A vivid painting depicting 'Munitionettes' working in a massive British armaments factory. With millions of men fighting overseas, the government relied on over 900,000 women to manufacture the vital artillery shells needed for the war effort, a key element of 'Total War'."
+          "text": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding military alliances. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.",
+          "level_4": "As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.",
+          "theme_heading": "Europe's Alliance System"
         },
         {
-          "title": "Fringes of History: Conscientious Objectors",
-          "text": "When conscription (forced military service) was introduced in 1916, not everyone agreed to fight. Around 16,000 men refused to join the army on moral or religious grounds. They were known as <strong>Conscientious Objectors (or 'Conchies')</strong>.<br><br>Their treatment on the Home Front was brutal. They were widely viewed as cowards and traitors by the public and government. While some were allowed to do non-combat roles like driving ambulances under fire (which took immense bravery), absolutists who refused to contribute to the war effort in any way were thrown into harsh civilian prisons, where they faced solitary confinement, starvation diets, and forced labor. Some were even shipped to the front lines in France, court-martialed for refusing orders, and sentenced to be \"Shot at Dawn\" (though these death sentences were later commuted to 10 years in prison). Today, they are remembered for their bravery in standing up for their beliefs, commemorated by a special memorial at the National Memorial Arboretum.",
-          "image": "/images/gw_arboretum.jpg",
-          "image_alt": "The 'Shot at Dawn' Memorial, commemorating the 306 British and Commonwealth soldiers executed by firing squad for cowardice or desertion. Modern historians recognize that many of these men were actually suffering from severe, undiagnosed shell shock (PTSD).",
+          "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong></strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong></strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
+          "level_4": "By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.",
           "tasks": [
             {
-              "text": "Many people in 1916 believed Conscientious Objectors were cowards. How could you argue that it actually took immense bravery to be a 'Conchie'?",
-              "model_answer": "It took immense bravery because they knew they would face total social isolation, public hatred, and harsh imprisonment. Standing up to the entire British government and society for your deeply held moral beliefs, even when threatened with execution, requires a different kind of courage than fighting in a trench."
-            }
-          ]
-        },
-        {
-          "title": "Source Spotlight: Censorship and Control",
-          "text": "The government realized that controlling information was just as important as producing weapons.<br><br><strong>Source D: A censored letter home from the Somme (1916)</strong><br><em>\"Dear Mother, We are currently stationed at [CENSORED]. The weather is terrible, and the [CENSORED] is up to our knees. We lost [CENSORED] men yesterday during the push toward [CENSORED]. Don't worry about me, I am keeping my head down.\"</em>",
-          "tasks": [
+              "type": "comprehension",
+              "text": "Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907.",
+              "model_answer": "By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia."
+            },
             {
-              "type": "short_answer",
-              "text": "Looking at Source D, why did the British government use DORA to mandate the strict censorship of soldiers' letters home? (Give two specific reasons).",
-              "model_answer": "Firstly, the government censored locations and troop movements so that if the mail was intercepted by German spies, they would not gain any tactical military advantage. Secondly, they censored casualty numbers and descriptions of the horrific conditions to protect civilian morale on the Home Front, preventing families from realizing the true scale of the slaughter and turning against the war effort."
+              "type": "comprehension",
+              "text": "Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war.",
+              "model_answer": "The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe."
             }
           ],
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "Female munitions workers ('Canary Girls') producing highly explosive artillery shells. Handling toxic TNT powder turned their skin yellow and hair green, and carried the constant, terrifying risk of massive factory explosions."
+          "theme_heading": "Europe's Two Alliances"
+        },
+        {
+          "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong></strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong></strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong></strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+          "level_4": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "According to Germany's military leaders, explain why a European war was considered \"inevitable and necessary\" rather than avoidable.",
+              "model_answer": "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong."
+            }
+          ],
+          "theme_heading": "German Fears and War Plans"
+        },
+        {
+          "text": "Concurrently, the nature of war was becoming highly industrialization-driven. All the Great Powers utilized their factories to engage in a massive land-based arms race. Between 1906 and 1914, steel production in Germany skyrocketed to over 17 million tonnes, vastly outpacing Britain and France combined, to forge heavy artillery and armaments. Millions of kilometers of railway tracks were laid down across the continent for a single strategic purpose: to move hundreds of thousands of uniformed soldiers to the front lines within hours of a crisis breaking out. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.",
+          "level_4": "Concurrently, the nature of war was becoming highly industrialization-driven. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization.",
+              "model_answer": "The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis."
+            },
+            {
+              "type": "extended_writing",
+              "text": "Explain how the transformation of Europe into two \"armed camps\" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. <br><br><em>Use the <abbr title=\"Identify, Describe, Explain, Analyse\">IDEA framework</abbr> to structure your response.</em>",
+              "model_answer": "Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war."
+            }
+          ],
+          "theme_heading": "Europe's Industrial War Machine"
+        },
+        {
+          "text": "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. To proceed safely, Austria needed a guarantee of German support. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
+          "level_4": "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
+          "theme_heading": "Germany's Blank Check"
+        },
+        {
+          "text": "This 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
+          "level_4": "This 'Blank Check' is one of the most debated actions in modern history. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
+          "theme_heading": "Kaiser's Motives"
+        },
+        {
+          "text": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
+          "level_4": "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
+          "theme_heading": "Germany's Calculated War"
         },
         {
           "title": "Consolidation Task",
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain how the Defence of the Realm Act (DORA) changed everyday life in Britain.",
+              "question": "Explain how the Alliance System contributed to the outbreak of the First World War.",
               "hints": [
-                "Sentence Starter: DORA changed everyday life by giving the government unprecedented control...",
-                "Sentence Starter: For example, the government introduced censorship and rationing to...",
-                "Sentence Starter: This resulted in ordinary civilians facing strict rules about..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+                "Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...",
+                "Sentence Starter: For example, if one country was attacked, its allies were obligated to...",
+                "Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a..."
+              ]
             }
           ],
           "text": "<h3>Consolidation Task</h3>"
@@ -1063,755 +1952,1347 @@ const unitData = {
       ],
       "quiz": [
         {
-          "q": "What term describes a conflict where the boundary between soldiers and civilians vanishes?",
-          "a": "Total War",
+          "q": "Which three countries formed the Triple Entente in 1907?",
+          "a": "Britain, France, Russia",
           "options": [
-            "Total War",
-            "Absolute War",
-            "Unlimited War",
-            "Civilian Warfare"
+            "Britain, France, Russia",
+            "Germany, Austria-Hungary, Italy",
+            "Britain, France, Italy",
+            "Germany, Russia, Austria-Hungary"
           ]
         },
         {
-          "q": "What law gave the British government sweeping emergency powers in August 1914?",
-          "a": "The Defense of the Realm Act (DORA)",
+          "q": "Which country left the Triple Alliance and joined the Entente in 1915?",
+          "a": "Italy",
           "options": [
-            "The Defense of the Realm Act (DORA)",
-            "The Emergency Powers Act",
-            "The Conscription Act",
-            "The Civilian Control Order"
+            "Italy",
+            "Ottoman Empire",
+            "Bulgaria",
+            "Romania"
           ]
         },
         {
-          "q": "What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?",
-          "a": "Canary Girls",
+          "q": "What was Britain's traditional foreign policy before forming alliances?",
+          "a": "Splendid Isolation",
           "options": [
-            "Canary Girls",
-            "Yellow Women",
-            "TNT Ladies",
-            "Explosive Girls"
+            "Splendid Isolation",
+            "Weltpolitik",
+            "Appeasement",
+            "Continental Commitment"
           ]
         },
         {
-          "q": "What term describes men who refused to fight in the war on moral, political, or religious grounds?",
-          "a": "Conscientious Objectors",
+          "q": "Which three countries made up the Triple Alliance of 1882?",
+          "a": "Germany, Austria-Hungary, Italy",
           "options": [
-            "Conscientious Objectors",
-            "Pacifist Resisters",
-            "Cowardly Dodgers",
-            "Anti-War Rebels"
+            "Germany, Austria-Hungary, Italy",
+            "Germany, Russia, Austria-Hungary",
+            "Britain, France, Russia",
+            "Germany, Ottoman Empire, Italy"
           ]
         },
         {
-          "q": "How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?",
-          "a": "They introduced rationing to ensure fair distribution of food.",
+          "q": "Which three countries formed the Triple Entente by 1907?",
+          "a": "Britain, France, Russia",
           "options": [
-            "They introduced rationing to ensure fair distribution of food.",
-            "They surrendered to Germany.",
-            "They imported all their food from America.",
-            "They forced citizens to grow their own food or face prison."
+            "Britain, France, Russia",
+            "Germany, Austria-Hungary, Italy",
+            "Britain, USA, France",
+            "France, Russia, Italy"
           ]
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-w-is-for-women-bbc-two/",
-          "title": "W is for Women | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "What were the 'Munitionettes' and why was their work so dangerous?",
-          "model_answer": "Munitionettes were the 1 million women who worked in munitions factories making shells. The work was incredibly dangerous due to the risk of massive factory explosions and toxic TNT poisoning, which turned their skin yellow (earning them the nickname 'Canaries')."
         },
         {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-c-is-for-conscription-bbc-two/",
-          "title": "C is for Conscription | WWI A-Z",
-          "duration": "3 mins",
-          "viewing_task": "Explain why the government was forced to introduce conscription in 1916.",
-          "model_answer": "The initial rush of volunteers had dried up by 1915, and due to massive casualties on the Western Front, the government had to force men to join the army (conscription) to keep the military functioning."
+          "q": "What was a major flaw of the alliance system?",
+          "a": "A small dispute between two nations could drag all major powers into war",
+          "options": [
+            "A small dispute between two nations could drag all major powers into war",
+            "It prevented any trade between the blocs",
+            "It made the armies too small",
+            "It forced countries to disarm"
+          ]
+        },
+        {
+          "q": "Why did Russia ally with France in 1894?",
+          "a": "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
+          "options": [
+            "Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse",
+            "Because they shared the same religion",
+            "Because France promised them African colonies",
+            "Because Britain attacked them"
+          ]
+        },
+        {
+          "q": "What was the 'Entente Cordiale' signed in 1904?",
+          "a": "A friendly agreement between Britain and France, settling colonial disputes",
+          "options": [
+            "A friendly agreement between Britain and France, settling colonial disputes",
+            "A military alliance between Germany and Russia",
+            "A peace treaty ending a war",
+            "An agreement to build dreadnoughts together"
+          ]
+        },
+        {
+          "q": "Why did Britain finally decide to form alliances?",
+          "a": "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+          "options": [
+            "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+            "They wanted to conquer Europe",
+            "They were invaded by France",
+            "They needed money from Russia"
+          ]
+        },
+        {
+          "q": "What does 'Weltpolitik' mean?",
+          "a": "World policy (Germany's desire for a global empire)",
+          "options": [
+            "World policy (Germany's desire for a global empire)",
+            "Naval supremacy",
+            "Splendid isolation",
+            "Peaceful co-existence"
+          ]
+        },
+        {
+          "q": "Which nation in the Triple Alliance was seen as the 'weak link'?",
+          "a": "Italy",
+          "options": [
+            "Italy",
+            "Germany",
+            "Austria-Hungary",
+            "Britain"
+          ]
         }
       ]
     },
     {
       "id": "lesson_5",
-      "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
-      "enquiry": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
-      "teacher_notes": {
-        "primer": "This lesson evaluates the conclusion of the First World War and introduces students to high-level historiographical debate regarding the Treaty of Versailles, shifting from basic source utility to complex interpretation analysis.",
-        "objectives": [
-          {
-            "objective": "Understand the harsh terms imposed on Germany by the Treaty of Versailles, including Article 231.",
-            "primer": "Highlight the 'Diktat' and the crippling economic/military sanctions placed on Germany by the 'Big Three'.",
-            "question": "Why was the Treaty of Versailles considered a 'Diktat' by the German people?"
-          },
-          {
-            "objective": "Analyze conflicting historiographical interpretations of the Treaty.",
-            "primer": "Contrast the traditional view (Keynes) of a 'Carthaginian peace' with the modern revisionist view (MacMillan) that the failure lay in enforcement.",
-            "question": "How does the modern revisionist view challenge the idea that the Treaty was excessively harsh?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson (photographs of the Big Four and contemporary political cartoons) capture the tense, vengeful atmosphere of the Paris Peace Conference. The cartoons are particularly valuable as they reveal contemporary awareness—even in 1919—that the extreme harshness of the treaty might guarantee a future conflict. **Hinge Question:** Look at the German political cartoon showing the guillotine; how does this source help explain why the German public overwhelmingly supported the dismantling of the Treaty of Versailles in the 1930s?"
-      },
+      "title": "Why did a single assassination in Sarajevo ignite a World War?",
+      "sources": [
+        {
+          "title": "Diagram A: The July Crisis Domino Effect",
+          "src": "/units/great_war/assets/july_crisis.svg",
+          "caption": "How a single assassination in the Balkans escalated into a world war within a month."
+        },
+        {
+          "title": "Map A: The Balkan Peninsula (1914)",
+          "src": "/units/great_war/assets/balkans_1914_simple_map.png",
+          "caption": "Simplified map of the highly unstable Balkan Peninsula in 1914."
+        },
+        {
+          "title": "Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route",
+          "src": "/units/great_war/assets/map_sarajevo_route.jpg",
+          "caption": ""
+        }
+      ],
+      "vocab": [
+        {
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
+        },
+        {
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
+        },
+        {
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+        },
+        {
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
+        }
+      ],
       "do_now": {
-        "title": "Do Now: Retrieval Grid",
-        "type": "grid",
+        "type": "questions",
         "items": [
           {
-            "question": "What was the name of the 1914 British law that gave the government sweeping emergency powers to censor newspapers and ration food?",
-            "answer": "The Defense of the Realm Act (DORA).",
-            "points": 1,
-            "category": "Lesson 4 Recall"
+            "question": "1. Which three countries made up the Triple Entente?",
+            "answer": "Great Britain, France, and Russia"
           },
           {
-            "question": "What nickname was given to the female British munitions workers whose skin turned yellow due to toxic chemical exposure?",
-            "answer": "\"Canary Girls\" (or Munitionettes).",
-            "points": 1,
-            "category": "Lesson 4 Recall"
+            "question": "2. Which three countries made up the Triple Alliance?",
+            "answer": "Germany, Austria-Hungary, and Italy"
           },
           {
-            "question": "Why did over 130,000 members of the British West Indies Regiment suffer a major mutiny in Taranto, Italy, in December 1918?",
-            "answer": "Because they were subjected to severe racial discrimination, poor conditions, and forced into humiliating manual labor instead of combat roles.",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "3. Explain the theoretical logic of how the alliance system was supposed to keep peace.",
+            "answer": "It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression."
           },
           {
-            "question": "Why did General Douglas Haig's week-long artillery bombardment fail to destroy the German defenders before the Battle of the Somme?",
-            "answer": "Because German soldiers survived safely in deep, concrete-reinforced underground bunkers.",
-            "points": 2,
-            "category": "Thematic Recall"
+            "question": "4. Why did the alliance system actually increase paranoia instead of security?",
+            "answer": "Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack."
           },
           {
-            "question": "Place these three WWI milestones in chronological order: The Battle of the Somme, The assassination of Archduke Franz Ferdinand, The Treaty of Versailles.",
-            "answer": "1. Assassination of Franz Ferdinand (June 1914), 2. Battle of the Somme (July 1916), 3. Treaty of Versailles (June 1919).",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "5. What military plan did Germany create to avoid a long two-front war?",
+            "answer": "The Schlieffen Plan"
           },
           {
-            "question": "Explain the difference between \"change\" and \"continuity\" when studying the roles of women on the British Home Front.",
-            "answer": "Change refers to the new temporary opportunities in factories, while continuity refers to how most women were pushed back into traditional domestic roles once the war ended.",
-            "points": 3,
-            "category": "Historical Skills"
+            "question": "6. Which neutral country did the Schlieffen Plan require invading?",
+            "answer": "Belgium"
+          },
+          {
+            "question": "7. What feeling of being surrounded by enemies haunted German planners?",
+            "answer": "Encirclement"
+          },
+          {
+            "question": "8. What revolutionary British battleship was launched in 1906?",
+            "answer": "HMS Dreadnought"
+          },
+          {
+            "question": "9. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
+          },
+          {
+            "question": "10. How did the Anglo-German naval race make war more likely?",
+            "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           }
         ]
       },
-      "vocab": [
-        {
-          "term": "Armistice",
-          "definition": "An agreement made by opposing sides in a war to stop fighting; a truce."
-        },
-        {
-          "term": "War Guilt Clause (Article 231)",
-          "definition": "The section of the Treaty of Versailles forcing Germany to accept sole blame for starting the war."
-        },
-        {
-          "term": "Reparations",
-          "definition": "Massive financial payments forced upon a defeated nation to pay for war damage."
-        },
-        {
-          "term": "Diktat",
-          "definition": "A German term meaning a 'dictated peace,' used because they were banned from negotiating the terms."
-        }
-      ],
-      "narrative_blocks": [
-        {
-          "title": "The Core Narrative",
-          "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>[Key Individual: Georges Clemenceau] (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>[Key Individual: Woodrow Wilson] (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "What was the \"Armistice\" of November 11, 1918?",
-              "model_answer": "It was an agreement between Germany and the Allies to stop fighting, bringing an end to active combat."
-            },
-            {
-              "type": "short_answer",
-              "text": "Identify three military restrictions placed on Germany by the Treaty of Versailles.",
-              "model_answer": "The army was cut to 100,000 men, the navy was banned from having submarines, and the air force was completely abolished."
-            },
-            {
-              "type": "short_answer",
-              "text": "Why did the German people refer to the Treaty of Versailles as a \"Diktat\"?",
-              "model_answer": "Because Germany was excluded from the peace negotiations and was forced to sign the final document under threat of invasion."
-            }
-          ],
-          "image": "/images/gw_big_three_versailles.jpg",
-          "image_alt": "The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands."
-        },
-        {
-          "title": "The Historians' Debate: A Doomed Peace?",
-          "text": "<strong>The Terms of the Treaty: A Diktat</strong><br>Germany was not invited to negotiate; they were simply handed the treaty and forced to sign it under the threat of invasion. For this reason, Germans bitterly referred to the treaty as a <strong>Diktat</strong> (a dictated peace). The terms were deliberately devastating:<br><br><ul><li><strong>Territory (Land):</strong> Germany lost 13% of its European land and 12% of its population. The wealthy coal fields of the Saar were given to France for 15 years, and the industrial region of Alsace-Lorraine was returned to France. Crucially, the 'Polish Corridor' was carved out of Germany, splitting the country in two.</li><li><strong>Military:</strong> The proud German army was slashed to just 100,000 men. They were banned from having an air force (Luftwaffe), tanks, or submarines. The Rhineland (the border area with France) was demilitarized.</li><li><strong>Reparations (Money):</strong> Germany was ordered to pay a staggering £6.6 billion in reparations to the Allies for the damage caused by the war—an impossible sum that would shatter the German economy.</li><li><strong>Blame:</strong> The most hated term was Article 231 (The War Guilt Clause), which forced Germany to accept 100% of the blame for starting the war.</li></ul><br><br>Read the two contrasting interpretations below to understand how historians debate the legacy of the Treaty of Versailles.<br><br><blockquote><strong>Interpretation 1: The Traditional View</strong><br><em>\"The Treaty of Versailles was a disastrous, vindictive peace. The economic reparations imposed on Germany are completely impossible to pay and will inevitably lead to the total financial collapse of central Europe. By stripping Germany of its wealth and humiliating its people, the Allies have virtually guaranteed a war of vengeance in the near future.\"</em><br>— <em>Adapted from John Maynard Keynes, The Economic Consequences of the Peace (1919)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The Treaty of Versailles was actually quite lenient compared to the brutal treaty Germany had forced upon Russia in 1918. Germany remained largely intact and structurally wealthy. The true failure was not that the treaty was too harsh, but that the Allies lacked the political will and unity to actually enforce it in the 1930s, allowing Hitler to easily tear it up.\"</em><br>— <em>Adapted from Margaret MacMillan, Peacemakers (2001)</em></blockquote>",
-          "tasks": [
-            {
-              "text": "Describe one feature of the military restrictions placed on Germany by the Treaty of Versailles. (2 marks)",
-              "model_answer": "One feature of the military restrictions was that they left Germany virtually defenseless. For example, the German army was limited to just 100,000 men and they were banned from having submarines or an air force."
-            },
-            {
-              "text": "Study Interpretation 1 (John Maynard Keynes arguing the economic reparations were too harsh and would ruin Europe).<br><br>How far do you agree with Interpretation 1 about the Treaty of Versailles? Explain your answer. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Keynes by discussing the massive £6.6 billion reparations figure, which crippled the German economy and arguably paved the way for future instability.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing the Treaty was actually quite lenient compared to what Germany did to Russia at the Treaty of Brest-Litovsk, and that France needed the reparations to rebuild its destroyed country.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on the fairness of the treaty."
-            },
-            {
-              "type": "short_answer",
-              "text": "Write a structured paragraph answering the following: <em>\"To what extent was the Treaty of Versailles an unfair settlement that guaranteed a future war?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Article 231, £6.6 billion in reparations, 100,000 men...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the traditional view (<em>Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy would lead to disaster...</em>)</li><li><strong>Evaluation:</strong> Conclude by using MacMillan's revisionist perspective to explain why the treaty's failure might have been more about enforcement than the actual terms.</li></ul>",
-              "starter": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...",
-              "model_answer": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
-            }
-          ],
-          "image": "/images/gw_versailles_cartoon.jpg",
-          "image_alt": "A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up."
-        },
-        {
-          "title": "Source Spotlight: German Reaction",
-          "text": "The German public was shocked and outraged by the severity of the Treaty. They had believed Wilson's fair 'Fourteen Points' would be the basis for peace.<br><br><strong>Source E: A German political cartoon published in 1919</strong><br><em>The cartoon shows a German man stripped to his underwear. Standing around him are Clemenceau, Wilson, and Lloyd George. Clemenceau holds a giant guillotine blade labeled 'Versailles'. The caption reads: 'When we have taken everything else, we will take your life.'</em>",
-          "tasks": [
-            {
-              "text": "Study Source A (the political cartoon).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
-              "model_answer": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
-            },
-            {
-              "type": "short_answer",
-              "text": "How does the German political cartoon (Source E) reflect the German public's attitude toward the Treaty of Versailles? Refer specifically to the concept of the 'Diktat' and the Big Three.",
-              "model_answer": "The cartoon reflects the intense anger and feeling of victimization in Germany. By showing the German man stripped of his clothes, it symbolizes how the Treaty stripped Germany of its territory, military, and wealth (the £6.6 billion reparations). The guillotine blade held by Clemenceau shows that Germans viewed the Treaty not as a peace settlement, but as a deliberate execution of their nation. It highlights their view of the Treaty as an unfair 'Diktat' forced upon them by the vengeful Big Three."
-            }
-          ],
-          "image": "/images/gw_versailles_cartoon.jpg",
-          "image_alt": "A German political cartoon reflecting the intense national anger over the Treaty of Versailles. It depicts Germany as a victim being marched to the guillotine by vengeful Allied leaders, perfectly capturing the German view of the treaty as an unfair 'Diktat' (dictated peace)."
-        },
-        {
-          "title": "Consolidation Task",
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
-              "hints": [
-                "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
-                "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
-                "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
-            }
-          ],
-          "text": "<h3>Consolidation Task</h3>"
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What date was the Treaty of Versailles officially signed by Allied and German leaders?",
-          "a": "June 28, 1919",
-          "options": [
-            "June 28, 1919",
-            "November 11, 1918",
-            "January 1, 1914",
-            "September 1, 1939"
-          ]
-        },
-        {
-          "q": "Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?",
-          "a": "Woodrow Wilson",
-          "options": [
-            "Woodrow Wilson",
-            "Georges Clemenceau",
-            "David Lloyd George",
-            "Franklin D. Roosevelt"
-          ]
-        },
-        {
-          "q": "What was the name of Article 231 of the Treaty of Versailles?",
-          "a": "The War Guilt Clause",
-          "options": [
-            "The War Guilt Clause",
-            "The Demilitarization Act",
-            "The Reparation Standard",
-            "The Armistice Agreement"
-          ]
-        },
-        {
-          "q": "Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?",
-          "a": "Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.",
-          "options": [
-            "Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.",
-            "Because the Allies forgave Germany's debt in 1920.",
-            "Because Britain and France gave Germany new colonies in Africa to help them recover.",
-            "Because Germany was allowed to keep a massive 1 million man army."
-          ]
-        },
-        {
-          "q": "Why did the German people call the Treaty of Versailles a 'Diktat'?",
-          "a": "They were completely excluded from the peace talks and forced to sign it.",
-          "options": [
-            "They were completely excluded from the peace talks and forced to sign it.",
-            "The entire treaty was written in a secret code they couldn't read.",
-            "It was signed in a railway carriage in the middle of a German forest.",
-            "It was dictated directly by Adolf Hitler."
-          ]
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
-          "title": "The Treaty of Versailles | Hitler's Rise: The Colour Films",
-          "duration": "5 mins",
-          "viewing_task": "Watch the colorized footage and list two ways the Treaty of Versailles punished Germany.",
-          "model_answer": "1. It forced Germany to accept full blame for the war (the War Guilt clause). 2. It imposed devastating financial reparations that shattered the German economy."
-        },
-        {
-          "type": "era",
-          "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
-          "title": "The end of WW1 | Nazis: A Warning from History",
-          "duration": "5 mins",
-          "viewing_task": "How did the German public react to the peace terms?",
-          "model_answer": "They were deeply bitter and felt betrayed, viewing the treaty as a 'Diktat' (a dictated peace) that humiliated their nation and stripped them of their dignity."
-        }
-      ]
-    },
-    {
-      "id": "lesson_6",
-      "title": "How did the \"Lost Generation\" impact the village of Stubbington?",
-      "enquiry": "How did the \"Lost Generation\" impact the village of Stubbington?",
-      "teacher_notes": {
-        "primer": "This lesson concludes the unit by scaling down the macro-statistics of the Great War into a localized micro-history, focusing on the Stubbington War Memorial and the tragic loss of the Lowry brothers. This fosters historical empathy and helps students grasp the profound demographic and emotional toll of the conflict.",
-        "objectives": [
-          {
-            "objective": "Understand the scale of the \"Lost Generation\" and how it affected local communities.",
-            "primer": "Explain how the death of over 700,000 British soldiers created a demographic catastrophe, using the 67 local names on the Stubbington memorial as a tangible anchor.",
-            "question": "How did the sheer number of casualties affect the local economy and community spirit in a village like Stubbington?"
-          },
-          {
-            "objective": "Apply the concept of micro-history to understand the human cost of the war.",
-            "primer": "Use the tragedy of the Lowry brothers to demonstrate how \"Pals Battalions\" and local enlistment meant that single battles could wipe out entire local families.",
-            "question": "Why does focusing on a single family like the Lowrys give us a different understanding of the war compared to reading general casualty statistics?"
-          }
-        ],
-        "source_context": "The visual sources in this lesson (the Stubbington War Memorial and the 'Dead Man's Penny') localize the staggering statistics of the Great War. They transform abstract casualty figures into tangible, community-level grief, demonstrating how the trauma of the 'Lost Generation' was permanently physically embedded into the landscape of everyday British villages. **Hinge Question:** Look at the Stubbington War Memorial; why was it deliberately built over the village pump, the center of daily community life?"
-      },
-      "do_now": {
-        "title": "Do Now: Retrieval Grid",
-        "type": "grid",
-        "items": [
-          {
-            "question": "What nickname was given to women working with toxic TNT in munitions factories?",
-            "answer": "\"Canary Girls\" (or Munitionettes).",
-            "points": 1,
-            "category": "Lesson 4 Recall"
-          },
-          {
-            "question": "Under the Treaty of Versailles, what was the maximum number of men allowed in the German army?",
-            "answer": "100,000 men.",
-            "points": 1,
-            "category": "Lesson 5 Recall"
-          },
-          {
-            "question": "What did Article 231 of the Treaty of Versailles force Germany to accept?",
-            "answer": "Full responsibility for causing the war (the War Guilt Clause).",
-            "points": 2,
-            "category": "Thematic Recall"
-          },
-          {
-            "question": "What was the name of the revolutionary battleship launched by Britain in 1906?",
-            "answer": "HMS Dreadnought.",
-            "points": 2,
-            "category": "Thematic Recall"
-          },
-          {
-            "question": "Explain the difference between a 'traditional' and 'revisionist' historical interpretation using General Douglas Haig as an example.",
-            "answer": "The traditional view sees Haig as a foolish 'donkey' sending men to their deaths, while the revisionist view argues he faced unprecedented technological challenges and eventually learned to adapt.",
-            "points": 3,
-            "category": "Historical Skills"
-          },
-          {
-            "question": "What does the term 'Diktat' mean and why did Germans use it to describe the Treaty of Versailles?",
-            "answer": "It means 'dictated peace'. They used it because Germany was banned from negotiating and forced to sign the treaty under threat of invasion.",
-            "points": 3,
-            "category": "Historical Skills"
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Commemoration",
-          "definition": "The formal act of honoring and remembering the people who sacrificed their lives in a conflict."
-        },
-        {
-          "term": "The Lost Generation",
-          "definition": "The term used to describe the young men who came of age during WWI, a massive percentage of whom were killed or severely wounded."
-        },
-        {
-          "term": "Micro-History",
-          "definition": "The study of history on a very small scale—such as looking at one specific village, family, or memorial—to help understand larger global events."
-        },
-        {
-          "term": "Historical Empathy",
-          "definition": "The ability to understand and share the feelings, perspectives, and experiences of people in the past."
-        }
-      ],
-      "narrative_blocks": [
-        {
-          "title": "Stubbington's Lost Generation",
-          "text": "To look at the wooden shelter in the centre of Stubbington's village green today, you might think it is just a quiet place to sit. But if you look up at the timber beams under its roof, you will find 67 names carved into the wood. These are the names of the young people from Stubbington and Hill Head who went off to fight in the First World War and never returned.<br><br>For a small, rural village, the war was not a distant political event—it was a devastating local tragedy that tore through families, streets, and schoolrooms. Behind every name on that memorial is a shattered family.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Where was the Stubbington War Memorial erected in 1922?",
-              "model_answer": "It was built on the Village Green, covering the local village pump."
-            },
-            {
-              "type": "short_answer",
-              "text": "How many local names from Stubbington and Hill Head are carved into the memorial?",
-              "model_answer": "There are 67 names carved into the memorial."
-            }
-          ],
-          "image": "/images/stubbington_memorial_1.jpg",
-          "image_alt": "The wooden Stubbington War Memorial, uniquely designed as a shelter over the village pump in 1922. It bears the names of 67 local men who died, serving as a powerful, everyday reminder of the devastating human cost inflicted on tight-knit local communities."
-        },
-        {
-          "title": "The Tragedy of the Lowry Brothers",
-          "text": "Of all the families in the parish, none paid a heavier price than the Lowrys. William and Annie Lowry lived in a grand house called Manor Way Grange. They had three sons, all of whom went off to fight. Not one of them came home.<br><br><strong>William \"Harper\" Lowry (25)</strong>, a brilliant Cambridge student, joined the Indian Army. On 4th June 1915, he was killed leading a desperate charge up a narrow ravine at Gallipoli under intense Turkish machine-gun fire. His body was never found.<br><br><strong>Cyril \"Patrick\" Lowry (20)</strong> joined the West Yorkshire Regiment. In a heartbreaking twist of fate, he served in the exact same battalion commanded by his older brother, Eric. On 25th March 1918, Patrick was killed in action during a massive German offensive near the Somme—in full view of his own brother. His body was never recovered.<br><br><strong>Auriol \"Eric\" Lowry (25)</strong>, the highly decorated middle brother, had survived the heartbreak of seeing his younger brother die. An exceptionally brave leader who won the DSO and Military Cross, his time ran out just weeks before the war ended. On 23rd September 1918, he was hit by a machine-gun bullet and died in his runner's arms.<br><br>Devastated by the loss of all three sons, their father built the Lowry Memorial Hall in Lee-on-the-Solent to ensure his boys would never be forgotten.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Why is the story of the three Lowry brothers historically significant when studying the impact of the First World War?",
-              "model_answer": "The loss of the Lowry brothers is significant because it highlights the concentrated grief experienced by individual families. It shows how the war didn't just cause random casualties, but often wiped out multiple siblings from the same household, devastating local family structures."
-            }
-          ],
-          "image": "/images/gw_death_plaque.jpg",
-          "image_alt": "A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice."
-        },
-        {
-          "title": "Nita Madeline King & A Father's Grief",
-          "text": "Among the list of fallen soldiers on the village green, one name stands out as different: <strong>Nita Madeline King</strong>. She is the <em>only woman</em> commemorated on the Stubbington War Memorial.<br><br>Nita (29) wanted to do her part and volunteered for the Queen Mary's Army Auxiliary Corps (QMAAC). She was sent to Wimereux in France, a massive, high-pressure hospital centre for thousands of wounded soldiers. But the enemy in Wimereux was not just bullets—it was disease. In the crowded military hospitals, Nita contracted cerebrospinal meningitis and died on 25th May 1917. Following her death, her grieving mother, Lydia, became the primary force behind building the Stubbington War Memorial, donating a fortune (£200) to ensure the village had a beautiful wooden shelter.<br><br><strong>The Father Who Carved His Son's Name</strong><br>Arthur Tribbeck, a local carpenter, was chosen by the village to build the wooden shelter with his own hands. Tragically, as he constructed it, he had to prepare the timber to hold the name of his own son, <strong>Harold Tribbeck</strong>. Harold had bravely refused to have his leg amputated after a terrible wound in 1918, and died of gangrene aged just 21.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Write a structured paragraph answering the following: <em>\"To what extent do local war memorials provide a more accurate picture of the First World War than military statistics?\"</em>",
-              "model_answer": "While military statistics show the global scale of the war, local war memorials are essential for revealing the true human cost. Factual evidence, such as the tragic loss of the three Lowry brothers or a carpenter having to carve his own son's name into the memorial, highlights the devastating emotional blow to a tight-knit community. However, looking only at one village's memorial does not explain why the war was won or lost on a tactical level. Ultimately, while statistics are necessary to understand the vast scope of the conflict, combining them with micro-histories gives historians the most complete picture by fostering historical empathy."
-            },
-            {
-              "type": "short_answer",
-              "text": "<em>Instructions: Choose one of the five historical investigation tasks below. Use the provided web links and your source packs to uncover the hidden realities of the Stubbington fallen.</em><br><br><strong>Path 1: The 1911 Census (Bringing the Names to Life)</strong><br>War memorials only give us names and initials. To understand what the village actually lost, we need to see who these men were before the war.<br><ul><li><strong>Your Task:</strong> Using the provided 1911 Census records for the Lowry family, find out the following: How old were the brothers? What were their jobs? Who else lived in the house? Write a short paragraph explaining how reading the census changes the way you look at the names on the memorial.</li><li><strong>Scaffolding Tip:</strong> Look closely at the \"Occupation\" column. Were they farm laborers, shop workers, or tradesmen? Think about how their sudden absence would impact the village's daily life and economy.</li><li><strong>Helpful Link:</strong> <a href='https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/' target='_blank'>The National Archives: 1911 Census Guide</a></li></ul><br><strong>Path 2: Mapping the Tragedy</strong><br>During the war, entire streets could be plunged into mourning in a single day.<br><ul><li><strong>Your Task:</strong> Select ten names from the Stubbington memorial. Using the Commonwealth War Graves Commission website to find their home addresses, plot them on a historical map of Fareham/Stubbington from the 1910s.</li><li><strong>Scaffolding Tip:</strong> Do you notice any clusters? Are there multiple casualties on the same street? Write a sentence explaining what it would have felt like to be a postman delivering telegrams on that street in 1916.</li><li><strong>Helpful Link:</strong> <a href='https://maps.nls.uk/geo/explore/side-by-side/' target='_blank'>National Library of Scotland: Side-by-Side Historic Maps</a></li></ul><br><strong>Path 3: Decoding the Commonwealth War Graves (CWGC)</strong><br>Historians use death records like detective clues to figure out where and how men fought.<br><ul><li><strong>Your Task:</strong> Search for the Lowry brothers on the CWGC database. Look at their date of death and the name of the cemetery or memorial where they are listed (e.g., the Thiepval Memorial or the Menin Gate).</li><li><strong>Scaffolding Tip:</strong> If a soldier died in July 1916 and is listed on the Thiepval Memorial, they almost certainly died at the Battle of the Somme. If they died in late 1917 near Ypres, it was likely Passchendaele. Write down which major battles the Stubbington men were caught in based on your findings.</li><li><strong>Helpful Link:</strong> <a href='https://www.cwgc.org/' target='_blank'>Commonwealth War Graves Commission Database</a></li></ul><br><strong>Path 4: Evaluating the Memorial Design</strong><br>Most towns built statues of soldiers with rifles or giant stone crosses. Stubbington built a wooden shelter over a water pump.<br><ul><li><strong>Your Task:</strong> Write a visual analysis of the Stubbington War Memorial. Why do you think the designer (a grieving mother) chose a water pump shelter rather than a glorifying statue of a soldier?</li><li><strong>Scaffolding Tip:</strong> Think about what a water pump represents (community, life, civilian utility) versus a soldier statue (combat, glory, military). What does this tell us about how the local community wanted to remember their dead?</li></ul><br><strong>Path 5: The Missing Voices (Historiography)</strong><br>War memorials only record the dead, meaning the \"visible\" history often masks the invisible trauma of the survivors.<br><ul><li><strong>Your Task:</strong> Challenge yourself to consider who is <em>not</em> on the memorial. Are there men from Stubbington who survived but returned with severe shell shock or missing limbs?</li><li><strong>Scaffolding Tip:</strong> Write a short paragraph explaining why relying solely on a war memorial might give a historian an incomplete picture of how the war actually impacted a village like Stubbington.</li></ul>",
-              "model_answer": "Teacher Note: These are open-ended masterclass extension tasks."
-            }
-          ]
-        },
-        {
-          "title": "Consolidation Task",
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Explain the impact of the First World War on local communities like Stubbington.",
-              "hints": [
-                "Sentence Starter: The war impacted local communities heavily through the loss of a generation of young men...",
-                "Sentence Starter: For example, the use of \"Pals Battalions\" meant that a single battle could...",
-                "Sentence Starter: This resulted in long-lasting grief and the building of war memorials to..."
-              ],
-              "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
-            }
-          ],
-          "text": "<h3>Consolidation Task</h3>"
-        }
-      ],
-      "quiz": [
-        {
-          "q": "In what year was the Stubbington War Memorial erected?",
-          "a": "1922",
-          "options": [
-            "1922",
-            "1918",
-            "1939",
-            "1914"
-          ]
-        },
-        {
-          "q": "What physical structure does the Stubbington War Memorial cover?",
-          "a": "The local village pump.",
-          "options": [
-            "The local village pump.",
-            "The entrance to the local church.",
-            "An old artillery gun brought back from France.",
-            "The village post office."
-          ]
-        },
-        {
-          "q": "Who proposed and designed the memorial in Stubbington?",
-          "a": "The mother of the only woman commemorated among the fallen.",
-          "options": [
-            "The mother of the only woman commemorated among the fallen.",
-            "The Mayor of Fareham.",
-            "Lord Kitchener.",
-            "A famous London architect."
-          ]
-        },
-        {
-          "q": "How many names of the fallen are recorded on the Stubbington memorial?",
-          "a": "67",
-          "options": [
-            "67",
-            "12",
-            "300",
-            "45"
-          ]
-        },
-        {
-          "q": "What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?",
-          "a": "Micro-history",
-          "options": [
-            "Micro-history",
-            "Historiography",
-            "Macro-economics",
-            "Demographics"
-          ]
-        }
-      ],
-      "video": [
-        {
-          "type": "era",
-          "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
-          "title": "The history of The Cenotaph | Remembrance Sunday",
-          "duration": "5 mins",
-          "viewing_task": "What is the powerful significance of the Unknown Warrior at the Cenotaph?",
-          "model_answer": "The Unknown Warrior represents all the unidentified soldiers who died in the war, allowing grieving families with no grave to visit to have a national symbol to mourn at."
-        },
-        {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-r-is-for-remembrance-bbc-two/",
-          "title": "R is for Remembrance | WWI A-Z",
-          "duration": "2 mins",
-          "viewing_task": "Why was the national act of remembrance established on November 11th?",
-          "model_answer": "It was established to mark the exact date and time the Armistice was signed in 1918 (the 11th hour of the 11th day of the 11th month), ensuring the country never forgets the sacrifice of the dead."
-        }
-      ]
-    },
-    {
-      "id": "lesson_7",
-      "title": "Assessment: The Great War",
-      "primer": "This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.",
-      "vocab": [],
-      "do_now": {
-        "type": "grid",
+      "primary_source": {
+        "title": "Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.",
+        "src": "/units/great_war/assets/was_boiling_point.png",
+        "caption": "This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
+        "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
         "tasks": [
           {
-            "question": "What triggered the start of WWI in 1914?",
-            "answer": "The assassination of Archduke Franz Ferdinand.",
-            "points": 1
+            "type": "draw",
+            "text": "Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.",
+            "model_answer": "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')"
           },
           {
-            "question": "What was the name of the British law that allowed the government to take control of industries?",
-            "answer": "DORA (Defence of the Realm Act).",
-            "points": 2
-          },
-          {
-            "question": "Why did the Schlieffen Plan fail?",
-            "answer": "Belgium resisted, Russia mobilized faster than expected, and Britain intervened.",
-            "points": 3
+            "type": "draw",
+            "text": "Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.",
+            "model_answer": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
           }
+        ],
+        "model_answer": "The men represent the leaders of the European Great Powers, and they are desperately trying to prevent the 'Balkan Troubles' pot from boiling over. This symbolizes their efforts to contain the explosive ethnic and nationalistic tensions in the Balkans, knowing that if the region erupted into conflict, the rigid alliance system would drag all of their empires into a catastrophic global war."
+      },
+      "flashcards": [
+        {
+          "term": "Assassination",
+          "definition": "The murder of a prominent person, often a political leader or ruler."
+        },
+        {
+          "term": "Black Hand",
+          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
+        },
+        {
+          "term": "Ultimatum",
+          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+        },
+        {
+          "term": "Mobilisation",
+          "definition": "The action of a country or its government preparing and organizing troops for active service."
+        }
+      ],
+      "pair_share": {
+        "prompt": "Look at the timeline of the July Crisis. At which exact moment do you think a world war became completely unstoppable? Was it the assassination, the blank cheque, or the mobilisations?",
+        "think": "Pick the specific turning point and write down why you chose it.",
+        "pair": "Compare your turning points. Do you agree on when the 'point of no return' was?",
+        "share": "Be ready to defend your group's chosen turning point to the class."
+      },
+      "historians_corner": {
+        "title": "The Fischer Controversy",
+        "text": "In 1961, German historian Fritz Fischer shocked the world by arguing that Germany deliberately caused WWI to achieve world power status. He pointed to the 'Blank Cheque' as evidence that Germany actively pushed Austria into war, knowing it would provoke Russia.",
+        "stretch_question": "How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?",
+        "stretch_model": "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe."
+      },
+      "gcse_task": {
+        "sources": [
+          {
+            "type": "visual",
+            "src": "/units/great_war/assets/was_boiling_point.png",
+            "title": "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912."
+          },
+          {
+            "type": "written",
+            "text": "“You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”",
+            "title": "Source B: The 'Blank Cheque' telegram sent from Germany to Austria-Hungary, 5 July 1914."
+          }
+        ],
+        "topic": "the causes of the outbreak of World War I",
+        "model_answer": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
+      },
+      "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
+      "learning_objectives": {
+        "overarching": "To analyze how a wrong turn in Sarajevo triggered a world war.",
+        "scaffolded": [
+          "Identify the events of 28 June 1914.",
+          "Explain how the assassination triggered the alliance system.",
+          "Analyze whether the resulting war was inevitable or accidental."
         ]
       },
+      "teacher_notes": {
+        "primer": "The overarching goal is to analyze how a wrong turn in Sarajevo triggered a world war. This lesson brings all the long-term causes together into the short-term spark. Focus on the timeline: the sheer bad luck of the assassination itself, followed by the rapid, rigid escalation of the July Crisis driven by military timetables.",
+        "objectives": [
+          {
+            "objective": "Identify the events of 28 June 1914.",
+            "primer": "Read paragraphs 4 and 5 as a tense, minute-by-minute narrative. Have students identify the failed bombings, the fateful wrong turn onto Franz Josef Street, and Gavrilo Princip seizing the unexpected opportunity.",
+            "question": "What was the single biggest piece of 'bad luck' that allowed Gavrilo Princip to assassinate the Archduke?"
+          },
+          {
+            "objective": "Explain how the assassination triggered the alliance system.",
+            "primer": "Direct students to paragraph 6. This is a crucial chronological sequence: Austria blames Serbia -> Russia mobilises -> Germany declares war -> Britain declares war to protect Belgium. Have them trace the dominoes.",
+            "question": "The Archduke was killed by a Serbian terrorist. Why on earth did Great Britain end up declaring war on Germany because of it?"
+          },
+          {
+            "objective": "Analyze whether the resulting war was inevitable or accidental.",
+            "primer": "Focus on the 'July Crisis' in paragraphs 7, 8, and 9. Point out the 'Willy-Nicky Telegrams' as an example of leaders trying to stop the war, versus the rigid military timetables (like the Schlieffen Plan) that forced it to happen.",
+            "question": "After reading about the 'Willy-Nicky Telegrams' and the military timetables, do you think the politicians were in charge in July 1914, or were the generals running the show?"
+          }
+        ],
+        "source_context": "The Balkans was known as the \"Powder Keg of Europe\" because of explosive nationalist movements, particularly Slavic groups seeking independence from the Austro-Hungarian Empire. The \"Great Powers\" (Britain, France, Germany, Russia, Austria-Hungary) are shown desperately trying to keep a lid on the tension, which finally exploded with the Archduke's assassination. **Hinge Question:** Based on this image, why were the Great Powers unable to permanently solve the 'Balkan Troubles'?"
+      },
+      "vocab_cloze_text": "The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war.",
       "narrative_blocks": [
         {
-          "text": "Complete the automated multiple-choice quiz for this unit to test your foundational knowledge.",
-          "tasks": [
-            {
-              "text": "1a. Describe one feature of the Home Front during the First World War. (2 marks)<br>1b. Describe one feature of the Treaty of Versailles. (2 marks)",
-              "model_answer": "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
-            }
-          ]
+          "text": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
+          "level_4": "The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.",
+          "theme_heading": "Balkans Ignite Conflict"
         },
         {
-          "text": "Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.",
+          "text": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong></strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
+          "level_4": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
           "tasks": [
             {
-              "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
-              "model_answer": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
+              "type": "comprehension",
+              "text": "Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire.",
+              "model_answer": "Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse."
             }
-          ]
+          ],
+          "theme_heading": "Empire's Serbian"
         },
         {
-          "text": "Study Interpretation 1. <em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",
+          "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong></strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          "theme_heading": "Ferdinand'"
+        },
+        {
+          "text": "The initial assassination attempts failed completely. One terrorist couldn't get his gun out, another went home out of pity, and a third threw a bomb that bounced off the Archduke's car and exploded under the vehicle behind. Furious, Franz Ferdinand canceled the rest of his itinerary and decided to head back to the train station, ordering his driver to stop by the hospital first to visit the wounded officers. However, the route map was altered and the drivers took a critical wrong turn onto Franz Josef Street. Realizing the error, the drivers stopped and attempted to reverse.",
+          "level_4": "The initial assassination attempts failed completely. Realizing the error, the drivers stopped and attempted to reverse.",
           "tasks": [
             {
-              "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
+              "type": "comprehension",
+              "text": "Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke.",
+              "model_answer": "The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot."
             }
-          ]
+          ],
+          "theme_heading": "A Fateful Wrong Turn"
+        },
+        {
+          "text": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Seizing his unexpected luck, Princip stepped forward, pulled his pistol, and fired twice into the car. One bullet tore through the Archduke's throat; the second struck his wife, Sophie, in the stomach. Both died within minutes.",
+          "level_4": "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes.",
+          "theme_heading": "Princip's Fatal"
+        },
+        {
+          "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong></strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+          "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war.",
+              "model_answer": "Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4."
+            }
+          ],
+          "theme_heading": "War Erupts Globally"
+        },
+        {
+          "text": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+          "level_4": "The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.",
+          "theme_heading": "July Crisis: Descent"
+        },
+        {
+          "text": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. Both monarchs pleaded with each other to stop military mobilizations, signing their telegrams with familiar nicknames. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
+          "level_4": "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis?",
+              "model_answer": "The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals."
+            }
+          ],
+          "theme_heading": "Cousins' Failed Peace"
+        },
+        {
+          "text": "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. Military timetables, such as Germany's rigid Schlieffen Plan and Russia's immense mobilization schedules, were so inflexible that once the train of war started moving, it could not be stopped. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
+          "level_4": "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "text": "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914.",
+              "model_answer": "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war."
+            }
+          ],
+          "theme_heading": "Military Control Unleashes"
+        },
+        {
+          "text": "When war broke out in 1914, it was not just a European conflict. Because of the aggressive Scramble for Colonies (Lesson 2), millions of colonized people across Africa, Asia, and the Middle East were dragged into a war they had no part in causing. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
+          "level_4": "When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.",
+          "theme_heading": "Colonies Join World War"
+        },
+        {
+          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
+          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\"><img src=\"./assets/july_crisis.svg\" style=\"width: 100%; max-width: 350px; display: block; margin: 0 auto;\" alt=\"The July Crisis (1914) - The Domino Effect\"></div>",
+          "theme_heading": "Dominoes"
+        },
+        {
+          "title": "Consolidation Task",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.",
+              "hints": [
+                "Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...",
+                "Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...",
+                "Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the..."
+              ]
+            }
+          ],
+          "text": "<h3>Consolidation Task</h3>"
         }
       ],
       "quiz": [
         {
-          "q": "In what year did the First World War begin?",
-          "a": "1914",
+          "q": "Who assassinated Archduke Franz Ferdinand?",
+          "a": "Gavrilo Princip",
           "options": [
-            "1914",
-            "1918",
-            "1939",
-            "1911"
+            "Gavrilo Princip",
+            "Nedeljko Cabrinovic",
+            "Dragutin Dimitrijevic",
+            "Leon Trotsky"
           ]
         },
         {
-          "q": "Which country was NOT part of the Triple Entente?",
-          "a": "Germany",
+          "q": "What was the name of the Serbian nationalist group responsible for the assassination?",
+          "a": "The Black Hand",
           "options": [
-            "Germany",
-            "Britain",
-            "France",
-            "Russia"
+            "The Black Hand",
+            "The White Rose",
+            "The Red Guards",
+            "Young Bosnia"
           ]
         },
         {
-          "q": "What condition was caused by standing in cold, flooded trenches?",
-          "a": "Trench Foot",
+          "q": "On what exact date was the Archduke assassinated?",
+          "a": "28 June 1914",
           "options": [
-            "Trench Foot",
-            "Shell Shock",
-            "Spanish Flu",
-            "Cholera"
+            "28 June 1914",
+            "28 July 1914",
+            "11 November 1918",
+            "4 August 1914"
           ]
         },
         {
-          "q": "How many men from the British Empire and Dominions served in the war?",
-          "a": "Nearly 3 million",
+          "q": "Which empire had annexed Bosnia in 1908, angering Serbian nationalists?",
+          "a": "Austria-Hungary",
           "options": [
-            "Nearly 3 million",
-            "100,000",
-            "500,000",
-            "5 million"
+            "Austria-Hungary",
+            "The Ottoman Empire",
+            "Russia",
+            "Germany"
           ]
         },
         {
-          "q": "What was the nickname given to women working with TNT in factories?",
-          "a": "Canary Girls",
+          "q": "Who was the heir to the Austro-Hungarian throne that visited Sarajevo?",
+          "a": "Archduke Franz Ferdinand",
           "options": [
-            "Canary Girls",
-            "Tommies",
-            "Doughboys",
-            "Land Girls"
+            "Archduke Franz Ferdinand",
+            "Emperor Franz Joseph",
+            "Kaiser Wilhelm II",
+            "Tsar Nicholas II"
+          ]
+        },
+        {
+          "q": "What terrorist group supplied the assassins with weapons?",
+          "a": "The Black Hand",
+          "options": [
+            "The Black Hand",
+            "Young Bosnia",
+            "The Red Army",
+            "The Serbian Guard"
+          ]
+        },
+        {
+          "q": "What was the first, failed assassination attempt on the Archduke that morning?",
+          "a": "A bomb was thrown at his car but bounced off",
+          "options": [
+            "A bomb was thrown at his car but bounced off",
+            "He was shot at but missed",
+            "His driver was poisoned",
+            "A bridge was blown up"
+          ]
+        },
+        {
+          "q": "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
+          "a": "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+          "options": [
+            "By total coincidence, the driver took a wrong turn and stalled the car right in front of him",
+            "Princip had planned the exact route",
+            "The Archduke went in to buy a sandwich",
+            "The police ordered the car to stop there"
+          ]
+        },
+        {
+          "q": "What was the 'Blank Cheque'?",
+          "a": "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+          "options": [
+            "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+            "A bribe paid to the assassins",
+            "A peace offer from Russia",
+            "The money used to buy the guns"
+          ]
+        },
+        {
+          "q": "What happened on July 23, 1914?",
+          "a": "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+          "options": [
+            "Austria-Hungary sent an impossibly harsh ultimatum to Serbia",
+            "Germany invaded Belgium",
+            "Russia declared war",
+            "Britain joined the war"
+          ]
+        },
+        {
+          "q": "Why did Britain declare war on Germany on August 4, 1914?",
+          "a": "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+          "options": [
+            "Germany invaded neutral Belgium, violating the 1839 Treaty of London",
+            "Because of the assassination in Sarajevo",
+            "Because France surrendered",
+            "Because Germany sank a British ship"
           ]
         }
-      ],
-      "teacher_notes": {
-        "source_context": "The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?"
-      }
+      ]
     }
   ],
-  "quizzes": {
-    "lesson_4": [
-      {
-        "q": "What emergency law passed in August 1914 gave the British government sweeping powers over daily life, including the ability to water down beer?",
-        "a": "The Defense of the Realm Act (DORA)",
-        "options": [
-          "The Defense of the Realm Act (DORA)",
-          "The Military Service Act",
-          "The Public Health Act",
-          "The Representation of the People Act"
-        ]
-      },
-      {
-        "q": "Where did many local women from the Fareham and Gosport area go to work handling high explosives for the war effort?",
-        "a": "The Priddy's Hard armaments depot",
-        "options": [
-          "The Priddy's Hard armaments depot",
-          "The Netley Military Hospital",
-          "The Stubbington Textile Mill",
-          "The Portsmouth Naval Dockyard"
-        ]
-      },
-      {
-        "q": "Why do revisionist historians like Gail Braybon argue that the war did NOT truly liberate women?",
-        "a": "Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.",
-        "options": [
-          "Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.",
-          "Because women refused to leave their homes and do any industrial work.",
-          "Because the government made it illegal for women to earn their own money.",
-          "Because women were not allowed to join the military."
-        ]
-      },
-      {
-        "q": "What was the primary trigger that forced the British government to introduce compulsory food rationing in 1918?",
-        "a": "German U-boats sank merchant ships bringing food, causing severe shortages.",
-        "options": [
-          "German U-boats sank merchant ships bringing food, causing severe shortages.",
-          "A national drought ruined all the grain crops in Hampshire.",
-          "Factory workers went on strike and refused to bake bread.",
-          "The British government sent all the food to France."
-        ]
-      },
-      {
-        "q": "How did the government treat Conscientious Objectors who refused to do any form of military work?",
-        "a": "They were sent to harsh labor prisons and stripped of their voting rights.",
-        "options": [
-          "They were sent to harsh labor prisons and stripped of their voting rights.",
-          "They were exempted from all taxes and given free houses.",
-          "They were forced to join the royal court as political advisors.",
-          "They were exiled to Australia."
-        ]
-      }
-    ]
-  },
+  "quizPack": [
+    {
+      "q": "In what year did the Franco-Prussian War end?",
+      "a": "1871",
+      "options": [
+        "1871",
+        "1882",
+        "1914",
+        "1890"
+      ],
+      "id": "gw_q1"
+    },
+    {
+      "q": "Which wealthy region did Germany take from France in 1871?",
+      "a": "Alsace-Lorraine",
+      "options": [
+        "Alsace-Lorraine",
+        "The Rhineland",
+        "The Sudetenland",
+        "The Ruhr Valley"
+      ],
+      "id": "gw_q2"
+    },
+    {
+      "q": "What was the French desire for revenge called?",
+      "a": "Revanche",
+      "options": [
+        "Revanche",
+        "Weltpolitik",
+        "Encirclement",
+        "Pan-Slavism"
+      ],
+      "id": "gw_q3"
+    },
+    {
+      "q": "Who was the German Chancellor that unified Germany?",
+      "a": "Otto von Bismarck",
+      "options": [
+        "Otto von Bismarck",
+        "Kaiser Wilhelm II",
+        "Count Leo von Caprivi",
+        "Theobald von Bethmann-Hollweg"
+      ],
+      "id": "gw_q4"
+    },
+    {
+      "q": "What was Bismarck's greatest strategic fear?",
+      "a": "A war on two fronts (Encirclement)",
+      "options": [
+        "A war on two fronts (Encirclement)",
+        "A British naval blockade",
+        "An uprising by the working class",
+        "The collapse of Austria-Hungary"
+      ],
+      "id": "gw_q5"
+    },
+    {
+      "q": "Which two countries did Bismarck fear would ally against Germany?",
+      "a": "France and Russia",
+      "options": [
+        "France and Russia",
+        "Britain and France",
+        "Russia and Austria-Hungary",
+        "Britain and Russia"
+      ],
+      "id": "gw_q6"
+    },
+    {
+      "q": "What was the secret 1887 agreement between Germany and Russia?",
+      "a": "The Reinsurance Treaty",
+      "options": [
+        "The Reinsurance Treaty",
+        "The Entente Cordiale",
+        "The Dual Alliance",
+        "The Treaty of London"
+      ],
+      "id": "gw_q7"
+    },
+    {
+      "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
+      "a": "Kaiser Wilhelm II",
+      "options": [
+        "Kaiser Wilhelm II",
+        "Kaiser Wilhelm I",
+        "Archduke Franz Ferdinand",
+        "Tsar Nicholas II"
+      ],
+      "id": "gw_q8"
+    },
+    {
+      "q": "What was Wilhelm II's aggressive global policy called?",
+      "a": "Weltpolitik (World Policy)",
+      "options": [
+        "Weltpolitik (World Policy)",
+        "Realpolitik",
+        "Lebensraum",
+        "Splendid Isolation"
+      ],
+      "id": "gw_q9"
+    },
+    {
+      "q": "What previous policy of Bismarck's focused on European peace?",
+      "a": "Realpolitik",
+      "options": [
+        "Realpolitik",
+        "Weltpolitik (World Policy)",
+        "Mitteleuropa",
+        "Pan-Slavism"
+      ],
+      "id": "gw_q10"
+    },
+    {
+      "q": "What agreement did Britain and France sign in 1904?",
+      "a": "The Entente Cordiale",
+      "options": [
+        "The Entente Cordiale",
+        "The Triple Entente",
+        "The Treaty of Versailles",
+        "The Reinsurance Treaty"
+      ],
+      "id": "gw_q11"
+    },
+    {
+      "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
+      "a": "Morocco",
+      "options": [
+        "Morocco",
+        "Egypt",
+        "South Africa",
+        "Sudan"
+      ],
+      "id": "gw_q12"
+    },
+    {
+      "q": "What was the result of the First Moroccan (Tangier) Crisis?",
+      "a": "Britain and France grew closer, isolating Germany",
+      "options": [
+        "Britain and France grew closer, isolating Germany",
+        "Germany gained control of Morocco",
+        "The Entente Cordiale was dissolved",
+        "Russia declared war on Germany"
+      ],
+      "id": "gw_q13"
+    },
+    {
+      "q": "What name was given to Germany's aggressive threat of military force?",
+      "a": "Gunboat Diplomacy",
+      "options": [
+        "Gunboat Diplomacy",
+        "Dollar Diplomacy",
+        "Appeasement",
+        "Risk Theory"
+      ],
+      "id": "gw_q14"
+    },
+    {
+      "q": "What was the name of the German gunboat sent to Agadir in 1911?",
+      "a": "SMS Panther",
+      "options": [
+        "SMS Panther",
+        "HMS Dreadnought",
+        "SMS Emden",
+        "SMS Bismarck"
+      ],
+      "id": "gw_q15"
+    },
+    {
+      "q": "What was the British policy requiring their navy to be larger than the next two combined?",
+      "a": "The Two-Power Standard",
+      "options": [
+        "The Two-Power Standard",
+        "The Risk Theory",
+        "The Imperial Defense Act",
+        "The Continental Commitment"
+      ],
+      "id": "gw_q16"
+    },
+    {
+      "q": "What revolutionary British battleship was launched in 1906?",
+      "a": "HMS Dreadnought",
+      "options": [
+        "HMS Dreadnought",
+        "HMS Victory",
+        "HMS Invincible",
+        "HMS Iron Duke"
+      ],
+      "id": "gw_q17"
+    },
+    {
+      "q": "Why did the Dreadnought ironically threaten British supremacy?",
+      "a": "It made all older ships obsolete, resetting the naval race",
+      "options": [
+        "It made all older ships obsolete, resetting the naval race",
+        "It was too expensive to build more than one",
+        "It was easily destroyed by German U-Boats",
+        "Its guns could not hit moving targets"
+      ],
+      "id": "gw_q18"
+    },
+    {
+      "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
+      "a": "Splendid Isolation",
+      "options": [
+        "Splendid Isolation",
+        "The Two-Power Standard",
+        "Balance of Power",
+        "Appeasement"
+      ],
+      "id": "gw_q19"
+    },
+    {
+      "q": "What was German Admiral Tirpitz's naval strategy called?",
+      "a": "Risk Theory",
+      "options": [
+        "Risk Theory",
+        "The Schlieffen Plan",
+        "Weltpolitik",
+        "Unrestricted Submarine Warfare"
+      ],
+      "id": "gw_q20"
+    },
+    {
+      "q": "What volatile region was known as the 'Powder Keg of Europe'?",
+      "a": "The Balkans",
+      "options": [
+        "The Balkans",
+        "The Rhineland",
+        "The Middle East",
+        "The Caucasus"
+      ],
+      "id": "gw_q21"
+    },
+    {
+      "q": "What declining multi-ethnic empire dominated the northern Balkans?",
+      "a": "The Austro-Hungarian Empire",
+      "options": [
+        "The Austro-Hungarian Empire",
+        "The Ottoman Empire",
+        "The Russian Empire",
+        "The British Empire"
+      ],
+      "id": "gw_q22"
+    },
+    {
+      "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
+      "a": "The Ottoman Empire",
+      "options": [
+        "The Ottoman Empire",
+        "The Austro-Hungarian Empire",
+        "The Russian Empire",
+        "The German Empire"
+      ],
+      "id": "gw_q23"
+    },
+    {
+      "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
+      "a": "Serbia",
+      "options": [
+        "Serbia",
+        "Bosnia",
+        "Croatia",
+        "Bulgaria"
+      ],
+      "id": "gw_q24"
+    },
+    {
+      "q": "Which region did Austria-Hungary formally annex in 1908?",
+      "a": "Bosnia",
+      "options": [
+        "Bosnia",
+        "Serbia",
+        "Romania",
+        "Albania"
+      ],
+      "id": "gw_q25"
+    },
+    {
+      "q": "Which major power considered itself the protector of the Slavic people?",
+      "a": "Russia",
+      "options": [
+        "Russia",
+        "Germany",
+        "France",
+        "Britain"
+      ],
+      "id": "gw_q26"
+    },
+    {
+      "q": "Who was the heir to the Austro-Hungarian throne?",
+      "a": "Archduke Franz Ferdinand",
+      "options": [
+        "Archduke Franz Ferdinand",
+        "Emperor Franz Joseph",
+        "Kaiser Wilhelm II",
+        "Tsar Nicholas II"
+      ],
+      "id": "gw_q27"
+    },
+    {
+      "q": "In which city was the Archduke assassinated?",
+      "a": "Sarajevo",
+      "options": [
+        "Sarajevo",
+        "Belgrade",
+        "Vienna",
+        "Berlin"
+      ],
+      "id": "gw_q28"
+    },
+    {
+      "q": "On what date was the Archduke assassinated?",
+      "a": "June 28, 1914",
+      "options": [
+        "June 28, 1914",
+        "July 23, 1914",
+        "August 4, 1914",
+        "November 11, 1918"
+      ],
+      "id": "gw_q29"
+    },
+    {
+      "q": "Who assassinated the Archduke?",
+      "a": "Gavrilo Princip",
+      "options": [
+        "Gavrilo Princip",
+        "Nedeljko Čabrinović",
+        "Dragutin Dimitrijević",
+        "Leon Trotsky"
+      ],
+      "id": "gw_q30"
+    },
+    {
+      "q": "What secret Serbian society did the assassin belong to?",
+      "a": "The Black Hand",
+      "options": [
+        "The Black Hand",
+        "The White Rose",
+        "The Young Turks",
+        "The Bolsheviks"
+      ],
+      "id": "gw_q31"
+    },
+    {
+      "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
+      "a": "The 'Blank Check'",
+      "options": [
+        "The 'Blank Check'",
+        "The Reinsurance Treaty",
+        "The Entente Cordiale",
+        "The Ultimatum"
+      ],
+      "id": "gw_q32"
+    },
+    {
+      "q": "What is the month of diplomatic failures after the assassination called?",
+      "a": "The July Crisis",
+      "options": [
+        "The July Crisis",
+        "The Sarajevo Crisis",
+        "The Balkan Wars",
+        "The Blank Check Incident"
+      ],
+      "id": "gw_q33"
+    },
+    {
+      "q": "What did Austria-Hungary issue to Serbia on July 23?",
+      "a": "An ultimatum",
+      "options": [
+        "An ultimatum",
+        "A declaration of war",
+        "A peace treaty",
+        "A demand for reparations"
+      ],
+      "id": "gw_q34"
+    },
+    {
+      "q": "Which country began mobilizing its army to protect Serbia?",
+      "a": "Russia",
+      "options": [
+        "Russia",
+        "France",
+        "Britain",
+        "Germany"
+      ],
+      "id": "gw_q35"
+    },
+    {
+      "q": "What was the name of Germany's military strategy for a two-front war?",
+      "a": "The Schlieffen Plan",
+      "options": [
+        "The Schlieffen Plan",
+        "The Risk Theory",
+        "Plan XVII",
+        "The Bismarck Strategy"
+      ],
+      "id": "gw_q36"
+    },
+    {
+      "q": "Which neutral country did Germany invade to attack France?",
+      "a": "Belgium",
+      "options": [
+        "Belgium",
+        "Switzerland",
+        "The Netherlands",
+        "Luxembourg"
+      ],
+      "id": "gw_q37"
+    },
+    {
+      "q": "Which country declared war on Germany due to the invasion of Belgium?",
+      "a": "Britain",
+      "options": [
+        "Britain",
+        "Russia",
+        "Italy",
+        "The United States"
+      ],
+      "id": "gw_q38"
+    },
+    {
+      "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
+      "a": "The Triple Alliance",
+      "options": [
+        "The Triple Alliance",
+        "The Triple Entente",
+        "The Central Powers",
+        "The League of Three Emperors"
+      ],
+      "id": "gw_q39"
+    },
+    {
+      "q": "What was the alliance of Britain, France, and Russia called?",
+      "a": "The Triple Entente",
+      "options": [
+        "The Triple Entente",
+        "The Triple Alliance",
+        "The Allied Powers",
+        "The Grand Alliance"
+      ],
+      "id": "gw_q40"
+    },
+    {
+      "q": "What treaty ended the First World War in 1919?",
+      "a": "The Treaty of Versailles",
+      "options": [
+        "The Treaty of Versailles",
+        "The Treaty of Brest-Litovsk",
+        "The Treaty of Trianon",
+        "The Congress of Vienna"
+      ],
+      "id": "gw_q41"
+    },
+    {
+      "q": "Which clause forced Germany to accept full responsibility for the war?",
+      "a": "Article 231 (War Guilt Clause)",
+      "options": [
+        "Article 231 (War Guilt Clause)",
+        "Article 48",
+        "The Blank Check",
+        "The Reparations Clause"
+      ],
+      "id": "gw_q42"
+    },
+    {
+      "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
+      "a": "Preventative War",
+      "options": [
+        "Preventative War",
+        "Total War",
+        "War of Attrition",
+        "Proxy War"
+      ],
+      "id": "gw_q43"
+    },
+    {
+      "q": "Which historian famously argued Germany planned a war of aggression?",
+      "a": "Fritz Fischer",
+      "options": [
+        "Fritz Fischer",
+        "Margaret MacMillan",
+        "A.J.P. Taylor",
+        "Christopher Clark"
+      ],
+      "id": "gw_q44"
+    },
+    {
+      "q": "Which historian argued the nations blundered into war due to rigid alliances?",
+      "a": "Margaret MacMillan",
+      "options": [
+        "Margaret MacMillan",
+        "Fritz Fischer",
+        "Ian Kershaw",
+        "Richard Evans"
+      ],
+      "id": "gw_q45"
+    },
+    {
+      "q": "What was the 'quarantine line' of new states created after WWI called?",
+      "a": "Cordon Sanitaire",
+      "options": [
+        "Cordon Sanitaire",
+        "The Iron Curtain",
+        "The Maginot Line",
+        "Mitteleuropa"
+      ],
+      "id": "gw_q46"
+    },
+    {
+      "q": "Name one new state created by the Treaty of Versailles.",
+      "a": "Poland",
+      "options": [
+        "Poland",
+        "Serbia",
+        "Bulgaria",
+        "Romania"
+      ],
+      "id": "gw_q47"
+    },
+    {
+      "q": "What European power was completely dismantled by the peace treaties?",
+      "a": "The Austro-Hungarian Empire",
+      "options": [
+        "The Austro-Hungarian Empire",
+        "The German Empire",
+        "The British Empire",
+        "The Russian Empire"
+      ],
+      "id": "gw_q48"
+    },
+    {
+      "q": "What ideological threat did the Allies want to separate from Germany after the war?",
+      "a": "Soviet Communism",
+      "options": [
+        "Soviet Communism",
+        "Fascism",
+        "Anarchism",
+        "Imperialism"
+      ],
+      "id": "gw_q49"
+    },
+    {
+      "q": "Which country did Germany invade on 3 August 1914?",
+      "a": "Belgium",
+      "options": [
+        "Belgium",
+        "France",
+        "Russia",
+        "Serbia"
+      ],
+      "id": "gw_q50"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Alsace-Lorraine",
+      "definition": "A resource-rich border region taken by Germany from France in 1871."
+    },
+    {
+      "term": "Ems Telegram",
+      "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
+    },
+    {
+      "term": "Reparations",
+      "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
+    },
+    {
+      "term": "Siege",
+      "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
+    },
+    {
+      "term": "Imperialism",
+      "definition": "A policy of extending a country's power and influence through diplomacy or military force."
+    },
+    {
+      "term": "Scramble for Africa",
+      "definition": "The rapid invasion, annexation, and division of African territory by European powers."
+    },
+    {
+      "term": "Empire",
+      "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+    },
+    {
+      "term": "Colony",
+      "definition": "A country or area under the full or partial political control of another country."
+    },
+    {
+      "term": "Dreadnought",
+      "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+    },
+    {
+      "term": "Arms Race",
+      "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+    },
+    {
+      "term": "Two-Power Standard",
+      "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+    },
+    {
+      "term": "Naval Supremacy",
+      "definition": "Having the most powerful and dominant navy in the world."
+    },
+    {
+      "term": "Triple Entente",
+      "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+    },
+    {
+      "term": "Triple Alliance",
+      "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+    },
+    {
+      "term": "Reinsurance Treaty",
+      "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
+    },
+    {
+      "term": "Encirclement",
+      "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+    },
+    {
+      "term": "Assassination",
+      "definition": "The murder of a prominent person, often a political leader or ruler."
+    },
+    {
+      "term": "Black Hand",
+      "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
+    },
+    {
+      "term": "Ultimatum",
+      "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+    },
+    {
+      "term": "Mobilisation",
+      "definition": "The action of a country or its government preparing and organizing troops for active service."
+    }
+  ],
   "key_individuals": [
     {
-      "name": "Lord Kitchener",
-      "image": "/images/gw_kitchener_portrait.jpg",
-      "bio": "Secretary of State for War in 1914. His face became instantly iconic on the 'Your Country Needs You' recruitment posters.",
-      "actions": "He realized the war would be long and require millions of men, leading to the creation of 'Kitchener's New Army' and Pals Battalions.",
-      "achievements": [
-        "Successfully mobilized a massive volunteer army before conscription was needed.",
-        "Drowned in 1916 when his ship hit a German mine."
+      "id": "wilhelm",
+      "name": "Kaiser Wilhelm II",
+      "role": "Emperor of Germany",
+      "image": "/units/great_war/assets/card_wilhelm.png",
+      "bio": "The impulsive and militaristic ruler of Germany whose aggressive 'Weltpolitik' foreign policy alienated Britain, France, and Russia, setting the stage for the Great War."
+    },
+    {
+      "id": "princip",
+      "name": "Gavrilo Princip",
+      "role": "Serbian Nationalist",
+      "image": "/units/great_war/assets/card_princip.png",
+      "bio": "A member of the Black Hand secret society who assassinated Archduke Franz Ferdinand in Sarajevo, providing the spark that ignited the July Crisis and World War I."
+    },
+    {
+      "id": "nicholas",
+      "name": "Tsar Nicholas II",
+      "role": "Emperor of Russia",
+      "image": "/units/great_war/assets/card_nicholas.png",
+      "bio": "The autocratic ruler of Russia who mobilized his vast army to defend Serbia against Austria-Hungary, triggering Germany's mobilization and the activation of the Schlieffen Plan."
+    }
+  ],
+  "guided_reading": [
+    {
+      "lesson_index": 0,
+      "book_title": "The Sleepwalkers: How Europe Went to War in 1914",
+      "author": "Christopher Clark",
+      "cover_image": "assets/clark_cover.png",
+      "author_context": "Christopher Clark is an acclaimed Australian historian. In 'The Sleepwalkers' (2012), he argues that the outbreak of World War I was not a premeditated crime by one single nation, but a tragic, complex failure of diplomacy where European leaders 'sleepwalked' into disaster without fully understanding the consequences.",
+      "extract": "The protagonists of 1914 were sleepwalkers, watchful but unseeing, haunted by dreams, yet blind to the reality of the horror they were about to bring into the world. For decades, the narrative of the Great War's outbreak has often focused on a single villain, usually pointing the finger of blame squarely at the German Empire. However, to truly understand the catastrophe, one must look at the entire continent of Europe—a continent caught in a rigid and paranoid web of its own making.\n\nIn the years leading up to 1914, Europe was dominated by a complex system of alliances. Originally designed as defensive measures to ensure peace through mutual protection, these agreements slowly morphed into dangerous tripwires. The Triple Entente, linking Britain, France, and Russia, stood in tense opposition to the Triple Alliance of Germany, Austria-Hungary, and Italy. Instead of feeling secure, the great powers felt entirely encircled and deeply suspicious of one another. The Franco-Prussian War of 1870 had left a bitter legacy; France was obsessed with regaining the lost territories of Alsace and Lorraine, while a newly unified Germany was determined to assert its dominance on the world stage.\n\nAmidst this atmosphere of mutual distrust, the military establishments across Europe grew vastly in size and influence. An unprecedented arms race took hold, most notably the fierce naval rivalry between Britain and Germany. Every nation began drafting intricate, inflexible mobilization plans. The most famous of these, the German Schlieffen Plan, dictated that in the event of war with Russia, Germany must rapidly strike and defeat France first to avoid a two-front war. Such plans meant that once the order to mobilize was given, the military timetables would take control, leaving politicians and diplomats entirely powerless to stop the descent into violence.\n\nThe spark that ignited this powder keg occurred in the volatile Balkan peninsula. The Austro-Hungarian Empire, a sprawling and multi-ethnic state, was terrified by the rise of Serbian nationalism on its southern border. When Archduke Franz Ferdinand was assassinated in Sarajevo on June 28, 1914, by a Bosnian Serb nationalist, the authorities in Vienna saw a perfect pretext to crush Serbia once and for all. They were emboldened by the infamous 'Blank Cheque' from their ally Germany, which promised unconditional support.\n\nYet, even after the assassination, a general European war was not inevitable. The ensuing July Crisis was a masterclass in diplomatic blundering, miscalculation, and brinkmanship. Leaders sent ambiguous messages, ambassadors failed to communicate their governments' true intentions, and monarchs desperately exchanged telegrams trying to preserve the peace while simultaneously signing mobilization orders. They were all playing a high-stakes game of bluff, assuming the other side would eventually back down.\n\nWhen Russia chose to mobilize its massive army in defense of its Slavic ally, Serbia, the fatal clockwork mechanism of the alliance system was triggered. Germany, bound by the rigid logic of the Schlieffen Plan, declared war on Russia and immediately invaded neutral Belgium to strike at France. This violation of Belgian neutrality finally brought the British Empire into the fray. \n\nIn the end, the outbreak of the First World War was not a premeditated crime planned in a single capital, but a tragic, collective failure. The statesmen of Europe were men who prided themselves on their rationality and diplomatic skill. Yet, gripped by fear, bound by rigid alliances, and overwhelmed by the speed of events, they sleepwalked past every opportunity to halt the crisis. They plunged their nations into a conflict of unprecedented scale and industrial slaughter, a war that would sweep away empires, redraw the map of the world, and cast a long, dark shadow over the rest of the twentieth century.",
+      "audio_file": "/assets/great_war_reading_gw_l0.mp3",
+      "questions": [
+        "What metaphor does the author use in the opening paragraph to describe the European leaders of 1914?",
+        "According to the text, why did defensive alliances like the Triple Entente and Triple Alliance actually make the great powers feel less secure?",
+        "How did the existence of inflexible military strategies, such as the Schlieffen Plan, affect the power of politicians and diplomats during the July Crisis?"
+      ],
+      "hinge_question": "If the European leaders were truly just 'sleepwalkers' who didn't want war, does that mean they are innocent of causing it? Why or why not?",
+      "is_adapted": true
+    },
+    {
+      "lesson_index": 1,
+      "book_title": "Heart of Darkness",
+      "author": "Joseph Conrad",
+      "cover_image": "assets/conrad_cover.png",
+      "author_context": "Joseph Conrad was a Polish-British author who worked as a sailor for many years. His 1899 novella 'Heart of Darkness' was based on his own horrifying experiences captaining a steamboat on the Congo River. It is a searing critique of the brutality, greed, and moral corruption of European imperialism in Africa.",
+      "extract": "The conquest of the earth, which mostly means the taking it away from those who have a different complexion or slightly flatter noses than ourselves, is not a pretty thing when you look into it too much. What redeems it is the idea only. An idea at the back of it; not a sentimental pretence but an idea; and an unselfish belief in the idea—something you can set up, and bow down before, and offer a sacrifice to...\n\nI left in a French steamer, and she called in every blamed port they have out there, for, as far as I could see, the sole purpose of landing soldiers and custom-house officers. I watched the coast. Watching a coast as it slips by the ship is like thinking about an enigma. There it is before you—smiling, frowning, inviting, grand, mean, insipid, or savage, and always mute with an air of whispering, 'Come and find out.' This one was almost featureless, as if still in the making, with an aspect of monotonous grimness. The edge of a colossal jungle, so dark-green as to be almost black, fringed with white surf, ran straight, like a ruled line, far, far away along a blue sea whose glitter was blurred by a creeping mist. The sun was fierce, the land seemed to glisten and drip with steam.\n\nNow and then a boat from the shore gave one a momentary contact with reality. It was paddled by black fellows. You could see from afar the white of their eyeballs glistening. They shouted, sang; their bodies streamed with perspiration; they had faces like grotesque masks—these chaps; but they had bone, muscle, a wild vitality, an intense energy of movement, that was as natural and true as the surf along their coast. They wanted no excuse for being there. They were a great comfort to look at. \n\nFor a time I would feel I belonged still to a world of straightforward facts; but the feeling would not last long. Something would turn up to scare it away. Once, I remember, we came upon a man-of-war anchored off the coast. There wasn't even a shed there, and she was shelling the bush. It appears the French had one of their wars going on thereabouts. Her ensign dropped limp like a rag; the muzzles of the long six-inch guns stuck out all over the low hull; the greasy, slimy swell swung her up lazily and let her down, swaying her thin masts. In the empty immensity of earth, sky, and water, there she was, incomprehensible, firing into a continent. Pop, would go one of the six-inch guns; a small flame would dart and vanish, a little white smoke would disappear, a tiny projectile would give a feeble screech—and nothing happened. Nothing could happen. There was a touch of insanity in the proceeding, a sense of lugubrious drollery in the sight; and it was not dissipated by somebody on board assuring me earnestly there was a camp of natives—he called them enemies!—hidden out of sight somewhere.\n\nWe gave her her letters (I heard the men in that lonely ship were dying of fever at the rate of three a day) and went on. We called at some more places with farcical names, where the merry dance of death and trade goes on in a still and earthy atmosphere as of an overheated catacomb; all along the formless coast bordered by dangerous surf, as if Nature herself had tried to ward off intruders; in and out of rivers, streams of death in life, whose banks were rotting into mud, whose waters, thickened into slime, invaded the contorted mangroves, that seemed to writhe at us in the extremity of an impotent despair.",
+      "audio_file": "/assets/great_war_reading_gw_l1.mp3",
+      "questions": [
+        "According to Conrad, what does the 'conquest of the earth' really involve?",
+        "How does the author describe the true motivations of the imperialists?",
+        "Why do you think this text was considered highly controversial when it was published in 1899?"
+      ],
+      "is_adapted": false,
+      "hinge_question": "How does Conrad use the image of the French warship 'firing into a continent' to expose the absurdity and violence of the 'civilizing mission' in Africa?"
+    },
+    {
+      "lesson_index": 2,
+      "book_title": "The Riddle of the Sands",
+      "author": "Erskine Childers",
+      "cover_image": "assets/childers_cover.png",
+      "author_context": "Erskine Childers was a British author and sailor. Published in 1903, 'The Riddle of the Sands' is considered the first modern spy novel. It fueled British paranoia about a surprise German naval invasion, perfectly capturing the intense public anxiety surrounding the Anglo-German naval arms race.",
+      "extract": "It was a glorious, breezy morning, and the waters of the Frisian coast danced and sparkled in the brilliant sunshine. We had brought the 'Dulcibella' through the tricky channels behind the islands, navigating the intricate maze of sandbanks that guarded the German shore. To the casual observer, we were merely a pair of eccentric English yachtsmen indulging in a late summer cruise among the desolate, mud-strewn estuaries of the North Sea. But beneath the facade of our holiday, a dark and terrifying suspicion had taken root in our minds—a suspicion that had driven us into these treacherous, shifting waters.\n\nAs we dropped anchor in a narrow, desolate gut behind the island of Memmert, Davies stood by the mast, sweeping the horizon with his binoculars. The coastline here was a bleak, monotonous stretch of flat sand and grey water, seemingly devoid of human life. Yet, it was precisely this desolate emptiness that made it so perfect for a secret of such colossal magnitude. For weeks, we had been piecing together a puzzle made of innocuous clues: a tugboat operating where it had no business being, a mysterious salvage operation that recovered nothing, and the relentless, almost obsessive secrecy of a certain Herr Dollmann, an Englishman turned traitor in the service of the Kaiser.\n\n'Look there,' Davies said quietly, handing me the glasses and pointing towards the mainland. 'Just past the spit of sand. Do you see it?'\n\nI squinted through the lenses. At first, there was nothing but the grey blur of the tidal flats. Then, as my eyes adjusted, I saw them. Not fishing boats, not merchantmen, but long, low shapes moving with mechanical precision through a dredged channel that did not exist on any of our Admiralty charts. They were lighters—massive, flat-bottomed barges designed for carrying troops and heavy equipment. There were dozens of them, moored in a hidden basin, sheltered from the open sea and completely invisible from the standard shipping lanes.\n\nThe blood ran cold in my veins as the pieces of the terrible puzzle finally snapped into place. This was no innocent coastal defense project. The German Empire, cramped within its landlocked borders and burning with imperial ambition, was not merely building a High Seas Fleet to challenge our dreadnoughts in open battle. They were preparing something far more insidious, something that struck directly at the heart of our island security.\n\nBehind the barrier of these Frisian islands, protected by the shifting sands and the treacherous tides, a vast, secret invasion force was being assembled. These hidden channels, newly deepened by relentless dredging, were designed to allow a flotilla of troop-carrying barges to slip out into the North Sea under the cover of darkness or a thick sea fog. They would bypass the mighty guns of the Royal Navy and strike a sudden, paralyzing blow on the unprotected eastern shores of England. \n\nWe were sitting in the very nerve center of a meticulously organized naval conspiracy. The Kaiser's Germany was preparing to leap the moat. We alone held the secret, and our tiny, fragile yacht was the only thing standing between the oblivious British public and a sudden, catastrophic war. The riddle of the sands had been solved, but the true terror of what it meant for the future of our nation was only just beginning.",
+      "audio_file": "/assets/great_war_reading_gw_l2.mp3",
+      "questions": [
+        "What secret threat did the narrator believe they had discovered?",
+        "According to the extract, why was the German Empire building its fleet?",
+        "How would reading a popular thriller like this have affected the British public's attitude toward Germany?"
+      ],
+      "is_adapted": false,
+      "hinge_question": "If 'The Riddle of the Sands' was a fictional novel, why do you think it caused such real-world panic and paranoia among the British public regarding the German Navy?"
+    },
+    {
+      "lesson_index": 3,
+      "book_title": "The Guns of August",
+      "author": "Barbara W. Tuchman",
+      "cover_image": "assets/tuchman_cover.png",
+      "author_context": "Barbara W. Tuchman was an American historian who won the Pulitzer Prize for 'The Guns of August' (1962). The book masterfully details the political calculations, military plans, and sheer arrogance of the Great Powers in the fateful month of August 1914 as the alliance system dragged them all into war.",
+      "extract": "The nations of Europe in the summer of 1914 were bound together by a series of treaties that were ostensibly designed for mutual defense. The theory behind these grand alliances was deterrence: if every major power was allied with another, the cost of aggression would be too high, and peace would be preserved. However, in reality, these treaties functioned not as safety nets, but as highly sensitive tripwires. The continent had become a rigid, inflexible machine, where a single spark could ignite the entire mechanism and drag millions into an unavoidable conflict. \n\nWhen the Archduke Franz Ferdinand was assassinated in the dusty streets of Sarajevo, the first of these tripwires was snapped. Austria-Hungary, determined to crush the irritating threat of Serbian nationalism, looked to its powerful ally, Germany, for support. The German Kaiser issued the infamous 'blank cheque,' a promise of unconditional backing that emboldened the Austrians to issue an ultimatum they knew Serbia could never fully accept. The localized crisis in the Balkans immediately began to pull the great powers into its gravitational vortex. \n\nRussia, presenting itself as the traditional protector of the Slavic people, felt compelled to stand by Serbia. But Russia’s vast size was its greatest weakness; its army was massive but agonizingly slow to gather. To have any hope of fighting effectively, the Russian Tsar had to order mobilization immediately, long before diplomacy had run its course. Once the Tsar gave the order, the fatal clockwork of the alliance system took over. \n\nMobilization in 1914 was not merely the calling up of reserves; it was an irrevocable step toward war. It meant the requisitioning of thousands of trains, the locking down of national borders, and the execution of highly detailed, down-to-the-minute railway timetables. For Germany, Russian mobilization triggered a terrifying strategic nightmare. Wedged between a hostile Russia to the east and a vengeful France to the west, the German military had devised the Schlieffen Plan. This plan dictated that Germany must immediately attack and defeat France in a lightning campaign of six weeks before the lumbering Russian army could reach the German borders. \n\nTherefore, when Russia mobilized, Germany could not wait. The German high command, terrified of fighting a two-front war, informed the civilian government that military necessity must now dictate political action. They declared war on Russia, but, bound by the rigid logic of the Schlieffen Plan, their armies immediately marched in the opposite direction—invading neutral Belgium to strike at France. \n\nThis violation of Belgian neutrality was the final tripwire. It outraged British public opinion and compelled the British Empire, tied to France and Russia by the Triple Entente, to declare war on Germany. In a matter of days, the entire continent had been plunged into disaster. The diplomats and politicians, who had spent the month of July sending frantic telegrams and attempting to bluff their way to victory, suddenly found themselves entirely powerless. The moment the mobilization orders were signed, control was handed over to the generals and their railway timetables. The statesmen of Europe had built a machine of alliances they believed would keep the peace, but once the gears started turning, it proved to be a machine of industrial slaughter that none of them could stop.",
+      "audio_file": "/assets/great_war_reading_gw_l3.mp3",
+      "questions": [
+        "Why does the author describe the defensive alliances as 'tripwires'?",
+        "What metaphor is used to describe the outbreak of the war?",
+        "According to the text, why were the diplomats unable to stop the war once it started?"
+      ],
+      "is_adapted": true,
+      "hinge_question": "How did the sheer speed and rigid timing of military mobilization plans like the Schlieffen Plan make a diplomatic solution almost impossible during the July Crisis?"
+    },
+    {
+      "lesson_index": 4,
+      "book_title": "All Quiet on the Western Front",
+      "author": "Erich Maria Remarque",
+      "cover_image": "assets/all_quiet_cover.png",
+      "author_context": "Erich Maria Remarque was a German veteran of World War I. His 1929 novel 'All Quiet on the Western Front' became a defining anti-war masterpiece, detailing the extreme physical and mental trauma of the trenches, and the profound disillusionment of a generation. It was so powerful that it was later banned and burned by the Nazi regime.",
+      "extract": "We were eighteen years old, and we had only just begun to love life and the world; and we had to shoot it to pieces. Before the war, our lives were filled with the ordinary concerns of youth—school, parents, hobbies, and the vague, distant promises of the future. But all of that was swept away in a sudden, overwhelming tide of national fervor. The older generation, the men who sat comfortably in their armchairs and read the newspapers, told us it was our glorious duty to defend the Fatherland. They spoke of the Fatherland as if it were a beautiful, fragile thing that required our immediate sacrifice, and we, in our naive enthusiasm, believed them.\n\nThe most persuasive of these voices belonged to our schoolmaster, Kantorek. He was a small, stern man who used to glare at us through his spectacles, pacing in front of the chalkboard. During drill-time, Kantorek gave us long, impassioned lectures about the honor of wearing the uniform and the sacred duty of the German soldier. He spoke of heroism and glory with such conviction that the whole of our class went, under his shepherding, straight to the District Commandant and volunteered. I can see him now, his voice trembling with emotion as he asked, 'Won't you join up, Comrades?' \n\nWe were all at once terribly earnest. We marched out of the school gates feeling like men, ready to shoulder the destiny of the empire. No one had the vaguest idea what we were actually in for. The word 'war' was an abstract concept to us, a glorious adventure gleaned from history books and patriotic poetry. We pictured cavalry charges, gleaming medals, and a swift, victorious return home before the leaves fell from the trees. Kantorek called us the 'Iron Youth,' a phrase that made us stand a little taller and puff out our chests, completely unaware of the grim irony it would soon hold. \n\nIt was only when we reached the training camps, and later the muddy, rat-infested trenches of the Western Front, that the glittering facade of duty and glory was violently stripped away. The first bombardment showed us our mistake, and under it the world as they had taught it to us broke in pieces. We realized that the authority of our teachers and parents, the people who were supposed to guide us into the world, was a lie. They had sent us out into a storm of steel with high-sounding words, but they had no conception of the reality of modern, industrial slaughter. \n\nOut here in the mud, nobody cared about the 'Fatherland' or the grand political arguments of the Kaiser. We fought simply to survive, driven by instinct and a desperate loyalty to the men standing next to us in the trench. We had become a wasteland. The older men might have wives, children, and occupations to return to, a solid foundation built before the war. But for us, the young men of eighteen, the war was our only education. We were a generation of men who, even though they may have escaped shells, were destroyed by the war.",
+      "audio_file": "/assets/great_war_reading_gw_l4.mp3",
+      "questions": [
+        "Who was Kantorek, and what did he persuade the entire class to do?",
+        "How did the adults, like teachers, use the idea of 'duty' or 'comradeship' to pressure young men?",
+        "How does this extract help explain the incredible surge of Nationalism and volunteering at the outbreak of the war?"
+      ],
+      "is_adapted": true,
+      "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "timeline",
+      "title": "Assessment Option 1: The July Crisis Domino Flowchart",
+      "type": "timeline",
+      "description": "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
+      "events": [
+        {
+          "year": "28 June 1914",
+          "title": "The Spark",
+          "detail": "Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo."
+        },
+        {
+          "year": "5 July 1914",
+          "title": "The Blank Cheque",
+          "detail": "Germany promises unconditional support to Austria-Hungary for any action against Serbia."
+        },
+        {
+          "year": "23 July 1914",
+          "title": "The Ultimatum",
+          "detail": "Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it."
+        },
+        {
+          "year": "30 July 1914",
+          "title": "Russian Mobilisation",
+          "detail": "Russia mobilises its massive army to defend its Slavic ally, Serbia."
+        },
+        {
+          "year": "3 August 1914",
+          "title": "The Schlieffen Plan",
+          "detail": "Germany declares war on France and invades neutral Belgium to avoid a two-front war."
+        }
       ]
     },
     {
-      "name": "Sir Douglas Haig",
-      "image": "/images/gw_douglas_haig.jpg",
-      "bio": "Commander-in-Chief of the British Expeditionary Force (BEF) from late 1915 until the end of the war.",
-      "actions": "He commanded the British forces at major battles including the Somme and Passchendaele, known for their horrific casualties.",
-      "achievements": [
-        "Highly controversial figure: criticized as the 'Butcher of the Somme' by some, but defended by others as a general who successfully adapted to modern industrial warfare and led the British to ultimate victory in 1918."
+      "id": "diamond9",
+      "title": "Assessment Option 2: The M.A.I.N. Significance Diamond",
+      "type": "diamond9",
+      "description": "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
+      "factors": [
+        "The Assassination of Franz Ferdinand (The Spark)",
+        "The Alliance System dividing Europe",
+        "Germany's 'Blank Cheque' to Austria",
+        "Anglo-German Naval Race (Militarism)",
+        "The scramble for Imperial colonies in Africa",
+        "Serbian Nationalism (The Black Hand)",
+        "Russian Mobilisation schedules",
+        "The Schlieffen Plan's invasion of Belgium",
+        "The decline of the Ottoman Empire (Balkan instability)"
       ]
     },
     {
-      "name": "Khudadad Khan",
-      "image": "/images/gw_khudadad_khan.jpg",
-      "bio": "A sepoy (infantryman) in the 129th Duke of Connaught's Own Baluchis of the British Indian Army.",
-      "actions": "In October 1914 at the First Battle of Ypres, his machine gun team fought to the death to hold back the German advance. He was the sole survivor of his team.",
-      "achievements": [
-        "He was the first Indian soldier to be awarded the Victoria Cross (VC), the highest military decoration for valour in the British Empire."
+      "id": "source_utility",
+      "title": "Assessment Option 3: Source Utility Analysis",
+      "type": "source_utility",
+      "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)",
+      "sources": [
+        {
+          "id": "Source B",
+          "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
+          "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
+          "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
+        },
+        {
+          "id": "Source C",
+          "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
+          "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
+          "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
+        }
       ]
     },
     {
-      "name": "Wilfred Owen",
-      "image": "/images/gw_wilfred_owen.jpg",
-      "bio": "One of the most famous British war poets, who served as an officer on the Western Front.",
-      "actions": "He wrote visceral, shocking poetry like 'Dulce et Decorum Est' and 'Anthem for Doomed Youth' while recovering from shell shock.",
-      "achievements": [
-        "His poetry shattered the romanticized, jingoistic propaganda of 1914, exposing the brutal 'pity of war'. Tragically killed in action just one week before the Armistice."
-      ]
-    },
-    {
-      "name": "David Lloyd George",
-      "image": "/images/gw_lloyd_george.jpg",
-      "bio": "British Prime Minister during the latter half of the war and at the Paris Peace Conference.",
-      "actions": "He drove the creation of the Ministry of Munitions to solve the shell crisis and effectively mobilized the Home Front.",
-      "achievements": [
-        "Represented Britain as one of the 'Big Three' at Versailles, attempting to find a middle ground between crushing Germany and rebuilding the European economy."
-      ]
-    },
-    {
-      "name": "Georges Clemenceau",
-      "image": "/images/gw_clemenceau.jpg",
-      "bio": "Prime Minister of France, nicknamed 'The Tiger'.",
-      "actions": "He represented a devastated France at the Paris Peace Conference, demanding maximum revenge and security.",
-      "achievements": [
-        "Pushed for the harshest possible terms against Germany in the Treaty of Versailles to ensure France would never be invaded again."
-      ]
-    },
-    {
-      "name": "Woodrow Wilson",
-      "image": "/images/gw_woodrow_wilson.jpg",
-      "bio": "President of the United States of America.",
-      "actions": "Brought America into the war in 1917 and proposed a peaceful, idealistic vision for the post-war world based on his 'Fourteen Points'.",
-      "achievements": [
-        "He championed the creation of the League of Nations, though his own country ultimately refused to join it."
+      "id": "interpretations",
+      "title": "Assessment Option 4: The Historians' Debate",
+      "type": "interpretations",
+      "description": "Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.",
+      "interpretations": [
+        {
+          "id": "Interpretation 1",
+          "text": "No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first."
+        },
+        {
+          "id": "Interpretation 2",
+          "text": "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+        }
+      ],
+      "questions": [
+        "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
+        "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+        "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)"
       ]
     }
   ]
 };
-
-console.log(unitData.lessons[4].narrative_blocks[1].tasks[0].text);

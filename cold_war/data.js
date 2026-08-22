@@ -28,7 +28,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why could Capitalism and Communism never peacefully coexist?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Yalta to Potsdam (1945): How did wartime allies become bitter rivals?",
@@ -55,7 +61,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who was more to blame for the breakdown in relations between Yalta and Potsdam?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint.",
@@ -82,7 +94,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Berlin Blockade a masterstroke by Stalin or a massive miscalculation?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Nuclear Brinkmanship: The Cuban Missile Crisis (1962).",
@@ -109,7 +127,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Who 'won' the Cuban Missile Crisis?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?",
@@ -136,7 +160,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Why did the superpowers fight proxy wars in Asia rather than direct conflicts?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991).",
@@ -163,7 +193,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Did the Soviet Union collapse because of internal weakness or external pressure?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     },
     {
       "title": "Assessment: Was the Cold War ever truly 'cold'?",
@@ -190,7 +226,13 @@ export const unitData = {
         "questions": []
       },
       "comprehension": [],
-      "source_tasks": []
+      "source_tasks": [],
+      "pair_share": {
+        "prompt": "Discuss with your partner: Was the Cold War ever truly 'cold'?",
+        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+        "share": "Share your pair's combined conclusion with the class."
+      }
     }
   ],
   "key_individuals": [],

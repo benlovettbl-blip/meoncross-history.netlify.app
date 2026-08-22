@@ -67,9 +67,18 @@ export function bindEvents() {
     });
     
     const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany', 'eee'];
-    const ks4Units = units.filter(u => !u.title.includes('KS3:')).sort((a, b) => {
+    const ks4Units = units.filter(u => !u.title.includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
       let idxA = ks4Order.indexOf(a.id);
       let idxB = ks4Order.indexOf(b.id);
+      if (idxA === -1) idxA = 999;
+      if (idxB === -1) idxB = 999;
+      return idxA - idxB;
+    });
+
+    const tripOrder = ['trip_ypres'];
+    const tripUnits = units.filter(u => tripOrder.includes(u.id)).sort((a, b) => {
+      let idxA = tripOrder.indexOf(a.id);
+      let idxB = tripOrder.indexOf(b.id);
       if (idxA === -1) idxA = 999;
       if (idxB === -1) idxB = 999;
       return idxA - idxB;
@@ -132,6 +141,7 @@ export function bindEvents() {
       });
     };
 
+    renderAccordionGroup('School Trips & Tours', tripUnits, true);
     renderAccordionGroup('Key Stage 3', ks3Units, true);
     renderAccordionGroup('Key Stage 4', ks4Units, false);
   }
