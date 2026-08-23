@@ -1447,18 +1447,6 @@ export function initializeApp(unitData) {
       };
 
 
-    let studentObjectivesHtml = '';
-    if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object' && lesson.teacher_notes.objectives) {
-      studentObjectivesHtml = `
-        <div class="learning-objectives-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 20px; border-radius: 6px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-          <h4 style="margin-top: 0; color: #1e3a8a; font-size: 1.15rem; margin-bottom: 15px;"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Learning Objectives</h4>
-          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.5;">
-            ${lesson.teacher_notes.objectives.map(obj => `<li style="margin-bottom: 8px;">${obj.objective}</li>`).join('')}
-          </ul>
-        </div>
-      `;
-    }
-
     if (lesson.teacher_notes) {
       let notesHtml = '';
       if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
@@ -2267,7 +2255,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              }
              if (task.type === 'multiple_choice') {
                extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text}</h4>
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text || task.question || ''}</h4>
                  ${task.questions.map((q, qIdx) => `
                    <div style="margin-top: 15px;">
                      <strong>${q.q}</strong>
@@ -2286,7 +2274,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              }
              if (task.type === 'sorting') {
                extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-arrow-down-1-9"></i> ${task.text}</h4>
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-arrow-down-1-9"></i> ${task.text || task.question || ''}</h4>
                  <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
                    ${task.events.map((ev, eIdx) => `
                      <div style="display:flex; align-items:center; gap:10px;">
@@ -2301,7 +2289,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              if (task.type === 'cloze') {
                let renderedCloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '<input type="text" placeholder="..." style="border:none; border-bottom:2px solid #3b82f6; background:transparent; width:100px; text-align:center; margin:0 5px;" />');
                extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-pen-clip"></i> ${task.text}</h4>
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-pen-clip"></i> ${task.text || task.question || ''}</h4>
                  <div style="margin-bottom: 15px; padding:10px; background:#e0f2fe; border-radius:6px; font-weight:bold; color:#0369a1;">Word Bank: ${task.words.join(' | ')}</div>
                  <p style="line-height:1.8; font-size:1.05rem;">${renderedCloze}</p>
                </div>`;
