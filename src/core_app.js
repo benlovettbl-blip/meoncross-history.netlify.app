@@ -1474,7 +1474,6 @@ export function initializeApp(unitData) {
 
       if (!isTrip) {
         html += `
-          ${studentObjectivesHtml}
           <div class="teacher-note">
             <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
             ${notesHtml}
@@ -1484,7 +1483,6 @@ export function initializeApp(unitData) {
     } else {
       // If no teacher notes but we somehow had objectives elsewhere (fallback)
       if (!isTrip) {
-        html += studentObjectivesHtml;
       }
     }
 
