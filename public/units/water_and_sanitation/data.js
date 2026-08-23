@@ -1,6 +1,4 @@
 module.exports = {
-  "cover_image": "assets/was_industrial_street.png",
-  "title": "KS3: Water and Sanitation Through Time",
   "debatePrompts": [
     {
       "title": "Roman Public Health",
@@ -16,6 +14,7 @@ module.exports = {
     }
   ],
   "id": "water_and_sanitation",
+  "title": "KS3: Water and Sanitation Through Time",
   "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",
   "color": "#0288d1",
   "enquiry": "Why did it take so long to clean up Britain?",
@@ -116,7 +115,6 @@ module.exports = {
               "clue": "Think about the scale of engineering and moving water using gravity."
             },
             {
-              "type": "written",
               "question": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?",
               "text": "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?"
             }
@@ -137,8 +135,7 @@ module.exports = {
             {
               "question": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?",
               "model_answer": "Fishbourne Roman Palace contains extensive remains of private bathhouses and underfloor heating (hypocausts), proving that wealthy elite Romans spent vast sums of money to ensure their personal hygiene and comfort.",
-              "text": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?",
-              "type": "short_answer"
+              "text": "How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?"
             }
           ],
           "text": "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href='https://sussexpast.co.uk/attraction/fishbourne-roman-palace/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>",
@@ -160,7 +157,6 @@ module.exports = {
               "clue": "Think about the social aspect of bathhouses and how flowing water cleared sewers."
             },
             {
-              "type": "written",
               "question": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?",
               "model_answer": "Seneca reveals that Roman bathhouses were incredibly noisy and chaotic. They were not just for washing, but served as busy social hubs where people exercised, argued, bought food from vendors, and conducted business.",
               "text": "Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?"
@@ -354,7 +350,6 @@ module.exports = {
               "clue": "Look at the Canterbury blueprints and who paid for the pipes."
             },
             {
-              "type": "written",
               "question": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?",
               "text": "Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?"
             }
@@ -577,7 +572,6 @@ module.exports = {
               "clue": "Think about why an invention is useless without a network (water & sewers)."
             },
             {
-              "type": "written",
               "question": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?",
               "text": "Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?"
             }
@@ -603,7 +597,7 @@ module.exports = {
           "theme_heading": "London's New Water Architecture"
         },
         {
-          "image": "",
+          "image": "/images/placeholder.jpg",
           "tasks": [
             {
               "type": "short_answer",
@@ -840,7 +834,6 @@ module.exports = {
               "clue": "Think about the rapid, terrifying nature of cholera deaths."
             },
             {
-              "type": "written",
               "question": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
               "text": "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?"
             }
@@ -1063,7 +1056,6 @@ module.exports = {
               "clue": "Think about how it moved waste out of the city and where it sent it."
             },
             {
-              "type": "written",
               "question": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?",
               "text": "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?"
             }

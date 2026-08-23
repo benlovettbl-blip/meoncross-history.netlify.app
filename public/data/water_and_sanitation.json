@@ -1,7 +1,5 @@
 {
   "data": {
-    "cover_image": "assets/was_industrial_street.png",
-    "title": "KS3: Water and Sanitation Through Time",
     "debatePrompts": [
       {
         "title": "Roman Public Health",
@@ -17,6 +15,7 @@
       }
     ],
     "id": "water_and_sanitation",
+    "title": "KS3: Water and Sanitation Through Time",
     "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",
     "color": "#0288d1",
     "enquiry": "Why did it take so long to clean up Britain?",
