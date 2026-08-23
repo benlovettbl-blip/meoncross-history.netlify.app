@@ -1,5 +1,4 @@
 module.exports = {
-  "title": "KS3: Change from 1450-1750",
   "title": "KS3: Change 1450-1750",
   "homepage_background": "/images/bg_great_war.jpg",
   "enquiry": "What were the biggest changes between 1450 and 1750?",
@@ -47,19 +46,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: Which technological change between 1450 and 1750 had the biggest global impact?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -97,19 +84,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: How did the Reformation shift the balance of power in Europe?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -147,19 +122,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: Was the Scientific Revolution truly a 'revolution' or a slow evolution?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -197,19 +160,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: Did the Enlightenment ultimately cause the political revolutions of the 18th century?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -247,19 +198,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: How did global trade transform daily life in Europe by 1750?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -297,19 +236,7 @@ module.exports = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "title": "Introduction",
-          "text": "Placeholder narrative.",
-          "tasks": [
-            {
-              "type": "short_answer",
-              "text": "Task 1: Placeholder task.",
-              "model_answer": "Model answer placeholder."
-            }
-          ]
-        }
-      ],
+      "narrative_blocks": [],
       "pair_share": {
         "prompt": "Discuss with your partner: Who were the 'winners' and 'losers' of the period 1450-1750?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
