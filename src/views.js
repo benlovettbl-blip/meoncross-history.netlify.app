@@ -307,7 +307,7 @@ window.launchSubApp = function(subAppName) {
     if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
     if (subAppName === 'great_war_v2') mappedName = 'great_war';
     
-    window.location.href = `/unit.html?id=${mappedName}`;
+    window.location.href = `/unit?id=${mappedName}`;
   }, 350);
 };
 
