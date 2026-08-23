@@ -1,0 +1,645 @@
+[
+  {
+    "id": "lesson_1",
+    "flashcards": [
+      {
+        "term": "Niccolò Barbaro",
+        "definition": "Witnessed and recorded the fall of Constantinople in 1453."
+      },
+      {
+        "term": "Sultan Mehmed II",
+        "definition": "Captured Constantinople in 1453, destroying the Byzantine Empire."
+      },
+      {
+        "term": "Mansa Musa",
+        "definition": "Renowned for his immense gold wealth and famous pilgrimage to Mecca."
+      },
+      {
+        "term": "Admiral Zheng He",
+        "definition": "Commanded massive Chinese treasure fleets across the Indian Ocean."
+      },
+      {
+        "term": "Christopher Columbus",
+        "definition": "His 1492 voyage to the Americas initiated European global expansion."
+      }
+    ],
+    "title": "Who held global power in 1450?",
+    "teacher_notes": {
+      "primer": "This lesson challenges Eurocentric narratives by showing that in 1450, true global wealth and power were held by the Ottoman Empire, the Silk Road networks, and African Kingdoms.",
+      "objectives": [
+        {
+          "objective": "Identify the major global powers and trading hubs in the year 1450.",
+          "primer": "Introduce the map of 1450, showing the Silk Road, Ottomans, and Benin/Mali.",
+          "question": "Which empire controlled the vital overland trade route to Asia in 1450?"
+        },
+        {
+          "objective": "Explain how the Ottoman Empire and West African kingdoms controlled global wealth.",
+          "primer": "Use the sources from Kritovoulos and the Catalan Atlas to demonstrate contemporary perceptions of wealth.",
+          "question": "How did 's pilgrimage demonstrate the vast wealth of West Africa?"
+        },
+        {
+          "objective": "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450.",
+          "primer": "Explain that European exploration was driven by desperation due to the Ottoman blockade, not just curiosity.",
+          "question": "Why did Western Europe need to find a sea route to Asia in the 15th century?"
+        }
+      ]
+    },
+    "do_now": {
+      "title": "Do Now: Connecting the Sources",
+      "type": "short_answer",
+      "text": "Look at the four historical sources depicted on the front cover of this workbook. What connections can you make between them, and what do they suggest about the balance of global power before 1450?",
+      "model_answer": "Students should identify that the sources show powerful, wealthy non-European empires dominating trade and military power, suggesting that Europe was not the center of global power in 1450."
+    },
+    "narrative_blocks": [
+      {
+        "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
+        "text": "In May 1453, a Venetian merchant named  stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old  of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
+        "tasks": [
+          {
+            "type": "multiple_choice",
+            "questions": [
+              {
+                "q": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
+                "options": [
+                  "It blocked the Silk Road trade routes",
+                  "It destroyed all European ships",
+                  "It ended the Renaissance",
+                  "It forced them to pay higher taxes to the Pope"
+                ]
+              },
+              {
+                "q": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                "options": [
+                  "Europeans were forced to stay in small, confined trading posts",
+                  "Europeans owned the entire city of Canton",
+                  "The Chinese refused to trade entirely",
+                  "Europeans had stronger armies than the Ming Emperor"
+                ]
+              }
+            ],
+            "question": "Knowledge Check: Review the events of 1450."
+          }
+        ]
+      },
+      {
+        "title": "Analyzing the Evidence: The Fall of Constantinople",
+        "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of  entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong></strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
+        "tasks": [
+          {
+            "type": "drawing",
+            "lines": 10,
+            "question": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin."
+          }
+        ]
+      },
+      {
+        "title": "Macro-History: The Wealth of the East",
+        "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
+      },
+      {
+        "title": "Macro-History: The Real Centers of Wealth in 1450",
+        "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul,  controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded."
+      },
+      {
+        "title": "Analyzing Source C",
+        "image": "/images/ottoman_1453.jpg",
+        "image_alt": "Source A: Fresco of the Siege of Constantinople (1537)",
+        "source_letter": "C",
+        "tasks": [
+          {
+            "type": "source_analysis",
+            "question": "Study Source A. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+            "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
+          },
+          {
+            "question": "Study Source A (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+            "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
+          }
+        ],
+        "image_caption": "Source A: Fresco of the Siege of Constantinople (1537)"
+      },
+      {
+        "title": "West Africa: Kingdoms of Gold and Brass",
+        "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>"
+      },
+      {
+        "title": "Analyzing Source D",
+        "image": "/images/benin_bronze.jpg",
+        "image_alt": "Source B: 16th-Century Benin Bronze Plaque",
+        "source_letter": "D",
+        "image_caption": "Source B: 16th-Century Benin Bronze Plaque",
+        "tasks": [
+          {
+            "question": "Study Source B (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+            "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
+          }
+        ]
+      },
+      {
+        "title": "Analyzing the Evidence: The Wealth of West Africa",
+        "text": "<div class='scaffold-box'><strong>Source E: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>"
+      },
+      {
+        "title": "Analyzing Source E",
+        "image": "/images/mansa_musa_catalan.jpg",
+        "image_alt": "Source C: Catalan Atlas (1375) - Mansa Musa",
+        "source_letter": "E",
+        "tasks": [
+          {
+            "type": "comprehension",
+            "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
+            "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
+          }
+        ],
+        "image_caption": "Source C: Catalan Atlas (1375) - Mansa Musa"
+      },
+      {
+        "title": "The Silk Road & Ming China: The World's Industrial Engine",
+        "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, ]] commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
+      },
+      {
+        "title": "Examining the Evidence",
+        "image": "/images/silk_road.jpg",
+        "image_alt": "Source D: Map of the Silk Road Trade Routes",
+        "image_caption": "Source D: Map of the Silk Road Trade Routes"
+      },
+      {
+        "title": "Historical Interpretations: The Eurocentric Myth",
+        "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: ]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
+        "tasks": [
+          {
+            "type": "think_pair_share",
+            "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+            "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+          }
+        ]
+      },
+      {
+        "title": "Lesson Reflection"
+      },
+      {
+        "title": "Side Quest: The English Peasant's Pottage",
+        "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The English Peasant's Pottage</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_peasant.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic 15th-century manuscript illumination showing peasants performing grueling manual agricultural labor.</i>\n</div>\n<p>While the Oba of Benin commissioned magnificent bronze plaques and Ming Emperors wore silk, the vast majority of people in 1450 England were destitute peasant farmers. An ordinary English peasant lived in a dark, smokey, single-room wattle-and-daub hut shared with their livestock. Their diet was incredibly monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats. They rarely travelled more than five miles from their birthplace and were completely oblivious to the vast riches flowing through the Silk Road or the trans-Saharan trade networks. Europe in 1450 was not the center of the world; for the average peasant, it was a cold, isolated struggle for survival.</p>\n</details>",
+        "tasks": [
+          {
+            "type": "comprehension",
+            "question": "How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
+            "model_answer": "Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive."
+          },
+          {
+            "type": "comprehension",
+            "question": "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
+            "model_answer": "It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages."
+          }
+        ],
+        "source_letter": "F"
+      }
+    ],
+    "learning_objectives": {
+      "overarching": "Who held global power in 1450?",
+      "scaffolded": [
+        "Identify the major global powers and trading hubs in the year 1450.",
+        "Explain how the Ottoman Empire and West African kingdoms controlled global wealth.",
+        "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450."
+      ]
+    },
+    "banner": "/images/early_mod_l1_banner.jpg",
+    "lesson_assessment": {
+      "question": "Explain why Europe was NOT the center of global wealth and power in 1450.",
+      "hints": "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
+      "sentence_starters": [
+        "In 1450, the true centers of global wealth were...",
+        "This was because they controlled...",
+        "By contrast, Europe was relatively isolated because..."
+      ]
+    },
+    "extended": {
+      "title": "Assessment Practice",
+      "question": "Explain why Europe was not the center of global wealth and power in 1450.",
+      "hints": [
+        "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
+        "Sentence Starter: In 1450, the true centers of global wealth were...",
+        "Sentence Starter: This was because they controlled...",
+        "Sentence Starter: By contrast, Europe was relatively isolated because..."
+      ],
+      "lines": 15
+    },
+    "vocab": [
+      {
+        "term": "Silk Road",
+        "definition": "An ancient network of trade routes connecting East Asia to the Mediterranean and Europe."
+      },
+      {
+        "term": "Ming Dynasty",
+        "definition": "The ruling dynasty of China from 1368 to 1644, known for its wealth and technological advancements."
+      },
+      {
+        "term": "Ottoman Empire",
+        "definition": "A powerful Islamic empire that controlled the Middle East, North Africa, and Eastern Europe, acting as the gateway for trade."
+      }
+    ]
+  },
+  {
+    "id": "lesson_2",
+    "flashcards": [
+      {
+        "term": "Martin Luther",
+        "definition": "His 1517 protests sparked the Protestant Reformation, dividing Europe."
+      },
+      {
+        "term": "Pope Alexander VI",
+        "definition": "Issued the 1494 Treaty of Tordesillas dividing the Americas between Spain and Portugal."
+      },
+      {
+        "term": "King Philip II",
+        "definition": "Catholic monarch who launched the Spanish Armada against England."
+      },
+      {
+        "term": "Queen Elizabeth I",
+        "definition": "Protestant Queen who authorized privateers and defeated the Spanish Armada."
+      },
+      {
+        "term": "Mary, Queen of Scots",
+        "definition": "Catholic monarch whose execution angered Philip II."
+      },
+      {
+        "term": "Henry VIII",
+        "definition": "Broke away from the Catholic Church in 1534."
+      }
+    ],
+    "title": "How did religious conflict trigger global exploration (1517–1588)?",
+    "teacher_notes": {
+      "primer": "This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.",
+      "objectives": [
+        {
+          "objective": "Explain how the Protestant Reformation shattered European unity after 1517.",
+          "primer": "Direct students to the Macro-History section on  and the 95 Theses. Emphasize how this split created a geopolitical divide that spilled into the New World.",
+          "question": "How did 's actions in 1517 directly contribute to the later naval conflict between England and Spain?"
+        },
+        {
+          "objective": "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
+          "primer": "Use the Micro-History of San Juan de Ulúa and the section on Protestant Privateers to show how Drake's personal vendetta aligned with Elizabeth's need to challenge Spain cheaply.",
+          "question": "Why did  choose to use privateers like Francis Drake rather than sending an official Royal Navy fleet to challenge Spain in the Americas?"
+        },
+        {
+          "objective": "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions.",
+          "primer": "Focus on the visual analysis of the Armada Portrait and the historical interpretations to debate whether the victory was a divine miracle or a result of tactical superiority.",
+          "question": "Based on the visual evidence in the Armada Portrait, how did the defeat of the Spanish Armada change England's self-image and future ambitions?"
+        }
+      ]
+    },
+    "do_now": {
+      "title": "Do Now: Previous Knowledge",
+      "type": "questions",
+      "items": [
+        {
+          "question": "What was the overarching name for the ancient trade network connecting Asia to Europe?",
+          "answer": "The Silk Road"
+        },
+        {
+          "question": "Which major empire expanded to block overland European trade routes in 1453?",
+          "answer": "The Ottoman Empire"
+        },
+        {
+          "question": "What city was captured by Sultan Mehmed II in 1453?",
+          "answer": "Constantinople"
+        },
+        {
+          "question": "What West African kingdom was known for its detailed bronze plaques in the 15th century?",
+          "answer": "The Kingdom of Benin"
+        },
+        {
+          "question": "Why did the capture of Constantinople force European nations to look for new trade routes?",
+          "answer": "Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade."
+        }
+      ]
+    },
+    "vocab": [
+      {
+        "term": "Reformation",
+        "definition": "A 16th-century religious movement in Europe that resulted in the creation of Protestant churches and a split from the Catholic Church."
+      },
+      {
+        "term": "Privateer",
+        "definition": "An armed ship owned by private individuals holding a government commission (Letter of Marque) and authorized for use in war, especially in the capture of enemy merchant shipping."
+      },
+      {
+        "term": "Armada",
+        "definition": "A fleet of warships, particularly the Spanish fleet that sailed against England under the command of  in 1588."
+      },
+      {
+        "term": "Monopoly",
+        "definition": "The exclusive possession or control of the supply or trade in a commodity or service."
+      },
+      {
+        "term": "Indulgences",
+        "definition": "In the Catholic Church, a grant by the Pope of remission of the temporal punishment in purgatory still due for sins after absolution."
+      }
+    ],
+    "narrative_blocks": [
+      {
+        "title": "Micro-History: San Juan de Ulúa (September 1568)",
+        "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, , had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against  of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
+        "tasks": [
+          {
+            "type": "comprehension",
+            "question": "Why did the Spanish attack Francis Drake and  at San Juan de Ulúa despite having signed a truce?",
+            "model_answer": "The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal."
+          }
+        ],
+        "images": [
+          {
+            "image": "/images/early_mod_l2_banner.jpg",
+            "image_alt": "Map of the Spanish Armada Route (1588)",
+            "image_context": "Trace the chaotic route of the Spanish fleet around the rugged coasts of Scotland and Ireland. This map highlights how the Armada was defeated not just by English naval tactics, but by disastrous weather (the 'Protestant Wind') and poor logistical planning. **Hinge Question:** Does this map suggest the English victory was due to superior skill, or lucky geography and weather?",
+            "image_caption": "An expedition map showing the route of the Spanish Armada in 1588.  of Spain launched the massive fleet to overthrow the Protestant , but it was defeated by English naval tactics and severe storms.",
+            "source_letter": "A"
+          },
+          {
+            "image": "/images/francis_drake.jpg",
+            "image_alt": "Portrait of Sir Francis Drake (1591)",
+            "image_context": "Notice Drake's confident posture and the hand resting on a globe. To the English, he was a heroic explorer and a symbol of their growing naval power. To the Spanish, however, he was 'El Draque' (The Dragon)—a ruthless pirate who terrorized their galleons. **Hinge Question:** How can the exact same historical figure be remembered as both a national hero and a criminal pirate?",
+            "image_caption": "Portrait of  (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.",
+            "source_letter": "B"
+          }
+        ]
+      },
+      {
+        "title": "Macro-History: Navigating the Unknown",
+        "text": "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time.<br><br><strong>The Invincible Armada (1588)</strong><br>In 1588, Philip II sent the 'Invincible Armada' to invade England. The Spanish ships sailed in a massive, tightly packed <strong>crescent (half-moon) formation</strong>, making them almost impossible to attack. However, when the Armada anchored off Calais, the English launched a devastating night attack. They set eight of their own ships on fire (<strong>fireships</strong>) and let the wind blow these floating infernos directly into the crowded Spanish fleet, causing mass panic and breaking their defensive crescent."
+      },
+      {
+        "title": "Examining the Evidence",
+        "image": "/images/global_mercator.jpg",
+        "image_alt": "Source A: Portrait of Gerardus Mercator (1574)",
+        "tasks": [
+          {
+            "type": "drawing",
+            "lines": 10,
+            "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
+          },
+          {
+            "question": "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+            "model_answer": "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires."
+          }
+        ],
+        "image_caption": "Source A: Portrait of Gerardus Mercator (1574)"
+      },
+      {
+        "title": "Macro-History: The Reformation (1517)",
+        "text": "<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named  nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of \"indulgences\" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after  broke away from Rome in 1534.</li></ul>"
+      },
+      {
+        "title": "Analyzing Source B",
+        "image": "/images/martin_luther_portrait.jpg",
+        "image_alt": "Source B: Portrait of Martin Luther (1529)",
+        "source_letter": "B",
+        "image_caption": "Source B: Portrait of Martin Luther (1529)"
+      },
+      {
+        "title": "Macro-History: The New World Monopoly & Privateers",
+        "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494,  issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant  took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, ]], and  were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II."
+      },
+      {
+        "title": "Analyzing Source C",
+        "image": "/images/tordesillas_map.png",
+        "image_alt": "Source C: Map of the Treaty of Tordesillas (1494)",
+        "source_letter": "C",
+        "tasks": [
+          {
+            "type": "source_analysis",
+            "question": "Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?",
+            "model_answer": "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly."
+          },
+          {
+            "type": "analysis",
+            "question": "How did Queen Elizabeth I use privateers as a strategic tool against Spain?",
+            "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
+          }
+        ],
+        "image_caption": "Source C: Map of the Treaty of Tordesillas (1494)"
+      },
+      {
+        "title": "The Climax: The Spanish Armada (1588)",
+        "text": "Furious at English privateering, Elizabeth's support for Protestant rebels in the Netherlands, and the execution of the Catholic , King Philip II decided to invade England.<br><br>In May 1588, Philip launched the <strong>Spanish Armada</strong>: 130 warships carrying 30,000 soldiers designed to overthrow Elizabeth and force England back to Catholicism.<br><br>The English navy, using smaller, faster ships equipped with long-range cannons, harassed the Armada up the English Channel. Off Calais, the English unleashed drifting <strong>fire ships</strong> (vessels packed with pitch and gunpowder set ablaze), forcing the panicked Spanish ships to cut their anchors and scatter. A disastrous storm—termed the \"Protestant Wind\"—blew the remaining Spanish fleet around the rocky coasts of Scotland and Ireland, destroying over half their ships.",
+        "tasks": [
+          {
+            "type": "comprehension",
+            "question": "Describe the two main reasons the Spanish Armada failed to invade England.",
+            "model_answer": "The Armada failed due to English tactics, such as using faster ships with long-range cannons and launching fire ships that scattered the Spanish fleet at Calais, and bad weather—the 'Protestant Wind' that destroyed fleeing Spanish ships on the rocky coasts of Scotland and Ireland."
+          }
+        ]
+      },
+      {
+        "title": "Opposing Views: A Queen and a Captive (Part 1)",
+        "text": "<blockquote><strong>Source B: An Excerpt from Queen Elizabeth I's Speech at Tilbury (August 1588)</strong><br><em>\"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king, and of a king of England too, and think foul scorn that Parma or Spain, or any prince of Europe, should dare to invade the borders of my realm... We shall shortly have a famous victory over these enemies of my God, of my kingdom, and of my people.\"</em></blockquote><br><br><blockquote><strong>Source C: A Spanish Catholic Account of English Privateers (1579)</strong><br><em>\"This Francisco Drake is a thief, a heretic, and a minister of the Devil. He robs churches, desecrates holy images, and steals the treasure that belongs by divine right to His Catholic Majesty King Philip. He does not fight for trade; he fights to destroy the Holy Mother Church.\"</em><br>— <strong>Adapted from a letter by </strong>, a Spanish captain captured by Drake.</blockquote>",
+        "tasks": [
+          {
+            "type": "source_analysis",
+            "question": "How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?",
+            "model_answer": "Source B frames the conflict as a holy defense of England against 'enemies of my God', portraying the English as righteous defenders. Source C, written by a Spanish Catholic, views Drake as a 'thief' and a 'heretic' fighting to destroy the Catholic Church, focusing on his piracy and religious desecration rather than legitimate warfare."
+          }
+        ]
+      },
+      {
+        "title": "Visual Analysis: The Armada Portrait (1588)",
+        "text": "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>"
+      },
+      {
+        "title": "Analyzing Source F",
+        "image": "/images/armada_portrait.jpg",
+        "image_alt": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)",
+        "source_letter": "F",
+        "tasks": [
+          {
+            "type": "analysis",
+            "question": "What message was the artist of the Armada Portrait trying to convey about England's future?",
+            "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
+          },
+          {
+            "question": "Study Source D (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
+            "model_answer": "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy."
+          }
+        ],
+        "image_caption": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)"
+      },
+      {
+        "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
+        "text": "<blockquote><strong>Historian Perspective A: Traditional View (19th Century)</strong><br><em>\"The defeat of the Armada was a miraculous victory for Protestantism and freedom. God sent a divine storm to scatter the Catholic tyrant’s fleet, paving the way for the rise of the British Empire.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Revisionist View (]], 2013)</strong><br><em>\"Philip II’s invasion failed due to structural flaws: poor communications between Spain and the Netherlands, rigid tactics, and terrible naval logistics. The 'Protestant Wind' simply finished off a fleet that had already been outmaneuvered by superior English ship design and artillery.\"</em></blockquote>",
+        "tasks": [
+          {
+            "type": "comprehension",
+            "question": "How does the revisionist view (Perspective B) challenge the traditional view (Perspective A) of the Armada's defeat?",
+            "model_answer": "Perspective A argues the defeat was a divine, miraculous event driven by the 'Protestant Wind' sent by God. Perspective B challenges this by arguing it was actually caused by human errors and Spanish structural flaws—such as poor logistics, rigid tactics, and superior English ship design—with the weather only playing a secondary role at the end."
+          }
+        ]
+      },
+      {
+        "title": "Lesson Reflection"
+      },
+      {
+        "title": "Side Quest: The Horrors of Scurvy",
+        "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_scurvy.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor's gums and teeth.</i>\n</div>\n<p>The 'Golden Age of Exploration' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake's Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor's gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>",
+        "tasks": [
+          {
+            "type": "think_pair_share",
+            "question": "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
+            "model_answer": "Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors."
+          },
+          {
+            "type": "sorting",
+            "events": [
+              "The Spanish Armada is defeated by the English fleet and bad weather.",
+              "Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.",
+              "Francis Drake circumnavigates the globe and raids Spanish treasure ships.",
+              "The Pope splits the 'New World' between Spain and Portugal."
+            ],
+            "question": "Number these events from 1 to 4 in the order they happened."
+          }
+        ],
+        "source_letter": "F"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?",
+        "options": [
+          "1492",
+          "1517",
+          "1534",
+          "1588"
+        ],
+        "answer": 1,
+        "explanation": "1517"
+      },
+      {
+        "question": "Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?",
+        "options": [
+          "Elizabeth I",
+          "Mary I",
+          "Edward VI",
+          ""
+        ],
+        "answer": 3,
+        "explanation": "Henry VIII"
+      },
+      {
+        "question": "What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?",
+        "options": [
+          "The Treaty of Versailles",
+          "The Treaty of Tordesillas",
+          "The Magna Carta",
+          "The Edict of Nantes"
+        ],
+        "answer": 1,
+        "explanation": "The Treaty of Tordesillas"
+      },
+      {
+        "question": "What official document gave privateers legal permission from a monarch to attack foreign ships?",
+        "options": [
+          "A Papal Bull",
+          "A Royal Charter",
+          "A Letter of Marque",
+          "An Indulgence"
+        ],
+        "answer": 2,
+        "explanation": "A Letter of Marque"
+      },
+      {
+        "question": "What nickname did the Spanish give to ?",
+        "options": [
+          "The Pirate King",
+          "The Heretic",
+          "El Draque (\"The Dragon\")",
+          "The English Devil"
+        ],
+        "answer": 2,
+        "explanation": "El Draque (\"The Dragon\")"
+      },
+      {
+        "question": "Name the flagship on which  circumnavigated the globe between 1577 and 1580.",
+        "options": [
+          "The Mayflower",
+          "The Mary Rose",
+          "The Golden Hind",
+          "The Victory"
+        ],
+        "answer": 2,
+        "explanation": "The Golden Hind"
+      },
+      {
+        "question": "Which English naval tactic shattered the Spanish fleet formation while anchored off Calais in 1588?",
+        "options": [
+          "Fire ships",
+          "Boarding parties",
+          "Submarine warfare",
+          "Cannon bombardment from shore"
+        ],
+        "answer": 0,
+        "explanation": "Fire ships"
+      },
+      {
+        "question": "Who was the Catholic King of Spain who launched the Armada against England in 1588?",
+        "options": [
+          "King Charles V",
+          "King Ferdinand II",
+          "King Philip II",
+          "King Louis XIV"
+        ],
+        "answer": 2,
+        "explanation": "King Philip II"
+      },
+      {
+        "question": "What term was used to describe the storms that wrecked the fleeing Spanish ships off Scotland and Ireland?",
+        "options": [
+          "The Protestant Wind",
+          "The Armada Storm",
+          "The English Channel Gale",
+          "The Divine Tempest"
+        ],
+        "answer": 0,
+        "explanation": "The Protestant Wind"
+      },
+      {
+        "question": "What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?",
+        "options": [
+          "North America",
+          "Europe",
+          "Africa",
+          "Asia"
+        ],
+        "answer": 0,
+        "explanation": "North America"
+      }
+    ],
+    "learning_objectives": {
+      "overarching": "How did religious conflict trigger global exploration (1517–1588)?",
+      "scaffolded": [
+        "Explain how the Protestant Reformation shattered European unity after 1517.",
+        "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
+        "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions."
+      ]
+    },
+    "banner": "/images/early_mod_l2_banner.jpg",
+    "lesson_assessment": {
+      "question": "How did the Protestant Reformation push England into global exploration and conflict with Spain?",
+      "hints": "Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.",
+      "sentence_starters": [
+        "When England became Protestant, it created conflict with Catholic Spain because...",
+        "To challenge Spain’s wealth in the New World, English monarchs encouraged...",
+        "This rivalry culminated in..."
+      ]
+    },
+    "extended": {
+      "title": "Assessment Practice",
+      "question": "How did the Protestant Reformation push England into global exploration and conflict with Spain?",
+      "hints": [
+        "Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.",
+        "Sentence Starter: When England became Protestant, it created conflict with Catholic Spain because...",
+        "Sentence Starter: To challenge Spain’s wealth in the New World, English monarchs encouraged...",
+        "Sentence Starter: This rivalry culminated in..."
+      ],
+      "lines": 15
+    }
+  }
+]

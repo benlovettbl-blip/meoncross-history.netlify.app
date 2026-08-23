@@ -262,20 +262,20 @@
           {
             "title": "Analyzing Source C",
             "image": "/images/ottoman_1453.jpg",
-            "image_alt": "Source A: Fresco of the Siege of Constantinople (1537)",
+            "image_alt": "Fresco of the Siege of Constantinople (1537)",
             "source_letter": "C",
             "tasks": [
               {
                 "type": "source_analysis",
-                "question": "Study Source A. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+                "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
                 "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
               },
               {
-                "question": "Study Source A (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+                "question": "Study Source C (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
                 "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
               }
             ],
-            "image_caption": "Source A: Fresco of the Siege of Constantinople (1537)"
+            "image_caption": "Fresco of the Siege of Constantinople (1537)"
           },
           {
             "title": "West Africa: Kingdoms of Gold and Brass",
@@ -284,12 +284,12 @@
           {
             "title": "Analyzing Source D",
             "image": "/images/benin_bronze.jpg",
-            "image_alt": "Source B: 16th-Century Benin Bronze Plaque",
+            "image_alt": "16th-Century Benin Bronze Plaque",
             "source_letter": "D",
-            "image_caption": "Source B: 16th-Century Benin Bronze Plaque",
+            "image_caption": "16th-Century Benin Bronze Plaque",
             "tasks": [
               {
-                "question": "Study Source B (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+                "question": "Study Source D (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
                 "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
               }
             ]
@@ -301,7 +301,7 @@
           {
             "title": "Analyzing Source E",
             "image": "/images/mansa_musa_catalan.jpg",
-            "image_alt": "Source C: Catalan Atlas (1375) - Mansa Musa",
+            "image_alt": "Catalan Atlas (1375) - Mansa Musa",
             "source_letter": "E",
             "tasks": [
               {
@@ -310,21 +310,21 @@
                 "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
               }
             ],
-            "image_caption": "Source C: Catalan Atlas (1375) - Mansa Musa"
+            "image_caption": "Catalan Atlas (1375) - Mansa Musa"
           },
           {
             "title": "The Silk Road & Ming China: The World's Industrial Engine",
-            "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, ]] commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
+            "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
           },
           {
             "title": "Examining the Evidence",
             "image": "/images/silk_road.jpg",
-            "image_alt": "Source D: Map of the Silk Road Trade Routes",
-            "image_caption": "Source D: Map of the Silk Road Trade Routes"
+            "image_alt": "Map of the Silk Road Trade Routes",
+            "image_caption": "Map of the Silk Road Trade Routes"
           },
           {
             "title": "Historical Interpretations: The Eurocentric Myth",
-            "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: ]] (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
+            "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: Peter Frankopan (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
             "tasks": [
               {
                 "type": "think_pair_share",
@@ -530,7 +530,7 @@
           {
             "title": "Examining the Evidence",
             "image": "/images/global_mercator.jpg",
-            "image_alt": "Source A: Portrait of Gerardus Mercator (1574)",
+            "image_alt": "Portrait of Gerardus Mercator (1574)",
             "tasks": [
               {
                 "type": "drawing",
@@ -538,11 +538,11 @@
                 "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
               },
               {
-                "question": "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+                "question": "Study Source C (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
                 "model_answer": "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires."
               }
             ],
-            "image_caption": "Source A: Portrait of Gerardus Mercator (1574)"
+            "image_caption": "Portrait of Gerardus Mercator (1574)"
           },
           {
             "title": "Macro-History: The Reformation (1517)",
@@ -551,18 +551,18 @@
           {
             "title": "Analyzing Source B",
             "image": "/images/martin_luther_portrait.jpg",
-            "image_alt": "Source B: Portrait of Martin Luther (1529)",
+            "image_alt": "Portrait of Martin Luther (1529)",
             "source_letter": "B",
-            "image_caption": "Source B: Portrait of Martin Luther (1529)"
+            "image_caption": "Portrait of Martin Luther (1529)"
           },
           {
             "title": "Macro-History: The New World Monopoly & Privateers",
-            "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494,  issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant  took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, ]], and  were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II."
+            "text": "<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494,  issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant  took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, John Hawkins, and Walter Raleigh were illegal pirates (<em>el Draque</em>, \"The Dragon\"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California (\"New Albion\") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II."
           },
           {
             "title": "Analyzing Source C",
             "image": "/images/tordesillas_map.png",
-            "image_alt": "Source C: Map of the Treaty of Tordesillas (1494)",
+            "image_alt": "Map of the Treaty of Tordesillas (1494)",
             "source_letter": "C",
             "tasks": [
               {
@@ -576,7 +576,7 @@
                 "model_answer": "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war."
               }
             ],
-            "image_caption": "Source C: Map of the Treaty of Tordesillas (1494)"
+            "image_caption": "Map of the Treaty of Tordesillas (1494)"
           },
           {
             "title": "The Climax: The Spanish Armada (1588)",
@@ -607,7 +607,7 @@
           {
             "title": "Analyzing Source F",
             "image": "/images/armada_portrait.jpg",
-            "image_alt": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)",
+            "image_alt": "The Armada Portrait of Queen Elizabeth I (c. 1588)",
             "source_letter": "F",
             "tasks": [
               {
@@ -620,11 +620,11 @@
                 "model_answer": "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy."
               }
             ],
-            "image_caption": "Source D: The Armada Portrait of Queen Elizabeth I (c. 1588)"
+            "image_caption": "The Armada Portrait of Queen Elizabeth I (c. 1588)"
           },
           {
             "title": "Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?",
-            "text": "<blockquote><strong>Historian Perspective A: Traditional View (19th Century)</strong><br><em>\"The defeat of the Armada was a miraculous victory for Protestantism and freedom. God sent a divine storm to scatter the Catholic tyrant’s fleet, paving the way for the rise of the British Empire.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Revisionist View (]], 2013)</strong><br><em>\"Philip II’s invasion failed due to structural flaws: poor communications between Spain and the Netherlands, rigid tactics, and terrible naval logistics. The 'Protestant Wind' simply finished off a fleet that had already been outmaneuvered by superior English ship design and artillery.\"</em></blockquote>",
+            "text": "<blockquote><strong>Historian Perspective A: Traditional View (19th Century)</strong><br><em>\"The defeat of the Armada was a miraculous victory for Protestantism and freedom. God sent a divine storm to scatter the Catholic tyrant’s fleet, paving the way for the rise of the British Empire.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Revisionist View (Geoffrey Parker, 2013)</strong><br><em>\"Philip II’s invasion failed due to structural flaws: poor communications between Spain and the Netherlands, rigid tactics, and terrible naval logistics. The 'Protestant Wind' simply finished off a fleet that had already been outmaneuvered by superior English ship design and artillery.\"</em></blockquote>",
             "tasks": [
               {
                 "type": "comprehension",
@@ -818,7 +818,7 @@
           },
           {
             "term": "Chief Powhatan",
-            "definition": "Leader of the ]] Confederacy who interacted with Jamestown settlers."
+            "definition": "Leader of the Powhatan Confederacy who interacted with Jamestown settlers."
           },
           {
             "term": "John Rolfe",
@@ -849,7 +849,7 @@
             {
               "objective": "Compare the early English colonial encounters in North America (Roanoke and Jamestown) with mercantile trade in Mughal India.",
               "primer": "Use the Jamestown and Mughal India sections to draw a stark contrast. The English were aggressive and desperate in America, but submissive and polite in wealthy India.",
-              "question": "How did ]]'s behavior at the Mughal Court differ from the behavior of the English settlers in Virginia, and why?"
+              "question": "How did Sir Thomas Roe's behavior at the Mughal Court differ from the behavior of the English settlers in Virginia, and why?"
             },
             {
               "objective": "Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation.",
@@ -909,7 +909,7 @@
         "narrative_blocks": [
           {
             "title": "Micro-History: Matoaka in London (1616)",
-            "text": "In the winter of 1616, a 21-year-old Algonquin woman named Matoaka—popularly known as —arrived at the court of ]] in London.<br><br>She was dressed not in the traditional deer skins of her Powhatan homeland in North America, but in heavy English velvet, lace ruffles, and a tall felt hat. Rechristened \"Rebecca Rolfe\" following her conversion to Christianity and marriage to English tobacco planter , she was brought to England by the <strong>Virginia Company</strong> as a living advertisement.<br><br>To the rich investors of London, Matoaka was proof that native populations in the \"New World\" could be tamed, converted, and integrated into a profitable English empire. But the reality back in North America was far grim. Matoaka had been kidnapped three years earlier by English colonists during a bloody border war. Within months of her court appearance in London, as she boarded a ship to return home, she fell ill and died at Gravesend on the River Thames.<br><br>Matoaka’s tragic life encapsulated the reality of early British expansion: what began as desperate, fragile trade encounters between unequal powers rapidly hardened into violent land seizures and permanent imperial domination.",
+            "text": "In the winter of 1616, a 21-year-old Algonquin woman named Matoaka—popularly known as Pocahontas—arrived at the court of King James I in London.<br><br>She was dressed not in the traditional deer skins of her Powhatan homeland in North America, but in heavy English velvet, lace ruffles, and a tall felt hat. Rechristened \"Rebecca Rolfe\" following her conversion to Christianity and marriage to English tobacco planter John Rolfe, she was brought to England by the <strong>Virginia Company</strong> as a living advertisement.<br><br>To the rich investors of London, Matoaka was proof that native populations in the \"New World\" could be tamed, converted, and integrated into a profitable English empire. But the reality back in North America was far grim. Matoaka had been kidnapped three years earlier by English colonists during a bloody border war. Within months of her court appearance in London, as she boarded a ship to return home, she fell ill and died at Gravesend on the River Thames.<br><br>Matoaka’s tragic life encapsulated the reality of early British expansion: what began as desperate, fragile trade encounters between unequal powers rapidly hardened into violent land seizures and permanent imperial domination.",
             "tasks": [
               {
                 "type": "cloze",
@@ -945,12 +945,12 @@
           },
           {
             "title": "Macro-History: The Big Picture",
-            "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612,  introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare. To defend themselves from Spanish ships and Powhatan attacks, the settlers built James Fort in a unique <strong>triangular shape</strong>. The fort had high wooden palisade walls made of vertically buried logs. At each of the three corners stood a raised watchtower called a bulwark, mounted with heavy cannons facing both the James River and the dense inland woods. Inside the triangle, they built a church, a storehouse, and rows of simple wooden barracks.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by ]].<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India."
+            "text": "Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>\"CROATOAN\"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, John Rolfe introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s \"green gold.\"</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare. To defend themselves from Spanish ships and Powhatan attacks, the settlers built James Fort in a unique <strong>triangular shape</strong>. The fort had high wooden palisade walls made of vertically buried logs. At each of the three corners stood a raised watchtower called a bulwark, mounted with heavy cannons facing both the James River and the dense inland woods. Inside the triangle, they built a church, a storehouse, and rows of simple wooden barracks.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by Emperor Jahangir.<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world's finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India."
           },
           {
             "title": "Examining the Evidence",
             "image": "/images/sir_thomas_roe.jpg",
-            "image_alt": "Source A: Sir Thomas Roe at the Mughal Court (1615)",
+            "image_alt": "Sir Thomas Roe at the Mughal Court (1615)",
             "tasks": [
               {
                 "type": "analysis",
@@ -963,11 +963,11 @@
                 "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
               },
               {
-                "question": "Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
+                "question": "Study Source C (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
                 "model_answer": "The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court."
               }
             ],
-            "image_caption": "Source A: Sir Thomas Roe at the Mughal Court (1615)"
+            "image_caption": "Sir Thomas Roe at the Mughal Court (1615)"
           },
           {
             "title": "Justifying Empire: Religion vs. Profit",
@@ -988,7 +988,7 @@
           {
             "title": "Analyzing Source F",
             "image": "/images/global_canton.jpg",
-            "image_alt": "Source B: View of the Thirteen Factories in Canton (c. 1800)",
+            "image_alt": "View of the Thirteen Factories in Canton (c. 1800)",
             "source_letter": "F",
             "tasks": [
               {
@@ -997,7 +997,7 @@
                 "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
               }
             ],
-            "image_caption": "Source B: View of the Thirteen Factories in Canton (c. 1800)"
+            "image_caption": "View of the Thirteen Factories in Canton (c. 1800)"
           },
           {
             "title": "Visual Analysis: The Jamestown Triangular Fort Plan (1607)",
@@ -1006,7 +1006,7 @@
           {
             "title": "Analyzing Source D",
             "image": "/images/jamestown_fort.jpg",
-            "image_alt": "Source C: Plan of James Fort in Virginia (1607)",
+            "image_alt": "Plan of James Fort in Virginia (1607)",
             "source_letter": "D",
             "tasks": [
               {
@@ -1015,11 +1015,11 @@
                 "model_answer": "The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade."
               }
             ],
-            "image_caption": "Source C: Plan of James Fort in Virginia (1607)"
+            "image_caption": "Plan of James Fort in Virginia (1607)"
           },
           {
             "title": "Historical Interpretations: Was the British Empire Planned or Accidental?",
-            "text": "<blockquote><strong>Historian Perspective A: ]] (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: ]] (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
+            "text": "<blockquote><strong>Historian Perspective A: John Robert Seeley (The Expansion of England, 1883)</strong><br><em>\"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade.\"</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Shashi Tharoor (Inglorious Empire, 2017)</strong><br><em>\"There was nothing 'accidental' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity.\"</em></blockquote>",
             "tasks": [
               {
                 "type": "think_pair_share",
@@ -1358,7 +1358,7 @@
           "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
           "objectives": [
             {
-              "objective": "Analyze why ]] and Parliament fought the English Civil War (1642–1651).",
+              "objective": "Analyze why King Charles I and Parliament fought the English Civil War (1642–1651).",
               "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
               "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
             },
@@ -1700,7 +1700,7 @@
           "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
           "objectives": [
             {
-              "objective": "Analyze why ]] and Parliament fought the English Civil War (1642–1651).",
+              "objective": "Analyze why King Charles I and Parliament fought the English Civil War (1642–1651).",
               "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
               "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
             },
@@ -1773,7 +1773,7 @@
           {
             "title": "Analyzing Source A",
             "image": "/images/royal_exchange_courtyard.jpg",
-            "image_alt": "Source A: The Royal Exchange, London (1644)",
+            "image_alt": "The Royal Exchange, London (1644)",
             "source_letter": "A",
             "tasks": [
               {
@@ -1783,7 +1783,7 @@
                 "text": "Based on Source A, how did the visual appearance of London change as it became a global financial hub?"
               }
             ],
-            "image_caption": "Source A: The Royal Exchange, London (1644)"
+            "image_caption": "The Royal Exchange, London (1644)"
           },
           {
             "title": "Visual Analysis: The Great Seal of the Commonwealth (1651)",
@@ -1792,7 +1792,7 @@
           {
             "title": "Analyzing Source E",
             "image": "/images/great_seal_1651.png",
-            "image_alt": "Source B: The Great Seal of the Commonwealth of England (1651)",
+            "image_alt": "The Great Seal of the Commonwealth of England (1651)",
             "source_letter": "E",
             "tasks": [
               {
@@ -1802,15 +1802,15 @@
                 "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
               },
               {
-                "question": "Study Source B (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+                "question": "Study Source D (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
                 "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
               }
             ],
-            "image_caption": "Source B: The Great Seal of the Commonwealth of England (1651)"
+            "image_caption": "The Great Seal of the Commonwealth of England (1651)"
           },
           {
             "title": "Historical Interpretations: Who Was the Real Winner?",
-            "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong></strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View (]], 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though  returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View (]], 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
+            "text": "In 1660, after Cromwell died, Britain restored the monarchy, inviting Charles I’s son, <strong>Charles II</strong>, back to the throne (<strong>The Restoration</strong>). But did things really go back to how they were?<br><br><blockquote><strong>Interpretation 1: The Political View (Christopher Hill, 1961)</strong><br><em>\"The Execution of Charles I permanently smashed the Divine Right of Kings. Though Charles II returned in 1660, no British monarch would ever again rule without Parliament’s consent or impose taxes without their vote.\"</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Imperial/Economic View (Eric Williams, 1944)</strong><br><em>\"The true victor of the Civil War was neither the King nor Parliament; it was the Atlantic mercantile class. The sugar of Barbados and the tobacco of Virginia created a political force so wealthy that no King or Parliament could ever again govern Britain without prioritizing imperial trade.\"</em></blockquote>",
             "tasks": [
               {
                 "type": "think_pair_share",
@@ -2021,7 +2021,7 @@
           {
             "title": "Analyzing Source A",
             "image": "/images/cape_coast_castle.jpg",
-            "image_alt": "Source A: Cape Coast Castle, a European slave fort on the Gold Coast",
+            "image_alt": "Cape Coast Castle, a European slave fort on the Gold Coast",
             "source_letter": "A",
             "tasks": [
               {
@@ -2036,7 +2036,7 @@
               },
               {
                 "type": "comprehension",
-                "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
+                "question": "Study Source C. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
                 "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
               },
               {
@@ -2045,7 +2045,7 @@
                 "question": "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point."
               }
             ],
-            "image_caption": "Source A: Cape Coast Castle, a European slave fort on the Gold Coast"
+            "image_caption": "Cape Coast Castle, a European slave fort on the Gold Coast"
           },
           {
             "title": "Macro-History: The Triangular Machinery of Exploitation",
@@ -2054,7 +2054,7 @@
           {
             "title": "Analyzing Source B",
             "image": "/images/triangular_trade.png",
-            "image_alt": "Source B: Diagram of the Triangular Trade",
+            "image_alt": "Diagram of the Triangular Trade",
             "source_letter": "B",
             "tasks": [
               {
@@ -2064,7 +2064,7 @@
                 "text": "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?"
               }
             ],
-            "image_caption": "Source B: Diagram of the Triangular Trade"
+            "image_caption": "Diagram of the Triangular Trade"
           },
           {
             "title": "Comparative Case Study: Caribbean Sugar vs. Virginian Tobacco",
@@ -2073,7 +2073,7 @@
           {
             "title": "Analyzing Source C",
             "image": "/images/plantation.jpg",
-            "image_alt": "Source C: A Cuban sugar plantation, showing the scale of the operation",
+            "image_alt": "A Cuban sugar plantation, showing the scale of the operation",
             "source_letter": "C",
             "tasks": [
               {
@@ -2092,7 +2092,7 @@
                 "model_answer": "Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it."
               }
             ],
-            "image_caption": "Source C: A Cuban sugar plantation, showing the scale of the operation"
+            "image_caption": "A Cuban sugar plantation, showing the scale of the operation"
           },
           {
             "title": "Digital Research Task: The Legacies of British Slavery",
@@ -2330,7 +2330,7 @@
             {
               "objective": "Analyze primary sources from formerly enslaved Africans.",
               "primer": "Use the Primary Source Deep Dive to interrogate authentic voices.",
-              "question": "How does ]]'s account challenge the idea that enslaved people were passive?"
+              "question": "How does Olaudah Equiano's account challenge the idea that enslaved people were passive?"
             },
             {
               "objective": "Investigate the Jamaican Maroon Wars.",
@@ -2413,7 +2413,7 @@
           {
             "title": "Examining the Evidence",
             "image": "/images/equiano.jpg",
-            "image_alt": "Source A: Portrait of Olaudah Equiano (1789)",
+            "image_alt": "Portrait of Olaudah Equiano (1789)",
             "tasks": [
               {
                 "type": "source_analysis",
@@ -2426,7 +2426,7 @@
                 "model_answer": "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public."
               }
             ],
-            "image_caption": "Source A: Portrait of Olaudah Equiano (1789)"
+            "image_caption": "Portrait of Olaudah Equiano (1789)"
           },
           {
             "title": "Case Study: The Stono Rebellion (1739)",
@@ -2435,7 +2435,7 @@
           {
             "title": "Analyzing Source D",
             "image": "/images/stono_rebellion_map.png",
-            "image_alt": "Source B: Map of the Stono Rebellion route (1739)",
+            "image_alt": "Map of the Stono Rebellion route (1739)",
             "source_letter": "D",
             "tasks": [
               {
@@ -2462,7 +2462,7 @@
                 "question": "Match the aspects of the Stono Rebellion to their correct historical descriptions."
               }
             ],
-            "image_caption": "Source B: Map of the Stono Rebellion route (1739)"
+            "image_caption": "Map of the Stono Rebellion route (1739)"
           },
           {
             "title": "Historical Debates: What Truly Destroyed Slavery?",
@@ -2471,7 +2471,7 @@
           {
             "title": "Analyzing Source F",
             "image": "/images/william_wilberforce.jpg",
-            "image_alt": "Source C: Portrait of , a British politician and abolitionist",
+            "image_alt": "Portrait of , a British politician and abolitionist",
             "source_letter": "F",
             "tasks": [
               {
@@ -2494,7 +2494,7 @@
                 "model_answer": "Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade."
               }
             ],
-            "image_caption": "Source C: Portrait of , a British politician and abolitionist"
+            "image_caption": "Portrait of , a British politician and abolitionist"
           },
           {
             "title": "Lesson Reflection",
@@ -2511,7 +2511,7 @@
           {
             "title": "Side Quest: Obeah and Botanical Warfare",
             "image": "/images/sidequest_cassava.jpg",
-            "image_alt": "Source D: 18th-century botanical illustration of the Cassava root",
+            "image_alt": "18th-century botanical illustration of the Cassava root",
             "image_context": "Observe the detailed cross-section of the Cassava root. This botanical illustration highlights the deep scientific knowledge required to understand which local plants were toxic. Obeah practitioners weaponized this natural science, transforming everyday botany into a terrifying, invisible weapon of psychological warfare against their enslavers. **Hinge Question:** Why would mastering the preparation of toxic plants give enslaved women a unique and powerful form of resistance?",
             "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: Obeah and Botanical Warfare</summary>\n  \n<p>When we think of resistance to slavery, we often picture armed rebellions or people running away. But there was a terrifying, silent, and highly intelligent form of psychological and chemical resistance happening right under the enslavers' noses. Enslaved people brought deep spiritual and botanical knowledge from West Africa, which evolved in the Caribbean into a belief system known as Obeah. Obeah practitioners (often women) were deeply respected healers within the enslaved community, possessing expert knowledge of local toxic plants. Because enslaved women often worked in the plantation houses cooking the enslavers' food, they occasionally used this botanical mastery to slowly, undetectably poison brutal overseers and plantation owners. Enslavers lived in a state of constant, paranoid terror of Obeah, passing strict laws to criminalize it.</p>\n</details>",
             "tasks": [
@@ -2526,7 +2526,7 @@
                 "model_answer": "It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat."
               }
             ],
-            "image_caption": "Source D: 18th-century botanical illustration of the Cassava root",
+            "image_caption": "18th-century botanical illustration of the Cassava root",
             "source_letter": "E"
           }
         ],
@@ -2925,16 +2925,16 @@
           {
             "title": "Analyzing Source A",
             "image": "/images/global_britannia.jpg",
-            "image_alt": "Source A: The East Offering its Riches to Britannia (1778)",
+            "image_alt": "The East Offering its Riches to Britannia (1778)",
             "source_letter": "A",
             "tasks": [
               {
                 "type": "source_analysis",
-                "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
+                "question": "Study Source C. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
                 "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
               }
             ],
-            "image_caption": "Source A: The East Offering its Riches to Britannia (1778)"
+            "image_caption": "The East Offering its Riches to Britannia (1778)"
           },
           {
             "title": "Macro-History: Weighing the Evidence (1450 vs. 1750)",
@@ -2950,7 +2950,7 @@
           {
             "title": "Analyzing Source B",
             "image": "/images/royal_exchange_courtyard.jpg",
-            "image_alt": "Source B: The Royal Exchange, London (1644)",
+            "image_alt": "The Royal Exchange, London (1644)",
             "source_letter": "B",
             "tasks": [
               {
@@ -2960,7 +2960,7 @@
                 "text": "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern."
               }
             ],
-            "image_caption": "Source B: The Royal Exchange, London (1644)"
+            "image_caption": "The Royal Exchange, London (1644)"
           },
           {
             "title": "Primary Source Analysis: The Dual Reality",
@@ -2989,9 +2989,9 @@
           {
             "title": "Urban Sprawl: Mapping 18th-Century London",
             "image": "/images/rocque_map.jpg",
-            "image_alt": "Source C: John Rocque's Map of London (1746)",
+            "image_alt": "John Rocque's Map of London (1746)",
             "image_context": "Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?",
-            "image_caption": "Source C: John Rocque's Map of London (1746)",
+            "image_caption": "John Rocque's Map of London (1746)",
             "tasks": [
               {
                 "type": "source_analysis",
@@ -3483,22 +3483,22 @@
     "cover_sources": [
       {
         "image": "/images/global_britannia.jpg",
-        "title": "Source A: The East Offering its Riches to Britannia (1778)",
+        "title": "The East Offering its Riches to Britannia (1778)",
         "description": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House in London (now held by the British Library). It is an allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire."
       },
       {
         "image": "/images/global_canton.jpg",
-        "title": "Source B: Foreign Trading Factories at Canton (Guangzhou)",
+        "title": "Foreign Trading Factories at Canton (Guangzhou)",
         "description": "A reverse glass painting by an unknown Chinese artist (c. 1805) currently held by the Peabody Essex Museum. It depicts the highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power."
       },
       {
         "image": "/images/royal_exchange_courtyard.jpg",
-        "title": "Source C: The Financial Hub of London",
+        "title": "The Financial Hub of London",
         "description": "An engraving of the Second Royal Exchange in London by Wenceslaus Hollar (1644), now held by the Metropolitan Museum of Art. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade."
       },
       {
         "image": "/images/global_mercator.jpg",
-        "title": "Source D: Nautical Planisphere World Map",
+        "title": "Nautical Planisphere World Map",
         "description": "A world map created by Flemish cartographer Gerardus Mercator in 1569. Early modern maps revolutionized travel by introducing new projections for navigation, showing the massive ocean trade routes and the terrifying scale of global exploration."
       }
     ],
