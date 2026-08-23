@@ -2006,7 +2006,8 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
 
         let themeHeadingHtml = '';
         if (block.theme_heading) {
-          themeHeadingHtml = `<h4 style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
+          const headingId = block.theme_heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          themeHeadingHtml = `<h4 id="${headingId}" style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
         }
 
         let imageHtml = '';
@@ -4188,6 +4189,17 @@ window.openGallery = function(encodedData, startIndex) {
   };
   window.unlockMission = function(btnElement, siteId) {
     const container = btnElement.closest('.geo-fence-container');
+    
+    // Simulate GPS Delay
+    if (btnElement && !btnElement.classList.contains('geo-btn-loading') && !btnElement.closest('h4')) {
+      const originalText = btnElement.innerHTML;
+      btnElement.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Acquiring Signal...';
+      btnElement.classList.add('geo-btn-loading');
+      btnElement.style.pointerEvents = 'none';
+      setTimeout(() => window.unlockMission(btnElement, siteId), 1500);
+      return;
+    }
+    
     let missionHTML = '';
     
     if (siteId === 'brooding_soldier') {

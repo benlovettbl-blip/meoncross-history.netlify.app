@@ -1356,3 +1356,63 @@ body.large-text { font-size: 1.15rem; } body.large-text h1 { font-size: 2rem; } 
 }
 
 @media print { .side-quest-box { display: none !important; } }
+
+/* --- Ypres Tour Enhancements --- */
+@keyframes pulse-lock {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.geo-fence-container .fa-lock {
+  animation: pulse-lock 2s infinite ease-in-out;
+}
+.geo-fence-container button {
+  transition: all 0.2s ease;
+}
+.geo-fence-container button:hover {
+  background: #cbd5e1 !important;
+  transform: translateY(-1px);
+}
+.geo-btn-loading {
+  background: #38bdf8 !important;
+  color: white !important;
+  cursor: not-allowed !important;
+}
+
+/* Mobile Tabs */
+#unit-tabs {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 5px;
+}
+#unit-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+#unit-tabs::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Broken Image Fallback */
+img {
+  position: relative;
+  min-height: 50px;
+}
+img::after {
+  content: '\f03e  Image not found';
+  font-family: 'Font Awesome 6 Free', 'Outfit', sans-serif;
+  font-weight: 900;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: #f8fafc;
+  color: #94a3b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: inherit;
+  z-index: 2;
+}

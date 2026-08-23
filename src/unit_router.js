@@ -1,5 +1,5 @@
 console.log('ROUTER RUNNING');
-import { initializeApp } from './core_app.js?v=2';
+import { initializeApp } from './core_app.js';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';

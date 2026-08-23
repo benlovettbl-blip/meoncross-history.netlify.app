@@ -58,7 +58,7 @@ export function bindEvents() {
     
     const units = getUnits();
     const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
-    const ks3Units = units.filter(u => (u.title || '').includes('KS3:')).sort((a, b) => {
+    const ks3Units = units.filter(u => u && u.title && typeof u.title === 'string' && u.title.includes('KS3:')).sort((a, b) => {
       let idxA = ks3Order.indexOf(a.id);
       let idxB = ks3Order.indexOf(b.id);
       if (idxA === -1) idxA = 999;
@@ -67,7 +67,7 @@ export function bindEvents() {
     });
     
     const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany', 'eee'];
-    const ks4Units = units.filter(u => !(u.title || '').includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
+    const ks4Units = units.filter(u => u && u.title && typeof u.title === 'string' && !u.title.includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
       let idxA = ks4Order.indexOf(a.id);
       let idxB = ks4Order.indexOf(b.id);
       if (idxA === -1) idxA = 999;

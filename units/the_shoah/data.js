@@ -15,7 +15,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -41,7 +48,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for 1933–1939: How were German Jews progressively stripped of citizenship and rights?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -67,7 +81,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -93,7 +114,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for The 'Final Solution': How did the death camps operate as industrialised extermination?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -119,7 +147,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -145,7 +180,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -171,7 +213,14 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [],
+      "narrative_blocks": [
+        {
+          "text": "Placeholder content for Assessment: The Shoah Enquiry",
+          "level_2": "",
+          "level_3": "",
+          "level_4": ""
+        }
+      ],
       "do_now": {
         "type": "standard",
         "questions": []
