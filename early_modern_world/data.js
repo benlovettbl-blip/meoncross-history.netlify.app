@@ -1,4 +1,4 @@
-module.exports = {
+const early_modern_world = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
   "cover_image": "/images/east_offering.jpg",
@@ -210,6 +210,20 @@ module.exports = {
       },
       "narrative_blocks": [
         {
+          "title": "Visual Analysis: The Silk Road (1375)",
+          "image": "/images/caravane_marco_polo.jpg",
+          "image_alt": "Detail from the Catalan Atlas (1375) showing Marco Polo's caravan on the Silk Road",
+          "source_letter": "A",
+          "image_caption": "A detail from the famous Catalan Atlas of 1375, depicting Marco Polo's caravan travelling along the Silk Road. For centuries, this massive network of overland trade routes was the artery of global wealth, connecting Europe to the riches of Asia.",
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the discovery of sea routes?",
+              "model_answer": "Source A shows merchants traveling in large caravans using camels and horses. This suggests that trade before 1450 relied on slow, grueling overland journeys across massive continents, requiring pack animals to transport luxury goods like silk and spices."
+            }
+          ]
+        },
+        {
           "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
           "text": "In May 1453, a Venetian merchant named  stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old  of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
           "tasks": [
@@ -224,15 +238,6 @@ module.exports = {
                     "It ended the Renaissance",
                     "It forced them to pay higher taxes to the Pope"
                   ]
-                },
-                {
-                  "q": "Based on Source F, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-                  "options": [
-                    "Europeans were forced to stay in small, confined trading posts",
-                    "Europeans owned the entire city of Canton",
-                    "The Chinese refused to trade entirely",
-                    "Europeans had stronger armies than the Ming Emperor"
-                  ]
                 }
               ],
               "question": "Knowledge Check: Review the events of 1450."
@@ -241,8 +246,13 @@ module.exports = {
         },
         {
           "title": "Analyzing the Evidence: The Fall of Constantinople",
-          "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of  entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong></strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
+          "text": "<div class='scaffold-box'><strong>Source B: An Eyewitness Account of Sultan Mehmed II entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>George Sphrantzes</strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
           "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Europe in 1453?",
+              "model_answer": "Source B suggests the Ottoman Empire was vastly more powerful, disciplined, and wealthy than Christian Europe. The mention of the Sultan's 'great pomp', 'absolute' power, and the fact that European rulers 'quaked with fear' highlights the severe power imbalance."
+            },
             {
               "type": "drawing",
               "lines": 10,
@@ -252,7 +262,24 @@ module.exports = {
         },
         {
           "title": "Macro-History: The Wealth of the East",
-          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
+          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
+          "tasks": [
+            {
+              "type": "multiple_choice",
+              "question": "Knowledge Check: Global Power in 1450",
+              "questions": [
+                {
+                  "q": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                  "options": [
+                    "Europeans were forced to stay in small, confined trading posts",
+                    "Europeans owned the entire city of Canton",
+                    "The Chinese refused to trade entirely",
+                    "Europeans had stronger armies than the Ming Emperor"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "title": "Macro-History: The Real Centers of Wealth in 1450",
@@ -262,15 +289,15 @@ module.exports = {
           "title": "Analyzing Source C",
           "image": "/images/ottoman_1453.jpg",
           "image_alt": "Fresco of the Siege of Constantinople (1537)",
-          "source_letter": "C",
+          "source_letter": "D",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+              "question": "Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
               "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
             },
             {
-              "question": "Study Source C (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+              "question": "Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
               "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
             }
           ],
@@ -284,11 +311,11 @@ module.exports = {
           "title": "Analyzing Source D",
           "image": "/images/benin_bronze.jpg",
           "image_alt": "16th-Century Benin Bronze Plaque",
-          "source_letter": "D",
+          "source_letter": "E",
           "image_caption": "16th-Century Benin Bronze Plaque",
           "tasks": [
             {
-              "question": "Study Source D (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+              "question": "Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
               "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
             }
           ]
@@ -301,12 +328,12 @@ module.exports = {
           "title": "Analyzing Source E",
           "image": "/images/mansa_musa_catalan.jpg",
           "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-          "source_letter": "E",
+          "source_letter": "F",
           "tasks": [
             {
               "type": "comprehension",
-              "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
-              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
+              "question": "What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?",
+              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
             }
           ],
           "image_caption": "Catalan Atlas (1375) - Mansa Musa"
@@ -314,12 +341,6 @@ module.exports = {
         {
           "title": "The Silk Road & Ming China: The World's Industrial Engine",
           "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/silk_road.jpg",
-          "image_alt": "Map of the Silk Road Trade Routes",
-          "image_caption": "Map of the Silk Road Trade Routes"
         },
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
@@ -497,7 +518,7 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "Micro-History: San Juan de Ulúa (September 1568)",
-          "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, , had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against  of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
+          "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
           "tasks": [
             {
               "type": "comprehension",
@@ -992,7 +1013,7 @@ module.exports = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+              "question": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
               "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
             }
           ],
@@ -1199,134 +1220,134 @@ module.exports = {
         "lines": 15
       }
     },
+    {
+      "id": "lesson_4",
+      "title": "James I and the Gunpowder Plot: Why was religious division so volatile?",
+      "narrative_blocks": [
         {
-        "id": "lesson_4",
-        "title": "James I and the Gunpowder Plot: Why was religious division so volatile?",
-        "narrative_blocks": [
-            {
-                "title": "The Roots of Volatility",
-                "text": "In seventeenth-century England, religion was not a private matter of personal conscience; it was central to daily life, guiding morals, behaviour, and major milestones such as birth, marriage, and death. Decades of religious upheaval following the Reformation had created deep division. As England switched between Protestant and Catholic monarchs, each side accused the other of being in league with the Devil, reinforcing public fears and suspicion. Roman Catholics who refused to accept the Church of England were branded as recusants. Heavily concentrated in northern regions like Yorkshire, Durham, and Lancashire, Catholics were viewed by Protestant authorities as a permanent security threat who might obey foreign powers or stage rebellions."
-            },
-            {
-                "title": "The Rise of King James and Crushed Hopes",
-                "text": "When James I came to the throne, English Catholics hoped for greater toleration. However, James struggled to manage religious factions. When he met with Church leaders in 1604, he failed to satisfy strict Protestants, prompting some to leave the country entirely. At the same time, James angered Catholics by ordering all Catholic priests to leave England or face execution. This severe crackdown convinced a small group of Catholic conspirators that peaceful reform was impossible and that James had to be removed."
-            },
-            {
-                "title": "Treason Beneath Parliament",
-                "text": "Led by Robert Catesby, the conspirators—including Guy Fawkes, Thomas Percy, and the Wright brothers—devised a plan to assassinate the King. They intended to detonate 36 barrels of gunpowder hidden beneath piles of firewood in the cellars of the House of Lords during the State Opening of Parliament on 5 November 1605. The explosion was meant to kill James and his government in a single stroke, allowing the plotters to seize his young daughter, Princess Elizabeth, and install her as a Catholic monarch."
-            },
-            {
-                "title": "Discovery and the 'History Mystery'",
-                "text": "The plot unraveled on 26 October 1605, when Lord Monteagle received an anonymous letter warning him to avoid Parliament because it would \"receive a mighty blow\". Monteagle delivered the letter to Robert Cecil, the King’s Chief Minister. Cecil ordered searches of the vaults, where guards discovered Guy Fawkes calling himself \"John Johnson\" beside the hidden explosives in the early hours of 5 November. Fawkes was arrested and tortured until he confessed and revealed the names of his co-conspirators. The remaining plotters fled to Holbeche House in the Midlands, where a gun battle resulted in the deaths of Catesby and Percy, while the survivors were captured and later executed. Cecil subsequently used the event to push stricter Penal Laws through Parliament, cementing public anti-Catholic sentiment and establishing the tradition of lighting bonfires on 5 November.",
-                "tasks": [
-                    {
-                        "type": "extended_writing",
-                        "question": "Task 1: The Foreign Diplomat’s Confidential Dispatch",
-                        "instructions": "Take on the role of a foreign ambassador visiting London in 1605. Write a confidential report back to your home court explaining why religious division in England is so intense. Include your impressions of King James, his falling out with Church leaders and Parliament, and the growing Catholic resentment over the expulsion of priests."
-                    },
-                    {
-                        "type": "extended_writing",
-                        "question": "Task 2: Prosecution Speech at Westminster",
-                        "instructions": "It is 27 January 1606, and the trial of the surviving conspirators has begun before Lord Chief Justice Sir John Popham. Write the opening speech for the prosecution outlining the charges—treason, attempted murder of the King, and conspiracy to reintroduce Catholicism—explaining why treason against the Protestant Crown requires the harshest public punishment."
-                    },
-                    {
-                        "type": "extended_writing",
-                        "question": "Task 3: Eyewitness Letter Home",
-                        "instructions": "Imagine you were a Londoner who witnessed the capture of Guy Fawkes and the subsequent execution of the conspirators in January 1606. Write a letter to a friend describing the mood of the city, explaining why most citizens were relieved the plot failed, and reflecting on how the King wants the fifth of November remembered."
-                    }
-                ]
-            },
-            {
-                "title": "Primary Source Gallery: Historical Visuals",
-                "text": "",
-                "images": [
-                    {
-                        "image": "/images/gunpowder_conspirators.jpg",
-                        "image_alt": "The 1605 Dutch Engraving of the Conspirators",
-                        "image_caption": "A contemporary Dutch print showing Robert Catesby, Thomas Percy, Guido (Guy) Fawkes, and fellow plotters gathered in cloaks and broad-brimmed hats.",
-                        "image_context": "Although published in 1605, it is unlikely the artist ever saw the plotters in person. How does this image illustrate seventeenth-century depictions of Catholic conspirators?",
-                        "source_letter": "A"
-                    },
-                    {
-                        "image": "/images/fawkes_signatures.png",
-                        "image_alt": "Guy Fawkes’s Signatures in the Tower of London (1605)",
-                        "image_caption": "Official records containing Fawkes’s firm initial signature (\"Guido Fawkes\") alongside his faint, broken signature written after interrogation on the rack.",
-                        "image_context": "What does the stark physical deterioration between these two signatures reveal about state interrogation methods and Jacobean trials for treason?",
-                        "source_letter": "B"
-                    },
-                    {
-                        "image": "/images/monteagle_letter.jpeg",
-                        "image_alt": "The Anonymous Warning Letter to Lord Monteagle (October 1605)",
-                        "image_caption": "The original unsigned manuscript advising Monteagle to stay away from Parliament.",
-                        "image_context": "Consider why Monteagle took this letter directly to Robert Cecil, and how Cecil utilized this intelligence to uncover the plot.",
-                        "source_letter": "C"
-                    }
-                ],
-                "tasks": [
-                    {
-                        "type": "source_analysis",
-                        "question": "1. Inference from Source A (2 Marks)",
-                        "instructions": "What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail."
-                    },
-                    {
-                        "type": "source_analysis",
-                        "question": "2. Utility & Provenance of Source A (8 Marks)",
-                        "instructions": "How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance."
-                    },
-                    {
-                        "type": "source_analysis",
-                        "question": "3. Analysis of Evidence in Source B (4 Marks)",
-                        "instructions": "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods."
-                    },
-                    {
-                        "type": "table_planner",
-                        "question": "4. Follow-Up Investigation (4 Marks)",
-                        "instructions": "Investigate the official government account of the plot based on the Monteagle letter (Source C).",
-                        "columns": [
-                            "Enquiry Field",
-                            "Student Response"
-                        ],
-                        "rows": [
-                            [
-                                "Detail in the Monteagle letter / Cecil's actions to follow up:",
-                                "(Identify a specific detail from the discovery of the plot)"
-                            ],
-                            [
-                                "Question I would ask:",
-                                "(Formulate an inquiry question about whether Cecil had prior knowledge)"
-                            ],
-                            [
-                                "Type of historical source to use:",
-                                "(e.g., State Papers, Privy Council records, trial transcripts)"
-                            ],
-                            [
-                                "How this helps answer the question:",
-                                "(Explain how this source resolves the mystery)"
-                            ]
-                        ]
-                    },
-                    {
-                        "type": "extended_writing",
-                        "question": "Essay Question (16 Marks)",
-                        "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
-                    }
-                ]
-            }
-        ],
-        "do_now": {
-            "type": "standard",
-            "questions": []
+          "title": "The Roots of Volatility",
+          "text": "In seventeenth-century England, religion was not a private matter of personal conscience; it was central to daily life, guiding morals, behaviour, and major milestones such as birth, marriage, and death. Decades of religious upheaval following the Reformation had created deep division. As England switched between Protestant and Catholic monarchs, each side accused the other of being in league with the Devil, reinforcing public fears and suspicion. Roman Catholics who refused to accept the Church of England were branded as recusants. Heavily concentrated in northern regions like Yorkshire, Durham, and Lancashire, Catholics were viewed by Protestant authorities as a permanent security threat who might obey foreign powers or stage rebellions."
         },
-        "teacher_notes": {
-            "primer": "This lesson explores the roots of religious volatility and the mechanics of the Gunpowder Plot, ending with a detailed source evaluation.",
-            "objectives": [
-                {
-                    "objective": "Understand the motivations and consequences of the Gunpowder Plot.",
-                    "primer": "Guide students through the narrative and focus on the religious motivations.",
-                    "question": "What is the most significant consequence of the Gunpowder Plot?"
-                }
-            ]
+        {
+          "title": "The Rise of King James and Crushed Hopes",
+          "text": "When James I came to the throne, English Catholics hoped for greater toleration. However, James struggled to manage religious factions. When he met with Church leaders in 1604, he failed to satisfy strict Protestants, prompting some to leave the country entirely. At the same time, James angered Catholics by ordering all Catholic priests to leave England or face execution. This severe crackdown convinced a small group of Catholic conspirators that peaceful reform was impossible and that James had to be removed."
+        },
+        {
+          "title": "Treason Beneath Parliament",
+          "text": "Led by Robert Catesby, the conspirators—including Guy Fawkes, Thomas Percy, and the Wright brothers—devised a plan to assassinate the King. They intended to detonate 36 barrels of gunpowder hidden beneath piles of firewood in the cellars of the House of Lords during the State Opening of Parliament on 5 November 1605. The explosion was meant to kill James and his government in a single stroke, allowing the plotters to seize his young daughter, Princess Elizabeth, and install her as a Catholic monarch."
+        },
+        {
+          "title": "Discovery and the 'History Mystery'",
+          "text": "The plot unraveled on 26 October 1605, when Lord Monteagle received an anonymous letter warning him to avoid Parliament because it would \"receive a mighty blow\". Monteagle delivered the letter to Robert Cecil, the King’s Chief Minister. Cecil ordered searches of the vaults, where guards discovered Guy Fawkes calling himself \"John Johnson\" beside the hidden explosives in the early hours of 5 November. Fawkes was arrested and tortured until he confessed and revealed the names of his co-conspirators. The remaining plotters fled to Holbeche House in the Midlands, where a gun battle resulted in the deaths of Catesby and Percy, while the survivors were captured and later executed. Cecil subsequently used the event to push stricter Penal Laws through Parliament, cementing public anti-Catholic sentiment and establishing the tradition of lighting bonfires on 5 November.",
+          "tasks": [
+            {
+              "type": "extended_writing",
+              "question": "Task 1: The Foreign Diplomat’s Confidential Dispatch",
+              "instructions": "Take on the role of a foreign ambassador visiting London in 1605. Write a confidential report back to your home court explaining why religious division in England is so intense. Include your impressions of King James, his falling out with Church leaders and Parliament, and the growing Catholic resentment over the expulsion of priests."
+            },
+            {
+              "type": "extended_writing",
+              "question": "Task 2: Prosecution Speech at Westminster",
+              "instructions": "It is 27 January 1606, and the trial of the surviving conspirators has begun before Lord Chief Justice Sir John Popham. Write the opening speech for the prosecution outlining the charges—treason, attempted murder of the King, and conspiracy to reintroduce Catholicism—explaining why treason against the Protestant Crown requires the harshest public punishment."
+            },
+            {
+              "type": "extended_writing",
+              "question": "Task 3: Eyewitness Letter Home",
+              "instructions": "Imagine you were a Londoner who witnessed the capture of Guy Fawkes and the subsequent execution of the conspirators in January 1606. Write a letter to a friend describing the mood of the city, explaining why most citizens were relieved the plot failed, and reflecting on how the King wants the fifth of November remembered."
+            }
+          ]
+        },
+        {
+          "title": "Primary Source Gallery: Historical Visuals",
+          "text": "",
+          "images": [
+            {
+              "image": "/images/gunpowder_conspirators.jpg",
+              "image_alt": "The 1605 Dutch Engraving of the Conspirators",
+              "image_caption": "A contemporary Dutch print showing Robert Catesby, Thomas Percy, Guido (Guy) Fawkes, and fellow plotters gathered in cloaks and broad-brimmed hats.",
+              "image_context": "Although published in 1605, it is unlikely the artist ever saw the plotters in person. How does this image illustrate seventeenth-century depictions of Catholic conspirators?",
+              "source_letter": "A"
+            },
+            {
+              "image": "/images/fawkes_signatures.png",
+              "image_alt": "Guy Fawkes’s Signatures in the Tower of London (1605)",
+              "image_caption": "Official records containing Fawkes’s firm initial signature (\"Guido Fawkes\") alongside his faint, broken signature written after interrogation on the rack.",
+              "image_context": "What does the stark physical deterioration between these two signatures reveal about state interrogation methods and Jacobean trials for treason?",
+              "source_letter": "B"
+            },
+            {
+              "image": "/images/monteagle_letter.jpeg",
+              "image_alt": "The Anonymous Warning Letter to Lord Monteagle (October 1605)",
+              "image_caption": "The original unsigned manuscript advising Monteagle to stay away from Parliament.",
+              "image_context": "Consider why Monteagle took this letter directly to Robert Cecil, and how Cecil utilized this intelligence to uncover the plot.",
+              "source_letter": "C"
+            }
+          ],
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "1. Inference from Source A (2 Marks)",
+              "instructions": "What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail."
+            },
+            {
+              "type": "source_analysis",
+              "question": "2. Utility & Provenance of Source A (8 Marks)",
+              "instructions": "How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance."
+            },
+            {
+              "type": "source_analysis",
+              "question": "3. Analysis of Evidence in Source B (4 Marks)",
+              "instructions": "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods."
+            },
+            {
+              "type": "table_planner",
+              "question": "4. Follow-Up Investigation (4 Marks)",
+              "instructions": "Investigate the official government account of the plot based on the Monteagle letter (Source C).",
+              "columns": [
+                "Enquiry Field",
+                "Student Response"
+              ],
+              "rows": [
+                [
+                  "Detail in the Monteagle letter / Cecil's actions to follow up:",
+                  "(Identify a specific detail from the discovery of the plot)"
+                ],
+                [
+                  "Question I would ask:",
+                  "(Formulate an inquiry question about whether Cecil had prior knowledge)"
+                ],
+                [
+                  "Type of historical source to use:",
+                  "(e.g., State Papers, Privy Council records, trial transcripts)"
+                ],
+                [
+                  "How this helps answer the question:",
+                  "(Explain how this source resolves the mystery)"
+                ]
+              ]
+            },
+            {
+              "type": "extended_writing",
+              "question": "Essay Question (16 Marks)",
+              "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
+            }
+          ]
         }
+      ],
+      "do_now": {
+        "type": "standard",
+        "questions": []
+      },
+      "teacher_notes": {
+        "primer": "This lesson explores the roots of religious volatility and the mechanics of the Gunpowder Plot, ending with a detailed source evaluation.",
+        "objectives": [
+          {
+            "objective": "Understand the motivations and consequences of the Gunpowder Plot.",
+            "primer": "Guide students through the narrative and focus on the religious motivations.",
+            "question": "What is the most significant consequence of the Gunpowder Plot?"
+          }
+        ]
+      }
     },
     {
       "id": "lesson_4",
@@ -1463,7 +1484,7 @@ module.exports = {
         },
         {
           "title": "Investigating Power: The King vs. The Merchants",
-          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong></strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by </strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: ’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
+          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>John Bradshaw</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by Maurice Thompson</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: Oliver Cromwell’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
             {
               "type": "think_pair_share",
@@ -1491,7 +1512,7 @@ module.exports = {
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by .</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by  in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by Gerrard Winstanley.</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by Gerrard Winstanley in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -2365,6 +2386,11 @@ module.exports = {
           "title": "Micro-History:  and the Blue Mountains (1730s)",
           "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen </strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
           "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source B. How did the geography of Jamaica shown in the map help the Maroons wage a successful guerrilla war against the British?",
+              "model_answer": "The 1775 map shows Jamaica's rugged, mountainous interior (the Blue Mountains). This harsh, inaccessible terrain allowed the Maroons to build hidden strongholds like Nanny Town and use the dense rainforest camouflage to launch surprise attacks on the British."
+            },
             {
               "type": "comprehension",
               "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
@@ -4109,3 +4135,5 @@ module.exports = {
     }
   ]
 };
+
+export default early_modern_world;
