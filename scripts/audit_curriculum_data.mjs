@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
  */
 
 export async function auditUnit(unitId) {
-    const unitPath = path.join(process.cwd(), unitId, 'data.js');
+    const unitPath = path.join(process.cwd(), 'public', 'units', unitId, 'data.js');
     if (!fs.existsSync(unitPath)) {
         console.error(`❌ Unit data not found at ${unitPath}`);
         return false;
@@ -80,14 +80,25 @@ export async function auditUnit(unitId) {
                         sourceMatch.forEach(src => {
                             // Verify this exact source exists SOMEWHERE in the current lesson
                             let sourceFoundInLesson = false;
-                            lesson.narrative_blocks.forEach(b => {
-                                const bAlt = b.image_alt || '';
-                                const bTitle = b.title || '';
-                                const bText = b.text || '';
-                                if (bText.includes(src) || bAlt.includes(src) || bTitle.includes(src)) {
-                                    sourceFoundInLesson = true;
-                                }
-                            });
+                              lesson.narrative_blocks.forEach(b => {
+                                  const bAlt = b.image_alt || '';
+                                  const bTitle = b.title || '';
+                                  const bText = b.text || '';
+                                  const bSourceLetter = b.source_letter ? `Source ${b.source_letter}` : '';
+                                  if (bText.includes(src) || bAlt.includes(src) || bTitle.includes(src) || bSourceLetter === src) {
+                                      sourceFoundInLesson = true;
+                                  }
+                                  if (b.images && Array.isArray(b.images)) {
+                                      b.images.forEach(img => {
+                                          const imgAlt = img.alt || img.image_alt || '';
+                                          const imgCaption = img.caption || img.image_caption || '';
+                                          const imgLetter = img.source_letter ? `Source ${img.source_letter}` : '';
+                                          if (imgAlt.includes(src) || imgCaption.includes(src) || imgLetter === src) {
+                                              sourceFoundInLesson = true;
+                                          }
+                                      });
+                                  }
+                              });
                             
                             if (!sourceFoundInLesson) {
                                 warnings.push(`[SOURCE MISMATCH] ${loc} -> Task ${tIdx}: Task references '${src}', but this source label is missing from the entire lesson.`);

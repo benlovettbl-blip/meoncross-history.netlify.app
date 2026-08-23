@@ -15,14 +15,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Ideological Clash: Why could Capitalism and Communism never peacefully coexist?",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -48,14 +41,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Yalta to Potsdam (1945): How did wartime allies become bitter rivals?",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -81,14 +67,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint.",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -114,14 +93,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Nuclear Brinkmanship: The Cuban Missile Crisis (1962).",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -147,14 +119,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -180,14 +145,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991).",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
@@ -213,14 +171,7 @@ export const unitData = {
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Assessment: Was the Cold War ever truly 'cold'?",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
+      "narrative_blocks": [],
       "do_now": {
         "type": "standard",
         "questions": []
